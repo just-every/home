@@ -41,7 +41,3 @@ yarn-error.log*
 next-env.d.ts
 
 /src/generated
-
-# video files (temporarily excluded)
-/public/video/*.mp4
-/public/video/*.webm
