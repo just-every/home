@@ -163,9 +163,56 @@ export default function Home() {
                             playsInline
                             crossOrigin="anonymous"
                             className="absolute inset-0 w-full h-full object-cover hero-video"
+                            poster="/video/poster.jpg"
+                            preload="metadata"
                         >
-                            <source src="/video/promo-4k.webm" type="video/webm" />
-                            <source src="/video/promo-4k.mp4" type="video/mp4" />
+                            {/* WebM sources (better compression, modern browsers) */}
+                            <source 
+                                src="/video/promo-4k.webm" 
+                                type="video/webm" 
+                                media="(min-width: 1920px)"
+                            />
+                            <source 
+                                src="/video/promo-1080.webm" 
+                                type="video/webm" 
+                                media="(min-width: 1280px) and (max-width: 1919px)"
+                            />
+                            <source 
+                                src="/video/promo-720.webm" 
+                                type="video/webm" 
+                                media="(min-width: 768px) and (max-width: 1279px)"
+                            />
+                            <source 
+                                src="/video/promo-480.webm" 
+                                type="video/webm" 
+                                media="(max-width: 767px)"
+                            />
+                            
+                            {/* MP4 sources (fallback for older browsers) */}
+                            <source 
+                                src="/video/promo-2k.mp4" 
+                                type="video/mp4" 
+                                media="(min-width: 1920px)"
+                            />
+                            <source 
+                                src="/video/promo-1080.mp4" 
+                                type="video/mp4" 
+                                media="(min-width: 1280px) and (max-width: 1919px)"
+                            />
+                            <source 
+                                src="/video/promo-720.mp4" 
+                                type="video/mp4" 
+                                media="(min-width: 768px) and (max-width: 1279px)"
+                            />
+                            <source 
+                                src="/video/promo-480.mp4" 
+                                type="video/mp4" 
+                                media="(max-width: 767px)"
+                            />
+                            
+                            {/* Default fallback */}
+                            <source src="/video/promo-720.mp4" type="video/mp4" />
+                            
                             <track 
                                 label="English" 
                                 kind="subtitles" 
