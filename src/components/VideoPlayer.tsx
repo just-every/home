@@ -129,8 +129,8 @@ export const VideoPlayer = ({ className = '', onPlayFullscreen }: VideoPlayerPro
     }, [onPlayFullscreen]);
 
 
-    // If using R2, use full responsive sources. Otherwise, use only 480p
-    const useFullQuality = !!process.env.NEXT_PUBLIC_R2_PUBLIC_URL;
+    // Use full quality for both local development and R2 hosting
+    const useFullQuality = true;
 
     return (
         <video 
@@ -150,17 +150,17 @@ export const VideoPlayer = ({ className = '', onPlayFullscreen }: VideoPlayerPro
                     <source 
                         src={`${videoBaseUrl}/promo-4k.webm`}
                         type="video/webm" 
-                        media="(min-width: 1920px) and (min-resolution: 2dppx), (min-width: 2560px)"
+                        media="(min-width: 1440px) and (min-resolution: 2dppx), (min-width: 2560px)"
                     />
                     <source 
                         src={`${videoBaseUrl}/promo-2k.webm`}
                         type="video/webm" 
-                        media="(min-width: 1280px) and (min-resolution: 2dppx) and (max-width: 1919px)"
+                        media="(min-width: 1280px) and (min-resolution: 2dppx) and (max-width: 1439px), (min-width: 1920px) and (max-width: 2559px)"
                     />
                     <source 
                         src={`${videoBaseUrl}/promo-1080.webm`}
                         type="video/webm" 
-                        media="(min-width: 1280px) and (max-resolution: 1.99dppx)"
+                        media="(min-width: 1280px) and (max-resolution: 1.99dppx) and (max-width: 1919px)"
                     />
                     <source 
                         src={`${videoBaseUrl}/promo-1080.webm`}
@@ -187,17 +187,17 @@ export const VideoPlayer = ({ className = '', onPlayFullscreen }: VideoPlayerPro
                     <source 
                         src={`${videoBaseUrl}/promo-4k.mp4`}
                         type="video/mp4" 
-                        media="(min-width: 1920px) and (min-resolution: 2dppx), (min-width: 2560px)"
+                        media="(min-width: 1440px) and (min-resolution: 2dppx), (min-width: 2560px)"
                     />
                     <source 
                         src={`${videoBaseUrl}/promo-2k.mp4`}
                         type="video/mp4" 
-                        media="(min-width: 1280px) and (min-resolution: 2dppx) and (max-width: 1919px)"
+                        media="(min-width: 1280px) and (min-resolution: 2dppx) and (max-width: 1439px), (min-width: 1920px) and (max-width: 2559px)"
                     />
                     <source 
                         src={`${videoBaseUrl}/promo-1080.mp4`}
                         type="video/mp4" 
-                        media="(min-width: 1280px) and (max-resolution: 1.99dppx)"
+                        media="(min-width: 1280px) and (max-resolution: 1.99dppx) and (max-width: 1919px)"
                     />
                     <source 
                         src={`${videoBaseUrl}/promo-1080.mp4`}

@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "build:cloudflare": "NODE_ENV=production opennextjs-cloudflare build",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "preview": "opennextjs-cloudflare build && find .open-next/assets -type f \\( -name '*.mp4' -o -name '*.webm' \\) -delete && opennextjs-cloudflare preview",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {

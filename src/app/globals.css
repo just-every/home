@@ -33,7 +33,7 @@ body {
 
 /* Style video captions/subtitles */
 video::cue {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
   font-size: 1.4rem;
   line-height: 1.4;
@@ -77,7 +77,7 @@ video::-webkit-media-text-track-display {
 /* Hero video specific subtitle positioning */
 .hero-video::-webkit-media-text-track-container {
   position: absolute !important;
-  bottom: 40px !important;
+  bottom: 20px !important;
   width: 100% !important;
   text-align: center !important;
 }
@@ -87,6 +87,21 @@ video::-webkit-media-text-track-display {
   bottom: 0 !important;
   margin: 0 auto !important;
   max-width: 80% !important;
+}
+
+/* Keep hero video subtitles consistent on mobile */
+@media (max-width: 640px) {
+  .hero-video::cue {
+    bottom: 20px !important;
+  }
+  
+  .hero-video::-webkit-media-text-track-container {
+    bottom: 20px !important;
+  }
+  
+  .hero-video::-webkit-media-text-track-display {
+    bottom: 0 !important;
+  }
 }
 
 /* Fullscreen video styles */

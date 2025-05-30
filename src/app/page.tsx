@@ -35,13 +35,12 @@ export default function Home() {
 
     return (
         <>
-            {/* Hero Section - Full viewport with video and title */}
-            <div className="flex flex-col min-h-screen">
-                {/* Black space at top with play button */}
-                <div className="h-[72px] bg-dark-200 flex-shrink-0 relative">
-                    {/* Play with sound button */}
+            {/* Hero Section - Full viewport with three sections */}
+            <div className="relative min-h-screen bg-dark-200 flex flex-col">
+                {/* Top section with play button */}
+                <div className="flex-1 relative flex items-center">
                     {showPlayButton && (
-                        <div className="absolute top-0 left-0 right-0 h-full flex items-center">
+                        <div className="absolute top-0 left-0 right-0 h-[72px] z-[60] flex items-center">
                             <div className="container mx-auto px-4 flex justify-end">
                                 <button
                                     onClick={() => {
@@ -49,7 +48,7 @@ export default function Home() {
                                         const event = new CustomEvent('requestFullscreen');
                                         window.dispatchEvent(event);
                                     }}
-                                    className={`hover:bg-white/20 transition-all duration-300 rounded-full p-3 flex items-center gap-2 hover:scale-105 z-[60] relative ${
+                                    className={`hover:bg-white/20 transition-all duration-300 rounded-full p-3 flex items-center gap-2 hover:scale-105 ${
                                         isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'
                                     }`}
                                     aria-label="Play video with sound"
@@ -65,29 +64,27 @@ export default function Home() {
                     )}
                 </div>
                 
-                {/* Video section with fixed height */}
-                <div className="relative h-[60vh] overflow-hidden flex-shrink-0 group">
-                    <div className="absolute inset-0 -top-[20px] -bottom-[20px]">
-                        <VideoPlayer 
-                            className="absolute inset-0 w-full h-full object-cover hero-video"
-                            onPlayFullscreen={handlePlayFullscreen}
-                        />
-                    </div>
+                {/* Middle section with video */}
+                <div className="relative w-full h-[50vh] lg:h-auto lg:max-h-[70vh] overflow-hidden">
+                    <VideoPlayer 
+                        className="w-full h-full lg:h-auto object-cover lg:object-contain hero-video"
+                        onPlayFullscreen={handlePlayFullscreen}
+                    />
                     <div className="absolute inset-0 bg-dark-200 opacity-40"></div>
                     <div className="absolute inset-0 bg-gradient-radial from-brand-cyan/10 via-brand-pink/10 to-transparent"></div>
                 </div>
                 
-                {/* Title section - fills remaining viewport height */}
-                <section className="bg-dark-200 flex-grow flex items-center justify-center px-4 pb-4">
+                {/* Bottom section with title */}
+                <div className="flex-1 flex items-center justify-center">
                     <motion.h1 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-5xl md:text-7xl font-display font-bold text-center"
+                        className="text-5xl md:text-7xl font-display font-bold text-center px-4"
                     >
                         <span className="block">Apps end. Ideas begin.</span>
                     </motion.h1>
-                </section>
+                </div>
             </div>
             
             {/* Additional content section */}
