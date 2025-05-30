@@ -32,6 +32,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env
+.env.local
+.env.production
 
 # vercel
 .vercel
@@ -41,3 +43,28 @@ yarn-error.log*
 next-env.d.ts
 
 /src/generated
+
+# Cloudflare build artifacts
+.open-next/
+.wrangler/
+.cloudflare/
+
+# Temporary files
+*.log
+*.tmp
+*~
+.cache/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+
+# Backup files
+backup/
+*.backup
+*.bak

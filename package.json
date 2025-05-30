@@ -7,16 +7,20 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:cloudflare": "opennextjs-cloudflare build",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
     "@neplex/vectorizer": "^0.0.5",
     "@next/font": "^14.2.15",
+    "@opennextjs/cloudflare": "^1.1.0",
     "autoprefixer": "^10.4.21",
     "framer-motion": "^12.15.0",
     "lucide-react": "^0.511.0",
     "next": "15.3.2",
-    "potrace": "^2.1.8",
+    "potrace": "^2.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sharp": "^0.34.2"
@@ -31,6 +35,7 @@
     "eslint-config-next": "^15.3.2",
     "tailwindcss": "^4",
     "tsx": "^4.19.4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.18.0"
   }
 }

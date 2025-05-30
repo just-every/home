@@ -1,0 +1,110 @@
+name: Deploy Production
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  # Upload changed assets to R2 first
+  upload-r2-assets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # Need previous commit to detect changes
+        
+      - name: Check for asset changes
+        id: check-changes
+        run: |
+          if git diff --name-only HEAD^ HEAD | grep -E '^public/(video|images|docs)/' > /dev/null; then
+            echo "assets_changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "assets_changed=false" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Setup Node.js
+        if: steps.check-changes.outputs.assets_changed == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Install Wrangler
+        if: steps.check-changes.outputs.assets_changed == 'true'
+        run: npm install -g wrangler
+        
+      - name: Upload changed assets to R2
+        if: steps.check-changes.outputs.assets_changed == 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          echo "📤 Uploading changed assets to R2..."
+          
+          # Get list of changed files
+          CHANGED_FILES=$(git diff --name-only HEAD^ HEAD | grep -E '^public/(video|images|docs)/' || true)
+          
+          if [ -n "$CHANGED_FILES" ]; then
+            echo "$CHANGED_FILES" | while read -r file; do
+              if [ -f "$file" ]; then
+                # Determine R2 path based on file location
+                if [[ "$file" == public/video/* ]]; then
+                  r2_path="justevery-assets/video/$(basename "$file")"
+                elif [[ "$file" == public/images/* ]]; then
+                  r2_path="justevery-assets/images/$(basename "$file")"
+                elif [[ "$file" == public/docs/* ]]; then
+                  r2_path="justevery-assets/docs/$(basename "$file")"
+                fi
+                
+                echo "Uploading: $file to $r2_path"
+                wrangler r2 object put "$r2_path" --file="$file" --remote
+              fi
+            done
+          fi
+
+  # Deploy Worker
+  deploy-worker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    needs: upload-r2-assets # Wait for R2 uploads to complete
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build application
+        run: npm run build:cloudflare
+        
+      - name: Clean up video files from build
+        run: |
+          echo "🧹 Removing video files from build output..."
+          find .open-next/assets -type f \( -name "*.mp4" -o -name "*.webm" -o -name "*.mov" -o -name "*.avi" \) -delete 2>/dev/null || true
+          
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy --compatibility-date=2025-03-25
+          
+      - name: Deploy Summary
+        run: |
+          echo "## 🚀 Deployment Complete!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Worker**: justevery" >> $GITHUB_STEP_SUMMARY
+          echo "- **URL**: https://justevery.com" >> $GITHUB_STEP_SUMMARY
+          echo "- **Assets**: https://assets.justevery.com" >> $GITHUB_STEP_SUMMARY
+          echo "- **Build**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY

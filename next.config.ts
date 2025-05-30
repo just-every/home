@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
     }
     return config;
   },
+  // Exclude large video files from static file copying in production
+  // Videos are served from R2 CDN
+  outputFileTracingExcludes: {
+    '*': ['public/video/*.mp4', 'public/video/*.webm'],
+  },
 };
 
 export default nextConfig;

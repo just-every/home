@@ -1,0 +1,9 @@
+# Ignore video files since they're served from R2
+public/video/*.mp4
+public/video/*.webm
+public/video/*.mov
+public/video/*.avi
+
+# Keep subtitle files if needed locally
+# public/video/*.vtt
+# public/video/*.srt

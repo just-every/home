@@ -3,10 +3,10 @@
 import Link from 'next/link';
 import { ArrowRight, Code, Cpu, Box, Sparkles, Play } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import VideoPlayer from '@/components/VideoPlayer';
 
 export default function Home() {
-    const videoRef = useRef<HTMLVideoElement>(null);
     const [showPlayButton, setShowPlayButton] = useState(true);
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -19,110 +19,18 @@ export default function Home() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    useEffect(() => {
-        const video = videoRef.current;
-        if (!video) return;
-
-        // Force subtitles to show even when muted
-        const enableSubtitles = () => {
-            if (video.textTracks && video.textTracks.length > 0) {
-                // Find the subtitle track
-                for (let i = 0; i < video.textTracks.length; i++) {
-                    const track = video.textTracks[i];
-                    if (track.kind === 'subtitles' || track.kind === 'captions') {
-                        track.mode = 'showing';
-                        console.log('Subtitles enabled:', track.label);
-                    }
-                }
-            }
-        };
-
-        const handleTimeUpdate = () => {
-            // Only loop at 58 seconds if not in fullscreen
-            const isFullscreen = document.fullscreenElement || 
-                                (document as any).webkitFullscreenElement || 
-                                (document as any).msFullscreenElement;
-            
-            if (!isFullscreen && video.currentTime >= 58) {
-                video.currentTime = 0;
-                video.play();
-            }
-        };
-
-        video.addEventListener('loadedmetadata', enableSubtitles);
-        video.addEventListener('timeupdate', handleTimeUpdate);
-        
-        // Try to enable subtitles immediately if already loaded
-        enableSubtitles();
-        
-        return () => {
-            video.removeEventListener('loadedmetadata', enableSubtitles);
-            video.removeEventListener('timeupdate', handleTimeUpdate);
-        };
-    }, []);
-
-    const playFullscreen = () => {
-        const video = videoRef.current;
-        if (!video) return;
-
-        // Remove the loop attribute for fullscreen playback
-        video.loop = false;
-        
-        // Unmute and restart video
-        video.muted = false;
-        video.currentTime = 0;
-        
-        // Hide subtitles in fullscreen with sound
-        if (video.textTracks && video.textTracks.length > 0) {
-            for (let i = 0; i < video.textTracks.length; i++) {
-                video.textTracks[i].mode = 'hidden';
-            }
-        }
-        
-        // Set video to contain within viewport to prevent cutoff
-        video.style.objectFit = 'contain';
-        video.style.width = '100%';
-        video.style.height = '100%';
-        
-        // Add controls for fullscreen playback
-        video.controls = true;
-        
-        // Request fullscreen on the video element itself to get native controls
-        if (video.requestFullscreen) {
-            video.requestFullscreen();
-        } else if ((video as any).webkitRequestFullscreen) {
-            (video as any).webkitRequestFullscreen();
-        } else if ((video as any).msRequestFullscreen) {
-            (video as any).msRequestFullscreen();
-        }
-        
-        video.play();
+    const handlePlayFullscreen = () => {
         setShowPlayButton(false);
         
         // Show button again when exiting fullscreen
         const handleFullscreenChange = () => {
             if (!document.fullscreenElement) {
-                video.muted = true;
-                video.loop = true;
-                video.controls = false; // Hide controls again
-                video.style.objectFit = 'cover'; // Reset to original
-                
-                // Re-enable subtitles
-                if (video.textTracks && video.textTracks.length > 0) {
-                    for (let i = 0; i < video.textTracks.length; i++) {
-                        const track = video.textTracks[i];
-                        if (track.kind === 'subtitles' || track.kind === 'captions') {
-                            track.mode = 'showing';
-                        }
-                    }
-                }
-                
                 setShowPlayButton(true);
             }
         };
         
-        document.addEventListener('fullscreenchange', handleFullscreenChange);
-        document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+        document.addEventListener('fullscreenchange', handleFullscreenChange, { once: true });
+        document.addEventListener('webkitfullscreenchange', handleFullscreenChange, { once: true });
     };
 
     return (
@@ -136,7 +44,11 @@ export default function Home() {
                         <div className="absolute top-0 left-0 right-0 h-full flex items-center">
                             <div className="container mx-auto px-4 flex justify-end">
                                 <button
-                                    onClick={playFullscreen}
+                                    onClick={() => {
+                                        // Trigger fullscreen play on the video element
+                                        const event = new CustomEvent('requestFullscreen');
+                                        window.dispatchEvent(event);
+                                    }}
                                     className={`hover:bg-white/20 transition-all duration-300 rounded-full p-3 flex items-center gap-2 hover:scale-105 z-[60] relative ${
                                         isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'
                                     }`}
@@ -156,71 +68,10 @@ export default function Home() {
                 {/* Video section with fixed height */}
                 <div className="relative h-[60vh] overflow-hidden flex-shrink-0 group">
                     <div className="absolute inset-0 -top-[20px] -bottom-[20px]">
-                        <video 
-                            ref={videoRef}
-                            autoPlay 
-                            muted 
-                            playsInline
-                            crossOrigin="anonymous"
+                        <VideoPlayer 
                             className="absolute inset-0 w-full h-full object-cover hero-video"
-                            poster="/video/poster.jpg"
-                            preload="metadata"
-                        >
-                            {/* WebM sources (better compression, modern browsers) */}
-                            <source 
-                                src="/video/promo-4k.webm" 
-                                type="video/webm" 
-                                media="(min-width: 1920px)"
-                            />
-                            <source 
-                                src="/video/promo-1080.webm" 
-                                type="video/webm" 
-                                media="(min-width: 1280px) and (max-width: 1919px)"
-                            />
-                            <source 
-                                src="/video/promo-720.webm" 
-                                type="video/webm" 
-                                media="(min-width: 768px) and (max-width: 1279px)"
-                            />
-                            <source 
-                                src="/video/promo-480.webm" 
-                                type="video/webm" 
-                                media="(max-width: 767px)"
-                            />
-                            
-                            {/* MP4 sources (fallback for older browsers) */}
-                            <source 
-                                src="/video/promo-2k.mp4" 
-                                type="video/mp4" 
-                                media="(min-width: 1920px)"
-                            />
-                            <source 
-                                src="/video/promo-1080.mp4" 
-                                type="video/mp4" 
-                                media="(min-width: 1280px) and (max-width: 1919px)"
-                            />
-                            <source 
-                                src="/video/promo-720.mp4" 
-                                type="video/mp4" 
-                                media="(min-width: 768px) and (max-width: 1279px)"
-                            />
-                            <source 
-                                src="/video/promo-480.mp4" 
-                                type="video/mp4" 
-                                media="(max-width: 767px)"
-                            />
-                            
-                            {/* Default fallback */}
-                            <source src="/video/promo-720.mp4" type="video/mp4" />
-                            
-                            <track 
-                                label="English" 
-                                kind="subtitles" 
-                                srcLang="en" 
-                                src="/video/promo.vtt" 
-                                default
-                            />
-                        </video>
+                            onPlayFullscreen={handlePlayFullscreen}
+                        />
                     </div>
                     <div className="absolute inset-0 bg-dark-200 opacity-40"></div>
                     <div className="absolute inset-0 bg-gradient-radial from-brand-cyan/10 via-brand-pink/10 to-transparent"></div>
@@ -234,7 +85,7 @@ export default function Home() {
                         transition={{ duration: 0.6 }}
                         className="text-5xl md:text-7xl font-display font-bold text-center"
                     >
-                        <span className="block">When apps end, ideas begin.</span>
+                        <span className="block">Apps end. Ideas begin.</span>
                     </motion.h1>
                 </section>
             </div>
