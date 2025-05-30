@@ -1,422 +1,363 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Code, Cpu, Box, Sparkles, Play } from 'lucide-react';
+import dynamic from 'next/dynamic';
+import { ArrowRight, Play } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import VideoPlayer from '@/components/VideoPlayer';
+import ShowcaseCard from '@/components/ShowcaseCard';
+import StackLayer from '@/components/StackLayer';
+import { showcaseItems } from '@/data/showcase';
+import { stackLayers } from '@/data/stack';
+
+const VideoPlayer = dynamic(() => import('@/components/VideoPlayer'), {
+  loading: () => (
+    <div className="bg-dark-100 h-[60vh] w-full animate-pulse lg:h-auto lg:min-h-[80vh]" />
+  ),
+});
 
 export default function Home() {
-    const [showPlayButton, setShowPlayButton] = useState(true);
-    const [isScrolled, setIsScrolled] = useState(false);
+  const [showPlayButton, setShowPlayButton] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 10);
-        };
-        
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const handlePlayFullscreen = () => {
-        setShowPlayButton(false);
-        
-        // Show button again when exiting fullscreen
-        const handleFullscreenChange = () => {
-            if (!document.fullscreenElement) {
-                setShowPlayButton(true);
-            }
-        };
-        
-        document.addEventListener('fullscreenchange', handleFullscreenChange, { once: true });
-        document.addEventListener('webkitfullscreenchange', handleFullscreenChange, { once: true });
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
     };
 
-    return (
-        <>
-            {/* Hero Section - Full viewport with video */}
-            <div className="relative min-h-screen bg-dark-200 flex flex-col">
-                {/* Top section with play button */}
-                <div className="flex-1 relative flex items-center">
-                    {showPlayButton && (
-                        <div className="absolute top-0 left-0 right-0 h-[72px] z-[60] flex items-center">
-                            <div className="container mx-auto px-4 flex justify-end">
-                                <button
-                                    onClick={() => {
-                                        // Trigger fullscreen play on the video element
-                                        const event = new CustomEvent('requestFullscreen');
-                                        window.dispatchEvent(event);
-                                    }}
-                                    className={`hover:bg-white/20 transition-all duration-300 rounded-full p-3 flex items-center gap-2 hover:scale-105 ${
-                                        isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'
-                                    }`}
-                                    aria-label="Play video with sound"
-                                >
-                                    <Play className="w-5 h-5 text-white" />
-                                    <span className="text-white text-sm px-2">
-                                        <span className="sm:hidden">Play</span>
-                                        <span className="hidden sm:inline">Play with sound</span>
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-                    )}
-                </div>
-                
-                {/* Middle section with video */}
-                <div className="relative w-full h-[60vh] lg:h-auto lg:min-h-[80vh] overflow-visible">
-                    <VideoPlayer 
-                        className="w-full h-[60vh] lg:h-auto lg:min-h-[80vh] object-cover lg:object-contain hero-video py-[5vh]"
-                        onPlayFullscreen={handlePlayFullscreen}
-                    />
-                    <div className="absolute inset-0 bg-dark-200 opacity-40 h-[50vh] lg:h-auto lg:max-h-[70vh] top-[5vh]"></div>
-                    <div className="absolute inset-0 bg-gradient-radial from-brand-cyan/10 via-brand-pink/10 to-transparent h-[50vh] lg:h-auto lg:max-h-[70vh] top-[5vh]"></div>
-                </div>
-                
-                {/* Bottom section - empty space */}
-                <div className="flex-1"></div>
-            </div>
-            
-            {/* Title section - below the fold */}
-            <section className="bg-dark-200 py-16 px-4 flex items-center justify-center min-h-[40vh]">
-                <motion.h1 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="text-5xl md:text-7xl font-display font-bold text-center"
-                >
-                    <span className="block">Apps end. Ideas begin.</span>
-                </motion.h1>
-            </section>
-            
-            {/* Additional content section */}
-            <section className="bg-dark-200 py-16 px-4">
-                <div className="text-center max-w-6xl mx-auto">
-                    <motion.p 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-xl md:text-2xl text-white/80 mb-6 max-w-3xl mx-auto"
-                    >
-                        We&apos;re building UI first, generative software, with ensemble AI.
-                    </motion.p>
-                    <motion.p 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-xl md:text-2xl text-white/80 mb-6 max-w-3xl mx-auto"
-                    >
-                        We build in the <span className="font-semibold">Open</span>. No, really.<br />It&apos;s not in our name, it&apos;s in our repo.
-                    </motion.p>
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-                    <motion.p 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        className="text-lg text-white/60 mb-10 max-w-2xl mx-auto"
-                    >
-                        <span className="text-brand-amber font-semibold">Fair warning:</span> We&apos;re an MVP that will fail sometimes. 
-                        But we&apos;re improving at an exponential rate. Join the revolution now and watch it evolve.
-                    </motion.p>
-                    
-                    <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                        className="flex flex-col sm:flex-row gap-4 justify-center"
-                    >
-                        <Link 
-                            href="/signup"
-                            className="relative group inline-flex items-center px-8 py-4 text-lg font-medium text-white rounded-full overflow-hidden transition-all duration-300 hover:scale-105"
-                        >
-                            <span className="absolute inset-0 bg-gradient-to-r from-brand-cyan via-brand-pink to-brand-amber opacity-75 group-hover:opacity-100 transition-opacity duration-300"></span>
-                            <span className="relative">Build Your First App</span>
-                        </Link>
-                        
-                        <a 
-                            href="#trailer"
-                            className="inline-flex items-center px-8 py-4 text-lg font-medium text-white border border-white/20 rounded-full hover:bg-white/10 transition-all duration-300"
-                        >
-                            Watch 50″ trailer
-                        </a>
-                    </motion.div>
-                </div>
-            </section>
+  const handlePlayFullscreen = () => {
+    setShowPlayButton(false);
 
-            {/* The Stack Section */}
-            <section className="py-20 px-4 bg-dark-100">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-3xl md:text-5xl font-display font-bold text-center mb-4">
-                        Four layers. One request.
-                    </h2>
-                    
-                    <div className="mt-16 grid md:grid-cols-4 gap-8">
-                        <motion.div 
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5 }}
-                            className="text-center"
-                        >
-                            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-brand-cyan to-brand-pink flex items-center justify-center">
-                                <Code className="w-8 h-8 text-white" />
-                            </div>
-                            <h3 className="text-xl font-semibold mb-2">ensemble</h3>
-                            <p className="text-white/60">multi-model conversations</p>
-                        </motion.div>
-                        
-                        <motion.div 
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: 0.1 }}
-                            className="text-center"
-                        >
-                            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-brand-pink to-brand-amber flex items-center justify-center">
-                                <Cpu className="w-8 h-8 text-white" />
-                            </div>
-                            <h3 className="text-xl font-semibold mb-2">ecot</h3>
-                            <p className="text-white/60">ensemble chain-of-thought</p>
-                        </motion.div>
-                        
-                        <motion.div 
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
-                            className="text-center"
-                        >
-                            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-brand-amber to-brand-cyan flex items-center justify-center">
-                                <Box className="w-8 h-8 text-white" />
-                            </div>
-                            <h3 className="text-xl font-semibold mb-2">magi</h3>
-                            <p className="text-white/60">mostly autonomous intelligence</p>
-                        </motion.div>
-                        
-                        <motion.div 
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: 0.3 }}
-                            className="text-center"
-                        >
-                            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-brand-cyan via-brand-pink to-brand-amber flex items-center justify-center">
-                                <Sparkles className="w-8 h-8 text-white" />
-                            </div>
-                            <h3 className="text-xl font-semibold mb-2">JustEvery_</h3>
-                            <p className="text-white/60">the end game</p>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
+    // Show button again when exiting fullscreen
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement) {
+        setShowPlayButton(true);
+      }
+    };
 
-            {/* Use Cases Section */}
-            <section className="py-20 px-4 bg-dark-200">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-3xl md:text-5xl font-display font-bold text-center mb-4">
-                        What can you build in 30 seconds?
-                    </h2>
-                    <p className="text-xl text-white/60 text-center mb-16 max-w-3xl mx-auto">
-                        Real apps, built by real people, in under a minute. Share your creations with the community.
-                    </p>
-                    
-                    <div className="grid md:grid-cols-2 gap-8">
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
-                            className="relative group cursor-pointer"
-                        >
-                            <div className="aspect-video bg-dark-100 rounded-lg overflow-hidden">
-                                {/* Replace with actual image */}
-                                <div className="w-full h-full bg-gradient-to-br from-brand-cyan/20 to-brand-pink/20"></div>
-                            </div>
-                            <div className="mt-4">
-                                <h3 className="text-2xl font-bold mb-2 gradient-text">Startup Metrics Dashboard</h3>
-                                <p className="text-white/60 italic">&quot;Build me a real-time dashboard that tracks our MRR, churn, and runway with Stripe integration&quot;</p>
-                                <p className="text-sm text-brand-amber mt-2">Built in 47 seconds • 2.3k clones</p>
-                            </div>
-                        </motion.div>
-                        
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.1 }}
-                            className="relative group cursor-pointer"
-                        >
-                            <div className="aspect-video bg-dark-100 rounded-lg overflow-hidden">
-                                {/* Replace with actual image */}
-                                <div className="w-full h-full bg-gradient-to-br from-brand-pink/20 to-brand-amber/20"></div>
-                            </div>
-                            <div className="mt-4">
-                                <h3 className="text-2xl font-bold mb-2 gradient-text">AI Study Buddy</h3>
-                                <p className="text-white/60 italic">&quot;Create a flashcard app that uses AI to generate questions from my uploaded PDFs&quot;</p>
-                                <p className="text-sm text-brand-amber mt-2">Built in 35 seconds • 8.7k clones</p>
-                            </div>
-                        </motion.div>
-                        
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
-                            className="relative group cursor-pointer"
-                        >
-                            <div className="aspect-video bg-dark-100 rounded-lg overflow-hidden">
-                                {/* Replace with actual image */}
-                                <div className="w-full h-full bg-gradient-to-br from-brand-amber/20 to-brand-cyan/20"></div>
-                            </div>
-                            <div className="mt-4">
-                                <h3 className="text-2xl font-bold mb-2 gradient-text">Local Events Aggregator</h3>
-                                <p className="text-white/60 italic">&quot;Show me all concerts, art shows, and food festivals happening this weekend in Brooklyn&quot;</p>
-                                <p className="text-sm text-brand-amber mt-2">Built in 52 seconds • 4.1k clones</p>
-                            </div>
-                        </motion.div>
-                        
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.3 }}
-                            className="relative group cursor-pointer"
-                        >
-                            <div className="aspect-video bg-dark-100 rounded-lg overflow-hidden">
-                                {/* Replace with actual image */}
-                                <div className="w-full h-full bg-gradient-to-br from-brand-cyan/20 via-brand-pink/20 to-brand-amber/20"></div>
-                            </div>
-                            <div className="mt-4">
-                                <h3 className="text-2xl font-bold mb-2 gradient-text">Team Retrospective Tool</h3>
-                                <p className="text-white/60 italic">&quot;Anonymous feedback board with real-time voting and action item tracking&quot;</p>
-                                <p className="text-sm text-brand-amber mt-2">Built in 28 seconds • 12.5k clones</p>
-                            </div>
-                        </motion.div>
-                    </div>
-                    
-                    <div className="text-center mt-12">
-                        <Link 
-                            href="/showcase"
-                            className="inline-flex items-center gap-2 text-brand-cyan hover:text-brand-pink transition-colors duration-300"
-                        >
-                            Explore the app gallery <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* How it Works Section */}
-            <section className="py-20 px-4 bg-dark-100">
-                <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-display font-bold mb-8">
-                        UI-first, then code follows
-                    </h2>
-                    <p className="text-2xl text-white/80 mb-12">
-                        <span className="text-brand-cyan">Ask</span> → 
-                        <span className="text-brand-pink mx-2">Imagine</span> → 
-                        <span className="text-brand-amber mx-2">Materialise</span> → 
-                        <span className="text-brand-cyan">Iterate</span>
-                    </p>
-                    <div className="text-left max-w-3xl mx-auto space-y-6 text-lg text-white/70">
-                        <p>
-                            <span className="text-brand-cyan font-semibold">1. You describe</span> what you want in plain English. 
-                            No technical knowledge required.
-                        </p>
-                        <p>
-                            <span className="text-brand-pink font-semibold">2. AI generates mockups</span> using image generators to visualize your app before writing a single line of code. 
-                            This ensures we nail the design first.
-                        </p>
-                        <p>
-                            <span className="text-brand-amber font-semibold">3. Magi materializes</span> the visual design into working code, 
-                            spinning up secured containers with proper backend, database, and API integrations.
-                        </p>
-                        <p>
-                            <span className="text-brand-cyan font-semibold">4. Watch it evolve</span> as the system observes real user interactions 
-                            and automatically refactors to improve performance and UX.
-                        </p>
-                    </div>
-                    <p className="text-md text-white/50 mt-8 italic">
-                        Yes, it will break sometimes. But each failure makes the system smarter.
-                    </p>
-                </div>
-            </section>
-
-            {/* Social Network Section */}
-            <section className="py-20 px-4 bg-dark-200">
-                <div className="max-w-6xl mx-auto">
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
-                                Not just a builder.<br/>
-                                <span className="gradient-text">A community.</span>
-                            </h2>
-                            <p className="text-xl text-white/80 mb-6">
-                                Every app you create becomes part of the JustEvery ecosystem. Clone, remix, and improve on what others have built.
-                            </p>
-                            <ul className="space-y-4 text-lg text-white/70">
-                                <li className="flex items-start">
-                                    <span className="text-brand-cyan mr-3">▸</span>
-                                    <span><strong>Share your apps</strong> with one click and let others build on your ideas</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <span className="text-brand-pink mr-3">▸</span>
-                                    <span><strong>Fork and customize</strong> any public app to make it your own</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <span className="text-brand-amber mr-3">▸</span>
-                                    <span><strong>Learn from the best</strong> by exploring how successful apps are built</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <span className="text-brand-cyan mr-3">▸</span>
-                                    <span><strong>Collaborate in real-time</strong> with AI and human developers alike</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="relative">
-                            <div className="aspect-square bg-dark-100 rounded-lg overflow-hidden">
-                                <div className="w-full h-full bg-gradient-to-br from-brand-cyan/20 via-brand-pink/20 to-brand-amber/20 flex items-center justify-center">
-                                    <p className="text-white/40 text-center px-8">Community visualization coming soon</p>
-                                </div>
-                            </div>
-                            <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-brand-pink to-brand-amber text-white px-6 py-3 rounded-full text-sm font-semibold">
-                                37,842 apps created this week
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Open Source Section */}
-            <section className="py-20 px-4 bg-dark-200">
-                <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-display font-bold mb-8">
-                        Open source, open future
-                    </h2>
-                    <p className="text-2xl text-white/90 mb-6">
-                        100% MIT-licensed. Forever free to use, modify, and distribute.
-                    </p>
-                    <p className="text-xl text-white/80 mb-4">
-                        We <em>encourage</em> commercial users to donate <span className="font-bold text-brand-amber text-2xl">90%</span> of profits 
-                        toward building a post-scarcity world.
-                    </p>
-                    <p className="text-lg text-white/60 mb-12 max-w-3xl mx-auto">
-                        This isn&apos;t just another startup. It&apos;s the beginning of a world where anyone can build anything. 
-                        Where software creation is democratized. Where the barrier between idea and reality disappears.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                        <Link 
-                            href="/future"
-                            className="inline-flex items-center px-6 py-3 text-white border border-white/20 rounded-full hover:bg-white/10 transition-all duration-300"
-                        >
-                            Read the manifesto
-                        </Link>
-                        <a 
-                            href="https://github.com/just-every"
-                            className="inline-flex items-center px-6 py-3 text-white border border-white/20 rounded-full hover:bg-white/10 transition-all duration-300"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Explore the code
-                        </a>
-                    </div>
-                    <p className="text-sm text-white/40">
-                        Join us in building the future. One app at a time.
-                    </p>
-                </div>
-            </section>
-        </>
+    document.addEventListener('fullscreenchange', handleFullscreenChange, {
+      once: true,
+    });
+    document.addEventListener(
+      'webkitfullscreenchange',
+      handleFullscreenChange,
+      { once: true }
     );
+  };
+
+  return (
+    <>
+      {/* Hero Section - Full viewport with video */}
+      <div className="bg-dark-200 relative flex min-h-screen flex-col">
+        {/* Top section with play button */}
+        <div className="relative flex flex-1 items-center">
+          {showPlayButton && (
+            <div className="absolute top-0 right-0 left-0 z-[60] flex h-[72px] items-center">
+              <div className="container mx-auto flex justify-end px-4">
+                <button
+                  onClick={() => {
+                    // Trigger fullscreen play on the video element
+                    const event = new CustomEvent('requestFullscreen');
+                    window.dispatchEvent(event);
+                  }}
+                  className={`flex items-center gap-2 rounded-full p-3 transition-all duration-300 hover:scale-105 hover:bg-white/20 ${
+                    isScrolled ? 'pointer-events-none opacity-0' : 'opacity-100'
+                  }`}
+                  aria-label="Play video with sound"
+                >
+                  <Play className="h-5 w-5 text-white" />
+                  <span className="px-2 text-sm text-white">
+                    <span className="sm:hidden">Play</span>
+                    <span className="hidden sm:inline">Play with sound</span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Middle section with video */}
+        <div className="relative h-[60vh] w-full overflow-hidden lg:h-auto lg:min-h-[80vh]">
+          <VideoPlayer
+            className="hero-video h-[60vh] w-full object-cover py-[5vh] lg:h-auto lg:min-h-[80vh] lg:object-contain"
+            onPlayFullscreen={handlePlayFullscreen}
+          />
+          <div className="bg-dark-200 pointer-events-none absolute inset-0 top-[5vh] h-[50vh] opacity-40 lg:h-auto lg:max-h-[70vh]"></div>
+          <div className="bg-gradient-radial from-brand-cyan/10 via-brand-pink/10 pointer-events-none absolute inset-0 top-[5vh] h-[50vh] to-transparent lg:h-auto lg:max-h-[70vh]"></div>
+        </div>
+
+        {/* Bottom section - empty space */}
+        <div className="flex-1"></div>
+      </div>
+
+      {/* Title section - below the fold */}
+      <section className="bg-dark-200 flex min-h-[40vh] items-center justify-center px-4 py-16">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="font-display text-center text-5xl font-bold md:text-7xl"
+        >
+          <span className="block">Apps end. Ideas begin.</span>
+        </motion.h1>
+      </section>
+
+      {/* Additional content section */}
+      <section className="bg-dark-200 px-4 py-16">
+        <div className="mx-auto max-w-6xl text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mx-auto mb-6 max-w-3xl text-xl text-white/80 md:text-2xl"
+          >
+            We&apos;re building UI first, generative software, with ensemble AI.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mx-auto mb-6 max-w-3xl text-xl text-white/80 md:text-2xl"
+          >
+            We build in the <span className="font-semibold">Open</span>. No,
+            really.
+            <br />
+            It&apos;s not in our name, it&apos;s in our repo.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mx-auto mb-10 max-w-2xl text-lg text-white/60"
+          >
+            <span className="text-brand-amber font-semibold">
+              Fair warning:
+            </span>{' '}
+            We&apos;re an MVP that will fail sometimes. But we&apos;re improving
+            at an exponential rate. Join the revolution now and watch it evolve.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col justify-center gap-4 sm:flex-row"
+          >
+            <Link
+              href="/signup"
+              className="group relative inline-flex items-center overflow-hidden rounded-full px-8 py-4 text-lg font-medium text-white transition-all duration-300 hover:scale-105"
+            >
+              <span className="from-brand-cyan via-brand-pink to-brand-amber absolute inset-0 bg-gradient-to-r opacity-75 transition-opacity duration-300 group-hover:opacity-100"></span>
+              <span className="relative">Build Your First App</span>
+            </Link>
+
+            <a
+              href="#trailer"
+              className="inline-flex items-center rounded-full border border-white/20 px-8 py-4 text-lg font-medium text-white transition-all duration-300 hover:bg-white/10"
+            >
+              Watch 50″ trailer
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* The Stack Section */}
+      <section className="bg-dark-100 px-4 py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="font-display mb-4 text-center text-3xl font-bold md:text-5xl">
+            Four layers. One request.
+          </h2>
+
+          <div className="mt-16 grid gap-8 md:grid-cols-4">
+            {stackLayers.map((layer, index) => (
+              <StackLayer key={layer.id} layer={layer} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="bg-dark-200 px-4 py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="font-display mb-4 text-center text-3xl font-bold md:text-5xl">
+            What can you build in 30 seconds?
+          </h2>
+          <p className="mx-auto mb-16 max-w-3xl text-center text-xl text-white/60">
+            Real apps, built by real people, in under a minute. Share your
+            creations with the community.
+          </p>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            {showcaseItems.map((item, index) => (
+              <ShowcaseCard key={item.id} item={item} index={index} />
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              href="/showcase"
+              className="text-brand-cyan hover:text-brand-pink inline-flex items-center gap-2 transition-colors duration-300"
+            >
+              Explore the app gallery <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* How it Works Section */}
+      <section className="bg-dark-100 px-4 py-20">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="font-display mb-8 text-3xl font-bold md:text-5xl">
+            UI-first, then code follows
+          </h2>
+          <p className="mb-12 text-2xl text-white/80">
+            <span className="text-brand-cyan">Ask</span> →
+            <span className="text-brand-pink mx-2">Imagine</span> →
+            <span className="text-brand-amber mx-2">Materialise</span> →
+            <span className="text-brand-cyan">Iterate</span>
+          </p>
+          <div className="mx-auto max-w-3xl space-y-6 text-left text-lg text-white/70">
+            <p>
+              <span className="text-brand-cyan font-semibold">
+                1. You describe
+              </span>{' '}
+              what you want in plain English. No technical knowledge required.
+            </p>
+            <p>
+              <span className="text-brand-pink font-semibold">
+                2. AI generates mockups
+              </span>{' '}
+              using image generators to visualize your app before writing a
+              single line of code. This ensures we nail the design first.
+            </p>
+            <p>
+              <span className="text-brand-amber font-semibold">
+                3. Magi materializes
+              </span>{' '}
+              the visual design into working code, spinning up secured
+              containers with proper backend, database, and API integrations.
+            </p>
+            <p>
+              <span className="text-brand-cyan font-semibold">
+                4. Watch it evolve
+              </span>{' '}
+              as the system observes real user interactions and automatically
+              refactors to improve performance and UX.
+            </p>
+          </div>
+          <p className="text-md mt-8 text-white/50 italic">
+            Yes, it will break sometimes. But each failure makes the system
+            smarter.
+          </p>
+        </div>
+      </section>
+
+      {/* Social Network Section */}
+      <section className="bg-dark-200 px-4 py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid items-center gap-12 md:grid-cols-2">
+            <div>
+              <h2 className="font-display mb-6 text-3xl font-bold md:text-5xl">
+                Not just a builder.
+                <br />
+                <span className="gradient-text">A community.</span>
+              </h2>
+              <p className="mb-6 text-xl text-white/80">
+                Every app you create becomes part of the JustEvery ecosystem.
+                Clone, remix, and improve on what others have built.
+              </p>
+              <ul className="space-y-4 text-lg text-white/70">
+                <li className="flex items-start">
+                  <span className="text-brand-cyan mr-3">▸</span>
+                  <span>
+                    <strong>Share your apps</strong> with one click and let
+                    others build on your ideas
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-brand-pink mr-3">▸</span>
+                  <span>
+                    <strong>Fork and customize</strong> any public app to make
+                    it your own
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-brand-amber mr-3">▸</span>
+                  <span>
+                    <strong>Learn from the best</strong> by exploring how
+                    successful apps are built
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-brand-cyan mr-3">▸</span>
+                  <span>
+                    <strong>Collaborate in real-time</strong> with AI and human
+                    developers alike
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div className="relative">
+              <div className="bg-dark-100 aspect-square overflow-hidden rounded-lg">
+                <div className="from-brand-cyan/20 via-brand-pink/20 to-brand-amber/20 flex h-full w-full items-center justify-center bg-gradient-to-br">
+                  <p className="px-8 text-center text-white/40">
+                    Community visualization coming soon
+                  </p>
+                </div>
+              </div>
+              <div className="from-brand-pink to-brand-amber absolute -right-6 -bottom-6 rounded-full bg-gradient-to-r px-6 py-3 text-sm font-semibold text-white">
+                37,842 apps created this week
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Open Source Section */}
+      <section className="bg-dark-200 px-4 py-20">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="font-display mb-8 text-3xl font-bold md:text-5xl">
+            Open source, open future
+          </h2>
+          <p className="mb-6 text-2xl text-white/90">
+            100% MIT-licensed. Forever free to use, modify, and distribute.
+          </p>
+          <p className="mb-4 text-xl text-white/80">
+            We <em>encourage</em> commercial users to donate{' '}
+            <span className="text-brand-amber text-2xl font-bold">90%</span> of
+            profits toward building a post-scarcity world.
+          </p>
+          <p className="mx-auto mb-12 max-w-3xl text-lg text-white/60">
+            This isn&apos;t just another startup. It&apos;s the beginning of a
+            world where anyone can build anything. Where software creation is
+            democratized. Where the barrier between idea and reality disappears.
+          </p>
+          <div className="mb-12 flex flex-col justify-center gap-4 sm:flex-row">
+            <Link
+              href="/future"
+              className="inline-flex items-center rounded-full border border-white/20 px-6 py-3 text-white transition-all duration-300 hover:bg-white/10"
+            >
+              Read the manifesto
+            </Link>
+            <a
+              href="https://github.com/just-every"
+              className="inline-flex items-center rounded-full border border-white/20 px-6 py-3 text-white transition-all duration-300 hover:bg-white/10"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore the code
+            </a>
+          </div>
+          <p className="text-sm text-white/40">
+            Join us in building the future. One app at a time.
+          </p>
+        </div>
+      </section>
+    </>
+  );
 }

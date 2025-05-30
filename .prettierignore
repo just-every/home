@@ -1,0 +1,10 @@
+node_modules
+.next
+.open-next
+out
+public
+*.min.js
+*.min.css
+package-lock.json
+pnpm-lock.yaml
+yarn.lock

@@ -1,0 +1,25 @@
+{
+  "name": "JustEvery_ - Build any app. Just ask.",
+  "short_name": "JustEvery_",
+  "description": "JustEvery_ turns a single prompt into a live product—UI, back-end, hosting and all.",
+  "theme_color": "#050505",
+  "background_color": "#050505",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/img/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

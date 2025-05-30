@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #050505;
@@ -23,8 +23,6 @@ body {
   /* Removed explicit font-family so Tailwind's font-sans class takes precedence */
 }
 
-
-
 /* Selection colors */
 ::selection {
   background: rgba(0, 224, 255, 0.2);
@@ -33,75 +31,126 @@ body {
 
 /* Style video captions/subtitles */
 video::cue {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   line-height: 1.4;
-  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
   font-family: var(--font-space-grotesk);
-  /* Position higher from bottom */
-  position: relative;
-  bottom: 10%;
 }
 
-/* WebKit browsers subtitle positioning */
+/* Style video captions/subtitles */
+video::cue {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-family: var(--font-space-grotesk);
+}
+
+/* WebKit browsers subtitle positioning - place at very bottom of video content */
 video::-webkit-media-text-track-container {
-  position: relative;
-  bottom: 10%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
 }
 
-/* Ensure subtitles stay within video bounds */
 video::-webkit-media-text-track-display {
   position: relative;
-  bottom: 10%;
+  width: 100%;
   max-width: 90%;
   margin: 0 auto;
+  /* Push subtitles to the very bottom edge */
+  margin-bottom: 2%;
 }
 
-/* Smaller subtitles on mobile */
+/* For object-contain videos, we need to account for letterboxing */
+.hero-video.object-contain::-webkit-media-text-track-display,
+video.object-contain::-webkit-media-text-track-display {
+  /* Subtitles should appear at the bottom of the actual video content, not the container */
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 2%;
+}
+
+/* Responsive subtitle sizing */
 @media (max-width: 640px) {
   video::cue {
-    font-size: 1.3rem;
-    bottom: 10%; /* Even higher on mobile */
+    font-size: 0.875rem;
+    padding: 0.375rem 0.5rem;
   }
-  
-  video::-webkit-media-text-track-container {
-    bottom: 10%;
-  }
-  
+
   video::-webkit-media-text-track-display {
-    bottom: 10%;
+    margin-bottom: 1%;
   }
 }
 
-/* Hero video specific subtitle positioning */
-.hero-video::-webkit-media-text-track-container {
-  position: absolute !important;
-  bottom: 10px !important;
-  width: 100% !important;
-  text-align: center !important;
+@media (min-width: 641px) and (max-width: 1024px) {
+  video::cue {
+    font-size: 1rem;
+  }
+
+  video::-webkit-media-text-track-display {
+    margin-bottom: 1.5%;
+  }
 }
 
-.hero-video::-webkit-media-text-track-display {
-  position: relative !important;
-  bottom: 0 !important;
-  margin: 0 auto !important;
-  max-width: 80% !important;
+@media (min-width: 1025px) and (max-width: 1280px) {
+  video::cue {
+    font-size: 1.125rem;
+  }
 }
 
-/* Keep hero video subtitles consistent on mobile */
-@media (max-width: 640px) {
-  .hero-video::cue {
-    bottom: 10px !important;
+@media (min-width: 1281px) {
+  video::cue {
+    font-size: 1.25rem;
   }
-  
-  .hero-video::-webkit-media-text-track-container {
-    bottom: 10px !important;
+}
+
+/* Large screens where object-contain creates letterboxing */
+@media (min-width: 1024px) {
+  .hero-video.lg\:object-contain::-webkit-media-text-track-container {
+    /* Account for letterboxing on large screens */
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
   }
-  
-  .hero-video::-webkit-media-text-track-display {
-    bottom: 0 !important;
+
+  .hero-video.lg\:object-contain::-webkit-media-text-track-display {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: max(2%, 20px);
   }
+}
+
+/* Fullscreen subtitle positioning */
+video:fullscreen::-webkit-media-text-track-container,
+video:-webkit-full-screen::-webkit-media-text-track-container {
+  bottom: 5%;
+  height: auto;
+  display: block;
+}
+
+video:fullscreen::-webkit-media-text-track-display,
+video:-webkit-full-screen::-webkit-media-text-track-display {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  margin-bottom: 0;
 }
 
 /* Fullscreen video styles */

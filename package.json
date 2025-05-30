@@ -8,9 +8,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "type-check": "tsc --noEmit",
     "build:cloudflare": "NODE_ENV=production opennextjs-cloudflare build",
     "preview": "opennextjs-cloudflare build && find .open-next/assets -type f \\( -name '*.mp4' -o -name '*.webm' \\) -delete && opennextjs-cloudflare preview",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "prepare": "husky"
   },
   "dependencies": {
     "@neplex/vectorizer": "^0.0.5",
@@ -26,6 +30,8 @@
     "sharp": "^0.34.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
@@ -33,6 +39,10 @@
     "@types/react-dom": "^19",
     "eslint": "^9.26.0",
     "eslint-config-next": "^15.3.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4",
     "tsx": "^4.19.4",
     "typescript": "^5",

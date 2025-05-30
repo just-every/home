@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://justevery.com/sitemap.xml
