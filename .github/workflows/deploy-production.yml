@@ -82,10 +82,51 @@ jobs:
           node-version: '20'
           cache: 'npm'
           
+      - name: Cache Next.js build
+        uses: actions/cache@v4
+        with:
+          path: |
+            .next/cache
+            .open-next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/package.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/package.json') }}-
+            ${{ runner.os }}-nextjs-
+            
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
+          
       - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm ci
         
+      - name: Cache OpenNext build artifacts
+        uses: actions/cache@v4
+        with:
+          path: |
+            .open-next/
+            !.open-next/assets/video
+          key: ${{ runner.os }}-opennext-${{ hashFiles('src/**', 'public/**', '!public/video/**') }}
+          restore-keys: |
+            ${{ runner.os }}-opennext-
+        
+      - name: Check for source changes
+        id: check-source-changes
+        run: |
+          if git diff --name-only HEAD^ HEAD | grep -E '\.(js|jsx|ts|tsx|css|json)$|^(src/|app/|pages/|components/|public/(?!video))' > /dev/null; then
+            echo "source_changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "source_changed=false" >> $GITHUB_OUTPUT
+          fi
+          
       - name: Build application
+        if: steps.check-source-changes.outputs.source_changed == 'true'
         env:
           NEXT_PUBLIC_R2_PUBLIC_URL: https://assets.justevery.com
           NEXT_PUBLIC_R2_BUCKET_NAME: justevery-assets
