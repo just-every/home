@@ -21,7 +21,7 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'JustEvery_ | Build any app. Just ask.',
+  title: 'JustEvery_ Build any app. Just ask.',
   description:
     'JustEvery_ turns a single prompt into a live product—UI, back-end, hosting and all. Powered by Magi, backed by open-source brains.',
   manifest: '/manifest.json',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'JustEvery_ | Build any app. Just ask.',
+    title: 'JustEvery_ Build any app. Just ask.',
     description:
       'JustEvery_ turns a single prompt into a live product—UI, back-end, hosting and all. Powered by Magi, backed by open-source brains.',
     url: 'https://justevery.com',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'JustEvery_ | Build any app. Just ask.',
+    title: 'JustEvery_ Build any app. Just ask.',
     description:
       'JustEvery_ turns a single prompt into a live product—UI, back-end, hosting and all.',
     images: ['https://justevery.com/twitter-image.jpg'],

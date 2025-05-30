@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { ArrowRight, Play } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -15,6 +16,10 @@ const VideoPlayer = dynamic(() => import('@/components/VideoPlayer'), {
     <div className="bg-dark-100 h-[60vh] w-full animate-pulse lg:h-auto lg:min-h-[80vh]" />
   ),
 });
+
+export const metadata: Metadata = {
+  title: 'JustEvery_',
+};
 
 export default function Home() {
   const [showPlayButton, setShowPlayButton] = useState(true);
