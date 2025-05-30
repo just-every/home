@@ -31,7 +31,7 @@ This is a modern Next.js application deployed on Cloudflare Workers with video a
 │   │   ├── docs/           # Documentation page
 │   │   ├── ensemble/       # Ensemble product page
 │   │   ├── future/         # Future vision page
-│   │   ├── magi/           # Magi product page
+│   │   ├── task/           # Magi product page
 │   │   ├── mech/           # MECH product page
 │   │   ├── one/            # One product page
 │   │   ├── showcase/       # App showcase page
@@ -142,6 +142,7 @@ Videos are stored in `public/video/` for local development but are excluded from
 ### R2 Configuration
 
 The R2 bucket (`justevery-assets`) is configured with:
+
 - Public access at `https://assets.justevery.com`
 - CORS enabled for `justevery.com` domains
 - Automatic upload of changed assets via GitHub Actions

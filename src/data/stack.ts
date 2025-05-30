@@ -10,8 +10,8 @@ export const stackLayers: StackLayer[] = [
     gradientTo: 'brand-pink',
   },
   {
-    id: 'ecot',
-    name: 'ecot',
+    id: 'MECH',
+    name: 'MECH',
     description: 'ensemble chain-of-thought',
     icon: 'Cpu',
     gradientFrom: 'brand-pink',

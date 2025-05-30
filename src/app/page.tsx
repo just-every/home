@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { ArrowRight, Play } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -16,10 +15,6 @@ const VideoPlayer = dynamic(() => import('@/components/VideoPlayer'), {
     <div className="bg-dark-100 h-[60vh] w-full animate-pulse lg:h-auto lg:min-h-[80vh]" />
   ),
 });
-
-export const metadata: Metadata = {
-  title: 'JustEvery_',
-};
 
 export default function Home() {
   const [showPlayButton, setShowPlayButton] = useState(true);
@@ -57,7 +52,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section - Full viewport with video */}
-      <div className="bg-dark-200 relative flex min-h-screen flex-col">
+      <div className="bg-dark-200 relative flex min-h-screen flex-col overflow-x-hidden">
         {/* Top section with play button */}
         <div className="relative flex flex-1 items-center">
           {showPlayButton && (
@@ -100,7 +95,7 @@ export default function Home() {
       </div>
 
       {/* Title section - below the fold */}
-      <section className="bg-dark-200 flex min-h-[40vh] items-center justify-center px-4 py-16">
+      <section className="bg-dark-200 flex min-h-[40vh] items-center justify-center overflow-x-hidden px-4 py-16">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -112,7 +107,7 @@ export default function Home() {
       </section>
 
       {/* Additional content section */}
-      <section className="bg-dark-200 px-4 py-16">
+      <section className="bg-dark-200 overflow-x-hidden px-4 py-16">
         <div className="mx-auto max-w-6xl text-center">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -172,7 +167,7 @@ export default function Home() {
       </section>
 
       {/* The Stack Section */}
-      <section className="bg-dark-100 px-4 py-20">
+      <section className="bg-dark-100 overflow-x-hidden px-4 py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="font-display mb-4 text-center text-3xl font-bold md:text-5xl">
             Four layers. One request.
@@ -187,7 +182,7 @@ export default function Home() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="bg-dark-200 px-4 py-20">
+      <section className="bg-dark-200 overflow-x-hidden px-4 py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="font-display mb-4 text-center text-3xl font-bold md:text-5xl">
             What can you build in 30 seconds?
@@ -215,7 +210,7 @@ export default function Home() {
       </section>
 
       {/* How it Works Section */}
-      <section className="bg-dark-100 px-4 py-20">
+      <section className="bg-dark-100 overflow-x-hidden px-4 py-20">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-display mb-8 text-3xl font-bold md:text-5xl">
             UI-first, then code follows
@@ -263,7 +258,7 @@ export default function Home() {
       </section>
 
       {/* Social Network Section */}
-      <section className="bg-dark-200 px-4 py-20">
+      <section className="bg-dark-200 overflow-x-hidden px-4 py-20">
         <div className="mx-auto max-w-6xl">
           <div className="grid items-center gap-12 md:grid-cols-2">
             <div>
@@ -307,7 +302,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="relative">
+            <div className="relative overflow-hidden">
               <div className="bg-dark-100 aspect-square overflow-hidden rounded-lg">
                 <div className="from-brand-cyan/20 via-brand-pink/20 to-brand-amber/20 flex h-full w-full items-center justify-center bg-gradient-to-br">
                   <p className="px-8 text-center text-white/40">
@@ -315,7 +310,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="from-brand-pink to-brand-amber absolute -right-6 -bottom-6 rounded-full bg-gradient-to-r px-6 py-3 text-sm font-semibold text-white">
+              <div className="from-brand-pink to-brand-amber absolute -right-3 -bottom-3 rounded-full bg-gradient-to-r px-4 py-2 text-xs font-semibold text-white sm:-right-6 sm:-bottom-6 sm:px-6 sm:py-3 sm:text-sm">
                 37,842 apps created this week
               </div>
             </div>
@@ -324,7 +319,7 @@ export default function Home() {
       </section>
 
       {/* Open Source Section */}
-      <section className="bg-dark-200 px-4 py-20">
+      <section className="bg-dark-200 overflow-x-hidden px-4 py-20">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-display mb-8 text-3xl font-bold md:text-5xl">
             Open source, open future

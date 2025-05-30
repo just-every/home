@@ -84,7 +84,7 @@ export default async function RootLayout({
   };
 
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark overflow-x-hidden">
       <head>
         <script
           type="application/ld+json"
@@ -96,7 +96,7 @@ export default async function RootLayout({
       >
         <ServiceWorkerRegistration />
         <HeaderWrapper />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow overflow-x-hidden">{children}</main>
         <Footer />
       </body>
     </html>
