@@ -83,15 +83,37 @@ export const VideoPlayer = ({ className = '', onPlayFullscreen }: VideoPlayerPro
             video.style.height = '100%';
             video.controls = true;
             
-            if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if ((video as any).webkitRequestFullscreen) {
-                (video as any).webkitRequestFullscreen();
-            } else if ((video as any).msRequestFullscreen) {
-                (video as any).msRequestFullscreen();
-            }
+            // Check if it's a mobile device
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                            (navigator.maxTouchPoints && navigator.maxTouchPoints > 2);
             
-            video.play();
+            if (isMobile) {
+                // On mobile, request fullscreen immediately and play
+                if (video.requestFullscreen) {
+                    video.requestFullscreen().then(() => {
+                        video.play();
+                    });
+                } else if ((video as any).webkitRequestFullscreen) {
+                    (video as any).webkitRequestFullscreen();
+                    video.play();
+                } else if ((video as any).webkitEnterFullscreen) {
+                    // iOS Safari fullscreen
+                    (video as any).webkitEnterFullscreen();
+                    video.play();
+                } else {
+                    video.play();
+                }
+            } else {
+                // On desktop, request fullscreen then play
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if ((video as any).webkitRequestFullscreen) {
+                    (video as any).webkitRequestFullscreen();
+                } else if ((video as any).msRequestFullscreen) {
+                    (video as any).msRequestFullscreen();
+                }
+                video.play();
+            }
             
             if (onPlayFullscreen) {
                 onPlayFullscreen();

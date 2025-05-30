@@ -77,7 +77,7 @@ video::-webkit-media-text-track-display {
 /* Hero video specific subtitle positioning */
 .hero-video::-webkit-media-text-track-container {
   position: absolute !important;
-  bottom: 20px !important;
+  bottom: 10px !important;
   width: 100% !important;
   text-align: center !important;
 }
@@ -92,11 +92,11 @@ video::-webkit-media-text-track-display {
 /* Keep hero video subtitles consistent on mobile */
 @media (max-width: 640px) {
   .hero-video::cue {
-    bottom: 20px !important;
+    bottom: 10px !important;
   }
   
   .hero-video::-webkit-media-text-track-container {
-    bottom: 20px !important;
+    bottom: 10px !important;
   }
   
   .hero-video::-webkit-media-text-track-display {

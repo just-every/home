@@ -35,7 +35,7 @@ export default function Home() {
 
     return (
         <>
-            {/* Hero Section - Full viewport with three sections */}
+            {/* Hero Section - Full viewport with video */}
             <div className="relative min-h-screen bg-dark-200 flex flex-col">
                 {/* Top section with play button */}
                 <div className="flex-1 relative flex items-center">
@@ -65,27 +65,30 @@ export default function Home() {
                 </div>
                 
                 {/* Middle section with video */}
-                <div className="relative w-full h-[50vh] lg:h-auto lg:max-h-[70vh] overflow-hidden">
+                <div className="relative w-full h-[60vh] lg:h-auto lg:min-h-[80vh] overflow-visible">
                     <VideoPlayer 
-                        className="w-full h-full lg:h-auto object-cover lg:object-contain hero-video"
+                        className="w-full h-[60vh] lg:h-auto lg:min-h-[80vh] object-cover lg:object-contain hero-video py-[5vh]"
                         onPlayFullscreen={handlePlayFullscreen}
                     />
-                    <div className="absolute inset-0 bg-dark-200 opacity-40"></div>
-                    <div className="absolute inset-0 bg-gradient-radial from-brand-cyan/10 via-brand-pink/10 to-transparent"></div>
+                    <div className="absolute inset-0 bg-dark-200 opacity-40 h-[50vh] lg:h-auto lg:max-h-[70vh] top-[5vh]"></div>
+                    <div className="absolute inset-0 bg-gradient-radial from-brand-cyan/10 via-brand-pink/10 to-transparent h-[50vh] lg:h-auto lg:max-h-[70vh] top-[5vh]"></div>
                 </div>
                 
-                {/* Bottom section with title */}
-                <div className="flex-1 flex items-center justify-center">
-                    <motion.h1 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="text-5xl md:text-7xl font-display font-bold text-center px-4"
-                    >
-                        <span className="block">Apps end. Ideas begin.</span>
-                    </motion.h1>
-                </div>
+                {/* Bottom section - empty space */}
+                <div className="flex-1"></div>
             </div>
+            
+            {/* Title section - below the fold */}
+            <section className="bg-dark-200 py-16 px-4 flex items-center justify-center min-h-[40vh]">
+                <motion.h1 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-5xl md:text-7xl font-display font-bold text-center"
+                >
+                    <span className="block">Apps end. Ideas begin.</span>
+                </motion.h1>
+            </section>
             
             {/* Additional content section */}
             <section className="bg-dark-200 py-16 px-4">
@@ -158,7 +161,7 @@ export default function Home() {
                             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-brand-cyan to-brand-pink flex items-center justify-center">
                                 <Code className="w-8 h-8 text-white" />
                             </div>
-                            <h3 className="text-xl font-semibold mb-2">Ensemble</h3>
+                            <h3 className="text-xl font-semibold mb-2">ensemble</h3>
                             <p className="text-white/60">multi-model conversations</p>
                         </motion.div>
                         
@@ -171,7 +174,7 @@ export default function Home() {
                             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-brand-pink to-brand-amber flex items-center justify-center">
                                 <Cpu className="w-8 h-8 text-white" />
                             </div>
-                            <h3 className="text-xl font-semibold mb-2">MECH</h3>
+                            <h3 className="text-xl font-semibold mb-2">ecot</h3>
                             <p className="text-white/60">ensemble chain-of-thought</p>
                         </motion.div>
                         
