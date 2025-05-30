@@ -86,6 +86,9 @@ jobs:
         run: npm ci
         
       - name: Build application
+        env:
+          NEXT_PUBLIC_R2_PUBLIC_URL: https://assets.justevery.com
+          NEXT_PUBLIC_R2_BUCKET_NAME: justevery-assets
         run: npm run build:cloudflare
         
       - name: Clean up video files from build
