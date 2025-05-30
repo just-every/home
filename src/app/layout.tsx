@@ -92,7 +92,7 @@ export default async function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} bg-dark-200 flex min-h-screen flex-col font-sans text-white antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} bg-dark-200 flex min-h-screen flex-col overflow-x-hidden font-sans text-white antialiased`}
       >
         <ServiceWorkerRegistration />
         <HeaderWrapper />
