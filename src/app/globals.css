@@ -89,30 +89,33 @@ video::-webkit-media-text-track-display {
   margin-bottom: 2%;
 }
 
-/* For object-contain videos with fixed aspect ratio */
+/* Hero video subtitle positioning with consistent placement */
 .hero-video::-webkit-media-text-track-container {
-  /* Position subtitles consistently within the fixed aspect ratio container */
+  /* Position subtitles at bottom of video container */
   position: absolute;
-  bottom: 0;
+  bottom: 8vh; /* Fixed distance from bottom of viewport */
   left: 0;
   right: 0;
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
   text-align: center;
 }
 
 .hero-video::-webkit-media-text-track-display {
-  /* Perfect centering with consistent bottom margin */
+  /* Center and style subtitle text */
   position: relative;
-  left: auto;
-  transform: none;
   text-align: center;
-  margin: 0 auto 4% auto;
+  margin: 0;
   width: auto;
   max-width: 90%;
+}
+
+/* Responsive subtitle positioning */
+@media (max-width: 1023px) {
+  .hero-video::-webkit-media-text-track-container {
+    bottom: 6vh; /* Closer to bottom on smaller screens */
+  }
 }
 
 /* Responsive subtitle sizing */
@@ -149,8 +152,7 @@ video::-webkit-media-text-track-display {
   }
 }
 
-/* Fixed aspect ratio ensures consistent positioning across all screen sizes */
-/* No need for large screen specific rules since aspect ratio is consistent */
+/* Subtitle positioning uses fixed viewport units for consistency */
 
 /* Fullscreen subtitle positioning */
 video:fullscreen::-webkit-media-text-track-container,

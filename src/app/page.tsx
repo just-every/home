@@ -81,19 +81,13 @@ export default function Home() {
         </div>
 
         {/* Middle section with video */}
-        <div className="relative w-full overflow-hidden">
-          {/* Responsive aspect ratio container for consistent subtitle positioning */}
-          <div
-            className="relative max-h-[70vh] w-full lg:max-h-[60vh]"
-            style={{ aspectRatio: '21 / 9' }}
-          >
-            <VideoPlayer
-              className="hero-video absolute inset-0 h-full w-full object-contain"
-              onPlayFullscreen={handlePlayFullscreen}
-            />
-            <div className="bg-dark-200 pointer-events-none absolute inset-0 opacity-40"></div>
-            <div className="bg-gradient-radial from-brand-cyan/10 via-brand-pink/10 pointer-events-none absolute inset-0 to-transparent"></div>
-          </div>
+        <div className="relative h-[60vh] w-full overflow-hidden lg:h-[70vh]">
+          <VideoPlayer
+            className="hero-video h-full w-full object-cover lg:object-contain"
+            onPlayFullscreen={handlePlayFullscreen}
+          />
+          <div className="bg-dark-200 pointer-events-none absolute inset-0 opacity-40"></div>
+          <div className="bg-gradient-radial from-brand-cyan/10 via-brand-pink/10 pointer-events-none absolute inset-0 to-transparent"></div>
         </div>
 
         {/* Bottom section - empty space */}
