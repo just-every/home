@@ -33,8 +33,12 @@ body {
 
 /* Prevent horizontal scrolling by ensuring elements don't exceed viewport */
 * {
-  max-width: 100%;
   box-sizing: border-box;
+}
+
+/* Prevent most elements from exceeding viewport, but allow containers to have their own max-width */
+*:not(.container):not([class*='max-w-']):not(html):not(body) {
+  max-width: 100%;
 }
 
 /* Reset for specific layout containers */
