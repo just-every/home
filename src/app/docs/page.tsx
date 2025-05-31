@@ -46,7 +46,7 @@ export default function DocsPage() {
 
   return (
     <div className="min-h-screen py-20">
-      <div className="container mx-auto max-w-4xl px-4">
+      <div className="container mx-auto max-w-5xl px-4">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
