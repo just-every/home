@@ -89,23 +89,28 @@ video::-webkit-media-text-track-display {
   margin-bottom: 2%;
 }
 
-/* For object-contain videos, we need to account for letterboxing */
-.hero-video.object-contain::-webkit-media-text-track-container,
-video.object-contain::-webkit-media-text-track-container {
-  /* Center the container properly */
+/* For object-contain videos with fixed aspect ratio */
+.hero-video::-webkit-media-text-track-container {
+  /* Position subtitles consistently within the fixed aspect ratio container */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  text-align: center;
 }
 
-.hero-video.object-contain::-webkit-media-text-track-display,
-video.object-contain::-webkit-media-text-track-display {
-  /* Ensure perfect centering */
+.hero-video::-webkit-media-text-track-display {
+  /* Perfect centering with consistent bottom margin */
   position: relative;
   left: auto;
   transform: none;
   text-align: center;
-  margin: 0 auto 2% auto;
+  margin: 0 auto 4% auto;
   width: auto;
   max-width: 90%;
 }
@@ -144,33 +149,8 @@ video.object-contain::-webkit-media-text-track-display {
   }
 }
 
-/* Large screens where object-contain creates letterboxing */
-@media (min-width: 1024px) {
-  .hero-video.lg\:object-contain::-webkit-media-text-track-container {
-    /* Account for letterboxing on large screens */
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .hero-video.lg\:object-contain::-webkit-media-text-track-display {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    text-align: center;
-    margin: 0 auto max(2%, 20px) auto;
-    width: auto;
-    max-width: 90%;
-  }
-}
+/* Fixed aspect ratio ensures consistent positioning across all screen sizes */
+/* No need for large screen specific rules since aspect ratio is consistent */
 
 /* Fullscreen subtitle positioning */
 video:fullscreen::-webkit-media-text-track-container,
