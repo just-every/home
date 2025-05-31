@@ -39,8 +39,6 @@ body {
 
 /* Reset for specific layout containers */
 .container,
-.max-w-\*,
-[class*='max-w-'],
 html,
 body {
   max-width: none;
