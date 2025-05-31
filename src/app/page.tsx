@@ -96,19 +96,21 @@ export default function Home() {
 
       {/* Title section - below the fold */}
       <section className="bg-dark-200 flex min-h-[40vh] items-center justify-center overflow-x-hidden px-4 py-16">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="font-display text-center text-5xl font-bold md:text-7xl"
-        >
-          <span className="block">Apps end. Ideas begin.</span>
-        </motion.h1>
+        <div className="container mx-auto max-w-4xl">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="font-display text-center text-5xl font-bold md:text-7xl"
+          >
+            <span className="block">Apps end. Ideas begin.</span>
+          </motion.h1>
+        </div>
       </section>
 
       {/* Additional content section */}
       <section className="bg-dark-200 overflow-x-hidden px-4 py-16">
-        <div className="mx-auto max-w-6xl text-center">
+        <div className="mx-auto max-w-4xl text-center">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -168,7 +170,7 @@ export default function Home() {
 
       {/* The Stack Section */}
       <section className="bg-dark-100 overflow-x-hidden px-4 py-20">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-4xl">
           <h2 className="font-display mb-4 text-center text-3xl font-bold md:text-5xl">
             Four layers. One request.
           </h2>
@@ -183,7 +185,7 @@ export default function Home() {
 
       {/* Use Cases Section */}
       <section className="bg-dark-200 overflow-x-hidden px-4 py-20">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-4xl">
           <h2 className="font-display mb-4 text-center text-3xl font-bold md:text-5xl">
             What can you build in 30 seconds?
           </h2>
@@ -259,7 +261,7 @@ export default function Home() {
 
       {/* Social Network Section */}
       <section className="bg-dark-200 overflow-x-hidden px-4 py-20">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-4xl">
           <div className="grid items-center gap-12 md:grid-cols-2">
             <div>
               <h2 className="font-display mb-6 text-3xl font-bold md:text-5xl">
