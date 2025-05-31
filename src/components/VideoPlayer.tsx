@@ -5,14 +5,17 @@ import { useRef, useEffect, useState } from 'react';
 interface VideoPlayerProps {
   className?: string;
   onPlayFullscreen?: () => void;
+  style?: React.CSSProperties;
 }
 
 export const VideoPlayer = ({
   className = '',
   onPlayFullscreen,
+  style,
 }: VideoPlayerProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoError, setIsVideoError] = useState(false);
+  const [hasPlayedFullscreen, setHasPlayedFullscreen] = useState(false);
 
   // Get R2 URL from environment or fallback to local
   const videoBaseUrl = process.env.NEXT_PUBLIC_R2_PUBLIC_URL
@@ -36,7 +39,12 @@ export const VideoPlayer = ({
     };
 
     const handleTimeUpdate = () => {
-      // Only loop at 58 seconds if not in fullscreen
+      // If play button has been pressed, always loop the full video
+      if (hasPlayedFullscreen) {
+        return; // Let the video loop naturally
+      }
+
+      // Otherwise, loop at 58 seconds if not in fullscreen
       const isFullscreen =
         document.fullscreenElement ||
         (document as Document & { webkitFullscreenElement?: Element })
@@ -148,6 +156,9 @@ export const VideoPlayer = ({
         video.play();
       }
 
+      // Mark that fullscreen play has been triggered
+      setHasPlayedFullscreen(true);
+
       if (onPlayFullscreen) {
         onPlayFullscreen();
       }
@@ -198,8 +209,10 @@ export const VideoPlayer = ({
       autoPlay
       muted
       playsInline
+      loop={hasPlayedFullscreen}
       crossOrigin="anonymous"
       className={className}
+      style={style}
       poster="/video/poster.jpg"
       preload="metadata"
       onError={handleVideoError}

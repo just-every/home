@@ -4,7 +4,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { ArrowRight, Play } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import ShowcaseCard from '@/components/ShowcaseCard';
 import StackLayer from '@/components/StackLayer';
 import { showcaseItems } from '@/data/showcase';
@@ -19,6 +19,9 @@ const VideoPlayer = dynamic(() => import('@/components/VideoPlayer'), {
 export default function Home() {
   const [showPlayButton, setShowPlayButton] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [videoContainerStyle, setVideoContainerStyle] =
+    useState<React.CSSProperties>({});
+  const videoContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +30,44 @@ export default function Home() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const calculateVideoSize = () => {
+      const isSmallScreen = window.innerWidth < 640;
+
+      if (isSmallScreen) {
+        // Small screens: fixed 60vh height
+        setVideoContainerStyle({
+          height: '60vh',
+          width: '100%',
+        });
+      } else {
+        // Large screens: video + subtitles
+        const maxWidth = window.innerWidth;
+        const videoHeight = maxWidth / 2.4;
+        const containerHeight = videoHeight + 120;
+
+        // Ensure it doesn't exceed 100vh
+        const maxHeight = window.innerHeight;
+        if (containerHeight > maxHeight) {
+          const scale = maxHeight / containerHeight;
+          setVideoContainerStyle({
+            width: maxWidth * scale + 'px',
+            height: maxHeight + 'px',
+          });
+        } else {
+          setVideoContainerStyle({
+            width: maxWidth + 'px',
+            height: containerHeight + 'px',
+          });
+        }
+      }
+    };
+
+    calculateVideoSize();
+    window.addEventListener('resize', calculateVideoSize);
+    return () => window.removeEventListener('resize', calculateVideoSize);
   }, []);
 
   const handlePlayFullscreen = () => {
@@ -52,46 +93,46 @@ export default function Home() {
   return (
     <>
       {/* Hero Section - Full viewport with video */}
-      <div className="bg-dark-200 relative flex min-h-screen flex-col overflow-x-hidden">
-        {/* Top section with play button */}
-        <div className="relative flex flex-1 items-center">
-          {showPlayButton && (
-            <div className="absolute top-0 right-0 left-0 z-[60] flex h-[72px] items-center">
-              <div className="container mx-auto flex justify-end px-4">
-                <button
-                  onClick={() => {
-                    // Trigger fullscreen play on the video element
-                    const event = new CustomEvent('requestFullscreen');
-                    window.dispatchEvent(event);
-                  }}
-                  className={`flex items-center gap-2 rounded-full p-3 transition-all duration-300 hover:scale-105 hover:bg-white/20 ${
-                    isScrolled ? 'pointer-events-none opacity-0' : 'opacity-100'
-                  }`}
-                  aria-label="Play video with sound"
-                >
-                  <Play className="h-5 w-5 text-white" />
-                  <span className="px-2 text-sm text-white">
-                    <span className="sm:hidden">Play</span>
-                    <span className="hidden sm:inline">Play with sound</span>
-                  </span>
-                </button>
-              </div>
+      <div className="bg-dark-200 relative flex min-h-screen items-center justify-center overflow-x-hidden">
+        {/* Play button overlay */}
+        {showPlayButton && (
+          <div className="absolute top-0 right-0 left-0 z-[60] flex h-[72px] items-center">
+            <div className="container mx-auto flex justify-end px-4">
+              <button
+                onClick={() => {
+                  // Trigger fullscreen play on the video element
+                  const event = new CustomEvent('requestFullscreen');
+                  window.dispatchEvent(event);
+                }}
+                className={`flex items-center gap-2 rounded-full p-3 transition-all duration-300 hover:scale-105 hover:bg-white/20 ${
+                  isScrolled ? 'pointer-events-none opacity-0' : 'opacity-100'
+                }`}
+                aria-label="Play video with sound"
+              >
+                <Play className="h-5 w-5 text-white" />
+                <span className="px-2 text-sm text-white">
+                  <span className="sm:hidden">Play</span>
+                  <span className="hidden sm:inline">Play with sound</span>
+                </span>
+              </button>
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
-        {/* Middle section with video */}
-        <div className="relative h-[60vh] w-full overflow-hidden lg:h-[70vh]">
+        {/* Video container with calculated sizing */}
+        <div
+          ref={videoContainerRef}
+          className="relative overflow-hidden"
+          style={videoContainerStyle}
+        >
           <VideoPlayer
-            className="hero-video h-full w-full object-cover lg:object-contain"
+            className="hero-video h-full w-full object-cover sm:object-contain"
             onPlayFullscreen={handlePlayFullscreen}
+            style={{ objectPosition: 'center' }}
           />
           <div className="bg-dark-200 pointer-events-none absolute inset-0 opacity-40"></div>
           <div className="bg-gradient-radial from-brand-cyan/10 via-brand-pink/10 pointer-events-none absolute inset-0 to-transparent"></div>
         </div>
-
-        {/* Bottom section - empty space */}
-        <div className="flex-1"></div>
       </div>
 
       {/* Title section - below the fold */}
