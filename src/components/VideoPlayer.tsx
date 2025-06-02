@@ -42,7 +42,9 @@ export const VideoPlayer = ({
         (document as Document & { webkitFullscreenElement?: Element })
           .webkitFullscreenElement ||
         (document as Document & { msFullscreenElement?: Element })
-          .msFullscreenElement;
+          .msFullscreenElement ||
+        (video as HTMLVideoElement & { webkitDisplayingFullscreen?: boolean })
+          .webkitDisplayingFullscreen;
 
       if (!isFullscreen && video.currentTime >= 58) {
         video.currentTime = 0;
