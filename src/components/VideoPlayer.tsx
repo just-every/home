@@ -44,8 +44,17 @@ export const VideoPlayer = ({
         return;
       }
 
-      // Otherwise, loop at 58 seconds
-      if (video.currentTime >= 58) {
+      // Otherwise, loop at 58 seconds if not in fullscreen
+      const isFullscreen =
+        document.fullscreenElement ||
+        (document as Document & { webkitFullscreenElement?: Element })
+          .webkitFullscreenElement ||
+        (document as Document & { msFullscreenElement?: Element })
+          .msFullscreenElement ||
+        (video as HTMLVideoElement & { webkitDisplayingFullscreen?: boolean })
+          .webkitDisplayingFullscreen;
+
+      if (!isFullscreen && video.currentTime >= 58) {
         video.currentTime = 0;
         video.play();
       }
