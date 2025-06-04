@@ -18,6 +18,22 @@ jobs:
         with:
           fetch-depth: 2 # Need previous commit to detect changes
           lfs: true # Pull Git LFS files
+      
+      - name: Pull LFS files
+        run: |
+          git lfs pull
+          echo "✅ Git LFS files pulled successfully"
+          # Verify video files are actual files, not pointers
+          for file in public/video/*.mp4 public/video/*.webm; do
+            if [ -f "$file" ]; then
+              size=$(stat -f%z "$file" 2>/dev/null || stat -c%s "$file" 2>/dev/null)
+              if [ "$size" -lt 1000 ]; then
+                echo "❌ Warning: $file appears to be an LFS pointer (size: $size bytes)"
+              else
+                echo "✅ $file: $(($size / 1024 / 1024))MB"
+              fi
+            fi
+          done
         
       - name: Check for asset changes
         id: check-changes
@@ -78,6 +94,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           lfs: true # Pull Git LFS files
+      
+      - name: Pull LFS files
+        run: |
+          git lfs pull
+          echo "✅ Git LFS files pulled for worker deployment"
         
       - name: Setup Node.js
         uses: actions/setup-node@v4

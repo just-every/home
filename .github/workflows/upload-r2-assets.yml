@@ -9,6 +9,15 @@ on:
       - 'public/images/**'
       - 'public/docs/**'
   workflow_dispatch: # Allow manual trigger
+    inputs:
+      force_upload:
+        description: 'Force upload all assets (not just changed ones)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
 
 jobs:
   upload-assets:
@@ -20,6 +29,23 @@ jobs:
         uses: actions/checkout@v4
         with:
           lfs: true # Pull Git LFS files
+      
+      - name: Pull LFS files
+        run: |
+          git lfs pull
+          echo "✅ Git LFS files pulled successfully"
+          # Verify video files are actual files, not pointers
+          for file in public/video/*.mp4 public/video/*.webm; do
+            if [ -f "$file" ]; then
+              size=$(stat -f%z "$file" 2>/dev/null || stat -c%s "$file" 2>/dev/null)
+              if [ "$size" -lt 1000 ]; then
+                echo "❌ Warning: $file appears to be an LFS pointer (size: $size bytes)"
+                exit 1
+              else
+                echo "✅ $file: $(($size / 1024 / 1024))MB"
+              fi
+            fi
+          done
         
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -64,7 +90,7 @@ jobs:
           echo "🔍 Verifying R2 uploads..."
           
           # Test a key file
-          if wrangler r2 object get "justevery-assets/video/promo-480.mp4" --remote --pipe > /dev/null 2>&1; then
+          if wrangler r2 object get "justevery-assets/video/promo-854w.mp4" --remote --pipe > /dev/null 2>&1; then
             echo "✅ R2 uploads verified successfully"
           else
             echo "❌ Failed to verify R2 uploads"
