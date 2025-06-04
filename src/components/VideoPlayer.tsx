@@ -45,23 +45,80 @@ export const VideoPlayer = ({
       }
 
       // Otherwise, loop at 58 seconds if not in fullscreen
-      const isFullscreen =
+      // Check for iOS video fullscreen first (most specific)
+      const videoElement = video as HTMLVideoElement & {
+        webkitDisplayingFullscreen?: boolean;
+        webkitPresentationMode?: string;
+      };
+
+      // iOS-specific fullscreen check
+      const isIOSFullscreen =
+        videoElement.webkitDisplayingFullscreen === true ||
+        videoElement.webkitPresentationMode === 'fullscreen';
+
+      // Standard fullscreen check for desktop
+      const isDocumentFullscreen =
         document.fullscreenElement ||
         (document as Document & { webkitFullscreenElement?: Element })
           .webkitFullscreenElement ||
         (document as Document & { msFullscreenElement?: Element })
-          .msFullscreenElement ||
-        (video as HTMLVideoElement & { webkitDisplayingFullscreen?: boolean })
-          .webkitDisplayingFullscreen;
+          .msFullscreenElement;
+
+      const isFullscreen = isIOSFullscreen || isDocumentFullscreen;
+
+      // Debug logging for mobile testing
+      if (video.currentTime > 57 && video.currentTime < 59) {
+        console.log('Video fullscreen check at 58s:', {
+          currentTime: video.currentTime,
+          hasPlayedFullscreen,
+          isIOSFullscreen,
+          isDocumentFullscreen,
+          isFullscreen,
+          webkitDisplayingFullscreen: videoElement.webkitDisplayingFullscreen,
+          webkitPresentationMode: videoElement.webkitPresentationMode,
+        });
+      }
 
       if (!isFullscreen && video.currentTime >= 58) {
+        console.log('Looping video back to start');
         video.currentTime = 0;
         video.play();
       }
     };
 
+    // iOS-specific fullscreen event handlers
+    const handleIOSFullscreenBegin = () => {
+      console.log('iOS fullscreen began');
+      // Mark that fullscreen play has been triggered on iOS
+      setHasPlayedFullscreen(true);
+      // Ensure video can play through completely in fullscreen
+      video.loop = false;
+    };
+
+    const handleIOSFullscreenEnd = () => {
+      console.log('iOS fullscreen ended');
+      // Video exited fullscreen on iOS
+      video.muted = true;
+      video.loop = true;
+      video.controls = false;
+
+      // Re-enable subtitles
+      if (video.textTracks && video.textTracks.length > 0) {
+        for (let i = 0; i < video.textTracks.length; i++) {
+          const track = video.textTracks[i];
+          if (track.kind === 'subtitles' || track.kind === 'captions') {
+            track.mode = 'showing';
+          }
+        }
+      }
+    };
+
     video.addEventListener('loadedmetadata', enableSubtitles);
     video.addEventListener('timeupdate', handleTimeUpdate);
+
+    // Add iOS-specific fullscreen event listeners
+    video.addEventListener('webkitbeginfullscreen', handleIOSFullscreenBegin);
+    video.addEventListener('webkitendfullscreen', handleIOSFullscreenEnd);
 
     // Try to enable subtitles immediately if already loaded
     enableSubtitles();
@@ -69,8 +126,13 @@ export const VideoPlayer = ({
     return () => {
       video.removeEventListener('loadedmetadata', enableSubtitles);
       video.removeEventListener('timeupdate', handleTimeUpdate);
+      video.removeEventListener(
+        'webkitbeginfullscreen',
+        handleIOSFullscreenBegin
+      );
+      video.removeEventListener('webkitendfullscreen', handleIOSFullscreenEnd);
     };
-  }, []);
+  }, [hasPlayedFullscreen]);
 
   const handleVideoError = () => {
     setIsVideoError(true);
@@ -211,7 +273,7 @@ export const VideoPlayer = ({
       autoPlay
       muted
       playsInline
-      loop={hasPlayedFullscreen}
+      loop
       crossOrigin="anonymous"
       className={className}
       style={style}
