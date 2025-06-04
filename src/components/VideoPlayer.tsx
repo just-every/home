@@ -445,4 +445,29 @@ export const getVideoRef = () => {
   return document.querySelector('.hero-video') as HTMLVideoElement | null;
 };
 
+// Direct play function for fallback
+export const playVideoDirectly = () => {
+  const video = getVideoRef();
+  if (!video) {
+    console.error('Video element not found');
+    return;
+  }
+
+  console.log('Playing video directly...');
+  video.muted = false;
+  video.loop = false;
+  video.currentTime = 0;
+
+  // Try iOS fullscreen
+  const iosVideo = video as HTMLVideoElement & {
+    webkitEnterFullscreen?: () => void;
+  };
+
+  if (iosVideo.webkitEnterFullscreen) {
+    iosVideo.webkitEnterFullscreen();
+  }
+
+  video.play().catch(e => console.error('Direct play failed:', e));
+};
+
 export default VideoPlayer;

@@ -9,6 +9,7 @@ import ShowcaseCard from '@/components/ShowcaseCard';
 import StackLayer from '@/components/StackLayer';
 import { showcaseItems } from '@/data/showcase';
 import { stackLayers } from '@/data/stack';
+import { playVideoDirectly } from '@/components/VideoPlayer';
 
 const VideoPlayer = dynamic(() => import('@/components/VideoPlayer'), {
   loading: () => (
@@ -94,21 +95,30 @@ export default function Home() {
     <>
       {/* Hero Section - Full viewport with video */}
       <div className="bg-dark-200 relative flex min-h-screen items-center justify-center overflow-x-hidden">
-        {/* Play button overlay */}
+        {/* Play button overlay - increased z-index and added background for debugging */}
         {showPlayButton && (
-          <div className="absolute top-0 right-0 left-0 z-[60] flex h-[72px] items-center">
+          <div className="pointer-events-none absolute top-0 right-0 left-0 z-[100] flex h-[72px] items-center">
             <div className="container mx-auto flex justify-end px-4">
               <button
-                onClick={() => {
-                  // Call the play function directly (required for iOS)
+                onClick={e => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  console.log('Play button clicked!');
+
+                  // Try the window function first
                   const extWindow = window as Window & {
                     playVideoFullscreen?: () => void;
                   };
                   if (extWindow.playVideoFullscreen) {
+                    console.log('Calling playVideoFullscreen...');
                     extWindow.playVideoFullscreen();
+                  } else {
+                    console.log('Using direct play fallback...');
+                    // Fallback to direct video element access
+                    playVideoDirectly();
                   }
                 }}
-                className={`flex items-center gap-2 rounded-full p-3 transition-all duration-300 hover:scale-105 hover:bg-white/20 ${
+                className={`pointer-events-auto flex items-center gap-2 rounded-full bg-black/30 p-3 transition-all duration-300 hover:scale-105 hover:bg-white/20 ${
                   isScrolled ? 'pointer-events-none opacity-0' : 'opacity-100'
                 }`}
                 aria-label="Play video with sound"
@@ -126,7 +136,7 @@ export default function Home() {
         {/* Video container with calculated sizing */}
         <div
           ref={videoContainerRef}
-          className="relative overflow-hidden"
+          className="relative z-10 overflow-hidden"
           style={videoContainerStyle}
         >
           <VideoPlayer
