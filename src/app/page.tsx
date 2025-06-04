@@ -9,7 +9,7 @@ import ShowcaseCard from '@/components/ShowcaseCard';
 import StackLayer from '@/components/StackLayer';
 import { showcaseItems } from '@/data/showcase';
 import { stackLayers } from '@/data/stack';
-import { playVideoDirectly } from '@/components/VideoPlayer';
+// import { playVideoDirectly } from '@/components/VideoPlayer';
 
 const VideoPlayer = dynamic(() => import('@/components/VideoPlayer'), {
   loading: () => (
@@ -23,6 +23,7 @@ export default function Home() {
   const [videoContainerStyle, setVideoContainerStyle] =
     useState<React.CSSProperties>({});
   const videoContainerRef = useRef<HTMLDivElement>(null);
+  const [debugInfo, setDebugInfo] = useState('Video loading...');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +32,25 @@ export default function Home() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Check for video element
+  useEffect(() => {
+    const checkVideo = setInterval(() => {
+      const video = document.querySelector('.hero-video') as HTMLVideoElement;
+      if (video) {
+        setDebugInfo(
+          `Video found: ${video.readyState}, autoplay: ${video.autoplay}, muted: ${video.muted}`
+        );
+        if (video.readyState >= 3) {
+          clearInterval(checkVideo);
+        }
+      } else {
+        setDebugInfo('Video element not found');
+      }
+    }, 1000);
+
+    return () => clearInterval(checkVideo);
   }, []);
 
   useEffect(() => {
@@ -95,6 +115,11 @@ export default function Home() {
     <>
       {/* Hero Section - Full viewport with video */}
       <div className="bg-dark-200 relative flex min-h-screen items-center justify-center overflow-x-hidden">
+        {/* Debug info overlay */}
+        <div className="absolute top-20 left-4 z-[200] max-w-xs rounded bg-red-600 p-2 text-xs text-white">
+          {debugInfo}
+        </div>
+
         {/* Play button overlay - increased z-index and added background for debugging */}
         {showPlayButton && (
           <div className="pointer-events-none absolute top-0 right-0 left-0 z-[100] flex h-[72px] items-center">
@@ -103,22 +128,43 @@ export default function Home() {
                 onClick={e => {
                   e.preventDefault();
                   e.stopPropagation();
-                  console.log('Play button clicked!');
 
-                  // Try the window function first
-                  const extWindow = window as Window & {
-                    playVideoFullscreen?: () => void;
-                  };
-                  if (extWindow.playVideoFullscreen) {
-                    console.log('Calling playVideoFullscreen...');
-                    extWindow.playVideoFullscreen();
-                  } else {
-                    console.log('Using direct play fallback...');
-                    // Fallback to direct video element access
-                    playVideoDirectly();
+                  // Visual feedback
+                  const button = e.currentTarget;
+                  button.style.backgroundColor = 'red';
+                  setTimeout(() => {
+                    button.style.backgroundColor = '';
+                  }, 500);
+
+                  // Try direct video access first (more reliable)
+                  try {
+                    const video = document.querySelector(
+                      '.hero-video'
+                    ) as HTMLVideoElement;
+                    if (video) {
+                      video.muted = false;
+                      video.loop = false;
+                      video.currentTime = 0;
+
+                      // iOS fullscreen
+                      const iosVideo = video as HTMLVideoElement & {
+                        webkitEnterFullscreen?: () => void;
+                      };
+                      if (iosVideo.webkitEnterFullscreen) {
+                        iosVideo.webkitEnterFullscreen();
+                      }
+
+                      video.play().catch(() => {
+                        // If play fails, try with muted
+                        video.muted = true;
+                        video.play();
+                      });
+                    }
+                  } catch (error) {
+                    alert('Error playing video: ' + error);
                   }
                 }}
-                className={`pointer-events-auto flex items-center gap-2 rounded-full bg-black/30 p-3 transition-all duration-300 hover:scale-105 hover:bg-white/20 ${
+                className={`pointer-events-auto flex items-center gap-2 rounded-full border-2 border-white/50 bg-black/50 p-4 transition-all duration-300 hover:scale-105 hover:bg-white/20 ${
                   isScrolled ? 'pointer-events-none opacity-0' : 'opacity-100'
                 }`}
                 aria-label="Play video with sound"
