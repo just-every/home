@@ -17,6 +17,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 2 # Need previous commit to detect changes
+          lfs: true # Pull Git LFS files
         
       - name: Check for asset changes
         id: check-changes
@@ -75,6 +76,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          lfs: true # Pull Git LFS files
         
       - name: Setup Node.js
         uses: actions/setup-node@v4
