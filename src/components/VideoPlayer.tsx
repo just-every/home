@@ -39,20 +39,13 @@ export const VideoPlayer = ({
     };
 
     const handleTimeUpdate = () => {
-      // If play button has been pressed, always loop the full video
+      // If play button has been pressed, let the video loop naturally
       if (hasPlayedFullscreen) {
-        return; // Let the video loop naturally
+        return;
       }
 
-      // Otherwise, loop at 58 seconds if not in fullscreen
-      const isFullscreen =
-        document.fullscreenElement ||
-        (document as Document & { webkitFullscreenElement?: Element })
-          .webkitFullscreenElement ||
-        (document as Document & { msFullscreenElement?: Element })
-          .msFullscreenElement;
-
-      if (!isFullscreen && video.currentTime >= 58) {
+      // Otherwise, loop at 58 seconds
+      if (video.currentTime >= 58) {
         video.currentTime = 0;
         video.play();
       }
@@ -221,74 +214,74 @@ export const VideoPlayer = ({
         <>
           {/* WebM sources for R2 hosting */}
           <source
-            src={`${videoBaseUrl}/promo-4k.webm`}
+            src={`${videoBaseUrl}/promo-3840w.webm`}
             type="video/webm"
             media="(min-width: 1440px) and (min-resolution: 2dppx), (min-width: 2560px)"
           />
           <source
-            src={`${videoBaseUrl}/promo-2k.webm`}
+            src={`${videoBaseUrl}/promo-2560w.webm`}
             type="video/webm"
             media="(min-width: 1280px) and (min-resolution: 2dppx) and (max-width: 1439px), (min-width: 1920px) and (max-width: 2559px)"
           />
           <source
-            src={`${videoBaseUrl}/promo-1080.webm`}
+            src={`${videoBaseUrl}/promo-1920w.webm`}
             type="video/webm"
             media="(min-width: 1280px) and (max-resolution: 1.99dppx) and (max-width: 1919px)"
           />
           <source
-            src={`${videoBaseUrl}/promo-1080.webm`}
+            src={`${videoBaseUrl}/promo-1920w.webm`}
             type="video/webm"
             media="(min-width: 768px) and (min-resolution: 2dppx) and (max-width: 1279px)"
           />
           <source
-            src={`${videoBaseUrl}/promo-720.webm`}
+            src={`${videoBaseUrl}/promo-1280w.webm`}
             type="video/webm"
             media="(min-width: 768px) and (max-resolution: 1.99dppx) and (max-width: 1279px)"
           />
           <source
-            src={`${videoBaseUrl}/promo-720.webm`}
+            src={`${videoBaseUrl}/promo-1280w.webm`}
             type="video/webm"
             media="(max-width: 767px) and (min-resolution: 2dppx)"
           />
           <source
-            src={`${videoBaseUrl}/promo-480.webm`}
+            src={`${videoBaseUrl}/promo-854w.webm`}
             type="video/webm"
             media="(max-width: 767px) and (max-resolution: 1.99dppx)"
           />
 
           {/* MP4 sources as fallback */}
           <source
-            src={`${videoBaseUrl}/promo-4k.mp4`}
+            src={`${videoBaseUrl}/promo-3840w.mp4`}
             type="video/mp4"
             media="(min-width: 1440px) and (min-resolution: 2dppx), (min-width: 2560px)"
           />
           <source
-            src={`${videoBaseUrl}/promo-2k.mp4`}
+            src={`${videoBaseUrl}/promo-2560w.mp4`}
             type="video/mp4"
             media="(min-width: 1280px) and (min-resolution: 2dppx) and (max-width: 1439px), (min-width: 1920px) and (max-width: 2559px)"
           />
           <source
-            src={`${videoBaseUrl}/promo-1080.mp4`}
+            src={`${videoBaseUrl}/promo-1920w.mp4`}
             type="video/mp4"
             media="(min-width: 1280px) and (max-resolution: 1.99dppx) and (max-width: 1919px)"
           />
           <source
-            src={`${videoBaseUrl}/promo-1080.mp4`}
+            src={`${videoBaseUrl}/promo-1920w.mp4`}
             type="video/mp4"
             media="(min-width: 768px) and (min-resolution: 2dppx) and (max-width: 1279px)"
           />
           <source
-            src={`${videoBaseUrl}/promo-720.mp4`}
+            src={`${videoBaseUrl}/promo-1280w.mp4`}
             type="video/mp4"
             media="(min-width: 768px) and (max-resolution: 1.99dppx) and (max-width: 1279px)"
           />
           <source
-            src={`${videoBaseUrl}/promo-720.mp4`}
+            src={`${videoBaseUrl}/promo-1280w.mp4`}
             type="video/mp4"
             media="(max-width: 767px) and (min-resolution: 2dppx)"
           />
           <source
-            src={`${videoBaseUrl}/promo-480.mp4`}
+            src={`${videoBaseUrl}/promo-854w.mp4`}
             type="video/mp4"
             media="(max-width: 767px) and (max-resolution: 1.99dppx)"
           />
@@ -296,8 +289,8 @@ export const VideoPlayer = ({
       ) : (
         <>
           {/* Fallback to local 480p only for Cloudflare Workers */}
-          <source src="/video/promo-480.webm" type="video/webm" />
-          <source src="/video/promo-480.mp4" type="video/mp4" />
+          <source src="/video/promo-854w.webm" type="video/webm" />
+          <source src="/video/promo-854w.mp4" type="video/mp4" />
         </>
       )}
 
