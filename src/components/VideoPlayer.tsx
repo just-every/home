@@ -120,6 +120,48 @@ export const VideoPlayer = ({
     video.addEventListener('webkitbeginfullscreen', handleIOSFullscreenBegin);
     video.addEventListener('webkitendfullscreen', handleIOSFullscreenEnd);
 
+    // For iOS Chrome, also use polling as a backup
+    const isIOS =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) && !('MSStream' in window);
+    const isIOSChrome = isIOS && /CriOS/.test(navigator.userAgent);
+
+    let fullscreenPollInterval: NodeJS.Timeout | null = null;
+    if (isIOSChrome) {
+      let wasFullscreen = false;
+      fullscreenPollInterval = setInterval(() => {
+        const videoElement = video as HTMLVideoElement & {
+          webkitDisplayingFullscreen?: boolean;
+          webkitPresentationMode?: string;
+        };
+
+        const isFullscreen =
+          videoElement.webkitDisplayingFullscreen === true ||
+          videoElement.webkitPresentationMode === 'fullscreen';
+
+        if (isFullscreen && !wasFullscreen) {
+          console.log('iOS Chrome entered fullscreen (detected by polling)');
+          setHasPlayedFullscreen(true);
+          video.loop = false;
+        } else if (!isFullscreen && wasFullscreen) {
+          console.log('iOS Chrome exited fullscreen (detected by polling)');
+          video.muted = true;
+          video.loop = true;
+          video.controls = false;
+          // Re-enable subtitles
+          if (video.textTracks && video.textTracks.length > 0) {
+            for (let i = 0; i < video.textTracks.length; i++) {
+              const track = video.textTracks[i];
+              if (track.kind === 'subtitles' || track.kind === 'captions') {
+                track.mode = 'showing';
+              }
+            }
+          }
+        }
+
+        wasFullscreen = isFullscreen;
+      }, 500); // Check every 500ms
+    }
+
     // Try to enable subtitles immediately if already loaded
     enableSubtitles();
 
@@ -131,6 +173,10 @@ export const VideoPlayer = ({
         handleIOSFullscreenBegin
       );
       video.removeEventListener('webkitendfullscreen', handleIOSFullscreenEnd);
+
+      if (fullscreenPollInterval) {
+        clearInterval(fullscreenPollInterval);
+      }
     };
   }, [hasPlayedFullscreen]);
 
@@ -139,9 +185,9 @@ export const VideoPlayer = ({
     console.error('Video failed to load. Using fallback.');
   };
 
-  // Listen for custom fullscreen request event
+  // Make play function available globally for direct calls
   useEffect(() => {
-    const handleFullscreenRequest = () => {
+    const playFullscreen = () => {
       const video = videoRef.current;
       if (!video) return;
 
@@ -161,67 +207,65 @@ export const VideoPlayer = ({
       video.style.height = '100%';
       video.controls = true;
 
-      // Check if it's a mobile device
-      const isMobile =
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent
-        ) ||
-        (navigator.maxTouchPoints && navigator.maxTouchPoints > 2);
+      // Better iOS detection
+      const isIOS =
+        /iPad|iPhone|iPod/.test(navigator.userAgent) && !('MSStream' in window);
+      const isIOSChrome = isIOS && /CriOS/.test(navigator.userAgent);
+      const isIOSSafari =
+        isIOS &&
+        /Safari/.test(navigator.userAgent) &&
+        !/CriOS/.test(navigator.userAgent);
 
-      if (isMobile) {
-        // On mobile, request fullscreen immediately and play
+      // Mark that fullscreen play has been triggered
+      setHasPlayedFullscreen(true);
+
+      if (isIOSSafari || isIOSChrome) {
+        // iOS-specific handling
+        const iosVideo = video as HTMLVideoElement & {
+          webkitEnterFullscreen?: () => void;
+        };
+        if (iosVideo.webkitEnterFullscreen) {
+          // Enter fullscreen and play
+          iosVideo.webkitEnterFullscreen();
+          // Play after a small delay for iOS
+          setTimeout(() => {
+            video.play().catch(e => console.error('Play failed:', e));
+          }, 100);
+        } else {
+          // Fallback: just play with controls
+          video.play().catch(e => console.error('Play failed:', e));
+        }
+      } else {
+        // Desktop and other mobile browsers
         if (video.requestFullscreen) {
           video.requestFullscreen().then(() => {
             video.play();
           });
         } else if (
-          (video as HTMLVideoElement & { webkitRequestFullscreen?: () => void })
-            .webkitRequestFullscreen
+          (
+            video as HTMLVideoElement & {
+              webkitRequestFullscreen?: () => Promise<void>;
+            }
+          ).webkitRequestFullscreen
         ) {
-          const webkitVideo = video as HTMLVideoElement & {
-            webkitRequestFullscreen: () => void;
-          };
-          webkitVideo.webkitRequestFullscreen();
+          (
+            video as HTMLVideoElement & {
+              webkitRequestFullscreen: () => Promise<void>;
+            }
+          ).webkitRequestFullscreen();
           video.play();
-        } else if (
-          (video as HTMLVideoElement & { webkitEnterFullscreen?: () => void })
-            .webkitEnterFullscreen
-        ) {
-          // iOS Safari fullscreen
-          const iosVideo = video as HTMLVideoElement & {
-            webkitEnterFullscreen: () => void;
-          };
-          iosVideo.webkitEnterFullscreen();
-          video.play();
-        } else {
-          video.play();
-        }
-      } else {
-        // On desktop, request fullscreen then play
-        if (video.requestFullscreen) {
-          video.requestFullscreen();
-        } else if (
-          (video as HTMLVideoElement & { webkitRequestFullscreen?: () => void })
-            .webkitRequestFullscreen
-        ) {
-          const webkitVideo = video as HTMLVideoElement & {
-            webkitRequestFullscreen: () => void;
-          };
-          webkitVideo.webkitRequestFullscreen();
         } else if (
           (video as HTMLVideoElement & { msRequestFullscreen?: () => void })
             .msRequestFullscreen
         ) {
-          const msVideo = video as HTMLVideoElement & {
-            msRequestFullscreen: () => void;
-          };
-          msVideo.msRequestFullscreen();
+          (
+            video as HTMLVideoElement & { msRequestFullscreen: () => void }
+          ).msRequestFullscreen();
+          video.play();
+        } else {
+          video.play();
         }
-        video.play();
       }
-
-      // Mark that fullscreen play has been triggered
-      setHasPlayedFullscreen(true);
 
       if (onPlayFullscreen) {
         onPlayFullscreen();
@@ -229,7 +273,17 @@ export const VideoPlayer = ({
 
       // Handle fullscreen exit
       const handleFullscreenChange = () => {
-        if (!document.fullscreenElement) {
+        const isFullscreen = !!(
+          document.fullscreenElement ||
+          (document as Document & { webkitFullscreenElement?: Element })
+            .webkitFullscreenElement ||
+          (document as Document & { msFullscreenElement?: Element })
+            .msFullscreenElement ||
+          (video as HTMLVideoElement & { webkitDisplayingFullscreen?: boolean })
+            .webkitDisplayingFullscreen
+        );
+
+        if (!isFullscreen) {
           video.muted = true;
           video.loop = true;
           video.controls = false;
@@ -247,20 +301,31 @@ export const VideoPlayer = ({
         }
       };
 
-      document.addEventListener('fullscreenchange', handleFullscreenChange, {
-        once: true,
-      });
+      document.addEventListener('fullscreenchange', handleFullscreenChange);
       document.addEventListener(
         'webkitfullscreenchange',
-        handleFullscreenChange,
-        { once: true }
+        handleFullscreenChange
       );
+
+      // Cleanup after a delay
+      setTimeout(() => {
+        document.removeEventListener(
+          'fullscreenchange',
+          handleFullscreenChange
+        );
+        document.removeEventListener(
+          'webkitfullscreenchange',
+          handleFullscreenChange
+        );
+      }, 5000);
     };
 
-    window.addEventListener('requestFullscreen', handleFullscreenRequest);
+    // Make function available globally
+    const extWindow = window as Window & { playVideoFullscreen?: () => void };
+    extWindow.playVideoFullscreen = playFullscreen;
 
     return () => {
-      window.removeEventListener('requestFullscreen', handleFullscreenRequest);
+      delete extWindow.playVideoFullscreen;
     };
   }, [onPlayFullscreen]);
 

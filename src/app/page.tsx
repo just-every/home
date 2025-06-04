@@ -100,9 +100,13 @@ export default function Home() {
             <div className="container mx-auto flex justify-end px-4">
               <button
                 onClick={() => {
-                  // Trigger fullscreen play on the video element
-                  const event = new CustomEvent('requestFullscreen');
-                  window.dispatchEvent(event);
+                  // Call the play function directly (required for iOS)
+                  const extWindow = window as Window & {
+                    playVideoFullscreen?: () => void;
+                  };
+                  if (extWindow.playVideoFullscreen) {
+                    extWindow.playVideoFullscreen();
+                  }
                 }}
                 className={`flex items-center gap-2 rounded-full p-3 transition-all duration-300 hover:scale-105 hover:bg-white/20 ${
                   isScrolled ? 'pointer-events-none opacity-0' : 'opacity-100'
