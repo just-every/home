@@ -180,9 +180,17 @@ export const VideoPlayer = ({
     };
   }, [hasPlayedFullscreen]);
 
-  const handleVideoError = () => {
+  const handleVideoError = (
+    e: React.SyntheticEvent<HTMLVideoElement, Event>
+  ) => {
+    const video = e.currentTarget;
+    console.error('Video error:', {
+      error: (e.nativeEvent as MediaError).message || 'Unknown error',
+      src: video.currentSrc,
+      readyState: video.readyState,
+      networkState: video.networkState,
+    });
     setIsVideoError(true);
-    console.error('Video failed to load. Using fallback.');
   };
 
   // Make play function available globally for direct calls

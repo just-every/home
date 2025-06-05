@@ -61,7 +61,7 @@ export default function EnsemblePage() {
                   {`import { request } from "@just-every/ensemble";
 
 // Stream responses from any provider
-const stream = request('claude-3-5-sonnet-20241022', [
+const stream = ensembleRequest('claude-3-5-sonnet-20241022', [
   { type: 'message', role: 'user', content: 'Hello, world!' }
 ]);
 
@@ -93,7 +93,7 @@ const providers = [
 ];
 
 // Switch providers seamlessly
-const stream = request(providers[0], messages);`}
+const stream = ensembleRequest(providers[0], messages);`}
                 </code>
               </pre>
             </div>
@@ -116,7 +116,7 @@ const tools = [
   }
 ];
 
-const stream = request('claude-3-5-sonnet-20241022', messages, { tools });
+const stream = ensembleRequest('claude-3-5-sonnet-20241022', messages, { tools });
 
 // Automatically converts streaming events to conversation history
 // Supports early stream termination

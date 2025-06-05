@@ -13,7 +13,7 @@ export default function StackPage() {
       icon: Code,
       href: '/ensemble',
       color: 'from-brand-cyan to-brand-pink',
-      snippet: 'const stream = request("claude-3-5-sonnet", messages)',
+      snippet: 'const stream = ensembleRequest("claude-3-5-sonnet", messages)',
       delay: 0,
     },
     {

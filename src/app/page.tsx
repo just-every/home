@@ -36,17 +36,28 @@ export default function Home() {
 
   // Check for video element
   useEffect(() => {
+    let attempts = 0;
     const checkVideo = setInterval(() => {
+      attempts++;
       const video = document.querySelector('.hero-video') as HTMLVideoElement;
       if (video) {
+        const states = [
+          'HAVE_NOTHING',
+          'HAVE_METADATA',
+          'HAVE_CURRENT_DATA',
+          'HAVE_FUTURE_DATA',
+          'HAVE_ENOUGH_DATA',
+        ];
         setDebugInfo(
-          `Video found: ${video.readyState}, autoplay: ${video.autoplay}, muted: ${video.muted}`
+          `Video: ${states[video.readyState]}, src: ${video.currentSrc ? 'loaded' : 'no src'}, attempts: ${attempts}`
         );
-        if (video.readyState >= 3) {
-          clearInterval(checkVideo);
+
+        // Force play if ready
+        if (video.readyState >= 3 && video.paused) {
+          video.play().catch(e => console.log('Autoplay failed:', e));
         }
       } else {
-        setDebugInfo('Video element not found');
+        setDebugInfo(`Video element not found (attempt ${attempts})`);
       }
     }, 1000);
 
@@ -118,6 +129,12 @@ export default function Home() {
         {/* Debug info overlay */}
         <div className="absolute top-20 left-4 z-[200] max-w-xs rounded bg-red-600 p-2 text-xs text-white">
           {debugInfo}
+          <button
+            onClick={() => alert('Test button works!')}
+            className="mt-2 rounded bg-blue-500 px-2 py-1 text-white"
+          >
+            Test Touch
+          </button>
         </div>
 
         {/* Play button overlay - increased z-index and added background for debugging */}
@@ -190,8 +207,7 @@ export default function Home() {
             onPlayFullscreen={handlePlayFullscreen}
             style={{ objectPosition: 'center' }}
           />
-          <div className="bg-dark-200 pointer-events-none absolute inset-0 opacity-40"></div>
-          <div className="bg-gradient-radial from-brand-cyan/10 via-brand-pink/10 pointer-events-none absolute inset-0 to-transparent"></div>
+          {/* Removed overlays that were blocking interactions */}
         </div>
       </div>
 
