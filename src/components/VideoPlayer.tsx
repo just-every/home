@@ -184,8 +184,11 @@ export const VideoPlayer = ({
     e: React.SyntheticEvent<HTMLVideoElement, Event>
   ) => {
     const video = e.currentTarget;
+    const videoError = video.error;
     console.error('Video error:', {
-      error: (e.nativeEvent as MediaError).message || 'Unknown error',
+      error: videoError
+        ? `Code: ${videoError.code}, Message: ${videoError.message}`
+        : 'Unknown error',
       src: video.currentSrc,
       readyState: video.readyState,
       networkState: video.networkState,
