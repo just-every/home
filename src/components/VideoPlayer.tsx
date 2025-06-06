@@ -330,9 +330,9 @@ export const VideoPlayer = ({
         </>
       ) : (
         <>
-          {/* Fallback to single file if responsive loading fails */}
-          <source src={`${videoBaseUrl}/promo.webm`} type="video/webm" />
-          <source src={`${videoBaseUrl}/promo.mp4`} type="video/mp4" />
+          {/* Fallback to smallest file if responsive loading fails */}
+          <source src={`${videoBaseUrl}/promo-854w.webm`} type="video/webm" />
+          <source src={`${videoBaseUrl}/promo-854w.mp4`} type="video/mp4" />
         </>
       )}
 
