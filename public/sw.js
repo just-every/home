@@ -18,6 +18,17 @@ self.addEventListener('install', (event) => {
 
 // Fetch event
 self.addEventListener('fetch', (event) => {
+  // Skip caching for video files and R2 CDN
+  const url = new URL(event.request.url);
+  const isVideo = url.pathname.includes('.mp4') || url.pathname.includes('.webm');
+  const isR2CDN = url.hostname.includes('r2.dev') || url.hostname.includes('cloudflare');
+  
+  if (isVideo || isR2CDN || event.request.headers.get('range')) {
+    // For videos and range requests, always fetch from network
+    event.respondWith(fetch(event.request));
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((response) => {
       // Cache hit - return response

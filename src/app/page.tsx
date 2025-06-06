@@ -11,11 +11,17 @@ import { showcaseItems } from '@/data/showcase';
 import { stackLayers } from '@/data/stack';
 // import { playVideoDirectly } from '@/components/VideoPlayer';
 
-const VideoPlayer = dynamic(() => import('@/components/VideoPlayer'), {
-  loading: () => (
-    <div className="bg-dark-100 h-[60vh] w-full animate-pulse lg:h-auto lg:min-h-[80vh]" />
-  ),
-});
+const VideoPlayer = dynamic(
+  () =>
+    import('@/components/VideoPlayer').then(mod => ({
+      default: mod.VideoPlayer,
+    })),
+  {
+    loading: () => (
+      <div className="bg-dark-100 h-[60vh] w-full animate-pulse lg:h-auto lg:min-h-[80vh]" />
+    ),
+  }
+);
 
 export default function Home() {
   const [showPlayButton, setShowPlayButton] = useState(true);
@@ -23,7 +29,6 @@ export default function Home() {
   const [videoContainerStyle, setVideoContainerStyle] =
     useState<React.CSSProperties>({});
   const videoContainerRef = useRef<HTMLDivElement>(null);
-  const [debugInfo, setDebugInfo] = useState('Video loading...');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,36 +37,6 @@ export default function Home() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Check for video element
-  useEffect(() => {
-    let attempts = 0;
-    const checkVideo = setInterval(() => {
-      attempts++;
-      const video = document.querySelector('.hero-video') as HTMLVideoElement;
-      if (video) {
-        const states = [
-          'HAVE_NOTHING',
-          'HAVE_METADATA',
-          'HAVE_CURRENT_DATA',
-          'HAVE_FUTURE_DATA',
-          'HAVE_ENOUGH_DATA',
-        ];
-        setDebugInfo(
-          `Video: ${states[video.readyState]}, src: ${video.currentSrc ? 'loaded' : 'no src'}, attempts: ${attempts}`
-        );
-
-        // Force play if ready
-        if (video.readyState >= 3 && video.paused) {
-          video.play().catch(e => console.log('Autoplay failed:', e));
-        }
-      } else {
-        setDebugInfo(`Video element not found (attempt ${attempts})`);
-      }
-    }, 1000);
-
-    return () => clearInterval(checkVideo);
   }, []);
 
   useEffect(() => {
@@ -126,17 +101,6 @@ export default function Home() {
     <>
       {/* Hero Section - Full viewport with video */}
       <div className="bg-dark-200 relative flex min-h-screen items-center justify-center overflow-x-hidden">
-        {/* Debug info overlay */}
-        <div className="absolute top-20 left-4 z-[200] max-w-xs rounded bg-red-600 p-2 text-xs text-white">
-          {debugInfo}
-          <button
-            onClick={() => alert('Test button works!')}
-            className="mt-2 rounded bg-blue-500 px-2 py-1 text-white"
-          >
-            Test Touch
-          </button>
-        </div>
-
         {/* Play button overlay - increased z-index and added background for debugging */}
         {showPlayButton && (
           <div className="pointer-events-none absolute top-0 right-0 left-0 z-[100] flex h-[72px] items-center">
@@ -146,39 +110,14 @@ export default function Home() {
                   e.preventDefault();
                   e.stopPropagation();
 
-                  // Visual feedback
-                  const button = e.currentTarget;
-                  button.style.backgroundColor = 'red';
-                  setTimeout(() => {
-                    button.style.backgroundColor = '';
-                  }, 500);
-
-                  // Try direct video access first (more reliable)
-                  try {
-                    const video = document.querySelector(
-                      '.hero-video'
-                    ) as HTMLVideoElement;
-                    if (video) {
-                      video.muted = false;
-                      video.loop = false;
-                      video.currentTime = 0;
-
-                      // iOS fullscreen
-                      const iosVideo = video as HTMLVideoElement & {
-                        webkitEnterFullscreen?: () => void;
-                      };
-                      if (iosVideo.webkitEnterFullscreen) {
-                        iosVideo.webkitEnterFullscreen();
-                      }
-
-                      video.play().catch(() => {
-                        // If play fails, try with muted
-                        video.muted = true;
-                        video.play();
-                      });
-                    }
-                  } catch (error) {
-                    alert('Error playing video: ' + error);
+                  // Use the VideoPlayer's exposed API
+                  const playVideoFullscreen = (
+                    window as Window & { playVideoFullscreen?: () => void }
+                  ).playVideoFullscreen;
+                  if (playVideoFullscreen) {
+                    playVideoFullscreen();
+                  } else {
+                    console.error('playVideoFullscreen function not available');
                   }
                 }}
                 className={`pointer-events-auto flex items-center gap-2 rounded-full border-2 border-white/50 bg-black/50 p-4 transition-all duration-300 hover:scale-105 hover:bg-white/20 ${
