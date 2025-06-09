@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function MechPage() {
+export default function TaskPage() {
   return (
     <div className="min-h-screen py-20">
       <div className="container mx-auto max-w-5xl px-4">
@@ -31,17 +31,15 @@ export default function MechPage() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="font-display mb-8 text-5xl font-bold md:text-6xl">
-            MECH
+            Task
           </h1>
 
-          <p className="mb-12 text-2xl text-white/80">
-            Metacognition Ensemble Chain-of-Thought Hierarchy
-          </p>
+          <p className="mb-12 text-2xl text-white/80">Thoughtful Task Loop</p>
 
           <p className="mb-12 text-lg text-white/60">
             Advanced LLM orchestration with meta-cognition capabilities.
             <br />
-            <span className="text-brand-pink font-semibold">MECH</span> provides
+            <span className="text-brand-pink font-semibold">Task</span> provides
             intelligent model rotation, self-reflection, and dynamic weighted
             selection based on performance across multiple AI providers.
           </p>
@@ -57,15 +55,15 @@ export default function MechPage() {
           {/* Basic usage */}
           <div>
             <h3 className="mb-3 text-lg font-semibold">
-              Simple MECH orchestration
+              Simple Task orchestration
             </h3>
             <div className="bg-dark-100 border-dark-50 rounded-lg border p-6">
               <pre className="overflow-x-auto">
                 <code className="font-mono text-sm">
-                  {`import { runMECH } from "@just-every/mech";
+                  {`import { mindTask } from "@just-every/task";
 
 // Run an agent with meta-cognition
-const result = await runMECH({
+const result = await mindTask({
   agent: { name: 'MyAgent' },
   task: 'Analyze this code for performance issues',
   runAgent: async (agent, input, history) => {
@@ -75,7 +73,7 @@ const result = await runMECH({
   }
 });
 
-// MECH handles intelligent model rotation and self-reflection`}
+// Task handles intelligent model rotation and self-reflection`}
                 </code>
               </pre>
             </div>
@@ -89,7 +87,7 @@ const result = await runMECH({
             <div className="bg-dark-100 border-dark-50 rounded-lg border p-6">
               <pre className="overflow-x-auto">
                 <code className="font-mono text-sm">
-                  {`// MECH provides intelligent features out of the box:
+                  {`// Task provides intelligent features out of the box:
 
 // 1. Ensemble Model Management
 //    Multiple AI models work in parallel or sequence
@@ -173,10 +171,10 @@ const result = await runMECH({
         >
           <div className="flex items-center justify-between">
             <code className="text-brand-pink font-mono">
-              npm i @just-every/mech
+              npm i @just-every/task
             </code>
             <a
-              href="https://github.com/just-every/MECH"
+              href="https://github.com/just-every/task"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-white/60 transition-colors hover:text-white"

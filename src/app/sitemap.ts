@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/docs',
     '/future',
     '/ensemble',
-    '/mech',
+    '/task',
     '/magi',
     '/one',
     '/signup',

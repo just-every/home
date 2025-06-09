@@ -178,10 +178,10 @@ magi.approve();    // Push to production`}
         {/* Navigation */}
         <div className="border-dark-50 flex items-center justify-between border-t pt-8">
           <Link
-            href="/mech"
+            href="/task"
             className="text-white/60 transition-colors hover:text-white"
           >
-            ← MECH
+            ← Task
           </Link>
           <Link
             href="/one"

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Code, Cpu, Box, Sparkles } from 'lucide-react';
+import { ArrowRight, Code, Diamond, Box, Minus } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function StackPage() {
@@ -17,19 +17,19 @@ export default function StackPage() {
       delay: 0,
     },
     {
-      name: 'MECH',
+      name: 'Task',
       description:
-        'Metacognition Ensemble Chain-of-Thought Hierarchy. Advanced LLM orchestration with intelligent model rotation, self-reflection, and dynamic weighted selection based on performance.',
-      icon: Cpu,
-      href: '/mech',
+        'Thoughtful Task Loop. Advanced LLM orchestration with intelligent model rotation, self-reflection, and dynamic weighted selection based on performance.',
+      icon: Diamond,
+      href: '/task',
       color: 'from-brand-pink to-brand-amber',
-      snippet: 'await runMECH({ agent, task, runAgent })',
+      snippet: 'await mindTask({ agent, task, runAgent })',
       delay: 0.1,
     },
     {
       name: 'Magi',
       description:
-        'Full orchestration system using Ensemble and MECH. Container management with Docker/Firecracker, React UI for monitoring. Mostly autonomous generative intelligence.',
+        'Full orchestration system using Ensemble and Task. Container management with Docker/Firecracker, React UI for monitoring. Mostly autonomous generative intelligence.',
       icon: Box,
       href: '/magi',
       color: 'from-brand-amber to-brand-cyan',
@@ -40,7 +40,7 @@ export default function StackPage() {
       name: 'JustEvery_',
       description:
         'The actual app that Magi drives. Social network for AI-generated apps. UI-first using image generators. Currently MVP but improving rapidly with each deployment.',
-      icon: Sparkles,
+      icon: Minus,
       href: '/signup',
       color: 'from-brand-cyan via-brand-pink to-brand-amber',
       snippet: 'prompt → generated UI → live app',

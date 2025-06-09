@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
 import ShowcaseCard from '@/components/ShowcaseCard';
 import StackLayer from '@/components/StackLayer';
+import { FlowingParticles } from '@/components/FlowingParticles';
 import { showcaseItems } from '@/data/showcase';
 import { stackLayers } from '@/data/stack';
 // import { playVideoDirectly } from '@/components/VideoPlayer';
@@ -98,7 +99,10 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div className="relative min-h-screen">
+      {/* Flowing particle background */}
+      <FlowingParticles opacity={0.8} />
+
       {/* Hero Section - Full viewport with video */}
       <div className="bg-dark-200 relative flex min-h-screen items-center justify-center overflow-x-hidden">
         {/* Play button overlay - increased z-index and added background for debugging */}
@@ -416,6 +420,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-    </>
+    </div>
   );
 }

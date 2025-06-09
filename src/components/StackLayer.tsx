@@ -1,14 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code, Cpu, Box, Sparkles, LucideIcon } from 'lucide-react';
+import { Code, Diamond, Box, Minus, LucideIcon } from 'lucide-react';
 import { StackLayer as StackLayerType } from '@/types';
 
 const iconMap: Record<string, LucideIcon> = {
   Code,
-  Cpu,
+  Diamond,
   Box,
-  Sparkles,
+  Minus,
 };
 
 interface StackLayerProps {

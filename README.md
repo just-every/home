@@ -31,8 +31,8 @@ This is a modern Next.js application deployed on Cloudflare Workers with video a
 │   │   ├── docs/           # Documentation page
 │   │   ├── ensemble/       # Ensemble product page
 │   │   ├── future/         # Future vision page
-│   │   ├── task/           # Magi product page
-│   │   ├── mech/           # MECH product page
+│   │   ├── magi/           # Magi product page
+│   │   ├── task/           # Task product page
 │   │   ├── one/            # One product page
 │   │   ├── showcase/       # App showcase page
 │   │   ├── signup/         # Signup page

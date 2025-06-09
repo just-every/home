@@ -220,10 +220,10 @@ const stream = ensembleRequest('claude-3-5-sonnet-20241022', messages, { tools }
             ← Stack Overview
           </Link>
           <Link
-            href="/mech"
+            href="/task"
             className="text-white/60 transition-colors hover:text-white"
           >
-            MECH →
+            Task →
           </Link>
         </div>
       </div>
