@@ -6,6 +6,10 @@ on:
       - main
   workflow_dispatch: # Allow manual trigger
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   # Upload changed assets to R2 first
   upload-r2-assets:

@@ -2,11 +2,22 @@
 
 The official homepage for JustEvery - building UI-first, generative software with ensemble AI.
 
-## 🚀 Overview
+[![GitHub Actions](https://github.com/just-every/home/workflows/Deploy%20Production/badge.svg)](https://github.com/just-every/home/actions)
+
+## Overview
 
 This is a modern Next.js application deployed on Cloudflare Workers with video assets served from Cloudflare R2. The site features a responsive design with high-quality video backgrounds, animated sections, and optimized performance.
 
-## 🛠️ Tech Stack
+## Features
+
+- 🎬 **Responsive Video Backgrounds** - Adaptive quality based on device and bandwidth
+- ⚡ **Edge Deployment** - Cloudflare Workers for global low-latency
+- 🎨 **Modern Design** - Tailwind CSS v4 with custom animations
+- 📱 **Mobile Optimized** - Progressive enhancement and responsive layouts
+- 🚀 **Performance First** - Optimized assets, lazy loading, and caching
+- 🔄 **CI/CD Pipeline** - Automated deployment via GitHub Actions
+
+## Tech Stack
 
 - **Framework**: Next.js 15.3 with App Router
 - **Language**: TypeScript
@@ -17,7 +28,7 @@ This is a modern Next.js application deployed on Cloudflare Workers with video a
 - **Animation**: Framer Motion
 - **Font**: Space Grotesk (custom font)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 /
@@ -50,7 +61,7 @@ This is a modern Next.js application deployed on Cloudflare Workers with video a
 └── package.json            # Dependencies and scripts
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -83,7 +94,7 @@ Create a `.env.local` file in the root directory:
 
 For local development, keep these commented out to use local video files. In production, they're set automatically by GitHub Actions.
 
-## 🎬 Video Architecture
+## Video Architecture
 
 ### Video Handling
 
@@ -110,7 +121,7 @@ The `VideoPlayer` component automatically detects the environment and serves vid
 - **720p**: 768px+ on mobile/tablet
 - **480p**: Mobile devices under 768px
 
-## 🚀 Deployment
+## Deployment
 
 ### Automatic Deployment
 
@@ -133,7 +144,7 @@ npx wrangler deploy
 npm run preview
 ```
 
-## 📦 Asset Management
+## Asset Management
 
 ### Video Files
 
@@ -147,7 +158,7 @@ The R2 bucket (`justevery-assets`) is configured with:
 - CORS enabled for `justevery.com` domains
 - Automatic upload of changed assets via GitHub Actions
 
-## 🔧 GitHub Actions CI/CD
+## GitHub Actions CI/CD
 
 The deployment workflow (`.github/workflows/deploy-production.yml`) handles:
 
@@ -162,7 +173,7 @@ The deployment workflow (`.github/workflows/deploy-production.yml`) handles:
 - `CLOUDFLARE_API_TOKEN`: Your Cloudflare API token with Workers and R2 permissions
 - `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
 
-## 🎨 Design System
+## Design System
 
 ### Colors
 
@@ -184,7 +195,7 @@ The deployment workflow (`.github/workflows/deploy-production.yml`) handles:
 - Feature sections with animations
 - Call-to-action buttons with gradients
 
-## 📝 Common Tasks
+## Common Tasks
 
 ### Update Video Content
 
@@ -204,7 +215,7 @@ The deployment workflow (`.github/workflows/deploy-production.yml`) handles:
 - Component styles: Use Tailwind classes
 - Theme customization: `tailwind.config.js`
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Videos Not Loading in Development
 
@@ -222,14 +233,14 @@ The deployment workflow (`.github/workflows/deploy-production.yml`) handles:
 - R2 CORS is configured for production domains
 - For local testing with R2, you may need to adjust CORS settings
 
-## 📚 Additional Documentation
+## Additional Documentation
 
 - [CLAUDE.md](./CLAUDE.md) - AI assistant instructions
 - [CLOUDFLARE_DEPLOYMENT.md](./CLOUDFLARE_DEPLOYMENT.md) - Detailed deployment guide
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Cloudflare Workers Documentation](https://developers.cloudflare.com/workers/)
 
-## 🤝 Contributing
+## Contributing
 
 This is the official JustEvery homepage. For contributions:
 
@@ -238,6 +249,6 @@ This is the official JustEvery homepage. For contributions:
 3. Make your changes
 4. Submit a pull request
 
-## 📄 License
+## License
 
 © 2024 JustEvery. All rights reserved.
