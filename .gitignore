@@ -49,6 +49,9 @@ next-env.d.ts
 .wrangler/
 .cloudflare/
 
+# Exclude wrangler.toml from gitignore (we need it for deployment)
+!wrangler.toml
+
 # Temporary files
 *.log
 *.tmp
