@@ -64,7 +64,7 @@ export const FlowingParticles = ({
       '#00e0ff', // Cyan
       '#ff4ecd', // Pink
       '#ffb500', // Amber
-      '#ffffff', // White
+      '#4a9eff', // Blue
     ];
 
     // Store random positions and properties for letters

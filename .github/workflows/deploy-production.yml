@@ -21,13 +21,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 2 # Need previous commit to detect changes
-          lfs: false # Skip LFS - videos already on R2
+          lfs: true # Pull LFS files to ensure we can upload them if needed
       
-      # Skip LFS pull - videos already on R2
-      # - name: Pull LFS files
-      #   run: |
-      #     git lfs pull
-      #     echo "✅ Git LFS files pulled successfully"
+      - name: Pull LFS files
+        run: |
+          git lfs pull
+          echo "✅ Git LFS files pulled successfully"
         
       - name: Check for asset changes
         id: check-changes
@@ -39,42 +38,60 @@ jobs:
           fi
           
       - name: Setup Node.js
-        if: steps.check-changes.outputs.assets_changed == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           
       - name: Install Wrangler
-        if: steps.check-changes.outputs.assets_changed == 'true'
         run: npm install -g wrangler
         
-      - name: Upload changed assets to R2
-        if: steps.check-changes.outputs.assets_changed == 'true'
+      - name: Verify and upload assets to R2
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
-          echo "📤 Uploading changed assets to R2..."
+          echo "🔍 Verifying R2 assets and uploading missing/changed files..."
           
-          # Get list of changed files
-          CHANGED_FILES=$(git diff --name-only HEAD^ HEAD | grep -E '^public/(video|images|docs)/' || true)
+          # First check if key assets exist in R2
+          MISSING_ASSETS=0
+          if ! wrangler r2 object get "justevery-assets/video/promo-854w.mp4" --remote --pipe > /dev/null 2>&1; then
+            echo "❌ Key asset missing from R2: promo-854w.mp4"
+            MISSING_ASSETS=1
+          fi
           
-          if [ -n "$CHANGED_FILES" ]; then
-            echo "$CHANGED_FILES" | while read -r file; do
+          # If assets are missing or changed, upload them
+          if [ "$MISSING_ASSETS" -eq 1 ] || [ "${{ steps.check-changes.outputs.assets_changed }}" == "true" ]; then
+            echo "📤 Uploading assets to R2..."
+            
+            # Upload all video files
+            for file in public/video/*.{mp4,webm,vtt,srt}; do
               if [ -f "$file" ]; then
-                # Determine R2 path based on file location
-                if [[ "$file" == public/video/* ]]; then
-                  r2_path="justevery-assets/video/$(basename "$file")"
-                elif [[ "$file" == public/images/* ]]; then
-                  r2_path="justevery-assets/images/$(basename "$file")"
-                elif [[ "$file" == public/docs/* ]]; then
-                  r2_path="justevery-assets/docs/$(basename "$file")"
-                fi
-                
-                echo "Uploading: $file to $r2_path"
-                wrangler r2 object put "$r2_path" --file="$file" --remote
+                filename=$(basename "$file")
+                echo "Uploading $filename..."
+                wrangler r2 object put "justevery-assets/video/$filename" --file="$file" --remote || echo "Failed to upload $filename"
               fi
             done
+            
+            # Upload images if they exist
+            if [ -d "public/images" ]; then
+              for file in public/images/*; do
+                if [ -f "$file" ]; then
+                  filename=$(basename "$file")
+                  echo "Uploading image: $filename..."
+                  wrangler r2 object put "justevery-assets/images/$filename" --file="$file" --remote
+                fi
+              done
+            fi
+          else
+            echo "✅ Assets verified - no upload needed"
+          fi
+          
+          # Final verification
+          if wrangler r2 object get "justevery-assets/video/promo-854w.mp4" --remote --pipe > /dev/null 2>&1; then
+            echo "✅ R2 assets verified successfully"
+          else
+            echo "❌ R2 asset verification failed - videos may not be available!"
+            exit 1
           fi
 
   # Deploy Worker
@@ -87,13 +104,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          lfs: false # Skip LFS - videos already on R2
-      
-      # Skip LFS pull - videos already on R2
-      # - name: Pull LFS files
-      #   run: |
-      #     git lfs pull
-      #     echo "✅ Git LFS files pulled for worker deployment"
+          lfs: false # Skip LFS for worker deployment - videos served from R2
         
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -124,6 +135,12 @@ jobs:
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm ci
         
+      - name: Update service worker cache version
+        run: |
+          echo "📝 Updating service worker cache version..."
+          TIMESTAMP=$(date +%s)
+          sed -i "s/const CACHE_VERSION = '[^']*'/const CACHE_VERSION = 'v${TIMESTAMP}'/" public/sw.js || echo "Failed to update SW version"
+          
       - name: Build application
         env:
           NEXT_PUBLIC_R2_PUBLIC_URL: https://assets.justevery.com

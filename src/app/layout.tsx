@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import HeaderWrapper from '@/components/HeaderWrapper';
 import Footer from '@/components/Footer';
-import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
+import ServiceWorkerCleanup from '@/components/ServiceWorkerCleanup';
 import './globals.css';
 
 const inter = Inter({
@@ -24,7 +24,6 @@ export const metadata: Metadata = {
   title: 'JustEvery_',
   description:
     'JustEvery_ turns a single prompt into a live product—UI, back-end, hosting and all. Powered by Magi, backed by open-source brains.',
-  manifest: '/manifest.json',
   icons: {
     icon: [
       { url: '/img/favicon.svg', type: 'image/svg+xml' },
@@ -94,7 +93,7 @@ export default async function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} bg-dark-200 flex min-h-screen flex-col overflow-x-hidden font-sans text-white antialiased`}
       >
-        <ServiceWorkerRegistration />
+        <ServiceWorkerCleanup />
         <HeaderWrapper />
         <main className="flex-grow overflow-x-hidden">{children}</main>
         <Footer />
