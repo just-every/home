@@ -156,7 +156,7 @@ export default function FuturePage() {
           className="from-brand-cyan/10 via-brand-pink/10 to-brand-amber/10 border-brand-pink/20 mb-12 rounded-lg border bg-gradient-to-r p-8 text-center"
         >
           <blockquote className="mb-2 text-lg italic">
-            &quot;Abundance is not a dream—just a poorly allocated budget.&quot;
+            &quot;Abundance is not a dream—just a well-allocated budget away.&quot;
           </blockquote>
           <cite className="text-sm text-white/60">
             — 2040 Annual Report, we hope
