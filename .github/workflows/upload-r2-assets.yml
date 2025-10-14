@@ -146,7 +146,7 @@ jobs:
             if [ -f "$file" ]; then
               filename=$(basename "$file")
               echo "Uploading $filename..."
-              wrangler r2 object put "justevery-assets/video/$filename" --file="$file" --remote
+              wrangler r2 object put "justevery-assets/video/$filename" --file="$file" --remote --multipart
             fi
           done
           
@@ -156,7 +156,7 @@ jobs:
               if [ -f "$file" ]; then
                 filename=$(basename "$file")
                 echo "Uploading image: $filename..."
-                wrangler r2 object put "justevery-assets/images/$filename" --file="$file" --remote
+                  wrangler r2 object put "justevery-assets/images/$filename" --file="$file" --remote --multipart
               fi
             done
           fi
