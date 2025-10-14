@@ -7,7 +7,11 @@ export default function Footer() {
     <footer className="w-full py-8 mt-auto bg-dark-100 border-t border-dark-50">
       <div className="container mx-auto px-4 flex justify-center items-center">
         <p className="text-white/60 text-sm flex items-center gap-4">
-          © {currentYear} JustEvery · 
+          © {currentYear} JustEvery ·
+          <span className="uppercase tracking-wide text-xs text-white/40">
+            Keeping launches fresh
+          </span>
+          ·
           <a 
             href="https://github.com/just-every" 
             target="_blank" 
