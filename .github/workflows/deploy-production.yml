@@ -37,15 +37,90 @@ jobs:
             echo "assets_changed=false" >> $GITHUB_OUTPUT
           fi
           
+      - name: Check R2 availability
+        id: r2-check
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import sys
+          import urllib.error
+          import urllib.request
+
+          account = os.environ["CLOUDFLARE_ACCOUNT_ID"]
+          token = os.environ["CLOUDFLARE_API_TOKEN"]
+          url = f"https://api.cloudflare.com/client/v4/accounts/{account}/r2/buckets"
+          req = urllib.request.Request(
+              url,
+              headers={
+                  "Authorization": f"Bearer {token}",
+                  "Content-Type": "application/json",
+              },
+          )
+
+          available = False
+          note = ""
+
+          try:
+              with urllib.request.urlopen(req) as resp:
+                  data = json.load(resp)
+          except urllib.error.HTTPError as exc:
+              body = exc.read()
+              try:
+                  data = json.loads(body)
+              except Exception:
+                  note = body.decode(errors="ignore")
+                  data = None
+              if exc.code == 403 and data:
+                  errors = data.get("errors") or []
+                  if any(err.get("code") == 10042 for err in errors):
+                      note = errors[0].get("message", note)
+                  else:
+                      print(body.decode(), file=sys.stderr)
+                      raise
+              else:
+                  print(body.decode(), file=sys.stderr)
+                  raise
+          else:
+              available = bool(data.get("success"))
+              if not available:
+                  errors = data.get("errors") or []
+                  if errors:
+                      note = errors[0].get("message", "")
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as fh:
+              fh.write(f"available={'true' if available else 'false'}\n")
+              if note:
+                  fh.write(f"note={note}\n")
+
+          if note:
+              print(f"::notice::{note}")
+
+          if not available and not note:
+              print("Unable to verify R2 availability", file=sys.stderr)
+              sys.exit(1)
+          PY
+
+      - name: Skip R2 upload (R2 disabled)
+        if: steps.r2-check.outputs.available != 'true'
+        run: |
+          echo "⚠️ R2 is not enabled for this account yet; skipping asset synchronization."
+
       - name: Setup Node.js
+        if: steps.r2-check.outputs.available == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           
       - name: Install Wrangler
+        if: steps.r2-check.outputs.available == 'true'
         run: npm install -g wrangler
         
       - name: Verify and upload assets to R2
+        if: steps.r2-check.outputs.available == 'true'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
