@@ -146,19 +146,43 @@ jobs:
             if [ -f "$file" ]; then
               filename=$(basename "$file")
               echo "Uploading $filename..."
-              wrangler r2 object put "justevery-assets/video/$filename" --file="$file" --remote --multipart
+              success=0
+              for attempt in 1 2 3; do
+                if wrangler r2 object put "justevery-assets/video/$filename" --file="$file" --remote; then
+                  success=1
+                  break
+                fi
+                echo "Retrying $filename (attempt $attempt)..."
+                sleep $((attempt * 5))
+              done
+              if [ "$success" -ne 1 ]; then
+                echo "Failed to upload $filename after multiple attempts"
+                exit 1
+              fi
             fi
           done
           
           # Upload images if they exist
           if [ -d "public/images" ]; then
-            for file in public/images/*; do
-              if [ -f "$file" ]; then
-                filename=$(basename "$file")
-                echo "Uploading image: $filename..."
-                  wrangler r2 object put "justevery-assets/images/$filename" --file="$file" --remote --multipart
-              fi
-            done
+              for file in public/images/*; do
+                if [ -f "$file" ]; then
+                  filename=$(basename "$file")
+                  echo "Uploading image: $filename..."
+                  success=0
+                  for attempt in 1 2 3; do
+                    if wrangler r2 object put "justevery-assets/images/$filename" --file="$file" --remote; then
+                      success=1
+                      break
+                    fi
+                    echo "Retrying image $filename (attempt $attempt)..."
+                    sleep $((attempt * 5))
+                  done
+                  if [ "$success" -ne 1 ]; then
+                    echo "Failed to upload image $filename after multiple attempts"
+                    exit 1
+                  fi
+                fi
+              done
           fi
           
       - name: Verify uploads
