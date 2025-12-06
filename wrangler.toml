@@ -2,6 +2,12 @@ name = "justevery"
 main = ".open-next/worker.js"
 compatibility_date = "2025-03-25"
 compatibility_flags = ["nodejs_compat"]
+workers_dev = false
+
+routes = [
+  { pattern = "justevery.com/*", zone_name = "justevery.com" },
+  { pattern = "www.justevery.com/*", zone_name = "justevery.com" }
+]
 
 [assets]
 directory = ".open-next/assets"
