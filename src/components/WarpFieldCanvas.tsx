@@ -1,10 +1,18 @@
 'use client';
 
 import { useEffect, useMemo, useRef } from 'react';
+import {
+  DEFAULT_WARP_CONFIG,
+  lerp,
+  mergeWarpConfig,
+  smoothstep,
+} from '@/lib/warp';
+import type { WarpFieldConfig } from '@/lib/warp';
 
 type WarpFieldCanvasProps = {
   className?: string;
   density?: number;
+  config?: Partial<WarpFieldConfig>;
 };
 
 type Particle = {
@@ -19,11 +27,11 @@ type Particle = {
   glyph: string;
 };
 
-const GRADIENT_STOPS = ['#00e0ff', '#7c5cff', '#ff4ecd', '#ff8a00'] as const;
-const GLYPHS = ['▢', '▣', '▪', '▫', '·', '•'] as const;
-
-const SPOOL_DURATION_MS = 900;
-const SPOOL_CLEANUP_MS = 1000;
+function rotate2d(x: number, y: number, angle: number) {
+  const c = Math.cos(angle);
+  const s = Math.sin(angle);
+  return { x: x * c - y * s, y: x * s + y * c };
+}
 
 function pseudoNoise(x: number, y: number, z: number, t: number) {
   const a = Math.sin(x * 1.3 + y * 1.7 + z * 0.35 + t * 0.6);
@@ -39,6 +47,7 @@ function easeOutCubic(p: number) {
 export function WarpFieldCanvas({
   className,
   density = 1,
+  config,
 }: WarpFieldCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const rafRef = useRef<number | null>(null);
@@ -48,13 +57,21 @@ export function WarpFieldCanvas({
   const spoolStartRef = useRef<number | null>(null);
   const reduceMotionRef = useRef(false);
 
+  const effectiveConfig = useMemo(() => {
+    const merged = mergeWarpConfig(DEFAULT_WARP_CONFIG, config);
+    return {
+      ...merged,
+      densityMultiplier: merged.densityMultiplier * density,
+    };
+  }, [config, density]);
+
   const baseCount = useMemo(() => {
     if (typeof window === 'undefined') return 800;
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const count = isMobile ? 600 : 1100;
-    return Math.floor(count * density * dpr);
-  }, [density]);
+    return Math.floor(count * effectiveConfig.densityMultiplier * dpr);
+  }, [effectiveConfig.densityMultiplier]);
 
   useEffect(() => {
     reduceMotionRef.current = window.matchMedia(
@@ -88,6 +105,8 @@ export function WarpFieldCanvas({
     const ro = new ResizeObserver(resize);
     ro.observe(document.documentElement);
 
+    const cfg = effectiveConfig;
+
     const initParticles = () => {
       const list: Particle[] = [];
       for (let i = 0; i < baseCount; i++) {
@@ -99,17 +118,24 @@ export function WarpFieldCanvas({
     const makeParticle = (randomZ = false): Particle => {
       const angle = Math.random() * Math.PI * 2;
       const radius = Math.random() * 1.2;
-      const highlight = Math.random() < 0.06;
+      const highlight = Math.random() < cfg.highlightChance;
       return {
         x: Math.cos(angle) * radius,
         y: Math.sin(angle) * radius,
         z: randomZ ? Math.random() * 0.9 + 0.1 : 1,
-        size: highlight ? 1.8 + Math.random() * 1.8 : 0.8 + Math.random() * 1.4,
-        speed: 0.12 + Math.random() * 0.28,
-        drift: 0.02 + Math.random() * 0.05,
+        size: highlight
+          ? cfg.particleSizeMax * (0.7 + Math.random() * 0.7)
+          : cfg.particleSizeMin +
+            Math.random() * (cfg.particleSizeMax - cfg.particleSizeMin),
+        speed:
+          cfg.particleSpeedMin +
+          Math.random() * (cfg.particleSpeedMax - cfg.particleSpeedMin),
+        drift:
+          cfg.particleDriftMin +
+          Math.random() * (cfg.particleDriftMax - cfg.particleDriftMin),
         highlight,
-        highlightIndex: Math.floor(Math.random() * GRADIENT_STOPS.length),
-        glyph: GLYPHS[Math.floor(Math.random() * GLYPHS.length)],
+        highlightIndex: Math.floor(Math.random() * cfg.paletteStops.length),
+        glyph: cfg.glyphs[Math.floor(Math.random() * cfg.glyphs.length)] ?? '•',
       };
     };
 
@@ -123,14 +149,7 @@ export function WarpFieldCanvas({
     };
     window.addEventListener('pointermove', onPointerMove, { passive: true });
 
-    const loop = (now: number) => {
-      rafRef.current = requestAnimationFrame(loop);
-      if (reduceMotionRef.current) return;
-
-      const last = lastTimeRef.current || now;
-      const dt = Math.min((now - last) / 1000, 0.033);
-      lastTimeRef.current = now;
-
+    const drawFrame = (now: number, dt: number) => {
       const w = window.innerWidth;
       const h = window.innerHeight;
       const cx = w / 2;
@@ -138,25 +157,32 @@ export function WarpFieldCanvas({
 
       const spoolStart = spoolStartRef.current;
       const spoolElapsed = spoolStart ? now - spoolStart : 9999;
-      const spoolProgress = Math.min(spoolElapsed / SPOOL_DURATION_MS, 1);
+      const spoolProgress = Math.min(spoolElapsed / cfg.spoolDurationMs, 1);
       const spoolFactor = spoolStart ? 1 - easeOutCubic(spoolProgress) : 0;
-      if (spoolStart && spoolElapsed > SPOOL_CLEANUP_MS)
+      if (spoolStart && spoolElapsed > cfg.spoolDurationMs + 140)
         spoolStartRef.current = null;
 
-      const baseSpeed = 0.5;
-      const speedBoost = baseSpeed * (1 + spoolFactor * 3.0);
+      const time = now / 1000;
+      const pulse =
+        cfg.pulseRateHz > 0 && cfg.pulseDepth > 0
+          ? 1 + cfg.pulseDepth * Math.sin(time * Math.PI * 2 * cfg.pulseRateHz)
+          : 1;
+
+      const speedBoost =
+        cfg.baseSpeed * (1 + spoolFactor * cfg.spoolBoost) * pulse;
+      const speedSense = Math.min(1, Math.max(0, cfg.baseSpeed / 3.2));
+      const streakFactor = Math.min(1, spoolFactor + speedSense * 0.25);
 
       const mouse = mouseRef.current;
       mouse.x += (mouse.tx - mouse.x) * 0.06;
       mouse.y += (mouse.ty - mouse.y) * 0.06;
 
-      const fade = 0.18 - spoolFactor * 0.12;
+      const fade = lerp(cfg.trailFade, cfg.trailFadeSpool, spoolFactor);
       ctx.globalCompositeOperation = 'source-over';
       ctx.fillStyle = `rgba(0,0,0,${fade.toFixed(3)})`;
       ctx.fillRect(0, 0, w, h);
       ctx.globalCompositeOperation = 'lighter';
 
-      const time = now / 1000;
       const particles = particlesRef.current;
 
       for (let i = 0; i < particles.length; i++) {
@@ -173,18 +199,62 @@ export function WarpFieldCanvas({
         const angle = n * Math.PI * 2;
         const drift = p.drift * (0.6 + (1 - p.z));
 
-        p.x += Math.cos(angle) * drift * dt + mouse.x * 0.002 * (1 - p.z);
-        p.y += Math.sin(angle) * drift * dt + mouse.y * 0.002 * (1 - p.z);
+        p.x +=
+          Math.cos(angle) * drift * dt +
+          mouse.x * cfg.mouseStrength * (1 - p.z);
+        p.y +=
+          Math.sin(angle) * drift * dt +
+          mouse.y * cfg.mouseStrength * (1 - p.z);
+
+        if (cfg.swirlStrength !== 0) {
+          const swirlAngle = cfg.swirlStrength * dt * (0.2 + (1 - p.z));
+          const rotated = rotate2d(p.x, p.y, swirlAngle);
+          p.x = rotated.x;
+          p.y = rotated.y;
+        }
 
         p.x *= 1 - dt * 0.015;
         p.y *= 1 - dt * 0.015;
 
         const perspective = 1 / (p.z * 0.9 + 0.08);
-        const tunnelScale = 0.38 + spoolFactor * 0.18;
-        const sx = cx + p.x * w * tunnelScale * perspective;
-        const sy = cy + p.y * h * tunnelScale * perspective;
+        const tunnelScale =
+          cfg.tunnelScale + spoolFactor * cfg.tunnelScaleSpoolBoost;
+        let sx = cx + p.x * w * tunnelScale * perspective;
+        let sy = cy + p.y * h * tunnelScale * perspective;
         const size =
-          p.size * perspective * (0.45 + (1 - p.z)) * (1 + spoolFactor * 0.35);
+          p.size *
+          perspective *
+          (0.45 + (1 - p.z)) *
+          (1 + spoolFactor * cfg.sizeSpoolBoost);
+
+        let dx = sx - cx;
+        let dy = sy - cy;
+
+        if (cfg.lensStrength !== 0) {
+          const rNorm = Math.hypot(dx, dy) / Math.max(1, Math.min(w, h));
+          const k = 1 + cfg.lensStrength * rNorm * rNorm;
+          dx *= k;
+          dy *= k;
+        }
+
+        if (cfg.cameraRoll !== 0) {
+          const roll =
+            cfg.cameraRoll *
+            (0.35 + streakFactor * 0.8) *
+            Math.sin(time * cfg.cameraRollRate + 1.7);
+          const rotated = rotate2d(dx, dy, roll);
+          dx = rotated.x;
+          dy = rotated.y;
+        }
+
+        if (cfg.shake > 0) {
+          const shakeAmp = cfg.shake * (0.12 + streakFactor * 0.88);
+          dx += Math.sin(time * 32.1) * shakeAmp;
+          dy += Math.sin(time * 27.7 + 1.3) * shakeAmp;
+        }
+
+        sx = cx + dx;
+        sy = cy + dy;
 
         if (sx < -50 || sx > w + 50 || sy < -50 || sy > h + 50) continue;
 
@@ -194,34 +264,67 @@ export function WarpFieldCanvas({
           (0.55 + (1 - p.z)) *
           (1 + spoolFactor * (p.highlight ? 1.2 : 0.4));
 
-        if (p.highlight) {
-          const color = GRADIENT_STOPS[p.highlightIndex];
-          ctx.fillStyle = color + '';
-          ctx.globalAlpha = Math.min(alpha, 1);
+        const radiusPx = cfg.centerMaskRadius * Math.min(w, h);
+        const softnessPx = Math.max(1, cfg.centerMaskSoftness * Math.min(w, h));
+        const distPx = Math.hypot(dx, dy);
+        const centerT = smoothstep(radiusPx, radiusPx + softnessPx, distPx);
+        const centerMask = 1 - cfg.centerMaskStrength * (1 - centerT);
+        const finalAlpha = alpha * centerMask;
 
-          if (spoolFactor > 0.02) {
-            const dx = sx - cx;
-            const dy = sy - cy;
-            const dist = Math.hypot(dx, dy) || 1;
-            const nx = dx / dist;
-            const ny = dy / dist;
-            const lineLen = (12 + (1 - p.z) * 24) * spoolFactor * perspective;
-            ctx.strokeStyle = color;
-            ctx.lineWidth = Math.max(0.75, size * 0.12);
-            ctx.beginPath();
-            ctx.moveTo(sx - nx * lineLen, sy - ny * lineLen);
-            ctx.lineTo(sx, sy);
-            ctx.stroke();
+        if (p.highlight) {
+          const color = cfg.paletteStops[p.highlightIndex] ?? '#00e0ff';
+          ctx.fillStyle = color + '';
+          ctx.globalAlpha = Math.min(finalAlpha, 1);
+
+          if (cfg.streakMode !== 'none' && streakFactor > 0.02) {
+            if (cfg.streakMode === 'all' || p.highlight) {
+              const dist = Math.hypot(dx, dy) || 1;
+              const nx = dx / dist;
+              const ny = dy / dist;
+              const lineLen =
+                cfg.streakLength *
+                (0.45 + (1 - p.z) * 0.75) *
+                perspective *
+                streakFactor;
+              ctx.strokeStyle = color;
+              ctx.lineWidth = Math.max(0.75, size * 0.12);
+              ctx.beginPath();
+              ctx.moveTo(sx - nx * lineLen, sy - ny * lineLen);
+              ctx.lineTo(sx, sy);
+              ctx.stroke();
+            }
           }
 
           ctx.shadowColor = color;
-          ctx.shadowBlur = 10 + spoolFactor * 26;
+          ctx.shadowBlur = cfg.glowBase + streakFactor * cfg.glowSpoolBoost;
           ctx.font = `${Math.max(10, size * 9)}px var(--font-jetbrains-mono, monospace)`;
           ctx.fillText(p.glyph, sx, sy);
+
+          if (cfg.chromaOffset > 0.05) {
+            const chroma =
+              cfg.chromaOffset * (0.6 + streakFactor * 0.9) * (0.7 + (1 - p.z));
+            ctx.globalAlpha = Math.min(finalAlpha * 0.35, 0.6);
+            ctx.shadowBlur = cfg.glowBase * 0.8;
+            ctx.fillStyle = '#00e0ff';
+            ctx.fillText(p.glyph, sx - chroma, sy);
+            ctx.fillStyle = '#ff4ecd';
+            ctx.fillText(p.glyph, sx + chroma, sy);
+          }
+
           ctx.shadowBlur = 0;
         } else {
           ctx.fillStyle = 'rgba(255,255,255,1)';
-          ctx.globalAlpha = alpha;
+          ctx.globalAlpha = finalAlpha;
+
+          if (cfg.streakMode === 'all' && streakFactor > 0.18) {
+            const dist = Math.hypot(dx, dy) || 1;
+            const nx = dx / dist;
+            const ny = dy / dist;
+            const lineLen =
+              cfg.streakLength * 0.42 * perspective * (streakFactor - 0.1);
+            ctx.fillRect(sx - nx * lineLen, sy - ny * lineLen, size, size);
+          }
+
           ctx.fillRect(sx, sy, size, size);
         }
       }
@@ -230,6 +333,29 @@ export function WarpFieldCanvas({
       ctx.globalCompositeOperation = 'source-over';
     };
 
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+    reduceMotionRef.current = prefersReducedMotion;
+
+    const loop = (now: number) => {
+      rafRef.current = requestAnimationFrame(loop);
+      if (reduceMotionRef.current) return;
+
+      const last = lastTimeRef.current || now;
+      const dt = Math.min((now - last) / 1000, 0.033);
+      lastTimeRef.current = now;
+      drawFrame(now, dt);
+    };
+
+    if (prefersReducedMotion) {
+      drawFrame(performance.now(), 0);
+      return () => {
+        ro.disconnect();
+        window.removeEventListener('pointermove', onPointerMove);
+      };
+    }
+
     rafRef.current = requestAnimationFrame(loop);
 
     return () => {
@@ -237,7 +363,7 @@ export function WarpFieldCanvas({
       ro.disconnect();
       window.removeEventListener('pointermove', onPointerMove);
     };
-  }, [baseCount]);
+  }, [baseCount, effectiveConfig]);
 
   return (
     <canvas

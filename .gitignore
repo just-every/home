@@ -64,6 +64,9 @@ next-env.d.ts
 *.swp
 *.swo
 
+# Local agent state
+.code/
+
 # OS files
 Thumbs.db
 
