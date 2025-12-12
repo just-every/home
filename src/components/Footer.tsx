@@ -1,36 +1,29 @@
-import { Github as GitHubIcon } from 'lucide-react';
-
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full py-8 mt-auto bg-dark-100 border-t border-dark-50">
-      <div className="container mx-auto px-4 flex justify-center items-center">
-        <p className="text-white/60 text-sm flex items-center gap-4">
-          © {currentYear} JustEvery ·
-          <span className="uppercase tracking-wide text-xs text-white/40">
-            Keeping launches fresh
-          </span>
-          ·
-          <a 
-            href="https://github.com/just-every" 
-            target="_blank" 
+    <footer className="mt-auto w-full border-t border-white/5 bg-black/40 py-8">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 text-center text-sm text-white/60 sm:flex-row sm:text-left">
+        <p>© {currentYear} JustEvery · Open source. Built in public.</p>
+        <div className="flex items-center gap-3">
+          <a
+            href="https://github.com/just-every"
+            target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white transition-colors duration-200 flex items-center gap-1"
+            className="transition-colors hover:text-white"
           >
-            <GitHubIcon className="w-4 h-4" />
             GitHub
           </a>
-          · 
-          <a 
-            href="https://discord.gg/just-every" 
-            target="_blank" 
+          <span className="text-white/30">·</span>
+          <a
+            href="https://www.reddit.com/r/justevery"
+            target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white transition-colors duration-200"
+            className="transition-colors hover:text-white"
           >
-            Discord
+            Reddit
           </a>
-        </p>
+        </div>
       </div>
     </footer>
   );

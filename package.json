@@ -11,22 +11,18 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
     "type-check": "tsc --noEmit",
-    "build:cloudflare": "NODE_ENV=production opennextjs-cloudflare build && find .open-next/assets -type f \\( -name '*.mp4' -o -name '*.webm' -o -name '*.mov' -o -name '*.avi' \\) -delete 2>/dev/null || true",
-    "preview": "opennextjs-cloudflare build && find .open-next/assets -type f \\( -name '*.mp4' -o -name '*.webm' \\) -delete && opennextjs-cloudflare preview",
+    "build:cloudflare": "NODE_ENV=production opennextjs-cloudflare build",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "prepare": "husky"
   },
   "dependencies": {
-    "@neplex/vectorizer": "^0.0.5",
     "@opennextjs/cloudflare": "^1.1.0",
     "autoprefixer": "^10.4.21",
-    "framer-motion": "^12.15.0",
     "lucide-react": "^0.511.0",
     "next": "15.3.6",
-    "potrace": "^2.1.8",
     "react": "^19.2.1",
-    "react-dom": "^19.2.1",
-    "sharp": "^0.34.2"
+    "react-dom": "^19.2.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",

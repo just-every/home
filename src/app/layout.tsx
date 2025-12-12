@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
-import HeaderWrapper from '@/components/HeaderWrapper';
 import Footer from '@/components/Footer';
-import ServiceWorkerCleanup from '@/components/ServiceWorkerCleanup';
+import Header from '@/components/Header';
 import './globals.css';
 
 const inter = Inter({
@@ -21,9 +20,13 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'JustEvery_',
+  title: {
+    default: 'JustEvery',
+    template: '%s · JustEvery',
+  },
   description:
-    'JustEvery_ turns a single prompt into a live product—UI, back-end, hosting and all. Powered by Magi, backed by open-source brains.',
+    'Push frontier AI further. Ship faster. JustEvery builds professional tools that turn powerful models into reliable workflows.',
+  metadataBase: new URL('https://justevery.com'),
   icons: {
     icon: [
       { url: '/img/favicon.svg', type: 'image/svg+xml' },
@@ -35,17 +38,17 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'JustEvery_',
+    title: 'JustEvery',
     description:
-      'JustEvery_ turns a single prompt into a live product—UI, back-end, hosting and all. Powered by Magi, backed by open-source brains.',
+      'Push frontier AI further. Ship faster. Professional tools for reliable AI workflows.',
     url: 'https://justevery.com',
-    siteName: 'JustEvery_',
+    siteName: 'JustEvery',
     images: [
       {
         url: 'https://justevery.com/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'JustEvery_',
+        alt: 'JustEvery',
       },
     ],
     locale: 'en_US',
@@ -53,9 +56,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'JustEvery_',
+    title: 'JustEvery',
     description:
-      'JustEvery_ turns a single prompt into a live product—UI, back-end, hosting and all.',
+      'Push frontier AI further. Ship faster. Professional tools for reliable AI workflows.',
     images: ['https://justevery.com/twitter-image.jpg'],
   },
 };
@@ -68,18 +71,10 @@ export default async function RootLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'JustEvery_',
+    name: 'JustEvery',
     description:
-      'JustEvery_ turns a single prompt into a live product—UI, back-end, hosting and all.',
+      'Push frontier AI further. Ship faster. JustEvery builds professional tools that turn powerful models into reliable workflows.',
     url: 'https://justevery.com',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: 'https://justevery.com/search?q={search_term_string}',
-      },
-      'query-input': 'required name=search_term_string',
-    },
   };
 
   return (
@@ -91,10 +86,9 @@ export default async function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} bg-dark-200 flex min-h-screen flex-col overflow-x-hidden font-sans text-white antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} flex min-h-screen flex-col overflow-x-hidden bg-black font-sans text-white antialiased`}
       >
-        <ServiceWorkerCleanup />
-        <HeaderWrapper />
+        <Header />
         <main className="flex-grow overflow-x-hidden">{children}</main>
         <Footer />
       </body>

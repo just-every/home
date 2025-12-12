@@ -1,147 +1,47 @@
-'use client';
-
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { Menu, X, Github as GitHubIcon } from 'lucide-react';
 
-interface HeaderProps {
-  isHomepage?: boolean;
-}
+const navItems = [
+  { label: 'Every Code', href: 'https://github.com/just-every/code' },
+  { label: 'GitHub', href: 'https://github.com/just-every' },
+  {
+    label: 'Docs',
+    href: 'https://github.com/just-every/code/blob/main/docs/index.md',
+  },
+  { label: 'Reddit', href: 'https://www.reddit.com/r/justevery' },
+] as const;
 
-export default function Header({ isHomepage = false }: HeaderProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
+export default function Header() {
   return (
-    <header 
-      className={`fixed top-0 z-50 w-full transition-all duration-300`}
-    >
-      <div className={`w-full transition-all duration-300 ${
-        isHomepage && !isScrolled 
-          ? 'bg-transparent' 
-          : isScrolled 
-            ? 'bg-dark-200/80 backdrop-blur-lg' 
-            : isHomepage 
-              ? 'bg-transparent'
-              : 'bg-dark-200/80 backdrop-blur-lg'
-      }`}>
-        <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link 
-            href="/" 
-            className="flex items-center transition-transform duration-200 hover:scale-105"
+    <header className="fixed inset-x-0 top-0 z-50">
+      <div className="border-b border-white/5 bg-black/30 backdrop-blur-md">
+        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
+          <Link
+            href="/"
+            className="font-display text-sm font-semibold tracking-wide text-white"
+            aria-label="JustEvery home"
           >
-            <Image 
-              src="/img/logo.svg" 
-              alt="JustEvery_" 
-              width={105} 
-              height={28}
-              className="h-7 w-auto"
-              priority
-            />
+            <span className="from-brand-cyan via-brand-violet to-brand-pink bg-gradient-to-r bg-clip-text text-transparent">
+              JustEvery
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className={`hidden lg:flex items-center space-x-8 transition-opacity duration-300 ${
-            isHomepage && !isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'
-          }`}>
-            <Link href="/stack" className="text-white/80 hover:text-white transition-colors duration-200">
-              Stack
-            </Link>
-            <Link href="/showcase" className="text-white/80 hover:text-white transition-colors duration-200">
-              Showcase
-            </Link>
-            <Link href="/docs" className="text-white/80 hover:text-white transition-colors duration-200">
-              Docs
-            </Link>
-           
-          </nav>
-
-          {/* Right side - CTA and Mobile Menu */}
-          <div className={`flex items-center gap-4 transition-opacity duration-300 ${
-            isHomepage && !isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'
-          }`}>
-
-             <a 
-              href="https://github.com/just-every"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative group inline-flex items-center px-6 py-2.5 text-sm font-medium text-white rounded-full overflow-hidden transition-all duration-300 hover:scale-105"
-            >
-              <GitHubIcon className="w-4 h-4 mr-2" />
-              GitHub
-            </a>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2"
-              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-              onClick={toggleMobileMenu}
-            >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6 text-white" />
-              ) : (
-                <Menu className="w-6 h-6 text-white" />
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <nav className="lg:hidden bg-dark-100 animate-fade-in">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex flex-col space-y-4">
-              <Link
-                href="/stack"
-                className="block py-2 text-white/80 hover:text-white transition-colors duration-200"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Stack
-              </Link>
-              <Link
-                href="/showcase"
-                className="block py-2 text-white/80 hover:text-white transition-colors duration-200"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Showcase
-              </Link>
-              <Link
-                href="/docs"
-                className="block py-2 text-white/80 hover:text-white transition-colors duration-200"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Docs
-              </Link>
-              <a 
-                href="https://github.com/just-every"
+          <nav
+            aria-label="Primary"
+            className="flex max-w-[70vw] items-center gap-4 overflow-x-auto text-xs text-white/70 sm:gap-6 sm:text-sm"
+          >
+            {navItems.map(item => (
+              <a
+                key={item.label}
+                href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block py-2 text-white/80 hover:text-white transition-colors duration-200 flex items-center gap-2"
-                onClick={() => setMobileMenuOpen(false)}
+                className="whitespace-nowrap transition-colors hover:text-white"
               >
-                <GitHubIcon className="w-4 h-4" />
-                GitHub
+                {item.label}
               </a>
-            </div>
-          </div>
-        </nav>
-      )}
+            ))}
+          </nav>
+        </div>
       </div>
     </header>
   );

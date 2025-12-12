@@ -8,13 +8,15 @@ const config = {
         brand: {
           pink: '#ff4ecd',
           cyan: '#00e0ff',
+          violet: '#7c5cff',
+          orange: '#ff8a00',
           amber: '#ffb500',
         },
         dark: {
           50: '#1a1a1a',
           100: '#0d0d0d',
           200: '#050505',
-        }
+        },
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

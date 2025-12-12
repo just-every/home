@@ -2,34 +2,20 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-3xl mx-auto text-center">
-        <h1 className="text-6xl font-bold mb-4">404</h1>
-        <h2 className="text-3xl font-semibold mb-6">Page Not Found</h2>
-
-        <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                    The page you are looking for doesn&apos;t exist or has been moved.
+    <div className="relative flex min-h-[70vh] items-center justify-center px-4 pt-24">
+      <div className="mx-auto max-w-xl text-center">
+        <p className="font-mono text-sm text-white/60">404</p>
+        <h1 className="font-display mt-2 text-4xl font-semibold tracking-tight sm:text-5xl">
+          Page not found
+        </h1>
+        <p className="mt-3 text-white/70">
+          The page you are looking for doesn&apos;t exist or has been moved.
         </p>
-
         <Link
           href="/"
-          className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+          className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
         >
-          <svg
-            className="w-5 h-5 mr-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            />
-          </svg>
-          Back to Homepage
+          Back home
         </Link>
       </div>
     </div>
