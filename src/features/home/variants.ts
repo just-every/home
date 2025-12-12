@@ -1,5 +1,6 @@
 import 'server-only';
 
+import type { BackgroundPreset } from '@/lib/backgrounds';
 import type { WarpFieldConfig } from '@/lib/warp';
 
 export type HeroStylePreset = {
@@ -25,8 +26,76 @@ export type HomeVariant = {
     description: string;
     robotsIndex: boolean;
   };
-  warp: Partial<WarpFieldConfig>;
+  background: BackgroundPreset;
   hero: HeroStylePreset;
+};
+
+const bg = {
+  minimal: (
+    accentHue: number,
+    accentStrength: number,
+    vignette = 0.9
+  ): BackgroundPreset => ({
+    kind: 'minimal',
+    config: { accentHue, accentStrength, vignette },
+  }),
+  starfield: (
+    starCount: number,
+    speed: number,
+    colorMode: 'mono' | 'cool' | 'prismatic' = 'cool'
+  ): BackgroundPreset => ({
+    kind: 'starfield',
+    config: { starCount, speed, depth: 1.0, twinkle: 0.65, colorMode },
+  }),
+  ascii: (
+    glyphs: string,
+    density: number,
+    speed: number
+  ): BackgroundPreset => ({
+    kind: 'asciiTunnel',
+    config: { glyphs, density, speed, swirl: 1.2, chroma: 0.55 },
+  }),
+  lanes: (
+    lanes: number,
+    speed: number,
+    colorMode: 'cyan' | 'violet' | 'prismatic'
+  ): BackgroundPreset => ({
+    kind: 'vectorLanes',
+    config: { lanes, speed, glow: 0.85, colorMode },
+  }),
+  warp: (warp: Partial<WarpFieldConfig>): BackgroundPreset => ({
+    kind: 'warp',
+    config: warp,
+  }),
+  warpGates: (
+    warp: Partial<WarpFieldConfig>,
+    rateHz: number
+  ): BackgroundPreset => ({
+    kind: 'warpGates',
+    config: { warp, gates: { rateHz, thickness: 1.6, glow: 0.9 } },
+  }),
+  wireframe: (speed: number, color: string): BackgroundPreset => ({
+    kind: 'wireframe',
+    config: { gridSize: 10, speed, roll: 0.55, color },
+  }),
+  nebula: (
+    mode: 'blue' | 'violet' | 'sunset',
+    intensity = 0.8
+  ): BackgroundPreset => ({
+    kind: 'nebula',
+    config: { colorMode: mode, intensity, speed: 0.22, scale: 1.0 },
+  }),
+  aiImage: (variantId: string, opacity = 0.55): BackgroundPreset => ({
+    kind: 'aiImage',
+    config: { variantId, opacity, blur: 8 },
+  }),
+  raymarch: (
+    palette: 'cyan' | 'prismatic' | 'infra',
+    intensity = 1.0
+  ): BackgroundPreset => ({
+    kind: 'raymarch',
+    config: { palette, intensity, speed: 1.0 },
+  }),
 };
 
 const baseHero: Omit<HeroStylePreset, 'accents'> = {
@@ -66,17 +135,7 @@ export const ROOT_VARIANT: HomeVariant = {
       'Push frontier AI further. Ship faster. Professional tools that turn powerful models into reliable workflows.',
     robotsIndex: true,
   },
-  warp: {
-    densityMultiplier: 0.55,
-    baseSpeed: 0.26,
-    trailFade: 0.3,
-    trailFadeSpool: 0.18,
-    highlightChance: 0.03,
-    streakMode: 'highlights',
-    streakLength: 12,
-    glowBase: 6,
-    glowSpoolBoost: 12,
-  },
+  background: bg.minimal(205, 0.3, 0.92),
   hero: {
     ...baseHero,
     scrimClassName: 'pointer-events-none absolute inset-0 bg-black/78',
@@ -86,24 +145,13 @@ export const ROOT_VARIANT: HomeVariant = {
 export const HOME_VARIANTS: Record<string, HomeVariant> = {
   '1': {
     id: '1',
-    name: 'Clean Warp',
+    name: 'Quiet Stars',
     metadata: {
-      title: 'JustEvery /1 — Clean Warp',
-      description: 'A calm, clean warp field. Minimal. Precise. Future-ready.',
+      title: 'JustEvery /1 — Quiet Stars',
+      description: 'Sparse starfield. Calm. Minimal. Future-ready.',
       robotsIndex: false,
     },
-    warp: {
-      densityMultiplier: 0.7,
-      baseSpeed: 0.34,
-      trailFade: 0.26,
-      trailFadeSpool: 0.14,
-      highlightChance: 0.04,
-      streakMode: 'highlights',
-      streakLength: 16,
-      centerMaskStrength: 0.3,
-      centerMaskRadius: 0.22,
-      centerMaskSoftness: 0.2,
-    },
+    background: bg.starfield(700, 0.24, 'mono'),
     hero: {
       ...baseHero,
       scrimClassName: 'pointer-events-none absolute inset-0 bg-black/70',
@@ -119,17 +167,7 @@ export const HOME_VARIANTS: Record<string, HomeVariant> = {
       description: 'Structured neon lanes. Smooth acceleration.',
       robotsIndex: false,
     },
-    warp: {
-      densityMultiplier: 0.95,
-      baseSpeed: 0.55,
-      trailFade: 0.18,
-      trailFadeSpool: 0.08,
-      tunnelScale: 0.4,
-      paletteStops: ['#00e0ff', '#00ffd1', '#7c5cff', '#ff4ecd'],
-      highlightChance: 0.065,
-      chromaOffset: 0.6,
-      centerMaskStrength: 0.3,
-    },
+    background: bg.lanes(18, 0.6, 'cyan'),
     hero: {
       ...baseHero,
       accents: subtleAccents,
@@ -137,24 +175,13 @@ export const HOME_VARIANTS: Record<string, HomeVariant> = {
   },
   '3': {
     id: '3',
-    name: 'Hyperdrive Streaks',
+    name: 'ASCII Hyperlane',
     metadata: {
-      title: 'JustEvery /3 — Hyperdrive Streaks',
-      description: 'Faster baseline with crisp streaking.',
+      title: 'JustEvery /3 — ASCII Hyperlane',
+      description: 'Monospace hyperspace. Huge motion. Low visual noise.',
       robotsIndex: false,
     },
-    warp: {
-      densityMultiplier: 1.05,
-      baseSpeed: 0.8,
-      spoolBoost: 4.2,
-      trailFade: 0.14,
-      trailFadeSpool: 0.06,
-      streakMode: 'highlights',
-      streakLength: 46,
-      glowBase: 12,
-      glowSpoolBoost: 28,
-      centerMaskStrength: 0.35,
-    },
+    background: bg.ascii('░▒▓█<>/\\[]{}()', 1.1, 0.55),
     hero: {
       ...baseHero,
       containerClassName:
@@ -171,24 +198,13 @@ export const HOME_VARIANTS: Record<string, HomeVariant> = {
   },
   '4': {
     id: '4',
-    name: 'Prismatic Shift',
+    name: 'Vector Lanes',
     metadata: {
-      title: 'JustEvery /4 — Prismatic Shift',
-      description: 'Prismatic color split and bloom.',
+      title: 'JustEvery /4 — Vector Lanes',
+      description: 'Neon lanes and gate-lines. Clean acceleration cues.',
       robotsIndex: false,
     },
-    warp: {
-      densityMultiplier: 1.12,
-      baseSpeed: 1.0,
-      spoolBoost: 4.8,
-      trailFade: 0.12,
-      trailFadeSpool: 0.05,
-      chromaOffset: 1.2,
-      glowBase: 14,
-      glowSpoolBoost: 34,
-      streakLength: 64,
-      centerMaskStrength: 0.4,
-    },
+    background: bg.lanes(14, 0.95, 'prismatic'),
     hero: {
       ...baseHero,
       scrimClassName: 'pointer-events-none absolute inset-0 bg-black/54',
@@ -212,7 +228,7 @@ export const HOME_VARIANTS: Record<string, HomeVariant> = {
       description: 'Helical motion. Strong forward pull. Controlled chaos.',
       robotsIndex: false,
     },
-    warp: {
+    background: bg.warp({
       densityMultiplier: 1.25,
       baseSpeed: 1.35,
       spoolBoost: 5.8,
@@ -229,7 +245,7 @@ export const HOME_VARIANTS: Record<string, HomeVariant> = {
       glowSpoolBoost: 38,
       centerMaskStrength: 0.62,
       centerMaskRadius: 0.26,
-    },
+    }),
     hero: {
       ...baseHero,
       scrimClassName: 'pointer-events-none absolute inset-0 bg-black/50',
@@ -255,18 +271,21 @@ export const HOME_VARIANTS: Record<string, HomeVariant> = {
       description: 'Rhythmic acceleration gates and dense streaking.',
       robotsIndex: false,
     },
-    warp: {
-      densityMultiplier: 1.35,
-      baseSpeed: 1.5,
-      spoolBoost: 6.5,
-      trailFade: 0.09,
-      trailFadeSpool: 0.04,
-      pulseRateHz: 0.85,
-      pulseDepth: 0.45,
-      chromaOffset: 1.8,
-      streakLength: 92,
-      centerMaskStrength: 0.6,
-    },
+    background: bg.warpGates(
+      {
+        densityMultiplier: 1.35,
+        baseSpeed: 1.5,
+        spoolBoost: 6.5,
+        trailFade: 0.09,
+        trailFadeSpool: 0.04,
+        pulseRateHz: 0.85,
+        pulseDepth: 0.45,
+        chromaOffset: 1.8,
+        streakLength: 92,
+        centerMaskStrength: 0.6,
+      },
+      0.9
+    ),
     hero: {
       ...baseHero,
       pClassName:
@@ -289,7 +308,7 @@ export const HOME_VARIANTS: Record<string, HomeVariant> = {
       description: 'Gravitational lensing. Controlled center-safe warp.',
       robotsIndex: false,
     },
-    warp: {
+    background: bg.warp({
       densityMultiplier: 1.45,
       baseSpeed: 1.8,
       spoolBoost: 7.6,
@@ -301,7 +320,7 @@ export const HOME_VARIANTS: Record<string, HomeVariant> = {
       centerMaskStrength: 0.72,
       centerMaskRadius: 0.3,
       centerMaskSoftness: 0.2,
-    },
+    }),
     hero: {
       ...baseHero,
       scrimClassName: 'pointer-events-none absolute inset-0 bg-black/46',
@@ -323,19 +342,7 @@ export const HOME_VARIANTS: Record<string, HomeVariant> = {
       description: 'Crystalline shards and glitch bursts.',
       robotsIndex: false,
     },
-    warp: {
-      densityMultiplier: 1.6,
-      baseSpeed: 2.1,
-      spoolBoost: 8.4,
-      trailFade: 0.075,
-      trailFadeSpool: 0.03,
-      chromaOffset: 2.2,
-      lensStrength: 0.6,
-      streakMode: 'all',
-      streakLength: 112,
-      shake: 2.4,
-      centerMaskStrength: 0.75,
-    },
+    background: bg.wireframe(0.78, '#7c5cff'),
     hero: {
       ...baseHero,
       scrimClassName: 'pointer-events-none absolute inset-0 bg-black/48',
@@ -361,20 +368,7 @@ export const HOME_VARIANTS: Record<string, HomeVariant> = {
       description: 'Dense plasma streaks with heavy optics.',
       robotsIndex: false,
     },
-    warp: {
-      densityMultiplier: 1.85,
-      baseSpeed: 2.6,
-      spoolBoost: 9.6,
-      trailFade: 0.065,
-      trailFadeSpool: 0.026,
-      chromaOffset: 2.6,
-      lensStrength: 0.8,
-      streakMode: 'all',
-      streakLength: 132,
-      swirlStrength: 1.6,
-      shake: 3.0,
-      centerMaskStrength: 0.8,
-    },
+    background: bg.nebula('sunset', 0.92),
     hero: {
       ...baseHero,
       h1ClassName:
@@ -399,33 +393,7 @@ export const HOME_VARIANTS: Record<string, HomeVariant> = {
         'Maximum future-warp: roll, lensing, streaks — still readable at the center.',
       robotsIndex: false,
     },
-    warp: {
-      densityMultiplier: 1.25,
-      baseSpeed: 3.4,
-      spoolBoost: 11.0,
-      spoolDurationMs: 1100,
-      trailFade: 0.06,
-      trailFadeSpool: 0.025,
-      tunnelScale: 0.44,
-      tunnelScaleSpoolBoost: 0.3,
-      sizeSpoolBoost: 0.6,
-      chromaOffset: 3.1,
-      lensStrength: 1.05,
-      swirlStrength: 2.2,
-      pulseRateHz: 1.1,
-      pulseDepth: 0.55,
-      cameraRoll: 0.12,
-      cameraRollRate: 1.25,
-      shake: 1.6,
-      streakMode: 'all',
-      streakLength: 150,
-      glowBase: 18,
-      glowSpoolBoost: 46,
-      highlightChance: 0.13,
-      centerMaskStrength: 0.86,
-      centerMaskRadius: 0.34,
-      centerMaskSoftness: 0.22,
-    },
+    background: bg.raymarch('infra', 1.0),
     hero: {
       ...baseHero,
       scrimClassName: 'pointer-events-none absolute inset-0 bg-black/36',

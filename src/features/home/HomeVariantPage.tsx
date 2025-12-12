@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { WarpFieldCanvas } from '@/components/WarpFieldCanvas';
-
 import { HomeHero } from './HomeHero';
+import { VariantBackground } from './VariantBackground';
 import { getHomeVariant } from './variants';
 
 export function getHomeVariantMetadata(variantId: string): Metadata {
@@ -28,7 +27,7 @@ export function HomeVariantPage({ variantId }: { variantId: string }) {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      <WarpFieldCanvas config={config.warp} />
+      <VariantBackground preset={config.background} />
       <HomeHero variant={config} />
     </div>
   );
