@@ -22,6 +22,9 @@ type Particle = {
 const GRADIENT_STOPS = ['#00e0ff', '#7c5cff', '#ff4ecd', '#ff8a00'] as const;
 const GLYPHS = ['▢', '▣', '▪', '▫', '·', '•'] as const;
 
+const SPOOL_DURATION_MS = 900;
+const SPOOL_CLEANUP_MS = 1000;
+
 function pseudoNoise(x: number, y: number, z: number, t: number) {
   const a = Math.sin(x * 1.3 + y * 1.7 + z * 0.35 + t * 0.6);
   const b = Math.sin(x * 0.7 - y * 1.1 + z * 0.9 - t * 0.4);
@@ -135,18 +138,22 @@ export function WarpFieldCanvas({
 
       const spoolStart = spoolStartRef.current;
       const spoolElapsed = spoolStart ? now - spoolStart : 9999;
-      const spoolProgress = Math.min(spoolElapsed / 400, 1);
+      const spoolProgress = Math.min(spoolElapsed / SPOOL_DURATION_MS, 1);
       const spoolFactor = spoolStart ? 1 - easeOutCubic(spoolProgress) : 0;
-      if (spoolStart && spoolElapsed > 420) spoolStartRef.current = null;
+      if (spoolStart && spoolElapsed > SPOOL_CLEANUP_MS)
+        spoolStartRef.current = null;
 
-      const baseSpeed = 0.42;
-      const speedBoost = baseSpeed * (1 + spoolFactor * 1.4);
+      const baseSpeed = 0.5;
+      const speedBoost = baseSpeed * (1 + spoolFactor * 3.0);
 
       const mouse = mouseRef.current;
       mouse.x += (mouse.tx - mouse.x) * 0.06;
       mouse.y += (mouse.ty - mouse.y) * 0.06;
 
-      ctx.clearRect(0, 0, w, h);
+      const fade = 0.18 - spoolFactor * 0.12;
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.fillStyle = `rgba(0,0,0,${fade.toFixed(3)})`;
+      ctx.fillRect(0, 0, w, h);
       ctx.globalCompositeOperation = 'lighter';
 
       const time = now / 1000;
@@ -173,9 +180,11 @@ export function WarpFieldCanvas({
         p.y *= 1 - dt * 0.015;
 
         const perspective = 1 / (p.z * 0.9 + 0.08);
-        const sx = cx + p.x * w * 0.38 * perspective;
-        const sy = cy + p.y * h * 0.38 * perspective;
-        const size = p.size * perspective * (0.45 + (1 - p.z));
+        const tunnelScale = 0.38 + spoolFactor * 0.18;
+        const sx = cx + p.x * w * tunnelScale * perspective;
+        const sy = cy + p.y * h * tunnelScale * perspective;
+        const size =
+          p.size * perspective * (0.45 + (1 - p.z)) * (1 + spoolFactor * 0.35);
 
         if (sx < -50 || sx > w + 50 || sy < -50 || sy > h + 50) continue;
 
@@ -186,10 +195,27 @@ export function WarpFieldCanvas({
           (1 + spoolFactor * (p.highlight ? 1.2 : 0.4));
 
         if (p.highlight) {
-          ctx.fillStyle = GRADIENT_STOPS[p.highlightIndex] + '';
+          const color = GRADIENT_STOPS[p.highlightIndex];
+          ctx.fillStyle = color + '';
           ctx.globalAlpha = Math.min(alpha, 1);
-          ctx.shadowColor = GRADIENT_STOPS[p.highlightIndex];
-          ctx.shadowBlur = 8 + spoolFactor * 18;
+
+          if (spoolFactor > 0.02) {
+            const dx = sx - cx;
+            const dy = sy - cy;
+            const dist = Math.hypot(dx, dy) || 1;
+            const nx = dx / dist;
+            const ny = dy / dist;
+            const lineLen = (12 + (1 - p.z) * 24) * spoolFactor * perspective;
+            ctx.strokeStyle = color;
+            ctx.lineWidth = Math.max(0.75, size * 0.12);
+            ctx.beginPath();
+            ctx.moveTo(sx - nx * lineLen, sy - ny * lineLen);
+            ctx.lineTo(sx, sy);
+            ctx.stroke();
+          }
+
+          ctx.shadowColor = color;
+          ctx.shadowBlur = 10 + spoolFactor * 26;
           ctx.font = `${Math.max(10, size * 9)}px var(--font-jetbrains-mono, monospace)`;
           ctx.fillText(p.glyph, sx, sy);
           ctx.shadowBlur = 0;
