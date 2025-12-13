@@ -2,10 +2,12 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-const INTRO_WEBM = '/video/hero-intro.webm';
-const INTRO_MP4 = '/video/hero-intro.mp4';
-const LOOP_WEBM = '/video/hero-loop.webm';
-const LOOP_MP4 = '/video/hero-loop.mp4';
+import { assetUrl } from '@/lib/asset-url';
+
+const INTRO_WEBM = assetUrl('/video/hero-intro.webm');
+const INTRO_MP4 = assetUrl('/video/hero-intro.mp4');
+const LOOP_WEBM = assetUrl('/video/hero-loop.webm');
+const LOOP_MP4 = assetUrl('/video/hero-loop.mp4');
 const POSTER = '/img/hero-bg.jpeg';
 
 export function HeroMedia() {

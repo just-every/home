@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import Footer from '@/components/Footer';
+import { assetUrl } from '@/lib/asset-url';
 import './globals.css';
 
 const inter = Inter({
@@ -83,13 +84,13 @@ export default async function RootLayout({
         <link
           rel="preload"
           as="video"
-          href="/video/hero-intro.webm"
+          href={assetUrl('/video/hero-intro.webm')}
           type="video/webm"
         />
         <link
           rel="preload"
           as="video"
-          href="/video/hero-loop.webm"
+          href={assetUrl('/video/hero-loop.webm')}
           type="video/webm"
         />
         <script
