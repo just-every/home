@@ -78,7 +78,7 @@ export default async function RootLayout({
   };
 
   return (
-    <html lang="en" className="dark overflow-x-hidden">
+    <html lang="en" className="dark overflow-hidden">
       <head>
         <link rel="preload" as="image" href="/img/hero-bg.jpeg" />
         <link
@@ -99,7 +99,7 @@ export default async function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} flex min-h-[100svh] flex-col overflow-x-hidden bg-black font-sans text-white antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} flex min-h-[100svh] flex-col overflow-hidden bg-black font-sans text-white antialiased`}
       >
         <svg
           aria-hidden="true"
