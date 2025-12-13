@@ -109,10 +109,10 @@ export default async function RootLayout({
           <defs>
             <filter
               id="hero-spag-filter-down"
-              x="-30%"
-              y="-120%"
-              width="160%"
-              height="340%"
+              x="-50%"
+              y="-200%"
+              width="200%"
+              height="500%"
               colorInterpolationFilters="sRGB"
             >
               <feImage
@@ -139,10 +139,10 @@ export default async function RootLayout({
 
             <filter
               id="hero-spag-filter-up"
-              x="-30%"
-              y="-120%"
-              width="160%"
-              height="340%"
+              x="-50%"
+              y="-200%"
+              width="200%"
+              height="500%"
               colorInterpolationFilters="sRGB"
             >
               <feImage

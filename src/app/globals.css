@@ -53,6 +53,8 @@ body {
   display: inline-block;
   transform-origin: center;
   will-change: filter, transform;
+  padding-block: 0.25em;
+  margin-block: -0.25em;
   letter-spacing: calc(var(--hero-warp) * -0.03em);
 }
 
