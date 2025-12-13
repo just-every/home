@@ -2,8 +2,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="mt-auto w-full border-t border-white/5 bg-black/40 py-8">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 text-center text-sm text-white/60 sm:flex-row sm:text-left">
+    <footer className="hidden">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 text-center text-xs text-white/70 sm:flex-row sm:text-left sm:text-sm">
         <p>© {currentYear} JustEvery · Open source. Built in public.</p>
         <div className="flex items-center gap-3">
           <a

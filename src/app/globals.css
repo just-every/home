@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #050505;
+  --background: #000000;
   --foreground: #ffffff;
 }
 
@@ -24,7 +24,11 @@ html {
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image: url('/img/hero-bg.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--foreground);
   overflow-x: hidden;
   width: 100%;
@@ -52,23 +56,6 @@ video:-webkit-full-screen::-webkit-media-text-track-display {
   left: auto;
   transform: none;
   margin-bottom: 0;
-}
-
-/* Fullscreen video styles */
-:fullscreen video {
-  object-fit: contain !important;
-  width: 100% !important;
-  height: 100% !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-}
-
-:-webkit-full-screen video {
-  object-fit: contain !important;
-  width: 100% !important;
-  height: 100% !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
 }
 
 /* Fullscreen container */

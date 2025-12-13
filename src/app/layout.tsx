@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import Footer from '@/components/Footer';
-import Header from '@/components/Header';
 import './globals.css';
 
 const inter = Inter({
@@ -80,16 +79,30 @@ export default async function RootLayout({
   return (
     <html lang="en" className="dark overflow-x-hidden">
       <head>
+        <link rel="preload" as="image" href="/img/hero-bg.jpeg" />
+        <link
+          rel="preload"
+          as="video"
+          href="/video/hero-intro.webm"
+          type="video/webm"
+        />
+        <link
+          rel="preload"
+          as="video"
+          href="/video/hero-loop.webm"
+          type="video/webm"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} flex min-h-screen flex-col overflow-x-hidden bg-black font-sans text-white antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} flex min-h-[100svh] flex-col overflow-x-hidden bg-black font-sans text-white antialiased`}
       >
-        <Header />
-        <main className="flex-grow overflow-x-hidden">{children}</main>
+        <main className="flex flex-1 flex-col overflow-x-hidden">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
