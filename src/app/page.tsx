@@ -27,9 +27,9 @@ export default function Home() {
         </a>
       </div>
 
-      <div className="absolute top-1/2 left-1/2 z-10 mt-[3.375rem] w-full max-w-md -translate-x-1/2">
-        <div className="hero-command rounded-lg border border-white/15 px-4 py-2 text-center font-mono text-xs text-white sm:text-sm">
-          <code>npx -y @just-every/code</code>
+      <div className="absolute top-1/2 left-1/2 z-10 mt-[3.375rem] w-full max-w-3xl -translate-x-1/2 px-2">
+        <div className="hero-title font-display text-center text-2xl tracking-tight sm:text-3xl">
+          When you move at light speed, <b>every</b> bold idea can ship.
         </div>
       </div>
     </div>
