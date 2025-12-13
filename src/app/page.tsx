@@ -28,7 +28,7 @@ export default function Home() {
       </div>
 
       <div className="absolute top-1/2 left-1/2 z-10 mt-[3.375rem] w-full max-w-md -translate-x-1/2">
-        <div className="rounded-lg border border-white/15 px-4 py-2 text-center font-mono text-xs text-white/90 sm:text-sm">
+        <div className="hero-command rounded-lg border border-white/15 bg-black/10 px-4 py-2 text-center font-mono text-xs text-white backdrop-blur-md sm:text-sm">
           <code>npx -y @just-every/code</code>
         </div>
       </div>

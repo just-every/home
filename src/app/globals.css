@@ -53,6 +53,12 @@ body {
   filter: drop-shadow(0 8px 28px rgba(0, 0, 0, 0.65));
 }
 
+.hero-command {
+  text-shadow:
+    0 2px 18px rgba(0, 0, 0, 0.7),
+    0 0 2px rgba(0, 0, 0, 0.9);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

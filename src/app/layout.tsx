@@ -117,11 +117,20 @@ export default async function RootLayout({
             >
               <feTurbulence
                 type="fractalNoise"
-                baseFrequency="0.006 0.02"
+                baseFrequency="0.004 0.012"
                 numOctaves="1"
                 seed="2"
                 result="noise"
-              />
+              >
+                <animate
+                  attributeName="baseFrequency"
+                  dur="14s"
+                  repeatCount="indefinite"
+                  values="0.004 0.012;0.004 0.012;0.007 0.02;0.004 0.012;0.004 0.012"
+                  keyTimes="0;0.78;0.84;0.9;1"
+                  calcMode="linear"
+                />
+              </feTurbulence>
               <feDisplacementMap
                 in="SourceGraphic"
                 in2="noise"
@@ -133,8 +142,8 @@ export default async function RootLayout({
                   attributeName="scale"
                   dur="14s"
                   repeatCount="indefinite"
-                  values="0;0;12;0;0"
-                  keyTimes="0;0.8;0.84;0.88;1"
+                  values="0;0;22;8;0"
+                  keyTimes="0;0.78;0.84;0.9;1"
                   calcMode="linear"
                 />
               </feDisplacementMap>
