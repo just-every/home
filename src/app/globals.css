@@ -43,31 +43,31 @@ body {
   color: #00e0ff;
 }
 
-.hero-warp {
-  display: inline-block;
-  filter: url(#hero-warp-filter);
-  transform-origin: center;
-  will-change: filter;
-}
-
 @property --hero-warp {
   syntax: '<number>';
   inherits: true;
   initial-value: 0;
 }
 
-.hero-pull-down {
-  letter-spacing: calc(var(--hero-warp) * -0.02em);
-  transform: translate3d(0, calc(var(--hero-warp) * 24px), 0)
-    scaleX(calc(1 - var(--hero-warp) * 0.08))
-    scaleY(calc(1 + var(--hero-warp) * 0.06));
+.hero-warp {
+  display: inline-block;
+  transform-origin: center;
+  will-change: filter, transform;
+  letter-spacing: calc(var(--hero-warp) * -0.03em);
 }
 
-.hero-pull-up {
-  letter-spacing: calc(var(--hero-warp) * -0.02em);
-  transform: translate3d(0, calc(var(--hero-warp) * -24px), 0)
-    scaleX(calc(1 - var(--hero-warp) * 0.08))
-    scaleY(calc(1 + var(--hero-warp) * 0.06));
+.hero-warp--down {
+  filter: url(#hero-spag-filter-down);
+}
+
+.hero-warp--up {
+  filter: url(#hero-spag-filter-up);
+}
+
+.hero-cta-wrap {
+  transform: scale(calc(1 - var(--hero-warp) * 0.18));
+  transform-origin: center;
+  will-change: transform;
 }
 
 .hero-title {
@@ -80,12 +80,8 @@ body {
   }
 
   .hero-warp {
+    letter-spacing: normal;
     filter: none;
-  }
-
-  .hero-pull-down,
-  .hero-pull-up {
-    transform: none;
   }
 }
 

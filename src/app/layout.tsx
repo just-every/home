@@ -108,30 +108,59 @@ export default async function RootLayout({
         >
           <defs>
             <filter
-              id="hero-warp-filter"
-              x="-20%"
-              y="-20%"
-              width="140%"
-              height="140%"
+              id="hero-spag-filter-down"
+              x="-30%"
+              y="-120%"
+              width="160%"
+              height="340%"
               colorInterpolationFilters="sRGB"
             >
-              <feTurbulence
-                id="hero-warp-turbulence"
-                type="fractalNoise"
-                baseFrequency="0.002 0.006"
-                numOctaves="1"
-                seed="2"
-                result="noise"
+              <feImage
+                href="/img/hero-spag-map.svg"
+                preserveAspectRatio="none"
+                result="mapSource"
               />
-              <feGaussianBlur
-                in="noise"
-                stdDeviation="1.35"
-                result="noiseSmooth"
-              />
+              <feComponentTransfer in="mapSource" result="map">
+                <feFuncR
+                  type="table"
+                  tableValues="0.250 0.345 0.419 0.471 0.502 0.512 0.500 0.488 0.498 0.529 0.581 0.655 0.750"
+                />
+                <feFuncG type="linear" slope="-0.22" intercept="0.61" />
+              </feComponentTransfer>
               <feDisplacementMap
-                id="hero-warp-displacement"
+                id="hero-spag-displacement-down"
                 in="SourceGraphic"
-                in2="noiseSmooth"
+                in2="map"
+                scale="0"
+                xChannelSelector="R"
+                yChannelSelector="G"
+              />
+            </filter>
+
+            <filter
+              id="hero-spag-filter-up"
+              x="-30%"
+              y="-120%"
+              width="160%"
+              height="340%"
+              colorInterpolationFilters="sRGB"
+            >
+              <feImage
+                href="/img/hero-spag-map.svg"
+                preserveAspectRatio="none"
+                result="mapSource"
+              />
+              <feComponentTransfer in="mapSource" result="map">
+                <feFuncR
+                  type="table"
+                  tableValues="0.250 0.345 0.419 0.471 0.502 0.512 0.500 0.488 0.498 0.529 0.581 0.655 0.750"
+                />
+                <feFuncG type="linear" slope="0.22" intercept="0.39" />
+              </feComponentTransfer>
+              <feDisplacementMap
+                id="hero-spag-displacement-up"
+                in="SourceGraphic"
+                in2="map"
                 scale="0"
                 xChannelSelector="R"
                 yChannelSelector="G"
