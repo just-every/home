@@ -103,6 +103,79 @@ export function HeroMedia() {
     };
   }, []);
 
+  useEffect(() => {
+    if (
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    ) {
+      return;
+    }
+
+    const doc = document.documentElement;
+    const displacement = document.getElementById(
+      'hero-warp-displacement'
+    ) as SVGFEDisplacementMapElement | null;
+    const turbulence = document.getElementById(
+      'hero-warp-turbulence'
+    ) as SVGFETurbulenceElement | null;
+
+    if (!displacement || !turbulence) return;
+
+    const clamp01 = (value: number) => Math.max(0, Math.min(1, value));
+    const pulse = (time: number, center: number, width: number) => {
+      const x = (time - center) / width;
+      return Math.exp(-x * x);
+    };
+
+    let rafId = 0;
+    let lastWarp = -1;
+
+    const tick = () => {
+      const intro = introRef.current;
+      const loop = loopRef.current;
+
+      const introActive = !!intro && !introEndedRef.current;
+      const activeVideo = introActive ? intro : loop;
+      const activeTime = activeVideo?.currentTime ?? 0;
+
+      let warp = 0;
+      if (introActive) {
+        warp = pulse(activeTime, 2, 0.5);
+      } else if (loop) {
+        warp = pulse(activeTime, 5, 0.7);
+      }
+
+      warp = clamp01(Math.pow(warp, 1.65));
+
+      if (Math.abs(warp - lastWarp) > 0.01) {
+        lastWarp = warp;
+
+        doc.style.setProperty('--hero-warp', warp.toFixed(3));
+
+        const scale = 22 * warp;
+        displacement.setAttribute('scale', scale.toFixed(2));
+
+        const freqX = 0.002 + 0.004 * warp;
+        const freqY = 0.006 + 0.01 * warp;
+        turbulence.setAttribute(
+          'baseFrequency',
+          `${freqX.toFixed(4)} ${freqY.toFixed(4)}`
+        );
+      }
+
+      rafId = window.requestAnimationFrame(tick);
+    };
+
+    rafId = window.requestAnimationFrame(tick);
+
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      doc.style.setProperty('--hero-warp', '0');
+      displacement.setAttribute('scale', '0');
+      turbulence.setAttribute('baseFrequency', '0.002 0.006');
+    };
+  }, []);
+
   return (
     <div
       aria-hidden

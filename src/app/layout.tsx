@@ -116,37 +116,26 @@ export default async function RootLayout({
               colorInterpolationFilters="sRGB"
             >
               <feTurbulence
+                id="hero-warp-turbulence"
                 type="fractalNoise"
-                baseFrequency="0.004 0.012"
+                baseFrequency="0.002 0.006"
                 numOctaves="1"
                 seed="2"
                 result="noise"
-              >
-                <animate
-                  attributeName="baseFrequency"
-                  dur="14s"
-                  repeatCount="indefinite"
-                  values="0.004 0.012;0.004 0.012;0.007 0.02;0.004 0.012;0.004 0.012"
-                  keyTimes="0;0.78;0.84;0.9;1"
-                  calcMode="linear"
-                />
-              </feTurbulence>
+              />
+              <feGaussianBlur
+                in="noise"
+                stdDeviation="1.35"
+                result="noiseSmooth"
+              />
               <feDisplacementMap
+                id="hero-warp-displacement"
                 in="SourceGraphic"
-                in2="noise"
+                in2="noiseSmooth"
                 scale="0"
                 xChannelSelector="R"
                 yChannelSelector="G"
-              >
-                <animate
-                  attributeName="scale"
-                  dur="14s"
-                  repeatCount="indefinite"
-                  values="0;0;22;8;0"
-                  keyTimes="0;0.78;0.84;0.9;1"
-                  calcMode="linear"
-                />
-              </feDisplacementMap>
+              />
             </filter>
           </defs>
         </svg>
