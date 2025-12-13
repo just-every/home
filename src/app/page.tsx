@@ -11,7 +11,7 @@ export default function Home() {
 
       <div className="absolute top-1/2 left-1/2 z-10 -mt-[3.375rem] w-full max-w-4xl -translate-x-1/2 -translate-y-full text-center">
         <h1 className="hero-title font-display text-4xl font-semibold tracking-tight text-balance sm:text-6xl md:text-7xl">
-          <span className="hero-warp">Push frontier AI further, faster.</span>
+          <span className="hero-warp">Push AI further, faster.</span>
         </h1>
       </div>
 
@@ -29,7 +29,9 @@ export default function Home() {
 
       <div className="absolute top-1/2 left-1/2 z-10 mt-[3.375rem] w-full max-w-3xl -translate-x-1/2 px-2">
         <div className="hero-title font-display text-center text-2xl tracking-tight sm:text-3xl">
-          When you move at light speed, <b>every</b> bold idea can ship.
+          When you move at light speed,
+          <br />
+          <b>every</b> bold idea can ship.
         </div>
       </div>
     </div>
