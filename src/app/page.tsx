@@ -10,8 +10,8 @@ export default function Home() {
       <HeroMedia />
 
       <div className="absolute top-1/2 left-1/2 z-10 -mt-[3.375rem] w-full max-w-4xl -translate-x-1/2 -translate-y-full text-center">
-        <h1 className="font-display text-4xl font-semibold tracking-tight text-balance drop-shadow-[0_8px_28px_rgba(0,0,0,0.65)] sm:text-6xl md:text-7xl">
-          Push frontier AI further, faster.
+        <h1 className="hero-title font-display text-4xl font-semibold tracking-tight text-balance sm:text-6xl md:text-7xl">
+          <span className="hero-warp">Push frontier AI further, faster.</span>
         </h1>
       </div>
 
@@ -20,9 +20,9 @@ export default function Home() {
           href={everyCodeHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="group focus-visible:ring-brand-cyan/70 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white px-7 text-sm font-semibold text-black transition-all hover:scale-[1.03] hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:outline-none"
+          className="group focus-visible:ring-brand-cyan/70 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white px-7 text-sm font-semibold whitespace-nowrap text-black transition-all hover:scale-[1.03] hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:outline-none"
         >
-          Install Every Code
+          Every Code
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
         </a>
       </div>

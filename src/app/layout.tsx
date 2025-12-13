@@ -101,6 +101,46 @@ export default async function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} flex min-h-[100svh] flex-col overflow-x-hidden bg-black font-sans text-white antialiased`}
       >
+        <svg
+          aria-hidden="true"
+          className="pointer-events-none absolute h-0 w-0"
+          focusable="false"
+        >
+          <defs>
+            <filter
+              id="hero-warp-filter"
+              x="-20%"
+              y="-20%"
+              width="140%"
+              height="140%"
+              colorInterpolationFilters="sRGB"
+            >
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.006 0.02"
+                numOctaves="1"
+                seed="2"
+                result="noise"
+              />
+              <feDisplacementMap
+                in="SourceGraphic"
+                in2="noise"
+                scale="0"
+                xChannelSelector="R"
+                yChannelSelector="G"
+              >
+                <animate
+                  attributeName="scale"
+                  dur="14s"
+                  repeatCount="indefinite"
+                  values="0;0;12;0;0"
+                  keyTimes="0;0.8;0.84;0.88;1"
+                  calcMode="linear"
+                />
+              </feDisplacementMap>
+            </filter>
+          </defs>
+        </svg>
         <main className="flex flex-1 flex-col overflow-x-hidden">
           {children}
         </main>

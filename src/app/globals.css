@@ -43,9 +43,23 @@ body {
   color: #00e0ff;
 }
 
+.hero-warp {
+  display: inline-block;
+  filter: url(#hero-warp-filter);
+  will-change: filter;
+}
+
+.hero-title {
+  filter: drop-shadow(0 8px 28px rgba(0, 0, 0, 0.65));
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .hero-warp {
+    filter: none;
   }
 }
 
