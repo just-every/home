@@ -1,6 +1,10 @@
 import { ArrowRight } from 'lucide-react';
 
 import { HeroMedia } from '@/components/HeroMedia';
+import {
+  HeroWormholeWarpProvider,
+  HeroWormholeWarpText,
+} from '@/components/HeroWormholeWarp';
 
 const everyCodeHref = 'https://github.com/just-every/code';
 
@@ -9,35 +13,41 @@ export default function Home() {
     <div className="relative h-[100svh] overflow-hidden px-6">
       <HeroMedia />
 
-      <div className="absolute top-1/2 left-1/2 z-10 -mt-[4.75rem] w-full max-w-[24rem] -translate-x-1/2 -translate-y-full text-center sm:-mt-[6rem] sm:max-w-4xl">
-        <h1 className="hero-title font-display text-5xl font-semibold tracking-tight text-balance sm:text-6xl md:text-7xl">
-          <span className="hero-warp hero-warp--down">
-            Push AI further, faster.
-          </span>
-        </h1>
-      </div>
-
-      <div className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-        <div className="hero-cta-wrap">
-          <a
-            href={everyCodeHref}
-            className="group focus-visible:ring-brand-cyan/70 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white px-7 text-sm font-semibold whitespace-nowrap text-black transition-all hover:scale-[1.03] hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:outline-none"
-          >
-            Every Code
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
+      <HeroWormholeWarpProvider>
+        <div className="absolute top-1/2 left-1/2 z-10 -mt-[4.75rem] w-full max-w-[24rem] -translate-x-1/2 -translate-y-full text-center sm:-mt-[6rem] sm:max-w-4xl">
+          <h1 className="hero-title font-display text-5xl font-semibold tracking-tight text-balance sm:text-6xl md:text-7xl">
+            <HeroWormholeWarpText
+              direction="down"
+              interactive
+              className="focus-visible:ring-brand-cyan/70 rounded-md focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+            >
+              Push AI further, faster.
+            </HeroWormholeWarpText>
+          </h1>
         </div>
-      </div>
 
-      <div className="absolute top-1/2 left-1/2 z-10 mt-[4.75rem] w-full max-w-3xl -translate-x-1/2 px-2 sm:mt-[6rem]">
-        <div className="hero-title font-display text-center text-2xl tracking-tight sm:text-3xl">
-          <span className="hero-warp hero-warp--up">
-            When you move at light speed,
-            <br />
-            <b>every</b> bold idea can ship.
-          </span>
+        <div className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
+          <div className="hero-cta-wrap">
+            <a
+              href={everyCodeHref}
+              className="group focus-visible:ring-brand-cyan/70 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white px-7 text-sm font-semibold whitespace-nowrap text-black transition-all hover:scale-[1.03] hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:outline-none"
+            >
+              Every Code
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </a>
+          </div>
         </div>
-      </div>
+
+        <div className="absolute top-1/2 left-1/2 z-10 mt-[4.75rem] w-full max-w-3xl -translate-x-1/2 px-2 sm:mt-[6rem]">
+          <div className="hero-title font-display text-center text-2xl tracking-tight sm:text-3xl">
+            <HeroWormholeWarpText direction="up">
+              When you move at light speed,
+              <br />
+              <b>every</b> bold idea can ship.
+            </HeroWormholeWarpText>
+          </div>
+        </div>
+      </HeroWormholeWarpProvider>
     </div>
   );
 }
