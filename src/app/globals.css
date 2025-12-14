@@ -65,72 +65,45 @@ body {
 }
 
 .hero-warp--down {
-  filter: url(#hero-spag-filter-down)
-    var(
-      --wormhole-filter-extra,
-      blur(0px) hue-rotate(0deg) saturate(1) contrast(1) brightness(1)
-        drop-shadow(0 0 0 rgba(0, 0, 0, 0))
-    );
+  filter: url(#hero-spag-filter-down);
 }
 
 .hero-warp--up {
-  filter: url(#hero-spag-filter-up)
-    var(
-      --wormhole-filter-extra,
-      blur(0px) hue-rotate(0deg) saturate(1) contrast(1) brightness(1)
-        drop-shadow(0 0 0 rgba(0, 0, 0, 0))
-    );
+  filter: url(#hero-spag-filter-up);
 }
 
 .wormhole-warp {
   --wormhole-p: 0;
   --wh-ox: 50%;
   --wh-oy: 50%;
-  --wh-perspective: 1200px;
-  --wh-z: 0px;
-  --wh-rot: 0turn;
-  --wh-tilt-x: 0deg;
-  --wh-tilt-y: 0deg;
-  --wh-skew-x: 0deg;
-  --wh-skew-y: 0deg;
-  --wh-scale: 0;
-  --wh-letter: 0em;
-  --wh-blur: 0px;
-  --wh-hue: 0deg;
-  --wh-sat: 0;
-  --wh-contrast: 0;
-  --wh-bright: 0;
-  --wh-glow-a: 0px;
-  --wh-glow-b: 0px;
+  --wh-tx: 0px;
+  --wh-ty: 0px;
 
   transform-origin: var(--wh-ox) var(--wh-oy);
-  will-change: transform, filter, text-shadow;
+  will-change: transform;
 
-  letter-spacing: calc(
-    var(--hero-warp) * -0.03em + var(--wormhole-p) * var(--wh-letter)
-  );
+  letter-spacing: calc(var(--hero-warp) * -0.03em);
+  transform: translate3d(
+      calc(var(--wormhole-p) * var(--wh-tx)),
+      calc(var(--wormhole-p) * var(--wh-ty)),
+      0
+    )
+    scale(calc(1 - var(--wormhole-p) * 0.02));
+}
 
-  transform: perspective(var(--wh-perspective))
-    translateZ(calc(var(--wormhole-p) * var(--wh-z)))
-    rotate(calc(var(--wormhole-p) * var(--wh-rot)))
-    rotateX(calc(var(--wormhole-p) * var(--wh-tilt-x)))
-    rotateY(calc(var(--wormhole-p) * var(--wh-tilt-y)))
-    skewX(calc(var(--wormhole-p) * var(--wh-skew-x)))
-    skewY(calc(var(--wormhole-p) * var(--wh-skew-y)))
-    scale(calc(1 + var(--wormhole-p) * var(--wh-scale)));
+.wormhole-char {
+  --wh-cx: 0px;
+  --wh-cy: 0px;
+  --wh-cs: 0;
 
-  text-shadow:
-    0 0 calc(var(--wormhole-p) * var(--wh-glow-a)) rgba(0, 224, 255, 0.55),
-    0 0 calc(var(--wormhole-p) * var(--wh-glow-b)) rgba(255, 78, 205, 0.4);
-
-  --wormhole-filter-extra: blur(calc(var(--wormhole-p) * var(--wh-blur)))
-    hue-rotate(calc(var(--wormhole-p) * var(--wh-hue)))
-    saturate(calc(1 + var(--wormhole-p) * var(--wh-sat)))
-    contrast(calc(1 + var(--wormhole-p) * var(--wh-contrast)))
-    brightness(calc(1 + var(--wormhole-p) * var(--wh-bright)))
-    drop-shadow(
-      0 0 calc(var(--wormhole-p) * var(--wh-glow-a)) rgba(0, 224, 255, 0.25)
-    );
+  display: inline-block;
+  will-change: transform;
+  transform: translate3d(
+      calc(var(--wormhole-p) * var(--wh-cx)),
+      calc(var(--wormhole-p) * var(--wh-cy)),
+      0
+    )
+    scale(calc(1 - var(--wormhole-p) * var(--wh-cs)));
 }
 
 .wormhole-warp--interactive {
@@ -166,161 +139,6 @@ body {
   }
 }
 
-/* 10 wormhole variants (random on load, rotate on click) */
-.wormhole-warp--v0 {
-  --wh-perspective: 1400px;
-  --wh-z: 90px;
-  --wh-rot: -0.06turn;
-  --wh-tilt-x: 10deg;
-  --wh-tilt-y: -6deg;
-  --wh-scale: 0.08;
-  --wh-letter: -0.02em;
-  --wh-blur: 0.9px;
-  --wh-sat: 0.25;
-  --wh-contrast: 0.15;
-  --wh-glow-a: 34px;
-  --wh-glow-b: 22px;
-}
-
-.wormhole-warp--v1 {
-  --wh-perspective: 1000px;
-  --wh-z: 160px;
-  --wh-rot: 0.24turn;
-  --wh-tilt-x: -18deg;
-  --wh-tilt-y: 12deg;
-  --wh-scale: 0.14;
-  --wh-letter: -0.03em;
-  --wh-blur: 1.6px;
-  --wh-contrast: 0.35;
-  --wh-glow-a: 44px;
-  --wh-glow-b: 28px;
-}
-
-.wormhole-warp--v2 {
-  --wh-perspective: 900px;
-  --wh-z: 140px;
-  --wh-rot: -0.18turn;
-  --wh-tilt-x: 24deg;
-  --wh-tilt-y: -22deg;
-  --wh-skew-x: 14deg;
-  --wh-scale: 0.16;
-  --wh-letter: -0.04em;
-  --wh-blur: 2.1px;
-  --wh-contrast: 0.45;
-  --wh-glow-a: 54px;
-  --wh-glow-b: 30px;
-}
-
-.wormhole-warp--v3 {
-  --wh-perspective: 780px;
-  --wh-z: 170px;
-  --wh-rot: 0.14turn;
-  --wh-tilt-y: 34deg;
-  --wh-skew-y: -12deg;
-  --wh-scale: 0.19;
-  --wh-letter: -0.05em;
-  --wh-blur: 2.2px;
-  --wh-hue: 40deg;
-  --wh-sat: 0.55;
-  --wh-contrast: 0.55;
-  --wh-glow-a: 60px;
-  --wh-glow-b: 34px;
-}
-
-.wormhole-warp--v4 {
-  --wh-perspective: 1300px;
-  --wh-z: 120px;
-  --wh-rot: -0.12turn;
-  --wh-tilt-x: -16deg;
-  --wh-skew-x: -18deg;
-  --wh-scale: 0.12;
-  --wh-letter: -0.04em;
-  --wh-blur: 1.8px;
-  --wh-hue: 165deg;
-  --wh-sat: 0.95;
-  --wh-contrast: 0.7;
-  --wh-glow-a: 58px;
-  --wh-glow-b: 44px;
-}
-
-.wormhole-warp--v5 {
-  --wh-perspective: 900px;
-  --wh-z: 210px;
-  --wh-rot: 0.3turn;
-  --wh-tilt-x: 10deg;
-  --wh-tilt-y: 10deg;
-  --wh-scale: 0.22;
-  --wh-letter: -0.06em;
-  --wh-blur: 3px;
-  --wh-bright: 0.4;
-  --wh-contrast: 0.85;
-  --wh-glow-a: 72px;
-  --wh-glow-b: 42px;
-}
-
-.wormhole-warp--v6 {
-  --wh-perspective: 1150px;
-  --wh-z: 90px;
-  --wh-rot: 0.08turn;
-  --wh-tilt-x: -28deg;
-  --wh-tilt-y: -10deg;
-  --wh-scale: -0.06;
-  --wh-letter: 0.02em;
-  --wh-blur: 1.2px;
-  --wh-contrast: 0.4;
-  --wh-glow-a: 50px;
-  --wh-glow-b: 26px;
-}
-
-.wormhole-warp--v7 {
-  --wh-perspective: 820px;
-  --wh-z: 190px;
-  --wh-rot: -0.22turn;
-  --wh-skew-x: 22deg;
-  --wh-skew-y: 12deg;
-  --wh-scale: 0.2;
-  --wh-letter: -0.06em;
-  --wh-blur: 2.4px;
-  --wh-hue: -55deg;
-  --wh-sat: 0.65;
-  --wh-contrast: 0.75;
-  --wh-glow-a: 68px;
-  --wh-glow-b: 36px;
-}
-
-.wormhole-warp--v8 {
-  --wh-perspective: 1500px;
-  --wh-z: 140px;
-  --wh-rot: 0.18turn;
-  --wh-tilt-x: 18deg;
-  --wh-tilt-y: -28deg;
-  --wh-scale: 0.1;
-  --wh-letter: -0.03em;
-  --wh-blur: 1.1px;
-  --wh-sat: 0.35;
-  --wh-contrast: 0.35;
-  --wh-glow-a: 48px;
-  --wh-glow-b: 30px;
-}
-
-.wormhole-warp--v9 {
-  --wh-perspective: 720px;
-  --wh-z: 230px;
-  --wh-rot: 0.36turn;
-  --wh-tilt-x: -14deg;
-  --wh-tilt-y: 20deg;
-  --wh-skew-x: -16deg;
-  --wh-scale: 0.26;
-  --wh-letter: -0.07em;
-  --wh-blur: 3.2px;
-  --wh-hue: 95deg;
-  --wh-sat: 0.85;
-  --wh-contrast: 1;
-  --wh-bright: 0.2;
-  --wh-glow-a: 86px;
-  --wh-glow-b: 54px;
-}
-
 .hero-cta-wrap {
   transform: scale(calc(1 - var(--hero-warp) * 0.18));
   transform-origin: center;
@@ -343,7 +161,11 @@ body {
 
   .wormhole-warp {
     transform: none;
-    text-shadow: none;
+    filter: none;
+  }
+
+  .wormhole-char {
+    transform: none;
   }
 }
 
