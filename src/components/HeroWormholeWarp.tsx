@@ -89,9 +89,9 @@ function getViewportCenterVector(element: HTMLElement) {
 function renderWormholeChars(children: React.ReactNode): React.ReactNode {
   let keyIndex = 0;
 
-  const renderNode = (node: React.ReactNode): React.ReactNode => {
+  const renderNode = (node: React.ReactNode): React.ReactNode[] => {
     if (node === null || node === undefined || typeof node === 'boolean')
-      return null;
+      return [];
 
     if (typeof node === 'string' || typeof node === 'number') {
       const text = String(node);
@@ -103,10 +103,14 @@ function renderWormholeChars(children: React.ReactNode): React.ReactNode {
           continue;
         }
 
-        const displayChar = char === ' ' ? '\u00A0' : char;
+        if (char === ' ') {
+          chars.push(' ');
+          continue;
+        }
+
         chars.push(
           <span key={`ch-${keyIndex++}`} className="wormhole-char" data-wh-char>
-            {displayChar}
+            {char}
           </span>
         );
       }
@@ -114,17 +118,21 @@ function renderWormholeChars(children: React.ReactNode): React.ReactNode {
       return chars;
     }
 
-    if (!isValidElement(node)) return node;
-    if (node.type === 'br') return node;
+    if (!isValidElement(node)) return [node];
+
+    if (node.type === 'br') {
+      const key = node.key ?? `br-${keyIndex++}`;
+      return [cloneElement(node, { key } as Record<string, unknown>)];
+    }
 
     const element = node as ReactElement<{ children?: React.ReactNode }>;
-    const nextChildren = Children.toArray(element.props.children).map(child =>
-      renderNode(child)
+    const nextChildren = Children.toArray(element.props.children).flatMap(
+      child => renderNode(child)
     );
-    return cloneElement(element, { ...element.props }, nextChildren);
+    return [cloneElement(element, { ...element.props }, nextChildren)];
   };
 
-  return Children.toArray(children).map(child => renderNode(child));
+  return Children.toArray(children).flatMap(child => renderNode(child));
 }
 
 function usePrefersReducedMotion() {
