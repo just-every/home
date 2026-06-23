@@ -41,11 +41,13 @@
     "tailwindcss": "^4",
     "tsx": "^4.19.4",
     "typescript": "^5",
-    "wrangler": "^4.19.1"
+    "wrangler": "4.86.0"
   },
   "overrides": {
     "phin": "^3.7.1",
     "jimp": "^1.6.0",
-    "esbuild": "0.28.1"
+    "esbuild": "0.28.1",
+    "undici": "7.28.0",
+    "ws": "8.21.0"
   }
 }
