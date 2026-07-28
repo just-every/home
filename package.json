@@ -44,6 +44,7 @@
     "wrangler": "4.86.0"
   },
   "overrides": {
+    "postcss": "8.5.24",
     "phin": "^3.7.1",
     "jimp": "^1.6.0",
     "esbuild": "0.28.1",
