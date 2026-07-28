@@ -17,10 +17,10 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@opennextjs/cloudflare": "^1.1.0",
+    "@opennextjs/cloudflare": "1.17.1",
     "autoprefixer": "^10.4.21",
     "lucide-react": "^0.511.0",
-    "next": "15.3.6",
+    "next": "15.5.21",
     "react": "^19.2.1",
     "react-dom": "^19.2.1"
   },
@@ -33,7 +33,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9.26.0",
-    "eslint-config-next": "^15.3.6",
+    "eslint-config-next": "15.5.21",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.0",
     "prettier": "^3.5.3",
@@ -49,6 +49,8 @@
     "jimp": "^1.6.0",
     "esbuild": "0.28.1",
     "undici": "7.28.0",
-    "ws": "8.21.0"
+    "ws": "8.21.0",
+    "@node-minify/core": "8.0.5",
+    "brace-expansion": "5.0.8"
   }
 }
