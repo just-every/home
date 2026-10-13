@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
-import Footer from '@/components/Footer';
-import { assetUrl } from '@/lib/asset-url';
+import { Inter } from 'next/font/google';
+
+import { siteMeta } from '@/content/meta';
 import './globals.css';
 
 const inter = Inter({
@@ -9,24 +9,13 @@ const inter = Inter({
   subsets: ['latin'],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: '--font-space-grotesk',
-  subsets: ['latin'],
-});
-
-const jetBrainsMono = JetBrains_Mono({
-  variable: '--font-jetbrains-mono',
-  subsets: ['latin'],
-});
-
 export const metadata: Metadata = {
   title: {
-    default: 'JustEvery',
-    template: '%s · JustEvery',
+    default: siteMeta.title,
+    template: `%s · ${siteMeta.name}`,
   },
-  description:
-    'Push frontier AI further. Ship faster. JustEvery builds professional tools that turn powerful models into reliable workflows.',
-  metadataBase: new URL('https://justevery.com'),
+  description: siteMeta.description,
+  metadataBase: new URL(siteMeta.url),
   icons: {
     icon: [
       { url: '/img/favicon.svg', type: 'image/svg+xml' },
@@ -38,140 +27,59 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'JustEvery',
-    description:
-      'Push frontier AI further. Ship faster. Professional tools for reliable AI workflows.',
-    url: 'https://justevery.com',
-    siteName: 'JustEvery',
-    images: [
-      {
-        url: 'https://justevery.com/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'JustEvery',
-      },
-    ],
+    title: siteMeta.ogTitle,
+    description: siteMeta.description,
+    url: siteMeta.url,
+    siteName: siteMeta.name,
+    images: [siteMeta.ogImage],
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'JustEvery',
-    description:
-      'Push frontier AI further. Ship faster. Professional tools for reliable AI workflows.',
-    images: ['https://justevery.com/twitter-image.jpg'],
+    title: siteMeta.ogTitle,
+    description: siteMeta.description,
+    images: [siteMeta.ogImage.url],
   },
 };
 
-export default async function RootLayout({
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${siteMeta.url}/#organization`,
+      name: siteMeta.name,
+      url: siteMeta.url,
+      logo: `${siteMeta.url}/img/favicon-512x512.png`,
+      sameAs: [siteMeta.githubUrl],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteMeta.url}/#website`,
+      name: siteMeta.name,
+      url: siteMeta.url,
+      description: siteMeta.description,
+      publisher: { '@id': `${siteMeta.url}/#organization` },
+    },
+  ],
+};
+
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'JustEvery',
-    description:
-      'Push frontier AI further. Ship faster. JustEvery builds professional tools that turn powerful models into reliable workflows.',
-    url: 'https://justevery.com',
-  };
-
   return (
-    <html lang="en" className="dark overflow-hidden">
+    <html lang="en">
       <head>
-        <link rel="preload" as="image" href="/img/hero-bg.jpeg" />
-        <link
-          rel="preload"
-          as="video"
-          href={assetUrl('/video/hero-intro.webm')}
-          type="video/webm"
-        />
-        <link
-          rel="preload"
-          as="video"
-          href={assetUrl('/video/hero-loop.webm')}
-          type="video/webm"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable} flex min-h-[100svh] flex-col overflow-hidden bg-black font-sans text-white antialiased`}
-      >
-        <svg
-          aria-hidden="true"
-          className="pointer-events-none absolute h-0 w-0"
-          focusable="false"
-        >
-          <defs>
-            <filter
-              id="hero-spag-filter-down"
-              x="-30%"
-              y="-120%"
-              width="160%"
-              height="340%"
-              colorInterpolationFilters="sRGB"
-            >
-              <feImage
-                href="/img/hero-spag-map.svg"
-                preserveAspectRatio="none"
-                result="mapSource"
-              />
-              <feComponentTransfer in="mapSource" result="map">
-                <feFuncR
-                  type="table"
-                  tableValues="0.250 0.345 0.419 0.471 0.502 0.512 0.500 0.488 0.498 0.529 0.581 0.655 0.750"
-                />
-                <feFuncG type="linear" slope="-0.22" intercept="0.61" />
-              </feComponentTransfer>
-              <feDisplacementMap
-                id="hero-spag-displacement-down"
-                in="SourceGraphic"
-                in2="map"
-                scale="0"
-                xChannelSelector="R"
-                yChannelSelector="G"
-              />
-            </filter>
-
-            <filter
-              id="hero-spag-filter-up"
-              x="-30%"
-              y="-120%"
-              width="160%"
-              height="340%"
-              colorInterpolationFilters="sRGB"
-            >
-              <feImage
-                href="/img/hero-spag-map.svg"
-                preserveAspectRatio="none"
-                result="mapSource"
-              />
-              <feComponentTransfer in="mapSource" result="map">
-                <feFuncR
-                  type="table"
-                  tableValues="0.250 0.345 0.419 0.471 0.502 0.512 0.500 0.488 0.498 0.529 0.581 0.655 0.750"
-                />
-                <feFuncG type="linear" slope="0.22" intercept="0.39" />
-              </feComponentTransfer>
-              <feDisplacementMap
-                id="hero-spag-displacement-up"
-                in="SourceGraphic"
-                in2="map"
-                scale="0"
-                xChannelSelector="R"
-                yChannelSelector="G"
-              />
-            </filter>
-          </defs>
-        </svg>
-        <main className="flex flex-1 flex-col overflow-x-hidden">
-          {children}
-        </main>
-        <Footer />
+      <body className={`${inter.variable} font-sans antialiased`}>
+        {children}
       </body>
     </html>
   );

@@ -1,43 +1,75 @@
-import { ArrowRight } from 'lucide-react';
+import type { Metadata } from 'next';
+import Link from 'next/link';
 
-import { HeroMedia } from '@/components/HeroMedia';
+export const metadata: Metadata = {
+  title: { absolute: 'justevery.com, five directions' },
+  robots: { index: false, follow: false },
+};
 
-const everyCodeHref = 'https://github.com/just-every/code';
+const directions = [
+  {
+    slug: 'label',
+    name: 'Label',
+    summary: 'The collection as numbered volumes.',
+  },
+  {
+    slug: 'objects',
+    name: 'Objects',
+    summary: 'Products as objects on a shelf.',
+  },
+  {
+    slug: 'unsubscribe',
+    name: 'Unsubscribe',
+    summary: 'Renewal emails vs owned products.',
+  },
+  {
+    slug: 'running',
+    name: 'Running',
+    summary: 'A wall of the real apps.',
+  },
+  {
+    slug: 'manifesto',
+    name: 'Manifesto',
+    summary: '“Code got cheap. We made it good.”',
+  },
+] as const;
 
-export default function Home() {
+export default function ReviewIndex() {
   return (
-    <div className="relative h-[100svh] overflow-hidden px-6">
-      <HeroMedia />
+    <main className="mx-auto max-w-5xl px-6 py-16">
+      <h1 className="text-3xl font-semibold tracking-tight">
+        justevery.com, five directions
+      </h1>
+      <p className="mt-3 max-w-2xl text-black/70">
+        Five complete pages for the same collection. Open each, scroll it end to
+        end, and pick one.
+      </p>
 
-      <div className="absolute top-1/2 left-1/2 z-10 -mt-[4.75rem] w-full max-w-[24rem] -translate-x-1/2 -translate-y-full text-center sm:-mt-[6rem] sm:max-w-4xl">
-        <h1 className="hero-title font-display text-5xl font-semibold tracking-tight text-balance sm:text-6xl md:text-7xl">
-          <span className="hero-warp hero-warp--down">
-            Push AI further, faster.
-          </span>
-        </h1>
-      </div>
-
-      <div className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-        <div className="hero-cta-wrap">
-          <a
-            href={everyCodeHref}
-            className="group focus-visible:ring-brand-cyan/70 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white px-7 text-sm font-semibold whitespace-nowrap text-black transition-all hover:scale-[1.03] hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:outline-none"
-          >
-            Every Code
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
-        </div>
-      </div>
-
-      <div className="absolute top-1/2 left-1/2 z-10 mt-[4.75rem] w-full max-w-3xl -translate-x-1/2 px-2 sm:mt-[6rem]">
-        <div className="hero-title font-display text-center text-2xl tracking-tight sm:text-3xl">
-          <span className="hero-warp hero-warp--up">
-            When you move at light speed,
-            <br />
-            <b>every</b> bold idea can ship.
-          </span>
-        </div>
-      </div>
-    </div>
+      <ul className="mt-12 grid gap-10 sm:grid-cols-2">
+        {directions.map(({ slug, name, summary }) => (
+          <li key={slug}>
+            <Link
+              href={`/v/${slug}`}
+              className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`/review/${slug}.webp`}
+                alt={`The ${name} hero design`}
+                width={1536}
+                height={1024}
+                loading="lazy"
+                className="w-full rounded-lg border border-black/10"
+              />
+              <h2 className="mt-4 text-xl font-semibold group-hover:underline group-hover:underline-offset-4">
+                {name}
+              </h2>
+              <p className="mt-1 text-black/70">{summary}</p>
+              <p className="mt-1 font-mono text-sm text-black/50">/v/{slug}</p>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </main>
   );
 }
