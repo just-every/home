@@ -3,15 +3,7 @@
 }
 
 .head {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px 48px;
-  margin: 0 0 32px;
-}
-
-.line {
-  flex: 0 1 520px;
+  margin: 0 0 28px;
 }
 
 /* Rows run down the first column, then the second, however many there are. */
@@ -57,14 +49,6 @@
   white-space: nowrap;
 }
 
-.renews {
-  flex: none;
-  margin-left: auto;
-  color: var(--muted);
-  font-size: 13px;
-  white-space: nowrap;
-}
-
 .strike {
   position: absolute;
   left: 0;
@@ -95,8 +79,6 @@
 
 /* The volume that replaces it, in its card's own tint. */
 .volume {
-  --tint: color-mix(in oklab, var(--pastel) 34%, #fff);
-
   display: flex;
   align-items: center;
   gap: 11px;
@@ -174,45 +156,7 @@
   }
 }
 
-/* Narrower columns: the renewal date drops under the tool's name. */
-@media (max-width: 599px), (min-width: 900px) and (max-width: 1279px) {
-  .email {
-    display: grid;
-    grid-template-columns: 18px minmax(0, 1fr);
-    align-content: center;
-    column-gap: 11px;
-    row-gap: 1px;
-  }
-
-  .mail {
-    grid-row: 1 / span 2;
-  }
-
-  .vendor {
-    justify-self: start;
-    max-width: 100%;
-    line-height: 1.2;
-  }
-
-  .renews {
-    margin: 0;
-    font-size: 12.5px;
-    line-height: 1.2;
-  }
-}
-
 @media (max-width: 1023px) {
-  .head {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-  }
-
-  .line {
-    flex: none;
-    max-width: 600px;
-  }
-
   .ledger {
     column-gap: 20px;
   }
@@ -224,10 +168,6 @@
   .email,
   .volume {
     padding-inline: 11px;
-  }
-
-  .email {
-    column-gap: 9px;
   }
 
   .volume {

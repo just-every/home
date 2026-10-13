@@ -19,15 +19,12 @@ export const nav = [
 export const collection = {
   id: 'all',
   heading: 'Pick your replacement.',
-  line: "Fourteen products so far, each one an alternative to software you're probably paying for.",
-  /** Use instead of `line` if the owner prefers no number. */
-  lineWithoutNumber:
-    "Each one an alternative to software you're probably paying for.",
-  /** Card anatomy: Name, `${alternativeTo} <X>`, one line, repo state. */
+  /**
+   * Card anatomy: mark, number, name, `${alternativeTo} <X>`, GitHub. The
+   * selected product's feature adds its headline, line and homepage.
+   */
   alternativeTo: 'Alternative to',
   githubLabel: 'GitHub',
-  /** Shown only on cards whose reel is on the page. */
-  watchLabel: 'Watch it run',
 } as const;
 
 /**
@@ -146,11 +143,6 @@ export const questions = {
         "It's your code, so you or your coding agent can fix it on the spot. Every repo ships instructions written for agents, and our fixes arrive as tagged releases.",
     },
     {
-      question: 'Can I really change anything?',
-      answer:
-        "Anything: screens, data, workflows, the lot. It's all source, with no locked core.",
-    },
-    {
       question: 'Where does my data live?',
       answer:
         "Wherever you run it: your computer, or your own Cloudflare account, in a database that's yours.",
@@ -186,8 +178,6 @@ export const runOne = {
     'git clone https://github.com/just-every/run-uptime',
     'cd run-uptime && rer dev',
   ],
-  afterLine:
-    'It installs, sets up a local owner and prints a link that opens the app, signed in.',
   altLine: {
     before: 'No npm?',
     command: 'curl -fsSL https://runeditrun.com/install.sh | sh',

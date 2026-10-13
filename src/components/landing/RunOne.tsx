@@ -28,7 +28,6 @@ export function RunOne() {
           {runOne.heading}
         </h2>
         <p className={styles.text}>{runOne.line}</p>
-        <p className={styles.after}>{runOne.afterLine}</p>
       </div>
       <div className={styles.terminalWrap}>
         <div className={styles.terminal}>

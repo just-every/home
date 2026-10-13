@@ -1,4 +1,4 @@
-/** What the search needs to know about a volume; serialisable from the server. */
+/** What the search needs to know about a volume. */
 export interface SearchVolume {
   slug: string;
   number: string;
@@ -7,13 +7,6 @@ export interface SearchVolume {
   replaces: string[];
   primaryReplace: string;
   line: string;
-  /** Public GitHub repository. */
-  repo: string;
-  /** Whether its reel is on the page ("Watch it run"). */
-  reel: boolean;
-  mark: string;
-  pastel: string;
-  ink: string;
 }
 
 const STOP_WORDS = new Set(
@@ -36,8 +29,8 @@ export function queryTokens(query: string): string[] {
   return words(query).filter(word => word.length >= 2 && !STOP_WORDS.has(word));
 }
 
-interface Indexed {
-  volume: SearchVolume;
+interface Indexed<T extends SearchVolume> {
+  volume: T;
   name: string[];
   replaces: string[];
   category: string[];
@@ -45,7 +38,9 @@ interface Indexed {
   wholeNames: string[];
 }
 
-export function indexVolumes(volumes: SearchVolume[]): Indexed[] {
+export function indexVolumes<T extends SearchVolume>(
+  volumes: T[]
+): Indexed<T>[] {
   return volumes.map(volume => ({
     volume,
     name: words(volume.name),
@@ -66,12 +61,15 @@ const hasPrefix = (list: string[], token: string) =>
  * start a word in the volume's name, the products it replaces, its category
  * or its line. Names and replaced products rank above categories, then lines.
  */
-export function localMatches(index: Indexed[], query: string): SearchVolume[] {
+export function localMatches<T extends SearchVolume>(
+  index: Indexed<T>[],
+  query: string
+): T[] {
   const tokens = queryTokens(query);
   if (tokens.length === 0) return [];
   const whole = query.trim().toLowerCase();
 
-  const scored: { volume: SearchVolume; score: number }[] = [];
+  const scored: { volume: T; score: number }[] = [];
   for (const entry of index) {
     let score = entry.wholeNames.some(name => name.startsWith(whole)) ? 20 : 0;
     let every = true;

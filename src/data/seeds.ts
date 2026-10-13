@@ -4,6 +4,19 @@ export type { Seed, SeedReel } from './seed-types';
 
 const dir = (slug: string) => `/seeds/${slug}`;
 
+/**
+ * Its homepage's first screen, captured at 1440 by 900 (Vector's at 1280 by
+ * 800) and saved as public/seeds/<slug>/home.webp.
+ */
+function home(slug: string, name: string, width = 1440, height = 900) {
+  return {
+    src: `${dir(slug)}/home.webp`,
+    width,
+    height,
+    alt: `The ${name} homepage`,
+  };
+}
+
 function reel(slug: string, durationSeconds: number) {
   return {
     src: `/video/${slug}-720.mp4`,
@@ -15,8 +28,9 @@ function reel(slug: string, durationSeconds: number) {
 /**
  * The 14 active seeds in collection order: the owner's favourites (Uptime,
  * HappyToHelp, Nook) first. Facts come from the copy deck (COPY.md) and
- * seeds.json; where they disagree the copy deck wins. Orbit's headline is null
- * because the deck says none is final. Accent, ink and paper match each
+ * seeds.json; where they disagree the copy deck wins. Headlines are each
+ * product's own homepage h1 (Orbit's from run-orbit.com, final since its
+ * brand refresh). Accent, ink and paper match each
  * product's own brand tokens; `pastel` softens one of them so all fourteen sit
  * together as a set.
  */
@@ -31,6 +45,7 @@ export const seeds: Seed[] = [
     line: 'Alerts you only when a failure is confirmed.',
     headline: 'Sleep through the night.',
     repo: 'https://github.com/just-every/run-uptime',
+    homepage: 'https://run-uptime.com',
     accent: '#e8894f',
     ink: '#14204a',
     paper: '#f7f6fb',
@@ -41,6 +56,7 @@ export const seeds: Seed[] = [
     markLight: `${dir('uptime')}/mark-light.svg`,
     markInk: null,
     reel: reel('uptime', 51.1),
+    still: null,
   },
   {
     slug: 'happytohelp',
@@ -52,6 +68,7 @@ export const seeds: Seed[] = [
     line: 'Your Codex or Claude fixes the problem and writes the reply.',
     headline: 'Customer Support, Solved.',
     repo: 'https://github.com/just-every/run-happytohelp',
+    homepage: null,
     accent: '#8fe3ee',
     ink: '#141414',
     paper: '#f6f2ea',
@@ -61,6 +78,7 @@ export const seeds: Seed[] = [
     markLight: null,
     markInk: `${dir('happytohelp')}/mark-ink.svg`,
     reel: null,
+    still: home('happytohelp', 'HappyToHelp'),
   },
   {
     slug: 'nook',
@@ -72,6 +90,7 @@ export const seeds: Seed[] = [
     line: 'Team chat where a message becomes a decision.',
     headline: 'Talk it through. Get it done.',
     repo: 'https://github.com/just-every/run-nook',
+    homepage: 'https://run-nook.com',
     accent: '#c24e5b',
     ink: '#2a1d21',
     paper: '#faf5ef',
@@ -81,6 +100,7 @@ export const seeds: Seed[] = [
     markLight: null,
     markInk: null,
     reel: null,
+    still: home('nook', 'Nook'),
   },
   {
     slug: 'lamp',
@@ -92,6 +112,7 @@ export const seeds: Seed[] = [
     line: 'The status page that never leaves your customers in the dark.',
     headline: 'When something breaks, turn the light on.',
     repo: 'https://github.com/just-every/run-lamp',
+    homepage: null,
     accent: '#f4c25c',
     ink: '#182d24',
     paper: '#f8f6f0',
@@ -101,6 +122,7 @@ export const seeds: Seed[] = [
     markLight: `${dir('lamp')}/mark-light.svg`,
     markInk: null,
     reel: reel('lamp', 59),
+    still: null,
   },
   {
     slug: 'cradle',
@@ -112,6 +134,7 @@ export const seeds: Seed[] = [
     line: 'Records, views and forms in one workspace.',
     headline: 'Everything comes together in one place.',
     repo: 'https://github.com/just-every/run-cradle',
+    homepage: 'https://run-cradle.com',
     accent: '#d7f25b',
     ink: '#12372e',
     paper: '#f3f3ee',
@@ -121,6 +144,7 @@ export const seeds: Seed[] = [
     markLight: null,
     markInk: null,
     reel: null,
+    still: home('cradle', 'Cradle'),
   },
   {
     slug: 'vector',
@@ -132,6 +156,7 @@ export const seeds: Seed[] = [
     line: "Issue tracking that shows what's now, what's next and why.",
     headline: 'Know what happens next.',
     repo: 'https://github.com/just-every/run-vector',
+    homepage: null,
     accent: '#2446dc',
     ink: '#171a20',
     paper: '#f4f0e6',
@@ -141,6 +166,7 @@ export const seeds: Seed[] = [
     markLight: null,
     markInk: null,
     reel: null,
+    still: home('vector', 'Vector', 1280, 800),
   },
   {
     slug: 'slate',
@@ -152,6 +178,7 @@ export const seeds: Seed[] = [
     line: 'Pages, databases and search in one wiki.',
     headline: 'One home for everything your team knows.',
     repo: 'https://github.com/just-every/run-slate',
+    homepage: 'https://run-slate.com',
     accent: '#526f62',
     ink: '#1b1b18',
     paper: '#f6f3e8',
@@ -161,6 +188,7 @@ export const seeds: Seed[] = [
     markLight: null,
     markInk: null,
     reel: null,
+    still: home('slate', 'Slate'),
   },
   {
     slug: 'pencil',
@@ -172,6 +200,7 @@ export const seeds: Seed[] = [
     line: 'Forms that ask only what fits the last answer.',
     headline: "Ask like you're listening.",
     repo: 'https://github.com/just-every/run-pencil',
+    homepage: 'https://run-pencil.com',
     accent: '#f2b33d',
     ink: '#1e2124',
     paper: '#fbfaf6',
@@ -181,6 +210,7 @@ export const seeds: Seed[] = [
     markLight: `${dir('pencil')}/mark-light.svg`,
     markInk: null,
     reel: null,
+    still: home('pencil', 'Pencil'),
   },
   {
     slug: 'orbit',
@@ -190,8 +220,9 @@ export const seeds: Seed[] = [
     replaces: ['HubSpot', 'Pipedrive', 'Salesforce'],
     primaryReplace: 'HubSpot',
     line: 'A CRM that shows which deal to work next, and why.',
-    headline: null,
+    headline: 'Your next deal finds you.',
     repo: 'https://github.com/just-every/run-orbit',
+    homepage: 'https://run-orbit.com',
     accent: '#e85b1e',
     ink: '#16171d',
     paper: '#f5f1ea',
@@ -201,6 +232,7 @@ export const seeds: Seed[] = [
     markLight: null,
     markInk: null,
     reel: null,
+    still: home('orbit', 'Orbit'),
   },
   {
     slug: 'mango',
@@ -212,6 +244,7 @@ export const seeds: Seed[] = [
     line: 'Newsletters that go only to people who said yes.',
     headline: 'Newsletters people are glad to get.',
     repo: 'https://github.com/just-every/run-mango',
+    homepage: 'https://run-mango.com',
     accent: '#f6b828',
     ink: '#1d1b17',
     paper: '#fbf7ee',
@@ -221,6 +254,7 @@ export const seeds: Seed[] = [
     markLight: null,
     markInk: null,
     reel: null,
+    still: home('mango', 'Mango'),
   },
   {
     slug: 'dial',
@@ -232,6 +266,7 @@ export const seeds: Seed[] = [
     line: 'Booking pages that check your live calendar.',
     headline: "Pick a time. That's it.",
     repo: 'https://github.com/just-every/run-dial',
+    homepage: null,
     accent: '#dcab3c',
     ink: '#1d1c1a',
     paper: '#f4f1ea',
@@ -241,6 +276,7 @@ export const seeds: Seed[] = [
     markLight: null,
     markInk: null,
     reel: null,
+    still: home('dial', 'Dial'),
   },
   {
     slug: 'penny',
@@ -252,6 +288,7 @@ export const seeds: Seed[] = [
     line: 'Collect requests, and tell everyone who asked when it ships.',
     headline: 'Every customer, heard.',
     repo: 'https://github.com/just-every/run-penny',
+    homepage: 'https://run-penny.com',
     accent: '#c85d2f',
     ink: '#20211f',
     paper: '#faf7ef',
@@ -261,6 +298,7 @@ export const seeds: Seed[] = [
     markLight: null,
     markInk: null,
     reel: null,
+    still: home('penny', 'Penny'),
   },
   {
     slug: 'oncall',
@@ -272,6 +310,7 @@ export const seeds: Seed[] = [
     line: "Who's on now, who's next, and when they hand over.",
     headline: "Everyone knows who's on call.",
     repo: 'https://github.com/just-every/run-oncall',
+    homepage: 'https://run-oncall.com',
     accent: '#d48f7f',
     ink: '#1d2a35',
     paper: '#f8f0e3',
@@ -282,6 +321,7 @@ export const seeds: Seed[] = [
     markLight: `${dir('oncall')}/mark-light.svg`,
     markInk: null,
     reel: null,
+    still: home('oncall', 'Oncall'),
   },
   {
     slug: 'spool',
@@ -293,6 +333,7 @@ export const seeds: Seed[] = [
     line: 'JavaScript errors, traced to the exact line in your source.',
     headline: 'See exactly what broke.',
     repo: 'https://github.com/just-every/run-spool',
+    homepage: 'https://run-spool.com',
     accent: '#f9d357',
     ink: '#1c1c1b',
     paper: '#f3f0e6',
@@ -302,5 +343,6 @@ export const seeds: Seed[] = [
     markLight: null,
     markInk: null,
     reel: null,
+    still: home('spool', 'Spool'),
   },
 ];

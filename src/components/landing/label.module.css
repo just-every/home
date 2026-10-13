@@ -12,14 +12,16 @@
   --pill-to: #18191b;
   --header-h: 81px;
 
-  /* One card language for every card-like surface on the page: the same
-     edge, radius and (no) shadow; a card's colour is its own soft tint. */
-  --card-line: rgb(36 32 72 / 0.09);
-  --card-border: 1px solid var(--card-line);
-  --card-radius: 12px;
-  --card-bg: #fff;
-  --card-shadow: none;
+  /* One card language for every card-like surface on the page: a soft
+     fill, no border and no shadow, as in the approved art. A product's
+     card is its pastel (`.tinted`, from --pastel); any other card sets its
+     own soft --tint, or takes the neutral. */
+  --card-radius: 14px;
   --card-gap: 14px;
+  --card-neutral: #f3f2f8;
+  /* The neutral for a card that sits on a tinted section (the reel frame). */
+  --card-paper: #fff;
+  --pastel-mix: 40%;
   --field-line: #d9d6e8;
   --field-line-hover: #c4c1d8;
   --error: #a3342b;
@@ -134,12 +136,15 @@
   letter-spacing: -0.01em;
 }
 
-/* Every card-like surface: tinted with --tint, or white. */
+/* Every card-like surface: its --tint, or the neutral. */
 .card {
-  border: var(--card-border);
   border-radius: var(--card-radius);
-  background: var(--tint, var(--card-bg));
-  box-shadow: var(--card-shadow);
+  background: var(--tint, var(--card-neutral));
+}
+
+/* A product's card: its brand pastel, softened the same way everywhere. */
+.tinted {
+  --tint: color-mix(in oklab, var(--pastel) var(--pastel-mix), #fff);
 }
 
 .pill {
