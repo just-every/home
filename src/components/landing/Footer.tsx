@@ -2,6 +2,7 @@ import { footer, wordmark } from '@/content/landing';
 
 import ui from './label.module.css';
 import styles from './footer.module.css';
+import { TokenCount } from './TokenCount';
 
 export function Footer() {
   return (
@@ -16,7 +17,10 @@ export function Footer() {
           </a>
         ))}
       </nav>
-      <p className={styles.line}>{footer.line}</p>
+      <div className={styles.lines}>
+        <p className={styles.line}>{footer.line}</p>
+        <TokenCount />
+      </div>
     </footer>
   );
 }
