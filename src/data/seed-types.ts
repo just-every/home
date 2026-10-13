@@ -20,6 +20,12 @@ export interface Seed {
   primaryReplace: string;
   /** The card line, verbatim from the copy deck. */
   line: string;
+  /**
+   * What the product does not do (and, where a search would stretch it, the
+   * exact scope it does cover), from its own seed.json and CONTRACT.md. Only
+   * the search matcher reads it, so a reason never claims more than is true.
+   */
+  limits: string;
   /** The seed's own homepage headline, or null when none is final. */
   headline: string | null;
   /** Public GitHub repository, or null while the product is not yet public. */

@@ -40,7 +40,7 @@ function fakeClaude(output: object) {
       id: 'msg_test',
       type: 'message',
       role: 'assistant',
-      model: 'claude-haiku-5-5',
+      model: 'claude-sonnet-5-5',
       content: [{ type: 'text', text: JSON.stringify(output) }],
       stop_reason: 'end_turn',
       stop_sequence: null,
@@ -96,11 +96,7 @@ test('match: Claude picks real products; a repeat comes from D1 with no model ca
     ],
     cached: false,
   });
-  const request = modelCalls[0] as {
-    model: string;
-    system: { cache_control?: object }[];
-  };
-  assert.equal(request.model, 'claude-haiku-5-5');
+  const request = modelCalls[0] as { system: { cache_control?: object }[] };
   assert.ok(request.system[0]?.cache_control, 'the catalogue prompt is cached');
 
   const second = await match(

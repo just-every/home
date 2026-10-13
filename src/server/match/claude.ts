@@ -57,10 +57,13 @@ export async function askClaude(
   try {
     response = await client.messages.create({
       model: MATCH_MODEL,
-      // Up to three one-sentence reasons in JSON: well under 300 tokens.
-      max_tokens: 500,
-      // A short classification over a catalogue in the prompt: no thinking.
-      thinking: { type: 'disabled' },
+      // Up to three one-sentence reasons in JSON, after a short think: well
+      // under 300 tokens in practice; the headroom keeps a long think from
+      // truncating the answer (which would surface as an honest error).
+      max_tokens: 2000,
+      // A small classification with strict truth rules: a little adaptive
+      // thinking at low effort keeps reasons to the catalogue's facts.
+      thinking: { type: 'adaptive' },
       output_config: {
         effort: 'low',
         format: { type: 'json_schema', schema: matchSchema },

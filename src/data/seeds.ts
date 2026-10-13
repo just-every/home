@@ -29,6 +29,8 @@ export const seeds: Seed[] = [
     replaces: ['UptimeRobot', 'Pingdom', 'Better Stack'],
     primaryReplace: 'Pingdom',
     line: 'Alerts you only when a failure is confirmed.',
+    limits:
+      'Its checks are scheduled HTTP(S), keyword, heartbeat and browser-flow checks, and it alerts by email, signed webhook or Slack. It never phones, texts or pages anyone, has no on-call escalation, does not connect to databases itself and publishes no status page.',
     headline: 'Sleep through the night.',
     repo: 'https://github.com/just-every/run-uptime',
     status: 'public',
@@ -51,6 +53,8 @@ export const seeds: Seed[] = [
     replaces: ['Zendesk', 'Intercom', 'Help Scout', 'Freshdesk'],
     primaryReplace: 'Intercom',
     line: 'Your Codex or Claude fixes the problem and writes the reply.',
+    limits:
+      'A person presses Send on every reply; it never answers customers on its own.',
     headline: 'Customer Support, Solved.',
     repo: 'https://github.com/just-every/happytohelp',
     status: 'public',
@@ -72,6 +76,8 @@ export const seeds: Seed[] = [
     replaces: ['Slack', 'Microsoft Teams'],
     primaryReplace: 'Slack',
     line: 'Team chat where a message becomes a decision.',
+    limits:
+      'It notifies people by email only, for mentions, urgent requests and commitments; it never pages anyone.',
     headline: 'Talk it through. Get it done.',
     repo: null,
     status: 'soon',
@@ -93,6 +99,8 @@ export const seeds: Seed[] = [
     replaces: ['Atlassian Statuspage', 'Instatus', 'Better Stack'],
     primaryReplace: 'Statuspage',
     line: 'The status page that never leaves your customers in the dark.',
+    limits:
+      'It does not monitor or probe services, schedule on-call or page anyone, send text or voice notifications, or host private status pages.',
     headline: 'When something breaks, turn the light on.',
     repo: 'https://github.com/just-every/run-lamp',
     status: 'public',
@@ -114,6 +122,8 @@ export const seeds: Seed[] = [
     replaces: ['Airtable', 'Smartsheet'],
     primaryReplace: 'Airtable',
     line: 'Records, views and forms in one workspace.',
+    limits:
+      'It does not sync two ways with spreadsheets or other tools, track general tasks, run content calendars or feedback tracking, publish public views, or ship native mobile apps.',
     headline: 'Everything comes together in one place.',
     repo: 'https://github.com/just-every/run-cradle',
     status: 'public',
@@ -135,6 +145,8 @@ export const seeds: Seed[] = [
     replaces: ['Linear', 'Jira', 'Asana'],
     primaryReplace: 'Linear',
     line: "Issue tracking that shows what's now, what's next and why.",
+    limits:
+      'It has no roadmaps, Gantt charts or time tracking, no customer portals or public roadmaps, no AI triage, and no built-in Sentry, Slack, GitLab, Jira or email integrations.',
     headline: 'Know what happens next.',
     repo: 'https://github.com/just-every/run-vector',
     status: 'public',
@@ -156,6 +168,8 @@ export const seeds: Seed[] = [
     replaces: ['Notion', 'Confluence', 'Guru'],
     primaryReplace: 'Notion',
     line: 'Pages, databases and search in one wiki.',
+    limits:
+      'One workspace per install; no template marketplace, screen recorder or native mobile app.',
     headline: 'One home for everything your team knows.',
     repo: 'https://github.com/just-every/run-slate',
     status: 'public',
@@ -177,6 +191,8 @@ export const seeds: Seed[] = [
     replaces: ['Typeform', 'Google Forms', 'Jotform'],
     primaryReplace: 'Typeform',
     line: 'Forms that ask only what fits the last answer.',
+    limits:
+      'It does not take payments or orders, book appointments, accept file uploads, signatures, video or audio answers, or offer single sign-on.',
     headline: "Ask like you're listening.",
     repo: 'https://github.com/just-every/run-pencil',
     status: 'public',
@@ -198,6 +214,8 @@ export const seeds: Seed[] = [
     replaces: ['HubSpot', 'Pipedrive', 'Salesforce'],
     primaryReplace: 'HubSpot',
     line: 'A CRM that shows which deal to work next, and why.',
+    limits:
+      'It sends no bulk campaigns or sequences and does no autonomous outreach or SMS, phone or social sending; it has no revenue forecasting, hosted forms, landing pages, ads or attribution.',
     headline: null,
     repo: null,
     status: 'soon',
@@ -219,6 +237,8 @@ export const seeds: Seed[] = [
     replaces: ['Mailchimp', 'Klaviyo'],
     primaryReplace: 'Mailchimp',
     line: 'Newsletters that go only to people who said yes.',
+    limits:
+      'It sends no order, shipping or account messages and nothing without your approval; it builds no signup forms or landing pages, runs no social or ad campaigns, and has no A/B tests or journey automation.',
     headline: 'Newsletters people are glad to get.',
     repo: null,
     status: 'soon',
@@ -240,6 +260,8 @@ export const seeds: Seed[] = [
     replaces: ['Calendly', 'Acuity Scheduling', 'SavvyCal'],
     primaryReplace: 'Calendly',
     line: 'Booking pages that check your live calendar.',
+    limits:
+      'One host per install: no team round-robin, group events or classes, payments, recurring bookings, or SMS, WhatsApp or phone reminders.',
     headline: "Pick a time. That's it.",
     repo: null,
     status: 'soon',
@@ -261,6 +283,8 @@ export const seeds: Seed[] = [
     replaces: ['Canny', 'UserVoice', 'Productboard'],
     primaryReplace: 'Canny',
     line: 'Collect requests, and tell everyone who asked when it ships.',
+    limits:
+      'It is not a support inbox, survey or NPS tool, community chat or forum, and it has no AI classification or scoring, Gantt charts or sprint planning.',
     headline: 'Every customer, heard.',
     repo: null,
     status: 'soon',
@@ -282,6 +306,8 @@ export const seeds: Seed[] = [
     replaces: ['PagerDuty', 'Opsgenie'],
     primaryReplace: 'PagerDuty',
     line: "Who's on now, who's next, and when they hand over.",
+    limits:
+      'Paging is off: it never calls, texts or pages anyone, and it runs beside your existing pager. Escalation policies are configuration you can read, not live timers.',
     headline: "Everyone knows who's on call.",
     repo: null,
     status: 'soon',
@@ -304,6 +330,8 @@ export const seeds: Seed[] = [
     replaces: ['Sentry', 'Bugsnag', 'Rollbar'],
     primaryReplace: 'Sentry',
     line: 'JavaScript errors, traced to the exact line in your source.',
+    limits:
+      'It handles errors only (other Sentry telemetry is counted and discarded), and it never pages anyone.',
     headline: 'See exactly what broke.',
     repo: null,
     status: 'soon',
