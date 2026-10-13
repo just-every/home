@@ -1,14 +1,15 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { CSSProperties, KeyboardEvent } from 'react';
+import type { KeyboardEvent } from 'react';
 
 import { collection, reels } from '@/content/landing';
 import { Reel } from '@/components/shared/Reel';
 
+import { BrandMark } from './BrandMark';
 import ui from './label.module.css';
 import styles from './running.module.css';
-import { volumes } from './volumes';
+import { volumeStyle, volumes } from './volumes';
 
 /** Every volume that has a reel, in volume order. New reels appear here. */
 const reelVolumes = volumes.filter(volume => volume.seed.reel);
@@ -138,11 +139,17 @@ export function Running() {
                   aria-controls={panelId}
                   tabIndex={selected ? 0 : -1}
                   className={styles.tab}
-                  style={{ '--ink': volume.ink } as CSSProperties}
+                  style={volumeStyle(volume)}
                   onClick={() => setActive(index)}
                   onKeyDown={onTabKey}
                 >
-                  <span className={styles.dot} aria-hidden="true" />
+                  <span className={styles.dot}>
+                    <BrandMark
+                      className={styles.dotMark}
+                      volume={volume}
+                      size={22}
+                    />
+                  </span>
                   <span className={styles.tabText}>
                     <span className={styles.tabName}>
                       <span className={styles.tabNum}>{volume.number}</span>{' '}

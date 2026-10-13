@@ -1,15 +1,10 @@
 import { githubOrgUrl } from '@/content/landing';
 
 import { handwriting } from './fonts';
+import { HeroShelf } from './HeroShelf';
 import ui from './label.module.css';
 import styles from './hero.module.css';
-import { volumeCount, volumes } from './volumes';
-
-/** The box-set art is a fixed picture of the first fourteen volumes. */
-const pictured = volumes.slice(0, 14);
-const boxSetAlt = `A box set of ${pictured.length} numbered volumes, one colour each: ${pictured
-  .map(volume => `${volume.number} ${volume.seed.name}`)
-  .join(', ')}.`;
+import { volumeCount } from './volumes';
 
 export function Hero() {
   return (
@@ -38,19 +33,9 @@ export function Hero() {
             </a>
           </div>
         </div>
-        <figure className={styles.art}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/variants/label/box-set.webp"
-            srcSet="/variants/label/box-set-800.webp 800w, /variants/label/box-set.webp 1588w"
-            sizes="(min-width: 1440px) 749px, (min-width: 1024px) 52vw, 100vw"
-            width={1588}
-            height={912}
-            alt={boxSetAlt}
-            fetchPriority="high"
-            decoding="async"
-          />
-          <figcaption className={`${styles.note} ${handwriting.className}`}>
+        <div className={styles.art}>
+          <HeroShelf />
+          <p className={`${styles.note} ${handwriting.className}`}>
             <svg
               className={styles.noteArrow}
               viewBox="0 0 64 44"
@@ -69,8 +54,8 @@ export function Hero() {
               <span>{volumeCount} open-source products.</span>{' '}
               <span>Yours to run, change and keep.</span>
             </span>
-          </figcaption>
-        </figure>
+          </p>
+        </div>
       </div>
     </section>
   );

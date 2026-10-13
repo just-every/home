@@ -1,36 +1,29 @@
-import type { CSSProperties } from 'react';
-
 import { collection, reels } from '@/content/landing';
 
+import { BrandMark } from './BrandMark';
 import ui from './label.module.css';
 import styles from './collection.module.css';
 import { RepoState } from './RepoState';
-import { VolumeMark } from './VolumeMark';
-import { coverVolumes, spineVolumes, volumeCount, volumes } from './volumes';
+import { cardId, volumeCount, volumeStyle, volumes } from './volumes';
 import type { Volume } from './volumes';
 
+/** Volumes 01 to 03 are the featured covers; every later one is a card. */
+const coverVolumes = volumes.slice(0, 3);
+const cardVolumes = volumes.slice(3);
 const lastNumber = volumes[volumes.length - 1]?.number ?? '';
-
-function volumeStyle(volume: Volume): CSSProperties {
-  return {
-    '--tint': volume.tint,
-    '--ink': volume.ink,
-    '--spine': volume.spine,
-  } as CSSProperties;
-}
 
 function CoverCard({ volume }: { volume: Volume }) {
   const { seed } = volume;
   return (
-    <li className={styles.cover} style={volumeStyle(volume)}>
+    <li
+      className={styles.cover}
+      id={cardId(volume.slug)}
+      style={volumeStyle(volume)}
+    >
       <p className={styles.num}>{volume.number}</p>
-      <h3 className={styles.coverName}>{seed.name}</h3>
+      <h3 className={styles.coverName}>{volume.name}</h3>
       <p className={styles.coverLine}>{seed.line}</p>
-      <VolumeMark
-        className={styles.coverMark}
-        shape={volume.shape}
-        color={volume.ink}
-      />
+      <BrandMark className={styles.coverMark} volume={volume} size={104} />
       <div className={styles.coverFoot}>
         <p className={styles.coverAlt}>
           {collection.alternativeTo} {seed.primaryReplace}
@@ -44,15 +37,15 @@ function CoverCard({ volume }: { volume: Volume }) {
 function VolumeCard({ volume }: { volume: Volume }) {
   const { seed } = volume;
   return (
-    <li className={styles.volume} style={volumeStyle(volume)}>
-      <VolumeMark
-        className={styles.volumeMark}
-        shape={volume.shape}
-        color={volume.ink}
-      />
+    <li
+      className={styles.volume}
+      id={cardId(volume.slug)}
+      style={volumeStyle(volume)}
+    >
+      <BrandMark className={styles.volumeMark} volume={volume} size={44} />
       <div className={styles.volumeBody}>
         <p className={styles.num}>{volume.number}</p>
-        <h3 className={styles.volumeName}>{seed.name}</h3>
+        <h3 className={styles.volumeName}>{volume.name}</h3>
         <p className={styles.volumeAlt}>
           <span>{collection.alternativeTo}</span>{' '}
           <span>{seed.primaryReplace}</span>
@@ -94,14 +87,16 @@ export function Collection() {
       </div>
       <ol className={styles.covers}>
         {coverVolumes.map(volume => (
-          <CoverCard key={volume.seed.slug} volume={volume} />
+          <CoverCard key={volume.slug} volume={volume} />
         ))}
       </ol>
-      <ol className={styles.grid} start={coverVolumes.length + 1}>
-        {spineVolumes.map(volume => (
-          <VolumeCard key={volume.seed.slug} volume={volume} />
-        ))}
-      </ol>
+      {cardVolumes.length > 0 ? (
+        <ol className={styles.grid} start={coverVolumes.length + 1}>
+          {cardVolumes.map(volume => (
+            <VolumeCard key={volume.slug} volume={volume} />
+          ))}
+        </ol>
+      ) : null}
     </section>
   );
 }

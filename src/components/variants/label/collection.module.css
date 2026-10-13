@@ -51,17 +51,25 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Every card is its volume: the brand pastel, softened, with a spine edge in
+   the full pastel down its left side. */
+.cover,
+.volume {
+  scroll-margin-top: 24px;
+  background: color-mix(in oklab, var(--pastel) 34%, #fff);
+  box-shadow: inset 6px 0 0 var(--pastel);
+}
+
 /* Volumes 01-03: face-out covers. */
 .cover {
-  --mark-w: clamp(84px, 8.33vw, 120px);
+  --mark-w: clamp(84px, 7.6vw, 108px);
 
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: 212px;
-  padding: 31px 36px 22px;
+  padding: 31px 36px 22px 40px;
   border-radius: 14px;
-  background: var(--tint);
 }
 
 .cover .num {
@@ -87,10 +95,11 @@
 
 .coverMark {
   position: absolute;
-  top: 28px;
+  top: 30px;
   right: 34px;
   width: var(--mark-w);
-  height: calc(var(--mark-w) * 0.91);
+  height: var(--mark-w);
+  object-fit: contain;
 }
 
 .coverFoot {
@@ -125,27 +134,27 @@
   grid-template-rows: 1fr auto;
   column-gap: 12px;
   min-height: 173px;
-  padding: 19px 17px 12px;
+  padding: 19px 17px 12px 21px;
   border-radius: 11px;
-  background: var(--tint);
 }
 
 .volume:nth-child(n + 6) {
   grid-column: span 5;
   grid-template-columns: 40px minmax(0, 1fr);
   column-gap: 9px;
-  padding-inline: 14px;
+  padding-inline: 18px 14px;
 }
 
 .volumeMark {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   margin-top: 6px;
+  object-fit: contain;
 }
 
 .volume:nth-child(n + 6) .volumeMark {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
 }
 
 .volume .num {
@@ -195,6 +204,7 @@
 }
 
 .coverFoot .repoState {
+  flex-wrap: nowrap;
   justify-content: flex-end;
 }
 
@@ -205,6 +215,7 @@
   gap: 6px;
   min-height: 36px;
   font-size: 13.5px;
+  white-space: nowrap;
 }
 
 .repoText > span:first-child,
@@ -260,7 +271,8 @@
   align-items: center;
   min-height: 26px;
   padding: 3px 11px;
-  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  border: 1px solid
+    color-mix(in srgb, var(--brand-ink, var(--ink)) 18%, transparent);
   border-radius: 999px;
   background: #ffffff8c;
   color: #6c6b7e;
@@ -296,12 +308,12 @@
     grid-column: auto;
     grid-template-columns: 50px minmax(0, 1fr);
     column-gap: 14px;
-    padding: 20px 18px 12px;
+    padding: 20px 18px 12px 22px;
   }
 
   .volume:nth-child(n + 6) .volumeMark {
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
   }
 
   .repoText,
@@ -345,7 +357,7 @@
 
   .cover {
     min-height: 0;
-    padding: 26px 24px 16px;
+    padding: 26px 24px 16px 28px;
   }
 
   .coverMark {
