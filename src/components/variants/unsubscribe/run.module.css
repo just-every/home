@@ -1,0 +1,216 @@
+.run {
+  position: relative;
+  padding: 20px 26px 22px;
+  border: 1px solid #e6ebee;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.title {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 750;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.lede {
+  max-width: 380px;
+  margin: 6px 0 0;
+  color: #5a6069;
+  font-size: 18px;
+  line-height: 1.38;
+}
+
+.noteWrap {
+  position: absolute;
+  top: 26px;
+  right: 24px;
+  transform: rotate(-7deg);
+}
+
+.note {
+  font-size: 19px;
+}
+
+.arrow {
+  position: absolute;
+  left: -54px;
+  top: 18px;
+  width: 48px;
+  height: 34px;
+  color: #2f3532;
+}
+
+.panel {
+  margin-top: 20px;
+  padding: 0 10px 10px;
+  border: 1px solid #e3e8ed;
+  border-radius: 10px;
+}
+
+.tabs {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #e3e8ee;
+}
+
+.tab {
+  padding: 12px 26px 8px;
+  border-bottom: 2px solid #19a874;
+  color: #13191d;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.code {
+  position: relative;
+  margin-top: 10px;
+  padding: 14px 46px 14px 12px;
+  border-radius: 7px;
+  background: #f2f5f9;
+}
+
+.lines {
+  margin: 0;
+  padding-left: 28px;
+  counter-reset: line;
+  color: #23518f;
+  font:
+    13px/1.8 ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    monospace;
+}
+
+.lines li {
+  position: relative;
+  counter-increment: line;
+}
+
+.lines li::before {
+  content: counter(line);
+  position: absolute;
+  left: -28px;
+  width: 14px;
+  color: #7d8999;
+  text-align: right;
+}
+
+.lines code {
+  display: block;
+  padding-left: 2ch;
+  font: inherit;
+  text-indent: -2ch;
+  white-space: pre-wrap;
+}
+
+.copy {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 0;
+  background: none;
+  color: #5d6878;
+}
+
+.copy::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid #dde3e8;
+  border-radius: 7px;
+  background: #fff;
+  z-index: 0;
+}
+
+.copy svg {
+  position: relative;
+  z-index: 1;
+}
+
+.copy:hover::before {
+  border-color: #b7c0ca;
+}
+
+.after {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.alt {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.alt code {
+  padding: 1px 5px;
+  border-radius: 5px;
+  background: #f2f5f9;
+  color: #23518f;
+  font:
+    13px ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    monospace;
+}
+
+.repo {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  padding: 0 4px;
+  color: #16191d;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.repo:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 599px) {
+  .run {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .lede {
+    font-size: 17px;
+  }
+
+  .noteWrap {
+    position: static;
+    margin: 14px 0 0 54px;
+    transform: rotate(-4deg);
+  }
+
+  .arrow {
+    left: -50px;
+    top: 6px;
+  }
+
+  .lines {
+    font-size: 13px;
+  }
+
+  .tab {
+    padding-inline: 12px;
+  }
+}

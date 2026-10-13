@@ -1,0 +1,113 @@
+/* Shared tokens and building blocks for the Running variant. Blocks use
+   :where() so a component's own class always refines them. Desktop values are
+   the approved 12ui canvas (1536 wide) scaled to a 1440 page. */
+
+.root {
+  --ink: #111314;
+  --ink-soft: #24282d;
+  --muted: #65676a;
+  --muted-2: #5f6774;
+  --line: #e5e7ea;
+  --card-line: #e8edf1;
+  --accent-blue: #1a56db;
+  --accent-blue-bg: #eaf3ff;
+  --focus: #438bff;
+  --gutter: clamp(16px, 3.9vw, 60px);
+
+  background: #fff;
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.35;
+  overflow-x: clip;
+}
+
+.root :where(a, button):focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* Zero specificity, so every component's own margins win. */
+:where(.root) :where(h1, h2, h3, p, ul, ol, figure) {
+  margin: 0;
+}
+
+.page {
+  max-width: 1536px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+:where(.pill) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 44px;
+  border: 1px solid #202222;
+  background: linear-gradient(#292b2b, #171818);
+  box-shadow: 0 2px 5px rgb(0 0 0 / 6%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 40px;
+  padding: 10px 26px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background 160ms ease;
+}
+
+:where(.pill):hover {
+  background: linear-gradient(#3a3d3d, #202222);
+}
+
+:where(.panel) {
+  border: 1px solid #e8edf2;
+  border-radius: 10px;
+  background: linear-gradient(115deg, #fff, #fdfefe);
+}
+
+:where(.sectionTitle) {
+  font-size: 38.5px;
+  line-height: 1.1;
+  letter-spacing: -1.6px;
+  font-weight: 500;
+}
+
+:where(.sectionSubtitle) {
+  font-size: 17px;
+  line-height: 1.4;
+  color: #6b7381;
+  margin-top: 4px;
+}
+
+:where(.circleIcon) {
+  width: 41px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  border-radius: 50%;
+  color: var(--icon-color, #2684ff);
+  background: var(--icon-bg, #eaf3ff);
+}
+
+@media (max-width: 1023px) {
+  :where(.sectionTitle) {
+    font-size: 34px;
+    letter-spacing: -1.3px;
+  }
+
+  :where(.sectionSubtitle) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root *,
+  .root *::before,
+  .root *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

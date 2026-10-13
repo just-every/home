@@ -1,0 +1,131 @@
+/* Narrow screens: the objects stand on their own planks, three to a shelf. */
+.shelf {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 30px;
+  margin: 34px 0 0;
+  padding: 0 14px;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 3);
+  min-width: 0;
+}
+
+.art {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 84px;
+  padding: 0 6px;
+}
+
+.object {
+  width: calc(var(--ow) * 0.5px);
+  height: auto;
+  filter: drop-shadow(0 5px 4px rgb(96 64 34 / 0.2));
+}
+
+.label {
+  display: block;
+  flex: 1;
+  padding: 13px 4px 11px;
+  background: linear-gradient(
+    180deg,
+    #f9f1e6 0,
+    #f4e7d6 7px,
+    #ead8c1 8px,
+    #e1cbae 100%
+  );
+  box-shadow: 0 12px 14px -12px rgb(110 78 44 / 0.45);
+  text-align: center;
+}
+
+.label strong {
+  display: block;
+  color: var(--ink);
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+.label span {
+  display: block;
+  margin-top: 2px;
+  color: #574f55;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+@media (min-width: 600px) {
+  .shelf {
+    row-gap: 34px;
+    padding: 0 22px;
+    margin-top: 44px;
+  }
+
+  .item {
+    width: calc(100% / 7);
+  }
+
+  .art {
+    height: 92px;
+    padding: 0 4px;
+  }
+
+  .object {
+    width: calc(var(--ow) * 0.52px);
+  }
+
+  .label strong {
+    font-size: 13px;
+  }
+
+  .label span {
+    font-size: 11.5px;
+  }
+}
+
+/* Wide screens: the scene draws the objects; lay the names on the shelf fronts. */
+@media (min-width: 1024px) {
+  .shelf {
+    position: absolute;
+    inset: 0;
+    display: block;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+  }
+
+  .item {
+    position: absolute;
+    left: calc(var(--x) * var(--u));
+    top: calc(var(--y) * var(--u));
+    width: calc(196 * var(--u));
+    transform: translateX(-50%);
+  }
+
+  .art {
+    display: none;
+  }
+
+  .label {
+    padding: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .label strong {
+    font-size: calc(15 * var(--u));
+    letter-spacing: -0.02em;
+  }
+
+  .label span {
+    margin-top: calc(3 * var(--u));
+    color: #45465a;
+    font-size: calc(13 * var(--u));
+  }
+}

@@ -1,0 +1,27 @@
+.wrap {
+  padding-block: 64px 72px;
+  background: #fdfdfd;
+}
+
+.grid {
+  display: grid;
+  gap: 72px;
+}
+
+@media (min-width: 1200px) {
+  .wrap {
+    padding-block: 76px 96px;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 600fr) minmax(0, 656fr);
+    grid-template-rows: auto auto auto;
+    column-gap: 80px;
+    row-gap: 0;
+    align-items: start;
+  }
+
+  .grid > section {
+    display: contents;
+  }
+}
