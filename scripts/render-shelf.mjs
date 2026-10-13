@@ -238,11 +238,11 @@ async function poster() {
     .screenshot({ omitBackground: true });
   const meta = await sharp(png).metadata();
   await sharp(png)
-    .webp({ quality: 90, alphaQuality: 90, effort: 6 })
+    .webp({ quality: 82, alphaQuality: 80, effort: 6 })
     .toFile(join(posterDir, 'shelf-1440.webp'));
   await sharp(png)
     .resize({ width: 800 })
-    .webp({ quality: 88, alphaQuality: 90, effort: 6 })
+    .webp({ quality: 82, alphaQuality: 80, effort: 6 })
     .toFile(join(posterDir, 'shelf-800.webp'));
   await sharp(png).toFile(join(shots, 'shelf-1440-transparent.png'));
   console.log(
