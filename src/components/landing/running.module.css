@@ -74,53 +74,61 @@
   gap: 16px 32px;
 }
 
-.player {
+/* The player, its corner kept clear of the plant. */
+.screen {
   position: relative;
   z-index: 1;
   min-width: 0;
   margin-right: 66px;
+  padding: 10px;
+  border-radius: var(--card-radius);
+  background: var(--card-paper);
 }
 
-.tabs {
-  display: flex;
-  gap: 8px;
+/* Every product, Uptime first, as its mark on its pastel and its name: one
+   row of fourteen on a wide screen, two rows of seven, or four to a row on a
+   phone (where every name still fits). The selected one sits on paper, like
+   the player. */
+.picker {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
   position: relative;
   z-index: 1;
-  /* The selected tab joins the frame below it. */
-  padding-right: 120px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.tabs::-webkit-scrollbar {
-  display: none;
+  margin-top: 22px;
+  padding: 6px;
+  border-radius: calc(var(--card-radius) + 4px);
+  background: color-mix(in oklab, var(--card-paper) 45%, transparent);
 }
 
 .tab {
   display: flex;
-  flex: 1 0 210px;
-  max-width: 240px;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  min-height: 56px;
-  padding: 10px 16px;
+  gap: 7px;
+  min-width: 0;
+  padding: 12px 2px 10px;
   border: 0;
-  border-radius: var(--card-radius) var(--card-radius) 0 0;
-  background: color-mix(in oklab, var(--card-paper) 55%, transparent);
+  border-radius: var(--card-radius);
+  background: transparent;
   color: var(--muted);
   font: inherit;
-  font-size: 14px;
-  text-align: left;
   cursor: pointer;
-  transition: background 160ms ease;
+  transition:
+    background 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .tab:hover {
-  background: color-mix(in oklab, var(--card-paper) 80%, transparent);
+  background: color-mix(in oklab, var(--card-paper) 70%, transparent);
 }
 
 .tab[aria-selected='true'] {
   background: var(--card-paper);
+  box-shadow:
+    0 1px 2px #1b1a3014,
+    0 6px 18px -10px #1b1a3040;
   color: var(--ink);
 }
 
@@ -128,52 +136,42 @@
   display: grid;
   flex: none;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: color-mix(in oklab, var(--pastel) 55%, #fff);
+  background: color-mix(in oklab, var(--pastel) 60%, #fff);
+  transition: background 160ms ease;
+}
+
+.tab[aria-selected='true'] .dot,
+.tab:hover .dot {
+  background: var(--pastel);
 }
 
 .dotMark {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
 }
 
-.tab[aria-selected='false'] .dot {
-  opacity: 0.75;
-}
-
-.tabText {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-
 .tabName {
-  color: #22222b;
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.tabNum {
-  margin-right: 3px;
-  color: var(--muted);
-  font-size: 12px;
-  font-variant-numeric: tabular-nums;
-}
-
-.tabText small {
-  color: var(--muted);
+  max-width: 100%;
+  overflow: hidden;
   font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.screen {
-  position: relative;
-  padding: 10px;
-  border-radius: 0 var(--card-radius) var(--card-radius) var(--card-radius);
-  background: var(--card-paper);
+.tab[aria-selected='true'] .tabName {
+  font-weight: 600;
+}
+
+@media (min-width: 1400px) {
+  .picker {
+    grid-template-columns: repeat(14, minmax(0, 1fr));
+  }
 }
 
 .video {
@@ -224,14 +222,19 @@
     gap: 4px;
   }
 
-  .player {
+  .screen,
+  .picker {
     width: 100%;
     max-width: 760px;
-    margin: 24px auto 0;
+    margin-inline: auto;
   }
 
-  .tabs {
-    padding-right: 0;
+  .screen {
+    margin-top: 24px;
+  }
+
+  .picker {
+    margin-top: 16px;
   }
 
   .plant {
@@ -244,33 +247,35 @@
   }
 }
 
-@media (max-width: 599px) {
+@media (max-width: 719px) {
+  /* Four to a row; the last row of two sits centred. */
+  .picker {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    padding: 4px;
+  }
+
   .tab {
-    flex: 1 1 0;
-    min-width: 150px;
-    gap: 8px;
-    padding: 8px 10px;
+    flex: 0 0 calc((100% - 12px) / 4);
+    gap: 6px;
+    padding: 10px 2px 8px;
   }
+}
 
-  .tabText small {
-    white-space: normal;
-  }
-
+@media (max-width: 599px) {
   .dot {
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
   }
 
   .dotMark {
-    width: 17px;
-    height: 17px;
+    width: 19px;
+    height: 19px;
   }
 
   .tabName {
-    font-size: 14px;
-  }
-
-  .tabText small {
     font-size: 11.5px;
   }
 
@@ -293,8 +298,16 @@
   }
 }
 
+@media (max-width: 379px) {
+  .tabName {
+    font-size: 11px;
+    letter-spacing: -0.01em;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .tab,
+  .dot,
   .play {
     transition: none;
   }
