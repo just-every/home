@@ -4,8 +4,9 @@
  * running server with Playwright:
  *
  *   - the static render the hero shows as its poster, taken from the real page
- *     with its own volumes, read from the canvas at 1440 (2x):
- *     public/landing/shelf/shelf-1440.webp (1498x860) and shelf-800.webp
+ *     with its own volumes, read from the canvas at 1440 (2x), its bleed past
+ *     the slot's left edge included: public/landing/shelf/shelf-1440.webp and
+ *     shelf-800.webp (keep POSTER in Shelf.tsx at the size it prints)
  *   - the poster and the live scene in place on the page at 1440, side by side
  *     with their difference measured, so the crossfade can be seen not to shift
  *   - growth shots at 14, 30 and 60 volumes (needs `next dev`: they use the
@@ -281,7 +282,9 @@ async function crossfade() {
     document.fonts.ready.then(() => window.scrollTo(0, 0))
   );
   const clip = await page.evaluate(() => {
-    const box = document.querySelector('[data-shelf]').getBoundingClientRect();
+    const box = document
+      .querySelector('[data-shelf] img')
+      .parentElement.getBoundingClientRect();
     return {
       x: Math.max(0, box.x - 24),
       y: Math.max(0, box.y - 24),
@@ -300,6 +303,11 @@ async function crossfade() {
       img.style.setProperty(
         'opacity',
         which === 'poster' ? '1' : '0',
+        'important'
+      );
+      img.style.setProperty(
+        'visibility',
+        which === 'poster' ? 'visible' : 'hidden',
         'important'
       );
       stage.style.setProperty(

@@ -12,6 +12,7 @@ import {
 import { buildShelf, lights, type Shelf, type ShelfPrint } from './build';
 import { CLIP, FRAME } from './camera';
 import {
+  type Box,
   type Framing,
   frameRow,
   makeCamera,
@@ -30,9 +31,9 @@ const MAX_PIXEL_RATIO = 2;
 const HERO_WIDTH = 749;
 
 export interface ShelfStats {
-  /** ms from engine start to the first rendered frame. */
+  /** ms from engine start to the first frame on screen (stage revealed). */
   firstFrameMs: number | null;
-  /** performance.now() of the first rendered frame. */
+  /** performance.now() when the first frame was on screen. */
   firstFrameAt: number | null;
   frames: number;
   /** Mean CPU time of the last 120 draws (ms). */
@@ -60,6 +61,8 @@ export interface ShelfHandle {
 }
 
 const UP = new Vector3(0, 1, 0);
+const nextFrame = () =>
+  new Promise<number>(resolve => requestAnimationFrame(resolve));
 const mean = (values: number[]) =>
   values.length
     ? values.reduce((sum, value) => sum + value, 0) / values.length
@@ -81,6 +84,12 @@ export class ShelfEngine {
   private width = 1;
   private height = 1;
   private pixelRatio = 1;
+  /** The shelf's slot (CSS px); the canvas may reach past it on the left. */
+  private slot: Box = { x: 0, y: 0, w: 1, h: 1 };
+  /** Where the canvas starts, left of the slot (CSS px). */
+  private stageX = 0;
+  /** Bumped whenever the canvas is resized, which clears it. */
+  private resizes = 0;
 
   private raf = 0;
   private last = 0;
@@ -147,7 +156,11 @@ export class ShelfEngine {
     this.pose();
   }
 
-  /** Load the prints, build the scene and draw the first frame. */
+  /**
+   * Load the prints, build the scene and draw the first frame; the stage is
+   * marked ready (and fades in over the poster) only once that frame is on
+   * screen.
+   */
   async start() {
     const family =
       getComputedStyle(this.host).fontFamily || 'system-ui, sans-serif';
@@ -172,15 +185,40 @@ export class ShelfEngine {
     this.shelf = buildShelf(this.paint(family, marks));
     this.scene.add(this.shelf.root, ...lights());
     this.wire();
-    this.draw();
+    await this.present();
+  }
+
+  /**
+   * Draw the first frame in an animation frame, so it reaches the screen with
+   * that frame, and reveal the stage in the next one: by then the frame (every
+   * print, mark and the lens pass, all drawn synchronously) has been
+   * composited. A resize in between clears the canvas, so draw again.
+   */
+  private async present() {
+    for (;;) {
+      await nextFrame();
+      if (this.disposed) return;
+      const resizes = this.resizes;
+      this.draw();
+      await nextFrame();
+      if (this.disposed) return;
+      if (resizes === this.resizes) break;
+    }
+    this.firstFrameAt = performance.now();
+    this.host.dataset.ready = '';
+    this.host.dispatchEvent(
+      new CustomEvent<ShelfHandle>('shelf3d-ready', {
+        bubbles: true,
+        detail: this.handle(),
+      })
+    );
     this.request();
   }
 
   /** Paint each volume's prints at the size the camera sees them. */
   private paint(family: string, marks: Mark[]): ShelfPrint[] {
     const anisotropy = this.renderer.capabilities.getMaxAnisotropy();
-    const minWidth = HERO_WIDTH * this.pixelRatio;
-    const scale = Math.max(1, minWidth / (this.width * this.pixelRatio));
+    const scale = Math.max(1, HERO_WIDTH / this.slot.w);
     const tall = (x: number, z: number) => {
       const top = new Vector3(x, VOLUME.h, z).project(this.camera);
       const foot = new Vector3(x, 0, z).project(this.camera);
@@ -255,13 +293,44 @@ export class ShelfEngine {
     camera.updateMatrixWorld(true);
   }
 
+  /**
+   * Fit the canvas to the stage and the view to the shelf's slot. Resizing a
+   * canvas clears it, so an unchanged size leaves it alone.
+   */
   private resize() {
     const width = Math.max(1, this.host.clientWidth);
     const height = Math.max(1, this.host.clientHeight);
     const ratio = Math.min(window.devicePixelRatio || 1, MAX_PIXEL_RATIO);
+    const shell = this.host.closest<HTMLElement>('[data-shelf]');
+    const own = this.host.getBoundingClientRect();
+    const box = shell?.getBoundingClientRect() ?? own;
+    const stage: Box = {
+      x: own.left - box.left,
+      y: own.top - box.top,
+      w: Math.max(1, own.width),
+      h: Math.max(1, own.height),
+    };
+    const slot: Box = {
+      x: 0,
+      y: 0,
+      w: Math.max(1, box.width),
+      h: Math.max(1, box.height),
+    };
+    const same =
+      this.resizes > 0 &&
+      width === this.width &&
+      height === this.height &&
+      ratio === this.pixelRatio &&
+      stage.x === this.stageX &&
+      slot.w === this.slot.w &&
+      slot.h === this.slot.h;
+    if (same) return;
+    this.stageX = stage.x;
     this.width = width;
     this.height = height;
     this.pixelRatio = ratio;
+    this.slot = slot;
+    this.resizes += 1;
     this.renderer.setPixelRatio(ratio);
     this.renderer.setSize(width, height, false);
     this.lens.setSize(
@@ -269,7 +338,7 @@ export class ShelfEngine {
       Math.round(height * ratio),
       ratio
     );
-    const view = viewWindow(width / height, this.framing.shift);
+    const view = viewWindow(slot, stage, this.framing.shift);
     this.camera.aspect = FRAME.w / FRAME.h;
     this.camera.near = CLIP.near;
     this.camera.far = CLIP.far;
@@ -337,16 +406,6 @@ export class ShelfEngine {
     this.draws = [...this.draws.slice(-119), performance.now() - begin];
     this.dirty = false;
     this.frames += 1;
-    if (this.firstFrameAt === null) {
-      this.firstFrameAt = performance.now();
-      this.host.dataset.ready = '';
-      this.host.dispatchEvent(
-        new CustomEvent<ShelfHandle>('shelf3d-ready', {
-          bubbles: true,
-          detail: this.handle(),
-        })
-      );
-    }
   }
 
   // ------------------------------------------------------- interaction

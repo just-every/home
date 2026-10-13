@@ -126,15 +126,33 @@ export function frameRow(count: number): Framing {
   };
 }
 
+/** A box in CSS px: the stage's, relative to the shelf's slot. */
+export interface Box {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}
+
 /**
- * The part of the design frame the canvas shows: the art crop, fitted inside
- * a canvas of any aspect (contain), moved by the framing's shift.
+ * The part of the design frame the canvas shows. The shelf's slot shows the
+ * art crop, fitted inside it (contain) and moved by the framing's shift; the
+ * canvas may reach past the slot (it runs further left, so the front box's
+ * shadow and reflection fade out on the page instead of at the canvas edge),
+ * and shows the same frame there, so the row stays put in the slot.
  */
-export function viewWindow(aspect: number, shift: number) {
+export function viewWindow(slot: Box, stage: Box, shift: number): Box {
+  const aspect = slot.w / slot.h;
   const artAspect = ART_CROP.w / ART_CROP.h;
   const w = aspect >= artAspect ? ART_CROP.h * aspect : ART_CROP.w;
   const h = w / aspect;
-  const cx = ART_CROP.x + ART_CROP.w / 2 + shift;
-  const cy = ART_CROP.y + ART_CROP.h / 2;
-  return { x: cx - w / 2, y: cy - h / 2, w, h };
+  const x = ART_CROP.x + ART_CROP.w / 2 + shift - w / 2;
+  const y = ART_CROP.y + ART_CROP.h / 2 - h / 2;
+  const scale = w / slot.w;
+  return {
+    x: x + (stage.x - slot.x) * scale,
+    y: y + (stage.y - slot.y) * scale,
+    w: stage.w * scale,
+    h: stage.h * scale,
+  };
 }

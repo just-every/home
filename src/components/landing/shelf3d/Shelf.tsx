@@ -1,7 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useSyncExternalStore } from 'react';
+import { type CSSProperties, useSyncExternalStore } from 'react';
 
 import styles from './shelf.module.css';
 import type { ShelfVolume } from './types';
@@ -15,12 +15,27 @@ export interface ShelfPoster {
   sizes?: string;
 }
 
+/**
+ * How far the poster and the live scene may reach past the slot's left edge,
+ * as a share of its width: room for the front box's contact shadow,
+ * reflection and floor to fade out on the page instead of ending at an edge.
+ * The poster is rendered with all of it; a layout with less room (the hero's
+ * `--shelf-bleed`) shows less of the poster, which stays pinned to the slot.
+ */
+const BLEED = 0.18;
+
+/** The static render's pixels: the scene at 1440 (2x), bleed included. */
+const POSTER = { w: 1768, h: 860 };
+
 /** The static render of the shelf (`node scripts/render-shelf.mjs`). */
 export const shelfPoster: ShelfPoster = {
   src: '/landing/shelf/shelf-1440.webp',
-  srcSet:
-    '/landing/shelf/shelf-800.webp 800w, /landing/shelf/shelf-1440.webp 1498w',
-  sizes: '(min-width: 1440px) 749px, (min-width: 1024px) 52vw, 100vw',
+  srcSet: `/landing/shelf/shelf-800.webp 800w, /landing/shelf/shelf-1440.webp ${POSTER.w}w`,
+  sizes: [
+    `(min-width: 1440px) ${Math.round(749 * (1 + BLEED))}px`,
+    `(min-width: 1024px) ${+(52 * (1 + BLEED)).toFixed(2)}vw`,
+    `${+(100 * (1 + BLEED)).toFixed(2)}vw`,
+  ].join(', '),
 };
 
 export interface ShelfProps {
@@ -67,6 +82,7 @@ export function Shelf({
   return (
     <div
       className={className ? `${styles.shelf} ${className}` : styles.shelf}
+      style={{ '--shelf-poster-bleed': `${BLEED * 100}cqw` } as CSSProperties}
       data-shelf
     >
       <div className={styles.room} aria-hidden="true">
@@ -76,22 +92,24 @@ export function Shelf({
         <div className={styles.floor} />
         <div className={styles.plant} />
       </div>
-      {poster ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          className={styles.poster}
-          src={poster.src}
-          srcSet={poster.srcSet}
-          sizes={poster.sizes}
-          width={1498}
-          height={860}
-          alt=""
-          aria-hidden="true"
-          fetchPriority="high"
-          decoding="async"
-        />
-      ) : null}
-      {live ? <Shelf3D volumes={volumes} featured={featured} /> : null}
+      <div className={styles.view}>
+        {poster ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            className={styles.poster}
+            src={poster.src}
+            srcSet={poster.srcSet}
+            sizes={poster.sizes}
+            width={POSTER.w}
+            height={POSTER.h}
+            alt=""
+            aria-hidden="true"
+            fetchPriority="high"
+            decoding="async"
+          />
+        ) : null}
+        {live ? <Shelf3D volumes={volumes} featured={featured} /> : null}
+      </div>
       <ul
         className={styles.list}
         aria-label="The collection, as a box set of numbered volumes"

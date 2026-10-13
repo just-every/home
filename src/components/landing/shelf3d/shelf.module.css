@@ -94,31 +94,78 @@
   background: url('/landing/shelf/plant.webp') center / 100% 100% no-repeat;
 }
 
-.poster,
+/* The poster and the live scene share one box: the slot, run further left
+   (--shelf-bleed, set by the hero for the room its layout has; never more
+   than the poster's own bleed, set by Shelf.tsx) so the front box's contact
+   shadow and reflection fade out on the page instead of ending at an edge.
+   The outer part of that run fades to nothing, so where the room is short
+   the shadow still ends softly. */
+.view {
+  --bleed: min(
+    var(--shelf-bleed, var(--shelf-poster-bleed, 0px)),
+    var(--shelf-poster-bleed, 0px)
+  );
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: calc(-1 * var(--bleed));
+  overflow: clip;
+  isolation: isolate;
+  mask-image: linear-gradient(90deg, transparent, #000 min(var(--bleed), 8cqw));
+}
+
 .stage {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  transition: opacity 0.5s ease;
 }
 
+/* The slot plus the poster's whole bleed, pinned to the right: it covers
+   the slot exactly as the canvas does, so the handover cannot shift, and a
+   shorter bleed leaves its outer left outside the view. */
 .poster {
+  position: absolute;
+  top: 0;
+  right: 0;
   display: block;
-  /* Fills the box exactly as the canvas does, so the crossfade cannot shift. */
+  width: calc(100cqw + var(--shelf-poster-bleed, 0px));
+  max-width: none;
+  height: 100%;
   object-fit: fill;
+}
+
+/* The handover. The poster stays as it is until the live scene's first
+   complete frame is on screen (data-ready); then the two crossfade, adding
+   up (plus-lighter) inside the view, so every frame is a straight mix of the
+   poster and the scene: never lighter or emptier than either, and the
+   shadows, see-through where they fade, never doubled. The poster is hidden
+   the moment the scene is fully opaque. */
+.poster,
+.stage {
+  mix-blend-mode: plus-lighter;
+  /* Composited on its own from the start, so the poster is scaled the same
+     way before and during the fade. */
+  will-change: opacity;
 }
 
 .stage {
   opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .stage[data-ready] {
   opacity: 1;
 }
 
-.shelf:has(.stage[data-ready]) .poster {
+.view:has(.stage[data-ready]) .poster {
   opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.5s ease,
+    visibility 0s 0.5s;
 }
 
 .canvas {
@@ -186,8 +233,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .poster,
-  .stage {
+  .stage,
+  .view:has(.stage[data-ready]) .poster {
     transition: none;
   }
 }
