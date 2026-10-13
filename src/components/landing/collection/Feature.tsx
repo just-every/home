@@ -40,8 +40,18 @@ export function Feature({ placed }: { placed: Placed }) {
   const { item, replaces, reason } = placed;
   const line = reason ?? item.line;
   const primary = item.homepage
-    ? { href: item.homepage, label: host(item.homepage), arrow: '↗' }
-    : { href: item.repo, label: collection.githubLabel, arrow: '→' };
+    ? {
+        href: item.homepage,
+        label: host(item.homepage),
+        name: undefined,
+        arrow: '↗',
+      }
+    : {
+        href: item.repo,
+        label: collection.githubLabel,
+        name: `${item.name} on ${collection.githubLabel}`,
+        arrow: '→',
+      };
   return (
     <li
       className={`${ui.card} ${ui.tinted} ${styles.feature}`}
@@ -70,6 +80,7 @@ export function Feature({ placed }: { placed: Placed }) {
           <a
             className={`${ui.pill} ${ui.pillSmall} ${styles.primary}`}
             href={primary.href}
+            aria-label={primary.name}
           >
             {primary.label}{' '}
             <span className={ui.arrow} aria-hidden="true">
