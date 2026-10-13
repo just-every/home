@@ -134,6 +134,8 @@
 
   .art {
     --shelf-room: calc((100vw - min(100vw - 56px, 760px)) / 2);
+    /* The shelf's shadow may run left only as far as the viewport's edge. */
+    --shelf-bleed: var(--shelf-room);
 
     position: relative;
     top: auto;
@@ -166,6 +168,7 @@
 
   .art {
     --shelf-room: 0px;
+    --shelf-bleed: 20px;
 
     width: calc(100% + 20px);
     margin-right: -20px;
