@@ -17,7 +17,7 @@ export const CAM = {
 export const CLIP = { near: 0.5, far: 80 } as const;
 
 /**
- * The hero art (box-set.webp, 1588x912) is a 1.983x crop of that design. This
- * is the crop in design pixels; at 14 volumes the scene fills it as the art.
+ * The hero's shelf slot (1588x912) is a 1.983x crop of that design. This is
+ * the crop in design pixels; at 14 volumes the scene fills it as the art.
  */
 export const ART_CROP = { x: 738.6, y: 122.9, w: 800.8, h: 459.9 } as const;
