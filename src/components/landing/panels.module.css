@@ -28,12 +28,6 @@
   gap: 20px;
 }
 
-.after {
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.45;
-}
-
 .terminalWrap {
   align-self: center;
   min-width: 0;

@@ -21,8 +21,8 @@
   list-style: none;
 }
 
-/* A seventh question takes the whole last row. */
-.card:nth-child(7):last-child {
+/* A lone last question takes the whole last row. */
+.card:last-child:nth-child(3n + 1) {
   grid-column: 1 / -1;
 }
 
