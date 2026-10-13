@@ -45,8 +45,6 @@ export const volumes: Volume[] = seeds.map((seed, index) => ({
   seed,
 }));
 
-export const volumeCount = volumes.length;
-
 /**
  * Every volume in display order, for the hero's shelf. The first is the
  * featured volume, shown face out with its tagline (Uptime).

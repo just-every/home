@@ -6,6 +6,16 @@ export interface SeedReel {
   durationSeconds: number;
 }
 
+/** A real picture of the product, for its feature when it has no reel. */
+export interface SeedStill {
+  /** WebP under /public/seeds/<slug>/. */
+  src: string;
+  width: number;
+  height: number;
+  /** What it shows, as its alt text. */
+  alt: string;
+}
+
 export interface Seed {
   slug: string;
   name: string;
@@ -22,6 +32,11 @@ export interface Seed {
   headline: string | null;
   /** Public GitHub repository. */
   repo: string;
+  /**
+   * The product's own homepage, only where it answers today (checked with
+   * curl when added); null until it is live.
+   */
+  homepage: string | null;
   accent: string;
   ink: string;
   paper: string;
@@ -44,4 +59,6 @@ export interface Seed {
   /** Mark drawn in the ink colour, where the product ships one. */
   markInk: string | null;
   reel: SeedReel | null;
+  /** Shown in the feature when there is no reel. */
+  still: SeedStill | null;
 }

@@ -1,0 +1,448 @@
+.collection {
+  padding: var(--section-y) 0;
+  border-top: 1px solid var(--line);
+}
+
+.heading {
+  margin-bottom: 22px;
+}
+
+/* One grid for every card: the feature, two beside it, rows of five and
+   six under it (30 columns: spans of 20, 10, 6 and 5). */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(30, minmax(0, 1fr));
+  gap: var(--card-gap);
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.feature {
+  grid-column: span 20;
+  grid-row: span 2;
+}
+
+/* A search that picked only one product. */
+.feature:only-child {
+  grid-column: 1 / -1;
+}
+
+.side {
+  grid-column: span 10;
+}
+
+.m {
+  grid-column: span 6;
+}
+
+.s {
+  grid-column: span 5;
+}
+
+.num {
+  color: var(--muted);
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+
+.alt {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+/* Cards: the whole card selects its product. */
+.card {
+  position: relative;
+  scroll-margin-top: 24px;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+/* Hover: a deeper pastel, its quiet text a step darker to keep AA. */
+.card:hover {
+  --pastel-mix: 50%;
+  --muted: var(--soft);
+}
+
+.card:hover .select {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+}
+
+.select::after {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  content: '';
+}
+
+.card .select:focus-visible {
+  outline: none;
+}
+
+.card:has(.select:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.m,
+.s {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  grid-template-rows: 1fr auto;
+  column-gap: 12px;
+  min-height: 132px;
+  padding: 20px 16px 10px 18px;
+}
+
+.s {
+  grid-template-columns: 34px minmax(0, 1fr);
+  column-gap: 10px;
+  padding-inline: 16px 12px;
+}
+
+.mark {
+  width: 40px;
+  height: 40px;
+  margin-top: 4px;
+  object-fit: contain;
+}
+
+.s .mark {
+  width: 34px;
+  height: 34px;
+}
+
+.body {
+  min-width: 0;
+}
+
+.body .num {
+  margin-bottom: 3px;
+}
+
+.name {
+  margin: 0 0 3px;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+.reason {
+  margin-top: 10px;
+  color: #34333f;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.repo {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  grid-column: 1 / -1;
+  align-self: end;
+  justify-self: start;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  margin-top: 8px;
+  font-size: 13.5px;
+  white-space: nowrap;
+}
+
+.repo > span:first-child {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.repo:hover > span:first-child {
+  text-decoration-thickness: 2px;
+}
+
+.repoArrow {
+  display: inline-block;
+  transition: transform 160ms ease;
+}
+
+.repo:hover .repoArrow {
+  transform: translateX(2px);
+}
+
+/* The two beside the feature: bigger, mark to the right. */
+.side {
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  padding: 24px 28px 10px;
+}
+
+.side .mark {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  width: clamp(60px, 5.6vw, 84px);
+  height: clamp(60px, 5.6vw, 84px);
+  margin: 0;
+}
+
+.side .body {
+  padding-right: clamp(72px, 6.6vw, 100px);
+}
+
+.side .name {
+  font-size: 28px;
+  letter-spacing: -0.8px;
+}
+
+.side .alt {
+  font-size: 15px;
+}
+
+.side .repo {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+/* The selected product. */
+.feature {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 16px 26px;
+  padding: 16px;
+  cursor: auto;
+}
+
+.featureText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 12px 0 2px 14px;
+}
+
+.featureMark {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 14px;
+  object-fit: contain;
+}
+
+.featureText .num {
+  margin-bottom: 3px;
+}
+
+.featureName {
+  margin: 0 0 5px;
+  font-size: clamp(28px, 2.35vw, 34px);
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.featureName:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.family {
+  display: inline-block;
+  color: var(--muted);
+  white-space: nowrap;
+  font-size: 0.58em;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.feature .alt {
+  font-size: 15px;
+}
+
+.headline {
+  margin-top: 18px;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.line {
+  margin-top: 6px;
+  color: var(--soft);
+  font-size: 16px;
+  line-height: 1.42;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 22px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.primary {
+  min-height: 46px;
+  padding: 0 22px;
+  font-size: 16px;
+}
+
+.secondary {
+  font-size: 16px;
+}
+
+.media {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.picture {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+  background: var(--card-paper);
+}
+
+/* Smaller desktops: the feature takes the whole first row. */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .feature {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .side {
+    grid-column: span 15;
+  }
+}
+
+@media (max-width: 1023px) {
+  .grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .feature {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  }
+
+  .featureName {
+    font-size: 30px;
+  }
+
+  .side {
+    grid-column: span 3;
+  }
+
+  .m,
+  .s {
+    grid-column: span 2;
+  }
+
+  /* Eleven cards in threes: the last two share the last row. */
+  .s:nth-last-child(-n + 2) {
+    grid-column: span 3;
+  }
+
+  .repo {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 767px) {
+  .feature {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .media {
+    order: -1;
+  }
+
+  .featureText {
+    padding: 8px 8px 4px;
+  }
+}
+
+@media (max-width: 599px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .side {
+    grid-column: 1 / -1;
+    padding: 20px 22px 6px;
+  }
+
+  .m,
+  .s,
+  .s:nth-last-child(-n + 2) {
+    display: flex;
+    flex-direction: column;
+    grid-column: span 1;
+    min-height: 0;
+    padding: 16px 16px 4px;
+  }
+
+  /* An odd last card takes the whole row. */
+  .s:last-child:nth-child(even) {
+    grid-column: 1 / -1;
+  }
+
+  .m .repo,
+  .s .repo {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .m .mark,
+  .s .mark {
+    width: 32px;
+    height: 32px;
+    margin: 0 0 10px;
+  }
+
+  .side .name {
+    font-size: 26px;
+  }
+
+  .featureName {
+    font-size: 30px;
+  }
+
+  .featureMark {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 10px;
+  }
+
+  .headline {
+    margin-top: 14px;
+    font-size: 19px;
+  }
+
+  .links {
+    padding-top: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .repoArrow {
+    transition: none;
+  }
+
+  .repo:hover .repoArrow {
+    transform: none;
+  }
+}

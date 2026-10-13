@@ -43,20 +43,6 @@ export function Running() {
     };
   }, [slug]);
 
-  // "Watch it run" links on the collection cards pick their reel.
-  useEffect(() => {
-    const onClick = (event: MouseEvent) => {
-      const link = (event.target as Element | null)?.closest?.('a[data-reel]');
-      if (!link) return;
-      const index = reelVolumes.findIndex(
-        volume => volume.seed.slug === link.getAttribute('data-reel')
-      );
-      if (index >= 0) setActive(index);
-    };
-    document.addEventListener('click', onClick);
-    return () => document.removeEventListener('click', onClick);
-  }, []);
-
   const play = useCallback(() => {
     const video = screenRef.current?.querySelector('video');
     video?.play().catch(() => {});

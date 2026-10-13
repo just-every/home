@@ -1,5 +1,6 @@
-/* The collection search: a quiet field under the heading, and matching
-   volumes in the collection's own card language. */
+/* The collection search: a quiet field under the heading. The field keeps
+   a subtle outline: with no card around it, that edge is what shows it is
+   a field. */
 
 .search {
   margin-bottom: 10px;
@@ -134,99 +135,10 @@
   cursor: pointer;
 }
 
-/* Matching volumes. */
-.results {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--card-gap);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.card {
-  --tint: color-mix(in oklab, var(--pastel) 34%, #fff);
-
-  display: grid;
-  grid-template-columns: 50px minmax(0, 1fr);
-  grid-template-rows: 1fr auto;
-  column-gap: 14px;
-  min-height: 190px;
-  padding: 22px 20px 12px;
-  animation: rise 220ms ease both;
-}
-
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-}
-
-.mark {
-  width: 44px;
-  height: 44px;
-  margin-top: 6px;
-  object-fit: contain;
-}
-
-.cardBody {
-  min-width: 0;
-}
-
-.num {
-  margin-bottom: 4px;
-  color: var(--muted);
-  font-size: 15px;
-  font-variant-numeric: tabular-nums;
-}
-
-.name {
-  margin: 0 0 3px;
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-  line-height: 1.15;
-}
-
-.meta {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.35;
-}
-
-.line,
-.reason {
-  margin-top: 12px;
-  line-height: 1.42;
-}
-
-.line {
-  color: var(--soft);
-  font-size: 14.5px;
-}
-
-.reason {
-  color: #34333f;
-  font-size: 16px;
-}
-
-.cardFoot {
-  grid-column: 1 / -1;
-  align-self: end;
-  margin-top: 12px;
-}
-
 .credit {
   margin-top: 22px;
   color: var(--muted);
   font-size: 15.5px;
-}
-
-@media (max-width: 1023px) {
-  .results {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 599px) {
@@ -243,26 +155,9 @@
     align-items: flex-start;
     padding-top: 6px;
   }
-
-  .results {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .card {
-    min-height: 0;
-    padding: 20px 18px 12px;
-  }
-
-  .line {
-    font-size: 15px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .card {
-    animation: none;
-  }
-
   .input {
     transition: none;
   }
