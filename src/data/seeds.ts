@@ -30,9 +30,9 @@ function shot(
 
 function reel(slug: string, durationSeconds: number) {
   return {
-    src: `/video/reels/${slug}-1080.mp4`,
-    src720: `/video/reels/${slug}-720.mp4`,
-    poster: `/video/reels/${slug}-poster.webp`,
+    src: `/video/${slug}-1080.mp4`,
+    src720: `/video/${slug}-720.mp4`,
+    poster: `/video/${slug}-poster.webp`,
     durationSeconds,
   };
 }
