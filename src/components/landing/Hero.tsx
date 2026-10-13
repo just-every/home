@@ -37,7 +37,6 @@ export function Hero({ shelf = <HeroShelf /> }: { shelf?: ReactNode }) {
           </div>
         </div>
         <div className={styles.art}>
-          <div className={styles.plant} aria-hidden="true" />
           {shelf}
           <p className={`${styles.note} ${handwriting.className}`}>
             <svg

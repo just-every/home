@@ -1,8 +1,97 @@
-/* The box set fills its slot at the art's aspect; the slot sets the width. */
+/* The box set fills its slot at the art's aspect; the slot sets the width.
+   Inside it, cqw is a hundredth of the shelf's width. */
 .shelf {
   position: relative;
   width: 100%;
   aspect-ratio: 1588 / 912;
+  container-type: inline-size;
+}
+
+/* The room of the art, behind the poster and the live scene alike: window
+   light across the wall, the lit floor running back to the wall, and a
+   potted plant out of focus past the row's far end. It may run past the
+   shelf's right edge into --shelf-room (the space the page leaves before the
+   viewport's edge, set by the hero); the plant always stays whole. */
+.room {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Window light on the wall, read off the art: a warm wedge that opens from
+   just above the row's tops towards the right edge, its upper edge rising at
+   about 24 degrees; past the shelf's edge it levels off under the header.
+   Blurred as one layer, painted once. Coordinates are from the shelf's
+   top-left, with the layer starting 6cqw above it. */
+.light {
+  position: absolute;
+  top: -6cqw;
+  left: 0;
+  width: calc(100cqw + var(--shelf-room, 0px));
+  height: 70cqw;
+  filter: blur(0.9cqw);
+}
+
+.beam {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(255 247 248 / 0) 62cqw,
+    rgb(255 247 248 / 0.55) 74cqw,
+    rgb(255 247 248 / 0.85) 88cqw,
+    rgb(255 247 248 / 0.85) calc(100cqw + var(--shelf-room, 0px) * 0.4),
+    rgb(255 247 248 / 0) calc(100cqw + var(--shelf-room, 0px))
+  );
+  clip-path: polygon(
+    62cqw 14.8cqw,
+    100cqw 2.4cqw,
+    calc(100cqw + var(--shelf-room, 0px)) 1.4cqw,
+    calc(100cqw + var(--shelf-room, 0px)) 12cqw,
+    100cqw 13.6cqw,
+    85cqw 17.4cqw
+  );
+}
+
+/* The floor in the light, from the foot of the far wall forward: the wall
+   shades a little towards it, then the floor runs bright. */
+.floor {
+  position: absolute;
+  left: 76cqw;
+  top: 34cqw;
+  width: calc(34cqw + var(--shelf-room, 0px));
+  height: 28cqw;
+  background: linear-gradient(
+    180deg,
+    rgb(122 114 168 / 0) 0%,
+    rgb(122 114 168 / 0.07) 22%,
+    rgb(255 255 255 / 0.7) 32%,
+    rgb(255 255 255 / 0.45) 70%,
+    rgb(255 255 255 / 0) 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 30%,
+    #000 calc(100% - 6cqw),
+    transparent
+  );
+}
+
+/* The plant, generated and baked out of focus (public/landing/shelf/plant.webp,
+   200x284 with its leaves and pot in a 178x262 box at 11,11). Centred on the
+   shelf's right edge, as in the art, when there is room; otherwise moved in
+   just far enough to stay whole, 2cqw clear of the viewport's edge, and
+   stood further back (higher), so its leaves still crown the row's end. */
+.plant {
+  --plant-in: max(0px, 12.45cqw - var(--shelf-room, 0px));
+
+  position: absolute;
+  top: calc(6.36cqw - var(--plant-in) * 0.45);
+  left: calc(86.15cqw - var(--plant-in));
+  width: 25.7cqw;
+  aspect-ratio: 200 / 284;
+  background: url('/landing/shelf/plant.webp') center / 100% 100% no-repeat;
 }
 
 .poster,

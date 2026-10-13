@@ -132,6 +132,7 @@ export class ShelfEngine {
       fadeFrom: 9.5,
       fadeTo: 22,
       fadeFloor: 0.2,
+      haze: '#ece9f7',
     });
     this.focusLens();
 
