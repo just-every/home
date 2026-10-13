@@ -25,10 +25,6 @@ import { Lens } from './lens';
 import { coverTexture, loadMark, type Mark, spineTexture } from './prints';
 import type { ShelfVolume } from './types';
 
-/** Idle drift and pointer parallax, in degrees; together they stay within 6. */
-const DRIFT = { yaw: 2.2, pitch: 0.5, yawPeriod: 28, pitchPeriod: 21 };
-const PARALLAX = { yaw: 3.4, pitch: 1.1 };
-const LIMIT = 6;
 const MAX_PIXEL_RATIO = 2;
 /** Prints are sized for at least the hero's width (749 CSS px). */
 const HERO_WIDTH = 749;
@@ -44,6 +40,7 @@ export interface ShelfStats {
   /** Mean interval between the last 120 animation frames (ms). */
   frameIntervalMs: number;
   running: boolean;
+  /** True only while a volume is still sliding; otherwise nothing is drawn. */
   animating: boolean;
   pixelRatio: number;
   size: [number, number];
@@ -54,6 +51,7 @@ export interface ShelfHandle {
   stats(): ShelfStats;
   /** Draw `frames` frames back to back, waiting for the GPU each time. */
   bench(frames: number): number;
+  /** Turn the camera off the art's angle (review captures only). */
   setOrbit(yawDeg: number, pitchDeg?: number): void;
   render(): void;
   scene: Scene;
@@ -90,12 +88,8 @@ export class ShelfEngine {
   private onscreen = false;
   private pageVisible = !document.hidden;
   private reduced: boolean;
-  private clock = 0;
+  /** Review tooling's orbit; the page always holds the art's camera. */
   private pinned: { yaw: number; pitch: number } | null = null;
-  private yaw = 0;
-  private pitch = 0;
-  private parallaxTarget = new Vector2();
-  private parallax = new Vector2();
 
   private hovered: string | null = null;
   private focused: string | null = null;
@@ -138,6 +132,7 @@ export class ShelfEngine {
       fadeFrom: 9.5,
       fadeTo: 22,
       fadeFloor: 0.2,
+      haze: '#ece9f7',
     });
     this.focusLens();
 
@@ -192,24 +187,30 @@ export class ShelfEngine {
       return ((top.y - foot.y) / 2) * this.height * this.pixelRatio * scale;
     };
     const faceH = VOLUME.h - VOLUME.bevel * 2;
+    const faceW = (slot: number) => slotT(slot) - VOLUME.bevel * 2;
     return this.ordered.map((volume, slot) => {
       const mark = marks[slot];
+      const h = MathUtils.clamp(tall(slotX(slot), 0) * 1.3, 160, 1400);
+      // The box's spine is slimmer: same type size as the others' spines.
+      const spine = spineTexture(
+        volume,
+        mark,
+        family,
+        (h * faceW(slot)) / faceH,
+        h,
+        anisotropy,
+        faceW(1) / faceW(slot)
+      );
       if (slot === 0) {
-        const h = MathUtils.clamp(tall(0, 0) * 1.3, 256, 1400);
-        const w = (h * (VOLUME.d - VOLUME.bevel * 2)) / faceH;
+        const coverH = MathUtils.clamp(tall(0, 0) * 1.3, 256, 1400);
+        const coverW = (coverH * (VOLUME.d - VOLUME.bevel * 2)) / faceH;
         return {
           colour: volume.colour,
-          spine: null,
-          cover: coverTexture(volume, mark, family, w, h, anisotropy),
+          spine,
+          cover: coverTexture(volume, mark, family, coverW, coverH, anisotropy),
         };
       }
-      const h = MathUtils.clamp(tall(slotX(slot), 0) * 1.3, 160, 1400);
-      const w = (h * (slotT(slot) - VOLUME.bevel * 2)) / faceH;
-      return {
-        colour: volume.colour,
-        spine: spineTexture(volume, mark, family, w, h, anisotropy),
-        cover: null,
-      };
+      return { colour: volume.colour, spine, cover: null };
     });
   }
 
@@ -226,11 +227,12 @@ export class ShelfEngine {
 
   // ---------------------------------------------------------------- camera
 
+  /** The art's camera, fixed; turned only when review tooling pins an orbit. */
   private pose() {
     const { camera, framing } = this;
     poseCamera(camera, framing.orbit);
-    const yaw = MathUtils.clamp(this.yaw, -LIMIT, LIMIT);
-    const pitch = MathUtils.clamp(this.pitch, -LIMIT, LIMIT);
+    const yaw = this.pinned?.yaw ?? 0;
+    const pitch = this.pinned?.pitch ?? 0;
     if (yaw || pitch) {
       const turn = new Quaternion().setFromAxisAngle(
         UP,
@@ -282,10 +284,6 @@ export class ShelfEngine {
     return this.onscreen && this.pageVisible && !this.disposed;
   }
 
-  private get motion() {
-    return !this.reduced && !this.pinned;
-  }
-
   invalidate() {
     this.dirty = true;
     this.request();
@@ -308,37 +306,20 @@ export class ShelfEngine {
     if (this.animating) this.request();
   };
 
-  /** Advance drift, parallax and lifts; true while anything still moves. */
+  /**
+   * Slide the active volume out and the others home; true while any still
+   * moves. Under reduced motion they jump straight to place.
+   */
   private step(dt: number) {
     const shelf = this.shelf;
     if (!shelf) return false;
     let moving = false;
-    if (this.pinned) {
-      this.yaw = this.pinned.yaw;
-      this.pitch = this.pinned.pitch;
-    } else if (this.motion) {
-      this.clock += dt;
-      const ease = 1 - Math.exp(-dt * 2.6);
-      this.parallax.lerp(this.parallaxTarget, ease);
-      const tau = Math.PI * 2;
-      this.yaw =
-        DRIFT.yaw * Math.sin((tau * this.clock) / DRIFT.yawPeriod) +
-        this.parallax.x * PARALLAX.yaw;
-      this.pitch =
-        DRIFT.pitch * Math.sin((tau * this.clock) / DRIFT.pitchPeriod) +
-        this.parallax.y * PARALLAX.pitch;
-      moving = true;
-    } else {
-      this.yaw = 0;
-      this.pitch = 0;
-    }
-
     const active = this.focused ?? this.hovered;
     const ease = 1 - Math.exp(-dt * 11);
     for (const node of shelf.nodes) {
       const slug = node.volume >= 0 ? this.ordered[node.volume].slug : null;
-      node.liftTarget = this.motion && slug !== null && slug === active ? 1 : 0;
-      if (!this.motion) node.lift = node.liftTarget;
+      node.liftTarget = slug !== null && slug === active ? 1 : 0;
+      if (this.reduced) node.lift = node.liftTarget;
       else if (Math.abs(node.liftTarget - node.lift) > 0.002) {
         node.lift += (node.liftTarget - node.lift) * ease;
         moving = true;
@@ -411,25 +392,6 @@ export class ShelfEngine {
       this.pageVisible = !document.hidden;
       if (this.pageVisible) this.invalidate();
     });
-
-    this.listen(
-      window,
-      'pointermove',
-      event => {
-        const { clientX, clientY, pointerType } = event as PointerEvent;
-        if (pointerType !== 'mouse' || !this.running) return;
-        const box = this.host.getBoundingClientRect();
-        const nx =
-          (clientX - (box.left + box.width / 2)) / (window.innerWidth / 2);
-        const ny =
-          (clientY - (box.top + box.height / 2)) / (window.innerHeight / 2);
-        this.parallaxTarget.set(
-          MathUtils.clamp(nx, -1, 1),
-          MathUtils.clamp(ny, -1, 1)
-        );
-      },
-      { passive: true }
-    );
 
     this.listen(this.canvas, 'pointermove', event =>
       this.hover(event as PointerEvent)
@@ -550,7 +512,6 @@ export class ShelfEngine {
         gl.finish();
         const begin = performance.now();
         for (let i = 0; i < frames; i += 1) {
-          this.clock += 1 / 60;
           this.step(1 / 60);
           this.lens.render(this.renderer, this.scene, this.camera);
           gl.finish();

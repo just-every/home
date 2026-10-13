@@ -14,23 +14,6 @@
     linear-gradient(180deg, #f6f5fe, #f8f6fe 60%, #faf8fe);
 }
 
-/* The soft window plant of the approved art, behind the end of the box set. */
-.plant {
-  position: absolute;
-  top: 4.7cqw;
-  right: 0;
-  width: 13.9cqw;
-  aspect-ratio: 224 / 660;
-  background: url('/landing/plant.webp') left top / cover no-repeat;
-  mix-blend-mode: multiply;
-  opacity: 0.85;
-  mask-image:
-    linear-gradient(90deg, transparent, #000 30%, #000 78%, transparent),
-    linear-gradient(180deg, transparent, #000 22%, #000 68%, transparent);
-  mask-composite: intersect;
-  pointer-events: none;
-}
-
 .hero {
   --art-w: min(52vw, 749px);
 
@@ -72,6 +55,10 @@
 }
 
 .art {
+  /* Room past the art's right edge before the viewport's: the shelf's plant
+     and window light may use it. */
+  --shelf-room: 0px;
+
   position: absolute;
   top: 34px;
   right: -4vw;
@@ -110,6 +97,8 @@
 
 @media (min-width: 1441px) {
   .art {
+    --shelf-room: max(0px, (100vw - 1331px) / 2 - 57px);
+
     right: -57px;
   }
 
@@ -119,10 +108,6 @@
 }
 
 @media (max-width: 1023px) {
-  .plant {
-    display: none;
-  }
-
   .hero {
     flex-direction: column;
     align-items: stretch;
@@ -148,6 +133,8 @@
   }
 
   .art {
+    --shelf-room: calc((100vw - min(100vw - 56px, 760px)) / 2);
+
     position: relative;
     top: auto;
     right: auto;
@@ -178,6 +165,8 @@
   }
 
   .art {
+    --shelf-room: 0px;
+
     width: calc(100% + 20px);
     margin-right: -20px;
     align-self: flex-start;

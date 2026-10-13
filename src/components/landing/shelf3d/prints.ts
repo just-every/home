@@ -125,7 +125,9 @@ function wrap(ctx: CanvasRenderingContext2D, text: string, width: number) {
 
 /**
  * A spine: number at the top, the name set vertically, the mark at the foot.
- * `w` and `h` are the texture size; the face is `w` wide.
+ * `w` and `h` are the texture size; the face is `w` wide. `type` sets the
+ * type and mark against a face `type` times as wide, so the box's slimmer
+ * spine carries them at the same size as every other volume's.
  */
 export function spineTexture(
   volume: ShelfVolume,
@@ -133,18 +135,20 @@ export function spineTexture(
   family: string,
   w: number,
   h: number,
-  anisotropy: number
+  anisotropy: number,
+  type = 1
 ) {
   const { el, ctx } = canvas(w, h);
   const W = el.width;
   const H = el.height;
+  const U = W * type;
   ctx.fillStyle = volume.ink;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'alphabetic';
-  ctx.font = `480 ${W * 0.31}px ${family}`;
+  ctx.font = `480 ${U * 0.31}px ${family}`;
   ctx.fillText(volume.number, W / 2, H * 0.136);
 
-  let size = W * 0.345;
+  let size = U * 0.345;
   ctx.font = `650 ${size}px ${family}`;
   const room = H * 0.56;
   const length = ctx.measureText(volume.name).width;
@@ -160,7 +164,7 @@ export function spineTexture(
   ctx.fillText(volume.name, 0, cap / 2);
   ctx.restore();
 
-  drawMark(ctx, mark, W / 2, H * 0.868, W * 0.42);
+  drawMark(ctx, mark, W / 2, H * 0.868, U * 0.42);
   return texture(el, anisotropy);
 }
 

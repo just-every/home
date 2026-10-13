@@ -2,6 +2,8 @@
 export interface ShelfVolume {
   slug: string;
   name: string;
+  /** The kind of product, one or two words: 'Support', 'Monitoring'. */
+  family: string;
   /** Two-digit volume number: "01" upward. */
   number: string;
   /** The harmonised spine colour, hex. */

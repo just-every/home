@@ -47,7 +47,7 @@ const rowEnd = (count: number) => {
 export interface Framing {
   orbit: number;
   shift: number;
-  /** Where the idle drift and pointer parallax turn about. */
+  /** Where review tooling's orbit (setOrbit) turns the camera about. */
   pivot: Vector3;
 }
 

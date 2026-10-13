@@ -6,7 +6,6 @@ import { handwriting } from './fonts';
 import { HeroShelf } from './HeroShelf';
 import ui from './label.module.css';
 import styles from './hero.module.css';
-import { volumeCount } from './volumes';
 
 /** `shelf` defaults to the page's box set; review tooling passes its own. */
 export function Hero({ shelf = <HeroShelf /> }: { shelf?: ReactNode }) {
@@ -37,7 +36,6 @@ export function Hero({ shelf = <HeroShelf /> }: { shelf?: ReactNode }) {
           </div>
         </div>
         <div className={styles.art}>
-          <div className={styles.plant} aria-hidden="true" />
           {shelf}
           <p className={`${styles.note} ${handwriting.className}`}>
             <svg
@@ -55,7 +53,7 @@ export function Hero({ shelf = <HeroShelf /> }: { shelf?: ReactNode }) {
               />
             </svg>
             <span className={styles.noteText}>
-              <span>{volumeCount} open-source products.</span>{' '}
+              <span>More volumes on the way.</span>{' '}
               <span>Yours to run, change and keep.</span>
             </span>
           </p>

@@ -43,7 +43,10 @@ function subscribe(onChange: () => void) {
 /**
  * The hero's box set: the static render first, crossfading to the live
  * three.js scene once it has drawn, with every volume as a real link (shown
- * as a name tag when its volume is hovered or focused).
+ * as a name tag, "HappyToHelp · Support", when its volume is hovered or
+ * focused). Behind both sits the room of the art: soft window light on the
+ * wall and floor, and a potted plant out of focus past the row's far end,
+ * so the poster, the live scene and phones all show it.
  */
 export function Shelf({
   volumes,
@@ -66,6 +69,13 @@ export function Shelf({
       className={className ? `${styles.shelf} ${className}` : styles.shelf}
       data-shelf
     >
+      <div className={styles.room} aria-hidden="true">
+        <div className={styles.light}>
+          <div className={styles.beam} />
+        </div>
+        <div className={styles.floor} />
+        <div className={styles.plant} />
+      </div>
       {poster ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
@@ -93,8 +103,8 @@ export function Shelf({
               href={volume.href}
               data-slug={volume.slug}
             >
-              <span className={styles.tagNumber}>{volume.number}</span>{' '}
               {volume.name}
+              <span className={styles.tagFamily}> · {volume.family}</span>
             </a>
           </li>
         ))}

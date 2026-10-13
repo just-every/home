@@ -1,5 +1,6 @@
 import {
   BufferGeometry,
+  Color,
   DepthTexture,
   Float32BufferAttribute,
   HalfFloatType,
@@ -16,10 +17,12 @@ import {
 
 /**
  * The camera's lens: the scene renders into a multisampled target, then one
- * full-screen pass blurs it by depth (a single-pass gather bokeh) and fades
- * the far end into the page. Sharp near volumes never smear over the blurred
- * ones behind them, and blurred ones never bleed onto sharp ones. Colour stays
- * premultiplied throughout, so the canvas composites over any page background.
+ * full-screen pass blurs it by depth (a single-pass gather bokeh) and hazes
+ * the far end towards the page's colour. The haze keeps far volumes opaque,
+ * so the room behind the canvas (the plant) never shows through them. Sharp
+ * near volumes never smear over the blurred ones behind them, and blurred
+ * ones never bleed onto sharp ones. Colour stays premultiplied throughout, so
+ * the canvas composites over any page background.
  */
 export interface LensSettings {
   /** View depth that stays perfectly sharp (scene units). */
@@ -28,11 +31,13 @@ export interface LensSettings {
   blur: number;
   /** Largest blur radius, CSS px. */
   maxBlur: number;
-  /** View depths where the fade into the page starts and ends. */
+  /** View depths where the haze starts and ends. */
   fadeFrom: number;
   fadeTo: number;
-  /** Opacity left at `fadeTo`. */
+  /** Share of an object's own colour left at `fadeTo`; the rest is haze. */
   fadeFloor: number;
+  /** The haze: the page's colour around the far end, sRGB hex. */
+  haze: string;
 }
 
 const vertexShader = /* glsl */ `
@@ -52,6 +57,7 @@ uniform float uFocus;
 uniform float uBlur;
 uniform float uMaxBlur;
 uniform vec3 uFade;
+uniform vec3 uHaze;
 varying vec2 vUv;
 
 const float GOLDEN = 2.39996323;
@@ -64,8 +70,9 @@ float depthAt(vec2 uv) {
 float cocAt(float z) {
   return min(uBlur * max(0.0, 1.0 - uFocus / z), uMaxBlur);
 }
-float fadeAt(float z) {
-  return mix(1.0, uFade.z, smoothstep(uFade.x, uFade.y, z));
+vec4 hazeAt(vec4 color, float z) {
+  float keep = mix(1.0, uFade.z, smoothstep(uFade.x, uFade.y, z));
+  return vec4(mix(uHaze * color.a, color.rgb, keep), color.a);
 }
 vec3 toSRGB(vec3 c) {
   return mix(c * 12.92, 1.055 * pow(c, vec3(1.0 / 2.4)) - 0.055, step(0.0031308, c));
@@ -74,7 +81,7 @@ vec3 toSRGB(vec3 c) {
 void main() {
   float z = depthAt(vUv);
   float size = cocAt(z);
-  vec4 color = texture2D(tColor, vUv) * fadeAt(z);
+  vec4 color = hazeAt(texture2D(tColor, vUv), z);
   if (size > 0.5) {
     float total = 1.0;
     float radius = STEP;
@@ -83,7 +90,7 @@ void main() {
       if (radius >= uMaxBlur) break;
       vec2 uv = vUv + vec2(cos(angle), sin(angle)) * uTexel * radius;
       float sz = depthAt(uv);
-      vec4 sampleColor = texture2D(tColor, uv) * fadeAt(sz);
+      vec4 sampleColor = hazeAt(texture2D(tColor, uv), sz);
       float sampleSize = cocAt(sz);
       if (sz > z) sampleSize = min(sampleSize, size * 2.0);
       float m = smoothstep(radius - 0.5, radius + 0.5, sampleSize);
@@ -135,6 +142,7 @@ export class Lens {
             settings.fadeFloor
           ),
         },
+        uHaze: { value: new Color(settings.haze) },
       },
     });
     const triangle = new BufferGeometry();
@@ -166,6 +174,8 @@ export class Lens {
     uniforms.uBlur.value = s.blur * this.pixelRatio;
     uniforms.uMaxBlur.value = s.maxBlur * this.pixelRatio;
     uniforms.uFade.value.set(s.fadeFrom, s.fadeTo, s.fadeFloor);
+    // Color.set converts the hex to linear, as the target is.
+    uniforms.uHaze.value.set(s.haze);
   }
 
   render(renderer: WebGLRenderer, scene: Scene, camera: PerspectiveCamera) {
