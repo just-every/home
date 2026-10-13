@@ -1,0 +1,19 @@
+.tile {
+  display: inline-flex;
+  flex: none;
+  width: var(--tile-size-override, var(--tile-size));
+  height: var(--tile-size-override, var(--tile-size));
+  align-items: center;
+  justify-content: center;
+  border-radius: calc(var(--tile-size-override, var(--tile-size)) * 0.26);
+  background: color-mix(in srgb, var(--tile-accent) 15%, #ffffff);
+  box-shadow: inset 0 0 0 1px
+    color-mix(in srgb, var(--tile-accent) 14%, transparent);
+}
+
+.mark {
+  display: block;
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+}
