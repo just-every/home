@@ -199,13 +199,19 @@ export const makers = {
   link: { label: 'Say hello on GitHub', href: githubOrgUrl },
 } as const;
 
-/** Wordmark, two links and the copy deck's small print, shortened to one line. */
+/**
+ * Wordmark, two links and one line of small print. With a measured token
+ * count the line is `${tokensBefore}<N>${tokensAfter}`; without one, or when
+ * the count cannot be read, it is `line`.
+ */
 export const footer = {
   links: [
     { label: 'Products', href: '#all' },
     { label: 'GitHub', href: githubOrgUrl },
   ],
-  line: 'Made with care, and a lot of coding agents.',
+  line: 'Made with care and a lot of coding agents.',
+  tokensBefore: 'Made with care and ',
+  tokensAfter: ' tokens.',
 } as const;
 
 /** The 404 page. */

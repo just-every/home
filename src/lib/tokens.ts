@@ -1,5 +1,5 @@
 /**
- * The footer's "Made with N tokens": the contract of GET /api/tokens and the
+ * The footer's "Made with care and N tokens.": the contract of GET /api/tokens and the
  * live count the page derives from it. Shared by the route and the footer.
  */
 

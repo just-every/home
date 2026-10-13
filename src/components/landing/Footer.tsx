@@ -17,10 +17,7 @@ export function Footer() {
           </a>
         ))}
       </nav>
-      <div className={styles.lines}>
-        <p className={styles.line}>{footer.line}</p>
-        <TokenCount />
-      </div>
+      <TokenCount />
     </footer>
   );
 }

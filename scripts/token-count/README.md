@@ -1,6 +1,6 @@
 # Token count
 
-The footer's "Made with N tokens" is measured, not estimated: these scripts
+The footer's "Made with care and N tokens." is measured, not estimated: these scripts
 read the Claude Code and Codex session logs on the owner's machines, count
 every API call once, and publish the total for the products to D1. The page
 counts on from the newest measurement at its measured rate

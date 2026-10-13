@@ -2,6 +2,7 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
+import { footer } from '@/content/landing';
 import {
   readTokenSnapshot,
   tokensAt,
@@ -9,6 +10,7 @@ import {
   type TokenSnapshot,
 } from '@/lib/tokens';
 
+import ui from './label.module.css';
 import styles from './footer.module.css';
 
 const digits = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
@@ -18,9 +20,10 @@ const LIVE_MS = 200;
 const STILL_MS = 30_000;
 
 /**
- * "Made with N tokens": the newest measurement from /api/tokens, counting on
- * at its measured rate. Nothing shows until a real measurement arrives, and
- * nothing shows if there is none; the line keeps its height either way.
+ * The footer's one line: "Made with care and N tokens.", N being the newest
+ * measurement from /api/tokens counting on at its measured rate. Until a real
+ * measurement arrives, and whenever there is none or the API fails, the line
+ * says the same without a number.
  */
 export function TokenCount() {
   const [snapshot, setSnapshot] = useState<TokenSnapshot | null>(null);
@@ -64,11 +67,13 @@ export function TokenCount() {
     };
   }, [snapshot]);
 
-  if (!snapshot) return <p className={styles.tokens} aria-hidden="true" />;
+  if (!snapshot) return <p className={styles.line}>{footer.line}</p>;
   return (
-    <p className={styles.tokens} title={TOKENS_EXPLAINED} aria-live="off">
-      Made with <span ref={count} /> tokens
-      <span className={styles.hidden}>. {TOKENS_EXPLAINED}</span>
+    <p className={styles.line} title={TOKENS_EXPLAINED} aria-live="off">
+      {footer.tokensBefore}
+      <span ref={count} className={styles.count} />
+      {footer.tokensAfter}
+      <span className={ui.srOnly}> {TOKENS_EXPLAINED}</span>
     </p>
   );
 }
