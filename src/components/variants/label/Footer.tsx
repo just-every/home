@@ -1,0 +1,25 @@
+import { footer, wordmark } from '@/content/landing';
+
+import ui from './label.module.css';
+import styles from './footer.module.css';
+
+export function Footer() {
+  return (
+    <footer className={`${ui.wrap} ${styles.footer}`}>
+      <a className={styles.brand} href="#top" aria-label="Just Every, top">
+        {wordmark}
+      </a>
+      <nav aria-label="Footer" className={styles.nav}>
+        {footer.links.map(link => (
+          <a key={link.label} href={link.href}>
+            {link.label}
+          </a>
+        ))}
+      </nav>
+      <div className={styles.lines}>
+        <p>{footer.line}</p>
+        <p className={styles.small}>{footer.smallPrint}</p>
+      </div>
+    </footer>
+  );
+}

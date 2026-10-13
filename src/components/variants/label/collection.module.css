@@ -1,0 +1,376 @@
+.collection {
+  padding: 43px 13px 56px;
+  border-top: 1px solid #d9d6e5;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 33px;
+  margin-bottom: 26px;
+}
+
+.headLine {
+  max-width: 436px;
+  color: #8b8ba3;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.head > div {
+  flex: none;
+}
+
+.headLine {
+  flex: 0 1 436px;
+}
+
+.headLink {
+  flex: none;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.covers,
+.grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.covers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.num {
+  color: #7f7e92;
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Volumes 01-03: face-out covers. */
+.cover {
+  --mark-w: clamp(84px, 8.33vw, 120px);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 212px;
+  padding: 31px 36px 22px;
+  border-radius: 14px;
+  background: var(--tint);
+}
+
+.cover .num {
+  margin-bottom: 8px;
+}
+
+.coverName {
+  margin: 0 0 6px;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.9px;
+  line-height: 1.1;
+}
+
+.coverLine {
+  position: relative;
+  z-index: 1;
+  max-width: min(218px, calc(100% - var(--mark-w) - 10px));
+  color: #6f6e80;
+  font-size: 16px;
+  line-height: 1.38;
+}
+
+.coverMark {
+  position: absolute;
+  top: 28px;
+  right: 34px;
+  width: var(--mark-w);
+  height: calc(var(--mark-w) * 0.91);
+}
+
+.coverFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.coverAlt {
+  color: #6f6e84;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+
+/* Volumes 04 onward. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(30, minmax(0, 1fr));
+  gap: 16px 12px;
+  margin-top: 16px;
+}
+
+.volume {
+  display: grid;
+  grid-column: span 6;
+  grid-template-columns: 50px minmax(0, 1fr);
+  grid-template-rows: 1fr auto;
+  column-gap: 12px;
+  min-height: 173px;
+  padding: 19px 17px 12px;
+  border-radius: 11px;
+  background: var(--tint);
+}
+
+.volume:nth-child(n + 6) {
+  grid-column: span 5;
+  grid-template-columns: 40px minmax(0, 1fr);
+  column-gap: 9px;
+  padding-inline: 14px;
+}
+
+.volumeMark {
+  width: 46px;
+  height: 46px;
+  margin-top: 6px;
+}
+
+.volume:nth-child(n + 6) .volumeMark {
+  width: 38px;
+  height: 38px;
+}
+
+.volume .num {
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.volumeName {
+  margin: 0 0 3px;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+.volumeAlt {
+  color: #757488;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+@media (min-width: 1024px) {
+  .volumeAlt > span {
+    display: block;
+  }
+}
+
+.volumeLine {
+  margin-top: 12px;
+  color: #6f6e80;
+  font-size: 14px;
+  line-height: 1.42;
+}
+
+.volumeFoot {
+  grid-column: 1 / -1;
+  align-self: end;
+  margin-top: 10px;
+}
+
+/* Repo state. */
+.repoState {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 16px;
+}
+
+.coverFoot .repoState {
+  justify-content: flex-end;
+}
+
+.repoText,
+.watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  font-size: 13.5px;
+}
+
+.repoText > span:first-child,
+.watch > span {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.repoText:hover > span:first-child,
+.watch:hover > span {
+  text-decoration-thickness: 2px;
+}
+
+.repoArrow {
+  display: inline-block;
+  transition: transform 160ms ease;
+}
+
+.repoText:hover .repoArrow,
+.repoCircle:hover .repoArrow {
+  transform: translateX(2px);
+}
+
+.repoCircle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 14px;
+}
+
+.repoCircle .repoArrow {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #d3d9e8;
+  border-radius: 50%;
+  background: #ffffffa6;
+  font-size: 17px;
+  transition:
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.repoCircle:hover .repoArrow {
+  background: #fff;
+}
+
+.soon {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 3px 11px;
+  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  border-radius: 999px;
+  background: #ffffff8c;
+  color: #6c6b7e;
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+
+@media (max-width: 1023px) {
+  .collection {
+    padding: 36px 0 48px;
+  }
+
+  .head {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 14px 33px;
+  }
+
+  .covers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .covers > :last-child {
+    grid-column: 1 / -1;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .volume,
+  .volume:nth-child(n + 6) {
+    grid-column: auto;
+    grid-template-columns: 50px minmax(0, 1fr);
+    column-gap: 14px;
+    padding: 20px 18px 12px;
+  }
+
+  .volume:nth-child(n + 6) .volumeMark {
+    width: 46px;
+    height: 46px;
+  }
+
+  .repoText,
+  .watch {
+    min-height: 44px;
+  }
+
+  .coverAlt {
+    font-size: 11.5px;
+    letter-spacing: 2px;
+  }
+
+  .cover {
+    --mark-w: 92px;
+  }
+
+  .coverMark {
+    top: 24px;
+    right: 24px;
+  }
+}
+
+@media (max-width: 599px) {
+  .head {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .headLine {
+    font-size: 16px;
+  }
+
+  .covers,
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .covers > :last-child {
+    grid-column: auto;
+  }
+
+  .cover {
+    min-height: 0;
+    padding: 26px 24px 16px;
+  }
+
+  .coverMark {
+    top: 24px;
+    right: 22px;
+  }
+
+  .volumeName {
+    font-size: 22px;
+  }
+
+  .volumeAlt,
+  .volumeLine {
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .repoArrow,
+  .repoCircle .repoArrow {
+    transition: none;
+  }
+
+  .repoText:hover .repoArrow,
+  .repoCircle:hover .repoArrow {
+    transform: none;
+  }
+}
