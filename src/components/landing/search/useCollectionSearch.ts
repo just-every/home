@@ -63,8 +63,16 @@ export function useCollectionSearch<T extends SearchVolume>(
   const answer = current?.state === 'answered' ? current.answer : null;
   const instant = useMemo(() => localMatches(index, text), [index, text]);
 
+  // Only picks the collection has count: an answer of unknown slugs is none.
+  const picks: SearchMatch<T>[] = answer
+    ? answer.matches.flatMap(match => {
+        const volume = bySlug.get(match.slug);
+        return volume ? [{ volume, reason: match.reason }] : [];
+      })
+    : [];
+
   const mode: SearchMode = answer
-    ? answer.matches.length > 0
+    ? picks.length > 0
       ? 'answer'
       : 'none'
     : instant.length > 0
@@ -72,11 +80,8 @@ export function useCollectionSearch<T extends SearchVolume>(
       : 'all';
 
   const matches: SearchMatch<T>[] =
-    mode === 'answer' && answer
-      ? answer.matches.flatMap(match => {
-          const volume = bySlug.get(match.slug);
-          return volume ? [{ volume, reason: match.reason }] : [];
-        })
+    mode === 'answer'
+      ? picks
       : mode === 'instant'
         ? instant.map(volume => ({ volume, reason: null }))
         : [];
