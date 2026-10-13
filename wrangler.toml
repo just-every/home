@@ -12,3 +12,24 @@ routes = [
 [assets]
 directory = ".open-next/assets"
 binding = "ASSETS"
+
+# Search matches, the search log and product suggestions (migrations/).
+# Local dev and preview need nothing more: `npm run db:migrate:local` creates the
+# local database under .wrangler/state.
+[[d1_databases]]
+binding = "DB"
+database_name = "justevery"
+# FILL AT DEPLOY: replace with the id `npx wrangler d1 create justevery` prints.
+# Deploys fail until it is set, which is intended.
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+# Per-visitor limit shared by /api/match and /api/suggest (keys are salted
+# hashes of the visitor's IP, prefixed by route; nothing is stored).
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
+simple = { limit = 10, period = 60 }
+
+# ANTHROPIC_API_KEY is a secret: `npx wrangler secret put ANTHROPIC_API_KEY`
+# in production, .dev.vars locally (see .dev.vars.example).

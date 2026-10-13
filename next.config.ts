@@ -1,4 +1,11 @@
+import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare';
 import type { NextConfig } from 'next';
+
+// `next dev` gets the Worker's bindings (D1, rate limiter, .dev.vars secrets)
+// from wrangler.toml through a local Miniflare.
+if (process.env.NODE_ENV === 'development') {
+  void initOpenNextCloudflareForDev();
+}
 
 const nextConfig: NextConfig = {
   /* config options here */

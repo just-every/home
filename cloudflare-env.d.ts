@@ -4,6 +4,10 @@
 declare namespace Cloudflare {
   interface Env {
     ASSETS: Fetcher;
+    DB: D1Database;
+    RATE_LIMITER: RateLimit;
+    /** Secret: .dev.vars locally, `wrangler secret put` in production. */
+    ANTHROPIC_API_KEY?: string;
   }
 }
 interface CloudflareEnv extends Cloudflare.Env {}
