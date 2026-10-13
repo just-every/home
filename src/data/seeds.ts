@@ -41,7 +41,7 @@ export const seeds: Seed[] = [
     mark: `${dir('uptime')}/mark.svg`,
     markLight: `${dir('uptime')}/mark-light.svg`,
     markInk: null,
-    reel: reel('uptime', 51),
+    reel: reel('uptime', 51.1),
   },
   {
     slug: 'happytohelp',
@@ -104,7 +104,7 @@ export const seeds: Seed[] = [
     mark: `${dir('lamp')}/mark.svg`,
     markLight: `${dir('lamp')}/mark-light.svg`,
     markInk: null,
-    reel: reel('lamp', 57.8),
+    reel: reel('lamp', 59),
   },
   {
     slug: 'cradle',
