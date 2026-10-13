@@ -91,11 +91,9 @@
   outline-offset: 2px;
 }
 
-.tagNumber {
-  margin-right: 2px;
+.tagFamily {
   color: #8b8ba3;
   font-weight: 500;
-  font-variant-numeric: tabular-nums;
 }
 
 @media (prefers-reduced-motion: reduce) {

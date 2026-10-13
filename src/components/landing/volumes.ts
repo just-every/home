@@ -35,6 +35,7 @@ export const cardId = (slug: string) => `vol-${slug}`;
 export const volumes: Volume[] = seeds.map((seed, index) => ({
   slug: seed.slug,
   name: seed.name,
+  family: seed.family,
   number: String(index + 1).padStart(2, '0'),
   colour: seed.pastel,
   ink: seed.ink,
@@ -52,9 +53,10 @@ export const volumeCount = volumes.length;
  */
 export function labelVolumes(): ShelfVolume[] {
   return volumes.map(
-    ({ slug, name, number, colour, ink, mark, tagline, href }) => ({
+    ({ slug, name, family, number, colour, ink, mark, tagline, href }) => ({
       slug,
       name,
+      family,
       number,
       colour,
       ink,

@@ -43,7 +43,8 @@ function subscribe(onChange: () => void) {
 /**
  * The hero's box set: the static render first, crossfading to the live
  * three.js scene once it has drawn, with every volume as a real link (shown
- * as a name tag when its volume is hovered or focused).
+ * as a name tag, "HappyToHelp · Support", when its volume is hovered or
+ * focused).
  */
 export function Shelf({
   volumes,
@@ -93,8 +94,8 @@ export function Shelf({
               href={volume.href}
               data-slug={volume.slug}
             >
-              <span className={styles.tagNumber}>{volume.number}</span>{' '}
               {volume.name}
+              <span className={styles.tagFamily}> · {volume.family}</span>
             </a>
           </li>
         ))}

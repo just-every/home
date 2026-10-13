@@ -44,7 +44,6 @@ export interface ShelfPrint {
 
 /** The unprinted box white, and the blank volume that says the set goes on. */
 const BOX_WHITE = '#f4f2f1';
-const BOX_EDGE = '#e2e0ea';
 const BLANK = '#f1f0f6';
 const FLOOR = '#fbfaff';
 /** Side faces read as the dark seams between volumes; slid out, they light up. */
@@ -177,9 +176,9 @@ export function lights() {
 }
 
 /**
- * The shelf: every volume as a bevelled slab with its printed spine (and the
- * featured box's printed cover), their reflections under the floor, the
- * floor's depth for the lens, and the contact shadow.
+ * The shelf: every volume as a bevelled slab with its printed spine (the
+ * featured box has a printed cover too), their reflections under the floor,
+ * the floor's depth for the lens, and the contact shadow.
  */
 export function buildShelf(prints: ShelfPrint[]) {
   const root = new Group();
@@ -206,11 +205,15 @@ export function buildShelf(prints: ShelfPrint[]) {
     VOLUME.t - VOLUME.bevel * 2,
     VOLUME.h - VOLUME.bevel * 2
   );
+  const boxSpineFace = new PlaneGeometry(
+    VOLUME.boxT - VOLUME.bevel * 2,
+    VOLUME.h - VOLUME.bevel * 2
+  );
   const coverFace = new PlaneGeometry(
     VOLUME.d - VOLUME.bevel * 2,
     VOLUME.h - VOLUME.bevel * 2
   );
-  disposables.push(box, spine, spineFace, coverFace);
+  disposables.push(box, spine, spineFace, boxSpineFace, coverFace);
 
   const slots = [...prints.map((print, volume) => ({ print, volume })), null];
   slots.forEach((entry, slot) => {
@@ -220,8 +223,8 @@ export function buildShelf(prints: ShelfPrint[]) {
     );
     const face = paper(colour);
     const side = paper(colour.clone().multiplyScalar(SIDE_SHADE.rest));
-    // The box's narrow front sits a shade under its cover, as in the art.
-    const front = featured ? paper(BOX_EDGE) : face;
+    // The box's spine is printed like every volume's, in its own colour.
+    const front = featured && entry ? paper(entry.print.colour) : face;
     // BoxGeometry groups: +x, -x, +y, -y, +z, -z.
     const materials: Material[] = [
       side,
@@ -238,7 +241,10 @@ export function buildShelf(prints: ShelfPrint[]) {
     const slab = new Mesh(featured ? box : spine, materials);
     group.add(slab);
     if (entry?.print.spine) {
-      const mesh = new Mesh(spineFace, printMaterial(entry.print.spine));
+      const mesh = new Mesh(
+        featured ? boxSpineFace : spineFace,
+        printMaterial(entry.print.spine)
+      );
       mesh.position.z = VOLUME.d / 2 + PRINT_LIFT;
       planes.push({ mesh, map: entry.print.spine });
     }
