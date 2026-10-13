@@ -49,13 +49,12 @@ export function CollectionBrowser({ items }: { items: CollectionItem[] }) {
     keeps: slug => answerSlugs.includes(slug),
   };
 
-  const shown = featured(
-    items,
-    selected,
-    search.mode,
-    search.matches,
-    search.text
-  );
+  // A submitted search that found nothing, or failed, leaves no product in
+  // the box: nothing from an earlier answer may read as its result.
+  const shown =
+    search.mode === 'none' || search.failed
+      ? null
+      : featured(items, selected, search.mode, search.matches, search.text);
   const placed = place(items, search.mode, search.matches, search.text);
 
   return (
