@@ -9,17 +9,23 @@
  *   - the poster and the live scene in place on the page at 1440, side by side
  *     with their difference measured, so the crossfade can be seen not to shift
  *   - growth shots at 14, 30 and 60 volumes (needs `next dev`: they use the
- *     dev-only /shelf-review page), and page shots at 1440, 768 and 390,
+ *     dev-only /shelf-review page), and page shots at 1920, 1440, 1280, 768
+ *     and 390,
  *     into --shots
- *   - with --measure: time to first frame, frame cost, and that drawing stops
- *     offscreen and in a hidden tab
+ *   - the hero at 1440 idle, hovering HappyToHelp and Uptime, and with a
+ *     volume focused from the keyboard; a click on a volume, and every
+ *     volume link's text
+ *   - with --measure: time to first frame, frames per second idle (the scene
+ *     renders on demand), while a volume slides out and once it is held, while
+ *     the pointer sweeps the row and under reduced motion, and frame cost
  *
  * The 30 and 60 sets are generated here, from the real volumes plus
  * stand-ins, and injected into /shelf-review; app code never makes them.
  *
  *   npm run dev -- -p 3328
  *   node scripts/render-shelf.mjs [--base http://localhost:3328] [--page /]
- *        [--shots DIR] [--only poster,crossfade,growth,pages,measure] [--measure]
+ *        [--shots DIR] [--only poster,crossfade,growth,pages,hover,measure]
+ *        [--measure]
  */
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync } from 'node:fs';
@@ -52,7 +58,7 @@ const shots = resolve(
 const posterDir = join(root, 'public/landing/shelf');
 const only = new Set(
   (
-    flag('only', 'poster,crossfade,growth,pages') +
+    flag('only', 'poster,crossfade,growth,pages,hover') +
     (args.includes('--measure') ? ',measure' : '')
   ).split(',')
 );
@@ -224,6 +230,7 @@ function grow(spec, count) {
     volumes.push({
       slug: `stand-in-${i + 1}`,
       name: standInNames[(i - spec.volumes.length) % standInNames.length],
+      family: 'Stand-in',
       number: String(i + 1).padStart(2, '0'),
       colour: hslToHex(pastelFor(i)),
       ink: '#17171d',
@@ -395,7 +402,9 @@ async function growth(spec) {
 
 async function pages() {
   for (const [width, height] of [
+    [1920, 1080],
     [1440, 900],
+    [1280, 800],
     [768, 1024],
     [390, 844],
   ]) {
@@ -416,6 +425,141 @@ async function pages() {
   }
 }
 
+/**
+ * Where each volume sits on the canvas: sweep the pointer along the row at
+ * mid-height and read which volume's tag comes up.
+ */
+async function volumeSpots(page) {
+  const box = await page.locator('[data-shelf] canvas').boundingBox();
+  const y = box.y + box.height * 0.5;
+  const xs = {};
+  for (let x = box.x + 4; x < box.x + box.width - 2; x += 3) {
+    await page.mouse.move(x, y);
+    const slug = await page.evaluate(
+      () =>
+        new Promise(done =>
+          requestAnimationFrame(() =>
+            done(
+              document.querySelector('[data-shelf] a[data-active]')?.dataset
+                .slug ?? null
+            )
+          )
+        )
+    );
+    if (slug) (xs[slug] ??= []).push(x);
+  }
+  await page.mouse.move(2, 2);
+  await page.waitForTimeout(600);
+  return Object.fromEntries(
+    Object.entries(xs).map(([slug, list]) => [
+      slug,
+      { x: (list[0] + list[list.length - 1]) / 2, y },
+    ])
+  );
+}
+
+const activeTag = page =>
+  page.evaluate(() => {
+    const tag = document.querySelector('[data-shelf] a[data-active]');
+    return tag ? { slug: tag.dataset.slug, text: tag.textContent } : null;
+  });
+
+/**
+ * The hero at 1440 idle, hovering HappyToHelp and Uptime, and with a volume
+ * focused from the keyboard; then a click on a volume, which should land on
+ * its card.
+ */
+async function hover() {
+  const { context, page } = await openPage({
+    width: 1440,
+    height: 900,
+    reduced: false,
+  });
+  await page.goto(base + pagePath, { waitUntil: 'load' });
+  await waitForShelf(page);
+  await page.evaluate(() =>
+    document.fonts.ready.then(() => window.scrollTo(0, 0))
+  );
+  const spots = await volumeSpots(page);
+  await page.screenshot({ path: join(shots, 'hero-1440-idle.png') });
+  console.log(`hover idle: ${join(shots, 'hero-1440-idle.png')}`);
+  for (const slug of ['happytohelp', 'uptime']) {
+    const spot = spots[slug];
+    if (!spot) throw new Error(`no volume found for ${slug}`);
+    await page.mouse.move(spot.x, spot.y);
+    await page.waitForTimeout(900);
+    const file = join(shots, `hero-1440-hover-${slug}.png`);
+    await page.screenshot({ path: file });
+    console.log(
+      `hover ${slug}: ${file} ${JSON.stringify(await activeTag(page))}`
+    );
+  }
+  await page.mouse.move(2, 2);
+  await page.waitForTimeout(600);
+  // Keyboard: Tab on until a volume's link has focus.
+  for (let i = 0; i < 40; i += 1) {
+    await page.keyboard.press('Tab');
+    const slug = await page.evaluate(
+      () => document.activeElement?.dataset?.slug ?? null
+    );
+    if (slug) break;
+  }
+  await page.waitForTimeout(900);
+  const focused = await page.evaluate(() => ({
+    slug: document.activeElement?.dataset?.slug ?? null,
+    text: document.activeElement?.textContent ?? null,
+  }));
+  await page.screenshot({ path: join(shots, 'hero-1440-focus.png') });
+  console.log(
+    `focus: ${join(shots, 'hero-1440-focus.png')} ${JSON.stringify(focused)}`
+  );
+  // Click: lands on the volume's card.
+  await page.keyboard.press('Escape');
+  await page.evaluate(() => document.activeElement?.blur());
+  const target = spots.happytohelp;
+  await page.mouse.click(target.x, target.y);
+  await page.waitForTimeout(800);
+  const landed = await page.evaluate(() => ({
+    hash: window.location.hash,
+    cardTop: Math.round(
+      document
+        .getElementById(window.location.hash.slice(1))
+        ?.getBoundingClientRect().top ?? -1
+    ),
+  }));
+  console.log(`click happytohelp: ${JSON.stringify(landed)}`);
+  // Every link's accessible text.
+  const links = await page.evaluate(() =>
+    Array.from(document.querySelectorAll('[data-shelf] a[data-slug]')).map(
+      link => link.textContent
+    )
+  );
+  console.log(`links: ${JSON.stringify(links)}`);
+  await context.close();
+}
+
+/** Frames drawn over `ms`, as frames per second. */
+async function fps(page, ms, during = null) {
+  const at = () => page.evaluate(() => window.__shelf.stats().frames);
+  const begin = await at();
+  const started = Date.now();
+  if (during) await during();
+  const left = ms - (Date.now() - started);
+  if (left > 0) await page.waitForTimeout(left);
+  const frames = (await at()) - begin;
+  return {
+    frames,
+    seconds: ms / 1000,
+    fps: +(frames / (ms / 1000)).toFixed(1),
+  };
+}
+
+/**
+ * First frame, frames per second idle (none: the scene renders on demand),
+ * while a volume slides out and once it is held out, while the pointer
+ * sweeps the row, and with reduced motion; the GPU cost of one frame; and
+ * the page's scripts.
+ */
 async function measure() {
   const { context, page } = await openPage({
     width: 1440,
@@ -440,70 +584,40 @@ async function measure() {
       null;
     return { ...stats, fcp: paint };
   });
-  // Idle animation: drift only, pointer still.
-  await page.mouse.move(720, 300);
-  await page.waitForTimeout(5000);
-  const idle = await page.evaluate(() => window.__shelf.stats());
-  const bench = await page.evaluate(() => window.__shelf.bench(240));
-
-  const framesAt = () => page.evaluate(() => window.__shelf.stats().frames);
-  // Scroll the shelf fully out of view.
-  await page.evaluate(() => {
-    document.body.style.paddingBottom = '3000px';
-    window.scrollTo(0, document.body.scrollHeight);
+  const spots = await volumeSpots(page);
+  const idle = await fps(page, 3000);
+  const spot = spots.happytohelp;
+  const slide = await fps(page, 1000, () => page.mouse.move(spot.x, spot.y));
+  const held = await fps(page, 2000);
+  const box = await page.locator('[data-shelf] canvas').boundingBox();
+  const sweep = await fps(page, 2000, async () => {
+    for (let i = 0; i <= 60; i += 1) {
+      await page.mouse.move(
+        box.x + box.width * (0.2 + 0.7 * (i / 60)),
+        box.y + box.height * 0.5
+      );
+      await page.waitForTimeout(25);
+    }
   });
-  await page.waitForTimeout(600);
-  const offA = await framesAt();
-  await page.waitForTimeout(2000);
-  const offB = await framesAt();
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(600);
-  const backA = await framesAt();
-  await page.waitForTimeout(1000);
-  const backB = await framesAt();
+  await page.mouse.move(2, 2);
+  const settle = await fps(page, 1000);
+  const after = await fps(page, 3000);
+  const bench = await page.evaluate(() => window.__shelf.bench(240));
+  const stats = await page.evaluate(() => window.__shelf.stats());
+  await context.close();
 
-  // Hide the tab. Headless Chrome keeps background tabs "visible", so when
-  // bringing another tab forward does not hide this one, signal it the way
-  // the browser does: document.hidden plus a visibilitychange event.
-  const other = await context.newPage();
-  await other.goto('about:blank');
-  await other.bringToFront();
-  await page.waitForTimeout(300);
-  let hidden = await page.evaluate(() => document.visibilityState);
-  const simulated = hidden !== 'hidden';
-  if (simulated) {
-    hidden = await page.evaluate(() => {
-      Object.defineProperty(document, 'hidden', {
-        configurable: true,
-        get: () => true,
-      });
-      Object.defineProperty(document, 'visibilityState', {
-        configurable: true,
-        get: () => 'hidden',
-      });
-      document.dispatchEvent(new Event('visibilitychange'));
-      return document.visibilityState;
-    });
-  }
-  await page.waitForTimeout(300);
-  const hidA = await framesAt();
-  await page.waitForTimeout(2000);
-  const hidB = await framesAt();
-  if (simulated) {
-    await page.evaluate(() => {
-      delete document.hidden;
-      delete document.visibilityState;
-      document.dispatchEvent(new Event('visibilitychange'));
-    });
-  }
-  await page.bringToFront();
-  await page.waitForTimeout(500);
-  const resumeA = await framesAt();
-  await page.waitForTimeout(1000);
-  const resumeB = await framesAt();
+  const calm = await openPage({ width: 1440, height: 900, reduced: true });
+  await calm.page.goto(base + pagePath, { waitUntil: 'load' });
+  await waitForShelf(calm.page);
+  const calmSpots = await volumeSpots(calm.page);
+  const calmSpot = calmSpots.happytohelp;
+  const calmHover = await fps(calm.page, 1500, () =>
+    calm.page.mouse.move(calmSpot.x, calmSpot.y)
+  );
+  await calm.context.close();
 
   const gzipped = scripts.reduce((sum, script) => sum + script.bytes, 0);
-  const three = scripts
+  const largest = scripts
     .filter(script => script.bytes > 0)
     .sort((a, b) => b.bytes - a.bytes)
     .slice(0, 6);
@@ -515,40 +629,38 @@ async function measure() {
           sinceEngineStartMs: Math.round(first.firstFrameMs),
           firstContentfulPaintMs: first.fcp && Math.round(first.fcp),
         },
-        idle: {
-          frameIntervalMs: +idle.frameIntervalMs.toFixed(2),
-          cpuDrawMs: +idle.drawMs.toFixed(2),
+        framesPerSecond: {
+          idle,
+          hoverSlidingOut: slide,
+          hoverHeld: held,
+          sweepingTheRow: sweep,
+          pointerLeftSettling: settle,
+          idleAgain: after,
+          reducedMotionHover: calmHover,
+        },
+        frame: {
+          cpuDrawMs: +stats.drawMs.toFixed(2),
           gpuBoundFrameMs: +bench.toFixed(2),
-          pixelRatio: idle.pixelRatio,
-          size: idle.size,
-        },
-        offscreen: {
-          framesWhileScrolledAway: offB - offA,
-          framesAfterReturning: backB - backA,
-        },
-        hiddenTab: {
-          visibilityState: hidden,
-          simulated,
-          framesWhileHidden: hidB - hidA,
-          framesAfterShowing: resumeB - resumeA,
+          pixelRatio: stats.pixelRatio,
+          size: stats.size,
         },
         scripts: {
           count: scripts.length,
           transferredBytes: gzipped,
-          largest: three,
+          largest,
         },
       },
       null,
       1
     )
   );
-  await context.close();
 }
 
 if (only.has('poster')) await poster();
 if (only.has('crossfade')) await crossfade();
 if (only.has('growth')) await growth(await realSet());
 if (only.has('pages')) await pages();
+if (only.has('hover')) await hover();
 if (only.has('measure')) await measure();
 
 await browser.close();
