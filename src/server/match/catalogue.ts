@@ -1,11 +1,13 @@
 import { seeds } from '@/data/seeds';
 import { MATCH_MAX } from '@/lib/interactive-api';
 
+import { seedLimits } from './limits';
+
 /**
  * What Claude matches against: every seed in src/data/seeds.ts, so a new
- * seed is matchable with no prompt change. Each entry carries the card's own
- * facts plus the seed's limits (what it does not do, from its contract), so a
- * reason can say only what is true of the product.
+ * seed is matchable with no prompt change once it has limits in ./limits.ts.
+ * Each entry carries the card's own facts plus those limits (what it does not
+ * do, from its contract), so a reason can say only what is true of it.
  */
 
 /**
@@ -16,13 +18,19 @@ import { MATCH_MAX } from '@/lib/interactive-api';
  */
 export const MATCH_MODEL = 'claude-sonnet-5-5';
 
+function limitsOf(slug: string): string {
+  const limits = seedLimits[slug];
+  if (!limits) throw new Error(`No matcher limits for seed "${slug}"`);
+  return limits;
+}
+
 export const catalogue = seeds.map(seed => ({
   slug: seed.slug,
   name: seed.name,
   category: seed.category,
   replaces: seed.replaces,
   line: seed.line,
-  limits: seed.limits,
+  limits: limitsOf(seed.slug),
 }));
 
 export const catalogueSlugs: ReadonlySet<string> = new Set(
