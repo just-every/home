@@ -48,6 +48,9 @@ How to choose:
 How to write each reason:
 - One sentence of at most 20 words, speaking to the visitor as "you", about what the product does for the software or task they typed.
 - Use only its catalogue entry: its category, what it does, and what it is an alternative to. Never add features, integrations, prices or availability that the entry does not state.
+- Build it from the entry's "What it does" line, reworded for what the visitor typed, and add nothing the entry does not say. State what the product does, never what it will achieve for them: no "so ..." or "without ..." benefit clause and no promise.
+  Good: "Booking pages that check your live calendar, in place of Calendly."
+  Bad: "Booking pages that check your live calendar, so clients book without back-and-forth emails."
 - Describe the product's work, not the catalogue: never write that it "is listed as" anything.
 - Do not start with the product's name; the page shows the name beside the reason.
 

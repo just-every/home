@@ -45,14 +45,46 @@ export function errorResponse(error: unknown): Response {
 /** Bodies are a few hundred bytes; anything far larger is not the form. */
 const MAX_BODY_BYTES = 8 * 1024;
 
+const tooLarge = () =>
+  new ApiError('invalid_request', 'That request is too large.');
+
+/**
+ * The body as text, refused once it passes MAX_BODY_BYTES: by its declared
+ * length before reading, else while reading, so an oversized body is never
+ * buffered whole.
+ */
+async function readCappedText(request: Request): Promise<string> {
+  const declared = Number(request.headers.get('content-length'));
+  if (declared > MAX_BODY_BYTES) throw tooLarge();
+  if (!request.body) return '';
+
+  const reader = request.body.getReader();
+  const chunks: Uint8Array[] = [];
+  let size = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    size += value.byteLength;
+    if (size > MAX_BODY_BYTES) {
+      await reader.cancel();
+      throw tooLarge();
+    }
+    chunks.push(value);
+  }
+  const bytes = new Uint8Array(size);
+  let offset = 0;
+  for (const chunk of chunks) {
+    bytes.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  return new TextDecoder().decode(bytes);
+}
+
 /** The request's JSON object body, or an `invalid_request` error. */
 export async function readJsonObject(
   request: Request
 ): Promise<Record<string, unknown>> {
-  const text = await request.text();
-  if (text.length > MAX_BODY_BYTES) {
-    throw new ApiError('invalid_request', 'That request is too large.');
-  }
+  const text = await readCappedText(request);
   let value: unknown;
   try {
     value = JSON.parse(text);
