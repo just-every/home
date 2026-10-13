@@ -1,0 +1,192 @@
+.top {
+  position: relative;
+  margin-top: calc(-1 * var(--header-h));
+  padding-top: var(--header-h);
+  background:
+    radial-gradient(
+      ellipse 58% 64% at 100% 0%,
+      #c9c5d9 0%,
+      #d5d1e7 35%,
+      #e5e2f5 62%,
+      #f4f2fe00 100%
+    ),
+    radial-gradient(ellipse 42% 55% at 22% 45%, #fdfbff 0%, #fdfbff00 100%),
+    linear-gradient(180deg, #f6f5fe, #f8f6fe 60%, #faf8fe);
+}
+
+/* The soft window plant of the approved art, behind the end of the box set. */
+.plant {
+  position: absolute;
+  top: 4.7cqw;
+  right: 0;
+  width: 13.9cqw;
+  aspect-ratio: 224 / 660;
+  background: url('/landing/plant.webp') left top / cover no-repeat;
+  mix-blend-mode: multiply;
+  opacity: 0.85;
+  mask-image:
+    linear-gradient(90deg, transparent, #000 30%, #000 78%, transparent),
+    linear-gradient(180deg, transparent, #000 22%, #000 68%, transparent);
+  mask-composite: intersect;
+  pointer-events: none;
+}
+
+.hero {
+  --art-w: min(52vw, 749px);
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: calc(var(--art-w) * 0.574 + 50px);
+}
+
+/* The copy stops short of the box set at every desktop width. */
+.copy {
+  position: relative;
+  z-index: 1;
+  width: calc(100% - var(--art-w) + 4vw);
+  padding: 0 9px 27px;
+}
+
+.copy h1 {
+  margin: 0 0 17px;
+  font-size: min(calc(4.33vw - 2.3px), 60px);
+  font-weight: 620;
+  letter-spacing: -0.012em;
+  line-height: 1.12;
+}
+
+.copy p {
+  max-width: 610px;
+  margin: 0 0 28px;
+  color: #7d7b90;
+  font-size: min(1.68vw, 24.2px);
+  line-height: 1.43;
+  letter-spacing: -0.012em;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.art {
+  position: absolute;
+  top: 34px;
+  right: -4vw;
+  width: var(--art-w);
+  margin: 0;
+  container-type: inline-size;
+}
+
+/* The handwritten note, set as live text over the shelf. */
+.note {
+  position: absolute;
+  left: 54.6%;
+  top: 86.6%;
+  display: flex;
+  align-items: flex-start;
+  gap: 2.4cqw;
+  color: #55537a;
+  font-size: 2.42cqw;
+  line-height: 1.45;
+  transform: rotate(-3.6deg);
+  transform-origin: left top;
+  white-space: nowrap;
+}
+
+.noteArrow {
+  width: 4.2cqw;
+  height: auto;
+  margin-top: 0.4cqw;
+  flex: none;
+}
+
+.noteText {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1441px) {
+  .art {
+    right: -57px;
+  }
+
+  .copy {
+    width: calc(100% - var(--art-w) + 57px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .plant {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+    padding: 44px 0 20px;
+  }
+
+  .copy {
+    width: auto;
+    padding: 0;
+  }
+
+  .hero {
+    min-height: 0;
+  }
+
+  .copy h1 {
+    font-size: 52px;
+  }
+
+  .copy p {
+    font-size: 22px;
+  }
+
+  .art {
+    position: relative;
+    top: auto;
+    right: auto;
+    align-self: center;
+    width: 100%;
+    max-width: 760px;
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 599px) {
+  .hero {
+    padding-top: 32px;
+  }
+
+  .copy h1 {
+    font-size: 40px;
+    letter-spacing: -0.04em;
+  }
+
+  .copy p {
+    font-size: 19px;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+    gap: 12px 24px;
+  }
+
+  .art {
+    width: calc(100% + 20px);
+    margin-right: -20px;
+    align-self: flex-start;
+    margin-top: 28px;
+  }
+
+  .note {
+    left: 38%;
+    top: 85%;
+    font-size: 3.4cqw;
+  }
+}

@@ -1,24 +1,25 @@
 #!/usr/bin/env node
 /**
- * Renders the three.js box set (src/components/variants/label/shelf3d) from a
+ * Renders the three.js box set (src/components/landing/shelf3d) from a
  * running server with Playwright:
  *
- *   - the static render the component shows as its poster:
- *     public/variants/label/shelf3d/shelf-1440.webp (749x430 at 2x) and shelf-800.webp
- *   - growth shots at 14, 30 and 60 volumes, page shots at 1440, 768 and 390,
- *     and the 1440 render side by side with the approved art, into --shots
+ *   - the static render the hero shows as its poster, taken from the real page
+ *     with its own volumes, read from the canvas at 1440 (2x):
+ *     public/landing/shelf/shelf-1440.webp (1498x860) and shelf-800.webp
+ *   - the poster and the live scene in place on the page at 1440, side by side
+ *     with their difference measured, so the crossfade can be seen not to shift
+ *   - growth shots at 14, 30 and 60 volumes (needs `next dev`: they use the
+ *     dev-only /shelf-review page), and page shots at 1440, 768 and 390,
+ *     into --shots
  *   - with --measure: time to first frame, frame cost, and that drawing stops
  *     offscreen and in a hidden tab
  *
- * The 30 and 60 sets are generated here, from the 14 real volumes plus
- * stand-ins, and injected into the review route; app code never makes them.
+ * The 30 and 60 sets are generated here, from the real volumes plus
+ * stand-ins, and injected into /shelf-review; app code never makes them.
  *
- *   npm run dev -- -p 3327            (or next start -p 3327)
- *   node scripts/render-shelf.mjs [--base http://localhost:3327] [--page /v/label/shelf]
- *        [--shots DIR] [--only poster,growth,pages,measure] [--measure]
- *
- * --page may point at any page with the shelf in it (e.g. /v/label once the
- * hero uses it), so the poster matches the volumes that page passes.
+ *   npm run dev -- -p 3328
+ *   node scripts/render-shelf.mjs [--base http://localhost:3328] [--page /]
+ *        [--shots DIR] [--only poster,crossfade,growth,pages,measure] [--measure]
  */
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync } from 'node:fs';
@@ -36,21 +37,22 @@ const flag = (name, fallback) => {
     ? args[at + 1]
     : fallback;
 };
-const base = flag('base', 'http://localhost:3327');
-const pagePath = flag('page', '/v/label/shelf');
+const base = flag('base', 'http://localhost:3328');
+const pagePath = flag('page', '/');
+const reviewPath = '/shelf-review';
 const shots = resolve(
   flag(
     'shots',
     join(
       process.env.HOME ?? '.',
-      '.orchestrator/evidence/home/landing/shots/shelf3d'
+      '.orchestrator/evidence/home/landing/shots/shelf'
     )
   )
 );
-const posterDir = join(root, 'public/variants/label/shelf3d');
+const posterDir = join(root, 'public/landing/shelf');
 const only = new Set(
   (
-    flag('only', 'poster,growth,pages') +
+    flag('only', 'poster,crossfade,growth,pages') +
     (args.includes('--measure') ? ',measure' : '')
   ).split(',')
 );
@@ -101,6 +103,16 @@ async function openPage({ width, height, reduced = true, inject = null }) {
   });
   if (inject)
     await context.addInitScript(spec => (window.__shelfReview = spec), inject);
+  // Any page with the shelf: expose the live scene once it has drawn.
+  await context.addInitScript(() =>
+    document.addEventListener('shelf3d-ready', event => {
+      const count = event.target
+        .closest('[data-shelf]')
+        ?.querySelectorAll('a[data-slug]').length;
+      window.__shelf = { ...event.detail, count: count ?? 0 };
+      window.__ready = true;
+    })
+  );
   const page = await context.newPage();
   page.on('console', message => {
     if (message.type() === 'error')
@@ -130,7 +142,7 @@ async function waitForShelf(page, count) {
 /** The real volumes as the page has them. */
 async function realSet() {
   const { context, page } = await openPage({ width: 1440, height: 900 });
-  await page.goto(base + pagePath, { waitUntil: 'load' });
+  await page.goto(base + reviewPath, { waitUntil: 'load' });
   await waitForShelf(page);
   const spec = await page.evaluate(() => window.__shelfSpec);
   await context.close();
@@ -227,15 +239,13 @@ async function poster() {
   const { context, page } = await openPage({ width: 1440, height: 900 });
   await page.goto(base + pagePath, { waitUntil: 'load' });
   await waitForShelf(page);
-  await page.evaluate(() => {
-    document.documentElement.dataset.capture = '';
-    document.documentElement.style.background = 'transparent';
-    document.body.style.background = 'transparent';
+  // The canvas's own pixels, so the poster has exactly the scene's size and
+  // the page scales both the same way.
+  const dataUrl = await page.evaluate(() => {
+    window.__shelf.render();
+    return document.querySelector('[data-shelf] canvas').toDataURL('image/png');
   });
-  const png = await page
-    .locator('[data-shelf]')
-    .first()
-    .screenshot({ omitBackground: true });
+  const png = Buffer.from(dataUrl.split(',')[1], 'base64');
   const meta = await sharp(png).metadata();
   await sharp(png)
     .webp({ quality: 82, alphaQuality: 80, effort: 6 })
@@ -246,42 +256,117 @@ async function poster() {
     .toFile(join(posterDir, 'shelf-800.webp'));
   await sharp(png).toFile(join(shots, 'shelf-1440-transparent.png'));
   console.log(
-    `poster: ${meta.width}x${meta.height} -> public/variants/label/shelf3d/shelf-1440.webp, shelf-800.webp`
+    `poster: ${meta.width}x${meta.height} -> public/landing/shelf/shelf-1440.webp, shelf-800.webp`
   );
   await context.close();
-  return png;
 }
 
-async function sideBySide(render) {
-  const { width, height } = await sharp(render).metadata();
-  const art = await sharp(join(root, 'public/variants/label/box-set.webp'))
-    .resize({ width })
-    .png()
-    .toBuffer();
-  const artHeight = (await sharp(art).metadata()).height;
-  const flat = await sharp({
-    create: { width, height, channels: 4, background: '#f6f4fd' },
-  })
-    .composite([{ input: render }])
-    .png()
-    .toBuffer();
+/**
+ * The hero at 1440 twice: showing the poster (the scene hidden), then the
+ * live scene (the poster hidden), as the crossfade's two ends. Writes the pair
+ * side by side and reports their difference and the best-matching offset.
+ */
+async function crossfade() {
+  const { context, page } = await openPage({ width: 1440, height: 900 });
+  await page.goto(base + pagePath, { waitUntil: 'load' });
+  await waitForShelf(page);
+  await page.evaluate(() =>
+    document.fonts.ready.then(() => window.scrollTo(0, 0))
+  );
+  const clip = await page.evaluate(() => {
+    const box = document.querySelector('[data-shelf]').getBoundingClientRect();
+    return {
+      x: Math.max(0, box.x - 24),
+      y: Math.max(0, box.y - 24),
+      width: Math.min(
+        window.innerWidth - Math.max(0, box.x - 24),
+        box.width + 48
+      ),
+      height: box.height + 48,
+    };
+  });
+  const show = which =>
+    page.evaluate(which => {
+      const shelf = document.querySelector('[data-shelf]');
+      const img = shelf.querySelector('img');
+      const stage = shelf.querySelector('canvas').parentElement;
+      img.style.setProperty(
+        'opacity',
+        which === 'poster' ? '1' : '0',
+        'important'
+      );
+      stage.style.setProperty(
+        'opacity',
+        which === 'live' ? '1' : '0',
+        'important'
+      );
+      return new Promise(done =>
+        requestAnimationFrame(() => requestAnimationFrame(done))
+      );
+    }, which);
+  await show('poster');
+  const before = await page.screenshot({ clip });
+  await show('live');
+  const after = await page.screenshot({ clip });
+  await context.close();
+
+  const { width, height } = await sharp(before).metadata();
   const gap = 24;
   await sharp({
     create: {
       width: width * 2 + gap,
-      height: Math.max(artHeight, height),
+      height,
       channels: 4,
       background: '#ffffff',
     },
   })
     .composite([
-      { input: art, left: 0, top: 0 },
-      { input: flat, left: width + gap, top: 0 },
+      { input: before, left: 0, top: 0 },
+      { input: after, left: width + gap, top: 0 },
     ])
     .png()
-    .toFile(join(shots, 'side-by-side-1440.png'));
+    .toFile(join(shots, 'poster-vs-live-1440.png'));
+  await sharp(before).toFile(join(shots, 'poster-1440.png'));
+  await sharp(after).toFile(join(shots, 'live-1440.png'));
+
+  const raw = buffer => sharp(buffer).removeAlpha().raw().toBuffer();
+  const [a, b] = await Promise.all([raw(before), raw(after)]);
+  let total = 0;
+  let over = 0;
+  for (let i = 0; i < a.length; i += 3) {
+    const d =
+      (Math.abs(a[i] - b[i]) +
+        Math.abs(a[i + 1] - b[i + 1]) +
+        Math.abs(a[i + 2] - b[i + 2])) /
+      3;
+    total += d;
+    if (d > 12) over += 1;
+  }
+  const pixels = a.length / 3;
+  // Best offset within 6 device pixels, on a grey copy: 0,0 means no shift.
+  const grey = async buffer => sharp(buffer).greyscale().raw().toBuffer();
+  const [ga, gb] = await Promise.all([grey(before), grey(after)]);
+  let best = { dx: 0, dy: 0, error: Infinity };
+  for (let dy = -6; dy <= 6; dy += 1)
+    for (let dx = -6; dx <= 6; dx += 1) {
+      let error = 0;
+      let n = 0;
+      for (let y = 8; y < height - 8; y += 2)
+        for (let x = 8; x < width - 8; x += 2) {
+          error += Math.abs(ga[y * width + x] - gb[(y + dy) * width + x + dx]);
+          n += 1;
+        }
+      error /= n;
+      if (error < best.error) best = { dx, dy, error: +error.toFixed(3) };
+    }
   console.log(
-    `side by side: ${join(shots, 'side-by-side-1440.png')} (art left, render right)`
+    `crossfade: ${join(shots, 'poster-vs-live-1440.png')} (poster left, live right) ${JSON.stringify(
+      {
+        meanAbsDiff: +(total / pixels).toFixed(3),
+        pixelsOver12: `${((over / pixels) * 100).toFixed(3)}%`,
+        bestOffset: best,
+      }
+    )}`
   );
 }
 
@@ -293,7 +378,7 @@ async function growth(spec) {
       height: 900,
       inject,
     });
-    await page.goto(base + pagePath, { waitUntil: 'load' });
+    await page.goto(base + reviewPath, { waitUntil: 'load' });
     await waitForShelf(page, count);
     await page
       .locator('section')
@@ -362,7 +447,7 @@ async function measure() {
   const bench = await page.evaluate(() => window.__shelf.bench(240));
 
   const framesAt = () => page.evaluate(() => window.__shelf.stats().frames);
-  // Scroll the shelf fully out of view (the review page is short, so pad it).
+  // Scroll the shelf fully out of view.
   await page.evaluate(() => {
     document.body.style.paddingBottom = '3000px';
     window.scrollTo(0, document.body.scrollHeight);
@@ -460,10 +545,9 @@ async function measure() {
   await context.close();
 }
 
-if (only.has('poster') || only.has('growth')) {
-  if (only.has('poster')) await sideBySide(await poster());
-  if (only.has('growth')) await growth(await realSet());
-}
+if (only.has('poster')) await poster();
+if (only.has('crossfade')) await crossfade();
+if (only.has('growth')) await growth(await realSet());
 if (only.has('pages')) await pages();
 if (only.has('measure')) await measure();
 

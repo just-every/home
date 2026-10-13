@@ -1,6 +1,6 @@
 /**
  * Shared landing copy from the approved copy deck (COPY.md, section B),
- * verbatim. The hero is deliberately absent: each variant owns its own.
+ * verbatim. The hero copy lives in src/components/landing/Hero.tsx.
  */
 
 export const githubOrgUrl = 'https://github.com/just-every';

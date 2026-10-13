@@ -610,7 +610,3 @@ export const seeds: Seed[] = [
     reel: null,
   },
 ];
-
-export const seedsBySlug: Record<string, Seed> = Object.fromEntries(
-  seeds.map(seed => [seed.slug, seed])
-);
