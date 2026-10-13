@@ -103,18 +103,12 @@ export function Running() {
             {caption}
           </p>
           <div className={styles.actions}>
-            {seed.status === 'public' && seed.repo ? (
-              <a className={`${ui.pill} ${ui.pillSmall}`} href={seed.repo}>
-                {reels.githubLabel}{' '}
-                <span className={ui.arrow} aria-hidden="true">
-                  →
-                </span>
-              </a>
-            ) : (
-              <span className={styles.soon}>
-                {collection.notYetPublicLabel}
+            <a className={`${ui.pill} ${ui.pillSmall}`} href={seed.repo}>
+              {reels.githubLabel}{' '}
+              <span className={ui.arrow} aria-hidden="true">
+                →
               </span>
-            )}
+            </a>
           </div>
         </div>
 

@@ -8,10 +8,8 @@ import styles from './panels.module.css';
 import { volumes } from './volumes';
 
 /** The volume the commands clone, found from the clone URL itself. */
-const cloned = volumes.find(
-  volume =>
-    volume.seed.repo &&
-    runOne.commands.some(command => command.endsWith(volume.seed.repo ?? ''))
+const cloned = volumes.find(volume =>
+  runOne.commands.some(command => command.endsWith(volume.seed.repo))
 );
 
 export function RunOne() {

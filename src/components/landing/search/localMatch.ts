@@ -7,8 +7,8 @@ export interface SearchVolume {
   replaces: string[];
   primaryReplace: string;
   line: string;
-  /** Public GitHub repository, or null while it is opening soon. */
-  repo: string | null;
+  /** Public GitHub repository. */
+  repo: string;
   /** Whether its reel is on the page ("Watch it run"). */
   reel: boolean;
   mark: string;

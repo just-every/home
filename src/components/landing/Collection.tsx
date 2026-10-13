@@ -22,7 +22,7 @@ const searchVolumes: SearchVolume[] = volumes.map(volume => ({
   replaces: volume.seed.replaces,
   primaryReplace: volume.seed.primaryReplace,
   line: volume.seed.line,
-  repo: volume.seed.status === 'public' ? volume.seed.repo : null,
+  repo: volume.seed.repo,
   reel: volume.seed.reel !== null,
   mark: volume.mark,
   pastel: volume.colour,

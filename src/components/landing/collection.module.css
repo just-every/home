@@ -244,19 +244,6 @@
   background: #fff;
 }
 
-.soon {
-  display: inline-flex;
-  align-items: center;
-  min-height: 26px;
-  padding: 3px 11px;
-  border: var(--card-border);
-  border-radius: 999px;
-  background: #ffffff8c;
-  color: var(--muted);
-  font-size: 12.5px;
-  white-space: nowrap;
-}
-
 @media (max-width: 1023px) {
   .covers {
     grid-template-columns: repeat(2, minmax(0, 1fr));

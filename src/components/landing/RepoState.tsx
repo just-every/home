@@ -10,9 +10,8 @@ interface RepoStateProps {
 }
 
 /**
- * A card's repo state: its public GitHub repo, or a quiet "Opening soon" pill
- * (never a link) while it is private. Seeds with a reel on this page also get
- * a link to it.
+ * A card's repo state: a link to its public GitHub repo. Seeds with a reel on
+ * this page also get a link to it.
  */
 export function RepoState({ seed, shape }: RepoStateProps) {
   return (
@@ -27,20 +26,16 @@ export function RepoState({ seed, shape }: RepoStateProps) {
           <span>{collection.watchLabel}</span>
         </a>
       ) : null}
-      {seed.status === 'public' && seed.repo ? (
-        <a
-          className={shape === 'circle' ? styles.repoCircle : styles.repoText}
-          href={seed.repo}
-          aria-label={`${seed.name} on ${collection.githubLabel}`}
-        >
-          <span>{collection.githubLabel}</span>
-          <span className={styles.repoArrow} aria-hidden="true">
-            →
-          </span>
-        </a>
-      ) : (
-        <span className={styles.soon}>{collection.notYetPublicLabel}</span>
-      )}
+      <a
+        className={shape === 'circle' ? styles.repoCircle : styles.repoText}
+        href={seed.repo}
+        aria-label={`${seed.name} on ${collection.githubLabel}`}
+      >
+        <span>{collection.githubLabel}</span>
+        <span className={styles.repoArrow} aria-hidden="true">
+          →
+        </span>
+      </a>
     </div>
   );
 }

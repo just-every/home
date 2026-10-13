@@ -24,8 +24,6 @@ export const collection = {
   /** Card anatomy: Name, `${alternativeTo} <X>`, one line, repo state. */
   alternativeTo: 'Alternative to',
   githubLabel: 'GitHub',
-  /** A quiet pill with no link, not a disabled button. */
-  notYetPublicLabel: 'Opening soon',
   /** Shown only on cards whose reel is on the page. */
   watchLabel: 'Watch it run',
 } as const;

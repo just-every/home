@@ -55,20 +55,16 @@ export function ResultCard({ volume, replaces, reason }: ResultCardProps) {
             <span>{collection.watchLabel}</span>
           </a>
         ) : null}
-        {volume.repo ? (
-          <a
-            className={cards.repoText}
-            href={volume.repo}
-            aria-label={`${volume.name} on ${collection.githubLabel}`}
-          >
-            <span>{collection.githubLabel}</span>
-            <span className={cards.repoArrow} aria-hidden="true">
-              →
-            </span>
-          </a>
-        ) : (
-          <span className={cards.soon}>{collection.notYetPublicLabel}</span>
-        )}
+        <a
+          className={cards.repoText}
+          href={volume.repo}
+          aria-label={`${volume.name} on ${collection.githubLabel}`}
+        >
+          <span>{collection.githubLabel}</span>
+          <span className={cards.repoArrow} aria-hidden="true">
+            →
+          </span>
+        </a>
       </div>
     </li>
   );

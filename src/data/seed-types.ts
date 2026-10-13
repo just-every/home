@@ -1,5 +1,3 @@
-export type SeedStatus = 'public' | 'soon';
-
 export interface SeedReel {
   /** 1280x720 H.264. Pass through assetUrl so production can serve it from R2. */
   src: string;
@@ -22,9 +20,8 @@ export interface Seed {
   line: string;
   /** The seed's own homepage headline, or null when none is final. */
   headline: string | null;
-  /** Public GitHub repository, or null while the product is not yet public. */
-  repo: string | null;
-  status: SeedStatus;
+  /** Public GitHub repository. */
+  repo: string;
   accent: string;
   ink: string;
   paper: string;
