@@ -20,18 +20,21 @@ export interface CollectionItem {
   still: SeedStill | null;
 }
 
-/**
- * Where a visible card sits: the selected product's feature, one of the two
- * cards beside it, or a smaller card in the rows below (`m` five to a row,
- * `s` six).
- */
-export type CardRole = 'feature' | 'side' | 'm' | 's';
-
-export interface Placed {
+/** A product as the page shows it, in the box or as a card. */
+export interface Shown {
   item: CollectionItem;
-  role: CardRole;
   /** The incumbent to name; the one the visitor typed, where it applies. */
   replaces: string;
   /** Claude's reason, when a submitted search picked it. */
   reason: string | null;
+}
+
+/**
+ * A card's size in the grid: a big cover (the first row of three), or a
+ * smaller card in the rows below (`m` five to a row, `s` six).
+ */
+export type CardRole = 'cover' | 'm' | 's';
+
+export interface Placed extends Shown {
+  role: CardRole;
 }

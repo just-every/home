@@ -8,30 +8,47 @@ import { cardStyle } from './cardStyle';
 import type { Placed } from './types';
 
 /**
- * Every product that is not the feature: its mark, number, name and what it
- * replaces, and GitHub. The whole card selects it (its name is the link).
+ * A product in the grid: its mark, number, name and what it replaces, and
+ * GitHub. The whole card selects it (its name is the link); the selected
+ * one is ringed, and the box above shows it.
  */
-export function ProductCard({ placed }: { placed: Placed }) {
+export function ProductCard({
+  placed,
+  current,
+}: {
+  placed: Placed;
+  current: boolean;
+}) {
   const { item, role, replaces, reason } = placed;
-  const side = role === 'side';
   return (
     <li
-      className={`${ui.card} ${ui.tinted} ${styles.card} ${styles[role]}`}
+      className={`${ui.card} ${ui.tinted} ${styles.card} ${styles[role]}${
+        current ? ` ${styles.current}` : ''
+      }`}
       id={cardId(item.slug)}
       style={cardStyle(item)}
     >
-      <BrandMark className={styles.mark} volume={item} size={side ? 88 : 40} />
+      <BrandMark
+        className={styles.mark}
+        volume={item}
+        size={role === 'cover' ? 96 : 40}
+      />
       <div className={styles.body}>
         <p className={styles.num}>{item.number}</p>
         <h3 className={styles.name}>
-          <a className={styles.select} href={`#${cardId(item.slug)}`}>
+          <a
+            className={styles.select}
+            href={`#${cardId(item.slug)}`}
+            aria-current={current ? 'true' : undefined}
+          >
             {item.name}
           </a>
         </h3>
         <p className={styles.alt}>
           {collection.alternativeTo} {replaces}
         </p>
-        {reason ? <p className={styles.reason}>{reason}</p> : null}
+        {/* The box above already gives the selected pick's reason. */}
+        {reason && !current ? <p className={styles.reason}>{reason}</p> : null}
       </div>
       <a
         className={styles.repo}

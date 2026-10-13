@@ -3,46 +3,59 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
-import { cardId } from '../volumes';
-
 const PREFIX = '#vol-';
+
+/** How the page brings the box into view after a selection. */
+type Reveal = 'start' | 'nearest';
 
 interface SelectOptions {
   /** How the address bar follows: a new entry, the same entry, or not at all. */
   history: 'push' | 'replace' | 'none';
   /** Runs in the same update as the selection. */
   also?: () => void;
-  /** Move keyboard focus to the feature (the visitor picked it in the grid). */
+  /** Move keyboard focus to the box (a link picked the product). */
   focus?: boolean;
-  /** Animate the change and the scroll; false for the first paint. */
+  /**
+   * `start` puts the box at the top unless it already shows; `nearest`
+   * scrolls only as far as it takes (a search answer under its field).
+   */
+  reveal?: Reveal;
+  /** Animate the scroll; false for the first paint. */
   animate?: boolean;
 }
 
 const reducedMotion = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/** The feature's heading, which takes focus after a pick in the grid. */
+/** The box above the grid that shows the selected product. */
+export const featureId = 'collection-selected';
+
+/** The box's heading, which takes focus after a pick from a link. */
 export const featureHeadingId = 'collection-feature-heading';
 
-/** Scroll the feature into view unless its top is already near the top. */
-function reveal(slug: string, smooth: boolean) {
-  const feature = document.getElementById(cardId(slug));
-  if (!feature) return;
-  const top = feature.getBoundingClientRect().top;
-  if (top >= 0 && top < window.innerHeight * 0.35) return;
-  feature.scrollIntoView({
-    behavior: smooth ? 'smooth' : 'instant',
-    block: 'start',
-  });
+/** Scroll the box into view so the visitor sees the change. */
+function reveal(how: Reveal, smooth: boolean) {
+  const box = document.getElementById(featureId);
+  if (!box) return;
+  const behavior = smooth ? 'smooth' : 'instant';
+  if (how === 'nearest') {
+    box.scrollIntoView({ behavior, block: 'nearest' });
+    return;
+  }
+  const { top, bottom } = box.getBoundingClientRect();
+  const shows =
+    top >= 0 &&
+    (bottom <= window.innerHeight || top < window.innerHeight * 0.35);
+  if (!shows) box.scrollIntoView({ behavior, block: 'start' });
 }
 
 /**
  * One product is always selected: the collection's first (Uptime) until the
  * address says `#vol-<slug>`. Any link to `#vol-<slug>` on the page (the
- * hero's shelf, the grid's own cards, the ledger) selects it, the hash
- * follows so the view can be shared, and the change animates as one view
- * transition where the browser has them (instantly with reduced motion).
- * `onNavigate` runs when a link or the address picks a product.
+ * hero's shelf, the grid's own cards, the Unsubscribe rows) selects it, the
+ * hash follows so the view can be shared, and the box above the grid scrolls
+ * into view (smoothly, or at once with reduced motion). `onNavigate` runs
+ * when a link or the address picks a product.
  */
 export function useSelection(
   slugs: string[],
@@ -60,13 +73,18 @@ export function useSelection(
   }, [selected]);
 
   const select = useCallback((slug: string, options: SelectOptions) => {
-    const { history, also, focus = false, animate = true } = options;
+    const {
+      history,
+      also,
+      focus = false,
+      reveal: how = 'start',
+      animate = true,
+    } = options;
     if (history !== 'none') {
       const url = `${PREFIX}${slug}`;
       if (history === 'push') window.history.pushState(null, '', url);
       else window.history.replaceState(null, '', url);
     }
-    const smooth = animate && !reducedMotion();
     const update = () => {
       setSelected(slug);
       also?.();
@@ -77,14 +95,9 @@ export function useSelection(
           .getElementById(featureHeadingId)
           ?.focus({ preventScroll: true });
       }
-      reveal(slug, smooth);
+      reveal(how, animate && !reducedMotion());
     };
-    if (smooth && typeof document.startViewTransition === 'function') {
-      // The browser snapshots, the new layout commits at once, then it
-      // animates every card from its old place and size to its new one.
-      const transition = document.startViewTransition(() => flushSync(update));
-      transition.finished.then(settle, settle);
-    } else if (animate) {
+    if (animate) {
       flushSync(update);
       settle();
     } else {
@@ -134,7 +147,7 @@ export function useSelection(
       select(slug, {
         history: 'push',
         also: () => navigateRef.current(slug),
-        focus: link.closest('[data-collection-grid]') !== null,
+        focus: true,
       });
     };
 

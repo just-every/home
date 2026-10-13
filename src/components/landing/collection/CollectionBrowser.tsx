@@ -9,15 +9,16 @@ import searchStyles from '../search/search.module.css';
 import { useCollectionSearch } from '../search/useCollectionSearch';
 import styles from './collection.module.css';
 import { Feature } from './Feature';
-import { place } from './place';
+import { featured, place } from './place';
 import { ProductCard } from './ProductCard';
 import type { CollectionItem } from './types';
 import { useSelection } from './useSelection';
 
 /**
- * The collection: the search, then every volume as a card, with the selected
- * one large. Selecting (a card, a search result, a shelf volume or any other
- * `#vol-<slug>` link) makes that product the feature.
+ * The collection: the search, the selected product in a box across the
+ * width, then every volume as a card in a grid that keeps its order and
+ * sizes. Selecting (a card, a search result, a shelf volume or any other
+ * `#vol-<slug>` link) puts that product in the box and rings its card.
  */
 export function CollectionBrowser({ items }: { items: CollectionItem[] }) {
   const slugs = useMemo(() => items.map(item => item.slug), [items]);
@@ -36,7 +37,7 @@ export function CollectionBrowser({ items }: { items: CollectionItem[] }) {
 
   const search = useCollectionSearch(items, {
     onAnswer: (slug, apply) =>
-      select(slug, { history: 'replace', also: apply }),
+      select(slug, { history: 'replace', also: apply, reveal: 'nearest' }),
   });
   const answerSlugs =
     search.mode === 'answer'
@@ -48,25 +49,27 @@ export function CollectionBrowser({ items }: { items: CollectionItem[] }) {
     keeps: slug => answerSlugs.includes(slug),
   };
 
-  const placed = place(
+  const shown = featured(
     items,
     selected,
     search.mode,
     search.matches,
     search.text
   );
+  const placed = place(items, search.mode, search.matches, search.text);
 
   return (
     <>
       <SearchForm state={search} />
+      {shown ? <Feature shown={shown} /> : null}
       <ul className={styles.grid} data-collection-grid="">
-        {placed.map(entry =>
-          entry.role === 'feature' ? (
-            <Feature key={entry.item.slug} placed={entry} />
-          ) : (
-            <ProductCard key={entry.item.slug} placed={entry} />
-          )
-        )}
+        {placed.map(entry => (
+          <ProductCard
+            key={entry.item.slug}
+            placed={entry}
+            current={entry.item.slug === shown?.item.slug}
+          />
+        ))}
       </ul>
       {search.mode === 'answer' ? (
         <p className={searchStyles.credit}>{searchCopy.credit}</p>
