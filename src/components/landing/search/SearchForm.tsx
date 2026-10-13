@@ -35,7 +35,8 @@ export function SearchForm<T extends SearchVolume>({
 
   return (
     <form className={styles.search} role="search" onSubmit={submit}>
-      <label className={styles.label} htmlFor={inputId}>
+      {/* Named for assistive tech; the placeholder shows what to type. */}
+      <label className={ui.srOnly} htmlFor={inputId}>
         {search.label}
       </label>
       <div className={styles.bar}>
