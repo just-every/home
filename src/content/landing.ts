@@ -4,6 +4,8 @@
  */
 
 export const githubOrgUrl = 'https://github.com/just-every';
+export const githubReposUrl =
+  'https://github.com/orgs/just-every/repositories?q=run-';
 
 export const wordmark = 'JustEvery_';
 
@@ -196,7 +198,9 @@ export const runOne = {
 export const makers = {
   heading: 'Made something this good?',
   line: "Just Every is open to more makers. If you've built a free, open-source alternative with this much care, we'd love to see it.",
+  welcome: 'Issues, pull requests and collaborators are welcome on every repo.',
   link: { label: 'Say hello on GitHub', href: githubOrgUrl },
+  reposLink: { label: 'Browse the repos', href: githubReposUrl },
 } as const;
 
 /**
