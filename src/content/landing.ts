@@ -106,6 +106,20 @@ export function demoLabel(name: string, line: string): string {
   return `Demo of ${name} running: ${line}`;
 }
 
+/**
+ * "Nothing to upsell." (owner brief of 13 Oct): why a free product's new
+ * features differ. Each example is a product's own line from seeds.ts, shown
+ * beside its real mark; `examples` lists the slugs, in order.
+ */
+export const nothingToUpsell = {
+  id: 'why-free',
+  eyebrow: 'Why free',
+  heading: 'Nothing to upsell.',
+  line: 'Software you rent has to keep you logging in, so its new features give you reasons to. Ours are free, so they only have to do the job.',
+  examples: ['happytohelp', 'uptime', 'nook'],
+  listLabel: 'Three products, and what each one does',
+} as const;
+
 export const questions = {
   id: 'questions',
   heading: "Surely this can't work?",

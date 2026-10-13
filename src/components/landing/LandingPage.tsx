@@ -5,6 +5,7 @@ import { Header } from './Header';
 import { Hero } from './Hero';
 import ui from './label.module.css';
 import { Makers } from './Makers';
+import { NothingToUpsell } from './NothingToUpsell';
 import panels from './panels.module.css';
 import { Questions } from './Questions';
 import { RunOne } from './RunOne';
@@ -30,6 +31,7 @@ export function LandingPage() {
         <Collection />
         <Running />
         <Unsubscribe />
+        <NothingToUpsell />
         <Questions />
         <Stand />
         <div className={`${ui.wrap} ${panels.panels}`}>
