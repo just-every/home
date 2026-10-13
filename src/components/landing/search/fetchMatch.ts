@@ -6,9 +6,10 @@ export type MatchOutcome =
   | { ok: false; message: string };
 
 /**
- * POST /api/match. A failure carries the server's own plain message (rate
- * limited, not configured, unavailable), or the network message when the
- * request never got an answer. Never a made-up result.
+ * POST /api/match. A failure carries a short visitor-facing message for its
+ * code (rate limited; not configured or unavailable), the server's own for a
+ * bad request, or the network message when the request never got an answer.
+ * Never a made-up result.
  */
 export async function fetchMatch(
   query: string,
@@ -34,7 +35,12 @@ export async function fetchMatch(
     return { ok: true, answer: body };
   }
   if (body && 'error' in body) {
-    return { ok: false, message: body.error.message };
+    const { code, message } = body.error;
+    if (code === 'rate_limited')
+      return { ok: false, message: search.rateLimited };
+    if (code === 'invalid_request') return { ok: false, message };
+    return { ok: false, message: search.unavailable };
   }
+  if (response.status >= 500) return { ok: false, message: search.unavailable };
   return { ok: false, message: search.network };
 }

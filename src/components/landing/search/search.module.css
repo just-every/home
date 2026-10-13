@@ -2,7 +2,7 @@
    volumes in the collection's own card language. */
 
 .search {
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .label {
@@ -43,17 +43,14 @@
   width: 100%;
   height: 56px;
   padding: 0 22px 0 50px;
-  border: 1px solid #d6d4e4;
+  border: 1px solid var(--field-line);
   border-radius: 999px;
   background: #fff;
-  box-shadow: 0 1px 2px #17171d0a;
   color: var(--ink);
   font: inherit;
   font-size: 17px;
   appearance: none;
-  transition:
-    border-color 160ms ease,
-    box-shadow 160ms ease;
+  transition: border-color 160ms ease;
 }
 
 .input::placeholder {
@@ -61,13 +58,9 @@
   opacity: 1;
 }
 
-.input:hover {
-  border-color: #c4c2d6;
-}
-
+.input:hover,
 .input:focus {
-  border-color: #b9b7cf;
-  box-shadow: 0 4px 14px #17171d12;
+  border-color: var(--field-line-hover);
   outline: none;
 }
 
@@ -83,11 +76,6 @@
 .submit {
   flex: none;
   min-height: 56px;
-  padding: 0 28px;
-  border: 0;
-  font: inherit;
-  font-size: 17px;
-  cursor: pointer;
 }
 
 .statusRow {
@@ -117,7 +105,21 @@
 }
 
 .error {
-  color: #a3342b;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--error);
+}
+
+.alert {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.6;
 }
 
 .action {
@@ -136,22 +138,21 @@
 .results {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 15px;
+  gap: var(--card-gap);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .card {
+  --tint: color-mix(in oklab, var(--pastel) 34%, #fff);
+
   display: grid;
   grid-template-columns: 50px minmax(0, 1fr);
   grid-template-rows: 1fr auto;
   column-gap: 14px;
   min-height: 190px;
-  padding: 22px 20px 12px 24px;
-  border-radius: 14px;
-  background: color-mix(in oklab, var(--pastel) 34%, #fff);
-  box-shadow: inset 6px 0 0 var(--pastel);
+  padding: 22px 20px 12px;
   animation: rise 220ms ease both;
 }
 
@@ -217,9 +218,9 @@
 }
 
 .credit {
-  margin-top: 14px;
-  color: #9a99ad;
-  font-size: 13.5px;
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 15.5px;
 }
 
 @media (max-width: 1023px) {
@@ -249,7 +250,7 @@
 
   .card {
     min-height: 0;
-    padding: 20px 18px 12px 22px;
+    padding: 20px 18px 12px;
   }
 
   .line {

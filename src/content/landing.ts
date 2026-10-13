@@ -35,6 +35,12 @@ export const collection = {
  * interactive brief of 13 Oct sets its label, placeholder and button).
  * Typing filters the volumes on the page; the button asks Claude.
  */
+/** A visitor's text in quotes, shortened so a long one stays on a line or two. */
+function quoted(text: string): string {
+  const short = text.length > 48 ? `${text.slice(0, 46).trimEnd()}…` : text;
+  return `“${short}”`;
+}
+
 export const search = {
   label: 'What do you use today?',
   placeholder: "Notion, Intercom, or 'booking client calls'",
@@ -45,15 +51,21 @@ export const search = {
   showAll: 'Back to all products',
   /** Typing matched names, replaced products, categories or lines. */
   instant: (count: number, query: string) =>
-    `${count === 1 ? '1 product matches' : `${count} products match`} “${query}”.`,
+    `${count === 1 ? '1 product matches' : `${count} products match`} ${quoted(query)}.`,
   /** Typing matched nothing by name: the button matches by what it does. */
   hint: (query: string) =>
-    `Press Find my replacement to match “${query}” by what it does.`,
-  finding: (query: string) => `Finding the best fit for “${query}”…`,
-  results: (query: string) => `Best fit for “${query}”.`,
+    `Press Find my replacement to match ${quoted(query)} by what it does.`,
+  /** The button pressed with nothing typed. */
+  empty: 'Type a product you use, or a task.',
+  finding: (query: string) => `Finding the best fit for ${quoted(query)}…`,
+  results: (query: string) => `Best fit for ${quoted(query)}.`,
   credit: "Picked by Claude from each product's own description.",
   noMatch: 'Nothing in the collection does that yet.',
   suggestIt: 'Suggest it',
+  /** The matcher is switched off, misconfigured or failing. */
+  unavailable:
+    "Matching by task isn't available right now. Typing a product's name still works.",
+  rateLimited: 'Too many searches from here. Try again in a minute.',
   network: "Couldn't reach the matcher. Check your connection and try again.",
 } as const;
 
@@ -73,6 +85,11 @@ export const suggest = {
   busy: 'Sending…',
   success: "Thanks. It's on the list.",
   another: 'Suggest another',
+  /** Checked on the page before sending (the same words as the server's). */
+  productMissing: 'Tell us the product or task you have in mind.',
+  emailInvalid: 'That email address does not look right.',
+  /** Storage or the limiter is down or not set up. */
+  unavailable: "Couldn't save that right now. Try again in a moment.",
   network: "Couldn't send that. Check your connection and try again.",
 } as const;
 
@@ -170,12 +187,18 @@ export const makers = {
   link: { label: 'Say hello on GitHub', href: githubOrgUrl },
 } as const;
 
+/** Wordmark, two links and the copy deck's small print, shortened to one line. */
 export const footer = {
-  line: 'High-quality open-source alternatives to the software you rent.',
   links: [
     { label: 'Products', href: '#all' },
     { label: 'GitHub', href: githubOrgUrl },
   ],
-  smallPrint:
-    'Every product MIT licensed. Made with care, and a lot of coding agents.',
+  line: 'Made with care, and a lot of coding agents.',
+} as const;
+
+/** The 404 page. */
+export const notFound = {
+  heading: 'Nothing here.',
+  line: "This page doesn't exist, or it has moved.",
+  home: 'Back to Just Every',
 } as const;

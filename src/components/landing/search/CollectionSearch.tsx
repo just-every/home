@@ -44,6 +44,8 @@ export function CollectionSearch({ volumes, children }: CollectionSearchProps) {
   const [query, setQuery] = useState('');
   const [asked, setAsked] = useState<Asked | null>(null);
   const [narrow, setNarrow] = useState(false);
+  // The button was pressed with nothing typed.
+  const [prompted, setPrompted] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -94,16 +96,20 @@ export function CollectionSearch({ volumes, children }: CollectionSearchProps) {
   else if (mode === 'none') status = search.noMatch;
   else if (mode === 'instant') status = search.instant(instant.length, text);
   else if (queryTokens(text).length > 0) status = search.hint(text);
+  else if (prompted && !text) status = search.empty;
+  const failed = current?.state === 'failed';
 
   function clear() {
     abortRef.current?.abort();
     setQuery('');
     setAsked(null);
+    setPrompted(false);
   }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!text) {
+      setPrompted(true);
       inputRef.current?.focus();
       return;
     }
@@ -179,7 +185,10 @@ export function CollectionSearch({ volumes, children }: CollectionSearchProps) {
               type="search"
               name="q"
               value={query}
-              onChange={event => setQuery(event.target.value)}
+              onChange={event => {
+                setQuery(event.target.value);
+                setPrompted(false);
+              }}
               onKeyDown={event => {
                 if (event.key === 'Escape' && query) {
                   event.preventDefault();
@@ -197,7 +206,7 @@ export function CollectionSearch({ volumes, children }: CollectionSearchProps) {
             />
           </div>
           <button
-            className={`${ui.pill} ${styles.submit}`}
+            className={`${ui.pill} ${ui.pillSmall} ${styles.submit}`}
             type="submit"
             aria-busy={current?.state === 'loading'}
           >
@@ -211,7 +220,7 @@ export function CollectionSearch({ volumes, children }: CollectionSearchProps) {
           <p
             id={statusId}
             className={
-              current?.state === 'failed'
+              failed
                 ? styles.error
                 : mode === 'none'
                   ? styles.none
@@ -219,6 +228,17 @@ export function CollectionSearch({ volumes, children }: CollectionSearchProps) {
             }
             role="status"
           >
+            {failed ? (
+              <svg
+                className={styles.alert}
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <circle cx="10" cy="10" r="8.25" />
+                <path d="M10 5.75v5.5M10 14.1v.15" />
+              </svg>
+            ) : null}
             {status}
           </p>
           {mode === 'none' ? (

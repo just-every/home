@@ -17,6 +17,8 @@ import styles from './suggest.module.css';
 
 const empty = { product: '', note: '', email: '' };
 
+type FieldErrors = { product?: string; email?: string };
+
 /**
  * "What should we build next?": stores a suggestion through /api/suggest.
  * The search's no-match state fills the product field from here.
@@ -25,7 +27,9 @@ export function Suggest() {
   const [fields, setFields] = useState(empty);
   const [state, setState] = useState<'editing' | 'sending' | 'sent'>('editing');
   const [error, setError] = useState('');
+  const [invalid, setInvalid] = useState<FieldErrors>({});
   const productRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
   const trapRef = useRef<HTMLInputElement>(null);
   const thanksRef = useRef<HTMLParagraphElement>(null);
 
@@ -34,6 +38,7 @@ export function Suggest() {
       onSuggestionRequest(product => {
         setFields({ ...empty, product: product.slice(0, SUGGEST_PRODUCT_MAX) });
         setError('');
+        setInvalid({});
         setState('editing');
         // The link's own jump scrolls the section into view.
         requestAnimationFrame(() =>
@@ -48,13 +53,25 @@ export function Suggest() {
   }, [state]);
 
   const set =
-    (name: keyof typeof empty) => (event: { target: { value: string } }) =>
+    (name: keyof typeof empty) => (event: { target: { value: string } }) => {
       setFields(current => ({ ...current, [name]: event.target.value }));
+      if (name !== 'note')
+        setInvalid(current => ({ ...current, [name]: undefined }));
+    };
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (state === 'sending') return;
-    if (!event.currentTarget.reportValidity()) return;
+    const found: FieldErrors = {};
+    if (!fields.product.trim()) found.product = suggest.productMissing;
+    if (emailRef.current && !emailRef.current.validity.valid) {
+      found.email = suggest.emailInvalid;
+    }
+    setInvalid(found);
+    if (found.product || found.email) {
+      (found.product ? productRef : emailRef).current?.focus();
+      return;
+    }
     setState('sending');
     setError('');
     try {
@@ -74,7 +91,21 @@ export function Suggest() {
       const body = (await response
         .json()
         .catch(() => null)) as ApiErrorBody | null;
-      setError(body?.error.message ?? suggest.network);
+      // The server's words for a bad field or the rate limit; plain copy
+      // for anything on our side.
+      const failure = body?.error;
+      if (
+        failure?.code === 'invalid_request' ||
+        failure?.code === 'rate_limited'
+      ) {
+        setError(failure.message);
+      } else {
+        setError(
+          failure || response.status >= 500
+            ? suggest.unavailable
+            : suggest.network
+        );
+      }
     } catch {
       setError(suggest.network);
     }
@@ -83,13 +114,13 @@ export function Suggest() {
 
   return (
     <section
-      className={styles.suggest}
+      className={`${ui.card} ${styles.suggest}`}
       id={suggest.id}
       aria-labelledby="label-suggest-heading"
     >
-      <div className={styles.copy}>
+      <div>
         <p className={ui.eyebrow}>{suggest.eyebrow}</p>
-        <h2 className={styles.heading} id="label-suggest-heading">
+        <h2 className={ui.h3} id="label-suggest-heading">
           {suggest.heading}
         </h2>
         <p className={styles.text}>{suggest.line}</p>
@@ -111,7 +142,7 @@ export function Suggest() {
           </button>
         </div>
       ) : (
-        <form className={styles.form} onSubmit={submit}>
+        <form className={styles.form} onSubmit={submit} noValidate>
           <div className={styles.field}>
             <label className={styles.label} htmlFor="suggest-product">
               {suggest.productLabel}
@@ -127,7 +158,16 @@ export function Suggest() {
               maxLength={SUGGEST_PRODUCT_MAX}
               autoComplete="off"
               required
+              aria-invalid={invalid.product ? true : undefined}
+              aria-describedby={
+                invalid.product ? 'suggest-product-error' : undefined
+              }
             />
+            {invalid.product ? (
+              <p className={styles.fieldError} id="suggest-product-error">
+                {invalid.product}
+              </p>
+            ) : null}
           </div>
           <div className={styles.field}>
             <label className={styles.label} htmlFor="suggest-note">
@@ -150,6 +190,7 @@ export function Suggest() {
                 {suggest.emailLabel}
               </label>
               <input
+                ref={emailRef}
                 id="suggest-email"
                 className={styles.input}
                 type="email"
@@ -158,14 +199,18 @@ export function Suggest() {
                 onChange={set('email')}
                 maxLength={SUGGEST_EMAIL_MAX}
                 autoComplete="email"
+                aria-invalid={invalid.email ? true : undefined}
                 aria-describedby="suggest-email-hint"
               />
-              <p className={styles.hint} id="suggest-email-hint">
-                {suggest.emailHint}
+              <p
+                className={invalid.email ? styles.fieldError : styles.hint}
+                id="suggest-email-hint"
+              >
+                {invalid.email ?? suggest.emailHint}
               </p>
             </div>
             <button
-              className={`${ui.pill} ${styles.submit}`}
+              className={`${ui.pill} ${ui.pillSmall} ${styles.submit}`}
               type="submit"
               aria-busy={state === 'sending'}
             >
@@ -189,6 +234,17 @@ export function Suggest() {
             />
           </div>
           <p className={styles.error} role="alert">
+            {error ? (
+              <svg
+                className={styles.alert}
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <circle cx="10" cy="10" r="8.25" />
+                <path d="M10 5.75v5.5M10 14.1v.15" />
+              </svg>
+            ) : null}
             {error}
           </p>
         </form>

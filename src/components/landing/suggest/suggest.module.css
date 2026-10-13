@@ -2,25 +2,14 @@
    and the makers invitation, in the same panel language. */
 
 .suggest {
+  --tint: #f3f1fe;
+
   display: grid;
   grid-column: 1 / -1;
   grid-template-columns: minmax(0, 39fr) minmax(0, 61fr);
   gap: 14px 40px;
-  padding: 27px 24px 26px;
-  border-radius: 9.5px;
-  background: linear-gradient(110deg, #f5f3ff, #f0eefe);
+  padding: 26px 24px;
   scroll-margin-top: 24px;
-}
-
-.copy {
-  padding-top: 6px;
-}
-
-.heading {
-  font-size: 34px;
-  font-weight: 650;
-  letter-spacing: -0.04em;
-  line-height: 1.12;
 }
 
 .text {
@@ -35,7 +24,6 @@
   display: grid;
   gap: 14px;
   align-content: start;
-  padding-top: 6px;
 }
 
 .field {
@@ -59,9 +47,9 @@
 
 .input {
   width: 100%;
-  min-height: 48px;
+  min-height: 52px;
   padding: 11px 16px;
-  border: 1px solid #d9d6ea;
+  border: 1px solid var(--field-line);
   border-radius: 10px;
   background: #fff;
   color: var(--ink);
@@ -76,13 +64,14 @@
   opacity: 1;
 }
 
-.input:hover {
-  border-color: #c5c2db;
+.input:hover,
+.input:focus {
+  border-color: var(--field-line-hover);
+  outline: none;
 }
 
-.input:focus {
-  border-color: #b7b4cf;
-  outline: none;
+.input[aria-invalid='true'] {
+  border-color: var(--error);
 }
 
 .input:focus-visible {
@@ -105,27 +94,44 @@
   flex: 1 1 auto;
 }
 
-.hint {
-  color: #85849b;
+.hint,
+.fieldError {
   font-size: 13.5px;
   line-height: 1.4;
+}
+
+.hint {
+  color: #85849b;
+}
+
+.fieldError {
+  color: var(--error);
 }
 
 .submit {
   flex: none;
   /* Line the pill up with the email field, under its label. */
   margin-top: 28px;
-  padding: 13px 28px;
-  border: 0;
-  font: inherit;
-  font-size: 16px;
-  cursor: pointer;
 }
 
 .error {
-  color: #a3342b;
-  font-size: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--error);
+  font-size: 15.5px;
   line-height: 1.4;
+}
+
+.alert {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.6;
 }
 
 .error:empty {
@@ -147,7 +153,6 @@
   align-items: flex-start;
   justify-content: center;
   gap: 10px;
-  padding: 6px 0 0;
 }
 
 .thanks {
@@ -186,10 +191,6 @@
 @media (max-width: 599px) {
   .suggest {
     padding: 24px 20px;
-  }
-
-  .heading {
-    font-size: 30px;
   }
 
   .last {
