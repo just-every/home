@@ -49,6 +49,18 @@ export interface Seed {
   accent: string;
   ink: string;
   paper: string;
+  /**
+   * The brand colour softened to a pastel (OKLCH, lightness about 0.82 to
+   * 0.93) so every seed's pastel sits with the others in one set. Derived
+   * from `accent`, or from `ink` where the seed says so.
+   */
+  pastel: string;
+  /**
+   * How the mark sits on `pastel`: in its own colours, or redrawn in `ink`
+   * alone (lighter colours as lighter tints of it) where its colours would
+   * vanish into the pastel.
+   */
+  markOnPastel: 'colour' | 'ink';
   /** Mark for light surfaces (may adapt to a dark colour scheme itself). */
   mark: string;
   /** Mark fixed to its light-surface colours, where the product ships one. */

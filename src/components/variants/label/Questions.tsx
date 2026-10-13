@@ -4,20 +4,19 @@ import { questions } from '@/content/landing';
 
 import ui from './label.module.css';
 import styles from './questions.module.css';
-import { VolumeMark } from './VolumeMark';
-import type { VolumeShape } from './volumes';
+import { Glyph } from './Glyph';
+import type { GlyphShape } from './Glyph';
 
 /** The design's question cards: one tint and shape each, in order. */
-const looks: { shape: VolumeShape; ink: string; tint: string; flip?: true }[] =
-  [
-    { shape: 'circle', ink: '#4a95ff', tint: '#e8f3ff' },
-    { shape: 'triangle', ink: '#3cc697', tint: '#e9f7f0' },
-    { shape: 'heptagon', ink: '#ff853e', tint: '#fff0ea' },
-    { shape: 'square', ink: '#9364f4', tint: '#f1ebff' },
-    { shape: 'triangle', ink: '#ed598b', tint: '#fceef7', flip: true },
-    { shape: 'star', ink: '#4796ff', tint: '#e8f3ff' },
-    { shape: 'folded', ink: '#efb429', tint: '#fff8e3' },
-  ];
+const looks: { shape: GlyphShape; ink: string; tint: string; flip?: true }[] = [
+  { shape: 'circle', ink: '#4a95ff', tint: '#e8f3ff' },
+  { shape: 'triangle', ink: '#3cc697', tint: '#e9f7f0' },
+  { shape: 'heptagon', ink: '#ff853e', tint: '#fff0ea' },
+  { shape: 'square', ink: '#9364f4', tint: '#f1ebff' },
+  { shape: 'triangle', ink: '#ed598b', tint: '#fceef7', flip: true },
+  { shape: 'star', ink: '#4796ff', tint: '#e8f3ff' },
+  { shape: 'folded', ink: '#efb429', tint: '#fff8e3' },
+];
 
 export function Questions() {
   return (
@@ -43,7 +42,7 @@ export function Questions() {
                 className={styles.card}
                 style={{ '--tint': look.tint } as CSSProperties}
               >
-                <VolumeMark
+                <Glyph
                   className={`${styles.mark} ${look.flip ? styles.flip : ''}`}
                   shape={look.shape}
                   color={look.ink}

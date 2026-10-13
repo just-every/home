@@ -143,17 +143,23 @@
 }
 
 .dot {
+  display: grid;
   flex: none;
-  box-sizing: content-box;
-  width: 11px;
-  height: 11px;
-  border: 9px solid color-mix(in srgb, var(--ink) 12%, #fff);
+  place-items: center;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: var(--ink);
+  background: color-mix(in oklab, var(--pastel) 55%, #fff);
+}
+
+.dotMark {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 .tab[aria-selected='false'] .dot {
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
 .tabText {
@@ -293,9 +299,13 @@
   }
 
   .dot {
-    width: 9px;
-    height: 9px;
-    border-width: 6px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .dotMark {
+    width: 17px;
+    height: 17px;
   }
 
   .tabName {

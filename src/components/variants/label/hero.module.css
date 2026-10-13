@@ -63,13 +63,7 @@
   container-type: inline-size;
 }
 
-.art img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* The handwritten note, set as live text where the art had its own. */
+/* The handwritten note, set as live text over the shelf. */
 .note {
   position: absolute;
   left: 54.6%;
