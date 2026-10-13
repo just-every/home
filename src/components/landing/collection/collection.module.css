@@ -79,8 +79,12 @@
   content: '';
 }
 
+/* Focus rings the whole card, and underlines the name it came from. */
 .card .select:focus-visible {
   outline: none;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
 .card:has(.select:focus-visible) {
