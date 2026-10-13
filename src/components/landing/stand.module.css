@@ -1,33 +1,19 @@
 .stand {
   display: grid;
-  grid-template-columns: 36% 1fr;
+  grid-template-columns: 34% 1fr;
   align-items: start;
-  gap: 13px;
-  padding: 30px 0 24px;
-}
-
-.intro {
-  padding-top: 5px;
-}
-
-.heading {
-  font-size: 44px;
-  font-weight: 650;
-  letter-spacing: -0.04em;
-  line-height: 1.12;
+  gap: 19px;
+  padding: var(--section-y) 0;
 }
 
 .line {
-  margin: 14px 0;
-  color: #85859f;
-  font-size: 19px;
-  line-height: 1.42;
+  margin-top: 14px;
 }
 
 .points {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  gap: var(--card-gap);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -35,9 +21,7 @@
 
 .point {
   min-height: 200px;
-  padding: 18px 24px 24px;
-  border-radius: 9.5px;
-  background: var(--tint);
+  padding: 20px 22px 24px;
 }
 
 .symbol {
@@ -71,24 +55,15 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 34px 0 28px;
-  }
-
-  .heading {
-    font-size: 40px;
   }
 }
 
 @media (max-width: 599px) {
-  .heading {
-    font-size: 34px;
-  }
-
-  .line {
-    font-size: 18px;
-  }
-
   .points {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .point {
+    min-height: 0;
   }
 }

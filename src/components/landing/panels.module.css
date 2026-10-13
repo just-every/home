@@ -1,23 +1,15 @@
 .panels {
   display: grid;
   grid-template-columns: minmax(0, 1.38fr) minmax(0, 1fr);
-  gap: 13px;
-  padding-bottom: 42px;
+  gap: var(--card-gap);
+  padding-bottom: var(--section-y);
 }
 
 .install,
 .makers {
   position: relative;
   min-height: 251px;
-  padding: 27px 24px 26px;
-  border-radius: 9.5px;
-}
-
-.heading {
-  font-size: 34px;
-  font-weight: 650;
-  letter-spacing: -0.04em;
-  line-height: 1.12;
+  padding: 26px 24px;
 }
 
 .text {
@@ -29,14 +21,11 @@
 
 /* Run one yourself. */
 .install {
-  display: grid;
-  grid-template-columns: minmax(0, 39fr) minmax(0, 61fr);
-  gap: 14px;
-  background: linear-gradient(110deg, #eff8ff, #e8f3ff);
-}
+  --tint: #ecf5ff;
 
-.installCopy {
-  padding-top: 6px;
+  display: grid;
+  grid-template-columns: minmax(0, 36fr) minmax(0, 64fr);
+  gap: 20px;
 }
 
 .after {
@@ -53,8 +42,7 @@
 .terminal {
   overflow: hidden;
   border-radius: 8px;
-  background: linear-gradient(115deg, #282d36, #1d2129);
-  box-shadow: 0 8px 15px #69748117;
+  background: #22262e;
   color: #dbddea;
 }
 
@@ -149,23 +137,14 @@
 
 /* For makers. */
 .makers {
-  padding-right: 178px;
-  background: linear-gradient(110deg, #edfdf6, #e9fbf2);
-}
+  --tint: #ebfaf3;
 
-.makersCopy {
-  padding-top: 6px;
-}
-
-.makers .panelPill {
-  gap: 12px;
-  padding: 15px 30px;
-  font-size: 16px;
+  padding-right: 190px;
 }
 
 .makersArt {
   position: absolute;
-  top: 45px;
+  top: 44px;
   right: 24px;
   width: 150px;
   height: 137px;
@@ -183,8 +162,6 @@
 
   .panels {
     grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
-    padding-bottom: 36px;
   }
 
   .install,
@@ -209,14 +186,7 @@
 
 @media (max-width: 599px) {
   .install {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
     padding: 24px 20px;
-  }
-
-  .heading {
-    font-size: 30px;
   }
 
   .makers {

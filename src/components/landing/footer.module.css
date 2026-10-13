@@ -1,10 +1,11 @@
 .footer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 40px;
-  min-height: 98px;
+  gap: 8px 36px;
+  min-height: 96px;
   padding: 18px 0;
-  border-top: 1px solid #d4d5e6;
+  border-top: 1px solid var(--line);
 }
 
 .brand {
@@ -35,29 +36,19 @@
   text-underline-offset: 5px;
 }
 
-.lines {
+.line {
   margin-left: auto;
-  text-align: right;
-  color: #6f7088;
-  font-size: 15px;
-  line-height: 1.5;
+  color: var(--muted);
+  font-size: 14px;
 }
 
-.small {
-  color: #7d7e95;
-  font-size: 13px;
-}
-
-@media (max-width: 1023px) {
+@media (max-width: 599px) {
   .footer {
-    flex-wrap: wrap;
-    gap: 8px 28px;
-    padding: 24px 0 32px;
+    padding: 20px 0 28px;
   }
 
-  .lines {
+  .line {
     width: 100%;
     margin-left: 0;
-    text-align: left;
   }
 }

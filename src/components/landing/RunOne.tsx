@@ -14,14 +14,17 @@ const cloned = volumes.find(
 
 export function RunOne() {
   return (
-    <article className={styles.install} aria-labelledby="label-run-heading">
-      <div className={styles.installCopy}>
+    <article
+      className={`${ui.card} ${styles.install}`}
+      aria-labelledby="label-run-heading"
+    >
+      <div>
         {cloned ? (
           <p className={ui.eyebrow}>
             Volume {cloned.number} · {cloned.seed.name}
           </p>
         ) : null}
-        <h2 className={styles.heading} id="label-run-heading">
+        <h2 className={ui.h3} id="label-run-heading">
           {runOne.heading}
         </h2>
         <p className={styles.text}>{runOne.line}</p>

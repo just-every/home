@@ -11,6 +11,25 @@
   --pill-to: #18191b;
   --header-h: 81px;
 
+  /* One card language for every card-like surface on the page: the same
+     edge, radius and (no) shadow; a card's colour is its own soft tint. */
+  --card-line: rgb(36 32 72 / 0.09);
+  --card-border: 1px solid var(--card-line);
+  --card-radius: 12px;
+  --card-bg: #fff;
+  --card-shadow: none;
+  --card-gap: 14px;
+  --field-line: #d9d6e8;
+  --field-line-hover: #c4c1d8;
+  --error: #a3342b;
+
+  /* Section rhythm and type. */
+  --section-y: 56px;
+  --h2-size: 44px;
+  --h3-size: 32px;
+  --lead-size: 19px;
+  --lead: #85849e;
+
   min-width: 320px;
   overflow-x: clip;
   background: #fdfdff;
@@ -36,6 +55,15 @@
   margin: 0;
 }
 
+/* No lone last words in section headings and lines. */
+:where(.page) :where(h2, h3) {
+  text-wrap: balance;
+}
+
+:where(.page) :where(main p) {
+  text-wrap: pretty;
+}
+
 .wrap {
   max-width: 1331px;
   margin-inline: auto;
@@ -51,6 +79,8 @@
 @media (max-width: 1023px) {
   .page {
     --header-h: 72px;
+    --section-y: 48px;
+    --h2-size: 40px;
   }
 
   .wrap {
@@ -61,6 +91,10 @@
 @media (max-width: 599px) {
   .page {
     --header-h: 100px;
+    --section-y: 40px;
+    --h2-size: 34px;
+    --h3-size: 30px;
+    --lead-size: 17px;
   }
 
   .wrap {
@@ -77,11 +111,34 @@
   text-transform: uppercase;
 }
 
+/* Section headings, panel headings and the line under a section heading. */
 .h2 {
-  font-size: 32px;
-  font-weight: 600;
-  letter-spacing: -0.025em;
-  line-height: 1.15;
+  font-size: var(--h2-size);
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+}
+
+.h3 {
+  font-size: var(--h3-size);
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+}
+
+.lead {
+  color: var(--lead);
+  font-size: var(--lead-size);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+/* Every card-like surface: tinted with --tint, or white. */
+.card {
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  background: var(--tint, var(--card-bg));
+  box-shadow: var(--card-shadow);
 }
 
 .pill {
@@ -107,6 +164,17 @@
 .pill:hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 24px #18191b33;
+}
+
+/* The pill everywhere below the hero. */
+.pillSmall {
+  min-height: 52px;
+  padding: 0 28px;
+  border: 0;
+  font: inherit;
+  font-size: 17px;
+  gap: 12px;
+  cursor: pointer;
 }
 
 .under {

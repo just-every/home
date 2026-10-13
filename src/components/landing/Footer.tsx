@@ -16,10 +16,7 @@ export function Footer() {
           </a>
         ))}
       </nav>
-      <div className={styles.lines}>
-        <p>{footer.line}</p>
-        <p className={styles.small}>{footer.smallPrint}</p>
-      </div>
+      <p className={styles.line}>{footer.line}</p>
     </footer>
   );
 }

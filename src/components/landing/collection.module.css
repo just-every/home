@@ -1,35 +1,18 @@
 .collection {
-  padding: 43px 13px 56px;
-  border-top: 1px solid #d9d6e5;
+  padding: var(--section-y) 0;
+  border-top: 1px solid var(--line);
 }
 
-.head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 33px;
-  margin-bottom: 26px;
+.heading {
+  margin-bottom: 22px;
 }
 
-.headLine {
-  max-width: 436px;
-  color: #8b8ba3;
-  font-size: 16px;
-  line-height: 1.4;
-}
-
-.head > div {
-  flex: none;
-}
-
-.headLine {
-  flex: 0 1 436px;
-}
-
-.headLink {
-  flex: none;
-  font-size: 16px;
-  white-space: nowrap;
+/* The count, a quiet note under the cards. */
+.note {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.45;
 }
 
 .covers,
@@ -42,7 +25,7 @@
 .covers {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 15px;
+  gap: var(--card-gap);
 }
 
 .num {
@@ -51,13 +34,12 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Every card is its volume: the brand pastel, softened, with a spine edge in
-   the full pastel down its left side. */
+/* Every card is its volume: the brand pastel, softened. */
 .cover,
 .volume {
+  --tint: color-mix(in oklab, var(--pastel) 34%, #fff);
+
   scroll-margin-top: 24px;
-  background: color-mix(in oklab, var(--pastel) 34%, #fff);
-  box-shadow: inset 6px 0 0 var(--pastel);
 }
 
 /* Volumes 01-03: face-out covers. */
@@ -68,8 +50,7 @@
   display: flex;
   flex-direction: column;
   min-height: 212px;
-  padding: 31px 36px 22px 40px;
-  border-radius: 14px;
+  padding: 30px 34px 22px;
 }
 
 .cover .num {
@@ -112,19 +93,17 @@
 }
 
 .coverAlt {
-  color: #6f6e84;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 2.4px;
-  text-transform: uppercase;
+  color: #757488;
+  font-size: 14px;
+  line-height: 1.3;
 }
 
 /* Volumes 04 onward. */
 .grid {
   display: grid;
   grid-template-columns: repeat(30, minmax(0, 1fr));
-  gap: 16px 12px;
-  margin-top: 16px;
+  gap: var(--card-gap);
+  margin-top: var(--card-gap);
 }
 
 .volume {
@@ -134,15 +113,14 @@
   grid-template-rows: 1fr auto;
   column-gap: 12px;
   min-height: 173px;
-  padding: 19px 17px 12px 21px;
-  border-radius: 11px;
+  padding: 19px 17px 12px 20px;
 }
 
 .volume:nth-child(n + 6) {
   grid-column: span 5;
   grid-template-columns: 40px minmax(0, 1fr);
   column-gap: 9px;
-  padding-inline: 18px 14px;
+  padding-inline: 16px 14px;
 }
 
 .volumeMark {
@@ -253,7 +231,7 @@
   place-items: center;
   width: 38px;
   height: 38px;
-  border: 1px solid #d3d9e8;
+  border: var(--card-border);
   border-radius: 50%;
   background: #ffffffa6;
   font-size: 17px;
@@ -271,8 +249,7 @@
   align-items: center;
   min-height: 26px;
   padding: 3px 11px;
-  border: 1px solid
-    color-mix(in srgb, var(--brand-ink, var(--ink)) 18%, transparent);
+  border: var(--card-border);
   border-radius: 999px;
   background: #ffffff8c;
   color: #6c6b7e;
@@ -281,16 +258,6 @@
 }
 
 @media (max-width: 1023px) {
-  .collection {
-    padding: 36px 0 48px;
-  }
-
-  .head {
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 14px 33px;
-  }
-
   .covers {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -308,7 +275,7 @@
     grid-column: auto;
     grid-template-columns: 50px minmax(0, 1fr);
     column-gap: 14px;
-    padding: 20px 18px 12px 22px;
+    padding: 20px 18px 12px 20px;
   }
 
   .volume:nth-child(n + 6) .volumeMark {
@@ -319,11 +286,6 @@
   .repoText,
   .watch {
     min-height: 44px;
-  }
-
-  .coverAlt {
-    font-size: 11.5px;
-    letter-spacing: 2px;
   }
 
   .cover {
@@ -337,17 +299,6 @@
 }
 
 @media (max-width: 599px) {
-  .head {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  /* In a column the 436px basis would be a height: size to the text. */
-  .headLine {
-    flex: none;
-    font-size: 16px;
-  }
-
   .covers,
   .grid {
     grid-template-columns: minmax(0, 1fr);
@@ -359,12 +310,18 @@
 
   .cover {
     min-height: 0;
-    padding: 26px 24px 16px 28px;
+    padding: 24px 22px 16px;
   }
 
   .coverMark {
     top: 24px;
     right: 22px;
+  }
+
+  .coverFoot {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
   }
 
   .volumeName {

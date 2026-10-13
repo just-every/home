@@ -1,4 +1,4 @@
-import { collection, reels } from '@/content/landing';
+import { collection } from '@/content/landing';
 
 import { BrandMark } from './BrandMark';
 import ui from './label.module.css';
@@ -12,7 +12,6 @@ import type { Volume } from './volumes';
 /** Volumes 01 to 03 are the featured covers; every later one is a card. */
 const coverVolumes = volumes.slice(0, 3);
 const cardVolumes = volumes.slice(3);
-const lastNumber = volumes[volumes.length - 1]?.number ?? '';
 
 /** What the search filters and shows, from the same volumes as the cards. */
 const searchVolumes: SearchVolume[] = volumes.map(volume => ({
@@ -34,7 +33,7 @@ function CoverCard({ volume }: { volume: Volume }) {
   const { seed } = volume;
   return (
     <li
-      className={styles.cover}
+      className={`${ui.card} ${styles.cover}`}
       id={cardId(volume.slug)}
       style={volumeStyle(volume)}
     >
@@ -56,7 +55,7 @@ function VolumeCard({ volume }: { volume: Volume }) {
   const { seed } = volume;
   return (
     <li
-      className={styles.volume}
+      className={`${ui.card} ${styles.volume}`}
       id={cardId(volume.slug)}
       style={volumeStyle(volume)}
     >
@@ -84,25 +83,9 @@ export function Collection() {
       id={collection.id}
       aria-labelledby="label-all-heading"
     >
-      <div className={styles.head}>
-        <div>
-          <p className={ui.eyebrow}>Volumes 01–{lastNumber}</p>
-          <h2 className={ui.h2} id="label-all-heading">
-            {collection.heading}
-          </h2>
-        </div>
-        <p className={styles.headLine}>
-          {volumeCount === 14 ? collection.line : collection.lineWithoutNumber}
-        </p>
-        <a className={`${ui.under} ${styles.headLink}`} href={`#${reels.id}`}>
-          <span>
-            {reels.heading.replace(/\.$/, '')}{' '}
-            <span className={ui.arrow} aria-hidden="true">
-              →
-            </span>
-          </span>
-        </a>
-      </div>
+      <h2 className={`${ui.h2} ${styles.heading}`} id="label-all-heading">
+        {collection.heading}
+      </h2>
       <CollectionSearch volumes={searchVolumes}>
         <ol className={styles.covers}>
           {coverVolumes.map(volume => (
@@ -116,6 +99,9 @@ export function Collection() {
             ))}
           </ol>
         ) : null}
+        <p className={styles.note}>
+          {volumeCount === 14 ? collection.line : collection.lineWithoutNumber}
+        </p>
       </CollectionSearch>
     </section>
   );

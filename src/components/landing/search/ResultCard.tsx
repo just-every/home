@@ -3,6 +3,7 @@ import type { CSSProperties } from 'react';
 import { collection } from '@/content/landing';
 
 import cards from '../collection.module.css';
+import ui from '../label.module.css';
 import styles from './search.module.css';
 import type { SearchVolume } from './localMatch';
 
@@ -21,7 +22,7 @@ export function ResultCard({ volume, replaces, reason }: ResultCardProps) {
     '--brand-ink': volume.ink,
   } as CSSProperties;
   return (
-    <li className={styles.card} style={style}>
+    <li className={`${ui.card} ${styles.card}`} style={style}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         className={styles.mark}

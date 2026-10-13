@@ -1,6 +1,5 @@
 .questions {
-  padding: 34px 0 30px;
-  background: linear-gradient(100deg, #f9f8ff, #fdfdff);
+  padding: var(--section-y) 0;
 }
 
 .inner {
@@ -9,28 +8,14 @@
   gap: 19px;
 }
 
-.intro {
-  padding: 12px 0;
-}
-
-.heading {
-  font-size: 45px;
-  font-weight: 650;
-  letter-spacing: -0.04em;
-  line-height: 1.12;
-}
-
 .line {
-  margin: 15px 0;
-  color: #85849e;
-  font-size: 23.4px;
-  line-height: 1.35;
+  margin-top: 14px;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 11px;
+  gap: var(--card-gap);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -46,8 +31,6 @@
   grid-template-columns: 36px minmax(0, 1fr);
   gap: 13px;
   padding: 18px 18px 20px;
-  border-radius: 9.5px;
-  background: var(--tint);
 }
 
 .mark {
@@ -80,28 +63,12 @@
     gap: 20px;
   }
 
-  .heading {
-    font-size: 40px;
-  }
-
-  .line {
-    font-size: 21px;
-  }
-
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 599px) {
-  .heading {
-    font-size: 34px;
-  }
-
-  .line {
-    font-size: 19px;
-  }
-
   .grid {
     grid-template-columns: minmax(0, 1fr);
   }

@@ -26,12 +26,12 @@ export function Questions() {
       aria-labelledby="label-questions-heading"
     >
       <div className={`${ui.wrap} ${styles.inner}`}>
-        <div className={styles.intro}>
+        <div>
           <p className={ui.eyebrow}>Questions</p>
-          <h2 className={styles.heading} id="label-questions-heading">
+          <h2 className={ui.h2} id="label-questions-heading">
             {questions.heading}
           </h2>
-          <p className={styles.line}>{questions.line}</p>
+          <p className={`${ui.lead} ${styles.line}`}>{questions.line}</p>
         </div>
         <ul className={styles.grid}>
           {questions.items.map((item, index) => {
@@ -39,7 +39,7 @@ export function Questions() {
             return (
               <li
                 key={item.question}
-                className={styles.card}
+                className={`${ui.card} ${styles.card}`}
                 style={{ '--tint': look.tint } as CSSProperties}
               >
                 <Glyph

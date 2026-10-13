@@ -5,14 +5,17 @@ import styles from './panels.module.css';
 
 export function Makers() {
   return (
-    <article className={styles.makers} aria-labelledby="label-makers-heading">
-      <div className={styles.makersCopy}>
+    <article
+      className={`${ui.card} ${styles.makers}`}
+      aria-labelledby="label-makers-heading"
+    >
+      <div>
         <p className={ui.eyebrow}>For makers</p>
-        <h2 className={styles.heading} id="label-makers-heading">
+        <h2 className={ui.h3} id="label-makers-heading">
           {makers.heading}
         </h2>
         <p className={styles.text}>{makers.line}</p>
-        <a className={`${ui.pill} ${styles.panelPill}`} href={makers.link.href}>
+        <a className={`${ui.pill} ${ui.pillSmall}`} href={makers.link.href}>
           {makers.link.label}{' '}
           <span className={ui.arrow} aria-hidden="true">
             →

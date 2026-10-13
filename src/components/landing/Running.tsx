@@ -91,10 +91,10 @@ export function Running() {
       <div className={`${ui.wrap} ${styles.inner}`}>
         <div className={styles.copy}>
           <p className={ui.eyebrow}>Watch</p>
-          <h2 className={styles.heading} id="label-running-heading">
+          <h2 className={ui.h2} id="label-running-heading">
             {reels.heading}
           </h2>
-          <p className={styles.line}>{reels.line}</p>
+          <p className={`${ui.lead} ${styles.line}`}>{reels.line}</p>
           <p className={styles.caption} aria-live="polite">
             <span className={styles.captionNum}>{current.number}</span>{' '}
             <strong>{seed.name}</strong>
@@ -104,7 +104,7 @@ export function Running() {
           </p>
           <div className={styles.actions}>
             {seed.status === 'public' && seed.repo ? (
-              <a className={ui.pill} href={seed.repo}>
+              <a className={`${ui.pill} ${ui.pillSmall}`} href={seed.repo}>
                 {reels.githubLabel}{' '}
                 <span className={ui.arrow} aria-hidden="true">
                   →

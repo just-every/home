@@ -18,6 +18,11 @@
   width: 105px;
   height: 309px;
   background: url('/landing/plant.webp') right top / contain no-repeat;
+  /* Fade the photo's own backdrop into the section's, so no edge shows. */
+  mask-image:
+    linear-gradient(to right, transparent, #000 45%),
+    linear-gradient(transparent, #000 18%, #000 78%, transparent);
+  mask-composite: intersect;
   pointer-events: none;
 }
 
@@ -26,27 +31,16 @@
   grid-template-columns: 46% 54%;
   align-items: center;
   gap: 8px;
-  min-height: 419px;
+  padding-block: var(--section-y);
 }
 
 .copy {
-  padding: 24px 5px;
-}
-
-.heading {
-  font-size: 50px;
-  font-weight: 650;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
+  min-width: 0;
 }
 
 .line {
   max-width: 560px;
-  margin: 14px 0 26px;
-  color: #85849b;
-  font-size: 23.4px;
-  line-height: 1.42;
-  letter-spacing: -0.01em;
+  margin: 14px 0 24px;
 }
 
 .caption {
@@ -80,16 +74,12 @@
   gap: 16px 32px;
 }
 
-.actions a {
-  padding-inline: 38px;
-}
-
 .soon {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
   padding: 8px 20px;
-  border: 1px solid #dcdbe8;
+  border: var(--card-border);
   border-radius: 999px;
   color: #6c6b7e;
 }
@@ -98,12 +88,16 @@
   position: relative;
   z-index: 1;
   min-width: 0;
-  margin: 36px 66px 40px 0;
+  margin-right: 66px;
 }
 
 .tabs {
   display: flex;
   gap: 8px;
+  position: relative;
+  z-index: 1;
+  /* The selected tab sits over the frame's top edge, joined to it. */
+  margin-bottom: -1px;
   padding-right: 120px;
   overflow-x: auto;
   scrollbar-width: none;
@@ -121,10 +115,11 @@
   gap: 12px;
   min-height: 56px;
   padding: 10px 16px;
-  border: 1px solid #dcdeef;
+  border: var(--card-border);
   border-bottom: 0;
-  border-radius: 9px 9px 0 0;
-  background: #f1f0f8;
+  border-radius: var(--card-radius) var(--card-radius) 0 0;
+  background: #f3f2f9;
+  box-shadow: inset 0 -1px 0 var(--card-line);
   color: #6c6b80;
   font: inherit;
   font-size: 14px;
@@ -138,7 +133,8 @@
 }
 
 .tab[aria-selected='true'] {
-  background: #fff;
+  background: var(--card-bg);
+  box-shadow: none;
   color: var(--ink);
 }
 
@@ -190,10 +186,10 @@
 .screen {
   position: relative;
   padding: 10px;
-  border: 2px solid #fff;
-  border-radius: 0 10px 10px 10px;
-  background: linear-gradient(125deg, #dfe4f7, #fff9fb);
-  box-shadow: 0 11px 28px #69668235;
+  border: var(--card-border);
+  border-radius: 0 var(--card-radius) var(--card-radius) var(--card-radius);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
 }
 
 .video {
@@ -201,7 +197,7 @@
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
-  border-radius: 7px;
+  border-radius: 6px;
   background: #eceaf5;
 }
 
@@ -242,20 +238,6 @@
     flex-direction: column;
     align-items: stretch;
     gap: 4px;
-    min-height: 0;
-    padding: 34px 0 30px;
-  }
-
-  .copy {
-    padding: 0;
-  }
-
-  .heading {
-    font-size: 42px;
-  }
-
-  .line {
-    font-size: 21px;
   }
 
   .player {
@@ -279,14 +261,6 @@
 }
 
 @media (max-width: 599px) {
-  .heading {
-    font-size: 35px;
-  }
-
-  .line {
-    font-size: 18px;
-  }
-
   .tab {
     flex: 1 1 0;
     min-width: 150px;

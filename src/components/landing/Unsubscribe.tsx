@@ -24,10 +24,10 @@ export function Unsubscribe() {
     >
       <div className={ui.wrap}>
         <div className={styles.head}>
-          <h2 className={styles.heading} id="label-unsubscribe-heading">
+          <h2 className={ui.h2} id="label-unsubscribe-heading">
             {heading}
           </h2>
-          <p className={styles.line}>{line}</p>
+          <p className={`${ui.lead} ${styles.line}`}>{line}</p>
         </div>
         <PlayInView className={styles.play}>
           <ol
@@ -42,7 +42,7 @@ export function Unsubscribe() {
                   { ...volumeStyle(volume), '--i': index } as CSSProperties
                 }
               >
-                <span className={styles.email}>
+                <span className={`${ui.card} ${styles.email}`}>
                   <Mail
                     aria-hidden="true"
                     className={styles.mail}
@@ -65,7 +65,7 @@ export function Unsubscribe() {
                   →
                 </span>
                 <span className={ui.srOnly}>, replaced by </span>
-                <a className={styles.volume} href={volume.href}>
+                <a className={`${ui.card} ${styles.volume}`} href={volume.href}>
                   <span className={styles.number}>{volume.number}</span>
                   <BrandMark
                     className={styles.mark}

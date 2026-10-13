@@ -43,13 +43,13 @@ export function Stand() {
       className={`${ui.wrap} ${styles.stand}`}
       aria-labelledby="label-stand-heading"
     >
-      <div className={styles.intro}>
+      <div>
         <p className={ui.eyebrow}>What we stand for</p>
-        <h2 className={styles.heading} id="label-stand-heading">
+        <h2 className={ui.h2} id="label-stand-heading">
           {stand.heading}
         </h2>
         {stand.lines.map(line => (
-          <p key={line} className={styles.line}>
+          <p key={line} className={`${ui.lead} ${styles.line}`}>
             {line}
           </p>
         ))}
@@ -60,7 +60,7 @@ export function Stand() {
           return (
             <li
               key={point.title}
-              className={styles.point}
+              className={`${ui.card} ${styles.point}`}
               style={{ '--tint': symbol.tint } as CSSProperties}
             >
               <span className={styles.symbol}>{symbol.art}</span>
