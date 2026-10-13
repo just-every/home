@@ -10,28 +10,8 @@ import { featureHeadingId, featureId } from './useSelection';
 
 const host = (url: string) => new URL(url).host;
 
-/** The product's reel where it has one, else a real picture of it. */
-function Media({ item }: { item: Shown['item'] }) {
-  if (item.reel) {
-    return <Reel key={item.slug} seed={item} className={styles.picture} />;
-  }
-  if (!item.still) return null;
-  return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      key={item.slug}
-      className={styles.picture}
-      src={item.still.src}
-      width={item.still.width}
-      height={item.still.height}
-      alt={item.still.alt}
-      decoding="async"
-    />
-  );
-}
-
 /**
- * The selected product, across the whole width above the grid: its media,
+ * The selected product, across the whole width above the grid: its reel,
  * name and family, what it replaces, its own headline and line (or Claude's
  * reason, after a search), its homepage where it is live, and GitHub.
  */
@@ -108,7 +88,7 @@ export function Feature({ shown }: { shown: Shown }) {
           </div>
         </div>
         <div className={styles.media}>
-          <Media item={item} />
+          <Reel key={item.slug} seed={item} className={styles.picture} />
         </div>
       </div>
     </article>

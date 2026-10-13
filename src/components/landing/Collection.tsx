@@ -23,7 +23,6 @@ const items: CollectionItem[] = volumes.map(({ seed, ...volume }) => ({
   pastel: volume.colour,
   ink: volume.ink,
   reel: seed.reel,
-  still: seed.still,
 }));
 
 export function Collection() {

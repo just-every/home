@@ -4,19 +4,6 @@ export type { Seed, SeedReel } from './seed-types';
 
 const dir = (slug: string) => `/seeds/${slug}`;
 
-/**
- * Its homepage's first screen, captured at 1440 by 900 (Vector's at 1280 by
- * 800) and saved as public/seeds/<slug>/home.webp.
- */
-function home(slug: string, name: string, width = 1440, height = 900) {
-  return {
-    src: `${dir(slug)}/home.webp`,
-    width,
-    height,
-    alt: `The ${name} homepage`,
-  };
-}
-
 function reel(slug: string, durationSeconds: number) {
   return {
     src: `/video/${slug}-720.mp4`,
@@ -56,7 +43,6 @@ export const seeds: Seed[] = [
     markLight: `${dir('uptime')}/mark-light.svg`,
     markInk: null,
     reel: reel('uptime', 51.1),
-    still: null,
   },
   {
     slug: 'happytohelp',
@@ -77,8 +63,7 @@ export const seeds: Seed[] = [
     mark: `${dir('happytohelp')}/mark.svg`,
     markLight: null,
     markInk: `${dir('happytohelp')}/mark-ink.svg`,
-    reel: null,
-    still: home('happytohelp', 'HappyToHelp'),
+    reel: reel('happytohelp', 45.1),
   },
   {
     slug: 'nook',
@@ -99,8 +84,7 @@ export const seeds: Seed[] = [
     mark: `${dir('nook')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: null,
-    still: home('nook', 'Nook'),
+    reel: reel('nook', 46.1),
   },
   {
     slug: 'lamp',
@@ -121,8 +105,7 @@ export const seeds: Seed[] = [
     mark: `${dir('lamp')}/mark.svg`,
     markLight: `${dir('lamp')}/mark-light.svg`,
     markInk: null,
-    reel: reel('lamp', 59),
-    still: null,
+    reel: reel('lamp', 45.4),
   },
   {
     slug: 'cradle',
@@ -143,8 +126,7 @@ export const seeds: Seed[] = [
     mark: `${dir('cradle')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: null,
-    still: home('cradle', 'Cradle'),
+    reel: reel('cradle', 45.1),
   },
   {
     slug: 'vector',
@@ -165,8 +147,7 @@ export const seeds: Seed[] = [
     mark: `${dir('vector')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: null,
-    still: home('vector', 'Vector', 1280, 800),
+    reel: reel('vector', 45.1),
   },
   {
     slug: 'slate',
@@ -187,8 +168,7 @@ export const seeds: Seed[] = [
     mark: `${dir('slate')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: null,
-    still: home('slate', 'Slate'),
+    reel: reel('slate', 47.4),
   },
   {
     slug: 'pencil',
@@ -209,8 +189,7 @@ export const seeds: Seed[] = [
     mark: `${dir('pencil')}/mark.svg`,
     markLight: `${dir('pencil')}/mark-light.svg`,
     markInk: null,
-    reel: null,
-    still: home('pencil', 'Pencil'),
+    reel: reel('pencil', 46.9),
   },
   {
     slug: 'orbit',
@@ -231,8 +210,7 @@ export const seeds: Seed[] = [
     mark: `${dir('orbit')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: null,
-    still: home('orbit', 'Orbit'),
+    reel: reel('orbit', 43.8),
   },
   {
     slug: 'mango',
@@ -253,8 +231,7 @@ export const seeds: Seed[] = [
     mark: `${dir('mango')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: null,
-    still: home('mango', 'Mango'),
+    reel: reel('mango', 45),
   },
   {
     slug: 'dial',
@@ -275,8 +252,7 @@ export const seeds: Seed[] = [
     mark: `${dir('dial')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: null,
-    still: home('dial', 'Dial'),
+    reel: reel('dial', 43.9),
   },
   {
     slug: 'penny',
@@ -297,8 +273,7 @@ export const seeds: Seed[] = [
     mark: `${dir('penny')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: null,
-    still: home('penny', 'Penny'),
+    reel: reel('penny', 44.9),
   },
   {
     slug: 'oncall',
@@ -320,8 +295,7 @@ export const seeds: Seed[] = [
     mark: `${dir('oncall')}/mark.svg`,
     markLight: `${dir('oncall')}/mark-light.svg`,
     markInk: null,
-    reel: null,
-    still: home('oncall', 'Oncall'),
+    reel: reel('oncall', 44.4),
   },
   {
     slug: 'spool',
@@ -342,7 +316,6 @@ export const seeds: Seed[] = [
     mark: `${dir('spool')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: null,
-    still: home('spool', 'Spool'),
+    reel: reel('spool', 42.4),
   },
 ];
