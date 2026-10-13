@@ -1,0 +1,225 @@
+.panels {
+  display: grid;
+  grid-template-columns: minmax(0, 1.38fr) minmax(0, 1fr);
+  gap: var(--card-gap);
+  padding-bottom: var(--section-y);
+}
+
+.install,
+.makers {
+  position: relative;
+  min-height: 251px;
+  padding: 26px 24px;
+}
+
+.text {
+  margin: 11px 0 18px;
+  color: var(--soft);
+  font-size: 17px;
+  line-height: 1.42;
+}
+
+/* Run one yourself. */
+.install {
+  --tint: #ecf5ff;
+
+  display: grid;
+  grid-template-columns: minmax(0, 36fr) minmax(0, 64fr);
+  gap: 20px;
+}
+
+.after {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.terminalWrap {
+  align-self: center;
+  min-width: 0;
+}
+
+.terminal {
+  overflow: hidden;
+  border-radius: 8px;
+  background: #22262e;
+  color: #dbddea;
+}
+
+.terminalHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 34px;
+  padding: 0 6px 0 14px;
+  background: #343a43;
+  color: #b3bccb;
+  font-size: 12.5px;
+}
+
+.lights {
+  display: flex;
+  gap: 7px;
+}
+
+.lights span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #ff665e;
+}
+
+.lights span:nth-child(2) {
+  background: #ffd35a;
+}
+
+.lights span:nth-child(3) {
+  background: #4bd268;
+}
+
+.terminalTitle {
+  margin-left: auto;
+}
+
+.copy {
+  min-width: 56px;
+  min-height: 28px;
+  padding: 3px 10px;
+  border: 1px solid #4b525d;
+  border-radius: 6px;
+  background: transparent;
+  color: #c4cad6;
+  font: inherit;
+  cursor: pointer;
+}
+
+.copy:hover {
+  background: #3d444e;
+}
+
+.commands {
+  margin: 0;
+  padding: 16px 16px 18px;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 12.2px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* A command wraps between words; a word breaks inside only when it is wider
+   than the whole terminal (a long URL on a phone). */
+.word {
+  display: inline-block;
+  max-width: 100%;
+  text-indent: 0;
+}
+
+.commandLine {
+  display: block;
+  padding-left: 1.4em;
+  text-indent: -1.4em;
+}
+
+.prompt {
+  color: #58d2ab;
+  user-select: none;
+}
+
+.altLine {
+  margin-top: 12px;
+  color: var(--soft);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.altLine code {
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: #ffffffb3;
+  color: #2a2d3a;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* For makers. */
+.makers {
+  --tint: #ebfaf3;
+
+  padding-right: 190px;
+}
+
+.makersArt {
+  position: absolute;
+  top: 44px;
+  right: 24px;
+  width: 150px;
+  height: 137px;
+}
+
+@media (max-width: 1023px) {
+  .terminalHead {
+    height: 48px;
+  }
+
+  .copy {
+    min-height: 44px;
+    min-width: 64px;
+  }
+
+  .panels {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .install,
+  .makers {
+    min-height: 0;
+  }
+
+  .install {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .terminalWrap {
+    align-self: stretch;
+  }
+
+  .makers {
+    padding-right: 200px;
+  }
+}
+
+@media (max-width: 599px) {
+  .install {
+    padding: 24px 20px;
+  }
+
+  .makers {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px;
+  }
+
+  .makersArt {
+    position: relative;
+    top: auto;
+    right: auto;
+    align-self: center;
+    width: 130px;
+    height: auto;
+    margin-top: 24px;
+  }
+
+  .commands {
+    padding: 14px;
+    font-size: 12px;
+  }
+
+  .altLine code {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}

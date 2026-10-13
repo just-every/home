@@ -1,0 +1,214 @@
+/* "What should we build next?": a full-width panel under Run one yourself
+   and the makers invitation, in the same panel language. */
+
+.suggest {
+  --tint: #f3f1fe;
+
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 39fr) minmax(0, 61fr);
+  gap: 14px 40px;
+  padding: 26px 24px;
+  scroll-margin-top: 24px;
+}
+
+.text {
+  max-width: 400px;
+  margin-top: 11px;
+  color: var(--soft);
+  font-size: 17px;
+  line-height: 1.42;
+}
+
+.form {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.label {
+  color: #3f3e50;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.optional {
+  margin-left: 4px;
+  color: var(--muted);
+  font-size: 13.5px;
+  font-weight: 400;
+}
+
+.input {
+  width: 100%;
+  min-height: 52px;
+  padding: 11px 16px;
+  border: 1px solid var(--field-line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.4;
+  transition: border-color 160ms ease;
+}
+
+.input::placeholder {
+  color: var(--placeholder);
+  opacity: 1;
+}
+
+.input:hover,
+.input:focus {
+  border-color: var(--field-line-hover);
+  outline: none;
+}
+
+.input[aria-invalid='true'] {
+  border-color: var(--error);
+}
+
+.input:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.note {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.last {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px 20px;
+}
+
+.last .field {
+  flex: 1 1 auto;
+}
+
+.hint,
+.fieldError {
+  font-size: 13.5px;
+  line-height: 1.4;
+}
+
+.hint {
+  color: var(--muted);
+}
+
+.fieldError {
+  color: var(--error);
+}
+
+.submit {
+  flex: none;
+  /* Line the pill up with the email field, under its label. */
+  margin-top: 28px;
+}
+
+.error {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--error);
+  font-size: 15.5px;
+  line-height: 1.4;
+}
+
+.alert {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.6;
+}
+
+.error:empty {
+  display: none;
+}
+
+/* The honeypot: off-screen, not merely invisible, so bots still fill it. */
+.trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.sent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+
+.thanks {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.thanks:focus {
+  outline: none;
+}
+
+.thanks:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.again {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 1023px) {
+  .suggest {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 599px) {
+  .suggest {
+    padding: 24px 20px;
+  }
+
+  .last {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .submit {
+    margin-top: 4px;
+  }
+
+  .thanks {
+    font-size: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .input {
+    transition: none;
+  }
+}

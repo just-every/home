@@ -1,117 +1,28 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  --background: #ffffff;
+  --foreground: #0a0a0a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-space-grotesk);
-  --font-mono: var(--font-jetbrains-mono);
+  --font-sans: var(--font-label-sans);
 }
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
-  width: 100%;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-x: none;
-  background: var(--background);
-  color: var(--foreground);
 }
 
 body {
   background-color: var(--background);
-  background-image: url('/img/hero-bg.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   color: var(--foreground);
-  overflow-x: hidden;
-  width: 100%;
   min-width: 320px;
-}
-
-* {
-  box-sizing: border-box;
-}
-::selection {
-  background: rgba(0, 224, 255, 0.2);
-  color: #00e0ff;
-}
-
-@property --hero-warp {
-  syntax: '<number>';
-  inherits: true;
-  initial-value: 0;
-}
-
-.hero-warp {
-  display: inline-block;
-  transform-origin: center;
-  will-change: filter, transform;
-  letter-spacing: calc(var(--hero-warp) * -0.03em);
-}
-
-.hero-warp--down {
-  filter: url(#hero-spag-filter-down);
-}
-
-.hero-warp--up {
-  filter: url(#hero-spag-filter-up);
-}
-
-.hero-cta-wrap {
-  transform: scale(calc(1 - var(--hero-warp) * 0.18));
-  transform-origin: center;
-  will-change: transform;
-}
-
-.hero-title {
-  filter: drop-shadow(0 8px 28px rgba(0, 0, 0, 0.65));
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-
-  .hero-warp {
-    letter-spacing: normal;
-    filter: none;
-  }
-}
-
-video:fullscreen::-webkit-media-text-track-display,
-video:-webkit-full-screen::-webkit-media-text-track-display {
-  position: relative;
-  bottom: auto;
-  left: auto;
-  transform: none;
-  margin-bottom: 0;
-}
-
-/* Fullscreen container */
-:fullscreen {
-  background-color: black;
-}
-
-:-webkit-full-screen {
-  background-color: black;
-}
-
-/* Glow effect utility */
-.glow {
-  filter: drop-shadow(0 0 20px rgba(0, 224, 255, 0.5));
-}
-
-/* Gradient text utility */
-.gradient-text {
-  background: linear-gradient(135deg, #00e0ff 0%, #ff4ecd 50%, #ffb500 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }

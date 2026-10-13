@@ -1,9 +1,9 @@
 {
-  "name": "JustEvery_ - Build any app. Just ask.",
+  "name": "Just Every",
   "short_name": "JustEvery_",
-  "description": "JustEvery_ turns a single prompt into a live product—UI, back-end, hosting and all.",
-  "theme_color": "#050505",
-  "background_color": "#050505",
+  "description": "High-quality open-source alternatives to Notion, Linear, Intercom, Calendly and more. 100% free, MIT licensed, yours to change.",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",

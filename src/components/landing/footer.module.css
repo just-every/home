@@ -1,0 +1,59 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 36px;
+  min-height: 96px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 19.7px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.nav a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.line {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Same-width digits, so the ticking count moves nothing. */
+.count {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 599px) {
+  .footer {
+    padding: 20px 0 28px;
+  }
+
+  .line {
+    width: 100%;
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,334 @@
+.collection {
+  padding: var(--section-y) 0;
+  border-top: 1px solid var(--line);
+}
+
+.heading {
+  margin-bottom: 22px;
+}
+
+/* The count, a quiet note under the cards. */
+.note {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.45;
+}
+
+.covers,
+.grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.covers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--card-gap);
+}
+
+.num {
+  color: var(--muted);
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Every card is its volume: the brand pastel, softened. */
+.cover,
+.volume {
+  --tint: color-mix(in oklab, var(--pastel) 34%, #fff);
+
+  scroll-margin-top: 24px;
+}
+
+/* Volumes 01-03: face-out covers. */
+.cover {
+  --mark-w: clamp(84px, 7.6vw, 108px);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 212px;
+  padding: 30px 34px 22px;
+}
+
+.cover .num {
+  margin-bottom: 8px;
+}
+
+.coverName {
+  margin: 0 0 6px;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.9px;
+  line-height: 1.1;
+}
+
+.coverLine {
+  position: relative;
+  z-index: 1;
+  max-width: min(218px, calc(100% - var(--mark-w) - 10px));
+  color: var(--soft);
+  font-size: 16px;
+  line-height: 1.38;
+}
+
+.coverMark {
+  position: absolute;
+  top: 30px;
+  right: 34px;
+  width: var(--mark-w);
+  height: var(--mark-w);
+  object-fit: contain;
+}
+
+.coverFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.coverAlt {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+/* Volumes 04 onward. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(30, minmax(0, 1fr));
+  gap: var(--card-gap);
+  margin-top: var(--card-gap);
+}
+
+.volume {
+  display: grid;
+  grid-column: span 6;
+  grid-template-columns: 50px minmax(0, 1fr);
+  grid-template-rows: 1fr auto;
+  column-gap: 12px;
+  min-height: 173px;
+  padding: 19px 17px 12px 20px;
+}
+
+.volume:nth-child(n + 6) {
+  grid-column: span 5;
+  grid-template-columns: 40px minmax(0, 1fr);
+  column-gap: 9px;
+  padding-inline: 16px 14px;
+}
+
+.volumeMark {
+  width: 44px;
+  height: 44px;
+  margin-top: 6px;
+  object-fit: contain;
+}
+
+.volume:nth-child(n + 6) .volumeMark {
+  width: 36px;
+  height: 36px;
+}
+
+.volume .num {
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.volumeName {
+  margin: 0 0 3px;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+.volumeAlt {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+@media (min-width: 1024px) {
+  .volumeAlt > span {
+    display: block;
+  }
+}
+
+.volumeLine {
+  margin-top: 12px;
+  color: var(--soft);
+  font-size: 14px;
+  line-height: 1.42;
+}
+
+.volumeFoot {
+  grid-column: 1 / -1;
+  align-self: end;
+  margin-top: 10px;
+}
+
+/* Repo state. */
+.repoState {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 16px;
+}
+
+.coverFoot .repoState {
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+
+.repoText,
+.watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  font-size: 13.5px;
+  white-space: nowrap;
+}
+
+.repoText > span:first-child,
+.watch > span {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.repoText:hover > span:first-child,
+.watch:hover > span {
+  text-decoration-thickness: 2px;
+}
+
+.repoArrow {
+  display: inline-block;
+  transition: transform 160ms ease;
+}
+
+.repoText:hover .repoArrow,
+.repoCircle:hover .repoArrow {
+  transform: translateX(2px);
+}
+
+.repoCircle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 14px;
+}
+
+.repoCircle .repoArrow {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: var(--card-border);
+  border-radius: 50%;
+  background: #ffffffa6;
+  font-size: 17px;
+  transition:
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.repoCircle:hover .repoArrow {
+  background: #fff;
+}
+
+@media (max-width: 1023px) {
+  .covers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .covers > :last-child {
+    grid-column: 1 / -1;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .volume,
+  .volume:nth-child(n + 6) {
+    grid-column: auto;
+    grid-template-columns: 50px minmax(0, 1fr);
+    column-gap: 14px;
+    padding: 20px 18px 12px 20px;
+  }
+
+  .volume:nth-child(n + 6) .volumeMark {
+    width: 44px;
+    height: 44px;
+  }
+
+  .repoText,
+  .watch {
+    min-height: 44px;
+  }
+
+  .cover {
+    --mark-w: 92px;
+  }
+
+  .coverMark {
+    top: 24px;
+    right: 24px;
+  }
+}
+
+@media (max-width: 599px) {
+  .covers,
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .covers > :last-child {
+    grid-column: auto;
+  }
+
+  .cover {
+    min-height: 0;
+    padding: 24px 22px 16px;
+  }
+
+  .coverMark {
+    top: 24px;
+    right: 22px;
+  }
+
+  .coverFoot {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .volumeName {
+    font-size: 22px;
+  }
+
+  .volumeAlt,
+  .volumeLine {
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .repoArrow,
+  .repoCircle .repoArrow {
+    transition: none;
+  }
+
+  .repoText:hover .repoArrow,
+  .repoCircle:hover .repoArrow {
+    transform: none;
+  }
+}

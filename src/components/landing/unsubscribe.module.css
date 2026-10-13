@@ -1,0 +1,287 @@
+.unsubscribe {
+  padding: var(--section-y) 0;
+}
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px 48px;
+  margin: 0 0 32px;
+}
+
+.line {
+  flex: 0 1 520px;
+}
+
+/* Rows run down the first column, then the second, however many there are. */
+.ledger {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 2;
+  column-gap: 44px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 30px minmax(0, 1fr);
+  align-items: center;
+  margin-bottom: 12px;
+  break-inside: avoid;
+}
+
+/* The rented tool: one more renewal email. */
+.email {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  height: 56px;
+  padding: 0 16px;
+}
+
+.mail {
+  flex: none;
+  width: 19px;
+  height: 19px;
+  color: var(--muted);
+}
+
+.vendor {
+  position: relative;
+  overflow: hidden;
+  color: #2a2a35;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.renews {
+  flex: none;
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.strike {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 7px;
+  margin-top: -2px;
+  overflow: visible;
+  color: #34343f;
+  pointer-events: none;
+}
+
+.strike path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  vector-effect: non-scaling-stroke;
+}
+
+.to {
+  color: #a9a8bd;
+  font-size: 17px;
+  text-align: center;
+}
+
+/* The volume that replaces it, in its card's own tint. */
+.volume {
+  --tint: color-mix(in oklab, var(--pastel) 34%, #fff);
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  height: 56px;
+  padding: 0 16px;
+  color: var(--brand-ink);
+  transition: transform 160ms ease;
+}
+
+.volume:hover {
+  transform: translateY(-1px);
+}
+
+.volume:hover .name {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.number {
+  flex: none;
+  min-width: 18px;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.68;
+}
+
+.mark {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.name {
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Each volume arrives in turn and strikes out the tool it replaces. The
+   finished state is the default; PlayInView arms it only off screen. */
+.play[data-state='ready'] .volume {
+  opacity: 0;
+  transform: translateX(-14px);
+}
+
+.play[data-state='ready'] .strike path {
+  stroke-dashoffset: 1;
+}
+
+.play[data-state='play'] .volume {
+  animation: arrive 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(min(var(--i), 20) * 85ms);
+}
+
+.play[data-state='play'] .strike path {
+  animation: strike 0.42s ease-out both;
+  animation-delay: calc(min(var(--i), 20) * 85ms + 260ms);
+}
+
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+}
+
+@keyframes strike {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+
+/* Narrower columns: the renewal date drops under the tool's name. */
+@media (max-width: 599px), (min-width: 900px) and (max-width: 1279px) {
+  .email {
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr);
+    align-content: center;
+    column-gap: 11px;
+    row-gap: 1px;
+  }
+
+  .mail {
+    grid-row: 1 / span 2;
+  }
+
+  .vendor {
+    justify-self: start;
+    max-width: 100%;
+    line-height: 1.2;
+  }
+
+  .renews {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 1023px) {
+  .head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .line {
+    flex: none;
+    max-width: 600px;
+  }
+
+  .ledger {
+    column-gap: 20px;
+  }
+
+  .row {
+    grid-template-columns: minmax(0, 0.92fr) 20px minmax(0, 1.08fr);
+  }
+
+  .email,
+  .volume {
+    padding-inline: 11px;
+  }
+
+  .email {
+    column-gap: 9px;
+  }
+
+  .volume {
+    gap: 8px;
+  }
+
+  .number {
+    min-width: 0;
+  }
+
+  .vendor,
+  .name {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 899px) {
+  .ledger {
+    columns: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .row {
+    margin-bottom: 10px;
+  }
+
+  .email,
+  .volume {
+    height: 54px;
+  }
+
+  .vendor,
+  .name {
+    font-size: 15px;
+  }
+
+  .mark {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .volume,
+  .play[data-state] .volume {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .play[data-state] .strike path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
