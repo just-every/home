@@ -14,7 +14,7 @@
 
 .text {
   margin: 11px 0 18px;
-  color: #74778f;
+  color: var(--soft);
   font-size: 17px;
   line-height: 1.42;
 }
@@ -29,7 +29,7 @@
 }
 
 .after {
-  color: #8a8ca3;
+  color: var(--muted);
   font-size: 15px;
   line-height: 1.45;
 }
@@ -53,7 +53,7 @@
   height: 34px;
   padding: 0 6px 0 14px;
   background: #343a43;
-  color: #8993a5;
+  color: #b3bccb;
   font-size: 12.5px;
 }
 
@@ -107,6 +107,14 @@
   overflow-wrap: anywhere;
 }
 
+/* A command wraps between words; a word breaks inside only when it is wider
+   than the whole terminal (a long URL on a phone). */
+.word {
+  display: inline-block;
+  max-width: 100%;
+  text-indent: 0;
+}
+
 .commandLine {
   display: block;
   padding-left: 1.4em;
@@ -120,7 +128,7 @@
 
 .altLine {
   margin-top: 12px;
-  color: #74778f;
+  color: var(--soft);
   font-size: 14px;
   line-height: 1.5;
 }

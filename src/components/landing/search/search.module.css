@@ -54,7 +54,7 @@
 }
 
 .input::placeholder {
-  color: #9897ac;
+  color: var(--placeholder);
   opacity: 1;
 }
 
@@ -176,7 +176,7 @@
 
 .num {
   margin-bottom: 4px;
-  color: #7f7e92;
+  color: var(--muted);
   font-size: 15px;
   font-variant-numeric: tabular-nums;
 }
@@ -190,7 +190,7 @@
 }
 
 .meta {
-  color: #757488;
+  color: var(--muted);
   font-size: 14px;
   line-height: 1.35;
 }
@@ -202,7 +202,7 @@
 }
 
 .line {
-  color: #6f6e80;
+  color: var(--soft);
   font-size: 14.5px;
 }
 

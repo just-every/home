@@ -28,6 +28,7 @@ export function ResultCard({ volume, replaces, reason }: ResultCardProps) {
         className={styles.mark}
         src={volume.mark}
         alt=""
+        aria-hidden="true"
         width={44}
         height={44}
         decoding="async"

@@ -17,6 +17,7 @@ export function BrandMark({ volume, className, size }: BrandMarkProps) {
     <img
       src={volume.mark}
       alt=""
+      aria-hidden="true"
       width={size}
       height={size}
       className={className}

@@ -45,7 +45,7 @@
   flex: none;
   width: 19px;
   height: 19px;
-  color: #8a89a0;
+  color: var(--muted);
 }
 
 .vendor {
@@ -60,7 +60,7 @@
 .renews {
   flex: none;
   margin-left: auto;
-  color: #9796ac;
+  color: var(--muted);
   font-size: 13px;
   white-space: nowrap;
 }

@@ -20,7 +20,7 @@
 .nav {
   display: flex;
   gap: 28px;
-  color: #6f7088;
+  color: var(--muted);
   font-size: 15px;
 }
 

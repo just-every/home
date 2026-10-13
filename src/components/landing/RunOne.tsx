@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 import { runOne } from '@/content/landing';
 
 import { CopyCommands } from './CopyCommands';
@@ -48,7 +50,12 @@ export function RunOne() {
                   <span className={styles.prompt} aria-hidden="true">
                     ${' '}
                   </span>
-                  {command}
+                  {command.split(' ').map((word, index) => (
+                    <Fragment key={index}>
+                      {index > 0 ? ' ' : null}
+                      <span className={styles.word}>{word}</span>
+                    </Fragment>
+                  ))}
                   {'\n'}
                 </span>
               ))}

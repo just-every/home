@@ -45,7 +45,7 @@
 }
 
 .point p {
-  color: #77768c;
+  color: var(--soft);
   font-size: 16px;
   line-height: 1.38;
 }

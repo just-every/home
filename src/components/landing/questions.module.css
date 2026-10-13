@@ -51,7 +51,7 @@
 }
 
 .card p {
-  color: #77768c;
+  color: var(--soft);
   font-size: 14.5px;
   line-height: 1.42;
 }
