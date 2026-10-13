@@ -30,6 +30,52 @@ export const collection = {
   watchLabel: 'Watch it run',
 } as const;
 
+/**
+ * The search under the collection heading (not in the copy deck: the
+ * interactive brief of 13 Oct sets its label, placeholder and button).
+ * Typing filters the volumes on the page; the button asks Claude.
+ */
+export const search = {
+  label: 'What do you use today?',
+  placeholder: "Notion, Intercom, or 'booking client calls'",
+  /** The same idea where the full placeholder would be cut off (phones). */
+  placeholderShort: "Notion, or 'booking client calls'",
+  button: 'Find my replacement',
+  busy: 'Finding…',
+  showAll: 'Back to all products',
+  /** Typing matched names, replaced products, categories or lines. */
+  instant: (count: number, query: string) =>
+    `${count === 1 ? '1 product matches' : `${count} products match`} “${query}”.`,
+  /** Typing matched nothing by name: the button matches by what it does. */
+  hint: (query: string) =>
+    `Press Find my replacement to match “${query}” by what it does.`,
+  finding: (query: string) => `Finding the best fit for “${query}”…`,
+  results: (query: string) => `Best fit for “${query}”.`,
+  credit: "Picked by Claude from each product's own description.",
+  noMatch: 'Nothing in the collection does that yet.',
+  suggestIt: 'Suggest it',
+  network: "Couldn't reach the matcher. Check your connection and try again.",
+} as const;
+
+/** "What should we build next?", after the makers panel (copy from the same brief). */
+export const suggest = {
+  id: 'suggest',
+  eyebrow: 'Requests',
+  heading: 'What should we build next?',
+  line: "Tell us the software you'd like an open-source version of.",
+  productLabel: 'Product or task',
+  productPlaceholder: "Zapier, or 'invoicing clients'",
+  noteLabel: 'Anything we should know?',
+  optional: 'Optional',
+  emailLabel: 'Email',
+  emailHint: 'Optional. Only to tell you if we build it.',
+  button: 'Suggest it',
+  busy: 'Sending…',
+  success: "Thanks. It's on the list.",
+  another: 'Suggest another',
+  network: "Couldn't send that. Check your connection and try again.",
+} as const;
+
 export const reels = {
   id: 'running',
   heading: 'See them running.',

@@ -38,6 +38,11 @@ yarn-error.log*
 
 !.env.example
 
+# Wrangler secrets for local dev (copy .dev.vars.example)
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+
 # vercel
 .vercel
 

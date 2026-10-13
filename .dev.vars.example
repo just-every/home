@@ -1,0 +1,4 @@
+# Local secrets for `next dev` and `npm run preview`. Copy to .dev.vars (gitignored).
+# Production uses `npx wrangler secret put ANTHROPIC_API_KEY` instead.
+# Without it, POST /api/match answers 503 not_configured; nothing else changes.
+ANTHROPIC_API_KEY=
