@@ -1,7 +1,13 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { flushSync } from 'react-dom';
+
+import {
+  onOutsidePick,
+  setSelectedProduct,
+  useSelectedProduct,
+} from './selectedProduct';
 
 const PREFIX = '#vol-';
 
@@ -63,13 +69,14 @@ function reveal(how: Reveal, smooth: boolean, force = false) {
  * hero's shelf, the grid's own cards, the Unsubscribe rows) selects it, the
  * hash follows so the view can be shared, and the box above the grid scrolls
  * into view (smoothly, or at once with reduced motion). `onNavigate` runs
- * when a link or the address picks a product.
+ * when a link, the address or the reels section picks a product. The
+ * selection is the page's one selected product (see selectedProduct).
  */
 export function useSelection(
   slugs: string[],
   onNavigate: (slug: string) => void
 ) {
-  const [selected, setSelected] = useState(slugs[0]);
+  const selected = useSelectedProduct(slugs[0]);
   const navigateRef = useRef(onNavigate);
   navigateRef.current = onNavigate;
   const settleRef = useRef<(() => void) | null>(null);
@@ -95,7 +102,7 @@ export function useSelection(
       else window.history.replaceState(null, '', url);
     }
     const update = () => {
-      setSelected(slug);
+      setSelectedProduct(slug);
       also?.();
     };
     const settle = () => {
@@ -173,9 +180,11 @@ export function useSelection(
 
     window.addEventListener('hashchange', onHash);
     document.addEventListener('click', onClick);
+    const stopPicks = onOutsidePick(slug => navigateRef.current(slug));
     return () => {
       window.removeEventListener('hashchange', onHash);
       document.removeEventListener('click', onClick);
+      stopPicks();
     };
   }, [slugs, select]);
 

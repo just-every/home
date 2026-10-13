@@ -1,4 +1,4 @@
-import type { SeedReel, SeedStill } from '@/data/seed-types';
+import type { SeedReel } from '@/data/seed-types';
 
 /** A volume as the collection shows it; serialisable from the server. */
 export interface CollectionItem {
@@ -16,8 +16,7 @@ export interface CollectionItem {
   mark: string;
   pastel: string;
   ink: string;
-  reel: SeedReel | null;
-  still: SeedStill | null;
+  reel: SeedReel;
 }
 
 /** A product as the page shows it, in the box or as a card. */

@@ -3,28 +3,35 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { KeyboardEvent } from 'react';
 
-import { collection, reels } from '@/content/landing';
+import { reels } from '@/content/landing';
 import { Reel } from '@/components/shared/Reel';
 
 import { BrandMark } from './BrandMark';
+import { pickProduct, useSelectedProduct } from './collection/selectedProduct';
 import ui from './label.module.css';
 import styles from './running.module.css';
 import { volumeStyle, volumes } from './volumes';
 
-/** Every volume that has a reel, in volume order. New reels appear here. */
-const reelVolumes = volumes.filter(volume => volume.seed.reel);
-
 const tabId = (slug: string) => `label-reel-tab-${slug}`;
 const panelId = 'label-reel-panel';
 
+/**
+ * Every product's reel, one at a time: the player beside the copy, and every
+ * product as its mark and name to pick from (one row of fourteen, two rows of
+ * seven, or four to a row on a phone). The pick is the page's selected product, the same one
+ * the collection's box shows.
+ */
 export function Running() {
-  const [active, setActive] = useState(0);
+  const slug = useSelectedProduct(volumes[0].slug);
+  const active = Math.max(
+    0,
+    volumes.findIndex(volume => volume.slug === slug)
+  );
+  const current = volumes[active];
+  const { seed } = current;
   const [paused, setPaused] = useState(true);
   const screenRef = useRef<HTMLDivElement>(null);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
-
-  const current = reelVolumes[active];
-  const slug = current?.seed.slug;
 
   // Follow the reel element the shared Reel renders, so the big play button
   // shows only while it is paused.
@@ -41,7 +48,7 @@ export function Running() {
       video.removeEventListener('pause', sync);
       video.removeEventListener('ended', sync);
     };
-  }, [slug]);
+  }, [seed.slug]);
 
   const play = useCallback(() => {
     const video = screenRef.current?.querySelector('video');
@@ -49,7 +56,7 @@ export function Running() {
   }, []);
 
   const onTabKey = (event: KeyboardEvent<HTMLButtonElement>) => {
-    const last = reelVolumes.length - 1;
+    const last = volumes.length - 1;
     const targets: Record<string, number> = {
       ArrowRight: active === last ? 0 : active + 1,
       ArrowLeft: active === 0 ? last : active - 1,
@@ -59,12 +66,10 @@ export function Running() {
     const next = targets[event.key];
     if (next === undefined) return;
     event.preventDefault();
-    setActive(next);
+    pickProduct(volumes[next].slug);
     tabRefs.current[next]?.focus();
   };
 
-  if (!current) return null;
-  const { seed } = current;
   const caption = seed.headline ?? seed.line;
 
   return (
@@ -81,7 +86,7 @@ export function Running() {
             {reels.heading}
           </h2>
           <p className={`${ui.lead} ${styles.line}`}>{reels.line}</p>
-          <p className={styles.caption} aria-live="polite">
+          <p className={styles.caption}>
             <span className={styles.captionNum}>{current.number}</span>{' '}
             <strong>{seed.name}</strong>
             <span aria-hidden="true"> · </span>
@@ -98,72 +103,68 @@ export function Running() {
           </div>
         </div>
 
-        <div className={styles.player}>
-          <div
-            className={styles.tabs}
-            role="tablist"
-            aria-label="Product reels"
-          >
-            {reelVolumes.map((volume, index) => {
-              const selected = index === active;
-              return (
-                <button
-                  key={volume.seed.slug}
-                  ref={element => {
-                    tabRefs.current[index] = element;
-                  }}
-                  type="button"
-                  role="tab"
-                  id={tabId(volume.seed.slug)}
-                  aria-selected={selected}
-                  aria-controls={panelId}
-                  tabIndex={selected ? 0 : -1}
-                  className={styles.tab}
-                  style={volumeStyle(volume)}
-                  onClick={() => setActive(index)}
-                  onKeyDown={onTabKey}
-                >
-                  <span className={styles.dot}>
-                    <BrandMark
-                      className={styles.dotMark}
-                      volume={volume}
-                      size={22}
-                    />
-                  </span>
-                  <span className={styles.tabText}>
-                    <span className={styles.tabName}>
-                      <span className={styles.tabNum}>{volume.number}</span>{' '}
-                      {volume.seed.name}
-                    </span>
-                    <small>
-                      {collection.alternativeTo} {volume.seed.primaryReplace}
-                    </small>
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-          <div
-            ref={screenRef}
-            className={styles.screen}
-            role="tabpanel"
-            id={panelId}
-            aria-labelledby={tabId(seed.slug)}
-          >
-            <Reel key={seed.slug} seed={seed} className={styles.video} />
-            {paused ? (
+        <div
+          ref={screenRef}
+          className={styles.screen}
+          role="tabpanel"
+          id={panelId}
+          aria-labelledby={tabId(seed.slug)}
+        >
+          <Reel
+            key={seed.slug}
+            seed={seed}
+            player="reels"
+            className={styles.video}
+          />
+          {paused ? (
+            <button
+              type="button"
+              className={styles.play}
+              onClick={play}
+              aria-label={`Play the ${seed.name} reel`}
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5.5v13l11-6.5z" fill="currentColor" />
+              </svg>
+            </button>
+          ) : null}
+        </div>
+
+        <div
+          className={styles.picker}
+          role="tablist"
+          aria-label="Product reels"
+        >
+          {volumes.map((volume, index) => {
+            const selected = index === active;
+            return (
               <button
+                key={volume.slug}
+                ref={element => {
+                  tabRefs.current[index] = element;
+                }}
                 type="button"
-                className={styles.play}
-                onClick={play}
-                aria-label={`Play the ${seed.name} reel`}
+                role="tab"
+                id={tabId(volume.slug)}
+                aria-selected={selected}
+                aria-controls={panelId}
+                tabIndex={selected ? 0 : -1}
+                className={styles.tab}
+                style={volumeStyle(volume)}
+                onClick={() => pickProduct(volume.slug)}
+                onKeyDown={onTabKey}
               >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M8 5.5v13l11-6.5z" fill="currentColor" />
-                </svg>
+                <span className={styles.dot}>
+                  <BrandMark
+                    className={styles.dotMark}
+                    volume={volume}
+                    size={22}
+                  />
+                </span>
+                <span className={styles.tabName}>{volume.name}</span>
               </button>
-            ) : null}
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>
