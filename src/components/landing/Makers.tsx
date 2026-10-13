@@ -14,13 +14,25 @@ export function Makers() {
         <h2 className={ui.h3} id="label-makers-heading">
           {makers.heading}
         </h2>
-        <p className={styles.text}>{makers.line}</p>
-        <a className={`${ui.pill} ${ui.pillSmall}`} href={makers.link.href}>
-          {makers.link.label}{' '}
-          <span className={ui.arrow} aria-hidden="true">
-            →
-          </span>
-        </a>
+        <p className={styles.text}>
+          {makers.line} {makers.welcome}
+        </p>
+        <div className={styles.makersActions}>
+          <a className={`${ui.pill} ${ui.pillSmall}`} href={makers.link.href}>
+            {makers.link.label}{' '}
+            <span className={ui.arrow} aria-hidden="true">
+              →
+            </span>
+          </a>
+          <a className={ui.under} href={makers.reposLink.href}>
+            <span>
+              {makers.reposLink.label}{' '}
+              <span className={ui.arrow} aria-hidden="true">
+                →
+              </span>
+            </span>
+          </a>
+        </div>
       </div>
       <svg
         className={styles.makersArt}

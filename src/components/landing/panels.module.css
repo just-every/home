@@ -150,6 +150,13 @@
   padding-right: 190px;
 }
 
+.makersActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+}
+
 .makersArt {
   position: absolute;
   top: 44px;
