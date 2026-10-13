@@ -13,8 +13,6 @@ type ReelProps = Omit<
 > & {
   /** A seed with a reel. Renders nothing when it has none. */
   seed: Pick<Seed, 'name' | 'line' | 'reel'>;
-  /** `small` serves the 1280x720 encode. */
-  size?: 'full' | 'small';
 };
 
 /**
@@ -22,7 +20,7 @@ type ReelProps = Omit<
  * `className`. Unless the visitor asked for reduced motion it plays muted the
  * first time it scrolls into view; otherwise the visitor presses play.
  */
-export function Reel({ seed, size = 'full', className, ...rest }: ReelProps) {
+export function Reel({ seed, className, ...rest }: ReelProps) {
   const ref = useRef<HTMLVideoElement>(null);
   const { reel } = seed;
 
@@ -46,16 +44,15 @@ export function Reel({ seed, size = 'full', className, ...rest }: ReelProps) {
 
   if (!reel) return null;
 
-  const full = size === 'full';
   return (
     <video
       {...rest}
       ref={ref}
       className={className}
-      src={assetUrl(full ? reel.src : reel.src720)}
+      src={assetUrl(reel.src)}
       poster={reel.poster}
-      width={full ? 1920 : 1280}
-      height={full ? 1080 : 720}
+      width={1280}
+      height={720}
       playsInline
       controls
       preload="metadata"

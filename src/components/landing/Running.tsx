@@ -170,12 +170,7 @@ export function Running() {
             id={panelId}
             aria-labelledby={tabId(seed.slug)}
           >
-            <Reel
-              key={seed.slug}
-              seed={seed}
-              size="small"
-              className={styles.video}
-            />
+            <Reel key={seed.slug} seed={seed} className={styles.video} />
             {paused ? (
               <button
                 type="button"

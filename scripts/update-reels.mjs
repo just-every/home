@@ -25,11 +25,11 @@
  * 1080p share copy. A file still being written, or without a readable duration of
  * at least 20 s at 1080p or more, is not finished and is skipped.
  *
- * What it writes, and only this: public/video/<slug>-1080.mp4 (1920x1080, 60 fps
- * when that stays under ~30 MB, else 30 fps), <slug>-720.mp4 (1280x720, 30 fps, at
- * most ~12 MB), <slug>-poster.webp, and the duration in that seed's reel(...) line.
- * The 1080 file carries the chosen source's name, size and mtime in its comment tag,
- * which is how a second run knows there is nothing to update.
+ * What it writes, and only this: public/video/<slug>-720.mp4 (1280x720, 30 fps, at
+ * most ~12 MB, the encode the page plays), <slug>-poster.webp, and the duration in
+ * that seed's reel(...) line. The 720 file carries the chosen source's name, size
+ * and mtime in its comment tag, which is how a second run knows there is nothing
+ * to update.
  *
  * Needs /opt/homebrew/bin/ffmpeg (the /usr/local one is x86-only) and, for the
  * poster, sharp (installed with next).
@@ -49,12 +49,10 @@ const FFPROBE = process.env.FFPROBE || '/opt/homebrew/bin/ffprobe';
 const RER_ROOT = process.env.RER_ROOT || join(homedir(), 'www', 'runeditrun');
 const REMOTE_HOST = process.env.SIZZLE_REMOTE_HOST || 'm1-runner';
 
-const MAX_1080_BYTES = 30 * 1024 * 1024;
 const MAX_720_BYTES = 12 * 1024 * 1024;
 const MIN_SECONDS = 20;
 const SETTLE_MS = 120_000; // a file touched this recently may still be written
 const SAME_CUT_MS = 15 * 60_000;
-const CRF_1080 = [19, 21, 23, 25, 27];
 const CRF_720 = [23, 25, 27, 29, 31];
 
 const args = process.argv.slice(2);
@@ -358,55 +356,46 @@ async function updateSeed({ slug, seconds }) {
   log(`           ${stamp(src.mtimeMs)}  ${src.duration.toFixed(3)} s  ${src.width}x${src.height} ${src.fps}  ${mb(src.size)}`);
   log(`           why: ${src.why}`);
 
-  const o1080 = join(videoDir, `${slug}-1080.mp4`);
   const o720 = join(videoDir, `${slug}-720.mp4`);
   const oPoster = join(videoDir, `${slug}-poster.webp`);
   const key = sourceKey(src);
-  const have = existsSync(o1080) ? probe(o1080) : null;
+  const have = existsSync(o720) ? probe(o720) : null;
   const upToDate =
-    have && have.comment === key && existsSync(o720) && existsSync(oPoster) && Number(have.duration.toFixed(1)) === seconds;
+    have && have.comment === key && existsSync(oPoster) && Number(have.duration.toFixed(1)) === seconds;
   if (upToDate && !force) {
     log(`  up to date: ${slug} already carries this source, nothing to update`);
     rmSync(join(videoDir, `.pull-${slug}`), { recursive: true, force: true });
     return false;
   }
   if (dryRun) {
-    log(`  would re-encode ${slug}-1080.mp4, ${slug}-720.mp4, ${slug}-poster.webp and set the duration in seeds.ts`);
+    log(`  would re-encode ${slug}-720.mp4, ${slug}-poster.webp and set the duration in seeds.ts`);
     rmSync(join(videoDir, `.pull-${slug}`), { recursive: true, force: true });
     return true;
   }
 
-  const t1080 = join(videoDir, `.${slug}-1080.tmp.mp4`);
   const t720 = join(videoDir, `.${slug}-720.tmp.mp4`);
   try {
-    const a = await encodeUnder({
-      label: '1080', src: file, out: t1080, width: 1920, height: 1080,
-      fpsLadder: [60, 30], crfs: CRF_1080, maxBytes: MAX_1080_BYTES, audioBitrate: '128k', comment: key,
-    });
     const b = await encodeUnder({
       label: '720', src: file, out: t720, width: 1280, height: 720,
       fpsLadder: [30], crfs: CRF_720, maxBytes: MAX_720_BYTES, audioBitrate: '96k', comment: key,
     });
     const poster = await pickPoster(slug, file, src.duration);
-    const duration = Number(probe(t1080).duration.toFixed(1));
+    const duration = Number(probe(t720).duration.toFixed(1));
 
     const was = {
       seconds,
-      size1080: existsSync(o1080) ? statSync(o1080).size : 0,
       size720: existsSync(o720) ? statSync(o720).size : 0,
     };
-    renameSync(t1080, o1080);
     renameSync(t720, o720);
     renameSync(poster.tmp, oPoster);
     writeSeedDuration(slug, duration);
 
-    log(`  wrote    ${slug}-1080.mp4 ${mb(statSync(o1080).size)} (was ${mb(was.size1080)}), ${a.fps} fps crf ${a.crf}`);
-    log(`           ${slug}-720.mp4 ${mb(statSync(o720).size)} (was ${mb(was.size720)}), ${b.fps} fps crf ${b.crf}`);
+    log(`  wrote    ${slug}-720.mp4 ${mb(statSync(o720).size)} (was ${mb(was.size720)}), ${b.fps} fps crf ${b.crf}`);
     log(`           ${slug}-poster.webp ${mb(statSync(oPoster).size)}, frame at ${poster.at.toFixed(1)} s`);
     log(`           seeds.ts reel('${slug}'): ${was.seconds} s -> ${duration} s`);
     return true;
   } finally {
-    for (const p of [t1080, t720, join(videoDir, `.${slug}-poster.tmp.webp`), join(videoDir, `.pull-${slug}`)]) {
+    for (const p of [t720, join(videoDir, `.${slug}-poster.tmp.webp`), join(videoDir, `.pull-${slug}`)]) {
       rmSync(p, { recursive: true, force: true });
     }
   }

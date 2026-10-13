@@ -1,31 +1,8 @@
 export type SeedStatus = 'public' | 'soon';
 
-/** What a screenshot is. `app-stale` shows an earlier interface, before the current brand. */
-export type SeedImageKind =
-  | 'app'
-  | 'app-stale'
-  | 'brand-card'
-  | 'homepage'
-  | 'homepage-section';
-
-export interface SeedImage {
-  /** Full-size WebP, served from /public. */
-  src: string;
-  /** 800px-wide WebP. */
-  src800: string;
-  /** Pixel size of `src`. */
-  width: number;
-  height: number;
-  /** Describes what the screenshot shows. */
-  alt: string;
-  kind: SeedImageKind;
-}
-
 export interface SeedReel {
-  /** 1920x1080 H.264. Pass through assetUrl so production can serve it from R2. */
+  /** 1280x720 H.264. Pass through assetUrl so production can serve it from R2. */
   src: string;
-  /** 1280x720 H.264. Pass through assetUrl. */
-  src720: string;
   /** WebP frame, served from /public (not R2). */
   poster: string;
   durationSeconds: number;
@@ -69,6 +46,5 @@ export interface Seed {
   markLight: string | null;
   /** Mark drawn in the ink colour, where the product ships one. */
   markInk: string | null;
-  images: SeedImage[];
   reel: SeedReel | null;
 }
