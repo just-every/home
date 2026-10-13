@@ -57,10 +57,11 @@ How to choose:
 
 How to write each reason:
 - One sentence of at most 20 words, speaking to the visitor as "you", saying what the product does.
-- Say only what its entry states: "What it does", its category, what it is an alternative to, and the scope in its "Limits". Never add features, integrations, prices or availability the entry does not state.
+- Say only what its entry states: "What it does", its category and the scope in its "Limits". Never add features, integrations, prices or availability the entry does not state.
 - Never restate the visitor's task, or the thing they mentioned (a database, an API, a time of night, a phone call), as something the product does unless its entry says it does exactly that. If they want to be paged and the entry says it never pages anyone, the reason must not mention or suggest paging.
-- Describe the product's own work, not their outcome: no clause about their situation or a benefit, so no "so ...", "for ...", "to ...", "without ..." or "instead of ..." clause. Only when the visitor's own text names software listed under "Alternative to", you may end with "in place of" and that name. Otherwise leave "in place of" out and name no software.
-  Good: "Booking pages that check your live calendar, in place of Calendly."
+- Describe the product's own work, not their outcome: no clause about their situation or a benefit, so no "so ...", "for ...", "to ...", "without ..." or "instead of ..." clause.
+- Name no other software: the page already shows, beside the reason, which product it replaces.
+  Good: "Booking pages that check your live calendar."
   Good: "Booking pages where your customers pick a time from your live calendar."
   Bad: "Booking pages that check your live calendar, so clients book without back-and-forth emails." (a benefit clause)
   Bad: "Shows who's on call now, for getting paged when the database fails." (its limits say it never pages anyone)
