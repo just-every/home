@@ -342,7 +342,9 @@
     gap: 12px;
   }
 
+  /* In a column the 436px basis would be a height: size to the text. */
   .headLine {
+    flex: none;
     font-size: 16px;
   }
 
