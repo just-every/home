@@ -1,0 +1,210 @@
+.makers {
+  display: grid;
+  grid-template-columns: minmax(0, 41%) minmax(0, 1fr);
+  gap: 33px;
+  margin-top: 12px;
+  padding: 12px 20px 20px;
+  min-height: 204px;
+}
+
+.line {
+  font-size: 15px;
+  line-height: 1.4;
+  color: #636d7d;
+  max-width: 470px;
+  margin: 12px 0 18px;
+}
+
+.cta {
+  font-size: 13.5px;
+  padding: 9px 22px;
+}
+
+.ctaIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.art {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 22px;
+  min-width: 0;
+  padding-right: 24px;
+}
+
+.yours {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 220px;
+  flex: none;
+  padding: 18px 20px 22px;
+  border: 1.5px dashed #c9d4e3;
+  border-radius: 10px;
+  background: linear-gradient(120deg, #fff, #fbfcfe);
+  box-shadow: 0 8px 33px rgb(70 109 171 / 5%);
+}
+
+.plus {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 4px;
+  border-radius: 9px;
+  color: #2684ff;
+  background: #eaf3ff;
+}
+
+.plus svg,
+.slot svg {
+  width: 18px;
+  height: 18px;
+}
+
+.skeleton {
+  display: block;
+  height: 9px;
+  border-radius: 4px;
+  background: #eef1f5;
+}
+
+.arrow {
+  flex: 1;
+  min-width: 70px;
+  max-width: 165px;
+  height: 23px;
+}
+
+.stack {
+  position: relative;
+  width: 258px;
+  height: 176px;
+  flex: none;
+}
+
+.back {
+  position: absolute;
+  width: 214px;
+  height: 150px;
+  border: 1px solid #eaf0f5;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 8px 32px rgb(57 71 93 / 4%);
+}
+
+.back:nth-child(1) {
+  top: 0;
+  left: 28px;
+}
+
+.back:nth-child(2) {
+  top: 14px;
+  left: 42px;
+}
+
+.front {
+  position: absolute;
+  top: 26px;
+  left: 0;
+  width: 232px;
+  padding: 12px 14px 14px;
+  border: 1px solid #e3e9f0;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 10px 34px rgb(57 71 93 / 9%);
+}
+
+.wordmark {
+  display: block;
+  font-size: 15px;
+  letter-spacing: -0.6px;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.marks {
+  display: grid;
+  grid-template-columns: repeat(5, 28px);
+  gap: 9px 13px;
+}
+
+.marks img {
+  width: 28px;
+  height: 28px;
+  padding: 3px;
+  object-fit: contain;
+  border-radius: 7px;
+  background: #f7f8fa;
+}
+
+.slot {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 1.5px dashed #9ab8e8;
+  border-radius: 7px;
+  color: #2684ff;
+}
+
+.slot svg {
+  width: 14px;
+  height: 14px;
+}
+
+@media (max-width: 1279px) {
+  .art {
+    padding-right: 0;
+    gap: 14px;
+  }
+
+  .yours {
+    width: 180px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .makers {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding: 20px;
+  }
+
+  .art {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .makers {
+    padding: 18px 16px 24px;
+  }
+
+  .line {
+    font-size: 16px;
+  }
+
+  .cta {
+    min-height: 44px;
+  }
+
+  .art {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .yours {
+    width: 232px;
+  }
+
+  .arrow {
+    transform: rotate(90deg);
+    width: 60px;
+    min-width: 0;
+    flex: none;
+    margin: 18px 0;
+  }
+}

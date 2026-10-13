@@ -1,0 +1,285 @@
+.collection {
+  padding: 30px 0 32px;
+  margin: 0 -14px;
+  scroll-margin-top: 8px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin: 0 7px 16px;
+}
+
+.title {
+  font-size: 53.5px;
+  line-height: 1.04;
+  letter-spacing: -2.3px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.intro {
+  font-size: 16px;
+  line-height: 1.42;
+  color: #626a78;
+  max-width: 330px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 12px;
+  padding: 3px;
+  background: #f8f9fb;
+  border: 1px solid #eaedf2;
+  border-radius: 30px;
+}
+
+.filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 8px 18px;
+  border: 0;
+  border-radius: 22px;
+  background: transparent;
+  color: #5f6774;
+  font: inherit;
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.filter:hover {
+  color: #14181d;
+}
+
+.filter[aria-pressed='true'] {
+  background: #fff;
+  color: #14181d;
+  font-weight: 600;
+  box-shadow: 0 1px 6px rgb(0 0 0 / 6%);
+}
+
+.count {
+  font-size: 11px;
+  font-weight: 400;
+  color: #6b7380;
+  font-variant-numeric: tabular-nums;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 9.5px;
+  list-style: none;
+  padding: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 150px;
+  padding: 14px 15px 12px;
+  border: 1px solid var(--card-line);
+  border-radius: 7px;
+  background: linear-gradient(120deg, #fff, #fdfefe);
+}
+
+.cardHead {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  /* Name plus a two-line "Alternative to", so every card's line starts level. */
+  min-height: 48px;
+}
+
+.mark {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  margin-top: 2px;
+  object-fit: contain;
+}
+
+.names {
+  min-width: 0;
+}
+
+.name {
+  font-size: 14px;
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.replaces {
+  font-size: 11px;
+  line-height: 1.3;
+  color: #6b7380;
+  margin-top: 2px;
+}
+
+.line {
+  font-size: 13px;
+  line-height: 1.36;
+  color: #68717e;
+  margin: 13px 0 12px;
+}
+
+.links {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 12px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 28px;
+  font-size: 11.5px;
+  color: #4f5966;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.linkIcon {
+  width: 15px;
+  height: 15px;
+  color: #22292e;
+}
+
+.linkArrow {
+  width: 13px;
+  height: 13px;
+  margin-left: -3px;
+}
+
+.playIcon {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+}
+
+.soon {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  margin: 2px 0;
+  padding: 3px 10px;
+  font-size: 11px;
+  color: #59616e;
+  background: #f2f4f7;
+  border-radius: 20px;
+}
+
+@media (max-width: 1279px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1023px) {
+  .collection {
+    margin: 0;
+    padding-top: 36px;
+  }
+
+  .head {
+    display: block;
+    margin: 0 0 20px;
+  }
+
+  .title {
+    font-size: 42px;
+    letter-spacing: -1.8px;
+  }
+
+  .intro {
+    max-width: 34em;
+  }
+
+  .filters {
+    width: fit-content;
+    margin-top: 18px;
+  }
+
+  .filter {
+    min-height: 44px;
+    font-size: 13.5px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .card {
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .cardHead {
+    min-height: 0;
+    align-items: center;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .replaces {
+    font-size: 13px;
+  }
+
+  .line {
+    font-size: 15px;
+  }
+
+  .link {
+    min-height: 44px;
+    font-size: 13.5px;
+  }
+
+  .soon {
+    font-size: 12.5px;
+    min-height: 30px;
+    margin: 7px 0;
+  }
+}
+
+@media (max-width: 559px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .card {
+    padding: 14px 16px 10px;
+  }
+
+  .line {
+    margin: 10px 0 4px;
+  }
+
+  .filters {
+    border-radius: 24px;
+  }
+
+  .filter {
+    padding: 8px 14px;
+  }
+}
