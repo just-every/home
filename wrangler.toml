@@ -19,16 +19,14 @@ binding = "ASSETS"
 [[d1_databases]]
 binding = "DB"
 database_name = "justevery"
-# FILL AT DEPLOY: replace with the id `npx wrangler d1 create justevery` prints.
-# Deploys fail until it is set, which is intended.
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "1e23003d-52f0-478a-aab6-ca780bae9de0"
 migrations_dir = "migrations"
 
 # Per-visitor limit shared by /api/match and /api/suggest (keys are salted
 # hashes of the visitor's IP, prefixed by route; nothing is stored).
 [[ratelimits]]
 name = "RATE_LIMITER"
-namespace_id = "1001"
+namespace_id = "2026101301"
 simple = { limit = 10, period = 60 }
 
 # ANTHROPIC_API_KEY is a secret: `npx wrangler secret put ANTHROPIC_API_KEY`
