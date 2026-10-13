@@ -88,7 +88,7 @@ export const seeds: Seed[] = [
         'Uptime notifications: destinations and a proven alert drill'
       ),
     ],
-    reel: reel('uptime', 29.1),
+    reel: reel('uptime', 51),
   },
   {
     slug: 'happytohelp',
@@ -212,7 +212,7 @@ export const seeds: Seed[] = [
         'An operator composing a public incident update in Lamp, with a live customer preview'
       ),
     ],
-    reel: reel('lamp', 55.5),
+    reel: reel('lamp', 57.8),
   },
   {
     slug: 'cradle',
