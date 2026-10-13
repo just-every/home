@@ -32,7 +32,7 @@ export function NothingToUpsell() {
         {examples.map(volume => (
           <li key={volume.slug} className={styles.item}>
             <a
-              className={`${ui.card} ${styles.example}`}
+              className={`${ui.card} ${ui.tinted} ${styles.example}`}
               href={volume.href}
               style={volumeStyle(volume)}
             >

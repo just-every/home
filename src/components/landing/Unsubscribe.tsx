@@ -4,16 +4,14 @@ import { Mail } from 'lucide-react';
 import { BrandMark } from './BrandMark';
 import ui from './label.module.css';
 import { PlayInView } from './PlayInView';
-import { spelledCount } from './spelled';
 import styles from './unsubscribe.module.css';
-import { volumeCount, volumeStyle, volumes } from './volumes';
+import { volumeStyle, volumes } from './volumes';
 
 const heading = 'Unsubscribe from just about everything.';
-const line = `${spelledCount(volumeCount)} polished, open-source replacements for the tools you rent. 100% free, MIT licensed, yours to change.`;
 
 /**
- * Each tool you rent, as its renewal email, beside the volume that replaces
- * it. The tool is struck through as its volume arrives. One row per seed,
+ * Each tool you rent, as an email in a soft neutral card, beside the volume
+ * that replaces it. The tool is struck through as its volume arrives. One row per seed,
  * from seeds.ts.
  */
 export function Unsubscribe() {
@@ -23,12 +21,12 @@ export function Unsubscribe() {
       aria-labelledby="label-unsubscribe-heading"
     >
       <div className={ui.wrap}>
-        <div className={styles.head}>
-          <h2 className={ui.h2} id="label-unsubscribe-heading">
-            {heading}
-          </h2>
-          <p className={`${ui.lead} ${styles.line}`}>{line}</p>
-        </div>
+        <h2
+          className={`${ui.h2} ${styles.head}`}
+          id="label-unsubscribe-heading"
+        >
+          {heading}
+        </h2>
         <PlayInView className={styles.play}>
           <ol
             className={styles.ledger}
@@ -59,13 +57,15 @@ export function Unsubscribe() {
                       <path d="M1 5.2C24 3.4 52 5.6 99 3.1" pathLength={1} />
                     </svg>
                   </span>
-                  <span className={styles.renews}>Renews soon</span>
                 </span>
                 <span className={styles.to} aria-hidden="true">
                   →
                 </span>
                 <span className={ui.srOnly}>, replaced by </span>
-                <a className={`${ui.card} ${styles.volume}`} href={volume.href}>
+                <a
+                  className={`${ui.card} ${ui.tinted} ${styles.volume}`}
+                  href={volume.href}
+                >
                   <span className={styles.number}>{volume.number}</span>
                   <BrandMark
                     className={styles.mark}

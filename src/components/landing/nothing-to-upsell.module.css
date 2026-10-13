@@ -22,8 +22,6 @@
 
 /* A product in its own card tint, as in the collection. */
 .example {
-  --tint: color-mix(in oklab, var(--pastel) 34%, #fff);
-
   display: flex;
   flex-direction: column;
   gap: 12px;
