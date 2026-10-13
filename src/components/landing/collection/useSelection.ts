@@ -22,6 +22,11 @@ interface SelectOptions {
   reveal?: Reveal;
   /** Animate the scroll; false for the first paint. */
   animate?: boolean;
+  /**
+   * Back, forward or a typed address: the browser scrolls to the card
+   * itself, so the box is brought back into view a frame later.
+   */
+  traversal?: boolean;
 }
 
 const reducedMotion = () =>
@@ -33,8 +38,11 @@ export const featureId = 'collection-selected';
 /** The box's heading, which takes focus after a pick from a link. */
 export const featureHeadingId = 'collection-feature-heading';
 
-/** Scroll the box into view so the visitor sees the change. */
-function reveal(how: Reveal, smooth: boolean) {
+/**
+ * Scroll the box into view so the visitor sees the change; unless `force`,
+ * not when it already shows.
+ */
+function reveal(how: Reveal, smooth: boolean, force = false) {
   const box = document.getElementById(featureId);
   if (!box) return;
   const behavior = smooth ? 'smooth' : 'instant';
@@ -46,7 +54,7 @@ function reveal(how: Reveal, smooth: boolean) {
   const shows =
     top >= 0 &&
     (bottom <= window.innerHeight || top < window.innerHeight * 0.35);
-  if (!shows) box.scrollIntoView({ behavior, block: 'start' });
+  if (force || !shows) box.scrollIntoView({ behavior, block: 'start' });
 }
 
 /**
@@ -79,6 +87,7 @@ export function useSelection(
       focus = false,
       reveal: how = 'start',
       animate = true,
+      traversal = false,
     } = options;
     if (history !== 'none') {
       const url = `${PREFIX}${slug}`;
@@ -95,7 +104,14 @@ export function useSelection(
           .getElementById(featureHeadingId)
           ?.focus({ preventScroll: true });
       }
-      reveal(how, animate && !reducedMotion());
+      const smooth = animate && !reducedMotion();
+      if (!traversal) reveal(how, smooth);
+      else {
+        // After the browser's own scroll to the card has begun.
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() => reveal(how, smooth, true))
+        );
+      }
     };
     if (animate) {
       flushSync(update);
@@ -123,7 +139,11 @@ export function useSelection(
       // Back to the address with no hash: the first product again.
       const slug = window.location.hash === '' ? slugs[0] : fromHash();
       if (!slug) return;
-      select(slug, { history: 'none', also: () => navigateRef.current(slug) });
+      select(slug, {
+        history: 'none',
+        also: () => navigateRef.current(slug),
+        traversal: true,
+      });
     };
 
     const onClick = (event: MouseEvent) => {
