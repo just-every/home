@@ -4,6 +4,8 @@ import { BrandMark } from './BrandMark';
 import ui from './label.module.css';
 import styles from './collection.module.css';
 import { RepoState } from './RepoState';
+import { CollectionSearch } from './search/CollectionSearch';
+import type { SearchVolume } from './search/localMatch';
 import { cardId, volumeCount, volumeStyle, volumes } from './volumes';
 import type { Volume } from './volumes';
 
@@ -11,6 +13,22 @@ import type { Volume } from './volumes';
 const coverVolumes = volumes.slice(0, 3);
 const cardVolumes = volumes.slice(3);
 const lastNumber = volumes[volumes.length - 1]?.number ?? '';
+
+/** What the search filters and shows, from the same volumes as the cards. */
+const searchVolumes: SearchVolume[] = volumes.map(volume => ({
+  slug: volume.slug,
+  number: volume.number,
+  name: volume.name,
+  category: volume.seed.category,
+  replaces: volume.seed.replaces,
+  primaryReplace: volume.seed.primaryReplace,
+  line: volume.seed.line,
+  repo: volume.seed.status === 'public' ? volume.seed.repo : null,
+  reel: volume.seed.reel !== null,
+  mark: volume.mark,
+  pastel: volume.colour,
+  ink: volume.ink,
+}));
 
 function CoverCard({ volume }: { volume: Volume }) {
   const { seed } = volume;
@@ -85,18 +103,20 @@ export function Collection() {
           </span>
         </a>
       </div>
-      <ol className={styles.covers}>
-        {coverVolumes.map(volume => (
-          <CoverCard key={volume.slug} volume={volume} />
-        ))}
-      </ol>
-      {cardVolumes.length > 0 ? (
-        <ol className={styles.grid} start={coverVolumes.length + 1}>
-          {cardVolumes.map(volume => (
-            <VolumeCard key={volume.slug} volume={volume} />
+      <CollectionSearch volumes={searchVolumes}>
+        <ol className={styles.covers}>
+          {coverVolumes.map(volume => (
+            <CoverCard key={volume.slug} volume={volume} />
           ))}
         </ol>
-      ) : null}
+        {cardVolumes.length > 0 ? (
+          <ol className={styles.grid} start={coverVolumes.length + 1}>
+            {cardVolumes.map(volume => (
+              <VolumeCard key={volume.slug} volume={volume} />
+            ))}
+          </ol>
+        ) : null}
+      </CollectionSearch>
     </section>
   );
 }
