@@ -1,6 +1,12 @@
 /* Directly under the hero: four short cards in a row, two by two on
-   tablets and one under another on phones. */
+   tablets and one under another on phones. The hero's box set stands taller
+   than the room under its copy (its foot, and the lit floor and reflection
+   that fade out below it, run on past the hero's end), so the strip is
+   stacked over it: the cards are the page's content and are never tinted by
+   the hero's room. */
 .benefits {
+  position: relative;
+  z-index: 3;
   padding: 12px 0 var(--section-y);
 }
 
