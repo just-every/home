@@ -1,12 +1,5 @@
-/* The essays' figure pieces. Card language as on the landing page: a soft
-   fill (--card-neutral) holding white sheets, no borders, the faintest
-   shadow on a sheet so it lifts off its fill. */
-
-.panel {
-  padding: 22px;
-  border-radius: var(--card-radius);
-  background: var(--card-neutral);
-}
+/* The essays' figure pieces. Card language as on the landing page: white
+   sheets, no borders, the faintest shadow so a sheet lifts off the page. */
 
 .sheet {
   border-radius: 12px;
@@ -14,76 +7,6 @@
   box-shadow:
     0 1px 2px #1d1b4a0f,
     0 10px 28px -12px #2f2a7a1f;
-}
-
-.sheetHead {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 18px;
-  border-bottom: 1px solid #ecebf4;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-.sheetHead .aside {
-  margin-left: auto;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 12.5px;
-  font-weight: 450;
-  letter-spacing: 0;
-}
-
-.label {
-  color: var(--muted);
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.mono {
-  font-family: var(--mono);
-  font-size: 0.86em;
-  letter-spacing: 0;
-}
-
-.mark {
-  display: block;
-  flex: none;
-  object-fit: contain;
-}
-
-/* Status: a tick or a cross in a soft circle. */
-.status {
-  display: inline-grid;
-  flex: none;
-  place-items: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-}
-
-.status svg {
-  width: 14px;
-  height: 14px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2.2;
-}
-
-.ok {
-  background: #dcf3e8;
-  color: #12784f;
-}
-
-.fail {
-  background: #fbe3e1;
-  color: #b3362d;
 }
 
 .clauseId {
@@ -104,38 +27,6 @@
 .clauseIdLarge {
   padding: 5px 12px;
   font-size: 15px;
-}
-
-/* A terminal line: ink, mono, the outcome in colour. */
-.terminal {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 4px 12px;
-  padding: 12px 16px;
-  border-radius: 10px;
-  background: #1d1c26;
-  color: #e9e7f6;
-  font-family: var(--mono);
-  font-size: 13.5px;
-  line-height: 1.5;
-}
-
-.terminalLabel {
-  color: #9d9ab4;
-  font-size: 12px;
-}
-
-.terminal code {
-  overflow-wrap: anywhere;
-}
-
-.termOk {
-  color: #8fe3b9;
-}
-
-.termFail {
-  color: #ffb0a6;
 }
 
 /* Source lines: numbered, wrapping rather than scrolling on a phone. */
@@ -177,11 +68,6 @@
   text-indent: -1.2em;
 }
 
-.unnumbered .codeLine {
-  grid-template-columns: minmax(0, 1fr);
-  padding-left: 16px;
-}
-
 .codeNum {
   padding-right: 14px;
   color: #727087;
@@ -208,18 +94,4 @@
   color: #55537a;
   font-size: 20px;
   line-height: 1.3;
-}
-
-.arrow {
-  color: var(--accent);
-}
-
-.nowrap {
-  white-space: nowrap;
-}
-
-@media (max-width: 599px) {
-  .panel {
-    padding: 14px;
-  }
 }
