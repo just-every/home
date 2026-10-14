@@ -42,7 +42,7 @@ export const seeds: Seed[] = [
     mark: `${dir('uptime')}/mark.svg`,
     markLight: `${dir('uptime')}/mark-light.svg`,
     markInk: null,
-    reel: reel('uptime', 51.1),
+    reel: reel('uptime', 49.4),
   },
   {
     slug: 'happytohelp',
@@ -63,7 +63,7 @@ export const seeds: Seed[] = [
     mark: `${dir('happytohelp')}/mark.svg`,
     markLight: null,
     markInk: `${dir('happytohelp')}/mark-ink.svg`,
-    reel: reel('happytohelp', 45.1),
+    reel: reel('happytohelp', 56.1),
   },
   {
     slug: 'nook',
@@ -84,7 +84,7 @@ export const seeds: Seed[] = [
     mark: `${dir('nook')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: reel('nook', 46.1),
+    reel: reel('nook', 49.4),
   },
   {
     slug: 'lamp',
@@ -105,7 +105,7 @@ export const seeds: Seed[] = [
     mark: `${dir('lamp')}/mark.svg`,
     markLight: `${dir('lamp')}/mark-light.svg`,
     markInk: null,
-    reel: reel('lamp', 45.4),
+    reel: reel('lamp', 50.9),
   },
   {
     slug: 'cradle',
@@ -126,7 +126,7 @@ export const seeds: Seed[] = [
     mark: `${dir('cradle')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: reel('cradle', 45.1),
+    reel: reel('cradle', 55),
   },
   {
     slug: 'vector',
@@ -147,7 +147,7 @@ export const seeds: Seed[] = [
     mark: `${dir('vector')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: reel('vector', 45.1),
+    reel: reel('vector', 55.3),
   },
   {
     slug: 'slate',
@@ -168,7 +168,7 @@ export const seeds: Seed[] = [
     mark: `${dir('slate')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: reel('slate', 47.4),
+    reel: reel('slate', 50.2),
   },
   {
     slug: 'pencil',
@@ -210,7 +210,7 @@ export const seeds: Seed[] = [
     mark: `${dir('orbit')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: reel('orbit', 43.8),
+    reel: reel('orbit', 51.4),
   },
   {
     slug: 'mango',
@@ -273,7 +273,7 @@ export const seeds: Seed[] = [
     mark: `${dir('penny')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: reel('penny', 44.9),
+    reel: reel('penny', 53.9),
   },
   {
     slug: 'oncall',
@@ -295,7 +295,7 @@ export const seeds: Seed[] = [
     mark: `${dir('oncall')}/mark.svg`,
     markLight: `${dir('oncall')}/mark-light.svg`,
     markInk: null,
-    reel: reel('oncall', 47.6),
+    reel: reel('oncall', 53.9),
   },
   {
     slug: 'spool',
@@ -316,6 +316,6 @@ export const seeds: Seed[] = [
     mark: `${dir('spool')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: reel('spool', 42.4),
+    reel: reel('spool', 50.6),
   },
 ];
