@@ -350,10 +350,14 @@ const merges = [
   },
 ];
 
-/** The first prefer_ours_globs of Every Code's .github/merge-policy.json. */
+/**
+ * Four of the prefer_ours_globs in Every Code's .github/merge-policy.json, in
+ * their order; null marks the entries skipped between them.
+ */
 const preferOurs = [
   'codex-rs/tui/**',
   'codex-cli/**',
+  null,
   'AGENTS.md',
   'README.md',
 ];
@@ -390,10 +394,16 @@ export function ForkLanes() {
               <span className={parts.dim}>
                 &quot;prefer_ours_globs&quot;: [
               </span>
-              {preferOurs.map(glob => (
-                <span key={glob} className={styles.glob}>
+              {preferOurs.map((glob, index) => (
+                <span key={glob ?? index} className={styles.glob}>
                   {'  '}
-                  <span className={parts.str}>&quot;{glob}&quot;</span>,
+                  {glob ? (
+                    <>
+                      <span className={parts.str}>&quot;{glob}&quot;</span>,
+                    </>
+                  ) : (
+                    <span className={parts.dim}>…</span>
+                  )}
                 </span>
               ))}
               <span className={parts.dim}>{'  '}…</span>
