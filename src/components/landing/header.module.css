@@ -1,17 +1,13 @@
 .header {
   position: relative;
   z-index: 2;
-  height: var(--header-h);
-  background: var(--chrome-bg);
-  color: var(--chrome-ink);
-}
-
-.inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  height: 100%;
+  height: var(--header-h);
+  padding-top: 18px;
+  border-bottom: 1px solid #dfddee;
 }
 
 .brand {
@@ -26,7 +22,7 @@
 .nav {
   display: flex;
   gap: 34px;
-  color: var(--chrome-link);
+  color: #454350;
   font-size: 17px;
 }
 
@@ -37,16 +33,17 @@
 }
 
 .nav a:hover {
-  color: var(--chrome-ink);
+  color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 6px;
 }
 
 @media (max-width: 599px) {
-  .inner {
+  .header {
     flex-wrap: wrap;
     align-content: center;
     row-gap: 0;
+    padding-top: 0;
   }
 
   .brand {
@@ -59,4 +56,23 @@
     gap: 8px;
     font-size: 15px;
   }
+}
+
+/* The black bar (the dark preview looks): the header's own box keeps the
+   page's width, and its colour runs out to the viewport's edges. */
+.dark {
+  padding-top: 0;
+  border-bottom: 0;
+  background: var(--chrome-bg);
+  box-shadow: 0 0 0 100vmax var(--chrome-bg);
+  clip-path: inset(0 -100vmax);
+  color: var(--chrome-ink);
+}
+
+.dark .nav {
+  color: var(--chrome-link);
+}
+
+.dark .nav a:hover {
+  color: var(--chrome-ink);
 }
