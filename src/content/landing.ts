@@ -15,6 +15,7 @@ export const nav = [
   { label: 'Products', href: '/#all' },
   { label: 'Process', href: '/process' },
   { label: 'Journey', href: '/journey' },
+  { label: 'Contact', href: '/contact' },
   { label: 'GitHub', href: githubOrgUrl },
 ] as const;
 
