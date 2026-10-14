@@ -26,9 +26,9 @@ export default function Journey() {
       }
     >
       <p>
-        In May 2025 we put up our first homepage. The question at the top asked,
-        “What can you build in 30 seconds?” Underneath, in smaller type, we
-        added: “Fair warning: We’re an MVP that will fail sometimes.”
+        In May 2025 we put up our first homepage. It asked, “What can you build
+        in 30 seconds?” Under the headline, in smaller type, we added: “Fair
+        warning: We’re an MVP that will fail sometimes.”
       </p>
       <p>It was the most honest sentence on the page.</p>
       <p>
