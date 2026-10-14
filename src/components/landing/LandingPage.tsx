@@ -3,6 +3,8 @@ import { sans } from './fonts';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { Hero } from './Hero';
+import type { Look } from './heroVariants/looks';
+import { HeroShelf } from './HeroShelf';
 import ui from './label.module.css';
 import { Makers } from './Makers';
 import { NothingToUpsell } from './NothingToUpsell';
@@ -21,13 +23,26 @@ import { Unsubscribe } from './Unsubscribe';
  * suggestion form closes the page under the makers invitation: visitors ask
  * for products where makers are asked for them, and the collection search's
  * "Nothing in the collection does that yet" links down to it.
+ *
+ * `look` is a preview's header and hero (the /preview/hero pages); the live
+ * page has none and keeps its own.
  */
-export function LandingPage() {
+export function LandingPage({ look }: { look?: Look }) {
   return (
-    <div className={`${ui.page} ${sans.variable}`} id="top">
-      <Header />
+    <div
+      className={`${ui.page} ${sans.variable}${look?.page ? ` ${look.page}` : ''}`}
+      id="top"
+    >
+      <Header tone={look?.chrome} className={look?.header} />
       <main>
-        <Hero />
+        {look ? (
+          <Hero
+            styles={look.hero}
+            shelf={<HeroShelf poster={look.poster} tone={look.shelfTone} />}
+          />
+        ) : (
+          <Hero />
+        )}
         <Collection />
         <Running />
         <Unsubscribe />
@@ -40,7 +55,7 @@ export function LandingPage() {
           <Suggest />
         </div>
       </main>
-      <Footer />
+      <Footer tone={look?.chrome} />
     </div>
   );
 }

@@ -1,0 +1,190 @@
+/* B. Stage: the header stands on the page by itself, and the hero is a
+   stage below it: a rounded room set in from the viewport's edges, the
+   headline left and a bigger shelf right, both centred in it. */
+
+.page.page {
+  --stage-inset: 20px;
+  --stage-radius: 32px;
+}
+
+/* No rule under the header: the stage's own edge parts them. */
+.header.header {
+  border-bottom-color: transparent;
+}
+
+.top {
+  position: relative;
+  margin: 18px var(--stage-inset) 0;
+  border-radius: var(--stage-radius);
+  overflow: clip;
+  background:
+    radial-gradient(
+      ellipse 62% 78% at 100% 0%,
+      #c6c1da 0%,
+      #d3cee8 34%,
+      #e3dff5 62%,
+      #efecfb00 100%
+    ),
+    radial-gradient(ellipse 44% 60% at 18% 50%, #fbfaff 0%, #fbfaff00 100%),
+    linear-gradient(180deg, #efedfb, #f3f1fc 58%, #f6f4fd);
+  box-shadow: inset 0 0 0 1px #e4e1f2;
+}
+
+.hero {
+  --art-w: min(58vw, 900px);
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--art-w);
+  align-items: center;
+  min-height: clamp(600px, calc(100svh - var(--header-h) - 46px), 900px);
+  padding: 48px 0 56px;
+}
+
+/* In line with the header: the page's margin, less the stage's inset. */
+.top .hero {
+  margin-inline: calc(4vw - var(--stage-inset));
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+  padding-left: 9px;
+}
+
+.copy h1 {
+  max-width: 6.3em;
+  margin: 0 0 24px;
+  font-size: clamp(54px, 5.6vw, 80px);
+  font-weight: 640;
+  letter-spacing: -0.03em;
+  line-height: 1.03;
+}
+
+.copy p {
+  max-width: 20em;
+  margin: 0 0 38px;
+  color: #535167;
+  font-size: clamp(19px, 1.56vw, 22.5px);
+  line-height: 1.45;
+  letter-spacing: -0.012em;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 32px;
+}
+
+/* The art ends at the page's right margin; its room (light, floor and
+   plant) runs on to the stage's edge. */
+.art {
+  --shelf-room: calc(4vw - var(--stage-inset));
+  --note-size: min(2.42cqw, 21px);
+
+  position: relative;
+  justify-self: end;
+  width: var(--art-w);
+  container-type: inline-size;
+}
+
+@media (min-width: 1441px) {
+  .top .hero {
+    margin-inline: auto;
+  }
+
+  .art {
+    --shelf-room: calc((100vw - 1331px) / 2 - var(--stage-inset));
+  }
+}
+
+/* The collection starts after the stage's edge, without a rule. */
+.page :global(#all) {
+  border-top-color: transparent;
+  padding-top: calc(var(--section-y) + 32px);
+}
+
+@media (max-width: 1023px) {
+  .page.page {
+    --stage-inset: 12px;
+    --stage-radius: 26px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+    padding: 56px 0 28px;
+  }
+
+  .top .hero {
+    margin-inline: 40px;
+  }
+
+  .copy {
+    padding: 0;
+  }
+
+  .copy h1 {
+    font-size: 66px;
+  }
+
+  .copy p {
+    max-width: 24em;
+    font-size: 21px;
+  }
+
+  .art {
+    --shelf-room: 32px;
+    --shelf-bleed: 32px;
+
+    align-self: center;
+    width: 100%;
+    max-width: 720px;
+    margin: 40px 0 0;
+  }
+}
+
+@media (max-width: 599px) {
+  .page.page {
+    --stage-inset: 8px;
+    --stage-radius: 22px;
+  }
+
+  .hero {
+    padding: 40px 0 20px;
+  }
+
+  .top .hero {
+    margin-inline: 16px;
+  }
+
+  .copy h1 {
+    margin-bottom: 18px;
+    font-size: 48px;
+    letter-spacing: -0.04em;
+  }
+
+  .copy p {
+    margin-bottom: 30px;
+    font-size: 18.5px;
+  }
+
+  .actions {
+    gap: 12px 16px;
+  }
+
+  .art {
+    --shelf-room: 0px;
+    --shelf-bleed: 16px;
+    --note-x: 38%;
+    --note-y: 85%;
+    --note-size: 3.4cqw;
+
+    width: calc(100% + 16px);
+    margin-right: -16px;
+    align-self: flex-start;
+    margin-top: 32px;
+  }
+}

@@ -1,0 +1,209 @@
+/* E. Dark stage: the black header runs on into a dark hero of the same
+   ink, with no edge between them. The shelf stands lit on a dark floor in
+   the warm window light, under a white headline; the light page then
+   rises over the stage's foot as a sheet with rounded corners. */
+
+.page.page {
+  --header-h: 88px;
+  --sheet-r: 40px;
+  --night: #17171d;
+}
+
+/* The header is the stage's own top: no bar of its own. */
+.header.header {
+  background: transparent;
+  box-shadow: none;
+  clip-path: none;
+}
+
+.top {
+  position: relative;
+  margin-top: calc(-1 * var(--header-h));
+  padding-top: var(--header-h);
+  overflow-x: clip;
+  background:
+    radial-gradient(
+      ellipse 46% 62% at 96% 6%,
+      rgb(255 196 146 / 0.13) 0%,
+      rgb(255 196 146 / 0.05) 45%,
+      rgb(255 196 146 / 0) 75%
+    ),
+    radial-gradient(
+      ellipse 44% 30% at 70% 74%,
+      rgb(150 140 200 / 0.09) 0%,
+      rgb(150 140 200 / 0) 100%
+    ),
+    var(--night);
+  color: #fff;
+}
+
+/* The light page's edge, rising over the stage's foot. */
+.top::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: var(--sheet-r);
+  border-radius: var(--sheet-r) var(--sheet-r) 0 0;
+  background: #fdfdff;
+  box-shadow: 0 -18px 40px rgb(0 0 0 / 0.28);
+  content: '';
+}
+
+.hero {
+  --art-w: min(61vw, 940px);
+  --art-out: 4vw;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) calc(var(--art-w) - var(--art-out));
+  align-items: center;
+  min-height: clamp(620px, calc(100svh - var(--header-h)), 960px);
+  padding: 32px 0 calc(var(--sheet-r) + 52px);
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+  padding-left: 9px;
+}
+
+.copy h1 {
+  max-width: 6.3em;
+  margin: 0 0 26px;
+  font-size: clamp(56px, 6vw, 86px);
+  font-weight: 640;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+}
+
+.copy p {
+  max-width: 21em;
+  margin: 0 0 40px;
+  color: #bebdcf;
+  font-size: clamp(19px, 1.62vw, 23px);
+  line-height: 1.45;
+  letter-spacing: -0.012em;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 32px;
+}
+
+/* On the dark stage the pill turns white, and the GitHub link's rule
+   light. */
+.actions > a:first-child {
+  background: linear-gradient(#ffffff, #ecebf3);
+  color: var(--night);
+  box-shadow: 0 8px 28px rgb(0 0 0 / 0.35);
+}
+
+.actions > a:last-child > span {
+  border-bottom-color: #d8d7e6;
+}
+
+.art {
+  --shelf-room: 0px;
+  --note-size: min(2.42cqw, 21px);
+  --note-ink: #c9c6e2;
+
+  position: relative;
+  justify-self: start;
+  width: var(--art-w);
+  container-type: inline-size;
+}
+
+@media (min-width: 1441px) {
+  .hero {
+    --art-out: 57px;
+  }
+
+  .art {
+    --shelf-room: max(0px, (100vw - 1331px) / 2 - 57px);
+  }
+}
+
+/* The collection starts on the sheet, without a rule. */
+.page :global(#all) {
+  border-top-color: transparent;
+  padding-top: calc(var(--section-y) - 8px);
+}
+
+@media (max-width: 1023px) {
+  .page.page {
+    --header-h: 72px;
+    --sheet-r: 32px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+    padding: 56px 0 calc(var(--sheet-r) + 24px);
+  }
+
+  .copy {
+    padding: 0;
+  }
+
+  .copy h1 {
+    font-size: 72px;
+  }
+
+  .copy p {
+    max-width: 24em;
+    font-size: 22px;
+  }
+
+  .art {
+    --shelf-room: calc((100vw - min(100vw - 56px, 760px)) / 2);
+    --shelf-bleed: var(--shelf-room);
+
+    align-self: center;
+    width: 100%;
+    max-width: 760px;
+    margin-top: 48px;
+  }
+}
+
+@media (max-width: 599px) {
+  .page.page {
+    --header-h: 100px;
+    --sheet-r: 26px;
+  }
+
+  .hero {
+    padding: 40px 0 calc(var(--sheet-r) + 16px);
+  }
+
+  .copy h1 {
+    margin-bottom: 20px;
+    font-size: 50px;
+    letter-spacing: -0.04em;
+  }
+
+  .copy p {
+    margin-bottom: 32px;
+    font-size: 19px;
+  }
+
+  .actions {
+    gap: 12px 24px;
+  }
+
+  .art {
+    --shelf-room: 0px;
+    --shelf-bleed: 20px;
+    --note-x: 38%;
+    --note-y: 85%;
+    --note-size: 3.4cqw;
+
+    width: calc(100% + 20px);
+    margin-right: -20px;
+    align-self: flex-start;
+    margin-top: 36px;
+  }
+}

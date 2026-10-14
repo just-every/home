@@ -5,10 +5,22 @@ import { githubOrgUrl } from '@/content/landing';
 import { handwriting } from './fonts';
 import { HeroShelf } from './HeroShelf';
 import ui from './label.module.css';
-import styles from './hero.module.css';
+import classic from './hero.module.css';
 
-/** `shelf` defaults to the page's box set; review tooling passes its own. */
-export function Hero({ shelf = <HeroShelf /> }: { shelf?: ReactNode }) {
+/** The class names a hero layout gives each part of the hero. */
+export type HeroStyles = Readonly<Record<string, string>>;
+
+/**
+ * `shelf` defaults to the page's box set; review tooling passes its own.
+ * `styles` is the hero's layout: the page's own, or a preview look's.
+ */
+export function Hero({
+  shelf = <HeroShelf />,
+  styles = classic,
+}: {
+  shelf?: ReactNode;
+  styles?: HeroStyles;
+}) {
   return (
     <section className={styles.top} aria-labelledby="label-hero-heading">
       <div className={`${ui.wrap} ${styles.hero}`}>

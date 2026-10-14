@@ -1,0 +1,224 @@
+/* D. Overlay: the header floats over the hero's room instead of standing
+   above it; the hero fills the viewport and the shelf runs off its right
+   edge, so the row carries on past the frame. In the light look the header
+   is just its words on the room; in the dark one it is a dark translucent
+   bar floating over it. */
+
+.header.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  border-bottom-color: transparent;
+}
+
+/* The dark look's bar: rounded, set in from the edges, the room's light
+   showing through it. */
+.header.headerDark {
+  top: 14px;
+  height: 64px;
+  padding: 0 14px 0 26px;
+  border-radius: 999px;
+  background: rgb(23 23 29 / 0.9);
+  box-shadow:
+    0 10px 30px rgb(23 23 29 / 0.18),
+    inset 0 0 0 1px rgb(255 255 255 / 0.08);
+  clip-path: none;
+  backdrop-filter: blur(14px) saturate(1.4);
+}
+
+.header.headerDark nav {
+  gap: 4px;
+}
+
+.header.headerDark nav a {
+  padding: 0 16px;
+  border-radius: 999px;
+}
+
+.header.headerDark nav a:hover {
+  background: rgb(255 255 255 / 0.1);
+  text-decoration: none;
+}
+
+.top {
+  position: relative;
+  padding-top: var(--header-h);
+  overflow-x: clip;
+  background:
+    radial-gradient(
+      ellipse 70% 80% at 100% 0%,
+      #c3bfd7 0%,
+      #d0cce5 34%,
+      #dfdcf2 62%,
+      #ebe9f900 100%
+    ),
+    linear-gradient(180deg, #e9e7f7, #edebf9 60%, #f3f1fc);
+}
+
+.hero {
+  /* The art runs a twentieth of its width past the viewport's right edge. */
+  --art-w: min(66vw, 1080px);
+  --art-out: 4vw;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) calc(
+      var(--art-w) - var(--art-out) - var(--art-w) * 0.05
+    );
+  align-items: center;
+  min-height: max(600px, calc(100svh - var(--header-h)));
+  padding: 24px 0 48px;
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+  padding-left: 9px;
+}
+
+.copy h1 {
+  max-width: 6.3em;
+  margin: 0 0 24px;
+  font-size: clamp(54px, 5.3vw, 80px);
+  font-weight: 640;
+  letter-spacing: -0.03em;
+  line-height: 1.03;
+}
+
+.copy p {
+  max-width: 19em;
+  margin: 0 0 38px;
+  color: #535167;
+  font-size: clamp(19px, 1.56vw, 22.5px);
+  line-height: 1.45;
+  letter-spacing: -0.012em;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 32px;
+}
+
+/* The plant stands in a little from the row's end, cut by the viewport's
+   edge with it. */
+.art {
+  --shelf-room: 6cqw;
+  --note-x: 50%;
+  --note-size: min(2.3cqw, 22px);
+
+  position: relative;
+  justify-self: start;
+  width: var(--art-w);
+  container-type: inline-size;
+}
+
+/* The room runs the hero's whole width: the far wall's foot, level with
+   the art's own (34cqw down), and the lit floor in front of it, under the
+   copy too, so the header floats over one scene. */
+.art::before {
+  position: absolute;
+  top: 34cqw;
+  right: -40cqw;
+  left: -100vw;
+  z-index: -1;
+  height: 40cqw;
+  background: linear-gradient(
+    180deg,
+    rgb(122 114 168 / 0.06) 0%,
+    rgb(255 255 255 / 0.62) 9%,
+    rgb(255 255 255 / 0.3) 55%,
+    rgb(255 255 255 / 0) 100%
+  );
+  content: '';
+}
+
+@media (min-width: 1441px) {
+  .hero {
+    --art-out: calc((100vw - 1331px) / 2);
+  }
+}
+
+@media (max-width: 1023px) {
+  .top {
+    min-height: 100svh;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    min-height: calc(100svh - var(--header-h));
+    padding: 32px 0 40px;
+  }
+
+  .header.headerDark {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    height: calc(var(--header-h) - 16px);
+    margin-inline: 0;
+    padding: 0 10px 0 22px;
+  }
+
+  .copy {
+    padding: 0;
+  }
+
+  .copy h1 {
+    font-size: 68px;
+  }
+
+  .copy p {
+    max-width: 24em;
+    font-size: 21px;
+  }
+
+  .art {
+    --shelf-room: 0px;
+    --shelf-bleed: 28px;
+    --note-x: 46%;
+
+    width: calc(100% + 28px + 6%);
+    margin-top: 44px;
+  }
+}
+
+@media (max-width: 599px) {
+  .header.headerDark {
+    border-radius: 22px;
+    padding: 0 14px;
+  }
+
+  .header.headerDark nav a {
+    padding: 0 6px;
+  }
+
+  .copy h1 {
+    margin-bottom: 18px;
+    font-size: 48px;
+    letter-spacing: -0.04em;
+  }
+
+  .copy p {
+    margin-bottom: 30px;
+    font-size: 18.5px;
+  }
+
+  .actions {
+    gap: 12px 24px;
+  }
+
+  .art {
+    --shelf-bleed: 20px;
+    --note-x: 36%;
+    --note-y: 85%;
+    --note-size: 3.4cqw;
+
+    width: calc(100% + 20px + 8%);
+    margin-top: 36px;
+  }
+}

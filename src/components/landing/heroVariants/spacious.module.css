@@ -1,0 +1,162 @@
+/* A. Spacious: the page's own composition, scaled up. A taller header, a
+   hero about a viewport tall, a two-line headline and a bigger shelf, both
+   centred in it, and more air before the collection. */
+
+/* Doubled, to win over the page's own --header-h wherever the CSS lands. */
+.page.page {
+  --header-h: 96px;
+}
+
+.top {
+  position: relative;
+  margin-top: calc(-1 * var(--header-h));
+  padding-top: var(--header-h);
+  background:
+    radial-gradient(
+      ellipse 60% 70% at 100% 0%,
+      #c9c5d9 0%,
+      #d5d1e7 35%,
+      #e5e2f5 62%,
+      #f4f2fe00 100%
+    ),
+    radial-gradient(ellipse 40% 50% at 20% 48%, #fdfbff 0%, #fdfbff00 100%),
+    linear-gradient(180deg, #f6f5fe, #f8f6fe 60%, #faf8fe);
+}
+
+.hero {
+  /* The art runs past the page's right margin to the viewport's edge. */
+  --art-w: min(61vw, 940px);
+  --art-out: 4vw;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) calc(var(--art-w) - var(--art-out));
+  align-items: center;
+  min-height: clamp(620px, calc(100svh - var(--header-h)), 960px);
+  padding: 40px 0 64px;
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+  padding-left: 9px;
+}
+
+.copy h1 {
+  max-width: 6.3em;
+  margin: 0 0 26px;
+  font-size: clamp(56px, 6vw, 86px);
+  font-weight: 640;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+}
+
+.copy p {
+  max-width: 21em;
+  margin: 0 0 40px;
+  color: #535167;
+  font-size: clamp(19px, 1.62vw, 23px);
+  line-height: 1.45;
+  letter-spacing: -0.012em;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 32px;
+}
+
+.art {
+  --shelf-room: 0px;
+  --note-size: min(2.42cqw, 21px);
+
+  position: relative;
+  justify-self: start;
+  width: var(--art-w);
+  container-type: inline-size;
+}
+
+@media (min-width: 1441px) {
+  .hero {
+    --art-out: 57px;
+  }
+
+  .art {
+    --shelf-room: max(0px, (100vw - 1331px) / 2 - 57px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .page.page {
+    --header-h: 80px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+    padding: 64px 0 40px;
+  }
+
+  .copy {
+    padding: 0;
+  }
+
+  .copy h1 {
+    font-size: 72px;
+  }
+
+  .copy p {
+    max-width: 24em;
+    font-size: 22px;
+  }
+
+  .art {
+    --shelf-room: calc((100vw - min(100vw - 56px, 760px)) / 2);
+    --shelf-bleed: var(--shelf-room);
+
+    align-self: center;
+    width: 100%;
+    max-width: 760px;
+    margin-top: 48px;
+  }
+}
+
+@media (max-width: 599px) {
+  .page.page {
+    --header-h: 100px;
+  }
+
+  .hero {
+    padding: 44px 0 36px;
+  }
+
+  .copy h1 {
+    margin-bottom: 20px;
+    font-size: 50px;
+    letter-spacing: -0.04em;
+  }
+
+  .copy p {
+    margin-bottom: 32px;
+    font-size: 19px;
+  }
+
+  .actions {
+    gap: 12px 24px;
+  }
+
+  .art {
+    --shelf-room: 0px;
+    --shelf-bleed: 20px;
+    --note-x: 38%;
+    --note-y: 85%;
+    --note-size: 3.4cqw;
+
+    width: calc(100% + 20px);
+    margin-right: -20px;
+    align-self: flex-start;
+    margin-top: 36px;
+  }
+}

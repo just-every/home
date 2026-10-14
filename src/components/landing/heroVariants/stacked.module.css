@@ -1,0 +1,145 @@
+/* C. Stacked: the headline, line and buttons centred over the shelf, and
+   the shelf below them across most of the page, much larger, with the
+   plant and the window light at its far end. */
+
+.top {
+  position: relative;
+  margin-top: calc(-1 * var(--header-h));
+  padding-top: var(--header-h);
+  overflow-x: clip;
+  background:
+    radial-gradient(
+      ellipse 46% 72% at 100% 18%,
+      #cdc9de 0%,
+      #d8d4ea 32%,
+      #e6e3f6 60%,
+      #f4f2fe00 100%
+    ),
+    radial-gradient(ellipse 52% 34% at 50% 18%, #fefdff 0%, #fefdff00 100%),
+    linear-gradient(180deg, #f8f7fe, #f5f3fd 55%, #f9f7fe);
+}
+
+.hero {
+  /* As large as the viewport's height leaves room for under the copy. */
+  --art-w: min(1120px, 80vw, calc((100svh - 420px) * 2));
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(28px, 4.4svh, 64px) 0 40px;
+  text-align: center;
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.copy h1 {
+  margin: 0 0 18px;
+  font-size: clamp(48px, 5vw, 80px);
+  font-weight: 640;
+  letter-spacing: -0.032em;
+  line-height: 1.04;
+}
+
+.copy p {
+  max-width: 31em;
+  margin: 0 0 28px;
+  color: #535167;
+  font-size: clamp(19px, 1.5vw, 22px);
+  line-height: 1.45;
+  letter-spacing: -0.012em;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px 32px;
+}
+
+/* Centred under the copy: the plant and light take the room on its right
+   out to the viewport's edge. */
+.art {
+  --shelf-room: calc((100vw - var(--art-w)) / 2);
+  /* The note sits over the row's far end, its arrow pointing down at it. */
+  --note-x: 57%;
+  --note-y: 3%;
+  --note-size: min(2.3cqw, 22px);
+  --note-flow: row-reverse;
+  --note-turn: -2deg;
+  --note-arrow: scaleY(-1);
+
+  position: relative;
+  width: var(--art-w);
+  margin-top: 16px;
+  container-type: inline-size;
+  text-align: left;
+}
+
+@media (max-width: 1023px) {
+  .hero {
+    --art-w: min(100vw - 56px, 760px);
+
+    padding: 56px 0 36px;
+  }
+
+  .copy h1 {
+    font-size: 60px;
+  }
+
+  .copy p {
+    max-width: 26em;
+    font-size: 21px;
+  }
+
+  .art {
+    --shelf-bleed: var(--shelf-room);
+
+    margin-top: 56px;
+  }
+}
+
+@media (max-width: 599px) {
+  .hero {
+    --art-w: calc(100vw - 20px);
+
+    padding: 40px 0 28px;
+  }
+
+  .copy h1 {
+    max-width: 6.4em;
+    margin-bottom: 16px;
+    font-size: 46px;
+    letter-spacing: -0.04em;
+  }
+
+  .copy p {
+    margin-bottom: 28px;
+    font-size: 18.5px;
+  }
+
+  .actions {
+    gap: 12px 24px;
+  }
+
+  .art {
+    --shelf-room: 0px;
+    --shelf-bleed: 20px;
+    --note-x: 38%;
+    --note-y: 85%;
+    --note-size: 3.4cqw;
+    --note-flow: row;
+    --note-turn: -3.6deg;
+    --note-arrow: none;
+
+    align-self: flex-end;
+    margin-right: -20px;
+    margin-top: 40px;
+  }
+}

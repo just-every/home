@@ -1,0 +1,32 @@
+/* The handwritten note under the shelf, as the page's own hero sets it;
+   each layout places and sizes it with --note-x, --note-y and --note-size
+   (cqw is a hundredth of the art's width). */
+.note {
+  position: absolute;
+  left: var(--note-x, 54.6%);
+  top: var(--note-y, 86.6%);
+  display: flex;
+  flex-direction: var(--note-flow, row);
+  align-items: flex-start;
+  gap: 2.4cqw;
+  color: var(--note-ink, #55537a);
+  font-size: var(--note-size, 2.42cqw);
+  line-height: 1.45;
+  transform: rotate(var(--note-turn, -3.6deg));
+  transform-origin: left top;
+  white-space: nowrap;
+}
+
+.noteArrow {
+  width: 4.2cqw;
+  max-width: 44px;
+  height: auto;
+  margin-top: 0.4cqw;
+  flex: none;
+  transform: var(--note-arrow, none);
+}
+
+.noteText {
+  display: flex;
+  flex-direction: column;
+}
