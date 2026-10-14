@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-// Prints what visitors ask for: the latest suggestions from the form, and the
-// most-searched queries nothing in the collection matched.
+// Prints what visitors ask for: the latest suggestions from the form, the
+// latest messages from /contact, and the most-searched queries nothing in the
+// collection matched.
 //
 //   npm run suggestions                  local D1 (.wrangler/state)
 //   npm run suggestions -- --remote      the production D1
@@ -68,6 +69,14 @@ table(
     `SELECT created_at, product, note, email FROM suggestions ORDER BY created_at DESC, id DESC LIMIT ${limit}`
   ),
   ['created_at', 'product', 'note', 'email']
+);
+
+table(
+  `Latest ${limit} contact messages`,
+  query(
+    `SELECT created_at, topic, name, email, message FROM contact_messages ORDER BY created_at DESC, id DESC LIMIT ${limit}`
+  ),
+  ['created_at', 'topic', 'name', 'email', 'message']
 );
 
 table(
