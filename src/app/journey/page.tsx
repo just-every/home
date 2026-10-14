@@ -8,7 +8,7 @@ import { AutoDrive, FirstHomepage, Shelf } from './figures';
 
 export const metadata: Metadata = essayMetadata(essays.journey);
 
-/** /journey: "We could have built this in 2025.", from JOURNEY-ESSAY-v2.md. */
+/** /journey: "The long way round", from JOURNEY-ESSAY-v2.md. */
 export default function Journey() {
   return (
     <ArticlePage
@@ -30,30 +30,31 @@ export default function Journey() {
         in 30 seconds?” Under the headline, in smaller type, we added: “Fair
         warning: We’re an MVP that will fail sometimes.”
       </p>
-      <p>It was the most honest sentence on the page.</p>
+      <p>That sentence has aged better than the headline.</p>
       <p>
         Agents could already make an app in thirty seconds. You typed an idea,
         waited, and something with buttons came back. It looked like software.
-        What they couldn’t make was software you’d move your team onto: the tool
-        you open every morning, trust with your customers’ data, and then stop
-        thinking about.
+        What they couldn’t yet make, as far as we could tell, was software you’d
+        move your team onto: the tool you open every morning, trust with your
+        customers’ data, and then stop thinking about.
       </p>
       <p>
-        The distance between those two things isn’t a feature list. It’s a
-        thousand quiet decisions about what happens when the network drops, when
-        two people edit the same page, when someone restores last week’s backup.
-        A free Notion built that way in 2025 would have looked like Notion for
-        an afternoon, then let you down in exactly the places Notion doesn’t.
+        We think the distance between those two things is less a feature list
+        than a thousand quiet decisions about what happens when the network
+        drops, when two people edit the same page, when someone restores last
+        week’s backup. A free Notion built that way in 2025 would, we suspect,
+        have looked like Notion for an afternoon, then let you down in the
+        places Notion doesn’t.
       </p>
       <p>
-        We could have shipped it anyway. We’d have known it was slop, so we
-        didn’t.
+        We could have shipped one anyway. We’d have known it wasn’t good enough,
+        so we didn’t.
       </p>
 
       <h2>Fixing the tools first</h2>
       <p>
-        If the tools weren’t good enough to make the products, we would work on
-        the tools. In August 2025 we forked OpenAI’s Codex CLI and started{' '}
+        If the tools weren’t good enough, we figured we’d work on the tools
+        first. In August 2025 we forked OpenAI’s Codex CLI and started{' '}
         <a href="https://github.com/just-every/code">Every Code</a>, a coding
         agent that could drive a browser, work in teams and, with a feature we
         called Auto Drive, take a task you’d already planned and keep going
@@ -68,8 +69,8 @@ export default function Journey() {
         A fork has to keep up with its parent, and Codex moves fast. OpenAI’s
         changes keep coming, and each batch has to be folded into a codebase
         that has drifted further from the original. It’s the slow, expensive,
-        unglamorous side of software, and everyone assumed it would always need
-        a person.
+        unglamorous side of software, and we’d assumed it would always need a
+        person.
       </p>
       <p>
         For six months, it didn’t. Agents kept Every Code in step with Codex on
@@ -78,27 +79,27 @@ export default function Journey() {
         runs, not when someone sits down with a coffee to untangle conflicts.
       </p>
       <p>
-        That changed the question. Not whether agents could start a piece of
-        software, but whether they could look after one. They could. So what
-        else was missing?
+        That changed our question. It was no longer whether agents could start a
+        piece of software, but whether they could look after one. For that job,
+        it seemed they could. So what else was missing?
       </p>
 
       <h2>The part that all looked the same</h2>
       <p>
         The answer was in our own work. Agents made shipping fast, but
         everything we shipped looked the same: the same centred hero, the same
-        cards, the same gradient. Agents reach for safe defaults, because the
-        average of everything they’ve seen is safe. You can test your way to
-        software that works. You can’t test your way to software that looks like
-        someone cared.
+        cards, the same gradient. Agents seem to reach for safe defaults,
+        perhaps because the average of everything they’ve seen is safe. We could
+        test our way to software that worked. We couldn’t test our way to
+        software that looked like someone cared.
       </p>
       <p>
         So at the end of 2025 we started <a href="https://12ui.com">12ui</a>,
-        which turns the usual order around. It searches real designs, drafts
-        directions from them and grows the one we pick into every screen. We
-        decide what a page should feel like by looking at real pixels and
-        choosing. Only then does anyone write code, and the code has to match
-        the picture. This site started that way too.
+        which puts design first. It searches real designs, drafts directions
+        from them and grows the one we pick into every screen. We decide what a
+        page should feel like by looking at real pixels and choosing. Only then
+        does anyone write code, and the code has to match the picture. This site
+        started that way too.
       </p>
 
       <h2>Fourteen products</h2>
@@ -112,12 +113,13 @@ export default function Journey() {
       </p>
       <Shelf />
       <p>
-        What changed since 2025 isn’t that agents type faster. It’s that every
-        product now carries its standards with it. Each has a contract, a plain
-        file that says what it does and what it doesn’t. Each has one command
-        that runs all of its checks. Each has instructions for the next agent
-        that works on it. Coding agents wrote the code. We decided what good
-        looks like, and wrote it down where the agents could hold us to it.
+        What changed since 2025 isn’t only that agents type faster. We think the
+        bigger change is that every product now carries its standards with it.
+        Each has a contract, a plain file that says what it does and what it
+        doesn’t. Each has one command that runs all of its checks. Each has
+        instructions for the next agent that works on it. Coding agents wrote
+        the code. We tried to say what good looks like, and wrote it down where
+        the agents could hold us to it.
       </p>
       <p>Remember the backup?</p>
       <p>
@@ -131,25 +133,28 @@ export default function Journey() {
         the fix, and its checks ran in public and passed.
       </p>
       <p>
-        Nobody puts that on a homepage. It is exactly the kind of thing a
-        thirty-second app never gets right, and the kind of thing you only
-        notice when it goes wrong.
+        Nobody puts that on a homepage, so we’re putting it here. It’s the sort
+        of detail a thirty-second app tends to miss, and you only notice it when
+        it goes wrong.
       </p>
 
       <h2>What’s left</h2>
       <p>What comes next? We’re not sure.</p>
       <p>
-        We are sure of this much. When code is almost free, anyone can ship
-        software, and much of what gets shipped will be slop. What’s left to
-        compete on is quality: how it works, how it looks, what it promises, and
-        whether it keeps that promise when nobody is watching.
+        Here is what we think. When code is almost free, anyone can ship
+        software, and we expect a lot of it will be slop. That leaves quality:
+        how it works, how it looks, what it promises, and whether it keeps that
+        promise when nobody is watching.
       </p>
       <p>
-        That’s what we’re trying to perfect. Not more products for the sake of
-        it, and not faster ones. Software you’d be glad to move your team onto,
-        that you own outright, and that keeps its word.
+        That’s what we’re trying to get right, and we’re not there yet. Not more
+        products for the sake of it, and not faster ones. Software you’d be glad
+        to move your team onto, that you own outright, and that keeps its word.
       </p>
-      <p>The thirty-second app was never the hard part. This is.</p>
+      <p>
+        The thirty-second app was the easy part. This is the part we’re still
+        working on.
+      </p>
     </ArticlePage>
   );
 }

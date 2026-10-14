@@ -5,8 +5,7 @@ import { siteMeta } from '@/content/meta';
 /**
  * The site's essays, from the second-pass drafts of 14 Oct 2026
  * (JOURNEY-ESSAY-v2.md and PROCESS-ESSAY-v2.md): the title and dek head the
- * page. Journey's description is its draft's; Process's draft gives none, so
- * its description is its dek.
+ * page. Both descriptions are the essay's dek.
  */
 export interface Essay {
   slug: 'journey' | 'process';
@@ -27,12 +26,12 @@ export interface Essay {
 export const essays = {
   journey: {
     slug: 'journey',
-    title: 'We could have built this in 2025.',
-    dek: 'We didn’t, because it would have been slop. This is the long way round we took instead, and why it matters now that code is nearly free.',
-    pageTitle: 'How we got here',
+    title: 'The long way round',
+    dek: 'Our first homepage promised an app in thirty seconds. This is why we didn’t ship one, and what we built instead.',
+    pageTitle: 'The long way round',
     description:
-      'We could have built free SaaS alternatives in 2025. They would have been slop. This is the long way round we took instead.',
-    shareTitle: 'We could have built this in 2025.',
+      'Our first homepage promised an app in thirty seconds. This is why we didn’t ship one, and what we built instead.',
+    shareTitle: 'The long way round',
     date: '14 October 2026',
     published: '2026-10-14',
     readingTime: '4 min read',
