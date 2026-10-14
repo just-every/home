@@ -1,26 +1,19 @@
-import { nav, wordmark } from '@/content/landing';
+import Link from 'next/link';
+
+import { nav } from '@/content/landing';
 
 import ui from './label.module.css';
+import { Logo } from './Logo';
 import styles from './header.module.css';
 
-/** The header and footer's colour: the page's own, or the black bar. */
-export type ChromeTone = 'light' | 'dark';
-
-export interface HeaderProps {
-  tone?: ChromeTone;
-  /** A page look's own placement and colours for the header. */
-  className?: string;
-}
-
-export function Header({ tone = 'light', className }: HeaderProps) {
-  const classes = [ui.wrap, styles.header];
-  if (tone === 'dark') classes.push(styles.dark);
-  if (className) classes.push(className);
+/** The landing page's header, floating on the hero's room. */
+export function Header() {
   return (
-    <header className={classes.join(' ')}>
-      <a className={styles.brand} href="#top" aria-label="Just Every, top">
-        {wordmark}
-      </a>
+    <header className={`${ui.wrap} ${styles.header} ${styles.floating}`}>
+      {/* The page links to itself: no prefetch needed. */}
+      <Link className={styles.brand} href="/" prefetch={false}>
+        <Logo />
+      </Link>
       <nav aria-label="Main" className={styles.nav}>
         {nav.map(item => (
           <a key={item.label} href={item.href}>

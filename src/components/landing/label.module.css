@@ -12,12 +12,8 @@
   --pill-to: #18191b;
   --header-h: 81px;
 
-  /* The black bars: header and footer. Soft white for links and the footer
-     line, both well past AA on the bar. */
-  --chrome-bg: #17171d;
-  --chrome-ink: #fff;
-  --chrome-link: #dcdbe8;
-  --chrome-soft: #bdbccd;
+  /* The wordmark's ink, shared with the hero headline's second line. */
+  --brand-ink: #6a6880;
 
   /* One card language for every card-like surface on the page: a soft
      fill, no border and no shadow, as in the approved art. A product's

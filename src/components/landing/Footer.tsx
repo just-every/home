@@ -1,18 +1,19 @@
-import { footer, wordmark } from '@/content/landing';
+import Link from 'next/link';
 
-import type { ChromeTone } from './Header';
+import { footer } from '@/content/landing';
+
 import ui from './label.module.css';
+import { Logo } from './Logo';
 import styles from './footer.module.css';
 import { TokenCount } from './TokenCount';
 
-export function Footer({ tone = 'light' }: { tone?: ChromeTone }) {
+export function Footer() {
   return (
-    <footer
-      className={`${ui.wrap} ${styles.footer}${tone === 'dark' ? ` ${styles.dark}` : ''}`}
-    >
-      <a className={styles.brand} href="#top" aria-label="Just Every, top">
-        {wordmark}
-      </a>
+    <footer className={`${ui.wrap} ${styles.footer}`}>
+      {/* The page links to itself: no prefetch needed. */}
+      <Link className={styles.brand} href="/" prefetch={false}>
+        <Logo />
+      </Link>
       <nav aria-label="Footer" className={styles.nav}>
         {footer.links.map(link => (
           <a key={link.label} href={link.href}>

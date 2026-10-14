@@ -3,50 +3,34 @@ import type { ReactNode } from 'react';
 import { githubOrgUrl } from '@/content/landing';
 
 import { handwriting } from './fonts';
+import styles from './hero.module.css';
 import { HeroShelf } from './HeroShelf';
 import ui from './label.module.css';
-import classic from './hero.module.css';
-import { type HeroCopy, heroCopy } from './heroVariants/copy';
 
-/** The class names a hero layout gives each part of the hero. */
-export type HeroStyles = Readonly<Record<string, string>>;
+/** Words that stay together: a hyphenated word, or a short phrase. */
+const Together = ({ children }: { children: ReactNode }) => (
+  <span className={styles.together}>{children}</span>
+);
 
 /**
- * `shelf` defaults to the page's box set; review tooling passes its own.
- * `styles` is the hero's layout: the page's own, or a preview look's.
- * `copy` is a preview's own headline and line; the page keeps its own.
+ * The hero (the owner's D, Overlay, with "Every SaaS. For Free."): the
+ * header floats on its lavender room, the headline's second line is in the
+ * muted ink the wordmark shares, the box set runs off the right edge and the
+ * room fades into the page at its foot. `shelf` defaults to the page's box
+ * set; review tooling passes its own.
  */
-export function Hero({
-  shelf = <HeroShelf />,
-  styles = classic,
-  copy,
-}: {
-  shelf?: ReactNode;
-  styles?: HeroStyles;
-  copy?: HeroCopy;
-}) {
-  const words = copy ? heroCopy(copy, styles) : null;
+export function Hero({ shelf = <HeroShelf /> }: { shelf?: ReactNode }) {
   return (
-    <section
-      className={
-        copy && styles[copy] ? `${styles.top} ${styles[copy]}` : styles.top
-      }
-      aria-labelledby="label-hero-heading"
-    >
+    <section className={styles.top} aria-labelledby="label-hero-heading">
       <div className={`${ui.wrap} ${styles.hero}`}>
         <div className={styles.copy}>
           <h1 id="label-hero-heading">
-            {words ? words.title : 'Just about every SaaS.'}
+            <Together>Every SaaS.</Together>{' '}
+            <span className={styles.turn}>For Free.</span>
           </h1>
           <p>
-            {words ? (
-              words.line
-            ) : (
-              <>
-                A collection of beautifully made, open-source alternatives to
-                the software you rent. 100% free.
-              </>
-            )}
+            Beautifully made, <Together>open-source</Together> alternatives to
+            Notion, Linear, Intercom and more.
           </p>
           <div className={styles.actions}>
             <a className={ui.pill} href="#all">

@@ -4,15 +4,12 @@ import { useEffect, useRef } from 'react';
 
 import { ShelfEngine } from './engine';
 import styles from './shelf.module.css';
-import type { ShelfTone } from './tones';
 import type { ShelfVolume } from './types';
 
 export interface Shelf3DProps {
   volumes: ShelfVolume[];
   /** Slug of the volume shown face-out at the front. */
   featured: string;
-  /** The room around the set: the page's light, or a dark stage. */
-  tone?: ShelfTone;
   className?: string;
 }
 
@@ -24,12 +21,11 @@ export interface Shelf3DProps {
 export default function Shelf3D({
   volumes,
   featured,
-  tone = 'light',
   className,
 }: Shelf3DProps) {
   const host = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
-  const spec = JSON.stringify({ volumes, featured, tone });
+  const spec = JSON.stringify({ volumes, featured });
 
   useEffect(() => {
     const root = host.current;
@@ -38,17 +34,10 @@ export default function Shelf3D({
     const props = JSON.parse(spec) as {
       volumes: ShelfVolume[];
       featured: string;
-      tone: ShelfTone;
     };
     let engine: ShelfEngine;
     try {
-      engine = new ShelfEngine(
-        root,
-        surface,
-        props.volumes,
-        props.featured,
-        props.tone
-      );
+      engine = new ShelfEngine(root, surface, props.volumes, props.featured);
     } catch {
       // No WebGL here: the static render stays in place.
       return;

@@ -8,13 +8,14 @@
   border-top: 1px solid var(--line);
 }
 
+/* The wordmark, in the header's muted ink. */
 .brand {
+  --logo-h: 18px;
+
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  font-size: 19.7px;
-  font-weight: 700;
-  letter-spacing: -0.8px;
+  color: var(--brand-ink);
 }
 
 .nav {
@@ -56,25 +57,4 @@
     width: 100%;
     margin-left: 0;
   }
-}
-
-/* The black bar (the dark preview looks), as the header's. */
-.dark {
-  border-top: 0;
-  background: var(--chrome-bg);
-  box-shadow: 0 0 0 100vmax var(--chrome-bg);
-  clip-path: inset(0 -100vmax);
-  color: var(--chrome-ink);
-}
-
-.dark .nav {
-  color: var(--chrome-link);
-}
-
-.dark .nav a:hover {
-  color: var(--chrome-ink);
-}
-
-.dark .line {
-  color: var(--chrome-soft);
 }

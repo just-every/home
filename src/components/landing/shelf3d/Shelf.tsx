@@ -4,7 +4,6 @@ import dynamic from 'next/dynamic';
 import { type CSSProperties, useSyncExternalStore } from 'react';
 
 import styles from './shelf.module.css';
-import type { ShelfTone } from './tones';
 import type { ShelfVolume } from './types';
 
 /** three.js loads on the client only, after first paint. */
@@ -14,9 +13,6 @@ export interface ShelfPoster {
   src: string;
   srcSet?: string;
   sizes?: string;
-  /** The render's pixels, when not the page's own poster's. */
-  width?: number;
-  height?: number;
 }
 
 /**
@@ -29,19 +25,17 @@ export interface ShelfPoster {
 const BLEED = 0.18;
 
 /** The static render's pixels: the scene at 1440 (2x), bleed included. */
-const POSTER = { w: 1768, h: 860 };
-
-/** The poster's bleed past the slot, for layouts that size their own. */
-export const POSTER_BLEED = BLEED;
+const POSTER = { w: 2242, h: 1092 };
 
 /** The static render of the shelf (`node scripts/render-shelf.mjs`). */
 export const shelfPoster: ShelfPoster = {
   src: '/landing/shelf/shelf-1440.webp',
   srcSet: `/landing/shelf/shelf-800.webp 800w, /landing/shelf/shelf-1440.webp ${POSTER.w}w`,
+  // The hero's slot (66vw, at most 1080px, on desktops; about the
+  // viewport's width below) and the bleed.
   sizes: [
-    `(min-width: 1440px) ${Math.round(749 * (1 + BLEED))}px`,
-    `(min-width: 1024px) ${+(52 * (1 + BLEED)).toFixed(2)}vw`,
-    `${+(100 * (1 + BLEED)).toFixed(2)}vw`,
+    `(min-width: 1024px) min(${+(66 * (1 + BLEED)).toFixed(2)}vw, ${Math.round(1080 * (1 + BLEED))}px)`,
+    '120vw',
   ].join(', '),
 };
 
@@ -51,8 +45,6 @@ export interface ShelfProps {
   className?: string;
   /** Shown until the live scene's first frame, and instead of it on phones. */
   poster?: ShelfPoster | null;
-  /** The room around the set: the page's light, or a dark stage. */
-  tone?: ShelfTone;
 }
 
 /** Phones keep the static render: the live scene starts at this width. */
@@ -77,7 +69,6 @@ export function Shelf({
   featured,
   className,
   poster = shelfPoster,
-  tone = 'light',
 }: ShelfProps) {
   const live = useSyncExternalStore(
     subscribe,
@@ -94,7 +85,6 @@ export function Shelf({
       className={className ? `${styles.shelf} ${className}` : styles.shelf}
       style={{ '--shelf-poster-bleed': `${BLEED * 100}cqw` } as CSSProperties}
       data-shelf
-      data-tone={tone === 'light' ? undefined : tone}
     >
       <div className={styles.room} aria-hidden="true">
         <div className={styles.light}>
@@ -111,17 +101,15 @@ export function Shelf({
             src={poster.src}
             srcSet={poster.srcSet}
             sizes={poster.sizes}
-            width={poster.width ?? POSTER.w}
-            height={poster.height ?? POSTER.h}
+            width={POSTER.w}
+            height={POSTER.h}
             alt=""
             aria-hidden="true"
             fetchPriority="high"
             decoding="async"
           />
         ) : null}
-        {live ? (
-          <Shelf3D volumes={volumes} featured={featured} tone={tone} />
-        ) : null}
+        {live ? <Shelf3D volumes={volumes} featured={featured} /> : null}
       </div>
       <ul
         className={styles.list}
