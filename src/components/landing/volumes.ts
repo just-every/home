@@ -40,14 +40,14 @@ export const volumes: Volume[] = seeds.map((seed, index) => ({
   colour: seed.pastel,
   ink: seed.ink,
   mark: markFor(seed),
-  tagline: seed.headline,
+  tagline: seed.line,
   href: `#${cardId(seed.slug)}`,
   seed,
 }));
 
 /**
  * Every volume in display order, for the hero's shelf. The first is the
- * featured volume, shown face out with its tagline (Uptime).
+ * featured volume, shown face out with what it does (Uptime).
  */
 export function labelVolumes(): ShelfVolume[] {
   return volumes.map(

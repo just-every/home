@@ -12,7 +12,7 @@ export interface ShelfVolume {
   ink: string;
   /** URL of the SVG mark to print on the spine, already recoloured if needed. */
   mark: string;
-  /** The product's own headline, for a featured cover. */
+  /** What the product does, in its card's line, for a featured cover. */
   tagline: string | null;
   /** Anchor of the product's card on the page. */
   href: string;

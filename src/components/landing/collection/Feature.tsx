@@ -12,12 +12,13 @@ const host = (url: string) => new URL(url).host;
 
 /**
  * The selected product, across the whole width above the grid: its reel,
- * name and family, what it replaces, its own headline and line (or Claude's
- * reason, after a search), its homepage where it is live, and GitHub.
+ * name and family, what it replaces, what it does (its card's line) and,
+ * under that, its own headline (or Claude's reason, after a search), its
+ * homepage where it is live, and GitHub.
  */
 export function Feature({ shown }: { shown: Shown }) {
   const { item, replaces, reason } = shown;
-  const line = reason ?? item.line;
+  const aside = reason ?? item.headline;
   const primary = item.homepage
     ? {
         href: item.homepage,
@@ -58,10 +59,8 @@ export function Feature({ shown }: { shown: Shown }) {
           <p className={styles.alt}>
             {collection.alternativeTo} {replaces}
           </p>
-          {item.headline ? (
-            <p className={styles.headline}>{item.headline}</p>
-          ) : null}
-          <p className={styles.line}>{line}</p>
+          <p className={styles.does}>{item.line}</p>
+          {aside ? <p className={styles.line}>{aside}</p> : null}
           <div className={styles.links}>
             <a
               className={`${ui.pill} ${ui.pillSmall} ${styles.primary}`}
