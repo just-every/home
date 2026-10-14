@@ -6,18 +6,20 @@ import { TokenCount } from './TokenCount';
 
 export function Footer() {
   return (
-    <footer className={`${ui.wrap} ${styles.footer}`}>
-      <a className={styles.brand} href="#top" aria-label="Just Every, top">
-        {wordmark}
-      </a>
-      <nav aria-label="Footer" className={styles.nav}>
-        {footer.links.map(link => (
-          <a key={link.label} href={link.href}>
-            {link.label}
-          </a>
-        ))}
-      </nav>
-      <TokenCount />
+    <footer className={styles.footer}>
+      <div className={`${ui.wrap} ${styles.inner}`}>
+        <a className={styles.brand} href="#top" aria-label="Just Every, top">
+          {wordmark}
+        </a>
+        <nav aria-label="Footer" className={styles.nav}>
+          {footer.links.map(link => (
+            <a key={link.label} href={link.href}>
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <TokenCount />
+      </div>
     </footer>
   );
 }

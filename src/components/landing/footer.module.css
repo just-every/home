@@ -1,11 +1,15 @@
 .footer {
+  background: var(--chrome-bg);
+  color: var(--chrome-ink);
+}
+
+.inner {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px 36px;
   min-height: 96px;
   padding: 18px 0;
-  border-top: 1px solid var(--line);
 }
 
 .brand {
@@ -20,7 +24,7 @@
 .nav {
   display: flex;
   gap: 28px;
-  color: var(--muted);
+  color: var(--chrome-link);
   font-size: 15px;
 }
 
@@ -31,14 +35,14 @@
 }
 
 .nav a:hover {
-  color: var(--ink);
+  color: var(--chrome-ink);
   text-decoration: underline;
   text-underline-offset: 5px;
 }
 
 .line {
   margin-left: auto;
-  color: var(--muted);
+  color: var(--chrome-soft);
   font-size: 14px;
 }
 
@@ -48,7 +52,7 @@
 }
 
 @media (max-width: 599px) {
-  .footer {
+  .inner {
     padding: 20px 0 28px;
   }
 

@@ -1,13 +1,17 @@
 .header {
   position: relative;
   z-index: 2;
+  height: var(--header-h);
+  background: var(--chrome-bg);
+  color: var(--chrome-ink);
+}
+
+.inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  height: var(--header-h);
-  padding-top: 18px;
-  border-bottom: 1px solid #dfddee;
+  height: 100%;
 }
 
 .brand {
@@ -22,7 +26,7 @@
 .nav {
   display: flex;
   gap: 34px;
-  color: #454350;
+  color: var(--chrome-link);
   font-size: 17px;
 }
 
@@ -33,17 +37,16 @@
 }
 
 .nav a:hover {
-  color: var(--ink);
+  color: var(--chrome-ink);
   text-decoration: underline;
   text-underline-offset: 6px;
 }
 
 @media (max-width: 599px) {
-  .header {
+  .inner {
     flex-wrap: wrap;
     align-content: center;
     row-gap: 0;
-    padding-top: 0;
   }
 
   .brand {
