@@ -94,6 +94,34 @@
   background: url('/landing/shelf/plant.webp') center / 100% 100% no-repeat;
 }
 
+/* The dark stage: the same window, its light warm on a dark wall and
+   floor, and the plant a soft silhouette against it. */
+.shelf[data-tone='dark'] .beam {
+  background: linear-gradient(
+    90deg,
+    rgb(255 196 146 / 0) 58cqw,
+    rgb(255 196 146 / 0.14) 72cqw,
+    rgb(255 202 156 / 0.26) 88cqw,
+    rgb(255 202 156 / 0.26) calc(100cqw + var(--shelf-room, 0px) * 0.4),
+    rgb(255 202 156 / 0) calc(100cqw + var(--shelf-room, 0px))
+  );
+}
+
+.shelf[data-tone='dark'] .floor {
+  background: linear-gradient(
+    180deg,
+    rgb(255 196 146 / 0) 0%,
+    rgb(255 196 146 / 0.05) 22%,
+    rgb(255 205 160 / 0.16) 32%,
+    rgb(255 205 160 / 0.08) 70%,
+    rgb(255 205 160 / 0) 100%
+  );
+}
+
+.shelf[data-tone='dark'] .plant {
+  filter: brightness(0.5) saturate(0.7) sepia(0.2);
+}
+
 /* The poster and the live scene share one box: the slot, run further left
    (--shelf-bleed, set by the hero for the room its layout has; never more
    than the poster's own bleed, set by Shelf.tsx) so the front box's contact

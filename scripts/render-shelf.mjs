@@ -26,7 +26,11 @@
  *   npm run dev -- -p 3328
  *   node scripts/render-shelf.mjs [--base http://localhost:3328] [--page /]
  *        [--shots DIR] [--only poster,crossfade,growth,pages,hover,measure]
- *        [--measure]
+ *        [--measure] [--name shelf]
+ *
+ * --name sets the poster's file names (<name>-1440.webp, <name>-800.webp):
+ * a hero layout with its own shelf size renders its own, from its preview
+ * page (--page /preview/hero/a-light --name hero-spacious).
  */
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync } from 'node:fs';
@@ -46,6 +50,9 @@ const flag = (name, fallback) => {
 };
 const base = flag('base', 'http://localhost:3328');
 const pagePath = flag('page', '/');
+const posterName = flag('name', 'shelf');
+/** Shots named after a layout's own poster; the page's keep their names. */
+const shotPrefix = posterName === 'shelf' ? '' : `${posterName}-`;
 const reviewPath = '/shelf-review';
 const shots = resolve(
   flag(
@@ -257,14 +264,14 @@ async function poster() {
   const meta = await sharp(png).metadata();
   await sharp(png)
     .webp({ quality: 82, alphaQuality: 80, effort: 6 })
-    .toFile(join(posterDir, 'shelf-1440.webp'));
+    .toFile(join(posterDir, `${posterName}-1440.webp`));
   await sharp(png)
     .resize({ width: 800 })
     .webp({ quality: 82, alphaQuality: 80, effort: 6 })
-    .toFile(join(posterDir, 'shelf-800.webp'));
-  await sharp(png).toFile(join(shots, 'shelf-1440-transparent.png'));
+    .toFile(join(posterDir, `${posterName}-800.webp`));
+  await sharp(png).toFile(join(shots, `${posterName}-1440-transparent.png`));
   console.log(
-    `poster: ${meta.width}x${meta.height} -> public/landing/shelf/shelf-1440.webp, shelf-800.webp`
+    `poster: ${meta.width}x${meta.height} -> public/landing/shelf/${posterName}-1440.webp, ${posterName}-800.webp`
   );
   await context.close();
 }
@@ -340,9 +347,9 @@ async function crossfade() {
       { input: after, left: width + gap, top: 0 },
     ])
     .png()
-    .toFile(join(shots, 'poster-vs-live-1440.png'));
-  await sharp(before).toFile(join(shots, 'poster-1440.png'));
-  await sharp(after).toFile(join(shots, 'live-1440.png'));
+    .toFile(join(shots, `${shotPrefix}poster-vs-live-1440.png`));
+  await sharp(before).toFile(join(shots, `${shotPrefix}poster-1440.png`));
+  await sharp(after).toFile(join(shots, `${shotPrefix}live-1440.png`));
 
   const raw = buffer => sharp(buffer).removeAlpha().raw().toBuffer();
   const [a, b] = await Promise.all([raw(before), raw(after)]);
@@ -375,7 +382,7 @@ async function crossfade() {
       if (error < best.error) best = { dx, dy, error: +error.toFixed(3) };
     }
   console.log(
-    `crossfade: ${join(shots, 'poster-vs-live-1440.png')} (poster left, live right) ${JSON.stringify(
+    `crossfade: ${join(shots, `${shotPrefix}poster-vs-live-1440.png`)} (poster left, live right) ${JSON.stringify(
       {
         meanAbsDiff: +(total / pixels).toFixed(3),
         pixelsOver12: `${((over / pixels) * 100).toFixed(3)}%`,

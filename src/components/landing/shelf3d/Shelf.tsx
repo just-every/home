@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import { type CSSProperties, useSyncExternalStore } from 'react';
 
 import styles from './shelf.module.css';
+import type { ShelfTone } from './tones';
 import type { ShelfVolume } from './types';
 
 /** three.js loads on the client only, after first paint. */
@@ -13,6 +14,9 @@ export interface ShelfPoster {
   src: string;
   srcSet?: string;
   sizes?: string;
+  /** The render's pixels, when not the page's own poster's. */
+  width?: number;
+  height?: number;
 }
 
 /**
@@ -26,6 +30,9 @@ const BLEED = 0.18;
 
 /** The static render's pixels: the scene at 1440 (2x), bleed included. */
 const POSTER = { w: 1768, h: 860 };
+
+/** The poster's bleed past the slot, for layouts that size their own. */
+export const POSTER_BLEED = BLEED;
 
 /** The static render of the shelf (`node scripts/render-shelf.mjs`). */
 export const shelfPoster: ShelfPoster = {
@@ -44,6 +51,8 @@ export interface ShelfProps {
   className?: string;
   /** Shown until the live scene's first frame, and instead of it on phones. */
   poster?: ShelfPoster | null;
+  /** The room around the set: the page's light, or a dark stage. */
+  tone?: ShelfTone;
 }
 
 /** Phones keep the static render: the live scene starts at this width. */
@@ -68,6 +77,7 @@ export function Shelf({
   featured,
   className,
   poster = shelfPoster,
+  tone = 'light',
 }: ShelfProps) {
   const live = useSyncExternalStore(
     subscribe,
@@ -84,6 +94,7 @@ export function Shelf({
       className={className ? `${styles.shelf} ${className}` : styles.shelf}
       style={{ '--shelf-poster-bleed': `${BLEED * 100}cqw` } as CSSProperties}
       data-shelf
+      data-tone={tone === 'light' ? undefined : tone}
     >
       <div className={styles.room} aria-hidden="true">
         <div className={styles.light}>
@@ -100,15 +111,17 @@ export function Shelf({
             src={poster.src}
             srcSet={poster.srcSet}
             sizes={poster.sizes}
-            width={POSTER.w}
-            height={POSTER.h}
+            width={poster.width ?? POSTER.w}
+            height={poster.height ?? POSTER.h}
             alt=""
             aria-hidden="true"
             fetchPriority="high"
             decoding="async"
           />
         ) : null}
-        {live ? <Shelf3D volumes={volumes} featured={featured} /> : null}
+        {live ? (
+          <Shelf3D volumes={volumes} featured={featured} tone={tone} />
+        ) : null}
       </div>
       <ul
         className={styles.list}

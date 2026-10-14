@@ -24,6 +24,7 @@ import {
 } from './layout';
 import { Lens } from './lens';
 import { coverTexture, loadMark, type Mark, spineTexture } from './prints';
+import { PALETTES, type ScenePalette, type ShelfTone } from './tones';
 import type { ShelfVolume } from './types';
 
 const MAX_PIXEL_RATIO = 2;
@@ -75,6 +76,7 @@ export class ShelfEngine {
   private readonly lens: Lens;
   private readonly framing: Framing;
   private readonly ordered: ShelfVolume[];
+  private readonly palette: ScenePalette;
   private readonly raycaster = new Raycaster();
   private readonly pointer = new Vector2();
   private readonly startedAt = performance.now();
@@ -117,8 +119,10 @@ export class ShelfEngine {
     private readonly host: HTMLElement,
     private readonly canvas: HTMLCanvasElement,
     volumes: ShelfVolume[],
-    featured: string
+    featured: string,
+    tone: ShelfTone = 'light'
   ) {
+    this.palette = PALETTES[tone];
     const lead = volumes.find(volume => volume.slug === featured) ?? volumes[0];
     this.ordered = lead
       ? [lead, ...volumes.filter(volume => volume !== lead)]
@@ -141,7 +145,7 @@ export class ShelfEngine {
       fadeFrom: 9.5,
       fadeTo: 22,
       fadeFloor: 0.2,
-      haze: '#ece9f7',
+      haze: this.palette.haze,
     });
     this.focusLens();
 
@@ -182,8 +186,8 @@ export class ShelfEngine {
     );
     if (this.disposed) return;
 
-    this.shelf = buildShelf(this.paint(family, marks));
-    this.scene.add(this.shelf.root, ...lights());
+    this.shelf = buildShelf(this.paint(family, marks), this.palette);
+    this.scene.add(this.shelf.root, ...lights(this.palette));
     this.wire();
     await this.present();
   }

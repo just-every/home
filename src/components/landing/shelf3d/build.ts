@@ -19,6 +19,7 @@ import {
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 
 import { slotT, slotX, VOLUME } from './layout';
+import type { ScenePalette } from './tones';
 
 /** One slot on the shelf: a product volume, or the blank next volume. */
 export interface VolumeNode {
@@ -45,7 +46,6 @@ export interface ShelfPrint {
 /** The unprinted box white, and the blank volume that says the set goes on. */
 const BOX_WHITE = '#f4f2f1';
 const BLANK = '#f1f0f6';
-const FLOOR = '#fbfaff';
 /** Side faces read as the dark seams between volumes; slid out, they light up. */
 const SIDE_SHADE = { rest: 0.6, out: 0.86 };
 const PRINT_LIFT = 0.0012;
@@ -168,9 +168,9 @@ function floorTexture(length: number, depth: number, margin: number) {
   return new CanvasTexture(el);
 }
 
-export function lights() {
-  const sky = new HemisphereLight('#ffffff', '#e6e3f1', 3.14);
-  const key = new DirectionalLight('#fffdfb', 0.5);
+export function lights(palette: ScenePalette) {
+  const sky = new HemisphereLight('#ffffff', palette.ground, 3.14);
+  const key = new DirectionalLight(palette.key, palette.keyIntensity);
   key.position.set(-0.35, 0.55, 0.76).multiplyScalar(10);
   return [sky, key];
 }
@@ -180,7 +180,7 @@ export function lights() {
  * featured box has a printed cover too), their reflections under the floor,
  * the floor's depth for the lens, and the contact shadow.
  */
-export function buildShelf(prints: ShelfPrint[]) {
+export function buildShelf(prints: ShelfPrint[], palette: ScenePalette) {
   const root = new Group();
   const mirrors = new Group();
   root.add(mirrors);
@@ -331,9 +331,9 @@ export function buildShelf(prints: ShelfPrint[]) {
     new PlaneGeometry(length + floorMargin * 2, VOLUME.d + floorMargin * 2),
     new MeshBasicMaterial({
       map: floorMap,
-      color: FLOOR,
+      color: palette.floor,
       transparent: true,
-      opacity: 0.7,
+      opacity: palette.floorOpacity,
       depthWrite: false,
     })
   );
@@ -349,7 +349,7 @@ export function buildShelf(prints: ShelfPrint[]) {
     new PlaneGeometry(length + margin * 2, VOLUME.d + margin * 2),
     new MeshBasicMaterial({
       map: shadowMap,
-      color: '#282338',
+      color: palette.shadow,
       transparent: true,
       depthWrite: false,
     })
