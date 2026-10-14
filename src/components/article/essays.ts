@@ -4,16 +4,20 @@ import { siteMeta } from '@/content/meta';
 
 /**
  * The site's essays, from the approved essay drafts of 14 Oct 2026
- * (JOURNEY-ESSAY.md and PROCESS-ESSAY.md). The nav label names the page; the
- * title and dek head it.
+ * (JOURNEY-ESSAY.md and PROCESS-ESSAY.md): the title and dek head the page.
+ * The metadata (browser title, description, share title) is the copy decks'
+ * section A (JOURNEY.md and PROCESS.md).
  */
 export interface Essay {
   slug: 'journey' | 'process';
-  label: string;
   title: string;
   dek: string;
+  /** The browser title, before " · Just Every". */
+  pageTitle: string;
   /** Meta and Open Graph description. */
   description: string;
+  /** Open Graph and Twitter title. */
+  shareTitle: string;
   date: string;
   /** ISO date for <time> and the article metadata. */
   published: string;
@@ -23,38 +27,40 @@ export interface Essay {
 export const essays = {
   journey: {
     slug: 'journey',
-    label: 'Journey',
     title: 'We could have built this in 2025.',
     dek: 'We didn’t, because it would have been slop. This is what we built first, and why quality is the whole point now.',
+    pageTitle: 'How we got here',
     description:
       'We could have built free SaaS alternatives in 2025. They would have been slop. Here’s what we built first, and why quality is the point now.',
+    shareTitle: 'We could have built this in 2025.',
     date: '14 October 2026',
     published: '2026-10-14',
     readingTime: '6 min read',
   },
   process: {
     slug: 'process',
-    label: 'Process',
     title: 'Quality, written down',
     dek: 'Agents can now write the code, check it against plain-English promises, and keep a fork alive for months. Here is how we use that to keep fourteen products good.',
+    pageTitle: 'Quality, written down',
     description:
-      'Agents can now write the code, check it against plain-English promises, and keep a fork alive for months. Here is how we use that to keep fourteen products good.',
+      'Every Just Every product ships with a contract: plain-English promises with numbers. Here’s how tests, pull requests and forks keep them.',
+    shareTitle: 'Quality, written down.',
     date: '14 October 2026',
     published: '2026-10-14',
     readingTime: '7 min read',
   },
 } as const satisfies Record<Essay['slug'], Essay>;
 
-/** The page metadata: "<Label> · Just Every", the dek, the site's share image. */
+/** The page metadata: "<page title> · Just Every", the decks' description and share title, the site's share image. */
 export function essayMetadata(essay: Essay): Metadata {
   const path = `/${essay.slug}`;
   return {
-    title: { absolute: `${essay.label} · ${siteMeta.name}` },
+    title: { absolute: `${essay.pageTitle} · ${siteMeta.name}` },
     description: essay.description,
     alternates: { canonical: path },
     // A page's openGraph and twitter replace the layout's, so they restate it.
     openGraph: {
-      title: essay.title,
+      title: essay.shareTitle,
       description: essay.description,
       url: path,
       siteName: siteMeta.name,
@@ -65,7 +71,7 @@ export function essayMetadata(essay: Essay): Metadata {
     },
     twitter: {
       card: 'summary_large_image',
-      title: essay.title,
+      title: essay.shareTitle,
       description: essay.description,
       images: [siteMeta.ogImage.url],
     },
