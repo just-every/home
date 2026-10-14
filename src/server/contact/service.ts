@@ -8,6 +8,15 @@ import { requireDb } from '../env';
 import { ApiError } from '../http';
 import { takeRateLimit } from '../rate-limit';
 
+/**
+ * The largest body /api/contact reads. The fields allow 5,374 characters in
+ * all, and JSON can spend up to 6 bytes on one (a CJK character is 3, a
+ * control character escaped as \uXXXX is 6), so a full message in any script
+ * fits; the shared 8 KB cap would refuse a 3,000-character message in Chinese.
+ */
+export const CONTACT_BODY_MAX_BYTES =
+  6 * (CONTACT_NAME_MAX + SUGGEST_EMAIL_MAX + CONTACT_MESSAGE_MAX) + 1024;
+
 /** The form's hidden field. People never see it; form-filling bots do. */
 export const HONEYPOT_FIELD = 'website';
 

@@ -22,7 +22,7 @@ database_name = "justevery"
 database_id = "1e23003d-52f0-478a-aab6-ca780bae9de0"
 migrations_dir = "migrations"
 
-# Per-visitor limit shared by /api/match and /api/suggest (keys are salted
+# Per-visitor limit shared by /api/match, /api/suggest and /api/contact (keys are salted
 # hashes of the visitor's IP, prefixed by route; nothing is stored).
 [[ratelimits]]
 name = "RATE_LIMITER"
