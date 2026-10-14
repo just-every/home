@@ -7,10 +7,14 @@ export const githubOrgUrl = 'https://github.com/just-every';
 export const githubReposUrl =
   'https://github.com/orgs/just-every/repositories?q=run-';
 
+/**
+ * The site's navigation. Paths are absolute ("/#all", not "#all") so the
+ * header and footer work from every page; on / the anchor stays in-page.
+ */
 export const nav = [
-  { label: 'Products', href: '#all' },
-  { label: 'Watch', href: '#running' },
-  { label: 'Questions', href: '#questions' },
+  { label: 'Products', href: '/#all' },
+  { label: 'Process', href: '/process' },
+  { label: 'Journey', href: '/journey' },
   { label: 'GitHub', href: githubOrgUrl },
 ] as const;
 
@@ -198,7 +202,10 @@ export const makers = {
  */
 export const footer = {
   links: [
-    { label: 'Products', href: '#all' },
+    { label: 'Products', href: '/#all' },
+    { label: 'Process', href: '/process' },
+    { label: 'Journey', href: '/journey' },
+    { label: 'Contact', href: '/contact' },
     { label: 'GitHub', href: githubOrgUrl },
   ],
   line: 'Made with care and a lot of coding agents.',
