@@ -46,18 +46,20 @@
   align-items: center;
 }
 
-/* Two rows, "Unsubscribe from" and, in the wordmark's muted ink, "just
-   about everything.". */
+/* Two rows in one ink, "Unsubscribe from" and "just about everything.".
+   The size follows the page's width and stops at 72px, so on a wide screen
+   it leads the copy without crowding the subhead or the shelf. */
 .copy h1 {
   margin: 0 0 26px;
-  font-size: clamp(64px, 5.5vw, 96px);
+  font-size: clamp(58px, 4.2vw, 72px);
   font-weight: 640;
   letter-spacing: -0.035em;
   line-height: 1.02;
 }
 
+/* The second half takes a row of its own at every width. */
 .turn {
-  color: var(--brand-ink);
+  display: block;
   white-space: nowrap;
 }
 
@@ -148,7 +150,7 @@
   }
 
   .copy h1 {
-    font-size: min(76px, 8.4vw);
+    font-size: min(64px, 8.4vw);
   }
 
   .copy p {
@@ -184,7 +186,6 @@
 
   /* A third row: "Unsubscribe from" / "just about" / "everything.". */
   .turn {
-    display: block;
     white-space: normal;
   }
 
