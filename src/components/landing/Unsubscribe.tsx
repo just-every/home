@@ -7,12 +7,16 @@ import { PlayInView } from './PlayInView';
 import styles from './unsubscribe.module.css';
 import { volumeStyle, volumes } from './volumes';
 
-const heading = 'Unsubscribe from just about everything.';
+/**
+ * The hero says "Unsubscribe from just about everything."; this section
+ * shows it, so its heading names what the rows do instead of repeating it.
+ */
+const heading = 'Cross off the renewals.';
 
 /**
- * Each tool you rent, as an email in a soft neutral card, beside the volume
- * that replaces it. The tool is struck through as its volume arrives. One row per seed,
- * from seeds.ts.
+ * Each tool you rent, as a renewal email in a soft neutral card, beside the
+ * product that replaces it. The tool is struck through as its product
+ * arrives. One row per seed, from seeds.ts.
  */
 export function Unsubscribe() {
   return (
@@ -30,7 +34,7 @@ export function Unsubscribe() {
         <PlayInView className={styles.play}>
           <ol
             className={styles.ledger}
-            aria-label="Each tool you rent, and the volume that replaces it"
+            aria-label="Each tool you rent, and the product that replaces it"
           >
             {volumes.map((volume, index) => (
               <li

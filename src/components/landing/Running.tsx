@@ -70,8 +70,6 @@ export function Running() {
     tabRefs.current[next]?.focus();
   };
 
-  const caption = seed.headline ?? seed.line;
-
   return (
     <section
       className={styles.running}
@@ -91,7 +89,7 @@ export function Running() {
             <strong>{seed.name}</strong>
             <span aria-hidden="true"> · </span>
             <span className={ui.srOnly}>: </span>
-            {caption}
+            {seed.line}
           </p>
           <div className={styles.actions}>
             <a className={`${ui.pill} ${ui.pillSmall}`} href={seed.repo}>

@@ -2,10 +2,10 @@
 /**
  * Renders public/og-image.png (1200x630) from the real hero of a running
  * server: the page's own fonts, hero background, logo (the header's SVG, in
- * its own ink) and headline, "Every SaaS." over "For Free." in the muted ink,
- * with the box set's static render (public/landing/shelf/shelf-1440.webp,
- * made by scripts/render-shelf.mjs) on the right, sized to read at thumbnail
- * scale.
+ * its own ink) and headline, "Unsubscribe from" over "just about
+ * everything." in the muted ink, centred over the box set as the hero sets
+ * it (the shelf's own room, plant and static render, made by
+ * scripts/render-shelf.mjs), sized to read at thumbnail scale.
  *
  *   npm run dev -- -p 3328            (or next start -p 3328)
  *   node scripts/render-og.mjs [--base http://localhost:3328]
@@ -61,7 +61,7 @@ await page.waitForSelector('[data-shelf] [data-ready]', { timeout: 60000 });
 await page.evaluate(() => document.fonts.ready);
 
 // Keep the hero's own section (its background) and rebuild its contents as a
-// card: the logo, the headline large, and the box set.
+// card: the logo, the headline large and centred, and the box set below it.
 await page.evaluate(() => {
   const hero = document.querySelector('main section');
   const page = hero.closest('[id=top]');
@@ -73,31 +73,42 @@ await page.evaluate(() => {
   const card = document.createElement('div');
   card.style.cssText = `position: fixed; inset: 0; z-index: 10; overflow: hidden;
     background: ${getComputedStyle(hero).backgroundImage};
-    background-color: #f8f6fe;`;
+    background-color: #f3f1fc;`;
 
   const mark = logo.cloneNode(true);
   mark.removeAttribute('class');
-  mark.style.cssText = `position: absolute; left: 64px; top: 54px;
-    height: 34px; width: auto; aspect-ratio: 800 / 151;
+  mark.style.cssText = `position: absolute; left: 56px; top: 44px;
+    height: 28px; width: auto; aspect-ratio: 800 / 151;
     color: ${getComputedStyle(logo).color};`;
 
   const title = document.createElement('div');
-  title.innerHTML = 'Every SaaS.<br><span>For Free.</span>';
+  title.innerHTML = 'Unsubscribe from<br><span>just about everything.</span>';
   title.setAttribute('aria-label', heading.textContent);
-  title.style.cssText = `position: absolute; left: 60px; top: 220px;
-    font-size: 100px; font-weight: 640; line-height: 1;
+  title.style.cssText = `position: absolute; left: 0; right: 0; top: 84px;
+    font-size: 86px; font-weight: 640; line-height: 1.02; text-align: center;
     letter-spacing: -0.035em; color: #17171d; white-space: nowrap;`;
   title.lastElementChild.style.color = getComputedStyle(turn).color;
 
-  const shelf = document.createElement('img');
-  shelf.src = '/landing/shelf/shelf-1440.webp';
-  shelf.style.cssText = `position: absolute; left: 556px; top: 132px;
-    width: 700px; height: auto;`;
+  // The hero's shelf as it stands on the page (its room, plant and static
+  // render), at the card's own size; the live scene is left out.
+  const slot = 700;
+  const shelf = hero.querySelector('[data-shelf]').cloneNode(true);
+  shelf.querySelector('canvas')?.parentElement.remove();
+  shelf.querySelector('ul')?.remove();
+  shelf.style.cssText = `position: absolute; left: ${(1200 - slot) / 2 - 56}px;
+    top: 278px; width: ${slot}px; --shelf-room: 140px;`;
+  const poster = shelf.querySelector('img');
+  poster.removeAttribute('srcset');
+  poster.removeAttribute('sizes');
+  poster.src = '/landing/shelf/shelf-1440.webp';
+  poster.style.cssText = 'opacity: 1; visibility: visible;';
 
   card.append(mark, title, shelf);
   // Inside the page wrapper, so the card inherits the page's fonts.
   page.append(card);
-  return new Promise(done => (shelf.complete ? done() : (shelf.onload = done)));
+  return new Promise(done =>
+    poster.complete ? done() : (poster.onload = done)
+  );
 });
 
 const png = await page.screenshot({ type: 'png' });

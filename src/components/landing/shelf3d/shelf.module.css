@@ -28,7 +28,7 @@
   top: -6cqw;
   left: 0;
   width: calc(100cqw + var(--shelf-room, 0px));
-  height: 70cqw;
+  height: 24cqw;
   filter: blur(0.9cqw);
 }
 
@@ -54,19 +54,21 @@
 }
 
 /* The floor in the light, from the foot of the far wall forward: the wall
-   shades a little towards it, then the floor runs bright. */
+   shades a little towards it, then the floor runs bright and fades out by
+   the shelf's own foot (57.4cqw: the art's height), so nothing of the room
+   spills onto the page below the hero. */
 .floor {
   position: absolute;
   left: 76cqw;
   top: 34cqw;
   width: calc(34cqw + var(--shelf-room, 0px));
-  height: 28cqw;
+  height: 23.4cqw;
   background: linear-gradient(
     180deg,
     rgb(122 114 168 / 0) 0%,
-    rgb(122 114 168 / 0.07) 22%,
-    rgb(255 255 255 / 0.7) 32%,
-    rgb(255 255 255 / 0.45) 70%,
+    rgb(122 114 168 / 0.07) 26%,
+    rgb(255 255 255 / 0.7) 38.5%,
+    rgb(255 255 255 / 0.45) 83.8%,
     rgb(255 255 255 / 0) 100%
   );
   mask-image: linear-gradient(

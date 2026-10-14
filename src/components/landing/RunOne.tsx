@@ -7,7 +7,7 @@ import ui from './label.module.css';
 import styles from './panels.module.css';
 import { volumes } from './volumes';
 
-/** The volume the commands clone, found from the clone URL itself. */
+/** The product the commands clone, found from the clone URL itself. */
 const cloned = volumes.find(volume =>
   runOne.commands.some(command => command.endsWith(volume.seed.repo))
 );
@@ -21,7 +21,7 @@ export function RunOne() {
       <div>
         {cloned ? (
           <p className={ui.eyebrow}>
-            Volume {cloned.number} · {cloned.seed.name}
+            {cloned.number} · {cloned.seed.name}
           </p>
         ) : null}
         <h2 className={ui.h3} id="label-run-heading">

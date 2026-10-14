@@ -84,7 +84,8 @@
   font-size: 15px;
 }
 
-.headline {
+.does {
+  max-width: 520px;
   margin-top: 22px;
   font-size: 22px;
   font-weight: 600;
@@ -435,7 +436,7 @@
     margin-bottom: 12px;
   }
 
-  .headline {
+  .does {
     margin-top: 16px;
     font-size: 19px;
   }

@@ -19,12 +19,39 @@ export const nav = [
   { label: 'GitHub', href: githubOrgUrl },
 ] as const;
 
+/**
+ * The benefits strip under the hero (owner feedback of 14 Oct): four plain
+ * reasons to switch, each a bold lead and one line.
+ */
+export const benefits = {
+  label: 'Why switch',
+  items: [
+    {
+      lead: 'No more per-seat bills.',
+      line: 'Free to use, however big your team gets.',
+    },
+    {
+      lead: 'Your data stays yours.',
+      line: 'It runs on your computer or your own Cloudflare account.',
+    },
+    {
+      lead: 'Change anything.',
+      line: "It's your code, so you or your AI can add the feature you need.",
+    },
+    {
+      lead: 'No price hikes, no lock-in.',
+      line: 'Nobody can change the deal on you.',
+    },
+  ],
+} as const;
+
 export const collection = {
   id: 'all',
   heading: 'Pick your replacement.',
   /**
    * Card anatomy: mark, number, name, `${alternativeTo} <X>`, GitHub. The
-   * selected product's feature adds its headline, line and homepage.
+   * selected product's feature adds what it does (its line), its headline
+   * under that, and its homepage.
    */
   alternativeTo: 'Alternative to',
   githubLabel: 'GitHub',
@@ -33,7 +60,7 @@ export const collection = {
 /**
  * The search under the collection heading (not in the copy deck: the
  * interactive brief of 13 Oct sets its label, placeholder and button).
- * Typing filters the volumes on the page; the button asks Claude.
+ * Typing filters the products on the page; the button asks Claude.
  */
 /** A visitor's text in quotes, shortened so a long one stays on a line or two. */
 function quoted(text: string): string {
@@ -97,7 +124,7 @@ export const reels = {
   id: 'running',
   heading: 'See them running.',
   line: 'Real footage of the real apps, clicked at true speed.',
-  /** Caption pattern: the product name, the seed's own headline, then this link. */
+  /** Caption pattern: the product name, what it does (its line), then this link. */
   githubLabel: 'Get it on GitHub',
 } as const;
 
@@ -107,15 +134,16 @@ export function demoLabel(name: string, line: string): string {
 }
 
 /**
- * "Nothing to upsell." (owner brief of 13 Oct): why a free product's new
- * features differ. Each example is a product's own line from seeds.ts, shown
- * beside its real mark; `examples` lists the slugs, in order.
+ * "Nothing to upsell." (owner brief of 13 Oct; its line made plain on 14
+ * Oct): a free product has no premium tier to sell. Each example is a
+ * product's own line from seeds.ts, shown beside its real mark; `examples`
+ * lists the slugs, in order.
  */
 export const nothingToUpsell = {
   id: 'why-free',
   eyebrow: 'Why free',
   heading: 'Nothing to upsell.',
-  line: 'Software you rent has to keep you logging in, so its new features give you reasons to. Ours are free, so they only have to do the job.',
+  line: 'No premium tier, no upgrade nags. Every feature is already yours.',
   examples: ['happytohelp', 'uptime', 'nook'],
   listLabel: 'Three products, and what each one does',
 } as const;
@@ -159,14 +187,14 @@ export const questions = {
 } as const;
 
 export const stand = {
-  heading: 'Quality is the product.',
+  heading: 'Built to be good, not just to exist.',
   lines: [
     "Code is nearly free now. Good software still isn't: someone has to care how it works, how it looks and what it promises.",
   ],
   points: [
     {
       title: 'Written down.',
-      text: "Every product ships a contract: what it does, and what it doesn't.",
+      text: "Every product lists exactly what it does, and what it doesn't.",
     },
     { title: 'Checked.', text: 'One command runs all its checks.' },
     { title: 'Yours.', text: 'MIT licensed. Change anything you like.' },

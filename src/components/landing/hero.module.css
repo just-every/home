@@ -1,6 +1,16 @@
-/* The hero: a full-height lavender room the header floats on, the copy on
-   the left and the box set running off the right edge, so the row carries
-   on past the frame; the room fades into the page's white at its foot. */
+/* The hero: a viewport-tall lavender room the header floats on, the
+   headline, line and buttons centred at the top, and the box set below them
+   as large as the room left under the copy allows, with the plant and the
+   window light at its far end. The room fades into the page's white at its
+   foot. */
+
+/* The art's width, worked out on the art from the stage's size and handed
+   down as a length, so the shelf's room can reach the viewport's edge. */
+@property --art-w {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 0px;
+}
 
 .top {
   position: relative;
@@ -9,49 +19,46 @@
   background:
     linear-gradient(180deg, #fdfdff00 calc(100% - 120px), #fdfdff 100%),
     radial-gradient(
-      ellipse 70% 80% at 100% 0%,
-      #c3bfd7 0%,
-      #d0cce5 34%,
-      #dfdcf2 62%,
-      #ebe9f900 100%
+      ellipse 52% 76% at 100% 14%,
+      #cbc7de 0%,
+      #d7d3ea 32%,
+      #e5e2f5 60%,
+      #f1effc00 100%
     ),
-    linear-gradient(180deg, #e9e7f7, #edebf9 60%, #f3f1fc);
+    radial-gradient(ellipse 56% 36% at 50% 20%, #fdfcff 0%, #fdfcff00 100%),
+    linear-gradient(180deg, #f3f1fc, #f2f0fc 55%, #f7f5fe);
 }
 
 .hero {
-  /* The art runs a twentieth of its width past the viewport's right edge. */
-  --art-w: min(66vw, 1080px);
-  --art-out: 4vw;
-
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) calc(
-      var(--art-w) - var(--art-out) - var(--art-w) * 0.05
-    );
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  min-height: max(600px, calc(100svh - var(--header-h)));
-  padding: 24px 0 48px;
+  min-height: calc(100svh - var(--header-h));
+  padding: clamp(16px, 2.6svh, 48px) 0 clamp(4px, 0.8svh, 16px);
+  text-align: center;
 }
 
 .copy {
   position: relative;
   z-index: 1;
-  padding-left: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Two short rows: "Every SaaS." and, in the wordmark's muted ink,
-   "For Free.". */
+/* Two rows, "Unsubscribe from" and, in the wordmark's muted ink, "just
+   about everything.". */
 .copy h1 {
-  max-width: 6em;
-  margin: 0 0 24px;
-  font-size: clamp(50px, 5.7vw, 92px);
+  margin: 0 0 26px;
+  font-size: clamp(64px, 5.5vw, 96px);
   font-weight: 640;
-  letter-spacing: -0.03em;
-  line-height: 1;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
 }
 
 .turn {
-  display: block;
   color: var(--brand-ink);
+  white-space: nowrap;
 }
 
 .together {
@@ -59,12 +66,17 @@
 }
 
 .copy p {
-  max-width: 21em;
-  margin: 0 0 38px;
+  max-width: 40em;
+  margin: 0 0 28px;
   color: #535167;
-  font-size: clamp(19px, 1.56vw, 22.5px);
+  font-size: clamp(19px, 1.46vw, 22px);
   line-height: 1.45;
   letter-spacing: -0.012em;
+}
+
+/* Each of the line's two sentences on a line of its own. */
+.sentence {
+  display: block;
   text-wrap: balance;
 }
 
@@ -72,141 +84,138 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 16px 32px;
 }
 
-/* The plant stands in a little from the row's end, cut by the viewport's
-   edge with it. */
+/* The room under the copy. The art fills it: as wide as its height allows
+   (the front box's foot, 85% of the art's height, at the stage's foot),
+   never wider than the page leaves, nor than 1200px. It stacks over the
+   copy, so a volume's name tag, which rises above the row's front, is never
+   hidden behind the buttons. */
+.stage {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 300px;
+  margin-top: 28px;
+  container-type: size;
+}
+
 .art {
-  --shelf-room: 6cqw;
+  --art-w: min(1200px, 100cqw - 8vw, 100cqh / 0.85 * 1588 / 912);
+  /* The plant and the light run on to the viewport's edge. */
+  --shelf-room: calc((100vw - var(--art-w)) / 2);
 
   position: relative;
-  justify-self: start;
   width: var(--art-w);
   container-type: inline-size;
+  text-align: left;
 }
 
-/* The room runs the hero's whole width: the far wall's foot, level with
-   the art's own (34cqw down), and the lit floor in front of it, under the
-   copy too, so the header floats over one scene. */
-.art::before {
-  position: absolute;
-  top: 34cqw;
-  right: -40cqw;
-  left: -100vw;
-  z-index: -1;
-  height: 40cqw;
-  background: linear-gradient(
-    180deg,
-    rgb(122 114 168 / 0.06) 0%,
-    rgb(255 255 255 / 0.62) 9%,
-    rgb(255 255 255 / 0.3) 55%,
-    rgb(255 255 255 / 0) 100%
-  );
-  content: '';
-}
-
-/* The handwritten note, set as live text under the shelf (cqw is a
-   hundredth of the art's width). */
+/* The handwritten note, over the row's far end, its arrow pointing down at
+   the last volume (cqw is a hundredth of the art's width). */
 .note {
   position: absolute;
-  left: 50%;
-  top: 86.6%;
+  left: 69.5%;
+  top: 4.2cqw;
   display: flex;
   align-items: flex-start;
-  gap: 2.4cqw;
+  gap: 0.8cqw;
   color: #55537a;
-  font-size: min(2.3cqw, 22px);
-  line-height: 1.45;
-  transform: rotate(-3.6deg);
+  font-size: min(2.3cqw, 23px);
+  line-height: 1.3;
+  transform: rotate(-3deg);
   transform-origin: left top;
   white-space: nowrap;
 }
 
 .noteArrow {
-  width: 4.2cqw;
-  max-width: 44px;
+  width: 4.6cqw;
+  max-width: 50px;
   height: auto;
-  margin-top: 0.4cqw;
+  margin-top: 0.9cqw;
   flex: none;
 }
 
-.noteText {
-  display: flex;
-  flex-direction: column;
-}
-
-@media (min-width: 1441px) {
-  .hero {
-    --art-out: calc((100vw - 1331px) / 2);
-  }
-}
-
 @media (max-width: 1023px) {
-  .top {
-    min-height: 100svh;
-  }
-
   .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
-    min-height: calc(100svh - var(--header-h));
-    padding: 32px 0 40px;
-  }
-
-  .copy {
-    padding: 0;
+    min-height: 0;
+    padding: 40px 0 36px;
   }
 
   .copy h1 {
-    font-size: 88px;
+    font-size: min(76px, 8.4vw);
   }
 
   .copy p {
-    font-size: 21px;
+    max-width: 30em;
+    font-size: 20px;
+  }
+
+  .stage {
+    flex: none;
+    min-height: 0;
+    margin-top: 48px;
+    container-type: normal;
   }
 
   .art {
-    --shelf-room: 0px;
-    --shelf-bleed: 28px;
-
-    width: calc(100% + 28px + 6%);
-    margin-top: 44px;
-  }
-
-  .note {
-    left: 46%;
+    --art-w: min(100vw - 96px, 820px);
+    --shelf-bleed: var(--shelf-room);
   }
 }
 
 @media (max-width: 599px) {
+  .hero {
+    padding: 28px 0 24px;
+  }
+
   .copy h1 {
     margin-bottom: 18px;
-    font-size: min(64px, 17vw);
+    /* "Unsubscribe from" fills the column at most. */
+    font-size: min(46px, (100vw - 40px) * 0.125);
     letter-spacing: -0.04em;
+    line-height: 1.06;
+  }
+
+  /* A third row: "Unsubscribe from" / "just about" / "everything.". */
+  .turn {
+    display: block;
+    white-space: normal;
   }
 
   .copy p {
-    margin-bottom: 30px;
-    font-size: 18.5px;
+    margin-bottom: 26px;
+    font-size: min(18px, 4.36vw);
   }
 
   .actions {
     gap: 12px 24px;
   }
 
-  .art {
-    --shelf-bleed: 20px;
-
-    width: calc(100% + 20px + 8%);
+  .stage {
+    justify-content: flex-end;
     margin-top: 36px;
   }
 
+  .art {
+    --art-w: calc(100vw - 20px);
+    --shelf-room: 0px;
+    --shelf-bleed: 20px;
+  }
+
   .note {
-    left: 36%;
+    left: 46%;
     top: 85%;
-    font-size: 3.4cqw;
+    font-size: 3.6cqw;
+    transform: rotate(-3.6deg);
+  }
+
+  .noteArrow {
+    display: none;
   }
 }
