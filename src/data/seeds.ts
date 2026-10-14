@@ -189,7 +189,7 @@ export const seeds: Seed[] = [
     mark: `${dir('pencil')}/mark.svg`,
     markLight: `${dir('pencil')}/mark-light.svg`,
     markInk: null,
-    reel: reel('pencil', 46.9),
+    reel: reel('pencil', 50.4),
   },
   {
     slug: 'orbit',
@@ -231,7 +231,7 @@ export const seeds: Seed[] = [
     mark: `${dir('mango')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: reel('mango', 45),
+    reel: reel('mango', 55.6),
   },
   {
     slug: 'dial',
@@ -252,7 +252,7 @@ export const seeds: Seed[] = [
     mark: `${dir('dial')}/mark.svg`,
     markLight: null,
     markInk: null,
-    reel: reel('dial', 43.9),
+    reel: reel('dial', 48.1),
   },
   {
     slug: 'penny',
