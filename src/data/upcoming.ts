@@ -49,7 +49,7 @@ export const upcoming: UpcomingSeed[] = [
     slug: 'easel',
     name: 'Easel',
     primaryReplace: 'Pigment',
-    line: 'Budgets, forecasts and a monthly plan-versus-actual review.',
+    line: 'Budgets, forecasts and a plan-versus-actual review every month.',
     repo: repo('easel'),
     // src/branding.json primaryColor #8c1a1f (hue 25).
     pastel: '#fac6c1',
