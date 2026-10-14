@@ -10,6 +10,8 @@ export interface HeroGroup {
   letter?: string;
   name: string;
   summary: string;
+  /** The index sets this group's looks three across, under its name. */
+  wide?: boolean;
   variants: HeroVariant[];
 }
 
@@ -19,6 +21,8 @@ export interface HeroVariant {
   chrome: ChromeTone;
   /** Set for the new copy's looks; the index captions them with it. */
   copy?: HeroCopy;
+  /** The index's caption, where the copy's name is already the group's. */
+  caption?: string;
   title: string;
   look: Look;
 }
@@ -115,26 +119,43 @@ export const heroGroups: HeroGroup[] = layouts.map(group => ({
 
 /**
  * The owner's new hero copy (14 Oct) in the three layouts he leans to, light
- * header only: c-new1, c-new2, d-new1, d-new2, f-new1, f-new2. Listed first.
+ * header only: c-new1, c-new2, d-new1, d-new2, f-new1, f-new2, and copy 3
+ * ("Every SaaS. Just Free.") as c-new3, d-new3, f-new3. Listed first, copy 3
+ * on top.
  */
 const newCopyLayouts = ['c', 'd', 'f'];
 const newCopies: HeroCopy[] = ['new1', 'new2'];
 
-export const newCopyGroups: HeroGroup[] = layouts
-  .filter(group => newCopyLayouts.includes(group.key))
-  .map(group => ({
+const variantFor = (group: (typeof layouts)[number], copy: HeroCopy) => ({
+  id: `${group.key}-${copy}`,
+  chrome: 'light' as const,
+  copy,
+  caption: copy === 'new3' ? `${group.letter}. ${group.name}` : undefined,
+  title: `${group.letter}. ${group.name}, ${heroCopyLabel[copy].toLowerCase()}`,
+  look: look(group.layout, 'light', copy),
+});
+
+const copyLayouts = layouts.filter(group => newCopyLayouts.includes(group.key));
+
+const copyThree: HeroGroup = {
+  key: 'new3',
+  name: 'Every SaaS. Just Free.',
+  summary:
+    'The owner’s third copy, in Stacked, Overlay and Split: a two-line headline with “Just Free.” in the muted ink, over the line naming Notion, Linear and Intercom.',
+  wide: true,
+  variants: copyLayouts.map(group => variantFor(group, 'new3')),
+};
+
+export const newCopyGroups: HeroGroup[] = [
+  copyThree,
+  ...copyLayouts.map(group => ({
     key: `${group.key}-new`,
     letter: group.letter,
     name: group.name,
     summary: group.summary,
-    variants: newCopies.map(copy => ({
-      id: `${group.key}-${copy}`,
-      chrome: 'light' as const,
-      copy,
-      title: `${group.letter}. ${group.name}, ${heroCopyLabel[copy].toLowerCase()}`,
-      look: look(group.layout, 'light', copy),
-    })),
-  }));
+    variants: newCopies.map(copy => variantFor(group, copy)),
+  })),
+];
 
 export const heroVariants: HeroVariant[] = [
   ...newCopyGroups,

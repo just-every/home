@@ -148,26 +148,30 @@
    page's, so it steps down a little; the line balances over two rows. The
    second headline row (copy 2) takes a row's height off the shelf. */
 .new1 .copy h1,
-.new2 .copy h1 {
+.new2 .copy h1,
+.new3 .copy h1 {
   font-size: clamp(44px, 5.4vw, 84px);
 }
 
 .new1 .copy p,
-.new2 .copy p {
+.new2 .copy p,
+.new3 .copy p {
   max-width: 29em;
   text-wrap: balance;
 }
 
 @media (max-width: 1023px) {
   .new1 .copy h1,
-  .new2 .copy h1 {
+  .new2 .copy h1,
+  .new3 .copy h1 {
     font-size: 58px;
   }
 }
 
 @media (max-width: 599px) {
   .new1 .copy h1,
-  .new2 .copy h1 {
+  .new2 .copy h1,
+  .new3 .copy h1 {
     font-size: 46px;
   }
 }
@@ -175,5 +179,30 @@
 @media (min-width: 1024px) {
   .new2 .hero {
     --art-w: min(1120px, 80vw, calc((100svh - 470px) * 2));
+  }
+}
+
+/* Copy 3, "Every SaaS. Just Free.": two short rows, so the headline is
+   larger than the others', and the second row takes a row off the shelf. */
+.new3 .copy h1 {
+  font-size: clamp(56px, 7.2vw, 112px);
+  line-height: 1;
+}
+
+@media (max-width: 1023px) {
+  .new3 .copy h1 {
+    font-size: 84px;
+  }
+}
+
+@media (max-width: 599px) {
+  .new3 .copy h1 {
+    font-size: min(64px, 17vw);
+  }
+}
+
+@media (min-width: 1024px) {
+  .new3 .hero {
+    --art-w: min(1120px, 80vw, calc((100svh - 500px) * 2));
   }
 }

@@ -226,27 +226,51 @@
 /* The new copy: a longer headline, kept to whole phrases per row, and a
    longer line, balanced. */
 .new1 .copy h1,
-.new2 .copy h1 {
+.new2 .copy h1,
+.new3 .copy h1 {
   max-width: 6.6em;
   font-size: clamp(50px, 5.1vw, 78px);
 }
 
 .new1 .copy p,
-.new2 .copy p {
+.new2 .copy p,
+.new3 .copy p {
   max-width: 21em;
   text-wrap: balance;
 }
 
 @media (max-width: 1023px) {
   .new1 .copy h1,
-  .new2 .copy h1 {
+  .new2 .copy h1,
+  .new3 .copy h1 {
     font-size: 64px;
   }
 }
 
 @media (max-width: 599px) {
   .new1 .copy h1,
-  .new2 .copy h1 {
+  .new2 .copy h1,
+  .new3 .copy h1 {
     font-size: 46px;
+  }
+}
+
+/* Copy 3, "Every SaaS. Just Free.": two short rows, larger than the other
+   copies' headlines. */
+.new3 .copy h1 {
+  max-width: 6em;
+  font-size: clamp(50px, 5.7vw, 92px);
+  line-height: 1;
+}
+
+@media (max-width: 1023px) {
+  .new3 .copy h1 {
+    font-size: 88px;
+  }
+}
+
+@media (max-width: 599px) {
+  .new3 .copy h1 {
+    font-size: min(64px, 17vw);
   }
 }

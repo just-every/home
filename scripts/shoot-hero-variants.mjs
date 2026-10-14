@@ -19,10 +19,12 @@
  *
  *   node scripts/shoot-hero-variants.mjs [--base http://localhost:3351]
  *        [--shots DIR] [--only a-light,e] [--no-thumbs]
- *        [--sheet NAME.png] [--narrow]
+ *        [--sheet NAME.png] [--narrow] [--columns N]
  *
- * With --only the contact sheet is made only when --sheet names it;
- * --narrow sets each look's 390 shot beside its 1440 one in the sheet.
+ * With --only the looks are shot, and sheeted, in the order named, and the
+ * contact sheet is made only when --sheet names it; --narrow sets each
+ * look's 390 shot beside its 1440 one in the sheet, --columns the looks
+ * per row.
  */
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
@@ -54,6 +56,7 @@ const only = flag('only', '').split(',').filter(Boolean);
 const thumbs = !args.includes('--no-thumbs');
 const sheetName = flag('sheet', 'hero-variants-sheet.png');
 const narrow = args.includes('--narrow');
+const columnsFlag = Number(flag('columns', 0));
 const extra = join(shots, 'extra');
 const thumbDir = join(root, 'public/landing/preview/hero');
 
@@ -281,7 +284,7 @@ async function ids() {
     links.map(link => link.getAttribute('href').split('/').pop())
   );
   await context.close();
-  return only.length ? list.filter(id => only.includes(id)) : list;
+  return only.length ? only.filter(id => list.includes(id)) : list;
 }
 
 const report = {};
@@ -360,7 +363,7 @@ async function sheet(list) {
     label: 44,
     gap: 24,
   };
-  const columns = narrow ? 2 : 3;
+  const columns = columnsFlag || (narrow ? 2 : 3);
   const rows = Math.ceil(list.length / columns);
   const width = columns * cell.w + (columns + 1) * cell.gap;
   const height = rows * (cell.h + cell.label) + (rows + 1) * cell.gap;

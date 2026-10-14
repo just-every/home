@@ -22,7 +22,12 @@ function Groups({ groups }: { groups: HeroGroup[] }) {
   return (
     <ol className={styles.groups}>
       {groups.map(group => (
-        <li key={group.key} className={styles.group}>
+        <li
+          key={group.key}
+          className={
+            group.wide ? `${styles.group} ${styles.wide}` : styles.group
+          }
+        >
           <div className={styles.about}>
             <h3 className={styles.name}>
               {group.letter ? (
@@ -47,9 +52,10 @@ function Groups({ groups }: { groups: HeroGroup[] }) {
                   />
                   <span className={styles.caption}>
                     <span>
-                      {variant.copy
-                        ? heroCopyLabel[variant.copy]
-                        : toneLabel[variant.chrome]}
+                      {variant.caption ??
+                        (variant.copy
+                          ? heroCopyLabel[variant.copy]
+                          : toneLabel[variant.chrome])}
                     </span>
                     <span className={styles.path}>
                       /preview/hero/{variant.id}
@@ -88,7 +94,9 @@ export default function HeroPreviews() {
             The new copy in the three looks leaned towards, light header. Copy
             1: the headline is “Too good to be free.” and the line begins “But
             it is.” Copy 2: the headline runs on to “But it is.” on its own
-            second line, in the muted ink.
+            second line, in the muted ink. Copy 3: “Every SaaS. Just Free.” in
+            two lines, the second in the muted ink, over the line naming Notion,
+            Linear and Intercom.
           </p>
           <Groups groups={newCopyGroups} />
         </section>
