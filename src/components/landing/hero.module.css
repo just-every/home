@@ -1,8 +1,10 @@
 /* The hero: a viewport-tall lavender room the header floats on, the
-   headline, line and buttons centred at the top, and the box set below them
+   headline, line and buttons centred over the box set below them, which is
    as large as the room left under the copy allows, with the plant and the
-   window light at its far end. The room fades into the page's white at its
-   foot. */
+   window light at its far end. Once the box set is at its largest, the room
+   left over goes evenly above the headline and below the box set, so the
+   two stay one composition in the middle of a tall screen. The room fades
+   into the page's white at its foot. */
 
 /* The art's width, worked out on the art from the stage's size and handed
    down as a length, so the shelf's room can reach the viewport's edge. */
@@ -30,12 +32,20 @@
 }
 
 .hero {
+  /* The box set's largest width: 1200px, growing with the screen past
+     2133px wide to 1440px, so it still fills a large display. .art and
+     .stage both read it; the poster's `sizes` in Shelf.tsx follows it. */
+  --art-max: clamp(1200px, 56.25vw, 1440px);
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   min-height: calc(100svh - var(--header-h));
   padding: clamp(16px, 2.6svh, 48px) 0 clamp(4px, 0.8svh, 16px);
   text-align: center;
+  /* The stage's height cap (below) is worked out from the hero's width. */
+  container-type: inline-size;
 }
 
 .copy {
@@ -92,9 +102,11 @@
 
 /* The room under the copy. The art fills it: as wide as its height allows
    (the front box's foot, 85% of the art's height, at the stage's foot),
-   never wider than the page leaves, nor than 1200px. It stacks over the
-   copy, so a volume's name tag, which rises above the row's front, is never
-   hidden behind the buttons. */
+   never wider than the page leaves, nor than --art-max. The stage grows no
+   taller than the art at that width needs, so on a tall screen the hero
+   centres the copy and the box set together instead of leaving the spare
+   height under the floor. It stacks over the copy, so a volume's name tag,
+   which rises above the row's front, is never hidden behind the buttons. */
 .stage {
   position: relative;
   z-index: 2;
@@ -103,12 +115,13 @@
   justify-content: center;
   width: 100%;
   min-height: 300px;
+  max-height: calc(min(var(--art-max), 100cqw - 8vw) * 912 / 1588 * 0.85);
   margin-top: 28px;
   container-type: size;
 }
 
 .art {
-  --art-w: min(1200px, 100cqw - 8vw, 100cqh / 0.85 * 1588 / 912);
+  --art-w: min(var(--art-max), 100cqw - 8vw, 100cqh / 0.85 * 1588 / 912);
   /* The plant and the light run on to the viewport's edge. */
   --shelf-room: calc((100vw - var(--art-w)) / 2);
 
@@ -161,6 +174,7 @@
   .stage {
     flex: none;
     min-height: 0;
+    max-height: none;
     margin-top: 48px;
     container-type: normal;
   }
