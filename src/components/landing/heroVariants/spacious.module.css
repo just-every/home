@@ -12,6 +12,7 @@
   margin-top: calc(-1 * var(--header-h));
   padding-top: var(--header-h);
   background:
+    linear-gradient(180deg, #fdfdff00 calc(100% - 120px), #fdfdff 100%),
     radial-gradient(
       ellipse 60% 70% at 100% 0%,
       #c9c5d9 0%,
@@ -21,6 +22,13 @@
     ),
     radial-gradient(ellipse 40% 50% at 20% 48%, #fdfbff 0%, #fdfbff00 100%),
     linear-gradient(180deg, #f6f5fe, #f8f6fe 60%, #faf8fe);
+}
+
+/* The collection starts after the hero's own foot, without a rule: the
+   room fades into the page's white over its last 120px. */
+.page :global(#all) {
+  border-top-color: transparent;
+  padding-top: calc(var(--section-y) + 16px);
 }
 
 .hero {

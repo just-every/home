@@ -50,6 +50,7 @@
   padding-top: var(--header-h);
   overflow-x: clip;
   background:
+    linear-gradient(180deg, #fdfdff00 calc(100% - 120px), #fdfdff 100%),
     radial-gradient(
       ellipse 54% 78% at 100% 0%,
       #c4bfd8 0%,
@@ -69,6 +70,13 @@
   width: var(--split);
   background: var(--panel);
   content: '';
+}
+
+/* The collection starts after the hero's own foot, without a rule: the
+   room fades into the page's white over its last 120px. */
+.page :global(#all) {
+  border-top-color: transparent;
+  padding-top: calc(var(--section-y) + 16px);
 }
 
 .hero {
