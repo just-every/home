@@ -1,0 +1,6 @@
+/* The turn in the new copy's second headline ("But it is."): its own
+   line, in the muted ink. */
+.turn {
+  display: block;
+  color: var(--turn-ink, #6a6880);
+}

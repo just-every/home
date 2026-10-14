@@ -1,7 +1,9 @@
 import type { ChromeTone } from '../Header';
 import type { HeroStyles } from '../Hero';
+import type { HeroCopy } from './copy';
 import type { ShelfPoster } from '../shelf3d/Shelf';
 import type { ShelfTone } from '../shelf3d/tones';
+import copyCss from './copy.module.css';
 import note from './note.module.css';
 import night from './night.module.css';
 import overlay from './overlay.module.css';
@@ -24,6 +26,8 @@ export interface Look {
   hero?: HeroStyles;
   poster?: ShelfPoster;
   shelfTone?: ShelfTone;
+  /** A preview's own headline and line, in place of the page's. */
+  copy?: HeroCopy;
 }
 
 export type Layout =
@@ -49,9 +53,13 @@ const modules: Record<Exclude<Layout, 'now'>, Module> = {
 const join = (...names: (string | false | undefined)[]) =>
   names.filter(Boolean).join(' ') || undefined;
 
-/** The page's top in `layout`, with the header in `chrome`. */
-export function look(layout: Layout, chrome: ChromeTone): Look {
-  if (layout === 'now') return { chrome };
+/** The page's top in `layout`, with the header in `chrome` and any new copy. */
+export function look(
+  layout: Layout,
+  chrome: ChromeTone,
+  copy?: HeroCopy
+): Look {
+  if (layout === 'now') return { chrome, copy };
   const css = modules[layout];
   const dark = chrome === 'dark';
   return {
@@ -63,8 +71,10 @@ export function look(layout: Layout, chrome: ChromeTone): Look {
       note: join(note.note, css.note) ?? note.note,
       noteArrow: note.noteArrow,
       noteText: note.noteText,
+      turn: copyCss.turn,
     },
     poster: layoutPoster(layout),
     shelfTone: layout === 'night' ? 'dark' : 'light',
+    copy,
   };
 }

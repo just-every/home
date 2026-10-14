@@ -143,3 +143,37 @@
     margin-top: 40px;
   }
 }
+
+/* The new copy: "Too good to be free." is a longer headline than the
+   page's, so it steps down a little; the line balances over two rows. The
+   second headline row (copy 2) takes a row's height off the shelf. */
+.new1 .copy h1,
+.new2 .copy h1 {
+  font-size: clamp(44px, 5.4vw, 84px);
+}
+
+.new1 .copy p,
+.new2 .copy p {
+  max-width: 29em;
+  text-wrap: balance;
+}
+
+@media (max-width: 1023px) {
+  .new1 .copy h1,
+  .new2 .copy h1 {
+    font-size: 58px;
+  }
+}
+
+@media (max-width: 599px) {
+  .new1 .copy h1,
+  .new2 .copy h1 {
+    font-size: 46px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .new2 .hero {
+    --art-w: min(1120px, 80vw, calc((100svh - 470px) * 2));
+  }
+}

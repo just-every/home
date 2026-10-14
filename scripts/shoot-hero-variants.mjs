@@ -19,6 +19,10 @@
  *
  *   node scripts/shoot-hero-variants.mjs [--base http://localhost:3351]
  *        [--shots DIR] [--only a-light,e] [--no-thumbs]
+ *        [--sheet NAME.png] [--narrow]
+ *
+ * With --only the contact sheet is made only when --sheet names it;
+ * --narrow sets each look's 390 shot beside its 1440 one in the sheet.
  */
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
@@ -48,6 +52,8 @@ const shots = resolve(
 );
 const only = flag('only', '').split(',').filter(Boolean);
 const thumbs = !args.includes('--no-thumbs');
+const sheetName = flag('sheet', 'hero-variants-sheet.png');
+const narrow = args.includes('--narrow');
 const extra = join(shots, 'extra');
 const thumbDir = join(root, 'public/landing/preview/hero');
 
@@ -347,8 +353,14 @@ await browser.close();
 
 /** Every look's first viewport at 1440, labelled, three to a row. */
 async function sheet(list) {
-  const cell = { w: 600, h: 375, label: 44, gap: 24 };
-  const columns = 3;
+  const phone = { w: 240, h: 520 };
+  const cell = {
+    w: narrow ? 600 + 16 + phone.w : 600,
+    h: narrow ? phone.h : 375,
+    label: 44,
+    gap: 24,
+  };
+  const columns = narrow ? 2 : 3;
   const rows = Math.ceil(list.length / columns);
   const width = columns * cell.w + (columns + 1) * cell.gap;
   const height = rows * (cell.h + cell.label) + (rows + 1) * cell.gap;
@@ -363,20 +375,28 @@ async function sheet(list) {
     layers.push({ input: label, left: x, top: y });
     layers.push({
       input: await sharp(join(shots, `${id}-1440.png`))
-        .resize({ width: cell.w })
+        .resize({ width: 600 })
         .toBuffer(),
       left: x,
       top: y + cell.label,
     });
+    if (narrow)
+      layers.push({
+        input: await sharp(join(shots, `${id}-390.png`))
+          .resize({ height: phone.h })
+          .toBuffer(),
+        left: x + 600 + 16,
+        top: y + cell.label,
+      });
   }
   await sharp({
     create: { width, height, channels: 3, background: '#e9e8f0' },
   })
     .composite(layers)
     .png()
-    .toFile(join(shots, 'hero-variants-sheet.png'));
+    .toFile(join(shots, sheetName));
 }
-if (!only.length) await sheet(looks);
+if (!only.length || args.includes('--sheet')) await sheet(looks);
 
 writeFileSync(join(shots, 'report.json'), JSON.stringify(report, null, 1));
 const failed = looks.filter(id => report[id].problems.length);

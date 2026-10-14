@@ -38,6 +38,7 @@ export function LandingPage({ look }: { look?: Look }) {
         {look ? (
           <Hero
             styles={look.hero}
+            copy={look.copy}
             shelf={<HeroShelf poster={look.poster} tone={look.shelfTone} />}
           />
         ) : (

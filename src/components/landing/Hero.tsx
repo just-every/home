@@ -6,6 +6,7 @@ import { handwriting } from './fonts';
 import { HeroShelf } from './HeroShelf';
 import ui from './label.module.css';
 import classic from './hero.module.css';
+import { type HeroCopy, heroCopy } from './heroVariants/copy';
 
 /** The class names a hero layout gives each part of the hero. */
 export type HeroStyles = Readonly<Record<string, string>>;
@@ -13,22 +14,39 @@ export type HeroStyles = Readonly<Record<string, string>>;
 /**
  * `shelf` defaults to the page's box set; review tooling passes its own.
  * `styles` is the hero's layout: the page's own, or a preview look's.
+ * `copy` is a preview's own headline and line; the page keeps its own.
  */
 export function Hero({
   shelf = <HeroShelf />,
   styles = classic,
+  copy,
 }: {
   shelf?: ReactNode;
   styles?: HeroStyles;
+  copy?: HeroCopy;
 }) {
+  const words = copy ? heroCopy(copy, styles) : null;
   return (
-    <section className={styles.top} aria-labelledby="label-hero-heading">
+    <section
+      className={
+        copy && styles[copy] ? `${styles.top} ${styles[copy]}` : styles.top
+      }
+      aria-labelledby="label-hero-heading"
+    >
       <div className={`${ui.wrap} ${styles.hero}`}>
         <div className={styles.copy}>
-          <h1 id="label-hero-heading">Just about every SaaS.</h1>
+          <h1 id="label-hero-heading">
+            {words ? words.title : 'Just about every SaaS.'}
+          </h1>
           <p>
-            A collection of beautifully made, open-source alternatives to the
-            software you rent. 100% free.
+            {words ? (
+              words.line
+            ) : (
+              <>
+                A collection of beautifully made, open-source alternatives to
+                the software you rent. 100% free.
+              </>
+            )}
           </p>
           <div className={styles.actions}>
             <a className={ui.pill} href="#all">

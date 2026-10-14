@@ -1,4 +1,6 @@
 import type { ChromeTone } from '../Header';
+import type { HeroCopy } from './copy';
+import { heroCopyLabel } from './copy';
 import { type Layout, type Look, look } from './looks';
 
 /** One header and hero layout, in each header colour it comes in. */
@@ -15,6 +17,8 @@ export interface HeroVariant {
   /** The preview route's id: /preview/hero/<id>. */
   id: string;
   chrome: ChromeTone;
+  /** Set for the new copy's looks; the index captions them with it. */
+  copy?: HeroCopy;
   title: string;
   look: Look;
 }
@@ -109,9 +113,33 @@ export const heroGroups: HeroGroup[] = layouts.map(group => ({
   })),
 }));
 
-export const heroVariants: HeroVariant[] = heroGroups.flatMap(
-  group => group.variants
-);
+/**
+ * The owner's new hero copy (14 Oct) in the three layouts he leans to, light
+ * header only: c-new1, c-new2, d-new1, d-new2, f-new1, f-new2. Listed first.
+ */
+const newCopyLayouts = ['c', 'd', 'f'];
+const newCopies: HeroCopy[] = ['new1', 'new2'];
+
+export const newCopyGroups: HeroGroup[] = layouts
+  .filter(group => newCopyLayouts.includes(group.key))
+  .map(group => ({
+    key: `${group.key}-new`,
+    letter: group.letter,
+    name: group.name,
+    summary: group.summary,
+    variants: newCopies.map(copy => ({
+      id: `${group.key}-${copy}`,
+      chrome: 'light' as const,
+      copy,
+      title: `${group.letter}. ${group.name}, ${heroCopyLabel[copy].toLowerCase()}`,
+      look: look(group.layout, 'light', copy),
+    })),
+  }));
+
+export const heroVariants: HeroVariant[] = [
+  ...newCopyGroups,
+  ...heroGroups,
+].flatMap(group => group.variants);
 
 export const heroVariant = (id: string) =>
   heroVariants.find(variant => variant.id === id);

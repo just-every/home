@@ -11,10 +11,20 @@
   margin-top: 14px;
 }
 
+.section {
+  margin-top: 72px;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 650;
+  letter-spacing: -0.035em;
+}
+
 .groups {
   display: grid;
   gap: 56px;
-  margin: 56px 0 0;
+  margin: 32px 0 0;
   padding: 0;
   list-style: none;
 }
