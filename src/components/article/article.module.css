@@ -1,0 +1,284 @@
+/* An essay laid out as a blog post, in the landing page's tokens (it sits
+   inside .page from label.module.css): a short lavender room for the header,
+   then prose at a reading measure, figures a little wider. */
+
+.article {
+  --measure: 640px;
+  --gutter: 20px;
+  --figure-out: 110px;
+  --wide-out: 120px;
+  --text: #2c2b38;
+  --accent: #5b4fc4;
+  --accent-soft: #ecebfb;
+  --link-line: #aaa5d6;
+  --mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* Three nested columns, centred: text, figure (a little wider) and wide
+   (the header figure). Each falls back to the gutter on a narrow screen. */
+.grid {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(var(--gutter), 1fr)
+    [wide-start] minmax(0, var(--wide-out))
+    [figure-start] minmax(0, var(--figure-out))
+    [text-start] min(var(--measure), calc(100% - 2 * var(--gutter)))
+    [text-end] minmax(0, var(--figure-out))
+    [figure-end] minmax(0, var(--wide-out))
+    [wide-end] minmax(var(--gutter), 1fr) [full-end];
+}
+
+.grid > * {
+  grid-column: text;
+}
+
+/* The header: the room the site header floats on, fading into the page. */
+.room {
+  padding: calc(var(--header-h) + 64px) 0 16px;
+  background:
+    linear-gradient(180deg, #fdfdff00 calc(100% - 200px), #fdfdff 100%),
+    radial-gradient(ellipse 60% 80% at 88% 0%, #dedaf3 0%, #ebe9f900 100%),
+    radial-gradient(ellipse 50% 70% at 6% 30%, #f0eefc 0%, #f6f5fe00 100%),
+    #f7f6fd;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(42px, 5.4vw, 68px);
+  font-weight: 680;
+  letter-spacing: -0.042em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.dek {
+  margin-top: 20px;
+  color: var(--soft);
+  font-size: 22px;
+  letter-spacing: -0.014em;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+/* The prose. */
+.body {
+  padding: 56px 0 8px;
+  color: var(--text);
+  font-size: 19px;
+  letter-spacing: -0.006em;
+  line-height: 1.72;
+}
+
+.body > * + * {
+  margin-top: 1.2em;
+}
+
+.body > :first-child {
+  margin-top: 0;
+}
+
+.body h2 {
+  margin-top: 2.2em;
+  color: var(--ink);
+  font-size: 28px;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.body h2 + p {
+  margin-top: 0.7em;
+}
+
+.body > p a,
+.figure figcaption a,
+.endLinks a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--link-line);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 140ms ease;
+}
+
+.body > p a:hover,
+.figure figcaption a:hover,
+.endLinks a:hover {
+  text-decoration-color: var(--ink);
+}
+
+.body em {
+  font-style: italic;
+}
+
+/* Figures: a little wider than the text, the caption under them. */
+.figure {
+  grid-column: figure;
+  margin: 2.2em 0 1em;
+}
+
+.body > .figure + * {
+  margin-top: 1.6em;
+}
+
+.figure.wide {
+  grid-column: wide;
+  margin: 44px 0 0;
+}
+
+.figure figcaption {
+  max-width: var(--measure);
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 15px;
+  letter-spacing: -0.003em;
+  line-height: 1.5;
+}
+
+.figure figcaption a {
+  white-space: nowrap;
+}
+
+/* The end note: the other essay, then a quiet line of links. */
+.end {
+  padding: 56px 0 72px;
+}
+
+.endInner {
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+}
+
+.endEyebrow {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.endTitle {
+  font-size: 26px;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.endTitle a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 5px;
+}
+
+.endArrow {
+  display: inline-block;
+  transition: transform 160ms ease;
+}
+
+.endTitle a:hover .endArrow {
+  transform: translateX(3px);
+}
+
+.endDek {
+  margin-top: 8px;
+  color: var(--soft);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.endLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 28px;
+  margin: 26px 0 0;
+  padding: 0;
+  font-size: 16px;
+  list-style: none;
+}
+
+.endLinks a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+}
+
+@media (max-width: 1023px) {
+  .article {
+    --gutter: 28px;
+  }
+
+  .room {
+    padding-top: calc(var(--header-h) + 44px);
+  }
+}
+
+@media (max-width: 599px) {
+  .article {
+    --gutter: 20px;
+  }
+
+  .room {
+    padding-top: calc(var(--header-h) + 24px);
+  }
+
+  .meta {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+  }
+
+  .dek {
+    font-size: 19px;
+  }
+
+  .body {
+    font-size: 17.5px;
+    line-height: 1.68;
+  }
+
+  .body h2 {
+    font-size: 24px;
+  }
+
+  .figure {
+    margin-top: 1.8em;
+  }
+
+  .figure.wide {
+    margin-top: 32px;
+  }
+
+  .figure figcaption {
+    font-size: 14px;
+  }
+
+  .endTitle {
+    font-size: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .body > p a,
+  .figure figcaption a,
+  .endLinks a,
+  .endArrow {
+    transition: none;
+  }
+
+  .endTitle a:hover .endArrow {
+    transform: none;
+  }
+}

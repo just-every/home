@@ -1,0 +1,421 @@
+/* The Journey essay's figures. */
+
+/* Figure 1: the first homepage, redrawn in ink in a plain browser frame. */
+.firstFigure {
+  grid-column: figure;
+}
+
+.browser {
+  position: relative;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow:
+    0 1px 2px #1d1b4a12,
+    0 24px 48px -24px #2f2a7a33;
+}
+
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ecebf4;
+}
+
+.dots {
+  display: flex;
+  gap: 7px;
+}
+
+.dots span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #e4e2ee;
+}
+
+.url {
+  flex: 1;
+  max-width: 320px;
+  margin-inline: auto;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: #f3f2f8;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* The page itself, a little faded, in ink on white. */
+.screen {
+  padding: 22px clamp(20px, 5%, 48px) 34px;
+  color: #3c3b4b;
+}
+
+.oldNav {
+  --logo-h: 16px;
+
+  color: #5f5d73;
+}
+
+.oldHero {
+  margin-top: 30px;
+  color: #2c2b38;
+  font-size: clamp(28px, 4.2vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.oldWarn {
+  margin-top: 12px;
+  color: #6a687e;
+  font-size: 15px;
+}
+
+.oldWarn strong {
+  color: #4a4858;
+  font-weight: 600;
+}
+
+.oldAsk {
+  margin-top: 34px;
+  padding-top: 26px;
+  border-top: 1px dashed #dcdae8;
+  color: #2c2b38;
+  font-size: clamp(19px, 2.4vw, 25px);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.circled {
+  position: relative;
+  margin: 0 0.42em 0 0.45em;
+  white-space: nowrap;
+}
+
+.circled svg {
+  position: absolute;
+  top: -26%;
+  left: -10%;
+  width: 120%;
+  height: 156%;
+  overflow: visible;
+  fill: none;
+  stroke: var(--accent);
+  stroke-linecap: round;
+  stroke-width: 2.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.circled svg path {
+  vector-effect: non-scaling-stroke;
+}
+
+.oldCards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.oldCards p {
+  margin-top: 10px;
+  color: #4a4858;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.thumb {
+  display: block;
+  aspect-ratio: 16 / 5;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #e4f4f7, #f6e6f1);
+}
+
+.thumbTwo {
+  background: linear-gradient(135deg, #f6e6f1, #fbf0dc);
+}
+
+.stamp {
+  position: absolute;
+  right: 22px;
+  bottom: -18px;
+  padding: 2px 12px;
+  border-radius: 6px;
+  background: #fdfdff;
+  color: var(--accent);
+  font-size: 21px;
+  transform: rotate(-4deg);
+}
+
+/* Figure 2: the video poster beside the commit list. */
+.pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.video {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--card-radius);
+  background: #1d1c26;
+  color: #fff;
+}
+
+.video img {
+  display: block;
+  width: 100%;
+  height: auto;
+  flex: 1;
+  object-fit: cover;
+}
+
+.videoLabel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+  padding: 12px 16px;
+  font-size: 14.5px;
+  font-weight: 550;
+}
+
+.videoWatch {
+  color: #c9c6e0;
+  font-weight: 450;
+}
+
+.video:hover .videoWatch {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.commits {
+  display: flex;
+  flex-direction: column;
+}
+
+.commitsHead {
+  padding: 14px 18px;
+  border-bottom: 1px solid #ecebf4;
+}
+
+.repo {
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.forked {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.commits ol {
+  margin: 0;
+  padding: 4px 18px 8px;
+  list-style: none;
+}
+
+.commits li {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 9px 0;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.commits li + li {
+  border-top: 1px solid #f0eff6;
+}
+
+.commitTitle {
+  color: #2c2b38;
+  font-weight: 500;
+}
+
+.commitWhen {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.commitWhen strong {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-weight: 650;
+}
+
+/* Figure 3: 12ui's steps, then the image and the build side by side. */
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.steps li {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #fff;
+  color: #3c3b4b;
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+.steps li span {
+  color: var(--accent);
+}
+
+.compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.compare p {
+  margin-bottom: 8px;
+}
+
+.compare img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px #1d1b4a14;
+}
+
+/* Figure 4: the shelf, and the repositories under it. */
+.shelf {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.repos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px 16px;
+  margin: 4px 0 0;
+  padding: 0;
+  font-family: var(--mono);
+  font-size: 13px;
+  list-style: none;
+}
+
+.repos a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  color: var(--soft);
+}
+
+.repos a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Figure 5: three cards, linked by arrows. */
+.trace {
+  display: grid;
+  grid-template-columns: 0.8fr 1.4fr 0.9fr;
+  gap: 34px;
+  margin: 0;
+  list-style: none;
+}
+
+.trace li {
+  position: relative;
+  padding: 16px 18px 18px;
+}
+
+.trace li + li::before {
+  position: absolute;
+  top: 50%;
+  left: -28px;
+  width: 22px;
+  height: 2px;
+  background: var(--accent);
+  content: '';
+}
+
+.trace li + li::after {
+  position: absolute;
+  top: calc(50% - 4px);
+  left: -12px;
+  border: 5px solid transparent;
+  border-left: 7px solid var(--accent);
+  border-right: 0;
+  content: '';
+}
+
+.trace .label,
+.trace li > p:first-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.traceText {
+  margin-top: 10px;
+  color: #2c2b38;
+  font-size: 15.5px;
+  line-height: 1.45;
+}
+
+@media (max-width: 767px) {
+  .pair,
+  .compare {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .trace {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .trace li + li::before {
+    top: -24px;
+    left: 50%;
+    width: 2px;
+    height: 18px;
+  }
+
+  .trace li + li::after {
+    top: -10px;
+    left: calc(50% - 4px);
+    border: 5px solid transparent;
+    border-top: 7px solid var(--accent);
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 599px) {
+  .screen {
+    padding-bottom: 28px;
+  }
+
+  .oldWarn,
+  .oldCards p {
+    font-size: 13.5px;
+  }
+
+  .oldCards {
+    gap: 12px;
+  }
+
+  .stamp {
+    font-size: 18px;
+  }
+}
