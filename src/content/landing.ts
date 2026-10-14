@@ -14,6 +14,32 @@ export const nav = [
   { label: 'GitHub', href: githubOrgUrl },
 ] as const;
 
+/**
+ * The benefits strip under the hero (owner feedback of 14 Oct): four plain
+ * reasons to switch, each a bold lead and one line.
+ */
+export const benefits = {
+  label: 'Why switch',
+  items: [
+    {
+      lead: 'No more per-seat bills.',
+      line: 'Free to use, however big your team gets.',
+    },
+    {
+      lead: 'Your data stays yours.',
+      line: 'It runs on your computer or your own Cloudflare account.',
+    },
+    {
+      lead: 'Change anything.',
+      line: "It's your code, so you or your AI can add the feature you need.",
+    },
+    {
+      lead: 'No price hikes, no lock-in.',
+      line: 'Nobody can change the deal on you.',
+    },
+  ],
+} as const;
+
 export const collection = {
   id: 'all',
   heading: 'Pick your replacement.',

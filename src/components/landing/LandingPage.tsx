@@ -1,3 +1,4 @@
+import { Benefits } from './Benefits';
 import { Collection } from './Collection';
 import { sans } from './fonts';
 import { Footer } from './Footer';
@@ -16,7 +17,8 @@ import { Unsubscribe } from './Unsubscribe';
 
 /**
  * The justevery.com landing page (the Label design): Just Every as a numbered box set, one volume per
- * product. Section order follows the approved copy deck; the Unsubscribe
+ * product. The benefits strip follows the hero, then the collection; the
+ * rest of the order follows the approved copy deck; the Unsubscribe
  * claim follows the reels and leads into the questions it provokes. The
  * suggestion form closes the page under the makers invitation: visitors ask
  * for products where makers are asked for them, and the collection search's
@@ -28,6 +30,7 @@ export function LandingPage() {
       <Header />
       <main>
         <Hero />
+        <Benefits />
         <Collection />
         <Running />
         <Unsubscribe />
