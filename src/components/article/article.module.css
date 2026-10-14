@@ -104,7 +104,7 @@
 
 .body > p a,
 .figure figcaption a,
-.endLinks a {
+.endLinkText {
   color: var(--ink);
   text-decoration: underline;
   text-decoration-color: var(--link-line);
@@ -115,7 +115,7 @@
 
 .body > p a:hover,
 .figure figcaption a:hover,
-.endLinks a:hover {
+.endLinks a:hover .endLinkText {
   text-decoration-color: var(--ink);
 }
 
@@ -273,7 +273,7 @@
 @media (prefers-reduced-motion: reduce) {
   .body > p a,
   .figure figcaption a,
-  .endLinks a,
+  .endLinkText,
   .endArrow {
     transition: none;
   }

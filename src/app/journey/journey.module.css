@@ -3,6 +3,8 @@
 /* Figure 1: the first homepage, redrawn in ink in a plain browser frame. */
 .firstFigure {
   grid-column: figure;
+  justify-self: center;
+  width: min(100%, 780px);
 }
 
 .browser {
@@ -61,7 +63,7 @@
 .oldHero {
   margin-top: 30px;
   color: #2c2b38;
-  font-size: clamp(28px, 4.2vw, 44px);
+  font-size: clamp(26px, 3.6vw, 38px);
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1.08;

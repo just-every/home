@@ -31,7 +31,7 @@ export function EndNote({
           const external = /^https?:/.test(link.href);
           const label = (
             <>
-              {link.label}{' '}
+              <span className={styles.endLinkText}>{link.label}</span>
               <span aria-hidden="true">{external ? '↗' : '→'}</span>
             </>
           );
