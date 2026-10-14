@@ -1,29 +1,33 @@
 #!/usr/bin/env node
 /**
- * update-reels.mjs - refresh the landing page's product reels from the Sizzle renders.
+ * update-reels.mjs - refresh the landing page's product reels from the owner-approved launch reels.
  *
  *   node scripts/update-reels.mjs                    every seed in src/data/seeds.ts
  *   node scripts/update-reels.mjs --seed uptime,lamp only these seeds
- *   node scripts/update-reels.mjs --host win-runner  encode there (any ssh host with ffmpeg); default local
+ *   node scripts/update-reels.mjs --host m1-runner   encode there (any ssh host with ffmpeg); default local
  *   node scripts/update-reels.mjs --jobs 3           seeds encoded at once (default 1)
  *   node scripts/update-reels.mjs --dry-run          show the source picked per seed, change nothing
  *   node scripts/update-reels.mjs --force            re-encode even when the source is unchanged
- *   node scripts/update-reels.mjs --no-remote        do not look for renders on m1-runner
  *   node scripts/update-reels.mjs --poster-at uptime=12.5   poster frame (seconds) for a seed
  *
  * Which seeds: every `slug: '<slug>'` in src/data/seeds.ts. A seed without a reel
  * gets one: its `reel: null` (or a missing reel line) becomes `reel: reel('<slug>', s)`.
  *
- * Which render: the newest complete one per seed, always. A render is a
- * <slug>-sizzle*.mp4 in tools/sizzle/out/<slug>/ of the RER checkout, of any
- * sizzle-* worktree, or of a rer-sizzle* checkout on m1-runner (pulled with
- * rsync when it wins), with its .json sidecar beside it. The sidecar must say
- * quality "final" or "review" (previews are skipped) and carry the file's exact
- * byte count; the file must be settled (untouched for two minutes), probe as
- * H.264 with audio at 1080p or more, and run as long as the sidecar's range.
- * Newest means the sidecar's renderedAt (the file time when it has none), so a
- * copied file never looks newer than it is. Among renders of the same cut
- * (same length, rendered within 15 minutes) the highest resolution wins.
+ * Where the renders come from: the launch-reels folders of the RER checkout,
+ * <RER_ROOT>/.artifacts/launch-reels-v<N>-<date>/<slug>/ (nothing else is read;
+ * the sizzle worktrees and the other .artifacts folders are not sources). The
+ * folder with the highest N that has a row for the seed in its APPROVALS.md
+ * decides: only a verdict starting "approved" publishes the reel. Any other
+ * verdict (changes, in fix rounds) is skipped with a message and the seed's
+ * current reel stays as it is.
+ *
+ * Which file: <slug>-sizzle-2160p60.mp4 (the 4K final master of the approved cut)
+ * when it is there and complete, otherwise <slug>-sizzle-1080p60.mp4 (the approved
+ * cut). Each has a .json sidecar beside it that must say quality "final" or
+ * "review" and carry the file's exact byte count; the file must be settled
+ * (untouched for two minutes), probe as H.264 or HEVC with audio at 1080p or
+ * more, and run as long as the sidecar's range. A 2160p file whose length is not
+ * the 1080p cut's is a master of a different cut and is ignored.
  *
  * What it writes, and only this: public/video/<slug>-720.mp4 (1280x720, 30 fps,
  * H.264 High, AAC, +faststart, a capped bitrate that lands about 5 MB),
@@ -51,12 +55,11 @@ const seedsFile = join(repo, 'src', 'data', 'seeds.ts');
 const FFMPEG = process.env.FFMPEG || '/opt/homebrew/bin/ffmpeg';
 const FFPROBE = process.env.FFPROBE || '/opt/homebrew/bin/ffprobe';
 const RER_ROOT = process.env.RER_ROOT || join(homedir(), 'www', 'runeditrun');
-const SEARCH_HOST = process.env.SIZZLE_REMOTE_HOST || 'm1-runner';
 
 const ACCEPT_QUALITY = new Set(['final', 'review']);
 const MIN_SECONDS = 20;
 const SETTLE_MS = 120_000; // a file touched this recently may still be written
-const SAME_CUT_MS = 15 * 60_000;
+const SAME_CUT_SECONDS = 0.2;
 // Capped CRF: quality-led, but never above ~5.2 MB for a 45 s reel.
 const VIDEO = { crf: 20, maxrate: '820k', bufsize: '1640k' };
 const AUDIO_BITRATE = '96k';
@@ -72,7 +75,6 @@ const option = name => {
 };
 const dryRun = flag('dry-run');
 const force = flag('force');
-const searchRemote = !flag('no-remote');
 const hostName = option('host') ?? 'local';
 const jobs = Math.max(1, Number(option('jobs') ?? 1));
 const only = option('seed')?.split(',').map(s => s.trim()).filter(Boolean);
@@ -155,79 +157,42 @@ function writeSeedReel(slug, seconds) {
   writeFileSync(seedsFile, text.slice(0, start) + next + text.slice(end));
 }
 
-// ---------- finding the newest complete render ----------
+// ---------- finding the approved render ----------
 
-const SKIP_NAME = /preview|wip|contact|draft|segment|sheet|share/i;
-const isCandidateName = (slug, name) =>
-  name.startsWith(`${slug}-sizzle`) && name.endsWith('.mp4') && !SKIP_NAME.test(name);
+const REELS_DIR = /^launch-reels-v(\d+)-/;
 
-function dirs(parent, accept) {
+/** The launch-reels-v<N>-* folders, highest N first. */
+function reelFolders() {
+  const parent = join(RER_ROOT, '.artifacts');
   if (!existsSync(parent)) return [];
   return readdirSync(parent, { withFileTypes: true })
-    .filter(e => e.isDirectory() && accept(e.name))
-    .map(e => join(parent, e.name));
+    .filter(e => e.isDirectory() && REELS_DIR.test(e.name))
+    .map(e => ({ dir: join(parent, e.name), n: Number(e.name.match(REELS_DIR)[1]) }))
+    .sort((a, b) => b.n - a.n);
 }
 
-function readSidecar(text) {
+/** { slug: verdict } from the table rows of a folder's APPROVALS.md. */
+function readApprovals(dir) {
+  const file = join(dir, 'APPROVALS.md');
+  if (!existsSync(file)) return {};
+  const verdicts = {};
+  for (const line of readFileSync(file, 'utf8').split('\n')) {
+    const cells = line.split('|').map(c => c.trim());
+    if (cells.length < 4 || !/^[a-z0-9-]+$/.test(cells[1])) continue;
+    verdicts[cells[1]] = cells[2].toLowerCase();
+  }
+  return verdicts;
+}
+
+function readSidecar(file) {
   try {
-    return JSON.parse(text);
+    return JSON.parse(readFileSync(file, 'utf8'));
   } catch {
     return null;
   }
 }
 
-function localCandidates(slug) {
-  const outDirs = [
-    join(RER_ROOT, 'tools', 'sizzle', 'out', slug),
-    ...dirs(join(RER_ROOT, '.claude', 'worktrees'), n => n.startsWith('sizzle-')).map(d =>
-      join(d, 'tools', 'sizzle', 'out', slug),
-    ),
-  ];
-  const found = [];
-  for (const dir of outDirs) {
-    if (!existsSync(dir)) continue;
-    for (const name of readdirSync(dir)) {
-      if (!isCandidateName(slug, name)) continue;
-      const path = join(dir, name);
-      const side = join(dir, name.replace(/\.mp4$/, '.json'));
-      const st = statSync(path);
-      found.push({
-        where: 'local',
-        path,
-        size: st.size,
-        mtimeMs: Math.round(st.mtimeMs),
-        sidecar: existsSync(side) ? readSidecar(readFileSync(side, 'utf8')) : null,
-      });
-    }
-  }
-  return found;
-}
-
-function remoteCandidates(slug) {
-  const out = `tools/sizzle/out/${slug}`;
-  const script =
-    `for d in "$HOME"/rer-sizzle*; do [ -d "$d/${out}" ] || continue; ` +
-    `for f in "$d/${out}"/${slug}-sizzle*.mp4; do [ -f "$f" ] || continue; ` +
-    `echo "F|$(stat -f '%m|%z' "$f")|$f"; j="\${f%.mp4}.json"; ` +
-    `[ -f "$j" ] && echo "J|$(tr -d '\\n' < "$j")"; done; done; true\n`;
-  const r = run('ssh', ['-o', 'BatchMode=yes', '-o', 'ConnectTimeout=6', SEARCH_HOST, 'bash', '-s'], { input: script });
-  if (r.status !== 0) {
-    console.log(`  ${SEARCH_HOST}: not reachable, its renders not searched`);
-    return [];
-  }
-  const found = [];
-  for (const line of r.stdout.split('\n')) {
-    if (line.startsWith('F|')) {
-      const [, m, size, ...path] = line.split('|');
-      found.push({ where: 'remote', path: path.join('|'), size: Number(size), mtimeMs: Number(m) * 1000, sidecar: null });
-    } else if (line.startsWith('J|') && found.length) {
-      found[found.length - 1].sidecar = readSidecar(line.slice(2));
-    }
-  }
-  return found.filter(c => isCandidateName(slug, basename(c.path)));
-}
-
-/** Why a candidate is not a complete render to use, or null when it is. */
+/** Why a file is not a complete render to use, or null when it is. */
 function rejectReason(c) {
   const s = c.sidecar;
   if (!s) return 'no sidecar (not a render, or still being written)';
@@ -237,71 +202,62 @@ function rejectReason(c) {
   return null;
 }
 
-function pull(slug, cand) {
-  const dir = join(videoDir, `.pull-${slug}`);
-  rmSync(dir, { recursive: true, force: true });
-  mkdirSync(dir, { recursive: true });
-  const dest = join(dir, basename(cand.path));
-  console.log(`  pulling ${SEARCH_HOST}:${cand.path} (${mb(cand.size)})`);
-  const r = run('rsync', ['-t', '-e', 'ssh -o BatchMode=yes', `${SEARCH_HOST}:${cand.path}`, dest]);
-  return r.status === 0 ? { ...cand, localPath: dest } : null;
-}
-
 function complete(info, sidecar) {
-  if (!info || info.codec !== 'h264' || !info.hasAudio || info.height < 1080 || info.duration < MIN_SECONDS) {
+  if (!info || !['h264', 'hevc'].includes(info.codec) || !info.hasAudio || info.height < 1080 || info.duration < MIN_SECONDS) {
     return false;
   }
   const range = sidecar.range;
   return !Array.isArray(range) || Math.abs(info.duration - (range[1] - range[0])) < 0.5;
 }
 
-function chooseSource(slug, say) {
-  const pool = localCandidates(slug);
-  if (searchRemote) pool.push(...remoteCandidates(slug));
-  const seen = new Set();
-  const ranked = pool
-    .map(c => ({ ...c, renderedMs: Date.parse(c.sidecar?.renderedAt ?? '') || c.mtimeMs }))
-    .sort((a, b) => b.renderedMs - a.renderedMs || (a.where === 'local' ? -1 : 1))
-    .filter(c => {
-      // The same render on both machines counts once, local first.
-      const key = `${basename(c.path)}|${c.size}`;
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
-  const ready = [];
-  for (const cand of ranked) {
-    const why = rejectReason(cand);
-    if (why) {
-      say(`  skip ${cand.path}: ${why}`);
-      continue;
-    }
-    let c = cand;
-    if (cand.where === 'remote') {
-      if (ready.length && ready[0].renderedMs > cand.renderedMs + SAME_CUT_MS) continue;
-      c = pull(slug, cand);
-      if (!c) {
-        say(`  skip ${cand.path}: could not pull`);
-        continue;
-      }
-    }
-    const info = probe(c.localPath ?? c.path);
-    if (!complete(info, c.sidecar)) {
-      say(`  skip ${c.path}: does not probe as a complete 1080p+ H.264 render with audio`);
-      continue;
-    }
-    ready.push({ ...c, ...info });
+/** A render of one resolution in a seed's folder, if it is complete. */
+function readRender(dir, slug, res, say) {
+  const path = join(dir, `${slug}-sizzle-${res}.mp4`);
+  if (!existsSync(path)) return null;
+  const st = statSync(path);
+  const c = { path, size: st.size, mtimeMs: Math.round(st.mtimeMs), sidecar: readSidecar(path.replace(/\.mp4$/, '.json')) };
+  const why = rejectReason(c);
+  if (why) {
+    say(`  skip ${path}: ${why}`);
+    return null;
   }
-  if (!ready.length) return null;
-  const newest = ready[0];
-  const sameCut = ready.filter(
-    c => Math.abs(c.duration - newest.duration) < 0.2 && Math.abs(c.renderedMs - newest.renderedMs) <= SAME_CUT_MS,
-  );
-  const best = sameCut.sort((a, b) => b.width * b.height - a.width * a.height || b.renderedMs - a.renderedMs)[0];
-  best.why =
-    `newest of ${ready.length} complete render(s) by render time` +
-    (best !== newest ? `; ${basename(newest.path)} is a lower-resolution copy of the same cut` : '');
-  return best;
+  const info = probe(path);
+  if (!complete(info, c.sidecar)) {
+    say(`  skip ${path}: does not probe as a complete 1080p+ H.264/HEVC render with audio`);
+    return null;
+  }
+  return { ...c, ...info, renderedMs: Date.parse(c.sidecar.renderedAt ?? '') || c.mtimeMs };
+}
+
+/** The approved render of a seed (2160p when present, else 1080p), or null with the reason said. */
+function chooseSource(slug, say) {
+  const folders = reelFolders();
+  if (!folders.length) {
+    say(`  no launch-reels-v<N>-* folder in ${join(RER_ROOT, '.artifacts')}`);
+    return null;
+  }
+  for (const { dir } of folders) {
+    const verdict = readApprovals(dir)[slug];
+    if (verdict == null) continue;
+    if (!verdict.startsWith('approved')) {
+      say(`  skip: ${basename(dir)}/APPROVALS.md says "${verdict}", not approved; its current reel stays`);
+      return null;
+    }
+    const seedDir = join(dir, slug);
+    const cut = readRender(seedDir, slug, '1080p60', say);
+    const master = readRender(seedDir, slug, '2160p60', say);
+    const use4k = master && (!cut || Math.abs(master.duration - cut.duration) < SAME_CUT_SECONDS);
+    if (master && !use4k) say(`  skip ${master.path}: ${master.duration.toFixed(2)} s is not the approved cut's ${cut.duration.toFixed(2)} s`);
+    const best = use4k ? master : cut;
+    if (!best) {
+      say(`  approved in ${basename(dir)} but no complete render in ${seedDir}`);
+      return null;
+    }
+    best.why = `approved in ${basename(dir)}/APPROVALS.md; ${use4k ? '2160p final master' : '1080p approved cut'}`;
+    return best;
+  }
+  say('  skip: no APPROVALS.md row for this seed; its current reel stays');
+  return null;
 }
 
 // ---------- where ffmpeg runs ----------
@@ -471,11 +427,11 @@ async function updateSeed({ slug, seconds }, host) {
   const flush = () => console.log(lines.splice(0).join('\n'));
   const src = chooseSource(slug, say);
   if (!src) {
-    say('  no complete render found; leaving it as is');
+    say('  not published');
     flush();
     return false;
   }
-  say(`  source   ${src.where === 'remote' ? `${SEARCH_HOST}:` : ''}${src.path}`);
+  say(`  source   ${src.path}`);
   say(
     `           quality ${src.sidecar.quality}, rendered ${stamp(src.renderedMs)}, ${src.duration.toFixed(3)} s, ` +
       `${src.width}x${src.height} ${Math.round(src.fps)} fps, ${mb(src.size)}`,
@@ -487,10 +443,8 @@ async function updateSeed({ slug, seconds }, host) {
   const key = sourceKey(src);
   const have = existsSync(o720) ? probe(o720) : null;
   const upToDate = have && have.comment === key && existsSync(oPoster) && Number(have.duration.toFixed(1)) === seconds;
-  const pulled = join(videoDir, `.pull-${slug}`);
-  if ((upToDate && !force) || dryRun) {
+    if ((upToDate && !force) || dryRun) {
     say(upToDate && !force ? '  up to date: nothing to update' : `  would encode ${slug}-720.mp4 and ${slug}-poster.webp and write reel('${slug}', ...)`);
-    rmSync(pulled, { recursive: true, force: true });
     flush();
     return !upToDate;
   }
@@ -502,7 +456,7 @@ async function updateSeed({ slug, seconds }, host) {
   const work = await host.workdir(slug);
   try {
     const started = Date.now();
-    const remoteSrc = await work.put(src.localPath ?? src.path);
+    const remoteSrc = await work.put(src.path);
     await encode720(work, remoteSrc, work.path('out-720.mp4'), key);
     const t720 = join(scratch, `${slug}-720.mp4`);
     await work.get('out-720.mp4', t720);
@@ -529,7 +483,7 @@ async function updateSeed({ slug, seconds }, host) {
     return true;
   } finally {
     await work.cleanup();
-    for (const p of [scratch, pulled]) rmSync(p, { recursive: true, force: true });
+    rmSync(scratch, { recursive: true, force: true });
   }
 }
 
