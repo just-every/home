@@ -152,6 +152,12 @@
   transform: rotate(-4deg);
 }
 
+/* The stamp hangs over the caption's line: keep the caption's text clear of
+   it (on phones, where it spans the middle, the caption starts below it). */
+.firstFigure figcaption {
+  padding-right: 180px;
+}
+
 /* Figure 2: the video poster beside the commit list. */
 .pair {
   display: grid;
@@ -419,5 +425,10 @@
 
   .stamp {
     font-size: 18px;
+  }
+
+  .firstFigure figcaption {
+    margin-top: 30px;
+    padding-right: 0;
   }
 }
