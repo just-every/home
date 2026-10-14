@@ -32,10 +32,11 @@ export const shelfPoster: ShelfPoster = {
   src: '/landing/shelf/shelf-1440.webp',
   srcSet: `/landing/shelf/shelf-800.webp 800w, /landing/shelf/shelf-1440.webp ${POSTER.w}w`,
   // The hero's slot (about 66vw on desktops, as the viewport's height
-  // allows, and at most 1200px; at most 820px on tablets; about the
+  // allows, and at most the hero's --art-max: 1200px, growing past 2133px
+  // wide as 56.25vw to 1440px; at most 820px on tablets; about the
   // viewport's width on phones) and the bleed.
   sizes: [
-    `(min-width: 1024px) min(${+(66 * (1 + BLEED)).toFixed(2)}vw, ${Math.round(1200 * (1 + BLEED))}px)`,
+    `(min-width: 1024px) min(${+(66 * (1 + BLEED)).toFixed(2)}vw, clamp(${Math.round(1200 * (1 + BLEED))}px, ${+(56.25 * (1 + BLEED)).toFixed(2)}vw, ${Math.round(1440 * (1 + BLEED))}px))`,
     `(min-width: 600px) min(${+(100 * (1 + BLEED)).toFixed(2)}vw, ${Math.round(820 * (1 + BLEED))}px)`,
     `${+(100 * (1 + BLEED)).toFixed(2)}vw`,
   ].join(', '),
