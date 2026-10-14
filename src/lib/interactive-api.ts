@@ -12,6 +12,9 @@ export const SUGGEST_PRODUCT_MAX = 120;
 export const SUGGEST_NOTE_MAX = 500;
 export const SUGGEST_EMAIL_MAX = 254;
 
+export const CONTACT_NAME_MAX = 120;
+export const CONTACT_MESSAGE_MAX = 5000;
+
 /** One product picked for the visitor, with Claude's one-sentence reason. */
 export interface MatchItem {
   slug: string;
@@ -27,7 +30,7 @@ export interface MatchResponse {
   cached: boolean;
 }
 
-/** POST /api/suggest 201. */
+/** POST /api/suggest and POST /api/contact 201. */
 export interface SuggestResponse {
   ok: true;
 }

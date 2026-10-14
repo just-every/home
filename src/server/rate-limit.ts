@@ -18,7 +18,7 @@ async function hashedKey(scope: string, address: string): Promise<string> {
  */
 export async function takeRateLimit(
   env: CloudflareEnv,
-  scope: 'match' | 'suggest',
+  scope: 'match' | 'suggest' | 'contact',
   address: string
 ): Promise<void> {
   if (!env.RATE_LIMITER) {
