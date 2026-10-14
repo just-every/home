@@ -12,6 +12,9 @@
   --pill-to: #18191b;
   --header-h: 81px;
 
+  /* The wordmark's ink, shared with the hero headline's second line. */
+  --brand-ink: #6a6880;
+
   /* One card language for every card-like surface on the page: a soft
      fill, no border and no shadow, as in the approved art. A product's
      card is its pastel (`.tinted`, from --pastel); any other card sets its

@@ -1,10 +1,11 @@
 import Link from 'next/link';
 
-import { notFound, wordmark } from '@/content/landing';
+import { notFound } from '@/content/landing';
 
 import { sans } from './fonts';
 import header from './header.module.css';
 import ui from './label.module.css';
+import { Logo } from './Logo';
 import styles from './not-found.module.css';
 
 /** The 404 page, in the landing page's own type, tokens and pill. */
@@ -12,8 +13,8 @@ export function NotFound() {
   return (
     <div className={`${ui.page} ${sans.variable} ${styles.page}`}>
       <header className={`${ui.wrap} ${header.header}`}>
-        <Link className={header.brand} href="/" aria-label="Just Every, home">
-          {wordmark}
+        <Link className={header.brand} href="/">
+          <Logo />
         </Link>
       </header>
       <main className={`${ui.wrap} ${styles.main}`}>

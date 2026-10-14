@@ -1,6 +1,6 @@
+/* No rule above: the hero's room fades into the page over its foot. */
 .collection {
-  padding: var(--section-y) 0;
-  border-top: 1px solid var(--line);
+  padding: calc(var(--section-y) + 16px) 0 var(--section-y);
 }
 
 .heading {

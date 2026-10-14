@@ -25,16 +25,17 @@ export interface ShelfPoster {
 const BLEED = 0.18;
 
 /** The static render's pixels: the scene at 1440 (2x), bleed included. */
-const POSTER = { w: 1768, h: 860 };
+const POSTER = { w: 2242, h: 1092 };
 
 /** The static render of the shelf (`node scripts/render-shelf.mjs`). */
 export const shelfPoster: ShelfPoster = {
   src: '/landing/shelf/shelf-1440.webp',
   srcSet: `/landing/shelf/shelf-800.webp 800w, /landing/shelf/shelf-1440.webp ${POSTER.w}w`,
+  // The hero's slot (66vw, at most 1080px, on desktops; about the
+  // viewport's width below) and the bleed.
   sizes: [
-    `(min-width: 1440px) ${Math.round(749 * (1 + BLEED))}px`,
-    `(min-width: 1024px) ${+(52 * (1 + BLEED)).toFixed(2)}vw`,
-    `${+(100 * (1 + BLEED)).toFixed(2)}vw`,
+    `(min-width: 1024px) min(${+(66 * (1 + BLEED)).toFixed(2)}vw, ${Math.round(1080 * (1 + BLEED))}px)`,
+    '120vw',
   ].join(', '),
 };
 

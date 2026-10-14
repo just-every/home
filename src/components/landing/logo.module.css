@@ -1,0 +1,13 @@
+/* The wordmark at --logo-h tall (its parent sets it), its width from the
+   viewBox. The capitals are 117 of the 151 units, from 1 down to the
+   baseline at 118; the 33 below hold the y's tail and the underscore. Room
+   above as deep as that (32 units more) means centring the box centres the
+   capitals, as a line of text sits beside it. */
+.logo {
+  display: block;
+  flex: none;
+  height: var(--logo-h, 21px);
+  width: auto;
+  aspect-ratio: 800 / 151;
+  margin-top: calc(var(--logo-h, 21px) * 32 / 151);
+}

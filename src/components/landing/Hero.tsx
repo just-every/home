@@ -3,20 +3,34 @@ import type { ReactNode } from 'react';
 import { githubOrgUrl } from '@/content/landing';
 
 import { handwriting } from './fonts';
+import styles from './hero.module.css';
 import { HeroShelf } from './HeroShelf';
 import ui from './label.module.css';
-import styles from './hero.module.css';
 
-/** `shelf` defaults to the page's box set; review tooling passes its own. */
+/** Words that stay together: a hyphenated word, or a short phrase. */
+const Together = ({ children }: { children: ReactNode }) => (
+  <span className={styles.together}>{children}</span>
+);
+
+/**
+ * The hero (the owner's D, Overlay, with "Every SaaS. For Free."): the
+ * header floats on its lavender room, the headline's second line is in the
+ * muted ink the wordmark shares, the box set runs off the right edge and the
+ * room fades into the page at its foot. `shelf` defaults to the page's box
+ * set; review tooling passes its own.
+ */
 export function Hero({ shelf = <HeroShelf /> }: { shelf?: ReactNode }) {
   return (
     <section className={styles.top} aria-labelledby="label-hero-heading">
       <div className={`${ui.wrap} ${styles.hero}`}>
         <div className={styles.copy}>
-          <h1 id="label-hero-heading">Just about every SaaS.</h1>
+          <h1 id="label-hero-heading">
+            <Together>Every SaaS.</Together>{' '}
+            <span className={styles.turn}>For Free.</span>
+          </h1>
           <p>
-            A collection of beautifully made, open-source alternatives to the
-            software you rent. 100% free.
+            Beautifully made, <Together>open-source</Together> alternatives to
+            Notion, Linear, Intercom and more.
           </p>
           <div className={styles.actions}>
             <a className={ui.pill} href="#all">

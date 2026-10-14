@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 /**
  * Renders public/og-image.png (1200x630) from the real hero of a running
- * server: the page's own fonts, hero background, wordmark and headline, with
- * the box set's static render (public/landing/shelf/shelf-1440.webp, made by
- * scripts/render-shelf.mjs) on the right, sized to read at thumbnail scale.
+ * server: the page's own fonts, hero background, logo (the header's SVG, in
+ * its own ink) and headline, "Every SaaS." over "For Free." in the muted ink,
+ * with the box set's static render (public/landing/shelf/shelf-1440.webp,
+ * made by scripts/render-shelf.mjs) on the right, sized to read at thumbnail
+ * scale.
  *
  *   npm run dev -- -p 3328            (or next start -p 3328)
  *   node scripts/render-og.mjs [--base http://localhost:3328]
@@ -59,30 +61,33 @@ await page.waitForSelector('[data-shelf] [data-ready]', { timeout: 60000 });
 await page.evaluate(() => document.fonts.ready);
 
 // Keep the hero's own section (its background) and rebuild its contents as a
-// card: the wordmark, the headline large, and the box set.
+// card: the logo, the headline large, and the box set.
 await page.evaluate(() => {
   const hero = document.querySelector('main section');
   const page = hero.closest('[id=top]');
   document.querySelector('nextjs-portal')?.remove();
   const heading = hero.querySelector('h1');
-  const wordmark = document.querySelector('header a');
+  const logo = document.querySelector('header a svg');
+  const turn = heading.lastElementChild;
 
   const card = document.createElement('div');
   card.style.cssText = `position: fixed; inset: 0; z-index: 10; overflow: hidden;
     background: ${getComputedStyle(hero).backgroundImage};
     background-color: #f8f6fe;`;
 
-  const mark = document.createElement('div');
-  mark.textContent = wordmark.textContent;
-  mark.style.cssText = `position: absolute; left: 64px; top: 52px;
-    font-size: 34px; font-weight: 700; letter-spacing: -1.3px; color: #17171d;`;
+  const mark = logo.cloneNode(true);
+  mark.removeAttribute('class');
+  mark.style.cssText = `position: absolute; left: 64px; top: 54px;
+    height: 34px; width: auto; aspect-ratio: 800 / 151;
+    color: ${getComputedStyle(logo).color};`;
 
   const title = document.createElement('div');
-  title.innerHTML = 'Just about<br>every SaaS.';
+  title.innerHTML = 'Every SaaS.<br><span>For Free.</span>';
   title.setAttribute('aria-label', heading.textContent);
-  title.style.cssText = `position: absolute; left: 60px; top: 214px;
-    font-size: 92px; font-weight: 640; line-height: 1.04;
-    letter-spacing: -0.035em; color: #17171d;`;
+  title.style.cssText = `position: absolute; left: 60px; top: 220px;
+    font-size: 100px; font-weight: 640; line-height: 1;
+    letter-spacing: -0.035em; color: #17171d; white-space: nowrap;`;
+  title.lastElementChild.style.color = getComputedStyle(turn).color;
 
   const shelf = document.createElement('img');
   shelf.src = '/landing/shelf/shelf-1440.webp';

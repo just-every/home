@@ -7,8 +7,6 @@ export const githubOrgUrl = 'https://github.com/just-every';
 export const githubReposUrl =
   'https://github.com/orgs/just-every/repositories?q=run-';
 
-export const wordmark = 'JustEvery_';
-
 export const nav = [
   { label: 'Products', href: '#all' },
   { label: 'Watch', href: '#running' },

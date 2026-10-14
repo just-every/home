@@ -1,82 +1,122 @@
+/* The hero: a full-height lavender room the header floats on, the copy on
+   the left and the box set running off the right edge, so the row carries
+   on past the frame; the room fades into the page's white at its foot. */
+
 .top {
   position: relative;
-  margin-top: calc(-1 * var(--header-h));
   padding-top: var(--header-h);
+  overflow-x: clip;
   background:
+    linear-gradient(180deg, #fdfdff00 calc(100% - 120px), #fdfdff 100%),
     radial-gradient(
-      ellipse 58% 64% at 100% 0%,
-      #c9c5d9 0%,
-      #d5d1e7 35%,
-      #e5e2f5 62%,
-      #f4f2fe00 100%
+      ellipse 70% 80% at 100% 0%,
+      #c3bfd7 0%,
+      #d0cce5 34%,
+      #dfdcf2 62%,
+      #ebe9f900 100%
     ),
-    radial-gradient(ellipse 42% 55% at 22% 45%, #fdfbff 0%, #fdfbff00 100%),
-    linear-gradient(180deg, #f6f5fe, #f8f6fe 60%, #faf8fe);
+    linear-gradient(180deg, #e9e7f7, #edebf9 60%, #f3f1fc);
 }
 
 .hero {
-  --art-w: min(52vw, 749px);
+  /* The art runs a twentieth of its width past the viewport's right edge. */
+  --art-w: min(66vw, 1080px);
+  --art-out: 4vw;
 
-  position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) calc(
+      var(--art-w) - var(--art-out) - var(--art-w) * 0.05
+    );
   align-items: center;
-  min-height: calc(var(--art-w) * 0.574 + 50px);
+  min-height: max(600px, calc(100svh - var(--header-h)));
+  padding: 24px 0 48px;
 }
 
-/* The copy stops short of the box set at every desktop width. */
 .copy {
   position: relative;
   z-index: 1;
-  width: calc(100% - var(--art-w) + 4vw);
-  padding: 0 9px 27px;
+  padding-left: 9px;
 }
 
+/* Two short rows: "Every SaaS." and, in the wordmark's muted ink,
+   "For Free.". */
 .copy h1 {
-  margin: 0 0 17px;
-  font-size: min(calc(4.33vw - 2.3px), 60px);
-  font-weight: 620;
-  letter-spacing: -0.012em;
-  line-height: 1.12;
+  max-width: 6em;
+  margin: 0 0 24px;
+  font-size: clamp(50px, 5.7vw, 92px);
+  font-weight: 640;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.turn {
+  display: block;
+  color: var(--brand-ink);
+}
+
+.together {
+  white-space: nowrap;
 }
 
 .copy p {
-  max-width: 610px;
-  margin: 0 0 28px;
-  color: #7d7b90;
-  font-size: min(1.68vw, 24.2px);
-  line-height: 1.43;
+  max-width: 21em;
+  margin: 0 0 38px;
+  color: #535167;
+  font-size: clamp(19px, 1.56vw, 22.5px);
+  line-height: 1.45;
   letter-spacing: -0.012em;
+  text-wrap: balance;
 }
 
 .actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 32px;
+  gap: 16px 32px;
 }
 
+/* The plant stands in a little from the row's end, cut by the viewport's
+   edge with it. */
 .art {
-  /* Room past the art's right edge before the viewport's: the shelf's plant
-     and window light may use it. */
-  --shelf-room: 0px;
+  --shelf-room: 6cqw;
 
-  position: absolute;
-  top: 34px;
-  right: -4vw;
+  position: relative;
+  justify-self: start;
   width: var(--art-w);
-  margin: 0;
   container-type: inline-size;
 }
 
-/* The handwritten note, set as live text over the shelf. */
+/* The room runs the hero's whole width: the far wall's foot, level with
+   the art's own (34cqw down), and the lit floor in front of it, under the
+   copy too, so the header floats over one scene. */
+.art::before {
+  position: absolute;
+  top: 34cqw;
+  right: -40cqw;
+  left: -100vw;
+  z-index: -1;
+  height: 40cqw;
+  background: linear-gradient(
+    180deg,
+    rgb(122 114 168 / 0.06) 0%,
+    rgb(255 255 255 / 0.62) 9%,
+    rgb(255 255 255 / 0.3) 55%,
+    rgb(255 255 255 / 0) 100%
+  );
+  content: '';
+}
+
+/* The handwritten note, set as live text under the shelf (cqw is a
+   hundredth of the art's width). */
 .note {
   position: absolute;
-  left: 54.6%;
+  left: 50%;
   top: 86.6%;
   display: flex;
   align-items: flex-start;
   gap: 2.4cqw;
   color: #55537a;
-  font-size: 2.42cqw;
+  font-size: min(2.3cqw, 22px);
   line-height: 1.45;
   transform: rotate(-3.6deg);
   transform-origin: left top;
@@ -85,6 +125,7 @@
 
 .noteArrow {
   width: 4.2cqw;
+  max-width: 44px;
   height: auto;
   margin-top: 0.4cqw;
   flex: none;
@@ -96,88 +137,75 @@
 }
 
 @media (min-width: 1441px) {
-  .art {
-    --shelf-room: max(0px, (100vw - 1331px) / 2 - 57px);
-
-    right: -57px;
-  }
-
-  .copy {
-    width: calc(100% - var(--art-w) + 57px);
+  .hero {
+    --art-out: calc((100vw - 1331px) / 2);
   }
 }
 
 @media (max-width: 1023px) {
+  .top {
+    min-height: 100svh;
+  }
+
   .hero {
+    display: flex;
     flex-direction: column;
     align-items: stretch;
-    min-height: 0;
-    padding: 44px 0 20px;
+    justify-content: center;
+    min-height: calc(100svh - var(--header-h));
+    padding: 32px 0 40px;
   }
 
   .copy {
-    width: auto;
     padding: 0;
   }
 
-  .hero {
-    min-height: 0;
-  }
-
   .copy h1 {
-    font-size: 52px;
+    font-size: 88px;
   }
 
   .copy p {
-    font-size: 22px;
-  }
-
-  .art {
-    --shelf-room: calc((100vw - min(100vw - 56px, 760px)) / 2);
-    /* The shelf's shadow may run left only as far as the viewport's edge. */
-    --shelf-bleed: var(--shelf-room);
-
-    position: relative;
-    top: auto;
-    right: auto;
-    align-self: center;
-    width: 100%;
-    max-width: 760px;
-    margin-top: 32px;
-  }
-}
-
-@media (max-width: 599px) {
-  .hero {
-    padding-top: 32px;
-  }
-
-  .copy h1 {
-    font-size: 40px;
-    letter-spacing: -0.04em;
-  }
-
-  .copy p {
-    font-size: 19px;
-  }
-
-  .actions {
-    flex-wrap: wrap;
-    gap: 12px 24px;
+    font-size: 21px;
   }
 
   .art {
     --shelf-room: 0px;
-    --shelf-bleed: 20px;
+    --shelf-bleed: 28px;
 
-    width: calc(100% + 20px);
-    margin-right: -20px;
-    align-self: flex-start;
-    margin-top: 28px;
+    width: calc(100% + 28px + 6%);
+    margin-top: 44px;
   }
 
   .note {
-    left: 38%;
+    left: 46%;
+  }
+}
+
+@media (max-width: 599px) {
+  .copy h1 {
+    margin-bottom: 18px;
+    font-size: min(64px, 17vw);
+    letter-spacing: -0.04em;
+  }
+
+  .copy p {
+    margin-bottom: 30px;
+    font-size: 18.5px;
+  }
+
+  .actions {
+    gap: 12px 24px;
+  }
+
+  .art {
+    --shelf-bleed: 20px;
+
+    width: calc(100% + 20px + 8%);
+    margin-top: 36px;
+  }
+
+  .note {
+    left: 36%;
     top: 85%;
     font-size: 3.4cqw;
   }
