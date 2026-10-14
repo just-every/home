@@ -11,7 +11,7 @@ import { essayJsonLd, type Essay } from './essays';
 /**
  * An essay on justevery.com, laid out as a blog post: the site's header
  * floating on a short lavender room that holds the meta line, the title, the
- * dek and one header figure; then the prose at a reading measure, with
+ * dek and, when there is one, a header figure; then the prose at a reading measure, with
  * figures breaking out a little wider; then a short end note.
  */
 export function ArticlePage({
@@ -21,8 +21,8 @@ export function ArticlePage({
   end,
 }: {
   essay: Essay;
-  /** The header figure, usually an <ArticleFigure wide>. */
-  art: ReactNode;
+  /** The header figure, if any. */
+  art?: ReactNode;
   children: ReactNode;
   /** The end note. */
   end: ReactNode;
@@ -38,7 +38,7 @@ export function ArticlePage({
               __html: JSON.stringify(essayJsonLd(essay)),
             }}
           />
-          <header className={styles.room}>
+          <header className={`${styles.room} ${art ? '' : styles.bare}`}>
             <div className={styles.grid}>
               <p className={styles.meta}>
                 <span>Essay</span>

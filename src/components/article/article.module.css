@@ -42,6 +42,11 @@
     #f7f6fd;
 }
 
+/* With no header figure, the room closes a little below the dek. */
+.room.bare {
+  padding-bottom: 40px;
+}
+
 .meta {
   display: flex;
   flex-wrap: wrap;
