@@ -1,5 +1,6 @@
 import { Benefits } from './Benefits';
 import { Collection } from './Collection';
+import { ComingSoon } from './ComingSoon';
 import { sans } from './fonts';
 import { Footer } from './Footer';
 import { Header } from './Header';
@@ -32,6 +33,7 @@ export function LandingPage() {
         <Hero />
         <Benefits />
         <Collection />
+        <ComingSoon />
         <Running />
         <Unsubscribe />
         <NothingToUpsell />
