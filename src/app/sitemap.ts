@@ -10,5 +10,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 1,
     },
+    ...['process', 'journey', 'contact'].map(slug => ({
+      url: `${baseUrl}/${slug}`,
+      lastModified: new Date('2026-10-14'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
   ];
 }

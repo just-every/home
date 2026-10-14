@@ -1,0 +1,199 @@
+/* The Journey essay's figures. */
+
+/* Figure 1: the first homepage, redrawn in ink in a plain browser frame. */
+.firstFigure {
+  grid-column: figure;
+  justify-self: center;
+  width: min(100%, 780px);
+}
+
+.browser {
+  position: relative;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow:
+    0 1px 2px #1d1b4a12,
+    0 24px 48px -24px #2f2a7a33;
+}
+
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ecebf4;
+}
+
+.dots {
+  display: flex;
+  gap: 7px;
+}
+
+.dots span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #e4e2ee;
+}
+
+.url {
+  flex: 1;
+  max-width: 320px;
+  margin-inline: auto;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: #f3f2f8;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* The page itself, a little faded, in ink on white. */
+.screen {
+  padding: 22px clamp(20px, 5%, 48px) 34px;
+  color: #3c3b4b;
+}
+
+.oldNav {
+  --logo-h: 16px;
+
+  color: #5f5d73;
+}
+
+.oldHero {
+  margin-top: 30px;
+  color: #2c2b38;
+  font-size: clamp(26px, 3.6vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.oldWarn {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 26px;
+  padding: 6px 10px;
+  color: #6a687e;
+  font-size: 15px;
+}
+
+.oldWarn strong {
+  color: #4a4858;
+  font-weight: 600;
+}
+
+/* The pencil circle: drawn round the fair warning. */
+.oldWarn svg {
+  position: absolute;
+  top: -42%;
+  left: -5%;
+  width: 110%;
+  height: 184%;
+  overflow: visible;
+  fill: none;
+  stroke: var(--accent);
+  stroke-linecap: round;
+  stroke-width: 2.2;
+  pointer-events: none;
+}
+
+.oldWarn svg path {
+  vector-effect: non-scaling-stroke;
+}
+
+.oldAsk {
+  margin-top: 38px;
+  padding-top: 26px;
+  border-top: 1px dashed #dcdae8;
+  color: #2c2b38;
+  font-size: clamp(19px, 2.4vw, 25px);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.oldCards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.oldCards p {
+  margin-top: 10px;
+  color: #4a4858;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.thumb {
+  display: block;
+  aspect-ratio: 16 / 5;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #e4f4f7, #f6e6f1);
+}
+
+.thumbTwo {
+  background: linear-gradient(135deg, #f6e6f1, #fbf0dc);
+}
+
+.stamp {
+  position: absolute;
+  right: 22px;
+  bottom: -18px;
+  padding: 2px 12px;
+  border-radius: 6px;
+  background: #fdfdff;
+  color: var(--accent);
+  font-size: 21px;
+  transform: rotate(-4deg);
+}
+
+/* The stamp hangs over the caption's line: keep the caption's text clear of
+   it (on phones, where it spans the middle, the caption starts below it). */
+.firstFigure figcaption {
+  padding-right: 180px;
+}
+
+/* Figure 3: the shelf, the whole picture a link to all fourteen. */
+.shelf {
+  display: block;
+  border-radius: var(--card-radius);
+}
+
+.shelf img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.shelf:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (max-width: 599px) {
+  .screen {
+    padding-bottom: 28px;
+  }
+
+  .oldWarn,
+  .oldCards p {
+    font-size: 13.5px;
+  }
+
+  .oldCards {
+    gap: 12px;
+  }
+
+  .stamp {
+    font-size: 18px;
+  }
+
+  .firstFigure figcaption {
+    margin-top: 30px;
+    padding-right: 0;
+  }
+}

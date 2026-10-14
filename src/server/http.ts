@@ -49,13 +49,16 @@ const tooLarge = () =>
   new ApiError('invalid_request', 'That request is too large.');
 
 /**
- * The body as text, refused once it passes MAX_BODY_BYTES: by its declared
+ * The body as text, refused once it passes `maxBytes`: by its declared
  * length before reading, else while reading, so an oversized body is never
  * buffered whole.
  */
-async function readCappedText(request: Request): Promise<string> {
+async function readCappedText(
+  request: Request,
+  maxBytes: number
+): Promise<string> {
   const declared = Number(request.headers.get('content-length'));
-  if (declared > MAX_BODY_BYTES) throw tooLarge();
+  if (declared > maxBytes) throw tooLarge();
   if (!request.body) return '';
 
   const reader = request.body.getReader();
@@ -65,7 +68,7 @@ async function readCappedText(request: Request): Promise<string> {
     const { done, value } = await reader.read();
     if (done) break;
     size += value.byteLength;
-    if (size > MAX_BODY_BYTES) {
+    if (size > maxBytes) {
       await reader.cancel();
       throw tooLarge();
     }
@@ -80,11 +83,15 @@ async function readCappedText(request: Request): Promise<string> {
   return new TextDecoder().decode(bytes);
 }
 
-/** The request's JSON object body, or an `invalid_request` error. */
+/**
+ * The request's JSON object body, or an `invalid_request` error. A route
+ * whose fields are longer than a few hundred bytes passes its own cap.
+ */
 export async function readJsonObject(
-  request: Request
+  request: Request,
+  maxBytes = MAX_BODY_BYTES
 ): Promise<Record<string, unknown>> {
-  const text = await readCappedText(request);
+  const text = await readCappedText(request, maxBytes);
   let value: unknown;
   try {
     value = JSON.parse(text);

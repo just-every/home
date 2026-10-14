@@ -20,7 +20,8 @@
 
 .nav {
   display: flex;
-  gap: 28px;
+  flex-wrap: wrap;
+  gap: 0 28px;
   color: var(--muted);
   font-size: 15px;
 }
@@ -51,6 +52,11 @@
 @media (max-width: 599px) {
   .footer {
     padding: 20px 0 28px;
+  }
+
+  .nav {
+    width: 100%;
+    gap: 0 16px;
   }
 
   .line {

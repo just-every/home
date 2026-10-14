@@ -204,8 +204,17 @@ export function coverTexture(
 
   if (volume.tagline) {
     ctx.fillStyle = '#6f6f78';
-    ctx.font = `400 ${H * 0.041}px ${family}`;
-    wrap(ctx, volume.tagline, W * 0.42)
+    // Three lines at most: where small type measures a little wider, it
+    // steps down until the line fits in three.
+    let size = H * 0.041;
+    let lines: string[];
+    for (;;) {
+      ctx.font = `400 ${size}px ${family}`;
+      lines = wrap(ctx, volume.tagline, W * 0.42);
+      if (lines.length <= 3 || size < H * 0.032) break;
+      size *= 0.97;
+    }
+    lines
       .slice(0, 3)
       .forEach((line, i) => ctx.fillText(line, left, H * (0.365 + i * 0.054)));
   }

@@ -11,6 +11,7 @@ import { after, before, beforeEach, test } from 'node:test';
 
 import { getPlatformProxy } from 'wrangler';
 
+import { POST as contact } from '../src/app/api/contact/route';
 import { POST as match } from '../src/app/api/match/route';
 import { POST as suggest } from '../src/app/api/suggest/route';
 
@@ -166,6 +167,45 @@ test('suggest: stores the row, refuses the honeypot, then rate limits', async ()
       (await suggest(post('/api/suggest', { product: `Tool ${i}` }, ip))).status
     );
   }
+  assert.deepEqual(statuses.slice(0, 9), Array(9).fill(201));
+  assert.equal(statuses[9], 429);
+});
+
+test('contact: stores the message, refuses the honeypot and bad input, then rate limits', async () => {
+  useEnv({});
+  const left = 60_000 - (Date.now() % 60_000);
+  if (left < 8_000)
+    await new Promise(resolve => setTimeout(resolve, left + 100));
+  const ip = '198.51.100.9';
+  const send = (body: object) => contact(post('/api/contact', body, ip));
+  const message = { email: 'a@example.com', message: 'Hello there' };
+
+  assert.equal(
+    (await send({ ...message, name: 'Ada', topic: 'maker', website: '' }))
+      .status,
+    201
+  );
+  assert.equal(
+    (await send({ ...message, website: 'http://spam.test' })).status,
+    400
+  );
+  assert.equal((await send({ message: 'No email' })).status, 400);
+  assert.equal((await send({ email: 'a@example.com' })).status, 400);
+
+  const { results } = await proxy.env.DB.prepare(
+    'SELECT topic, name, email, message FROM contact_messages'
+  ).all();
+  assert.deepEqual(results, [
+    {
+      topic: 'maker',
+      name: 'Ada',
+      email: 'a@example.com',
+      message: 'Hello there',
+    },
+  ]);
+
+  const statuses: number[] = [];
+  for (let i = 0; i < 10; i += 1) statuses.push((await send(message)).status);
   assert.deepEqual(statuses.slice(0, 9), Array(9).fill(201));
   assert.equal(statuses[9], 429);
 });
