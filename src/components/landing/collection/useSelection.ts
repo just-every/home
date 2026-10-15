@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { flushSync } from 'react-dom';
 
+import { HERO_SELECTOR } from '@/lib/hero-ab';
+
 import {
   onOutsidePick,
   setSelectedProduct,
@@ -71,7 +73,9 @@ function reveal(how: Reveal, smooth: boolean, force = false) {
  * into view (smoothly, or at once with reduced motion). `onNavigate` runs
  * when a link, the address or the reels section picks a product. The
  * selection is the page's one selected product (see selectedProduct).
- * `onOpen` runs once per visitor click that opens a product in the box.
+ * `onOpen` runs once per visitor click that opens a product in the box,
+ * except from the hero's own links: those are the hero's call to action,
+ * which HeroBeacon reports instead.
  */
 export function useSelection(
   slugs: string[],
@@ -190,7 +194,7 @@ export function useSelection(
         also: () => navigateRef.current(slug),
         focus: true,
       });
-      openRef.current(slug);
+      if (!link.closest(HERO_SELECTOR)) openRef.current(slug);
     };
 
     window.addEventListener('hashchange', onHash);

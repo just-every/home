@@ -40,12 +40,15 @@ const AB_NAMES: Record<XEventId, AbEventName> = {
 const CONTENT_TYPES: Record<string, AbEventName> = {
   reel: 'reel_played',
   'hero-pick': 'hero_pick',
+  'hero-switch': 'hero_cta',
 };
 
 /**
  * The event as the hero A/B test stores it. A content view is a product
- * opened, a reel played or a pick in the hero's own picker; the detail is
- * the product or repository name only (never search text or form contents).
+ * opened, a reel played, a pick in the hero's own picker or a click on the
+ * hero's call to action; the detail is the product or repository name, or
+ * the hero link's target slug (or `all`), only (never search text or form
+ * contents).
  */
 function abEvent(eventId: XEventId, params?: XEventParams) {
   const type = params?.content_type;

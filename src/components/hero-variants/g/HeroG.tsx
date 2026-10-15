@@ -105,6 +105,7 @@ export default function HeroG() {
     <section
       className={styles.top}
       aria-labelledby="hero-g-heading"
+      data-hero="g"
       data-picked={picked ?? undefined}
     >
       <div className={styles.canvas}>

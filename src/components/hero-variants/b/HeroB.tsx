@@ -20,6 +20,7 @@ export default function HeroB() {
     <section
       className={`${styles.hero} ${fonts}`}
       aria-labelledby="hero-b-heading"
+      data-hero="b"
     >
       <div className={`${ui.wrap} ${styles.rule}`} aria-hidden="true" />
       <div className={`${ui.wrap} ${styles.grid}`}>

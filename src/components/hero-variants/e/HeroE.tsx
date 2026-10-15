@@ -48,7 +48,11 @@ export default function HeroE() {
   };
 
   return (
-    <section className={styles.hero} aria-labelledby="hero-e-heading">
+    <section
+      className={styles.hero}
+      aria-labelledby="hero-e-heading"
+      data-hero="e"
+    >
       <div className={`${ui.wrap} ${styles.rule}`} aria-hidden="true" />
       <div className={styles.canvas}>
         <div className={styles.intro}>

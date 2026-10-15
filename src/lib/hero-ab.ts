@@ -42,9 +42,18 @@ export const HERO_PARAM = 'hero';
 export const HERO_ROUTE = '/hero';
 
 /**
- * The engagement events recorded with the variant, as stored in D1.
- * `hero_pick` is a pick in a hero's own tool picker: only some heroes have
- * one, so it is reported per variant but left out of "engaged at all".
+ * Each hero's root element carries `data-hero="<id>"`. A click on a link
+ * inside it to a product (`#vol-<slug>`) or to the collection (`#all`) is
+ * the hero's call to action (`hero_cta`), not a product opened.
+ */
+export const HERO_SELECTOR = '[data-hero]';
+
+/**
+ * The events recorded with the variant, as stored in D1. Two belong to the
+ * hero itself, so they are reported per variant on their own rows but left
+ * out of "engaged at all": `hero_pick` is a pick in a hero's tool picker
+ * (only some heroes have one) and `hero_cta` is a click on one of the
+ * hero's links into the page, its main button among them.
  */
 export const AB_EVENTS = [
   'search',
@@ -56,13 +65,16 @@ export const AB_EVENTS = [
   'suggestion_sent',
   'contact_sent',
   'hero_pick',
+  'hero_cta',
 ] as const;
 
 export type AbEventName = (typeof AB_EVENTS)[number];
 
-/** Events that every hero can produce, so "engaged at all" compares fairly. */
+const HERO_OWN: readonly AbEventName[] = ['hero_pick', 'hero_cta'];
+
+/** Events that every hero's page produces alike, so "engaged at all" compares fairly. */
 export const ENGAGEMENT_EVENTS: readonly AbEventName[] = AB_EVENTS.filter(
-  name => name !== 'hero_pick'
+  name => !HERO_OWN.includes(name)
 );
 
 const VARIANT_IDS: ReadonlySet<string> = new Set(HERO_VARIANTS.map(v => v.id));

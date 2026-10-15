@@ -10,8 +10,10 @@
 // out: visitors who saw a hero forced by ?hero= (previews), bots, and any
 // visitor id seen under two variants. An event counts for a visitor when it
 // came on their variant, not forced, at or after their first exposure.
-// "engaged" counts the events every hero can produce, so a hero's own picker
-// (hero_pick, reported on its own row) does not decide it.
+// "engaged" counts the events every hero's page produces alike, so the hero's
+// own events do not decide it: picks in its picker (hero_pick) and clicks on
+// its links into the page, its main button among them (hero_cta), each
+// reported on its own row.
 
 import { spawnSync } from 'node:child_process';
 
