@@ -34,15 +34,20 @@ export function Makers() {
           </a>
         </div>
       </div>
-      <svg
+      {/* A watering can tending someone's flower, painted in the footer's
+          hand. Decorative. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         className={styles.makersArt}
-        viewBox="0 0 170 155"
+        src="/landing/painted/watering-can.svg"
+        alt=""
         aria-hidden="true"
-      >
-        <path d="M54 1 101 85H7z" fill="#4bcfa3" opacity=".85" />
-        <circle cx="108" cy="72" r="46" fill="#28c291" opacity=".75" />
-        <path d="M99 83h66v67H99z" fill="#24b68a" opacity=".8" />
-      </svg>
+        width={170}
+        height={155}
+        loading="lazy"
+        decoding="async"
+        draggable={false}
+      />
     </article>
   );
 }

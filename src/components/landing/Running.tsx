@@ -76,7 +76,18 @@ export function Running() {
       id={reels.id}
       aria-labelledby="label-running-heading"
     >
-      <div className={styles.plant} aria-hidden="true" />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        className={styles.plant}
+        src="/landing/painted/palm.svg"
+        alt=""
+        aria-hidden="true"
+        width={224}
+        height={660}
+        loading="lazy"
+        decoding="async"
+        draggable={false}
+      />
       <div className={`${ui.wrap} ${styles.inner}`}>
         <div className={styles.copy}>
           <p className={ui.eyebrow}>Watch</p>

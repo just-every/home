@@ -64,7 +64,7 @@ function subscribe(onChange: () => void) {
  * three.js scene once it has drawn, with every volume as a real link (shown
  * as a name tag, "HappyToHelp · Support", when its volume is hovered or
  * focused). Behind both sits the room of the art: soft window light on the
- * wall and floor, and a potted plant out of focus past the row's far end,
+ * wall and floor, and a painted potted plant past the row's far end,
  * so the poster, the live scene and phones all show it.
  */
 export function Shelf({

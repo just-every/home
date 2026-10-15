@@ -4,9 +4,29 @@
   padding: 0 0 var(--section-y);
 }
 
+/* The heading and its line on the left; on the right, painted sprouts sit
+   on the head's foot and rise into the section's top space, so the cards
+   stay where the text alone puts them. */
 .head {
-  max-width: 660px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
   margin: 0 0 24px;
+}
+
+.headText {
+  min-width: 0;
+  max-width: 660px;
+}
+
+.sprouts {
+  flex: none;
+  display: block;
+  width: 300px;
+  height: auto;
+  margin-top: -30px;
+  user-select: none;
 }
 
 .line {
@@ -122,6 +142,17 @@
 }
 
 @media (max-width: 599px) {
+  .head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .sprouts {
+    width: 220px;
+    margin-top: 0;
+  }
+
   .grid {
     grid-template-columns: minmax(0, 1fr);
   }

@@ -8,7 +8,10 @@ import ui from './label.module.css';
 import { Logo } from './Logo';
 import styles from './not-found.module.css';
 
-/** The 404 page, in the landing page's own type, tokens and pill. */
+/**
+ * The 404 page, in the landing page's own type, tokens and pill, with the
+ * footer's painted dog looking down a path that runs out.
+ */
 export function NotFound() {
   return (
     <div className={`${ui.page} ${sans.variable} ${styles.page}`}>
@@ -18,15 +21,29 @@ export function NotFound() {
         </Link>
       </header>
       <main className={`${ui.wrap} ${styles.main}`}>
-        <p className={ui.eyebrow}>404</p>
-        <h1 className={ui.h2}>{notFound.heading}</h1>
-        <p className={`${ui.lead} ${styles.line}`}>{notFound.line}</p>
-        <Link className={`${ui.pill} ${ui.pillSmall}`} href="/">
-          {notFound.home}{' '}
-          <span className={ui.arrow} aria-hidden="true">
-            →
-          </span>
-        </Link>
+        <div className={styles.copy}>
+          <p className={ui.eyebrow}>404</p>
+          <h1 className={ui.h2}>{notFound.heading}</h1>
+          <p className={`${ui.lead} ${styles.line}`}>{notFound.line}</p>
+          <Link className={`${ui.pill} ${ui.pillSmall}`} href="/">
+            {notFound.home}{' '}
+            <span className={ui.arrow} aria-hidden="true">
+              →
+            </span>
+          </Link>
+        </div>
+        {/* The footer's dog, wondering where the path went. Decorative. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className={styles.art}
+          src="/landing/painted/dog.svg"
+          alt=""
+          aria-hidden="true"
+          width={560}
+          height={420}
+          decoding="async"
+          draggable={false}
+        />
       </main>
     </div>
   );

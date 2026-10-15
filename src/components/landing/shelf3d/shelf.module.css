@@ -9,7 +9,7 @@
 
 /* The room of the art, behind the poster and the live scene alike: window
    light across the wall, the lit floor running back to the wall, and a
-   potted plant out of focus past the row's far end. It may run past the
+   painted potted plant past the row's far end. It may run past the
    shelf's right edge into --shelf-room (the space the page leaves before the
    viewport's edge, set by the hero); the plant always stays whole. */
 .room {
@@ -80,11 +80,12 @@
   );
 }
 
-/* The plant, generated and baked out of focus (public/landing/shelf/plant.webp,
-   200x284 with its leaves and pot in a 178x262 box at 11,11). Centred on the
-   shelf's right edge, as in the art, when there is room; otherwise moved in
-   just far enough to stay whole, 2cqw clear of the viewport's edge, and
-   stood further back (higher), so its leaves still crown the row's end. */
+/* The plant, painted in the footer's flat colours (public/landing/painted/
+   plant.svg, drawn on a 200x284 box with its leaves and pot in 178x262 at
+   11,11). Centred on the shelf's right edge, as in the art, when there is
+   room; otherwise moved in just far enough to stay whole, 2cqw clear of the
+   viewport's edge, and stood further back (higher), so its leaves still
+   crown the row's end. */
 .plant {
   --plant-in: max(0px, 12.45cqw - var(--shelf-room, 0px));
 
@@ -93,7 +94,7 @@
   left: calc(86.15cqw - var(--plant-in));
   width: 25.7cqw;
   aspect-ratio: 200 / 284;
-  background: url('/landing/shelf/plant.webp') center / 100% 100% no-repeat;
+  background: url('/landing/painted/plant.svg') center / 100% 100% no-repeat;
 }
 
 /* The poster and the live scene share one box: the slot, run further left
