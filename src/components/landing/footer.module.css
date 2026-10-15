@@ -1,21 +1,36 @@
 /* The illustrated footer: a riso landscape printed on a paper that the page
-   above fades into, the page links over its sky, then the wordmark, a rule
-   and the token line. The art's sky is unprinted, so the paper shows through
-   it, and the tree's crown closes inside the art; the inks themselves live in
-   the SVG (scripts/footer-inks.mjs). */
+   above fades into, running to the bottom of the page, with the wordmark,
+   the token line and the links over its sky. The art's sky is unprinted, so
+   the paper shows through it; the inks themselves live in the SVG
+   (scripts/footer-inks.mjs). */
 .footer {
   /* The paper: the page's white, a breath toward the site's lavender. */
   --paper: #f8f6fb;
-  /* The rules: the header's lavender grey, a step deeper on the paper. */
-  --rule: #cdcbe4;
   /* Room above the art (its own sky carries the rest), none on windows up
-     to 1080px tall, where the section above already leaves room, and the
-     height of the wordmark and token line under it: the art leaves the
-     window this much. */
+     to 1080px tall, where the section above already leaves room. */
   --pad: clamp(0px, calc((100svh - 1080px) / 2), 16px);
-  --base-h: 117px;
+  /* How far the art rises behind the page above: none unless the footer is
+     told it may (.rise), and then only where the text sits over the sky. */
+  --rise: 0px;
+
+  /* The art, in its own units: 7040 wide and 1766 tall, the 3072-unit core
+     scene (tree, person, dog, sun, bay, village, cypresses) in the middle
+     and 1984 units of scenery each side. A taller art changes --art-h and
+     the image's height attribute together. */
+  --art-w: 7040;
+  --art-h: 1766;
+  --art-core: 3072;
+  --art-side: 1984;
+  /* --u is one unit in CSS px. The core fills the footer's width up to
+     --cap; past that it stops growing and the wider scenery fills the
+     rest of the window. Worked out in the footer's own width (cqw), so
+     its children resolve it. */
+  --cap: 1700px;
+  --core: min(100cqw, var(--cap));
+  --u: calc(var(--core) / var(--art-core));
 
   position: relative;
+  container-type: inline-size;
   padding-top: var(--pad);
   /* The page's white settles into the paper over the art's sky. */
   background: linear-gradient(
@@ -26,43 +41,26 @@
 }
 
 .scene {
-  /* The scene is drawn in the art's own units: --u is one unit in CSS px.
-     The core scene (tree, person, dog, sun, bay, village, cypresses) is
-     3072 units wide and fills the band up to --cap; past that it stops
-     growing and the art's wider scenery fills the rest of the window. At
-     the cap the art is 977px tall, the height of a 1080p window's footer;
-     wider, it used to grow with the window (1307px at 2560x1440). */
-  --cap: 1700px;
-  --core: min(100cqw, var(--cap));
-  --u: calc(var(--core) / 3072);
-
   position: relative;
-  /* The art's crop is worked out in the band's own width (cqw). */
-  container-type: inline-size;
+  margin-top: calc(-1 * var(--rise));
   overflow: clip;
 }
 
-/* The art is 7040 units wide: the 3072-unit core in the middle and 1984
-   units of hills, bay, grass and canopy each side, so wide windows reveal
-   more scenery instead of a larger scene. It is drawn at the core's scale
-   (cover picks it: the box is the art's full height) and centred, so at
-   --cap and below the window shows the core alone, as before. Past the
-   art's own width at the cap (3896px) it stops there, centred, and its
-   ends fade into the paper, so the whole scene keeps its scale and the
-   footer its height on any window. At full
-   height it is 1766 units tall; on a short window it gives up height so
-   that, at the end of the page, the whole footer is in view. The crop
-   takes the thin sky above the crown first (at most 20 units), then the
-   foreground grass, and never more than 220 units in all, which keeps the
-   grass under the dog; on windows shorter than that (1280x720, say) the
-   footer runs about 25px past the window, which is only sky and the
-   crown's tip. */
+/* The art is drawn at the core's scale (cover picks it: the box is the
+   art's full height) and centred, so at --cap and below the window shows
+   the core alone. Past the art's own width at the cap (3896px) it stops
+   there, centred, and its ends fade into the paper, so the whole scene
+   keeps its scale and the footer its height on any window. On a short
+   window it gives up height so that, at the end of the page, the whole
+   footer is in view. The crop takes the thin sky above the crown first (at
+   most 20 units), then the foreground grass, and never more than 220 units
+   in all, which keeps the grass under the dog. */
 .art {
-  --full: calc(var(--u) * 1766);
+  --full: calc(var(--u) * var(--art-h));
   --h: min(
     var(--full),
     max(
-      calc(100svh - var(--pad) - var(--base-h)),
+      calc(100svh - var(--pad) + var(--rise)),
       calc(var(--full) - var(--u) * 220),
       560px
     )
@@ -71,7 +69,7 @@
   --crop-top: min(var(--crop), var(--u) * 20);
 
   display: block;
-  width: min(100%, var(--u) * 7040);
+  width: min(100%, var(--u) * var(--art-w));
   height: var(--full);
   margin: calc(-1 * var(--crop-top)) auto calc(var(--crop-top) - var(--crop));
   object-fit: cover;
@@ -92,72 +90,26 @@
   }
 }
 
-/* The page links over the sky at top right, ruled underneath as the header
-   is: from the sky's edge (just past the canopy) to the text column's. */
-.top {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.nav {
-  position: absolute;
-  top: clamp(36px, var(--core) * 0.044, 96px);
-  right: 0;
-  left: 53%;
+/* The text block: the wordmark with the token line under it, and the links
+   in two short columns, each under a small heading. On narrow windows it is
+   a band on the paper above the art, the wordmark at left and the columns
+   at right (stacked on phones); wide, it sits over the art's sky. */
+.text {
   display: flex;
-  justify-content: flex-end;
-  gap: 0 clamp(20px, 2.4vw, 40px);
-  border-bottom: 1px solid var(--rule);
-  color: #454350;
-  font-size: clamp(15px, 1.18vw, 19px);
-  pointer-events: auto;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px 48px;
+  padding: 40px 0 28px;
 }
 
-/* Tabbing into the links brings the art below them into view too, so the
-   next stop, the wordmark under the art, needs no long scroll. */
-.nav a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding-bottom: 4px;
-  scroll-margin-bottom: 48svh;
-}
-
-.nav a:hover {
-  color: var(--ink);
-  text-decoration: underline;
-  text-underline-offset: 6px;
-}
-
-/* Under the art: the wordmark, a rule, the token line. */
-.base {
-  padding: 12px 0 26px;
-}
-
-/* Up to 1080px tall the wordmark block packs tighter, so the art keeps its
-   foreground (the mound and fronds) where it would otherwise be cropped. */
-@media (max-height: 1080px) {
-  .footer {
-    --base-h: 101px;
-  }
-
-  .base {
-    padding: 6px 0 16px;
-  }
-}
-
-/* The rule runs the row; the link is only as wide as the wordmark. */
 .mark {
-  display: flex;
-  align-items: center;
-  min-height: 48px;
-  border-bottom: 1px solid var(--rule);
+  max-width: 200px;
 }
 
 /* The wordmark, in the header's muted ink. */
 .brand {
-  --logo-h: 21px;
+  --logo-h: 22px;
 
   display: inline-flex;
   align-items: center;
@@ -170,9 +122,10 @@
 }
 
 .line {
-  margin-top: 10px;
+  margin-top: 6px;
   color: var(--muted);
   font-size: 14px;
+  line-height: 1.5;
 }
 
 /* Same-width digits, so the ticking count moves nothing. */
@@ -180,31 +133,44 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Narrow screens: the art keeps its full height, and the links follow it on
-   the paper, set apart from the wordmark below them. */
-@media (max-width: 1023px) {
-  .top {
-    position: static;
-    pointer-events: auto;
-  }
+.nav {
+  display: flex;
+  gap: 0 clamp(36px, 4vw, 64px);
+}
 
-  .nav {
-    position: static;
-    justify-content: flex-start;
-    gap: 0 28px;
-    padding-top: 8px;
-    border-bottom: 0;
-    font-size: 16px;
-  }
+.heading {
+  margin: 0 0 2px;
+  padding-top: 13px;
+  color: #34333f;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
 
-  .base {
-    padding-top: 22px;
-  }
+.links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #454350;
+  font-size: 16px;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.links a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
 
 /* Phones: the art keeps a picture's height, cropped toward the person, the
    dog and the sun, and never cut at the crown: the core sits 27% of the way
-   along the window's overflow, as when the art was the core alone. */
+   along the window's overflow, as when the art was the core alone. The text
+   stacks: the wordmark and line, then the two columns side by side. */
 @media (max-width: 767px) {
   .art {
     --hm: clamp(300px, 92vw, 420px);
@@ -212,21 +178,57 @@
     height: var(--hm);
     margin: 0;
     object-position: calc(
-        0.27 * (100cqw - var(--hm) * 3072 / 1766) - var(--hm) * 1984 / 1766
+        0.27 * (100cqw - var(--hm) * var(--art-core) / var(--art-h)) -
+          var(--hm) * var(--art-side) / var(--art-h)
       )
       0;
   }
 
-  /* The five links need about 314px; on the narrowest phones (320px) they
-     wrap to a second row rather than run past the window. */
-  .nav {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 0 8px;
-    font-size: 15px;
+  .text {
+    flex-direction: column;
+    gap: 12px;
+    padding: 32px 0 20px;
   }
 
-  .base {
-    padding-bottom: 32px;
+  .nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 24px;
+    width: 100%;
+  }
+}
+
+/* From 1280px wide the text sits over the art's sky, right of the tree's
+   crown: the wordmark and line at the sky's left, the columns at the text
+   column's right edge, below the rise. On pages that end on a card the art
+   rises behind that card, so the crown grows out from under it. */
+@media (min-width: 1280px) {
+  .rise {
+    /* The gap above the footer, and a little more: the crown's top tucks
+       under the card's bottom edge. A taller crown raises this with it. */
+    --rise: calc(var(--section-y, 56px) + var(--u) * 48);
+
+    z-index: -1;
+  }
+
+  /* The art sits under the page above (z-index -1): the footer's parent
+     isolates, so the art stays above that parent's own background, while
+     the page's cards, text and controls all paint over it. */
+  :global(*):has(> .rise) {
+    isolation: isolate;
+  }
+
+  .top {
+    pointer-events: none;
+  }
+
+  .text {
+    position: absolute;
+    top: calc(var(--rise) + clamp(28px, var(--u) * 72, 56px));
+    right: max(4%, (100% - 1331px) / 2);
+    left: calc(50% + var(--core) * 0.04);
+    flex-wrap: nowrap;
+    padding: 0;
+    pointer-events: auto;
   }
 }

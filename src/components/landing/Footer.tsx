@@ -9,15 +9,47 @@ import { TokenCount } from './TokenCount';
 
 /**
  * The illustrated footer (owner's pick B3, 15 Oct): a two-ink riso landscape
- * as a full-bleed band, the page links over its sky, then the wordmark, a
- * rule and the token line on the same paper. The art is one SVG (two ink
- * plates over a cream for the shirt and dog; scripts/footer-inks.mjs sets
- * their colours), loaded lazily as an image so the page's HTML stays light.
+ * as a full-bleed band that runs to the bottom of the page, with the
+ * wordmark, the token line and the site's links set over its sky. The art is
+ * one SVG (ink plates over a cream for the shirt and dog;
+ * scripts/footer-inks.mjs sets their colours), loaded lazily as an image so
+ * the page's HTML stays light.
+ *
+ * `rise`: the page above ends on an opaque card, so the art may rise behind
+ * it (by the stylesheet's --rise), the tree's crown growing out from under
+ * the card. Pages that end on bare text leave it off.
  */
-export function Footer() {
+export function Footer({ rise = false }: { rise?: boolean }) {
   return (
-    <footer className={styles.footer}>
+    <footer
+      className={rise ? `${styles.footer} ${styles.rise}` : styles.footer}
+    >
       <div className={styles.scene}>
+        <div className={`${ui.wrap} ${styles.top}`}>
+          <div className={styles.text}>
+            <div className={styles.mark}>
+              {/* The page links to itself: no prefetch needed. */}
+              <Link className={styles.brand} href="/" prefetch={false}>
+                <Logo />
+              </Link>
+              <TokenCount />
+            </div>
+            <nav aria-label="Footer" className={styles.nav}>
+              {footer.groups.map(group => (
+                <div key={group.heading} className={styles.group}>
+                  <h2 className={styles.heading}>{group.heading}</h2>
+                  <ul className={styles.links}>
+                    {group.links.map(link => (
+                      <li key={link.label}>
+                        <a href={link.href}>{link.label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </nav>
+          </div>
+        </div>
         {/* An SVG: next/image would only pass it through. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -25,28 +57,10 @@ export function Footer() {
           src="/landing/footer/footer-art.svg"
           width={7040}
           height={1766}
-          alt="A person with a laptop and a white dog sit under a big tree on a grassy hill, looking over a bay at a coral setting sun, with a small village and cypress trees beyond."
+          alt="A person with a laptop and a white dog sit under a big tree on a grassy hill, looking over a bay at the setting sun, with a small village and cypress trees beyond."
           loading="lazy"
           decoding="async"
         />
-        <div className={`${ui.wrap} ${styles.top}`}>
-          <nav aria-label="Footer" className={styles.nav}>
-            {footer.links.map(link => (
-              <a key={link.label} href={link.href}>
-                {link.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-      </div>
-      <div className={`${ui.wrap} ${styles.base}`}>
-        <div className={styles.mark}>
-          {/* The page links to itself: no prefetch needed. */}
-          <Link className={styles.brand} href="/" prefetch={false}>
-            <Logo />
-          </Link>
-        </div>
-        <TokenCount />
       </div>
     </footer>
   );
