@@ -84,6 +84,8 @@ export function useSelection(
   const openRef = useRef(onOpen);
   openRef.current = onOpen;
   const settleRef = useRef<(() => void) | null>(null);
+  const selectedRef = useRef(selected);
+  selectedRef.current = selected;
 
   useEffect(() => {
     const settle = settleRef.current;
@@ -116,7 +118,9 @@ export function useSelection(
           ?.focus({ preventScroll: true });
       }
       const smooth = animate && !reducedMotion();
-      if (!traversal) reveal(how, smooth);
+      // The first paint always scrolls: the browser's own scroll to the
+      // card in the grid is under way and this one replaces it.
+      if (!traversal) reveal(how, smooth, !animate);
       else {
         // After the browser's own scroll to the card has begun.
         requestAnimationFrame(() =>
@@ -131,6 +135,12 @@ export function useSelection(
       // From an effect (the first paint): settle once React has committed.
       settleRef.current = settle;
       update();
+      // The collection's first product is already the one showing, so no
+      // update commits and the effect above never runs: settle here.
+      if (selectedRef.current === slug) {
+        settleRef.current = null;
+        settle();
+      }
     }
   }, []);
 

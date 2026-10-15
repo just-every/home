@@ -1,5 +1,6 @@
 import { collection } from '@/content/landing';
 import { Reel } from '@/components/shared/Reel';
+import { track, X_EVENTS } from '@/lib/x-pixel';
 
 import { BrandMark } from '../BrandMark';
 import ui from '../label.module.css';
@@ -66,6 +67,12 @@ export function Feature({ shown }: { shown: Shown }) {
               className={`${ui.pill} ${ui.pillSmall} ${styles.primary}`}
               href={primary.href}
               aria-label={primary.name}
+              onClick={
+                item.homepage
+                  ? () =>
+                      track(X_EVENTS.runSiteClick, { content_name: item.name })
+                  : undefined
+              }
             >
               {primary.label}{' '}
               <span className={ui.arrow} aria-hidden="true">

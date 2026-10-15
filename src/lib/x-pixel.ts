@@ -7,6 +7,7 @@ export const X_EVENTS = {
   search: 'tw-reblb-13xo57',
   contentView: 'tw-reblb-13xo58',
   githubClick: 'tw-reblb-13xo55',
+  runSiteClick: 'tw-reblb-13xo56',
   commandCopied: 'tw-reblb-13xo50',
   suggestionSent: 'tw-reblb-13xo51',
   contactSent: 'tw-reblb-13xo59',
