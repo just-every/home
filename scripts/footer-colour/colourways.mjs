@@ -17,6 +17,7 @@
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { lightness, mix, seedPastels, shade } from './colour.mjs';
+import { CARDS, PEACH, lightScene } from './light.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const P = seedPastels(resolve(root, 'src/data/seeds.ts'));
@@ -239,4 +240,110 @@ export const colourways = {
   },
 };
 
-export const defaultColourway = 'meadow';
+/**
+ * Dusk in seven hue families: lavender (uptime; the crown, ridge, jeans and
+ * cypresses with vector), periwinkle blue (vector, oncall; the grass, shore
+ * and backpack), mauve (uptime with penny; the trunk), pink (nook; the
+ * blossom, flowers, far hills and clouds), salmon (orbit; the field, bark,
+ * roofs and straps), peach (mango; the sun, walls, skin and dog) and aqua
+ * (happytohelp; the water). The light dusks below keep five of them, each
+ * from a card fill above the footer (light.mjs), and merge the cut ones'
+ * parts onto the kept families.
+ */
+const duskParts = {
+  leaf: 'lavender',
+  blossom: 'pink',
+  trunk: 'lavender',
+  bark: 'pink',
+  grass: 'blue',
+  field: 'pink',
+  flower: 'pink',
+  water: 'aqua',
+  shore: 'blue',
+  hills: 'pink',
+  ridge: 'lavender',
+  sun: 'peach',
+  cloud: 'pink',
+  cypress: 'lavender',
+  walls: 'peach',
+  roofs: 'pink',
+  backpack: 'blue',
+  straps: 'pink',
+  jeans: 'lavender',
+  skin: 'peach',
+  dog: 'peach',
+};
+
+const mist = {
+  families: {
+    lavender: CARDS.request,
+    blue: CARDS.runOne,
+    pink: CARDS.purse,
+    peach: PEACH,
+    aqua: CARDS.pier,
+  },
+  parts: duskParts,
+};
+
+Object.assign(colourways, {
+  'dusk-mist': {
+    note: 'Light dusk without mauve and salmon: a request-box lavender tree and trunk, run-one blue grass, pink blossom, field and roofs, a peach sun, aqua water.',
+    ...lightScene(mist),
+  },
+  'dusk-veil': {
+    note: 'Light dusk without periwinkle and mauve: lavender tree, trunk, grass and shore, pink blossom, a salmon field and roofs, a peach sun, aqua water.',
+    ...lightScene({
+      families: {
+        lavender: CARDS.request,
+        pink: CARDS.purse,
+        salmon: CARDS.easel,
+        peach: PEACH,
+        aqua: CARDS.pier,
+      },
+      parts: {
+        ...duskParts,
+        grass: 'lavender',
+        shore: 'lavender',
+        backpack: 'lavender',
+        bark: 'salmon',
+        field: 'salmon',
+        roofs: 'salmon',
+        straps: 'salmon',
+      },
+    }),
+  },
+  'dusk-haze': {
+    note: 'Light dusk without pink and mauve: a lavender tree with salmon blossom, run-one blue grass, a salmon field, a peach sun, makers-mint water.',
+    ...lightScene({
+      families: {
+        lavender: CARDS.request,
+        blue: CARDS.runOne,
+        salmon: CARDS.easel,
+        peach: PEACH,
+        mint: CARDS.makers,
+      },
+      parts: {
+        ...duskParts,
+        blossom: 'salmon',
+        bark: 'salmon',
+        field: 'salmon',
+        flower: 'salmon',
+        hills: 'salmon',
+        cloud: 'salmon',
+        roofs: 'salmon',
+        straps: 'salmon',
+        water: 'mint',
+      },
+    }),
+  },
+  'dusk-pale': {
+    note: 'Dusk mist balanced paler: the same five families, every step lifted toward its card.',
+    ...lightScene({ ...mist, lift: 0.3 }),
+  },
+});
+
+/**
+ * Dusk mist: dusk's character in the cards' own fills, so the footer reads
+ * as one more card of the set above it.
+ */
+export const defaultColourway = 'dusk-mist';

@@ -69,9 +69,11 @@
    top stands 24px below the window's top edge: the art's top is then
    --air units above the crown, so the art is the window's height plus
    those units, less the 24px. The crop takes the sky over the crown first
-   (at most 30 of its --air units, none where the art rises), then the
-   foreground grass, and never more than 220 units in all, which keeps the
-   grass under the dog. */
+   (at most --sky-crop of its --air units: 30 where the text is a band
+   above the art, none from 1280px wide, where the text sits in the sky and
+   the crown needs those 24px at the page's end), then the foreground
+   grass, and never more than 220 units in all, which keeps the grass under
+   the dog. */
 .art {
   --full: calc(var(--u) * (var(--art-h) - var(--trim)));
   --h: min(
@@ -159,9 +161,11 @@
   gap: 0 clamp(36px, 4vw, 64px);
 }
 
+/* A heading stays on one line; the token line gives way instead. */
 .heading {
   margin: 0 0 2px;
   padding-top: 13px;
+  white-space: nowrap;
   color: #34333f;
   font-size: 13px;
   font-weight: 600;
@@ -226,12 +230,15 @@
    column's right edge, below the rise. On pages that end on a card the art
    rises behind that card, so the crown grows out from under it. */
 @media (min-width: 1280px) {
+  .footer {
+    --sky-crop: 0;
+  }
+
   .rise {
     /* The gap above the footer and the sky over the crown, then --tuck.
        Where the card spans the crown, the crown stops short of it, whole,
        its top at least 24px under the card in open sky. */
     --tuck: -24px;
-    --sky-crop: 0;
     --rise: calc(var(--section-y, 56px) + var(--u) * var(--air) + var(--tuck));
 
     z-index: -1;

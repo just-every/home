@@ -59,6 +59,9 @@ export function mix(a, b, t) {
 /** OKLab lightness, 0 to 1. */
 export const lightness = hex => hexToOklab(hex)[0];
 
+/** OKLab chroma: how far from grey. */
+export const chroma = hex => Math.hypot(...hexToOklab(hex).slice(1));
+
 const inGamut = lab =>
   oklabToLinear(lab).every(c => c >= -1e-4 && c <= 1 + 1e-4);
 
