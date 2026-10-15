@@ -12,7 +12,6 @@ export const githubReposUrl =
  * header and footer work from every page; on / the anchor stays in-page.
  */
 export const nav = [
-  { label: 'Products', href: '/#all' },
   { label: 'Process', href: '/process' },
   { label: 'Journey', href: '/journey' },
   { label: 'Contact', href: '/contact' },
@@ -225,17 +224,28 @@ export const makers = {
 } as const;
 
 /**
- * Wordmark, two links and one line of small print. With a measured token
- * count the line is `${tokensBefore}<N>${tokensAfter}`; without one, or when
- * the count cannot be read, it is `line`.
+ * The footer over the art's sky: the wordmark, one line of small print and
+ * the site's links in two short columns. With a measured token count the
+ * line is `${tokensBefore}<N>${tokensAfter}`; without one, or when the count
+ * cannot be read, it is `line`. The collection is the home page itself, so
+ * the footer does not link to it.
  */
 export const footer = {
-  links: [
-    { label: 'Products', href: '/#all' },
-    { label: 'Process', href: '/process' },
-    { label: 'Journey', href: '/journey' },
-    { label: 'Contact', href: '/contact' },
-    { label: 'GitHub', href: githubOrgUrl },
+  groups: [
+    {
+      heading: 'Essays',
+      links: [
+        { label: 'Process', href: '/process' },
+        { label: 'Journey', href: '/journey' },
+      ],
+    },
+    {
+      heading: 'Get in touch',
+      links: [
+        { label: 'Contact', href: '/contact' },
+        { label: 'GitHub', href: githubOrgUrl },
+      ],
+    },
   ],
   line: 'Made with care and a lot of coding agents.',
   tokensBefore: 'Made with care and ',
