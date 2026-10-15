@@ -10,10 +10,17 @@
 // out: visitors who saw a hero forced by ?hero= (previews), bots, and any
 // visitor id seen under two variants. An event counts for a visitor when it
 // came on their variant, not forced, at or after their first exposure.
+// "engaged" counts the events every hero can produce, so a hero's own picker
+// (hero_pick, reported on its own row) does not decide it.
 
 import { spawnSync } from 'node:child_process';
 
-import { AB_EVENTS, CONTROL, HERO_VARIANTS } from '../src/lib/hero-ab.ts';
+import {
+  AB_EVENTS,
+  CONTROL,
+  ENGAGEMENT_EVENTS,
+  HERO_VARIANTS,
+} from '../src/lib/hero-ab.ts';
 import { compare } from './ab-stats.mjs';
 
 const args = process.argv.slice(2);
@@ -77,6 +84,7 @@ SELECT variant, segment, 'visitors' AS metric, COUNT(*) AS n
 UNION ALL
 SELECT c.variant, c.segment, 'engaged', COUNT(DISTINCT d.visitor_id)
   FROM clean c JOIN done d ON d.visitor_id = c.visitor_id
+  WHERE d.name IN (${ENGAGEMENT_EVENTS.map(name => `'${name}'`).join(', ')})
   GROUP BY c.variant, c.segment
 UNION ALL
 SELECT c.variant, c.segment, d.name, COUNT(*)

@@ -19,6 +19,10 @@ export interface HeroVariant {
 
 export const HERO_VARIANTS = [
   { id: 'control', weight: 1, enabled: true },
+  { id: 'a', weight: 1, enabled: true },
+  { id: 'b', weight: 1, enabled: true },
+  { id: 'e', weight: 1, enabled: true },
+  { id: 'g', weight: 1, enabled: true },
 ] as const satisfies readonly HeroVariant[];
 
 export type HeroVariantId = (typeof HERO_VARIANTS)[number]['id'];
@@ -37,7 +41,11 @@ export const HERO_PARAM = 'hero';
 /** The internal route the middleware rewrites `/` to, one static page per variant. */
 export const HERO_ROUTE = '/hero';
 
-/** The engagement events recorded with the variant, as stored in D1. */
+/**
+ * The engagement events recorded with the variant, as stored in D1.
+ * `hero_pick` is a pick in a hero's own tool picker: only some heroes have
+ * one, so it is reported per variant but left out of "engaged at all".
+ */
 export const AB_EVENTS = [
   'search',
   'product_opened',
@@ -47,9 +55,15 @@ export const AB_EVENTS = [
   'command_copied',
   'suggestion_sent',
   'contact_sent',
+  'hero_pick',
 ] as const;
 
 export type AbEventName = (typeof AB_EVENTS)[number];
+
+/** Events that every hero can produce, so "engaged at all" compares fairly. */
+export const ENGAGEMENT_EVENTS: readonly AbEventName[] = AB_EVENTS.filter(
+  name => name !== 'hero_pick'
+);
 
 const VARIANT_IDS: ReadonlySet<string> = new Set(HERO_VARIANTS.map(v => v.id));
 

@@ -31,14 +31,14 @@ import { Unsubscribe } from './Unsubscribe';
  * middleware and rendered here on the server.
  */
 export function LandingPage({ hero }: { hero: HeroVariantId }) {
-  const HeroVariant = heroes[hero];
+  const { component: HeroVariant, shelf = false } = heroes[hero];
   return (
     <div className={`${ui.page} ${sans.variable}`} id="top">
       <Header />
       <main>
         <HeroVariant />
         <HeroBeacon variant={hero} />
-        <Benefits />
+        <Benefits overShelf={shelf} />
         <Collection />
         <ComingSoon />
         <Running />

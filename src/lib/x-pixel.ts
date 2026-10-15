@@ -36,16 +36,23 @@ const AB_NAMES: Record<XEventId, AbEventName> = {
   [X_EVENTS.contactSent]: 'contact_sent',
 };
 
+/** A content view's `content_type`, as the A/B test names the event. */
+const CONTENT_TYPES: Record<string, AbEventName> = {
+  reel: 'reel_played',
+  'hero-pick': 'hero_pick',
+};
+
 /**
  * The event as the hero A/B test stores it. A content view is a product
- * opened or a reel played; the detail is the product or repository name
- * only (never search text or form contents).
+ * opened, a reel played or a pick in the hero's own picker; the detail is
+ * the product or repository name only (never search text or form contents).
  */
 function abEvent(eventId: XEventId, params?: XEventParams) {
+  const type = params?.content_type;
   const name =
-    eventId === X_EVENTS.contentView && params?.content_type === 'reel'
-      ? 'reel_played'
-      : AB_NAMES[eventId];
+    (eventId === X_EVENTS.contentView && typeof type === 'string'
+      ? CONTENT_TYPES[type]
+      : undefined) ?? AB_NAMES[eventId];
   const detail = params?.content_name;
   return { name, detail: typeof detail === 'string' ? detail : undefined };
 }
