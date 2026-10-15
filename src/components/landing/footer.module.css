@@ -191,7 +191,10 @@
     object-position: 27% 0;
   }
 
+  /* The five links need about 314px; on the narrowest phones (320px) they
+     wrap to a second row rather than run past the window. */
   .nav {
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 0 8px;
     font-size: 15px;
