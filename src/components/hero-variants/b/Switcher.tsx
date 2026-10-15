@@ -35,7 +35,10 @@ const KEY_SETTLE_MS = 700;
  * replaces it lights up under "Yours to own", its line shows under the
  * lists, and the button switches to it (`#vol-<slug>` opens that product's
  * panel and reel further down the page). Each pick that changes the
- * selection sends the pixel's content-view event as a hero pick.
+ * selection sends the pixel's content-view event as a hero pick. On phones,
+ * once a tool is picked, the footer with the button stays at the foot of
+ * the screen while the card shows (`data-picked`), so the next step is in
+ * view right after a pick however far down the card it sits.
  */
 export function Switcher() {
   const [slug, setSlug] = useState(defaultSlug);
@@ -64,18 +67,38 @@ export function Switcher() {
     });
   };
 
+  /**
+   * On phones a pick pins the card's footer to the foot of the screen, and
+   * the picked row scrolls clear of it (the rows' scroll margin, set for
+   * phones only, is the footer's height). Wider, the row already shows.
+   */
+  const keepClear = (row: HTMLElement | null | undefined) => {
+    if (!row) return;
+    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    requestAnimationFrame(() =>
+      row.scrollIntoView({
+        behavior: still ? 'instant' : 'smooth',
+        block: 'nearest',
+      })
+    );
+  };
+
   /** A click or tap picks and reports at once; keys report on settling. */
-  const choose = (pick: Pick, fromKeys = false) => {
+  const choose = (pick: Pick, row?: HTMLElement | null, fromKeys = false) => {
     setSlug(pick.slug);
     setStep(1);
+    keepClear(row);
     if (!fromKeys) {
       report(pick);
       return;
     }
-    radios.current[picks.indexOf(pick)]?.focus();
+    row?.focus();
     clearTimeout(settle.current);
     settle.current = setTimeout(() => report(pick), KEY_SETTLE_MS);
   };
+
+  const pickByKey = (pick: Pick) =>
+    choose(pick, radios.current[picks.indexOf(pick)], true);
 
   const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     const last = picks.length - 1;
@@ -90,7 +113,7 @@ export function Switcher() {
     if (event.key in moves) {
       event.preventDefault();
       const next = Math.min(last, Math.max(0, moves[event.key]));
-      choose(picks[next], true);
+      pickByKey(picks[next]);
       return;
     }
     if (
@@ -108,7 +131,7 @@ export function Switcher() {
       const match = matchIncumbent(text);
       if (match) {
         event.preventDefault();
-        choose(match, true);
+        pickByKey(match);
       }
     }
   };
@@ -118,6 +141,7 @@ export function Switcher() {
       className={styles.switcher}
       id={switcherId}
       aria-labelledby="hero-b-switch-heading"
+      data-picked={step > 0 || undefined}
     >
       <PixelBurst className={styles.topSpark} />
       <p className={`${styles.annotation} ${styles.topNote}`}>
@@ -158,7 +182,7 @@ export function Switcher() {
                 aria-checked={at === index}
                 tabIndex={at === index ? 0 : -1}
                 className={`${styles.tool} ${at === index ? styles.selected : ''}`}
-                onClick={() => choose(pick)}
+                onClick={event => choose(pick, event.currentTarget)}
               >
                 {pick.incumbent}
               </button>
@@ -182,7 +206,7 @@ export function Switcher() {
                   type="button"
                   aria-pressed={pick.slug === slug}
                   className={`${styles.tool} ${pick.slug === slug ? styles.selected : ''}`}
-                  onClick={() => choose(pick)}
+                  onClick={event => choose(pick, event.currentTarget)}
                 >
                   <strong>{pick.name}</strong>{' '}
                   <span>(for {pick.incumbent})</span>
