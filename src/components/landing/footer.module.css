@@ -1,8 +1,8 @@
-/* The illustrated footer: a riso landscape printed on a paper that the page
+/* The illustrated footer: a landscape printed on a paper that the page
    above fades into, running to the bottom of the page, with the wordmark,
    the token line and the links over its sky. The art's sky is unprinted, so
-   the paper shows through it; the inks themselves live in the SVG
-   (scripts/footer-inks.mjs). */
+   the paper shows through it; its colours, the collection's pastels by
+   region, live in the SVG (scripts/footer-colours.mjs). */
 .footer {
   /* The paper: the page's white, a breath toward the site's lavender. */
   --paper: #f8f6fb;
@@ -13,14 +13,18 @@
      told it may (.rise), and then only where the text sits over the sky. */
   --rise: 0px;
 
-  /* The art, in its own units: 7040 wide and 1766 tall, the 3072-unit core
+  /* The art, in its own units: 7040 wide and 2186 tall, the 3072-unit core
      scene (tree, person, dog, sun, bay, village, cypresses) in the middle
-     and 1984 units of scenery each side. A taller art changes --art-h and
-     the image's height attribute together. */
+     and 1984 units of scenery each side. The crown's top is about 120 units
+     below the art's top: --trim of that open sky is never shown, which
+     leaves --air units of sky over the crown. A taller art changes --art-h
+     and the image's height attribute together. */
   --art-w: 7040;
-  --art-h: 1766;
+  --art-h: 2186;
   --art-core: 3072;
   --art-side: 1984;
+  --trim: 70;
+  --air: 50;
   /* --u is one unit in CSS px. The core fills the footer's width up to
      --cap; past that it stops growing and the wider scenery fills the
      rest of the window. Worked out in the footer's own width (cqw), so
@@ -40,7 +44,10 @@
   );
 }
 
+/* Its own formatting context, so the art's negative top margin (the sky it
+   trims) is clipped here instead of collapsing into the rise. */
 .scene {
+  display: flow-root;
   position: relative;
   margin-top: calc(-1 * var(--rise));
   overflow: clip;
@@ -52,11 +59,11 @@
    there, centred, and its ends fade into the paper, so the whole scene
    keeps its scale and the footer its height on any window. On a short
    window it gives up height so that, at the end of the page, the whole
-   footer is in view. The crop takes the thin sky above the crown first (at
-   most 20 units), then the foreground grass, and never more than 220 units
-   in all, which keeps the grass under the dog. */
+   footer is in view. The crop takes the sky over the crown first (at most
+   30 of its --air units), then the foreground grass, and never more than
+   220 units in all, which keeps the grass under the dog. */
 .art {
-  --full: calc(var(--u) * var(--art-h));
+  --full: calc(var(--u) * (var(--art-h) - var(--trim)));
   --h: min(
     var(--full),
     max(
@@ -66,12 +73,13 @@
     )
   );
   --crop: calc(var(--full) - var(--h));
-  --crop-top: min(var(--crop), var(--u) * 20);
+  --crop-top: min(var(--crop), var(--u) * var(--sky-crop, 30));
 
   display: block;
   width: min(100%, var(--u) * var(--art-w));
-  height: var(--full);
-  margin: calc(-1 * var(--crop-top)) auto calc(var(--crop-top) - var(--crop));
+  height: calc(var(--u) * var(--art-h));
+  margin: calc(-1 * (var(--u) * var(--trim) + var(--crop-top))) auto
+    calc(var(--crop-top) - var(--crop));
   object-fit: cover;
   object-position: 50% 0;
 }
@@ -167,19 +175,21 @@
   text-underline-offset: 6px;
 }
 
-/* Phones: the art keeps a picture's height, cropped toward the person, the
-   dog and the sun, and never cut at the crown: the core sits 27% of the way
-   along the window's overflow, as when the art was the core alone. The text
-   stacks: the wordmark and line, then the two columns side by side. */
+/* Phones: the art keeps a picture's height (--hm, the whole crown with 20
+   units of sky over it down to the foreground), cropped toward the person,
+   the dog and the sun: the core sits 27% of the way along the window's
+   overflow, as when the art was the core alone. --s is one unit in px. The
+   text stacks: the wordmark and line, then the two columns side by side. */
 @media (max-width: 767px) {
   .art {
-    --hm: clamp(300px, 92vw, 420px);
+    --hm: clamp(330px, 104vw, 480px);
+    --s: calc(var(--hm) / (var(--art-h) - var(--trim) - 30));
 
-    height: var(--hm);
-    margin: 0;
+    height: calc(var(--s) * var(--art-h));
+    margin: calc(-1 * var(--s) * (var(--trim) + 30)) 0 0;
     object-position: calc(
-        0.27 * (100cqw - var(--hm) * var(--art-core) / var(--art-h)) -
-          var(--hm) * var(--art-side) / var(--art-h)
+        0.27 * (100cqw - var(--s) * var(--art-core)) - var(--s) *
+          var(--art-side)
       )
       0;
   }
@@ -204,9 +214,16 @@
    rises behind that card, so the crown grows out from under it. */
 @media (min-width: 1280px) {
   .rise {
-    /* The gap above the footer, and a little more: the crown's top tucks
-       under the card's bottom edge. A taller crown raises this with it. */
-    --rise: calc(var(--section-y, 56px) + var(--u) * 48);
+    /* The gap above the footer and the sky over the crown, then --tuck:
+       where the card spans the crown (up to about 1600px wide) the crown
+       stops a little short of it, whole and in open sky; wider, the crown
+       stands mostly beside the card, so it grows up past the card's bottom
+       edge and its upper right tucks behind the card's corner. The crown's
+       own sky sits behind the card, so a short window crops only the
+       foreground. */
+    --tuck: clamp(-24px, (100cqw - 1640px) * 0.14, 96px);
+    --sky-crop: 0;
+    --rise: calc(var(--section-y, 56px) + var(--u) * var(--air) + var(--tuck));
 
     z-index: -1;
   }

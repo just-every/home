@@ -8,12 +8,12 @@ import styles from './footer.module.css';
 import { TokenCount } from './TokenCount';
 
 /**
- * The illustrated footer (owner's pick B3, 15 Oct): a two-ink riso landscape
- * as a full-bleed band that runs to the bottom of the page, with the
- * wordmark, the token line and the site's links set over its sky. The art is
- * one SVG (ink plates over a cream for the shirt and dog;
- * scripts/footer-inks.mjs sets their colours), loaded lazily as an image so
- * the page's HTML stays light.
+ * The illustrated footer (owner's pick B3, 15 Oct): a flat landscape in the
+ * collection's pastels as a full-bleed band that runs to the bottom of the
+ * page, with the wordmark, the token line and the site's links set over its
+ * sky. The art is one SVG (traced shapes coloured by region;
+ * scripts/footer-colours.mjs sets the colourway), loaded lazily as an image
+ * so the page's HTML stays light.
  *
  * `rise`: the page above ends on an opaque card, so the art may rise behind
  * it (by the stylesheet's --rise), the tree's crown growing out from under
@@ -56,7 +56,7 @@ export function Footer({ rise = false }: { rise?: boolean }) {
           className={styles.art}
           src="/landing/footer/footer-art.svg"
           width={7040}
-          height={1766}
+          height={2186}
           alt="A person with a laptop and a white dog sit under a big tree on a grassy hill, looking over a bay at the setting sun, with a small village and cypress trees beyond."
           loading="lazy"
           decoding="async"
