@@ -1,0 +1,702 @@
+/* Hero B, ported from the 12ui conversion of design r1 b. From 1024px wide
+   every length is the design's value at 1440px times --u, so the copy, the
+   card and the landscape keep their proportions as the window narrows, and
+   at 1440x900 the whole hero, landscape included, fits the first screen.
+   Below 1024px the copy, the card and the landscape stack. */
+
+.hero {
+  --u: min(1px, calc(100vw / 1440));
+  --ink: #101014;
+  --violet: #6420ff;
+  --scene-h: calc(100vw * 304 / 1536);
+
+  position: relative;
+  overflow: clip;
+  padding-top: var(--header-h);
+  color: var(--ink);
+  font-family: var(--hb-sans), 'DM Sans', Arial, sans-serif;
+  background: radial-gradient(
+    ellipse at 18% 40%,
+    #fff 0,
+    #f8f7ff 35%,
+    #e7e5ff 100%
+  );
+}
+
+.hero .grid a:focus-visible,
+.hero .grid button:focus-visible {
+  outline: 3px solid #7035ff;
+  outline-offset: 3px;
+}
+
+.grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 44.8% 55.2%;
+  align-items: start;
+  padding-top: calc(46 * var(--u));
+}
+
+/* ---- The copy ---- */
+
+.intro {
+  padding-right: calc(20 * var(--u));
+}
+
+.eyebrow {
+  margin: 0 0 calc(14 * var(--u));
+  color: var(--violet);
+  font:
+    calc(28 * var(--u)) / 1.1 var(--hb-pixel),
+    'VT323',
+    monospace;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Two lines at every width: "Stop renting" and "your software.". */
+.headline {
+  margin: 0 0 calc(24 * var(--u));
+  font-size: calc(90 * var(--u));
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.062em;
+}
+
+.headline span {
+  display: block;
+  white-space: nowrap;
+}
+
+.description {
+  max-width: calc(530 * var(--u));
+  margin: 0 0 calc(32 * var(--u));
+  color: #57527c;
+  font-size: calc(22 * var(--u));
+  line-height: 1.42;
+}
+
+.primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(24 * var(--u));
+  max-width: calc(420 * var(--u));
+  min-height: max(44px, calc(64 * var(--u)));
+  border-radius: 40px;
+  background: radial-gradient(ellipse at center, #29282c, #1b1b1e);
+  box-shadow: 0 8px 28px #21194613;
+  color: #fff;
+  font:
+    calc(21 * var(--u)) var(--hb-mono),
+    'IBM Plex Mono',
+    monospace;
+  text-decoration: none;
+}
+
+.primary:hover,
+.switchLink:hover {
+  background: #3a3940;
+}
+
+.arrow {
+  font-family: Arial, sans-serif;
+  font-size: 1.4em;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.benefits {
+  display: flex;
+  align-items: center;
+  gap: calc(24 * var(--u));
+  margin: calc(30 * var(--u)) 0 0;
+  padding: 0;
+  color: #24214c;
+  font:
+    calc(15 * var(--u)) / 1.5 var(--hb-mono),
+    'IBM Plex Mono',
+    monospace;
+  list-style: none;
+}
+
+.benefits li {
+  display: flex;
+  align-items: center;
+  gap: calc(16 * var(--u));
+}
+
+.benefits li + li {
+  padding-left: calc(24 * var(--u));
+  border-left: 1px solid #b2adc9;
+}
+
+.benefits span {
+  max-width: calc(76 * var(--u));
+}
+
+.benefitIcon {
+  flex: none;
+  width: calc(34 * var(--u));
+  height: calc(37 * var(--u));
+  fill: none;
+  stroke: #131223;
+  stroke-width: 2.5;
+}
+
+/* ---- The card ---- */
+
+.switcher {
+  position: relative;
+  min-width: 0;
+  margin-top: calc(30 * var(--u));
+  padding: calc(18 * var(--u)) calc(24 * var(--u)) calc(20 * var(--u));
+  border: calc(6 * var(--u)) solid #222225;
+  border-radius: calc(16 * var(--u));
+  background: linear-gradient(125deg, #ffffffed, #f5f3ffed);
+  box-shadow: 0 2px 0 #fff8;
+  font-family: var(--hb-mono), 'IBM Plex Mono', monospace;
+}
+
+.switchHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: calc(10 * var(--u));
+  border-bottom: 2px solid #d5d1e5;
+}
+
+.switchHeader h2 {
+  margin: 0;
+  font-size: calc(23 * var(--u));
+  font-weight: 500;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  gap: calc(14 * var(--u));
+  margin: 0;
+  padding: 0;
+  font-size: calc(12 * var(--u));
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.steps li {
+  display: flex;
+  align-items: center;
+  gap: calc(7 * var(--u));
+  padding-right: calc(6 * var(--u));
+}
+
+.steps b {
+  padding: 1px calc(6 * var(--u));
+  border: 2px solid #e9e6f7;
+  border-radius: 4px;
+  font-weight: 400;
+}
+
+.steps .stepActive {
+  background: #eeebff;
+}
+
+.steps .stepActive b {
+  border-color: transparent;
+  background: linear-gradient(135deg, #9657ff, #6121ff);
+  color: #fff;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: 1fr calc(58 * var(--u)) 1.1fr;
+  align-items: stretch;
+  margin: calc(16 * var(--u)) 0 calc(14 * var(--u));
+  font-size: calc(15 * var(--u));
+}
+
+.panel {
+  min-width: 0;
+  padding: calc(12 * var(--u)) calc(7 * var(--u)) calc(8 * var(--u));
+  border-radius: calc(12 * var(--u));
+  background: linear-gradient(125deg, #e9e9f1, #e5e5ed);
+}
+
+.panel h3 {
+  margin: 0 calc(9 * var(--u)) calc(8 * var(--u));
+  color: #43424e;
+  font-size: calc(13 * var(--u));
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.panel.own {
+  padding-right: calc(12 * var(--u));
+  padding-left: calc(14 * var(--u));
+  background: linear-gradient(135deg, #e8e2ff, #dfd9ff);
+}
+
+.own h3 {
+  margin-left: 0;
+  color: #6527ff;
+}
+
+.rentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: calc(12 * var(--u));
+}
+
+.ownList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  animation: hb-show 0.22s ease-out;
+}
+
+@keyframes hb-show {
+  from {
+    opacity: 0.35;
+  }
+}
+
+.tool {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: calc(32 * var(--u));
+  padding: 0 calc(14 * var(--u));
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+
+.tool:hover {
+  background: #d9d6ea;
+}
+
+.tool.selected {
+  background: #d7ccff;
+  color: #5000ed;
+}
+
+.own .tool {
+  gap: 0.6em;
+  flex-wrap: wrap;
+  column-gap: 0.6em;
+}
+
+.own .tool:hover {
+  background: #d3c9ff;
+}
+
+.own .tool strong {
+  font-weight: 400;
+}
+
+.own .tool span {
+  color: #51138a;
+}
+
+.own .tool.selected {
+  background: linear-gradient(110deg, #702cff, #7032ff);
+  color: #fff;
+}
+
+.own .tool.selected span {
+  color: #fff;
+}
+
+.more {
+  display: inline-flex;
+  align-items: center;
+  min-height: calc(32 * var(--u));
+  margin: calc(4 * var(--u)) 0 0;
+  padding: 0 calc(14 * var(--u));
+  border-radius: 5px;
+  color: #281053;
+  text-decoration: none;
+}
+
+.more:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.pixelArrow {
+  align-self: center;
+  justify-self: center;
+  width: calc(40 * var(--u));
+  color: #792eff;
+}
+
+.switchFooter {
+  display: flex;
+  align-items: center;
+  gap: calc(22 * var(--u));
+  padding: calc(12 * var(--u)) calc(12 * var(--u)) calc(12 * var(--u))
+    calc(22 * var(--u));
+  border: 2px solid #dedaf7;
+  border-radius: calc(14 * var(--u));
+  font-size: calc(15 * var(--u));
+  line-height: 1.4;
+}
+
+.sparkles {
+  flex: none;
+  width: calc(28 * var(--u));
+  color: #6116ed;
+}
+
+.switchFooter p {
+  flex: 1;
+  margin: 0;
+}
+
+.switchLink {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: calc(12 * var(--u));
+  min-height: max(44px, calc(52 * var(--u)));
+  padding: 0 calc(24 * var(--u));
+  border-radius: calc(14 * var(--u));
+  background: radial-gradient(ellipse, #29282b, #1b1b1e);
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---- The handwritten notes and the pixel burst ---- */
+
+.annotation {
+  margin: 0;
+  color: #5511e7;
+  font:
+    calc(19 * var(--u)) / 1.1 var(--hb-hand),
+    'Kalam',
+    cursive;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.topSpark {
+  position: absolute;
+  top: calc(-46 * var(--u));
+  left: calc(38 * var(--u));
+  width: calc(30 * var(--u));
+  color: #6d23f5;
+}
+
+.topNote {
+  position: absolute;
+  top: calc(-86 * var(--u));
+  right: calc(-36 * var(--u));
+  width: calc(170 * var(--u));
+  transform: rotate(-11deg);
+}
+
+.topNoteArrow {
+  position: absolute;
+  top: calc(14 * var(--u));
+  left: calc(-54 * var(--u));
+  width: calc(56 * var(--u));
+}
+
+/* ---- The landscape ---- */
+
+/* It rises behind the card's foot, so the sign stands just under it. */
+.landscape {
+  position: relative;
+  z-index: 1;
+  margin-top: calc(var(--scene-h) * -0.215);
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1536 / 304;
+  container-type: inline-size;
+}
+
+.sceneArt {
+  display: block;
+  width: 100%;
+  height: 100%;
+  mask-image: linear-gradient(180deg, #0000 0, #000 16%);
+}
+
+/* The lettering on the sign's plate, tilted with it (cqw: a hundredth of
+   the scene's width). */
+.sign {
+  position: absolute;
+  margin: 0;
+  top: 43.5%;
+  left: 89.2%;
+  width: 9cqw;
+  color: #7825be;
+  font-family: var(--hb-pixel), 'VT323', monospace;
+  line-height: 0.9;
+  text-align: center;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%) rotate(-12deg) skewX(-4deg);
+}
+
+.sign strong {
+  display: block;
+  font-size: 2.05cqw;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.sign span {
+  display: block;
+  margin-top: 0.45cqw;
+  font-size: 1.2cqw;
+  letter-spacing: 0.04em;
+}
+
+.bottomNote {
+  position: absolute;
+  top: 34%;
+  left: 4.4%;
+  width: calc(130 * var(--u));
+  transform: rotate(-12deg);
+}
+
+.bottomNoteArrow {
+  position: absolute;
+  top: calc(30 * var(--u));
+  left: calc(140 * var(--u));
+  width: calc(56 * var(--u));
+}
+
+/* ---- Stacked: tablets and phones ---- */
+
+@media (max-width: 1023px) {
+  .hero {
+    --u: 1px;
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 36px;
+  }
+
+  .intro {
+    padding: 0;
+  }
+
+  .eyebrow {
+    font-size: 26px;
+  }
+
+  .headline {
+    font-size: 76px;
+  }
+
+  .description {
+    max-width: 620px;
+    font-size: 21px;
+  }
+
+  .switcher {
+    width: 100%;
+    margin-top: 96px;
+  }
+
+  /* Touch-sized rows. */
+  .tool,
+  .more {
+    min-height: 44px;
+  }
+
+  .landscape {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 28px;
+    overflow: hidden;
+  }
+
+  /* Wide enough to keep the sign legible; the right end, sign and all,
+     shows. */
+  .scene {
+    flex: none;
+    width: max(100%, 860px);
+  }
+
+  .bottomNote {
+    top: 12%;
+    left: 5%;
+    width: 120px;
+    font-size: 17px;
+  }
+
+  .bottomNoteArrow {
+    top: 22px;
+    left: 124px;
+    width: 46px;
+  }
+}
+
+@media (max-width: 599px) {
+  .grid {
+    padding-top: 28px;
+  }
+
+  .eyebrow {
+    font-size: 22px;
+    letter-spacing: 0.6px;
+  }
+
+  .headline {
+    font-size: 54px;
+    letter-spacing: -0.055em;
+    line-height: 0.98;
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  .primary {
+    max-width: none;
+    min-height: 58px;
+    gap: 16px;
+    font-size: 17px;
+  }
+
+  .benefits {
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .benefits li {
+    flex: 1;
+    gap: 8px;
+  }
+
+  .benefits li + li {
+    padding-left: 10px;
+  }
+
+  .benefitIcon {
+    width: 24px;
+    height: 30px;
+  }
+
+  .switcher {
+    margin-top: 86px;
+    padding: 16px 12px;
+    border-width: 5px;
+    border-radius: 14px;
+  }
+
+  .switchHeader {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .switchHeader h2 {
+    font-size: 21px;
+  }
+
+  .steps {
+    gap: 10px;
+    font-size: 11px;
+  }
+
+  .choices {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    font-size: 15px;
+  }
+
+  .panel,
+  .panel.own {
+    padding: 14px 8px 8px;
+  }
+
+  .rentGrid {
+    column-gap: 6px;
+  }
+
+  .tool,
+  .more {
+    padding: 0 12px;
+  }
+
+  .pixelArrow {
+    width: 30px;
+    transform: rotate(90deg);
+  }
+
+  .switchFooter {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .switchFooter p {
+    flex-basis: calc(100% - 44px);
+  }
+
+  .switchLink {
+    width: 100%;
+    min-height: 50px;
+    font-size: 15px;
+  }
+
+  .topNote {
+    top: -78px;
+    right: 0;
+    width: 150px;
+    font-size: 16px;
+  }
+
+  .topNoteArrow {
+    left: -42px;
+    width: 42px;
+  }
+
+  .topSpark {
+    top: -40px;
+    left: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool {
+    transition: none;
+  }
+
+  .ownList {
+    animation: none;
+  }
+}
