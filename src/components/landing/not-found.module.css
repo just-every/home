@@ -5,6 +5,14 @@
   min-height: 100dvh;
 }
 
+/* Past 1440px the wrap centres with auto margins, which would shrink a flex
+   item to its content; the header and main keep the wrap's full width. */
+@media (min-width: 1441px) {
+  .page > * {
+    width: 100%;
+  }
+}
+
 .main {
   display: flex;
   flex: 1;
@@ -14,6 +22,37 @@
   padding: var(--section-y) 0 calc(var(--section-y) * 2);
 }
 
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .line {
   margin: 14px 0 28px;
+}
+
+/* Under the pill on narrow screens; beside the text from 900px. */
+.art {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  margin-top: 32px;
+  user-select: none;
+}
+
+@media (min-width: 900px) {
+  .main {
+    display: grid;
+    grid-template-columns: minmax(320px, 1fr) minmax(0, 560px);
+    align-content: center;
+    align-items: center;
+    column-gap: 40px;
+  }
+
+  .art {
+    justify-self: end;
+    margin-top: 0;
+  }
 }

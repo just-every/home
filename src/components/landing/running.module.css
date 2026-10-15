@@ -11,19 +11,19 @@
   );
 }
 
+/* A painted parlour palm reaching in from past the viewport's right edge
+   (public/landing/painted/palm.svg), cut clean by that edge. */
 .plant {
   position: absolute;
   top: 52px;
   right: 0;
+  display: block;
   width: 105px;
   height: 309px;
-  background: url('/landing/plant.webp') right top / contain no-repeat;
-  /* Fade the photo's own backdrop into the section's, so no edge shows. */
-  mask-image:
-    linear-gradient(to right, transparent, #000 45%),
-    linear-gradient(transparent, #000 18%, #000 78%, transparent);
-  mask-composite: intersect;
+  object-fit: contain;
+  object-position: right top;
   pointer-events: none;
+  user-select: none;
 }
 
 .inner {

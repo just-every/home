@@ -153,6 +153,7 @@
 
 .makersArt {
   position: absolute;
+  display: block;
   top: 44px;
   right: 24px;
   width: 150px;
