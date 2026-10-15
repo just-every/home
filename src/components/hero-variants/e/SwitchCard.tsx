@@ -20,7 +20,14 @@ function SeedRow({ volume, tool, on }: RowProps) {
         style={{ '--tile': volume.colour } as CSSProperties}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={volume.mark} alt="" width={20} height={20} decoding="async" />
+        <img
+          src={volume.mark}
+          alt=""
+          aria-hidden="true"
+          width={20}
+          height={20}
+          decoding="async"
+        />
       </span>
       <a className={styles.appLink} href={volume.href}>
         <span className={styles.appName}>{volume.name}</span>

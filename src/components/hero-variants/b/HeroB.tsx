@@ -66,6 +66,7 @@ export default function HeroB() {
             width={1536}
             height={304}
             alt=""
+            aria-hidden="true"
             decoding="async"
             fetchPriority="high"
             draggable={false}

@@ -234,7 +234,13 @@ export default function HeroG() {
                       data-on={on || undefined}
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={volume.mark} alt="" width={20} height={20} />
+                      <img
+                        src={volume.mark}
+                        alt=""
+                        aria-hidden="true"
+                        width={20}
+                        height={20}
+                      />
                       <span className={styles.name}>{volume.name}</span>
                       <span className={styles.go} aria-hidden="true">
                         {on ? (
@@ -279,6 +285,7 @@ export default function HeroG() {
         <img
           src="/hero-variants/g/landscape-3072.webp"
           alt=""
+          aria-hidden="true"
           width={3072}
           height={420}
           decoding="async"

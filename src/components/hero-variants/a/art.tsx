@@ -45,6 +45,7 @@ export function Terrain() {
       width={1040}
       height={382}
       alt=""
+      aria-hidden="true"
       decoding="async"
     />
   );
