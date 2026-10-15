@@ -71,14 +71,18 @@ function reveal(how: Reveal, smooth: boolean, force = false) {
  * into view (smoothly, or at once with reduced motion). `onNavigate` runs
  * when a link, the address or the reels section picks a product. The
  * selection is the page's one selected product (see selectedProduct).
+ * `onOpen` runs once per visitor click that opens a product in the box.
  */
 export function useSelection(
   slugs: string[],
-  onNavigate: (slug: string) => void
+  onNavigate: (slug: string) => void,
+  onOpen: (slug: string) => void
 ) {
   const selected = useSelectedProduct(slugs[0]);
   const navigateRef = useRef(onNavigate);
   navigateRef.current = onNavigate;
+  const openRef = useRef(onOpen);
+  openRef.current = onOpen;
   const settleRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
@@ -176,6 +180,7 @@ export function useSelection(
         also: () => navigateRef.current(slug),
         focus: true,
       });
+      openRef.current(slug);
     };
 
     window.addEventListener('hashchange', onHash);

@@ -10,6 +10,7 @@ import {
   SUGGEST_PRODUCT_MAX,
 } from '@/lib/interactive-api';
 import type { ApiErrorBody } from '@/lib/interactive-api';
+import { conversionId, track, X_EVENTS } from '@/lib/x-pixel';
 
 import ui from '../label.module.css';
 import { onSuggestionRequest } from './prefill';
@@ -74,16 +75,19 @@ export function Suggest() {
     }
     setState('sending');
     setError('');
+    const id = conversionId();
     try {
       const response = await fetch('/api/suggest', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
           ...fields,
+          conversion_id: id,
           website: trapRef.current?.value ?? '',
         }),
       });
       if (response.ok) {
+        track(X_EVENTS.suggestionSent, { conversion_id: id });
         setFields(empty);
         setState('sent');
         return;
