@@ -45,7 +45,7 @@ export function LandingPage() {
           <Suggest />
         </div>
       </main>
-      <Footer />
+      <Footer rise />
     </div>
   );
 }
