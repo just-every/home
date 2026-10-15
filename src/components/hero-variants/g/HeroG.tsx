@@ -10,6 +10,7 @@ import { X_EVENTS, track } from '@/lib/x-pixel';
 import { countWord } from './count';
 import { caveat } from './fonts';
 import styles from './hero-g.module.css';
+import { rows } from './order';
 import {
   CodeIcon,
   DocIcon,
@@ -62,7 +63,7 @@ export default function HeroG() {
 
   /** Up, down, Home and End move between the rented tools. */
   const onPickerKey = (event: KeyboardEvent<HTMLButtonElement>, i: number) => {
-    const last = volumes.length - 1;
+    const last = rows.length - 1;
     const next =
       event.key === 'ArrowDown'
         ? Math.min(i + 1, last)
@@ -182,7 +183,7 @@ export default function HeroG() {
           >
             <h2 id="hero-g-stack-heading">Your current stack</h2>
             <ul>
-              {volumes.map((volume, i) => (
+              {rows.map((volume, i) => (
                 <li
                   key={volume.slug}
                   style={{ '--pastel': volume.colour } as CSSProperties}
@@ -215,7 +216,7 @@ export default function HeroG() {
           >
             <h2 id="hero-g-own-heading">To open source you own.</h2>
             <ul>
-              {volumes.map(volume => {
+              {rows.map(volume => {
                 const on = picked === volume.slug;
                 return (
                   <li

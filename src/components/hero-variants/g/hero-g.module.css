@@ -23,6 +23,18 @@
   z-index: 1;
 }
 
+/* The header's content edge, where the wordmark sits: 4% in from the page's
+   sides up to 1440px wide, then the 1331px column the landing wrap keeps. */
+.top {
+  --edge: 4cqw;
+}
+
+@media (min-width: 1441px) {
+  .top {
+    --edge: calc((100cqw - 1331px) / 2);
+  }
+}
+
 .hand {
   color: #6b6496;
   font-weight: 400;
@@ -50,7 +62,7 @@
 }
 
 .intro h1 {
-  font-weight: 700;
+  font-weight: 600;
   color: #222;
 }
 
@@ -229,8 +241,8 @@
 }
 
 /* A seed you can own: its mark and name on its pastel, linking to its
-   panel in the collection. The pick lifts the matching seed and quiets
-   the rest. */
+   panel in the collection. The pick lifts the matching seed and softens
+   the other rows' backgrounds; their labels keep full ink. */
 .new a {
   display: flex;
   align-items: center;
@@ -240,7 +252,6 @@
   transition:
     background 0.18s,
     box-shadow 0.18s,
-    opacity 0.18s,
     transform 0.18s;
 }
 
@@ -268,16 +279,15 @@
 
 .new a:hover {
   background: var(--pastel);
-  opacity: 1;
 }
 
 .top[data-picked] .new a:not([data-on]) {
-  opacity: 0.55;
+  background: color-mix(in oklab, var(--pastel) 24%, #fff);
 }
 
 .top[data-picked] .new a:not([data-on]):hover,
 .top[data-picked] .new a:not([data-on]):focus-visible {
-  opacity: 1;
+  background: color-mix(in oklab, var(--pastel) 55%, #fff);
 }
 
 .new a[data-on] {
@@ -328,19 +338,23 @@
   .intro {
     position: absolute;
     top: calc(var(--u) * 108);
-    left: calc(var(--u) * 102);
+    /* The copy starts 38px inside the header's content edge, whatever the
+       canvas's own margin: the edge, less the canvas's offset from the page. */
+    left: calc(var(--edge) + 38px - (100cqw - var(--u) * 1536) / 2);
     z-index: 3;
-    width: calc(var(--u) * 590);
+    width: calc(var(--u) * 650);
   }
 
   .intro h1 {
-    margin: 0 0 calc(var(--u) * 29);
-    font-size: calc(var(--u) * 88);
-    line-height: 1.025;
-    letter-spacing: calc(var(--u) * -4.7);
+    margin: 0 0 calc(var(--u) * 28);
+    font-size: calc(var(--u) * 99.5);
+    line-height: 0.97;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
   }
 
   .description {
+    max-width: calc(var(--u) * 590);
     font-size: calc(var(--u) * 23);
     line-height: 1.49;
     letter-spacing: calc(var(--u) * -0.3);
@@ -650,7 +664,7 @@
     margin: 0 0 20px;
     font-size: clamp(46px, 11.5vw, 76px);
     line-height: 1.04;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.02em;
   }
 
   .description {
