@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 
 import { sans } from '@/components/landing/fonts';
 import { siteMeta } from '@/content/meta';
@@ -38,6 +39,12 @@ export const metadata: Metadata = {
   },
 };
 
+// X (Twitter) conversion tracking base code, pixel ID reblb.
+const xPixel = `!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','reblb');`;
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -75,6 +82,9 @@ export default function RootLayout({
       </head>
       <body className={`${sans.variable} font-sans antialiased`}>
         {children}
+        <Script id="x-pixel" strategy="afterInteractive">
+          {xPixel}
+        </Script>
       </body>
     </html>
   );
