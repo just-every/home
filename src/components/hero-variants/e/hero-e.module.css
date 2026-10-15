@@ -126,7 +126,7 @@
 .cardHead p {
   margin: 0;
   color: #717693;
-  font-size: calc(14 * var(--u));
+  font-size: max(12px, calc(14 * var(--u)));
   letter-spacing: -0.028em;
 }
 
@@ -297,7 +297,7 @@
 .appLink small {
   overflow: hidden;
   color: #707691;
-  font-size: calc(14 * var(--u));
+  font-size: max(12px, calc(14 * var(--u)));
   letter-spacing: -0.028em;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -497,7 +497,7 @@
 .featureLine {
   margin: 0;
   color: #737a95;
-  font-size: calc(14 * var(--u));
+  font-size: max(12px, calc(14 * var(--u)));
 }
 
 /* Motion: a pick settles in; nothing moves with reduced motion. */

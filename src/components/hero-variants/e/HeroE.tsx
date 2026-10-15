@@ -81,7 +81,7 @@ export default function HeroE() {
             className={`${styles.note} ${styles.rightNote} ${notes.className}`}
           >
             <p>
-              <span>Same tools.</span> <span>Open source</span>{' '}
+              <span>Same jobs.</span> <span>Open source</span>{' '}
               <span>versions you own.</span>
             </p>
             <NoteArrow className={styles.noteArrow} side="right" />
