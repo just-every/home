@@ -1,15 +1,20 @@
 /* The illustrated footer: a riso landscape printed on a paper that the page
    above fades into, the page links over its sky, then the wordmark, a rule
-   and the token line. The art's sky is unprinted, so the paper shows
-   through it; the inks themselves live in the SVG (scripts/footer-inks.mjs). */
+   and the token line. The art's sky is unprinted, so the paper shows through
+   it, and the tree's crown closes inside the art; the inks themselves live in
+   the SVG (scripts/footer-inks.mjs). */
 .footer {
   /* The paper: the page's white, a breath toward the site's lavender. */
   --paper: #f8f6fb;
   /* The rules: the header's lavender grey, a step deeper on the paper. */
   --rule: #cdcbe4;
+  /* Room above the art (its own sky carries the rest) and the height of the
+     wordmark and token line under it: the art leaves the window this much. */
+  --pad: clamp(8px, 1vw, 16px);
+  --base-h: 118px;
 
   position: relative;
-  padding-top: clamp(16px, 2.2vw, 40px);
+  padding-top: var(--pad);
   /* The page's white settles into the paper over the art's sky. */
   background: linear-gradient(
     to bottom,
@@ -19,34 +24,33 @@
 }
 
 .scene {
-  /* How deep the canopy's top edge dissolves into the page above. */
-  --band: clamp(18px, 4vw, 96px);
-
   position: relative;
+  /* The art's crop is worked out in the band's own width (cqw). */
+  container-type: inline-size;
 }
 
-/* The art bleeds off both sides and the top. Its canopy runs into the page
-   above through a band of riso grain, as ink thinning out at the sheet's
-   edge: fade.png is a 768x64 stochastic dither (clumped noise against a
-   downward ramp) repeated along the edge; below it the art shows whole. */
+/* The art bleeds off both sides. At its own proportions it is 57.49% as tall
+   as it is wide; on a short window it gives up height so that, at the end of
+   the page, the whole footer is in view. The crop takes the thin sky above
+   the crown first (at most 0.65cqw, 20 of the art's 3072 units), then the
+   foreground grass, and never more than 7.16cqw in all, which keeps the
+   grass under the dog; below that the footer may run past the window. */
 .art {
+  --full: 57.49cqw;
+  --h: min(
+    var(--full),
+    max(
+      calc(100svh - var(--pad) - var(--base-h)),
+      calc(var(--full) - 7.16cqw),
+      560px
+    )
+  );
+
   display: block;
   width: 100%;
-  /* Its own proportions, but never much taller than the window: on tall
-     wide screens the sky and the canopy's crown give way first. */
-  height: min(57.49vw, max(92vh, 640px));
+  height: var(--h);
   object-fit: cover;
-  object-position: 50% 72%;
-  -webkit-mask:
-    url('/landing/footer/fade.png') 0 0 / calc(var(--band) * 12) var(--band)
-      repeat-x,
-    linear-gradient(#000, #000) 0 100% / 100% calc(100% - var(--band) + 2px)
-      no-repeat;
-  mask:
-    url('/landing/footer/fade.png') 0 0 / calc(var(--band) * 12) var(--band)
-      repeat-x,
-    linear-gradient(#000, #000) 0 100% / 100% calc(100% - var(--band) + 2px)
-      no-repeat;
+  object-position: 50% calc(-1 * min(var(--full) - var(--h), 0.65cqw));
 }
 
 /* The page links over the sky at top right, ruled underneath as the header
@@ -86,26 +90,33 @@
 
 /* Under the art: the wordmark, a rule, the token line. */
 .base {
-  padding: 18px 0 40px;
+  padding: 12px 0 26px;
+}
+
+/* The rule runs the row; the link is only as wide as the wordmark. */
+.mark {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  border-bottom: 1px solid var(--rule);
 }
 
 /* The wordmark, in the header's muted ink. */
 .brand {
   --logo-h: 21px;
 
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  min-height: 52px;
-  border-bottom: 1px solid var(--rule);
+  min-height: 44px;
   color: var(--brand-ink);
 }
 
 .brand svg {
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .line {
-  margin-top: 14px;
+  margin-top: 10px;
   color: var(--muted);
   font-size: 14px;
 }
@@ -115,8 +126,8 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Narrow screens: the art keeps a picture's height, cropped toward the
-   person, the dog and the sun, and the links follow it on the paper. */
+/* Narrow screens: the art keeps its full height, and the links follow it on
+   the paper. */
 @media (max-width: 1023px) {
   .top {
     position: static;
@@ -137,11 +148,12 @@
   }
 }
 
+/* Phones: the art keeps a picture's height, cropped toward the person, the
+   dog and the sun, and never cut at the crown. */
 @media (max-width: 767px) {
   .art {
     height: clamp(300px, 92vw, 420px);
-    object-fit: cover;
-    object-position: 27% 50%;
+    object-position: 27% 0;
   }
 
   .nav {

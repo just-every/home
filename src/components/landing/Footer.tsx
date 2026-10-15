@@ -11,8 +11,8 @@ import { TokenCount } from './TokenCount';
  * The illustrated footer (owner's pick B3, 15 Oct): a two-ink riso landscape
  * as a full-bleed band, the page links over its sky, then the wordmark, a
  * rule and the token line on the same paper. The art is one SVG (two ink
- * plates, scripts/footer-inks.mjs sets their colours), loaded lazily as an
- * image so the page's HTML stays light.
+ * plates over a cream for the shirt and dog; scripts/footer-inks.mjs sets
+ * their colours), loaded lazily as an image so the page's HTML stays light.
  */
 export function Footer() {
   return (
@@ -40,10 +40,12 @@ export function Footer() {
         </div>
       </div>
       <div className={`${ui.wrap} ${styles.base}`}>
-        {/* The page links to itself: no prefetch needed. */}
-        <Link className={styles.brand} href="/" prefetch={false}>
-          <Logo />
-        </Link>
+        <div className={styles.mark}>
+          {/* The page links to itself: no prefetch needed. */}
+          <Link className={styles.brand} href="/" prefetch={false}>
+            <Logo />
+          </Link>
+        </div>
         <TokenCount />
       </div>
     </footer>
