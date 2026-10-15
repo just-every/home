@@ -46,9 +46,10 @@
    units of hills, bay, grass and canopy each side, so wide windows reveal
    more scenery instead of a larger scene. It is drawn at the core's scale
    (cover picks it: the box is the art's full height) and centred, so at
-   --cap and below the window shows the core alone, as before; past the
-   art's own width at the cap (3896px) it is scaled up and cropped at the
-   bottom, so the footer keeps its height. At full
+   --cap and below the window shows the core alone, as before. Past the
+   art's own width at the cap (3896px) it stops there, centred, and its
+   ends fade into the paper, so the whole scene keeps its scale and the
+   footer its height on any window. At full
    height it is 1766 units tall; on a short window it gives up height so
    that, at the end of the page, the whole footer is in view. The crop
    takes the thin sky above the crown first (at most 20 units), then the
@@ -70,12 +71,25 @@
   --crop-top: min(var(--crop), var(--u) * 20);
 
   display: block;
-  width: 100%;
+  width: min(100%, var(--u) * 7040);
   height: var(--full);
-  margin-top: calc(-1 * var(--crop-top));
-  margin-bottom: calc(var(--crop-top) - var(--crop));
+  margin: calc(-1 * var(--crop-top)) auto calc(var(--crop-top) - var(--crop));
   object-fit: cover;
   object-position: 50% 0;
+}
+
+/* Wider than the art at the cap (--cap * 7040 / 3072): the paper shows
+   either side, and the art's ends fade into it rather than stop at a line. */
+@container (min-width: 3897px) {
+  .art {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 160px,
+      #000 calc(100% - 160px),
+      transparent
+    );
+  }
 }
 
 /* The page links over the sky at top right, ruled underneath as the header
