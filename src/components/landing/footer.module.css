@@ -1,45 +1,111 @@
+/* The illustrated footer: a riso landscape printed on a paper that the page
+   above fades into, the page links over its sky, then the wordmark, a rule
+   and the token line. The art's sky is unprinted, so the paper shows
+   through it; the inks themselves live in the SVG (scripts/footer-inks.mjs). */
 .footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 36px;
-  min-height: 96px;
-  padding: 18px 0;
-  border-top: 1px solid var(--line);
+  /* The paper: the page's white, a breath toward the site's lavender. */
+  --paper: #f8f6fb;
+  /* The rules: the header's lavender grey, a step deeper on the paper. */
+  --rule: #cdcbe4;
+
+  position: relative;
+  padding-top: clamp(16px, 2.2vw, 40px);
+  /* The page's white settles into the paper over the art's sky. */
+  background: linear-gradient(
+    to bottom,
+    #fdfdff 0,
+    var(--paper) clamp(120px, 16vw, 320px)
+  );
 }
 
-/* The wordmark, in the header's muted ink. */
-.brand {
-  --logo-h: 18px;
+.scene {
+  /* How deep the canopy's top edge dissolves into the page above. */
+  --band: clamp(18px, 4vw, 96px);
 
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  color: var(--brand-ink);
+  position: relative;
+}
+
+/* The art bleeds off both sides and the top. Its canopy runs into the page
+   above through a band of riso grain, as ink thinning out at the sheet's
+   edge: fade.png is a 768x64 stochastic dither (clumped noise against a
+   downward ramp) repeated along the edge; below it the art shows whole. */
+.art {
+  display: block;
+  width: 100%;
+  /* Its own proportions, but never much taller than the window: on tall
+     wide screens the sky and the canopy's crown give way first. */
+  height: min(57.49vw, max(92vh, 640px));
+  object-fit: cover;
+  object-position: 50% 72%;
+  -webkit-mask:
+    url('/landing/footer/fade.png') 0 0 / calc(var(--band) * 12) var(--band)
+      repeat-x,
+    linear-gradient(#000, #000) 0 100% / 100% calc(100% - var(--band) + 2px)
+      no-repeat;
+  mask:
+    url('/landing/footer/fade.png') 0 0 / calc(var(--band) * 12) var(--band)
+      repeat-x,
+    linear-gradient(#000, #000) 0 100% / 100% calc(100% - var(--band) + 2px)
+      no-repeat;
+}
+
+/* The page links over the sky at top right, ruled underneath as the header
+   is: from the sky's edge (just past the canopy) to the text column's. */
+.top {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
 .nav {
+  position: absolute;
+  top: clamp(36px, 4.4vw, 96px);
+  right: 0;
+  left: 53%;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0 28px;
-  color: var(--muted);
-  font-size: 15px;
+  justify-content: flex-end;
+  gap: 0 clamp(20px, 2.4vw, 40px);
+  border-bottom: 1px solid var(--rule);
+  color: #454350;
+  font-size: clamp(15px, 1.18vw, 19px);
+  pointer-events: auto;
 }
 
 .nav a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
+  padding-bottom: 4px;
 }
 
 .nav a:hover {
   color: var(--ink);
   text-decoration: underline;
-  text-underline-offset: 5px;
+  text-underline-offset: 6px;
+}
+
+/* Under the art: the wordmark, a rule, the token line. */
+.base {
+  padding: 18px 0 40px;
+}
+
+/* The wordmark, in the header's muted ink. */
+.brand {
+  --logo-h: 21px;
+
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--brand-ink);
+}
+
+.brand svg {
+  margin-bottom: 4px;
 }
 
 .line {
-  margin-left: auto;
+  margin-top: 14px;
   color: var(--muted);
   font-size: 14px;
 }
@@ -49,18 +115,42 @@
   font-variant-numeric: tabular-nums;
 }
 
-@media (max-width: 599px) {
-  .footer {
-    padding: 20px 0 28px;
+/* Narrow screens: the art keeps a picture's height, cropped toward the
+   person, the dog and the sun, and the links follow it on the paper. */
+@media (max-width: 1023px) {
+  .top {
+    position: static;
+    pointer-events: auto;
   }
 
   .nav {
-    width: 100%;
-    gap: 0 16px;
+    position: static;
+    justify-content: flex-start;
+    gap: 0 28px;
+    padding-top: 8px;
+    border-bottom: 0;
+    font-size: 16px;
   }
 
-  .line {
-    width: 100%;
-    margin-left: 0;
+  .base {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .art {
+    height: clamp(300px, 92vw, 420px);
+    object-fit: cover;
+    object-position: 27% 50%;
+  }
+
+  .nav {
+    justify-content: space-between;
+    gap: 0 8px;
+    font-size: 15px;
+  }
+
+  .base {
+    padding-bottom: 32px;
   }
 }
