@@ -21,6 +21,7 @@ export default function HeroB() {
       className={`${styles.hero} ${fonts}`}
       aria-labelledby="hero-b-heading"
     >
+      <div className={`${ui.wrap} ${styles.rule}`} aria-hidden="true" />
       <div className={`${ui.wrap} ${styles.grid}`}>
         <div className={styles.intro}>
           <p className={styles.eyebrow}>Same work. Yours to own.</p>

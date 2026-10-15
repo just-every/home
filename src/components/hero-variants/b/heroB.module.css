@@ -23,6 +23,15 @@
   );
 }
 
+/* The design's rule under the header. */
+.rule {
+  position: absolute;
+  top: calc(var(--header-h) - 1px);
+  right: 0;
+  left: 0;
+  border-top: 1px solid #dcdcf0;
+}
+
 .hero .grid a:focus-visible,
 .hero .grid button:focus-visible {
   outline: 3px solid #7035ff;
@@ -698,5 +707,12 @@
 
   .ownList {
     animation: none;
+  }
+}
+
+/* The badge row already says it, and at phone width the line is unreadable. */
+@media (max-width: 767px) {
+  .sign span {
+    display: none;
   }
 }
