@@ -1,0 +1,716 @@
+/* Hero E, ported from the 12ui conversion of design E (1536 wide). On
+   screens 1024 wide and up every size is the design's, in design pixels
+   times --u: the design scaled to the screen's width, and down further when
+   the screen is short, so the whole hero, feature row included, sits in the
+   first viewport. Below 1024 the hero stacks: intro, the rented tools, the
+   arrow, the seeds, then the button, which stays in reach at the foot of
+   the screen while the tables scroll by. */
+
+.hero {
+  --u: clamp(0.78px, min(100vw / 1536, (100svh - var(--header-h)) / 860), 1px);
+  --violet: #5e45f7;
+  --hero-ink: #151724;
+  --hero-muted: #626581;
+  --row: #f5f5fcbd;
+  --row-on: #eeebff;
+  --ring: #8b7aff;
+
+  position: relative;
+  padding-top: var(--header-h);
+  overflow-x: clip;
+  color: var(--hero-ink);
+  background:
+    linear-gradient(180deg, #fdfdff00 calc(100% - 90px), #fdfdff 100%),
+    radial-gradient(ellipse at 15% 51%, #eceaffaa, transparent 36%),
+    radial-gradient(ellipse at 89% 56%, #eae6ffa0, transparent 35%),
+    radial-gradient(ellipse at 88% 0%, #f2f0ff, transparent 40%), #fcfcff;
+}
+
+/* The header's rule, as in the design. */
+.rule {
+  position: absolute;
+  top: calc(var(--header-h) - 1px);
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: #dcdbea;
+}
+
+.canvas {
+  position: relative;
+  max-width: calc(1536 * var(--u));
+  margin-inline: auto;
+  padding: calc(26 * var(--u)) 0 calc(22 * var(--u));
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* The headline and line. */
+.intro {
+  text-align: center;
+}
+
+.intro h1 {
+  max-width: calc(1100 * var(--u));
+  margin: 0 auto;
+  font-size: calc(66 * var(--u));
+  font-weight: 700;
+  font-optical-sizing: none;
+  line-height: 1.02;
+  letter-spacing: -0.042em;
+}
+
+.intro h1 span {
+  display: block;
+  color: var(--violet);
+  text-shadow: 0 5px 9px #7967ff15;
+}
+
+.intro p {
+  max-width: calc(760 * var(--u));
+  margin: calc(12 * var(--u)) auto 0;
+  color: var(--hero-muted);
+  font-size: calc(23 * var(--u));
+  line-height: 1.26;
+  letter-spacing: -0.024em;
+}
+
+.intro p span {
+  display: block;
+}
+
+/* The two tables and the arrow between them; the notes, the rays and the
+   plant are placed against them. */
+.comparison {
+  position: relative;
+  display: grid;
+  grid-template-columns: calc(426 * var(--u)) calc(113 * var(--u)) calc(
+      492 * var(--u)
+    );
+  align-items: stretch;
+  width: calc(1031 * var(--u));
+  margin: calc(26 * var(--u)) auto 0;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  padding: calc(18 * var(--u)) calc(25 * var(--u)) calc(16 * var(--u));
+  border: 1px solid #efedff;
+  border-radius: calc(16 * var(--u));
+  background: linear-gradient(125deg, #ffffffec, #ffffffc9);
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: calc(15 * var(--u));
+}
+
+.cardHead h2 {
+  margin: 0;
+  font-size: calc(20 * var(--u));
+  font-weight: 500;
+  letter-spacing: -0.032em;
+}
+
+.cardHead p {
+  margin: 0;
+  color: #717693;
+  font-size: max(12px, calc(14 * var(--u)));
+  letter-spacing: -0.028em;
+}
+
+.rentList,
+.switchList {
+  display: grid;
+  gap: calc(6 * var(--u));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* A rented tool: a toggle. */
+.rentRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: calc(37 * var(--u));
+  padding: 0 calc(17 * var(--u));
+  border: 0;
+  border-radius: calc(12 * var(--u));
+  background: var(--row);
+  box-shadow: inset 0 0 0 2px transparent;
+  color: inherit;
+  font: inherit;
+  font-size: calc(18 * var(--u));
+  letter-spacing: -0.033em;
+  text-align: left;
+  cursor: pointer;
+}
+
+.rentRow:hover {
+  background: var(--row-on);
+}
+
+.people {
+  width: calc(29 * var(--u));
+  height: calc(25 * var(--u));
+  color: #acafc2;
+}
+
+.rentRow.on {
+  background: #fff;
+  box-shadow:
+    inset 0 0 0 2px var(--ring),
+    0 4px 14px #6c54ff1f;
+  color: var(--violet);
+}
+
+.rentRow.on .people {
+  color: var(--violet);
+}
+
+/* "+ N more": a native select dressed as the design's quiet last line. */
+.more {
+  position: relative;
+  display: block;
+}
+
+.more select {
+  width: 100%;
+  height: calc(37 * var(--u));
+  padding: 0 calc(40 * var(--u)) 0 calc(17 * var(--u));
+  border: 0;
+  border-radius: calc(12 * var(--u));
+  background: transparent;
+  box-shadow: inset 0 0 0 2px transparent;
+  color: #71758f;
+  font: inherit;
+  font-size: calc(18 * var(--u));
+  letter-spacing: -0.022em;
+  cursor: pointer;
+  appearance: none;
+}
+
+.more select:hover {
+  background: var(--row);
+}
+
+.more select:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.more.on select {
+  background: #fff;
+  box-shadow:
+    inset 0 0 0 2px var(--ring),
+    0 4px 14px #6c54ff1f;
+  color: var(--violet);
+}
+
+.chevron {
+  position: absolute;
+  top: 50%;
+  right: calc(19 * var(--u));
+  width: calc(12 * var(--u));
+  height: calc(8 * var(--u));
+  transform: translateY(-50%);
+  fill: none;
+  stroke: #9a9eb8;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+/* The seeds. */
+.switch {
+  padding: calc(18 * var(--u)) calc(25 * var(--u)) calc(18 * var(--u))
+    calc(37 * var(--u));
+  border: 2px solid #b8afff;
+  box-shadow: 0 7px 22px #7166e111;
+}
+
+.switch .cardHead {
+  margin-left: calc(-12 * var(--u));
+  margin-bottom: calc(13 * var(--u));
+}
+
+.switchList li {
+  display: flex;
+  align-items: center;
+  gap: calc(8 * var(--u));
+  height: calc(37 * var(--u));
+}
+
+.appIcon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: calc(31 * var(--u));
+  height: calc(32 * var(--u));
+  margin-left: -1px;
+  border-radius: calc(9 * var(--u));
+  background: var(--tile);
+  box-shadow: inset 0 0 8px #ffffff60;
+}
+
+.appIcon img {
+  width: calc(20 * var(--u));
+  height: calc(20 * var(--u));
+}
+
+.dots {
+  background: #dddfee;
+  color: #9499bc;
+  font-size: calc(12 * var(--u));
+  letter-spacing: 1px;
+}
+
+.appLink {
+  display: grid;
+  flex: 1;
+  grid-template-columns: calc(120 * var(--u)) 1fr calc(17 * var(--u));
+  align-items: center;
+  min-width: 0;
+  height: 100%;
+  padding: 0 calc(12 * var(--u));
+  border-radius: calc(11 * var(--u));
+  background: #f6f6fcbb;
+  box-shadow: inset 0 0 0 2px transparent;
+  font-size: calc(16 * var(--u));
+  letter-spacing: -0.031em;
+}
+
+.appLink small {
+  overflow: hidden;
+  color: #707691;
+  font-size: max(12px, calc(14 * var(--u)));
+  letter-spacing: -0.028em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.arrow {
+  color: #aab0cb;
+  font-size: calc(21 * var(--u));
+  line-height: 1;
+}
+
+.appLink:hover {
+  background: var(--row-on);
+}
+
+.switchList li.on .appLink {
+  background: var(--row-on);
+  box-shadow:
+    inset 0 0 0 2px var(--ring),
+    0 4px 14px #6c54ff1f;
+}
+
+.switchList li.on .appName,
+.switchList li.on .arrow {
+  color: var(--violet);
+  font-weight: 600;
+}
+
+.extra .appLink {
+  display: flex;
+  gap: calc(5 * var(--u));
+}
+
+.extra small {
+  flex: 1;
+}
+
+/* The arrow between the tables. */
+.transfer {
+  align-self: center;
+  justify-self: center;
+  width: calc(71 * var(--u));
+  height: calc(67 * var(--u));
+}
+
+/* Handwritten notes, placed against the tables as in the design. */
+.note {
+  position: absolute;
+  width: calc(160 * var(--u));
+  color: #7872cb;
+  font-size: calc(32 * var(--u));
+  line-height: calc(30 * var(--u));
+  transform: rotate(-8deg);
+}
+
+.note p {
+  margin: 0;
+}
+
+.note p span {
+  display: block;
+}
+
+.leftNote {
+  top: calc(60 * var(--u));
+  left: calc(-157 * var(--u));
+  width: calc(145 * var(--u));
+}
+
+.rightNote {
+  top: calc(16 * var(--u));
+  left: calc(1074 * var(--u));
+  width: calc(185 * var(--u));
+  color: #8477ff;
+  font-size: calc(29 * var(--u));
+  line-height: calc(29 * var(--u));
+}
+
+.noteArrow {
+  display: block;
+  width: calc(96 * var(--u));
+  height: calc(68 * var(--u));
+  margin-top: calc(4 * var(--u));
+  margin-left: calc(42 * var(--u));
+  fill: none;
+  stroke: var(--ring);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.rightNote .noteArrow {
+  margin-left: calc(-33 * var(--u));
+  transform: rotate(8deg);
+}
+
+.rays {
+  position: absolute;
+  top: calc(-34 * var(--u));
+  right: calc(-46 * var(--u));
+  width: calc(50 * var(--u));
+  height: calc(50 * var(--u));
+  fill: none;
+  stroke: #a08aff;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.plant {
+  position: absolute;
+  top: calc(205 * var(--u));
+  right: calc(-252 * var(--u));
+  z-index: 0;
+  width: calc(250 * var(--u));
+  height: calc(315 * var(--u));
+  pointer-events: none;
+  /* The art is opaque: its edges fade into the room. */
+  mask-image:
+    linear-gradient(90deg, transparent, #000 12%, #000 94%, transparent),
+    linear-gradient(180deg, transparent, #000 10%, #000 84%, transparent);
+  mask-composite: intersect;
+}
+
+/* The button. */
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(18 * var(--u));
+  width: max-content;
+  min-width: calc(354 * var(--u));
+  min-height: calc(62 * var(--u));
+  margin: calc(26 * var(--u)) auto 0;
+  padding: calc(12 * var(--u)) calc(34 * var(--u));
+  border-radius: 40px;
+  background: radial-gradient(ellipse at 40% 0, #303139, #1d1e25);
+  box-shadow: 0 8px 17px #30285814;
+  color: #fff;
+  font-size: calc(23 * var(--u));
+  letter-spacing: -0.026em;
+}
+
+.cta:hover {
+  background: #353241;
+}
+
+.cta span:last-child {
+  font-size: calc(28 * var(--u));
+  line-height: 1;
+}
+
+/* The feature row. */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: calc(88 * var(--u));
+  max-width: calc(1000 * var(--u));
+  margin: calc(24 * var(--u)) auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: calc(20 * var(--u));
+}
+
+.featureIcon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: calc(47 * var(--u));
+  height: calc(47 * var(--u));
+  border-radius: 50%;
+  background: #e9e5ff;
+  color: #7460ff;
+}
+
+.featureIcon svg {
+  width: calc(29 * var(--u));
+  height: calc(29 * var(--u));
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.featureLead {
+  margin: 0 0 calc(5 * var(--u));
+  font-size: calc(16 * var(--u));
+  font-weight: 500;
+  letter-spacing: -0.031em;
+}
+
+.featureLine {
+  margin: 0;
+  color: #737a95;
+  font-size: max(12px, calc(14 * var(--u)));
+}
+
+/* Motion: a pick settles in; nothing moves with reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .rentRow,
+  .more select,
+  .appLink,
+  .cta {
+    transition:
+      background-color 160ms ease,
+      box-shadow 160ms ease,
+      color 160ms ease;
+  }
+
+  .transfer {
+    transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1.4);
+  }
+
+  .transfer.go {
+    transform: translateX(calc(6 * var(--u)));
+  }
+
+  .switchList li.on .appLink {
+    animation: settle 320ms cubic-bezier(0.2, 0.8, 0.2, 1.2);
+  }
+}
+
+@keyframes settle {
+  from {
+    transform: translateX(-6px);
+  }
+}
+
+/* No room beside the tables for the notes and the plant. */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .note,
+  .rays,
+  .plant {
+    display: none;
+  }
+}
+
+/* Stacked: tablets and phones. */
+@media (max-width: 1023px) {
+  .hero {
+    --u: 1px;
+  }
+
+  .canvas {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    padding: 32px 28px 40px;
+  }
+
+  .intro h1 {
+    font-size: 48px;
+    letter-spacing: -0.04em;
+  }
+
+  .intro p {
+    font-size: 19px;
+    line-height: 1.4;
+  }
+
+  .comparison {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .note {
+    position: static;
+    width: auto;
+    font-size: 27px;
+    line-height: 28px;
+    text-align: center;
+    transform: rotate(-3deg);
+  }
+
+  .leftNote,
+  .rightNote {
+    width: auto;
+    font-size: 27px;
+    line-height: 28px;
+  }
+
+  .note p {
+    text-wrap: balance;
+  }
+
+  .note p span {
+    display: inline;
+  }
+
+  .noteArrow,
+  .rays,
+  .plant {
+    display: none;
+  }
+
+  .transfer {
+    width: 50px;
+    height: 46px;
+    transform: rotate(90deg);
+  }
+
+  .transfer.go {
+    transform: rotate(90deg) translateX(4px);
+  }
+
+  .rentRow,
+  .more select,
+  .switchList li {
+    height: 44px;
+  }
+
+  /* The button stays at the foot of the screen while the tables scroll. */
+  .cta {
+    position: sticky;
+    bottom: 16px;
+    z-index: 2;
+    order: 1;
+    width: 100%;
+    max-width: 420px;
+    min-width: 0;
+    min-height: 58px;
+    margin-top: 24px;
+    font-size: 20px;
+    box-shadow: 0 10px 28px #1d1e2540;
+  }
+
+  .features {
+    order: 2;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 599px) {
+  .canvas {
+    padding: 24px 20px 36px;
+  }
+
+  .intro h1 {
+    font-size: 38px;
+    line-height: 1.06;
+    letter-spacing: -0.04em;
+  }
+
+  .intro p {
+    margin-top: 14px;
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  .card {
+    padding: 16px 14px;
+  }
+
+  .switch {
+    padding: 16px 14px;
+  }
+
+  .switch .cardHead {
+    margin-left: 0;
+  }
+
+  .cardHead {
+    flex-wrap: wrap;
+    gap: 2px 10px;
+  }
+
+  .cardHead h2 {
+    font-size: 19px;
+  }
+
+  .cardHead p {
+    font-size: 13px;
+  }
+
+  .rentRow,
+  .more select {
+    font-size: 17px;
+  }
+
+  .appLink {
+    grid-template-columns: minmax(96px, 1fr) minmax(0, 1.2fr) 14px;
+    padding: 0 10px;
+    font-size: 15px;
+  }
+
+  .appLink small {
+    font-size: 13px;
+  }
+
+  .switchList li.extra {
+    height: auto;
+    min-height: 44px;
+  }
+
+  .extra .appLink {
+    display: grid;
+    grid-template-columns: auto 1fr 14px;
+    gap: 8px;
+    padding-block: 6px;
+  }
+
+  .extra small {
+    white-space: normal;
+  }
+}
