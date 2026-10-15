@@ -29,5 +29,12 @@ name = "RATE_LIMITER"
 namespace_id = "2026101301"
 simple = { limit = 10, period = 60 }
 
+# Per-visitor limit for /api/ab, the hero A/B beacons: one per page view and
+# one per click, so more than a form, and shared by visitors behind one address.
+[[ratelimits]]
+name = "AB_RATE_LIMITER"
+namespace_id = "2026101601"
+simple = { limit = 120, period = 60 }
+
 # ANTHROPIC_API_KEY is a secret: `npx wrangler secret put ANTHROPIC_API_KEY`
 # in production, .dev.vars locally (see .dev.vars.example).

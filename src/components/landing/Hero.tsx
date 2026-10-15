@@ -23,7 +23,11 @@ const Together = ({ children }: { children: ReactNode }) => (
  */
 export function Hero({ shelf = <HeroShelf /> }: { shelf?: ReactNode }) {
   return (
-    <section className={styles.top} aria-labelledby="label-hero-heading">
+    <section
+      className={styles.top}
+      aria-labelledby="label-hero-heading"
+      data-hero="control"
+    >
       <div className={styles.hero}>
         <div className={`${ui.wrap} ${styles.copy}`}>
           <h1 id="label-hero-heading">

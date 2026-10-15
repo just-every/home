@@ -6,6 +6,7 @@ declare namespace Cloudflare {
     ASSETS: Fetcher;
     DB: D1Database;
     RATE_LIMITER: RateLimit;
+    AB_RATE_LIMITER: RateLimit;
     /** Secret: .dev.vars locally, `wrangler secret put` in production. */
     ANTHROPIC_API_KEY?: string;
   }

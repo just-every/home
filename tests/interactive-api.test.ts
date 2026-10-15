@@ -1,5 +1,5 @@
 /**
- * The landing page's two endpoints through their route handlers, against a
+ * The landing page's endpoints through their route handlers, against a
  * real local D1 and rate limiter (wrangler's platform proxy, in memory, with
  * migrations/ applied). Only the Anthropic API is faked, at fetch.
  *
@@ -11,6 +11,7 @@ import { after, before, beforeEach, test } from 'node:test';
 
 import { getPlatformProxy } from 'wrangler';
 
+import { POST as ab } from '../src/app/api/ab/route';
 import { POST as contact } from '../src/app/api/contact/route';
 import { POST as match } from '../src/app/api/match/route';
 import { POST as suggest } from '../src/app/api/suggest/route';
@@ -208,4 +209,95 @@ test('contact: stores the message, refuses the honeypot and bad input, then rate
   for (let i = 0; i < 10; i += 1) statuses.push((await send(message)).status);
   assert.deepEqual(statuses.slice(0, 9), Array(9).fill(201));
   assert.equal(statuses[9], 429);
+});
+
+test('ab: stores exposures and events with the hero; refuses beacons the cookies do not back', async () => {
+  useEnv({});
+  const visitor = '0b1c2d3e-4f50-4a6b-8c7d-9e0f1a2b3c4d';
+  const beacon = (body: object, cookie: string) =>
+    ab(
+      new Request('http://localhost/api/ab', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'cf-connecting-ip': '198.51.100.20',
+          'user-agent':
+            'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) Mobile/15E148',
+          cookie,
+        },
+        body: JSON.stringify(body),
+      })
+    );
+  const assigned = `je_hero=control; je_vid=${visitor}`;
+
+  const exposure = {
+    kind: 'exposure',
+    variant: 'control',
+    forced: false,
+    utm_source: 'x',
+    landing: '/#vol-uptime',
+  };
+  assert.equal((await beacon(exposure, assigned)).status, 201);
+  const click = {
+    kind: 'event',
+    variant: 'control',
+    forced: false,
+    name: 'github_click',
+    detail: 'uptime',
+  };
+  assert.equal((await beacon(click, assigned)).status, 201);
+  // A preview: forced, so it needs no matching assignment.
+  assert.equal(
+    (await beacon({ ...exposure, forced: true }, `je_vid=${visitor}`)).status,
+    201
+  );
+
+  // Randomised beacons must match the assignment; all need a visitor id.
+  assert.equal(
+    (await beacon(click, `je_hero=other; je_vid=${visitor}`)).status,
+    400
+  );
+  assert.equal((await beacon(click, 'je_hero=control')).status, 400);
+  assert.equal(
+    (await beacon({ ...click, name: 'scrolled' }, assigned)).status,
+    400
+  );
+  assert.equal(
+    (await beacon({ ...click, variant: 'nope' }, assigned)).status,
+    400
+  );
+
+  const exposures = await proxy.env.DB.prepare(
+    'SELECT visitor_id, variant, forced, utm_source, landing, device FROM ab_exposures ORDER BY id'
+  ).all();
+  assert.deepEqual(exposures.results, [
+    {
+      visitor_id: visitor,
+      variant: 'control',
+      forced: 0,
+      utm_source: 'x',
+      landing: '/#vol-uptime',
+      device: 'mobile',
+    },
+    {
+      visitor_id: visitor,
+      variant: 'control',
+      forced: 1,
+      utm_source: 'x',
+      landing: '/#vol-uptime',
+      device: 'mobile',
+    },
+  ]);
+  const events = await proxy.env.DB.prepare(
+    'SELECT visitor_id, variant, forced, name, detail FROM ab_events'
+  ).all();
+  assert.deepEqual(events.results, [
+    {
+      visitor_id: visitor,
+      variant: 'control',
+      forced: 0,
+      name: 'github_click',
+      detail: 'uptime',
+    },
+  ]);
 });

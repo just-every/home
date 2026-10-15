@@ -1,10 +1,13 @@
+import type { HeroVariantId } from '@/lib/hero-ab';
+
 import { Benefits } from './Benefits';
 import { Collection } from './Collection';
 import { ComingSoon } from './ComingSoon';
 import { sans } from './fonts';
 import { Footer } from './Footer';
 import { Header } from './Header';
-import { Hero } from './Hero';
+import { HeroBeacon } from './HeroBeacon';
+import { heroes } from './heroes';
 import ui from './label.module.css';
 import { Makers } from './Makers';
 import { NothingToUpsell } from './NothingToUpsell';
@@ -23,15 +26,19 @@ import { Unsubscribe } from './Unsubscribe';
  * claim follows the reels and leads into the questions it provokes. The
  * suggestion form closes the page under the makers invitation: visitors ask
  * for products where makers are asked for them, and the collection search's
- * "Nothing in the collection does that yet" links down to it.
+ * "Nothing in the collection does that yet" links down to it. `hero` is
+ * the visitor's hero A/B variant (src/lib/hero-ab.ts), chosen by the
+ * middleware and rendered here on the server.
  */
-export function LandingPage() {
+export function LandingPage({ hero }: { hero: HeroVariantId }) {
+  const { component: HeroVariant, shelf = false } = heroes[hero];
   return (
     <div className={`${ui.page} ${sans.variable}`} id="top">
       <Header />
       <main>
-        <Hero />
-        <Benefits />
+        <HeroVariant />
+        <HeroBeacon variant={hero} />
+        <Benefits overShelf={shelf} />
         <Collection />
         <ComingSoon />
         <Running />

@@ -10,6 +10,11 @@
   padding: 12px 0 var(--section-y);
 }
 
+/* Under a hero that ends at its own foot: a section's room above the cards. */
+.benefits.clear {
+  padding-top: var(--section-y);
+}
+
 .list {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -46,6 +51,10 @@
 @media (max-width: 599px) {
   .benefits {
     padding-top: 4px;
+  }
+
+  .benefits.clear {
+    padding-top: var(--section-y);
   }
 
   .list {
