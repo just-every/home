@@ -3,6 +3,7 @@
 import { useCallback, useMemo, useRef } from 'react';
 
 import { search as searchCopy } from '@/content/landing';
+import { track, X_EVENTS } from '@/lib/x-pixel';
 
 import { SearchForm } from '../search/SearchForm';
 import searchStyles from '../search/search.module.css';
@@ -33,7 +34,17 @@ export function CollectionBrowser({ items }: { items: CollectionItem[] }) {
   const onNavigate = useCallback((slug: string) => {
     if (!searchRef.current.keeps(slug)) searchRef.current.clear();
   }, []);
-  const { selected, select } = useSelection(slugs, onNavigate);
+  const onOpen = useCallback(
+    (slug: string) => {
+      const name = items.find(item => item.slug === slug)?.name ?? slug;
+      track(X_EVENTS.contentView, {
+        content_name: name,
+        content_type: 'product',
+      });
+    },
+    [items]
+  );
+  const { selected, select } = useSelection(slugs, onNavigate, onOpen);
 
   const search = useCollectionSearch(items, {
     onAnswer: (slug, apply) =>

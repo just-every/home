@@ -11,6 +11,7 @@ import {
   SUGGEST_EMAIL_MAX,
 } from '@/lib/interactive-api';
 import type { ApiErrorBody } from '@/lib/interactive-api';
+import { conversionId, track, X_EVENTS } from '@/lib/x-pixel';
 
 import styles from './contact.module.css';
 import type { Topic } from './types';
@@ -82,6 +83,7 @@ export function ContactForm({
     }
     setState('sending');
     setError('');
+    const id = conversionId();
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -89,10 +91,12 @@ export function ContactForm({
         body: JSON.stringify({
           ...fields,
           topic,
+          conversion_id: id,
           website: trapRef.current?.value ?? '',
         }),
       });
       if (response.ok) {
+        track(X_EVENTS.contactSent, { conversion_id: id });
         setFields(empty);
         onTopic('general');
         setState('sent');

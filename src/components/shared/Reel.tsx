@@ -6,6 +6,7 @@ import type { ComponentProps } from 'react';
 import { demoLabel } from '@/content/landing';
 import type { Seed } from '@/data/seed-types';
 import { assetUrl } from '@/lib/asset-url';
+import { track, X_EVENTS } from '@/lib/x-pixel';
 
 type ReelProps = Omit<
   ComponentProps<'video'>,
@@ -26,12 +27,33 @@ type ReelProps = Omit<
  * the visitor asked for reduced motion it plays muted while at least half of
  * it shows and pauses when it leaves; once the visitor pauses it (or it
  * ends), it stays paused until they play it again. With reduced motion the
- * visitor presses play.
+ * visitor presses play. A play the visitor starts (never the autoplay) is
+ * reported to the X pixel, once per player.
  */
 export function Reel({ seed, player, className, ...rest }: ReelProps) {
   const ref = useRef<HTMLVideoElement>(null);
+  // Set while this component's own autoplay is starting the video.
+  const autoplaying = useRef(false);
+  const name = seed.name;
   const file = assetUrl(seed.reel.src);
   const src = player ? `${file}?player=${encodeURIComponent(player)}` : file;
+
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+    let reported = false;
+    const onStart = () => {
+      if (autoplaying.current) {
+        autoplaying.current = false;
+        return;
+      }
+      if (reported) return;
+      reported = true;
+      track(X_EVENTS.contentView, { content_name: name, content_type: 'reel' });
+    };
+    video.addEventListener('play', onStart);
+    return () => video.removeEventListener('play', onStart);
+  }, [src, name]);
 
   useEffect(() => {
     const video = ref.current;
@@ -62,7 +84,10 @@ export function Reel({ seed, player, className, ...rest }: ReelProps) {
           // Muted the first time; after that, as the visitor left it.
           if (!started) video.muted = true;
           started = true;
-          video.play().catch(() => {});
+          autoplaying.current = true;
+          video.play().catch(() => {
+            autoplaying.current = false;
+          });
         }
       },
       { threshold: [0, 0.5] }

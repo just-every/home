@@ -1,14 +1,18 @@
 'use client';
 
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
 
 import { search } from '@/content/landing';
 import type { MatchResponse } from '@/lib/interactive-api';
+import { track, X_EVENTS } from '@/lib/x-pixel';
 
 import { fetchMatch } from './fetchMatch';
 import { indexVolumes, localMatches, queryTokens } from './localMatch';
 import type { SearchVolume } from './localMatch';
+
+/** How long typing rests before the query counts as searched. */
+const SETTLE_MS = 1500;
 
 type Asked =
   | { state: 'loading'; query: string }
@@ -48,6 +52,7 @@ export function useCollectionSearch<T extends SearchVolume>(
   const [asked, setAsked] = useState<Asked | null>(null);
   // The button was pressed with nothing typed.
   const [prompted, setPrompted] = useState(false);
+  const reportedRef = useRef('');
   const abortRef = useRef<AbortController | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -95,6 +100,20 @@ export function useCollectionSearch<T extends SearchVolume>(
   else if (queryTokens(text).length > 0) status = search.hint(text);
   else if (prompted && !text) status = search.empty;
 
+  // One pixel event per query: when it is submitted, or when typing settles
+  // on it, whichever comes first.
+  function report(query: string) {
+    if (reportedRef.current === query) return;
+    reportedRef.current = query;
+    track(X_EVENTS.search, { search_string: query });
+  }
+
+  useEffect(() => {
+    if (queryTokens(text).length === 0) return;
+    const timer = window.setTimeout(() => report(text), SETTLE_MS);
+    return () => window.clearTimeout(timer);
+  }, [text]);
+
   function setQuery(value: string) {
     setQueryState(value);
     setPrompted(false);
@@ -105,6 +124,7 @@ export function useCollectionSearch<T extends SearchVolume>(
     setQueryState('');
     setAsked(null);
     setPrompted(false);
+    reportedRef.current = '';
   }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
@@ -114,6 +134,7 @@ export function useCollectionSearch<T extends SearchVolume>(
       inputRef.current?.focus();
       return;
     }
+    report(text);
     abortRef.current?.abort();
     const controller = new AbortController();
     abortRef.current = controller;
