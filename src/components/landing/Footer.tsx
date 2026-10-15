@@ -23,9 +23,9 @@ export function Footer() {
         <img
           className={styles.art}
           src="/landing/footer/footer-art.svg"
-          width={3072}
+          width={7040}
           height={1766}
-          alt="A person with a laptop and a white dog sit under a big tree on a grassy hill, looking over a bay at a pink setting sun, with a small village and cypress trees beyond."
+          alt="A person with a laptop and a white dog sit under a big tree on a grassy hill, looking over a bay at a coral setting sun, with a small village and cypress trees beyond."
           loading="lazy"
           decoding="async"
         />

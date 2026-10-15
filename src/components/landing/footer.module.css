@@ -26,35 +26,56 @@
 }
 
 .scene {
+  /* The scene is drawn in the art's own units: --u is one unit in CSS px.
+     The core scene (tree, person, dog, sun, bay, village, cypresses) is
+     3072 units wide and fills the band up to --cap; past that it stops
+     growing and the art's wider scenery fills the rest of the window. At
+     the cap the art is 977px tall, the height of a 1080p window's footer;
+     wider, it used to grow with the window (1307px at 2560x1440). */
+  --cap: 1700px;
+  --core: min(100cqw, var(--cap));
+  --u: calc(var(--core) / 3072);
+
   position: relative;
   /* The art's crop is worked out in the band's own width (cqw). */
   container-type: inline-size;
+  overflow: clip;
 }
 
-/* The art bleeds off both sides. At its own proportions it is 57.49% as tall
-   as it is wide; on a short window it gives up height so that, at the end of
-   the page, the whole footer is in view. The crop takes the thin sky above
-   the crown first (at most 0.65cqw, 20 of the art's 3072 units), then the
-   foreground grass, and never more than 7.16cqw in all, which keeps the
+/* The art is 7040 units wide: the 3072-unit core in the middle and 1984
+   units of hills, bay, grass and canopy each side, so wide windows reveal
+   more scenery instead of a larger scene. It is drawn at the core's scale
+   (cover picks it: the box is the art's full height) and centred, so at
+   --cap and below the window shows the core alone, as before; past the
+   art's own width at the cap (3896px) it is scaled up and cropped at the
+   bottom, so the footer keeps its height. At full
+   height it is 1766 units tall; on a short window it gives up height so
+   that, at the end of the page, the whole footer is in view. The crop
+   takes the thin sky above the crown first (at most 20 units), then the
+   foreground grass, and never more than 220 units in all, which keeps the
    grass under the dog; on windows shorter than that (1280x720, say) the
    footer runs about 25px past the window, which is only sky and the
    crown's tip. */
 .art {
-  --full: 57.49cqw;
+  --full: calc(var(--u) * 1766);
   --h: min(
     var(--full),
     max(
       calc(100svh - var(--pad) - var(--base-h)),
-      calc(var(--full) - 7.16cqw),
+      calc(var(--full) - var(--u) * 220),
       560px
     )
   );
+  --crop: calc(var(--full) - var(--h));
+  --crop-top: min(var(--crop), var(--u) * 20);
 
   display: block;
   width: 100%;
-  height: var(--h);
+  height: var(--full);
+  margin-top: calc(-1 * var(--crop-top));
+  margin-bottom: calc(var(--crop-top) - var(--crop));
   object-fit: cover;
-  object-position: 50% calc(-1 * min(var(--full) - var(--h), 0.65cqw));
+  object-position: 50% 0;
 }
 
 /* The page links over the sky at top right, ruled underneath as the header
@@ -67,7 +88,7 @@
 
 .nav {
   position: absolute;
-  top: clamp(36px, 4.4vw, 96px);
+  top: clamp(36px, var(--core) * 0.044, 96px);
   right: 0;
   left: 53%;
   display: flex;
@@ -145,22 +166,6 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Very wide windows: the links leave the text column and follow the art,
-   over the sky above the cypresses as in the pick. */
-@media (min-width: 2200px) {
-  .scene > .top {
-    max-width: none;
-    margin-inline: 0;
-  }
-
-  .nav {
-    top: 4.6cqw;
-    right: 4cqw;
-    left: 53cqw;
-    font-size: clamp(19px, 0.9cqw, 24px);
-  }
-}
-
 /* Narrow screens: the art keeps its full height, and the links follow it on
    the paper, set apart from the wordmark below them. */
 @media (max-width: 1023px) {
@@ -184,11 +189,18 @@
 }
 
 /* Phones: the art keeps a picture's height, cropped toward the person, the
-   dog and the sun, and never cut at the crown. */
+   dog and the sun, and never cut at the crown: the core sits 27% of the way
+   along the window's overflow, as when the art was the core alone. */
 @media (max-width: 767px) {
   .art {
-    height: clamp(300px, 92vw, 420px);
-    object-position: 27% 0;
+    --hm: clamp(300px, 92vw, 420px);
+
+    height: var(--hm);
+    margin: 0;
+    object-position: calc(
+        0.27 * (100cqw - var(--hm) * 3072 / 1766) - var(--hm) * 1984 / 1766
+      )
+      0;
   }
 
   /* The five links need about 314px; on the narrowest phones (320px) they
