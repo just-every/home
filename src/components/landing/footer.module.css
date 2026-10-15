@@ -8,10 +8,12 @@
   --paper: #f8f6fb;
   /* The rules: the header's lavender grey, a step deeper on the paper. */
   --rule: #cdcbe4;
-  /* Room above the art (its own sky carries the rest) and the height of the
-     wordmark and token line under it: the art leaves the window this much. */
-  --pad: clamp(8px, 1vw, 16px);
-  --base-h: 118px;
+  /* Room above the art (its own sky carries the rest), none on windows up
+     to 1080px tall, where the section above already leaves room, and the
+     height of the wordmark and token line under it: the art leaves the
+     window this much. */
+  --pad: clamp(0px, calc((100svh - 1080px) / 2), 16px);
+  --base-h: 117px;
 
   position: relative;
   padding-top: var(--pad);
@@ -34,7 +36,9 @@
    the page, the whole footer is in view. The crop takes the thin sky above
    the crown first (at most 0.65cqw, 20 of the art's 3072 units), then the
    foreground grass, and never more than 7.16cqw in all, which keeps the
-   grass under the dog; below that the footer may run past the window. */
+   grass under the dog; on windows shorter than that (1280x720, say) the
+   footer runs about 25px past the window, which is only sky and the
+   crown's tip. */
 .art {
   --full: 57.49cqw;
   --h: min(
@@ -75,11 +79,14 @@
   pointer-events: auto;
 }
 
+/* Tabbing into the links brings the art below them into view too, so the
+   next stop, the wordmark under the art, needs no long scroll. */
 .nav a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
   padding-bottom: 4px;
+  scroll-margin-bottom: 48svh;
 }
 
 .nav a:hover {
@@ -91,6 +98,18 @@
 /* Under the art: the wordmark, a rule, the token line. */
 .base {
   padding: 12px 0 26px;
+}
+
+/* Up to 1080px tall the wordmark block packs tighter, so the art keeps its
+   foreground (the mound and fronds) where it would otherwise be cropped. */
+@media (max-height: 1080px) {
+  .footer {
+    --base-h: 101px;
+  }
+
+  .base {
+    padding: 6px 0 16px;
+  }
 }
 
 /* The rule runs the row; the link is only as wide as the wordmark. */
@@ -126,8 +145,24 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Very wide windows: the links leave the text column and follow the art,
+   over the sky above the cypresses as in the pick. */
+@media (min-width: 2200px) {
+  .scene > .top {
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  .nav {
+    top: 4.6cqw;
+    right: 4cqw;
+    left: 53cqw;
+    font-size: clamp(19px, 0.9cqw, 24px);
+  }
+}
+
 /* Narrow screens: the art keeps its full height, and the links follow it on
-   the paper. */
+   the paper, set apart from the wordmark below them. */
 @media (max-width: 1023px) {
   .top {
     position: static;
@@ -144,7 +179,7 @@
   }
 
   .base {
-    padding-top: 0;
+    padding-top: 22px;
   }
 }
 

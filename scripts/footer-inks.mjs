@@ -10,7 +10,7 @@
  * src/components/landing/footer.module.css).
  *
  *   node scripts/footer-inks.mjs                      (the shipped colours below)
- *   node scripts/footer-inks.mjs --pink '#e35a95' --blue '#1a53a5'
+ *   node scripts/footer-inks.mjs --pink '#f85694' --blue '#1650a6'
  *   node scripts/footer-inks.mjs --file other.svg --pink ... --blue ... --cream ...
  */
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -19,13 +19,14 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 
 /**
- * The shipped inks: the pick's hot pink and cobalt (#e35a95, #1a53a5), the
- * pink a touch rosier and the cobalt turned toward indigo, so the blue reads
- * with the site's lavenders and the overprint goes plum rather than navy. The
- * cream is the pick's warm paper, kept for the shirt and dog so they stay the
- * lightest, warmest shapes on the cooler footer paper.
+ * The shipped inks: the pick's hot pink and cobalt (#f85694, #1650a6), the
+ * pink a shade less fluorescent and the cobalt turned toward indigo, so the
+ * blue reads with the site's lavenders and the overprint goes to a deep
+ * indigo rather than navy. The cream is the pick's warm paper, kept for the
+ * shirt and dog so they stay the lightest, warmest shapes on the cooler
+ * footer paper; a faint pink plate shades their sides away from the sun.
  */
-const INKS = { pink: '#e6609e', blue: '#3c4db2', cream: '#f7efea' };
+const INKS = { pink: '#ea5799', blue: '#2b3fa4', cream: '#f7efea' };
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const { values } = parseArgs({
