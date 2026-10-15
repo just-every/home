@@ -42,6 +42,8 @@ function query(sql) {
   return result.results;
 }
 
+// One query, one wrangler call. D1 allows at most five terms in a compound
+// SELECT; the last term counts the visitors left out, by reason.
 const SQL = `
 WITH ranked AS (
   SELECT visitor_id, variant, forced, device, created_at,
@@ -81,12 +83,11 @@ SELECT c.variant, c.segment, d.name, COUNT(*)
   FROM clean c JOIN done d ON d.visitor_id = c.visitor_id
   GROUP BY c.variant, c.segment, d.name
 UNION ALL
-SELECT '', '', 'left out: forced', COALESCE(SUM(forced = 1), 0) FROM visitors
-UNION ALL
-SELECT '', '', 'left out: bot', COALESCE(SUM(forced = 0 AND bot = 1), 0) FROM visitors
-UNION ALL
-SELECT '', '', 'left out: two variants',
-       COALESCE(SUM(forced = 0 AND bot = 0 AND variants > 1), 0) FROM visitors
+SELECT '', '',
+       CASE WHEN forced = 1 THEN 'forced' WHEN bot = 1 THEN 'bot' ELSE 'mixed' END,
+       COUNT(*)
+  FROM visitors WHERE forced = 1 OR bot = 1 OR variants > 1
+  GROUP BY 3
 `;
 
 const rows = query(SQL);
@@ -99,7 +100,8 @@ const count = (variant, segments, metric) =>
         row.metric === metric
     )
     .reduce((sum, row) => sum + row.n, 0);
-const leftOut = metric => rows.find(row => row.metric === metric)?.n ?? 0;
+const leftOut = reason =>
+  rows.find(row => row.variant === '' && row.metric === reason)?.n ?? 0;
 
 // Registered variants first (control leading), then any only the data knows.
 const variants = [
@@ -176,8 +178,8 @@ function segment(title, segments) {
 
 console.log(`Hero A/B test, D1 "justevery" (${target.slice(2)})`);
 console.log(
-  `Left out: ${leftOut('left out: forced')} visitors who saw a forced (?hero=) preview, ` +
-    `${leftOut('left out: bot')} bots, ${leftOut('left out: two variants')} seen under two variants.`
+  `Left out: ${leftOut('forced')} visitors who saw a forced (?hero=) preview, ` +
+    `${leftOut('bot')} bots, ${leftOut('mixed')} seen under two variants.`
 );
 if (variants.length === 1) {
   console.log('Only the control is registered: nothing to compare yet.');
