@@ -24,15 +24,19 @@ function hexToOklab(hex) {
   ];
 }
 
-function oklabToHex([L, a, b]) {
+function oklabToLinear([L, a, b]) {
   const l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3;
   const m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3;
   const s = (L - 0.0894841775 * a - 1.291485548 * b) ** 3;
-  const rgb = [
+  return [
     4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s,
     -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s,
     -0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s,
   ];
+}
+
+function oklabToHex(lab) {
+  const rgb = oklabToLinear(lab);
   return (
     '#' +
     rgb
@@ -54,6 +58,27 @@ export function mix(a, b, t) {
 
 /** OKLab lightness, 0 to 1. */
 export const lightness = hex => hexToOklab(hex)[0];
+
+const inGamut = lab =>
+  oklabToLinear(lab).every(c => c >= -1e-4 && c <= 1 + 1e-4);
+
+/**
+ * The colour at OKLab lightness L in the same hue as `hex`, its chroma scaled
+ * by `chroma` (a deeper shade of a pastel needs more colour to stay that
+ * colour rather than read as grey), and pulled back only as far as sRGB needs.
+ */
+export function shade(hex, L, chroma = 1) {
+  const [, a, b] = hexToOklab(hex);
+  let lo = 0;
+  let hi = chroma;
+  if (inGamut([L, a * hi, b * hi])) return oklabToHex([L, a * hi, b * hi]);
+  for (let i = 0; i < 24; i++) {
+    const k = (lo + hi) / 2;
+    if (inGamut([L, a * k, b * k])) lo = k;
+    else hi = k;
+  }
+  return oklabToHex([L, a * lo, b * lo]);
+}
 
 /** The 14 seeds' `pastel` values by slug, in collection order. */
 export function seedPastels(seedsFile) {

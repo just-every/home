@@ -27,10 +27,17 @@
   --air: 50;
   /* --u is one unit in CSS px. The core fills the footer's width up to
      --cap; past that it stops growing and the wider scenery fills the
-     rest of the window. Worked out in the footer's own width (cqw), so
-     its children resolve it. */
+     rest of the window. A short, wide window (1600x900) caps it lower, so
+     the art at its shortest crop (below) still shows the crown's top 24px
+     inside the window; the wider scenery fills the sides there too. Worked
+     out in the footer's own width (cqw), so its children resolve it. */
   --cap: 1700px;
-  --core: min(100cqw, var(--cap));
+  --core: min(
+    100cqw,
+    var(--cap),
+    (100svh - 24px) * var(--art-core) /
+      (var(--art-h) - var(--trim) - var(--air) - 220)
+  );
   --u: calc(var(--core) / var(--art-core));
 
   position: relative;
@@ -58,16 +65,19 @@
    the core alone. Past the art's own width at the cap (3896px) it stops
    there, centred, and its ends fade into the paper, so the whole scene
    keeps its scale and the footer its height on any window. On a short
-   window it gives up height so that, at the end of the page, the whole
-   footer is in view. The crop takes the sky over the crown first (at most
-   30 of its --air units), then the foreground grass, and never more than
-   220 units in all, which keeps the grass under the dog. */
+   window it gives up height so that, at the end of the page, the crown's
+   top stands 24px below the window's top edge: the art's top is then
+   --air units above the crown, so the art is the window's height plus
+   those units, less the 24px. The crop takes the sky over the crown first
+   (at most 30 of its --air units, none where the art rises), then the
+   foreground grass, and never more than 220 units in all, which keeps the
+   grass under the dog. */
 .art {
   --full: calc(var(--u) * (var(--art-h) - var(--trim)));
   --h: min(
     var(--full),
     max(
-      calc(100svh - var(--pad) + var(--rise)),
+      calc(100svh + var(--u) * var(--air) - 24px),
       calc(var(--full) - var(--u) * 220),
       560px
     )
@@ -111,8 +121,10 @@
   padding: 40px 0 28px;
 }
 
+/* The token line stays on one line where there is room (from 1280px wide,
+   level with the columns) and wraps evenly where there is not. */
 .mark {
-  max-width: 200px;
+  min-width: 0;
 }
 
 /* The wordmark, in the header's muted ink. */
@@ -134,6 +146,7 @@
   color: var(--muted);
   font-size: 14px;
   line-height: 1.5;
+  text-wrap: balance;
 }
 
 /* Same-width digits, so the ticking count moves nothing. */
@@ -197,7 +210,7 @@
   .text {
     flex-direction: column;
     gap: 12px;
-    padding: 32px 0 20px;
+    padding: 4px 0 20px;
   }
 
   .nav {
@@ -214,18 +227,24 @@
    rises behind that card, so the crown grows out from under it. */
 @media (min-width: 1280px) {
   .rise {
-    /* The gap above the footer and the sky over the crown, then --tuck:
-       where the card spans the crown (up to about 1600px wide) the crown
-       stops a little short of it, whole and in open sky; wider, the crown
-       stands mostly beside the card, so it grows up past the card's bottom
-       edge and its upper right tucks behind the card's corner. The crown's
-       own sky sits behind the card, so a short window crops only the
-       foreground. */
-    --tuck: clamp(-24px, (100cqw - 1640px) * 0.14, 96px);
+    /* The gap above the footer and the sky over the crown, then --tuck.
+       Where the card spans the crown, the crown stops short of it, whole,
+       its top at least 24px under the card in open sky. */
+    --tuck: -24px;
     --sky-crop: 0;
     --rise: calc(var(--section-y, 56px) + var(--u) * var(--air) + var(--tuck));
 
     z-index: -1;
+  }
+
+  /* From 1800px wide the window shows the crown's left reach standing
+     beside the card, so the crown grows up past the card's bottom edge and
+     its top lobes go decisively behind the card's corner (about 60 to
+     75px), never a graze along the edge. Below 1800 it stays clear. */
+  @media (min-width: 1800px) {
+    .rise {
+      --tuck: 88px;
+    }
   }
 
   /* The art sits under the page above (z-index -1): the footer's parent

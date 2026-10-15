@@ -4,10 +4,10 @@
  * src/data/seeds.ts: the product cards and the box-set spines), and keeps the
  * drawing's values: a region's pink plate takes one pastel in three tints, its
  * blue plate another pastel with a deeper step of it, and where the two
- * overprinted, its shadows step down toward the page's own ink (#454350, the
- * footer's link colour, and below it the page text). The darkest shapes (hair,
- * laptop, birds, cypress and trunk shadows) end on those inks; the shirt and
- * the dog stay the lightest shapes.
+ * overprinted, its shadows step down in that pastel's own hue, to the
+ * lightness of the page's ink (#454350, the footer's link colour) and below.
+ * Only the hair, the laptop, the birds and the dog's eyes are the ink itself;
+ * the shirt and the dog stay the lightest shapes.
  *
  * A colourway names a pastel for each part of the scene; `scene()` turns that
  * into every region's colours. A region is { pink: [light, mid, full],
@@ -16,7 +16,7 @@
  */
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { mix, seedPastels } from './colour.mjs';
+import { lightness, mix, seedPastels, shade } from './colour.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const P = seedPastels(resolve(root, 'src/data/seeds.ts'));
@@ -26,7 +26,15 @@ export const PAPER = '#f8f6fb';
 export const INK = '#454350';
 export const DEEP = mix(INK, '#17171d', 0.45);
 
-const deepen = (c, t) => mix(c, INK, t);
+/**
+ * A pastel's shadow t of the way down to the ink's lightness, in its own hue:
+ * mixing toward the neutral ink turned the deep greens and blues grey, so the
+ * shadow keeps the pastel's hue and gains colour as it darkens.
+ */
+const GAIN = 0.4;
+const deepen = (c, t) => shade(c, lightness(mix(c, INK, t)), 1 + GAIN * t);
+/** A region's darkest shade: near the deep ink's lightness, still its colour. */
+const deepest = c => shade(c, lightness(DEEP) + 0.05, 1 + GAIN);
 const tints = (c, a = 0.45, b = 0.75) => [
   mix(PAPER, c, a),
   mix(PAPER, c, b),
@@ -34,8 +42,8 @@ const tints = (c, a = 0.45, b = 0.75) => [
 ];
 /** A body colour (blue plate): pale, the colour, and a step deeper. */
 const body = (c, step) => [mix(PAPER, c, 0.55), c, deepen(c, step)];
-/** Where pink overprinted the full body: its shadows, down toward the ink. */
-const shadows = (c, a, b, end = mix(c, DEEP, 0.82)) => [
+/** Where pink overprinted the full body: its shadows, down to its deepest. */
+const shadows = (c, a, b, end = deepest(c)) => [
   deepen(c, a),
   deepen(c, b),
   end,
@@ -77,12 +85,16 @@ function scene(s, depth = 1.2) {
       village: region(
         [mix(PAPER, s.walls, 0.5), s.walls, deepen(s.walls, 0.12)],
         [mix(PAPER, s.roofs, 0.6), deepen(s.roofs, 0.1), deepen(s.roofs, 0.25)],
-        [deepen(s.roofs, 0.45), INK, DEEP]
+        [deepen(s.roofs, 0.45), deepen(s.roofs, 0.7), deepest(s.roofs)]
       ),
       cypress: region(
         tints(s.field),
-        [s.cypress, deepen(s.cypress, d(0.3)), deepen(s.cypress, d(0.42))],
-        [deepen(s.cypress, d(0.5)), deepen(s.cypress, d(0.62)), DEEP]
+        [s.cypress, deepen(s.cypress, d(0.24)), deepen(s.cypress, d(0.34))],
+        [
+          deepen(s.cypress, d(0.42)),
+          deepen(s.cypress, d(0.52)),
+          deepest(s.cypress),
+        ]
       ),
       canopy: region(tints(s.blossom, 0.5, 0.8), body(s.leaf, d(0.08)), [
         deepen(s.leaf, d(0.26)),
@@ -94,12 +106,12 @@ function scene(s, depth = 1.2) {
         // it meets inside the crown
         tints(mix(s.bark, s.blossom, 0.5)),
         body(s.trunk, d(0.22)),
-        [deepen(s.trunk, d(0.42)), deepen(s.trunk, d(0.58)), DEEP]
+        [deepen(s.trunk, d(0.42)), deepen(s.trunk, d(0.58)), deepest(s.trunk)]
       ),
       backpack: region(tints(s.straps), body(s.backpack, 0.28), [
         deepen(s.backpack, 0.48),
         deepen(s.backpack, 0.62),
-        DEEP,
+        deepest(s.backpack),
       ]),
       person: region(
         [mix(PAPER, s.skin, 0.5), s.skin, mix(s.skin, P.penny, 0.6)],
