@@ -416,6 +416,7 @@ export function Hero({
         loading="lazy"
         decoding="async"
       />
+      <div className={styles.groundFade} aria-hidden="true" />
 
       <p className={styles.srOnly} aria-live="polite">
         {pickedVolume

@@ -399,6 +399,20 @@
   user-select: none;
 }
 
+/* The ground's flat foot colour carries on below the strip and fades to the
+   page, so the hero eases into the next section instead of stopping on a
+   line. */
+.groundFade {
+  height: 96px;
+  background: linear-gradient(180deg, #c8def6, #fdfdff);
+}
+
+@media (max-width: 599px) {
+  .groundFade {
+    height: 64px;
+  }
+}
+
 /* The home page's hero (layout 3): rain-grey and darker on the left, shading
    to sunlit and warm on the right. */
 .layout3 {
@@ -1628,9 +1642,12 @@
     display: none;
   }
 
-  .price,
   .go {
     font-size: 13px;
+  }
+
+  .price {
+    font-size: 12px;
   }
 
   .old button {

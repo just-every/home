@@ -51,7 +51,7 @@ export const incumbentPrices: Record<string, IncumbentPrice> = {
   Intercom: {
     label: '$348–$1,584/user',
     perUser: true,
-    compact: '$348–1,584',
+    compact: '$348–1.6k',
     plan: 'Essential to Expert, per seat',
     sourceUrl: 'https://www.intercom.com/pricing',
     checked: CHECKED,
@@ -73,7 +73,7 @@ export const incumbentPrices: Record<string, IncumbentPrice> = {
   HubSpot: {
     label: '$1,080–$1,800/user',
     perUser: true,
-    compact: '$1,080–1,800',
+    compact: '$1.1–1.8k',
     plan: 'Sales Hub Professional to Enterprise, per seat',
     sourceUrl: 'https://www.hubspot.com/pricing/sales',
     checked: CHECKED,
@@ -88,7 +88,7 @@ export const incumbentPrices: Record<string, IncumbentPrice> = {
   Mailchimp: {
     label: '$240–$4,200',
     perUser: false,
-    compact: '$240–4,200',
+    compact: '$240–4.2k',
     plan: 'Standard to Premium, scales with contacts',
     sourceUrl: 'https://mailchimp.com/pricing/marketing/',
     checked: CHECKED,
@@ -119,7 +119,7 @@ export const incumbentPrices: Record<string, IncumbentPrice> = {
   Pingdom: {
     label: '$120–$1,200',
     perUser: false,
-    compact: '$120–1,200',
+    compact: '$120–1.2k',
     plan: 'Entry tier up, scales with checks',
     sourceUrl: 'https://www.pingdom.com/synthetic-pricing/',
     checked: CHECKED,

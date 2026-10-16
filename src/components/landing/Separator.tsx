@@ -29,27 +29,31 @@ export type SeparatorVariant = keyof typeof strips;
 /**
  * A painted strip that closes a section (never the page: the footer has its
  * own scene). It sits at the section's foot, cropped from the middle on
- * narrower screens, ignores the pointer and is decorative.
+ * narrower screens, ignores the pointer and is decorative. Below the art its
+ * ground colour continues for a short fade into the next section's background
+ * (separator.module.css), so the strip eases out instead of ending on a line.
  */
 export function Separator({ variant }: { variant: SeparatorVariant }) {
   const strip = strips[variant];
   return (
     <div
-      className={styles.band}
+      className={`${styles.band} ${styles[variant === 'meadow-path' ? 'meadow' : variant]}`}
       style={{ '--show': `${strip.show}px` } as CSSProperties}
       aria-hidden="true"
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={strip.src}
-        alt=""
-        aria-hidden="true"
-        width={strip.w}
-        height={strip.h}
-        loading="lazy"
-        decoding="async"
-        draggable={false}
-      />
+      <div className={styles.art}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={strip.src}
+          alt=""
+          aria-hidden="true"
+          width={strip.w}
+          height={strip.h}
+          loading="lazy"
+          decoding="async"
+          draggable={false}
+        />
+      </div>
     </div>
   );
 }
