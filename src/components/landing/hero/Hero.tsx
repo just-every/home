@@ -3,7 +3,7 @@
 import type { CSSProperties, KeyboardEvent, MouseEvent } from 'react';
 import { useRef, useState } from 'react';
 
-import { benefits, collection } from '@/content/landing';
+import { benefits, products } from '@/content/landing';
 import { volumes } from '@/components/landing/volumes';
 import { incumbentPrices } from '@/data/incumbent-prices';
 import { upcoming } from '@/data/upcoming';
@@ -354,7 +354,7 @@ export function Hero({
                 })}
               </ul>
               {moreCount > 0 ? (
-                <a className={styles.more} href={`#${collection.id}`}>
+                <a className={styles.more} href={products.path}>
                   and {moreCount} more <span aria-hidden="true">→</span>
                 </a>
               ) : null}

@@ -20,7 +20,7 @@ export default function Journey() {
         <EndNote
           next={essays.process}
           links={[
-            { label: `See all ${numberWord(seeds.length)}`, href: '/#all' },
+            { label: `See all ${numberWord(seeds.length)}`, href: '/products' },
             { label: 'Every Code', href: 'https://github.com/just-every/code' },
             { label: '12ui', href: 'https://12ui.com' },
           ]}

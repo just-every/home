@@ -91,7 +91,7 @@ const shelved = seeds.slice(0, 14);
 export function Shelf() {
   return (
     <ArticleFigure caption="Fourteen products, all public and MIT licensed.">
-      <Link className={styles.shelf} href="/#all">
+      <Link className={styles.shelf} href="/products">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/landing/shelf/shelf-1440.webp"

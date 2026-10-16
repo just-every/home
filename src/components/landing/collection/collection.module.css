@@ -7,6 +7,11 @@
   margin-bottom: 24px;
 }
 
+/* On /products the page's own room sits above: no heading, less air. */
+.standalone {
+  padding-top: 8px;
+}
+
 .alt {
   color: var(--muted);
   font-size: 14px;
