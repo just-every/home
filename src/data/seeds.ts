@@ -13,16 +13,16 @@ function reel(slug: string, durationSeconds: number) {
 }
 
 /**
- * The 31 released seeds (each has a release tag) in collection order: the
+ * The 30 released seeds (each has a release tag) in collection order: the
  * owner's favourites (Uptime, HappyToHelp, Nook) first, then the other
  * original 14, then the later releases A to Z. Facts for the original 14 come
  * from the copy deck (COPY.md) and seeds.json; where they disagree the copy
  * deck wins. Their headlines are each product's own homepage h1 (Orbit's from
- * run-orbit.com, final since its brand refresh). The later 17 take their
+ * run-orbit.com, final since its brand refresh). The later 16 take their
  * facts from each repo's README, CONTRACT and seed.json, and carry no
  * headline or reel yet; where one's homepage is live, `homepageShot` is a
  * still of it (captured 16 and 17 Oct 2026 at 1280x720). Accent, ink and paper match each product's own brand
- * tokens; `pastel` softens one of them so all thirty-one sit together as a set
+ * tokens; `pastel` softens one of them so all thirty sit together as a set
  * (OKLCH lightness about 0.875, chroma 0.45 of the brand's, kept between
  * 0.04 and 0.08, same hue).
  */
