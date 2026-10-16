@@ -15,6 +15,7 @@ import { Running } from './Running';
 import { Stand } from './Stand';
 import { Suggest } from './suggest/Suggest';
 import { Unsubscribe } from './Unsubscribe';
+import { VolumeLinks } from './VolumeLinks';
 
 /**
  * The justevery.com landing page (the Label design): Just Every as a numbered box set, one volume per
@@ -35,6 +36,7 @@ export function LandingPage({
 }) {
   return (
     <div className={`${ui.page} ${sans.variable}`} id="top">
+      <VolumeLinks />
       <Header tone={heroTone} />
       <main>
         <Hero layout={heroLayout} tone={heroTone} />

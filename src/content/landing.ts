@@ -53,9 +53,8 @@ export const collection = {
   id: 'all',
   heading: 'Pick your replacement.',
   /**
-   * Card anatomy: mark, number, name, `${alternativeTo} <X>`, GitHub. The
-   * selected product's feature adds what it does (its line), its headline
-   * under that, and its homepage.
+   * Card anatomy: mark, name, `${alternativeTo} <X>`, GitHub, what it does
+   * (its line). The card opens the seed's own page, `/<slug>`.
    */
   alternativeTo: 'Alternative to',
   githubLabel: 'GitHub',

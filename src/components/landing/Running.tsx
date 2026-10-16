@@ -7,7 +7,10 @@ import { reels } from '@/content/landing';
 import { Reel } from '@/components/shared/Reel';
 
 import { BrandMark } from './BrandMark';
-import { pickProduct, useSelectedProduct } from './collection/selectedProduct';
+import {
+  setSelectedProduct,
+  useSelectedProduct,
+} from './collection/selectedProduct';
 import { GroundBand } from './GroundBand';
 import ui from './label.module.css';
 import styles from './running.module.css';
@@ -28,8 +31,7 @@ const panelId = 'label-reel-panel';
 /**
  * Every reel, one at a time: the player beside the copy, and every product
  * with a reel as its mark and name to pick from (one row of fourteen, two
- * rows of seven, or four to a row on a phone, as there are fourteen today). The pick is the page's selected product, the same one
- * the collection's box shows.
+ * rows of seven, or four to a row on a phone, as there are fourteen today). The pick is the one reel the player shows.
  */
 export function Running() {
   const slug = useSelectedProduct(reelVolumes[0].slug);
@@ -76,7 +78,7 @@ export function Running() {
     const next = targets[event.key];
     if (next === undefined) return;
     event.preventDefault();
-    pickProduct(reelVolumes[next].slug);
+    setSelectedProduct(reelVolumes[next].slug);
     tabRefs.current[next]?.focus();
   };
 
@@ -158,7 +160,7 @@ export function Running() {
                 tabIndex={selected ? 0 : -1}
                 className={styles.tab}
                 style={volumeStyle(volume)}
-                onClick={() => pickProduct(volume.slug)}
+                onClick={() => setSelectedProduct(volume.slug)}
                 onKeyDown={onTabKey}
               >
                 <span className={styles.dot}>

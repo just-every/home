@@ -34,14 +34,6 @@ export interface SearchMatch<T> {
   reason: string | null;
 }
 
-interface Options {
-  /**
-   * A submitted search found its best product: `apply` shows the answer and
-   * must run in the same update that selects `slug`.
-   */
-  onAnswer: (slug: string, apply: () => void) => void;
-}
-
 /**
  * "What do you use today?": typing filters the volumes with no network, and
  * finds the seeds in the works (`upcoming`) the same way, as coming soon;
@@ -51,7 +43,7 @@ interface Options {
 export function useCollectionSearch<
   T extends SearchVolume,
   U extends SoonVolume,
->(volumes: T[], upcoming: U[], { onAnswer }: Options) {
+>(volumes: T[], upcoming: U[]) {
   const [query, setQueryState] = useState('');
   const [asked, setAsked] = useState<Asked | null>(null);
   // The button was pressed with nothing typed.
@@ -171,9 +163,7 @@ export function useCollectionSearch<
         query: text,
         answer: outcome.answer,
       };
-      const best = outcome.answer.matches.find(match => bySlug.has(match.slug));
-      if (best) onAnswer(best.slug, () => setAsked(answered));
-      else setAsked(answered);
+      setAsked(answered);
     } catch {
       // Aborted by a newer search or by clearing it.
     }

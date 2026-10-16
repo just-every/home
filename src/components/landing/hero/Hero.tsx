@@ -4,7 +4,7 @@ import type { CSSProperties, KeyboardEvent, MouseEvent } from 'react';
 import { useRef, useState } from 'react';
 
 import { benefits, collection } from '@/content/landing';
-import { cardId, volumes } from '@/components/landing/volumes';
+import { volumes } from '@/components/landing/volumes';
 import { incumbentPrices } from '@/data/incumbent-prices';
 import { upcoming } from '@/data/upcoming';
 import { numberWord } from '@/lib/number-word';
@@ -34,13 +34,6 @@ const CALM_LAYOUT = 3;
 
 const STACK_ID = 'hero-stack';
 
-/**
- * The hero's root carries `data-hero`: a click on one of its links into the
- * collection is the hero's call to action, not a product opened
- * (collection/useSelection.ts).
- */
-export const HERO_SELECTOR = '[data-hero]';
-
 const reducedMotion = () =>
   typeof window !== 'undefined' &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -57,9 +50,8 @@ const reducedMotion = () =>
  *
  * The rented stack is the picker: picking a tool highlights it and the
  * seed that replaces it, the button turns into "Switch to <Seed> →" for
- * `#vol-<slug>` (the collection opens that product's panel and reel), and
- * the pick is reported as a hero-pick content view. Every seed row also
- * links straight to its panel. A click on the switch button or a seed row
+ * the seed's own page, `/<slug>`, and the pick is reported as a hero-pick content view. Every seed row also
+ * links straight to its page. A click on the switch button or a seed row
  * is the hero's call to action, reported as a hero-switch content view
  * with the seed's slug.
  */
@@ -142,7 +134,6 @@ export function Hero({
     <section
       className={`${styles.top} ${styles[`layout${layout}`]} ${tone === 'storm' ? styles.storm : ''}`}
       aria-labelledby="hero-heading"
-      data-hero
       data-picked={picked ?? undefined}
     >
       <div className={styles.canvas}>
@@ -158,9 +149,7 @@ export function Hero({
           <div className={styles.actionRow}>
             <a
               className={styles.cta}
-              href={
-                pickedVolume ? `#${cardId(pickedVolume.slug)}` : `#${STACK_ID}`
-              }
+              href={pickedVolume ? pickedVolume.href : `#${STACK_ID}`}
               onClick={onCta}
             >
               {pickedVolume
@@ -341,7 +330,7 @@ export function Hero({
                       }
                     >
                       <a
-                        href={`#${cardId(volume.slug)}`}
+                        href={volume.href}
                         aria-current={on ? 'true' : undefined}
                         data-on={on || undefined}
                         onClick={() => reportSwitch(volume.slug)}
