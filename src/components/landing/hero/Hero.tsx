@@ -280,9 +280,7 @@ export function Hero({
                   );
                 })}
               </ul>
-              <p className={styles.priceNote}>
-                List prices, per user where priced per user.
-              </p>
+              <p className={styles.priceNote}>List prices per year.</p>
               <p id="hero-pick-hint" className={styles.srOnly}>
                 Pick the tool you rent to see what replaces it.
               </p>
