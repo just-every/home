@@ -8,6 +8,9 @@ import type { Seed, SeedReel } from '@/data/seed-types';
 import { assetUrl } from '@/lib/asset-url';
 import { track, X_EVENTS } from '@/lib/x-pixel';
 
+import { bindReelSound } from './reelSound';
+import type { ReelSound } from './reelSound';
+
 type ReelProps = Omit<
   ComponentProps<'video'>,
   'src' | 'poster' | 'aria-label' | 'children'
@@ -24,14 +27,16 @@ type ReelProps = Omit<
 /**
  * An accessible demo video. It has no styling opinions: size it with
  * `className`. It shows its poster and loads nothing until it plays. Unless
- * the visitor asked for reduced motion it plays muted while at least half of
- * it shows and pauses when it leaves; once the visitor pauses it (or it
- * ends), it stays paused until they play it again. With reduced motion the
+ * the visitor asked for reduced motion it plays while at least half of it
+ * shows and pauses when it leaves; once the visitor pauses it (or it ends),
+ * it stays paused until they play it again. Every reel shares one muted
+ * preference (see reelSound): muted until the visitor unmutes any of them. With reduced motion the
  * visitor presses play. A play the visitor starts (never the autoplay) is
  * reported to the X pixel, once per player.
  */
 export function Reel({ seed, player, className, ...rest }: ReelProps) {
   const ref = useRef<HTMLVideoElement>(null);
+  const sound = useRef<ReelSound | null>(null);
   // Set while this component's own autoplay is starting the video.
   const autoplaying = useRef(false);
   const name = seed.name;
@@ -58,9 +63,19 @@ export function Reel({ seed, player, className, ...rest }: ReelProps) {
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
+    const bound = bindReelSound(video);
+    sound.current = bound;
+    return () => {
+      bound.dispose();
+      sound.current = null;
+    };
+  }, [src]);
+
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    let started = false;
     let pausing = false;
     let stopped = false;
     const onPause = () => {
@@ -81,11 +96,8 @@ export function Reel({ seed, player, className, ...rest }: ReelProps) {
           pausing = true;
           video.pause();
         } else if (video.paused && !stopped) {
-          // Muted the first time; after that, as the visitor left it.
-          if (!started) video.muted = true;
-          started = true;
           autoplaying.current = true;
-          video.play().catch(() => {
+          (sound.current?.play() ?? video.play()).catch(() => {
             autoplaying.current = false;
           });
         }
