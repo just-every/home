@@ -211,8 +211,8 @@
   list-style: none;
 }
 
-/* A rented tool: the name and the sketched bar beside it. Picking it
-   fills the bar with the pastel of the seed that replaces it. */
+/* A rented tool: the name and what it costs beside it. Picking it tints
+   the row with the pastel of the seed that replaces it. */
 .old button {
   display: flex;
   align-items: center;
@@ -230,11 +230,26 @@
     color 0.18s;
 }
 
-.old button::after {
-  content: '';
+.tool {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* The price: a muted ink that reads as a cost, and the $0 on the seeds'
+   side beside it in the same figures, so the two cards compare. */
+.price,
+.go {
   flex: none;
-  background: #dedde8;
-  transition: background 0.18s;
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.price {
+  color: #6c6a86;
+  transition: color 0.18s;
 }
 
 .old button:hover {
@@ -242,8 +257,20 @@
   background: #f1eff9;
 }
 
-.old button:hover::after {
-  background: #cfcde0;
+.old button:hover .price {
+  color: #45435e;
+}
+
+.compact {
+  display: none;
+}
+
+.priceNote {
+  margin: 0;
+  color: #77759a;
+  font-size: 13px;
+  line-height: 1.3;
+  text-wrap: balance;
 }
 
 .old button[aria-pressed='true'] {
@@ -252,8 +279,8 @@
   background: color-mix(in oklab, var(--pastel) 38%, #fff);
 }
 
-.old button[aria-pressed='true']::after {
-  background: var(--pastel);
+.old button[aria-pressed='true'] .price {
+  color: #45435e;
 }
 
 .old button:focus-visible {
@@ -306,9 +333,8 @@
 }
 
 .go {
-  flex: none;
-  margin-left: auto;
-  white-space: nowrap;
+  color: #17603f;
+  font-weight: 600;
 }
 
 .goWord {
@@ -391,6 +417,39 @@
 
 .layout3 .rain {
   filter: brightness(0.8) saturate(1.15);
+}
+
+/* The storm option (/hero-preview/storm): near-black at the far left, through
+   purple in the middle, to the light warm right. From 1280px wide, where
+   the cards flank the copy; narrower screens keep the lighter background. */
+@media (min-width: 1280px) {
+  .storm {
+    background:
+      radial-gradient(ellipse at 14% 36%, #6a5fc255, transparent 46%),
+      linear-gradient(
+        90deg,
+        #15151f 0%,
+        #22213a 12%,
+        #3d3478 24%,
+        #8479c4 34%,
+        #d3cbee 45%,
+        #f1eef5 56%,
+        #fff1e4 80%,
+        #fff7ec 100%
+      );
+  }
+
+  .storm .rain {
+    filter: brightness(1.3) saturate(1.05);
+  }
+
+  .storm .noteFrom {
+    color: #e6dfff;
+  }
+
+  .storm .description {
+    color: #2c2a4c;
+  }
 }
 
 /* The only notes: one under each card, set in the hand and kept clear of
@@ -577,18 +636,9 @@
     font-size: calc(var(--u) * 16);
   }
 
-  .old button::after {
-    width: calc(var(--u) * 88);
-    height: calc(var(--u) * 13);
-    border-radius: calc(var(--u) * 10);
-  }
-
-  .old li:nth-child(-n + 6) button::after {
-    transform: rotate(-6deg);
-  }
-
-  .old li:nth-child(n + 11) button::after {
-    transform: rotate(2deg);
+  .priceNote {
+    margin-top: calc(var(--u) * 14);
+    font-size: calc(var(--u) * 13);
   }
 
   .new {
@@ -646,14 +696,15 @@
     height: calc(var(--u) * 20);
   }
 
+  .price,
   .go {
-    font-size: calc(var(--u) * 24);
+    font-size: calc(var(--u) * 16);
     line-height: 1;
   }
 
   .goWord {
-    font-size: calc(var(--u) * 15);
-    vertical-align: calc(var(--u) * 3);
+    font-size: calc(var(--u) * 14);
+    vertical-align: calc(var(--u) * 1);
   }
 
   .new .more {
@@ -982,7 +1033,6 @@
   /* Every row sits flat in its card's plane. */
   .layout3 .old h2,
   .layout3 .new h2,
-  .layout3 .old li button::after,
   .layout3 .new li {
     transform: none;
   }
@@ -1313,13 +1363,6 @@
     font-size: 16px;
   }
 
-  .old button::after {
-    flex: 0 1 56px;
-    min-width: 14px;
-    height: 11px;
-    border-radius: 8px;
-  }
-
   .new a {
     gap: 9px;
     padding: 0 10px;
@@ -1338,14 +1381,20 @@
     height: 20px;
   }
 
+  .price,
   .go {
-    font-size: 20px;
+    font-size: 15px;
     line-height: 1;
   }
 
   .goWord {
     font-size: 14px;
-    vertical-align: 2px;
+  }
+
+  .priceNote {
+    margin-top: 10px;
+    padding-inline: 8px;
+    font-size: 12.5px;
   }
 
   .new .more {
@@ -1504,7 +1553,7 @@
       'old new'
       'six six'
       'different different';
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    grid-template-columns: minmax(0, 0.93fr) minmax(0, 1.07fr);
     column-gap: 10px;
     margin-top: 32px;
     padding-top: 92px;
@@ -1540,7 +1589,7 @@
   }
 
   .old button {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .new a {
@@ -1557,8 +1606,27 @@
     display: none;
   }
 
+  .price,
   .go {
-    font-size: 18px;
+    font-size: 13px;
+  }
+
+  .old button {
+    gap: 4px;
+    padding: 0 5px;
+  }
+
+  .full {
+    display: none;
+  }
+
+  .compact {
+    display: inline;
+  }
+
+  .priceNote {
+    padding-inline: 4px;
+    font-size: 12px;
   }
 
   .six {
@@ -1573,7 +1641,7 @@
 
 @media (max-width: 599px) {
   .layout3 .comparison {
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    grid-template-columns: minmax(0, 0.93fr) minmax(0, 1.07fr);
     column-gap: 10px;
   }
 

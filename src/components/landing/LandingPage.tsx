@@ -4,7 +4,7 @@ import { sans } from './fonts';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { Hero } from './hero/Hero';
-import type { HeroLayout } from './hero/layouts';
+import type { HeroLayout, HeroTone } from './hero/layouts';
 import ui from './label.module.css';
 import { Makers } from './Makers';
 import { NothingToUpsell } from './NothingToUpsell';
@@ -26,12 +26,18 @@ import { Unsubscribe } from './Unsubscribe';
  * for products where makers are asked for them, and the collection search's
  * "Nothing in the collection does that yet" links down to it.
  */
-export function LandingPage({ heroLayout }: { heroLayout?: HeroLayout }) {
+export function LandingPage({
+  heroLayout,
+  heroTone,
+}: {
+  heroLayout?: HeroLayout;
+  heroTone?: HeroTone;
+}) {
   return (
     <div className={`${ui.page} ${sans.variable}`} id="top">
-      <Header />
+      <Header tone={heroTone} />
       <main>
-        <Hero layout={heroLayout} />
+        <Hero layout={heroLayout} tone={heroTone} />
         <Collection />
         <ComingSoon />
         <Running />

@@ -5,13 +5,14 @@ import { useRef, useState } from 'react';
 
 import { benefits, collection } from '@/content/landing';
 import { cardId, volumes } from '@/components/landing/volumes';
+import { incumbentPrices } from '@/data/incumbent-prices';
 import { upcoming } from '@/data/upcoming';
 import { numberWord } from '@/lib/number-word';
 import { X_EVENTS, track } from '@/lib/x-pixel';
 
 import { caveat } from './fonts';
 import { DEFAULT_HERO_LAYOUT } from './layouts';
-import type { HeroLayout } from './layouts';
+import type { HeroLayout, HeroTone } from './layouts';
 import styles from './hero.module.css';
 import { moreCount, rows } from './order';
 import {
@@ -64,8 +65,10 @@ const reducedMotion = () =>
  */
 export function Hero({
   layout = DEFAULT_HERO_LAYOUT,
+  tone,
 }: {
   layout?: HeroLayout;
+  tone?: HeroTone;
 }) {
   const [picked, setPicked] = useState<string | null>(null);
   const pickers = useRef<(HTMLButtonElement | null)[]>([]);
@@ -137,7 +140,7 @@ export function Hero({
 
   return (
     <section
-      className={`${styles.top} ${styles[`layout${layout}`]}`}
+      className={`${styles.top} ${styles[`layout${layout}`]} ${tone === 'storm' ? styles.storm : ''}`}
       aria-labelledby="hero-heading"
       data-hero
       data-picked={picked ?? undefined}
@@ -247,26 +250,50 @@ export function Hero({
             >
               <h2 id="hero-stack-heading">Your current stack</h2>
               <ul>
-                {rows.map((volume, i) => (
-                  <li
-                    key={volume.slug}
-                    style={{ '--pastel': volume.colour } as CSSProperties}
-                  >
-                    <button
-                      type="button"
-                      ref={el => {
-                        pickers.current[i] = el;
-                      }}
-                      aria-pressed={picked === volume.slug}
-                      aria-describedby="hero-pick-hint"
-                      onClick={() => pick(volume.slug)}
-                      onKeyDown={event => onPickerKey(event, i)}
+                {rows.map((volume, i) => {
+                  const price = incumbentPrices[volume.seed.primaryReplace];
+                  return (
+                    <li
+                      key={volume.slug}
+                      style={{ '--pastel': volume.colour } as CSSProperties}
                     >
-                      <span>{volume.seed.primaryReplace}</span>
-                    </button>
-                  </li>
-                ))}
+                      <button
+                        type="button"
+                        ref={el => {
+                          pickers.current[i] = el;
+                        }}
+                        aria-pressed={picked === volume.slug}
+                        aria-describedby="hero-pick-hint"
+                        onClick={() => pick(volume.slug)}
+                        onKeyDown={event => onPickerKey(event, i)}
+                      >
+                        <span className={styles.tool}>
+                          {volume.seed.primaryReplace}
+                        </span>
+                        {price ? (
+                          <span className={styles.price}>
+                            <span
+                              className={
+                                price.compact ? styles.full : undefined
+                              }
+                            >
+                              {price.label}
+                            </span>
+                            {price.compact ? (
+                              <span className={styles.compact}>
+                                {price.compact}
+                              </span>
+                            ) : null}
+                          </span>
+                        ) : null}
+                      </button>
+                    </li>
+                  );
+                })}
               </ul>
+              <p className={styles.priceNote}>
+                List prices, per user where priced per user.
+              </p>
               <p id="hero-pick-hint" className={styles.srOnly}>
                 Pick the tool you rent to see what replaces it.
               </p>
@@ -332,7 +359,7 @@ export function Hero({
                           {on ? (
                             <span className={styles.goWord}>Switch </span>
                           ) : null}
-                          →
+                          $0
                         </span>
                       </a>
                     </li>

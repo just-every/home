@@ -20,3 +20,6 @@ export const DEFAULT_HERO_LAYOUT: HeroLayout = 3;
 
 export const isHeroLayout = (n: number): n is HeroLayout =>
   (HERO_LAYOUTS as readonly number[]).includes(n);
+
+/** The hero's background: the default rain-grey, or the darker storm option. */
+export type HeroTone = 'storm';
