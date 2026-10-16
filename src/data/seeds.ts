@@ -534,10 +534,11 @@ export const seeds: Seed[] = [
     paper: '#f7f0e5',
     pastel: '#f1cfb0',
     markOnPastel: 'colour',
-    mark: `${dir('glove')}/mark.svg`,
-    // Its orange disc nearly vanishes on its own peach pastel: the same mark in ink.
+    // run-glove's mark is still a plain disc, not a drawn mark.
+    mark: `${dir('glove')}/mark-lettered.svg`,
+    markPlaceholder: true,
     markLight: null,
-    markInk: `${dir('glove')}/mark-ink.svg`,
+    markInk: null,
     reel: null,
     homepageShot: `${dir('glove')}/home.webp`,
   },

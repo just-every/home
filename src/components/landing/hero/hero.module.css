@@ -657,10 +657,16 @@
     position: absolute;
     top: calc(var(--u) * 176);
     left: calc(100% + var(--u) * 18);
-    width: calc(var(--u) * 116);
+    width: max-content;
     margin: 0;
     font-size: calc(var(--u) * 25);
     transform: rotate(-7deg);
+  }
+
+  /* Two set lines, "Plus twenty more / coming soon.", never three. */
+  .six > span {
+    display: block;
+    white-space: nowrap;
   }
 
   .sixArrow {
@@ -913,7 +919,6 @@
   .layout3 .six {
     top: calc(100% + var(--u) * 34);
     left: calc(var(--u) * -30);
-    width: calc(var(--u) * 140);
     transform: rotate(-5deg);
   }
 
@@ -922,15 +927,28 @@
     display: none;
   }
 
+  /* Shorter and lower, so its tip stays under the first screen at
+     1440x900 with the note it belongs to. */
   .layout1 .upArrow,
   .layout3 .upArrow {
+    top: calc(100% + var(--u) * 22);
     left: calc(var(--u) * 122);
+    height: calc(var(--u) * 40);
   }
 
   .layout1 .different,
   .layout3 .different {
     left: calc(var(--u) * 160);
     width: calc(var(--u) * 200);
+  }
+}
+
+/* Up to 1440px wide the sun's halo would meet the screen's right edge in
+   layouts 1 and 3: it comes in a little. */
+@media (min-width: 1280px) and (max-width: 1440px) {
+  .layout1 .sun,
+  .layout3 .sun {
+    margin-left: calc(var(--u) * -20);
   }
 }
 

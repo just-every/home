@@ -58,9 +58,10 @@ export interface Seed {
   /** Mark for light surfaces (may adapt to a dark colour scheme itself). */
   mark: string;
   /**
-   * True while the seed's repo still carries the Base foundation's
-   * placeholder mark (the "F" tile): `mark` is then a lettered tile, its
-   * initial in the page's ink on its pastel, for a real mark to replace.
+   * True while the seed's repo has no designed mark of its own (Base's
+   * placeholder "F" tile, or Glove's plain disc): `mark` is then a lettered
+   * tile, its initial in the page's ink on its pastel, for a real mark to
+   * replace.
    */
   markPlaceholder?: true;
   /** Mark fixed to its light-surface colours, where the product ships one. */

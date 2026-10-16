@@ -1,11 +1,14 @@
 import type { CSSProperties } from 'react';
 import { Mail } from 'lucide-react';
 
+import { collection } from '@/content/landing';
+
 import { BrandMark } from './BrandMark';
+import { moreCount, rows } from './hero/order';
 import ui from './label.module.css';
 import { PlayInView } from './PlayInView';
 import styles from './unsubscribe.module.css';
-import { volumeStyle, volumes } from './volumes';
+import { volumeStyle } from './volumes';
 
 /**
  * The hero says "Stop renting your software."; this section shows the
@@ -16,7 +19,9 @@ const heading = 'Cross off the renewals.';
 /**
  * Each tool you rent, as a renewal email in a soft neutral card, beside the
  * product that replaces it. The tool is struck through as its product
- * arrives. One row per seed, from seeds.ts.
+ * arrives. The rows are the hero's dozen, in its order (hero/order.ts), and
+ * the rest wait in the collection behind an "and N more" link, so the
+ * collection stays the one complete list.
  */
 export function Unsubscribe() {
   return (
@@ -36,7 +41,7 @@ export function Unsubscribe() {
             className={styles.ledger}
             aria-label="Each tool you rent, and the product that replaces it"
           >
-            {volumes.map((volume, index) => (
+            {rows.map((volume, index) => (
               <li
                 key={volume.slug}
                 className={styles.row}
@@ -82,6 +87,17 @@ export function Unsubscribe() {
             ))}
           </ol>
         </PlayInView>
+        {moreCount > 0 ? (
+          <a
+            className={`${ui.under} ${styles.more}`}
+            href={`#${collection.id}`}
+          >
+            <span>and {moreCount} more</span>
+            <span className={ui.arrow} aria-hidden="true">
+              →
+            </span>
+          </a>
+        ) : null}
       </div>
     </section>
   );

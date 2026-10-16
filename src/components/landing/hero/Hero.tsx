@@ -319,7 +319,7 @@ export function Hero({
             </section>
 
             <p className={`${caveat.className} ${styles.hand} ${styles.six}`}>
-              Plus {coming} more coming soon.
+              <span>Plus {coming} more</span> <span>coming soon.</span>
             </p>
             <SixArrow className={`${styles.lineArt} ${styles.sixArrow}`} />
             <UpArrow className={`${styles.lineArt} ${styles.upArrow}`} />

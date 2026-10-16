@@ -53,8 +53,20 @@ export function indexVolumes<T extends SearchVolume>(
   }));
 }
 
+/**
+ * A typed word and its singular, so "expenses" finds "Expense claims" and
+ * "invoices" finds "invoice export".
+ */
+function forms(token: string): string[] {
+  if (token.length < 4 || !token.endsWith('s') || token.endsWith('ss')) {
+    return [token];
+  }
+  if (token.endsWith('ies')) return [token, `${token.slice(0, -3)}y`];
+  return [token, token.slice(0, -1)];
+}
+
 const hasPrefix = (list: string[], token: string) =>
-  list.some(word => word.startsWith(token));
+  forms(token).some(form => list.some(word => word.startsWith(form)));
 
 /**
  * Instant, on-device matching while the visitor types: every typed word must
@@ -94,22 +106,21 @@ export function localMatches<T extends SearchVolume>(
 }
 
 /**
- * The incumbent to name on a card: the one the visitor typed, when they named
- * one this volume replaces ("Zendesk" shows "Alternative to Zendesk"), else
- * the volume's usual one.
+ * The incumbent to name on a card: the one the visitor typed, when the whole
+ * query starts one this volume replaces ("Zendesk" shows "Alternative to
+ * Zendesk", "Shopify" "Alternative to Shopify B2B"), else the volume's usual
+ * one. A single shared word is not enough: "sign in" does not name Dropbox
+ * Sign.
  */
 export function namedReplace(
   volume: Pick<SearchVolume, 'replaces' | 'primaryReplace'>,
   query: string
 ): string {
-  const typed = query.trim().toLowerCase();
-  const tokens = queryTokens(query);
+  const typed = words(query).join(' ');
+  if (!typed) return volume.primaryReplace;
   const hit = volume.replaces.find(name => {
-    const lower = name.toLowerCase();
-    return (
-      lower === typed ||
-      (tokens.length > 0 && tokens.every(token => words(lower).includes(token)))
-    );
+    const whole = words(name).join(' ');
+    return whole === typed || whole.startsWith(`${typed} `);
   });
   return hit ?? volume.primaryReplace;
 }
