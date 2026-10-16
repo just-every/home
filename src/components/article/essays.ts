@@ -34,7 +34,7 @@ export const essays = {
     shareTitle: 'The long way round',
     date: '14 October 2026',
     published: '2026-10-14',
-    readingTime: '4 min read',
+    readingTime: '5 min read',
   },
   process: {
     slug: 'process',
