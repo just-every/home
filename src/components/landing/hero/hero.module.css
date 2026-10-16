@@ -1,0 +1,1244 @@
+/* The hero, "a sketched journey", from the 12ui conversion of design G,
+   with weather: a rain cloud over the stack you rent, the sun over the open
+   source you own, and a painted ground along the foot that runs from
+   rain-cooled to sunlit (the footer's flat "dusk-mist" style), all under a
+   dusk sky: a deep slate-purple that warms to sunrise.
+
+   From 1280px wide the hero fills the header's content column and every
+   length is a design pixel times --u (1px in the 1331px column). The two
+   cards flank a centred copy column as mirror images in one grid, so they
+   never overlap. Narrower screens stack: the copy, then the two lists side
+   by side so each rented tool sits beside the seed that replaces it. */
+
+/* Stacked (under 1280px), the copy sits on the dusk itself, so the sky runs
+   from the top down, to the warm light behind the sun, and the copy turns
+   light. Wide, it runs left to right (below). */
+.top {
+  position: relative;
+  padding-top: var(--header-h);
+  overflow-x: clip;
+  container-type: inline-size;
+  color: #222;
+  background: linear-gradient(
+    180deg,
+    #3a3a5e 0,
+    #43437a 340px,
+    #6d66ac 600px,
+    #a39cd0 820px,
+    #d6d2eb 1150px,
+    #ebe8f6 1700px,
+    #f1eef5 100%
+  );
+}
+
+.canvas {
+  position: relative;
+  z-index: 1;
+}
+
+/* The header's content edge, where the wordmark sits: 4% in from the page's
+   sides up to 1440px wide, then the 1331px column the landing wrap keeps. */
+.top {
+  --edge: 4cqw;
+}
+
+@media (min-width: 1441px) {
+  .top {
+    --edge: calc((100cqw - 1331px) / 2);
+  }
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.intro {
+  position: relative;
+  z-index: 3;
+}
+
+.intro h1 {
+  font-weight: 600;
+  color: #222;
+  text-wrap: balance;
+}
+
+.turn {
+  display: block;
+}
+
+.description {
+  color: #2c2a4c;
+  text-wrap: pretty;
+}
+
+.actionRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cta {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: radial-gradient(ellipse at 60% 0, #303030, #1e1e1e);
+  color: #fff;
+  line-height: 1.1;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px #18191b26;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.cta:hover {
+  background: radial-gradient(ellipse at 60% 0, #3c3c3c, #111);
+}
+
+.cta:active {
+  transform: translateY(1px);
+}
+
+.top .cta:focus-visible {
+  outline: 3px solid var(--focus, #458eff);
+  outline-offset: 4px;
+}
+
+.ctaArrow {
+  display: inline-block;
+}
+
+.benefits {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #545775;
+}
+
+.benefits li {
+  display: flex;
+  align-items: center;
+}
+
+.benefits svg {
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.comparison {
+  position: relative;
+}
+
+/* Each side (its weather, card and note) is structure only: its parts are
+   laid out by the comparison's grid stacked, and by the canvas's wide. */
+.side {
+  display: contents;
+}
+
+/* The weather: painted, decorative, behind the cards and the notes. */
+.weather {
+  position: absolute;
+  z-index: 0;
+  display: block;
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* The rain is two things in one box: the still cloud, over a layer of small
+   falling items (Rainfall.tsx). The sun is a stack of layers (SunLayers.tsx).
+   Both keep the art's own proportions. The falling items take a light tint
+   against the dusk, as colours of their own: a filter over them would be
+   redone on every frame. */
+.rain {
+  aspect-ratio: 1120 / 540;
+  --rf-drop: #cdfbff;
+  --rf-slip: #f1e3ff;
+  --rf-paper: #ffffff;
+  --rf-fold: #e4daf7;
+  --rf-line: #e9ddff;
+  --rf-coin-rim: #ffd8a6;
+  --rf-coin-face: #fff8c7;
+  --rf-coin-core: #ffe5b2;
+  --rf-coin-shine: #ffffff;
+}
+
+.sun {
+  aspect-ratio: 4 / 3;
+}
+
+.cloud {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: brightness(1.3) saturate(1.05);
+}
+
+/* The two cards: opaque white sheets, so the weather never shows through
+   the lists. */
+.panel {
+  position: relative;
+  z-index: 1;
+}
+
+.panel h2 {
+  font-weight: 600;
+  color: #535675;
+  line-height: 1.3;
+}
+
+.old ul,
+.new ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* A rented tool: the name and what it costs beside it. Picking it tints
+   the row with the pastel of the seed that replaces it. */
+.old button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  color: #2e334c;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.18s,
+    color 0.18s;
+}
+
+.tool {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* The price: a muted ink that reads as a cost, and the $0 on the seeds'
+   side beside it in the same figures, so the two cards compare. */
+.price,
+.go {
+  flex: none;
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.price {
+  color: #6c6a86;
+  transition: color 0.18s;
+}
+
+.old button:hover {
+  color: #17171d;
+  background: #f1eff9;
+}
+
+.old button:hover .price {
+  color: #45435e;
+}
+
+.compact {
+  display: none;
+}
+
+.priceNote {
+  margin: 0;
+  color: #77759a;
+  font-size: 13px;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.old button[aria-pressed='true'] {
+  color: #17171d;
+  font-weight: 600;
+  background: color-mix(in oklab, var(--pastel) 38%, #fff);
+}
+
+.old button[aria-pressed='true'] .price {
+  color: #45435e;
+}
+
+.old button:focus-visible {
+  outline: 3px solid var(--focus, #458eff);
+  outline-offset: 1px;
+}
+
+@keyframes nudge {
+  0%,
+  100% {
+    translate: 0;
+  }
+  25% {
+    translate: -6px 0;
+  }
+  75% {
+    translate: 6px 0;
+  }
+}
+
+/* A seed you can own: its mark and name on its pastel, linking to its
+   panel in the collection. The pick lifts the matching seed and softens
+   the other rows' backgrounds; their labels keep full ink. */
+.new a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background: color-mix(in oklab, var(--pastel) 55%, #fff);
+  color: #283344;
+  transition:
+    background 0.18s,
+    box-shadow 0.18s,
+    transform 0.18s;
+}
+
+.new img {
+  flex: none;
+  object-fit: contain;
+}
+
+.name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.go {
+  color: #17603f;
+  font-weight: 600;
+}
+
+.goWord {
+  font-weight: 600;
+}
+
+.new a:hover {
+  background: var(--pastel);
+}
+
+.top[data-picked] .new a:not([data-on]) {
+  background: color-mix(in oklab, var(--pastel) 24%, #fff);
+}
+
+.top[data-picked] .new a:not([data-on]):hover,
+.top[data-picked] .new a:not([data-on]):focus-visible {
+  background: color-mix(in oklab, var(--pastel) 55%, #fff);
+}
+
+.new a[data-on] {
+  position: relative;
+  z-index: 1;
+  background: var(--pastel);
+  font-weight: 600;
+  transform: scale(1.05);
+}
+
+.top .new a:focus-visible {
+  outline: 3px solid var(--focus, #458eff);
+  outline-offset: 2px;
+}
+
+/* The rest of the collection, quietly, under the seeds. The rule above
+   covers its focus ring; it keeps the card's white, not a pastel. */
+.new .more {
+  display: block;
+  height: auto;
+  background: none;
+  color: #5d5f80;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: #c9c3e6;
+  text-underline-offset: 0.2em;
+}
+
+.new .more:hover {
+  background: none;
+  color: #17171d;
+  text-decoration-color: currentColor;
+}
+
+/* The painted ground: a very wide strip, cool and damp at its left end and
+   sunlit at its right, cropped from the middle on narrower screens. */
+.ground {
+  position: relative;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* The ground's flat lavender foot holds briefly below the strip and fades
+   over a long tail into the page, behind the Collection that follows (under
+   its content, out of the pointer's way), so the hero eases into it instead
+   of stopping on a line. */
+.groundFade {
+  --foot: #dcd7f4;
+  --to: #fdfdff;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  height: 340px;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    var(--foot) 0,
+    var(--foot) 8%,
+    color-mix(in srgb, var(--foot) 68%, var(--to)) 24%,
+    color-mix(in srgb, var(--foot) 42%, var(--to)) 46%,
+    color-mix(in srgb, var(--foot) 20%, var(--to)) 68%,
+    color-mix(in srgb, var(--foot) 7%, var(--to)) 86%,
+    var(--to) 100%
+  );
+}
+
+@media (max-width: 599px) {
+  .groundFade {
+    height: 190px;
+  }
+}
+
+/* The only notes: one under each card, set in the hand and kept clear of
+   everything. */
+.note {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: #4f4a82;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+/* The four reasons to switch, a row of soft cards above the ground. */
+.reasons {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #17171d;
+}
+
+.reasons li {
+  border-radius: 14px;
+  background: var(--tint);
+  box-shadow: 0 10px 28px -16px #4d4a8066;
+}
+
+.lead {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.line {
+  color: #5a596e;
+  line-height: 1.42;
+}
+
+/* ---- The column, from 1280px wide ---- */
+
+/* The cards flank a centred text column: the rented stack under the rain on
+   the left, the seeds in the sun on the right. The canvas holds the
+   perspective, so the two cards are mirror images turned toward the copy
+   between them, each a flat plane (rows included) in one 3D scene. The
+   sides and the comparison give their cards, weather and notes to the
+   canvas, so the cards are the perspective parent's own children. */
+@media (min-width: 1280px) {
+  .top {
+    /* The header's column, growing past it on the widest screens so the
+       cards stay large there. */
+    --col: max(min(100cqw - 2 * var(--edge), 1331px), 62cqw);
+    --u: calc(var(--col) / 1331);
+    --ry: 20deg;
+    --fy: calc(var(--u) * 12);
+    /* The dusk runs left to right: a deep slate-purple at the far left,
+       with white clouds, warming to sunrise behind the sun. */
+    background:
+      radial-gradient(ellipse at 14% 36%, #5f58a044, transparent 46%),
+      linear-gradient(
+        90deg,
+        #3a3a5e 0%,
+        #46467a 12%,
+        #6d66ac 24%,
+        #a39cd0 34%,
+        #d6d2eb 45%,
+        #f1eef5 56%,
+        #fff1e4 80%,
+        #fff7ec 100%
+      );
+  }
+
+  .canvas {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      'rainy intro sunny'
+      'noteFrom . noteDifferent';
+    column-gap: calc(var(--u) * 46);
+    width: var(--col);
+    margin-inline: auto;
+    padding-top: calc(var(--u) * 40);
+    perspective: calc(var(--u) * 1900);
+  }
+
+  .intro {
+    grid-area: intro;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: calc(var(--u) * 140);
+    text-align: center;
+  }
+
+  .intro h1 {
+    margin: 0 0 calc(var(--u) * 26);
+    font-size: calc(var(--u) * 92);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+  }
+
+  .description {
+    max-width: calc(var(--u) * 540);
+    margin: 0;
+    font-size: calc(var(--u) * 22);
+    line-height: 1.5;
+    letter-spacing: calc(var(--u) * -0.3);
+    text-wrap: balance;
+  }
+
+  .actionRow {
+    margin-top: calc(var(--u) * 40);
+  }
+
+  .cta {
+    gap: calc(var(--u) * 18);
+    min-height: calc(var(--u) * 66);
+    padding: calc(var(--u) * 18) calc(var(--u) * 38);
+    font-size: calc(var(--u) * 22);
+  }
+
+  .ctaArrow {
+    font-size: calc(var(--u) * 32);
+    line-height: calc(var(--u) * 20);
+  }
+
+  .benefits {
+    gap: calc(var(--u) * 42);
+    margin-top: calc(var(--u) * 44);
+  }
+
+  .benefits li {
+    gap: calc(var(--u) * 16);
+    font-size: calc(var(--u) * 17);
+    line-height: 1.35;
+  }
+
+  .benefits svg {
+    width: calc(var(--u) * 33);
+    height: calc(var(--u) * 37);
+  }
+
+  .comparison {
+    display: contents;
+  }
+
+  .panel h2 {
+    margin: 0 0 calc(var(--u) * 18);
+    font-size: calc(var(--u) * 16);
+  }
+
+  /* The cards stand level, the same height, so each note hangs from its
+     card's foot on one line. */
+  .old,
+  .new {
+    align-self: stretch;
+    margin-top: calc(var(--u) * 196);
+    padding: calc(var(--u) * 26) calc(var(--u) * 28) calc(var(--u) * 28);
+    border: 2px solid #fff;
+    border-radius: calc(var(--u) * 20);
+    background: linear-gradient(115deg, #fff, #fbfaff);
+  }
+
+  .old {
+    grid-area: rainy;
+    justify-self: start;
+    display: flex;
+    flex-direction: column;
+    width: calc(var(--u) * 304);
+    transform: rotateY(var(--ry));
+    box-shadow: calc(var(--u) * -14) calc(var(--u) * 26) calc(var(--u) * 40)
+      #4d4a8040;
+  }
+
+  .old ul {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .old h2 {
+    margin-bottom: calc(var(--u) * 22);
+  }
+
+  .old li {
+    height: calc(var(--u) * 35);
+  }
+
+  .old button {
+    gap: calc(var(--u) * 12);
+    width: calc(100% + var(--u) * 12);
+    margin-inline: calc(var(--u) * -6);
+    padding-inline: calc(var(--u) * 6);
+    border-radius: calc(var(--u) * 8);
+    font-size: calc(var(--u) * 16);
+  }
+
+  .priceNote {
+    margin-top: calc(var(--u) * 14);
+    font-size: calc(var(--u) * 13);
+  }
+
+  .new {
+    grid-area: sunny;
+    justify-self: end;
+    width: calc(var(--u) * 320);
+    transform: rotateY(calc(var(--ry) * -1));
+    box-shadow: calc(var(--u) * 14) calc(var(--u) * 26) calc(var(--u) * 40)
+      #b8906a40;
+  }
+
+  .new h2 {
+    margin: 0 0 calc(var(--u) * 19);
+  }
+
+  .new li {
+    height: calc(var(--u) * 37);
+    margin-bottom: calc(var(--u) * 4);
+  }
+
+  .new li:last-child {
+    margin-bottom: 0;
+  }
+
+  .new a {
+    gap: calc(var(--u) * 11);
+    padding: 0 calc(var(--u) * 12);
+    border-radius: calc(var(--u) * 10);
+    font-size: calc(var(--u) * 16);
+  }
+
+  .new a[data-on] {
+    box-shadow:
+      0 0 0 calc(var(--u) * 2) var(--seed-ink),
+      0 calc(var(--u) * 8) calc(var(--u) * 18) #6b5fb033;
+    transform: scale(1.04);
+  }
+
+  .new img {
+    width: calc(var(--u) * 18);
+    height: calc(var(--u) * 20);
+  }
+
+  .price,
+  .go {
+    font-size: calc(var(--u) * 16);
+    line-height: 1;
+  }
+
+  .goWord {
+    font-size: calc(var(--u) * 14);
+    vertical-align: calc(var(--u) * 1);
+  }
+
+  .new .more {
+    margin-top: calc(var(--u) * 12);
+    padding: calc(var(--u) * 4) 0 0;
+    font-size: calc(var(--u) * 15);
+  }
+
+  /* The weather sits behind each card, measured from its grid cell. */
+  .rain {
+    grid-area: rainy;
+    top: calc(var(--u) * -21);
+    left: calc(var(--u) * -60);
+    width: calc(var(--u) * 430);
+  }
+
+  .sun {
+    grid-area: sunny;
+    top: calc(var(--u) * -46);
+    left: calc(var(--u) * -90);
+    width: calc(var(--u) * 480);
+  }
+
+  /* The ground's top half is open sky, so it tucks under the canvas. */
+  .ground {
+    height: calc(var(--u) * 300);
+    margin-top: calc(var(--u) * -168);
+  }
+
+  .reasons {
+    width: var(--col);
+    gap: calc(var(--u) * 14);
+    margin: calc(var(--u) * 44) auto calc(var(--u) * 20);
+  }
+
+  .reasons li {
+    padding: calc(var(--u) * 22) calc(var(--u) * 24) calc(var(--u) * 24);
+    border-radius: calc(var(--u) * 14);
+  }
+
+  .lead {
+    font-size: calc(var(--u) * 19);
+  }
+
+  .line {
+    margin-top: calc(var(--u) * 8);
+    font-size: calc(var(--u) * 16);
+  }
+
+  .noteFrom {
+    grid-area: noteFrom;
+    justify-self: start;
+    margin: calc(var(--u) * 34) 0 0 calc(var(--u) * 10);
+    color: #e6dfff;
+    font-size: calc(var(--u) * 28);
+    transform: rotate(-3deg);
+    transform-origin: left center;
+  }
+
+  .noteDifferent {
+    grid-area: noteDifferent;
+    justify-self: start;
+    max-width: calc(var(--u) * 250);
+    margin: calc(var(--u) * 34) 0 0 calc(var(--u) * 30);
+    font-size: calc(var(--u) * 26);
+    transform: rotate(-3deg);
+    transform-origin: left center;
+    text-wrap: balance;
+  }
+}
+
+/* ---- Stacked, under 1280px wide ---- */
+
+/* The copy on the dusk turns light; the two cards still face each other, as
+   they do flanking the copy, each a flat plane turned toward the other in
+   one perspective scene, with the tilt scaled down so the rows stay
+   readable and the near edges stay inside the page. Each note sits under
+   its own card. */
+@media (max-width: 1279px) {
+  .top {
+    --ry: 15deg;
+    --fy: 10px;
+  }
+
+  .canvas {
+    max-width: 760px;
+    margin-inline: auto;
+    padding: 36px 28px 0;
+  }
+
+  .intro h1 {
+    margin: 0 0 20px;
+    color: #fff;
+    font-size: clamp(46px, 11.5vw, 76px);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+  }
+
+  .description {
+    color: #e6e0fa;
+    font-size: 21px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
+
+  .actionRow {
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    margin-top: 30px;
+  }
+
+  .cta {
+    gap: 12px;
+    min-height: 58px;
+    padding: 16px 26px;
+    background: #fff;
+    color: #1e1e1e;
+    font-size: 19px;
+    box-shadow: 0 6px 18px #1c1a3a40;
+  }
+
+  .cta:hover {
+    background: #f1eefc;
+  }
+
+  .ctaArrow {
+    font-size: 26px;
+    line-height: 16px;
+  }
+
+  .benefits {
+    flex-wrap: wrap;
+    gap: 16px 32px;
+    margin-top: 32px;
+    color: #d9d2f4;
+  }
+
+  .benefits li {
+    gap: 12px;
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .benefits svg {
+    width: 28px;
+    height: 31px;
+  }
+
+  /* The weather gets a band of its own above the lists: the rain over the
+     stack you rent, the sun over the seeds you own. */
+  .comparison {
+    display: grid;
+    grid-template-areas:
+      'old new'
+      'from different';
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 14px;
+    margin-top: 40px;
+    padding-top: 136px;
+    perspective: 1700px;
+  }
+
+  /* The warm glow of the sunrise behind the sun, fading out inside its own
+     box so it has no edge. */
+  .comparison::before {
+    content: '';
+    position: absolute;
+    top: -90px;
+    right: -190px;
+    width: 460px;
+    height: 360px;
+    pointer-events: none;
+    background: radial-gradient(
+      closest-side,
+      #fff1e4 0,
+      #ffe6d0cc 30%,
+      #ffdcc080 56%,
+      transparent 100%
+    );
+  }
+
+  .rain {
+    top: -18px;
+    left: -22px;
+    width: min(330px, 52%);
+  }
+
+  .sun {
+    top: -20px;
+    right: -24px;
+    width: min(300px, 50%);
+  }
+
+  .panel {
+    padding: 20px 16px 16px;
+  }
+
+  .panel h2 {
+    min-height: 2.6em;
+    margin: 0 0 10px;
+    font-size: 16px;
+  }
+
+  .old,
+  .new {
+    border-radius: 18px;
+    background: linear-gradient(115deg, #fff, #fbfaff);
+  }
+
+  .old {
+    grid-area: old;
+    transform: rotateY(var(--ry));
+    box-shadow:
+      inset 0 0 0 2px #fff,
+      -10px 22px 34px #4d4a8040;
+  }
+
+  .new {
+    grid-area: new;
+    transform: rotateY(calc(var(--ry) * -1));
+    box-shadow:
+      inset 0 0 0 2px #fff,
+      10px 22px 34px #b8906a40;
+  }
+
+  .old li,
+  .new li {
+    height: 44px;
+    margin-bottom: 4px;
+  }
+
+  .old li:last-child,
+  .new li:last-child {
+    margin-bottom: 0;
+  }
+
+  .old button {
+    gap: 8px;
+    padding: 0 8px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+  .new a {
+    gap: 9px;
+    padding: 0 10px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+  .new a[data-on] {
+    box-shadow:
+      0 0 0 2px var(--seed-ink),
+      0 8px 18px #6b5fb033;
+  }
+
+  .new img {
+    width: 18px;
+    height: 20px;
+  }
+
+  .price,
+  .go {
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  .goWord {
+    font-size: 14px;
+  }
+
+  .priceNote {
+    margin-top: 10px;
+    padding-inline: 8px;
+    font-size: 12.5px;
+  }
+
+  .new .more {
+    margin-top: 8px;
+    padding: 6px 0 2px;
+    font-size: 15px;
+  }
+
+  .ground {
+    height: 180px;
+    margin-top: -100px;
+  }
+
+  .noteFrom {
+    grid-area: from;
+    justify-self: start;
+    margin: 20px 0 0 6px;
+    font-size: 26px;
+    transform: rotate(-2deg);
+  }
+
+  .noteDifferent {
+    grid-area: different;
+    justify-self: start;
+    margin: 20px 0 0 6px;
+    font-size: 25px;
+    text-wrap: balance;
+    transform: rotate(-2deg);
+  }
+
+  .reasons {
+    max-width: 760px;
+    margin: 36px auto 28px;
+    padding-inline: 28px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reasons li {
+    padding: 18px 20px 20px;
+  }
+
+  .lead {
+    font-size: 18px;
+  }
+
+  .line {
+    margin-top: 6px;
+    font-size: 15.5px;
+  }
+}
+
+/* Phones: the two lists stay side by side, so a picked tool and its seed
+   sit on one row, with a gentler tilt. */
+@media (max-width: 599px) {
+  .top {
+    --ry: 11deg;
+    --fy: 8px;
+  }
+
+  .canvas {
+    padding: 28px 20px 0;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .actionRow {
+    margin-top: 26px;
+  }
+
+  .cta {
+    min-height: 56px;
+    padding: 15px 24px;
+    font-size: 18px;
+  }
+
+  .benefits {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .benefits li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .benefits svg {
+    width: 26px;
+    height: 29px;
+  }
+
+  .comparison {
+    grid-template-columns: minmax(0, 0.93fr) minmax(0, 1.07fr);
+    column-gap: 10px;
+    margin-top: 32px;
+    padding-top: 92px;
+    perspective: 1100px;
+  }
+
+  .comparison::before {
+    top: -70px;
+    right: -150px;
+    width: 340px;
+    height: 280px;
+  }
+
+  .rain {
+    top: -16px;
+    left: -18px;
+    width: 230px;
+  }
+
+  .sun {
+    top: -14px;
+    right: -26px;
+    width: 220px;
+  }
+
+  .panel {
+    padding: 16px 6px 8px;
+  }
+
+  .panel h2 {
+    padding-inline: 4px;
+    font-size: 15px;
+  }
+
+  .old,
+  .new {
+    border-radius: 16px;
+  }
+
+  .old {
+    box-shadow:
+      inset 0 0 0 2px #fff,
+      -7px 16px 26px #4d4a8040;
+  }
+
+  .new {
+    box-shadow:
+      inset 0 0 0 2px #fff,
+      7px 16px 26px #b8906a40;
+  }
+
+  .old button {
+    gap: 4px;
+    padding: 0 5px;
+    font-size: 14px;
+  }
+
+  .new a {
+    gap: 7px;
+    padding: 0 8px;
+    font-size: 15px;
+  }
+
+  .new a[data-on] {
+    transform: none;
+  }
+
+  .goWord {
+    display: none;
+  }
+
+  .go {
+    font-size: 13px;
+  }
+
+  .price {
+    font-size: 12px;
+  }
+
+  .full {
+    display: none;
+  }
+
+  .compact {
+    display: inline;
+  }
+
+  .priceNote {
+    padding-inline: 4px;
+    font-size: 12px;
+  }
+
+  .ground {
+    height: 140px;
+  }
+
+  .reasons {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    padding-inline: 20px;
+  }
+
+  .reasons li {
+    padding: 16px 18px 18px;
+  }
+}
+
+/* Motion, calm but plain to see: each card floats about a dozen pixels with
+   a couple of degrees of extra turn, out of phase with the other, on
+   transform alone. The rain and the sun move in their own small layers
+   (Rainfall.tsx, SunLayers.tsx). While the hero is off screen, all of it
+   waits. Each float runs four bobs in one iteration (36s and 44s): the
+   page has animation listeners, and the browser wakes the main thread at
+   every iteration boundary to tell them. */
+.old,
+.new {
+  will-change: transform;
+}
+
+.old {
+  animation: floatLeft 36s ease-in-out -12s infinite;
+}
+
+.new {
+  animation: floatRight 44s ease-in-out -28s infinite;
+}
+
+/* The nudge keeps the float running beside it, so it never jumps. */
+.old.nudge {
+  animation:
+    floatLeft 36s ease-in-out -12s infinite,
+    nudge 0.5s ease-in-out;
+}
+
+@keyframes floatLeft {
+  0%,
+  25%,
+  50%,
+  75%,
+  100% {
+    transform: translate3d(0, 0, 0) rotateY(var(--ry)) rotateZ(-0.6deg);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: translate3d(0, calc(var(--fy) * -1), 0)
+      rotateY(calc(var(--ry) + 2deg)) rotateZ(0.8deg);
+  }
+}
+
+@keyframes floatRight {
+  0%,
+  25%,
+  50%,
+  75%,
+  100% {
+    transform: translate3d(0, 0, 0) rotateY(calc(var(--ry) * -1))
+      rotateZ(0.6deg);
+  }
+
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: translate3d(0, calc(var(--fy) * -1), 0)
+      rotateY(calc(var(--ry) * -1 - 2deg)) rotateZ(-0.8deg);
+  }
+}
+
+.paused,
+.paused *,
+.paused *::before,
+.paused *::after {
+  animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .top *,
+  .top *::before,
+  .top *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

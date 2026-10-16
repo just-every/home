@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import { ArticlePage } from '@/components/article/ArticlePage';
 import { EndNote } from '@/components/article/EndNote';
 import { essayMetadata, essays } from '@/components/article/essays';
+import { seeds } from '@/data/seeds';
+import { numberWord } from '@/lib/number-word';
 
 import { AutoDrive, PromiseAndTest, PromiseChanged } from './figures';
 
@@ -19,7 +21,7 @@ export default function Process() {
         <EndNote
           next={essays.journey}
           links={[
-            { label: 'See all fourteen', href: '/#all' },
+            { label: `See all ${numberWord(seeds.length)}`, href: '/products' },
             {
               label: 'Lamp on GitHub',
               href: 'https://github.com/just-every/run-lamp',
@@ -62,8 +64,8 @@ export default function Process() {
         Every product we publish has a file called{' '}
         <a href={`${lamp}/CONTRACT.md`}>CONTRACT.md</a> at the root of its
         repository. It’s a list of promises in plain English, each one specific
-        enough to argue about. Across our fourteen products there are more than
-        a thousand of them.
+        enough to argue about. Across our {numberWord(seeds.length)} products
+        there are more than a thousand of them.
       </p>
       <p>
         Lamp is our status page, and one of its promises is about exactly that

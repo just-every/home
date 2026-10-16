@@ -1,54 +1,56 @@
+'use client';
+
+import Link from 'next/link';
+
 import { collection } from '@/content/landing';
+import { track, X_EVENTS } from '@/lib/x-pixel';
 
 import { BrandMark } from '../BrandMark';
 import ui from '../label.module.css';
-import { cardId } from '../volumes';
 import styles from './collection.module.css';
 import { cardStyle } from './cardStyle';
-import type { Placed } from './types';
+import type { Shown } from './types';
 
 /**
- * A product in the grid: its mark, number, name and what it replaces, and
- * GitHub. The whole card selects it (its name is the link); the selected
- * one is ringed, and the box above shows it.
+ * A product among the others: its mark, name, what it replaces, what it
+ * does (its line) and GitHub, on its pastel. The whole card opens the seed's
+ * own page (its name is the link).
  */
 export function ProductCard({
-  placed,
-  current,
+  shown,
+  level,
 }: {
-  placed: Placed;
-  current: boolean;
+  shown: Shown;
+  /** One level under the heading the card's list sits beneath. */
+  level: 'h2' | 'h3' | 'h4';
 }) {
-  const { item, role, replaces, reason } = placed;
+  const { item, replaces, reason } = shown;
+  const Name = level;
   return (
     <li
-      className={`${ui.card} ${ui.tinted} ${styles.card} ${styles[role]}${
-        current ? ` ${styles.current}` : ''
-      }`}
-      id={cardId(item.slug)}
+      className={`${ui.card} ${ui.tinted} ${styles.card}`}
       style={cardStyle(item)}
     >
-      <BrandMark
-        className={styles.mark}
-        volume={item}
-        size={role === 'cover' ? 96 : 40}
-      />
-      <div className={styles.body}>
-        <p className={styles.num}>{item.number}</p>
-        <h3 className={styles.name}>
-          <a
+      <BrandMark className={styles.mark} volume={item} size={36} />
+      <div className={styles.head}>
+        <Name className={styles.name}>
+          <Link
             className={styles.select}
-            href={`#${cardId(item.slug)}`}
-            aria-current={current ? 'true' : undefined}
+            href={`/${item.slug}`}
+            prefetch={false}
+            onClick={() =>
+              track(X_EVENTS.contentView, {
+                content_name: item.name,
+                content_type: 'product',
+              })
+            }
           >
             {item.name}
-          </a>
-        </h3>
+          </Link>
+        </Name>
         <p className={styles.alt}>
           {collection.alternativeTo} {replaces}
         </p>
-        {/* The box above already gives the selected pick's reason. */}
-        {reason && !current ? <p className={styles.reason}>{reason}</p> : null}
       </div>
       <a
         className={styles.repo}
@@ -60,6 +62,8 @@ export function ProductCard({
           →
         </span>
       </a>
+      <p className={styles.cardLine}>{item.line}</p>
+      {reason ? <p className={styles.reason}>{reason}</p> : null}
     </li>
   );
 }

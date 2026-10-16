@@ -1,4 +1,4 @@
-import type { SeedReel } from '@/data/seed-types';
+import type { SeedArea, SeedReel } from '@/data/seed-types';
 
 /** A volume as the collection shows it; serialisable from the server. */
 export interface CollectionItem {
@@ -6,6 +6,7 @@ export interface CollectionItem {
   number: string;
   name: string;
   family: string;
+  area: SeedArea;
   category: string;
   replaces: string[];
   primaryReplace: string;
@@ -16,10 +17,13 @@ export interface CollectionItem {
   mark: string;
   pastel: string;
   ink: string;
-  reel: SeedReel;
+  /** Null for a product with no reel yet. */
+  reel: SeedReel | null;
+  /** A still of its homepage, for a product with no reel. */
+  homepageShot: string | null;
 }
 
-/** A product as the page shows it, in the box or as a card. */
+/** A product as the page shows it, as a card. */
 export interface Shown {
   item: CollectionItem;
   /** The incumbent to name; the one the visitor typed, where it applies. */
@@ -28,12 +32,9 @@ export interface Shown {
   reason: string | null;
 }
 
-/**
- * A card's size in the grid: a big cover (the first row of three), or a
- * smaller card in the rows below (`m` five to a row, `s` six).
- */
-export type CardRole = 'cover' | 'm' | 's';
-
-export interface Placed extends Shown {
-  role: CardRole;
+/** One area's small heading over its products, in volume order. */
+export interface Area {
+  id: SeedArea;
+  heading: string;
+  items: Shown[];
 }

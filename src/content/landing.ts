@@ -1,6 +1,11 @@
+import type { SeedArea } from '@/data/seed-types';
+import { seeds } from '@/data/seeds';
+import { numberWord } from '@/lib/number-word';
+
 /**
  * Shared landing copy from the approved copy deck (COPY.md, section B),
- * verbatim. The hero copy lives in src/components/landing/Hero.tsx.
+ * verbatim. The hero copy lives in src/components/landing/hero/Hero.tsx.
+ * Counts of products follow the data.
  */
 
 export const githubOrgUrl = 'https://github.com/just-every';
@@ -8,10 +13,11 @@ export const githubReposUrl =
   'https://github.com/orgs/just-every/repositories?q=run-';
 
 /**
- * The site's navigation. Paths are absolute ("/#all", not "#all") so the
- * header and footer work from every page; on / the anchor stays in-page.
+ * The site's navigation. Paths are absolute so the header and footer work
+ * from every page.
  */
 export const nav = [
+  { label: 'Products', href: '/products' },
   { label: 'Process', href: '/process' },
   { label: 'Journey', href: '/journey' },
   { label: 'Contact', href: '/contact' },
@@ -19,7 +25,7 @@ export const nav = [
 ] as const;
 
 /**
- * The benefits strip under the hero (owner feedback of 14 Oct): four plain
+ * The four reasons to switch, at the hero's foot (owner feedback of 14 Oct): four plain
  * reasons to switch, each a bold lead and one line.
  */
 export const benefits = {
@@ -44,16 +50,56 @@ export const benefits = {
   ],
 } as const;
 
+/**
+ * The home page's way into the full list: a few featured products, a
+ * search that opens /products, and the link to everything. The six are
+ * the owner's three favourites, then three more with reels.
+ */
+export const featured = {
+  slugs: ['uptime', 'happytohelp', 'nook', 'slate', 'vector', 'orbit'],
+  heading: 'Pick your replacement.',
+  line: 'Search for the tool you use today, or start with one of these.',
+  searchLabel: 'What do you use today?',
+  searchPlaceholder: "Notion, Intercom, or 'booking client calls'",
+  searchButton: 'Search',
+  /** "All fifty products →": the count is spelled out from the data. */
+  all: (count: string) => `All ${count} products`,
+} as const;
+
+/** The products page, /products: every product, searchable. */
+export const products = {
+  path: '/products',
+  /** "All fifty products.": the count is spelled out from the data. */
+  heading: (count: string) => `All ${count} products.`,
+  label: 'Products',
+  line: 'Free and open source, every one. Search for the tool you use today, or browse by what it does.',
+  title: (count: string) =>
+    `All ${count} products: free, open-source alternatives`,
+  description: (released: number, soon: number) =>
+    `Search ${released} free, open-source alternatives to the tools a team rents, plus ${soon} more coming soon. MIT licensed, yours to change.`,
+} as const;
+
 export const collection = {
   id: 'all',
   heading: 'Pick your replacement.',
   /**
-   * Card anatomy: mark, number, name, `${alternativeTo} <X>`, GitHub. The
-   * selected product's feature adds what it does (its line), its headline
-   * under that, and its homepage.
+   * Card anatomy: mark, name, `${alternativeTo} <X>`, GitHub, what it does
+   * (its line). The card opens the seed's own page, `/<slug>`.
    */
   alternativeTo: 'Alternative to',
   githubLabel: 'GitHub',
+  /**
+   * The small heading over each area's products, in the order the
+   * collection shows the areas.
+   */
+  areas: {
+    customers: 'Customers and sales',
+    team: 'Teamwork',
+    engineering: 'Engineering',
+    finance: 'Finance',
+    people: 'People',
+    operations: 'Operations',
+  } satisfies Record<SeedArea, string>,
 } as const;
 
 /**
@@ -75,9 +121,14 @@ export const search = {
   button: 'Find my replacement',
   busy: 'Finding…',
   showAll: 'Back to all products',
-  /** Typing matched names, replaced products, categories or lines. */
-  instant: (count: number, query: string) =>
-    `${count === 1 ? '1 product matches' : `${count} products match`} ${quoted(query)}.`,
+  /**
+   * Typing matched names, replaced products, categories or lines: `count`
+   * released products and `soon` in the works.
+   */
+  instant: (count: number, soon: number, query: string) =>
+    count === 0
+      ? `${soon === 1 ? '1 product in the works matches' : `${soon} products in the works match`} ${quoted(query)}.`
+      : `${count === 1 ? '1 product matches' : `${count} products match`} ${quoted(query)}${soon ? `, and ${soon} coming soon` : ''}.`,
   /** Typing matched nothing by name: the button matches by what it does. */
   hint: (query: string) =>
     `Press Find my replacement to match ${quoted(query)} by what it does.`,
@@ -132,21 +183,6 @@ export function demoLabel(name: string, line: string): string {
   return `Demo of ${name} running: ${line}`;
 }
 
-/**
- * "Nothing to upsell." (owner brief of 13 Oct; its line made plain on 14
- * Oct): a free product has no premium tier to sell. Each example is a
- * product's own line from seeds.ts, shown beside its real mark; `examples`
- * lists the slugs, in order.
- */
-export const nothingToUpsell = {
-  id: 'why-free',
-  eyebrow: 'Why free',
-  heading: 'Nothing to upsell.',
-  line: 'No premium tier, no upgrade nags. Every feature is already yours.',
-  examples: ['happytohelp', 'uptime', 'nook'],
-  listLabel: 'Three products, and what each one does',
-} as const;
-
 export const questions = {
   id: 'questions',
   heading: "Surely this can't work?",
@@ -158,7 +194,7 @@ export const questions = {
         'No catch. Every one is MIT licensed and 100% free. Take it, run it, change it.',
     },
     {
-      question: 'Fourteen products? From one team?',
+      question: `${numberWord(seeds.length, true)} products? From one team?`,
       answer:
         'Coding agents write the code. We decide what good looks like, write it down as a contract, and ship the tests with it.',
     },

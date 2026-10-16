@@ -31,4 +31,32 @@ export const seedLimits: Readonly<Record<string, string>> = {
     'Paging is off: it never calls, texts or pages anyone, and it runs beside your existing pager. Escalation policies are configuration you can read, not live timers.',
   spool:
     'It handles errors only (other Sentry telemetry is counted and discarded), and it never pages anyone.',
+  chest:
+    'It does not edit office documents or preview every file type, share anonymously, sync devices, or apply statutory retention and automatic destruction.',
+  easel:
+    'One company only: no multi-entity consolidation or currency conversion, no posting journals or correcting the ledger, no payroll, tax or statutory statements, and it does not run spreadsheet formulas or macros.',
+  pier: 'Finished-goods wholesale for one business in AUD: no manufacturing or assemblies, serial or expiry tracking, payments, general ledger, tax filing, carrier or supplier networks, or autonomous purchasing.',
+  purse:
+    'It does not execute payments, post to accounting, determine tax, find suppliers, or send supplier messages or negotiate for you.',
+  willow:
+    'It does not calculate payroll, tax or payments, handle benefits or pensions, track applicants or performance, rank candidates, or apply statutory entitlement rules; it hands changes to the payroll provider you already use.',
+  beam: 'It builds courses from your own procedures; no accreditation or statements of competence, SCORM or xAPI playback, course sales, or learners who are children.',
+  coaster:
+    'It records reimbursement but never moves money or makes payment files; no card issuing or feeds, payroll, travel booking, multi-currency claims, receipt reading by OCR or model, accounting software sync or tax determination. Finance exports a CSV.',
+  gasket:
+    'One site only: it never certifies equipment as safe or compliant, takes no sensor or IoT feeds and controls no equipment, and has no purchasing, costs, depreciation or contractor work for customers.',
+  gauge:
+    'It prepares billing packets but issues no tax or statutory invoices, takes no payments, runs no payroll and handles no retainers; it connects to no calendar or accounting providers.',
+  glove:
+    'It has no route optimisation or maps, sends no SMS or email, takes no card payments and is not a full accounting or tax system; invoices are exported to your own accounting system.',
+  larder:
+    "It does not keep statutory books, file tax, run payroll, post journals, handle multiple entities or currencies, schedule by finite capacity, or certify regulated quality or recalls; it hands off to the accountant's own ledger.",
+  locket:
+    'It organises and prepares agreements but gives no legal advice, does not sign or re-sign anything, and does not validate signatory authority; signing happens in the service you already use.',
+  lodge:
+    'It sends no email and syncs no calendars; it does not reject, rank or score candidates automatically, record or run interviews, do background checks, payroll, employee records or e-signature, or post to job boards.',
+  nectar:
+    'It never collects payments, holds cards or retries charges, and sends no invoices or reminders; no merchant-of-record service, revenue recognition, multiple entities or currencies, and tax only for one declared US state policy.',
+  pantry:
+    'One US business in USD: no live bank feeds, payment initiation, tax filing or advice, payroll, multi-currency, multi-entity consolidation or inventory valuation.',
 };

@@ -1,7 +1,7 @@
-import type { ShelfVolume } from './volumes';
+import type { Volume } from './volumes';
 
 interface BrandMarkProps {
-  volume: Pick<ShelfVolume, 'mark'>;
+  volume: Pick<Volume, 'mark'>;
   className?: string;
   /** Rendered size in CSS pixels, for the intrinsic width and height. */
   size: number;

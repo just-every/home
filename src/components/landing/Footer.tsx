@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { footer } from '@/content/landing';
 
 import ui from './label.module.css';
+import { FooterMotion } from './FooterMotion';
 import { Logo } from './Logo';
 import styles from './footer.module.css';
 import { TokenCount } from './TokenCount';
@@ -11,9 +12,10 @@ import { TokenCount } from './TokenCount';
  * The illustrated footer (owner's pick B3, 15 Oct): a flat landscape in the
  * collection's pastels as a full-bleed band that runs to the bottom of the
  * page, with the wordmark, the token line and the site's links set over its
- * sky. The art is one SVG (traced shapes coloured by region;
+ * sky. The art is one static SVG (traced shapes coloured by region;
  * scripts/footer-colours.mjs sets the colourway), loaded lazily as an image
- * so the page's HTML stays light.
+ * so the page's HTML stays light, with its moving parts laid over it as
+ * small images of their own (FooterMotion, scripts/footer-motion.mjs).
  *
  * `rise`: the page above ends on an opaque card, so the art may rise behind
  * it (by the stylesheet's --rise), the tree's crown growing out from under
@@ -50,17 +52,23 @@ export function Footer({ rise = false }: { rise?: boolean }) {
             </nav>
           </div>
         </div>
-        {/* An SVG: next/image would only pass it through. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          className={styles.art}
-          src="/landing/footer/footer-art.svg"
-          width={7040}
-          height={2186}
-          alt="A person with a laptop and a white dog sit under a big tree on a grassy hill, looking over a bay at the setting sun, with a small village and cypress trees beyond."
-          loading="lazy"
-          decoding="async"
-        />
+        {/* The art's box shows its crop; the canvas inside is the whole art. */}
+        <div className={styles.art}>
+          <div className={styles.canvas}>
+            {/* An SVG: next/image would only pass it through. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className={styles.paint}
+              src="/landing/footer/footer-art.svg"
+              width={7040}
+              height={2186}
+              alt="A person with a laptop and a white dog sit under a big tree on a grassy hill, looking over a bay at the setting sun, with a small village and cypress trees beyond."
+              loading="lazy"
+              decoding="async"
+            />
+            <FooterMotion />
+          </div>
+        </div>
       </div>
     </footer>
   );

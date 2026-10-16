@@ -1,0 +1,87 @@
+/* A painted strip shown at its natural height (--show) on wide screens and
+   shrinking to 60% of it on phones; the image keeps its proportions and is
+   cropped from the middle, anchored at the foot. */
+/* Below the art the strip's foot colour (--foot, the bottom band of its SVG)
+   holds briefly and then fades over a long tail (--fade) into the page
+   (--to). The wash is out of the flow, behind the section that follows: it
+   paints under that section's content (z-index -1) and ignores the pointer,
+   so it can never cover a control. */
+.band {
+  position: relative;
+  pointer-events: none;
+  user-select: none;
+  --to: #fdfdff;
+  --fade: 300px;
+}
+
+.band::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  height: var(--fade);
+  background: linear-gradient(
+    180deg,
+    var(--foot) 0,
+    var(--foot) 8%,
+    color-mix(in srgb, var(--foot) 68%, var(--to)) 24%,
+    color-mix(in srgb, var(--foot) 42%, var(--to)) 46%,
+    color-mix(in srgb, var(--foot) 20%, var(--to)) 68%,
+    color-mix(in srgb, var(--foot) 7%, var(--to)) 86%,
+    var(--to) 100%
+  );
+}
+
+.creek {
+  --foot: #c0e4e1;
+  --fade: 300px;
+}
+
+.garden {
+  --foot: #f4ddcb;
+  --fade: 260px;
+}
+
+.hedgerow {
+  --foot: #f5d1d8;
+  --fade: 320px;
+}
+
+.meadow {
+  --foot: #d2e4f8;
+  --fade: 280px;
+}
+
+@media (max-width: 599px) {
+  .creek {
+    --fade: 170px;
+  }
+
+  .garden {
+    --fade: 150px;
+  }
+
+  .hedgerow {
+    --fade: 180px;
+  }
+
+  .meadow {
+    --fade: 160px;
+  }
+}
+
+.art {
+  position: relative;
+  height: clamp(calc(var(--show) * 0.6), 13vw, var(--show));
+  overflow: hidden;
+}
+
+.art > .stage {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+}

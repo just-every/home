@@ -7,10 +7,9 @@
   margin-bottom: 24px;
 }
 
-.num {
-  color: var(--muted);
-  font-size: 15px;
-  font-variant-numeric: tabular-nums;
+/* On /products the page's own room sits above: no heading, less air. */
+.standalone {
+  padding-top: 8px;
 }
 
 .alt {
@@ -19,161 +18,61 @@
   line-height: 1.3;
 }
 
-/* The selected product, across the whole width above the grid: text on
-   one side, its reel or homepage on the other. */
-.feature {
-  scroll-margin-top: 24px;
-  margin-bottom: var(--card-gap);
-  padding: 18px;
-  transition: background-color 240ms ease;
-}
-
-.featureBody {
+/* Every product under its area's small heading: three areas to a row on
+   wide screens, two on tablets, one on phones. */
+.areas {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-  gap: 20px 44px;
-  animation: feature-in 280ms ease both;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px 28px;
 }
 
-@keyframes feature-in {
-  from {
-    opacity: 0;
-  }
-}
-
-.featureText {
-  display: flex;
-  flex-direction: column;
+.area {
   min-width: 0;
-  padding: 14px 0 4px 18px;
 }
 
-.featureMark {
-  width: 52px;
-  height: 52px;
-  margin-bottom: 16px;
-  object-fit: contain;
-}
-
-.featureText .num {
-  margin-bottom: 4px;
-}
-
-.featureName {
-  margin: 0 0 6px;
-  font-size: clamp(30px, 2.5vw, 36px);
-  font-weight: 650;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
-}
-
-.featureName:focus:not(:focus-visible) {
-  outline: none;
-}
-
-.family {
-  display: inline-block;
+.areaHeading {
+  margin: 0 0 12px;
   color: var(--muted);
-  white-space: nowrap;
-  font-size: 0.56em;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-
-.feature .alt {
-  font-size: 15px;
-}
-
-.does {
-  max-width: 520px;
-  margin-top: 22px;
-  font-size: 22px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
+  letter-spacing: 0.14em;
+  line-height: 1.3;
+  text-transform: uppercase;
 }
 
-.line {
-  max-width: 520px;
-  margin-top: 6px;
-  color: var(--soft);
-  font-size: 16px;
-  line-height: 1.42;
-}
-
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 22px;
-  margin-top: auto;
-  padding-top: 22px;
-}
-
-.primary {
-  min-height: 46px;
-  padding: 0 22px;
-  font-size: 16px;
-}
-
-.secondary {
-  font-size: 16px;
-}
-
-.media {
-  display: flex;
-  align-items: center;
-  min-width: 0;
-}
-
-.picture {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 10px;
-  background: var(--card-paper);
-}
-
-/* Every product, in volume order whatever is selected: three covers, then
-   rows of five and six (30 columns: spans of 10, 6 and 5). */
-.grid {
+.list,
+.results {
   display: grid;
-  grid-template-columns: repeat(30, minmax(0, 1fr));
-  gap: var(--card-gap);
+  gap: 8px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.cover {
-  grid-column: span 10;
+/* A search's products, with no headings: three to a row. */
+.results {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--card-gap);
 }
 
-.m {
-  grid-column: span 6;
+/* The seeds in the works that a search found, under the products. */
+.soon {
+  margin-top: 32px;
 }
 
-.s {
-  grid-column: span 5;
-}
-
-/* Cards: the whole card selects its product. */
+/* A card: mark, then name and what it replaces beside GitHub, then its
+   line. The whole card opens its product's page. */
 .card {
   position: relative;
-  scroll-margin-top: 24px;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  column-gap: 12px;
+  align-items: start;
+  padding: 14px 12px 14px 16px;
   cursor: pointer;
   transition:
     background-color 160ms ease,
     box-shadow 160ms ease;
-}
-
-/* The selected card, and only it, is ringed in its own ink. An inset ring
-   moves nothing, and leaves the outline to keyboard focus. */
-.current {
-  box-shadow: inset 0 0 0 2px var(--brand-ink);
 }
 
 /* Hover: a deeper pastel, its quiet text a step darker to keep AA. */
@@ -208,19 +107,36 @@
   outline-offset: 3px;
 }
 
-.body {
+.mark {
+  grid-row: span 2;
+  width: 36px;
+  height: 36px;
+  margin-top: 2px;
+  object-fit: contain;
+}
+
+.head {
   min-width: 0;
 }
 
 .name {
-  margin: 0 0 3px;
-  font-size: 19px;
+  margin: 0 0 1px;
+  font-size: 18px;
   font-weight: 600;
-  letter-spacing: -0.5px;
-  line-height: 1.15;
+  letter-spacing: -0.4px;
+  line-height: 1.2;
+}
+
+.cardLine {
+  grid-column: 2 / -1;
+  margin-top: 6px;
+  color: var(--soft);
+  font-size: 14.5px;
+  line-height: 1.4;
 }
 
 .reason {
+  grid-column: 2 / -1;
   margin-top: 10px;
   color: #34333f;
   font-size: 15px;
@@ -233,8 +149,9 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  min-height: 36px;
-  font-size: 13.5px;
+  min-height: 28px;
+  margin-top: -3px;
+  font-size: 13px;
   white-space: nowrap;
 }
 
@@ -257,238 +174,37 @@
   transform: translateX(2px);
 }
 
-/* Volumes 01-03: the big covers, mark to the right. */
-.cover {
-  --mark-w: clamp(72px, 6.8vw, 100px);
-
-  display: flex;
-  flex-direction: column;
-  min-height: 196px;
-  padding: 28px 32px 14px;
-}
-
-.cover .mark {
-  position: absolute;
-  top: 28px;
-  right: 30px;
-  width: var(--mark-w);
-  height: var(--mark-w);
-  object-fit: contain;
-}
-
-.cover .body {
-  padding-right: calc(var(--mark-w) + 12px);
-}
-
-.cover .num {
-  margin-bottom: 6px;
-  font-size: 16px;
-}
-
-.cover .name {
-  margin-bottom: 6px;
-  font-size: 30px;
-  letter-spacing: -0.9px;
-  line-height: 1.1;
-}
-
-.cover .alt {
-  font-size: 15px;
-}
-
-.cover .repo {
-  align-self: flex-start;
-  margin-top: auto;
-  padding-top: 10px;
-}
-
-/* Volumes 04 onward: mark to the left. */
-.m,
-.s {
-  display: grid;
-  grid-template-columns: 40px minmax(0, 1fr);
-  grid-template-rows: 1fr auto;
-  column-gap: 12px;
-  min-height: 132px;
-  padding: 20px 16px 10px 18px;
-}
-
-.s {
-  grid-template-columns: 34px minmax(0, 1fr);
-  column-gap: 10px;
-  padding-inline: 16px 12px;
-}
-
-.mark {
-  width: 40px;
-  height: 40px;
-  margin-top: 4px;
-  object-fit: contain;
-}
-
-.s .mark {
-  width: 34px;
-  height: 34px;
-}
-
-.body .num {
-  margin-bottom: 3px;
-}
-
-.m .repo,
-.s .repo {
-  grid-column: 1 / -1;
-  align-self: end;
-  justify-self: start;
-  margin-top: 8px;
-}
-
 @media (max-width: 1023px) {
-  /* The box stacks: its picture, then its text. */
-  .feature {
-    padding: 14px;
-  }
-
-  .featureBody {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .media {
-    order: -1;
-  }
-
-  .featureText {
-    padding: 6px 10px 6px;
-  }
-
-  .featureName {
-    font-size: 32px;
-  }
-
-  .line {
-    max-width: 600px;
-  }
-
-  /* Two covers, then the third across; the rest two to a row. */
-  .grid {
+  .areas,
+  .results {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .cover,
-  .m,
-  .s {
-    grid-column: auto;
-  }
-
-  .cover:nth-child(3),
-  .cover:only-child {
-    grid-column: 1 / -1;
-  }
-
-  .cover {
-    --mark-w: 88px;
-
-    min-height: 168px;
-    padding: 24px 24px 12px 28px;
-  }
-
-  .cover .mark {
-    top: 24px;
-    right: 24px;
-  }
-
-  .m,
-  .s {
-    grid-template-columns: 44px minmax(0, 1fr);
-    column-gap: 14px;
-    min-height: 0;
-    padding: 20px 18px 10px 20px;
-  }
-
-  .m .mark,
-  .s .mark {
-    width: 44px;
-    height: 44px;
   }
 
   .repo {
     min-height: 44px;
+    margin-top: -11px;
   }
 }
 
 @media (max-width: 599px) {
-  .feature {
-    padding: 10px;
-  }
-
-  .featureText {
-    padding: 8px 10px 4px;
-  }
-
-  .featureName {
-    font-size: 30px;
-  }
-
-  .featureMark {
-    width: 44px;
-    height: 44px;
-    margin-bottom: 12px;
-  }
-
-  .does {
-    margin-top: 16px;
-    font-size: 19px;
-  }
-
-  .links {
-    padding-top: 18px;
-  }
-
-  /* One column, as the collection always was on phones. */
-  .grid {
+  .areas,
+  .results {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .cover {
-    --mark-w: 76px;
-
-    min-height: 0;
-    padding: 22px 22px 8px;
-  }
-
-  .cover .mark {
-    top: 22px;
-    right: 22px;
-  }
-
-  .cover .name {
-    font-size: 28px;
-  }
-
-  .m,
-  .s {
-    padding: 18px 18px 8px;
-  }
-
-  .name {
-    font-size: 21px;
+  .areas {
+    row-gap: 32px;
   }
 
   .alt {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .feature,
   .card,
   .repoArrow {
     transition: none;
-  }
-
-  .featureBody {
-    animation: none;
   }
 
   .repo:hover .repoArrow {

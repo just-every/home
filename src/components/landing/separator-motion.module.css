@@ -1,0 +1,237 @@
+/* Painted art with moving parts (SeparatorArt.tsx). The art itself never
+   animates; each part is a small image laid over it that moves by transform
+   and opacity only, on its own compositor layer. Parts pause while their
+   stage is off screen (no data-play) and stop under reduced motion. */
+.stage {
+  position: relative;
+}
+
+.base {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+.part {
+  position: absolute;
+  display: block;
+  max-width: none;
+  pointer-events: none;
+  will-change: transform;
+  animation-duration: var(--dur);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+}
+
+.stage[data-play] .part {
+  animation-play-state: running;
+}
+
+/* Grass, reeds and stems lean about their base, back and forth. */
+.sway {
+  animation-name: sway;
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: skewX(calc(var(--amp) * -1deg));
+  }
+  50% {
+    transform: skewX(calc(var(--amp) * 1deg));
+  }
+}
+
+/* Flower heads nod up and down. */
+.bob {
+  animation-name: bob;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1.5deg);
+  }
+  50% {
+    transform: translateY(calc(var(--amp) * -1px)) rotate(1.5deg);
+  }
+}
+
+/* Lily pads drift on the water. */
+.drift {
+  animation-name: drift;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(calc(var(--amp) * -1px), 1px) rotate(-1deg);
+  }
+  50% {
+    transform: translate(calc(var(--amp) * 1px), -1px) rotate(1deg);
+  }
+}
+
+/* Light glints on the creek: a white copy of a ripple brightens as it
+   slides along, then fades away. Hidden at rest. */
+.shimmer {
+  opacity: 0;
+  will-change: transform, opacity;
+  animation-name: shimmer;
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateX(calc(var(--amp) * -1px));
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(calc(var(--amp) * 1px));
+  }
+}
+
+/* The hedgerow birds sit, hop twice, turn round, then turn back. */
+.hop {
+  animation-name: hop;
+}
+
+@keyframes hop {
+  0%,
+  6%,
+  13%,
+  20%,
+  100% {
+    transform: none;
+  }
+  9% {
+    transform: translateY(-9px);
+  }
+  16% {
+    transform: translateY(-6px);
+  }
+  38% {
+    transform: none;
+  }
+  41%,
+  64% {
+    transform: scaleX(-1);
+  }
+  52% {
+    transform: scaleX(-1) rotate(-8deg);
+  }
+  56% {
+    transform: scaleX(-1);
+  }
+  67% {
+    transform: none;
+  }
+  82% {
+    transform: rotate(9deg);
+  }
+  86% {
+    transform: none;
+  }
+}
+
+/* The flying bird loops gently about its spot. */
+.flutter {
+  animation-name: flutter;
+  animation-timing-function: linear;
+}
+
+@keyframes flutter {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(-6deg);
+  }
+  25% {
+    transform: translate(16px, -10px) rotate(5deg);
+  }
+  50% {
+    transform: translate(30px, 2px) rotate(-4deg);
+  }
+  75% {
+    transform: translate(14px, 9px) rotate(6deg);
+  }
+}
+
+/* The mailbox bird bobs, pecks, and looks about. */
+.perch {
+  animation-name: perch;
+}
+
+@keyframes perch {
+  0%,
+  100% {
+    transform: none;
+  }
+  12% {
+    transform: translateY(-6px);
+  }
+  22% {
+    transform: none;
+  }
+  32% {
+    transform: translateY(-4px);
+  }
+  40% {
+    transform: none;
+  }
+  52% {
+    transform: rotate(12deg);
+  }
+  60% {
+    transform: none;
+  }
+  75% {
+    transform: rotate(-7deg);
+  }
+  84% {
+    transform: none;
+  }
+}
+
+/* The 404 dog's tail wags in bursts. */
+.wag {
+  animation-name: wag;
+}
+
+@keyframes wag {
+  0%,
+  62%,
+  100% {
+    transform: none;
+  }
+  8% {
+    transform: rotate(-26deg);
+  }
+  16% {
+    transform: rotate(14deg);
+  }
+  24% {
+    transform: rotate(-26deg);
+  }
+  32% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-24deg);
+  }
+  48% {
+    transform: rotate(12deg);
+  }
+  56% {
+    transform: rotate(-8deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .part {
+    animation: none;
+    will-change: auto;
+  }
+}

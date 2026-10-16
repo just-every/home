@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import { ArticlePage } from '@/components/article/ArticlePage';
 import { EndNote } from '@/components/article/EndNote';
 import { essayMetadata, essays } from '@/components/article/essays';
+import { seeds } from '@/data/seeds';
+import { numberWord } from '@/lib/number-word';
 
 import { AutoDrive, FirstHomepage, Shelf } from './figures';
 
@@ -18,7 +20,7 @@ export default function Journey() {
         <EndNote
           next={essays.process}
           links={[
-            { label: 'See all fourteen', href: '/#all' },
+            { label: `See all ${numberWord(seeds.length)}`, href: '/products' },
             { label: 'Every Code', href: 'https://github.com/just-every/code' },
             { label: '12ui', href: 'https://12ui.com' },
           ]}

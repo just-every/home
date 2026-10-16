@@ -1,17 +1,14 @@
-/* Seeds in the works: the collection's card language, one step quieter
-   (a lighter pastel, no number, no ring, nothing to select). */
-.soon {
-  padding: 0 0 var(--section-y);
+/* Seeds in the works: quieter than the collection (rows, not cards; see
+   soon/soon.module.css). */
+.section {
+  position: relative;
 }
 
-/* The heading and its line on the left; on the right, painted sprouts sit
-   on the head's foot and rise into the section's top space, so the cards
-   stay where the text alone puts them. */
+.soon {
+  padding: calc(var(--section-y) * 0.6) 0 var(--section-y);
+}
+
 .head {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
   margin: 0 0 24px;
 }
 
@@ -20,162 +17,6 @@
   max-width: 660px;
 }
 
-.sprouts {
-  flex: none;
-  display: block;
-  width: 300px;
-  height: auto;
-  margin-top: -30px;
-  user-select: none;
-}
-
 .line {
   margin-top: 10px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--card-gap);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.card {
-  --pastel-mix: 26%;
-
-  display: grid;
-  grid-template-columns: 44px minmax(0, 1fr);
-  grid-template-rows: 1fr auto;
-  column-gap: 14px;
-  min-height: 176px;
-  padding: 22px 20px 8px 22px;
-}
-
-.mark {
-  width: 44px;
-  height: 44px;
-  margin-top: 2px;
-  object-fit: contain;
-}
-
-.body {
-  min-width: 0;
-}
-
-.name {
-  margin: 0 0 6px;
-  font-size: 21px;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-  line-height: 1.15;
-}
-
-/* The one thing that sets these apart: a small, plain pill. */
-.status {
-  display: inline-block;
-  margin-bottom: 8px;
-  padding: 2px 10px;
-  border-radius: 999px;
-  background: color-mix(in oklab, var(--pastel) 55%, #fff);
-  color: var(--soft);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0;
-  line-height: 1.5;
-}
-
-.alt {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.3;
-}
-
-.text {
-  margin-top: 8px;
-  color: var(--soft);
-  font-size: 15.5px;
-  line-height: 1.4;
-}
-
-.repo {
-  display: inline-flex;
-  grid-column: 1 / -1;
-  align-items: center;
-  align-self: end;
-  justify-self: start;
-  gap: 6px;
-  min-height: 44px;
-  margin-top: 6px;
-  font-size: 13.5px;
-  white-space: nowrap;
-}
-
-.repo > span:first-child {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-}
-
-.repo:hover > span:first-child {
-  text-decoration-thickness: 2px;
-}
-
-.repoArrow {
-  display: inline-block;
-  transition: transform 160ms ease;
-}
-
-.repo:hover .repoArrow {
-  transform: translateX(2px);
-}
-
-@media (max-width: 1023px) {
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .card {
-    min-height: 0;
-  }
-}
-
-@media (max-width: 599px) {
-  .head {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-  }
-
-  .sprouts {
-    width: 220px;
-    margin-top: 0;
-  }
-
-  .grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .card {
-    padding: 18px 18px 6px;
-  }
-
-  .name {
-    font-size: 22px;
-  }
-
-  .alt {
-    font-size: 15px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .repoArrow {
-    transition: none;
-  }
-
-  .repo:hover .repoArrow {
-    transform: none;
-  }
 }

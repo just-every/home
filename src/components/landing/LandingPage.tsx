@@ -1,49 +1,37 @@
-import type { HeroVariantId } from '@/lib/hero-ab';
-
-import { Benefits } from './Benefits';
-import { Collection } from './Collection';
-import { ComingSoon } from './ComingSoon';
+import { Featured } from './Featured';
 import { sans } from './fonts';
 import { Footer } from './Footer';
 import { Header } from './Header';
-import { HeroBeacon } from './HeroBeacon';
-import { heroes } from './heroes';
+import { Hero } from './hero/Hero';
 import ui from './label.module.css';
 import { Makers } from './Makers';
-import { NothingToUpsell } from './NothingToUpsell';
 import panels from './panels.module.css';
 import { Questions } from './Questions';
 import { RunOne } from './RunOne';
 import { Running } from './Running';
 import { Stand } from './Stand';
 import { Suggest } from './suggest/Suggest';
-import { Unsubscribe } from './Unsubscribe';
+import { VolumeLinks } from './VolumeLinks';
 
 /**
  * The justevery.com landing page (the Label design): Just Every as a numbered box set, one volume per
- * product. The benefits strip follows the hero, then the collection; the
- * rest of the order follows the approved copy deck; the Unsubscribe
- * claim follows the reels and leads into the questions it provokes. The
- * suggestion form closes the page under the makers invitation: visitors ask
- * for products where makers are asked for them, and the collection search's
- * "Nothing in the collection does that yet" links down to it. `hero` is
- * the visitor's hero A/B variant (src/lib/hero-ab.ts), chosen by the
- * middleware and rendered here on the server.
+ * product. The hero is 12ui design G (hero/), with the four reasons to
+ * switch at its foot; a few featured products follow it as a portal to
+ * /products (the full, searchable list), then the rest of the order follows
+ * the approved copy deck, with the questions after the reels. The suggestion form closes the page under the makers invitation: visitors ask
+ * for products where makers are asked for them, and the search's
+ * "Nothing in the collection does that yet" links down to it (on /products
+ * it has its own copy of the form).
  */
-export function LandingPage({ hero }: { hero: HeroVariantId }) {
-  const { component: HeroVariant, shelf = false } = heroes[hero];
+export function LandingPage() {
   return (
     <div className={`${ui.page} ${sans.variable}`} id="top">
-      <Header />
+      <VolumeLinks />
+      <Header dusk />
       <main>
-        <HeroVariant />
-        <HeroBeacon variant={hero} />
-        <Benefits overShelf={shelf} />
-        <Collection />
-        <ComingSoon />
+        <Hero />
+        <Featured />
         <Running />
-        <Unsubscribe />
-        <NothingToUpsell />
         <Questions />
         <Stand />
         <div className={`${ui.wrap} ${panels.panels}`}>

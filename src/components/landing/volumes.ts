@@ -3,18 +3,28 @@ import type { CSSProperties } from 'react';
 import { seeds } from '@/data/seeds';
 import type { Seed } from '@/data/seeds';
 
-import type { ShelfVolume } from './shelf3d/types';
-
 /**
  * The label device: every product is a numbered volume in one box set, in its
  * own brand colours. Numbers follow seeds.ts order, so a new seed simply
  * becomes the next volume, everywhere on the page.
  */
 
-export type { ShelfVolume };
-
-/** A volume as the page uses it: the shelf fields plus the seed's facts. */
-export interface Volume extends ShelfVolume {
+/** A volume as the page uses it. */
+export interface Volume {
+  slug: string;
+  name: string;
+  /** The kind of product, one or two words: 'Support', 'Monitoring'. */
+  family: string;
+  /** Two-digit volume number: "01" upward. */
+  number: string;
+  /** The harmonised pastel, hex. */
+  colour: string;
+  /** Text and mark colour on that pastel (the brand ink), hex. */
+  ink: string;
+  /** URL of the SVG mark, already recoloured if needed. */
+  mark: string;
+  /** The product's own page. */
+  href: string;
   seed: Seed;
 }
 
@@ -30,8 +40,6 @@ function markFor(seed: Seed): string {
   return seed.markLight ?? seed.markInk ?? seed.mark;
 }
 
-export const cardId = (slug: string) => `vol-${slug}`;
-
 export const volumes: Volume[] = seeds.map((seed, index) => ({
   slug: seed.slug,
   name: seed.name,
@@ -40,33 +48,14 @@ export const volumes: Volume[] = seeds.map((seed, index) => ({
   colour: seed.pastel,
   ink: seed.ink,
   mark: markFor(seed),
-  tagline: seed.line,
-  href: `#${cardId(seed.slug)}`,
+  href: `/${seed.slug}`,
   seed,
 }));
 
-/**
- * Every volume in display order, for the hero's shelf. The first is the
- * featured volume, shown face out with what it does (Uptime).
- */
-export function labelVolumes(): ShelfVolume[] {
-  return volumes.map(
-    ({ slug, name, family, number, colour, ink, mark, tagline, href }) => ({
-      slug,
-      name,
-      family,
-      number,
-      colour,
-      ink,
-      mark,
-      tagline,
-      href,
-    })
-  );
-}
-
 /** The volume's colours as CSS custom properties. */
-export function volumeStyle(volume: ShelfVolume): CSSProperties {
+export function volumeStyle(
+  volume: Pick<Volume, 'colour' | 'ink'>
+): CSSProperties {
   return {
     '--pastel': volume.colour,
     '--brand-ink': volume.ink,

@@ -1,0 +1,166 @@
+/* Seeds in the works as quiet rows: no card fill, a hairline between rows,
+   and the seed's pastel only as the tile behind its mark. Two columns on
+   wide screens, one on phones. */
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 48px;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 11rem) minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 16px;
+  min-height: 72px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.tile {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: color-mix(in oklab, var(--pastel) 55%, #fff);
+}
+
+.mark {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.head {
+  min-width: 0;
+}
+
+.name {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.open::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+}
+
+.item:hover .open {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+}
+
+.open:focus-visible {
+  outline: none;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.item:has(.open:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.alt {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.3;
+}
+
+.text {
+  color: var(--soft);
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+
+.repo {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  font-size: 13.5px;
+  white-space: nowrap;
+}
+
+.repo > span:first-child {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.repo:hover > span:first-child {
+  text-decoration-thickness: 2px;
+}
+
+.repoArrow {
+  display: inline-block;
+  transition: transform 160ms ease;
+}
+
+.repo:hover .repoArrow {
+  transform: translateX(2px);
+}
+
+/* One column below the wide layout: name and source on one line, the
+   seed's line under them. */
+@media (max-width: 1199px) {
+  .list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .item {
+    grid-template-columns: 40px minmax(0, 1fr) auto;
+    grid-template-areas:
+      'tile head repo'
+      'tile text text';
+    align-items: start;
+    row-gap: 4px;
+    padding: 14px 0 12px;
+  }
+
+  .tile {
+    grid-area: tile;
+  }
+
+  .head {
+    grid-area: head;
+    align-self: center;
+  }
+
+  .text {
+    grid-area: text;
+  }
+
+  .repo {
+    grid-area: repo;
+    align-self: center;
+    min-height: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .repoArrow {
+    transition: none;
+  }
+
+  .repo:hover .repoArrow {
+    transform: none;
+  }
+}

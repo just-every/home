@@ -38,6 +38,9 @@
 
   min-width: 320px;
   overflow-x: clip;
+  /* A stacking context, so the painted strips' washes (z-index -1) sit above
+     this background and under every section's content. */
+  isolation: isolate;
   background: #fdfdff;
   color: var(--ink);
   font-family: var(--font-label-sans), system-ui, sans-serif;

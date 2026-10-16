@@ -1,19 +1,20 @@
 /**
- * Page metadata, from the copy deck (section A) with the hero's headline,
- * "Unsubscribe from just about everything.", brought forward on 14 Oct.
+ * Page metadata, following the hero (hero G): its headline, "Stop renting
+ * your software.", and its switch from the tools a team rents to open
+ * source it owns.
  */
 export const siteMeta = {
   name: 'Just Every',
   url: 'https://justevery.com',
-  title: 'Just Every · Unsubscribe from just about everything.',
+  title: 'Just Every · Stop renting your software.',
   description:
-    'High-quality open-source alternatives to Notion, Linear, Intercom, Calendly and more. 100% free, MIT licensed, yours to change.',
-  ogTitle: 'Unsubscribe from just about everything.',
+    'Switch from Notion, Slack, Intercom, Calendly and more to free, open-source alternatives you own. MIT licensed, yours to change.',
+  ogTitle: 'Stop renting your software.',
   ogImage: {
     url: '/og-image.png',
     width: 1200,
     height: 630,
-    alt: 'Just Every. Unsubscribe from just about everything.',
+    alt: 'Just Every. Stop renting your software: the tools a team rents under a rain cloud, switched to the open source it owns in the sun.',
   },
   githubUrl: 'https://github.com/just-every',
 } as const;

@@ -1,86 +1,86 @@
 'use client';
 
-import { useCallback, useMemo, useRef } from 'react';
+import { useMemo } from 'react';
 
 import { search as searchCopy } from '@/content/landing';
-import { track, X_EVENTS } from '@/lib/x-pixel';
+import { comingSoon, upcoming } from '@/data/upcoming';
 
+import { namedReplace } from '../search/localMatch';
 import { SearchForm } from '../search/SearchForm';
 import searchStyles from '../search/search.module.css';
 import { useCollectionSearch } from '../search/useCollectionSearch';
+import { SoonItem } from '../soon/SoonItem';
+import soonStyles from '../soon/soon.module.css';
 import styles from './collection.module.css';
-import { Feature } from './Feature';
-import { featured, place } from './place';
+import { areas, results } from './place';
 import { ProductCard } from './ProductCard';
 import type { CollectionItem } from './types';
-import { useSelection } from './useSelection';
 
 /**
- * The collection: the search, the selected product in a box across the
- * width, then every volume as a card in a grid that keeps its order and
- * sizes. Selecting (a card, a search result, a shelf volume or any other
- * `#vol-<slug>` link) puts that product in the box and rings its card.
+ * The collection: the search, then every product as a card under its area's
+ * small heading. A search shows only its products, with no headings, and
+ * the seeds in the works that match what is typed, as coming soon (each
+ * naming the tool typed, where it replaces it). Every card, and every coming
+ * soon row, links to the seed's own page. `level` is the level of the
+ * collection's own headings (each area, coming soon, and a search's
+ * results): 2 on /products, right under its h1; 3 under a section's h2.
  */
-export function CollectionBrowser({ items }: { items: CollectionItem[] }) {
-  const slugs = useMemo(() => items.map(item => item.slug), [items]);
-
-  // The selection needs the search (a link to a product that a search is
-  // hiding shows the whole collection again) and the search needs the
-  // selection (its best pick becomes the feature): this ref joins them.
-  const searchRef = useRef<{
-    clear: () => void;
-    keeps: (slug: string) => boolean;
-  }>({ clear: () => {}, keeps: () => false });
-  const onNavigate = useCallback((slug: string) => {
-    if (!searchRef.current.keeps(slug)) searchRef.current.clear();
-  }, []);
-  const onOpen = useCallback(
-    (slug: string) => {
-      const name = items.find(item => item.slug === slug)?.name ?? slug;
-      track(X_EVENTS.contentView, {
-        content_name: name,
-        content_type: 'product',
-      });
-    },
-    [items]
-  );
-  const { selected, select } = useSelection(slugs, onNavigate, onOpen);
-
-  const search = useCollectionSearch(items, {
-    onAnswer: (slug, apply) =>
-      select(slug, { history: 'replace', also: apply, reveal: 'nearest' }),
-  });
-  const answerSlugs =
-    search.mode === 'answer'
-      ? search.matches.map(match => match.volume.slug)
-      : [];
-  searchRef.current = {
-    clear: search.clear,
-    // A pick among a submitted search's answers keeps the answers showing.
-    keeps: slug => answerSlugs.includes(slug),
-  };
-
-  // A submitted search that found nothing, or failed, leaves no product in
-  // the box: nothing from an earlier answer may read as its result.
-  const shown =
-    search.mode === 'none' || search.failed
-      ? null
-      : featured(items, selected, search.mode, search.matches, search.text);
-  const placed = place(items, search.mode, search.matches, search.text);
+export function CollectionBrowser({
+  items,
+  level,
+}: {
+  items: CollectionItem[];
+  level: 2 | 3;
+}) {
+  const search = useCollectionSearch(items, upcoming);
+  const grouped = useMemo(() => areas(items), [items]);
+  const searching = search.mode === 'instant' || search.mode === 'answer';
+  const Heading = level === 2 ? 'h2' : 'h3';
+  const under = level === 2 ? 'h3' : 'h4';
 
   return (
     <>
       <SearchForm state={search} />
-      {shown ? <Feature shown={shown} /> : null}
-      <ul className={styles.grid} data-collection-grid="">
-        {placed.map(entry => (
-          <ProductCard
-            key={entry.item.slug}
-            placed={entry}
-            current={entry.item.slug === shown?.item.slug}
-          />
-        ))}
-      </ul>
+      {searching && search.matches.length > 0 ? (
+        <ul className={styles.results}>
+          {results(search.mode, search.matches, search.text).map(entry => (
+            <ProductCard key={entry.item.slug} shown={entry} level={Heading} />
+          ))}
+        </ul>
+      ) : null}
+      {search.soon.length > 0 ? (
+        <div className={styles.soon}>
+          <Heading className={styles.areaHeading}>{comingSoon.label}</Heading>
+          <ul className={soonStyles.list}>
+            {search.soon.map(seed => (
+              <SoonItem
+                key={seed.slug}
+                seed={seed}
+                level={under}
+                replaces={namedReplace(seed, search.text)}
+              />
+            ))}
+          </ul>
+        </div>
+      ) : null}
+      {searching ? null : (
+        <div className={styles.areas}>
+          {grouped.map(area => (
+            <div className={styles.area} key={area.id}>
+              <Heading className={styles.areaHeading}>{area.heading}</Heading>
+              <ul className={styles.list}>
+                {area.items.map(entry => (
+                  <ProductCard
+                    key={entry.item.slug}
+                    shown={entry}
+                    level={under}
+                  />
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      )}
       {search.mode === 'answer' ? (
         <p className={searchStyles.credit}>{searchCopy.credit}</p>
       ) : null}

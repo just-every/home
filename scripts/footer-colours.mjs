@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 /**
- * Colours the footer illustration (public/landing/footer/footer-art.svg).
+ * Colours the footer illustration: the static art
+ * (public/landing/footer/footer-art.svg) and its moving parts
+ * (public/landing/footer/motion/*.svg, made by scripts/footer-motion.mjs).
  *
  * The art keeps the traced shapes of its two ink plates (pink and blue, three
  * tint levels each) and a cream layer for the shirt and dog, defined once.
@@ -9,8 +11,8 @@
  * inside it every pair of pink and blue levels present is drawn flat with its
  * own class: `.canopy .c13` is the canopy where light pink overprinted full
  * blue. A colourway is the style sheet that fills those classes; this script
- * writes it into the SVG's <style id="colourway">, so switching colourways
- * changes nothing but that one block.
+ * writes it into each SVG's <style id="colourway">, so switching colourways
+ * changes nothing but that one block (scripts/footer-colour/apply.mjs).
  *
  *   node scripts/footer-colours.mjs                     (the default colourway)
  *   node scripts/footer-colours.mjs --colourway dusk
@@ -19,21 +21,19 @@
  *
  * The colourways themselves are in scripts/footer-colour/colourways.mjs.
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
-import { mix } from './footer-colour/colour.mjs';
+import { colourSvg, hasColourway } from './footer-colour/apply.mjs';
 import { colourways, defaultColourway } from './footer-colour/colourways.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const dir = resolve(root, 'public/landing/footer');
 const { values } = parseArgs({
   options: {
     colourway: { type: 'string', default: defaultColourway },
-    file: {
-      type: 'string',
-      default: resolve(root, 'public/landing/footer/footer-art.svg'),
-    },
+    file: { type: 'string' },
     list: { type: 'boolean', default: false },
   },
 });
@@ -47,48 +47,30 @@ if (values.list) {
   process.exit(0);
 }
 
-const cw = colourways[values.colourway];
-if (!cw) {
-  console.error(
-    `No colourway ${values.colourway}; one of: ${Object.keys(colourways).join(', ')}`
-  );
-  process.exit(1);
-}
+// The art, then every moving part that carries colours (the glints are light).
+const files = values.file
+  ? [resolve(values.file)]
+  : [
+      resolve(dir, 'footer-art.svg'),
+      ...readdirSync(resolve(dir, 'motion'))
+        .filter(f => f.endsWith('.svg'))
+        .map(f => resolve(dir, 'motion', f)),
+    ];
 
-/** The fill of pink level i over blue level j (0 is no ink) in a region. */
-function fill(r, i, j) {
-  if (j === 0) return r.pink[i - 1];
-  if (i === 0) return r.blue[j - 1];
-  if (j === 3) return r.over[i - 1];
-  // A pink tint over a lighter blue: between that blue and the full-blue overprint.
-  return mix(r.blue[j - 1], r.over[i - 1], j === 1 ? 0.35 : 0.6);
-}
-
-let svg = readFileSync(values.file, 'utf8');
-const style = /<style id="colourway">[^<]*<\/style>/;
-if (!style.test(svg)) {
-  console.error(`${values.file} has no <style id="colourway">`);
-  process.exit(1);
-}
-const rules = [`.cr{fill:${cw.cream}}`, `.sh{fill:${cw.shade}}`];
-const groups = [...svg.matchAll(/<g class="([a-z]+)"[^>]*>(.*?)<\/g>/g)];
-for (const [, name, body] of groups) {
-  const r = cw.regions[name];
-  if (!r) {
-    console.error(
-      `Colourway ${values.colourway} has no colours for the ${name} region`
-    );
+for (const file of files) {
+  const svg = readFileSync(file, 'utf8');
+  if (!hasColourway(svg)) {
+    if (values.file) {
+      console.error(`${file} has no <style id="colourway">`);
+      process.exit(1);
+    }
+    continue;
+  }
+  try {
+    writeFileSync(file, colourSvg(svg, values.colourway));
+  } catch (e) {
+    console.error(`${file}: ${e.message}`);
     process.exit(1);
   }
-  for (const [, i, j] of body.matchAll(/class="c(\d)(\d)"/g)) {
-    rules.push(`.${name} .c${i}${j}{fill:${fill(r, +i, +j)}}`);
-  }
+  console.log(`${file}: ${values.colourway}`);
 }
-svg = svg.replace(
-  style,
-  `<style id="colourway">/* ${values.colourway} */${rules.join('')}</style>`
-);
-writeFileSync(values.file, svg);
-console.log(
-  `${values.file}: ${values.colourway} (${groups.length} regions, ${rules.length} fills)`
-);
