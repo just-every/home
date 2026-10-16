@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 import { GithubClicks } from '@/components/GithubClicks';
+import { PageViews } from '@/components/PageViews';
 import { sans } from '@/components/landing/fonts';
 import { siteMeta } from '@/content/meta';
 import './globals.css';
@@ -84,6 +85,7 @@ export default function RootLayout({
       <body className={`${sans.variable} font-sans antialiased`}>
         {children}
         <GithubClicks />
+        <PageViews />
         <Script id="x-pixel" strategy="afterInteractive">
           {xPixel}
         </Script>

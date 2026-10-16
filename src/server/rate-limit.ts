@@ -14,15 +14,17 @@ async function hashedKey(scope: string, address: string): Promise<string> {
 /**
  * One request from `address` against a Workers Rate Limiting binding,
  * counted separately per scope (wrangler.toml): the forms and search get 10 a
- * minute; the A/B beacons (a page view or a click each) get AB_RATE_LIMITER's
- * 120. Throws `rate_limited` when the visitor is over the limit.
+ * minute; the usage beacons (a page view or a click each) get
+ * EVENTS_RATE_LIMITER's 120. Throws `rate_limited` when the visitor is over
+ * the limit.
  */
 export async function takeRateLimit(
   env: CloudflareEnv,
-  scope: 'match' | 'suggest' | 'contact' | 'ab',
+  scope: 'match' | 'suggest' | 'contact' | 'events',
   address: string
 ): Promise<void> {
-  const limiter = scope === 'ab' ? env.AB_RATE_LIMITER : env.RATE_LIMITER;
+  const limiter =
+    scope === 'events' ? env.EVENTS_RATE_LIMITER : env.RATE_LIMITER;
   if (!limiter) {
     throw new ApiError(
       'not_configured',

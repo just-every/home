@@ -8,7 +8,7 @@ export const sans = Inter({
   display: 'swap',
 });
 
-/** The handwritten note under the box set. */
+/** The handwritten notes on the contact page and in the articles. */
 export const handwriting = Kalam({
   weight: '300',
   subsets: ['latin'],

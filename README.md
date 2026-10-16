@@ -5,7 +5,7 @@ products as a box set, lets a visitor find the replacement for a tool they use
 today, and takes suggestions for what to build next.
 
 Next.js 15 (App Router) on Cloudflare Workers through OpenNext, with D1 for
-search logs and suggestions and R2 (`assets.justevery.com`) for the demo reels.
+search logs, suggestions and the usage log, and R2 (`assets.justevery.com`) for the demo reels.
 
 ## Run it
 
@@ -24,7 +24,7 @@ match still works.
 ```bash
 npm run lint
 npm run type-check
-npm test                 # the /api/match and /api/suggest flows
+npm test                 # the /api/match, /api/suggest, /api/contact and /api/events flows
 npm run build
 npm run build:cloudflare
 ```
@@ -34,25 +34,31 @@ npm run build:cloudflare
 - `src/components/landing/` — the page, one component and CSS module per
   section. `label.module.css` holds the shared tokens (text colours, card
   border, radius, section rhythm).
-- `src/components/landing/shelf3d/` — the three.js box-set shelf in the hero,
-  with a static poster (`public/landing/shelf/`) that hands over to the live
-  scene. Phones get the poster only.
+- `src/components/landing/hero/` — the hero (12ui design G): the rented
+  stack as a picker beside the seeds that replace it, over the watercolour
+  landscape in `public/landing/hero/`.
 - `src/components/landing/search/` and `suggest/` — "What do you use today?"
   and "What should we build next?".
 - `src/data/seeds.ts` — the products, in collection order, with marks and reels.
 - `src/content/` — page copy and site metadata.
 - `src/app/api/match`, `src/app/api/suggest`, `src/server/` — the two endpoints,
   validation, the shared per-visitor rate limit and D1 storage.
+- `src/lib/usage.ts`, `src/lib/usage-client.ts`, `src/app/api/events` — the
+  first-party usage log: one row per page view (`page_views`) and per
+  engagement event (`events`), keyed by a random per-page-view id, with no IP,
+  cookie or user agent stored. `src/lib/x-pixel.ts` sends each event to it and
+  to the X pixel.
 - `migrations/` — the D1 schema.
 
 ## Scripts
 
 - `scripts/update-reels.mjs` — re-encodes the newest finished product reels into
   `public/video/<slug>-720.mp4` and a poster.
-- `scripts/render-shelf.mjs` — renders the shelf poster from the live scene.
 - `scripts/render-og.mjs` — renders `public/og-image.png` from a running server.
 - `npm run suggestions [-- --remote]` — prints recent suggestions and unmatched
   searches.
+- `npm run usage [-- --remote] [-- --days 7]` — prints page views, the share
+  with an event, and each event's counts and top details.
 
 ## Deploy
 

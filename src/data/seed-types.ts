@@ -10,7 +10,7 @@ export interface Seed {
   slug: string;
   name: string;
   category: string;
-  /** The shelf's one- or two-word kind of product, e.g. 'Support'. */
+  /** The one- or two-word kind of product, e.g. 'Support'. */
   family: string;
   /** Every incumbent the product replaces. */
   replaces: string[];

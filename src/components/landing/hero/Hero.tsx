@@ -9,7 +9,7 @@ import { X_EVENTS, track } from '@/lib/x-pixel';
 
 import { countWord } from './count';
 import { caveat } from './fonts';
-import styles from './hero-g.module.css';
+import styles from './hero.module.css';
 import { rows } from './order';
 import {
   CodeIcon,
@@ -23,14 +23,21 @@ import {
   UpArrow,
 } from './sketches';
 
-const STACK_ID = 'hero-g-stack';
+const STACK_ID = 'hero-stack';
+
+/**
+ * The hero's root carries `data-hero`: a click on one of its links into the
+ * collection is the hero's call to action, not a product opened
+ * (collection/useSelection.ts).
+ */
+export const HERO_SELECTOR = '[data-hero]';
 
 const reducedMotion = () =>
   typeof window !== 'undefined' &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /**
- * Hero G, "a sketched journey" (12ui design G): the headline, the button
+ * The hero, "a sketched journey" (12ui design G): the headline, the button
  * and the trust row on the left; on the right the stack a team rents
  * today (each seed's `primaryReplace`), a sketched arrow, and the open
  * source it can own instead (the seeds, with their marks and pastels),
@@ -39,10 +46,12 @@ const reducedMotion = () =>
  * The rented stack is the picker: picking a tool highlights it and the
  * seed that replaces it, the button turns into "Switch to <Seed> →" for
  * `#vol-<slug>` (the collection opens that product's panel and reel), and
- * the pick is reported to the X pixel as a hero-pick content view. Every
- * seed row also links straight to its panel.
+ * the pick is reported as a hero-pick content view. Every seed row also
+ * links straight to its panel. A click on the switch button or a seed row
+ * is the hero's call to action, reported as a hero-switch content view
+ * with the seed's slug.
  */
-export default function HeroG() {
+export function Hero() {
   const [picked, setPicked] = useState<string | null>(null);
   const pickers = useRef<(HTMLButtonElement | null)[]>([]);
   const stackRef = useRef<HTMLElement | null>(null);
@@ -79,9 +88,18 @@ export default function HeroG() {
     pickers.current[next]?.focus();
   };
 
+  const reportSwitch = (slug: string) =>
+    track(X_EVENTS.contentView, {
+      content_name: slug,
+      content_type: 'hero-switch',
+    });
+
   /** Before a pick, the button brings the rented stack forward to choose from. */
   const onCta = (event: MouseEvent<HTMLAnchorElement>) => {
-    if (pickedVolume) return;
+    if (pickedVolume) {
+      reportSwitch(pickedVolume.slug);
+      return;
+    }
     event.preventDefault();
     const smooth = !reducedMotion();
     stackRef.current?.scrollIntoView({
@@ -104,13 +122,13 @@ export default function HeroG() {
   return (
     <section
       className={styles.top}
-      aria-labelledby="hero-g-heading"
-      data-hero="g"
+      aria-labelledby="hero-heading"
+      data-hero
       data-picked={picked ?? undefined}
     >
       <div className={styles.canvas}>
         <div className={styles.intro}>
-          <h1 id="hero-g-heading">
+          <h1 id="hero-heading">
             Stop renting <span className={styles.turn}>your software.</span>
           </h1>
           <p className={styles.description}>
@@ -177,12 +195,12 @@ export default function HeroG() {
             className={`${styles.panel} ${styles.old}`}
             id={STACK_ID}
             ref={stackRef}
-            aria-labelledby="hero-g-stack-heading"
+            aria-labelledby="hero-stack-heading"
             onAnimationEnd={event =>
               event.currentTarget.classList.remove(styles.nudge)
             }
           >
-            <h2 id="hero-g-stack-heading">Your current stack</h2>
+            <h2 id="hero-stack-heading">Your current stack</h2>
             <ul>
               {rows.map((volume, i) => (
                 <li
@@ -195,7 +213,7 @@ export default function HeroG() {
                       pickers.current[i] = el;
                     }}
                     aria-pressed={picked === volume.slug}
-                    aria-describedby="hero-g-pick-hint"
+                    aria-describedby="hero-pick-hint"
                     onClick={() => pick(volume.slug)}
                     onKeyDown={event => onPickerKey(event, i)}
                   >
@@ -204,7 +222,7 @@ export default function HeroG() {
                 </li>
               ))}
             </ul>
-            <p id="hero-g-pick-hint" className={styles.srOnly}>
+            <p id="hero-pick-hint" className={styles.srOnly}>
               Pick the tool you rent to see what replaces it.
             </p>
           </section>
@@ -213,9 +231,9 @@ export default function HeroG() {
 
           <section
             className={`${styles.panel} ${styles.new}`}
-            aria-labelledby="hero-g-own-heading"
+            aria-labelledby="hero-own-heading"
           >
-            <h2 id="hero-g-own-heading">To open source you own.</h2>
+            <h2 id="hero-own-heading">To open source you own.</h2>
             <ul>
               {rows.map(volume => {
                 const on = picked === volume.slug;
@@ -233,6 +251,7 @@ export default function HeroG() {
                       href={`#${cardId(volume.slug)}`}
                       aria-current={on ? 'true' : undefined}
                       data-on={on || undefined}
+                      onClick={() => reportSwitch(volume.slug)}
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
@@ -281,10 +300,10 @@ export default function HeroG() {
       <picture className={styles.landscape}>
         <source
           media="(max-width: 1023px)"
-          srcSet="/hero-variants/g/landscape-1536.webp"
+          srcSet="/landing/hero/landscape-1536.webp"
         />
         <img
-          src="/hero-variants/g/landscape-3072.webp"
+          src="/landing/hero/landscape-3072.webp"
           alt=""
           aria-hidden="true"
           width={3072}

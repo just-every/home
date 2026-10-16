@@ -1,5 +1,4 @@
 import type { SuggestResponse } from '@/lib/interactive-api';
-import { storeBeacon } from '@/server/ab/service';
 import { workerEnv } from '@/server/env';
 import {
   clientAddress,
@@ -7,17 +6,23 @@ import {
   json,
   readJsonObject,
 } from '@/server/http';
+import { storeBeacon } from '@/server/usage/service';
 
 /**
- * POST { kind: 'exposure', variant, forced, utm_source?, utm_campaign?,
- * utm_content?, landing? } or { kind: 'event', variant, forced, name,
- * detail? }, with the je_vid and je_hero cookies -> 201 { ok: true }.
+ * POST { kind: 'view', view_id, path, utm_source?, utm_campaign?,
+ * utm_content? } or { kind: 'event', view_id, name, detail? }
+ * -> 201 { ok: true }.
  */
 export async function POST(request: Request): Promise<Response> {
   try {
     const body = await readJsonObject(request);
     const env = await workerEnv();
-    await storeBeacon(env, body, request.headers, clientAddress(request));
+    await storeBeacon(
+      env,
+      body,
+      request.headers.get('user-agent'),
+      clientAddress(request)
+    );
     const created: SuggestResponse = { ok: true };
     return json(created, 201);
   } catch (error) {

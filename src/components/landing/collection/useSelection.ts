@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { flushSync } from 'react-dom';
 
-import { HERO_SELECTOR } from '@/lib/hero-ab';
+import { HERO_SELECTOR } from '../hero/Hero';
 
 import {
   onOutsidePick,
@@ -68,14 +68,14 @@ function reveal(how: Reveal, smooth: boolean, force = false) {
 /**
  * One product is always selected: the collection's first (Uptime) until the
  * address says `#vol-<slug>`. Any link to `#vol-<slug>` on the page (the
- * hero's shelf, the grid's own cards, the Unsubscribe rows) selects it, the
+ * hero's seed rows, the grid's own cards, the Unsubscribe rows) selects it, the
  * hash follows so the view can be shared, and the box above the grid scrolls
  * into view (smoothly, or at once with reduced motion). `onNavigate` runs
  * when a link, the address or the reels section picks a product. The
  * selection is the page's one selected product (see selectedProduct).
  * `onOpen` runs once per visitor click that opens a product in the box,
  * except from the hero's own links: those are the hero's call to action,
- * which HeroBeacon reports instead.
+ * which the hero reports itself.
  */
 export function useSelection(
   slugs: string[],

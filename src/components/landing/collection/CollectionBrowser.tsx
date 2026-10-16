@@ -18,7 +18,7 @@ import { useSelection } from './useSelection';
 /**
  * The collection: the search, the selected product in a box across the
  * width, then every volume as a card in a grid that keeps its order and
- * sizes. Selecting (a card, a search result, a shelf volume or any other
+ * sizes. Selecting (a card, a search result, a hero seed row or any other
  * `#vol-<slug>` link) puts that product in the box and rings its card.
  */
 export function CollectionBrowser({ items }: { items: CollectionItem[] }) {

@@ -1,5 +1,5 @@
-import { heroContext, recordEvent } from './hero-ab-client';
-import type { AbEventName } from './hero-ab';
+import type { UsageEventName } from './usage';
+import { recordEvent } from './usage-client';
 
 /**
  * The X (Twitter) base pixel's standard events (pixel id reblb, loaded in
@@ -26,7 +26,7 @@ declare global {
   }
 }
 
-const AB_NAMES: Record<XEventId, AbEventName> = {
+const USAGE_NAMES: Record<XEventId, UsageEventName> = {
   [X_EVENTS.search]: 'search',
   [X_EVENTS.contentView]: 'product_opened',
   [X_EVENTS.githubClick]: 'github_click',
@@ -36,51 +36,42 @@ const AB_NAMES: Record<XEventId, AbEventName> = {
   [X_EVENTS.contactSent]: 'contact_sent',
 };
 
-/** A content view's `content_type`, as the A/B test names the event. */
-const CONTENT_TYPES: Record<string, AbEventName> = {
+/** A content view's `content_type`, as the usage log names the event. */
+const CONTENT_TYPES: Record<string, UsageEventName> = {
   reel: 'reel_played',
   'hero-pick': 'hero_pick',
   'hero-switch': 'hero_cta',
 };
 
 /**
- * The event as the hero A/B test stores it. A content view is a product
- * opened, a reel played, a pick in the hero's own picker or a click on the
- * hero's call to action; the detail is the product or repository name, or
- * the hero link's target slug (or `all`), only (never search text or form
- * contents).
+ * The event as the usage log stores it. A content view is a product opened,
+ * a reel played, a pick in the hero's picker or a click on the hero's call
+ * to action; the detail is the product or repository name, or the hero
+ * link's seed slug, only (never search text or form contents).
  */
-function abEvent(eventId: XEventId, params?: XEventParams) {
+function usageEvent(eventId: XEventId, params?: XEventParams) {
   const type = params?.content_type;
   const name =
     (eventId === X_EVENTS.contentView && typeof type === 'string'
       ? CONTENT_TYPES[type]
-      : undefined) ?? AB_NAMES[eventId];
+      : undefined) ?? USAGE_NAMES[eventId];
   const detail = params?.content_name;
   return { name, detail: typeof detail === 'string' ? detail : undefined };
 }
 
 /**
- * Sends one engagement event: to our own A/B measurement (/api/ab) with the
- * visitor's hero, and to the X pixel with that hero as `content_category`
- * (`hero-<id>`) so X can split by hero. The pixel part does nothing without
- * `window.twq` (an ad blocker removed it). Never throws.
+ * Sends one engagement event: to our own usage log (/api/events) and to the
+ * X pixel. The pixel part does nothing without `window.twq` (an ad blocker
+ * removed it). Never throws.
  */
 export function track(eventId: XEventId, params?: XEventParams): void {
   try {
-    const hero = heroContext();
-    if (hero) {
-      const { name, detail } = abEvent(eventId, params);
-      recordEvent(hero, name, detail);
-    }
+    const { name, detail } = usageEvent(eventId, params);
+    recordEvent(name, detail);
     if (typeof window === 'undefined' || typeof window.twq !== 'function') {
       return;
     }
-    window.twq(
-      'event',
-      eventId,
-      hero ? { ...params, content_category: `hero-${hero.variant}` } : params
-    );
+    window.twq('event', eventId, params);
   } catch {
     // Analytics never gets in the visitor's way.
   }

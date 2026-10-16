@@ -10,14 +10,13 @@ const tints = ['#e9f7f0', '#e8f3ff', '#f1ebff', '#fff8e3'];
 
 /**
  * The benefits strip under the hero: four plain reasons to switch, each a
- * bold lead and one line, on the page's pastel cards. `overShelf` stacks it
- * close over a hero whose box set runs on past its foot; otherwise the strip
- * keeps a section's room above it.
+ * bold lead and one line, on the page's pastel cards, a section's room below
+ * the hero's foot.
  */
-export function Benefits({ overShelf = false }: { overShelf?: boolean }) {
+export function Benefits() {
   return (
     <section
-      className={`${ui.wrap} ${styles.benefits} ${overShelf ? '' : styles.clear}`}
+      className={`${ui.wrap} ${styles.benefits}`}
       aria-label={benefits.label}
     >
       <ul className={styles.list}>
