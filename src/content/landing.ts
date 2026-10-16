@@ -153,21 +153,6 @@ export function demoLabel(name: string, line: string): string {
   return `Demo of ${name} running: ${line}`;
 }
 
-/**
- * "Nothing to upsell." (owner brief of 13 Oct; its line made plain on 14
- * Oct): a free product has no premium tier to sell. Each example is a
- * product's own line from seeds.ts, shown beside its real mark; `examples`
- * lists the slugs, in order.
- */
-export const nothingToUpsell = {
-  id: 'why-free',
-  eyebrow: 'Why free',
-  heading: 'Nothing to upsell.',
-  line: 'No premium tier, no upgrade nags. Every feature is already yours.',
-  examples: ['happytohelp', 'uptime', 'nook'],
-  listLabel: 'Three products, and what each one does',
-} as const;
-
 export const questions = {
   id: 'questions',
   heading: "Surely this can't work?",
