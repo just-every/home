@@ -176,7 +176,7 @@ export function Running() {
           })}
         </div>
       </div>
-      <Separator variant="hedgerow" />
+      <Separator variant="hedgerow" solid />
     </section>
   );
 }
