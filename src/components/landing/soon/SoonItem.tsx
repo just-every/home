@@ -13,10 +13,16 @@ import styles from './soon.module.css';
 export function SoonItem({
   seed,
   level,
+  replaces = seed.primaryReplace,
 }: {
   seed: UpcomingSeed;
   /** The name's heading level under the list's own heading. */
   level: 'h3' | 'h4';
+  /**
+   * The incumbent to name: in a search's results, the one the visitor typed
+   * where the seed replaces it (search/localMatch.ts `namedReplace`).
+   */
+  replaces?: string;
 }) {
   const Name = level;
   return (
@@ -40,9 +46,7 @@ export function SoonItem({
       <div className={styles.head}>
         <Name className={styles.name}>{seed.name}</Name>
         <p className={styles.alt}>
-          {seed.primaryReplace
-            ? `${comingSoon.alternativeTo} ${seed.primaryReplace}`
-            : seed.category}
+          {replaces ? `${comingSoon.alternativeTo} ${replaces}` : seed.category}
         </p>
       </div>
       <p className={styles.text}>{seed.line}</p>

@@ -352,6 +352,25 @@
   outline-offset: 2px;
 }
 
+/* The rest of the collection, quietly, under the seeds. The rule above
+   covers its focus ring; it keeps the card's white, not a pastel. */
+.new .more {
+  display: block;
+  height: auto;
+  background: none;
+  color: #5d5f80;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: #c9c3e6;
+  text-underline-offset: 0.2em;
+}
+
+.new .more:hover {
+  background: none;
+  color: #17171d;
+  text-decoration-color: currentColor;
+}
+
 /* The painted ground: a very wide strip, cool and damp at its left end and
    sunlit at its right, cropped from the middle on narrower screens. */
 .ground {
@@ -587,6 +606,12 @@
   .goWord {
     font-size: calc(var(--u) * 15);
     vertical-align: calc(var(--u) * 3);
+  }
+
+  .new .more {
+    margin-top: calc(var(--u) * 12);
+    padding: calc(var(--u) * 4) 0 0;
+    font-size: calc(var(--u) * 15);
   }
 
   /* The weather and the notes sit around each card, measured from it: the
@@ -1084,9 +1109,12 @@
     transform: rotate(1deg);
   }
 
+  /* Only as wide as its words, so the tilt turns about the note itself:
+     a full-width box would swing its left end down onto the cards. */
   .from {
     grid-area: from;
-    margin: 0 0 12px 6px;
+    justify-self: start;
+    margin: 0 0 14px 6px;
     font-size: 27px;
     transform: rotate(-3deg);
   }
@@ -1172,6 +1200,12 @@
     vertical-align: 2px;
   }
 
+  .new .more {
+    margin-top: 8px;
+    padding: 6px 0 2px;
+    font-size: 15px;
+  }
+
   .switchArrow {
     grid-area: arrow;
     align-self: center;
@@ -1180,9 +1214,11 @@
     height: 36px;
   }
 
+  /* Like the note above the cards, tilted about its own words. */
   .six {
     grid-area: six;
-    margin: 14px 4px 0;
+    justify-self: end;
+    margin: 18px 4px 0;
     font-size: 25px;
     text-align: right;
     transform: rotate(-3deg);

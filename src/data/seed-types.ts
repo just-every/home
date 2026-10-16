@@ -57,6 +57,12 @@ export interface Seed {
   markOnPastel: 'colour' | 'ink';
   /** Mark for light surfaces (may adapt to a dark colour scheme itself). */
   mark: string;
+  /**
+   * True while the seed's repo still carries the Base foundation's
+   * placeholder mark (the "F" tile): `mark` is then a lettered tile, its
+   * initial in the page's ink on its pastel, for a real mark to replace.
+   */
+  markPlaceholder?: true;
   /** Mark fixed to its light-surface colours, where the product ships one. */
   markLight: string | null;
   /** Mark drawn in the ink colour, where the product ships one. */

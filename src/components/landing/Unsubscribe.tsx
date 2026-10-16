@@ -8,8 +8,8 @@ import styles from './unsubscribe.module.css';
 import { volumeStyle, volumes } from './volumes';
 
 /**
- * The hero says "Unsubscribe from just about everything."; this section
- * shows it, so its heading names what the rows do instead of repeating it.
+ * The hero says "Stop renting your software."; this section shows the
+ * renewals that stop, so its heading names what the rows do.
  */
 const heading = 'Cross off the renewals.';
 

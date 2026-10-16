@@ -64,8 +64,8 @@ export default function Process() {
         Every product we publish has a file called{' '}
         <a href={`${lamp}/CONTRACT.md`}>CONTRACT.md</a> at the root of its
         repository. It’s a list of promises in plain English, each one specific
-        enough to argue about. Across our fourteen products there are more than
-        a thousand of them.
+        enough to argue about. Across our {numberWord(seeds.length)} products
+        there are more than a thousand of them.
       </p>
       <p>
         Lamp is our status page, and one of its promises is about exactly that

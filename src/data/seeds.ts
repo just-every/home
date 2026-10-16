@@ -366,10 +366,11 @@ export const seeds: Seed[] = [
     accent: '#356c60',
     ink: '#1b2724',
     paper: '#f4f6f5',
-    // Pastel from #356c60 (src/branding.json primaryColor, hue 177).
-    pastel: '#b5e3d7',
+    // Its #356c60 is still the Base default, so a pastel of its own (hue 270).
+    pastel: '#c6d5fe',
     markOnPastel: 'colour',
-    mark: `${dir('auth')}/mark.svg`,
+    mark: `${dir('auth')}/mark-lettered.svg`,
+    markPlaceholder: true,
     markLight: null,
     markInk: null,
     reel: null,
@@ -621,7 +622,8 @@ export const seeds: Seed[] = [
     headline: null,
     repo: 'https://github.com/just-every/run-nectar',
     homepage: 'https://run-nectar.com',
-    accent: '#1c1a17',
+    // src/branding.json primaryColor, the honey of its mark.
+    accent: '#f6b23e',
     ink: '#1c1a17',
     paper: '#fffcf5',
     pastel: '#efd1a5',

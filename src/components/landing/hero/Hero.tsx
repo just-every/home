@@ -3,16 +3,17 @@
 import type { CSSProperties, KeyboardEvent, MouseEvent } from 'react';
 import { useRef, useState } from 'react';
 
+import { collection } from '@/content/landing';
 import { cardId, volumes } from '@/components/landing/volumes';
 import { upcoming } from '@/data/upcoming';
+import { numberWord } from '@/lib/number-word';
 import { X_EVENTS, track } from '@/lib/x-pixel';
 
-import { countWord } from './count';
 import { caveat } from './fonts';
 import { DEFAULT_HERO_LAYOUT } from './layouts';
 import type { HeroLayout } from './layouts';
 import styles from './hero.module.css';
-import { rows } from './order';
+import { moreCount, rows } from './order';
 import {
   CodeIcon,
   DocIcon,
@@ -40,12 +41,13 @@ const reducedMotion = () =>
 
 /**
  * The hero, "a sketched journey" (12ui design G): the headline, the button
- * and the trust row; the stack a team rents today (each seed's
- * `primaryReplace`) under a rain cloud, a sketched arrow, and the open
- * source it can own instead (the seeds, with their marks and pastels) in
- * the sun, with handwritten notes and a painted ground along the foot that
- * runs from rain-cooled to sunlit. `layout` picks how the copy sits around
- * the two cards (layouts.ts).
+ * and the trust row; a curated dozen of the stack a team rents today (each
+ * seed's `primaryReplace`, picked in order.ts) under a rain cloud, a
+ * sketched arrow, and the open source it can own instead (the seeds, with
+ * their marks and pastels, and a quiet "and N more" link to the rest of the
+ * collection) in the sun, with handwritten notes and a painted ground along
+ * the foot that runs from rain-cooled to sunlit. `layout` picks how the
+ * copy sits around the two cards (layouts.ts).
  *
  * The rented stack is the picker: picking a tool highlights it and the
  * seed that replaces it, the button turns into "Switch to <Seed> →" for
@@ -124,8 +126,8 @@ export function Hero({
     }
   };
 
-  const live = countWord(volumes.length, true);
-  const coming = countWord(upcoming.length);
+  const live = numberWord(volumes.length, true);
+  const coming = numberWord(upcoming.length);
 
   return (
     <section
@@ -309,6 +311,11 @@ export function Hero({
                   );
                 })}
               </ul>
+              {moreCount > 0 ? (
+                <a className={styles.more} href={`#${collection.id}`}>
+                  and {moreCount} more <span aria-hidden="true">→</span>
+                </a>
+              ) : null}
             </section>
 
             <p className={`${caveat.className} ${styles.hand} ${styles.six}`}>

@@ -28,9 +28,13 @@ export interface UpcomingSeed {
   /** Brand hue softened to a pastel (OKLCH, lightness 0.87 to 0.90). */
   pastel: string;
   mark: string;
+  /** As on a released seed (seed-types.ts): `mark` is a lettered tile. */
+  markPlaceholder?: true;
 }
 
 const mark = (slug: string) => `/seeds/${slug}/mark.svg`;
+/** The lettered tile standing in for Base's placeholder mark. */
+const lettered = (slug: string) => `/seeds/${slug}/mark-lettered.svg`;
 const repo = (slug: string) => `https://github.com/just-every/run-${slug}`;
 
 export const upcoming: UpcomingSeed[] = [
@@ -89,9 +93,10 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: '',
     line: 'Calendar imports, cleaner photo checklists and owner statements.',
     repo: repo('cabin'),
-    // Pastel from #356c60, the Base default its repo has not replaced yet.
-    pastel: '#b5e3d7',
-    mark: mark('cabin'),
+    // Its colour is still the Base default #356c60, so a pastel of its own (hue 140).
+    pastel: '#c2e0bb',
+    mark: lettered('cabin'),
+    markPlaceholder: true,
   },
   {
     slug: 'coffer',
@@ -101,9 +106,10 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: '',
     line: 'Gifts, consent and acknowledgement letters for a US nonprofit.',
     repo: repo('coffer'),
-    // Pastel from #356c60, the Base default its repo has not replaced yet.
-    pastel: '#b5e3d7',
-    mark: mark('coffer'),
+    // Its colour is still the Base default #356c60, so a pastel of its own (hue 85).
+    pastel: '#e8d4a9',
+    mark: lettered('coffer'),
+    markPlaceholder: true,
   },
   {
     slug: 'crank',
@@ -181,9 +187,10 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'Tablein',
     line: 'Table bookings, walk-ins, waitlist and guest history for restaurants.',
     repo: repo('placemat'),
-    // Pastel from #356c60, the Base default its repo has not replaced yet.
-    pastel: '#b5e3d7',
-    mark: mark('placemat'),
+    // Its colour is still the Base default #356c60, so a pastel of its own (hue 25).
+    pastel: '#fbc7c2',
+    mark: lettered('placemat'),
+    markPlaceholder: true,
   },
   {
     slug: 'platter',
@@ -228,9 +235,10 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'Shopify',
     line: 'An online shop with Stripe Checkout, shipping and partial refunds.',
     repo: repo('stall'),
-    // Pastel from #356c60, the Base default its repo has not replaced yet.
-    pastel: '#b5e3d7',
-    mark: mark('stall'),
+    // Its colour is still the Base default #356c60, so a pastel of its own (hue 205).
+    pastel: '#a8e2e9',
+    mark: lettered('stall'),
+    markPlaceholder: true,
   },
   {
     slug: 'strap',
@@ -240,9 +248,10 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'Mindbody',
     line: 'Studio classes, pack credits, waitlists and member balances.',
     repo: repo('strap'),
-    // Pastel from #356c60, the Base default its repo has not replaced yet.
-    pastel: '#b5e3d7',
-    mark: mark('strap'),
+    // Its colour is still the Base default #356c60, so a pastel of its own (hue 340).
+    pastel: '#f2c7e2',
+    mark: lettered('strap'),
+    markPlaceholder: true,
   },
   {
     slug: 'terrace',

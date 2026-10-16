@@ -6,6 +6,7 @@ import { search as searchCopy } from '@/content/landing';
 import { comingSoon, upcoming } from '@/data/upcoming';
 import { track, X_EVENTS } from '@/lib/x-pixel';
 
+import { namedReplace } from '../search/localMatch';
 import { SearchForm } from '../search/SearchForm';
 import searchStyles from '../search/search.module.css';
 import { useCollectionSearch } from '../search/useCollectionSearch';
@@ -23,7 +24,7 @@ import { useSelection } from './useSelection';
  * width, then every product as a card under its area's small heading, the
  * same whatever is selected. A search shows only its products, with no
  * headings, and the seeds in the works that match what is typed, as coming
- * soon. Selecting (a card, a search result, a hero seed row or any other
+ * soon (each naming the tool typed, where it replaces it). Selecting (a card, a search result, a hero seed row or any other
  * `#vol-<slug>` link) puts that product in the box and rings its card.
  */
 export function CollectionBrowser({ items }: { items: CollectionItem[] }) {
@@ -96,7 +97,12 @@ export function CollectionBrowser({ items }: { items: CollectionItem[] }) {
           <h3 className={styles.areaHeading}>{comingSoon.label}</h3>
           <ul className={soonStyles.list}>
             {search.soon.map(seed => (
-              <SoonItem key={seed.slug} seed={seed} level="h4" />
+              <SoonItem
+                key={seed.slug}
+                seed={seed}
+                level="h4"
+                replaces={namedReplace(seed, search.text)}
+              />
             ))}
           </ul>
         </div>

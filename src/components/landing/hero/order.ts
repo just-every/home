@@ -2,11 +2,16 @@ import { volumes } from '@/components/landing/volumes';
 import type { Volume } from '@/components/landing/volumes';
 
 /**
- * The rows, in the 12ui design's order: each rented tool beside the seed
- * that replaces it (Notion beside Slate, Slack beside Nook, and so on). A
- * seed added later joins the end of both lists.
+ * The hero's rows: a curated dozen of the most recognisable tools a team
+ * rents, each beside the seed that replaces it (Notion beside Slate, Slack
+ * beside Nook, and so on). The cards were drawn for about a dozen rows, so
+ * the rest of the collection sits behind the "and N more" link under the
+ * seeds. The rented names are each seed's own `primaryReplace`; this list
+ * only picks and orders the seeds. The first six are the tools a first-time
+ * visitor most often rents; the later picks show the newer releases
+ * (expenses, HR) beside the original fourteen.
  */
-const designOrder = [
+const heroPicks = [
   'slate',
   'nook',
   'happytohelp',
@@ -14,18 +19,17 @@ const designOrder = [
   'vector',
   'orbit',
   'cradle',
-  'pencil',
   'mango',
-  'lamp',
-  'uptime',
+  'coaster',
+  'willow',
   'spool',
-  'penny',
-  'oncall',
+  'uptime',
 ];
 
-const rank = (volume: Volume) => {
-  const index = designOrder.indexOf(volume.slug);
-  return index < 0 ? designOrder.length : index;
-};
+export const rows: Volume[] = heroPicks.flatMap(slug => {
+  const volume = volumes.find(v => v.slug === slug);
+  return volume ? [volume] : [];
+});
 
-export const rows: Volume[] = [...volumes].sort((a, b) => rank(a) - rank(b));
+/** The released seeds the hero's rows leave out, for its "and N more" line. */
+export const moreCount = volumes.length - rows.length;

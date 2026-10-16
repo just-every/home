@@ -98,7 +98,10 @@ export function localMatches<T extends SearchVolume>(
  * one this volume replaces ("Zendesk" shows "Alternative to Zendesk"), else
  * the volume's usual one.
  */
-export function namedReplace(volume: SearchVolume, query: string): string {
+export function namedReplace(
+  volume: Pick<SearchVolume, 'replaces' | 'primaryReplace'>,
+  query: string
+): string {
   const typed = query.trim().toLowerCase();
   const tokens = queryTokens(query);
   const hit = volume.replaces.find(name => {
