@@ -4,7 +4,6 @@ import { featured } from '@/content/landing';
 import { seeds } from '@/data/seeds';
 import { upcoming } from '@/data/upcoming';
 
-import { caveat } from './hero/fonts';
 import { collectionItems } from './collection/items';
 import collectionStyles from './collection/collection.module.css';
 import { ProductCard } from './collection/ProductCard';
@@ -20,9 +19,8 @@ const shown = featured.slugs.flatMap(slug => {
 /**
  * The home page's portal to /products: a search that opens the full list with
  * its query, six featured products as cards, and the link to all of them
- * (its count, in digits, follows the data), with a handwritten "(so far)"
- * and a drawn arrow beside it. The form is a plain GET, so it works before
- * the page's scripts do.
+ * (its count, in digits, follows the data). The form is a plain GET, so it
+ * works before the page's scripts do.
  */
 export function Featured() {
   const count = seeds.length + upcoming.length;
@@ -94,16 +92,6 @@ export function Featured() {
               →
             </span>
           </Link>
-          <span
-            className={`${caveat.className} ${styles.note}`}
-            aria-hidden="true"
-          >
-            <svg className={styles.drawn} viewBox="0 0 46 30" focusable="false">
-              <path d="M43 6C34 1 18 3 10 19" />
-              <path d="M3.5 12.5C5 15.5 7 18 9.5 22C12 19.5 15 17.5 18.5 16" />
-            </svg>
-            {featured.allNote}
-          </span>
         </p>
       </div>
     </section>
