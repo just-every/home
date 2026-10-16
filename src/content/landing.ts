@@ -149,7 +149,6 @@ export const search = {
 /** "What should we build next?", after the makers panel (copy from the same brief). */
 export const suggest = {
   id: 'suggest',
-  eyebrow: 'Requests',
   heading: 'What should we build next?',
   line: "Tell us the software you'd like an open-source version of.",
   productLabel: 'Product or task',

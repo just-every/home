@@ -27,7 +27,6 @@ export function Questions() {
     >
       <div className={`${ui.wrap} ${styles.inner}`}>
         <div>
-          <p className={ui.eyebrow}>Questions</p>
           <h2 className={ui.h2} id="label-questions-heading">
             {questions.heading}
           </h2>

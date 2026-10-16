@@ -24,7 +24,6 @@ export function NotFound() {
       </header>
       <main className={`${ui.wrap} ${styles.main}`}>
         <div className={styles.copy}>
-          <p className={ui.eyebrow}>404</p>
           <h1 className={ui.h2}>{notFound.heading}</h1>
           <p className={`${ui.lead} ${styles.line}`}>{notFound.line}</p>
           <Link className={`${ui.pill} ${ui.pillSmall}`} href="/">

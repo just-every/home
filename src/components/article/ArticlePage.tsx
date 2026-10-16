@@ -41,8 +41,6 @@ export function ArticlePage({
           <header className={`${styles.room} ${art ? '' : styles.bare}`}>
             <div className={styles.grid}>
               <p className={styles.meta}>
-                <span>Essay</span>
-                <span aria-hidden="true">·</span>
                 <time dateTime={essay.published}>{essay.date}</time>
                 <span aria-hidden="true">·</span>
                 <span>{essay.readingTime}</span>

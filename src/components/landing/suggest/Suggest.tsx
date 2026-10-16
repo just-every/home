@@ -123,7 +123,6 @@ export function Suggest() {
       aria-labelledby="label-suggest-heading"
     >
       <div>
-        <p className={ui.eyebrow}>{suggest.eyebrow}</p>
         <h2 className={ui.h3} id="label-suggest-heading">
           {suggest.heading}
         </h2>
