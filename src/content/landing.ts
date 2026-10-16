@@ -64,8 +64,6 @@ export const featured = {
   searchButton: 'Search',
   /** "All 51 products →": the count, in digits, follows the data. */
   all: (count: number) => `All ${count} products`,
-  /** The handwritten aside beside that link (decorative, set in the hero's hand). */
-  allNote: '(so far)',
 } as const;
 
 /** The products page, /products: every product, searchable. */
@@ -268,11 +266,15 @@ export const makers = {
  * the footer does not link to it.
  */
 export const footer = {
-  /** The first group: one link to /products, its count in digits from the data. */
+  /**
+   * The first group: one link to /products, its count in digits from the
+   * data, with a handwritten aside (decorative, set in the hero's hand).
+   */
   products: {
     heading: products.label,
     href: products.path,
     label: featured.all,
+    note: '(so far)',
   },
   groups: [
     {

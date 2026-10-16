@@ -6,9 +6,16 @@ import { upcoming } from '@/data/upcoming';
 
 import ui from './label.module.css';
 import { FooterMotion } from './FooterMotion';
+import { FooterNote, notedItem } from './FooterNote';
 import { Logo } from './Logo';
 import styles from './footer.module.css';
 import { TokenCount } from './TokenCount';
+
+/** A column of links under a small heading; a link may carry a note. */
+type FooterGroup = {
+  heading: string;
+  links: readonly { label: string; href: string; note?: string }[];
+};
 
 /**
  * The illustrated footer (owner's pick B3, 15 Oct): a flat landscape in the
@@ -17,7 +24,8 @@ import { TokenCount } from './TokenCount';
  * sky. The art is one static SVG (traced shapes coloured by region;
  * scripts/footer-colours.mjs sets the colourway), loaded lazily as an image
  * so the page's HTML stays light, with its moving parts laid over it as
- * small images of their own (FooterMotion, scripts/footer-motion.mjs).
+ * small images of their own (FooterMotion, scripts/footer-motion.mjs). The
+ * products link carries a handwritten "(so far)" (FooterNote).
  *
  * `rise`: the page above ends on an opaque card, so the art may rise behind
  * it (by the stylesheet's --rise), the tree's crown growing out from under
@@ -25,11 +33,15 @@ import { TokenCount } from './TokenCount';
  */
 export function Footer({ rise = false }: { rise?: boolean }) {
   const count = seeds.length + upcoming.length;
-  const groups = [
+  const groups: readonly FooterGroup[] = [
     {
       heading: footer.products.heading,
       links: [
-        { label: footer.products.label(count), href: footer.products.href },
+        {
+          label: footer.products.label(count),
+          href: footer.products.href,
+          note: footer.products.note,
+        },
       ],
     },
     ...footer.groups,
@@ -54,8 +66,12 @@ export function Footer({ rise = false }: { rise?: boolean }) {
                   <h2 className={styles.heading}>{group.heading}</h2>
                   <ul className={styles.links}>
                     {group.links.map(link => (
-                      <li key={link.label}>
+                      <li
+                        key={link.label}
+                        className={link.note ? notedItem : undefined}
+                      >
                         <a href={link.href}>{link.label}</a>
+                        {link.note ? <FooterNote text={link.note} /> : null}
                       </li>
                     ))}
                   </ul>

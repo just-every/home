@@ -1,0 +1,86 @@
+/* A footer link's handwritten aside (FooterNote): the hero's hand and ink,
+   set level with its baseline on a line of the links, and a drawn arrow
+   back to the link's end. Static and decorative.
+
+   On phones the products group has a row of its own, so the note sits after
+   the link, its baseline on the link's. From 768px wide the products column
+   is only as wide as its link (the other columns stand beside it, and from
+   1280px the wordmark's line already gives way to them), so the note tucks
+   under the link instead, on the baseline of the columns' second links, its
+   right edge under the link's end, and the arrow curls up round that end.
+   The arrows keep clear of the link's text and its hover underline. */
+.noted {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 24px;
+  align-items: baseline;
+}
+
+.note {
+  position: relative;
+  color: #4f4a82;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Each drawing is laid out in px from the note's start and baseline (its
+   viewBox), and the baseline sits 18px below the note box's top (Caveat's
+   ascent at 22px, less its half-leading at line-height 1), so a drawing's
+   top is 18px plus its viewBox's top. */
+.arrow {
+  position: absolute;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* After the link: from just after the "(" up and back over the gap, to
+   just past the link's last letter. */
+.beside {
+  top: -14px;
+  left: -28px;
+  width: 44px;
+  height: 20px;
+}
+
+.under {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  /* The link and the note share one cell, baselines aligned; the note then
+     drops exactly one link row (the links' 44px). */
+  .noted {
+    grid-template-columns: max-content;
+  }
+
+  .noted > * {
+    grid-area: 1 / 1;
+  }
+
+  .note {
+    justify-self: end;
+    transform: translateY(44px);
+  }
+
+  .beside {
+    display: none;
+  }
+
+  /* Under the link: from just after the "(" over the note and round the
+     link's end, up to just past its last letter. */
+  .under {
+    display: block;
+    top: -34px;
+    left: 10px;
+    width: 62px;
+    height: 40px;
+  }
+}
