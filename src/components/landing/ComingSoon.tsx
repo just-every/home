@@ -1,13 +1,12 @@
 import { comingSoon, upcoming } from '@/data/upcoming';
 
-import { Separator } from './Separator';
 import ui from './label.module.css';
 import styles from './coming-soon.module.css';
 import { SoonItem } from './soon/SoonItem';
 import soon from './soon/soon.module.css';
 
 /**
- * Seeds in the works, below the collection: one quiet row each (see
+ * Seeds in the works, below the collection on /products: one quiet row each (see
  * SoonItem), under a heading that says they are coming soon.
  */
 export function ComingSoon() {
@@ -32,7 +31,6 @@ export function ComingSoon() {
           ))}
         </ul>
       </div>
-      <Separator variant="garden" />
     </section>
   );
 }

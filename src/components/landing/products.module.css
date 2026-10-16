@@ -1,0 +1,36 @@
+/* /products: the room the site header floats on (the essays' lavender), then
+   the collection and the seeds in the works. */
+.room {
+  padding: calc(var(--header-h) + 64px) 0 40px;
+  background:
+    linear-gradient(180deg, #fdfdff00 calc(100% - 140px), #fdfdff 100%),
+    radial-gradient(ellipse 60% 80% at 88% 0%, #dedaf3 0%, #ebe9f900 100%),
+    radial-gradient(ellipse 50% 70% at 6% 30%, #f0eefc 0%, #f6f5fe00 100%),
+    #f7f6fd;
+}
+
+.title {
+  margin: 0 0 14px;
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 650;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.line {
+  max-width: 660px;
+  margin: 0;
+}
+
+@media (max-width: 1023px) {
+  .room {
+    padding-top: calc(var(--header-h) + 44px);
+  }
+}
+
+@media (max-width: 599px) {
+  .room {
+    padding-top: calc(var(--header-h) + 24px);
+    padding-bottom: 24px;
+  }
+}

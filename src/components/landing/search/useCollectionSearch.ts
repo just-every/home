@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
 
 import { search } from '@/content/landing';
+import { QUERY_MAX } from '@/lib/interactive-api';
 import type { MatchResponse } from '@/lib/interactive-api';
 import { track, X_EVENTS } from '@/lib/x-pixel';
 
@@ -119,6 +120,13 @@ export function useCollectionSearch<
     reportedRef.current = query;
     track(X_EVENTS.search, { search_string: query });
   }
+
+  // /products?q=<text> opens with the search filled (the home page's search
+  // sends its query here).
+  useEffect(() => {
+    const prefill = new URLSearchParams(window.location.search).get('q');
+    if (prefill) setQueryState(prefill.slice(0, QUERY_MAX));
+  }, []);
 
   useEffect(() => {
     if (queryTokens(text).length === 0) return;

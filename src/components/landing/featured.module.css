@@ -1,0 +1,25 @@
+/* The home page's portal to /products: heading, search, six cards, the link. */
+.featured {
+  padding: calc(var(--section-y) + 16px) 0 var(--section-y);
+}
+
+.heading {
+  margin-bottom: 10px;
+}
+
+.line {
+  margin: 0 0 24px;
+}
+
+.cards {
+  margin-top: 18px;
+}
+
+.all {
+  margin: 28px 0 0;
+}
+
+.all a {
+  font-size: 19px;
+  font-weight: 600;
+}

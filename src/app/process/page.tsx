@@ -21,7 +21,7 @@ export default function Process() {
         <EndNote
           next={essays.journey}
           links={[
-            { label: `See all ${numberWord(seeds.length)}`, href: '/#all' },
+            { label: `See all ${numberWord(seeds.length)}`, href: '/products' },
             {
               label: 'Lamp on GitHub',
               href: 'https://github.com/just-every/run-lamp',

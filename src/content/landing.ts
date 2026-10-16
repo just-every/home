@@ -13,10 +13,11 @@ export const githubReposUrl =
   'https://github.com/orgs/just-every/repositories?q=run-';
 
 /**
- * The site's navigation. Paths are absolute ("/#all", not "#all") so the
- * header and footer work from every page; on / the anchor stays in-page.
+ * The site's navigation. Paths are absolute so the header and footer work
+ * from every page.
  */
 export const nav = [
+  { label: 'Products', href: '/products' },
   { label: 'Process', href: '/process' },
   { label: 'Journey', href: '/journey' },
   { label: 'Contact', href: '/contact' },
@@ -47,6 +48,35 @@ export const benefits = {
       line: 'Nobody can change the deal on you.',
     },
   ],
+} as const;
+
+/**
+ * The home page's way into the full list: a few featured products, a
+ * search that opens /products, and the link to everything. The six are
+ * the owner's three favourites, then three more with reels.
+ */
+export const featured = {
+  slugs: ['uptime', 'happytohelp', 'nook', 'slate', 'vector', 'orbit'],
+  heading: 'Pick your replacement.',
+  line: 'Search for the tool you use today, or start with one of these.',
+  searchLabel: 'What do you use today?',
+  searchPlaceholder: "Notion, Intercom, or 'booking client calls'",
+  searchButton: 'Search',
+  /** "All fifty products →": the count is spelled out from the data. */
+  all: (count: string) => `All ${count} products`,
+} as const;
+
+/** The products page, /products: every product, searchable. */
+export const products = {
+  path: '/products',
+  /** "All fifty products.": the count is spelled out from the data. */
+  heading: (count: string) => `All ${count} products.`,
+  label: 'Products',
+  line: 'Free and open source, every one. Search for the tool you use today, or browse by what it does.',
+  title: (count: string) =>
+    `All ${count} products: free, open-source alternatives`,
+  description: (released: number, soon: number) =>
+    `Search ${released} free, open-source alternatives to the tools a team rents, plus ${soon} more coming soon. MIT licensed, yours to change.`,
 } as const;
 
 export const collection = {
