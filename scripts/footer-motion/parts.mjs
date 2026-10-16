@@ -69,43 +69,7 @@ export const cuts = [
     fill: 'c02',
     origin: [1196, 1201],
   },
-  {
-    // The dog's back half, laid over the tail so the tail at rest is hidden
-    // behind the dog and swings out past its right hip. It never moves.
-    id: 'dog',
-    region: 'dog',
-    box: [1100, 1320, 170, 214],
-    still: true,
-  },
 ];
-
-/**
- * The tail: drawn here (the art shows the dog from behind with no tail), in
- * its own units with its root at 0 0, pointing right and curling up at the
- * tip. The page hangs it at `root` and turns it: pointing up (-90deg) it lies
- * wholly behind the dog, which is its rest; wagging, it sweeps out over the
- * grass. Cream, a lavender fringe below and a peach rim on top, the dog's
- * own colour classes.
- */
-export const tail = {
-  id: 'tail',
-  root: [1180, 1478],
-  box: [-16, -44, 160, 64],
-  shapes: [
-    [
-      'cr',
-      'M-4 -12C36 -15 80 -30 118 -34C130 -35 139 -30 136 -22C132 -13 118 -10 104 -6C70 4 34 14 -4 13Z',
-    ],
-    [
-      'sh',
-      'M6 6C40 4 78 -4 112 -11C124 -13 133 -17 136 -22C134 -10 122 -6 110 -1C98 4 92 10 80 8C70 13 58 12 48 15C34 18 18 17 4 14Z',
-    ],
-    [
-      'c30',
-      'M-4 -12C36 -15 80 -30 118 -34C130 -35 139 -30 136 -22C134 -28 126 -31 116 -30C80 -26 40 -10 -4 -8Z',
-    ],
-  ],
-};
 
 /** A petal: a pink teardrop with a paler half, in a 56-unit box. */
 export const petal = {
@@ -118,24 +82,108 @@ export const petal = {
 };
 
 /**
- * Blossom petals falling from the crown's lower edge, all inside the part of
- * the art that phones show too: [x, y, path (a, b or c), seconds, delay s,
- * size]. Delays spread them so a few are always in the air.
+ * Blossom petals that come loose under the crown and drift down toward the
+ * grass, spread across the crown's width. Each falls on its own beat (all the
+ * timings are prime-ish, so no two ever line up), swinging side to side like
+ * a leaf (a pendulum: tilted and lifted at each end of its swing, lowest and
+ * fastest in the middle) while it flutters over: [x, y, drift (units right),
+ * fall (units down), seconds, delay s, size, swing (units each side), swing
+ * s (one way), flutter s (one way), turn (its resting angle)].
  */
 export const petals = [
-  [420, 560, 'a', 13, -1.5, 1],
-  [640, 470, 'b', 14, -5.2, 1.15],
-  [880, 610, 'c', 12, -9.8, 0.9],
-  [1080, 520, 'a', 15, -3.6, 1.1],
-  [1300, 600, 'b', 12.5, -7.4, 1],
-  [760, 640, 'c', 13.5, -11.9, 1.2],
-  [520, 650, 'b', 14.5, -12.8, 0.95],
-  [1180, 470, 'c', 13, -0.4, 1.05],
-  [980, 680, 'a', 12, -6.3, 1.15],
-  [1420, 520, 'a', 14, -10.6, 0.9],
-  [600, 560, 'c', 13, -4.4, 1],
-  [1240, 640, 'a', 14, -8.8, 0.95],
+  [170, 470, 260, 700, 15, -2, 0.9, 40, 1.7, 1.1, -20],
+  [390, 520, 180, 760, 17, -9.3, 1.1, 55, 2.1, 1.4, 35],
+  [570, 640, 300, 640, 14, -5.6, 0.85, 34, 1.5, 0.9, 10],
+  [770, 660, 220, 640, 16, -12.7, 1, 50, 1.9, 1.3, -40],
+  [940, 600, 340, 700, 18.5, -3.4, 1.2, 60, 2.3, 1.6, 60],
+  [1110, 560, 260, 680, 15.5, -14.1, 0.95, 45, 1.8, 1.2, -5],
+  [1290, 520, 200, 720, 17.5, -7.7, 1.05, 55, 2, 1.5, 25],
+  [1450, 470, 280, 650, 14.5, -10.6, 0.8, 40, 1.6, 1, -30],
+  [690, 520, 240, 780, 19.5, -16.4, 1.15, 64, 2.4, 1.7, 50],
 ];
+
+/**
+ * The birds' flights over the bay, left to right, the first two as a pair
+ * and the third on its own, lower and slower: each
+ * fades in `from` units left of where the art drew it and out `to` units
+ * right of it, over `seconds`. On the way it rises and sinks by `rise` units
+ * every `wave` seconds (one way), banking into each climb and dive, and its
+ * wings beat three times quickly and then it glides, every `beat` seconds.
+ */
+export const flights = {
+  bird1: {
+    from: 1050,
+    to: 850,
+    seconds: 33,
+    delay: -12,
+    rise: 30,
+    wave: 3.6,
+    beat: 3.3,
+  },
+  bird2: {
+    from: 1060,
+    to: 840,
+    seconds: 33,
+    delay: -12,
+    rise: 24,
+    wave: 4.3,
+    beat: 3.9,
+  },
+  bird3: {
+    from: 950,
+    to: 1000,
+    seconds: 43,
+    delay: -31,
+    rise: 40,
+    wave: 5.1,
+    beat: 4.6,
+  },
+};
+
+/**
+ * The laptop's screen, which shows code typing out line by line while the
+ * block scrolls slowly up. The screen is a slanted parallelogram in the art:
+ * its top left corner at `origin`, its top edge along `x` and its left edge
+ * along `y` (art units). The code area sits `inset` units inside the screen
+ * [left, top, right, bottom], with `radius` corners. Rows are `pitch` units
+ * apart and `line` units tall; the row being typed sits `band` units down the
+ * code area, and a new row starts every `seconds`. Each row lists its
+ * segments [x, length] in code-area units; an empty row is a pause.
+ */
+export const screen = {
+  origin: [807.6, 1180],
+  x: [177, 3.08],
+  y: [-36.6, 113],
+  inset: [3, 3, 3, 8],
+  radius: 6,
+  pitch: 10.5,
+  line: 4.2,
+  band: 92,
+  seconds: 1.5,
+  rows: [
+    [[14, 52]],
+    [
+      [23, 30],
+      [57, 40],
+    ],
+    [[32, 62]],
+    [[32, 24]],
+    [[23, 12]],
+    [],
+    [
+      [14, 44],
+      [62, 22],
+    ],
+    [[23, 74]],
+    [[32, 36]],
+    [
+      [32, 50],
+      [86, 18],
+    ],
+    [[23, 14]],
+    [[14, 8]],
+  ],
+};
 
 /**
  * Glints on the sea: three sets of short pale dashes over the sun's

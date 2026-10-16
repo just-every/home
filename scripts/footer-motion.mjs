@@ -8,10 +8,11 @@
  *   over (the ear's shadow). Nothing in it moves, so the browser rasterises it
  *   once.
  * - public/landing/footer/motion/*.svg are the parts, each a few kilobytes:
- *   the art's own layers cropped to the part's box, or a drawn part (the
- *   tail, a petal, the glints).
+ *   the art's own layers cropped to the part's box, or a drawn part (a
+ *   petal, the glints).
  * - src/components/landing/footer-motion.json gives the page each part's box
- *   and pivot in art units, so FooterMotion lays them exactly over the art.
+ *   and pivot in art units, so FooterMotion lays them exactly over the art,
+ *   with the petals', birds' and laptop screen's motion settings.
  *
  * It keeps the art's colourway and gives the parts the same one; after it,
  * scripts/footer-colours.mjs recolours the art and the parts together. It is
@@ -32,11 +33,12 @@ import { colourSvg, colourwayOf } from './footer-colour/apply.mjs';
 import { crop } from './footer-motion/paths.mjs';
 import {
   cuts,
+  flights,
   glintBox,
   glints,
   petal,
   petals,
-  tail,
+  screen,
 } from './footer-motion/parts.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -180,7 +182,7 @@ for (const c of cuts) {
   layout.parts[c.id] = { box: c.box, ...(c.origin && { origin: c.origin }) };
 }
 
-// The drawn parts: the tail, a petal and the glints.
+// The drawn parts: a petal and the glints.
 const drawn = (part, region) =>
   colourSvg(
     `${svgOpen(part.box)}${STYLE}<g class="${region}">${part.shapes
@@ -188,28 +190,39 @@ const drawn = (part, region) =>
       .join('')}</g></svg>`,
     key
   );
-write('tail', drawn(tail, 'dog'));
-layout.parts.tail = {
-  box: [
-    tail.root[0] + tail.box[0],
-    tail.root[1] + tail.box[1],
-    tail.box[2],
-    tail.box[3],
-  ],
-  origin: tail.root,
-};
 write('petal', drawn(petal, 'flowers'));
-layout.petals = petals.map(([x, y, path, seconds, delay, size]) => ({
-  box: [
-    x + petal.box[0] * size,
-    y + petal.box[1] * size,
-    petal.box[2] * size,
-    petal.box[3] * size,
-  ],
-  path,
-  seconds,
-  delay,
-}));
+layout.petals = petals.map(
+  ([
+    x,
+    y,
+    drift,
+    fall,
+    seconds,
+    delay,
+    size,
+    swing,
+    swingS,
+    flutterS,
+    turn,
+  ]) => ({
+    box: [
+      x + petal.box[0] * size,
+      y + petal.box[1] * size,
+      petal.box[2] * size,
+      petal.box[3] * size,
+    ],
+    drift,
+    fall,
+    seconds,
+    delay,
+    swing,
+    swingSeconds: swingS,
+    flutterSeconds: flutterS,
+    turn,
+  })
+);
+layout.flights = flights;
+layout.screen = screen;
 glints.forEach((set, i) => {
   write(
     `glints-${i + 1}`,

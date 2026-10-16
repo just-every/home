@@ -1,0 +1,156 @@
+/* The laptop's screen (FooterScreen): a slanted frame over the art's screen,
+   its code area in the art's screen colours (the dark #2f2e38, a glow of the
+   mid #454350, rows of pale #f8f6fb with a #9e98ad lip and a blossom caret).
+   With reduced motion it is not drawn, and the art's own screen shows. */
+.frame {
+  position: absolute;
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+
+.area {
+  position: absolute;
+  overflow: hidden;
+  container-type: size;
+  background: #2f2e38;
+}
+
+/* The art paints its screen as a dark rim around a softer middle. */
+.glow {
+  position: absolute;
+  inset: 6% 9% 12% 16%;
+  border-radius: 46% 38% 44% 36% / 40% 48% 38% 50%;
+  background: #454350;
+}
+
+.view {
+  position: absolute;
+  inset: 0 0 auto;
+  overflow: hidden;
+}
+
+.column {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.row,
+.caret,
+.text,
+.blink {
+  position: absolute;
+  display: block;
+}
+
+.row {
+  transform-origin: 0 50%;
+}
+
+.text {
+  top: 0;
+  height: 100%;
+  border-radius: 999px;
+  background: #f8f6fb;
+  box-shadow: 0 0.9cqh 0 #9e98ad;
+}
+
+.blink {
+  inset: 0;
+  border-radius: 0.6cqh;
+  background: #f8d9df;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frame {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .column {
+    will-change: transform;
+    animation: scroll linear infinite;
+  }
+
+  .typing {
+    will-change: transform, opacity;
+    animation-name: type;
+    animation-iteration-count: infinite;
+  }
+
+  .caret {
+    will-change: transform, opacity;
+    animation-name: caret;
+    animation-iteration-count: infinite;
+  }
+
+  .blink {
+    animation: blink 1.05s step-end infinite;
+  }
+}
+
+/* One loop: up by one copy of the rows (half the column). */
+@keyframes scroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+/* A row's loop, from the moment it starts typing: out to its full length in
+   the first 60% of its slot (a twelfth of the loop: the screen has twelve
+   rows in footer-motion.json, and these stops assume it), shown until the slot
+   before its next turn, then hidden, so it never shows before it is typed.
+   The row's steps() timing makes it type in bursts. */
+@keyframes type {
+  0% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  5% {
+    transform: scaleX(1);
+  }
+  91.6% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  91.7%,
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+
+/* The caret rides the end of the row as it types, waits there blinking to
+   the end of the slot, and hands over to the next row. */
+@keyframes caret {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  5% {
+    transform: translateX(var(--to));
+  }
+  8.3% {
+    transform: translateX(var(--to));
+    opacity: 1;
+  }
+  8.34%,
+  100% {
+    transform: translateX(var(--to));
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
