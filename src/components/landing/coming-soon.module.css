@@ -5,7 +5,7 @@
 }
 
 .soon {
-  padding: 0 0 var(--section-y);
+  padding: calc(var(--section-y) * 0.6) 0 var(--section-y);
 }
 
 .head {

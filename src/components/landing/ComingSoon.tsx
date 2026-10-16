@@ -1,6 +1,6 @@
 import { comingSoon, upcoming } from '@/data/upcoming';
 
-import { GroundBand } from './GroundBand';
+import { Separator } from './Separator';
 import ui from './label.module.css';
 import styles from './coming-soon.module.css';
 import { SoonItem } from './soon/SoonItem';
@@ -32,7 +32,7 @@ export function ComingSoon() {
           ))}
         </ul>
       </div>
-      <GroundBand />
+      <Separator variant="garden" />
     </section>
   );
 }

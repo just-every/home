@@ -1,8 +1,8 @@
 /* A seed's own page (/<slug>), in the landing page's tokens (it sits inside
    .page from label.module.css, which sets --pastel and --brand-ink to the
    seed's own colours): a room tinted with the seed's pastel for the header,
-   prose at a reading measure, the video wider, the painted ground at the
-   foot. */
+   prose at a reading measure, the video wider, a painted meadow between the
+   video and the text. */
 
 .article {
   --measure: 680px;

@@ -2,9 +2,9 @@ import type { CSSProperties } from 'react';
 
 import { Footer } from '@/components/landing/Footer';
 import { sans } from '@/components/landing/fonts';
-import { GroundBand } from '@/components/landing/GroundBand';
 import { Header } from '@/components/landing/Header';
 import ui from '@/components/landing/label.module.css';
+import { Separator } from '@/components/landing/Separator';
 import { Terminal } from '@/components/landing/Terminal';
 import { Reel } from '@/components/shared/Reel';
 import { collection, runOne } from '@/content/landing';
@@ -106,6 +106,8 @@ export function SeedPage({ page }: { page: SeedPageModel }) {
               )}
             </div>
           ) : null}
+
+          <Separator variant="meadow-path" />
 
           <div className={`${styles.col} ${styles.body}`}>
             <div className={styles.links}>
@@ -226,7 +228,6 @@ export function SeedPage({ page }: { page: SeedPageModel }) {
             </dl>
           </div>
         </article>
-        <GroundBand />
       </main>
       <Footer />
     </div>

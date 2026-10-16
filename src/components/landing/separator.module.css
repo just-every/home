@@ -1,0 +1,21 @@
+/* A painted strip shown at its natural height (--show) on wide screens and
+   shrinking to 60% of it on phones; the image keeps its proportions and is
+   cropped from the middle, anchored at the foot. */
+.band {
+  position: relative;
+  height: clamp(calc(var(--show) * 0.6), 13vw, var(--show));
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.band img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  transform: translateX(-50%);
+}

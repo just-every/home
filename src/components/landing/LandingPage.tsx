@@ -12,6 +12,7 @@ import panels from './panels.module.css';
 import { Questions } from './Questions';
 import { RunOne } from './RunOne';
 import { Running } from './Running';
+import { Separator } from './Separator';
 import { Stand } from './Stand';
 import { Suggest } from './suggest/Suggest';
 import { Unsubscribe } from './Unsubscribe';
@@ -41,6 +42,7 @@ export function LandingPage({
       <main>
         <Hero layout={heroLayout} tone={heroTone} />
         <Collection />
+        <Separator variant="creek" />
         <ComingSoon />
         <Running />
         <Unsubscribe />

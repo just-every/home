@@ -11,7 +11,7 @@ import {
   setSelectedProduct,
   useSelectedProduct,
 } from './collection/selectedProduct';
-import { GroundBand } from './GroundBand';
+import { Separator } from './Separator';
 import ui from './label.module.css';
 import styles from './running.module.css';
 import { volumeStyle, volumes } from './volumes';
@@ -176,7 +176,7 @@ export function Running() {
           })}
         </div>
       </div>
-      <GroundBand />
+      <Separator variant="hedgerow" />
     </section>
   );
 }
