@@ -140,7 +140,7 @@ export function Hero({
 
   return (
     <section
-      className={`${styles.top} ${styles[`layout${layout}`]} ${tone === 'storm' ? styles.storm : ''}`}
+      className={`${styles.top} ${styles[`layout${layout}`]} ${tone ? styles[tone] : ''}`}
       aria-labelledby="hero-heading"
       data-hero
       data-picked={picked ?? undefined}

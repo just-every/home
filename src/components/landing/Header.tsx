@@ -11,7 +11,7 @@ import styles from './header.module.css';
 export function Header({ tone }: { tone?: HeroTone }) {
   return (
     <header
-      className={`${ui.wrap} ${styles.header} ${styles.floating} ${tone === 'storm' ? styles.storm : ''}`}
+      className={`${ui.wrap} ${styles.header} ${styles.floating} ${tone ? styles[tone] : ''}`}
     >
       {/* The page links to itself: no prefetch needed. */}
       <Link className={styles.brand} href="/" prefetch={false}>

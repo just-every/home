@@ -77,11 +77,12 @@
   color: #27244d;
 }
 
-/* Over the hero's storm background (hero/hero.module.css) the left end is
+/* Over the hero's storm and dusk backgrounds (hero/hero.module.css) the left end is
    near-black: the wordmark turns light there, from 1280px wide where the
    storm gradient applies. */
 @media (min-width: 1280px) {
-  .floating.storm .brand {
+  .floating.storm .brand,
+  .floating.dusk .brand {
     color: #f3f0ff;
   }
 }

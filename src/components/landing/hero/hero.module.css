@@ -439,15 +439,37 @@
       );
   }
 
-  .storm .rain {
+  /* The dusk option (/hero-preview/dusk): halfway between the home page's
+     rain-grey and the storm, a deep slate-purple at the far left, with the
+     storm's white clouds. */
+  .dusk {
+    background:
+      radial-gradient(ellipse at 14% 36%, #5f58a044, transparent 46%),
+      linear-gradient(
+        90deg,
+        #3a3a5e 0%,
+        #46467a 12%,
+        #6d66ac 24%,
+        #a39cd0 34%,
+        #d6d2eb 45%,
+        #f1eef5 56%,
+        #fff1e4 80%,
+        #fff7ec 100%
+      );
+  }
+
+  .storm .rain,
+  .dusk .rain {
     filter: brightness(1.3) saturate(1.05);
   }
 
-  .storm .noteFrom {
+  .storm .noteFrom,
+  .dusk .noteFrom {
     color: #e6dfff;
   }
 
-  .storm .description {
+  .storm .description,
+  .dusk .description {
     color: #2c2a4c;
   }
 }
@@ -991,14 +1013,14 @@
 
   .layout3 .rain {
     grid-area: rainy;
-    top: calc(var(--u) * 46);
+    top: calc(var(--u) * 20);
     left: calc(var(--u) * -60);
     width: calc(var(--u) * 430);
   }
 
   .layout3 .sun {
     grid-area: sunny;
-    top: calc(var(--u) * 6);
+    top: calc(var(--u) * -46);
     left: calc(var(--u) * -90);
   }
 
