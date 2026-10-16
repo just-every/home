@@ -1,58 +1,16 @@
 /* The Process essay's figures. */
 
-/* Figure 1: the promise beside its test, a drawn line from ID to ID. Both
-   sheets open with the same file bar and padding, so the clause ID and the
-   test's first line sit at the same height. */
-.promiseTest {
-  display: grid;
-  grid-template-columns: minmax(0, 0.82fr) 28px minmax(0, 1.5fr);
-  align-items: start;
+/* The painted figures: flat SVGs in the footer's hand, floating on the
+   page with no frame, at the figure column's width. */
+.painting {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
 }
 
-.promise {
-  overflow: hidden;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow:
-    0 1px 2px #1d1b4a0f,
-    0 10px 28px -12px #2f2a7a1f;
-}
-
-.promiseBody {
-  padding: 5px 18px 20px;
-}
-
-.promiseTitle {
-  margin-top: 12px;
-  color: var(--ink);
-  font-size: 18px;
-  font-weight: 650;
-  letter-spacing: -0.02em;
-  line-height: 1.3;
-}
-
-.promiseText {
-  margin-top: 8px;
-  color: #45445a;
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-/* The join: file bar (12.5px text, 11px padding each side) plus the gap to
-   the middle of the first line. */
-.join {
-  height: 2px;
-  margin-top: calc(1.72 * 12.5px + 22px + 1px + 22px);
-  background: var(--accent);
-}
-
-.guard {
-  color: var(--accent);
-  font-weight: 650;
-}
-
-/* Figure 2: one promise, its number changed by hand, and the measurement
-   noted in the margin. */
+/* One promise, its number changed by hand, and the measurement noted in the
+   margin. */
 .changed {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
@@ -64,13 +22,6 @@
   padding: 20px 22px 22px;
 }
 
-.changedHead {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 12px;
-}
-
 .changedTitle {
   color: var(--ink);
   font-size: 17px;
@@ -79,7 +30,7 @@
 }
 
 .changedText {
-  margin-top: 12px;
+  margin-top: 10px;
   color: #2c2b38;
   font-size: 17px;
   line-height: 1.55;
@@ -98,8 +49,8 @@
 .struck svg {
   position: absolute;
   top: 5%;
-  left: -20%;
-  width: 140%;
+  left: -8%;
+  width: 116%;
   height: 90%;
   overflow: visible;
   fill: none;
@@ -123,8 +74,8 @@
 
 .marginLabel {
   color: var(--muted);
-  font-family: var(--mono);
-  font-size: 12.5px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .marginNote {
@@ -134,23 +85,21 @@
 }
 
 @media (max-width: 767px) {
-  .promiseTest,
   .changed {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .join {
-    width: 2px;
-    height: 20px;
-    margin: 0 auto;
-  }
-
-  .changed {
     gap: 18px;
   }
 }
 
 @media (max-width: 599px) {
+  /* On a phone the paintings reach into the gutters: their edges are soft,
+     and every pixel of width helps them read. */
+  .painting {
+    width: calc(100% + 2 * var(--gutter));
+    max-width: none;
+    margin-inline: calc(-1 * var(--gutter));
+  }
+
   .changedText {
     font-size: 16px;
   }
