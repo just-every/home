@@ -6,12 +6,25 @@ export interface SeedReel {
   durationSeconds: number;
 }
 
+/**
+ * The part of a business a seed serves; the collection groups its products
+ * under one small heading per area (headings in src/content/landing.ts).
+ */
+export type SeedArea =
+  | 'customers'
+  | 'team'
+  | 'engineering'
+  | 'finance'
+  | 'people'
+  | 'operations';
+
 export interface Seed {
   slug: string;
   name: string;
   category: string;
   /** The one- or two-word kind of product, e.g. 'Support'. */
   family: string;
+  area: SeedArea;
   /** Every incumbent the product replaces. */
   replaces: string[];
   /** The one incumbent named on cards. */
@@ -48,5 +61,11 @@ export interface Seed {
   markLight: string | null;
   /** Mark drawn in the ink colour, where the product ships one. */
   markInk: string | null;
-  reel: SeedReel;
+  /** The product's launch reel, or null until it has one. */
+  reel: SeedReel | null;
+  /**
+   * A 1280x720 still of `homepage` above the fold, which the collection's box
+   * shows for a product with no reel yet; null otherwise.
+   */
+  homepageShot: string | null;
 }

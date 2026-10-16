@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import type { ComponentProps } from 'react';
 
 import { demoLabel } from '@/content/landing';
-import type { Seed } from '@/data/seed-types';
+import type { Seed, SeedReel } from '@/data/seed-types';
 import { assetUrl } from '@/lib/asset-url';
 import { track, X_EVENTS } from '@/lib/x-pixel';
 
@@ -12,7 +12,7 @@ type ReelProps = Omit<
   ComponentProps<'video'>,
   'src' | 'poster' | 'aria-label' | 'children'
 > & {
-  seed: Pick<Seed, 'name' | 'line' | 'reel'>;
+  seed: Pick<Seed, 'name' | 'line'> & { reel: SeedReel };
   /**
    * Names a second player of the same reel on the page, so its download is
    * its own: a browser holds a second request for a file until the first,
