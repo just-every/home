@@ -5,8 +5,9 @@ import { RAIN_SLANT, RAIN_SPEED } from './rain-sheets';
  * nine in all (a third
  * of everything that falls, with the drops in rain-sheets.ts). They are part of the same rain: each comes down
  * at the nearer drops' speed and along their slant, give or take a few per
- * cent, and only turns or flutters as it falls. Each is its own small layer
- * so it can turn. Every length is in the cloud art's own units (a 1120 x 540
+ * cent, and only tilts or flutters as it falls (a dollar sign sways, a coin
+ * wobbles gently and never turns edge-on). Each is its own small layer
+ * so it can move on its own. Every length is in the cloud art's own units (a 1120 x 540
  * box), so the layer scales with the art; the table is fixed, so the server
  * and the browser agree on it.
  *
@@ -37,9 +38,9 @@ export type RainItem = {
   o: number;
   /** Where along its fall a still frame (reduced motion) freezes it, 0 to 1. */
   p: number;
-  /** Tumble: a half-turn amplitude in degrees for the swaying kinds. */
+  /** Sway: an amplitude in degrees for the swaying kinds (a coin sways half as far). */
   a: number;
-  /** Where in its sway a swaying kind starts (seconds, negative). */
+  /** Where in its sway (and a coin's tilt) it starts (seconds, negative). */
   s: number;
 };
 

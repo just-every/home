@@ -1,5 +1,5 @@
 /* The rain's moving parts: small elements over the static cloud art. Only
-   translate, rotate and opacity ever change, all on the compositor, and
+   translate, rotate, transform and opacity ever change, all on the compositor, and
    every item is its own light layer. The hero pauses the lot while it is
    off screen, and stills it for reduced motion (hero.module.css).
 
@@ -90,7 +90,11 @@
 
 /* The rest fall three times per iteration. A dollar sign flutters
    side to side (six sways, 14.4 seconds, as rain-items.ts counts);
-   a coin turns over once a fall. */
+   a coin never turns edge-on: it tilts gently about its vertical axis
+   (up to 34 degrees, its face never narrower than 83%) while swaying a few
+   degrees in the plane. The two run on their own slow beats (3.3 s and
+   4.1 s each way, against the dollar sign's 2.4 s), each coin at its own
+   point in them (--s), so no two move in step. */
 .dollar {
   animation:
     specialRun calc(var(--t) * 3) linear var(--o) infinite,
@@ -100,7 +104,8 @@
 .coin {
   animation:
     specialRun calc(var(--t) * 3) linear var(--o) infinite,
-    flip calc(var(--t) * 3) linear var(--o) infinite;
+    coinSway 4.1s ease-in-out var(--s) infinite alternate,
+    coinTilt 3.3s ease-in-out var(--s) infinite alternate;
 }
 
 @keyframes sheetFall {
@@ -216,11 +221,20 @@
   }
 }
 
-@keyframes flip {
+@keyframes coinSway {
   from {
-    rotate: y 0deg;
+    rotate: calc(var(--a) * -0.5);
   }
   to {
-    rotate: y 1080deg;
+    rotate: calc(var(--a) * 0.5);
+  }
+}
+
+@keyframes coinTilt {
+  from {
+    transform: perspective(420px) rotateY(-34deg);
+  }
+  to {
+    transform: perspective(420px) rotateY(34deg);
   }
 }

@@ -77,12 +77,12 @@ function Sprites() {
 /**
  * The rain's moving parts, as layers laid exactly over the cloud art (same
  * box, drawn under the cloud so everything comes out of it). The painted
- * cloud stays a static image; here only `translate`, `rotate` and
- * `opacity` change, so the browser moves each layer on the compositor and
+ * cloud stays a static image; here only `translate`, `rotate`, a coin's
+ * `transform` tilt and `opacity` change, so the browser moves each layer on the compositor and
  * never repaints or re-rasterises the art. The painted drops are two sheets
  * (rain-sheets.ts); a third of what falls is a dollar sign or a
  * coin, larger, falling with the drops at their speed and slant, each its
- * own layer so it can turn as it comes down (rain-items.ts).
+ * own layer so it can sway or tilt as it comes down (rain-items.ts).
  */
 export function Rainfall() {
   const w = RAIN_WINDOW;
