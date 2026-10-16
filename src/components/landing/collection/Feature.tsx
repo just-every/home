@@ -94,7 +94,13 @@ export function Feature({ shown }: { shown: Shown }) {
           </div>
         </div>
         <div className={styles.media}>
-          <Reel key={item.slug} seed={item} className={styles.picture} />
+          {item.reel ? (
+            <Reel
+              key={item.slug}
+              seed={{ ...item, reel: item.reel }}
+              className={styles.picture}
+            />
+          ) : null}
         </div>
       </div>
     </article>

@@ -16,7 +16,8 @@ export interface CollectionItem {
   mark: string;
   pastel: string;
   ink: string;
-  reel: SeedReel;
+  /** Null for a product with no reel yet. */
+  reel: SeedReel | null;
 }
 
 /** A product as the page shows it, in the box or as a card. */

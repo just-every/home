@@ -11,6 +11,15 @@ import { pickProduct, useSelectedProduct } from './collection/selectedProduct';
 import ui from './label.module.css';
 import styles from './running.module.css';
 import { volumeStyle, volumes } from './volumes';
+import type { Volume } from './volumes';
+import type { Seed, SeedReel } from '@/data/seed-types';
+
+type ReelVolume = Volume & { seed: Seed & { reel: SeedReel } };
+
+/** The products that have a reel to watch; the rest are in the collection. */
+const reelVolumes = volumes.filter(
+  (volume): volume is ReelVolume => volume.seed.reel !== null
+);
 
 const tabId = (slug: string) => `label-reel-tab-${slug}`;
 const panelId = 'label-reel-panel';
@@ -22,12 +31,12 @@ const panelId = 'label-reel-panel';
  * the collection's box shows.
  */
 export function Running() {
-  const slug = useSelectedProduct(volumes[0].slug);
+  const slug = useSelectedProduct(reelVolumes[0].slug);
   const active = Math.max(
     0,
-    volumes.findIndex(volume => volume.slug === slug)
+    reelVolumes.findIndex(volume => volume.slug === slug)
   );
-  const current = volumes[active];
+  const current = reelVolumes[active];
   const { seed } = current;
   const [paused, setPaused] = useState(true);
   const screenRef = useRef<HTMLDivElement>(null);
@@ -56,7 +65,7 @@ export function Running() {
   }, []);
 
   const onTabKey = (event: KeyboardEvent<HTMLButtonElement>) => {
-    const last = volumes.length - 1;
+    const last = reelVolumes.length - 1;
     const targets: Record<string, number> = {
       ArrowRight: active === last ? 0 : active + 1,
       ArrowLeft: active === 0 ? last : active - 1,
@@ -66,7 +75,7 @@ export function Running() {
     const next = targets[event.key];
     if (next === undefined) return;
     event.preventDefault();
-    pickProduct(volumes[next].slug);
+    pickProduct(reelVolumes[next].slug);
     tabRefs.current[next]?.focus();
   };
 
@@ -144,7 +153,7 @@ export function Running() {
           role="tablist"
           aria-label="Product reels"
         >
-          {volumes.map((volume, index) => {
+          {reelVolumes.map((volume, index) => {
             const selected = index === active;
             return (
               <button
