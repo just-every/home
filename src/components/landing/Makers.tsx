@@ -10,7 +10,6 @@ export function Makers() {
       aria-labelledby="label-makers-heading"
     >
       <div>
-        <p className={ui.eyebrow}>For makers</p>
         <h2 className={ui.h3} id="label-makers-heading">
           {makers.heading}
         </h2>

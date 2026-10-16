@@ -204,6 +204,7 @@
   display: inline-flex;
   align-items: center;
   min-height: 44px;
+  white-space: nowrap;
 }
 
 .links a:hover {
@@ -241,6 +242,11 @@
     grid-template-columns: 1fr 1fr;
     gap: 0 24px;
     width: 100%;
+  }
+
+  /* The products group takes a row of its own, so its link has room. */
+  .group:first-child {
+    grid-column: 1 / -1;
   }
 }
 

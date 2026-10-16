@@ -1,5 +1,11 @@
+/* The hedgerow strip above ends in this pink (its --foot, #f5d1d8); the
+   section carries it down as one flat colour and stops at its bottom edge.
+   Text that sits straight on it is darkened to keep 4.5:1 or better. */
 .questions {
+  --muted: #4b4a5e;
+  --lead: #4b4a5e;
   padding: var(--section-y) 0;
+  background: #f5d1d8;
 }
 
 .inner {

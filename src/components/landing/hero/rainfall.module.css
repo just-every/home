@@ -1,5 +1,5 @@
 /* The rain's moving parts: small elements over the static cloud art. Only
-   translate, rotate and opacity ever change, all on the compositor, and
+   translate, rotate, transform and opacity ever change, all on the compositor, and
    every item is its own light layer. The hero pauses the lot while it is
    off screen, and stills it for reduced motion (hero.module.css).
 
@@ -12,6 +12,22 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
+  /* Soft sides: the rain keeps to the middle of the cloud and fades out
+     toward each side instead of being cut off. */
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent var(--edge-out),
+    #000 var(--edge-in),
+    #000 calc(100% - var(--edge-in)),
+    transparent calc(100% - var(--edge-out))
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent var(--edge-out),
+    #000 var(--edge-in),
+    #000 calc(100% - var(--edge-in)),
+    transparent calc(100% - var(--edge-out))
+  );
 }
 
 .sprites {
@@ -42,6 +58,18 @@
 .sheets {
   position: absolute;
   overflow: hidden;
+  /* The drops fade out down the last stretch of their fall, before the
+     window's foot, so the clip is never seen. */
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    #000 var(--fade-from),
+    transparent var(--fade-to)
+  );
+  mask-image: linear-gradient(
+    180deg,
+    #000 var(--fade-from),
+    transparent var(--fade-to)
+  );
 }
 
 .sheet {
@@ -60,19 +88,24 @@
   overflow: visible;
 }
 
-/* The rest fall three times per iteration. A dollar sign and a receipt
-   sway side to side (six sways, 24 seconds); a coin turns over. */
-.dollar,
-.receipt {
+/* The rest fall three times per iteration. A dollar sign flutters
+   side to side (six sways, 14.4 seconds, as rain-items.ts counts);
+   a coin never turns edge-on: it tilts gently about its vertical axis
+   (up to 34 degrees, its face never narrower than 83%) while swaying a few
+   degrees in the plane. The two run on their own slow beats (3.3 s and
+   4.1 s each way, against the dollar sign's 2.4 s), each coin at its own
+   point in them (--s), so no two move in step. */
+.dollar {
   animation:
     specialRun calc(var(--t) * 3) linear var(--o) infinite,
-    sway 24s ease-in-out var(--s) infinite;
+    sway 14.4s ease-in-out var(--s) infinite;
 }
 
 .coin {
   animation:
     specialRun calc(var(--t) * 3) linear var(--o) infinite,
-    flip calc(var(--t) * 3) linear var(--o) infinite;
+    coinSway 4.1s ease-in-out var(--s) infinite alternate,
+    coinTilt 3.3s ease-in-out var(--s) infinite alternate;
 }
 
 @keyframes sheetFall {
@@ -114,6 +147,9 @@
   }
 }
 
+/* Each fall: in behind the cloud, then out over its last third (the fall
+   is 19.333% of a third of the iteration's three cycles, so the fade runs
+   from 12.889% to 19.333% and likewise in the next two). */
 @keyframes specialRun {
   0% {
     translate: 0 0;
@@ -122,7 +158,7 @@
   2% {
     opacity: 1;
   }
-  16.667% {
+  12.889% {
     opacity: 1;
   }
   19.333% {
@@ -140,7 +176,7 @@
   35.333% {
     opacity: 1;
   }
-  50% {
+  46.222% {
     opacity: 1;
   }
   52.667% {
@@ -158,7 +194,7 @@
   68.667% {
     opacity: 1;
   }
-  83.333% {
+  79.556% {
     opacity: 1;
   }
   86% {
@@ -185,11 +221,20 @@
   }
 }
 
-@keyframes flip {
+@keyframes coinSway {
   from {
-    rotate: y 0deg;
+    rotate: calc(var(--a) * -0.5);
   }
   to {
-    rotate: y 2160deg;
+    rotate: calc(var(--a) * 0.5);
+  }
+}
+
+@keyframes coinTilt {
+  from {
+    transform: perspective(420px) rotateY(-34deg);
+  }
+  to {
+    transform: perspective(420px) rotateY(34deg);
   }
 }

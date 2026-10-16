@@ -1,6 +1,6 @@
 /* The Journey essay's figures. */
 
-/* Figure 1: the first homepage, redrawn in ink in a plain browser frame. */
+/* The header figure: the first homepage, redrawn in ink in a plain browser frame. */
 .firstFigure {
   grid-column: figure;
   justify-self: center;
@@ -157,7 +157,16 @@
   padding-right: 180px;
 }
 
-/* Figure 3: the shelf, the whole picture a link to all fourteen. */
+/* The painted figures: flat vignettes on the page's paper, as wide as the
+   other figures; on phones they run nearly edge to edge, the caption kept
+   on the text's line. */
+.painted .paint {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The shelf, the whole picture a link to all fourteen. */
 .shelf {
   display: block;
   border-radius: var(--card-radius);
@@ -195,5 +204,14 @@
   .firstFigure figcaption {
     margin-top: 30px;
     padding-right: 0;
+  }
+
+  .painted.painted {
+    grid-column: full;
+    padding-inline: 6px;
+  }
+
+  .painted figcaption {
+    padding-inline: calc(var(--gutter) - 6px);
   }
 }

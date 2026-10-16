@@ -11,6 +11,7 @@ import { collection, runOne } from '@/content/landing';
 
 import { seedPages } from './model';
 import type { SeedPageModel } from './model';
+import { Promises } from './Promises';
 import { seedJsonLd } from './seoData';
 import styles from './seed.module.css';
 import { SiteLink } from './SiteLink';
@@ -165,29 +166,7 @@ export function SeedPage({ page }: { page: SeedPageModel }) {
               </ul>
             </section>
 
-            <section aria-labelledby="promises-heading">
-              <h2 className={styles.h2} id="promises-heading">
-                What it promises
-              </h2>
-              <ul className={styles.promises}>
-                {page.promises.map(promise => (
-                  <li key={promise.id}>
-                    {promise.id ? (
-                      <span className={styles.promiseId}>{promise.id}</span>
-                    ) : null}
-                    {promise.text}
-                  </li>
-                ))}
-              </ul>
-              {page.contractUrl ? (
-                <a className={ui.under} href={page.contractUrl}>
-                  <span>Read the full contract</span>
-                  <span className={ui.arrow} aria-hidden="true">
-                    →
-                  </span>
-                </a>
-              ) : null}
-            </section>
+            <Promises promises={page.promises} contractUrl={page.contractUrl} />
 
             {page.moveIn.length > 0 ? (
               <section aria-labelledby="move-heading">

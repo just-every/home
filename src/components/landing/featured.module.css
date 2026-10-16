@@ -1,6 +1,12 @@
-/* The home page's portal to /products: heading, search, six cards, the link. */
+/* The home page's portal to /products: heading, search, six cards, the link.
+   The hero's painted ground ends in this lavender (its foot colour, #dcd7f4);
+   the section carries it down as one flat colour and stops at its bottom
+   edge. Text that sits straight on it is darkened to keep 4.5:1 or better. */
 .featured {
-  padding: calc(var(--section-y) + 16px) 0 var(--section-y);
+  --muted: #4b4a5e;
+  --lead: #4b4a5e;
+  padding: var(--section-y) 0;
+  background: #dcd7f4;
 }
 
 .heading {
@@ -16,10 +22,40 @@
 }
 
 .all {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 6px;
   margin: 28px 0 0;
 }
 
 .all a {
   font-size: 19px;
   font-weight: 600;
+}
+
+/* The hero's handwriting and ink: an aside beside the link, tilted a little,
+   with a loose drawn arrow from it to the link. Decorative only. */
+.note {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #4f4a82;
+  font-size: 26px;
+  line-height: 1;
+  white-space: nowrap;
+  transform: translateY(-10px) rotate(-4deg);
+}
+
+.drawn {
+  width: 40px;
+  height: auto;
+  flex: none;
+  transform: translateY(6px);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
 }

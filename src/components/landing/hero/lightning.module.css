@@ -1,0 +1,65 @@
+/* The lightning's layers (Lightning.tsx), laid over the cloud art's box.
+   All rest unseen; a flash only fades them in and out (and drops a bolt
+   down), on the compositor. Nothing here runs under reduced motion: the
+   timer never starts. */
+
+.layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sky,
+.bolt,
+.glow {
+  position: absolute;
+  display: block;
+  opacity: 0;
+}
+
+/* The sky just behind the cloud lifts a little: a soft lilac light, faint
+   at its brightest, fading out inside its own box so it has no edge. It
+   sits under the rain and the cloud. */
+.sky {
+  z-index: -1;
+  left: -18%;
+  top: -40%;
+  width: 136%;
+  height: 150%;
+  background: radial-gradient(
+    closest-side,
+    #e4dfff66 0,
+    #d5cdfa40 45%,
+    transparent 100%
+  );
+  will-change: opacity;
+}
+
+/* A flat painted bolt, warm white over a soft gold edge, its top behind
+   the cloud. It grows down from there. */
+.bolt {
+  overflow: visible;
+  transform-origin: 50% 0;
+  filter: drop-shadow(0 0 6px rgb(255 244 200 / 0.7));
+  will-change: transform, opacity;
+}
+
+.boltShade {
+  fill: #f4cd6a;
+}
+
+.boltFace {
+  fill: #fff4bf;
+}
+
+/* The cloud, brightened: a still copy of the art that fades in over it. */
+.glow {
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  filter: brightness(1.45) saturate(0.8)
+    drop-shadow(0 0 12px rgb(255 249 232 / 0.55));
+  will-change: opacity;
+}

@@ -90,7 +90,6 @@ export function Running() {
     >
       <div className={`${ui.wrap} ${styles.inner}`}>
         <div className={styles.copy}>
-          <p className={ui.eyebrow}>Watch</p>
           <h2 className={ui.h2} id="label-running-heading">
             {reels.heading}
           </h2>
@@ -176,7 +175,7 @@ export function Running() {
           })}
         </div>
       </div>
-      <Separator variant="hedgerow" />
+      <Separator variant="hedgerow" solid />
     </section>
   );
 }

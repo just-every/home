@@ -12,6 +12,7 @@ import { X_EVENTS, track } from '@/lib/x-pixel';
 
 import { caveat } from './fonts';
 import styles from './hero.module.css';
+import { Lightning } from './Lightning';
 import { moreCount, rows } from './order';
 import { Rainfall } from './Rainfall';
 import { CodeIcon, DocIcon, LeafIcon } from './sketches';
@@ -21,6 +22,8 @@ import { SunLayers } from './SunLayers';
 const tints = ['#e9f7f0', '#e8f3ff', '#f1ebff', '#fff8e3'];
 
 const STACK_ID = 'hero-stack';
+
+const CLOUD = '/landing/hero/rain.svg';
 
 const reducedMotion = () =>
   typeof window !== 'undefined' &&
@@ -36,10 +39,11 @@ const reducedMotion = () =>
  * the foot that runs from rain-cooled to sunlit, all under a dusk sky. From
  * 1280px wide the two cards flank the copy as mirror images; narrower
  * screens stack the copy over the two cards. The weather moves, slowly:
- * the cards float, the rain falls (a third of it dollar signs, receipts and
- * coins, tumbling), the sun's glow breathes and its clouds drift. Only
- * small layers move (Rainfall, SunLayers), on the compositor, and only
- * while the hero is on screen.
+ * the cards float, the rain falls (a third of it dollar signs and
+ * coins, in the same stream), now and then the cloud lights up, the sun's
+ * glow breathes and its clouds drift. Only small layers move (Rainfall,
+ * Lightning, SunLayers), on the compositor, and only while the hero is on
+ * screen.
  *
  * The rented stack is the picker: picking a tool highlights it and the
  * seed that replaces it, the button turns into "Switch to <Seed> →" for
@@ -191,16 +195,18 @@ export function Hero() {
         <div className={styles.comparison}>
           <div className={styles.side}>
             {/* The cloud is still art; what falls from it is a layer of small
-                elements under it (Rainfall.tsx). */}
+                elements under it (Rainfall.tsx), and now and then it lights
+                up (Lightning.tsx). */}
             <div
               className={`${styles.weather} ${styles.rain}`}
               aria-hidden="true"
             >
               <Rainfall />
+              <Lightning cloud={CLOUD} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className={styles.cloud}
-                src="/landing/hero/rain.svg"
+                src={CLOUD}
                 alt=""
                 width={1120}
                 height={540}
@@ -365,7 +371,6 @@ export function Hero() {
         loading="lazy"
         decoding="async"
       />
-      <div className={styles.groundFade} aria-hidden="true" />
 
       <p className={styles.srOnly} aria-live="polite">
         {pickedVolume

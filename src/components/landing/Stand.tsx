@@ -44,7 +44,6 @@ export function Stand() {
       aria-labelledby="label-stand-heading"
     >
       <div>
-        <p className={ui.eyebrow}>What we stand for</p>
         <h2 className={ui.h2} id="label-stand-heading">
           {stand.heading}
         </h2>

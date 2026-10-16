@@ -34,15 +34,15 @@ export const essays = {
     shareTitle: 'The long way round',
     date: '14 October 2026',
     published: '2026-10-14',
-    readingTime: '4 min read',
+    readingTime: '5 min read',
   },
   process: {
     slug: 'process',
     title: 'Quality, written down',
-    dek: 'Code got cheap. What’s worth keeping now is a short list of sentences that says what a product is for, and a machine that won’t let anyone break one quietly.',
+    dek: 'Writing software got cheap. Keeping it right didn’t. So each of our products carries a list of plain-English promises, and tests that check them, sometimes by breaking things on purpose.',
     pageTitle: 'Quality, written down',
     description:
-      'Code got cheap. What’s worth keeping now is a short list of sentences that says what a product is for, and a machine that won’t let anyone break one quietly.',
+      'Writing software got cheap. Keeping it right didn’t. So each of our products carries a list of plain-English promises, and tests that check them, sometimes by breaking things on purpose.',
     shareTitle: 'Quality, written down.',
     date: '14 October 2026',
     published: '2026-10-14',
