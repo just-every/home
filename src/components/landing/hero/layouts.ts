@@ -6,7 +6,8 @@
  *
  * 1. Text left, cards right, with a capped column so they never meet.
  * 2. Text centred above, the two cards side by side under it.
- * 3. The cards flank a centred text column: rain card left, sun card right.
+ * 3. The cards flank a centred text column: rain card left, sun card right,
+ *    with a long switch arrow under the copy from one card to the other.
  * 4. A split heading row (headline left, subhead and button right), the
  *    cards spread wide below with the switch arrow between them.
  */

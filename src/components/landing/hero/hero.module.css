@@ -151,6 +151,17 @@
   position: relative;
 }
 
+/* Layout 3's switch arrow, drawn long enough to span the copy between the
+   cards; every other arrangement uses the short one. */
+.longArrow {
+  display: none;
+  fill: none;
+  stroke: #9b86df;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .side {
   position: relative;
 }
@@ -176,8 +187,7 @@
 .different,
 .fromArrow,
 .sixArrow,
-.upArrow,
-.rays {
+.upArrow {
   position: relative;
   z-index: 2;
 }
@@ -445,13 +455,10 @@
     margin-top: calc(var(--u) * 52);
   }
 
+  /* The backing sheet belongs to the stacked lists; beside the copy it
+     would read as a stray box between the cards. */
   .wash {
-    top: calc(var(--u) * 380);
-    right: calc(var(--u) * -18);
-    bottom: calc(var(--u) * 90);
-    left: calc(var(--u) * -18);
-    border-radius: calc(var(--u) * 42);
-    transform: rotate(1deg);
+    display: none;
   }
 
   .switchArrow {
@@ -639,16 +646,6 @@
     height: calc(var(--u) * 42);
   }
 
-  .rays {
-    position: absolute;
-    bottom: calc(var(--u) * -6);
-    left: calc(var(--u) * -40);
-    width: calc(var(--u) * 44);
-    height: calc(var(--u) * 52);
-    stroke-width: 3;
-    transform: rotate(175deg);
-  }
-
   .upArrow {
     position: absolute;
     top: calc(100% + var(--u) * 6);
@@ -711,8 +708,12 @@
     margin-right: calc(var(--u) * 12);
   }
 
+  /* The cloud stays over the rented card: between the headline and the
+     switch arrow, so no drop falls on the seeds. */
   .layout1 .rain {
-    left: calc(var(--u) * -90);
+    top: calc(var(--u) * -112);
+    left: calc(var(--u) * -40);
+    width: calc(var(--u) * 315);
   }
 
   .layout1 .closing {
@@ -810,10 +811,6 @@
     display: contents;
   }
 
-  .layout3 .wash {
-    display: none;
-  }
-
   .layout3 .rainy {
     grid-area: rainy;
     align-self: start;
@@ -841,16 +838,30 @@
   }
 
   .layout3 .actionRow {
-    margin-right: calc(var(--u) * 40);
+    margin-right: calc(var(--u) * 64);
   }
 
+  .layout3 .startArrow {
+    transform: translate(calc(var(--u) * 8), -60%);
+  }
+
+  .layout3 .start {
+    left: calc(100% + var(--u) * 70);
+  }
+
+  /* A long stroke from the rented card across to the seeds' card. */
   .layout3 .switchArrow {
+    display: none;
+  }
+
+  .layout3 .longArrow {
+    display: block;
     grid-area: arrow;
     align-self: start;
     justify-self: center;
-    width: calc(var(--u) * 90);
-    height: calc(var(--u) * 66);
-    margin-top: calc(var(--u) * 50);
+    width: calc(100% + var(--u) * 50);
+    height: auto;
+    margin-top: calc(var(--u) * 46);
   }
 
   .layout3 .rain {
@@ -882,9 +893,7 @@
   }
 
   .layout1 .sixArrow,
-  .layout1 .rays,
-  .layout3 .sixArrow,
-  .layout3 .rays {
+  .layout3 .sixArrow {
     display: none;
   }
 
@@ -958,10 +967,6 @@
     width: calc(var(--u) * 110);
     height: calc(var(--u) * 81);
     margin: 0 calc(var(--u) * 80);
-  }
-
-  .layout4 .wash {
-    display: none;
   }
 
   .layout4 .rain {
@@ -1088,7 +1093,6 @@
 
   .fromArrow,
   .sixArrow,
-  .rays,
   .upArrow {
     display: none;
   }
@@ -1193,7 +1197,7 @@
   }
 
   .closing {
-    margin: 8px 20px 0;
+    margin: 28px 20px 0;
     font-size: 25px;
     text-align: center;
     transform: rotate(-1.5deg);

@@ -18,7 +18,7 @@ import {
   DocIcon,
   FromArrow,
   LeafIcon,
-  Rays,
+  LongSwitchArrow,
   SixArrow,
   StartArrow,
   SwitchArrow,
@@ -250,6 +250,7 @@ export function Hero({
           </div>
 
           <SwitchArrow className={styles.switchArrow} />
+          <LongSwitchArrow className={styles.longArrow} />
 
           <div className={`${styles.side} ${styles.sunny}`}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -314,7 +315,6 @@ export function Hero({
               Plus {coming} more coming soon.
             </p>
             <SixArrow className={`${styles.lineArt} ${styles.sixArrow}`} />
-            <Rays className={`${styles.lineArt} ${styles.rays}`} />
             <UpArrow className={`${styles.lineArt} ${styles.upArrow}`} />
             <p
               className={`${caveat.className} ${styles.hand} ${styles.different}`}
