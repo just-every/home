@@ -11,7 +11,7 @@ import { numberWord } from '@/lib/number-word';
 import styles from './journey.module.css';
 
 /**
- * Figure 1, the header: our first homepage (commit f47ba68 in
+ * The header figure: our first homepage (commit f47ba68 in
  * just-every/home, src/app/page.tsx, 30 May 2025), redrawn in ink with its
  * own strings in their own order: the wordmark, the hero line, the fair
  * warning (circled), the question and its first two example cards.
@@ -65,7 +65,7 @@ export function FirstHomepage() {
   );
 }
 
-/** Figure 2: the Auto Drive video, playable in the page. */
+/** The Auto Drive video, playable in the page. */
 export function AutoDrive() {
   return (
     <ArticleFigure
@@ -84,10 +84,71 @@ export function AutoDrive() {
   );
 }
 
+/**
+ * A painted figure: one of the essay's spot illustrations, traced flat in the
+ * footer's dusk-mist hand (public/landing/essays/journey/), static on the
+ * page's paper.
+ */
+function Painting({
+  src,
+  width,
+  height,
+  alt,
+  caption,
+}: {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+  caption: string;
+}) {
+  return (
+    <ArticleFigure className={styles.painted} caption={caption}>
+      {/* An SVG: next/image would only pass it through. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        className={styles.paint}
+        src={src}
+        width={width}
+        height={height}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+      />
+    </ArticleFigure>
+  );
+}
+
+/** After the opening: the quick version is a front with nothing behind it. */
+export function Front() {
+  return (
+    <Painting
+      src="/landing/essays/journey/front.svg"
+      width={1440}
+      height={834}
+      alt="A cottage front that is only a flat painted board, braced from behind with nothing else there, while a winding path leads away over the hill to a small real cottage."
+      caption="The quick version looks fine from the front. The real one was further down the path."
+    />
+  );
+}
+
+/** The boring part: the merges landed while nobody was at the table. */
+export function Morning() {
+  return (
+    <Painting
+      src="/landing/essays/journey/morning.svg"
+      width={1440}
+      height={729}
+      alt="A garden table at sunrise with an open laptop showing lines of code and an untouched cup of coffee, an empty chair beside it and a white dog asleep underneath."
+      caption="Seven in the morning, and nobody at the desk."
+    />
+  );
+}
+
 /** The render shows the first fourteen volumes, as there were in mid-October. */
 const shelved = seeds.slice(0, 14);
 
-/** Figure 3: the shelf render from the landing page, linking to the collection. */
+/** The shelf render from the landing page, linking to the collection. */
 export function Shelf() {
   return (
     <ArticleFigure caption="Fourteen products, all public and MIT licensed.">
