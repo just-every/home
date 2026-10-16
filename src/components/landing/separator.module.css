@@ -1,54 +1,74 @@
 /* A painted strip shown at its natural height (--show) on wide screens and
    shrinking to 60% of it on phones; the image keeps its proportions and is
    cropped from the middle, anchored at the foot. */
+/* Below the art the strip's foot colour (--foot, the bottom band of its SVG)
+   holds briefly and then fades over a long tail (--fade) into the page
+   (--to). The wash is out of the flow, behind the section that follows: it
+   paints under that section's content (z-index -1) and ignores the pointer,
+   so it can never cover a control. */
 .band {
+  position: relative;
   pointer-events: none;
   user-select: none;
+  --to: #fdfdff;
+  --fade: 300px;
 }
 
-/* Below the art the foot colour (--foot, read from each SVG's bottom band)
-   continues and fades into the background the strip meets (--to). The fade
-   takes its own height in the flow, so it never covers what follows. */
 .band::after {
   content: '';
-  display: block;
-  height: var(--fade, 96px);
-  background: linear-gradient(180deg, var(--foot), var(--to));
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  height: var(--fade);
+  background: linear-gradient(
+    180deg,
+    var(--foot) 0,
+    var(--foot) 8%,
+    color-mix(in srgb, var(--foot) 68%, var(--to)) 24%,
+    color-mix(in srgb, var(--foot) 42%, var(--to)) 46%,
+    color-mix(in srgb, var(--foot) 20%, var(--to)) 68%,
+    color-mix(in srgb, var(--foot) 7%, var(--to)) 86%,
+    var(--to) 100%
+  );
 }
 
 .creek {
-  --foot: #bed7f3;
-  --to: #fdfdff;
-}
-
-/* The creek's art runs to its bottom edge in several colours, so the art
-   itself eases into the foot colour before the fade begins. */
-.creek .art {
-  background: linear-gradient(180deg, transparent 55%, var(--foot));
-}
-
-.creek img {
-  mask-image: linear-gradient(180deg, #000 55%, transparent);
+  --foot: #c0e4e1;
+  --fade: 300px;
 }
 
 .garden {
-  --foot: #dbeafb;
-  --to: #fdfdff;
+  --foot: #f4ddcb;
+  --fade: 260px;
 }
 
 .hedgerow {
-  --foot: #d2e4f8;
-  --to: #fdfdff;
+  --foot: #f5d1d8;
+  --fade: 320px;
 }
 
 .meadow {
-  --foot: #b2cff0;
-  --to: #fdfdff;
+  --foot: #d2e4f8;
+  --fade: 280px;
 }
 
 @media (max-width: 599px) {
-  .band {
-    --fade: 64px;
+  .creek {
+    --fade: 170px;
+  }
+
+  .garden {
+    --fade: 150px;
+  }
+
+  .hedgerow {
+    --fade: 180px;
+  }
+
+  .meadow {
+    --fade: 160px;
   }
 }
 

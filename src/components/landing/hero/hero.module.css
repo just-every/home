@@ -13,7 +13,7 @@
 .top {
   position: relative;
   padding-top: var(--header-h);
-  overflow: clip;
+  overflow-x: clip;
   container-type: inline-size;
   color: #222;
   background:
@@ -399,17 +399,35 @@
   user-select: none;
 }
 
-/* The ground's flat foot colour carries on below the strip and fades to the
-   page, so the hero eases into the next section instead of stopping on a
-   line. */
+/* The ground's flat lavender foot holds briefly below the strip and fades
+   over a long tail into the page, behind the Collection that follows (under
+   its content, out of the pointer's way), so the hero eases into it instead
+   of stopping on a line. */
 .groundFade {
-  height: 96px;
-  background: linear-gradient(180deg, #c8def6, #fdfdff);
+  --foot: #dcd7f4;
+  --to: #fdfdff;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  height: 340px;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    var(--foot) 0,
+    var(--foot) 8%,
+    color-mix(in srgb, var(--foot) 68%, var(--to)) 24%,
+    color-mix(in srgb, var(--foot) 42%, var(--to)) 46%,
+    color-mix(in srgb, var(--foot) 20%, var(--to)) 68%,
+    color-mix(in srgb, var(--foot) 7%, var(--to)) 86%,
+    var(--to) 100%
+  );
 }
 
 @media (max-width: 599px) {
   .groundFade {
-    height: 64px;
+    height: 190px;
   }
 }
 

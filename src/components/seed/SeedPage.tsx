@@ -4,11 +4,12 @@ import { Footer } from '@/components/landing/Footer';
 import { sans } from '@/components/landing/fonts';
 import { Header } from '@/components/landing/Header';
 import ui from '@/components/landing/label.module.css';
-import { Separator } from '@/components/landing/Separator';
+import { Separator, separatorVariants } from '@/components/landing/Separator';
 import { Terminal } from '@/components/landing/Terminal';
 import { Reel } from '@/components/shared/Reel';
 import { collection, runOne } from '@/content/landing';
 
+import { seedPages } from './model';
 import type { SeedPageModel } from './model';
 import { seedJsonLd } from './seoData';
 import styles from './seed.module.css';
@@ -43,6 +44,9 @@ export function SeedPage({ page }: { page: SeedPageModel }) {
   const alsoReplaces = page.replaces.filter(
     name => name !== page.primaryReplace
   );
+  // The strip rotates with the seed's place in the list, so neighbours differ.
+  const strip =
+    separatorVariants[seedPages.indexOf(page) % separatorVariants.length];
   return (
     <div className={`${ui.page} ${sans.variable}`} style={style}>
       <Header />
@@ -107,7 +111,7 @@ export function SeedPage({ page }: { page: SeedPageModel }) {
             </div>
           ) : null}
 
-          <Separator variant="meadow-path" />
+          <Separator variant={strip} />
 
           <div className={`${styles.col} ${styles.body}`}>
             <div className={styles.links}>

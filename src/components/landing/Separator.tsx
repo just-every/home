@@ -26,12 +26,16 @@ const strips = {
 
 export type SeparatorVariant = keyof typeof strips;
 
+/** Every strip, in the order the seed pages rotate through them. */
+export const separatorVariants = Object.keys(strips) as SeparatorVariant[];
+
 /**
  * A painted strip that closes a section (never the page: the footer has its
  * own scene). It sits at the section's foot, cropped from the middle on
  * narrower screens, ignores the pointer and is decorative. Below the art its
- * ground colour continues for a short fade into the next section's background
- * (separator.module.css), so the strip eases out instead of ending on a line.
+ * ground colour holds and then fades over a long tail behind the next
+ * section (separator.module.css), so the strip eases out instead of ending
+ * on a line.
  */
 export function Separator({ variant }: { variant: SeparatorVariant }) {
   const strip = strips[variant];
