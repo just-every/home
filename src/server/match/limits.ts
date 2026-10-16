@@ -51,6 +51,8 @@ export const seedLimits: Readonly<Record<string, string>> = {
     'It has no route optimisation or maps, sends no SMS or email, takes no card payments and is not a full accounting or tax system; invoices are exported to your own accounting system.',
   larder:
     "It does not keep statutory books, file tax, run payroll, post journals, handle multiple entities or currencies, schedule by finite capacity, or certify regulated quality or recalls; it hands off to the accountant's own ledger.",
+  linen:
+    'It is an employee IT service desk, not an identity provider, endpoint-management, HR or payroll system, monitoring store or procurement ledger; it connects to those rather than replacing them, and acts only where an owner has granted it.',
   locket:
     'It organises and prepares agreements but gives no legal advice, does not sign or re-sign anything, and does not validate signatory authority; signing happens in the service you already use.',
   lodge:

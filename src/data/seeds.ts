@@ -21,7 +21,7 @@ function reel(slug: string, durationSeconds: number) {
  * run-orbit.com, final since its brand refresh). The later 16 take their
  * facts from each repo's README, CONTRACT and seed.json, and carry no
  * headline or reel yet; where one's homepage is live, `homepageShot` is a
- * still of it (captured 16 Oct 2026 at 1280x720). Accent, ink and paper match each product's own brand
+ * still of it (captured 16 and 17 Oct 2026 at 1280x720). Accent, ink and paper match each product's own brand
  * tokens; `pastel` softens one of them so all thirty sit together as a set
  * (OKLCH lightness about 0.875, chroma 0.45 of the brand's, kept between
  * 0.04 and 0.08, same hue).
@@ -539,6 +539,30 @@ export const seeds: Seed[] = [
     markInk: null,
     reel: null,
     homepageShot: `${dir('larder')}/home.webp`,
+  },
+  {
+    slug: 'linen',
+    name: 'Linen',
+    category: 'IT service desk',
+    family: 'IT service',
+    area: 'operations',
+    replaces: ['Freshservice', 'Jira Service Management'],
+    primaryReplace: 'Freshservice',
+    line: 'One conversation per IT request, with only the choices that need a person.',
+    headline: null,
+    repo: 'https://github.com/just-every/run-linen',
+    homepage: 'https://run-linen.com',
+    // src/branding.json primaryColor, the navy of its mark; paper from its site.
+    accent: '#0e1c33',
+    ink: '#0e1c33',
+    paper: '#f3f0eb',
+    pastel: '#c7d7f1',
+    markOnPastel: 'colour',
+    mark: `${dir('linen')}/mark.svg`,
+    markLight: null,
+    markInk: null,
+    reel: null,
+    homepageShot: `${dir('linen')}/home.webp`,
   },
   {
     slug: 'locket',
