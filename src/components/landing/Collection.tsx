@@ -12,6 +12,7 @@ const items: CollectionItem[] = volumes.map(({ seed, ...volume }) => ({
   number: volume.number,
   name: volume.name,
   family: volume.family,
+  area: seed.area,
   category: seed.category,
   replaces: seed.replaces,
   primaryReplace: seed.primaryReplace,
@@ -23,6 +24,7 @@ const items: CollectionItem[] = volumes.map(({ seed, ...volume }) => ({
   pastel: volume.colour,
   ink: volume.ink,
   reel: seed.reel,
+  homepageShot: seed.homepageShot,
 }));
 
 export function Collection() {

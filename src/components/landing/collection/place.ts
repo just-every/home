@@ -1,10 +1,9 @@
+import { collection } from '@/content/landing';
+import type { SeedArea } from '@/data/seed-types';
+
 import { namedReplace } from '../search/localMatch';
 import type { SearchMatch, SearchMode } from '../search/useCollectionSearch';
-import type { CardRole, CollectionItem, Placed, Shown } from './types';
-
-/** The grid's rows: three covers, then five cards, then the rest (six). */
-const COVERS = 3;
-const MEDIUM_ROW = 5;
+import type { Area, CollectionItem, Shown } from './types';
 
 function shown(
   item: CollectionItem,
@@ -19,41 +18,39 @@ function shown(
 }
 
 /**
- * The grid's cards, in what order and at what size.
- *
- * The whole collection: every product in volume order, the same whatever is
- * selected: three covers, then rows of five and six. Typing: only the
- * matches, best first. A submitted search: its picks, each with its reason.
+ * The whole collection: every product under its area's heading, the areas
+ * in the copy's order and the products in volume order within each, the
+ * same whatever is selected.
  */
-export function place(
-  items: CollectionItem[],
-  mode: SearchMode,
-  matches: SearchMatch<CollectionItem>[],
-  query: string
-): Placed[] {
-  if (mode === 'instant') {
-    return matches.map(({ volume }) => ({
-      ...shown(volume, query),
-      role: 'm',
-    }));
-  }
-  if (mode === 'answer') {
-    return matches.map(({ volume, reason }) => ({
-      ...shown(volume, query, reason),
-      role: 'cover',
-    }));
-  }
-  return items.map((item, index) => {
-    const role: CardRole =
-      index < COVERS ? 'cover' : index < COVERS + MEDIUM_ROW ? 'm' : 's';
-    return { ...shown(item), role };
-  });
+export function areas(items: CollectionItem[]): Area[] {
+  return (Object.entries(collection.areas) as [SeedArea, string][]).map(
+    ([id, heading]) => ({
+      id,
+      heading,
+      items: items.filter(item => item.area === id).map(item => shown(item)),
+    })
+  );
 }
 
 /**
- * The product in the box above the grid: the selected one, or after a
+ * A search's products, with no area headings: while typing, only the
+ * matches, best first; after a submitted search, its picks, each with its
+ * reason.
+ */
+export function results(
+  mode: SearchMode,
+  matches: SearchMatch<CollectionItem>[],
+  query: string
+): Shown[] {
+  return matches.map(({ volume, reason }) =>
+    shown(volume, query, mode === 'answer' ? reason : null)
+  );
+}
+
+/**
+ * The product in the box above the products: the selected one, or after a
  * submitted search its pick (with Claude's reason). None while typing
- * narrows the grid, so the page shows only what matches.
+ * narrows the products, so the page shows only what matches.
  */
 export function featured(
   items: CollectionItem[],

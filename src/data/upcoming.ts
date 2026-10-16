@@ -1,9 +1,11 @@
 import { collection } from '@/content/landing';
+import { numberWord } from '@/lib/number-word';
 
 /**
  * Seeds in the works: public repository, no release tag yet, so not in the
  * collection. They are listed apart from `seeds.ts` and shown quietly (no
- * reel, no homepage, not selectable). Each line is checked against that
+ * reel, no homepage, not selectable), and the collection's search finds them
+ * as coming soon. Each line is checked against that
  * seed's README and CONTRACT.md; the pastel keeps the seed's own brand hue at
  * the lightness and softness of the collection's pastels. A seed moves to
  * `seeds.ts` when it gets its first release tag. `primaryReplace` and
@@ -270,7 +272,8 @@ export const upcoming: UpcomingSeed[] = [
 export const comingSoon = {
   id: 'soon',
   heading: 'Coming soon.',
-  line: 'Twenty more in the works. Source is already public.',
+  line: `${numberWord(upcoming.length, true)} more in the works. Source is already public.`,
+  /** Over the seeds in the works that the collection's search finds. */
   label: 'Coming soon',
   alternativeTo: collection.alternativeTo,
   githubLabel: collection.githubLabel,

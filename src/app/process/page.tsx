@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import { ArticlePage } from '@/components/article/ArticlePage';
 import { EndNote } from '@/components/article/EndNote';
 import { essayMetadata, essays } from '@/components/article/essays';
+import { seeds } from '@/data/seeds';
+import { numberWord } from '@/lib/number-word';
 
 import { AutoDrive, PromiseAndTest, PromiseChanged } from './figures';
 
@@ -19,7 +21,7 @@ export default function Process() {
         <EndNote
           next={essays.journey}
           links={[
-            { label: 'See all fourteen', href: '/#all' },
+            { label: `See all ${numberWord(seeds.length)}`, href: '/#all' },
             {
               label: 'Lamp on GitHub',
               href: 'https://github.com/just-every/run-lamp',

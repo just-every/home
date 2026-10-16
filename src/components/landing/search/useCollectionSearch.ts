@@ -11,6 +11,9 @@ import { fetchMatch } from './fetchMatch';
 import { indexVolumes, localMatches, queryTokens } from './localMatch';
 import type { SearchVolume } from './localMatch';
 
+/** A seed in the works, as the search finds it (never selected). */
+type SoonVolume = Omit<SearchVolume, 'number'>;
+
 /** How long typing rests before the query counts as searched. */
 const SETTLE_MS = 1500;
 
@@ -40,14 +43,15 @@ interface Options {
 }
 
 /**
- * "What do you use today?": typing filters the volumes with no network; the
- * button asks /api/match, where Claude picks the best one to three with a
- * reason each.
+ * "What do you use today?": typing filters the volumes with no network, and
+ * finds the seeds in the works (`upcoming`) the same way, as coming soon;
+ * the button asks /api/match, where Claude picks the best one to three
+ * released products with a reason each.
  */
-export function useCollectionSearch<T extends SearchVolume>(
-  volumes: T[],
-  { onAnswer }: Options
-) {
+export function useCollectionSearch<
+  T extends SearchVolume,
+  U extends SoonVolume,
+>(volumes: T[], upcoming: U[], { onAnswer }: Options) {
   const [query, setQueryState] = useState('');
   const [asked, setAsked] = useState<Asked | null>(null);
   // The button was pressed with nothing typed.
@@ -57,6 +61,16 @@ export function useCollectionSearch<T extends SearchVolume>(
   const inputRef = useRef<HTMLInputElement>(null);
 
   const index = useMemo(() => indexVolumes(volumes), [volumes]);
+  const soonIndex = useMemo(
+    () =>
+      indexVolumes(
+        upcoming.map((seed, i) => ({
+          ...seed,
+          number: String(i + 1).padStart(2, '0'),
+        }))
+      ),
+    [upcoming]
+  );
   const bySlug = useMemo(
     () => new Map(volumes.map(volume => [volume.slug, volume])),
     [volumes]
@@ -67,6 +81,11 @@ export function useCollectionSearch<T extends SearchVolume>(
   const current = asked?.query === text ? asked : null;
   const answer = current?.state === 'answered' ? current.answer : null;
   const instant = useMemo(() => localMatches(index, text), [index, text]);
+  // Seeds in the works that match what is typed, whatever the button found.
+  const soon: U[] = useMemo(
+    () => localMatches(soonIndex, text),
+    [soonIndex, text]
+  );
 
   // Only picks the collection has count: an answer of unknown slugs is none.
   const picks: SearchMatch<T>[] = answer
@@ -80,7 +99,7 @@ export function useCollectionSearch<T extends SearchVolume>(
     ? picks.length > 0
       ? 'answer'
       : 'none'
-    : instant.length > 0
+    : instant.length > 0 || soon.length > 0
       ? 'instant'
       : 'all';
 
@@ -96,7 +115,8 @@ export function useCollectionSearch<T extends SearchVolume>(
   else if (current?.state === 'failed') status = current.message;
   else if (mode === 'answer') status = search.results(text);
   else if (mode === 'none') status = search.noMatch;
-  else if (mode === 'instant') status = search.instant(instant.length, text);
+  else if (mode === 'instant')
+    status = search.instant(instant.length, soon.length, text);
   else if (queryTokens(text).length > 0) status = search.hint(text);
   else if (prompted && !text) status = search.empty;
 
@@ -167,6 +187,7 @@ export function useCollectionSearch<T extends SearchVolume>(
     submit,
     mode,
     matches,
+    soon,
     status,
     loading: current?.state === 'loading',
     failed: current?.state === 'failed',
@@ -174,6 +195,7 @@ export function useCollectionSearch<T extends SearchVolume>(
   };
 }
 
-export type CollectionSearchState<T extends SearchVolume> = ReturnType<
-  typeof useCollectionSearch<T>
->;
+export type CollectionSearchState<
+  T extends SearchVolume,
+  U extends SoonVolume = SoonVolume,
+> = ReturnType<typeof useCollectionSearch<T, U>>;

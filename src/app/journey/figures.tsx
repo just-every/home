@@ -6,6 +6,7 @@ import { AutoDriveVideo } from '@/components/article/AutoDriveVideo';
 import { Handnote } from '@/components/article/parts';
 import { Logo } from '@/components/landing/Logo';
 import { seeds } from '@/data/seeds';
+import { numberWord } from '@/lib/number-word';
 
 import styles from './journey.module.css';
 
@@ -83,7 +84,10 @@ export function AutoDrive() {
   );
 }
 
-/** Figure 3: the shelf render from the landing page, linking to all fourteen. */
+/** The render shows the first fourteen volumes, as there were in mid-October. */
+const shelved = seeds.slice(0, 14);
+
+/** Figure 3: the shelf render from the landing page, linking to the collection. */
 export function Shelf() {
   return (
     <ArticleFigure caption="Fourteen products, all public and MIT licensed.">
@@ -93,7 +97,7 @@ export function Shelf() {
           src="/landing/shelf/shelf-1440.webp"
           srcSet="/landing/shelf/shelf-800.webp 800w, /landing/shelf/shelf-1440.webp 2242w"
           sizes="(max-width: 599px) 100vw, 860px"
-          alt={`See all fourteen products: ${seeds.map(s => s.name).join(', ')}, as a row of book spines, each in its own colour with its own mark.`}
+          alt={`See all ${numberWord(seeds.length)} products. The shelf shows the first fourteen as a row of book spines, each in its own colour with its own mark: ${shelved.map(s => s.name).join(', ')}.`}
           width={2242}
           height={1092}
           loading="lazy"

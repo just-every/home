@@ -12,8 +12,9 @@ import { featureHeadingId, featureId } from './useSelection';
 const host = (url: string) => new URL(url).host;
 
 /**
- * The selected product, across the whole width above the grid: its reel,
- * name and family, what it replaces, what it does (its card's line) and,
+ * The selected product, across the whole width above the grid: its reel
+ * (or, until it has one, a still of its homepage, or its mark), name and
+ * family, what it replaces, what it does (its card's line) and,
  * under that, its own headline (or Claude's reason, after a search), its
  * homepage where it is live, and GitHub.
  */
@@ -100,7 +101,27 @@ export function Feature({ shown }: { shown: Shown }) {
               seed={{ ...item, reel: item.reel }}
               className={styles.picture}
             />
-          ) : null}
+          ) : item.homepageShot && item.homepage ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              key={item.slug}
+              className={styles.picture}
+              src={item.homepageShot}
+              alt={`The ${item.name} homepage, ${host(item.homepage)}`}
+              width={1280}
+              height={720}
+              decoding="async"
+              draggable={false}
+            />
+          ) : (
+            <div className={styles.plate} aria-hidden="true">
+              <BrandMark
+                className={styles.plateMark}
+                volume={item}
+                size={120}
+              />
+            </div>
+          )}
         </div>
       </div>
     </article>

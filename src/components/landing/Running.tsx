@@ -25,9 +25,9 @@ const tabId = (slug: string) => `label-reel-tab-${slug}`;
 const panelId = 'label-reel-panel';
 
 /**
- * Every product's reel, one at a time: the player beside the copy, and every
- * product as its mark and name to pick from (one row of fourteen, two rows of
- * seven, or four to a row on a phone). The pick is the page's selected product, the same one
+ * Every reel, one at a time: the player beside the copy, and every product
+ * with a reel as its mark and name to pick from (one row of fourteen, two
+ * rows of seven, or four to a row on a phone, as there are fourteen today). The pick is the page's selected product, the same one
  * the collection's box shows.
  */
 export function Running() {

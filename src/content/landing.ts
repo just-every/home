@@ -1,6 +1,11 @@
+import type { SeedArea } from '@/data/seed-types';
+import { seeds } from '@/data/seeds';
+import { numberWord } from '@/lib/number-word';
+
 /**
  * Shared landing copy from the approved copy deck (COPY.md, section B),
  * verbatim. The hero copy lives in src/components/landing/hero/Hero.tsx.
+ * Counts of products follow the data.
  */
 
 export const githubOrgUrl = 'https://github.com/just-every';
@@ -54,6 +59,18 @@ export const collection = {
    */
   alternativeTo: 'Alternative to',
   githubLabel: 'GitHub',
+  /**
+   * The small heading over each area's products, in the order the
+   * collection shows the areas.
+   */
+  areas: {
+    customers: 'Customers and sales',
+    team: 'Teamwork',
+    engineering: 'Engineering',
+    finance: 'Finance',
+    people: 'People',
+    operations: 'Operations',
+  } satisfies Record<SeedArea, string>,
 } as const;
 
 /**
@@ -75,9 +92,14 @@ export const search = {
   button: 'Find my replacement',
   busy: 'Finding…',
   showAll: 'Back to all products',
-  /** Typing matched names, replaced products, categories or lines. */
-  instant: (count: number, query: string) =>
-    `${count === 1 ? '1 product matches' : `${count} products match`} ${quoted(query)}.`,
+  /**
+   * Typing matched names, replaced products, categories or lines: `count`
+   * released products and `soon` in the works.
+   */
+  instant: (count: number, soon: number, query: string) =>
+    count === 0
+      ? `${soon === 1 ? '1 product in the works matches' : `${soon} products in the works match`} ${quoted(query)}.`
+      : `${count === 1 ? '1 product matches' : `${count} products match`} ${quoted(query)}${soon ? `, and ${soon} coming soon` : ''}.`,
   /** Typing matched nothing by name: the button matches by what it does. */
   hint: (query: string) =>
     `Press Find my replacement to match ${quoted(query)} by what it does.`,
@@ -158,7 +180,7 @@ export const questions = {
         'No catch. Every one is MIT licensed and 100% free. Take it, run it, change it.',
     },
     {
-      question: 'Fourteen products? From one team?',
+      question: `${numberWord(seeds.length, true)} products? From one team?`,
       answer:
         'Coding agents write the code. We decide what good looks like, write it down as a contract, and ship the tests with it.',
     },
