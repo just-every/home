@@ -1,10 +1,14 @@
-/* The hero, "a sketched journey", ported from the 12ui conversion of design
-   G. From 1280px wide the hero is the design's canvas: every length is a
-   design pixel times --u, which fits the 1536 x 935 canvas (the design
-   under its 89px header) to the page's width and to the room under the
-   header, so the whole hero sits in the first screen. Narrower screens get
-   a stacked version: the copy, then the two lists side by side so each
-   rented tool sits beside the seed that replaces it. */
+/* The hero, "a sketched journey", from the 12ui conversion of design G,
+   with weather: a rain cloud over the stack you rent, the sun over the open
+   source you own, and a painted ground along the foot that runs from
+   rain-cooled to sunlit (the footer's flat "dusk-mist" style).
+
+   From 1280px wide the hero fills the header's content column and every
+   length is a design pixel times --u (1px in the 1331px column). The copy
+   and the two cards sit in a grid, so they never overlap; .layout1 to
+   .layout4 arrange them (layouts.ts). Narrower screens stack every layout
+   the same way: the copy, then the two lists side by side so each rented
+   tool sits beside the seed that replaces it. */
 
 .top {
   position: relative;
@@ -13,8 +17,9 @@
   container-type: inline-size;
   color: #222;
   background:
-    radial-gradient(ellipse at 83% 42%, #eae3ff8a, transparent 48%),
-    radial-gradient(ellipse at 23% 45%, #fff9, transparent 58%),
+    radial-gradient(ellipse at 12% 30%, #e7e9fbcc, transparent 46%),
+    radial-gradient(ellipse at 90% 26%, #fff1e6b3, transparent 44%),
+    radial-gradient(ellipse at 50% 45%, #fff9, transparent 58%),
     linear-gradient(180deg, #f6f4ff, #f0effd 85%);
 }
 
@@ -61,9 +66,15 @@
   border: 0;
 }
 
+.intro {
+  position: relative;
+  z-index: 3;
+}
+
 .intro h1 {
   font-weight: 600;
   color: #222;
+  text-wrap: balance;
 }
 
 .turn {
@@ -72,6 +83,7 @@
 
 .description {
   color: #595c7a;
+  text-wrap: pretty;
 }
 
 .actionRow {
@@ -139,12 +151,39 @@
   position: relative;
 }
 
+.side {
+  position: relative;
+}
+
 .wash {
   position: absolute;
   background: #ecdfff80;
 }
 
-/* The two cards: a soft frosted sheet with a white edge. */
+/* The weather: painted, decorative, behind the cards and the notes. */
+.weather {
+  position: absolute;
+  z-index: 0;
+  display: block;
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.from,
+.six,
+.different,
+.fromArrow,
+.sixArrow,
+.upArrow,
+.rays {
+  position: relative;
+  z-index: 2;
+}
+
+/* The two cards: an opaque white sheet with a soft edge, so the weather
+   never shows through the lists. */
 .panel {
   position: relative;
   z-index: 1;
@@ -157,7 +196,7 @@
   inset: 0;
   z-index: -1;
   border: 2px solid #fff;
-  background: linear-gradient(115deg, #ffffffd9, #fbfaffaa);
+  background: linear-gradient(115deg, #fff, #fbfaff);
 }
 
 .panel h2 {
@@ -303,76 +342,64 @@
   outline-offset: 2px;
 }
 
-.landscape {
-  display: block;
-  pointer-events: none;
-}
-
-.landscape img {
+/* The painted ground: a very wide strip, cool and damp at its left end and
+   sunlit at its right, cropped from the middle on narrower screens. */
+.ground {
+  position: relative;
+  z-index: 0;
   display: block;
   width: 100%;
-  height: 100%;
   object-fit: cover;
   object-position: 50% 100%;
-  mask-image: linear-gradient(180deg, transparent, #000 32%);
+  pointer-events: none;
+  user-select: none;
 }
 
-/* ---- The design's canvas, from 1280px wide ---- */
+/* ---- The column, from 1280px wide ---- */
 
 @media (min-width: 1280px) {
-  .canvas,
-  .landscape {
-    --u: clamp(
-      0.8125px,
-      min(100cqw / 1536, (100svh - var(--header-h)) / 935),
-      1.2px
-    );
+  .top {
+    /* The header's column, growing past it on the widest screens so the
+       cards stay large there. */
+    --col: max(min(100cqw - 2 * var(--edge), 1331px), 62cqw);
+    --u: calc(var(--col) / 1331);
   }
 
   .canvas {
-    width: calc(var(--u) * 1536);
-    height: calc(var(--u) * 935);
+    display: grid;
+    width: var(--col);
     margin-inline: auto;
-  }
-
-  .intro {
-    position: absolute;
-    top: calc(var(--u) * 108);
-    /* The copy starts 38px inside the header's content edge, whatever the
-       canvas's own margin: the edge, less the canvas's offset from the page. */
-    left: calc(var(--edge) + 38px - (100cqw - var(--u) * 1536) / 2);
-    z-index: 3;
-    width: calc(var(--u) * 650);
+    padding-top: calc(var(--u) * 40);
   }
 
   .intro h1 {
-    margin: 0 0 calc(var(--u) * 28);
-    font-size: calc(var(--u) * 99.5);
-    line-height: 0.97;
+    margin: 0 0 calc(var(--u) * 26);
+    font-size: calc(var(--u) * 92);
+    line-height: 0.98;
     letter-spacing: -0.02em;
-    white-space: nowrap;
   }
 
   .description {
-    max-width: calc(var(--u) * 590);
-    font-size: calc(var(--u) * 23);
-    line-height: 1.49;
+    max-width: calc(var(--u) * 560);
+    margin: 0;
+    font-size: calc(var(--u) * 22);
+    line-height: 1.5;
     letter-spacing: calc(var(--u) * -0.3);
   }
 
   .actionRow {
-    margin-top: calc(var(--u) * 49);
+    margin-top: calc(var(--u) * 40);
   }
 
   .cta {
     gap: calc(var(--u) * 18);
-    min-height: calc(var(--u) * 68);
-    padding: calc(var(--u) * 19) calc(var(--u) * 40);
-    font-size: calc(var(--u) * 23);
+    min-height: calc(var(--u) * 66);
+    padding: calc(var(--u) * 18) calc(var(--u) * 38);
+    font-size: calc(var(--u) * 22);
   }
 
   .ctaArrow {
-    font-size: calc(var(--u) * 34);
+    font-size: calc(var(--u) * 32);
     line-height: calc(var(--u) * 20);
   }
 
@@ -392,12 +419,12 @@
   }
 
   .benefits {
-    gap: calc(var(--u) * 45);
-    margin-top: calc(var(--u) * 51);
+    gap: calc(var(--u) * 42);
+    margin-top: calc(var(--u) * 44);
   }
 
   .benefits li {
-    gap: calc(var(--u) * 17);
+    gap: calc(var(--u) * 16);
     font-size: calc(var(--u) * 17);
     line-height: 1.35;
   }
@@ -407,43 +434,35 @@
     height: calc(var(--u) * 37);
   }
 
+  /* The pair of cards: the rented stack, the switch arrow, the seeds. The
+     stack sits a little lower, as in the design. */
   .comparison {
-    position: absolute;
-    top: calc(var(--u) * 45);
-    left: calc(var(--u) * 743);
-    z-index: 2;
-    width: calc(var(--u) * 738);
-    height: calc(var(--u) * 756);
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .rainy {
+    margin-top: calc(var(--u) * 52);
   }
 
   .wash {
-    top: calc(var(--u) * 207);
-    left: calc(var(--u) * 2);
-    width: calc(var(--u) * 700);
-    height: calc(var(--u) * 421);
+    top: calc(var(--u) * 380);
+    right: calc(var(--u) * -18);
+    bottom: calc(var(--u) * 90);
+    left: calc(var(--u) * -18);
     border-radius: calc(var(--u) * 42);
     transform: rotate(1deg);
   }
 
-  .from {
-    position: absolute;
-    top: calc(var(--u) * 7);
-    left: calc(var(--u) * 35);
-    margin: 0;
-    font-size: calc(var(--u) * 28);
-    transform: rotate(-8deg);
-  }
-
-  .fromArrow {
-    position: absolute;
-    top: calc(var(--u) * 8);
-    left: calc(var(--u) * 248);
-    width: calc(var(--u) * 35);
-    height: calc(var(--u) * 56);
+  .switchArrow {
+    flex: none;
+    align-self: center;
+    width: calc(var(--u) * 65);
+    height: calc(var(--u) * 48);
+    margin: 0 calc(var(--u) * 10);
   }
 
   .panel {
-    position: absolute;
     filter: drop-shadow(0 calc(var(--u) * 17) calc(var(--u) * 20) #b6a2e52c);
   }
 
@@ -457,10 +476,8 @@
   }
 
   .old {
-    top: calc(var(--u) * 87);
-    left: calc(var(--u) * 44);
-    width: calc(var(--u) * 259);
-    padding: calc(var(--u) * 24) calc(var(--u) * 27) calc(var(--u) * 25);
+    width: calc(var(--u) * 280);
+    padding: calc(var(--u) * 24) calc(var(--u) * 28) calc(var(--u) * 26);
     transform: perspective(calc(var(--u) * 900)) rotateY(-17deg) rotate(1deg);
   }
 
@@ -474,7 +491,7 @@
   }
 
   .old li {
-    height: calc(var(--u) * 33.6);
+    height: calc(var(--u) * 34);
   }
 
   .old button {
@@ -487,7 +504,7 @@
   }
 
   .old button::after {
-    width: calc(var(--u) * 83);
+    width: calc(var(--u) * 88);
     height: calc(var(--u) * 13);
     border-radius: calc(var(--u) * 10);
   }
@@ -500,18 +517,8 @@
     transform: rotate(2deg);
   }
 
-  .switchArrow {
-    position: absolute;
-    top: calc(var(--u) * 286);
-    left: calc(var(--u) * 295);
-    width: calc(var(--u) * 65);
-    height: calc(var(--u) * 48);
-  }
-
   .new {
-    top: calc(var(--u) * 34);
-    left: calc(var(--u) * 366);
-    width: calc(var(--u) * 278);
+    width: calc(var(--u) * 300);
     padding: calc(var(--u) * 27) calc(var(--u) * 20) calc(var(--u) * 20);
     transform: rotate(-0.4deg);
   }
@@ -526,7 +533,7 @@
   }
 
   .new li {
-    height: calc(var(--u) * 36);
+    height: calc(var(--u) * 37);
     margin-bottom: calc(var(--u) * 4);
     transform: rotate(var(--tilt, 0deg));
   }
@@ -575,11 +582,50 @@
     vertical-align: calc(var(--u) * 3);
   }
 
+  /* The weather and the notes sit around each card, measured from it: the
+     rain over the stack's top-left corner and the sun just past the seeds'
+     top-right one, each with the room above its card to itself, so the
+     notes that name the cards caption them from below. */
+  .comparison {
+    padding-top: calc(var(--u) * 150);
+  }
+
+  .rain {
+    top: calc(var(--u) * -164);
+    left: calc(var(--u) * -150);
+    width: calc(var(--u) * 500);
+  }
+
+  .sun {
+    top: calc(var(--u) * -186);
+    left: calc(var(--u) * -50);
+    width: calc(var(--u) * 480);
+  }
+
+  .from {
+    position: absolute;
+    top: calc(100% + var(--u) * 30);
+    left: calc(var(--u) * 58);
+    margin: 0;
+    font-size: calc(var(--u) * 28);
+    white-space: nowrap;
+    transform: rotate(-5deg);
+  }
+
+  .fromArrow {
+    position: absolute;
+    top: calc(100% + var(--u) * 4);
+    left: calc(var(--u) * 18);
+    width: calc(var(--u) * 35);
+    height: calc(var(--u) * 56);
+    transform: scaleY(-1);
+  }
+
   .six {
     position: absolute;
-    top: calc(var(--u) * 221);
-    left: calc(var(--u) * 659);
-    width: calc(var(--u) * 113);
+    top: calc(var(--u) * 176);
+    left: calc(100% + var(--u) * 18);
+    width: calc(var(--u) * 116);
     margin: 0;
     font-size: calc(var(--u) * 25);
     transform: rotate(-7deg);
@@ -587,67 +633,344 @@
 
   .sixArrow {
     position: absolute;
-    top: calc(var(--u) * 302);
-    left: calc(var(--u) * 652);
+    top: calc(var(--u) * 262);
+    left: calc(100% + var(--u) * 8);
     width: calc(var(--u) * 53);
     height: calc(var(--u) * 42);
   }
 
   .rays {
     position: absolute;
-    top: calc(var(--u) * -7);
-    left: calc(var(--u) * 636);
+    bottom: calc(var(--u) * -6);
+    left: calc(var(--u) * -40);
     width: calc(var(--u) * 44);
     height: calc(var(--u) * 52);
     stroke-width: 3;
-  }
-
-  .raysBottom {
-    top: calc(var(--u) * 628);
-    left: calc(var(--u) * 333);
     transform: rotate(175deg);
   }
 
-  .closing {
+  .upArrow {
     position: absolute;
-    top: calc(var(--u) * 802);
-    left: calc(var(--u) * 289);
-    z-index: 2;
-    margin: 0;
-    padding: calc(var(--u) * 6) calc(var(--u) * 18);
-    /* The landscape's line breaks for the words, as in the design. */
-    background: radial-gradient(closest-side, #f0effd 72%, #f0effd00);
-    font-size: calc(var(--u) * 25);
-    transform: rotate(4deg);
+    top: calc(100% + var(--u) * 6);
+    left: calc(var(--u) * 92);
+    width: calc(var(--u) * 47);
+    height: calc(var(--u) * 56);
   }
 
   .different {
     position: absolute;
-    top: calc(var(--u) * 738);
-    left: calc(var(--u) * 1270);
-    z-index: 3;
+    top: calc(100% + var(--u) * 22);
+    left: calc(var(--u) * 140);
     width: calc(var(--u) * 220);
     margin: 0;
     font-size: calc(var(--u) * 25);
     transform: rotate(-6deg);
   }
 
-  .upArrow {
-    position: absolute;
-    top: calc(var(--u) * 721);
-    left: calc(var(--u) * 1220);
-    z-index: 3;
-    width: calc(var(--u) * 47);
-    height: calc(var(--u) * 56);
+  .closing {
+    position: relative;
+    z-index: 2;
+    margin: calc(var(--u) * 120) 0 0;
+    padding: calc(var(--u) * 6) calc(var(--u) * 18);
+    /* A soft halo of the page's colour keeps the note clear of the ground. */
+    background: radial-gradient(closest-side, #f0effd 70%, #f0effd00);
+    font-size: calc(var(--u) * 25);
+    transform: rotate(3deg);
   }
 
-  .landscape {
+  /* The ground's top half is open sky, so it tucks under the canvas. */
+  .ground {
+    height: calc(var(--u) * 300);
+    margin-top: calc(var(--u) * -168);
+  }
+}
+
+/* 1. Text left, cards right: the copy keeps its own column, the cards and
+   their notes the rest, so they never meet. */
+@media (min-width: 1280px) {
+  .layout1 .canvas {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'intro cards'
+      'closing closing';
+    column-gap: calc(var(--u) * 56);
+  }
+
+  .layout1 .intro {
+    grid-area: intro;
+    max-width: calc(var(--u) * 620);
+    padding-top: calc(var(--u) * 96);
+  }
+
+  .layout1 .intro h1 {
+    font-size: calc(var(--u) * 88);
+  }
+
+  .layout1 .comparison {
+    grid-area: cards;
+    margin-right: calc(var(--u) * 12);
+  }
+
+  .layout1 .rain {
+    left: calc(var(--u) * -90);
+  }
+
+  .layout1 .closing {
+    grid-area: closing;
+    justify-self: start;
+    margin-left: calc(var(--u) * 260);
+  }
+}
+
+/* 2. Text centred above, the two cards side by side under it. */
+@media (min-width: 1280px) {
+  .layout2 .canvas {
+    grid-template-areas:
+      'intro'
+      'cards'
+      'closing';
+    justify-items: center;
+  }
+
+  .layout2 .intro {
+    grid-area: intro;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: calc(var(--u) * 1100);
+    padding-top: calc(var(--u) * 40);
+    text-align: center;
+  }
+
+  .layout2 .turn {
+    display: inline;
+  }
+
+  .layout2 .description {
+    max-width: calc(var(--u) * 700);
+    text-wrap: balance;
+  }
+
+  .layout2 .comparison {
+    grid-area: cards;
+    margin-top: calc(var(--u) * 10);
+  }
+
+  .layout2 .rain {
+    left: calc(var(--u) * -260);
+  }
+
+  .layout2 .closing {
+    grid-area: closing;
+  }
+}
+
+/* Centred copy: the button stays on the centre line and its handwritten
+   note hangs beside it. */
+@media (min-width: 1280px) {
+  .layout2 .actionRow,
+  .layout3 .actionRow {
+    justify-content: center;
+  }
+
+  .layout2 .startArrow,
+  .layout3 .startArrow {
     position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    height: calc(var(--u) * 210);
+    top: 50%;
+    left: 100%;
+    margin: 0;
+    transform: translate(calc(var(--u) * 16), -60%);
+  }
+
+  .layout2 .start,
+  .layout3 .start {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + var(--u) * 82);
+    margin: 0;
+    text-align: left;
+    transform: translateY(-70%) rotate(-6deg);
+  }
+}
+
+/* 3. The cards flank a centred text column: the rented stack under the
+   rain on the left, the seeds in the sun on the right. */
+@media (min-width: 1280px) {
+  .layout3 .canvas {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      'rainy intro sunny'
+      'rainy arrow sunny'
+      'closing closing closing';
+    grid-template-rows: auto 1fr auto;
+    column-gap: calc(var(--u) * 46);
+  }
+
+  .layout3 .comparison {
+    display: contents;
+  }
+
+  .layout3 .wash {
+    display: none;
+  }
+
+  .layout3 .rainy {
+    grid-area: rainy;
+    align-self: start;
+    margin-top: calc(var(--u) * 196);
+  }
+
+  .layout3 .sunny {
+    grid-area: sunny;
+    align-self: start;
+    margin: calc(var(--u) * 150) calc(var(--u) * 12) 0 0;
+  }
+
+  .layout3 .intro {
+    grid-area: intro;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: calc(var(--u) * 92);
+    text-align: center;
+  }
+
+  .layout3 .description {
+    max-width: calc(var(--u) * 540);
+    text-wrap: balance;
+  }
+
+  .layout3 .actionRow {
+    margin-right: calc(var(--u) * 40);
+  }
+
+  .layout3 .switchArrow {
+    grid-area: arrow;
+    align-self: start;
+    justify-self: center;
+    width: calc(var(--u) * 90);
+    height: calc(var(--u) * 66);
+    margin-top: calc(var(--u) * 50);
+  }
+
+  .layout3 .rain {
+    top: calc(var(--u) * -150);
+    left: calc(var(--u) * -60);
+    width: calc(var(--u) * 430);
+  }
+
+  .layout3 .sun {
+    left: calc(var(--u) * -70);
+  }
+
+  .layout3 .closing {
+    grid-area: closing;
+    justify-self: center;
+  }
+}
+
+/* Layouts 1 and 3 keep the seeds' card at the column's right edge, with no
+   room beside it: the count note hangs under the card's left edge, before
+   "Different tools". */
+@media (min-width: 1280px) {
+  .layout1 .six,
+  .layout3 .six {
+    top: calc(100% + var(--u) * 34);
+    left: calc(var(--u) * -30);
+    width: calc(var(--u) * 140);
+    transform: rotate(-5deg);
+  }
+
+  .layout1 .sixArrow,
+  .layout1 .rays,
+  .layout3 .sixArrow,
+  .layout3 .rays {
+    display: none;
+  }
+
+  .layout1 .upArrow,
+  .layout3 .upArrow {
+    left: calc(var(--u) * 122);
+  }
+
+  .layout1 .different,
+  .layout3 .different {
+    left: calc(var(--u) * 160);
+    width: calc(var(--u) * 200);
+  }
+}
+
+/* 4. A split heading row, the headline left and the subhead and button
+   right, with the two cards spread wide below it. */
+@media (min-width: 1280px) {
+  .layout4 .canvas {
+    grid-template-areas:
+      'intro'
+      'cards'
+      'closing';
+  }
+
+  .layout4 .intro {
+    grid-area: intro;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+    grid-template-areas:
+      'h1 description'
+      'h1 actions'
+      'h1 benefits';
+    column-gap: calc(var(--u) * 70);
+    align-items: start;
+    padding-top: calc(var(--u) * 48);
+  }
+
+  .layout4 .turn {
+    display: inline;
+  }
+
+  .layout4 .intro h1 {
+    grid-area: h1;
+    margin: 0;
+    font-size: calc(var(--u) * 100);
+  }
+
+  .layout4 .description {
+    grid-area: description;
+    padding-top: calc(var(--u) * 12);
+  }
+
+  .layout4 .actionRow {
+    grid-area: actions;
+    margin-top: calc(var(--u) * 32);
+  }
+
+  .layout4 .benefits {
+    grid-area: benefits;
+    margin-top: calc(var(--u) * 36);
+  }
+
+  .layout4 .comparison {
+    grid-area: cards;
+    justify-self: center;
+    margin-top: calc(var(--u) * 20);
+  }
+
+  .layout4 .switchArrow {
+    width: calc(var(--u) * 110);
+    height: calc(var(--u) * 81);
+    margin: 0 calc(var(--u) * 80);
+  }
+
+  .layout4 .wash {
+    display: none;
+  }
+
+  .layout4 .rain {
+    left: calc(var(--u) * -250);
+  }
+
+  .layout4 .closing {
+    grid-area: closing;
+    justify-self: center;
   }
 }
 
@@ -720,18 +1043,38 @@
     height: 31px;
   }
 
+  /* The weather gets a band of its own above the lists: the rain over the
+     stack you rent, the sun over the seeds you own. */
   .comparison {
     display: grid;
     grid-template-areas:
       'from arrow .'
       'old arrow new'
-      '. arrow six';
+      '. arrow six'
+      'different different different';
     grid-template-columns: minmax(0, 1fr) 64px minmax(0, 1fr);
-    margin-top: 44px;
+    margin-top: 40px;
+    padding-top: 136px;
+  }
+
+  .side {
+    display: contents;
+  }
+
+  .rain {
+    top: -10px;
+    left: -22px;
+    width: min(330px, 52%);
+  }
+
+  .sun {
+    top: -20px;
+    right: -60px;
+    width: min(300px, 50%);
   }
 
   .wash {
-    inset: 56px -14px 28px;
+    inset: 192px -14px 70px;
     border-radius: 32px;
     transform: rotate(1deg);
   }
@@ -841,24 +1184,24 @@
     transform: rotate(-3deg);
   }
 
-  .closing {
-    margin: 40px 20px 0;
-    font-size: 25px;
-    text-align: center;
-    transform: rotate(-1.5deg);
-  }
-
   .different {
-    margin: 6px 20px 0;
+    grid-area: different;
+    margin: 36px 20px 0;
     font-size: 23px;
     text-align: center;
     transform: rotate(1.5deg);
   }
 
-  .landscape {
-    position: relative;
-    height: 150px;
-    margin-top: -24px;
+  .closing {
+    margin: 8px 20px 0;
+    font-size: 25px;
+    text-align: center;
+    transform: rotate(-1.5deg);
+  }
+
+  .ground {
+    height: 180px;
+    margin-top: -64px;
   }
 }
 
@@ -915,14 +1258,28 @@
     grid-template-areas:
       'from from'
       'old new'
-      'six six';
+      'six six'
+      'different different';
     grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
     column-gap: 10px;
-    margin-top: 40px;
+    margin-top: 32px;
+    padding-top: 92px;
+  }
+
+  .rain {
+    top: -12px;
+    left: -18px;
+    width: 230px;
+  }
+
+  .sun {
+    top: -14px;
+    right: -26px;
+    width: 220px;
   }
 
   .wash {
-    inset: 50px -10px 30px;
+    inset: 142px -10px 110px;
   }
 
   .switchArrow {
@@ -964,12 +1321,9 @@
     font-size: 24px;
   }
 
-  .landscape {
-    height: 150px;
-  }
-
-  .landscape img {
-    object-position: 0 100%;
+  .ground {
+    height: 140px;
+    margin-top: -48px;
   }
 }
 

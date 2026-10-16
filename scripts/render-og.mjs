@@ -2,8 +2,8 @@
 /**
  * Renders public/og-image.png (1200x630) from the real hero of a running
  * server: the page's first screen at the card's proportions (the header's
- * logo, the hero's headline, button, lists, notes and landscape), with
- * motion reduced, after its fonts and the landscape have loaded.
+ * logo, the hero's headline, button, lists, notes and weather), with
+ * motion reduced, after its fonts and the hero's images have loaded.
  *
  *   npm run dev -- -p 3328            (or npm run preview -- --port 3328)
  *   node scripts/render-og.mjs [--base http://localhost:3328]
@@ -47,8 +47,8 @@ const sharp = require('sharp');
 const browser = await chromium
   .launch({ channel: 'chrome' })
   .catch(() => chromium.launch());
-// 1440 wide, at the card's 1200:630 proportions: the hero fits its canvas
-// to the room under the header, so the whole hero is in the frame.
+// 1440 wide, at the card's 1200:630 proportions: the headline, the button
+// and the top of both cards under their weather.
 const context = await browser.newContext({
   viewport: { width: 1440, height: 756 },
   deviceScaleFactor: 2,
@@ -60,13 +60,19 @@ await page.waitForSelector('[data-hero] h1');
 await page.evaluate(async () => {
   document.querySelector('nextjs-portal')?.remove();
   await document.fonts.ready;
-  const landscape = document.querySelector('[data-hero] picture img');
-  if (landscape && !landscape.complete) {
-    await new Promise(done => {
-      landscape.onload = done;
-      landscape.onerror = done;
-    });
-  }
+  // The hero's art loads lazily: load it now and wait for every image.
+  const images = [...document.querySelectorAll('[data-hero] img')];
+  for (const image of images) image.loading = 'eager';
+  await Promise.all(
+    images.map(image =>
+      image.complete
+        ? null
+        : new Promise(done => {
+            image.onload = done;
+            image.onerror = done;
+          })
+    )
+  );
 });
 
 const png = await page.screenshot({ type: 'png' });

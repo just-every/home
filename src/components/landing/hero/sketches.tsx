@@ -1,6 +1,6 @@
 /**
  * The hand-drawn strokes of design G, as drawn in the 12ui conversion:
- * the arrows that tie the notes to the lists, the rays around the list you
+ * the arrows that tie the notes to the lists, the rays beside the list you
  * own, and the trust row's three line icons. All are decoration.
  */
 
@@ -42,15 +42,9 @@ export const UpArrow = ({ className }: Props) => (
   </svg>
 );
 
-export const Rays = ({ className, short }: Props & { short?: boolean }) => (
+export const Rays = ({ className }: Props) => (
   <svg className={className} viewBox="0 0 44 52" aria-hidden="true">
-    <path
-      d={
-        short
-          ? 'm4 24 4-20m6 26L26 7M18 38l21-14'
-          : 'm4 24 4-20m6 26L26 7M18 38l21-14M20 47l20-7'
-      }
-    />
+    <path d="m4 24 4-20m6 26L26 7M18 38l21-14" />
   </svg>
 );
 

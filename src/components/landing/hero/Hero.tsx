@@ -9,6 +9,8 @@ import { X_EVENTS, track } from '@/lib/x-pixel';
 
 import { countWord } from './count';
 import { caveat } from './fonts';
+import { DEFAULT_HERO_LAYOUT } from './layouts';
+import type { HeroLayout } from './layouts';
 import styles from './hero.module.css';
 import { rows } from './order';
 import {
@@ -38,10 +40,12 @@ const reducedMotion = () =>
 
 /**
  * The hero, "a sketched journey" (12ui design G): the headline, the button
- * and the trust row on the left; on the right the stack a team rents
- * today (each seed's `primaryReplace`), a sketched arrow, and the open
- * source it can own instead (the seeds, with their marks and pastels),
- * with handwritten notes and a watercolour landscape along the foot.
+ * and the trust row; the stack a team rents today (each seed's
+ * `primaryReplace`) under a rain cloud, a sketched arrow, and the open
+ * source it can own instead (the seeds, with their marks and pastels) in
+ * the sun, with handwritten notes and a painted ground along the foot that
+ * runs from rain-cooled to sunlit. `layout` picks how the copy sits around
+ * the two cards (layouts.ts).
  *
  * The rented stack is the picker: picking a tool highlights it and the
  * seed that replaces it, the button turns into "Switch to <Seed> →" for
@@ -51,7 +55,11 @@ const reducedMotion = () =>
  * is the hero's call to action, reported as a hero-switch content view
  * with the seed's slug.
  */
-export function Hero() {
+export function Hero({
+  layout = DEFAULT_HERO_LAYOUT,
+}: {
+  layout?: HeroLayout;
+}) {
   const [picked, setPicked] = useState<string | null>(null);
   const pickers = useRef<(HTMLButtonElement | null)[]>([]);
   const stackRef = useRef<HTMLElement | null>(null);
@@ -121,7 +129,7 @@ export function Hero() {
 
   return (
     <section
-      className={styles.top}
+      className={`${styles.top} ${styles[`layout${layout}`]}`}
       aria-labelledby="hero-heading"
       data-hero
       data-picked={picked ?? undefined}
@@ -186,131 +194,154 @@ export function Hero() {
 
         <div className={styles.comparison}>
           <div className={styles.wash} aria-hidden="true" />
-          <p className={`${caveat.className} ${styles.hand} ${styles.from}`}>
-            From tools you rent…
-          </p>
-          <FromArrow className={`${styles.lineArt} ${styles.fromArrow}`} />
 
-          <section
-            className={`${styles.panel} ${styles.old}`}
-            id={STACK_ID}
-            ref={stackRef}
-            aria-labelledby="hero-stack-heading"
-            onAnimationEnd={event =>
-              event.currentTarget.classList.remove(styles.nudge)
-            }
-          >
-            <h2 id="hero-stack-heading">Your current stack</h2>
-            <ul>
-              {rows.map((volume, i) => (
-                <li
-                  key={volume.slug}
-                  style={{ '--pastel': volume.colour } as CSSProperties}
-                >
-                  <button
-                    type="button"
-                    ref={el => {
-                      pickers.current[i] = el;
-                    }}
-                    aria-pressed={picked === volume.slug}
-                    aria-describedby="hero-pick-hint"
-                    onClick={() => pick(volume.slug)}
-                    onKeyDown={event => onPickerKey(event, i)}
-                  >
-                    <span>{volume.seed.primaryReplace}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-            <p id="hero-pick-hint" className={styles.srOnly}>
-              Pick the tool you rent to see what replaces it.
+          <div className={`${styles.side} ${styles.rainy}`}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className={`${styles.weather} ${styles.rain}`}
+              src="/landing/hero/rain.svg"
+              alt=""
+              aria-hidden="true"
+              width={1120}
+              height={464}
+              loading="lazy"
+              decoding="async"
+            />
+            <p className={`${caveat.className} ${styles.hand} ${styles.from}`}>
+              From tools you rent…
             </p>
-          </section>
+            <FromArrow className={`${styles.lineArt} ${styles.fromArrow}`} />
+
+            <section
+              className={`${styles.panel} ${styles.old}`}
+              id={STACK_ID}
+              ref={stackRef}
+              aria-labelledby="hero-stack-heading"
+              onAnimationEnd={event =>
+                event.currentTarget.classList.remove(styles.nudge)
+              }
+            >
+              <h2 id="hero-stack-heading">Your current stack</h2>
+              <ul>
+                {rows.map((volume, i) => (
+                  <li
+                    key={volume.slug}
+                    style={{ '--pastel': volume.colour } as CSSProperties}
+                  >
+                    <button
+                      type="button"
+                      ref={el => {
+                        pickers.current[i] = el;
+                      }}
+                      aria-pressed={picked === volume.slug}
+                      aria-describedby="hero-pick-hint"
+                      onClick={() => pick(volume.slug)}
+                      onKeyDown={event => onPickerKey(event, i)}
+                    >
+                      <span>{volume.seed.primaryReplace}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+              <p id="hero-pick-hint" className={styles.srOnly}>
+                Pick the tool you rent to see what replaces it.
+              </p>
+            </section>
+          </div>
 
           <SwitchArrow className={styles.switchArrow} />
 
-          <section
-            className={`${styles.panel} ${styles.new}`}
-            aria-labelledby="hero-own-heading"
-          >
-            <h2 id="hero-own-heading">To open source you own.</h2>
-            <ul>
-              {rows.map(volume => {
-                const on = picked === volume.slug;
-                return (
-                  <li
-                    key={volume.slug}
-                    style={
-                      {
-                        '--pastel': volume.colour,
-                        '--seed-ink': volume.ink,
-                      } as CSSProperties
-                    }
-                  >
-                    <a
-                      href={`#${cardId(volume.slug)}`}
-                      aria-current={on ? 'true' : undefined}
-                      data-on={on || undefined}
-                      onClick={() => reportSwitch(volume.slug)}
-                    >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={volume.mark}
-                        alt=""
-                        aria-hidden="true"
-                        width={20}
-                        height={20}
-                      />
-                      <span className={styles.name}>{volume.name}</span>
-                      <span className={styles.go} aria-hidden="true">
-                        {on ? (
-                          <span className={styles.goWord}>Switch </span>
-                        ) : null}
-                        →
-                      </span>
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </section>
+          <div className={`${styles.side} ${styles.sunny}`}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className={`${styles.weather} ${styles.sun}`}
+              src="/landing/hero/sun.svg"
+              alt=""
+              aria-hidden="true"
+              width={960}
+              height={720}
+              loading="lazy"
+              decoding="async"
+            />
 
-          <p className={`${caveat.className} ${styles.hand} ${styles.six}`}>
-            Plus {coming} more coming soon.
-          </p>
-          <SixArrow className={`${styles.lineArt} ${styles.sixArrow}`} />
-          <Rays className={`${styles.lineArt} ${styles.rays}`} />
-          <Rays
-            className={`${styles.lineArt} ${styles.rays} ${styles.raysBottom}`}
-            short
-          />
+            <section
+              className={`${styles.panel} ${styles.new}`}
+              aria-labelledby="hero-own-heading"
+            >
+              <h2 id="hero-own-heading">To open source you own.</h2>
+              <ul>
+                {rows.map(volume => {
+                  const on = picked === volume.slug;
+                  return (
+                    <li
+                      key={volume.slug}
+                      style={
+                        {
+                          '--pastel': volume.colour,
+                          '--seed-ink': volume.ink,
+                        } as CSSProperties
+                      }
+                    >
+                      <a
+                        href={`#${cardId(volume.slug)}`}
+                        aria-current={on ? 'true' : undefined}
+                        data-on={on || undefined}
+                        onClick={() => reportSwitch(volume.slug)}
+                      >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={volume.mark}
+                          alt=""
+                          aria-hidden="true"
+                          width={20}
+                          height={20}
+                        />
+                        <span className={styles.name}>{volume.name}</span>
+                        <span className={styles.go} aria-hidden="true">
+                          {on ? (
+                            <span className={styles.goWord}>Switch </span>
+                          ) : null}
+                          →
+                        </span>
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+
+            <p className={`${caveat.className} ${styles.hand} ${styles.six}`}>
+              Plus {coming} more coming soon.
+            </p>
+            <SixArrow className={`${styles.lineArt} ${styles.sixArrow}`} />
+            <Rays className={`${styles.lineArt} ${styles.rays}`} />
+            <UpArrow className={`${styles.lineArt} ${styles.upArrow}`} />
+            <p
+              className={`${caveat.className} ${styles.hand} ${styles.different}`}
+            >
+              Different tools.
+              <br />
+              Nothing to renew.
+            </p>
+          </div>
         </div>
 
         <p className={`${caveat.className} ${styles.hand} ${styles.closing}`}>
           Own your tools. Change any line.
         </p>
-        <UpArrow className={`${styles.lineArt} ${styles.upArrow}`} />
-        <p className={`${caveat.className} ${styles.hand} ${styles.different}`}>
-          Different tools.
-          <br />
-          Nothing to renew.
-        </p>
       </div>
 
-      <picture className={styles.landscape}>
-        <source
-          media="(max-width: 1023px)"
-          srcSet="/landing/hero/landscape-1536.webp"
-        />
-        <img
-          src="/landing/hero/landscape-3072.webp"
-          alt=""
-          aria-hidden="true"
-          width={3072}
-          height={420}
-          decoding="async"
-        />
-      </picture>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        className={styles.ground}
+        src="/landing/hero/ground.svg"
+        alt=""
+        aria-hidden="true"
+        width={7680}
+        height={600}
+        loading="lazy"
+        decoding="async"
+      />
 
       <p className={styles.srOnly} aria-live="polite">
         {pickedVolume
