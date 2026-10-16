@@ -1,7 +1,7 @@
 /**
  * The hand-drawn strokes of design G, as drawn in the 12ui conversion:
- * the arrows that tie the notes to the lists, the rays around the list you
- * own, and the trust row's three line icons. All are decoration.
+ * the arrows that tie the notes to the lists and the trust row's three line
+ * icons. All are decoration.
  */
 
 type Props = { className?: string };
@@ -30,6 +30,12 @@ export const SwitchArrow = ({ className }: Props) => (
   </svg>
 );
 
+export const LongSwitchArrow = ({ className }: Props) => (
+  <svg className={className} viewBox="0 0 600 64" aria-hidden="true">
+    <path d="M6 15C80 36 170 54 300 53s210-12 288-31m-17-5 17 5-13 12" />
+  </svg>
+);
+
 export const SixArrow = ({ className }: Props) => (
   <svg className={className} viewBox="0 0 53 42" aria-hidden="true">
     <path d="M47 3Q39 30 5 29m8-5-9 5 8 5" />
@@ -39,18 +45,6 @@ export const SixArrow = ({ className }: Props) => (
 export const UpArrow = ({ className }: Props) => (
   <svg className={className} viewBox="0 0 47 56" aria-hidden="true">
     <path d="M38 50Q6 44 8 5m-5 8 5-9 5 9" />
-  </svg>
-);
-
-export const Rays = ({ className, short }: Props & { short?: boolean }) => (
-  <svg className={className} viewBox="0 0 44 52" aria-hidden="true">
-    <path
-      d={
-        short
-          ? 'm4 24 4-20m6 26L26 7M18 38l21-14'
-          : 'm4 24 4-20m6 26L26 7M18 38l21-14M20 47l20-7'
-      }
-    />
   </svg>
 );
 
