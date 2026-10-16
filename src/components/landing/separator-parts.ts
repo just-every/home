@@ -1,0 +1,472 @@
+/**
+ * The moving parts laid over each painted SVG. Each part is a small SVG cut
+ * from the art (and removed from it, lower layers included, so it never
+ * shows twice) or, for the creek's glints, a white copy laid over a ripple.
+ * `box` is the part's left, top, width and height as percentages of its art;
+ * `origin` is its transform-origin; `amp` is degrees for sway and pixels for
+ * bob, drift and shimmer; `dur` is seconds per cycle and `delay` its offset.
+ */
+export type Motion =
+  | 'sway'
+  | 'bob'
+  | 'drift'
+  | 'shimmer'
+  | 'hop'
+  | 'flutter'
+  | 'perch'
+  | 'wag';
+
+export interface ArtPart {
+  src: string;
+  box: readonly [number, number, number, number];
+  motion: Motion;
+  origin: string;
+  amp?: number;
+  dur: number;
+  delay: number;
+}
+
+export const creekParts: readonly ArtPart[] = [
+  {
+    src: '/landing/separators/parts/creek-lilies.svg',
+    box: [34.036, 59.545, 4.505, 27.273],
+    motion: 'drift',
+    origin: '50% 50%',
+    amp: 5,
+    dur: 6.5,
+    delay: -2.0,
+  },
+  {
+    src: '/landing/separators/parts/creek-cattails-b.svg',
+    box: [53.828, 0.909, 5.104, 60.455],
+    motion: 'sway',
+    origin: '50.0% 97.7%',
+    amp: 4,
+    dur: 5.2,
+    delay: -2.6,
+  },
+  {
+    src: '/landing/separators/parts/creek-cattails-a.svg',
+    box: [40.911, 12.727, 2.969, 62.273],
+    motion: 'sway',
+    origin: '50.0% 97.8%',
+    amp: 5,
+    dur: 4.8,
+    delay: -0.4,
+  },
+  {
+    src: '/landing/separators/parts/creek-reeds-a.svg',
+    box: [27.057, 35.0, 2.917, 31.818],
+    motion: 'sway',
+    origin: '50.0% 95.7%',
+    amp: 6,
+    dur: 4.4,
+    delay: -1.2,
+  },
+  {
+    src: '/landing/separators/parts/creek-reeds-b.svg',
+    box: [65.651, 54.545, 1.25, 31.364],
+    motion: 'sway',
+    origin: '50.0% 95.7%',
+    amp: 7,
+    dur: 3.9,
+    delay: -0.9,
+  },
+  {
+    src: '/landing/separators/parts/creek-cattails-c.svg',
+    box: [70.677, 11.364, 3.073, 52.727],
+    motion: 'sway',
+    origin: '50.0% 97.4%',
+    amp: 5,
+    dur: 4.6,
+    delay: -3.3,
+  },
+  {
+    src: '/landing/separators/parts/creek-glint-a.svg',
+    box: [44.115, 78.182, 1.25, 13.182],
+    motion: 'shimmer',
+    origin: '50% 50%',
+    amp: 10,
+    dur: 3.4,
+    delay: -0.8,
+  },
+  {
+    src: '/landing/separators/parts/creek-glint-c.svg',
+    box: [52.63, 72.273, 1.615, 12.727],
+    motion: 'shimmer',
+    origin: '50% 50%',
+    amp: 10,
+    dur: 3.7,
+    delay: -1.4,
+  },
+  {
+    src: '/landing/separators/parts/creek-glint-e.svg',
+    box: [62.422, 33.182, 7.187, 22.727],
+    motion: 'shimmer',
+    origin: '50% 50%',
+    amp: 14,
+    dur: 3.9,
+    delay: -0.3,
+  },
+  {
+    src: '/landing/separators/parts/creek-glint-d.svg',
+    box: [56.693, 62.727, 4.792, 17.273],
+    motion: 'shimmer',
+    origin: '50% 50%',
+    amp: 14,
+    dur: 4.4,
+    delay: -3.0,
+  },
+  {
+    src: '/landing/separators/parts/creek-glint-f.svg',
+    box: [70.234, 68.636, 3.229, 9.091],
+    motion: 'shimmer',
+    origin: '50% 50%',
+    amp: 10,
+    dur: 3.2,
+    delay: -1.9,
+  },
+  {
+    src: '/landing/separators/parts/creek-glint-b.svg',
+    box: [47.057, 68.636, 1.432, 9.091],
+    motion: 'shimmer',
+    origin: '50% 50%',
+    amp: 12,
+    dur: 4.1,
+    delay: -2.1,
+  },
+];
+
+export const gardenParts: readonly ArtPart[] = [
+  {
+    src: '/landing/separators/parts/garden-peach-a.svg',
+    box: [37.292, 28.858, 2.063, 53.768],
+    motion: 'sway',
+    origin: '50.0% 98.5%',
+    amp: 5,
+    dur: 4.4,
+    delay: -1.0,
+  },
+  {
+    src: '/landing/separators/parts/garden-peach-b.svg',
+    box: [39.383, 18.926, 3.663, 63.895],
+    motion: 'sway',
+    origin: '50.0% 98.8%',
+    amp: 4,
+    dur: 4.1,
+    delay: -0.3,
+  },
+  {
+    src: '/landing/separators/parts/garden-pink-b.svg',
+    box: [47.749, 30.979, 2.458, 52.405],
+    motion: 'sway',
+    origin: '50.0% 98.5%',
+    amp: 4,
+    dur: 5.2,
+    delay: -1.6,
+  },
+  {
+    src: '/landing/separators/parts/garden-pink-c.svg',
+    box: [50.226, 27.279, 1.707, 54.742],
+    motion: 'sway',
+    origin: '50.0% 98.6%',
+    amp: 6,
+    dur: 3.9,
+    delay: -2.2,
+  },
+  {
+    src: '/landing/separators/parts/garden-pink-a.svg',
+    box: [46.42, 46.753, 1.148, 35.463],
+    motion: 'sway',
+    origin: '50.0% 97.8%',
+    amp: 5,
+    dur: 4.6,
+    delay: -3.4,
+  },
+  {
+    src: '/landing/separators/parts/garden-herb-a.svg',
+    box: [56.308, 22.084, 2.005, 61.947],
+    motion: 'sway',
+    origin: '50.0% 98.7%',
+    amp: 4,
+    dur: 4.8,
+    delay: -0.9,
+  },
+  {
+    src: '/landing/separators/parts/garden-herb-b.svg',
+    box: [58.427, 31.042, 1.707, 52.795],
+    motion: 'sway',
+    origin: '50.0% 98.5%',
+    amp: 5,
+    dur: 4.2,
+    delay: -3.0,
+  },
+  {
+    src: '/landing/separators/parts/garden-sprout-b.svg',
+    box: [67.419, 54.189, 1.148, 25.337],
+    motion: 'sway',
+    origin: '50.0% 96.9%',
+    amp: 7,
+    dur: 3.3,
+    delay: -2.5,
+  },
+  {
+    src: '/landing/separators/parts/garden-sprout-a.svg',
+    box: [64.789, 58.084, 1.128, 25.337],
+    motion: 'sway',
+    origin: '50.0% 96.9%',
+    amp: 7,
+    dur: 3.6,
+    delay: -1.3,
+  },
+];
+
+export const hedgerowParts: readonly ArtPart[] = [
+  {
+    src: '/landing/separators/parts/hedgerow-spike-a.svg',
+    box: [36.615, 38.83, 0.964, 51.596],
+    motion: 'sway',
+    origin: '50.0% 96.9%',
+    amp: 6,
+    dur: 4.2,
+    delay: -1.1,
+  },
+  {
+    src: '/landing/separators/parts/hedgerow-spike-c.svg',
+    box: [55.99, 17.021, 0.938, 43.085],
+    motion: 'sway',
+    origin: '50.0% 96.3%',
+    amp: 6,
+    dur: 4.6,
+    delay: -0.2,
+  },
+  {
+    src: '/landing/separators/parts/hedgerow-spike-e.svg',
+    box: [62.135, 51.064, 1.042, 49.468],
+    motion: 'sway',
+    origin: '50.0% 96.8%',
+    amp: 7,
+    dur: 3.6,
+    delay: -0.8,
+  },
+  {
+    src: '/landing/separators/parts/hedgerow-spike-b.svg',
+    box: [39.427, 28.723, 0.885, 53.191],
+    motion: 'sway',
+    origin: '50.0% 97.0%',
+    amp: 6,
+    dur: 3.8,
+    delay: -2.4,
+  },
+  {
+    src: '/landing/separators/parts/hedgerow-flowers-a.svg',
+    box: [38.333, 57.979, 1.198, 23.936],
+    motion: 'bob',
+    origin: '50% 100%',
+    amp: 5,
+    dur: 3.2,
+    delay: -0.6,
+  },
+  {
+    src: '/landing/separators/parts/hedgerow-flower-b.svg',
+    box: [44.844, 57.979, 1.328, 22.872],
+    motion: 'bob',
+    origin: '50% 100%',
+    amp: 4,
+    dur: 2.9,
+    delay: -1.7,
+  },
+  {
+    src: '/landing/separators/parts/hedgerow-flower-c.svg',
+    box: [58.281, 55.851, 1.068, 22.34],
+    motion: 'bob',
+    origin: '50% 100%',
+    amp: 4,
+    dur: 3.5,
+    delay: -1.2,
+  },
+  {
+    src: '/landing/separators/parts/hedgerow-spike-d.svg',
+    box: [57.604, 37.766, 0.911, 44.149],
+    motion: 'sway',
+    origin: '50.0% 96.4%',
+    amp: 6,
+    dur: 4.0,
+    delay: -2.9,
+  },
+  {
+    src: '/landing/separators/parts/hedgerow-bird-a.svg',
+    box: [48.516, 22.872, 1.458, 27.128],
+    motion: 'hop',
+    origin: '50% 100%',
+    dur: 7.5,
+    delay: -0.5,
+  },
+  {
+    src: '/landing/separators/parts/hedgerow-flower-d.svg',
+    box: [60.391, 48.404, 1.328, 20.213],
+    motion: 'bob',
+    origin: '50% 100%',
+    amp: 5,
+    dur: 3.0,
+    delay: -2.0,
+  },
+  {
+    src: '/landing/separators/parts/hedgerow-bird-b.svg',
+    box: [50.469, 23.404, 2.344, 27.66],
+    motion: 'hop',
+    origin: '50% 100%',
+    dur: 9.5,
+    delay: -4.6,
+  },
+  {
+    src: '/landing/separators/parts/hedgerow-flower-e.svg',
+    box: [66.198, 75.0, 1.094, 21.277],
+    motion: 'bob',
+    origin: '50% 100%',
+    amp: 4,
+    dur: 3.4,
+    delay: -2.2,
+  },
+  {
+    src: '/landing/separators/parts/hedgerow-flier.svg',
+    box: [77.734, 3.723, 1.042, 24.468],
+    motion: 'flutter',
+    origin: '50% 50%',
+    dur: 5.5,
+    delay: -1.0,
+  },
+];
+
+export const meadowParts: readonly ArtPart[] = [
+  {
+    src: '/landing/separators/parts/meadow-flower-a.svg',
+    box: [33.776, 24.0, 1.589, 35.75],
+    motion: 'sway',
+    origin: '50.0% 97.9%',
+    amp: 7,
+    dur: 4.5,
+    delay: -1.4,
+  },
+  {
+    src: '/landing/separators/parts/meadow-fern-a.svg',
+    box: [38.503, 31.5, 1.224, 21.5],
+    motion: 'sway',
+    origin: '50.0% 96.5%',
+    amp: 8,
+    dur: 4.0,
+    delay: -0.5,
+  },
+  {
+    src: '/landing/separators/parts/meadow-flower-b.svg',
+    box: [60.273, 25.75, 1.393, 28.5],
+    motion: 'sway',
+    origin: '50.0% 97.4%',
+    amp: 7,
+    dur: 4.8,
+    delay: -0.8,
+  },
+  {
+    src: '/landing/separators/parts/meadow-tuft-b.svg',
+    box: [54.271, 51.25, 0.951, 41.5],
+    motion: 'sway',
+    origin: '50.0% 98.2%',
+    amp: 8,
+    dur: 4.2,
+    delay: -3.0,
+  },
+  {
+    src: '/landing/separators/parts/meadow-tuft-e.svg',
+    box: [46.94, 60.25, 0.716, 10.0],
+    motion: 'sway',
+    origin: '50.0% 92.5%',
+    amp: 8,
+    dur: 3.5,
+    delay: -0.2,
+  },
+  {
+    src: '/landing/separators/parts/meadow-tuft-a.svg',
+    box: [50.091, 67.75, 0.703, 27.0],
+    motion: 'sway',
+    origin: '50.0% 97.2%',
+    amp: 8,
+    dur: 3.7,
+    delay: -2.1,
+  },
+];
+
+export const mailboxParts: readonly ArtPart[] = [
+  {
+    src: '/landing/painted/parts/mailbox-flower-a.svg',
+    box: [19.722, 74.565, 5.833, 8.696],
+    motion: 'bob',
+    origin: '50% 100%',
+    amp: 3,
+    dur: 2.8,
+    delay: -0.4,
+  },
+  {
+    src: '/landing/painted/parts/mailbox-bird.svg',
+    box: [27.361, 1.087, 10.972, 14.565],
+    motion: 'perch',
+    origin: '45% 100%',
+    dur: 4.2,
+    delay: -0.6,
+  },
+  {
+    src: '/landing/painted/parts/mailbox-flower-c.svg',
+    box: [62.361, 78.261, 5.278, 9.565],
+    motion: 'bob',
+    origin: '50% 100%',
+    amp: 3,
+    dur: 3.4,
+    delay: -0.9,
+  },
+  {
+    src: '/landing/painted/parts/mailbox-blades-a.svg',
+    box: [26.528, 62.609, 6.667, 15.435],
+    motion: 'sway',
+    origin: '50.0% 95.8%',
+    amp: 7,
+    dur: 3.6,
+    delay: -1.2,
+  },
+  {
+    src: '/landing/painted/parts/mailbox-blades-b.svg',
+    box: [50.139, 63.913, 4.028, 9.13],
+    motion: 'sway',
+    origin: '50.0% 92.9%',
+    amp: 7,
+    dur: 4.0,
+    delay: -2.6,
+  },
+  {
+    src: '/landing/painted/parts/mailbox-blades-c.svg',
+    box: [72.361, 73.478, 5.833, 15.217],
+    motion: 'sway',
+    origin: '50.0% 95.7%',
+    amp: 7,
+    dur: 3.8,
+    delay: -0.2,
+  },
+  {
+    src: '/landing/painted/parts/mailbox-flower-b.svg',
+    box: [42.917, 70.217, 5.0, 7.391],
+    motion: 'bob',
+    origin: '50% 100%',
+    amp: 3,
+    dur: 3.1,
+    delay: -1.9,
+  },
+];
+
+export const dogParts: readonly ArtPart[] = [
+  {
+    src: '/landing/painted/parts/dog-tail.svg',
+    box: [37.5, 73.81, 14.821, 12.857],
+    motion: 'wag',
+    origin: '9.6% 79.6%',
+    dur: 3.2,
+    delay: -0.8,
+  },
+];

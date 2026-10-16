@@ -78,13 +78,10 @@
   overflow: hidden;
 }
 
-.band img {
+.art > .stage {
   position: absolute;
   bottom: 0;
   left: 50%;
-  display: block;
   height: 100%;
-  width: auto;
-  max-width: none;
   transform: translateX(-50%);
 }
