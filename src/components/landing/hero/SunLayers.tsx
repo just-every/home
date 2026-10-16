@@ -39,7 +39,7 @@ const layers = [
   },
   {
     src: 'base',
-    className: styles.base,
+    className: '',
     left: '79.062%',
     top: '58.333%',
     width: '14.792%',
@@ -70,7 +70,7 @@ export function SunLayers() {
         // eslint-disable-next-line @next/next/no-img-element
         <img
           key={layer.src}
-          className={`${styles.layer} ${layer.className}`}
+          className={`${styles.layer} ${layer.className}`.trim()}
           style={
             {
               left: layer.left,

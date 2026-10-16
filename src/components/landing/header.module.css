@@ -71,6 +71,15 @@
   }
 }
 
+/* Under 360px (and desktop zoomed to 400%) the five links at 15px with 8px
+   gaps are wider than the row: tighten both so nothing scrolls sideways. */
+@media (max-width: 359px) {
+  .nav {
+    gap: 4px;
+    font-size: 14px;
+  }
+}
+
 /* Floating over the hero, whose left end is rain-dark: the wordmark takes a
    deeper ink there. */
 .floating .brand {
