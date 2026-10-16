@@ -3,7 +3,7 @@ import type { CSSProperties } from 'react';
 import styles from './rainfall.module.css';
 import { rainItems } from './rain-items';
 import type { SpecialKind } from './rain-items';
-import { RAIN_WINDOW, rainSheets } from './rain-sheets';
+import { DROP_TILT, RAIN_WINDOW, rainSheets } from './rain-sheets';
 
 /** The cloud art's box, which every position and size below is measured in. */
 const ART_W = 1120;
@@ -107,8 +107,8 @@ function Sprites() {
  * `opacity` change, so the browser moves each layer on the compositor and
  * never repaints or re-rasterises the art. The painted drops are two sheets
  * (rain-sheets.ts); a third of what falls is a dollar sign, a receipt or a
- * coin, larger and slower, each its own layer so it can tumble as it comes
- * down (rain-items.ts).
+ * coin, larger, falling with the drops at their speed and slant, each its
+ * own layer so it can turn as it comes down (rain-items.ts).
  */
 export function Rainfall() {
   const w = RAIN_WINDOW;
@@ -148,7 +148,7 @@ export function Rainfall() {
                   <use
                     key={j}
                     href="#rf-drop"
-                    transform={`translate(${d.x.toFixed(1)} ${d.y.toFixed(1)}) scale(${sheet.scale})`}
+                    transform={`translate(${d.x.toFixed(1)} ${d.y.toFixed(1)}) scale(${sheet.scale}) rotate(${DROP_TILT})`}
                   />
                 ))}
               </svg>

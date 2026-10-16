@@ -32,10 +32,19 @@ export type Sheet = {
 /** The wrapper clips the sheets to this window (cloud-art units). */
 export const RAIN_WINDOW = { x: -30, y: 262, w: 1050, h: 378 };
 
-const SLANT = -0.3;
+/** The rain's lean: how far left it moves for each unit it falls. */
+export const RAIN_SLANT = -0.3;
+
+/**
+ * The painted drop leans further than the rain does, so each drop is turned
+ * this far (degrees) to lie along its own fall.
+ */
+export const DROP_TILT = -15.5;
+
 const COPIES = 3;
+/** The turned drop's reach right of and above where it is placed (art units, before scaling). */
 const DROP_W = 18;
-const DROP_UP = 18;
+const DROP_UP = 21;
 
 type Spec = {
   tile: number;
@@ -46,16 +55,31 @@ type Spec = {
   seed: number;
 };
 
+const NEAR: Spec = {
+  tile: 250,
+  drops: 14,
+  scale: 2,
+  t: 3,
+  opacity: 1,
+  seed: 0.71,
+};
+
 const SPECS: Spec[] = [
   { tile: 300, drops: 12, scale: 1.55, t: 4.6, opacity: 0.7, seed: 0.37 },
-  { tile: 250, drops: 14, scale: 2, t: 3, opacity: 1, seed: 0.71 },
+  NEAR,
 ];
+
+/**
+ * How fast the nearer drops fall (art units a second). What else falls
+ * with them (rain-items.ts) keeps to it, so the rain is one stream.
+ */
+export const RAIN_SPEED = NEAR.tile / NEAR.t;
 
 const frac = (n: number) => n - Math.floor(n);
 
 function sheet(spec: Spec, index: number): Sheet {
   const { tile, scale } = spec;
-  const dx = tile * SLANT;
+  const dx = tile * RAIN_SLANT;
   // The tile's x range is as wide as the window plus the slide's reach, so
   // the slide never uncovers an edge.
   const reach = Math.abs(dx) * (COPIES - 1);
