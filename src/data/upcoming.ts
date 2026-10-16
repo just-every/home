@@ -39,6 +39,19 @@ const repo = (slug: string) => `https://github.com/just-every/run-${slug}`;
 
 export const upcoming: UpcomingSeed[] = [
   {
+    slug: 'auth',
+    name: 'Auth',
+    category: 'Identity provider',
+    replaces: ['Auth0', 'Okta'],
+    primaryReplace: 'Auth0',
+    line: 'Email-link and passkey sign-in that you run yourself.',
+    repo: repo('auth'),
+    // Its #356c60 is still the Base default, so a pastel of its own (hue 270).
+    pastel: '#c6d5fe',
+    mark: lettered('auth'),
+    markPlaceholder: true,
+  },
+  {
     slug: 'balm',
     name: 'Balm',
     category: 'Clinic management',

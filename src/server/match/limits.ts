@@ -31,7 +31,6 @@ export const seedLimits: Readonly<Record<string, string>> = {
     'Paging is off: it never calls, texts or pages anyone, and it runs beside your existing pager. Escalation policies are configuration you can read, not live timers.',
   spool:
     'It handles errors only (other Sentry telemetry is counted and discarded), and it never pages anyone.',
-  auth: 'It signs people in to your own apps with email links and passkeys over OpenID Connect; it does not synchronise roles or provision people with SCIM.',
   chest:
     'It does not edit office documents or preview every file type, share anonymously, sync devices, or apply statutory retention and automatic destruction.',
   easel:
