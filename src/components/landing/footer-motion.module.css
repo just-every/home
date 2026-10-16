@@ -1,0 +1,346 @@
+/* The footer art's moving parts (FooterMotion), each a small image over the
+   static art. Transforms and opacity only, so they are composited and the art
+   is never repainted. Translations are in percent of the part's own box (see
+   each part's box in footer-motion.json, art units): a bird box is 96 units
+   wide, a petal box 56 units times its size. Nothing runs until the footer is
+   on screen (data-run), and nothing moves with reduced motion: the parts then
+   sit where the art drew them, the tail hidden behind the dog and the petals
+   and glints unseen. */
+.motion {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.motion img {
+  position: absolute;
+  display: block;
+  max-width: none;
+}
+
+.bird {
+  position: absolute;
+}
+
+.bird .wings {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* At rest the tail points up, wholly behind the dog. */
+.tail {
+  transform: rotate(-90deg);
+}
+
+.petal,
+.glint {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal,
+  .glint {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .motion:not([data-run]) *,
+  .motion:not([data-run]) {
+    animation-play-state: paused;
+  }
+
+  /* The birds fly as a flock over 18 s, about 540 units (250px at 1440 wide)
+     left to right, through the place the art drew them, and fade at each end
+     of the crossing; their wings beat twice every 2.6 s. */
+  .bird {
+    will-change: transform, opacity;
+    animation: glide 18s linear infinite;
+  }
+
+  .bird2 {
+    animation-delay: -0.5s;
+  }
+
+  .bird3 {
+    animation-delay: -1s;
+  }
+
+  .wings {
+    will-change: transform;
+    animation: flap 2.6s ease-in-out infinite;
+  }
+
+  .bird2 .wings {
+    animation-delay: -0.9s;
+  }
+
+  .bird3 .wings {
+    animation-delay: -1.7s;
+  }
+
+  /* The head tilts toward the dog every 11 s. */
+  .head {
+    will-change: transform;
+    animation: tilt 11s ease-in-out -3s infinite;
+  }
+
+  /* The ear flicks up and out every 7 s. */
+  .ear {
+    will-change: transform;
+    animation: flick 7s ease-in-out -2s infinite;
+  }
+
+  /* Every 5 s the tail swings out past the dog's hip and wags, 16 degrees
+     a beat, then lies down behind it again. */
+  .tail {
+    will-change: transform;
+    animation: wag 5s ease-in-out infinite;
+  }
+
+  .petal {
+    will-change: transform, opacity;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  .fall-a {
+    animation-name: fall-a;
+  }
+
+  .fall-b {
+    animation-name: fall-b;
+  }
+
+  .fall-c {
+    animation-name: fall-c;
+  }
+
+  .glint {
+    will-change: opacity, transform;
+    animation: glint 2.4s ease-in-out infinite;
+  }
+
+  .glint2 {
+    animation-duration: 3.1s;
+    animation-delay: -1s;
+  }
+
+  .glint3 {
+    animation-duration: 3.7s;
+    animation-delay: -2.2s;
+  }
+}
+
+@keyframes glide {
+  0% {
+    transform: translate(-280%, 20%);
+    opacity: 0;
+  }
+  7% {
+    opacity: 1;
+  }
+  25% {
+    transform: translate(-140%, -12%);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  75% {
+    transform: translate(140%, -18%);
+  }
+  93% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(280%, -6%);
+    opacity: 0;
+  }
+}
+
+/* Two beats: the wings sweep down past the body and up again. */
+@keyframes flap {
+  0%,
+  46%,
+  100% {
+    transform: scaleY(1);
+  }
+  54% {
+    transform: scaleY(-0.5);
+  }
+  62% {
+    transform: scaleY(0.9);
+  }
+  70% {
+    transform: scaleY(-0.5);
+  }
+  78% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes tilt {
+  0%,
+  22% {
+    transform: rotate(0);
+  }
+  32%,
+  50% {
+    transform: rotate(7deg);
+  }
+  57% {
+    transform: rotate(5deg);
+  }
+  66%,
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes flick {
+  0%,
+  80%,
+  100% {
+    transform: rotate(0);
+  }
+  83% {
+    transform: rotate(-20deg);
+  }
+  86% {
+    transform: rotate(-4deg);
+  }
+  89% {
+    transform: rotate(-13deg);
+  }
+  93% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes wag {
+  0% {
+    transform: rotate(-90deg);
+  }
+  9% {
+    transform: rotate(-18deg);
+  }
+  17% {
+    transform: rotate(-34deg);
+  }
+  25% {
+    transform: rotate(-18deg);
+  }
+  33% {
+    transform: rotate(-34deg);
+  }
+  41% {
+    transform: rotate(-18deg);
+  }
+  49% {
+    transform: rotate(-32deg);
+  }
+  60%,
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+/* A petal's fall: about 10 boxes down (some 540 units), swaying side to
+   side as it drifts toward the sea, turning and tumbling (scaleY) all the
+   way. Three paths, so neighbours differ. */
+@keyframes fall-a {
+  0% {
+    transform: translate(0, 0) rotate(0) scaleY(1);
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  20% {
+    transform: translate(149%, 189%) rotate(80deg) scaleY(0.5);
+  }
+  40% {
+    transform: translate(109%, 389%) rotate(170deg) scaleY(1);
+  }
+  60% {
+    transform: translate(274%, 589%) rotate(250deg) scaleY(0.5);
+  }
+  80% {
+    transform: translate(240%, 789%) rotate(330deg) scaleY(1);
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(411%, 971%) rotate(420deg) scaleY(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes fall-b {
+  0% {
+    transform: translate(0, 0) rotate(0) scaleY(1);
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  20% {
+    transform: translate(-51%, 194%) rotate(-90deg) scaleY(0.5);
+  }
+  40% {
+    transform: translate(120%, 400%) rotate(-180deg) scaleY(1);
+  }
+  60% {
+    transform: translate(80%, 594%) rotate(-260deg) scaleY(0.5);
+  }
+  80% {
+    transform: translate(251%, 789%) rotate(-350deg) scaleY(1);
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(297%, 983%) rotate(-430deg) scaleY(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes fall-c {
+  0% {
+    transform: translate(0, 0) rotate(0) scaleY(1);
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  25% {
+    transform: translate(189%, 229%) rotate(120deg) scaleY(0.5);
+  }
+  50% {
+    transform: translate(171%, 486%) rotate(230deg) scaleY(1);
+  }
+  75% {
+    transform: translate(371%, 731%) rotate(350deg) scaleY(0.5);
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(469%, 960%) rotate(440deg) scaleY(1);
+    opacity: 0;
+  }
+}
+
+@keyframes glint {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateX(-0.4%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0.4%);
+  }
+}
