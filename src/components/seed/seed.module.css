@@ -132,7 +132,6 @@
 }
 
 .list,
-.promises,
 .chips {
   margin: 0;
   padding: 0;
@@ -161,30 +160,6 @@
   border-radius: 50%;
   background: color-mix(in oklab, var(--pastel) 90%, #7a78a0);
   content: '';
-}
-
-.promises {
-  display: grid;
-  margin-bottom: 18px;
-  border-top: 1px solid var(--line);
-}
-
-.promises li {
-  padding: 16px 0;
-  border-bottom: 1px solid var(--line);
-  color: #2c2b38;
-  font-size: 17.5px;
-  line-height: 1.5;
-}
-
-.promiseId {
-  display: block;
-  margin-bottom: 4px;
-  color: var(--muted);
-  font-family:
-    ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 12px;
-  letter-spacing: 0.06em;
 }
 
 .chips {
@@ -280,8 +255,7 @@
     font-size: 24px;
   }
 
-  .list li,
-  .promises li {
+  .list li {
     font-size: 16.5px;
   }
 }
