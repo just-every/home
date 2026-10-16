@@ -62,8 +62,8 @@ export function motionCss() {
     `@keyframes fall{0%{opacity:0;transform:translate(0,0) rotate(0)}5%{opacity:.9}30%{opacity:.9}38%,100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(var(--r))}}`,
     `@keyframes sway{from{transform:translateX(-12px)}to{transform:translateX(12px)}}`,
     `@keyframes flutter{from{transform:scaleY(1)}to{transform:scaleY(.35)}}`,
-    `@keyframes glint{0%,100%{opacity:0;transform:translateX(0) scaleX(.8)}50%{opacity:.85;transform:translateX(5px) scaleX(1.05)}}`,
-    `@keyframes streak{0%,100%{opacity:0;transform:scaleX(.6)}50%{opacity:.9;transform:scaleX(1.1)}}`,
+    `@keyframes glint{0%,100%{opacity:0;transform:translateX(0) scaleX(.8)}50%{opacity:.6;transform:translateX(5px) scaleX(1.05)}}`,
+    `@keyframes streak{0%,100%{opacity:0;transform:scaleX(.6)}50%{opacity:.8;transform:scaleX(1.1)}}`,
   ];
   // Petals and glints are invisible unless their animation runs.
   return `.gl,[id^=pt]{opacity:0}@media (prefers-reduced-motion:no-preference){${r.join('')}${keys.join('')}}`;
