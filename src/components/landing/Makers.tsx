@@ -34,20 +34,6 @@ export function Makers() {
           </a>
         </div>
       </div>
-      {/* A watering can tending someone's flower, painted in the footer's
-          hand. Decorative. */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        className={styles.makersArt}
-        src="/landing/painted/watering-can.svg"
-        alt=""
-        aria-hidden="true"
-        width={170}
-        height={155}
-        loading="lazy"
-        decoding="async"
-        draggable={false}
-      />
     </article>
   );
 }

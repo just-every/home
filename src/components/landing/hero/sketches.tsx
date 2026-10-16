@@ -30,12 +30,6 @@ export const SwitchArrow = ({ className }: Props) => (
   </svg>
 );
 
-export const LongSwitchArrow = ({ className }: Props) => (
-  <svg className={className} viewBox="0 0 600 64" aria-hidden="true">
-    <path d="M6 15C80 36 170 54 300 53s210-12 288-31m-17-5 17 5-13 12" />
-  </svg>
-);
-
 export const SixArrow = ({ className }: Props) => (
   <svg className={className} viewBox="0 0 53 42" aria-hidden="true">
     <path d="M47 3Q39 30 5 29m8-5-9 5 8 5" />

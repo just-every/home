@@ -70,3 +70,9 @@
     font-size: 15px;
   }
 }
+
+/* Floating over the hero, whose left end is rain-dark: the wordmark takes a
+   deeper ink there. */
+.floating .brand {
+  color: #27244d;
+}

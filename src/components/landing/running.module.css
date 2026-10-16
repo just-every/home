@@ -1,29 +1,7 @@
 .running {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    164deg,
-    #faf8ff 10%,
-    #f1f2ff 61%,
-    #fff 69%,
-    #ecebf6 83%,
-    #fff
-  );
-}
-
-/* A painted parlour palm reaching in from past the viewport's right edge
-   (public/landing/painted/palm.svg), cut clean by that edge. */
-.plant {
-  position: absolute;
-  top: 52px;
-  right: 0;
-  display: block;
-  width: 105px;
-  height: 309px;
-  object-fit: contain;
-  object-position: right top;
-  pointer-events: none;
-  user-select: none;
+  background: linear-gradient(180deg, #fdfdff, #f6f4ff 88%);
 }
 
 .inner {
@@ -74,13 +52,13 @@
   gap: 16px 32px;
 }
 
-/* The player, its corner kept clear of the plant. */
+/* The player, on paper. */
 .screen {
   position: relative;
   z-index: 1;
   min-width: 0;
-  margin-right: 66px;
   padding: 10px;
+  box-shadow: 0 18px 40px -22px #6b5fb04d;
   border-radius: var(--card-radius);
   background: var(--card-paper);
 }
@@ -236,15 +214,6 @@
   .picker {
     margin-top: 16px;
   }
-
-  .plant {
-    top: auto;
-    bottom: 0;
-    width: 13%;
-    height: auto;
-    aspect-ratio: 112 / 330;
-    opacity: 0.8;
-  }
 }
 
 @media (max-width: 719px) {
@@ -291,10 +260,6 @@
   .play svg {
     width: 24px;
     height: 24px;
-  }
-
-  .plant {
-    display: none;
   }
 }
 

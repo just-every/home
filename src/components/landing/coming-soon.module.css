@@ -1,17 +1,14 @@
 /* Seeds in the works: quieter than the collection (rows, not cards; see
    soon/soon.module.css). */
+.section {
+  position: relative;
+}
+
 .soon {
   padding: 0 0 var(--section-y);
 }
 
-/* The heading and its line on the left; on the right, painted sprouts sit
-   on the head's foot and rise into the section's top space, so the cards
-   stay where the text alone puts them. */
 .head {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
   margin: 0 0 24px;
 }
 
@@ -20,28 +17,6 @@
   max-width: 660px;
 }
 
-.sprouts {
-  flex: none;
-  display: block;
-  width: 300px;
-  height: auto;
-  margin-top: -30px;
-  user-select: none;
-}
-
 .line {
   margin-top: 10px;
-}
-
-@media (max-width: 599px) {
-  .head {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-  }
-
-  .sprouts {
-    width: 220px;
-    margin-top: 0;
-  }
 }

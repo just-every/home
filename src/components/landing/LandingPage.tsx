@@ -1,4 +1,3 @@
-import { Benefits } from './Benefits';
 import { Collection } from './Collection';
 import { ComingSoon } from './ComingSoon';
 import { sans } from './fonts';
@@ -19,8 +18,8 @@ import { Unsubscribe } from './Unsubscribe';
 
 /**
  * The justevery.com landing page (the Label design): Just Every as a numbered box set, one volume per
- * product. The hero is 12ui design G (hero/). The benefits strip follows
- * it, then the collection; the
+ * product. The hero is 12ui design G (hero/), with the four reasons to
+ * switch at its foot; the collection follows it, then the
  * rest of the order follows the approved copy deck; the Unsubscribe
  * claim follows the reels and leads into the questions it provokes. The
  * suggestion form closes the page under the makers invitation: visitors ask
@@ -33,7 +32,6 @@ export function LandingPage({ heroLayout }: { heroLayout?: HeroLayout }) {
       <Header />
       <main>
         <Hero layout={heroLayout} />
-        <Benefits />
         <Collection />
         <ComingSoon />
         <Running />

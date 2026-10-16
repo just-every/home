@@ -24,7 +24,7 @@ export const nav = [
 ] as const;
 
 /**
- * The benefits strip under the hero (owner feedback of 14 Oct): four plain
+ * The four reasons to switch, at the hero's foot (owner feedback of 14 Oct): four plain
  * reasons to switch, each a bold lead and one line.
  */
 export const benefits = {

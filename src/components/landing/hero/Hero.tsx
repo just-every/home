@@ -3,7 +3,7 @@
 import type { CSSProperties, KeyboardEvent, MouseEvent } from 'react';
 import { useRef, useState } from 'react';
 
-import { collection } from '@/content/landing';
+import { benefits, collection } from '@/content/landing';
 import { cardId, volumes } from '@/components/landing/volumes';
 import { upcoming } from '@/data/upcoming';
 import { numberWord } from '@/lib/number-word';
@@ -19,12 +19,17 @@ import {
   DocIcon,
   FromArrow,
   LeafIcon,
-  LongSwitchArrow,
   SixArrow,
   StartArrow,
   SwitchArrow,
   UpArrow,
 } from './sketches';
+
+/** The page's soft card tints, one per benefit, in order. */
+const tints = ['#e9f7f0', '#e8f3ff', '#f1ebff', '#fff8e3'];
+
+/** Layout 3 is the home page's: two notes, no arrows, no loose lines. */
+const CALM_LAYOUT = 3;
 
 const STACK_ID = 'hero-stack';
 
@@ -126,6 +131,7 @@ export function Hero({
     }
   };
 
+  const calm = layout === CALM_LAYOUT;
   const live = numberWord(volumes.length, true);
   const coming = numberWord(upcoming.length);
 
@@ -161,10 +167,18 @@ export function Hero({
                 →
               </span>
             </a>
-            <StartArrow className={`${styles.lineArt} ${styles.startArrow}`} />
-            <p className={`${caveat.className} ${styles.hand} ${styles.start}`}>
-              Start your switch here.
-            </p>
+            {calm ? null : (
+              <>
+                <StartArrow
+                  className={`${styles.lineArt} ${styles.startArrow}`}
+                />
+                <p
+                  className={`${caveat.className} ${styles.hand} ${styles.start}`}
+                >
+                  Start your switch here.
+                </p>
+              </>
+            )}
           </div>
           <ul className={styles.benefits}>
             <li>
@@ -209,10 +223,18 @@ export function Hero({
               loading="lazy"
               decoding="async"
             />
-            <p className={`${caveat.className} ${styles.hand} ${styles.from}`}>
-              From tools you rent…
-            </p>
-            <FromArrow className={`${styles.lineArt} ${styles.fromArrow}`} />
+            {calm ? null : (
+              <>
+                <p
+                  className={`${caveat.className} ${styles.hand} ${styles.from}`}
+                >
+                  From tools you rent…
+                </p>
+                <FromArrow
+                  className={`${styles.lineArt} ${styles.fromArrow}`}
+                />
+              </>
+            )}
 
             <section
               className={`${styles.panel} ${styles.old}`}
@@ -249,10 +271,16 @@ export function Hero({
                 Pick the tool you rent to see what replaces it.
               </p>
             </section>
+            {calm ? (
+              <p
+                className={`${caveat.className} ${styles.hand} ${styles.note} ${styles.noteFrom}`}
+              >
+                From tools you rent…
+              </p>
+            ) : null}
           </div>
 
-          <SwitchArrow className={styles.switchArrow} />
-          <LongSwitchArrow className={styles.longArrow} />
+          {calm ? null : <SwitchArrow className={styles.switchArrow} />}
 
           <div className={`${styles.side} ${styles.sunny}`}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -318,25 +346,52 @@ export function Hero({
               ) : null}
             </section>
 
-            <p className={`${caveat.className} ${styles.hand} ${styles.six}`}>
-              <span>Plus {coming} more</span> <span>coming soon.</span>
-            </p>
-            <SixArrow className={`${styles.lineArt} ${styles.sixArrow}`} />
-            <UpArrow className={`${styles.lineArt} ${styles.upArrow}`} />
-            <p
-              className={`${caveat.className} ${styles.hand} ${styles.different}`}
-            >
-              Different tools.
-              <br />
-              Nothing to renew.
-            </p>
+            {calm ? (
+              <p
+                className={`${caveat.className} ${styles.hand} ${styles.note} ${styles.noteDifferent}`}
+              >
+                Different tools. Nothing to renew.
+              </p>
+            ) : (
+              <>
+                <p
+                  className={`${caveat.className} ${styles.hand} ${styles.six}`}
+                >
+                  <span>Plus {coming} more</span> <span>coming soon.</span>
+                </p>
+                <SixArrow className={`${styles.lineArt} ${styles.sixArrow}`} />
+                <UpArrow className={`${styles.lineArt} ${styles.upArrow}`} />
+                <p
+                  className={`${caveat.className} ${styles.hand} ${styles.different}`}
+                >
+                  Different tools.
+                  <br />
+                  Nothing to renew.
+                </p>
+              </>
+            )}
           </div>
         </div>
 
-        <p className={`${caveat.className} ${styles.hand} ${styles.closing}`}>
-          Own your tools. Change any line.
-        </p>
+        {calm ? null : (
+          <p className={`${caveat.className} ${styles.hand} ${styles.closing}`}>
+            Own your tools. Change any line.
+          </p>
+        )}
       </div>
+
+      {/* The four reasons to switch, above the ground. */}
+      <ul className={styles.reasons} aria-label={benefits.label}>
+        {benefits.items.map((item, index) => (
+          <li
+            key={item.lead}
+            style={{ '--tint': tints[index % tints.length] } as CSSProperties}
+          >
+            <p className={styles.lead}>{item.lead}</p>
+            <p className={styles.line}>{item.line}</p>
+          </li>
+        ))}
+      </ul>
 
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img

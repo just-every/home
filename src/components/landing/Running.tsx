@@ -8,6 +8,7 @@ import { Reel } from '@/components/shared/Reel';
 
 import { BrandMark } from './BrandMark';
 import { pickProduct, useSelectedProduct } from './collection/selectedProduct';
+import { GroundBand } from './GroundBand';
 import ui from './label.module.css';
 import styles from './running.module.css';
 import { volumeStyle, volumes } from './volumes';
@@ -85,18 +86,6 @@ export function Running() {
       id={reels.id}
       aria-labelledby="label-running-heading"
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        className={styles.plant}
-        src="/landing/painted/palm.svg"
-        alt=""
-        aria-hidden="true"
-        width={224}
-        height={660}
-        loading="lazy"
-        decoding="async"
-        draggable={false}
-      />
       <div className={`${ui.wrap} ${styles.inner}`}>
         <div className={styles.copy}>
           <p className={ui.eyebrow}>Watch</p>
@@ -185,6 +174,7 @@ export function Running() {
           })}
         </div>
       </div>
+      <GroundBand />
     </section>
   );
 }

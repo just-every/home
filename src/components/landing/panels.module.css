@@ -151,15 +151,6 @@
   gap: 8px 24px;
 }
 
-.makersArt {
-  position: absolute;
-  display: block;
-  top: 44px;
-  right: 24px;
-  width: 150px;
-  height: 137px;
-}
-
 @media (max-width: 1023px) {
   .terminalHead {
     height: 48px;
@@ -203,16 +194,6 @@
     display: flex;
     flex-direction: column;
     padding: 24px 20px;
-  }
-
-  .makersArt {
-    position: relative;
-    top: auto;
-    right: auto;
-    align-self: center;
-    width: 130px;
-    height: auto;
-    margin-top: 24px;
   }
 
   .commands {
