@@ -28,69 +28,74 @@ export function Featured() {
   const count = numberWord(total);
   return (
     <section
-      className={`${ui.wrap} ${styles.featured}`}
+      className={styles.featured}
       aria-labelledby="label-featured-heading"
     >
-      <h2 className={`${ui.h2} ${styles.heading}`} id="label-featured-heading">
-        {featured.heading}
-      </h2>
-      <p className={`${ui.lead} ${styles.line}`}>{featured.line}</p>
-      <form
-        className={searchStyles.search}
-        role="search"
-        action="/products"
-        method="get"
-      >
-        <label className={ui.srOnly} htmlFor="featured-search">
-          {featured.searchLabel}
-        </label>
-        <div className={searchStyles.bar}>
-          <div className={searchStyles.field}>
-            <svg
-              className={searchStyles.icon}
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              focusable="false"
+      <div className={ui.wrap}>
+        <h2
+          className={`${ui.h2} ${styles.heading}`}
+          id="label-featured-heading"
+        >
+          {featured.heading}
+        </h2>
+        <p className={`${ui.lead} ${styles.line}`}>{featured.line}</p>
+        <form
+          className={searchStyles.search}
+          role="search"
+          action="/products"
+          method="get"
+        >
+          <label className={ui.srOnly} htmlFor="featured-search">
+            {featured.searchLabel}
+          </label>
+          <div className={searchStyles.bar}>
+            <div className={searchStyles.field}>
+              <svg
+                className={searchStyles.icon}
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <circle cx="10.5" cy="10.5" r="6.5" />
+                <path d="m15.5 15.5 5 5" />
+              </svg>
+              <input
+                id="featured-search"
+                className={searchStyles.input}
+                type="search"
+                name="q"
+                placeholder={featured.searchPlaceholder}
+                maxLength={120}
+                autoComplete="off"
+                spellCheck={false}
+                enterKeyHint="search"
+              />
+            </div>
+            <button
+              className={`${ui.pill} ${ui.pillSmall} ${searchStyles.submit}`}
+              type="submit"
             >
-              <circle cx="10.5" cy="10.5" r="6.5" />
-              <path d="m15.5 15.5 5 5" />
-            </svg>
-            <input
-              id="featured-search"
-              className={searchStyles.input}
-              type="search"
-              name="q"
-              placeholder={featured.searchPlaceholder}
-              maxLength={120}
-              autoComplete="off"
-              spellCheck={false}
-              enterKeyHint="search"
-            />
+              {featured.searchButton}{' '}
+              <span className={ui.arrow} aria-hidden="true">
+                →
+              </span>
+            </button>
           </div>
-          <button
-            className={`${ui.pill} ${ui.pillSmall} ${searchStyles.submit}`}
-            type="submit"
-          >
-            {featured.searchButton}{' '}
+        </form>
+        <ul className={`${collectionStyles.results} ${styles.cards}`}>
+          {shown.map(entry => (
+            <ProductCard key={entry.item.slug} shown={entry} level="h3" />
+          ))}
+        </ul>
+        <p className={styles.all}>
+          <Link className={ui.under} href="/products" prefetch={false}>
+            <span>{featured.all(count)}</span>
             <span className={ui.arrow} aria-hidden="true">
               →
             </span>
-          </button>
-        </div>
-      </form>
-      <ul className={`${collectionStyles.results} ${styles.cards}`}>
-        {shown.map(entry => (
-          <ProductCard key={entry.item.slug} shown={entry} level="h3" />
-        ))}
-      </ul>
-      <p className={styles.all}>
-        <Link className={ui.under} href="/products" prefetch={false}>
-          <span>{featured.all(count)}</span>
-          <span className={ui.arrow} aria-hidden="true">
-            →
-          </span>
-        </Link>
-      </p>
+          </Link>
+        </p>
+      </div>
     </section>
   );
 }

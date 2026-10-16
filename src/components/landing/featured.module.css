@@ -1,6 +1,12 @@
-/* The home page's portal to /products: heading, search, six cards, the link. */
+/* The home page's portal to /products: heading, search, six cards, the link.
+   The hero's painted ground ends in this lavender (its foot colour, #dcd7f4);
+   the section carries it down as one flat colour and stops at its bottom
+   edge. Text that sits straight on it is darkened to keep 4.5:1 or better. */
 .featured {
-  padding: calc(var(--section-y) + 16px) 0 var(--section-y);
+  --muted: #4b4a5e;
+  --lead: #4b4a5e;
+  padding: var(--section-y) 0;
+  background: #dcd7f4;
 }
 
 .heading {

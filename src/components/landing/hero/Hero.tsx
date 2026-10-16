@@ -39,7 +39,7 @@ const reducedMotion = () =>
  * the foot that runs from rain-cooled to sunlit, all under a dusk sky. From
  * 1280px wide the two cards flank the copy as mirror images; narrower
  * screens stack the copy over the two cards. The weather moves, slowly:
- * the cards float, the rain falls (a third of it dollar signs, receipts and
+ * the cards float, the rain falls (a third of it dollar signs and
  * coins, in the same stream), now and then the cloud lights up, the sun's
  * glow breathes and its clouds drift. Only small layers move (Rainfall,
  * Lightning, SunLayers), on the compositor, and only while the hero is on
@@ -371,7 +371,6 @@ export function Hero() {
         loading="lazy"
         decoding="async"
       />
-      <div className={styles.groundFade} aria-hidden="true" />
 
       <p className={styles.srOnly} aria-live="polite">
         {pickedVolume

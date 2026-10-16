@@ -11,7 +11,6 @@ const ART_H = 540;
 
 const VIEW: Record<SpecialKind, string> = {
   dollar: '-11 -22 22 44',
-  receipt: '-20 -26 40 52',
   coin: '-19 -19 38 38',
 };
 
@@ -45,37 +44,6 @@ function Sprites() {
           />
           <path strokeWidth="4.6" d="M0.6 -18.4V-12.6M-0.6 12.6V18.4" />
         </g>
-        <g id="rf-receipt">
-          <path
-            strokeWidth="3"
-            strokeLinejoin="round"
-            style={{
-              fill: v('slip', '#b9afe2'),
-              stroke: v('slip', '#b9afe2'),
-            }}
-            d="M-14.4 -17.4L-11.4 -20.4L12.6 -20.4L19.6 -13.4L19.6 21.6L15.3 25.6L11.1 21.6L6.8 25.6L2.6 21.6L-1.6 25.6L-5.9 21.6L-10.2 25.6L-14.4 21.6z"
-          />
-          <path
-            strokeWidth="3"
-            strokeLinejoin="round"
-            style={{
-              fill: v('paper', '#f7f5fd'),
-              stroke: v('paper', '#f7f5fd'),
-            }}
-            d="M-17 -20L-14 -23L10 -23L17 -16L17 19L12.8 23L8.5 19L4.2 23L0 19L-4.2 23L-8.5 19L-12.8 23L-17 19z"
-          />
-          <path
-            style={{ fill: v('fold', '#cfc8ee') }}
-            d="M10 -23L10 -17Q10 -16 11 -16L17 -16z"
-          />
-          <path
-            fill="none"
-            strokeWidth="2.6"
-            strokeLinecap="round"
-            style={{ stroke: v('line', '#b3aadb') }}
-            d="M-10 -13.5H5M-10 -5.5H10M-10 1H6M-10 7.5H9"
-          />
-        </g>
         <g id="rf-coin">
           <circle r="17" style={{ fill: v('coin-rim', '#e2a682') }} />
           <circle
@@ -106,7 +74,7 @@ function Sprites() {
  * cloud stays a static image; here only `translate`, `rotate` and
  * `opacity` change, so the browser moves each layer on the compositor and
  * never repaints or re-rasterises the art. The painted drops are two sheets
- * (rain-sheets.ts); a third of what falls is a dollar sign, a receipt or a
+ * (rain-sheets.ts); a third of what falls is a dollar sign or a
  * coin, larger, falling with the drops at their speed and slant, each its
  * own layer so it can turn as it comes down (rain-items.ts).
  */

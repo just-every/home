@@ -1,9 +1,9 @@
 import { RAIN_SLANT, RAIN_SPEED } from './rain-sheets';
 
 /**
- * The things you pay for that fall among the drops: a dollar sign, a receipt
- * slip or a coin, nine in all (a third of everything that falls, with the
- * drops in rain-sheets.ts). They are part of the same rain: each comes down
+ * The things you pay for that fall among the drops: a dollar sign or a coin,
+ * nine in all (a third
+ * of everything that falls, with the drops in rain-sheets.ts). They are part of the same rain: each comes down
  * at the nearer drops' speed and along their slant, give or take a few per
  * cent, and only turns or flutters as it falls. Each is its own small layer
  * so it can turn. Every length is in the cloud art's own units (a 1120 x 540
@@ -17,7 +17,7 @@ import { RAIN_SLANT, RAIN_SPEED } from './rain-sheets';
  * flight at once.
  */
 
-export type SpecialKind = 'dollar' | 'receipt' | 'coin';
+export type SpecialKind = 'dollar' | 'coin';
 
 export type RainItem = {
   kind: SpecialKind;
@@ -46,11 +46,10 @@ export type RainItem = {
 /** Each kind's box (art units) and how much bigger than the first pass it is. */
 const BOX: Record<SpecialKind, { w: number; h: number; scale: number }> = {
   dollar: { w: 22, h: 44, scale: 2 },
-  receipt: { w: 40, h: 52, scale: 1.9 },
   coin: { w: 38, h: 38, scale: 2 },
 };
 
-const KINDS: SpecialKind[] = ['coin', 'dollar', 'receipt'];
+const KINDS: SpecialKind[] = ['coin', 'dollar'];
 
 /**
  * The share of its cycle an item spends falling in view; the rest it waits
@@ -81,7 +80,7 @@ const LANES: Lane[] = [
 const frac = (n: number) => n - Math.floor(n);
 
 export const rainItems: RainItem[] = LANES.map((lane, i) => {
-  const kind = KINDS[i % 3];
+  const kind = KINDS[i % 2];
   const box = BOX[kind];
   const jitter = frac((i + 1) * 0.618034);
   // A few per cent either side of the drops' speed and slant, so the

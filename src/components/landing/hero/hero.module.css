@@ -170,10 +170,6 @@
 .rain {
   aspect-ratio: 1120 / 540;
   --rf-drop: #cdfbff;
-  --rf-slip: #f1e3ff;
-  --rf-paper: #ffffff;
-  --rf-fold: #e4daf7;
-  --rf-line: #e9ddff;
   --rf-coin-rim: #ffd8a6;
   --rf-coin-face: #fff8c7;
   --rf-coin-core: #ffe5b2;
@@ -394,38 +390,6 @@
   object-position: 50% 100%;
   pointer-events: none;
   user-select: none;
-}
-
-/* The ground's flat lavender foot holds briefly below the strip and fades
-   over a long tail into the page, behind the Collection that follows (under
-   its content, out of the pointer's way), so the hero eases into it instead
-   of stopping on a line. */
-.groundFade {
-  --foot: #dcd7f4;
-  --to: #fdfdff;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  left: 0;
-  z-index: -1;
-  height: 340px;
-  pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    var(--foot) 0,
-    var(--foot) 8%,
-    color-mix(in srgb, var(--foot) 68%, var(--to)) 24%,
-    color-mix(in srgb, var(--foot) 42%, var(--to)) 46%,
-    color-mix(in srgb, var(--foot) 20%, var(--to)) 68%,
-    color-mix(in srgb, var(--foot) 7%, var(--to)) 86%,
-    var(--to) 100%
-  );
-}
-
-@media (max-width: 599px) {
-  .groundFade {
-    height: 190px;
-  }
 }
 
 /* The only notes: one under each card, set in the hand and kept clear of
@@ -748,7 +712,7 @@
     max-width: calc(var(--u) * 250);
     margin: calc(var(--u) * 34) 0 0 calc(var(--u) * 30);
     font-size: calc(var(--u) * 26);
-    transform: rotate(-3deg);
+    transform: rotate(3deg);
     transform-origin: left center;
     text-wrap: balance;
   }
@@ -985,7 +949,7 @@
     margin: 20px 0 0 6px;
     font-size: 25px;
     text-wrap: balance;
-    transform: rotate(-2deg);
+    transform: rotate(2deg);
   }
 
   .reasons {

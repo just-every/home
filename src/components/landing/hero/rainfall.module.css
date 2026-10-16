@@ -60,11 +60,10 @@
   overflow: visible;
 }
 
-/* The rest fall three times per iteration. A dollar sign and a receipt
-   flutter side to side (six sways, 14.4 seconds, as rain-items.ts counts);
+/* The rest fall three times per iteration. A dollar sign flutters
+   side to side (six sways, 14.4 seconds, as rain-items.ts counts);
    a coin turns over once a fall. */
-.dollar,
-.receipt {
+.dollar {
   animation:
     specialRun calc(var(--t) * 3) linear var(--o) infinite,
     sway 14.4s ease-in-out var(--s) infinite;
