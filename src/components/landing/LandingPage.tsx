@@ -4,7 +4,7 @@ import { sans } from './fonts';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { Hero } from './hero/Hero';
-import type { HeroLayout, HeroTone } from './hero/layouts';
+import type { HeroLayout, HeroRain, HeroTone } from './hero/layouts';
 import ui from './label.module.css';
 import { Makers } from './Makers';
 import panels from './panels.module.css';
@@ -28,16 +28,18 @@ import { VolumeLinks } from './VolumeLinks';
 export function LandingPage({
   heroLayout,
   heroTone,
+  heroRain,
 }: {
   heroLayout?: HeroLayout;
   heroTone?: HeroTone;
+  heroRain?: HeroRain;
 }) {
   return (
     <div className={`${ui.page} ${sans.variable}`} id="top">
       <VolumeLinks />
       <Header tone={heroTone} />
       <main>
-        <Hero layout={heroLayout} tone={heroTone} />
+        <Hero layout={heroLayout} tone={heroTone} rain={heroRain} />
         <Collection />
         <Separator variant="creek" />
         <ComingSoon />
