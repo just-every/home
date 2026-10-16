@@ -52,7 +52,7 @@
   aspect-ratio: 360 / 230;
 }
 
-.helloArt {
+.art > .helloArt {
   position: absolute;
   inset: 0;
   display: block;

@@ -6,6 +6,8 @@ import { sans } from './fonts';
 import header from './header.module.css';
 import ui from './label.module.css';
 import { Logo } from './Logo';
+import { PaintedArt } from './SeparatorArt';
+import { dogParts } from './separator-parts';
 import styles from './not-found.module.css';
 
 /**
@@ -32,17 +34,14 @@ export function NotFound() {
             </span>
           </Link>
         </div>
-        {/* The footer's dog, wondering where the path went. Decorative. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        {/* The footer's dog, wondering where the path went, wagging its
+            tail. Decorative. */}
+        <PaintedArt
           className={styles.art}
           src="/landing/painted/dog.svg"
-          alt=""
-          aria-hidden="true"
-          width={560}
-          height={420}
-          decoding="async"
-          draggable={false}
+          width={1120}
+          height={840}
+          parts={dogParts}
         />
       </main>
     </div>
