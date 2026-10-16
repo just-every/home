@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { footer } from '@/content/landing';
 import { seeds } from '@/data/seeds';
 import { upcoming } from '@/data/upcoming';
-import { numberWord } from '@/lib/number-word';
 
 import ui from './label.module.css';
 import { FooterMotion } from './FooterMotion';
@@ -25,7 +24,7 @@ import { TokenCount } from './TokenCount';
  * the card. Pages that end on bare text leave it off.
  */
 export function Footer({ rise = false }: { rise?: boolean }) {
-  const count = numberWord(seeds.length + upcoming.length);
+  const count = seeds.length + upcoming.length;
   const groups = [
     {
       heading: footer.products.heading,
