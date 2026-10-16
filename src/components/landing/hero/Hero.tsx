@@ -11,8 +11,8 @@ import { numberWord } from '@/lib/number-word';
 import { X_EVENTS, track } from '@/lib/x-pixel';
 
 import { caveat } from './fonts';
-import { DEFAULT_HERO_LAYOUT, DEFAULT_HERO_RAIN } from './layouts';
-import type { HeroLayout, HeroRain, HeroTone } from './layouts';
+import { DEFAULT_HERO_LAYOUT } from './layouts';
+import type { HeroLayout, HeroTone } from './layouts';
 import styles from './hero.module.css';
 import { moreCount, rows } from './order';
 import {
@@ -46,8 +46,9 @@ const reducedMotion = () =>
  * their marks and pastels, and a quiet "and N more" link to the rest of the
  * collection) in the sun, with handwritten notes and a painted ground along
  * the foot that runs from rain-cooled to sunlit. `layout` picks how the
- * copy sits around the two cards (layouts.ts), and `rain` what falls from
- * the cloud.
+ * copy sits around the two cards (layouts.ts). The weather moves, slowly:
+ * the cards float, the rain falls (now and then a dollar sign, a receipt or a
+ * coin among the drops), the sun's glow breathes and its clouds drift.
  *
  * The rented stack is the picker: picking a tool highlights it and the
  * seed that replaces it, the button turns into "Switch to <Seed> →" for
@@ -59,11 +60,9 @@ const reducedMotion = () =>
 export function Hero({
   layout = DEFAULT_HERO_LAYOUT,
   tone,
-  rain = DEFAULT_HERO_RAIN,
 }: {
   layout?: HeroLayout;
   tone?: HeroTone;
-  rain?: HeroRain;
 }) {
   const [picked, setPicked] = useState<string | null>(null);
   const pickers = useRef<(HTMLButtonElement | null)[]>([]);
@@ -210,11 +209,11 @@ export function Hero({
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className={`${styles.weather} ${styles.rain}`}
-              src={`/landing/hero/rain-${rain}.svg`}
+              src="/landing/hero/rain.svg"
               alt=""
               aria-hidden="true"
               width={1120}
-              height={464}
+              height={540}
               loading="lazy"
               decoding="async"
             />

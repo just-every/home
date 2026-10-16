@@ -26,15 +26,3 @@ export const isHeroLayout = (n: number): n is HeroLayout =>
  * storm, or the dusk halfway between the two.
  */
 export type HeroTone = 'storm' | 'dusk';
-
-/**
- * What falls from the rented stack's cloud, offered to the owner at
- * /hero-preview/rain-a to /hero-preview/rain-c until he picks one:
- * a. Gentle painted rain with three drops shaped like dollar signs.
- * b. A few small paper bills drifting down like leaves.
- * c. A few pale peach coins, some face-on and some tilted.
- */
-export type HeroRain = 'a' | 'b' | 'c';
-
-/** The rain the home page uses: the bills say what renting costs. */
-export const DEFAULT_HERO_RAIN: HeroRain = 'b';
