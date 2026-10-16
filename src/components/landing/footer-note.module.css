@@ -1,23 +1,34 @@
 /* A footer link's handwritten aside (FooterNote): the hero's hand and ink,
-   set level with its baseline on a line of the links, and a drawn arrow
-   back to the link's end. Static and decorative.
+   written on the line under the link and lined up with its first letter,
+   with a short drawn arrow from its end up toward the link's end. Static
+   and decorative.
 
-   On phones the products group has a row of its own, so the note sits after
-   the link, its baseline on the link's. From 768px wide the products column
-   is only as wide as its link (the other columns stand beside it, and from
-   1280px the wordmark's line already gives way to them), so the note tucks
-   under the link instead, on the baseline of the columns' second links, its
-   right edge under the link's end, and the arrow curls up round that end.
-   The arrows keep clear of the link's text and its hover underline. */
+   The note takes the list's next link row at every width: its baseline sits
+   one row (the links' 44px) under the link's, so on wider windows it lines
+   up with the other columns' second links, and on phones, where the
+   products group has a row of its own, it is that group's second line. The
+   arrow keeps clear of the link's text and its hover underline, and stays
+   inside the link's width, so it never reaches the next column. */
 .noted {
   display: grid;
-  grid-template-columns: max-content max-content;
-  column-gap: 24px;
+  grid-template-columns: max-content;
   align-items: baseline;
+  justify-items: start;
+  /* The note's row. */
+  padding-bottom: 44px;
+}
+
+/* The link and the note share one cell, baselines aligned; the note then
+   drops exactly one row. Caveat's "(" starts about 3px into its box at
+   22px and the link's "A" under half a px into its own, so the note also
+   moves 2.75px left to bring their ink to one edge. */
+.noted > * {
+  grid-area: 1 / 1;
 }
 
 .note {
   position: relative;
+  transform: translate(-2.75px, 44px);
   color: #4f4a82;
   font-size: 22px;
   font-weight: 400;
@@ -27,60 +38,22 @@
   user-select: none;
 }
 
-/* Each drawing is laid out in px from the note's start and baseline (its
+/* The drawing is laid out in px from the note's start and baseline (its
    viewBox), and the baseline sits 18px below the note box's top (Caveat's
-   ascent at 22px, less its half-leading at line-height 1), so a drawing's
-   top is 18px plus its viewBox's top. */
+   ascent at 22px, less its half-leading at line-height 1), so its top is
+   18px plus its viewBox's top. From just after the ")", it rises and bends
+   right, its head under the link's last letters and 4px clear of the hover
+   underline (the link's baseline is at -44, the underline 6px below it). */
 .arrow {
   position: absolute;
+  top: -16px;
+  left: 62px;
+  width: 26px;
+  height: 25px;
   overflow: visible;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.6;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-/* After the link: from just after the "(" up and back over the gap, to
-   just past the link's last letter. */
-.beside {
-  top: -14px;
-  left: -28px;
-  width: 44px;
-  height: 20px;
-}
-
-.under {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  /* The link and the note share one cell, baselines aligned; the note then
-     drops exactly one link row (the links' 44px). */
-  .noted {
-    grid-template-columns: max-content;
-  }
-
-  .noted > * {
-    grid-area: 1 / 1;
-  }
-
-  .note {
-    justify-self: end;
-    transform: translateY(44px);
-  }
-
-  .beside {
-    display: none;
-  }
-
-  /* Under the link: from just after the "(" over the note and round the
-     link's end, up to just past its last letter. */
-  .under {
-    display: block;
-    top: -34px;
-    left: 10px;
-    width: 62px;
-    height: 40px;
-  }
 }
