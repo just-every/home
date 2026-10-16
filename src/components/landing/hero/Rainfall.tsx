@@ -19,7 +19,7 @@ const pct = (n: number, of: number) => `${((n / of) * 100).toFixed(3)}%`;
 
 /**
  * The shapes, drawn once and reused by every falling item. Their colours
- * are custom properties, so the hero's tone can tint them (hero.module.css).
+ * are custom properties, so the hero's dusk sky can tint them (hero.module.css).
  */
 function Sprites() {
   const v = (name: string, raw: string) => `var(--rf-${name}, ${raw})`;

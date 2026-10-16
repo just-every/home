@@ -24,7 +24,7 @@ export function Collection({ standalone = false }: { standalone?: boolean }) {
           {collection.heading}
         </h2>
       )}
-      <CollectionBrowser items={collectionItems} />
+      <CollectionBrowser items={collectionItems} level={standalone ? 2 : 3} />
     </section>
   );
 }

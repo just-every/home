@@ -2198,7 +2198,7 @@ export const seedPageContent: SeedPageContent[] = [
   {
     slug: 'coffer',
     summary:
-      "Coffer keeps donor records for a US nonprofit: donors and households, every gift as an exact ledger line, pledges and each donor's consent to hear from you. It prepares the acknowledgement letters that gifts of $250 or more need and builds appeal lists that only include donors who said yes. It does not process payments, send email or give tax advice.",
+      "Coffer keeps donor records for a US nonprofit: donors and households, every gift as an exact ledger line, pledges and each donor's consent to hear from you. It prepares acknowledgement letters for the gifts that need one and builds appeal lists that only include donors who said yes. It does not process payments, send email or give tax advice.",
     does: [
       'Move in a year of gifts from saved Stripe pages, with a preview and undo',
       "Show each donor's gifts by year, pledges, consent history, letters and appeals",
@@ -2224,7 +2224,7 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'ACK-001',
-        text: 'Gifts of $250 or more are due a letter within your target days, and no letter is prepared until a person has saved your letter wording; Coffer never sends mail.',
+        text: 'Gifts at or over your acknowledgement threshold are due a letter within your target days, and no letter is prepared until a person has saved your letter wording; Coffer never sends mail.',
       },
       {
         id: 'APPEAL-001',

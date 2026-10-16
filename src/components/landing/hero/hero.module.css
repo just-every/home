@@ -1,26 +1,34 @@
 /* The hero, "a sketched journey", from the 12ui conversion of design G,
    with weather: a rain cloud over the stack you rent, the sun over the open
    source you own, and a painted ground along the foot that runs from
-   rain-cooled to sunlit (the footer's flat "dusk-mist" style).
+   rain-cooled to sunlit (the footer's flat "dusk-mist" style), all under a
+   dusk sky: a deep slate-purple that warms to sunrise.
 
    From 1280px wide the hero fills the header's content column and every
-   length is a design pixel times --u (1px in the 1331px column). The copy
-   and the two cards sit in a grid, so they never overlap; .layout1 to
-   .layout4 arrange them (layouts.ts). Narrower screens stack every layout
-   the same way: the copy, then the two lists side by side so each rented
-   tool sits beside the seed that replaces it. */
+   length is a design pixel times --u (1px in the 1331px column). The two
+   cards flank a centred copy column as mirror images in one grid, so they
+   never overlap. Narrower screens stack: the copy, then the two lists side
+   by side so each rented tool sits beside the seed that replaces it. */
 
+/* Stacked (under 1280px), the copy sits on the dusk itself, so the sky runs
+   from the top down, to the warm light behind the sun, and the copy turns
+   light. Wide, it runs left to right (below). */
 .top {
   position: relative;
   padding-top: var(--header-h);
   overflow-x: clip;
   container-type: inline-size;
   color: #222;
-  background:
-    radial-gradient(ellipse at 12% 30%, #e7e9fbcc, transparent 46%),
-    radial-gradient(ellipse at 90% 26%, #fff1e6b3, transparent 44%),
-    radial-gradient(ellipse at 50% 45%, #fff9, transparent 58%),
-    linear-gradient(180deg, #f6f4ff, #f0effd 85%);
+  background: linear-gradient(
+    180deg,
+    #3a3a5e 0,
+    #43437a 340px,
+    #6d66ac 600px,
+    #a39cd0 820px,
+    #d6d2eb 1150px,
+    #ebe8f6 1700px,
+    #f1eef5 100%
+  );
 }
 
 .canvas {
@@ -38,20 +46,6 @@
   .top {
     --edge: calc((100cqw - 1331px) / 2);
   }
-}
-
-.hand {
-  color: #6b6496;
-  font-weight: 400;
-  line-height: 1.05;
-}
-
-.lineArt {
-  fill: none;
-  stroke: #9380d3;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
 .srOnly {
@@ -82,7 +76,7 @@
 }
 
 .description {
-  color: #595c7a;
+  color: #2c2a4c;
   text-wrap: pretty;
 }
 
@@ -151,13 +145,10 @@
   position: relative;
 }
 
+/* Each side (its weather, card and note) is structure only: its parts are
+   laid out by the comparison's grid stacked, and by the canvas's wide. */
 .side {
-  position: relative;
-}
-
-.wash {
-  position: absolute;
-  background: #ecdfff80;
+  display: contents;
 }
 
 /* The weather: painted, decorative, behind the cards and the notes. */
@@ -173,9 +164,20 @@
 
 /* The rain is two things in one box: the still cloud, over a layer of small
    falling items (Rainfall.tsx). The sun is a stack of layers (SunLayers.tsx).
-   Both keep the art's own proportions. */
+   Both keep the art's own proportions. The falling items take a light tint
+   against the dusk, as colours of their own: a filter over them would be
+   redone on every frame. */
 .rain {
   aspect-ratio: 1120 / 540;
+  --rf-drop: #cdfbff;
+  --rf-slip: #f1e3ff;
+  --rf-paper: #ffffff;
+  --rf-fold: #e4daf7;
+  --rf-line: #e9ddff;
+  --rf-coin-rim: #ffd8a6;
+  --rf-coin-face: #fff8c7;
+  --rf-coin-core: #ffe5b2;
+  --rf-coin-shine: #ffffff;
 }
 
 .sun {
@@ -187,33 +189,14 @@
   display: block;
   width: 100%;
   height: auto;
+  filter: brightness(1.3) saturate(1.05);
 }
 
-.from,
-.six,
-.different,
-.fromArrow,
-.sixArrow,
-.upArrow {
-  position: relative;
-  z-index: 2;
-}
-
-/* The two cards: an opaque white sheet with a soft edge, so the weather
-   never shows through the lists. */
+/* The two cards: opaque white sheets, so the weather never shows through
+   the lists. */
 .panel {
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 17px 20px #b6a2e52c);
-}
-
-.panel::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border: 2px solid #fff;
-  background: linear-gradient(115deg, #fff, #fbfaff);
 }
 
 .panel h2 {
@@ -304,10 +287,6 @@
 .old button:focus-visible {
   outline: 3px solid var(--focus, #458eff);
   outline-offset: 1px;
-}
-
-.nudge {
-  animation: nudge 0.5s ease-in-out;
 }
 
 @keyframes nudge {
@@ -449,155 +428,6 @@
   }
 }
 
-/* The home page's hero (layout 3): rain-grey and darker on the left, shading
-   to sunlit and warm on the right. */
-.layout3 {
-  background:
-    radial-gradient(ellipse at 10% 34%, #6f739f66, transparent 52%),
-    linear-gradient(
-      90deg,
-      #a1a4c6 0%,
-      #bbbddb 22%,
-      #dcdcee 42%,
-      #f1eef5 58%,
-      #fff1e4 80%,
-      #fff7ec 100%
-    );
-}
-
-.layout3 .rain .cloud {
-  filter: brightness(0.8) saturate(1.15);
-}
-
-/* The falling items take the same tint as the cloud, as colours of their
-   own: a filter over them would be redone on every frame. */
-.layout3 .rain {
-  --rf-drop: #7c9bbe;
-  --rf-slip: #958bba;
-  --rf-paper: #c6c4cb;
-  --rf-fold: #a69fc2;
-  --rf-line: #9087b4;
-  --rf-coin-rim: #bb8462;
-  --rf-coin-face: #c79877;
-  --rf-coin-core: #c18c6a;
-  --rf-coin-shine: #cdb8a7;
-}
-
-/* The storm option (/hero-preview/storm): near-black at the far left, through
-   purple in the middle, to the light warm right. From 1280px wide, where
-   the cards flank the copy; narrower screens keep the lighter background. */
-@media (min-width: 1280px) {
-  .storm {
-    background:
-      radial-gradient(ellipse at 14% 36%, #6a5fc255, transparent 46%),
-      linear-gradient(
-        90deg,
-        #15151f 0%,
-        #22213a 12%,
-        #3d3478 24%,
-        #8479c4 34%,
-        #d3cbee 45%,
-        #f1eef5 56%,
-        #fff1e4 80%,
-        #fff7ec 100%
-      );
-  }
-
-  .storm .noteFrom {
-    color: #e6dfff;
-  }
-
-  .storm .description {
-    color: #2c2a4c;
-  }
-}
-
-/* The dusk sky, the home page's: a deep slate-purple that warms to sunrise.
-   Wide, it runs left to right, a deep slate-purple at the far left, halfway
-   between the rain-grey and the storm, with white clouds. Stacked (under
-   1280px), the copy sits on the dusk itself, so the sky runs from the top
-   down instead, to the warm light behind the sun, and the copy turns light. */
-.dusk {
-  background: linear-gradient(
-    180deg,
-    #3a3a5e 0,
-    #43437a 340px,
-    #6d66ac 600px,
-    #a39cd0 820px,
-    #d6d2eb 1150px,
-    #ebe8f6 1700px,
-    #f1eef5 100%
-  );
-}
-
-.dusk .rain .cloud,
-.storm .rain .cloud {
-  filter: brightness(1.3) saturate(1.05);
-}
-
-.dusk .rain,
-.storm .rain {
-  --rf-drop: #cdfbff;
-  --rf-slip: #f1e3ff;
-  --rf-paper: #ffffff;
-  --rf-fold: #e4daf7;
-  --rf-line: #e9ddff;
-  --rf-coin-rim: #ffd8a6;
-  --rf-coin-face: #fff8c7;
-  --rf-coin-core: #ffe5b2;
-  --rf-coin-shine: #ffffff;
-}
-
-@media (max-width: 1279px) {
-  .dusk .intro h1 {
-    color: #fff;
-  }
-
-  .dusk .description {
-    color: #e6e0fa;
-  }
-
-  .dusk .benefits {
-    color: #d9d2f4;
-  }
-
-  .dusk .cta {
-    background: #fff;
-    color: #1e1e1e;
-    box-shadow: 0 6px 18px #1c1a3a40;
-  }
-
-  .dusk .cta:hover {
-    background: #f1eefc;
-  }
-}
-
-@media (min-width: 1280px) {
-  .dusk {
-    background:
-      radial-gradient(ellipse at 14% 36%, #5f58a044, transparent 46%),
-      linear-gradient(
-        90deg,
-        #3a3a5e 0%,
-        #46467a 12%,
-        #6d66ac 24%,
-        #a39cd0 34%,
-        #d6d2eb 45%,
-        #f1eef5 56%,
-        #fff1e4 80%,
-        #fff7ec 100%
-      );
-  }
-
-  .dusk .noteFrom {
-    color: #e6dfff;
-  }
-
-  .dusk .description {
-    color: #2c2a4c;
-  }
-}
-
 /* The only notes: one under each card, set in the hand and kept clear of
    everything. */
 .note {
@@ -605,6 +435,8 @@
   z-index: 2;
   margin: 0;
   color: #4f4a82;
+  font-weight: 400;
+  line-height: 1.05;
 }
 
 /* The four reasons to switch, a row of soft cards above the ground. */
@@ -639,19 +471,57 @@
 
 /* ---- The column, from 1280px wide ---- */
 
+/* The cards flank a centred text column: the rented stack under the rain on
+   the left, the seeds in the sun on the right. The canvas holds the
+   perspective, so the two cards are mirror images turned toward the copy
+   between them, each a flat plane (rows included) in one 3D scene. The
+   sides and the comparison give their cards, weather and notes to the
+   canvas, so the cards are the perspective parent's own children. */
 @media (min-width: 1280px) {
   .top {
     /* The header's column, growing past it on the widest screens so the
        cards stay large there. */
     --col: max(min(100cqw - 2 * var(--edge), 1331px), 62cqw);
     --u: calc(var(--col) / 1331);
+    --ry: 20deg;
+    --fy: calc(var(--u) * 12);
+    /* The dusk runs left to right: a deep slate-purple at the far left,
+       with white clouds, warming to sunrise behind the sun. */
+    background:
+      radial-gradient(ellipse at 14% 36%, #5f58a044, transparent 46%),
+      linear-gradient(
+        90deg,
+        #3a3a5e 0%,
+        #46467a 12%,
+        #6d66ac 24%,
+        #a39cd0 34%,
+        #d6d2eb 45%,
+        #f1eef5 56%,
+        #fff1e4 80%,
+        #fff7ec 100%
+      );
   }
 
   .canvas {
     display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      'rainy intro sunny'
+      'noteFrom . noteDifferent';
+    column-gap: calc(var(--u) * 46);
     width: var(--col);
     margin-inline: auto;
     padding-top: calc(var(--u) * 40);
+    perspective: calc(var(--u) * 1900);
+  }
+
+  .intro {
+    grid-area: intro;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: calc(var(--u) * 140);
+    text-align: center;
   }
 
   .intro h1 {
@@ -662,11 +532,12 @@
   }
 
   .description {
-    max-width: calc(var(--u) * 560);
+    max-width: calc(var(--u) * 540);
     margin: 0;
     font-size: calc(var(--u) * 22);
     line-height: 1.5;
     letter-spacing: calc(var(--u) * -0.3);
+    text-wrap: balance;
   }
 
   .actionRow {
@@ -685,21 +556,6 @@
     line-height: calc(var(--u) * 20);
   }
 
-  .startArrow {
-    flex: none;
-    width: calc(var(--u) * 62);
-    height: calc(var(--u) * 40);
-    margin-left: calc(var(--u) * 17);
-    transform: translateY(calc(var(--u) * -4));
-  }
-
-  .start {
-    width: calc(var(--u) * 132);
-    margin: 0 0 0 calc(var(--u) * 4);
-    font-size: calc(var(--u) * 25);
-    transform: translateY(calc(var(--u) * -16)) rotate(-6deg);
-  }
-
   .benefits {
     gap: calc(var(--u) * 42);
     margin-top: calc(var(--u) * 44);
@@ -716,37 +572,8 @@
     height: calc(var(--u) * 37);
   }
 
-  /* The pair of cards: the rented stack, the switch arrow, the seeds. The
-     stack sits a little lower, as in the design. */
   .comparison {
-    display: flex;
-    align-items: flex-start;
-  }
-
-  .rainy {
-    margin-top: calc(var(--u) * 52);
-  }
-
-  /* The backing sheet belongs to the stacked lists; beside the copy it
-     would read as a stray box between the cards. */
-  .wash {
-    display: none;
-  }
-
-  .switchArrow {
-    flex: none;
-    align-self: center;
-    width: calc(var(--u) * 65);
-    height: calc(var(--u) * 48);
-    margin: 0 calc(var(--u) * 10);
-  }
-
-  .panel {
-    filter: drop-shadow(0 calc(var(--u) * 17) calc(var(--u) * 20) #b6a2e52c);
-  }
-
-  .panel::before {
-    border-radius: calc(var(--u) * 20);
+    display: contents;
   }
 
   .panel h2 {
@@ -754,23 +581,42 @@
     font-size: calc(var(--u) * 16);
   }
 
-  .old {
-    width: calc(var(--u) * 280);
-    padding: calc(var(--u) * 24) calc(var(--u) * 28) calc(var(--u) * 26);
-    transform: perspective(calc(var(--u) * 900)) rotateY(-17deg) rotate(1deg);
+  /* The cards stand level, the same height, so each note hangs from its
+     card's foot on one line. */
+  .old,
+  .new {
+    align-self: stretch;
+    margin-top: calc(var(--u) * 196);
+    padding: calc(var(--u) * 26) calc(var(--u) * 28) calc(var(--u) * 28);
+    border: 2px solid #fff;
+    border-radius: calc(var(--u) * 20);
+    background: linear-gradient(115deg, #fff, #fbfaff);
   }
 
-  .old::before {
-    transform: skewY(-5deg);
+  .old {
+    grid-area: rainy;
+    justify-self: start;
+    display: flex;
+    flex-direction: column;
+    width: calc(var(--u) * 304);
+    transform: rotateY(var(--ry));
+    box-shadow: calc(var(--u) * -14) calc(var(--u) * 26) calc(var(--u) * 40)
+      #4d4a8040;
+  }
+
+  .old ul {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .old h2 {
     margin-bottom: calc(var(--u) * 22);
-    transform: rotate(-5deg);
   }
 
   .old li {
-    height: calc(var(--u) * 34);
+    height: calc(var(--u) * 35);
   }
 
   .old button {
@@ -788,36 +634,21 @@
   }
 
   .new {
-    width: calc(var(--u) * 300);
-    padding: calc(var(--u) * 27) calc(var(--u) * 20) calc(var(--u) * 20);
-    transform: rotate(-0.4deg);
-  }
-
-  .new::before {
-    transform: perspective(calc(var(--u) * 900)) rotateY(-12deg);
+    grid-area: sunny;
+    justify-self: end;
+    width: calc(var(--u) * 320);
+    transform: rotateY(calc(var(--ry) * -1));
+    box-shadow: calc(var(--u) * 14) calc(var(--u) * 26) calc(var(--u) * 40)
+      #b8906a40;
   }
 
   .new h2 {
-    margin: 0 calc(var(--u) * 2) calc(var(--u) * 19);
-    transform: rotate(-4deg);
+    margin: 0 0 calc(var(--u) * 19);
   }
 
   .new li {
     height: calc(var(--u) * 37);
     margin-bottom: calc(var(--u) * 4);
-    transform: rotate(var(--tilt, 0deg));
-  }
-
-  .new li:nth-child(-n + 4) {
-    --tilt: -5deg;
-  }
-
-  .new li:nth-child(n + 5):nth-child(-n + 8) {
-    --tilt: -2deg;
-  }
-
-  .new li:nth-child(n + 11) {
-    --tilt: 2deg;
   }
 
   .new li:last-child {
@@ -835,6 +666,7 @@
     box-shadow:
       0 0 0 calc(var(--u) * 2) var(--seed-ink),
       0 calc(var(--u) * 8) calc(var(--u) * 18) #6b5fb033;
+    transform: scale(1.04);
   }
 
   .new img {
@@ -859,96 +691,19 @@
     font-size: calc(var(--u) * 15);
   }
 
-  /* The weather and the notes sit around each card, measured from it: the
-     rain over the stack's top-left corner and the sun just past the seeds'
-     top-right one, each with the room above its card to itself, so the
-     notes that name the cards caption them from below. */
-  .comparison {
-    padding-top: calc(var(--u) * 150);
-  }
-
+  /* The weather sits behind each card, measured from its grid cell. */
   .rain {
-    top: calc(var(--u) * -164);
-    left: calc(var(--u) * -150);
-    width: calc(var(--u) * 500);
+    grid-area: rainy;
+    top: calc(var(--u) * -21);
+    left: calc(var(--u) * -60);
+    width: calc(var(--u) * 430);
   }
 
   .sun {
-    top: calc(var(--u) * -186);
-    left: calc(var(--u) * -50);
+    grid-area: sunny;
+    top: calc(var(--u) * -46);
+    left: calc(var(--u) * -90);
     width: calc(var(--u) * 480);
-  }
-
-  .from {
-    position: absolute;
-    top: calc(100% + var(--u) * 30);
-    left: calc(var(--u) * 58);
-    margin: 0;
-    font-size: calc(var(--u) * 28);
-    white-space: nowrap;
-    transform: rotate(-5deg);
-  }
-
-  .fromArrow {
-    position: absolute;
-    top: calc(100% + var(--u) * 4);
-    left: calc(var(--u) * 18);
-    width: calc(var(--u) * 35);
-    height: calc(var(--u) * 56);
-    transform: scaleY(-1);
-  }
-
-  .six {
-    position: absolute;
-    top: calc(var(--u) * 176);
-    left: calc(100% + var(--u) * 18);
-    width: max-content;
-    margin: 0;
-    font-size: calc(var(--u) * 25);
-    transform: rotate(-7deg);
-  }
-
-  /* Two set lines, "Plus twenty more / coming soon.", never three. */
-  .six > span {
-    display: block;
-    white-space: nowrap;
-  }
-
-  .sixArrow {
-    position: absolute;
-    top: calc(var(--u) * 262);
-    left: calc(100% + var(--u) * 8);
-    width: calc(var(--u) * 53);
-    height: calc(var(--u) * 42);
-  }
-
-  .upArrow {
-    position: absolute;
-    top: calc(100% + var(--u) * 6);
-    left: calc(var(--u) * 92);
-    width: calc(var(--u) * 47);
-    height: calc(var(--u) * 56);
-  }
-
-  .different {
-    position: absolute;
-    top: calc(100% + var(--u) * 22);
-    left: calc(var(--u) * 140);
-    width: calc(var(--u) * 220);
-    margin: 0;
-    font-size: calc(var(--u) * 25);
-    transform: rotate(-6deg);
-  }
-
-  .closing {
-    position: relative;
-    z-index: 2;
-    margin: calc(var(--u) * 120) 0 0;
-    padding: calc(var(--u) * 6) calc(var(--u) * 18);
-    /* A soft halo of the page's colour keeps the note clear of the ground. */
-    background: radial-gradient(closest-side, #f0effd 70%, #f0effd00);
-    font-size: calc(var(--u) * 25);
-    transform: rotate(3deg);
   }
 
   /* The ground's top half is open sky, so it tucks under the canvas. */
@@ -956,362 +711,7 @@
     height: calc(var(--u) * 300);
     margin-top: calc(var(--u) * -168);
   }
-}
 
-/* 1. Text left, cards right: the copy keeps its own column, the cards and
-   their notes the rest, so they never meet. */
-@media (min-width: 1280px) {
-  .layout1 .canvas {
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-areas:
-      'intro cards'
-      'closing closing';
-    column-gap: calc(var(--u) * 56);
-  }
-
-  .layout1 .intro {
-    grid-area: intro;
-    max-width: calc(var(--u) * 620);
-    padding-top: calc(var(--u) * 96);
-  }
-
-  .layout1 .intro h1 {
-    font-size: calc(var(--u) * 88);
-  }
-
-  .layout1 .comparison {
-    grid-area: cards;
-    margin-right: calc(var(--u) * 12);
-  }
-
-  /* The cloud stays over the rented card: between the headline and the
-     switch arrow, so no drop falls on the seeds. */
-  .layout1 .rain {
-    top: calc(var(--u) * -112);
-    left: calc(var(--u) * -40);
-    width: calc(var(--u) * 315);
-  }
-
-  .layout1 .closing {
-    grid-area: closing;
-    justify-self: start;
-    margin-left: calc(var(--u) * 260);
-  }
-}
-
-/* 2. Text centred above, the two cards side by side under it. */
-@media (min-width: 1280px) {
-  .layout2 .canvas {
-    grid-template-areas:
-      'intro'
-      'cards'
-      'closing';
-    justify-items: center;
-  }
-
-  .layout2 .intro {
-    grid-area: intro;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: calc(var(--u) * 1100);
-    padding-top: calc(var(--u) * 40);
-    text-align: center;
-  }
-
-  .layout2 .turn {
-    display: inline;
-  }
-
-  .layout2 .description {
-    max-width: calc(var(--u) * 700);
-    text-wrap: balance;
-  }
-
-  .layout2 .comparison {
-    grid-area: cards;
-    margin-top: calc(var(--u) * 10);
-  }
-
-  .layout2 .rain {
-    left: calc(var(--u) * -260);
-  }
-
-  .layout2 .closing {
-    grid-area: closing;
-  }
-}
-
-/* Centred copy: the button stays on the centre line and its handwritten
-   note hangs beside it. */
-@media (min-width: 1280px) {
-  .layout2 .actionRow {
-    justify-content: center;
-  }
-
-  .layout2 .startArrow {
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    margin: 0;
-    transform: translate(calc(var(--u) * 16), -60%);
-  }
-
-  .layout2 .start {
-    position: absolute;
-    top: 50%;
-    left: calc(100% + var(--u) * 82);
-    margin: 0;
-    text-align: left;
-    transform: translateY(-70%) rotate(-6deg);
-  }
-}
-
-/* 3. The cards flank a centred text column: the rented stack under the
-   rain on the left, the seeds in the sun on the right. The canvas holds the
-   perspective, so the two cards are mirror images turned toward the copy
-   between them, each a flat plane (rows included) in one 3D scene. */
-@media (min-width: 1280px) {
-  .layout3 .canvas {
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    grid-template-areas:
-      'rainy intro sunny'
-      'noteFrom . noteDifferent';
-    column-gap: calc(var(--u) * 46);
-    perspective: calc(var(--u) * 1900);
-  }
-
-  .layout3 .comparison {
-    display: contents;
-  }
-
-  /* The sides give their cards, weather and notes to the canvas, so the
-     cards are the perspective parent's own children. */
-  .layout3 .side {
-    display: contents;
-  }
-
-  /* The cards stand level, the same height, so each note hangs from its
-     card's foot on one line. */
-  .layout3 .old,
-  .layout3 .new {
-    align-self: stretch;
-    margin-top: calc(var(--u) * 196);
-  }
-
-  .layout3 .old {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .layout3 .old ul {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .layout3 .old {
-    grid-area: rainy;
-    justify-self: start;
-  }
-
-  .layout3 .new {
-    grid-area: sunny;
-    justify-self: end;
-  }
-
-  .layout3 .intro {
-    grid-area: intro;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: calc(var(--u) * 140);
-    text-align: center;
-  }
-
-  .layout3 .description {
-    max-width: calc(var(--u) * 540);
-    text-wrap: balance;
-  }
-
-  .layout3 .rain {
-    grid-area: rainy;
-    top: calc(var(--u) * -21);
-    left: calc(var(--u) * -60);
-    width: calc(var(--u) * 430);
-  }
-
-  .layout3 .sun {
-    grid-area: sunny;
-    top: calc(var(--u) * -46);
-    left: calc(var(--u) * -90);
-  }
-
-  .layout3 .old,
-  .layout3 .new {
-    padding: calc(var(--u) * 26) calc(var(--u) * 28) calc(var(--u) * 28);
-    border: 2px solid #fff;
-    border-radius: calc(var(--u) * 20);
-    background: linear-gradient(115deg, #fff, #fbfaff);
-    filter: none;
-  }
-
-  .layout3 .old::before,
-  .layout3 .new::before {
-    display: none;
-  }
-
-  .layout3 {
-    --ry: 20deg;
-    --fy: calc(var(--u) * 12);
-  }
-
-  .layout3 .old {
-    width: calc(var(--u) * 304);
-    transform: rotateY(var(--ry));
-    box-shadow: calc(var(--u) * -14) calc(var(--u) * 26) calc(var(--u) * 40)
-      #4d4a8040;
-  }
-
-  .layout3 .new {
-    width: calc(var(--u) * 320);
-    transform: rotateY(calc(var(--ry) * -1));
-    box-shadow: calc(var(--u) * 14) calc(var(--u) * 26) calc(var(--u) * 40)
-      #b8906a40;
-  }
-
-  /* Every row sits flat in its card's plane. */
-  .layout3 .old h2,
-  .layout3 .new h2,
-  .layout3 .new li {
-    transform: none;
-  }
-
-  .layout3 .new h2 {
-    margin-inline: 0;
-  }
-
-  .layout3 .old li {
-    height: calc(var(--u) * 35);
-  }
-
-  .layout3 .new li {
-    height: calc(var(--u) * 37);
-  }
-
-  .layout3 .new a[data-on] {
-    transform: scale(1.04);
-  }
-}
-
-/* Layout 1 keeps the seeds' card at the column's right edge, with no
-   room beside it: the count note hangs under the card's left edge, before
-   "Better, open source, free." */
-@media (min-width: 1280px) {
-  .layout1 .six {
-    top: calc(100% + var(--u) * 34);
-    left: calc(var(--u) * -30);
-    transform: rotate(-5deg);
-  }
-
-  .layout1 .sixArrow {
-    display: none;
-  }
-
-  /* Shorter and lower, so its tip stays under the first screen at
-     1440x900 with the note it belongs to. */
-  .layout1 .upArrow {
-    top: calc(100% + var(--u) * 22);
-    left: calc(var(--u) * 122);
-    height: calc(var(--u) * 40);
-  }
-
-  .layout1 .different {
-    left: calc(var(--u) * 160);
-    width: calc(var(--u) * 200);
-  }
-}
-
-/* Up to 1440px wide the sun's halo would meet the screen's right edge in
-   layouts 1 and 3: it comes in a little. */
-@media (min-width: 1280px) and (max-width: 1440px) {
-  .layout1 .sun {
-    margin-left: calc(var(--u) * -20);
-  }
-}
-
-/* 4. A split heading row, the headline left and the subhead and button
-   right, with the two cards spread wide below it. */
-@media (min-width: 1280px) {
-  .layout4 .canvas {
-    grid-template-areas:
-      'intro'
-      'cards'
-      'closing';
-  }
-
-  .layout4 .intro {
-    grid-area: intro;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
-    grid-template-areas:
-      'h1 description'
-      'h1 actions'
-      'h1 benefits';
-    column-gap: calc(var(--u) * 70);
-    align-items: start;
-    padding-top: calc(var(--u) * 48);
-  }
-
-  .layout4 .turn {
-    display: inline;
-  }
-
-  .layout4 .intro h1 {
-    grid-area: h1;
-    margin: 0;
-    font-size: calc(var(--u) * 100);
-  }
-
-  .layout4 .description {
-    grid-area: description;
-    padding-top: calc(var(--u) * 12);
-  }
-
-  .layout4 .actionRow {
-    grid-area: actions;
-    margin-top: calc(var(--u) * 32);
-  }
-
-  .layout4 .benefits {
-    grid-area: benefits;
-    margin-top: calc(var(--u) * 36);
-  }
-
-  .layout4 .comparison {
-    grid-area: cards;
-    justify-self: center;
-    margin-top: calc(var(--u) * 20);
-  }
-
-  .layout4 .switchArrow {
-    width: calc(var(--u) * 110);
-    height: calc(var(--u) * 81);
-    margin: 0 calc(var(--u) * 80);
-  }
-
-  .layout4 .rain {
-    left: calc(var(--u) * -250);
-  }
-
-  .layout4 .closing {
-    grid-area: closing;
-    justify-self: center;
-  }
-}
-
-@media (min-width: 1280px) {
   .reasons {
     width: var(--col);
     gap: calc(var(--u) * 14);
@@ -1336,6 +736,7 @@
     grid-area: noteFrom;
     justify-self: start;
     margin: calc(var(--u) * 34) 0 0 calc(var(--u) * 10);
+    color: #e6dfff;
     font-size: calc(var(--u) * 28);
     transform: rotate(-3deg);
     transform-origin: left center;
@@ -1355,7 +756,17 @@
 
 /* ---- Stacked, under 1280px wide ---- */
 
+/* The copy on the dusk turns light; the two cards still face each other, as
+   they do flanking the copy, each a flat plane turned toward the other in
+   one perspective scene, with the tilt scaled down so the rows stay
+   readable and the near edges stay inside the page. Each note sits under
+   its own card. */
 @media (max-width: 1279px) {
+  .top {
+    --ry: 15deg;
+    --fy: 10px;
+  }
+
   .canvas {
     max-width: 760px;
     margin-inline: auto;
@@ -1364,12 +775,14 @@
 
   .intro h1 {
     margin: 0 0 20px;
+    color: #fff;
     font-size: clamp(46px, 11.5vw, 76px);
     line-height: 1.04;
     letter-spacing: -0.02em;
   }
 
   .description {
+    color: #e6e0fa;
     font-size: 21px;
     line-height: 1.5;
     letter-spacing: -0.01em;
@@ -1385,7 +798,14 @@
     gap: 12px;
     min-height: 58px;
     padding: 16px 26px;
+    background: #fff;
+    color: #1e1e1e;
     font-size: 19px;
+    box-shadow: 0 6px 18px #1c1a3a40;
+  }
+
+  .cta:hover {
+    background: #f1eefc;
   }
 
   .ctaArrow {
@@ -1393,22 +813,11 @@
     line-height: 16px;
   }
 
-  .startArrow {
-    flex: none;
-    width: 50px;
-    height: 32px;
-  }
-
-  .start {
-    margin: 0;
-    font-size: 24px;
-    transform: rotate(-5deg);
-  }
-
   .benefits {
     flex-wrap: wrap;
     gap: 16px 32px;
     margin-top: 32px;
+    color: #d9d2f4;
   }
 
   .benefits li {
@@ -1427,17 +836,32 @@
   .comparison {
     display: grid;
     grid-template-areas:
-      'from arrow .'
-      'old arrow new'
-      '. arrow six'
-      'different different different';
-    grid-template-columns: minmax(0, 1fr) 64px minmax(0, 1fr);
+      'old new'
+      'from different';
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 14px;
     margin-top: 40px;
     padding-top: 136px;
+    perspective: 1700px;
   }
 
-  .side {
-    display: contents;
+  /* The warm glow of the sunrise behind the sun, fading out inside its own
+     box so it has no edge. */
+  .comparison::before {
+    content: '';
+    position: absolute;
+    top: -90px;
+    right: -190px;
+    width: 460px;
+    height: 360px;
+    pointer-events: none;
+    background: radial-gradient(
+      closest-side,
+      #fff1e4 0,
+      #ffe6d0cc 30%,
+      #ffdcc080 56%,
+      transparent 100%
+    );
   }
 
   .rain {
@@ -1452,34 +876,8 @@
     width: min(300px, 50%);
   }
 
-  .wash {
-    inset: 192px -14px 70px;
-    border-radius: 32px;
-    transform: rotate(1deg);
-  }
-
-  /* Only as wide as its words, so the tilt turns about the note itself:
-     a full-width box would swing its left end down onto the cards. */
-  .from {
-    grid-area: from;
-    justify-self: start;
-    margin: 0 0 14px 6px;
-    font-size: 27px;
-    transform: rotate(-3deg);
-  }
-
-  .fromArrow,
-  .sixArrow,
-  .upArrow {
-    display: none;
-  }
-
   .panel {
     padding: 20px 16px 16px;
-  }
-
-  .panel::before {
-    border-radius: 18px;
   }
 
   .panel h2 {
@@ -1488,12 +886,26 @@
     font-size: 16px;
   }
 
+  .old,
+  .new {
+    border-radius: 18px;
+    background: linear-gradient(115deg, #fff, #fbfaff);
+  }
+
   .old {
     grid-area: old;
+    transform: rotateY(var(--ry));
+    box-shadow:
+      inset 0 0 0 2px #fff,
+      -10px 22px 34px #4d4a8040;
   }
 
   .new {
     grid-area: new;
+    transform: rotateY(calc(var(--ry) * -1));
+    box-shadow:
+      inset 0 0 0 2px #fff,
+      10px 22px 34px #b8906a40;
   }
 
   .old li,
@@ -1554,57 +966,9 @@
     font-size: 15px;
   }
 
-  .switchArrow {
-    grid-area: arrow;
-    align-self: center;
-    justify-self: center;
-    width: 48px;
-    height: 36px;
-  }
-
-  /* Like the note above the cards, tilted about its own words. */
-  .six {
-    grid-area: six;
-    justify-self: end;
-    margin: 18px 4px 0;
-    font-size: 25px;
-    text-align: right;
-    transform: rotate(-3deg);
-  }
-
-  .different {
-    grid-area: different;
-    margin: 36px 20px 0;
-    font-size: 23px;
-    text-align: center;
-    transform: rotate(1.5deg);
-  }
-
-  .closing {
-    margin: 28px 20px 0;
-    font-size: 25px;
-    text-align: center;
-    transform: rotate(-1.5deg);
-  }
-
   .ground {
     height: 180px;
-    margin-top: -64px;
-  }
-}
-
-/* The home page's hero stacked: each note sits under its own card. */
-@media (max-width: 1279px) {
-  .layout3 .comparison {
-    grid-template-areas:
-      'old new'
-      'from different';
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    column-gap: 14px;
-  }
-
-  .layout3 .wash {
-    display: none;
+    margin-top: -100px;
   }
 
   .noteFrom {
@@ -1643,110 +1007,16 @@
     margin-top: 6px;
     font-size: 15.5px;
   }
-
-  .layout3 .ground {
-    margin-top: -100px;
-  }
 }
 
-/* The home page's hero stacked: the two cards still face each other, as they
-   do flanking the copy, each a flat plane turned toward the other in one
-   perspective scene, with the tilt scaled down so the rows stay readable
-   and the near edges stay inside the page. */
-@media (max-width: 1279px) {
-  .layout3 {
-    --ry: 15deg;
-    --fy: 10px;
-  }
-
-  .layout3 .comparison {
-    perspective: 1700px;
-  }
-
-  .layout3 .old,
-  .layout3 .new {
-    border-radius: 18px;
-    background: linear-gradient(115deg, #fff, #fbfaff);
-    filter: none;
-  }
-
-  .layout3 .old::before,
-  .layout3 .new::before {
-    display: none;
-  }
-
-  .layout3 .old {
-    transform: rotateY(var(--ry));
-    box-shadow:
-      inset 0 0 0 2px #fff,
-      -10px 22px 34px #4d4a8040;
-  }
-
-  .layout3 .new {
-    transform: rotateY(calc(var(--ry) * -1));
-    box-shadow:
-      inset 0 0 0 2px #fff,
-      10px 22px 34px #b8906a40;
-  }
-
-  /* The warm glow of the sunrise behind the sun, fading out inside its own
-     box so it has no edge. */
-  .dusk .comparison::before {
-    content: '';
-    position: absolute;
-    top: -90px;
-    right: -190px;
-    width: 460px;
-    height: 360px;
-    pointer-events: none;
-    background: radial-gradient(
-      closest-side,
-      #fff1e4 0,
-      #ffe6d0cc 30%,
-      #ffdcc080 56%,
-      transparent 100%
-    );
-  }
-}
-
+/* Phones: the two lists stay side by side, so a picked tool and its seed
+   sit on one row, with a gentler tilt. */
 @media (max-width: 599px) {
-  .layout3 {
+  .top {
     --ry: 11deg;
     --fy: 8px;
   }
 
-  .layout3 .comparison {
-    perspective: 1100px;
-  }
-
-  .layout3 .old,
-  .layout3 .new {
-    border-radius: 16px;
-  }
-
-  .layout3 .old {
-    box-shadow:
-      inset 0 0 0 2px #fff,
-      -7px 16px 26px #4d4a8040;
-  }
-
-  .layout3 .new {
-    box-shadow:
-      inset 0 0 0 2px #fff,
-      7px 16px 26px #b8906a40;
-  }
-
-  .dusk .comparison::before {
-    top: -70px;
-    right: -150px;
-    width: 340px;
-    height: 280px;
-  }
-}
-
-/* Phones: the two lists stay side by side, so a picked tool and its seed
-   sit on one row; the arrow between them gives way to the lists. */
-@media (max-width: 599px) {
   .canvas {
     padding: 28px 20px 0;
   }
@@ -1763,15 +1033,6 @@
     min-height: 56px;
     padding: 15px 24px;
     font-size: 18px;
-  }
-
-  .startArrow {
-    display: none;
-  }
-
-  .start {
-    width: 100%;
-    margin: 10px 0 0 28px;
   }
 
   .benefits {
@@ -1794,15 +1055,18 @@
   }
 
   .comparison {
-    grid-template-areas:
-      'from from'
-      'old new'
-      'six six'
-      'different different';
     grid-template-columns: minmax(0, 0.93fr) minmax(0, 1.07fr);
     column-gap: 10px;
     margin-top: 32px;
     padding-top: 92px;
+    perspective: 1100px;
+  }
+
+  .comparison::before {
+    top: -70px;
+    right: -150px;
+    width: 340px;
+    height: 280px;
   }
 
   .rain {
@@ -1817,14 +1081,6 @@
     width: 220px;
   }
 
-  .wash {
-    inset: 142px -10px 110px;
-  }
-
-  .switchArrow {
-    display: none;
-  }
-
   .panel {
     padding: 16px 6px 8px;
   }
@@ -1834,7 +1090,26 @@
     font-size: 15px;
   }
 
+  .old,
+  .new {
+    border-radius: 16px;
+  }
+
+  .old {
+    box-shadow:
+      inset 0 0 0 2px #fff,
+      -7px 16px 26px #4d4a8040;
+  }
+
+  .new {
+    box-shadow:
+      inset 0 0 0 2px #fff,
+      7px 16px 26px #b8906a40;
+  }
+
   .old button {
+    gap: 4px;
+    padding: 0 5px;
     font-size: 14px;
   }
 
@@ -1860,11 +1135,6 @@
     font-size: 12px;
   }
 
-  .old button {
-    gap: 4px;
-    padding: 0 5px;
-  }
-
   .full {
     display: none;
   }
@@ -1878,20 +1148,8 @@
     font-size: 12px;
   }
 
-  .six {
-    font-size: 24px;
-  }
-
   .ground {
     height: 140px;
-    margin-top: -48px;
-  }
-}
-
-@media (max-width: 599px) {
-  .layout3 .comparison {
-    grid-template-columns: minmax(0, 0.93fr) minmax(0, 1.07fr);
-    column-gap: 10px;
   }
 
   .reasons {
@@ -1912,21 +1170,21 @@
    waits. Each float runs four bobs in one iteration (36s and 44s): the
    page has animation listeners, and the browser wakes the main thread at
    every iteration boundary to tell them. */
-.layout3 .old,
-.layout3 .new {
+.old,
+.new {
   will-change: transform;
 }
 
-.layout3 .old {
+.old {
   animation: floatLeft 36s ease-in-out -12s infinite;
 }
 
-.layout3 .new {
+.new {
   animation: floatRight 44s ease-in-out -28s infinite;
 }
 
 /* The nudge keeps the float running beside it, so it never jumps. */
-.layout3 .old.nudge {
+.old.nudge {
   animation:
     floatLeft 36s ease-in-out -12s infinite,
     nudge 0.5s ease-in-out;

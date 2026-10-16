@@ -21,8 +21,8 @@ export function ProductCard({
   level,
 }: {
   shown: Shown;
-  /** h4 under an area's heading; h3 in a search's results. */
-  level: 'h3' | 'h4';
+  /** One level under the heading the card's list sits beneath. */
+  level: 'h2' | 'h3' | 'h4';
 }) {
   const { item, replaces, reason } = shown;
   const Name = level;

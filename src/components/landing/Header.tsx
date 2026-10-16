@@ -3,15 +3,18 @@ import Link from 'next/link';
 import { nav } from '@/content/landing';
 
 import ui from './label.module.css';
-import type { HeroTone } from './hero/layouts';
 import { Logo } from './Logo';
 import styles from './header.module.css';
 
-/** The landing page's header, floating on the hero's room. */
-export function Header({ tone }: { tone?: HeroTone }) {
+/**
+ * The landing page's header, floating on the hero's room. `dusk` is the home
+ * page's: over the hero's dusk sky the wordmark (and, stacked, the links)
+ * turn light.
+ */
+export function Header({ dusk = false }: { dusk?: boolean }) {
   return (
     <header
-      className={`${ui.wrap} ${styles.header} ${styles.floating} ${tone ? styles[tone] : ''}`}
+      className={`${ui.wrap} ${styles.header} ${styles.floating} ${dusk ? styles.dusk : ''}`}
     >
       {/* The page links to itself: no prefetch needed. */}
       <Link className={styles.brand} href="/" prefetch={false}>

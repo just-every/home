@@ -21,12 +21,22 @@ import type { CollectionItem } from './types';
  * small heading. A search shows only its products, with no headings, and
  * the seeds in the works that match what is typed, as coming soon (each
  * naming the tool typed, where it replaces it). Every card, and every coming
- * soon row, links to the seed's own page.
+ * soon row, links to the seed's own page. `level` is the level of the
+ * collection's own headings (each area, coming soon, and a search's
+ * results): 2 on /products, right under its h1; 3 under a section's h2.
  */
-export function CollectionBrowser({ items }: { items: CollectionItem[] }) {
+export function CollectionBrowser({
+  items,
+  level,
+}: {
+  items: CollectionItem[];
+  level: 2 | 3;
+}) {
   const search = useCollectionSearch(items, upcoming);
   const grouped = useMemo(() => areas(items), [items]);
   const searching = search.mode === 'instant' || search.mode === 'answer';
+  const Heading = level === 2 ? 'h2' : 'h3';
+  const under = level === 2 ? 'h3' : 'h4';
 
   return (
     <>
@@ -34,19 +44,19 @@ export function CollectionBrowser({ items }: { items: CollectionItem[] }) {
       {searching && search.matches.length > 0 ? (
         <ul className={styles.results}>
           {results(search.mode, search.matches, search.text).map(entry => (
-            <ProductCard key={entry.item.slug} shown={entry} level="h3" />
+            <ProductCard key={entry.item.slug} shown={entry} level={Heading} />
           ))}
         </ul>
       ) : null}
       {search.soon.length > 0 ? (
         <div className={styles.soon}>
-          <h3 className={styles.areaHeading}>{comingSoon.label}</h3>
+          <Heading className={styles.areaHeading}>{comingSoon.label}</Heading>
           <ul className={soonStyles.list}>
             {search.soon.map(seed => (
               <SoonItem
                 key={seed.slug}
                 seed={seed}
-                level="h4"
+                level={under}
                 replaces={namedReplace(seed, search.text)}
               />
             ))}
@@ -57,10 +67,14 @@ export function CollectionBrowser({ items }: { items: CollectionItem[] }) {
         <div className={styles.areas}>
           {grouped.map(area => (
             <div className={styles.area} key={area.id}>
-              <h3 className={styles.areaHeading}>{area.heading}</h3>
+              <Heading className={styles.areaHeading}>{area.heading}</Heading>
               <ul className={styles.list}>
                 {area.items.map(entry => (
-                  <ProductCard key={entry.item.slug} shown={entry} level="h4" />
+                  <ProductCard
+                    key={entry.item.slug}
+                    shown={entry}
+                    level={under}
+                  />
                 ))}
               </ul>
             </div>

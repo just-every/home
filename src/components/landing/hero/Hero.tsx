@@ -11,28 +11,14 @@ import { numberWord } from '@/lib/number-word';
 import { X_EVENTS, track } from '@/lib/x-pixel';
 
 import { caveat } from './fonts';
-import { DEFAULT_HERO_LAYOUT } from './layouts';
-import type { HeroLayout, HeroTone } from './layouts';
 import styles from './hero.module.css';
 import { moreCount, rows } from './order';
 import { Rainfall } from './Rainfall';
-import {
-  CodeIcon,
-  DocIcon,
-  FromArrow,
-  LeafIcon,
-  SixArrow,
-  StartArrow,
-  SwitchArrow,
-  UpArrow,
-} from './sketches';
+import { CodeIcon, DocIcon, LeafIcon } from './sketches';
 import { SunLayers } from './SunLayers';
 
 /** The page's soft card tints, one per benefit, in order. */
 const tints = ['#e9f7f0', '#e8f3ff', '#f1ebff', '#fff8e3'];
-
-/** Layout 3 is the home page's: two notes, no arrows, no loose lines. */
-const CALM_LAYOUT = 3;
 
 const STACK_ID = 'hero-stack';
 
@@ -47,8 +33,9 @@ const reducedMotion = () =>
  * sketched arrow, and the open source it can own instead (the seeds, with
  * their marks and pastels, and a quiet "and N more" link to the rest of the
  * collection) in the sun, with handwritten notes and a painted ground along
- * the foot that runs from rain-cooled to sunlit. `layout` picks how the
- * copy sits around the two cards (layouts.ts). The weather moves, slowly:
+ * the foot that runs from rain-cooled to sunlit, all under a dusk sky. From
+ * 1280px wide the two cards flank the copy as mirror images; narrower
+ * screens stack the copy over the two cards. The weather moves, slowly:
  * the cards float, the rain falls (a third of it dollar signs, receipts and
  * coins, tumbling), the sun's glow breathes and its clouds drift. Only
  * small layers move (Rainfall, SunLayers), on the compositor, and only
@@ -61,13 +48,7 @@ const reducedMotion = () =>
  * is the hero's call to action, reported as a hero-switch content view
  * with the seed's slug.
  */
-export function Hero({
-  layout = DEFAULT_HERO_LAYOUT,
-  tone,
-}: {
-  layout?: HeroLayout;
-  tone?: HeroTone;
-}) {
+export function Hero() {
   const [picked, setPicked] = useState<string | null>(null);
   const pickers = useRef<(HTMLButtonElement | null)[]>([]);
   const stackRef = useRef<HTMLElement | null>(null);
@@ -145,14 +126,13 @@ export function Hero({
     }
   };
 
-  const calm = layout === CALM_LAYOUT;
   const live = numberWord(volumes.length, true);
   const coming = numberWord(upcoming.length);
 
   return (
     <section
       ref={topRef}
-      className={`${styles.top} ${styles[`layout${layout}`]} ${tone ? styles[tone] : ''}`}
+      className={styles.top}
       aria-labelledby="hero-heading"
       data-picked={picked ?? undefined}
     >
@@ -179,18 +159,6 @@ export function Hero({
                 →
               </span>
             </a>
-            {calm ? null : (
-              <>
-                <StartArrow
-                  className={`${styles.lineArt} ${styles.startArrow}`}
-                />
-                <p
-                  className={`${caveat.className} ${styles.hand} ${styles.start}`}
-                >
-                  Start your switch here.
-                </p>
-              </>
-            )}
           </div>
           <ul className={styles.benefits}>
             <li>
@@ -221,9 +189,7 @@ export function Hero({
         </div>
 
         <div className={styles.comparison}>
-          <div className={styles.wash} aria-hidden="true" />
-
-          <div className={`${styles.side} ${styles.rainy}`}>
+          <div className={styles.side}>
             {/* The cloud is still art; what falls from it is a layer of small
                 elements under it (Rainfall.tsx). */}
             <div
@@ -242,18 +208,6 @@ export function Hero({
                 decoding="async"
               />
             </div>
-            {calm ? null : (
-              <>
-                <p
-                  className={`${caveat.className} ${styles.hand} ${styles.from}`}
-                >
-                  From tools you rent…
-                </p>
-                <FromArrow
-                  className={`${styles.lineArt} ${styles.fromArrow}`}
-                />
-              </>
-            )}
 
             <section
               className={`${styles.panel} ${styles.old}`}
@@ -312,18 +266,14 @@ export function Hero({
                 Pick the tool you rent to see what replaces it.
               </p>
             </section>
-            {calm ? (
-              <p
-                className={`${caveat.className} ${styles.hand} ${styles.note} ${styles.noteFrom}`}
-              >
-                From tools you rent…
-              </p>
-            ) : null}
+            <p
+              className={`${caveat.className} ${styles.note} ${styles.noteFrom}`}
+            >
+              From tools you rent…
+            </p>
           </div>
 
-          {calm ? null : <SwitchArrow className={styles.switchArrow} />}
-
-          <div className={`${styles.side} ${styles.sunny}`}>
+          <div className={styles.side}>
             <div
               className={`${styles.weather} ${styles.sun}`}
               aria-hidden="true"
@@ -382,36 +332,13 @@ export function Hero({
               ) : null}
             </section>
 
-            {calm ? (
-              <p
-                className={`${caveat.className} ${styles.hand} ${styles.note} ${styles.noteDifferent}`}
-              >
-                Better, open source, free.
-              </p>
-            ) : (
-              <>
-                <p
-                  className={`${caveat.className} ${styles.hand} ${styles.six}`}
-                >
-                  <span>Plus {coming} more</span> <span>coming soon.</span>
-                </p>
-                <SixArrow className={`${styles.lineArt} ${styles.sixArrow}`} />
-                <UpArrow className={`${styles.lineArt} ${styles.upArrow}`} />
-                <p
-                  className={`${caveat.className} ${styles.hand} ${styles.different}`}
-                >
-                  Better, open source, free.
-                </p>
-              </>
-            )}
+            <p
+              className={`${caveat.className} ${styles.note} ${styles.noteDifferent}`}
+            >
+              Better, open source, free.
+            </p>
           </div>
         </div>
-
-        {calm ? null : (
-          <p className={`${caveat.className} ${styles.hand} ${styles.closing}`}>
-            Own your tools. Change any line.
-          </p>
-        )}
       </div>
 
       {/* The four reasons to switch, above the ground. */}

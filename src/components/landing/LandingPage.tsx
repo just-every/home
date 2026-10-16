@@ -3,7 +3,6 @@ import { sans } from './fonts';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { Hero } from './hero/Hero';
-import type { HeroLayout, HeroTone } from './hero/layouts';
 import ui from './label.module.css';
 import { Makers } from './Makers';
 import panels from './panels.module.css';
@@ -24,19 +23,13 @@ import { VolumeLinks } from './VolumeLinks';
  * "Nothing in the collection does that yet" links down to it (on /products
  * it has its own copy of the form).
  */
-export function LandingPage({
-  heroLayout,
-  heroTone,
-}: {
-  heroLayout?: HeroLayout;
-  heroTone?: HeroTone;
-}) {
+export function LandingPage() {
   return (
     <div className={`${ui.page} ${sans.variable}`} id="top">
       <VolumeLinks />
-      <Header tone={heroTone} />
+      <Header dusk />
       <main>
-        <Hero layout={heroLayout} tone={heroTone} />
+        <Hero />
         <Featured />
         <Running />
         <Questions />
