@@ -1056,7 +1056,7 @@
 
 /* Layout 1 keeps the seeds' card at the column's right edge, with no
    room beside it: the count note hangs under the card's left edge, before
-   "Different tools". */
+   "Better, open source, free." */
 @media (min-width: 1280px) {
   .layout1 .six {
     top: calc(100% + var(--u) * 34);

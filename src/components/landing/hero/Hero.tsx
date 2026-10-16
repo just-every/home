@@ -377,7 +377,7 @@ export function Hero({
               <p
                 className={`${caveat.className} ${styles.hand} ${styles.note} ${styles.noteDifferent}`}
               >
-                Different tools. Nothing to renew.
+                Better, open source, free.
               </p>
             ) : (
               <>
@@ -391,9 +391,7 @@ export function Hero({
                 <p
                   className={`${caveat.className} ${styles.hand} ${styles.different}`}
                 >
-                  Different tools.
-                  <br />
-                  Nothing to renew.
+                  Better, open source, free.
                 </p>
               </>
             )}
