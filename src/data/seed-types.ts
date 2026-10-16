@@ -48,5 +48,6 @@ export interface Seed {
   markLight: string | null;
   /** Mark drawn in the ink colour, where the product ships one. */
   markInk: string | null;
-  reel: SeedReel;
+  /** The product's launch reel, or null until it has one. */
+  reel: SeedReel | null;
 }
