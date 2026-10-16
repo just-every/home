@@ -12,6 +12,7 @@
 }
 
 .item {
+  position: relative;
   display: grid;
   grid-template-columns: 40px minmax(0, 11rem) minmax(0, 1fr) auto;
   align-items: center;
@@ -48,6 +49,30 @@
   line-height: 1.2;
 }
 
+.open::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+}
+
+.item:hover .open {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+}
+
+.open:focus-visible {
+  outline: none;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.item:has(.open:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
 .alt {
   margin-top: 2px;
   color: var(--muted);
@@ -62,6 +87,8 @@
 }
 
 .repo {
+  position: relative;
+  z-index: 1;
   display: inline-flex;
   align-items: center;
   gap: 6px;

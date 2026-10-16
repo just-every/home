@@ -19,11 +19,11 @@ export interface CollectionItem {
   ink: string;
   /** Null for a product with no reel yet. */
   reel: SeedReel | null;
-  /** A still of its homepage, for the box when it has no reel. */
+  /** A still of its homepage, for a product with no reel. */
   homepageShot: string | null;
 }
 
-/** A product as the page shows it, in the box or as a card. */
+/** A product as the page shows it, as a card. */
 export interface Shown {
   item: CollectionItem;
   /** The incumbent to name; the one the visitor typed, where it applies. */

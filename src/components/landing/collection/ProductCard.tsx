@@ -1,24 +1,24 @@
+import Link from 'next/link';
+
 import { collection } from '@/content/landing';
+import { track, X_EVENTS } from '@/lib/x-pixel';
 
 import { BrandMark } from '../BrandMark';
 import ui from '../label.module.css';
-import { cardId } from '../volumes';
 import styles from './collection.module.css';
 import { cardStyle } from './cardStyle';
 import type { Shown } from './types';
 
 /**
  * A product among the others: its mark, name, what it replaces, what it
- * does (its line) and GitHub, on its pastel. The whole card selects it (its
- * name is the link); the selected one is ringed, and the box above shows it.
+ * does (its line) and GitHub, on its pastel. The whole card opens the seed's
+ * own page (its name is the link).
  */
 export function ProductCard({
   shown,
-  current,
   level,
 }: {
   shown: Shown;
-  current: boolean;
   /** h4 under an area's heading; h3 in a search's results. */
   level: 'h3' | 'h4';
 }) {
@@ -26,22 +26,25 @@ export function ProductCard({
   const Name = level;
   return (
     <li
-      className={`${ui.card} ${ui.tinted} ${styles.card}${
-        current ? ` ${styles.current}` : ''
-      }`}
-      id={cardId(item.slug)}
+      className={`${ui.card} ${ui.tinted} ${styles.card}`}
       style={cardStyle(item)}
     >
       <BrandMark className={styles.mark} volume={item} size={36} />
       <div className={styles.head}>
         <Name className={styles.name}>
-          <a
+          <Link
             className={styles.select}
-            href={`#${cardId(item.slug)}`}
-            aria-current={current ? 'true' : undefined}
+            href={`/${item.slug}`}
+            prefetch={false}
+            onClick={() =>
+              track(X_EVENTS.contentView, {
+                content_name: item.name,
+                content_type: 'product',
+              })
+            }
           >
             {item.name}
-          </a>
+          </Link>
         </Name>
         <p className={styles.alt}>
           {collection.alternativeTo} {replaces}
@@ -58,8 +61,7 @@ export function ProductCard({
         </span>
       </a>
       <p className={styles.cardLine}>{item.line}</p>
-      {/* The box above already gives the selected pick's reason. */}
-      {reason && !current ? <p className={styles.reason}>{reason}</p> : null}
+      {reason ? <p className={styles.reason}>{reason}</p> : null}
     </li>
   );
 }

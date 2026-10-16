@@ -23,7 +23,7 @@ export interface Volume {
   ink: string;
   /** URL of the SVG mark, already recoloured if needed. */
   mark: string;
-  /** Anchor of the product's card on the page. */
+  /** The product's own page. */
   href: string;
   seed: Seed;
 }
@@ -40,8 +40,6 @@ function markFor(seed: Seed): string {
   return seed.markLight ?? seed.markInk ?? seed.mark;
 }
 
-export const cardId = (slug: string) => `vol-${slug}`;
-
 export const volumes: Volume[] = seeds.map((seed, index) => ({
   slug: seed.slug,
   name: seed.name,
@@ -50,7 +48,7 @@ export const volumes: Volume[] = seeds.map((seed, index) => ({
   colour: seed.pastel,
   ink: seed.ink,
   mark: markFor(seed),
-  href: `#${cardId(seed.slug)}`,
+  href: `/${seed.slug}`,
   seed,
 }));
 

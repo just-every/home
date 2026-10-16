@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { CSSProperties } from 'react';
 
 import { comingSoon } from '@/data/upcoming';
@@ -8,7 +9,7 @@ import styles from './soon.module.css';
 /**
  * A seed in the works as one quiet row: its mark on its pastel, its name,
  * what it replaces (or, where its repo names nothing, what it is), its line
- * and its public source. Nothing here selects, plays or opens a product.
+ * and its public source. The name opens the seed's own page.
  */
 export function SoonItem({
   seed,
@@ -44,7 +45,11 @@ export function SoonItem({
         />
       </span>
       <div className={styles.head}>
-        <Name className={styles.name}>{seed.name}</Name>
+        <Name className={styles.name}>
+          <Link className={styles.open} href={`/${seed.slug}`} prefetch={false}>
+            {seed.name}
+          </Link>
+        </Name>
         <p className={styles.alt}>
           {replaces ? `${comingSoon.alternativeTo} ${replaces}` : seed.category}
         </p>

@@ -7,153 +7,10 @@
   margin-bottom: 24px;
 }
 
-.num {
-  color: var(--muted);
-  font-size: 15px;
-  font-variant-numeric: tabular-nums;
-}
-
 .alt {
   color: var(--muted);
   font-size: 14px;
   line-height: 1.3;
-}
-
-/* The selected product, across the whole width above the products: text
-   on one side, its reel (or a still of its homepage, or its mark) on the
-   other. */
-.feature {
-  scroll-margin-top: 24px;
-  margin-bottom: 36px;
-  padding: 18px;
-  transition: background-color 240ms ease;
-}
-
-.featureBody {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-  gap: 20px 44px;
-  animation: feature-in 280ms ease both;
-}
-
-@keyframes feature-in {
-  from {
-    opacity: 0;
-  }
-}
-
-.featureText {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: 14px 0 4px 18px;
-}
-
-.featureMark {
-  width: 52px;
-  height: 52px;
-  margin-bottom: 16px;
-  object-fit: contain;
-}
-
-.featureText .num {
-  margin-bottom: 4px;
-}
-
-.featureName {
-  margin: 0 0 6px;
-  font-size: clamp(30px, 2.5vw, 36px);
-  font-weight: 650;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
-}
-
-.featureName:focus:not(:focus-visible) {
-  outline: none;
-}
-
-.family {
-  display: inline-block;
-  color: var(--muted);
-  white-space: nowrap;
-  font-size: 0.56em;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-
-.feature .alt {
-  font-size: 15px;
-}
-
-.does {
-  max-width: 520px;
-  margin-top: 22px;
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-}
-
-.line {
-  max-width: 520px;
-  margin-top: 6px;
-  color: var(--soft);
-  font-size: 16px;
-  line-height: 1.42;
-}
-
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 22px;
-  margin-top: auto;
-  padding-top: 22px;
-}
-
-.primary {
-  min-height: 46px;
-  padding: 0 22px;
-  font-size: 16px;
-}
-
-.secondary {
-  font-size: 16px;
-}
-
-.media {
-  display: flex;
-  align-items: center;
-  min-width: 0;
-}
-
-.picture {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 10px;
-  background: var(--card-paper);
-}
-
-/* A product with no reel and no homepage yet: its mark on paper, the same
-   shape as a reel, so the box keeps its size from product to product. */
-.plate {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 10px;
-  background: color-mix(in oklab, var(--pastel) 22%, var(--card-paper));
-}
-
-.plateMark {
-  width: clamp(88px, 9vw, 128px);
-  height: auto;
-  aspect-ratio: 1;
-  object-fit: contain;
 }
 
 /* Every product under its area's small heading: three areas to a row on
@@ -199,25 +56,18 @@
 }
 
 /* A card: mark, then name and what it replaces beside GitHub, then its
-   line. The whole card selects its product. */
+   line. The whole card opens its product's page. */
 .card {
   position: relative;
   display: grid;
   grid-template-columns: 36px minmax(0, 1fr) auto;
   column-gap: 12px;
   align-items: start;
-  scroll-margin-top: 24px;
   padding: 14px 12px 14px 16px;
   cursor: pointer;
   transition:
     background-color 160ms ease,
     box-shadow 160ms ease;
-}
-
-/* The selected card, and only it, is ringed in its own ink. An inset ring
-   moves nothing, and leaves the outline to keyboard focus. */
-.current {
-  box-shadow: inset 0 0 0 2px var(--brand-ink);
 }
 
 /* Hover: a deeper pastel, its quiet text a step darker to keep AA. */
@@ -320,32 +170,6 @@
 }
 
 @media (max-width: 1023px) {
-  /* The box stacks: its picture, then its text. */
-  .feature {
-    padding: 14px;
-  }
-
-  .featureBody {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .media {
-    order: -1;
-  }
-
-  .featureText {
-    padding: 6px 10px 6px;
-  }
-
-  .featureName {
-    font-size: 32px;
-  }
-
-  .line {
-    max-width: 600px;
-  }
-
   .areas,
   .results {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -358,38 +182,6 @@
 }
 
 @media (max-width: 599px) {
-  .feature {
-    padding: 10px;
-  }
-
-  .featureText {
-    padding: 8px 10px 4px;
-  }
-
-  .featureName {
-    font-size: 30px;
-  }
-
-  .featureMark {
-    width: 44px;
-    height: 44px;
-    margin-bottom: 12px;
-  }
-
-  /* On a phone the box's text already carries the mark. */
-  .plate {
-    display: none;
-  }
-
-  .does {
-    margin-top: 16px;
-    font-size: 19px;
-  }
-
-  .links {
-    padding-top: 18px;
-  }
-
   .areas,
   .results {
     grid-template-columns: minmax(0, 1fr);
@@ -405,14 +197,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .feature,
   .card,
   .repoArrow {
     transition: none;
-  }
-
-  .featureBody {
-    animation: none;
   }
 
   .repo:hover .repoArrow {
