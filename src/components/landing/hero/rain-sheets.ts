@@ -4,9 +4,8 @@
  * tile of scattered drops repeated three times down the line of the fall;
  * it slides one tile along that line, then starts again, and the repeat
  * lines up with the start, so the rain never seems to begin or end. One
- * layer carries a dozen drops. The cloud covers where they start and the
- * stack card where they end; beside the card they simply run out at the
- * window's foot.
+ * layer carries a dozen drops. The cloud covers where they start, and they
+ * fade out (RAIN_FADE) before the stack card where they end.
  *
  * All lengths are in the cloud art's units (a 1120 x 540 box).
  */
@@ -30,7 +29,18 @@ export type Sheet = {
 };
 
 /** The wrapper clips the sheets to this window (cloud-art units). */
-export const RAIN_WINDOW = { x: -30, y: 262, w: 1050, h: 378 };
+export const RAIN_WINDOW = { x: 130, y: 262, w: 860, h: 378 };
+
+/**
+ * The rain's soft edges, in cloud-art units. Across the sides the whole layer
+ * (drops and the rest) goes from nothing at `out` to full at `in`, measured
+ * from each side of the 1120-wide box, so the rain keeps to the middle and
+ * has no hard edge. Down the fall the drops fade from full at `from` to
+ * nothing at `to`, so they are gone before the stack card's top edge (about
+ * y 565) and nothing is cut off by the window's foot.
+ */
+export const RAIN_SIDES = { out: 130, in: 190 };
+export const RAIN_FADE = { from: 440, to: 560 };
 
 /** The rain's lean: how far left it moves for each unit it falls. */
 export const RAIN_SLANT = -0.3;
@@ -57,7 +67,7 @@ type Spec = {
 
 const NEAR: Spec = {
   tile: 250,
-  drops: 14,
+  drops: 12,
   scale: 2,
   t: 3,
   opacity: 1,
@@ -65,7 +75,7 @@ const NEAR: Spec = {
 };
 
 const SPECS: Spec[] = [
-  { tile: 300, drops: 12, scale: 1.55, t: 4.6, opacity: 0.7, seed: 0.37 },
+  { tile: 300, drops: 10, scale: 1.55, t: 4.6, opacity: 0.7, seed: 0.37 },
   NEAR,
 ];
 

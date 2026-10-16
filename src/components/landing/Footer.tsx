@@ -1,6 +1,9 @@
 import Link from 'next/link';
 
 import { footer } from '@/content/landing';
+import { seeds } from '@/data/seeds';
+import { upcoming } from '@/data/upcoming';
+import { numberWord } from '@/lib/number-word';
 
 import ui from './label.module.css';
 import { FooterMotion } from './FooterMotion';
@@ -22,6 +25,16 @@ import { TokenCount } from './TokenCount';
  * the card. Pages that end on bare text leave it off.
  */
 export function Footer({ rise = false }: { rise?: boolean }) {
+  const count = numberWord(seeds.length + upcoming.length);
+  const groups = [
+    {
+      heading: footer.products.heading,
+      links: [
+        { label: footer.products.label(count), href: footer.products.href },
+      ],
+    },
+    ...footer.groups,
+  ];
   return (
     <footer
       className={rise ? `${styles.footer} ${styles.rise}` : styles.footer}
@@ -37,7 +50,7 @@ export function Footer({ rise = false }: { rise?: boolean }) {
               <TokenCount />
             </div>
             <nav aria-label="Footer" className={styles.nav}>
-              {footer.groups.map(group => (
+              {groups.map(group => (
                 <div key={group.heading} className={styles.group}>
                   <h2 className={styles.heading}>{group.heading}</h2>
                   <ul className={styles.links}>

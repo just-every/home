@@ -3,7 +3,13 @@ import type { CSSProperties } from 'react';
 import styles from './rainfall.module.css';
 import { rainItems } from './rain-items';
 import type { SpecialKind } from './rain-items';
-import { DROP_TILT, RAIN_WINDOW, rainSheets } from './rain-sheets';
+import {
+  DROP_TILT,
+  RAIN_FADE,
+  RAIN_SIDES,
+  RAIN_WINDOW,
+  rainSheets,
+} from './rain-sheets';
 
 /** The cloud art's box, which every position and size below is measured in. */
 const ART_W = 1120;
@@ -81,16 +87,29 @@ function Sprites() {
 export function Rainfall() {
   const w = RAIN_WINDOW;
   return (
-    <div className={styles.layer} aria-hidden="true">
+    <div
+      className={styles.layer}
+      style={
+        {
+          '--edge-out': pct(RAIN_SIDES.out, ART_W),
+          '--edge-in': pct(RAIN_SIDES.in, ART_W),
+        } as CSSProperties
+      }
+      aria-hidden="true"
+    >
       <Sprites />
       <div
         className={styles.sheets}
-        style={{
-          left: pct(w.x, ART_W),
-          top: pct(w.y, ART_H),
-          width: pct(w.w, ART_W),
-          height: pct(w.h, ART_H),
-        }}
+        style={
+          {
+            left: pct(w.x, ART_W),
+            top: pct(w.y, ART_H),
+            width: pct(w.w, ART_W),
+            height: pct(w.h, ART_H),
+            '--fade-from': pct(RAIN_FADE.from - w.y, w.h),
+            '--fade-to': pct(RAIN_FADE.to - w.y, w.h),
+          } as CSSProperties
+        }
       >
         {rainSheets.map((sheet, i) => {
           const b = sheet.box;

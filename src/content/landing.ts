@@ -261,12 +261,18 @@ export const makers = {
 
 /**
  * The footer over the art's sky: the wordmark, one line of small print and
- * the site's links in two short columns. With a measured token count the
+ * the site's links in short columns: the products, then the rest. With a measured token count the
  * line is `${tokensBefore}<N>${tokensAfter}`; without one, or when the count
  * cannot be read, it is `line`. The collection is the home page itself, so
  * the footer does not link to it.
  */
 export const footer = {
+  /** The first group: one link to /products, its count spelled out from the data. */
+  products: {
+    heading: products.label,
+    href: products.path,
+    label: featured.all,
+  },
   groups: [
     {
       heading: 'Essays',

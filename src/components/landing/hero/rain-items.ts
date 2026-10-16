@@ -10,11 +10,11 @@ import { RAIN_SLANT, RAIN_SPEED } from './rain-sheets';
  * box), so the layer scales with the art; the table is fixed, so the server
  * and the browser agree on it.
  *
- * The stack card sits just under the cloud and hides what falls behind it,
- * so most of them come down over the card's width and fade as they reach its
- * top edge, while one falls in the clear along each of the cloud's two
- * overhanging edges and stays in view all the way down. About half are in
- * flight at once.
+ * The stack card sits just under the cloud and hides what falls behind it.
+ * All of them come down over the card's width, well in from the cloud's two
+ * sides (RAIN_SIDES in rain-sheets.ts fades the layer there), and each fades
+ * out over the last third of its fall, so it is already gone as it reaches
+ * the card's top edge. About half are in flight at once.
  */
 
 export type SpecialKind = 'dollar' | 'coin';
@@ -64,18 +64,15 @@ const SWAY = 14.4;
 /** Where it starts across the art, and how far down it falls. */
 type Lane = { x: number; dy: number };
 
-/** Seven over the card, one down each side. */
-const LANES: Lane[] = [
-  { x: 230, dy: 262 },
-  { x: 355, dy: 262 },
-  { x: 480, dy: 262 },
-  { x: 605, dy: 262 },
-  { x: 730, dy: 262 },
-  { x: 855, dy: 262 },
-  { x: 945, dy: 262 },
-  { x: 112, dy: 380 },
-  { x: 1068, dy: 300 },
-];
+/**
+ * Nine across the middle of the cloud, between about 24% and 83% of its width
+ * where they start (the slant carries each a further 7% left as it falls), so
+ * none starts or falls near the sides.
+ */
+const LANES: Lane[] = Array.from({ length: 9 }, (_, k) => ({
+  x: 270 + k * 82.5,
+  dy: 262,
+}));
 
 const frac = (n: number) => n - Math.floor(n);
 
@@ -88,12 +85,11 @@ export const rainItems: RainItem[] = LANES.map((lane, i) => {
   const speed = RAIN_SPEED * (0.95 + frac((i + 1) * 0.381966) * 0.1);
   const slant = RAIN_SLANT + (frac((i + 1) * 0.7548) - 0.5) * 0.05;
   const t = lane.dy / speed / FALL_SHARE;
-  // The seven over the card take turns round the cycle; the two at the
-  // sides are a third of the way off.
-  const turn = i < 7 ? ((i * 3) % 7) / 7 : (i - 6) / 3;
+  // They take turns round the cycle (4 and 9 share no factor).
+  const turn = ((i * 4) % 9) / 9;
   return {
     kind,
-    x: lane.x + (jitter - 0.5) * 50,
+    x: lane.x + (jitter - 0.5) * 40,
     y: 268 + jitter * 28,
     w: box.w * box.scale,
     aspect: box.w / box.h,
