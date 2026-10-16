@@ -62,14 +62,14 @@ export const featured = {
   searchLabel: 'What do you use today?',
   searchPlaceholder: "Notion, Intercom, or 'booking client calls'",
   searchButton: 'Search',
-  /** "All fifty products →": the count is spelled out from the data. */
+  /** "All 51 products →": the count is spelled out from the data. */
   all: (count: string) => `All ${count} products`,
 } as const;
 
 /** The products page, /products: every product, searchable. */
 export const products = {
   path: '/products',
-  /** "All fifty products.": the count is spelled out from the data. */
+  /** "All 51 products.": the count is spelled out from the data. */
   heading: (count: string) => `All ${count} products.`,
   label: 'Products',
   line: 'Free and open source, every one. Search for the tool you use today, or browse by what it does.',

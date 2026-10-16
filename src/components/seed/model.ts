@@ -65,8 +65,6 @@ export const seedPages: SeedPageModel[] = [...released, ...inTheWorks];
 export const findSeedPage = (slug: string) =>
   seedPages.find(page => page.slug === slug);
 
-export const seedPath = (slug: string) => `/${slug}`;
-
 /** A promise that leads the list with its kind's icon. */
 export type LeadPromise = SeedPromise & { category: IconCategory };
 
