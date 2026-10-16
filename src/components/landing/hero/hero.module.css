@@ -171,6 +171,24 @@
   user-select: none;
 }
 
+/* The rain is two things in one box: the still cloud, over a layer of small
+   falling items (Rainfall.tsx). The sun is a stack of layers (SunLayers.tsx).
+   Both keep the art's own proportions. */
+.rain {
+  aspect-ratio: 1120 / 540;
+}
+
+.sun {
+  aspect-ratio: 4 / 3;
+}
+
+.cloud {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .from,
 .six,
 .different,
@@ -447,8 +465,22 @@
     );
 }
 
-.layout3 .rain {
+.layout3 .rain .cloud {
   filter: brightness(0.8) saturate(1.15);
+}
+
+/* The falling items take the same tint as the cloud, as colours of their
+   own: a filter over them would be redone on every frame. */
+.layout3 .rain {
+  --rf-drop: #7c9bbe;
+  --rf-slip: #958bba;
+  --rf-paper: #c6c4cb;
+  --rf-fold: #a69fc2;
+  --rf-line: #9087b4;
+  --rf-coin-rim: #bb8462;
+  --rf-coin-face: #c79877;
+  --rf-coin-core: #c18c6a;
+  --rf-coin-shine: #cdb8a7;
 }
 
 /* The storm option (/hero-preview/storm): near-black at the far left, through
@@ -486,22 +518,34 @@
    1280px), the copy sits on the dusk itself, so the sky runs from the top
    down instead, to the warm light behind the sun, and the copy turns light. */
 .dusk {
-  background:
-    linear-gradient(
-      180deg,
-      #3a3a5e 0,
-      #43437a 340px,
-      #6d66ac 600px,
-      #a39cd0 820px,
-      #d6d2eb 1150px,
-      #ebe8f6 1700px,
-      #f1eef5 100%
-    );
+  background: linear-gradient(
+    180deg,
+    #3a3a5e 0,
+    #43437a 340px,
+    #6d66ac 600px,
+    #a39cd0 820px,
+    #d6d2eb 1150px,
+    #ebe8f6 1700px,
+    #f1eef5 100%
+  );
+}
+
+.dusk .rain .cloud,
+.storm .rain .cloud {
+  filter: brightness(1.3) saturate(1.05);
 }
 
 .dusk .rain,
 .storm .rain {
-  filter: brightness(1.3) saturate(1.05);
+  --rf-drop: #cdfbff;
+  --rf-slip: #f1e3ff;
+  --rf-paper: #ffffff;
+  --rf-fold: #e4daf7;
+  --rf-line: #e9ddff;
+  --rf-coin-rim: #ffd8a6;
+  --rf-coin-face: #fff8c7;
+  --rf-coin-core: #ffe5b2;
+  --rf-coin-shine: #ffffff;
 }
 
 @media (max-width: 1279px) {
@@ -1093,7 +1137,7 @@
 
   .layout3 .rain {
     grid-area: rainy;
-    top: calc(var(--u) * 20);
+    top: calc(var(--u) * -21);
     left: calc(var(--u) * -60);
     width: calc(var(--u) * 430);
   }
@@ -1120,7 +1164,7 @@
 
   .layout3 {
     --ry: 20deg;
-    --fy: calc(var(--u) * 7);
+    --fy: calc(var(--u) * 12);
   }
 
   .layout3 .old {
@@ -1397,7 +1441,7 @@
   }
 
   .rain {
-    top: 14px;
+    top: -18px;
     left: -22px;
     width: min(330px, 52%);
   }
@@ -1612,7 +1656,7 @@
 @media (max-width: 1279px) {
   .layout3 {
     --ry: 15deg;
-    --fy: 5px;
+    --fy: 10px;
   }
 
   .layout3 .comparison {
@@ -1668,7 +1712,7 @@
 @media (max-width: 599px) {
   .layout3 {
     --ry: 11deg;
-    --fy: 4px;
+    --fy: 8px;
   }
 
   .layout3 .comparison {
@@ -1698,7 +1742,6 @@
     width: 340px;
     height: 280px;
   }
-
 }
 
 /* Phones: the two lists stay side by side, so a picked tool and its seed
@@ -1763,7 +1806,7 @@
   }
 
   .rain {
-    top: 6px;
+    top: -16px;
     left: -18px;
     width: 230px;
   }
@@ -1862,46 +1905,75 @@
   }
 }
 
-/* Motion, all of it slow, out of phase and on transform alone: each card
-   floats a few pixels with a hint of tilt, keeping its turn toward the
-   other. The rain, the sun and the clouds move inside their own SVGs. */
+/* Motion, calm but plain to see: each card floats about a dozen pixels with
+   a couple of degrees of extra turn, out of phase with the other, on
+   transform alone. The rain and the sun move in their own small layers
+   (Rainfall.tsx, SunLayers.tsx). While the hero is off screen, all of it
+   waits. Each float runs four bobs in one iteration (36s and 44s): the
+   page has animation listeners, and the browser wakes the main thread at
+   every iteration boundary to tell them. */
+.layout3 .old,
+.layout3 .new {
+  will-change: transform;
+}
+
 .layout3 .old {
-  animation: floatLeft 11s ease-in-out -3s infinite;
+  animation: floatLeft 36s ease-in-out -12s infinite;
 }
 
 .layout3 .new {
-  animation: floatRight 13s ease-in-out -7s infinite;
+  animation: floatRight 44s ease-in-out -28s infinite;
 }
 
 /* The nudge keeps the float running beside it, so it never jumps. */
 .layout3 .old.nudge {
   animation:
-    floatLeft 11s ease-in-out -3s infinite,
+    floatLeft 36s ease-in-out -12s infinite,
     nudge 0.5s ease-in-out;
 }
 
 @keyframes floatLeft {
   0%,
+  25%,
+  50%,
+  75%,
   100% {
-    transform: translate3d(0, 0, 0) rotateY(var(--ry)) rotateZ(0deg);
+    transform: translate3d(0, 0, 0) rotateY(var(--ry)) rotateZ(-0.6deg);
   }
 
-  50% {
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
     transform: translate3d(0, calc(var(--fy) * -1), 0)
-      rotateY(calc(var(--ry) + 1.6deg)) rotateZ(0.5deg);
+      rotateY(calc(var(--ry) + 2deg)) rotateZ(0.8deg);
   }
 }
 
 @keyframes floatRight {
   0%,
+  25%,
+  50%,
+  75%,
   100% {
-    transform: translate3d(0, 0, 0) rotateY(calc(var(--ry) * -1)) rotateZ(0deg);
+    transform: translate3d(0, 0, 0) rotateY(calc(var(--ry) * -1))
+      rotateZ(0.6deg);
   }
 
-  50% {
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
     transform: translate3d(0, calc(var(--fy) * -1), 0)
-      rotateY(calc(var(--ry) * -1 - 1.6deg)) rotateZ(-0.5deg);
+      rotateY(calc(var(--ry) * -1 - 2deg)) rotateZ(-0.8deg);
   }
+}
+
+.paused,
+.paused *,
+.paused *::before,
+.paused *::after {
+  animation-play-state: paused !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
