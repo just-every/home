@@ -1,4 +1,5 @@
 import { volumes } from '@/components/landing/volumes';
+import { upcoming } from '@/data/upcoming';
 import type { Volume } from '@/components/landing/volumes';
 
 /**
@@ -31,5 +32,8 @@ export const rows: Volume[] = heroPicks.flatMap(slug => {
   return volume ? [volume] : [];
 });
 
-/** The released seeds the hero's rows leave out, for its "and N more" line. */
-export const moreCount = volumes.length - rows.length;
+/**
+ * Every product the hero's rows leave out, released and coming soon, for its
+ * "and N more" line.
+ */
+export const moreCount = volumes.length + upcoming.length - rows.length;
