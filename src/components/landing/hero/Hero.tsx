@@ -1,7 +1,7 @@
 'use client';
 
 import type { CSSProperties, KeyboardEvent, MouseEvent } from 'react';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { benefits, products } from '@/content/landing';
 import { volumes } from '@/components/landing/volumes';
@@ -15,6 +15,7 @@ import { DEFAULT_HERO_LAYOUT } from './layouts';
 import type { HeroLayout, HeroTone } from './layouts';
 import styles from './hero.module.css';
 import { moreCount, rows } from './order';
+import { Rainfall } from './Rainfall';
 import {
   CodeIcon,
   DocIcon,
@@ -25,6 +26,7 @@ import {
   SwitchArrow,
   UpArrow,
 } from './sketches';
+import { SunLayers } from './SunLayers';
 
 /** The page's soft card tints, one per benefit, in order. */
 const tints = ['#e9f7f0', '#e8f3ff', '#f1ebff', '#fff8e3'];
@@ -47,8 +49,10 @@ const reducedMotion = () =>
  * collection) in the sun, with handwritten notes and a painted ground along
  * the foot that runs from rain-cooled to sunlit. `layout` picks how the
  * copy sits around the two cards (layouts.ts). The weather moves, slowly:
- * the cards float, the rain falls (now and then a dollar sign, a receipt or a
- * coin among the drops), the sun's glow breathes and its clouds drift.
+ * the cards float, the rain falls (a third of it dollar signs, receipts and
+ * coins, tumbling), the sun's glow breathes and its clouds drift. Only
+ * small layers move (Rainfall, SunLayers), on the compositor, and only
+ * while the hero is on screen.
  *
  * The rented stack is the picker: picking a tool highlights it and the
  * seed that replaces it, the button turns into "Switch to <Seed> →" for
@@ -67,6 +71,19 @@ export function Hero({
   const [picked, setPicked] = useState<string | null>(null);
   const pickers = useRef<(HTMLButtonElement | null)[]>([]);
   const stackRef = useRef<HTMLElement | null>(null);
+  const topRef = useRef<HTMLElement | null>(null);
+
+  // The weather only moves while the hero is on screen.
+  useEffect(() => {
+    const top = topRef.current;
+    if (!top || typeof IntersectionObserver === 'undefined') return;
+    const observer = new IntersectionObserver(entries => {
+      const visible = entries.some(entry => entry.isIntersecting);
+      top.classList.toggle(styles.paused, !visible);
+    });
+    observer.observe(top);
+    return () => observer.disconnect();
+  }, []);
 
   const pickedVolume = volumes.find(v => v.slug === picked) ?? null;
 
@@ -134,6 +151,7 @@ export function Hero({
 
   return (
     <section
+      ref={topRef}
       className={`${styles.top} ${styles[`layout${layout}`]} ${tone ? styles[tone] : ''}`}
       aria-labelledby="hero-heading"
       data-picked={picked ?? undefined}
@@ -206,17 +224,24 @@ export function Hero({
           <div className={styles.wash} aria-hidden="true" />
 
           <div className={`${styles.side} ${styles.rainy}`}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            {/* The cloud is still art; what falls from it is a layer of small
+                elements under it (Rainfall.tsx). */}
+            <div
               className={`${styles.weather} ${styles.rain}`}
-              src="/landing/hero/rain.svg"
-              alt=""
               aria-hidden="true"
-              width={1120}
-              height={540}
-              loading="lazy"
-              decoding="async"
-            />
+            >
+              <Rainfall />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className={styles.cloud}
+                src="/landing/hero/rain.svg"
+                alt=""
+                width={1120}
+                height={540}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
             {calm ? null : (
               <>
                 <p
@@ -299,17 +324,12 @@ export function Hero({
           {calm ? null : <SwitchArrow className={styles.switchArrow} />}
 
           <div className={`${styles.side} ${styles.sunny}`}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <div
               className={`${styles.weather} ${styles.sun}`}
-              src="/landing/hero/sun.svg"
-              alt=""
               aria-hidden="true"
-              width={960}
-              height={720}
-              loading="lazy"
-              decoding="async"
-            />
+            >
+              <SunLayers />
+            </div>
 
             <section
               className={`${styles.panel} ${styles.new}`}
