@@ -58,13 +58,20 @@ export const separatorVariants = Object.keys(strips) as SeparatorVariant[];
  * ground colour holds and then fades over a long tail behind the next
  * section (separator.module.css), so the strip eases out instead of ending
  * on a line. Its grass, flowers, water and birds move only while it is on
- * screen.
+ * screen. With `solid` the fade is left out: the section that follows paints
+ * the strip's ground colour itself (the home page's questions).
  */
-export function Separator({ variant }: { variant: SeparatorVariant }) {
+export function Separator({
+  variant,
+  solid,
+}: {
+  variant: SeparatorVariant;
+  solid?: boolean;
+}) {
   const strip = strips[variant];
   return (
     <div
-      className={`${styles.band} ${styles[variant === 'meadow-path' ? 'meadow' : variant]}`}
+      className={`${styles.band} ${styles[variant === 'meadow-path' ? 'meadow' : variant]} ${solid ? styles.solid : ''}`}
       style={{ '--show': `${strip.show}px` } as CSSProperties}
       aria-hidden="true"
     >

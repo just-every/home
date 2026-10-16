@@ -34,6 +34,10 @@
   );
 }
 
+.solid::after {
+  content: none;
+}
+
 .creek {
   --foot: #c0e4e1;
   --fade: 300px;
