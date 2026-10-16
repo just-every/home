@@ -70,7 +70,8 @@ if (!style.test(svg)) {
   console.error(`${values.file} has no <style id="colourway">`);
   process.exit(1);
 }
-const rules = [`.cr{fill:${cw.cream}}`, `.sh{fill:${cw.shade}}`];
+// A region repeated for the motion (scripts/footer-motion.mjs) has one rule per class.
+const rules = new Set([`.cr{fill:${cw.cream}}`, `.sh{fill:${cw.shade}}`]);
 const groups = [...svg.matchAll(/<g class="([a-z]+)"[^>]*>(.*?)<\/g>/g)];
 for (const [, name, body] of groups) {
   const r = cw.regions[name];
@@ -81,14 +82,14 @@ for (const [, name, body] of groups) {
     process.exit(1);
   }
   for (const [, i, j] of body.matchAll(/class="c(\d)(\d)"/g)) {
-    rules.push(`.${name} .c${i}${j}{fill:${fill(r, +i, +j)}}`);
+    rules.add(`.${name} .c${i}${j}{fill:${fill(r, +i, +j)}}`);
   }
 }
 svg = svg.replace(
   style,
-  `<style id="colourway">/* ${values.colourway} */${rules.join('')}</style>`
+  `<style id="colourway">/* ${values.colourway} */${[...rules].join('')}</style>`
 );
 writeFileSync(values.file, svg);
 console.log(
-  `${values.file}: ${values.colourway} (${groups.length} regions, ${rules.length} fills)`
+  `${values.file}: ${values.colourway} (${groups.length} regions, ${rules.size} fills)`
 );
