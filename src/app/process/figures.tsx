@@ -5,30 +5,58 @@ import styles from './process.module.css';
 
 const art = '/landing/essays/process';
 
-/** A painted figure: one flat SVG in the footer's hand, still. */
+/**
+ * A painted figure: one flat SVG in the footer's hand, still. The header's
+ * (`lead`) loads first and keeps the header figure's width on phones.
+ */
 function Painting({
   src,
   width,
   height,
   alt,
+  lead = false,
 }: {
   src: string;
   width: number;
   height: number;
   alt: string;
+  lead?: boolean;
 }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      className={styles.painting}
+      className={lead ? styles.leadPainting : styles.painting}
       src={src}
       alt={alt}
       width={width}
       height={height}
-      loading="lazy"
+      loading={lead ? 'eager' : 'lazy'}
+      fetchPriority={lead ? 'high' : undefined}
       decoding="async"
       draggable={false}
     />
+  );
+}
+
+/**
+ * The header figure, the opening scene: the worst ten minutes. The shop is
+ * dark in the storm, and its little status board still shows all green.
+ * Lamp's light in the rain answers it further down.
+ */
+export function AllClear() {
+  return (
+    <ArticleFigure
+      className={styles.lead}
+      caption="Lights out, and the sign still says all clear."
+    >
+      <Painting
+        lead
+        src={`${art}/all-clear-in-the-storm.svg`}
+        width={1200}
+        height={678}
+        alt="A painted corner shop in a storm, its lights out and its striped awning torn loose, under a rain cloud with a flash of lightning. Out front, a little sandwich board still shows a big green tick and three green lights."
+      />
+    </ArticleFigure>
   );
 }
 

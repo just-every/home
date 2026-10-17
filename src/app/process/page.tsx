@@ -6,7 +6,12 @@ import { essayMetadata, essays } from '@/components/article/essays';
 import { seeds } from '@/data/seeds';
 import { numberWord } from '@/lib/number-word';
 
-import { ForkedStream, LampInTheRain, PromiseChanged } from './figures';
+import {
+  AllClear,
+  ForkedStream,
+  LampInTheRain,
+  PromiseChanged,
+} from './figures';
 
 export const metadata: Metadata = essayMetadata(essays.process);
 
@@ -14,13 +19,15 @@ const lamp = 'https://github.com/just-every/run-lamp/blob/v1.4.0';
 
 /**
  * /process: "Quality, written down", from PROCESS-ESSAY-v2.md, retold for a
- * reader outside AI tooling (17 Oct 2026): the same facts, plainer words, and
- * two painted figures where the story turns.
+ * reader outside AI tooling (17 Oct 2026): the same facts, plainer words, a
+ * painted opening scene in the header (18 Oct) and two painted figures where
+ * the story turns.
  */
 export default function Process() {
   return (
     <ArticlePage
       essay={essays.process}
+      art={<AllClear />}
       end={
         <EndNote
           next={essays.journey}
