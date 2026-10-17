@@ -341,7 +341,7 @@ export function Hero() {
             <p
               className={`${caveat.className} ${styles.note} ${styles.noteDifferent}`}
             >
-              Better, open source, free.
+              Own and change anything!
             </p>
           </div>
         </div>
