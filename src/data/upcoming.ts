@@ -4,8 +4,9 @@ import { numberWord } from '@/lib/number-word';
 /**
  * Seeds in the works: public repository, no release tag yet, so not in the
  * collection. They are listed apart from `seeds.ts` and shown quietly (no
- * reel, no homepage, not selectable), and the collection's search finds them
- * as coming soon. Each line is checked against that
+ * reel, not selectable), and the collection's search finds them as coming
+ * soon; a seed's own page links its live homepage and shows a still of it
+ * (captured 17 Oct 2026 at 1280x720). Each line is checked against that
  * seed's README and CONTRACT.md; the pastel keeps the seed's own brand hue at
  * the lightness and softness of the collection's pastels. A seed moves to
  * `seeds.ts` when it gets its first release tag. `primaryReplace` and
@@ -25,17 +26,19 @@ export interface UpcomingSeed {
   line: string;
   /** Public GitHub repository. */
   repo: string;
+  /** As on a released seed (seed-types.ts): the live homepage, or null. */
+  homepage: string | null;
+  /** As on a released seed: a 1280x720 still of `homepage`, or null. */
+  homepageShot: string | null;
   /** Brand hue softened to a pastel (OKLCH, lightness 0.87 to 0.90). */
   pastel: string;
   mark: string;
-  /** As on a released seed (seed-types.ts): `mark` is a lettered tile. */
-  markPlaceholder?: true;
 }
 
 const mark = (slug: string) => `/seeds/${slug}/mark.svg`;
-/** The lettered tile standing in for Base's placeholder mark. */
-const lettered = (slug: string) => `/seeds/${slug}/mark-lettered.svg`;
 const repo = (slug: string) => `https://github.com/just-every/run-${slug}`;
+const homepage = (slug: string) => `https://run-${slug}.com`;
+const shot = (slug: string) => `/seeds/${slug}/home.webp`;
 
 export const upcoming: UpcomingSeed[] = [
   {
@@ -46,10 +49,12 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'Auth0',
     line: 'Email-link and passkey sign-in that you run yourself.',
     repo: repo('auth'),
-    // Its #356c60 is still the Base default, so a pastel of its own (hue 270).
-    pastel: '#c6d5fe',
-    mark: lettered('auth'),
-    markPlaceholder: true,
+    homepage: homepage('auth'),
+    homepageShot: shot('auth'),
+    // Pastel from src/branding.json primaryColor #14536e (hue 232).
+    pastel: '#bcdbec',
+    // Its mark turns light in a dark colour scheme; this copy keeps its light-surface colours.
+    mark: '/seeds/auth/mark-light.svg',
   },
   {
     slug: 'balm',
@@ -59,7 +64,9 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'Cliniko',
     line: 'Bookings, intake forms, private notes and invoices for small clinics.',
     repo: repo('balm'),
-    // Pastel from #356c60 (src/branding.json primaryColor, hue 177), the Base default.
+    homepage: homepage('balm'),
+    homepageShot: shot('balm'),
+    // Pastel from #356c60 (src/branding.json primaryColor, hue 177), the teal its site keeps beside the amber mark.
     pastel: '#b5e3d7',
     mark: mark('balm'),
   },
@@ -71,6 +78,8 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'B2B Wave',
     line: 'Wholesale ordering where each stockist sees its own prices.',
     repo: repo('barrow'),
+    homepage: homepage('barrow'),
+    homepageShot: shot('barrow'),
     // Pastel from the blue of its mark (#2348a8); its brand colour is near-black.
     pastel: '#c2d6ff',
     mark: mark('barrow'),
@@ -83,6 +92,8 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'Karbon',
     line: 'Recurring client jobs, document requests and sign-off for accounting practices.',
     repo: repo('blotter'),
+    homepage: homepage('blotter'),
+    homepageShot: shot('blotter'),
     pastel: '#c9d6f1',
     mark: mark('blotter'),
   },
@@ -94,6 +105,8 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'Vitally',
     line: 'Renewal dates beside billing and support evidence, each decision recorded.',
     repo: repo('buoy'),
+    homepage: homepage('buoy'),
+    homepageShot: shot('buoy'),
     // Pastel from the orange of its mark (#e15d0f); its brand colour is near-black.
     pastel: '#ffc8b1',
     mark: mark('buoy'),
@@ -106,10 +119,11 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: '',
     line: 'Calendar imports, cleaner photo checklists and owner statements.',
     repo: repo('cabin'),
-    // Its colour is still the Base default #356c60, so a pastel of its own (hue 140).
+    homepage: homepage('cabin'),
+    homepageShot: shot('cabin'),
+    // Its colour is still the Base default #356c60; pastel from the pine green of its mark (hue 140).
     pastel: '#c2e0bb',
-    mark: lettered('cabin'),
-    markPlaceholder: true,
+    mark: mark('cabin'),
   },
   {
     slug: 'coffer',
@@ -119,10 +133,11 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: '',
     line: 'Gifts, consent and acknowledgement letters for a US nonprofit.',
     repo: repo('coffer'),
-    // Its colour is still the Base default #356c60, so a pastel of its own (hue 85).
-    pastel: '#e8d4a9',
-    mark: lettered('coffer'),
-    markPlaceholder: true,
+    homepage: homepage('coffer'),
+    homepageShot: shot('coffer'),
+    // Pastel from the amber coin of its mark (#f39a2e, hue 65): its violet (#7c4dff) would match Chest's.
+    pastel: '#f6cda6',
+    mark: mark('coffer'),
   },
   {
     slug: 'crank',
@@ -132,7 +147,10 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'n8n',
     line: 'Workflow automation where a person approves each run.',
     repo: repo('crank'),
-    pastel: '#d1dda1',
+    homepage: homepage('crank'),
+    homepageShot: shot('crank'),
+    // Pastel from src/branding.json primaryColor #011646 (hue 262).
+    pastel: '#c7d7f3',
     mark: mark('crank'),
   },
   {
@@ -143,6 +161,8 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'Drata',
     line: 'Controls, proof on a schedule, gaps and expiring auditor folders.',
     repo: repo('evidence'),
+    homepage: homepage('evidence'),
+    homepageShot: shot('evidence'),
     // Pastel from its --ev-spectrum sky blue (#c9e6ff); its brand colour and mark are black.
     pastel: '#c1d9ef',
     mark: mark('evidence'),
@@ -155,6 +175,8 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'DocuSign',
     line: 'Ordered PDF signatures, with the signed file and audit trail.',
     repo: repo('inkwell'),
+    homepage: homepage('inkwell'),
+    homepageShot: shot('inkwell'),
     pastel: '#f0cad8',
     mark: mark('inkwell'),
   },
@@ -166,6 +188,8 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'Deputy',
     line: 'Weekly rosters, phone clocking and approved timesheets for payroll.',
     repo: repo('lanyard'),
+    homepage: homepage('lanyard'),
+    homepageShot: shot('lanyard'),
     pastel: '#bbe2bf',
     mark: mark('lanyard'),
   },
@@ -177,6 +201,8 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'RepairShopr',
     line: 'Estimates, customer authorisation, parts and labour for workshop repairs.',
     repo: repo('mallet'),
+    homepage: homepage('mallet'),
+    homepageShot: shot('mallet'),
     // Pastel from the red of its mark (#b4231c); its brand colour is near-black.
     pastel: '#ffc6bd',
     mark: mark('mallet'),
@@ -189,6 +215,8 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'Squarespace',
     line: 'A five-page business site with a contact inbox and rollback.',
     repo: repo('pane'),
+    homepage: homepage('pane'),
+    homepageShot: shot('pane'),
     pastel: '#bdd8fe',
     mark: mark('pane'),
   },
@@ -200,10 +228,11 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'Tablein',
     line: 'Table bookings, walk-ins, waitlist and guest history for restaurants.',
     repo: repo('placemat'),
-    // Its colour is still the Base default #356c60, so a pastel of its own (hue 25).
+    homepage: homepage('placemat'),
+    homepageShot: shot('placemat'),
+    // Its primaryColor #1f242b is near-black, so a pastel of its own (hue 25).
     pastel: '#fbc7c2',
-    mark: lettered('placemat'),
-    markPlaceholder: true,
+    mark: mark('placemat'),
   },
   {
     slug: 'platter',
@@ -213,6 +242,8 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'Qwilr',
     line: 'Two-option proposals that clients accept online.',
     repo: repo('platter'),
+    homepage: homepage('platter'),
+    homepageShot: shot('platter'),
     // Pastel from the teal of its mark (#8cbbba); its brand colour is near-black.
     pastel: '#b8dfde',
     // Its teal ring nearly vanishes on its own pastel: the same mark in ink.
@@ -226,6 +257,8 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'JobTread',
     line: 'Quotes, site diaries, variations and progress claims for builders.',
     repo: repo('plinth'),
+    homepage: homepage('plinth'),
+    homepageShot: shot('plinth'),
     pastel: '#bae1ca',
     mark: mark('plinth'),
   },
@@ -237,6 +270,8 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'Clio',
     line: 'Conflict checks, time, bills, files and deadlines for law firms.',
     repo: repo('satchel'),
+    homepage: homepage('satchel'),
+    homepageShot: shot('satchel'),
     pastel: '#f0cebc',
     mark: mark('satchel'),
   },
@@ -248,10 +283,11 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'Shopify',
     line: 'An online shop with Stripe Checkout, shipping and partial refunds.',
     repo: repo('stall'),
-    // Its colour is still the Base default #356c60, so a pastel of its own (hue 205).
-    pastel: '#a8e2e9',
-    mark: lettered('stall'),
-    markPlaceholder: true,
+    homepage: homepage('stall'),
+    homepageShot: shot('stall'),
+    // Pastel from src/branding.json primaryColor #ff6a13 (hue 44).
+    pastel: '#ffc8b1',
+    mark: mark('stall'),
   },
   {
     slug: 'strap',
@@ -261,10 +297,11 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'Mindbody',
     line: 'Studio classes, pack credits, waitlists and member balances.',
     repo: repo('strap'),
-    // Its colour is still the Base default #356c60, so a pastel of its own (hue 340).
-    pastel: '#f2c7e2',
-    mark: lettered('strap'),
-    markPlaceholder: true,
+    homepage: homepage('strap'),
+    homepageShot: shot('strap'),
+    // Pastel from src/branding.json primaryColor #94174b (hue 3).
+    pastel: '#ffc3d2',
+    mark: mark('strap'),
   },
   {
     slug: 'terrace',
@@ -274,6 +311,8 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'PropertyMe',
     line: 'Tenancies, recorded rent, photo inspections and maintenance for landlords.',
     repo: repo('terrace'),
+    homepage: homepage('terrace'),
+    homepageShot: shot('terrace'),
     pastel: '#d1dabe',
     mark: mark('terrace'),
   },
@@ -285,7 +324,10 @@ export const upcoming: UpcomingSeed[] = [
     primaryReplace: 'Google Analytics',
     line: 'Website visits, sources, campaigns and goals without cookies.',
     repo: repo('vane'),
-    pastel: '#c7d4ff',
+    homepage: homepage('vane'),
+    homepageShot: shot('vane'),
+    // Pastel from src/branding.json primaryColor #1d58f0 (hue 264).
+    pastel: '#c2d6fe',
     mark: mark('vane'),
   },
 ];

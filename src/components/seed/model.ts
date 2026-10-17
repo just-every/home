@@ -54,9 +54,9 @@ const inTheWorks: SeedPageModel[] = upcoming.map(seed => ({
   ink: '#17171d',
   mark: seed.mark,
   soon: true,
-  homepage: null,
+  homepage: seed.homepage,
   reel: null,
-  homepageShot: null,
+  homepageShot: seed.homepageShot,
 }));
 
 /** Every seed page: the released seeds in collection order, then the coming soon. */
