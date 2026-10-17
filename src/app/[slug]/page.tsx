@@ -33,6 +33,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: { absolute: page.seoTitle },
     description: page.seoDescription,
     alternates: { canonical: seedUrl(page.slug) },
+    // The seed's own mark colours (npm run favicons); these replace the
+    // site's icons from the root layout on seed pages only.
+    icons: {
+      icon: [
+        { url: `/img/favicons/${page.slug}.svg`, type: 'image/svg+xml' },
+        {
+          url: `/img/favicons/${page.slug}-32.png`,
+          sizes: '32x32',
+          type: 'image/png',
+        },
+        {
+          url: `/img/favicons/${page.slug}-16.png`,
+          sizes: '16x16',
+          type: 'image/png',
+        },
+      ],
+      apple: [
+        {
+          url: '/img/favicon-192x192.png',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+      ],
+    },
     openGraph: {
       title: page.seoTitle,
       description: page.seoDescription,
