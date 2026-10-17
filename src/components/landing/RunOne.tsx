@@ -2,6 +2,8 @@ import { runOne } from '@/content/landing';
 
 import ui from './label.module.css';
 import styles from './panels.module.css';
+import { AltLine } from './AltLine';
+import { runCommand } from './runCommand';
 import { Terminal } from './Terminal';
 
 export function RunOne() {
@@ -17,11 +19,8 @@ export function RunOne() {
         <p className={styles.text}>{runOne.line}</p>
       </div>
       <div className={styles.terminalWrap}>
-        <Terminal commands={runOne.commands} />
-        <p className={styles.altLine}>
-          {runOne.altLine.before} <code>{runOne.altLine.command}</code>{' '}
-          {runOne.altLine.after}
-        </p>
+        <Terminal command={runCommand(runOne.target)} />
+        <AltLine target={runOne.target} />
       </div>
     </article>
   );

@@ -237,16 +237,12 @@ export const stand = {
 
 export const runOne = {
   heading: 'Run one yourself.',
-  line: 'Install the command once, then clone a product and start it.',
-  commands: [
-    'npx -y @runeditrun/rer cli install',
-    'git clone https://github.com/just-every/run-uptime',
-    'cd run-uptime && rer dev',
-  ],
+  line: 'One command clones a product and starts it.',
+  target: 'just-every/run-uptime',
   altLine: {
     before: 'No npm?',
     command: 'curl -fsSL https://runeditrun.com/install.sh | sh',
-    after: 'installs the same command.',
+    after: 'installs rer, then',
   },
 } as const;
 

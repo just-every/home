@@ -196,7 +196,14 @@
   color: #2a2d3a;
   font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   font-size: 12px;
-  overflow-wrap: anywhere;
+  white-space: nowrap;
+}
+
+@media (max-width: 599px) {
+  .altLine code {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
 }
 
 .facts {
