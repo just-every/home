@@ -201,6 +201,11 @@
   line-height: 1.3;
 }
 
+/* The right card mirrors the left: its heading sits on its right edge. */
+.new h2 {
+  text-align: right;
+}
+
 .old ul,
 .new ul {
   margin: 0;
