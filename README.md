@@ -54,7 +54,8 @@ npm run build:cloudflare
 
 - `scripts/update-reels.mjs` — re-encodes the newest finished product reels into
   `public/video/<slug>-720.mp4` and a poster.
-- `scripts/render-og.mjs` — renders `public/og-image.png` from a running server.
+- `scripts/og-image.mjs` — renders the share image, `public/og-image.png`, from
+  the built site's hero (`npm run build` first).
 - `npm run suggestions [-- --remote]` — prints recent suggestions and unmatched
   searches.
 - `npm run usage [-- --remote] [-- --days 7]` — prints page views, the share
