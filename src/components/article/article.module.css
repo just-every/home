@@ -221,6 +221,14 @@
   min-height: 44px;
 }
 
+/* A slightly wider reading measure on desktop (about 77 characters a line);
+   tablet and phone keep the 640px measure and their gutters. */
+@media (min-width: 1024px) {
+  .article {
+    --measure: 690px;
+  }
+}
+
 @media (max-width: 1023px) {
   .article {
     --gutter: 28px;
