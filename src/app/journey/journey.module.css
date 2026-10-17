@@ -151,10 +151,10 @@
   transform: rotate(-4deg);
 }
 
-/* The stamp hangs over the caption's line: keep the caption's text clear of
-   it (on phones, where it spans the middle, the caption starts below it). */
+/* The stamp hangs below the frame's corner: the centred caption starts below
+   it, at every width. */
 .firstFigure figcaption {
-  padding-right: 180px;
+  margin-top: 34px;
 }
 
 /* The painted figures: flat vignettes on the page's paper, as wide as the
@@ -199,11 +199,6 @@
 
   .stamp {
     font-size: 18px;
-  }
-
-  .firstFigure figcaption {
-    margin-top: 30px;
-    padding-right: 0;
   }
 
   .painted.painted {
