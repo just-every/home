@@ -116,12 +116,12 @@ export const incumbentPrices: Record<string, IncumbentPrice> = {
     sourceUrl: 'https://sentry.io/pricing/',
     checked: CHECKED,
   },
-  UptimeRobot: {
-    label: '$108–$1,788',
+  Pingdom: {
+    label: '$120–$1,200',
     perUser: false,
-    compact: '$108+',
-    plan: 'Solo to Scale, scales with monitors',
-    sourceUrl: 'https://uptimerobot.com/pricing/',
-    checked: '2026-10-18',
+    compact: '$120–1.2k',
+    plan: 'Entry tier up, scales with checks',
+    sourceUrl: 'https://www.pingdom.com/synthetic-pricing/',
+    checked: CHECKED,
   },
 };
