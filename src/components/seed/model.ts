@@ -1,3 +1,5 @@
+import { seedGallery } from '@/data/seed-gallery';
+import type { SeedShot } from '@/data/seed-gallery';
 import { seedPageContent } from '@/data/seed-pages';
 import type { SeedPageContent, SeedPromise } from '@/data/seed-pages';
 import type { SeedReel } from '@/data/seed-types';
@@ -21,6 +23,8 @@ export interface SeedPageModel extends SeedPageContent {
   homepage: string | null;
   reel: SeedReel | null;
   homepageShot: string | null;
+  /** Product screenshots, in display order (scripts/gallery-ingest.mjs). */
+  shots: SeedShot[];
 }
 
 const content = new Map(seedPageContent.map(page => [page.slug, page]));
@@ -40,6 +44,7 @@ const released: SeedPageModel[] = volumes.map(({ seed, ...volume }) => ({
   homepage: seed.homepage,
   reel: seed.reel,
   homepageShot: seed.homepageShot,
+  shots: seedGallery[seed.slug] ?? [],
 }));
 
 const inTheWorks: SeedPageModel[] = upcoming.map(seed => ({
@@ -57,6 +62,7 @@ const inTheWorks: SeedPageModel[] = upcoming.map(seed => ({
   homepage: seed.homepage,
   reel: null,
   homepageShot: seed.homepageShot,
+  shots: seedGallery[seed.slug] ?? [],
 }));
 
 /** Every seed page: the released seeds in collection order, then the coming soon. */
@@ -64,6 +70,53 @@ export const seedPages: SeedPageModel[] = [...released, ...inTheWorks];
 
 export const findSeedPage = (slug: string) =>
   seedPages.find(page => page.slug === slug);
+
+/** One picture in a seed's gallery: its reel, or a still in a window frame. */
+export type GallerySlide =
+  | { kind: 'reel'; reel: SeedReel; caption: string; thumb: string }
+  | {
+      kind: 'still';
+      src: string;
+      alt: string;
+      caption: string;
+      width: number;
+      height: number;
+      /** The host the frame's address bar shows; null for a neutral bar. */
+      host: string | null;
+      thumb: string;
+    };
+
+const host = (url: string) => new URL(url).host;
+
+/**
+ * A seed's gallery, in order: its reel if it has one, then the still of its
+ * homepage, then its product screenshots.
+ */
+export function gallerySlides(page: SeedPageModel): GallerySlide[] {
+  const slides: GallerySlide[] = [];
+  if (page.reel) {
+    slides.push({
+      kind: 'reel',
+      reel: page.reel,
+      caption: `${page.name} in ${Math.round(page.reel.durationSeconds)} seconds`,
+      thumb: page.reel.poster,
+    });
+  }
+  if (page.homepageShot && page.homepage) {
+    slides.push({
+      kind: 'still',
+      src: page.homepageShot,
+      alt: `The ${page.name} homepage, ${host(page.homepage)}`,
+      caption: `The ${page.name} homepage`,
+      width: 1280,
+      height: 720,
+      host: host(page.homepage),
+      thumb: page.homepageShot,
+    });
+  }
+  for (const shot of page.shots) slides.push({ kind: 'still', ...shot });
+  return slides;
+}
 
 /** A promise that leads the list with its kind's icon. */
 export type LeadPromise = SeedPromise & { category: IconCategory };

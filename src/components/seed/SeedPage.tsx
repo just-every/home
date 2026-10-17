@@ -8,10 +8,10 @@ import { Separator, separatorVariants } from '@/components/landing/Separator';
 import { AltLine } from '@/components/landing/AltLine';
 import { runCommand } from '@/components/landing/runCommand';
 import { Terminal } from '@/components/landing/Terminal';
-import { Reel } from '@/components/shared/Reel';
 import { collection, runOne } from '@/content/landing';
 
-import { seedPages } from './model';
+import { Gallery } from './Gallery';
+import { gallerySlides, seedPages } from './model';
 import type { SeedPageModel } from './model';
 import { Promises } from './Promises';
 import { seedJsonLd } from './seoData';
@@ -25,10 +25,10 @@ const repoTarget = (page: SeedPageModel) =>
   page.repo.split('/').slice(-2).join('/');
 
 /**
- * One seed's own page, /<slug>: its name, what it replaces and its video (or
- * a still of its homepage), then what it does, what it promises, what it
- * moves in, how to run it and where it runs. Prose at a reading measure, the
- * picture wider, the painted ground at the foot.
+ * One seed's own page, /<slug>: its name, what it replaces and its gallery
+ * (its video, a still of its homepage, its screens), then what it does, what
+ * it promises, what it moves in, how to run it and where it runs. Prose at a
+ * reading measure, the gallery wider, the painted ground at the foot.
  */
 export function SeedPage({ page }: { page: SeedPageModel }) {
   const style = {
@@ -44,6 +44,7 @@ export function SeedPage({ page }: { page: SeedPageModel }) {
   // The strip rotates with the seed's place in the list, so neighbours differ.
   const strip =
     separatorVariants[seedPages.indexOf(page) % separatorVariants.length];
+  const slides = gallerySlides(page);
   return (
     <div className={`${ui.page} ${sans.variable}`} style={style}>
       <Header />
@@ -86,25 +87,9 @@ export function SeedPage({ page }: { page: SeedPageModel }) {
             </div>
           </header>
 
-          {page.reel || (page.homepageShot && page.homepage) ? (
+          {slides.length > 0 ? (
             <div className={styles.media}>
-              {page.reel ? (
-                <Reel
-                  seed={{ name: page.name, line: page.line, reel: page.reel }}
-                  className={styles.picture}
-                />
-              ) : (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  className={styles.picture}
-                  src={page.homepageShot!}
-                  alt={`The ${page.name} homepage, ${host(page.homepage!)}`}
-                  width={1280}
-                  height={720}
-                  decoding="async"
-                  draggable={false}
-                />
-              )}
+              <Gallery name={page.name} line={page.line} slides={slides} />
             </div>
           ) : null}
 
