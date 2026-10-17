@@ -9,7 +9,7 @@
  *
  *   { "slug": "chest", "items": [ { "file": "01-files.webp", "alt": "…",
  *     "caption": "…", "width": 1600, "height": 1000,
- *     "source": "demo" | "repo", "from": "<url or repo path>" } ] }
+ *     "source": "demo" | "repo" | "local", "from": "<url, repo path or in-app path>" } ] }
  *
  * with its items in display order, up to five a seed. An item is kept when
  * its file sits beside the manifest, is a WebP of the stated width and height
@@ -115,10 +115,10 @@ async function checkItem(item, dir) {
   if (typeof caption !== 'string' || !caption.trim()) {
     return { ok: false, reason: `${file}: empty caption` };
   }
-  if (source !== 'demo' && source !== 'repo') {
+  if (source !== 'demo' && source !== 'repo' && source !== 'local') {
     return {
       ok: false,
-      reason: `${file}: source ${JSON.stringify(source)} is not demo or repo`,
+      reason: `${file}: source ${JSON.stringify(source)} is not demo, repo or local`,
     };
   }
   const host = source === 'demo' ? hostOf(from) : null;
