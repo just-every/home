@@ -140,7 +140,8 @@
 
 .figure figcaption {
   max-width: var(--measure);
-  margin-top: 14px;
+  margin: 14px auto 0;
+  text-align: center;
   color: var(--muted);
   font-size: 15px;
   letter-spacing: -0.003em;
