@@ -1,5 +1,20 @@
 /* The Process essay's figures. */
 
+/* The header figure: the opening scene, where Journey's first homepage sits
+   (the figure column, centred, at most 780px wide). */
+.lead {
+  grid-column: figure;
+  justify-self: center;
+  width: min(100%, 780px);
+}
+
+.leadPainting {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+
 /* The painted figures: flat SVGs in the footer's hand, floating on the
    page with no frame, at the figure column's width. */
 .painting {
