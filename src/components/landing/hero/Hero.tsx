@@ -224,7 +224,7 @@ export function Hero() {
                 event.currentTarget.classList.remove(styles.nudge)
               }
             >
-              <h2 id="hero-stack-heading">Your current stack</h2>
+              <h2 id="hero-stack-heading">Your current stack…</h2>
               <ul>
                 {rows.map((volume, i) => {
                   const price = incumbentPrices[volume.seed.primaryReplace];
@@ -291,7 +291,7 @@ export function Hero() {
               className={`${styles.panel} ${styles.new}`}
               aria-labelledby="hero-own-heading"
             >
-              <h2 id="hero-own-heading">Better, open source you own.</h2>
+              <h2 id="hero-own-heading">JustEvery Stack</h2>
               <ul>
                 {rows.map(volume => {
                   const on = picked === volume.slug;

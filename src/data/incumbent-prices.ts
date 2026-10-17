@@ -1,5 +1,5 @@
 /**
- * List prices for the rented tools in the hero's "Your current stack" card,
+ * List prices for the rented tools in the hero's "Your current stack…" card,
  * each the vendor's popular or entry plan from its own pricing page. Keyed by
  * the tool's name as the seeds spell it (`primaryReplace`). Full research and
  * caveats: the hero-g evidence, incumbent-prices-2026-10-16.json.
