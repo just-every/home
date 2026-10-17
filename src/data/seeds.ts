@@ -13,16 +13,16 @@ function reel(slug: string, durationSeconds: number) {
 }
 
 /**
- * The 30 released seeds (each has a release tag) in collection order: the
+ * The 31 released seeds (each has a release tag) in collection order: the
  * owner's favourites (Uptime, HappyToHelp, Nook) first, then the other
  * original 14, then the later releases A to Z. Facts for the original 14 come
  * from the copy deck (COPY.md) and seeds.json; where they disagree the copy
  * deck wins. Their headlines are each product's own homepage h1 (Orbit's from
- * run-orbit.com, final since its brand refresh). The later 16 take their
+ * run-orbit.com, final since its brand refresh). The later 17 take their
  * facts from each repo's README, CONTRACT and seed.json, and carry no
  * headline or reel yet; where one's homepage is live, `homepageShot` is a
  * still of it (captured 16 and 17 Oct 2026 at 1280x720). Accent, ink and paper match each product's own brand
- * tokens; `pastel` softens one of them so all thirty sit together as a set
+ * tokens; `pastel` softens one of them so all thirty-one sit together as a set
  * (OKLCH lightness about 0.875, chroma 0.45 of the brand's, kept between
  * 0.04 and 0.08, same hue).
  */
@@ -350,6 +350,30 @@ export const seeds: Seed[] = [
     markInk: null,
     reel: reel('spool', 50.6),
     homepageShot: null,
+  },
+  {
+    slug: 'balm',
+    name: 'Balm',
+    category: 'Clinic management',
+    family: 'Clinic',
+    area: 'operations',
+    replaces: ['Cliniko'],
+    primaryReplace: 'Cliniko',
+    line: 'Bookings, intake forms, private notes and invoices for small clinics.',
+    headline: null,
+    repo: 'https://github.com/just-every/run-balm',
+    homepage: 'https://run-balm.com',
+    // Accent, ink and paper from its site's tokens; pastel from #356c60 (src/branding.json primaryColor, hue 177), the teal its site keeps beside the amber mark.
+    accent: '#16403d',
+    ink: '#17323a',
+    paper: '#faf7f2',
+    pastel: '#b5e3d7',
+    markOnPastel: 'colour',
+    mark: `${dir('balm')}/mark.svg`,
+    markLight: null,
+    markInk: null,
+    reel: null,
+    homepageShot: `${dir('balm')}/home.webp`,
   },
   {
     slug: 'beam',

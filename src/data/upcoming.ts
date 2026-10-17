@@ -57,20 +57,6 @@ export const upcoming: UpcomingSeed[] = [
     mark: '/seeds/auth/mark-light.svg',
   },
   {
-    slug: 'balm',
-    name: 'Balm',
-    category: 'Clinic management',
-    replaces: ['Cliniko'],
-    primaryReplace: 'Cliniko',
-    line: 'Bookings, intake forms, private notes and invoices for small clinics.',
-    repo: repo('balm'),
-    homepage: homepage('balm'),
-    homepageShot: shot('balm'),
-    // Pastel from #356c60 (src/branding.json primaryColor, hue 177), the teal its site keeps beside the amber mark.
-    pastel: '#b5e3d7',
-    mark: mark('balm'),
-  },
-  {
     slug: 'barrow',
     name: 'Barrow',
     category: 'Wholesale ordering',

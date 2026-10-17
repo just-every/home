@@ -187,7 +187,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Zendesk', 'Help Scout', 'Intercom', 'Freshdesk'],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.4.1',
+    version: 'v0.4.2',
     contractUrl:
       'https://github.com/just-every/run-happytohelp/blob/main/CONTRACT.md',
     seoTitle: 'HappyToHelp: free, open-source alternative to Zendesk',
@@ -336,7 +336,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Statuspage', 'Better Stack', 'Instatus', 'Sorry'],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v1.5.1',
+    version: 'v1.7.0',
     contractUrl: 'https://github.com/just-every/run-lamp/blob/main/CONTRACT.md',
     seoTitle: 'Lamp: free, open-source alternative to Statuspage',
     seoDescription:
@@ -945,7 +945,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Canny (saved CSV or API files)', 'UserVoice (saved CSV exports)'],
     runsOn: 'your own computer, or your own Cloudflare account',
-    version: 'v0.1.1',
+    version: 'v0.1.2',
     contractUrl:
       'https://github.com/just-every/run-penny/blob/main/CONTRACT.md',
     seoTitle: 'Penny: free, open-source alternative to Canny',
@@ -2071,7 +2071,7 @@ export const seedPageContent: SeedPageContent[] = [
     moveIn: ['QuickBooks Online (seven report exports as CSV)'],
     runsOn:
       'Your own computer to try it; your own Cloudflare account to run it for real',
-    version: 'v0.1.0',
+    version: 'v0.2.1',
     contractUrl:
       'https://github.com/just-every/run-pantry/blob/main/CONTRACT.md',
     seoTitle: 'Pantry: free, open-source alternative to QuickBooks',
@@ -2461,7 +2461,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Cliniko patient export (CSV)'],
     runsOn: 'your own Cloudflare account (or on your computer to try it)',
-    version: '',
+    version: 'v0.1.0',
     contractUrl: 'https://github.com/just-every/run-balm/blob/main/CONTRACT.md',
     seoTitle: 'Balm: free, open-source clinic booking and notes',
     seoDescription:
