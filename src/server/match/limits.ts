@@ -49,6 +49,7 @@ export const seedLimits: Readonly<Record<string, string>> = {
     'It prepares billing packets but issues no tax or statutory invoices, takes no payments, runs no payroll and handles no retainers; it connects to no calendar or accounting providers.',
   glove:
     'It has no route optimisation or maps, sends no SMS or email, takes no card payments and is not a full accounting or tax system; invoices are exported to your own accounting system.',
+  balm: 'It does no insurance billing (eligibility, authorizations, claims, remittance posting or denials), telehealth video, prescribing or clinical decision support, and has no signed-in patient portal or home exercise programs yet.',
   larder:
     "It does not keep statutory books, file tax, run payroll, post journals, handle multiple entities or currencies, schedule by finite capacity, or certify regulated quality or recalls; it hands off to the accountant's own ledger.",
   linen:

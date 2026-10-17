@@ -13,16 +13,16 @@ function reel(slug: string, durationSeconds: number) {
 }
 
 /**
- * The 30 released seeds (each has a release tag) in collection order: the
+ * The 31 released seeds (each has a release tag) in collection order: the
  * owner's favourites (Uptime, HappyToHelp, Nook) first, then the other
  * original 14, then the later releases A to Z. Facts for the original 14 come
  * from the copy deck (COPY.md) and seeds.json; where they disagree the copy
  * deck wins. Their headlines are each product's own homepage h1 (Orbit's from
- * run-orbit.com, final since its brand refresh). The later 16 take their
+ * run-orbit.com, final since its brand refresh). The later 17 take their
  * facts from each repo's README, CONTRACT and seed.json, and carry no
  * headline or reel yet; where one's homepage is live, `homepageShot` is a
  * still of it (captured 16 and 17 Oct 2026 at 1280x720). Accent, ink and paper match each product's own brand
- * tokens; `pastel` softens one of them so all thirty sit together as a set
+ * tokens; `pastel` softens one of them so all thirty-one sit together as a set
  * (OKLCH lightness about 0.875, chroma 0.45 of the brand's, kept between
  * 0.04 and 0.08, same hue).
  */
@@ -352,6 +352,30 @@ export const seeds: Seed[] = [
     homepageShot: null,
   },
   {
+    slug: 'balm',
+    name: 'Balm',
+    category: 'Clinic management',
+    family: 'Clinic',
+    area: 'operations',
+    replaces: ['Cliniko'],
+    primaryReplace: 'Cliniko',
+    line: 'Bookings, intake forms, private notes and invoices for small clinics.',
+    headline: null,
+    repo: 'https://github.com/just-every/run-balm',
+    homepage: 'https://run-balm.com',
+    // Accent, ink and paper from its site's tokens; pastel from #356c60 (src/branding.json primaryColor, hue 177), the teal its site keeps beside the amber mark.
+    accent: '#16403d',
+    ink: '#17323a',
+    paper: '#faf7f2',
+    pastel: '#b5e3d7',
+    markOnPastel: 'colour',
+    mark: `${dir('balm')}/mark.svg`,
+    markLight: null,
+    markInk: null,
+    reel: null,
+    homepageShot: `${dir('balm')}/home.webp`,
+  },
+  {
     slug: 'beam',
     name: 'Beam',
     category: 'Staff training records',
@@ -390,8 +414,8 @@ export const seeds: Seed[] = [
     accent: '#181818',
     ink: '#181818',
     paper: '#fdfcf8',
-    // Its primaryColor is plain black; pastel from the sand of its folder mark (#ead6b4, hue 81).
-    pastel: '#f3dbb2',
+    // Its primaryColor is plain black; pastel from the violet of its chest mark (#7c48fd, hue 289).
+    pastel: '#d4d0ff',
     markOnPastel: 'colour',
     mark: `${dir('chest')}/mark.svg`,
     markLight: null,
@@ -504,14 +528,12 @@ export const seeds: Seed[] = [
     headline: null,
     repo: 'https://github.com/just-every/run-glove',
     homepage: 'https://run-glove.com',
-    accent: '#efa45a',
-    ink: '#1d1b18',
-    paper: '#f7f0e5',
-    pastel: '#f1cfb0',
+    accent: '#fd4b07',
+    ink: '#0c1631',
+    paper: '#f8fafd',
+    pastel: '#ffc7b7',
     markOnPastel: 'colour',
-    // run-glove's mark is still a plain disc, not a drawn mark.
-    mark: `${dir('glove')}/mark-lettered.svg`,
-    markPlaceholder: true,
+    mark: `${dir('glove')}/mark.svg`,
     markLight: null,
     markInk: null,
     reel: null,
@@ -646,10 +668,10 @@ export const seeds: Seed[] = [
     headline: null,
     repo: 'https://github.com/just-every/run-pantry',
     homepage: 'https://run-pantry.com',
-    accent: '#41203c',
-    ink: '#1a1a1b',
-    paper: '#fbfaf8',
-    pastel: '#e7cde1',
+    accent: '#101a33',
+    ink: '#101a33',
+    paper: '#f7f6fb',
+    pastel: '#c9d6f1',
     markOnPastel: 'colour',
     mark: `${dir('pantry')}/mark.svg`,
     markLight: null,
@@ -669,11 +691,12 @@ export const seeds: Seed[] = [
     headline: null,
     repo: 'https://github.com/just-every/run-pier',
     homepage: 'https://run-pier.com',
-    accent: '#315b51',
-    ink: '#202825',
-    paper: '#f8f6ef',
-    // Pastel from public/rer-theme.css link teal #276f69 (hue 187); its branding.json #315b51 is the same family.
-    pastel: '#bde8e4',
+    // Its site's rer-theme accent and text; branding.json still has the old #315b51.
+    accent: '#0b1020',
+    ink: '#0b1020',
+    paper: '#f9f8f4',
+    // Pastel from the cobalt of its mark (#1c50dc, hue 264); its brand colour is near-black.
+    pastel: '#c2d6fe',
     markOnPastel: 'colour',
     mark: `${dir('pier')}/mark.svg`,
     markLight: null,
@@ -717,11 +740,11 @@ export const seeds: Seed[] = [
     headline: null,
     repo: 'https://github.com/just-every/run-willow',
     homepage: 'https://run-willow.com',
-    accent: '#5f7444',
-    ink: '#1f2a23',
-    paper: '#faf9f5',
-    // Pastel from src/branding.json primaryColor #5f7444 (hue 128).
-    pastel: '#c9e2ad',
+    // Its site's rer-theme accent, text and page; branding.json still has the old #5f7444.
+    accent: '#b1054f',
+    ink: '#2a0b28',
+    paper: '#faf8f6',
+    pastel: '#ffc4cf',
     markOnPastel: 'colour',
     mark: `${dir('willow')}/mark.svg`,
     markLight: null,
