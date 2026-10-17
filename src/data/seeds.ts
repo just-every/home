@@ -36,8 +36,10 @@ export const seeds: Seed[] = [
     category: 'Uptime monitoring',
     family: 'Monitoring',
     area: 'engineering',
-    replaces: ['UptimeRobot', 'Pingdom', 'Better Stack'],
-    primaryReplace: 'UptimeRobot',
+    // Owner's choice of 18 Oct 2026: Pingdom leads (UptimeRobot reads too close to
+    // "Uptime"), even though run-uptime.com names UptimeRobot first.
+    replaces: ['Pingdom', 'UptimeRobot', 'Better Stack'],
+    primaryReplace: 'Pingdom',
     line: 'Alerts you only when a failure is confirmed.',
     headline: 'Sleep through the night.',
     repo: 'https://github.com/just-every/run-uptime',

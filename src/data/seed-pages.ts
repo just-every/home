@@ -112,11 +112,11 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'erasure',
       },
     ],
-    moveIn: ['UptimeRobot', 'Pingdom', 'Better Stack Uptime', 'Site24x7'],
+    moveIn: ['Pingdom', 'UptimeRobot', 'Better Stack Uptime', 'Site24x7'],
     runsOn: 'Your computer, or your own Cloudflare account',
     version: 'v0.3.0',
     contractUrl: 'https://run-uptime.com/contract',
-    seoTitle: 'Uptime: free, open-source alternative to UptimeRobot',
+    seoTitle: 'Uptime: free, open-source alternative to Pingdom',
     seoDescription:
       'Uptime checks your websites, APIs, DNS and certificates, confirms failures before alerting, and tells you by email, Slack or webhook.',
   },
