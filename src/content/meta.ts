@@ -14,7 +14,7 @@ export const siteMeta = {
     url: '/og-image.png',
     width: 1200,
     height: 630,
-    alt: 'The Just Every headline “Stop renting your software.” on a dusk sky, between a card of rented tools and their yearly prices under a cloud raining dollar signs and coins, and a card of their open-source replacements at $0 in the sun.',
+    alt: 'The Just Every headline “Stop renting your software.” on a dusk sky, between a card of rented tools and their yearly prices under a cloud raining dollar signs and coins, and a card of their free, open-source replacements in the sun.',
   },
   githubUrl: 'https://github.com/just-every',
 } as const;
