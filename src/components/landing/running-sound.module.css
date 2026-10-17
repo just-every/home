@@ -1,0 +1,110 @@
+/* The reels' sound button (RunningSound), right-aligned under the player,
+   with the handwritten note in the space to its left. */
+.sound {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 48px;
+}
+
+/* As wide for "Mute" as for "Unmute", its icon and name centred, so it
+   keeps its place when pressed. */
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-width: 7.5em;
+  min-height: 44px;
+  padding: 0 18px 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--card-paper);
+  box-shadow:
+    0 1px 2px #1b1a3014,
+    0 6px 18px -10px #1b1a3040;
+  color: var(--ink);
+  font: inherit;
+  font-size: 15.5px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 2px #1b1a3014,
+    0 10px 22px -10px #1b1a3059;
+}
+
+.icon {
+  flex: none;
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.speaker {
+  fill: currentColor;
+}
+
+/* The hero's hand and ink, as the footer's note (footer-note.module.css),
+   sitting a little below the button's middle so its arrow can sweep up into
+   it. Decorative and level; it fades while the sound is on. */
+.note {
+  position: relative;
+  transform: translateY(10px);
+  color: #4f4a82;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 260ms ease;
+}
+
+.note[data-shown='false'] {
+  opacity: 0;
+}
+
+/* The drawing is laid out in px from the note's end and baseline (its
+   viewBox), and the baseline sits 18px below the note box's top (Caveat's
+   ascent at 22px, less its half-leading at line-height 1), so its top is
+   18px plus its viewBox's top. As if drawn by hand after the note: it
+   leaves a few px after the ")" at the middle of the note's x-height,
+   heading right and a touch down, sweeps round and rises, and points up
+   and in at the middle of the button's left end, its head about 5px clear
+   of it. */
+.arrow {
+  position: absolute;
+  top: -4px;
+  left: 100%;
+  width: 48px;
+  height: 26px;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .note {
+    transition: none;
+  }
+
+  .button:hover {
+    transform: none;
+  }
+}

@@ -63,6 +63,14 @@
   background: var(--card-paper);
 }
 
+/* The sound button, under the player's lower right (RunningSound). */
+.sound {
+  grid-column: 2;
+  position: relative;
+  z-index: 1;
+  margin-top: 6px;
+}
+
 /* Every product, Uptime first, as its mark on its pastel and its name: one
    row of fourteen on a wide screen, two rows of seven, or four to a row on a
    phone (where every name still fits). The selected one sits on paper, like
@@ -201,6 +209,7 @@
   }
 
   .screen,
+  .sound,
   .picker {
     width: 100%;
     max-width: 760px;
@@ -209,6 +218,10 @@
 
   .screen {
     margin-top: 24px;
+  }
+
+  .sound {
+    margin-top: 10px;
   }
 
   .picker {
