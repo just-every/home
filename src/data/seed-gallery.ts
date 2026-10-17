@@ -1309,7 +1309,7 @@ export const seedGallery: Record<string, SeedShot[]> = {
     {
       src: '/seeds/pantry/gallery/04-questions.webp',
       thumb: '/seeds/pantry/gallery/thumbs/04-questions.webp',
-      alt: "Pantry's questions page where the books assistant asks about an uncategorised $2,000 payment and files the owner's plain-words answer once confirmed.",
+      alt: "Pantry's questions page where the books assistant asks about an uncategorised payment and files the owner's plain-words answer once confirmed.",
       caption: "Questions from Pantry about what doesn't add up",
       width: 1600,
       height: 1000,
