@@ -6,7 +6,7 @@ import { track, X_EVENTS } from '@/lib/x-pixel';
 
 import styles from './panels.module.css';
 
-/** Copies the run-one commands, one per line. */
+/** Copies the run command. */
 export function CopyCommands({ text }: { text: string }) {
   const [copied, setCopied] = useState(false);
 

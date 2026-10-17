@@ -5,6 +5,8 @@ import { sans } from '@/components/landing/fonts';
 import { Header } from '@/components/landing/Header';
 import ui from '@/components/landing/label.module.css';
 import { Separator, separatorVariants } from '@/components/landing/Separator';
+import { AltLine } from '@/components/landing/AltLine';
+import { runCommand } from '@/components/landing/runCommand';
 import { Terminal } from '@/components/landing/Terminal';
 import { Reel } from '@/components/shared/Reel';
 import { collection, runOne } from '@/content/landing';
@@ -18,15 +20,9 @@ import { SiteLink } from './SiteLink';
 
 const host = (url: string) => new URL(url).host;
 
-/** The commands that run this seed: the site's own, with this seed's repo. */
-const installCommands = (page: SeedPageModel) => {
-  const name = page.repo.split('/').pop()!;
-  return [
-    runOne.commands[0],
-    `git clone ${page.repo}`,
-    `cd ${name} && rer dev`,
-  ];
-};
+/** This seed's GitHub target, owner/repo, from its repo URL. */
+const repoTarget = (page: SeedPageModel) =>
+  page.repo.split('/').slice(-2).join('/');
 
 /**
  * One seed's own page, /<slug>: its name, what it replaces and its video (or
@@ -186,11 +182,8 @@ export function SeedPage({ page }: { page: SeedPageModel }) {
                 Run it yourself
               </h2>
               <p className={styles.runLine}>{runOne.line}</p>
-              <Terminal commands={installCommands(page)} />
-              <p className={styles.altLine}>
-                {runOne.altLine.before} <code>{runOne.altLine.command}</code>{' '}
-                {runOne.altLine.after}
-              </p>
+              <Terminal command={runCommand(repoTarget(page))} />
+              <AltLine target={repoTarget(page)} className={styles.altLine} />
             </section>
 
             <dl className={styles.facts}>
