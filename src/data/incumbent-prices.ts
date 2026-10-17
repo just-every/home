@@ -48,13 +48,13 @@ export const incumbentPrices: Record<string, IncumbentPrice> = {
     sourceUrl: 'https://slack.com/pricing',
     checked: CHECKED,
   },
-  Intercom: {
-    label: '$348–$1,584/user',
+  Zendesk: {
+    label: '$228–$1,380/user',
     perUser: true,
-    compact: '$348–1.6k',
-    plan: 'Essential to Expert, per seat',
-    sourceUrl: 'https://www.intercom.com/pricing',
-    checked: CHECKED,
+    compact: '$228–1.4k',
+    plan: 'Support Team to Suite Professional, per agent',
+    sourceUrl: 'https://www.zendesk.com/pricing/',
+    checked: '2026-10-18',
   },
   Calendly: {
     label: '$192/user',
@@ -116,12 +116,12 @@ export const incumbentPrices: Record<string, IncumbentPrice> = {
     sourceUrl: 'https://sentry.io/pricing/',
     checked: CHECKED,
   },
-  Pingdom: {
-    label: '$120–$1,200',
+  UptimeRobot: {
+    label: '$108–$1,788',
     perUser: false,
-    compact: '$120–1.2k',
-    plan: 'Entry tier up, scales with checks',
-    sourceUrl: 'https://www.pingdom.com/synthetic-pricing/',
-    checked: CHECKED,
+    compact: '$108+',
+    plan: 'Solo to Scale, scales with monitors',
+    sourceUrl: 'https://uptimerobot.com/pricing/',
+    checked: '2026-10-18',
   },
 };

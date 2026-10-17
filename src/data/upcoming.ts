@@ -6,23 +6,24 @@ import { numberWord } from '@/lib/number-word';
  * collection. They are listed apart from `seeds.ts` and shown quietly (no
  * reel, not selectable), and the collection's search finds them as coming
  * soon; a seed's own page links its live homepage and shows a still of it
- * (captured 17 Oct 2026 at 1280x720). Each line is checked against that
- * seed's README and CONTRACT.md; the pastel keeps the seed's own brand hue at
- * the lightness and softness of the collection's pastels. A seed moves to
- * `seeds.ts` when it gets its first release tag. `primaryReplace` and
- * `replaces` name what the seed's repo says it stands in for, and are empty
- * where the repo names no product.
+ * (captured 17 Oct 2026 at 1280x720). Each category and line is true to that
+ * homepage's headline and subhead (checked 17 Oct 2026, after every homepage
+ * was rebuilt); the pastel keeps the seed's own brand hue at the lightness
+ * and softness of the collection's pastels. A seed moves to `seeds.ts` when
+ * it gets its first release tag. `replaces` lists the products named in the
+ * homepage's "alternative to" line, in that line's order, and
+ * `primaryReplace` is the first of them.
  */
 export interface UpcomingSeed {
   slug: string;
   name: string;
   /** What the seed is, in a few words. */
   category: string;
-  /** Every incumbent the seed's repo names; empty where it names none. */
+  /** Every incumbent the homepage's "alternative to" line names, in its order. */
   replaces: string[];
-  /** The one incumbent named on the card; empty where the repo names none. */
+  /** The one incumbent named on the card: the first of `replaces`. */
   primaryReplace: string;
-  /** What the code does, in one plain line. */
+  /** What the product does, in one plain line. */
   line: string;
   /** Public GitHub repository. */
   repo: string;
@@ -45,7 +46,7 @@ export const upcoming: UpcomingSeed[] = [
     slug: 'auth',
     name: 'Auth',
     category: 'Identity provider',
-    replaces: ['Auth0', 'Okta'],
+    replaces: ['Auth0', 'Okta', 'Microsoft Entra'],
     primaryReplace: 'Auth0',
     line: 'Email-link and passkey sign-in that you run yourself.',
     repo: repo('auth'),
@@ -100,10 +101,10 @@ export const upcoming: UpcomingSeed[] = [
   {
     slug: 'cabin',
     name: 'Cabin',
-    category: 'Holiday rental operations',
-    replaces: [],
-    primaryReplace: '',
-    line: 'Calendar imports, cleaner photo checklists and owner statements.',
+    category: 'Vacation rental management',
+    replaces: ['Guesty', 'Hostaway', 'OwnerRez'],
+    primaryReplace: 'Guesty',
+    line: 'Syncs your booking channels, answers guests, sends the cleaner and builds owner statements.',
     repo: repo('cabin'),
     homepage: homepage('cabin'),
     homepageShot: shot('cabin'),
@@ -114,10 +115,10 @@ export const upcoming: UpcomingSeed[] = [
   {
     slug: 'coffer',
     name: 'Coffer',
-    category: 'Donor records',
-    replaces: [],
-    primaryReplace: '',
-    line: 'Gifts, consent and acknowledgement letters for a US nonprofit.',
+    category: 'Donor management',
+    replaces: ['Bloomerang', 'Little Green Light', 'Neon CRM'],
+    primaryReplace: 'Bloomerang',
+    line: "Takes donations, keeps every donor's story and sends the receipts and thank-yous.",
     repo: repo('coffer'),
     homepage: homepage('coffer'),
     homepageShot: shot('coffer'),
@@ -129,9 +130,9 @@ export const upcoming: UpcomingSeed[] = [
     slug: 'crank',
     name: 'Crank',
     category: 'Workflow automation',
-    replaces: ['n8n'],
-    primaryReplace: 'n8n',
-    line: 'Workflow automation where a person approves each run.',
+    replaces: ['Zapier', 'Make', 'Workato'],
+    primaryReplace: 'Zapier',
+    line: 'Workflow automation that connects your apps and retries what fails.',
     repo: repo('crank'),
     homepage: homepage('crank'),
     homepageShot: shot('crank'),
@@ -142,10 +143,10 @@ export const upcoming: UpcomingSeed[] = [
   {
     slug: 'evidence',
     name: 'Evidence',
-    category: 'Audit evidence',
-    replaces: ['Drata'],
-    primaryReplace: 'Drata',
-    line: 'Controls, proof on a schedule, gaps and expiring auditor folders.',
+    category: 'Compliance automation',
+    replaces: ['Vanta', 'Drata', 'Secureframe'],
+    primaryReplace: 'Vanta',
+    line: 'Tests your controls on a schedule, collects the proof and hands your auditor everything.',
     repo: repo('evidence'),
     homepage: homepage('evidence'),
     homepageShot: shot('evidence'),
@@ -183,8 +184,8 @@ export const upcoming: UpcomingSeed[] = [
     slug: 'mallet',
     name: 'Mallet',
     category: 'Workshop repair jobs',
-    replaces: ['RepairShopr', 'Shopmonkey', 'Tekmetric'],
-    primaryReplace: 'RepairShopr',
+    replaces: ['Shopmonkey', 'Tekmetric', 'RepairShopr'],
+    primaryReplace: 'Shopmonkey',
     line: 'Estimates, customer authorisation, parts and labour for workshop repairs.',
     repo: repo('mallet'),
     homepage: homepage('mallet'),
@@ -210,8 +211,8 @@ export const upcoming: UpcomingSeed[] = [
     slug: 'placemat',
     name: 'Placemat',
     category: 'Restaurant bookings',
-    replaces: ['Tablein'],
-    primaryReplace: 'Tablein',
+    replaces: ['OpenTable', 'Resy', 'SevenRooms'],
+    primaryReplace: 'OpenTable',
     line: 'Table bookings, walk-ins, waitlist and guest history for restaurants.',
     repo: repo('placemat'),
     homepage: homepage('placemat'),
@@ -252,7 +253,7 @@ export const upcoming: UpcomingSeed[] = [
     slug: 'satchel',
     name: 'Satchel',
     category: 'Legal practice management',
-    replaces: ['Clio', 'MyCase', 'PracticePanther'],
+    replaces: ['Clio', 'MyCase', 'Smokeball'],
     primaryReplace: 'Clio',
     line: 'Conflict checks, time, bills, files and deadlines for law firms.',
     repo: repo('satchel'),
@@ -265,9 +266,9 @@ export const upcoming: UpcomingSeed[] = [
     slug: 'stall',
     name: 'Stall',
     category: 'Online shop',
-    replaces: ['Shopify'],
+    replaces: ['Shopify', 'Squarespace Commerce', 'BigCommerce'],
     primaryReplace: 'Shopify',
-    line: 'An online shop with Stripe Checkout, shipping and partial refunds.',
+    line: 'An online shop with checkout, sales tax, shipping labels and returns.',
     repo: repo('stall'),
     homepage: homepage('stall'),
     homepageShot: shot('stall'),
@@ -279,7 +280,7 @@ export const upcoming: UpcomingSeed[] = [
     slug: 'strap',
     name: 'Strap',
     category: 'Studio management',
-    replaces: ['Mindbody'],
+    replaces: ['Mindbody', 'TeamUp', 'Momence'],
     primaryReplace: 'Mindbody',
     line: 'Studio classes, pack credits, waitlists and member balances.',
     repo: repo('strap'),
@@ -306,8 +307,8 @@ export const upcoming: UpcomingSeed[] = [
     slug: 'vane',
     name: 'Vane',
     category: 'Web analytics',
-    replaces: ['Google Analytics', 'Plausible', 'Fathom'],
-    primaryReplace: 'Google Analytics',
+    replaces: ['Plausible', 'Fathom', 'Matomo'],
+    primaryReplace: 'Plausible',
     line: 'Website visits, sources, campaigns and goals without cookies.',
     repo: repo('vane'),
     homepage: homepage('vane'),
