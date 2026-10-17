@@ -11,7 +11,7 @@
   border-radius: calc(var(--card-radius) + 4px);
 }
 
-.carousel:focus-visible {
+.track:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 6px;
 }

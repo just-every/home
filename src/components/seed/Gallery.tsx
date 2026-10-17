@@ -45,8 +45,6 @@ function Carousel({ name, line, slides }: Props) {
       className={`${styles.gallery} ${styles.carousel}`}
       aria-roledescription="carousel"
       aria-label={`Pictures of ${name}`}
-      tabIndex={0}
-      onKeyDown={onKeyDown}
     >
       <div className={styles.stage}>
         {/* The arrows come first, so a tab reaches them before a video's own
@@ -71,7 +69,13 @@ function Carousel({ name, line, slides }: Props) {
         >
           <Chevron />
         </button>
-        <div className={styles.track} id={id} ref={track} tabIndex={-1}>
+        <div
+          className={styles.track}
+          id={id}
+          ref={track}
+          tabIndex={0}
+          onKeyDown={onKeyDown}
+        >
           {slides.map((slide, i) => (
             <div
               key={slide.kind === 'reel' ? 'reel' : slide.src}
