@@ -2,7 +2,7 @@
 /**
  * Renders public/og-image.png, the 1200x630 share image, from the real hero
  * of the built site: its dusk sky, the cloud raining dollar signs and coins
- * over "Your current stack", the sun over "To open source you own.", the
+ * over "Your current stack", the sun over "Better, open source you own.", the
  * headline and the painted ground, as the page draws them (its own art,
  * rows, prices and fonts), with motion reduced so the weather is still.
  *
