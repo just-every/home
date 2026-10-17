@@ -11,10 +11,10 @@ const soundControl = { [SOUND_CONTROL]: '' };
 /**
  * The reels' sound button, outside the player at its lower right, naming
  * what it does. While the sound is off a handwritten "(it's worth it!)" sits
- * to its left, in the hero's hand and ink like the footer's FooterNote, with
- * an arrow drawn out of its end, down and round and up into the button
- * (running-sound.module.css). The note is decorative and fades away while the
- * sound is on.
+ * to its left, level with it, in the hero's hand and ink like the footer's
+ * FooterNote, with an arrow drawn out of its end that dips and comes in
+ * level to the button's side (running-sound.module.css). The note and its
+ * arrow are decorative and fade away while the sound is on.
  */
 export function RunningSound({
   muted,
@@ -33,13 +33,19 @@ export function RunningSound({
         aria-hidden="true"
       >
         {reels.soundNote}
-        {/* The drawing's units are px from the note's end (x) and its
-            baseline (y), so the viewBox reads in the page's own px. */}
-        <svg className={styles.arrow} viewBox="0 -22 48 26" focusable="false">
-          <path d="M6 -4.6C20 0.5 36 -4 44.5 -15" />
-          <path d="M39.2 -13.1L44.5 -15L44.1 -9.9" />
-        </svg>
       </span>
+      {/* The drawing's units are px from the note's end (x) and the
+          button's middle (y), so the viewBox reads in the page's own px. */}
+      <svg
+        className={styles.arrow}
+        data-shown={muted}
+        viewBox="0 -12 44 24"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path d="M5 3C12 15 28 1.5 44 0" />
+        <path d="M39.2 -2.5L44 0L40 3.3" />
+      </svg>
       <button
         type="button"
         className={styles.button}

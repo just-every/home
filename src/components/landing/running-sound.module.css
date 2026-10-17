@@ -1,10 +1,11 @@
 /* The reels' sound button (RunningSound), right-aligned under the player,
-   with the handwritten note in the space to its left. */
+   with the handwritten note and its arrow in the space to its left. The row
+   centres all three on the button, the tallest, and the arrow ends just
+   before it, so the drawing lands on the button's middle at every width. */
 .sound {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 48px;
 }
 
 /* As wide for "Mute" as for "Unmute", its icon and name centred, so it
@@ -57,11 +58,9 @@
 }
 
 /* The hero's hand and ink, as the footer's note (footer-note.module.css),
-   sitting a little below the button's middle so its arrow can sweep up into
-   it. Decorative and level; it fades while the sound is on. */
+   level with the button: its line box, and so its ink, centred on the
+   button's middle. Decorative; it fades while the sound is on. */
 .note {
-  position: relative;
-  transform: translateY(10px);
   color: #4f4a82;
   font-size: 22px;
   font-weight: 400;
@@ -72,35 +71,36 @@
   transition: opacity 260ms ease;
 }
 
-.note[data-shown='false'] {
-  opacity: 0;
-}
-
-/* The drawing is laid out in px from the note's end and baseline (its
-   viewBox), and the baseline sits 18px below the note box's top (Caveat's
-   ascent at 22px, less its half-leading at line-height 1), so its top is
-   18px plus its viewBox's top. As if drawn by hand after the note: it
-   leaves a few px after the ")" at the middle of the note's x-height,
-   heading right and a touch down, sweeps round and rises, and points up
-   and in at the middle of the button's left end, its head about 5px clear
-   of it. */
+/* As if drawn by hand after the note, in its ink: the drawing starts right
+   after the note's end, its viewBox's middle on the button's middle (where
+   the note's x-height middle sits about 3px lower). It leaves a few px
+   after the ")" there, heading right and down, dips, and comes in level to
+   the button's side, its head 6px clear of the button at its middle. */
 .arrow {
-  position: absolute;
-  top: -4px;
-  left: 100%;
-  width: 48px;
-  height: 26px;
+  flex: none;
+  width: 44px;
+  height: 24px;
+  margin-right: 6px;
   overflow: visible;
+  color: #4f4a82;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.6;
   stroke-linecap: round;
   stroke-linejoin: round;
+  pointer-events: none;
+  transition: opacity 260ms ease;
+}
+
+.note[data-shown='false'],
+.arrow[data-shown='false'] {
+  opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .button,
-  .note {
+  .note,
+  .arrow {
     transition: none;
   }
 
