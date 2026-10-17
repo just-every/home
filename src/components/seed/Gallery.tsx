@@ -107,6 +107,7 @@ function Carousel({ name, line, slides }: Props) {
             <img
               src={slide.thumb}
               alt=""
+              aria-hidden="true"
               width={80}
               height={45}
               loading="lazy"
