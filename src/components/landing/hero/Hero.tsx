@@ -291,7 +291,7 @@ export function Hero() {
               className={`${styles.panel} ${styles.new}`}
               aria-labelledby="hero-own-heading"
             >
-              <h2 id="hero-own-heading">To open source you own.</h2>
+              <h2 id="hero-own-heading">Better, open source you own.</h2>
               <ul>
                 {rows.map(volume => {
                   const on = picked === volume.slug;
