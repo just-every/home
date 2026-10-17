@@ -1,9 +1,9 @@
 /**
  * One muted/unmuted preference for every reel on the site. A visitor who mutes
- * or unmutes any player (its own controls included) sets it for every other
- * player on the page and for the next reel they open, and it is kept in this
- * browser between visits. Storage may be blocked; the preference then lasts
- * for the page.
+ * or unmutes any player (its own controls, or a sound button beside it) sets
+ * it for every other player on the page and for the next reel they open, and
+ * it is kept in this browser between visits. Storage may be blocked; the
+ * preference then lasts for the page.
  */
 
 const KEY = 'je-reel-muted';
@@ -27,16 +27,25 @@ export function getReelMuted(): boolean {
   return current;
 }
 
-function setReelMuted(muted: boolean) {
-  if (getReelMuted() === muted) return;
-  current = muted;
-  try {
-    window.localStorage.setItem(KEY, muted ? '1' : '0');
-  } catch {
-    // Storage is blocked: the preference lasts for this page only.
+/**
+ * Sets the preference from the visitor's own action (a player's controls, or
+ * a sound button), and every player follows it at once, one the browser had
+ * kept silent included: the action is the gesture that lets it have sound.
+ */
+export function setReelMuted(muted: boolean) {
+  if (getReelMuted() !== muted) {
+    current = muted;
+    try {
+      window.localStorage.setItem(KEY, muted ? '1' : '0');
+    } catch {
+      // Storage is blocked: the preference lasts for this page only.
+    }
   }
   listeners.forEach(listener => listener(muted));
 }
+
+/** Marks a sound button, whose own click decides the sound (bindReelSound). */
+export const SOUND_CONTROL = 'data-reel-sound';
 
 export interface ReelSound {
   /**
@@ -79,10 +88,18 @@ export function bindReelSound(video: HTMLVideoElement): ReelSound {
     return () => listeners.delete(listener);
   })();
 
-  // The visitor's next interaction (outside the player, whose own controls
-  // speak for themselves) lets a refused player have its sound back.
+  // The visitor's next interaction (outside the player and any sound button,
+  // whose own controls speak for themselves) lets a refused player have its
+  // sound back.
   const onInteract = (event: Event) => {
-    if (!refused || event.target instanceof HTMLVideoElement) return;
+    if (!refused) return;
+    const target = event.target;
+    if (
+      target instanceof HTMLVideoElement ||
+      (target instanceof Element && target.closest(`[${SOUND_CONTROL}]`))
+    ) {
+      return;
+    }
     refused = false;
     apply(getReelMuted());
   };

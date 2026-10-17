@@ -62,7 +62,7 @@ export const seeds: Seed[] = [
     line: 'Your Codex or Claude fixes the problem and writes the reply.',
     headline: 'Customer Support, Solved.',
     repo: 'https://github.com/just-every/run-happytohelp',
-    homepage: null,
+    homepage: 'https://happytohelp.com',
     accent: '#8fe3ee',
     ink: '#141414',
     paper: '#f6f2ea',

@@ -173,8 +173,15 @@ export const reels = {
   id: 'running',
   heading: 'See them running.',
   line: 'Real footage of the real apps, clicked at true speed.',
-  /** Caption pattern: the product name, what it does (its line), then this link. */
+  /** Caption pattern: the product name, what it does (its line), then this link to its homepage. */
+  homepageLabel: (host: string) => `Visit ${host}`,
+  /** The link for a product with a reel but no homepage yet. */
   githubLabel: 'Get it on GitHub',
+  /** The sound button beside the player names what it does. */
+  unmute: 'Unmute',
+  mute: 'Mute',
+  /** The handwritten note pointing at the button while the sound is off. */
+  soundNote: "(it's worth it!)",
 } as const;
 
 /** Video accessibility label: `Demo of <Name> running: <one line from the card>`. */

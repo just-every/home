@@ -5,12 +5,15 @@ import type { KeyboardEvent } from 'react';
 
 import { reels } from '@/content/landing';
 import { Reel } from '@/components/shared/Reel';
+import { getReelMuted, setReelMuted } from '@/components/shared/reelSound';
+import { SiteLink } from '@/components/seed/SiteLink';
 
 import { BrandMark } from './BrandMark';
 import {
   setSelectedProduct,
   useSelectedProduct,
 } from './collection/selectedProduct';
+import { RunningSound } from './RunningSound';
 import { Separator } from './Separator';
 import ui from './label.module.css';
 import styles from './running.module.css';
@@ -27,11 +30,14 @@ const reelVolumes = volumes.filter(
 
 const tabId = (slug: string) => `label-reel-tab-${slug}`;
 const panelId = 'label-reel-panel';
+const host = (url: string) => new URL(url).host;
 
 /**
- * Every reel, one at a time: the player beside the copy, and every product
- * with a reel as its mark and name to pick from (one row of fourteen, two
- * rows of seven, or four to a row on a phone, as there are fourteen today). The pick is the one reel the player shows.
+ * Every reel, one at a time: the player beside the copy with its sound
+ * button under it, and every product with a reel as its mark and name to
+ * pick from (one row of fourteen, two rows of seven, or four to a row on a
+ * phone, as there are fourteen today). The pick is the one reel the player
+ * shows; the copy links to its homepage.
  */
 export function Running() {
   const slug = useSelectedProduct(reelVolumes[0].slug);
@@ -42,29 +48,42 @@ export function Running() {
   const current = reelVolumes[active];
   const { seed } = current;
   const [paused, setPaused] = useState(true);
+  const [muted, setMuted] = useState(true);
   const screenRef = useRef<HTMLDivElement>(null);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   // Follow the reel element the shared Reel renders, so the big play button
-  // shows only while it is paused.
+  // shows only while it is paused, and the sound button says what the
+  // visitor hears (its own controls change it too).
   useEffect(() => {
     const video = screenRef.current?.querySelector('video');
     if (!video) return;
     const sync = () => setPaused(video.paused);
+    const syncSound = () => setMuted(video.muted);
     sync();
+    syncSound();
     video.addEventListener('play', sync);
     video.addEventListener('pause', sync);
     video.addEventListener('ended', sync);
+    video.addEventListener('volumechange', syncSound);
     return () => {
       video.removeEventListener('play', sync);
       video.removeEventListener('pause', sync);
       video.removeEventListener('ended', sync);
+      video.removeEventListener('volumechange', syncSound);
     };
   }, [seed.slug]);
 
   const play = useCallback(() => {
     const video = screenRef.current?.querySelector('video');
     video?.play().catch(() => {});
+  }, []);
+
+  // The click is the gesture that lets the playing reel have its sound; the
+  // shared preference carries it to every reel after.
+  const toggleSound = useCallback(() => {
+    const video = screenRef.current?.querySelector('video');
+    setReelMuted(!(video?.muted ?? getReelMuted()));
   }, []);
 
   const onTabKey = (event: KeyboardEvent<HTMLButtonElement>) => {
@@ -102,12 +121,25 @@ export function Running() {
             {seed.line}
           </p>
           <div className={styles.actions}>
-            <a className={`${ui.pill} ${ui.pillSmall}`} href={seed.repo}>
-              {reels.githubLabel}{' '}
-              <span className={ui.arrow} aria-hidden="true">
-                →
-              </span>
-            </a>
+            {seed.homepage ? (
+              <SiteLink
+                className={`${ui.pill} ${ui.pillSmall}`}
+                href={seed.homepage}
+                name={seed.name}
+              >
+                {reels.homepageLabel(host(seed.homepage))}{' '}
+                <span className={ui.arrow} aria-hidden="true">
+                  →
+                </span>
+              </SiteLink>
+            ) : (
+              <a className={`${ui.pill} ${ui.pillSmall}`} href={seed.repo}>
+                {reels.githubLabel}{' '}
+                <span className={ui.arrow} aria-hidden="true">
+                  →
+                </span>
+              </a>
+            )}
           </div>
         </div>
 
@@ -137,6 +169,12 @@ export function Running() {
             </button>
           ) : null}
         </div>
+
+        <RunningSound
+          className={styles.sound}
+          muted={muted}
+          onToggle={toggleSound}
+        />
 
         <div
           className={styles.picker}
