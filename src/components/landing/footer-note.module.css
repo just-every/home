@@ -1,7 +1,7 @@
 /* A footer link's handwritten aside (FooterNote): the hero's hand and ink,
    written on the line under the link and lined up with its first letter,
-   with a short drawn arrow from its end up toward the link's end. Static
-   and decorative.
+   with a short arrow drawn out of its end, round and up into the link.
+   Static and decorative.
 
    The note takes the list's next link row at every width: its baseline sits
    one row (the links' 44px) under the link's, so on wider windows it lines
@@ -41,15 +41,18 @@
 /* The drawing is laid out in px from the note's start and baseline (its
    viewBox), and the baseline sits 18px below the note box's top (Caveat's
    ascent at 22px, less its half-leading at line-height 1), so its top is
-   18px plus its viewBox's top. From just after the ")", it rises and bends
-   right, its head under the link's last letters and 4px clear of the hover
-   underline (the link's baseline is at -44, the underline 6px below it). */
+   18px plus its viewBox's top. As if drawn by hand after the note: it
+   leaves a few px after the ")" at the middle of the note's x-height,
+   heading right, sweeps round like the lower right quarter of a loop, and
+   rises to point up, leaning a touch into the curve, its head under the
+   back of "products" and 4px clear of the hover underline (the link's
+   baseline is at -44, the underline 6px below it). */
 .arrow {
   position: absolute;
   top: -16px;
-  left: 62px;
-  width: 26px;
-  height: 25px;
+  left: 64px;
+  width: 34px;
+  height: 31px;
   overflow: visible;
   fill: none;
   stroke: currentColor;
