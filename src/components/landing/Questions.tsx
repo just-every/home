@@ -1,6 +1,9 @@
 import type { CSSProperties } from 'react';
 
 import { questions } from '@/content/landing';
+import { seeds } from '@/data/seeds';
+import { upcoming } from '@/data/upcoming';
+import { numberWord } from '@/lib/number-word';
 
 import ui from './label.module.css';
 import styles from './questions.module.css';
@@ -35,9 +38,15 @@ export function Questions() {
         <ul className={styles.grid}>
           {questions.items.map((item, index) => {
             const look = looks[index % looks.length];
+            const question =
+              typeof item.question === 'function'
+                ? item.question(
+                    numberWord(seeds.length + upcoming.length, true)
+                  )
+                : item.question;
             return (
               <li
-                key={item.question}
+                key={question}
                 className={`${ui.card} ${styles.card}`}
                 style={{ '--tint': look.tint } as CSSProperties}
               >
@@ -47,7 +56,7 @@ export function Questions() {
                   color={look.ink}
                 />
                 <div>
-                  <h3>{item.question}</h3>
+                  <h3>{question}</h3>
                   <p>{item.answer}</p>
                 </div>
               </li>

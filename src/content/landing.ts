@@ -1,6 +1,4 @@
 import type { SeedArea } from '@/data/seed-types';
-import { seeds } from '@/data/seeds';
-import { numberWord } from '@/lib/number-word';
 
 /**
  * Shared landing copy from the approved copy deck (COPY.md, section B),
@@ -200,14 +198,16 @@ export const questions = {
         'No catch. Every one is MIT licensed and 100% free. Take it, run it, change it.',
     },
     {
-      question: `${numberWord(seeds.length, true)} products? From one team?`,
+      /** Every product, released and coming soon; Questions.tsx passes the
+       * count spelled out ("Fifty-one"), since the data imports this file. */
+      question: (total: string) => `${total} products? From one team?`,
       answer:
         'Coding agents write the code. We decide what good looks like, write it down as a contract, and ship the tests with it.',
     },
     {
       question: 'Is it a real product or a demo?',
       answer:
-        "Real. Run the three lines further down this page and you're signed in to the whole app on your own computer.",
+        "Real. Run the one command further down this page and you're signed in to the whole app on your own computer.",
     },
     {
       question: 'What happens when it breaks?',
@@ -220,7 +220,7 @@ export const questions = {
         "Wherever you run it: your computer, or your own Cloudflare account, in a database that's yours.",
     },
     {
-      question: 'Does it do everything Notion does?',
+      question: 'Does it do everything the big tools do?',
       answer:
         "No, and it isn't trying to. Each one does its job properly, and the source is yours if you need more.",
     },
