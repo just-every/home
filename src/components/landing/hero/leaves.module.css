@@ -1,0 +1,26 @@
+/* The leaves the wind blows across (Leaves.tsx, wind.ts): the cloud art's
+   box, which they fly out of to the screen's left edge (the hero clips them
+   there). Only transform and opacity change, from script, on each leaf's own
+   small layer. */
+.layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* A leaf or petal waits unseen at the cloud's right end until the wind
+   blows it across. */
+.leaf {
+  position: absolute;
+  display: block;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.leaf img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  user-select: none;
+}
