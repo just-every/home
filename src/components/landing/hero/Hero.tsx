@@ -12,6 +12,7 @@ import { X_EVENTS, track } from '@/lib/x-pixel';
 
 import { caveat } from './fonts';
 import styles from './hero.module.css';
+import { Leaves } from './Leaves';
 import { Lightning } from './Lightning';
 import { moreCount, rows } from './order';
 import { Rainfall } from './Rainfall';
@@ -40,10 +41,10 @@ const reducedMotion = () =>
  * 1280px wide the two cards flank the copy as mirror images; narrower
  * screens stack the copy over the two cards. The weather moves, slowly:
  * the cards float, the rain falls (a third of it dollar signs and
- * coins, in the same stream), now and then the cloud lights up, the sun's
- * glow breathes and its clouds drift. Only small layers move (Rainfall,
- * Lightning, SunLayers), on the compositor, and only while the hero is on
- * screen.
+ * coins, in the same stream), now and then the wind blows a leaf across,
+ * now and then the cloud lights up, the sun's glow breathes and its clouds
+ * drift. Only small layers move (Rainfall, Leaves, Lightning, SunLayers), on
+ * the compositor, and only while the hero is on screen.
  *
  * The rented stack is the picker: picking a tool highlights it and the
  * seed that replaces it, the button turns into "Switch to <Seed> →" for
@@ -195,13 +196,15 @@ export function Hero() {
         <div className={styles.comparison}>
           <div className={styles.side}>
             {/* The cloud is still art; what falls from it is a layer of small
-                elements under it (Rainfall.tsx), and now and then it lights
-                up (Lightning.tsx). */}
+                elements under it (Rainfall.tsx), now and then a leaf blows
+                across (Leaves.tsx), and now and then it lights up
+                (Lightning.tsx). */}
             <div
               className={`${styles.weather} ${styles.rain}`}
               aria-hidden="true"
             >
               <Rainfall />
+              <Leaves />
               <Lightning cloud={CLOUD} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
