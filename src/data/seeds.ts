@@ -13,12 +13,12 @@ function reel(slug: string, durationSeconds: number) {
 }
 
 /**
- * The 31 released seeds (each has a release tag) in collection order: the
+ * The 33 released seeds (each has a release tag) in collection order: the
  * owner's favourites (Uptime, HappyToHelp, Nook) first, then the other
  * original 14, then the later releases A to Z. Facts for the original 14 come
  * from the copy deck (COPY.md) and seeds.json; where they disagree the copy
  * deck wins. Their headlines are each product's own homepage h1 (Orbit's from
- * run-orbit.com, final since its brand refresh). The later 17 carry no
+ * run-orbit.com, final since its brand refresh). The later 19 carry no
  * headline or reel yet; where one's homepage is live, `homepageShot` is a
  * 1280x720 still of it. Every seed's `replaces` and `primaryReplace` are the
  * products named in its live homepage's "alternative to" line, in that
@@ -26,7 +26,7 @@ function reel(slug: string, durationSeconds: number) {
  * (scripts/seeds-sync/overrides.json). Its `category` and `line` were
  * written true to that homepage's headline and subhead (17 Oct 2026). Accent,
  * ink and paper match each product's own brand tokens; `pastel` softens one
- * of them so all thirty-one sit together as a set: OKLCH lightness 0.875,
+ * of them so all thirty-three sit together as a set: OKLCH lightness 0.875,
  * chroma 0.45 of the brand's kept between 0.04 and 0.08, same hue (`pastelOf`
  * in scripts/seeds-sync/lib/pastel.mjs; the original 14's were tuned by hand
  * around it). `npm run seeds:sync` keeps marks, colours, stills, `replaces`
@@ -399,14 +399,38 @@ export const seeds: Seed[] = [
     accent: '#191d29',
     ink: '#191d29',
     paper: '#fbfaf7',
-    // Pastel from the pink of its mark (#fc68ab); its brand colour is near-black.
-    pastel: '#fec2d8',
+    // Pastel from the olive of its mark's vest (#79872b, hue 118); its brand colour is near-black.
+    pastel: '#d3dbb4',
     markOnPastel: 'colour',
     mark: `${dir('beam')}/mark.svg`,
     markLight: null,
     markInk: null,
     reel: null,
     homepageShot: `${dir('beam')}/home.webp`,
+  },
+  {
+    slug: 'cabin',
+    name: 'Cabin',
+    category: 'Vacation rental management',
+    family: 'Rentals',
+    area: 'operations',
+    replaces: ['Guesty', 'Hostaway', 'OwnerRez'],
+    primaryReplace: 'Guesty',
+    line: 'Syncs your booking channels, answers guests, sends the cleaner and builds owner statements.',
+    headline: null,
+    repo: 'https://github.com/just-every/run-cabin',
+    homepage: 'https://run-cabin.com',
+    // Accent from src/branding.json primaryColor; ink and paper from its homepage's headline and background; pastel from the accent (hue 168).
+    accent: '#0f3d2e',
+    ink: '#03221e',
+    paper: '#faf7f3',
+    pastel: '#bedfd1',
+    markOnPastel: 'colour',
+    mark: `${dir('cabin')}/mark.svg`,
+    markLight: null,
+    markInk: null,
+    reel: null,
+    homepageShot: `${dir('cabin')}/home.webp`,
   },
   {
     slug: 'chest',
@@ -454,6 +478,30 @@ export const seeds: Seed[] = [
     markInk: null,
     reel: null,
     homepageShot: `${dir('coaster')}/home.webp`,
+  },
+  {
+    slug: 'coffer',
+    name: 'Coffer',
+    category: 'Donor management',
+    family: 'Donors',
+    area: 'customers',
+    replaces: ['Bloomerang', 'Little Green Light', 'Neon CRM'],
+    primaryReplace: 'Bloomerang',
+    line: "Takes donations, keeps every donor's story and sends the receipts and thank-yous.",
+    headline: null,
+    repo: 'https://github.com/just-every/run-coffer',
+    homepage: 'https://run-coffer.com',
+    // Accent, ink and paper from its rer-theme (accent, text, page); pastel from the amber coin of its mark (#f39a2e, hue 65): its violet would match Chest's.
+    accent: '#6d4df5',
+    ink: '#14194a',
+    paper: '#f7f8fc',
+    pastel: '#f6cda6',
+    markOnPastel: 'colour',
+    mark: `${dir('coffer')}/mark.svg`,
+    markLight: null,
+    markInk: null,
+    reel: null,
+    homepageShot: `${dir('coffer')}/home.webp`,
   },
   {
     slug: 'easel',

@@ -31,8 +31,12 @@ export const seedLimits: Readonly<Record<string, string>> = {
     'Paging is off: it never calls, texts or pages anyone, and it runs beside your existing pager. Escalation policies are configuration you can read, not live timers.',
   spool:
     'It handles errors only (other Sentry telemetry is counted and discarded), and it never pages anyone.',
+  cabin:
+    'Airbnb, Vrbo and Booking.com calendars sync by iCal, not partner APIs, so prices and messages do not flow through them; it has no dynamic pricing, no live QuickBooks Online connection (QuickBooks gets export files), no owner disbursements or lodging-tax filing, and no review replies.',
   chest:
     'It does not preview every file type or apply statutory retention and automatic destruction.',
+  coffer:
+    'For US nonprofits: no PayPal, Venmo or text-to-give, no live QuickBooks Online connection, no native phone apps, prospect research, grants or planned giving, and it gives no tax advice or values non-cash gifts.',
   easel:
     'One company only: no multi-entity consolidation or currency conversion, no posting journals or correcting the ledger, no payroll, tax or statutory statements, and it does not run spreadsheet formulas or macros.',
   pier: 'Finished-goods wholesale for one US business: no manufacturing or assemblies, serial or expiry tracking, payments, general ledger or tax filing; the books stay in QuickBooks Online or Xero.',

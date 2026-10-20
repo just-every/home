@@ -82,7 +82,8 @@ export const upcoming: UpcomingSeed[] = [
     repo: repo('blotter'),
     homepage: homepage('blotter'),
     homepageShot: shot('blotter'),
-    pastel: '#c9d6f1',
+    // Pastel from the lilac of its mark's calendar (#b88aee, hue 304); its brand colour is black.
+    pastel: '#dfccfa',
     mark: mark('blotter'),
   },
   {
@@ -95,37 +96,9 @@ export const upcoming: UpcomingSeed[] = [
     repo: repo('buoy'),
     homepage: homepage('buoy'),
     homepageShot: shot('buoy'),
-    // Pastel from the orange of its mark (#e15d0f); its brand colour is near-black.
-    pastel: '#ffc8b1',
+    // Pastel from the purple of its mark's ring (#8a2eae, hue 315); its brand colour is near-black.
+    pastel: '#eac7fb',
     mark: mark('buoy'),
-  },
-  {
-    slug: 'cabin',
-    name: 'Cabin',
-    category: 'Vacation rental management',
-    replaces: ['Guesty', 'Hostaway', 'OwnerRez'],
-    primaryReplace: 'Guesty',
-    line: 'Syncs your booking channels, answers guests, sends the cleaner and builds owner statements.',
-    repo: repo('cabin'),
-    homepage: homepage('cabin'),
-    homepageShot: shot('cabin'),
-    // Pastel from src/branding.json primaryColor #0f3d2e (hue 168).
-    pastel: '#bedfd1',
-    mark: mark('cabin'),
-  },
-  {
-    slug: 'coffer',
-    name: 'Coffer',
-    category: 'Donor management',
-    replaces: ['Bloomerang', 'Little Green Light', 'Neon CRM'],
-    primaryReplace: 'Bloomerang',
-    line: "Takes donations, keeps every donor's story and sends the receipts and thank-yous.",
-    repo: repo('coffer'),
-    homepage: homepage('coffer'),
-    homepageShot: shot('coffer'),
-    // Pastel from the amber coin of its mark (#f39a2e, hue 65): its violet (#7c4dff) would match Chest's.
-    pastel: '#f6cda6',
-    mark: mark('coffer'),
   },
   {
     slug: 'crank',
