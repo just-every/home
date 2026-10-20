@@ -1,0 +1,14 @@
+{
+  "defaultMark": "public/brand/mark.svg",
+  "marks": {
+    "uptime": "public/favicon.svg",
+    "happytohelp": "public/homepage/media/brands/happytohelp-mark.svg",
+    "lamp": "public/app-assets/brand/lamp-mark.svg",
+    "slate": "public/slate-mark.svg",
+    "pencil": "public/brand/pencil-mark.svg",
+    "mango": "public/favicon.svg",
+    "dial": "public/rer-mark.svg",
+    "penny": "public/brand/penny-mark.svg",
+    "spool": "public/theme/spool-mark.svg"
+  }
+}

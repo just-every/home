@@ -18,6 +18,7 @@
     "db:migrate:local": "wrangler d1 migrations apply justevery --local",
     "db:migrate:remote": "wrangler d1 migrations apply justevery --remote",
     "favicons": "node --import tsx scripts/favicons.mjs",
+    "seeds:sync": "node --import tsx scripts/seeds-sync/index.mjs",
     "suggestions": "node scripts/suggestions.mjs",
     "usage": "node scripts/usage.mjs",
     "tokens:measure": "node scripts/token-count/measure.mjs",

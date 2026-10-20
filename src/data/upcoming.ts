@@ -5,14 +5,15 @@ import { numberWord } from '@/lib/number-word';
  * Seeds in the works: public repository, no release tag yet, so not in the
  * collection. They are listed apart from `seeds.ts` and shown quietly (no
  * reel, not selectable), and the collection's search finds them as coming
- * soon; a seed's own page links its live homepage and shows a still of it
- * (captured 17 Oct 2026 at 1280x720). Each category and line is true to that
- * homepage's headline and subhead (checked 17 Oct 2026, after every homepage
- * was rebuilt); the pastel keeps the seed's own brand hue at the lightness
- * and softness of the collection's pastels. A seed moves to `seeds.ts` when
- * it gets its first release tag. `replaces` lists the products named in the
- * homepage's "alternative to" line, in that line's order, and
- * `primaryReplace` is the first of them.
+ * soon; a seed's own page links its live homepage and shows a 1280x720
+ * still of it. Each category and line was written true to that homepage's
+ * headline and subhead (17 Oct 2026); the pastel keeps the seed's own brand
+ * hue at the lightness and softness of the collection's pastels. A tag on one
+ * is reported by `npm run seeds:sync`; moving it to `seeds.ts` is a decision
+ * (Auth stays here by owner intent). `replaces` lists the products named in
+ * the homepage's "alternative to" line, in that line's order, and
+ * `primaryReplace` is the first of them; the sync keeps both, the mark, the
+ * pastel and the still current.
  */
 export interface UpcomingSeed {
   slug: string;
@@ -61,8 +62,8 @@ export const upcoming: UpcomingSeed[] = [
     slug: 'barrow',
     name: 'Barrow',
     category: 'Wholesale ordering',
-    replaces: ['B2B Wave', 'Orderspace', 'Shopify B2B'],
-    primaryReplace: 'B2B Wave',
+    replaces: ['NuORDER', 'Pepperi', 'Brandboom'],
+    primaryReplace: 'NuORDER',
     line: 'Wholesale ordering where each stockist sees its own prices.',
     repo: repo('barrow'),
     homepage: homepage('barrow'),
@@ -75,56 +76,29 @@ export const upcoming: UpcomingSeed[] = [
     slug: 'blotter',
     name: 'Blotter',
     category: 'Accounting practice workflow',
-    replaces: ['Karbon', 'Financial Cents', 'TaxDome'],
+    replaces: ['Karbon', 'TaxDome', 'Canopy'],
     primaryReplace: 'Karbon',
     line: 'Recurring client jobs, document requests and sign-off for accounting practices.',
     repo: repo('blotter'),
     homepage: homepage('blotter'),
     homepageShot: shot('blotter'),
-    pastel: '#c9d6f1',
+    // Pastel from the lilac of its mark's calendar (#b88aee, hue 304); its brand colour is black.
+    pastel: '#dfccfa',
     mark: mark('blotter'),
   },
   {
     slug: 'buoy',
     name: 'Buoy',
     category: 'Customer success and renewals',
-    replaces: ['Vitally', 'Planhat', 'ChurnZero'],
-    primaryReplace: 'Vitally',
+    replaces: ['Gainsight', 'ChurnZero', 'Totango'],
+    primaryReplace: 'Gainsight',
     line: 'Renewal dates beside billing and support evidence, each decision recorded.',
     repo: repo('buoy'),
     homepage: homepage('buoy'),
     homepageShot: shot('buoy'),
-    // Pastel from the orange of its mark (#e15d0f); its brand colour is near-black.
-    pastel: '#ffc8b1',
+    // Pastel from the purple of its mark's ring (#8a2eae, hue 315); its brand colour is near-black.
+    pastel: '#eac7fb',
     mark: mark('buoy'),
-  },
-  {
-    slug: 'cabin',
-    name: 'Cabin',
-    category: 'Vacation rental management',
-    replaces: ['Guesty', 'Hostaway', 'OwnerRez'],
-    primaryReplace: 'Guesty',
-    line: 'Syncs your booking channels, answers guests, sends the cleaner and builds owner statements.',
-    repo: repo('cabin'),
-    homepage: homepage('cabin'),
-    homepageShot: shot('cabin'),
-    // Its colour is still the Base default #356c60; pastel from the pine green of its mark (hue 140).
-    pastel: '#c2e0bb',
-    mark: mark('cabin'),
-  },
-  {
-    slug: 'coffer',
-    name: 'Coffer',
-    category: 'Donor management',
-    replaces: ['Bloomerang', 'Little Green Light', 'Neon CRM'],
-    primaryReplace: 'Bloomerang',
-    line: "Takes donations, keeps every donor's story and sends the receipts and thank-yous.",
-    repo: repo('coffer'),
-    homepage: homepage('coffer'),
-    homepageShot: shot('coffer'),
-    // Pastel from the amber coin of its mark (#f39a2e, hue 65): its violet (#7c4dff) would match Chest's.
-    pastel: '#f6cda6',
-    mark: mark('coffer'),
   },
   {
     slug: 'crank',
@@ -158,13 +132,14 @@ export const upcoming: UpcomingSeed[] = [
     slug: 'inkwell',
     name: 'Inkwell',
     category: 'Electronic signatures',
-    replaces: ['DocuSign', 'Dropbox Sign', 'PandaDoc'],
-    primaryReplace: 'DocuSign',
+    replaces: ['Docusign', 'Adobe Acrobat Sign', 'Dropbox Sign'],
+    primaryReplace: 'Docusign',
     line: 'Ordered PDF signatures, with the signed file and audit trail.',
     repo: repo('inkwell'),
     homepage: homepage('inkwell'),
     homepageShot: shot('inkwell'),
-    pastel: '#f0cad8',
+    // Pastel from src/branding.json primaryColor #0a9e6c (hue 162).
+    pastel: '#b3e3ca',
     mark: mark('inkwell'),
   },
   {
@@ -184,27 +159,28 @@ export const upcoming: UpcomingSeed[] = [
     slug: 'mallet',
     name: 'Mallet',
     category: 'Workshop repair jobs',
-    replaces: ['Shopmonkey', 'Tekmetric', 'RepairShopr'],
-    primaryReplace: 'Shopmonkey',
+    replaces: ['Tekmetric', 'Shopmonkey', 'Mitchell 1 Manager SE'],
+    primaryReplace: 'Tekmetric',
     line: 'Estimates, customer authorisation, parts and labour for workshop repairs.',
     repo: repo('mallet'),
     homepage: homepage('mallet'),
     homepageShot: shot('mallet'),
-    // Pastel from the red of its mark (#b4231c); its brand colour is near-black.
-    pastel: '#ffc6bd',
+    // Pastel from its rer-theme focus #0a86c2 (hue 239).
+    pastel: '#b3dcf9',
     mark: mark('mallet'),
   },
   {
     slug: 'pane',
     name: 'Pane',
     category: 'Small-business website',
-    replaces: ['Squarespace', 'Wix'],
+    replaces: ['Squarespace', 'Wix', 'WordPress.com'],
     primaryReplace: 'Squarespace',
     line: 'A five-page business site with a contact inbox and rollback.',
     repo: repo('pane'),
     homepage: homepage('pane'),
     homepageShot: shot('pane'),
-    pastel: '#bdd8fe',
+    // Pastel from src/branding.json primaryColor #e8176e (hue 6).
+    pastel: '#ffc4cf',
     mark: mark('pane'),
   },
   {
@@ -217,8 +193,8 @@ export const upcoming: UpcomingSeed[] = [
     repo: repo('placemat'),
     homepage: homepage('placemat'),
     homepageShot: shot('placemat'),
-    // Its primaryColor #1f242b is near-black, so a pastel of its own (hue 25).
-    pastel: '#fbc7c2',
+    // Pastel from src/branding.json primaryColor #16583d (hue 162).
+    pastel: '#c0dfce',
     mark: mark('placemat'),
   },
   {
@@ -240,13 +216,14 @@ export const upcoming: UpcomingSeed[] = [
     slug: 'plinth',
     name: 'Plinth',
     category: 'Contractor project management',
-    replaces: ['JobTread', 'Buildertrend', 'Procore'],
-    primaryReplace: 'JobTread',
+    replaces: ['Buildertrend', 'Procore', 'Houzz Pro'],
+    primaryReplace: 'Buildertrend',
     line: 'Quotes, site diaries, variations and progress claims for builders.',
     repo: repo('plinth'),
     homepage: homepage('plinth'),
     homepageShot: shot('plinth'),
-    pastel: '#bae1ca',
+    // Pastel from src/branding.json primaryColor #801030 (hue 12).
+    pastel: '#fdc5ca',
     mark: mark('plinth'),
   },
   {
@@ -259,7 +236,8 @@ export const upcoming: UpcomingSeed[] = [
     repo: repo('satchel'),
     homepage: homepage('satchel'),
     homepageShot: shot('satchel'),
-    pastel: '#f0cebc',
+    // Pastel from src/branding.json primaryColor #0f5c66 (hue 208).
+    pastel: '#b8dee4',
     mark: mark('satchel'),
   },
   {
@@ -280,27 +258,28 @@ export const upcoming: UpcomingSeed[] = [
     slug: 'strap',
     name: 'Strap',
     category: 'Studio management',
-    replaces: ['Mindbody', 'TeamUp', 'Momence'],
+    replaces: ['Mindbody', 'WellnessLiving', 'Vagaro'],
     primaryReplace: 'Mindbody',
     line: 'Studio classes, pack credits, waitlists and member balances.',
     repo: repo('strap'),
     homepage: homepage('strap'),
     homepageShot: shot('strap'),
-    // Pastel from src/branding.json primaryColor #94174b (hue 3).
-    pastel: '#ffc3d2',
+    // Pastel from src/branding.json primaryColor #6e1041 (hue 354).
+    pastel: '#f7c6d8',
     mark: mark('strap'),
   },
   {
     slug: 'terrace',
     name: 'Terrace',
     category: 'Property management',
-    replaces: ['PropertyMe', 'Console Cloud', 'Buildium'],
-    primaryReplace: 'PropertyMe',
+    replaces: ['AppFolio', 'Buildium', 'Rent Manager'],
+    primaryReplace: 'AppFolio',
     line: 'Tenancies, recorded rent, photo inspections and maintenance for landlords.',
     repo: repo('terrace'),
     homepage: homepage('terrace'),
     homepageShot: shot('terrace'),
-    pastel: '#d1dabe',
+    // Pastel from src/branding.json primaryColor #12163a (hue 273).
+    pastel: '#cdd5f1',
     mark: mark('terrace'),
   },
   {
