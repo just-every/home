@@ -1,0 +1,10 @@
+{
+  "uptime": {
+    "primaryReplace": "Pingdom",
+    "why": "Owner, 18 Oct 2026: Pingdom leads (UptimeRobot reads too close to \"Uptime\"), whatever order run-uptime.com names them in."
+  },
+  "auth": {
+    "staysComingSoon": true,
+    "why": "Owner intent: Auth stays coming soon, tagged or not."
+  }
+}
