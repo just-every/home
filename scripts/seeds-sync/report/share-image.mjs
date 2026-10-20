@@ -7,8 +7,8 @@
  */
 const SHOWN = {
   mark: plan => Boolean(plan.mark),
-  pastel: plan => Boolean(plan.colours?.pastel),
-  ink: plan => Boolean(plan.colours?.ink),
+  pastel: plan => Boolean(plan.colours?.updates.pastel),
+  ink: plan => Boolean(plan.colours?.updates.ink),
   'primary incumbent': (plan, seed) =>
     Boolean(plan.replaces) &&
     plan.replaces.primaryReplace !== seed.primaryReplace,

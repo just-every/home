@@ -100,4 +100,8 @@ tags and heads with `git ls-remote`; no GitHub API (except `--baseline-date`).
 
 After an `--apply`, review the report's before/after images, then
 `npm run lint`, `npm run type-check` and `npm run build`. The copy rewrites
-and hand steps the report lists are for an agent pass.
+and hand steps the report lists are for an agent pass. Once applied, they are
+recorded as seen and not reported again, so that run's report is their
+record. Findings that recur until someone acts (a mark waiting on a hand
+redraw, a placeholder mark, an update an override keeps) are listed as still
+open, not as news.

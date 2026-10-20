@@ -28,7 +28,11 @@ const FILES = {
 
 const hue = hex => Math.round(oklch(hex).h);
 
-function applyColours(text, seed, updates) {
+/**
+ * Writes the moved colours. The comment above `accent` (which says where the
+ * three come from) is rewritten from the tokens they follow now.
+ */
+function applyColours(text, seed, { updates, sources }) {
   let next = text;
   for (const field of ['accent', 'ink', 'paper']) {
     if (updates[field])
@@ -36,9 +40,9 @@ function applyColours(text, seed, updates) {
   }
   const moved = ['accent', 'ink', 'paper'].filter(field => updates[field]);
   if (moved.length && readComment(next, seed.slug, 'accent')) {
-    const parts = moved.map(
-      field => `${field} from ${tokenLabel(updates[field].token)}`
-    );
+    const parts = ['accent', 'ink', 'paper']
+      .filter(field => sources[field])
+      .map(field => `${field} from ${tokenLabel(sources[field])}`);
     const sentence = parts.join(', ');
     next = setComment(
       next,

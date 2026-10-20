@@ -223,7 +223,9 @@ export function detectColours(seed, baseline, current) {
             .map(m => `${m.token} ${m.from ?? 'none'} -> ${m.to ?? 'gone'}`)
             .join(', ')}${moved.length > 4 ? ', ...' : ''}`,
       details: { updates, moved, sources, pastelSource },
-      apply: Object.keys(updates).length ? { colours: updates } : null,
+      apply: Object.keys(updates).length
+        ? { colours: { updates, sources } }
+        : null,
       manual: notes.length ? notes.join('; ') : null,
     });
   }
