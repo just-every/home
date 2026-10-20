@@ -129,7 +129,7 @@ export const seedPageContent: SeedPageContent[] = [
     does: [
       "Let your own Codex or Claude, running on your computer, investigate a customer's problem, fix it and draft the reply for you to send",
       'Put a chat widget on your website that offers a hand when a visitor seems stuck',
-      'Answer chat and email from one shared inbox, with customer details beside each conversation',
+      'Answer chat and email from one shared inbox, with customer details beside each conversation, assignment rules, saved-reply macros, snoozing and merging of duplicates',
       'Publish a searchable help center that customers use to find answers themselves',
       'Get suggested replies drafted from your own articles, with the source shown',
       'Collect a thumbs up or down on resolved conversations and see reports you can export',
@@ -178,21 +178,20 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'security',
       },
       {
-        id: 'KNOWLEDGE-001',
-        text: 'A failed refresh of your help content never replaces the last good published version, and drafts never appear publicly.',
-        category: 'reliability',
+        id: 'IDENTITY-003',
+        text: 'Teammates can sign in with an authenticator app or a security key plus one-time recovery codes, and an owner can require it for everyone or by role.',
+        category: 'security',
       },
       {
-        id: 'IDENTITY-001',
-        text: 'Every private page and action checks who is signed in, which workspace and which role; blocked workspaces and revoked tokens lose access.',
-        category: 'access',
+        id: 'PORTABILITY-001',
+        text: 'You can export your conversations, files, contacts, help articles, settings and history in one checked archive and restore it into a clean installation; sign-ins and provider secrets are left out.',
+        category: 'export',
       },
     ],
     moveIn: ['Zendesk', 'Help Scout', 'Intercom', 'Freshdesk'],
     runsOn: 'Your computer, or your own Cloudflare account',
     version: 'v0.4.9',
-    contractUrl:
-      'https://github.com/just-every/run-happytohelp/blob/main/CONTRACT.md',
+    contractUrl: 'https://happytohelp.com/contract',
     seoTitle: 'HappyToHelp: free, open-source alternative to Zendesk',
     seoDescription:
       'HappyToHelp is a free support desk: your Codex or Claude fixes the problem and drafts the reply, you press Send. A Zendesk, Intercom and Freshdesk alternative.',
@@ -206,7 +205,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Turn a message into a recorded decision or a request that only the person asked can accept',
       'See requests for you, mentions and replies you follow in one list, and go quiet for an hour when you need to focus',
       'Attach images, PDFs and text files to messages, kept private to the conversation',
-      'Search any message you are allowed to read',
+      'Search any message you are allowed to read, and set reminders or schedule messages for later',
       'Invite teammates and choose which channels each person sees',
       'Opt in to email and phone notifications for mentions and urgent requests',
       'Bring in your Slack history as read-only channels, and back everything up to one file you can restore later',
@@ -416,7 +415,7 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'API-USER-001',
-        text: 'Access keys are shown once, limited to one app, stored only as digests, can be revoked, and expire within 30 days.',
+        text: 'Access keys are shown once, limited to one app, stored only as digests, can be revoked, and can be given an expiry date.',
         category: 'security',
       },
       {
@@ -516,7 +515,7 @@ export const seedPageContent: SeedPageContent[] = [
     runsOn: 'Your computer, or your own Cloudflare account',
     version: 'v0.3.0',
     contractUrl: 'https://run-vector.com/contract',
-    seoTitle: 'Vector: free, open-source alternative to Linear and Jira',
+    seoTitle: 'Vector: free, open-source alternative to Linear',
     seoDescription:
       'Vector is a free issue tracker where every report gets a decision, and one shared list shows what is now, what is next and why.',
   },
@@ -796,7 +795,7 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'CAMP-009',
-        text: 'Cancelling a scheduled or sending campaign stops everything not yet handed to the mail provider, and never claims to recall a message already delivered.',
+        text: 'Cancelling a scheduled or sending campaign stops everything the mail provider has not received, and never claims to recall a message already delivered.',
         category: 'undo',
       },
       {
@@ -880,9 +879,9 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'undo',
       },
       {
-        id: 'NOTIFY-006',
-        text: 'Dial never reads mail sent to its sender address, so a reply can never create a booking or request.',
-        category: 'security',
+        id: 'BOOK-007',
+        text: 'Rescheduling from the private link moves the booking only if the new time is free; if any step fails, the original booking stays confirmed and unchanged.',
+        category: 'reliability',
       },
       {
         id: 'PUBLIC-005',
@@ -901,6 +900,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Microsoft Bookings',
       'Cal.com',
       'SavvyCal',
+      'Doodle',
     ],
     runsOn: 'your own computer, or your own Cloudflare account',
     version: 'v0.5.0',
@@ -1074,7 +1074,7 @@ export const seedPageContent: SeedPageContent[] = [
     promises: [
       {
         id: 'ERR-003',
-        text: 'Error details are scrubbed before they are stored: no headers, cookies, request bodies or user identity are kept.',
+        text: 'Error details are scrubbed before they are stored: emails, tokens and passwords are removed, and headers, cookies and request bodies are not kept by default.',
         category: 'privacy',
       },
       {
@@ -1114,17 +1114,16 @@ export const seedPageContent: SeedPageContent[] = [
   {
     slug: 'beam',
     summary:
-      'Beam turns your own procedures into training courses and shows you who has completed the latest version. When a procedure changes, the courses that rely on it are flagged for review, and every completion is tied to the exact version the person took.',
+      'Beam is employee training for small and mid-sized employers. It enrolls new hires from your HR system, teaches on any phone even without signal, plays the courses you already own, and renews certifications on schedule. When a procedure changes, it redrafts only the lessons affected, and every completion is tied to the exact version the person took.',
     does: [
-      'Turn your procedures and media into courses with lessons, quizzes and practical assessments',
-      'Flag every course that cites a procedure when a new version of it is uploaded, so you can publish the update and move people onto it',
-      'Have a named reviewer approve each course version before staff see it',
-      'Assign courses to people or teams with due dates, and let staff pick up where they left off on any device',
-      'Score quizzes where a question counts only if exactly the right choices are picked, and send practical work to the assessor you name',
-      'Record instructor-led training against the right version, and issue a numbered certificate for every completion',
-      'Download a training report showing who completed what, against which version, and who is overdue or due for renewal',
-      'Let your own agent prepare course drafts, assignment plans and reminders, with nothing reaching staff until you approve it',
-      'Ask staff optional questions whose answers come back without names',
+      'Enroll new hires from your HR system and sign them in with a badge number and PIN, in Spanish or English, with no work email needed',
+      'Teach on any phone, including courses downloaded for use offline, and let people pick up where they left off on any device',
+      'Play your existing SCORM courses as they are',
+      "Score observed practical work such as a forklift drive on the assessor's phone, and issue a numbered certificate for every completion",
+      'Redraft only the lessons a changed procedure affects, with a named reviewer approving each version before staff see it and everyone keeping their progress',
+      "Chase overdue training by text or Teams, go to the manager's cover when the manager is away, and stop the moment the training is done",
+      'Show compliance by state, role and requirement on one page, and schedule renewals automatically',
+      'Move in your TalentLMS history, credit current training, and export everything in one file',
     ],
     promises: [
       {
@@ -1168,6 +1167,11 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'privacy',
       },
       {
+        id: 'BEAM-15',
+        text: 'A TalentLMS move-in previews without writing anything, imported completions stay labelled as TalentLMS history, importing the same export twice adds nothing, and it can be undone while keeping rows a manager has reviewed.',
+        category: 'import',
+      },
+      {
         id: 'BEAM-16',
         text: 'Export captures every record and file without sign-ins or credentials, and import refuses a corrupt archive or a site that already has data.',
         category: 'export',
@@ -1181,6 +1185,8 @@ export const seedPageContent: SeedPageContent[] = [
       '360Learning',
       'Sana',
       'Arist',
+      'SCORM course files',
+      'BambooHR',
     ],
     runsOn:
       'your own computer; going live needs your own Cloudflare account and a verified email sender',
@@ -1188,7 +1194,7 @@ export const seedPageContent: SeedPageContent[] = [
     contractUrl: 'https://run-beam.com/contract',
     seoTitle: 'Beam: free, open-source alternative to TalentLMS',
     seoDescription:
-      'Beam is a free, open-source tool that turns your procedures into staff training, tracks completions by version and issues certificates. Replaces TalentLMS.',
+      'Beam is a free, open-source employee training tool that enrolls new hires, teaches on any phone and keeps certifications current.',
   },
   {
     slug: 'chest',
@@ -1202,7 +1208,6 @@ export const seedPageContent: SeedPageContent[] = [
       'Keep every version of a file, go back to an earlier one, and rewind a whole folder after an accident',
       'Record approvals against the exact version that was signed off',
       'Let agents file what arrives from email and apps, merge duplicates and flag links shared too widely, with an undo on each action',
-      'Run single sign-on, automatic user setup, team spaces and storage limits for your team',
       'Move in from Google Drive, Dropbox or Box with folders, permissions, versions and shared links, and rewrite links inside your files to the new copies',
     ],
     promises: [
@@ -1232,13 +1237,13 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'undo',
       },
       {
-        id: 'VERSION-001',
-        text: 'Every retained version of a file is listed with its author, time and size, and editors can restore any of them as a new current version without deleting later ones.',
+        id: 'CHEST-16',
+        text: 'Every uploaded version of a file is kept with its number, author, time and size, and restoring an earlier one adds it as a new current version without deleting the later ones.',
         category: 'history',
       },
       {
         id: 'RECOVER-001',
-        text: "A folder, a whole space or a departed person's files can be rewound to a recorded point after an accidental deletion or overwrite, after a preview of what will change.",
+        text: 'A folder or a whole space can be rewound to a recorded point after an accidental deletion or overwrite, after a preview of what will change, and a revoked share stays revoked.',
         category: 'undo',
       },
       {
@@ -1272,17 +1277,16 @@ export const seedPageContent: SeedPageContent[] = [
   {
     slug: 'coaster',
     summary:
-      'Coaster is expense management for a business: staff add receipts, managers approve, and finance gets one reimbursement batch that adds up to the cent. Policy exceptions are explained once and travel with the claim, and a returned claim is corrected, never erased.',
+      'Coaster is expense management for a business. It reads each receipt, matches it to the card charge, chases approvals and missing receipts, pays employees by ACH and keeps your accounting software in step. Each claim is approved at the exact version submitted, and a returned claim is corrected, never erased.',
     does: [
-      'Let staff submit claims with receipt photos or PDFs, mileage and per diem',
-      'Split one expense across several categories and cost centres, with the parts adding up exactly',
-      'Flag missing receipts, spending over a category limit and possible duplicates, and ask the employee to explain once',
-      "Route each claim to the employee's own manager to approve, return or reject",
-      'Gather approved claims into a reimbursement batch checked against a reconciled total before anyone is paid',
-      'Download an accounting file with one line per split and a reimbursements file with one total per person',
-      'Record the payment you made, with its reference and date',
-      'Give each person an agent key so their own agent prepares draft claims that only that person can accept',
-      'Preview and import your Expensify history, and undo it if you change your mind',
+      'Take receipts by photo, forwarded email, Slack or straight from services like Lyft, and read each one, including multi-night hotel bills',
+      'Match each receipt to the card charge from your daily card file, and ask the employee the one thing a receipt cannot say, such as who was at dinner',
+      'Flag policy exceptions such as a hotel over the nightly cap, ask the employee to explain once, and carry the explanation to the approver',
+      'Let managers approve or hold from Slack or their phone, then gather approved claims into one reimbursement batch checked against a reconciled total',
+      'Pay employees by ACH, explain a returned payment in plain words, and resend once the bank details are fixed',
+      'Chase missing receipts on business days, skipping holidays and quiet hours, and stop the moment the receipt arrives',
+      'Sync paid bills and card purchases to QuickBooks or Xero with receipts attached, and reconcile the card statement to the cent',
+      'Test a new policy on twelve months of past trips before you adopt it',
     ],
     promises: [
       {
@@ -1342,7 +1346,7 @@ export const seedPageContent: SeedPageContent[] = [
     contractUrl: 'https://run-coaster.com/contract',
     seoTitle: 'Coaster: free, open-source alternative to Expensify',
     seoDescription:
-      'Coaster is a free, open-source expense tool: staff add receipts, managers approve, finance gets a batch that adds up. An Expensify and Concur alternative.',
+      'Coaster is a free, open-source expense tool that reads receipts, matches card charges, gets claims approved and pays staff back.',
   },
   {
     slug: 'easel',
@@ -1352,8 +1356,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Plan revenue, hiring, expenses and cash for the next twelve months, with every figure showing the driver, rate and month behind it',
       'Upload your general-ledger file, map each account and check every row before you accept it',
       'Branch a downside scenario and compare profit and closing cash with the plan month by month',
-      'Ask each department to submit its own budget, then approve and lock it with a permanent record of who approved what',
-      'Suggest changes as proposals that finance promotes or declines',
+      'Ask each department to submit its own budget, take suggested changes as proposals that finance promotes or declines, then approve and lock it with a permanent record of who approved what',
       'Close each month and see actual against budget and the forecast as it stood, with an explanation for every variance',
       'Publish a monthly review pack with decisions, downloadable as HTML or CSV',
       'Keep salaries visible only to finance and the department concerned',
@@ -1418,25 +1421,23 @@ export const seedPageContent: SeedPageContent[] = [
     runsOn: 'your own computer',
     version: 'v0.1.0',
     contractUrl: 'https://run-easel.com/contract',
-    seoTitle: 'Easel: free, open-source alternative to Adaptive Planning',
+    seoTitle: 'Easel: free, open-source alternative to Jirav',
     seoDescription:
       'Easel is a free, open-source planning tool that builds a twelve-month plan from your actuals and shows the arithmetic behind every number.',
   },
   {
     slug: 'gasket',
     summary:
-      'Gasket keeps your equipment in service. Schedules become work orders, finished work gets reviewed, and every asset keeps its full history of work, readings, parts, downtime and findings.',
+      'Gasket keeps your equipment in service. It turns operator requests, preventive schedules and machine readings into work with the right people and parts, lets technicians work offline, and flags failing machines before they break down. Every asset keeps its full history of work, readings, parts, downtime and cost.',
     does: [
-      'Keep one register of equipment with tags, locations, custodians and meters',
-      'Schedule preventive work by calendar date, by meter reading, or both, and create the work orders that fall due',
-      'Assign work to maintainers, who record pass, fail or needs-attention results with notes, photos and readings',
-      'Issue parts to a job, return what is left over, and reconcile physical counts against the shelf',
-      'Record downtime in minutes and findings, and turn a finding into follow-up work',
-      'Have a supervisor review and close finished work',
-      'See overdue work, work waiting for review, equipment down now and parts below minimum on one board',
-      "Download an asset's full history as a file",
-      'Let an agent propose schedules, work and counts that a lead approves',
-      'Preview your MaintainX assets, parts and meter readings before anything is written',
+      'Keep one register of equipment with locations, meters, manuals, warranties and parts lists',
+      'Create preventive work on its own by calendar, meter reading or inspection round, and chase late jobs until they are done',
+      'Let technicians complete checklists, photos and readings offline and sync when they are back in signal',
+      'Fit repairs into planned shutdowns with the person, parts, procedure and tools lined up',
+      'Flag a failing machine from its live readings and its repair history, with a lead approving the fix',
+      'Track parts across storerooms, reserve them for jobs, transfer between sites and draft purchase orders when stock runs low',
+      'Report on-time maintenance, downtime, repair cost and the machines that fail most',
+      'Move in your MaintainX equipment, parts, readings and work history after a preview',
     ],
     promises: [
       {
@@ -1460,19 +1461,24 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'history',
       },
       {
-        id: 'GAS-05',
-        text: 'A schedule never has more than one open work order at a time.',
-        category: 'reliability',
+        id: 'GAS-09',
+        text: 'Finished work needs every checklist result and a follow-up for each failure, and the person who did the work cannot approve it.',
+        category: 'approval',
       },
       {
-        id: 'GAS-07',
-        text: 'Only the assigned maintainer can record the work, a meter reading lower than the previous one is refused, and evidence downloads need access.',
+        id: 'PM-001',
+        text: 'Preventive work is created automatically on schedule, and a restart or retry never creates the same job twice.',
+        category: 'schedule',
+      },
+      {
+        id: 'BUY-003',
+        text: 'The person who starts a purchase cannot approve it, and changing a vendor, line or currency voids the approval.',
+        category: 'approval',
+      },
+      {
+        id: 'ADMIN-006',
+        text: 'Every change to maintenance records is logged with who, what and when, and corrections are added rather than overwriting earlier evidence.',
         category: 'evidence',
-      },
-      {
-        id: 'GAS-08',
-        text: 'A maintainer can return no more parts than they hold, and an asset has at most one open downtime.',
-        category: 'reliability',
       },
       {
         id: 'GAS-13',
@@ -1485,29 +1491,27 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'import',
       },
     ],
-    moveIn: ['MaintainX', 'UpKeep', 'Fiix', 'Limble', 'Tractian'],
+    moveIn: ['MaintainX', 'UpKeep', 'Fiix', 'Limble', 'Spreadsheets'],
     runsOn: 'your own computer, or your own Cloudflare account',
     version: 'v0.1.0',
     contractUrl: 'https://run-gasket.com/contract',
     seoTitle: 'Gasket: free, open-source alternative to MaintainX',
     seoDescription:
-      "Gasket is a free, open-source maintenance tool that turns schedules into work orders and keeps every asset's history. An alternative to MaintainX and UpKeep.",
+      "Gasket is a free, open-source maintenance tool that turns requests and schedules into work orders and tracks every asset's history, parts and downtime.",
   },
   {
     slug: 'gauge',
     summary:
-      'Gauge helps an agency finish every week ready to bill. Staff record time and expenses, leads approve them, and finance hands the bookkeeper one clean billing packet where each hour is billed once. Capacity, rates and budgets sit in the same place.',
+      'Gauge carries each agency engagement from estimate and retainer through staffing, time and invoices to cash, and plans the recovery when a project drifts. Staff confirm their own hours, leads approve them, and finance sends one clean billing packet where every hour is billed once.',
     does: [
-      'Set up clients, engagements, scope, tasks and milestones, and agree hourly or fixed-fee terms with change orders as new versions',
-      'Record time with a persistent timer or manual entries, and submit it for approval',
-      'Record expenses with receipts that stay private to their owner and finance',
-      "See next month's capacity from calendars, leave and staffing, with conflicts flagged",
-      'Keep rates by effective date so approved work keeps the rate it was approved at',
-      'Compare the agreed budget with approved actual time and cost',
-      'Reserve exact approved work in a billing packet and download the same file every time',
-      "Review the week's exceptions in one place",
-      'Let an agent you already run draft time, staffing and billing proposals that the right person approves',
-      'Preview a Harvest export and compare totals before anything is changed',
+      'Price an estimate from role hours and real rates, send the proposal, and turn a signed deal into an engagement with its team requested',
+      'Run retainers with included hours, rollover of unused time and overage billing, with the client seeing the same statement',
+      'Plan staffing five weeks ahead from calendars and leave, and propose cover when someone is out so a launch date holds',
+      'Draft missing hours from calendars and tools, then approve every timesheet in one queue',
+      'Compare agreed budget with approved time and cost, and price the options when scope grows',
+      'Invoice accepted milestones and approved hours, with card and ACH links, and sync invoices to QuickBooks',
+      'Close the month, and see expected cash, utilization and margin',
+      'Move in Harvest and Forecast history, run a month beside it, then take over with open invoices',
     ],
     promises: [
       {
@@ -1521,11 +1525,6 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'privacy',
       },
       {
-        id: 'TIME-002',
-        text: 'Approved time is reopened only through an audited correction, and approved again.',
-        category: 'history',
-      },
-      {
         id: 'COST-001',
         text: 'Expense receipts are fixed when submitted, and only their owner or finance can download them.',
         category: 'privacy',
@@ -1534,6 +1533,11 @@ export const seedPageContent: SeedPageContent[] = [
         id: 'CAPACITY-001',
         text: 'A person with no working calendar shows as unknown capacity, never as zero.',
         category: 'reliability',
+      },
+      {
+        id: 'RETAINER-002',
+        text: 'Retainer rollover, caps, expiry and overage rates follow the agreed version, and only allowed overage is billed.',
+        category: 'money',
       },
       {
         id: 'BILLING-001',
@@ -1574,21 +1578,21 @@ export const seedPageContent: SeedPageContent[] = [
     runsOn: 'your own computer',
     version: 'v0.1.0',
     contractUrl: 'https://run-gauge.com/contract',
-    seoTitle: 'Gauge: free, open-source alternative to Harvest',
+    seoTitle: 'Gauge: free, open-source alternative to Kantata',
     seoDescription:
-      'Gauge is a free, open-source tool for agencies to approve time, plan capacity and send one clean billing packet. An alternative to Harvest and Productive.',
+      'Gauge is a free, open-source agency tool that takes engagements from estimate and retainer through staffing and time to invoices and cash.',
   },
   {
     slug: 'glove',
     summary:
-      'Glove is field service software for US plumbing, HVAC, electrical and other home and commercial service businesses. It answers calls and texts, turns requests into quotes and booked jobs, sends the right technician, takes payment on site and keeps maintenance plans on schedule.',
+      'Glove is field service software for plumbing, HVAC, electrical and other home service businesses. It answers calls and texts, books the job and sends the right technician, takes payment on site, and keeps maintenance plans on schedule.',
     does: [
       "Answer calls and texts day and night and book the job into a real open slot on a technician's calendar",
-      'Send quotes with good, better and best options, collect a signature and deposit online, and follow up until the customer answers',
-      'Dispatch from a drag-and-drop board with a live map, routes for every van and a reshuffled day when a job runs long',
+      'Turn requests from your website, Google and texts into quotes with good, better and best options, signed online with a deposit, and follow up until the customer says yes',
+      'Dispatch from a drag-and-drop board with a live map, routes for every van, and a reshuffled day when a job runs long',
       'Give technicians the job, history and photos on their phone, with signatures and payment on site, even with no signal',
-      'Take card, ACH and tap-to-pay payments, send reminders that stop when the balance reaches zero, and sync with QuickBooks Online',
-      'Sell maintenance plans that book every visit and renew themselves',
+      'Take card, ACH and tap-to-pay payments, stop reminders when the balance reaches zero, and sync with QuickBooks Online',
+      'Sell yearly maintenance plans that book every visit and renew themselves',
       'Track time, job costs and margin, and ask for a review after every paid job',
       'Keep a full record of every call, change and payment, and export everything at any time',
     ],
@@ -1600,7 +1604,7 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'GLOVE-04',
-        text: "A quote is never claimed as delivered unless the provider says so, and the customer's answer is recorded with who answered, how and who recorded it.",
+        text: "A quote is never claimed as delivered unless it truly was, and the customer's answer is recorded with who answered, how and who recorded it.",
         category: 'evidence',
       },
       {
@@ -1614,11 +1618,6 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'reliability',
       },
       {
-        id: 'GLOVE-07',
-        text: "Changing a visit's technician or time needs a reason and keeps the before and after; evidence that arrives late is kept and flagged for the dispatcher.",
-        category: 'history',
-      },
-      {
         id: 'GLOVE-08',
         text: "A job is completed only when every required checklist item is done or marked not applicable with a reason, with the customer's signature or the reason they could not sign.",
         category: 'evidence',
@@ -1627,6 +1626,11 @@ export const seedPageContent: SeedPageContent[] = [
         id: 'GLOVE-09',
         text: 'An exported invoice is never changed; a correction is a new approved revision that exports as its own numbered row.',
         category: 'history',
+      },
+      {
+        id: 'CUST-005',
+        text: 'Customers sharing a phone number, email or address are flagged for a merge review, and a merge can be undone.',
+        category: 'undo',
       },
       {
         id: 'GLOVE-10',
@@ -1658,21 +1662,21 @@ export const seedPageContent: SeedPageContent[] = [
     contractUrl: 'https://run-glove.com/contract',
     seoTitle: 'Glove: free, open-source alternative to Jobber',
     seoDescription:
-      'Glove is free, open-source field service software for US trades: calls, quotes, dispatch, on-site payment and maintenance plans in one place.',
+      'Glove is free, open-source field service software for plumbers and HVAC pros: calls, quotes, dispatch, on-site payment and maintenance plans.',
   },
   {
     slug: 'larder',
     summary:
-      'Larder is manufacturing and inventory software for small US makers. It takes an order, reserves stock so nothing is promised twice, works out what to buy or make, tracks the work through to shipment and readies the handoff to your accountant.',
+      'Larder is manufacturing and inventory software for small makers. It plans your materials and machines before offering a ship date, runs the shop floor, traces every lot, costs every job and keeps QuickBooks in sync.',
     does: [
-      'Reserve only free stock for each order so two orders can never claim the same goods',
-      'Show what is short, why and by when, and draft the purchase order or work order to cover it',
-      'Make to the recipe you released: a work order keeps its bill of materials even after you change the recipe',
-      'Receive part of a delivery, record supplier lots, and hold stock in quarantine until someone decides',
-      'Pick, pack and ship part of an order, with returns, transfers and stock counts that keep the original record',
-      'Prepare a valued batch of receipts, shipments and production, matched line by line to your ledger, for your accountant',
-      'Move in from Odoo and other manufacturing tools with a preview of every rejected row and an undo',
-      'Export the whole business in one checksummed file',
+      'Check materials, machines and people before quoting a ship date, then price the job',
+      'Work out what to buy and make from the recipe, and draft the purchase and work orders with dates',
+      'Reserve only free stock so two orders never claim the same goods, and make to the recipe revision you released',
+      'Receive partial deliveries, record supplier lots and expiry, hold stock in quarantine, and trace any lot forward to orders or back to inputs',
+      'Lay jobs onto real machines and people, and offer fixes when a machine goes down or a supplier is late',
+      'Let operators start and stop work on a tablet and log good output and scrap',
+      'Ship wholesale, Shopify and Amazon orders from one list, with labels and tracking',
+      'Cost every order against the quote and post invoices and journals to QuickBooks, and move in from Katana, MRPeasy, Fishbowl, Odoo, Fulcrum or DOSS',
     ],
     promises: [
       {
@@ -1696,13 +1700,13 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'evidence',
       },
       {
-        id: 'LARDER-009',
-        text: 'Production issues materials as actually used, records good output and scrap against the pinned recipe, and closing the work records cost and variance.',
-        category: 'history',
+        id: 'TRACE-003',
+        text: 'Lots record expiry dates and the oldest-expiry lot is proposed first; expired or held stock is blocked unless a documented decision allows it.',
+        category: 'evidence',
       },
       {
         id: 'LARDER-011',
-        text: "Stock counts by one person need another's approval, stale counts are refused, and corrections are linked entries that leave the original in place.",
+        text: "Stock counts need a second person's approval, stale counts are refused, and corrections are linked entries that leave the original in place.",
         category: 'undo',
       },
       {
@@ -1712,7 +1716,7 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'LARDER-013',
-        text: 'One queue shows shortages, overdue purchases, quarantine and waiting approvals, and the owner can export the complete business archive with a checksum and restore it into an empty installation.',
+        text: 'One queue shows shortages, overdue purchases, quarantine and waiting approvals, and the owner can export the complete business with a checksum and restore it into an empty installation.',
         category: 'export',
       },
       {
@@ -1726,28 +1730,28 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'import',
       },
     ],
-    moveIn: ['Odoo', 'Katana', 'MRPeasy', 'Fishbowl', 'Fulcrum', 'DOSS'],
+    moveIn: ['Katana', 'MRPeasy', 'Fishbowl', 'Odoo', 'Fulcrum', 'DOSS'],
     runsOn:
       'Your own computer to try it; your own Cloudflare account to run it for real',
     version: 'v0.1.0',
     contractUrl: 'https://run-larder.com/contract',
     seoTitle: 'Larder: free, open-source alternative to Katana',
     seoDescription:
-      'Larder is free, open-source manufacturing and inventory software for US makers: reserve stock, plan purchases and production, ship and hand off to accounting.',
+      'Larder is free, open-source manufacturing software that plans materials and machines, runs the shop floor, traces lots and costs every job.',
   },
   {
     slug: 'linen',
     summary:
-      'Linen is an IT service desk for companies of 50 to 500 people. Employees ask for help in their own words, Linen does the routine work such as access, joining and leaving, and checks that it worked, so the IT team only decides the choices that need a person.',
+      'Linen is an IT service desk for growing companies. It answers IT requests in chat, grants access, sets up new hires, offboards leavers and tracks every laptop, then checks that each person can actually work. Your IT team decides only the choices that need a person.',
     does: [
-      'Let employees ask for help, access, devices or software in plain language from the portal, email, Slack or Teams',
-      'Carry out routine access changes through your identity systems and read back that they took effect',
-      'Run joining, moving and leaving with separate steps for access and devices, so nothing stays open unnoticed',
-      'Show only the choices that need a person, with a recommendation, the consequences and whether it can be undone',
-      'Keep an answer-with-a-source knowledge base, shared incident handling, change records and a device register',
-      'Offer a service catalogue with approvals, and private notes the employee never sees',
-      'Connect Freshservice and other desks, review what comes across and run both side by side',
-      'Back up and restore everything as one archive',
+      'Answer requests in Slack or the portal, do the access work under your standing rules, and check it worked',
+      "Plan each new hire's tasks for IT, HR and the manager back from their start date, and confirm every app sign-in on day one",
+      'Allocate, ship and enrol each laptop, track it to the door and get it back from leavers',
+      "Revoke every app on a leaver's last day, hand their files to a manager and close the loop on the return kit",
+      'Handle role changes by adding, removing and keeping the right apps, and reset locked-out accounts without passwords in chat',
+      'Plan changes with risk, approvals and a backout plan, and roll back when a check fails',
+      'Report the time saved per request type and the software licences you can reclaim',
+      'Move in your tickets, private notes, assets, catalogue and knowledge from Freshservice, Jira Service Management, ServiceNow or a CSV, and run both side by side until you switch',
     ],
     promises: [
       {
@@ -1781,6 +1785,11 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'schedule',
       },
       {
+        id: 'LIFE-007',
+        text: 'Every join, move and leave produces an exportable record of what was granted or revoked, when, by whom and how it was checked.',
+        category: 'evidence',
+      },
+      {
         id: 'AUDIT-001',
         text: 'Privileged reads, exports, configuration changes, grants and actions are recorded with who and when, readable by auditors and exportable.',
         category: 'history',
@@ -1796,28 +1805,33 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'export',
       },
     ],
-    moveIn: ['Freshservice', 'Jira Service Management', 'ServiceNow'],
+    moveIn: [
+      'Freshservice',
+      'Jira Service Management',
+      'ServiceNow',
+      'CSV files',
+    ],
     runsOn:
       'Your own computer to try it; your own Cloudflare account to run it for real',
     version: 'v0.1.0',
     contractUrl: 'https://run-linen.com/contract',
-    seoTitle: 'Linen: free, open-source alternative to Freshservice',
+    seoTitle: 'Linen: free, open-source alternative to ServiceNow',
     seoDescription:
-      'Linen is a free, open-source IT service desk: employees ask in plain words, routine access work is done and checked, and IT decides only what needs a person.',
+      'Linen is a free, open-source IT service desk that grants access, onboards and offboards people, tracks laptops and checks everyone can work.',
   },
   {
     slug: 'locket',
     summary:
-      'Locket is contract management for US businesses. It keeps every agreement from request to renewal, holds the signed files exactly as signed, and makes sure each renewal is decided before its notice deadline passes.',
+      'Locket is contract management for growing businesses. It checks drafts against your own playbook, sends them for signature, files the signed copy exactly as signed, and emails reminders before every renewal deadline so each one is decided in time.',
     does: [
-      "Show every notice deadline in the agreement's own time zone while there is still time to decide",
-      'Keep the signed PDF and its certificate exactly as signed, from DocuSign or the signing service you already use',
-      'Compare any two versions line by line and approve the exact version that goes out',
-      'Confirm terms against the signed words and give every obligation an owner and a due date',
-      'Build agreements from approved templates and a clause playbook, with roles for counsel and approvers',
-      'Search inside every version and restrict sensitive agreements to the people who need them',
-      'Let an agent prepare work for a person to approve',
-      'Bring in a DocuSign archive with a dry run of every envelope, and export everything',
+      'Start a contract from a deal in your CRM, filling the order form from its line items',
+      'Check an agreement against your playbook and suggest wording for each breach',
+      "Keep every version, including the other side's markup, compare any two line by line, and approve the exact version that goes out",
+      'Route approvals by rule, such as the CFO for large deals, and take the decision from Slack',
+      'Send for signature, follow the envelope, and file the signed PDF and certificate in your drive',
+      'Confirm dates, renewal terms and notice periods against the signed words and give every obligation an owner and due date',
+      'Email reminders ahead of each notice deadline, escalate if nobody decides, and put the deadline on a calendar',
+      'Ask questions across all agreements, see renewal briefs that check invoices against the contract, and move in your Ironclad or DocuSign archive',
     ],
     promises: [
       {
@@ -1856,14 +1870,14 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'schedule',
       },
       {
+        id: 'RENEW-002',
+        text: 'Renewal reminders go out by email ahead of each deadline, escalate if no decision is recorded by the 30-day reminder, and a bounced reminder is retried to another person.',
+        category: 'alerts',
+      },
+      {
         id: 'ACCESS-001',
         text: 'A restricted agreement and everything attached to it, including search results, is invisible to anyone not granted access.',
         category: 'privacy',
-      },
-      {
-        id: 'FILE-001',
-        text: 'Uploaded, signed and imported files are stored with a checksum and served byte for byte; nothing rewrites an original.',
-        category: 'evidence',
       },
       {
         id: 'PROPOSE-001',
@@ -1872,8 +1886,8 @@ export const seedPageContent: SeedPageContent[] = [
       },
     ],
     moveIn: [
-      'DocuSign archive',
       'Ironclad',
+      'DocuSign archive',
       'Icertis',
       'Agiloft',
       'SpotDraft',
@@ -1887,21 +1901,21 @@ export const seedPageContent: SeedPageContent[] = [
     contractUrl: 'https://run-locket.com/contract',
     seoTitle: 'Locket: free, open-source alternative to Ironclad',
     seoDescription:
-      'Locket is free, open-source contract management for US businesses: approved versions, signed records kept as signed, and renewals decided before the deadline.',
+      'Locket is free, open-source contract management that checks drafts against your playbook, files signed copies and reminds you before every renewal.',
   },
   {
     slug: 'lodge',
     summary:
-      'Lodge is hiring software for US employers with 20 to 200 people. You approve the role, each interviewer scores candidates on their own, and every decision is recorded through to an accepted offer.',
+      "Lodge is hiring software for small employers. It publishes your approved jobs, schedules interviews, gathers each interviewer's independent scorecard and carries every hire from signed offer into your HR system.",
     does: [
-      'Approve the exact pay range, headcount and hiring manager before a job is published',
-      'Take applications on a page anyone can use, with a privacy receipt for each applicant',
-      "Keep each interviewer's scorecard private until the manager releases feedback, with evidence behind every rating",
-      'Record who moved a candidate between stages, when and why',
-      'Coordinate interview times and share calendar files',
-      'Draft candidate messages for you to approve, then send them yourself',
-      'Have a person decide possible duplicate candidates',
-      'Apply retention rules, legal holds and deletion receipts, and move in your Workable history with a preview first',
+      'Approve the exact pay range, headcount and hiring manager, then post the job to your careers page and the job boards',
+      'Take applications on a page anyone can use, read resumes for you, send every applicant a receipt, and review everyone from one queue',
+      "Let candidates pick their own interview times from your team's calendars, and rebook when an interviewer is out",
+      "Keep each interviewer's scorecard private until the manager releases feedback, then summarise where they agree and differ with the passages cited",
+      'Fill offers from your template, track the signature, and redraft and re-sign when the start date changes',
+      'Record who moved a candidate between stages, when and why, and have a person decide possible duplicate candidates',
+      'Create the employee in your HR system after the offer is signed and the background check is clear, then read it back',
+      'Report time to fill, hiring sources and cost per hire, and move in your Workable, Greenhouse or Lever history with a preview first',
     ],
     promises: [
       {
@@ -1962,26 +1976,31 @@ export const seedPageContent: SeedPageContent[] = [
     contractUrl: 'https://run-lodge.com/contract',
     seoTitle: 'Lodge: free, open-source alternative to Greenhouse',
     seoDescription:
-      'Lodge is free, open-source hiring software for US employers: approved roles, private scorecards, recorded decisions and signed offers in one place.',
+      'Lodge is free, open-source hiring software that posts approved jobs, schedules interviews, keeps scorecards independent and hands hires to HR.',
   },
   {
     slug: 'nectar',
     summary:
-      'Nectar is subscription and usage billing for US software and service businesses. Plans, seats and metered usage become invoices where every line shows how it was calculated, followed by credits, payments and overdue follow-up.',
+      'Nectar is subscription and usage billing for software and service businesses. It prices every plan and meter, sends exact invoices, collects by card and ACH through your processor, recovers failed payments and ties out the month.',
     does: [
-      'Rate seats and metered usage exactly and show the rule, quantity and price behind every line',
-      "Draft a whole month's invoices in one bill run, compare it with last month and list anything unusual",
-      'Approve clean drafts and issue numbered invoices that never change afterwards',
-      'Preview plan and quantity changes with proration before you approve them',
-      'Issue credit notes, record payments and show who owes what by age, with reminders ready to send from your own mail',
-      'Explain why a customer does or does not have a feature on a given date',
-      'Run beside Stripe Billing, rate every subscription in shadow and compare every price before you switch',
-      'Let an agent propose price changes and corrections for a person to approve',
+      'Rate seats and metered usage to the cent, with the rule, quantity and price shown behind every invoice line',
+      "Prepare a whole month's invoices the evening before billing day, send the clean ones on their own, and hold anything unusual for you",
+      'Retry failed payments at the best time, email a one-click card update link, and never retry a stolen card',
+      'Chase overdue invoices, find why they are unpaid and ask the right person for what is missing',
+      'Let customers change plans in their own portal with the proration shown first, and answer your app at once about what they can use',
+      'Catch mismatches between signed terms, usage and invoices, with a fix drafted for you to approve',
+      'Close the month with invoices, payments, payouts and sales tax tied out, synced to QuickBooks and handed to your accountant',
+      'Move in from Stripe Billing by rating a month in shadow first, then take over with the same cards and invoice numbers',
     ],
     promises: [
       {
         id: 'NEC-05',
         text: 'A usage event with the same ID and values is recorded once; reused with different values or an unknown customer it is rejected and reported.',
+        category: 'reliability',
+      },
+      {
+        id: 'USE-007',
+        text: 'Usage is checked against the totals your sending system reports, and invoices affected by a gap are blocked until a person resolves it.',
         category: 'reliability',
       },
       {
@@ -2024,11 +2043,6 @@ export const seedPageContent: SeedPageContent[] = [
         text: 'Moving in from Stripe Billing refuses an incomplete capture, previews everything first, can be undone, and bills nothing until you adopt each subscription.',
         category: 'import',
       },
-      {
-        id: 'GOV-004',
-        text: 'Every change records who or what made it, when and why, in the same step as the change, and the trail can be read and exported but never edited.',
-        category: 'history',
-      },
     ],
     moveIn: [
       'Stripe Billing',
@@ -2044,21 +2058,21 @@ export const seedPageContent: SeedPageContent[] = [
     contractUrl: 'https://run-nectar.com/contract',
     seoTitle: 'Nectar: free, open-source alternative to Stripe Billing',
     seoDescription:
-      'Nectar is free, open-source subscription and usage billing for US businesses: explainable invoice lines, bill runs, credits and overdue follow-up.',
+      'Nectar is free, open-source subscription and usage billing with exact invoices, payment recovery, collections and a month-end close.',
   },
   {
     slug: 'pantry',
     summary:
-      'Pantry is accounting for US small businesses. It pulls in your bank and cards, catches every receipt, gets invoices paid and closes the month with your accountant, and every figure opens to the entries behind it.',
+      'Pantry is accounting for small businesses. It pulls in your bank and cards, catches every receipt, gets invoices paid and closes the month with your accountant. Every figure opens to the entries behind it.',
     does: [
-      'Bring in bank and card transactions and file the routine ones with rules you teach it once',
-      'Read receipts from a photo or a forwarded email and attach each to the right transaction',
-      'Send invoices that customers pay by card or ACH from a link, with reminders and automatic matching',
-      'Open any figure on your profit and loss to the bills, receipts and transactions behind it, on a cash or accrual basis',
-      'Ask about anything that does not add up, and show what changes before anything moves',
+      'Bring in bank, card, Stripe and Gusto transactions, backfill gaps without duplicates, and file the routine ones with rules',
+      'Read receipts from a photo or a forwarded email, match each to its card charge and file it once',
+      'Email invoices with a card or ACH link, send reminders on schedule, and match each payment to its deposit',
+      'Show when a bank feed breaks and fill in the missed days once you sign in again',
+      'Chase loose ends across your bank, payroll and inbox, asking you by text and showing what each fix changed',
       'Reconcile accounts, lock the month and let your accountant sign off in the same place',
-      'Book Stripe payouts and Gusto payroll as balanced entries, and track sales tax by state and 1099 contractors',
-      'Move in from QuickBooks Online or Xero with balances, open invoices and attachments checked first, and export everything',
+      'Open any profit and loss, balance sheet or cash flow figure to the bills, receipts and vendors behind it, on a cash or accrual basis',
+      'Track 1099 contractors and sales tax, move in from QuickBooks Online or Xero with balances checked to the cent, and export everything',
     ],
     promises: [
       {
@@ -2119,7 +2133,7 @@ export const seedPageContent: SeedPageContent[] = [
     contractUrl: 'https://run-pantry.com/contract',
     seoTitle: 'Pantry: free, open-source alternative to QuickBooks Online',
     seoDescription:
-      'Pantry is free, open-source accounting for US small businesses: bank feeds, receipts, invoices that get paid, and a month-end close with your accountant.',
+      'Pantry is free, open-source small-business accounting with bank feeds, receipt capture, invoices that get paid and a month-end close.',
   },
   {
     slug: 'pier',
@@ -2127,7 +2141,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Pier is inventory and order software for US wholesalers and distributors. It tracks stock across warehouses, runs orders from sales channel to carrier, reorders before you run out and keeps your books in step.',
     does: [
       'Receive, put away, pick, pack and count from any phone or scanner so every bin knows what it holds',
-      'Show one stock count across Shopify, WooCommerce, Amazon and your storefront',
+      'Show one stock count across Shopify, Amazon, Faire and your own storefront',
       'Take purchase orders from big-box retailers by EDI and send the acknowledgment, ship notice and invoice on time',
       'Compare UPS, FedEx and USPS rates, print the label and send tracking to your customer',
       'Suggest reorders from real sell-through, draft the purchase order with landed cost and give backorders a real date',
@@ -2162,9 +2176,9 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'reliability',
       },
       {
-        id: 'PIER-010',
-        text: 'Returns point to a real shipment, come back into quarantine and need a separate review before they are sellable.',
-        category: 'evidence',
+        id: 'STOCK-001',
+        text: 'Every item shows its stock at each warehouse and bin: on hand, reserved, available, in transit and expected from open purchase orders, with totals per warehouse and for the company.',
+        category: 'reliability',
       },
       {
         id: 'PIER-011',
@@ -2192,7 +2206,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Your own computer to try it; deploys to an owner-configured Cloudflare target when you choose',
     version: 'v0.1.0',
     contractUrl: 'https://run-pier.com/contract',
-    seoTitle: 'Pier: free, open-source alternative to Cin7 Core',
+    seoTitle: 'Pier: free, open-source alternative to Cin7',
     seoDescription:
       'Pier is free, open-source inventory and order software for US wholesalers: warehouse scanning, channels, EDI, shipping, reorders and synced books.',
   },
@@ -2217,9 +2231,9 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'access',
       },
       {
-        id: 'PUR-004',
-        text: 'Drafts keep exact quantities, attachments and an unchangeable history of every revision.',
-        category: 'history',
+        id: 'INVOICE-003',
+        text: "Near-duplicate invoices, a repeated document image, changed remit-to details and invoices above an order's remaining balance are flagged, and a flagged invoice cannot be approved for payment until it is resolved.",
+        category: 'money',
       },
       {
         id: 'PUR-006',
@@ -2276,11 +2290,11 @@ export const seedPageContent: SeedPageContent[] = [
     summary:
       'Willow is HR software for US employers with 20 to 200 people. It keeps your people records, welcomes new hires, handles time off and changes, and makes payroll, benefits and access agree.',
     does: [
-      "Keep every person's job, pay, manager and documents in one dated record, so you can see what was true on any day",
+      "Keep every person's job, pay, manager and documents in one dated record, with a directory and org chart, so you can see what was true on any day",
       'Give each new hire a checklist with owners and deadlines and chase every step until it is done',
       'Let people request time off and update their details, with managers approving in one tap and balances kept right',
       "Send offer letters and policies for e-signature and file them to each person's record",
-      'Keep payroll in step with Gusto, ADP RUN and QuickBooks Payroll and catch differences before payday',
+      'Keep payroll in step with Gusto, ADP RUN, QuickBooks Payroll and Paychex and catch differences before payday',
       'Open and close Google Workspace, Microsoft 365 and Okta accounts on time and check each is really gone',
       'Carry an approved raise, move or leave through payroll, benefits, access and time off with a change agent',
       'Move in from BambooHR, Rippling or HiBob, and export everything at any time',
@@ -2337,7 +2351,14 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'export',
       },
     ],
-    moveIn: ['BambooHR', 'Rippling', 'HiBob', 'Factorial', 'Deel HR'],
+    moveIn: [
+      'BambooHR',
+      'Rippling',
+      'HiBob',
+      'Gusto HR',
+      'Factorial',
+      'Deel HR',
+    ],
     runsOn:
       'Your own computer to try it; your own Cloudflare account to run it for real',
     version: 'v0.1.0',
@@ -2423,7 +2444,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Your own computer to try it; a host you choose and run yourself for real use',
     version: 'v0.1.0',
     contractUrl: 'https://run-auth.com/contract',
-    seoTitle: 'Auth: free, open-source alternative to Okta',
+    seoTitle: 'Auth: free, open-source alternative to Auth0',
     seoDescription:
       'Auth is free, open-source sign-in for your team: passkeys, one login across your apps, and accounts created and removed automatically.',
   },
@@ -2437,7 +2458,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Write PT, OT and speech notes from templates, let the scribe draft from the visit for you to review and sign, and count billed units under the 8-minute rule',
       'Check eligibility, track authorizations, send claims through Claim.MD or Availity, post payments from the remittance and show denials with the fix',
       'Take patient payments with cards on file, text-to-pay links, copays at check-in, statements and superbills',
-      'Send text and email reminders that patients confirm or reschedule with one reply, and run video visits from the same calendar',
+      'Send text and email reminders that patients confirm or reschedule with one reply',
       'Let the case agent spot stalled referrals, cite the record and line up the next step',
       'Import patients, appointments, notes and balances from WebPT, SimplePractice, Jane or Cliniko and check the totals before you switch',
     ],
@@ -2504,16 +2525,16 @@ export const seedPageContent: SeedPageContent[] = [
   {
     slug: 'barrow',
     summary:
-      'Barrow is a wholesale ordering portal for a US brand or wholesaler. Each stockist signs in to its own prices, minimum orders and payment terms and orders against live stock. You approve the order and the invoice is ready to download.',
+      'Barrow is wholesale ordering software for US brands and wholesalers. Each stockist gets its own prices and line sheets, orders come in online, from reps and at trade shows, and every order is followed through delivery and payment.',
     does: [
-      'Give each stockist its own price list, minimum order and payment terms, so they see only theirs',
-      'Show live stock from Pier beside each price',
-      'Let stockists order with their own purchase order reference and see their order history',
-      'Approve an order and have Pier reserve every line',
-      'Download an invoice CSV with the agreed prices, due date and a stable invoice number for your accounting system',
-      'Set minimums per product as well as per order',
-      'Let an assistant read the catalogue and prepare order drafts for people to submit and approve',
-      'Move in a trade-account spreadsheet with a dry run, apply and undo, and export and restore your data',
+      'Send each stockist a line sheet with its own prices, and show every stockist only the products and prices assigned to it',
+      'Let stockists order online with their own purchase order reference, and let reps write orders size by size on an iPad with case packs and minimums checked',
+      "Keep reps selling when the hall's Wi-Fi drops, then sync every draft once and send any changed price back to the buyer to re-confirm",
+      'Take seasonal prebooks with more than one ship window and a deposit',
+      'Sign up a new stockist at the booth with a trade application and resale certificate, and approve them before their first order ships',
+      'Read a photographed or emailed purchase order into a draft, ask about unclear lines, and check prices and stock before a person approves it',
+      "Follow each order to the carrier's delivered scan and the bank's paid, and draft the note when delivery or payment slips",
+      'Keep stock and books in NetSuite, QuickBooks, Shopify, Faire or a nightly file, and move in from NuORDER, Pepperi, Brandboom, SparkLayer or WizCommerce',
     ],
     promises: [
       {
@@ -2528,13 +2549,23 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'STK-001',
-        text: 'Stock is read live from Pier and checked again when an order is prepared; without a connection Barrow never invents a stock promise.',
+        text: 'Stock is read live from your connected inventory system and checked again when an order is prepared; without a connection Barrow never invents a stock promise.',
         category: 'reliability',
       },
       {
         id: 'ORD-010',
         text: 'An order keeps the prices, terms and approvers agreed at the time, so changing prices later cannot rewrite the order or its invoice.',
         category: 'history',
+      },
+      {
+        id: 'BAR-002',
+        text: 'An order goes to your inventory system once, and a shortfall stays visible and cannot become a fully fulfilled invoice.',
+        category: 'reliability',
+      },
+      {
+        id: 'PRI-003',
+        text: "Quantities that break a case pack, minimum or increment get an explanation and a suggested correction, and no import quietly raises a buyer's commitment.",
+        category: 'other',
       },
       {
         id: 'BAR-003',
@@ -2557,32 +2588,39 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'erasure',
       },
     ],
-    moveIn: ['Your trade-account spreadsheet (CSV)'],
+    moveIn: [
+      'NuORDER',
+      'Pepperi',
+      'Brandboom',
+      'SparkLayer',
+      'WizCommerce',
+      'Trade-account spreadsheet (CSV)',
+    ],
     runsOn: 'your own Cloudflare account (or on your computer to try it)',
     version: '',
     contractUrl: 'https://run-barrow.com/contract',
-    seoTitle: 'Barrow: free, open-source alternative to B2B Wave',
+    seoTitle: 'Barrow: free, open-source alternative to NuORDER',
     seoDescription:
-      'Barrow is a free, open-source wholesale ordering portal: private stockist prices, live stock, order approval and invoices.',
+      'Barrow is free, open-source wholesale ordering software: private line sheets and prices, rep and trade-show orders, then delivery and payment.',
   },
   {
     slug: 'blotter',
     summary:
-      "Blotter is the job workflow for a bookkeeping or accounting practice. It rolls each recurring client job forward, collects client documents through a private upload link, records a second person's sign-off and exports time for billing.",
+      "Blotter is practice management for bookkeeping and tax firms. It schedules every client's recurring work against federal and state deadlines, chases documents and signatures, routes the work through review and collects the fee.",
     does: [
-      'Start recurring client jobs from templates with a checklist, document requests and a fixed fee',
-      'Send clients a reminder with a private upload link so they can send files without an account, then accept each file or ask again',
-      'Have a preparer submit the work and an assigned reviewer sign it off with a recorded note',
-      'Roll a signed-off job forward to the next period',
-      "Record each person's time at their own rate and export approved time and fees as a CSV that never changes once approved",
-      'Give owners, reviewers and preparers roles and rates, with a log of every action',
-      'Let an assistant prepare roll-forwards, reminders and exports for a person to approve',
-      'Import a client list from a CSV, and back up the whole practice',
+      "Work out each client's due dates, extensions included, and create each period's work ahead of time, already assigned",
+      'Ask clients for documents through a private upload link and chase by email, portal and text until each file arrives',
+      'Route work through a preparer and an assigned reviewer, whose sign-off is recorded with a note',
+      'Show every return and job on one board by status and due date, and rebalance staff when someone is overbooked',
+      'Collect e-file signatures with identity checks and track each return through to IRS acceptance or rejection',
+      'Bill recurring fees on schedule, collect by ACH or card, and sync invoices and payments with QuickBooks Online and Xero',
+      'Let an agent ask the exact question about each uncategorized bookkeeping line and flag work outside the signed scope, always for a person to approve',
+      'Move in from Karbon, TaxDome, Canopy, Financial Cents or Double, and back up the whole practice',
     ],
     promises: [
       {
-        id: 'WORK-001',
-        text: "Reusable templates carry a checklist, document requests and a fixed fee, and starting a job copies them into that period's own work.",
+        id: 'WORK-002',
+        text: "Approved recurring rules create each next period's work once and ahead of time with staff assigned; catching up after downtime never duplicates a job or changes past sign-offs.",
         category: 'schedule',
       },
       {
@@ -2631,33 +2669,45 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'history',
       },
     ],
-    moveIn: ['Client list (CSV)'],
+    moveIn: [
+      'Karbon',
+      'TaxDome',
+      'Canopy',
+      'Financial Cents',
+      'Double',
+      'Client list (CSV)',
+    ],
     runsOn: 'your own Cloudflare account (or on your computer to try it)',
     version: '',
     contractUrl: 'https://run-blotter.com/contract',
     seoTitle: 'Blotter: free, open-source alternative to Karbon',
     seoDescription:
-      'Blotter is free, open-source job workflow for bookkeeping and accounting practices: client uploads, sign-off and time export.',
+      'Blotter is free, open-source practice management for bookkeeping and tax firms: deadlines, client documents, review, billing and e-file tracking.',
   },
   {
     slug: 'buoy',
     summary:
-      "Buoy is customer success and renewals software for a B2B subscription company. It shows renewal dates and notice deadlines beside billing and support evidence, explains each account's health, and keeps a record of every decision.",
+      'Buoy is customer success software for subscription companies. It joins CRM, billing, support and usage data for every account, explains its health, runs your playbooks and reconciles renewals to billing.',
     does: [
-      "Record each account's renewal date and notice period, and show the deadline by which you need to act",
-      'Show account health that names the invoice or ticket behind it, and keep missing or old evidence in view',
-      'Prepare at-risk playbooks that a person approves, creating a task',
-      'Record each renewal decision with who approved it, when, and the evidence it rested on',
-      'Let an assistant with a scoped credential list renewals and prepare playbooks for people to approve',
-      'Paste account JSON, review a dry run, apply it, and undo while nothing has changed',
-      'Give owners, admins and members different roles',
-      'Export and restore your data, and erase an account',
+      'Join CRM, billing, support and usage data for each account, with every fact showing its source and how fresh it is',
+      'Score account health with weights you choose, and name the measure and source behind every point of change',
+      'Alert your team in Slack and show the same health beside the account in Salesforce and the ticket in Zendesk',
+      'Run playbooks such as a champion change or a detractor follow-up, with owners, tasks, reminders and tracked outcomes',
+      "Check that a ticket marked solved is really fixed against the customer's own usage, and close a risk only on that evidence",
+      'Plan onboarding on one plan your team and the customer can both see, with a customer portal for their tasks',
+      'Track each renewal from notice date through signature, check it landed in Salesforce and Stripe, and tie retention figures back to billing',
+      'Move in from Gainsight, ChurnZero, Totango, Planhat, Vitally or Velaris, keeping the Salesforce fields your reports read',
     ],
     promises: [
       {
         id: 'HTTP-001',
         text: 'Every request checks the current sign-in, role and origin; assistant credentials can only read and prepare.',
         category: 'access',
+      },
+      {
+        id: 'DATA-001',
+        text: 'Every account fact carries its source, reference and time; missing or stale evidence stays visible beside the value, and a refresh never silently overwrites anything.',
+        category: 'evidence',
       },
       {
         id: 'APPROVAL-001',
@@ -2667,6 +2717,16 @@ export const seedPageContent: SeedPageContent[] = [
       {
         id: 'APPROVAL-001',
         text: 'Completing an action needs separate evidence, and refreshing the source data never rewrites earlier decisions.',
+        category: 'history',
+      },
+      {
+        id: 'GOVERN-001',
+        text: 'Each agent has an expiring, revocable credential with named scopes, a spend budget and rate limits; it cannot approve its own proposals, every action is logged, and one switch stops all agents.',
+        category: 'ai',
+      },
+      {
+        id: 'AUDIT-001',
+        text: 'Sign-ins, role changes, exports, erasures, approvals and every agent action are recorded with who, when and what, and the record survives erasure of its subject with personal details removed.',
         category: 'history',
       },
       {
@@ -2680,18 +2740,30 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'erasure',
       },
       {
-        id: 'RESTORE-001',
-        text: 'A backup restores into an empty installation with a new sign-in; damaged backups are refused, and credentials and settings are left out.',
-        category: 'export',
+        id: 'BOUNDARY-003',
+        text: 'Health scores and forecasts are explainable judgments over the data present, not guaranteed churn predictions; missing data stays visible and people decide what to do.',
+        category: 'other',
+      },
+      {
+        id: 'BOUNDARY-001',
+        text: 'Buoy reads billing and never charges cards, runs dunning or changes subscriptions; your billing system stays authoritative for invoices and cash.',
+        category: 'money',
       },
     ],
-    moveIn: ["Account JSON (Buoy's documented format)"],
+    moveIn: [
+      'Gainsight',
+      'ChurnZero',
+      'Totango',
+      'Planhat',
+      'Vitally',
+      'Velaris',
+    ],
     runsOn: 'your own Cloudflare account (or on your computer to try it)',
     version: '',
     contractUrl: 'https://run-buoy.com/contract',
-    seoTitle: 'Buoy: free, open-source alternative to Vitally',
+    seoTitle: 'Buoy: free, open-source alternative to Gainsight',
     seoDescription:
-      'Buoy is free, open-source customer success software: renewal dates, explained account health, approved playbooks and recorded decisions.',
+      'Buoy is free, open-source customer success software: explained account health, playbooks, verified fixes and renewals that tie to billing.',
   },
   {
     slug: 'cabin',
@@ -2729,9 +2801,34 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'evidence',
       },
       {
+        id: 'CABIN-02',
+        text: 'A request for nights held on another channel is declined with the overlapping stay named, and a collision arriving from two channels is kept and shown as a double booking to resolve.',
+        category: 'reliability',
+      },
+      {
         id: 'EVIDENCE-001',
         text: "A cleaner's completed checklist and photo are private to the team and cannot be changed or completed twice once recorded.",
         category: 'evidence',
+      },
+      {
+        id: 'CABIN-08',
+        text: "When a cleaner cancels, Cabin proposes a backup cleaner, a new door code and a guest credit, acts only on exact approval or within the owner's limits, and closes once the home is verified ready.",
+        category: 'approval',
+      },
+      {
+        id: 'PAY-003',
+        text: "A damage deposit is held, not charged, and released automatically after checkout unless a claim is opened; claims need evidence and a person's approval, and repeated clicks cannot refund twice.",
+        category: 'money',
+      },
+      {
+        id: 'FIN-004',
+        text: 'Owner statements come from the reconciled books, a manager reviews them before release, sent versions are frozen, and corrections issue traceable adjustments rather than rewriting them.',
+        category: 'money',
+      },
+      {
+        id: 'CABIN-11',
+        text: 'Moving in from Guesty, Hostaway or OwnerRez shows a preview with each refused row, reconciles the result, and can be undone without losing records changed since.',
+        category: 'undo',
       },
     ],
     moveIn: ['Guesty', 'Hostaway', 'OwnerRez'],
@@ -2745,15 +2842,15 @@ export const seedPageContent: SeedPageContent[] = [
   {
     slug: 'coffer',
     summary:
-      "Coffer is donor management for a US nonprofit. It takes donations, keeps every donor's story, sends receipts and thank-yous, and shows who needs a call.",
+      "Coffer is donor management for a US nonprofit. It takes donations online, keeps every donor's story, sends receipts and thank-yous, and shows who needs a call. It reconciles gifts with Stripe and your books, and moves in your history from the donor system you use now.",
     does: [
-      'Take donations on forms and campaign pages with monthly giving, card, bank and Apple Pay checkout, and a portal where donors update their own card',
-      'Keep households, relationships, every gift and every conversation in one place, with soft credits, tributes and employer matches',
-      'Sync gifts, fees, refunds and failed monthly payments from Stripe, and match each payout to its deposit in QuickBooks Online or Pantry, split by fund',
-      'Send thank-you letters and year-end tax receipts by email or print-ready for mail, with the right IRS language',
-      'Send appeals and welcome journeys through Mango or Mailchimp, honoring unsubscribes everywhere',
-      'Track a major-gift pipeline with next steps, owners and engagement scores',
-      'Let the development agent reconcile gifts, rescue failed monthly gifts, send missing receipts and show who needs a call',
+      'Take gifts on campaign pages and forms, once or monthly, by card, bank or Apple Pay, with a portal where donors update their own card',
+      'Keep households, relationships, every gift and every conversation on one record, with soft credits, tributes and employer matches',
+      'Choose who to ask from giving history and consent, then send appeals through Mango or Mailchimp and print-ready letters to donors who prefer paper, honoring unsubscribes everywhere',
+      'Thank donors by name within minutes with a tax receipt that carries the right IRS wording, and send each donor one year-end statement by email or on paper',
+      'Sync Stripe gifts, fees, refunds and failed monthly gifts, and match each payout to its deposit in QuickBooks Online or Pantry, fund by fund',
+      'Report who gave again and who lapsed, and track major gifts with next steps and owners',
+      'Let the development agent reconcile gifts, rescue failed monthly gifts, send missing receipts and rank who needs a call',
       "Move in from Little Green Light, Bloomerang or Raiser's Edge NXT and check the totals before you switch",
     ],
     promises: [
@@ -2764,7 +2861,7 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'GIFT-001',
-        text: 'Gifts are exact ledger lines that cannot be edited; a correction is a matching opposite line, once per gift.',
+        text: 'Gifts are exact ledger lines that cannot be edited; a correction is a matching opposite line, once per gift, and a gift moves to another donor only through an audited merge or an erasure.',
         category: 'history',
       },
       {
@@ -2814,37 +2911,52 @@ export const seedPageContent: SeedPageContent[] = [
     contractUrl: 'https://run-coffer.com/contract',
     seoTitle: 'Coffer: free, open-source alternative to Bloomerang',
     seoDescription:
-      'Coffer is free, open-source donor management for US nonprofits: online giving, receipts, thank-yous and major-gift tracking.',
+      'Coffer is free, open-source donor management for US nonprofits: online giving, receipts, thank-yous, appeals, major gifts and retention reporting.',
   },
   {
     slug: 'crank',
     summary:
-      "Crank is workflow automation that connects your apps, runs every step on schedule, retries what fails and fixes the mapping when an app changes. Build workflows step by step, add a person's approval only where it matters, and use AI steps where they help.",
+      "Crank is workflow automation that connects your apps, runs every step on schedule, retries what fails and fixes the mapping when an app changes. You build workflows step by step, add a person's approval only where it matters, and use AI steps where they help.",
     does: [
-      'Connect Gmail, Slack, Google Sheets, HubSpot, Salesforce, QuickBooks, Stripe and Shopify, with sign-ins kept fresh',
+      'Connect apps such as Stripe, QuickBooks, Shopify, Slack, Gmail, Google Sheets, HubSpot and Typeform, with sign-ins kept fresh',
       'Start workflows on a schedule, a new email, a form, a webhook or any app event, with duplicates caught before they run twice',
       'Build step by step with field mapping, filters, branches, loops, waits, code steps and reusable subflows',
-      'Queue and save every run, retry failed steps with backoff, respect rate limits and replay any step',
+      'Run every workflow unattended, trace each run step by step, and retry failed steps with growing waits while runs queue and resume in order when an app is down',
       'Add approval steps for refunds or large orders, and let routine actions run on standing rules',
       'Add AI steps and agents that use your tools, or describe a workflow in plain words and have Crank build it',
-      'Repair the mapping when an app renames a field, test it on recent runs and resume the workflow',
-      'Import workflows from Zapier, Make or n8n and run them beside the old ones until the results match',
+      'Repair the mapping when an app renames a field, test it on recent runs, replay held runs and ask a person only for a business choice',
+      'Move in from Zapier, Make or Workato and run each workflow beside the old one until the results match',
     ],
     promises: [
       {
         id: 'TRIG-001',
-        text: 'Each workflow gets private webhook addresses you can revoke and rotate, and a repeated event is recognized and not run twice.',
+        text: 'Each workflow gets private webhook addresses you can revoke and rotate, and a repeated event is recognized and run only once.',
         category: 'security',
       },
       {
-        id: 'TRIG-007',
-        text: 'Feed and web-address triggers start one run per new item, and an item that is re-published or edited starts no new run.',
-        category: 'reliability',
+        id: 'TRIG-002',
+        text: 'You can start a run on demand or on a schedule in your own time zone, and run a published workflow over past records after seeing how many it will touch and what it will cost.',
+        category: 'schedule',
       },
       {
         id: 'WORK-004',
-        text: 'Delays and waits for an event survive restarts and deployments, and a duplicate callback resumes a step only once.',
+        text: 'Delays and waits for an event survive restarts and updates, and a duplicate callback resumes a step only once.',
         category: 'schedule',
+      },
+      {
+        id: 'EXEC-001',
+        text: 'Published workflows run without anyone starting each run; queues show what is waiting, and work resumes from its last saved step after a restart or update.',
+        category: 'reliability',
+      },
+      {
+        id: 'EXEC-002',
+        text: "Retries wait longer each time and respect each app's rate limits; a step that was never sent is told apart from one with an uncertain result, and work that runs out of attempts stays saved with its next action.",
+        category: 'reliability',
+      },
+      {
+        id: 'EXEC-004',
+        text: 'A failed or incomplete step can be retried or resumed from its saved input after a preview, and a successful action is never silently repeated.',
+        category: 'undo',
       },
       {
         id: 'HTTP-001',
@@ -2861,8 +2973,13 @@ export const seedPageContent: SeedPageContent[] = [
         text: 'Publishing a workflow authorizes exactly the steps it declares on the connections bound to it, and that authority ends when it is unpublished, replaced or a connection is revoked.',
         category: 'approval',
       },
+      {
+        id: 'DATA-002',
+        text: 'Erasing completed run data removes sensitive inputs and outputs and leaves value-free receipts, so an older backup cannot bring them back.',
+        category: 'erasure',
+      },
     ],
-    moveIn: ['Zapier', 'Make', 'n8n'],
+    moveIn: ['Zapier', 'Make', 'Workato'],
     runsOn: 'your own Cloudflare account (or on your computer to try it)',
     version: '',
     contractUrl: 'https://run-crank.com/contract',
@@ -2947,18 +3064,28 @@ export const seedPageContent: SeedPageContent[] = [
   {
     slug: 'inkwell',
     summary:
-      'Inkwell gets a PDF signed and keeps the record. Send a document to each signer in turn, then keep the signed file, certificate and history, and check them again any time.',
+      'Inkwell gets documents signed and filed. It builds each envelope from your templates, routes every signer in the right order, sends the reminders, catches bounced emails and files the sealed record in your CRM, with a certificate anyone can check.',
     does: [
-      'Place signature, text and date fields on any page of a PDF for one to five signers',
-      'Invite each signer in order through their own private link, where they read, type their name and sign',
-      'Keep the original, executed PDF and certificate, and recompute their fingerprints with one click',
-      'Keep a chained audit trail of who prepared, sent, verified and signed, and download it',
-      'Void an unfinished envelope and keep the reason on record',
-      'Let an agent prepare envelopes with a preparation token for you to review and send',
-      'Give owners, admins and members different access',
-      'Import signed PDFs and their evidence from a DocuSeal archive, and download or restore everything in a full archive',
+      'Build envelopes from reusable templates with named roles, or let the agent assemble one from a CRM deal and ask about anything missing',
+      'Route signers in order or in parallel, with a rule that adds another signer when a contract is over an amount you set',
+      'Guide each signer through the fields on a phone, in English or Spanish, with a signer assistant that answers questions about the document',
+      'Send reminders on business days only to the person whose turn it is, and catch bounced emails so a corrected address resends in one step',
+      'Send one document to a whole list from an upload, or let visitors sign straight from a form on your website',
+      'Seal the PDF on the last signature with a completion certificate and a tamper-evident audit trail, and let anyone verify a file',
+      'File the completed record in your CRM and file storage and send every party their copy',
+      'Move in completed envelopes, certificates, templates and contacts from Docusign, with anything that did not map listed by name',
     ],
     promises: [
+      {
+        id: 'ACCESS-001',
+        text: "Every request checks the person's role: senders handle their own envelopes and ones shared with them, admins handle all, viewers only read, and only the owner manages assistant keys, archives and erasure.",
+        category: 'access',
+      },
+      {
+        id: 'SIGN-001',
+        text: 'Each signer opens their own single-use link, passes the check the sender chose such as an email code, reviews the exact approved document and can sign only when it is their turn.',
+        category: 'security',
+      },
       {
         id: 'DELEGATE-001',
         text: 'An envelope an agent prepares is sent only when a signed-in person approves it; a revoked token loses all authority, and the audit trail names both the agent and the approver.',
@@ -2966,8 +3093,23 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'RECORD-001',
-        text: 'On the last signature Inkwell produces the executed PDF, a completion certificate and a chained audit trail, and verification recomputes every fingerprint and the event chain.',
+        text: 'On the last signature Inkwell produces the signed PDF, a completion certificate and a chained audit trail, and verification recomputes every fingerprint and the event chain.',
         category: 'evidence',
+      },
+      {
+        id: 'RECORD-004',
+        text: 'Anyone holding a signed PDF or certificate can check it on the verification page without signing in; an altered copy fails and an unrelated file reveals nothing.',
+        category: 'evidence',
+      },
+      {
+        id: 'DELIV-003',
+        text: 'Reminders go only to the person whose turn it is, on business days in your time zone, and stop at signature, decline, void or expiry.',
+        category: 'alerts',
+      },
+      {
+        id: 'DELIV-002',
+        text: "A bounced or rejected address pauses that signer's reminders and alerts the sender, who corrects the address and resends in one step while the old link stops working.",
+        category: 'alerts',
       },
       {
         id: 'MOVE-001',
@@ -2985,28 +3127,33 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'erasure',
       },
     ],
-    moveIn: ['DocuSeal'],
+    moveIn: [
+      'Docusign',
+      'Adobe Acrobat Sign',
+      'Dropbox Sign',
+      'Documenso',
+      'DocuSeal',
+    ],
     runsOn: 'your own Cloudflare account (or on your computer to try it)',
     version: '',
     contractUrl: 'https://run-inkwell.com/contract',
-    seoTitle: 'Inkwell: free, open-source alternative to DocuSign',
+    seoTitle: 'Inkwell: free, open-source alternative to Docusign',
     seoDescription:
-      'Inkwell is free, open-source e-signature software: ordered signers, a signed PDF, a certificate and a verifiable audit trail.',
+      'Inkwell is free, open-source e-signature software: templates, ordered signers, reminders, a sealed PDF with certificate and a verifiable audit trail.',
   },
   {
     slug: 'lanyard',
     summary:
-      'Lanyard is scheduling and time clocking for a US business with hourly staff, from a 10-person shop to a 100-person restaurant or retail chain. You build and publish the weekly roster, staff clock in by phone, and managers approve the hours and send them to payroll.',
+      'Lanyard is scheduling and time clocking for a US business with hourly staff. It builds and fills the weekly schedule, covers call-outs and swaps, clocks time and breaks, watches labor cost against budget and sends approved hours to payroll.',
     does: [
-      'Add staff, invite them to sign in, and bring a staff list in from a spreadsheet',
-      'Collect staff availability and time-off requests, and let managers decide them',
-      'Publish a conflict-free weekly roster that each person sees and confirms',
-      'Let staff clock in and out on a phone, with a retry if the signal drops',
-      'Let managers fill in missed time, approve hours and correct approved records with the history kept',
-      "Export approved hours as a payroll file, once, and record your payroll provider's reference",
-      'Handle shift swaps, open shifts and call-out replacements',
-      'Watch overtime and labor cost against budget, and split tips fairly',
-      'Let an assistant prepare rosters, timesheets and payroll drafts for a person to approve',
+      "Draft the week from last week's pattern and your sales forecast with each day's cost against budget, then publish a schedule checked against availability, leave and overlapping shifts",
+      'Send the week to each person in English or Spanish by app or text, and collect their confirmation',
+      'Let staff clock in and out at a phone or kiosk with a PIN, photo or location check, with meals timed against state rules and a premium added when one runs late',
+      'Collect availability and time-off requests for managers to decide, let staff swap shifts and pick up open ones, and find qualified no-overtime cover for a call-out',
+      'Watch overtime and labor cost against budget through the day, and split card tips fairly by hours worked',
+      'Let managers fix missed punches, approve hours in bulk and send them to payroll once, then read them back against your payroll provider',
+      'Let an assistant prepare rosters, timesheet fixes and payroll drafts for a person to approve',
+      'Move in your staff list, availability, leave balances, future shifts and past timesheets, previewed and checked before anything changes',
     ],
     promises: [
       {
@@ -3074,22 +3221,21 @@ export const seedPageContent: SeedPageContent[] = [
     contractUrl: 'https://run-lanyard.com/contract',
     seoTitle: 'Lanyard: free, open-source alternative to Deputy',
     seoDescription:
-      'Free, open-source employee scheduling and time clock for US hourly teams: build rosters, clock in by phone, approve hours and send them to payroll.',
+      'Free, open-source employee scheduling and time clock for US hourly teams: build schedules, cover call-outs, clock time and send approved hours to payroll.',
   },
   {
     slug: 'mallet',
     summary:
-      'Mallet is shop management for a US independent auto repair shop: intake, inspections, estimates the customer approves line by line, parts, technician work, payment and follow-up. Every vehicle keeps its full visit history, and each repair ends with one saved invoice. It also suits bicycle, electronics and equipment repair benches.',
+      'Mallet is shop management for a US independent auto repair shop. It checks cars in by VIN, texts photo inspections for line-by-line approval, orders parts, runs the technician board, takes payment and brings customers back when the miles say so. Every vehicle keeps its full visit history.',
     does: [
-      'Register customers and their vehicles or devices, and keep every visit in one history',
-      'Book jobs into bays and technician time, refusing a double booking',
-      'Send digital inspections and build estimates that keep every revision',
-      "Record the customer's yes or no on each line, and how they gave it",
-      'Record parts and labour only against what the customer approved',
-      'Source and track parts, stock and purchase orders',
-      'Take payment and hand over one saved invoice per visit, exported once',
-      'Send customer messages and bring declined work back at the right mileage',
-      'Let an assistant prepare estimates and dispatch for a person to approve',
+      'Check customers in from their phone, decode the VIN and keep every visit on one vehicle history',
+      'Run digital inspections with measurements and photos, and text them to the customer',
+      "Build estimates that keep every revision, record the customer's yes or no on each line, and let an agent prepare them for a person to check",
+      'Record parts and labour only against what the customer approved, and ask again for added work',
+      'Find and order parts from suppliers, reprice the affected line and tell the customer if the promised time moves',
+      'Run one board of all bays with promise times, job clocks and sold against clocked hours for each technician',
+      'Take payment by text, hand over one saved invoice per visit and sync it to QuickBooks Online',
+      'Bring back declined work and service intervals by mileage, and report cars, average repair order and technician efficiency each week',
     ],
     promises: [
       {
@@ -3113,6 +3259,16 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'approval',
       },
       {
+        id: 'EST-004',
+        text: 'New findings or price changes become a separate supplement on the same repair; only the added work needs fresh consent, and a refusal does not stop work already approved.',
+        category: 'approval',
+      },
+      {
+        id: 'EST-005',
+        text: 'Declined or deferred work is kept with its reason, price, date and mileage, comes back at the next visit and is repriced before asking again; it is never counted as sold.',
+        category: 'history',
+      },
+      {
         id: 'INVOICE-001',
         text: 'An invoice freezes the approved prices and actual quantities, a person approves it before export, and exporting again returns the same saved file.',
         category: 'export',
@@ -3134,12 +3290,12 @@ export const seedPageContent: SeedPageContent[] = [
       },
     ],
     moveIn: [
-      'RepairShopr',
       'Tekmetric',
       'Shopmonkey',
       'Mitchell 1 Manager SE',
       'Shop-Ware',
       'AutoLeap',
+      'RepairShopr',
       'RepairDesk',
       'Orderry',
       'Fixably',
@@ -3150,22 +3306,21 @@ export const seedPageContent: SeedPageContent[] = [
     contractUrl: 'https://run-mallet.com/contract',
     seoTitle: 'Mallet: free, open-source alternative to Tekmetric',
     seoDescription:
-      'Free, open-source shop software for US auto repair: inspections, line-by-line customer approval, parts, bay booking, and one saved invoice per repair.',
+      'Free, open-source shop software for US auto repair: VIN check-in, photo inspections, line-by-line approval, parts and one saved invoice per repair.',
   },
   {
     slug: 'pane',
     summary:
-      'Pane is the website builder and content system a US small business uses instead of Squarespace or Wix: a visual editor, unlimited pages, templates and brand styles, a blog, forms that send leads to a person, and your own domain. You preview every change, publish when you are happy, and roll back in one step. An assistant can prepare the draft while you stay in charge of what goes live.',
+      'Pane is the website builder a US small business uses instead of Squarespace or Wix. It builds your site visually, moves it over with old links and email kept, and checks that every inquiry reaches a person. You preview every change, publish when you are happy, and roll back in one step.',
     does: [
-      'Build pages in a visual editor with templates and brand styles',
-      'Keep a media library, blog and other content collections',
-      'Preview any draft privately before it goes live',
-      'Publish a whole version of the site at once, and restore an earlier version in one step',
-      'Collect contact messages from visitors in an inbox you read',
-      'Show which pages people read, without cookies or visitor tracking',
-      'Use your own domain, with search visibility tools built in',
-      'Let an assistant prepare drafts for you to preview and approve',
-      'Back up and restore your site and inbox',
+      'Draft a whole site from a short interview about your business, checking each fact before it goes in',
+      'Edit pages block by block with templates, galleries, forms and booking, set a separate phone layout and send changes for review',
+      'Preview any draft privately, publish a whole version at once, and restore an earlier version or a single page in one action',
+      'Move in from Squarespace, Wix or WordPress.com with a report of what moved and what stayed behind, every old link redirected and tested on a preview before cutover',
+      'Move your domain without breaking email, reading your records first and keeping your mailboxes working',
+      "Send every inquiry to a person's inbox and your CRM, run a daily test, and flag the inquiry if a notice bounces",
+      'Count visits without cookies, trace lost search traffic to old addresses, and send a monthly report in inquiries and bookings',
+      'Keep every published version, take everything out in open formats, and let an assistant prepare drafts while you approve what goes live',
     ],
     promises: [
       {
@@ -3220,35 +3375,34 @@ export const seedPageContent: SeedPageContent[] = [
       },
     ],
     moveIn: [
-      'Site export file',
-      'WordPress.com and WordPress',
       'Squarespace',
       'Wix',
+      'WordPress.com',
       'Webflow',
       'Framer',
       'Durable',
+      'Site export file',
     ],
     runsOn: 'Your own Cloudflare account, or your own computer to try it',
     version: '',
     contractUrl: 'https://run-pane.com/contract',
     seoTitle: 'Pane: free, open-source alternative to Squarespace',
     seoDescription:
-      'Free, open-source website builder and CMS for US small businesses: pages, blog, contact inbox, your own domain, preview, publish and one-step rollback.',
+      'Free, open-source website builder for US small businesses: build visually, move in with old links and email kept, preview, publish and roll back in one step.',
   },
   {
     slug: 'placemat',
     summary:
-      'Placemat fills tables and remembers guests for a US restaurant. Guests book online, walk-ins and the waitlist share one floor, and every visit stays in your own guest list.',
+      'Placemat fills tables and remembers guests for a US restaurant. It takes reservations from your site, Google and Instagram, runs the host stand and waitlist, and keeps every visit in your own guest list.',
     does: [
-      'Set your venue time zone, tables, turn times and cover limit, and publish each service',
-      'Let guests book online into times that fit, with tables assigned or combined for you',
-      'Seat walk-ins and manage the waitlist, and free the table on a no-show',
-      'Show the whole floor to the host in one live view',
-      "Keep every guest's visits, notes and preferences in one history",
-      'Send reminders and guest messages, and take deposits to protect tables',
-      'Offer ticketed and prepaid dining experiences',
-      'Connect to your point-of-sale and report on covers and revenue',
-      'Let an assistant prepare table changes and reminders for a person to approve',
+      'Take bookings from your website, Google and Instagram into times that fit, with tables assigned or combined for you and pacing that keeps the kitchen even',
+      'Confirm by text so guests reply to confirm or reschedule, and hold big tables with deposits',
+      'Brief every server before service with a sheet of guests to know, sections and kitchen notes',
+      'Show the whole floor to the host on one live screen with tables, sections, waits and turns',
+      'Run the waitlist and walk-ins, text when a table is ready, and refill a no-show table from the waitlist while charging the no-show fee',
+      'Answer calls, texts and direct messages with a service agent that books into live tables',
+      "Read ticket times from Toast, Square or Clover to space the next seatings, and add each check to the guest's history",
+      "Keep every guest's visits, notes and preferences in one history, with a service report at close",
     ],
     promises: [
       {
@@ -3303,14 +3457,14 @@ export const seedPageContent: SeedPageContent[] = [
       },
     ],
     moveIn: [
-      'Guest and visit history spreadsheet (CSV)',
-      'Tablein',
       'OpenTable',
       'Resy',
       'SevenRooms',
       'Tock',
       'Eat App',
       'Loman AI',
+      'Tablein',
+      'Guest and visit history spreadsheet (CSV)',
     ],
     runsOn: 'Your own computer, or your own Cloudflare account',
     version: '',
@@ -3322,17 +3476,16 @@ export const seedPageContent: SeedPageContent[] = [
   {
     slug: 'platter',
     summary:
-      'Platter is proposal-to-payment software for a US service business, agency or consultancy. You write a branded proposal with priced options, send it from your own mailbox, and the client accepts online with a verified email and a recorded signature. A deposit invoice follows.',
+      'Platter is proposal software for a US service business, agency or consultancy. You offer a client two priced options, they pick one and accept online with a verified email, and the deposit invoice is ready the moment they do.',
     does: [
       'Write branded proposals from templates, a content library and a priced catalogue',
-      'Offer clients side-by-side priced options with a deposit',
-      'Approve the exact version before it can be sent, with every approval recorded',
+      'Offer clients two options side by side, each with its own total and deposit',
+      'Approve the exact version before it can be sent, then freeze the offer when it goes out',
       'Send from your own mailbox and see who opened and read what',
-      'Let clients accept online after verifying their email, with their name, choice and time kept',
-      'Raise one deposit invoice per accepted proposal, exported once as an invoice file',
-      'Collect deposits, milestones and recurring fees by card or bank transfer',
-      'Keep deals and invoices in step with your CRM and accounting system',
-      'Let an assistant draft proposals for a person to check and send',
+      'Let clients accept online after verifying their email, with their name, chosen option and time kept exactly',
+      "Raise one deposit invoice per accepted proposal and export it once as an invoice file in Xero's columns, with the same file on every re-download",
+      'Let an agent draft proposals with its own key while you check the prices and send',
+      'Bring in your client list by pasting it, previewing it and applying it, with undo if you need it',
     ],
     promises: [
       {
@@ -3349,6 +3502,11 @@ export const seedPageContent: SeedPageContent[] = [
         id: 'PROP-001',
         text: 'An approval applies to one exact version; saving any change clears it, so a changed price or term can never go out on an earlier approval.',
         category: 'approval',
+      },
+      {
+        id: 'PROP-002',
+        text: 'Sending freezes the approved offer; any change after sending is a new version, never an edit to what the client already holds.',
+        category: 'history',
       },
       {
         id: 'SIGN-001',
@@ -3386,28 +3544,30 @@ export const seedPageContent: SeedPageContent[] = [
       'PandaDoc',
       'Proposify',
       'Better Proposals',
+      'Qwilr',
+      'Ignition',
     ],
     runsOn: 'Your own computer, or your own Cloudflare account',
     version: '',
     contractUrl: 'https://run-platter.com/contract',
-    seoTitle: 'Platter: free, open-source alternative to PandaDoc',
+    seoTitle: 'Platter: free, open-source alternative to Qwilr',
     seoDescription:
-      'Free, open-source proposal software for US service businesses: branded proposals, online acceptance with a verified email, deposits and invoices.',
+      'Free, open-source proposal software for US service businesses: two priced options, online acceptance with a verified email and a deposit invoice.',
   },
   {
     slug: 'plinth',
     summary:
-      "Plinth runs a US residential builder or remodeler's jobs from estimate to warranty: quotes, contracts, trade scheduling, site diaries with photos, client-approved changes, purchase orders and progress claims that add up. Your clients sign in to approve their own changes and see their own job.",
+      "Plinth runs a US residential builder or remodeler's jobs from e-signed estimate to handover: one schedule for every trade, client-signed change orders, selections, subcontractors, job costing and progress billing. When a job slips, it plans the recovery and checks that the handover date and margin were really restored.",
     does: [
-      "Prepare numbered quote revisions and record the client's acceptance",
-      'Book each trade once across every job, refusing overlaps',
-      'Publish site diaries with original photos your client can open',
-      'Have clients approve the exact wording and amount of each change, including credits',
-      'Issue purchase orders and record partial deliveries as they arrive',
-      'Build progress claims that deduct earlier claims and show supplier commitments',
-      'Track actual job cost against budget and forecast margin',
-      'Follow up on selections, aftercare and warranty',
-      'Let an assistant prepare drafts for a person to approve',
+      'Price estimates by cost code and send them to the client for e-signature',
+      'Put every trade on one schedule with dependencies, a signed baseline and float, refusing a trade booked twice at once',
+      'Have clients sign change orders that show the exact price and the days they add',
+      'Let clients choose finishes against an allowance, with a reminder before the order deadline',
+      "Hold a subcontractor's start until insurance is current, and collect conditional and unconditional lien waivers",
+      'Issue purchase orders and record deliveries as they arrive',
+      "Bill progress applications with retainage, take payment through the client's portal and sync with QuickBooks",
+      'Track actual cost against budget and forecast margin, with daily logs and photos from the field',
+      'Plan a recovery when a job slips and check afterwards that the date and margin held',
     ],
     promises: [
       {
@@ -3431,9 +3591,14 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'approval',
       },
       {
-        id: 'NATIVE-006',
-        text: 'A purchase order is issued once, deliveries are recorded against it, and receiving more than was ordered is refused.',
+        id: 'SUB-003',
+        text: 'You set the insurance and licence evidence each trade must have, and a start is flagged or held when it is missing or expired; an uploaded file alone never counts as verified.',
         category: 'reliability',
+      },
+      {
+        id: 'SUB-004',
+        text: 'Lien waivers name the exact amount and through-date, and an unconditional release waits for confirmed payment unless someone records an approved exception.',
+        category: 'approval',
       },
       {
         id: 'NATIVE-007',
@@ -3444,11 +3609,6 @@ export const seedPageContent: SeedPageContent[] = [
         id: 'NATIVE-008',
         text: "An assistant's key can only prepare drafts; it cannot accept quotes, approve, issue orders, export claims, import or erase.",
         category: 'ai',
-      },
-      {
-        id: 'NATIVE-009',
-        text: 'Money is held in exact cents, and a decision either commits completely or not at all, even when two people act at once.',
-        category: 'reliability',
       },
       {
         id: 'NATIVE-010',
@@ -3476,27 +3636,27 @@ export const seedPageContent: SeedPageContent[] = [
     contractUrl: 'https://run-plinth.com/contract',
     seoTitle: 'Plinth: free, open-source alternative to Buildertrend',
     seoDescription:
-      'Free, open-source construction management for US builders and remodelers: quotes, trades, site diaries, client-approved changes, and progress billing.',
+      'Free, open-source construction management for US builders and remodelers: estimates, schedules, change orders, subs, job costing and progress billing.',
   },
   {
     slug: 'satchel',
     summary:
-      'Satchel is practice management for a US law firm of one to ten lawyers. It runs conflict checks, client intake, matters, documents, court deadlines, time, bills and trust accounting in one place. Lawyers confirm every deadline and every bill themselves, and an assistant can prepare work for them to review.',
+      'Satchel is practice management for a US law firm of one to ten lawyers. It runs intake, conflict checks, matters, deadlines and documents, tracks your time, and keeps billing and trust accounting in order. Lawyers make every legal call, and an assistant prepares work for them to review.',
     does: [
-      "Check conflicts across clients, adverse parties and aliases before a matter opens, and record the lawyer's conclusion",
-      'Give lawyers and assistants access matter by matter',
-      'Record time in minutes and expenses in exact dollar amounts',
-      'Prepare a bill from unbilled work, approve the exact lines and download it',
-      'Keep every version of each matter document, with private files for the principal only',
-      'Record court deadlines with their date, time zone and source, and have a lawyer confirm them',
-      'Keep trust funds in a built-in trust ledger and take legal payments',
-      'Message clients and keep emails with the matter',
-      'Let an assistant prepare matters, bills and deadlines for a lawyer to approve',
+      "Take intake forms and check conflicts across every client, adverse party and alias before a matter opens, recording the lawyer's conclusion",
+      'Give lawyers and assistants access matter by matter, with private files for the principal',
+      'Record court deadlines with date, time zone and source, have a lawyer confirm them, and remind and escalate before they fall due',
+      'Keep every version of each matter document, organise document sets and fill templates from the matter',
+      'Draft time entries from your email, calendar and documents for review, then bill hourly, flat fee or contingency with LEDES for insurers',
+      'Keep trust funds in a built-in trust ledger that reconciles the bank statement, trust ledger and every client ledger',
+      'Give clients a secure portal for documents and messages, with text and email for the moments that matter',
+      'Let a matter agent check the file against the claim, ask the client for what is missing and draft with sources cited for a lawyer to approve',
+      'Bring matters, contacts, documents, time and trust balances over from Clio',
     ],
     promises: [
       {
         id: 'SAT-001',
-        text: "The principal invites lawyers and assistants and controls each person's access; every private page checks the person's role itself.",
+        text: "The principal invites lawyers and assistants and controls each person's access, matter by matter; every private page checks the person's role itself.",
         category: 'access',
       },
       {
@@ -3505,19 +3665,9 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'evidence',
       },
       {
-        id: 'SAT-003',
-        text: 'Staff see only the matters they are assigned; the principal grants and removes access to each one.',
-        category: 'access',
-      },
-      {
         id: 'SAT-005',
         text: 'A lawyer approves the exact bill before it is exported; the same time can never be billed twice, and assistants cannot approve.',
         category: 'approval',
-      },
-      {
-        id: 'SAT-006',
-        text: 'A correction is a separately reviewed addition that points to the original bill, which stays untouched.',
-        category: 'history',
       },
       {
         id: 'SAT-007',
@@ -3535,8 +3685,18 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'ai',
       },
       {
+        id: 'TRUST-003',
+        text: 'Trust funds are checked per client against cleared money: a payment that would overdraw one client is refused even when the bank holds enough in total, and the attempt stays on record.',
+        category: 'money',
+      },
+      {
+        id: 'TRUST-005',
+        text: 'Each month the bank statement, the trust register and the sum of client ledgers are reconciled, every difference is shown, and a signed reconciliation is locked.',
+        category: 'evidence',
+      },
+      {
         id: 'SAT-010',
-        text: 'A contact list from your old system is previewed first, applied exactly as reviewed, and undone for contacts not yet used.',
+        text: 'A contact list from your old system is previewed first, applied exactly as reviewed, and undone for contacts that nobody has used since.',
         category: 'import',
       },
       {
@@ -3559,38 +3719,53 @@ export const seedPageContent: SeedPageContent[] = [
     contractUrl: 'https://run-satchel.com/contract',
     seoTitle: 'Satchel: free, open-source alternative to Clio',
     seoDescription:
-      'Free, open-source practice management for small US law firms: conflict checks, matters, time, bills, deadlines and trust accounting.',
+      'Free, open-source practice management for small US law firms: intake, conflict checks, matters, deadlines, time, billing and trust accounting.',
   },
   {
     slug: 'stall',
     summary:
-      "Stall puts a US maker or small retailer's shop online with a storefront on your own domain, checkout, sales tax, shipping labels, returns and abandoned-cart reminders. Customers pay with cards, Apple Pay or Google Pay, and stock is held while they check out. Your shop, customers and data stay yours.",
+      'Stall puts a US maker or small shop online: a storefront and checkout, sales tax, shipping labels and tracking, returns, and the carts people left behind. Customers pay with cards, Apple Pay or Google Pay while their stock is held. Your shop, customers and data stay yours.',
     does: [
-      'Build a storefront with themes, collections, search, filters and your own domain',
-      'Check out with Apple Pay, Google Pay and cards, with discount codes, gift cards and stock held while they pay',
-      'Show live USPS and UPS rates, print labels from the order and email tracking',
+      'List a new batch ahead of time and have it go live on its own, on your online store and on Google Shopping and Instagram',
+      'Check out with Apple Pay, Google Pay and cards, with discount codes and stock held for ten minutes while they pay',
+      'Bring shoppers back to abandoned carts with a note on what is still in stock',
+      'Show live USPS and UPS rates, check addresses, print every label in one run and email tracking',
       'Collect the right sales tax for each US address, ready to file',
-      'Let customers start returns and exchanges, with the label, restock and refund following',
-      'Offer customers a real choice when stock runs out or a parcel stalls',
-      'Bring people back to abandoned carts',
-      'Sell on Google Shopping, Instagram and TikTok Shop',
-      'Post sales and fees to QuickBooks, and report on sales, conversion and best sellers',
+      'Let customers start returns from their account, with the label, restock and refund in one record',
+      'Let an order agent offer a real choice when a parcel is damaged or stock runs out, for you to approve',
+      'Post sales, shipping, tax, refunds and fees to QuickBooks',
+      'Bring products, customers, orders and redirects over from Shopify in one import',
     ],
     promises: [
-      {
-        id: 'HTTP-001',
-        text: 'The shop, its documents and its pages respond as real pages, and unknown addresses return a genuine not-found.',
-        category: 'reliability',
-      },
       {
         id: 'PAY-003',
         text: 'An order counts as paid only when a verified payment confirmation matches the exact amount, currency and order; a repeated notice never creates a second order or stock hold.',
         category: 'money',
       },
       {
+        id: 'ORDER-003',
+        text: 'A person approves the exact lines, reason and amount of a refund, and approving again can never pay twice.',
+        category: 'money',
+      },
+      {
+        id: 'AGENT-001',
+        text: 'An assistant can only prepare product, shipment and refund drafts; a signed-in owner or admin approves the exact version before anything is published, shipped or paid.',
+        category: 'ai',
+      },
+      {
         id: 'SECURITY-001',
         text: "Staff pages, imports and data downloads are protected by the shop's own sign-in on the server, and card details and secrets never reach the browser.",
         category: 'security',
+      },
+      {
+        id: 'INTEGRATION-001',
+        text: 'You connect, test and revoke your own provider accounts, and every outgoing payment, label, mail and ledger job is recorded with its outcome, so an uncertain result is never silently repeated.',
+        category: 'reliability',
+      },
+      {
+        id: 'EXPORT-001',
+        text: 'You can export every supported business record, in documented formats, along with a complete archive, so you can always leave with your shop.',
+        category: 'export',
       },
       {
         id: 'DATA-001',
@@ -3607,6 +3782,11 @@ export const seedPageContent: SeedPageContent[] = [
         text: 'Approvals, shipments, refunds, reconciliations and erasures keep who did them and when, and that history survives customer erasure.',
         category: 'history',
       },
+      {
+        id: 'DEMO-001',
+        text: 'The hosted demo shop runs on sample data with simulated payments and stock, so nothing reaches a real provider and no mail is delivered.',
+        category: 'privacy',
+      },
     ],
     moveIn: [
       'Shopify (products, customers, orders and redirects)',
@@ -3621,33 +3801,28 @@ export const seedPageContent: SeedPageContent[] = [
     contractUrl: 'https://run-stall.com/contract',
     seoTitle: 'Stall: free, open-source alternative to Shopify',
     seoDescription:
-      'Free, open-source online store for US makers and small retailers: storefront, checkout, sales tax, shipping labels, returns and abandoned carts.',
+      'Free, open-source online store for US makers and small shops: checkout, sales tax, shipping labels, returns and abandoned carts.',
   },
   {
     slug: 'strap',
     summary:
-      'Strap runs a US yoga, Pilates or boutique fitness studio: published class schedules, memberships and class packs, a waitlist that fills cancellations, check-in and member balances. Members book their own classes and the studio owns every record.',
+      'Strap runs a US yoga, Pilates or boutique fitness studio. It sells and auto-renews memberships, fills classes through your branded app, recovers failed payments, and spots members drifting away and books them back in. Members book their own classes and the studio owns every record.',
     does: [
-      "Publish the week's classes with an instructor and capacity for each",
-      'Let members book and cancel their own classes with the current waiver acknowledged',
-      'Sell finite class packs that spend a credit per booking and give it back on cancellation',
-      'Promote the first eligible person on the waitlist when a spot opens',
-      'Let instructors see their own rosters and check people in',
-      'Record every payment received and show what each member owes',
-      'Sell memberships and intro offers with automatic renewal',
-      'Send reminders and follow up on new and lapsing members',
-      "Let an assistant prepare next week's classes, packs and reminders for you to approve",
+      'Publish recurring class timetables with instructor, room and capacity, and let members book, cancel and pick a named reformer',
+      'Sell memberships, intro offers and class packs that renew on their own, with every credit accounted for',
+      'Give a cancelled spot to the first eligible person on the waitlist, with a deadline to claim it',
+      'Check members in at the front desk or kiosk, with waivers, walk-ins, late-cancel fees and retail',
+      'Collect the monthly renewals, explain declined cards and returned bank payments, and keep access fair while they are fixed',
+      'Find a qualified substitute, tell the booked members and give payroll exact pay for every instructor',
+      'Spot members drifting from their routine, offer classes that fit and book the one they pick',
+      'Welcome new intro members, count their visits and offer the right plan before the intro ends',
+      'Bring members, memberships, class packs, waivers and saved cards over from Mindbody and other studio systems',
     ],
     promises: [
       {
         id: 'AUTH-001',
         text: 'Members see only their own balances and bookings, and instructors see only the classes assigned to them; every page and download checks this itself.',
         category: 'access',
-      },
-      {
-        id: 'AUTH-002',
-        text: "Deactivating a person or revoking an assistant's key stops their very next request, and changes from other websites are refused.",
-        category: 'security',
       },
       {
         id: 'AGENT-001',
@@ -3665,9 +3840,9 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'undo',
       },
       {
-        id: 'PACK-001',
-        text: 'A class pack is approved by a person with its credits, amount and expiry, and creating it happens once.',
-        category: 'approval',
+        id: 'PLAN-003',
+        text: 'Members and staff see the remaining, reserved, used, restored and expired credits of every pack with its exact expiry, and every staff adjustment needs a reason and keeps its history.',
+        category: 'history',
       },
       {
         id: 'PAY-001',
@@ -3683,6 +3858,11 @@ export const seedPageContent: SeedPageContent[] = [
         id: 'IMPORT-001',
         text: 'A member list is previewed, applied exactly as reviewed, creates members with no invented credits or charges, and can be undone.',
         category: 'import',
+      },
+      {
+        id: 'MOVE-011',
+        text: 'The owner can download every studio record, with credit and payment history and waiver text, in documented formats with stable references.',
+        category: 'export',
       },
       {
         id: 'ERASE-001',
@@ -3704,22 +3884,21 @@ export const seedPageContent: SeedPageContent[] = [
     contractUrl: 'https://run-strap.com/contract',
     seoTitle: 'Strap: free, open-source alternative to Mindbody',
     seoDescription:
-      'Free, open-source studio software for US yoga, Pilates and fitness studios: class schedules, packs, memberships, waitlists, check-in and balances.',
+      'Free, open-source studio software for US yoga, Pilates and fitness studios: memberships, class schedules, waitlists, check-in and member retention.',
   },
   {
     slug: 'terrace',
     summary:
-      'Terrace is property management for a US residential manager looking after rentals for several owners. It keeps tenancies, rent, photographed inspections, maintenance and owner statements together.',
+      "Terrace is property management for a US residential manager or landlord. It collects the rent, fills empty units, runs repairs from report to invoice, and keeps every owner's books reconciled to the cent. Residents, owners and vendors each get their own view.",
     does: [
-      "Keep each tenancy's address, owner, tenants, lease dates, rent and history of earlier terms",
-      'Record rent as it arrives and show what is outstanding and overdue',
-      'Prepare lease renewals and confirm the exact terms before they apply',
+      'Collect rent by bank transfer, card or cash at a store, with autopay, partial payments and late fees under your rules',
+      'List an empty unit on Zillow, Apartments.com and your own site, then take applications, screening and the signed lease',
+      "Run each repair from the resident's report to the matched vendor invoice, within the owner's spending limit",
+      'Draft renewals and payment plans for late rent, weighed in cash and vacant days, for a manager to approve',
+      'Keep a trust ledger by owner, property and resident, matched to the bank line by line, and close each month',
+      "Send owner statements with receipts attached, pay owners by bank transfer and prepare the year's 1099 data",
       'Complete dated inspections with notes and photos kept as saved',
-      'Prepare maintenance jobs and send the trade a ready packet from your own inbox',
-      'Download owner statements for any period',
-      'Draft arrears follow-ups for a manager to decide',
-      'Give owners, residents and vendors their own portals',
-      'Move tenancies in from a spreadsheet, back them up, and erase a tenancy when required',
+      'Bring properties, leases, deposits and opening balances over from AppFolio or Buildium, checked against the old balances',
     ],
     promises: [
       {
@@ -3738,14 +3917,14 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'money',
       },
       {
-        id: 'TER-005',
-        text: 'Arrears messages are drafted by preparers and decided by an owner or manager, with the decision-maker recorded.',
-        category: 'approval',
+        id: 'PAY-001',
+        text: 'Recurring rent and lease charges are previewed before they post, missing terms are shown, and a retry or a month boundary never posts the same charge twice.',
+        category: 'reliability',
       },
       {
-        id: 'TER-006',
-        text: 'Managers download a period receivables file showing opening balance, charges, receipts, reductions and closing balance; preparers cannot.',
-        category: 'export',
+        id: 'ROLE-003',
+        text: 'Repair spending limits are set by the owner per property; people who prepare work cannot approve it, and a changed amount, payee or bank detail voids the approval.',
+        category: 'approval',
       },
       {
         id: 'TER-007',
@@ -3753,9 +3932,9 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'evidence',
       },
       {
-        id: 'TER-008',
-        text: 'A manager approves the exact maintenance job before its packet can be downloaded, and the handoff is recorded afterwards.',
-        category: 'approval',
+        id: 'ACCT-011',
+        text: 'Each month closes with a reconciliation sign-off and is locked; reopening it needs authority and a reason, and affected statements are marked superseded.',
+        category: 'history',
       },
       {
         id: 'TER-009',
@@ -3763,8 +3942,8 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'import',
       },
       {
-        id: 'TER-010',
-        text: 'The owner exports all property records, photos and import history and restores them into an empty installation, which keeps its own owner and sign-ins.',
+        id: 'SAFE-005',
+        text: 'The owner can download all property records, photos and history in documented formats and restore them into an empty installation.',
         category: 'export',
       },
       {
@@ -3787,14 +3966,14 @@ export const seedPageContent: SeedPageContent[] = [
     contractUrl: 'https://run-terrace.com/contract',
     seoTitle: 'Terrace: free, open-source alternative to AppFolio',
     seoDescription:
-      'Free, open-source property management for US residential landlords and managers: tenancies, rent, inspections, maintenance and owner statements.',
+      'Free, open-source property management for US residential landlords: rent collection, listings, repairs, owner statements and trust accounting.',
   },
   {
     slug: 'vane',
     summary:
-      'Vane is website analytics that counts your visitors without cookies and without a cookie banner. It shows where visitors came from, which pages they read and which goals they completed, and explains why the numbers moved. You run it on your own computer or your own Cloudflare account and keep every visit.',
+      'Vane is website analytics that counts your visitors without cookies and without a cookie banner. It shows where visitors came from, which pages they read and which goals they completed, and tells you why the numbers moved. You run it on your own computer or your own Cloudflare account and keep every visit.',
     does: [
-      'Count unique visitors, visits, bounce rate and visit duration without cookies, using a hash that resets every day',
+      'Count unique visitors, visits, bounce rate and visit duration without cookies, using a hash that resets every day, with the method published',
       'See live and historical traffic by page, source, campaign, country, device and browser, with filters and period comparisons',
       'Track goals, funnels and revenue with real order values, plus outbound links, file downloads and 404 pages',
       'Send scheduled email reports and spike or drop alerts, and share dashboards with your team or the public',
@@ -3822,6 +4001,11 @@ export const seedPageContent: SeedPageContent[] = [
       {
         id: 'CONSENT-001',
         text: 'If a site requires consent, only visits that carry granted consent are counted; the rest are refused.',
+        category: 'privacy',
+      },
+      {
+        id: 'PRIVACY-005',
+        text: "Visitor data goes only from the visitor's browser to your own installation and is stored there; no visitor-level record is ever sent to another service.",
         category: 'privacy',
       },
       {
@@ -3862,8 +4046,8 @@ export const seedPageContent: SeedPageContent[] = [
     runsOn: 'Your own Cloudflare account, or your own computer to try it',
     version: '',
     contractUrl: 'https://run-vane.com/contract',
-    seoTitle: 'Vane: free, open-source alternative to Plausible Analytics',
+    seoTitle: 'Vane: free, open-source alternative to Plausible',
     seoDescription:
-      'Cookie-free website analytics you run yourself. Visitors, sources, goals and revenue with no banner. A free, open-source alternative to Plausible and Fathom.',
+      'Free, open-source website analytics without cookies: visitors, sources, goals and revenue, with no banner and your data on your own server.',
   },
 ];
