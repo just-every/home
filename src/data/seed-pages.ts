@@ -1,10 +1,12 @@
 /**
  * The content of each seed's own page (/<slug>), read from each seed's repo
  * (README, CONTRACT.md, seed.json) on 17 Oct 2026: what it does, what it
- * promises, what it moves in, where it runs and its version. Facts about the
- * product's look and card (mark, colours, line, reel) stay in seeds.ts and
- * upcoming.ts; src/components/seed/model.ts joins the two. An empty
- * `contractUrl` or `version` means the repo has none yet.
+ * promises, what it moves in and where it runs. Its version is the repo's
+ * latest release tag, kept current by `npm run seeds:sync`, which also
+ * reports a changed README, CONTRACT.md or seed.json for a rewrite. Facts
+ * about the product's look and card (mark, colours, line, reel) stay in
+ * seeds.ts and upcoming.ts; src/components/seed/model.ts joins the two. An
+ * empty `contractUrl` or `version` means the repo has none yet.
  */
 export type PromiseCategory =
   | 'privacy'
@@ -114,7 +116,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Pingdom', 'UptimeRobot', 'Better Stack Uptime', 'Site24x7'],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.3.0',
+    version: 'v0.4.2',
     contractUrl: 'https://run-uptime.com/contract',
     seoTitle: 'Uptime: free, open-source alternative to Pingdom',
     seoDescription:
@@ -188,7 +190,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Zendesk', 'Help Scout', 'Intercom', 'Freshdesk'],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.4.2',
+    version: 'v0.4.9',
     contractUrl:
       'https://github.com/just-every/run-happytohelp/blob/main/CONTRACT.md',
     seoTitle: 'HappyToHelp: free, open-source alternative to Zendesk',
@@ -270,7 +272,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Mattermost',
     ],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.3.0',
+    version: 'v0.4.0',
     contractUrl: 'https://run-nook.com/contract',
     seoTitle: 'Nook: free, open-source alternative to Slack',
     seoDescription:
@@ -351,7 +353,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Sorry',
     ],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v1.7.0',
+    version: 'v1.9.0',
     contractUrl: 'https://run-lamp.com/contract',
     seoTitle: 'Lamp: free, open-source alternative to Atlassian Statuspage',
     seoDescription:
@@ -431,7 +433,7 @@ export const seedPageContent: SeedPageContent[] = [
       'CSV files',
     ],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.2.0',
+    version: 'v0.4.0',
     contractUrl: 'https://run-cradle.com/contract',
     seoTitle: 'Cradle: free, open-source alternative to Airtable',
     seoDescription:
@@ -512,7 +514,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Shortcut',
     ],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.2.0',
+    version: 'v0.3.0',
     contractUrl: 'https://run-vector.com/contract',
     seoTitle: 'Vector: free, open-source alternative to Linear and Jira',
     seoDescription:
@@ -660,7 +662,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Typeform', 'Google Forms', 'SurveyMonkey', 'Jotform'],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.5.0',
+    version: 'v0.7.0',
     contractUrl: 'https://run-pencil.com/contract',
     seoTitle: 'Pencil: free, open-source alternative to Typeform',
     seoDescription:
@@ -741,7 +743,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Outlook mail and calendar',
     ],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.1.0',
+    version: 'v0.2.0',
     contractUrl: 'https://run-orbit.com/contract',
     seoTitle: 'Orbit: free, open-source alternative to HubSpot',
     seoDescription:
@@ -821,7 +823,7 @@ export const seedPageContent: SeedPageContent[] = [
       'CSV files',
     ],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.2.0',
+    version: 'v0.3.0',
     contractUrl: 'https://run-mango.com/contract',
     seoTitle: 'Mango: free, open-source alternative to Mailchimp',
     seoDescription:
@@ -901,7 +903,7 @@ export const seedPageContent: SeedPageContent[] = [
       'SavvyCal',
     ],
     runsOn: 'your own computer, or your own Cloudflare account',
-    version: 'v0.3.0',
+    version: 'v0.5.0',
     contractUrl: 'https://run-dial.com/contract',
     seoTitle: 'Dial: free, open-source alternative to Calendly',
     seoDescription:
@@ -975,7 +977,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Canny', 'UserVoice', 'Productboard', 'Aha! Ideas', 'Featurebase'],
     runsOn: 'your own computer, or your own Cloudflare account',
-    version: 'v0.1.2',
+    version: 'v0.1.4',
     contractUrl: 'https://run-penny.com/contract',
     seoTitle: 'Penny: free, open-source alternative to Canny',
     seoDescription:
@@ -1049,7 +1051,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['PagerDuty', 'Opsgenie', 'Splunk On-Call', 'Better Stack'],
     runsOn: 'your own computer, or your own Cloudflare account',
-    version: 'v0.3.0',
+    version: 'v0.4.1',
     contractUrl: 'https://run-oncall.com/contract',
     seoTitle: 'Oncall: free, open-source alternative to PagerDuty',
     seoDescription:
@@ -1103,7 +1105,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Sentry', 'Datadog Error Tracking', 'Rollbar', 'Bugsnag'],
     runsOn: 'your own computer, or your own Cloudflare account',
-    version: 'v0.2.0',
+    version: 'v0.6.0',
     contractUrl: 'https://run-spool.com/contract',
     seoTitle: 'Spool: free, open-source alternative to Sentry',
     seoDescription:
@@ -1261,7 +1263,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     runsOn:
       'your own computer; going live needs your own hosting and email setup',
-    version: 'v0.1.0',
+    version: 'v0.2.0',
     contractUrl: 'https://run-chest.com/contract',
     seoTitle: 'Chest: free, open-source alternative to Google Drive',
     seoDescription:
@@ -2734,7 +2736,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Guesty', 'Hostaway', 'OwnerRez'],
     runsOn: 'your own Cloudflare account (or on your computer to try it)',
-    version: '',
+    version: 'v0.1.0',
     contractUrl: 'https://run-cabin.com/contract',
     seoTitle: 'Cabin: free, open-source alternative to Guesty',
     seoDescription:
@@ -2808,7 +2810,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Little Green Light', 'Bloomerang', "Raiser's Edge NXT", 'Stripe'],
     runsOn: 'your own Cloudflare account (or on your computer to try it)',
-    version: '',
+    version: 'v0.1.0',
     contractUrl: 'https://run-coffer.com/contract',
     seoTitle: 'Coffer: free, open-source alternative to Bloomerang',
     seoDescription:

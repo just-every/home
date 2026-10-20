@@ -46,7 +46,8 @@ export interface Seed {
   /**
    * The brand colour softened to a pastel (OKLCH, lightness about 0.82 to
    * 0.93) so every seed's pastel sits with the others in one set. Derived
-   * from `accent`, or from `ink` where the seed says so.
+   * from `accent`, or from `ink` where the seed says so, by `pastelOf` in
+   * scripts/seeds-sync/lib/pastel.mjs.
    */
   pastel: string;
   /**
