@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "npm run db:migrate:local && next dev --turbopack",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint src tests",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
     "type-check": "tsc --noEmit",
@@ -23,14 +23,17 @@
     "usage": "node scripts/usage.mjs",
     "tokens:measure": "node scripts/token-count/measure.mjs",
     "tokens:publish": "node scripts/token-count/publish.mjs",
-    "prepare": "husky"
+    "prepare": "husky",
+    "brand": "node --import tsx scripts/brand-json.mjs",
+    "brand:rer": "node scripts/brand-rer.mjs",
+    "listings": "node --import tsx scripts/listings.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "0.133.0",
-    "@opennextjs/cloudflare": "1.20.4",
+    "@opennextjs/cloudflare": "1.20.13",
     "autoprefixer": "^10.4.21",
     "lucide-react": "^0.511.0",
-    "next": "15.5.24",
+    "next": "16.4.3",
     "react": "^19.2.1",
     "react-dom": "^19.2.1"
   },

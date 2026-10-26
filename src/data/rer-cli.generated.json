@@ -1,0 +1,5 @@
+{
+  "package": "@runeditrun/rer",
+  "installUrl": "https://runeditrun.com/install.sh",
+  "devCommand": "npx -y @runeditrun/rer dev owner/repo"
+}

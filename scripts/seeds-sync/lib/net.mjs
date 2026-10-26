@@ -1,8 +1,6 @@
 /**
- * Network reads: repository files from raw.githubusercontent.com, refs with
- * `git ls-remote`, and plain HTTP checks. Nothing here uses the GitHub API,
- * which is rate limited and shared with other sessions; the one exception,
- * `commitAt`, is called only when a seed has no baseline yet.
+ * Repository files through gh api, refs through git ls-remote. A failed read
+ * leaves the seed unchanged; no local-source or application fallback.
  */
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
@@ -52,10 +50,23 @@ export const parseRepo = url => {
 
 /** A file at a commit, as a Buffer, or null where the repo has none. */
 export async function rawFile(repo, ref, path) {
-  const response = await get(
-    `https://raw.githubusercontent.com/${repo}/${ref}/${path}`
-  );
-  return response ? Buffer.from(await response.arrayBuffer()) : null;
+  try {
+    const { stdout } = await run(
+      'gh',
+      [
+        'api',
+        `repos/${repo}/contents/${path}?ref=${encodeURIComponent(ref)}`,
+        '-H',
+        'Accept: application/vnd.github.raw+json',
+      ],
+      { encoding: 'buffer', timeout: 30000, maxBuffer: 8 << 20 }
+    );
+    return stdout;
+  } catch (error) {
+    const message = error.stderr?.toString() ?? error.message;
+    if (/HTTP (404|410)/.test(message)) return null;
+    throw new Unreadable(`${repo}/${path}@${ref}`, message.trim());
+  }
 }
 
 async function lsRemote(repo, options, patterns = []) {

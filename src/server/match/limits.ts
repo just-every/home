@@ -6,6 +6,11 @@
  * refuses to build without one.
  */
 export const seedLimits: Readonly<Record<string, string>> = {
+  buoy: 'Customer success and renewals for B2B subscriptions. It reads billing evidence; payments, subscription changes and general marketing campaigns stay in their own systems.',
+  lanyard:
+    'Scheduling and timekeeping for US hourly teams. It hands approved hours to payroll; it does not calculate payroll or move wages.',
+  terrace:
+    'US residential property management. It is not a commercial-property, HOA or short-term vacation-rental system.',
   uptime:
     'Its checks are scheduled HTTP(S), keyword, heartbeat and browser-flow checks, and it alerts by email, signed webhook or Slack. It never phones, texts or pages anyone, has no on-call escalation, does not connect to databases itself and publishes no status page.',
   happytohelp:
@@ -56,8 +61,6 @@ export const seedLimits: Readonly<Record<string, string>> = {
   balm: 'Built for US therapy clinics (PT, OT and speech); it does no prescribing or clinical decision support.',
   larder:
     "It does not keep statutory books, file tax, run payroll, post journals, handle multiple entities or currencies, schedule by finite capacity, or certify regulated quality or recalls; it hands off to the accountant's own ledger.",
-  linen:
-    'It is an employee IT service desk, not an identity provider, endpoint-management, HR or payroll system, monitoring store or procurement ledger; it connects to those rather than replacing them, and acts only where an owner has granted it.',
   locket:
     'It organises and prepares agreements but gives no legal advice, does not sign or re-sign anything, and does not validate signatory authority; signing happens in the service you already use.',
   lodge:

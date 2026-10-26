@@ -1,0 +1,32 @@
+name: Verify branch
+
+on:
+  pull_request:
+  push:
+    branches: ['cloud/**']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.event.pull_request.head.sha || github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    if: github.event_name == 'push' || !startsWith(github.head_ref, 'cloud/')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run type-check
+      - run: npm test
+      - run: npm run brand -- --check
+      - run: npm run listings -- --check
+      - run: npm run build:cloudflare

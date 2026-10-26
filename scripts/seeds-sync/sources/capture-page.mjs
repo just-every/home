@@ -230,9 +230,20 @@ if (!jobsFile || !out) {
 mkdirSync(out, { recursive: true });
 const jobs = JSON.parse(readFileSync(jobsFile, 'utf8'));
 const { chromium } = await loadPlaywright();
-const browser = await chromium
-  .launch()
-  .catch(() => chromium.launch({ channel: 'chrome' }));
+const browser = await chromium.launch({
+  headless: true,
+  executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined,
+  args: [
+    '--use-mock-keychain',
+    '--password-store=basic',
+    ...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH
+      ? ['--no-sandbox']
+      : []),
+  ],
+  proxy: process.env.HTTPS_PROXY
+    ? { server: process.env.HTTPS_PROXY, bypass: 'localhost,127.0.0.1,[::1]' }
+    : undefined,
+});
 const results = [];
 try {
   let next = 0;

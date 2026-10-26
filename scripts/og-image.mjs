@@ -160,9 +160,17 @@ const served = arg('--base') ? null : await serveBuild();
 const base = arg('--base') ?? served.base;
 
 const { chromium } = await loadPlaywright();
-const browser = await chromium
-  .launch({ channel: 'chrome' })
-  .catch(() => chromium.launch());
+const browser = await chromium.launch({
+  headless: true,
+  executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined,
+  args: [
+    '--use-mock-keychain',
+    '--password-store=basic',
+    ...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH
+      ? ['--no-sandbox']
+      : []),
+  ],
+});
 
 try {
   const context = await browser.newContext({

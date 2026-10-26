@@ -31,8 +31,9 @@ before/after images to `~/.orchestrator/evidence/home/seeds-sync/<timestamp>/`.
 | f   | Copy sources changed       | `CONTRACT.md`, `README.md`, `seed.json`                                                                                           | never: reported with the commit range for an agent's rewrite                                                                       |
 | g   | Tag on a coming-soon seed  | `git ls-remote --tags`                                                                                                            | never: moving a seed to `seeds.ts` is a decision                                                                                   |
 
-Repository files are read from raw.githubusercontent.com at the head commit,
-tags and heads with `git ls-remote`; no GitHub API (except `--baseline-date`).
+Repository files are read through `gh api` at the head commit; tags and heads
+use `git ls-remote`. Authenticate `gh` before running. Failed reads are reported
+and never replaced with local files. `--baseline-date` also uses the API.
 
 ## Rules and thresholds
 
@@ -105,3 +106,9 @@ recorded as seen and not reported again, so that run's report is their
 record. Findings that recur until someone acts (a mark waiting on a hand
 redraw, a placeholder mark, an update an override keeps) are listed as still
 open, not as news.
+
+For a headless Linux capture with a provisioned Chromium, set
+`PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium`. There is no fallback
+to a system browser or an owner profile. HTTPS capture follows `HTTPS_PROXY`
+when configured. Hidden/retired slugs in `src/data/hidden-seeds.json` are
+excluded from sync and gallery import.

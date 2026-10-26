@@ -17,6 +17,9 @@ import { numberWord } from '@/lib/number-word';
  */
 export interface UpcomingSeed {
   slug: string;
+  accent: string;
+  ink: string;
+  paper: string;
   name: string;
   /** What the seed is, in a few words. */
   category: string;
@@ -38,19 +41,21 @@ export interface UpcomingSeed {
 }
 
 const mark = (slug: string) => `/seeds/${slug}/mark.svg`;
-const repo = (slug: string) => `https://github.com/just-every/run-${slug}`;
 const homepage = (slug: string) => `https://run-${slug}.com`;
 const shot = (slug: string) => `/seeds/${slug}/home.webp`;
 
 export const upcoming: UpcomingSeed[] = [
   {
     slug: 'auth',
+    accent: '#14536e',
+    ink: '#1f2428',
+    paper: '#fbf8f2',
     name: 'Auth',
     category: 'Identity provider',
     replaces: ['Auth0', 'Okta', 'Microsoft Entra'],
     primaryReplace: 'Auth0',
     line: 'Email-link and passkey sign-in that you run yourself.',
-    repo: repo('auth'),
+    repo: 'https://github.com/just-every/run-auth',
     homepage: homepage('auth'),
     homepageShot: shot('auth'),
     // Pastel from src/branding.json primaryColor #14536e (hue 232).
@@ -59,27 +64,16 @@ export const upcoming: UpcomingSeed[] = [
     mark: '/seeds/auth/mark-light.svg',
   },
   {
-    slug: 'barrow',
-    name: 'Barrow',
-    category: 'Wholesale ordering',
-    replaces: ['NuORDER', 'Pepperi', 'Brandboom'],
-    primaryReplace: 'NuORDER',
-    line: 'Wholesale ordering where each stockist sees its own prices.',
-    repo: repo('barrow'),
-    homepage: homepage('barrow'),
-    homepageShot: shot('barrow'),
-    // Pastel from the blue of its mark (#2348a8); its brand colour is near-black.
-    pastel: '#c2d6ff',
-    mark: mark('barrow'),
-  },
-  {
     slug: 'blotter',
+    accent: '#111111',
+    ink: '#111111',
+    paper: '#ffffff',
     name: 'Blotter',
     category: 'Accounting practice workflow',
     replaces: ['Karbon', 'TaxDome', 'Canopy'],
     primaryReplace: 'Karbon',
     line: 'Recurring client jobs, document requests and sign-off for accounting practices.',
-    repo: repo('blotter'),
+    repo: 'https://github.com/just-every/run-blotter',
     homepage: homepage('blotter'),
     homepageShot: shot('blotter'),
     // Pastel from the lilac of its mark's calendar (#b88aee, hue 304); its brand colour is black.
@@ -87,27 +81,16 @@ export const upcoming: UpcomingSeed[] = [
     mark: mark('blotter'),
   },
   {
-    slug: 'buoy',
-    name: 'Buoy',
-    category: 'Customer success and renewals',
-    replaces: ['Gainsight', 'ChurnZero', 'Totango'],
-    primaryReplace: 'Gainsight',
-    line: 'Renewal dates beside billing and support evidence, each decision recorded.',
-    repo: repo('buoy'),
-    homepage: homepage('buoy'),
-    homepageShot: shot('buoy'),
-    // Pastel from the purple of its mark's ring (#8a2eae, hue 315); its brand colour is near-black.
-    pastel: '#eac7fb',
-    mark: mark('buoy'),
-  },
-  {
     slug: 'crank',
+    accent: '#011646',
+    ink: '#061943',
+    paper: '#f3f8fd',
     name: 'Crank',
     category: 'Workflow automation',
     replaces: ['Zapier', 'Make', 'Workato'],
     primaryReplace: 'Zapier',
     line: 'Workflow automation that connects your apps and retries what fails.',
-    repo: repo('crank'),
+    repo: 'https://github.com/just-every/run-crank',
     homepage: homepage('crank'),
     homepageShot: shot('crank'),
     // Pastel from src/branding.json primaryColor #011646 (hue 262).
@@ -116,12 +99,15 @@ export const upcoming: UpcomingSeed[] = [
   },
   {
     slug: 'evidence',
+    accent: '#16181d',
+    ink: '#080c1a',
+    paper: '#f4f9fe',
     name: 'Evidence',
     category: 'Compliance automation',
     replaces: ['Vanta', 'Drata', 'Secureframe'],
     primaryReplace: 'Vanta',
     line: 'Tests your controls on a schedule, collects the proof and hands your auditor everything.',
-    repo: repo('evidence'),
+    repo: 'https://github.com/just-every/run-evidence',
     homepage: homepage('evidence'),
     homepageShot: shot('evidence'),
     // Pastel from its --ev-spectrum sky blue (#c9e6ff); its brand colour and mark are black.
@@ -130,12 +116,15 @@ export const upcoming: UpcomingSeed[] = [
   },
   {
     slug: 'inkwell',
+    accent: '#0a9e6c',
+    ink: '#0b0d12',
+    paper: '#ffffff',
     name: 'Inkwell',
     category: 'Electronic signatures',
     replaces: ['Docusign', 'Adobe Acrobat Sign', 'Dropbox Sign'],
     primaryReplace: 'Docusign',
     line: 'Ordered PDF signatures, with the signed file and audit trail.',
-    repo: repo('inkwell'),
+    repo: 'https://github.com/just-every/run-inkwell',
     homepage: homepage('inkwell'),
     homepageShot: shot('inkwell'),
     // Pastel from src/branding.json primaryColor #0a9e6c (hue 162).
@@ -143,26 +132,16 @@ export const upcoming: UpcomingSeed[] = [
     mark: mark('inkwell'),
   },
   {
-    slug: 'lanyard',
-    name: 'Lanyard',
-    category: 'Rostering and timesheets',
-    replaces: ['Deputy', 'When I Work', 'Homebase'],
-    primaryReplace: 'Deputy',
-    line: 'Weekly rosters, phone clocking and approved timesheets for payroll.',
-    repo: repo('lanyard'),
-    homepage: homepage('lanyard'),
-    homepageShot: shot('lanyard'),
-    pastel: '#bbe2bf',
-    mark: mark('lanyard'),
-  },
-  {
     slug: 'mallet',
+    accent: '#2a0a2b',
+    ink: '#22061f',
+    paper: '#f3f7fa',
     name: 'Mallet',
     category: 'Workshop repair jobs',
     replaces: ['Tekmetric', 'Shopmonkey', 'Mitchell 1 Manager SE'],
     primaryReplace: 'Tekmetric',
     line: 'Estimates, customer authorisation, parts and labour for workshop repairs.',
-    repo: repo('mallet'),
+    repo: 'https://github.com/just-every/run-mallet',
     homepage: homepage('mallet'),
     homepageShot: shot('mallet'),
     // Pastel from its rer-theme focus #0a86c2 (hue 239).
@@ -171,12 +150,15 @@ export const upcoming: UpcomingSeed[] = [
   },
   {
     slug: 'pane',
+    accent: '#e8176e',
+    ink: '#1f0717',
+    paper: '#ffffff',
     name: 'Pane',
     category: 'Small-business website',
     replaces: ['Squarespace', 'Wix', 'WordPress.com'],
     primaryReplace: 'Squarespace',
     line: 'A five-page business site with a contact inbox and rollback.',
-    repo: repo('pane'),
+    repo: 'https://github.com/just-every/run-pane',
     homepage: homepage('pane'),
     homepageShot: shot('pane'),
     // Pastel from src/branding.json primaryColor #e8176e (hue 6).
@@ -185,12 +167,15 @@ export const upcoming: UpcomingSeed[] = [
   },
   {
     slug: 'placemat',
+    accent: '#16583d',
+    ink: '#0b2a20',
+    paper: '#fbf8f2',
     name: 'Placemat',
     category: 'Restaurant bookings',
     replaces: ['OpenTable', 'Resy', 'SevenRooms'],
     primaryReplace: 'OpenTable',
     line: 'Table bookings, walk-ins, waitlist and guest history for restaurants.',
-    repo: repo('placemat'),
+    repo: 'https://github.com/just-every/run-placemat',
     homepage: homepage('placemat'),
     homepageShot: shot('placemat'),
     // Pastel from src/branding.json primaryColor #16583d (hue 162).
@@ -199,27 +184,32 @@ export const upcoming: UpcomingSeed[] = [
   },
   {
     slug: 'platter',
+    accent: '#1f2121',
+    ink: '#1c1c24',
+    paper: '#ffffff',
     name: 'Platter',
     category: 'Proposals and quotes',
-    replaces: ['Qwilr', 'Proposify', 'PandaDoc'],
-    primaryReplace: 'Qwilr',
+    replaces: ['PandaDoc', 'Proposify', 'Better Proposals'],
+    primaryReplace: 'PandaDoc',
     line: 'Two-option proposals that clients accept online.',
-    repo: repo('platter'),
+    repo: 'https://github.com/just-every/run-platter',
     homepage: homepage('platter'),
     homepageShot: shot('platter'),
-    // Pastel from the teal of its mark (#8cbbba); its brand colour is near-black.
-    pastel: '#b8dfde',
-    // Its teal ring nearly vanishes on its own pastel: the same mark in ink.
-    mark: '/seeds/platter/mark-ink.svg',
+    // Pastel from the blue of its current published mark (#06699c).
+    pastel: '#b9dbf5',
+    mark: mark('platter'),
   },
   {
     slug: 'plinth',
+    accent: '#801030',
+    ink: '#061320',
+    paper: '#ffffff',
     name: 'Plinth',
     category: 'Contractor project management',
     replaces: ['Buildertrend', 'Procore', 'Houzz Pro'],
     primaryReplace: 'Buildertrend',
     line: 'Quotes, site diaries, variations and progress claims for builders.',
-    repo: repo('plinth'),
+    repo: 'https://github.com/just-every/run-plinth',
     homepage: homepage('plinth'),
     homepageShot: shot('plinth'),
     // Pastel from src/branding.json primaryColor #801030 (hue 12).
@@ -228,12 +218,15 @@ export const upcoming: UpcomingSeed[] = [
   },
   {
     slug: 'satchel',
+    accent: '#0f5c66',
+    ink: '#0e333c',
+    paper: '#f4f7f6',
     name: 'Satchel',
     category: 'Legal practice management',
     replaces: ['Clio', 'MyCase', 'Smokeball'],
     primaryReplace: 'Clio',
     line: 'Conflict checks, time, bills, files and deadlines for law firms.',
-    repo: repo('satchel'),
+    repo: 'https://github.com/just-every/run-satchel',
     homepage: homepage('satchel'),
     homepageShot: shot('satchel'),
     // Pastel from src/branding.json primaryColor #0f5c66 (hue 208).
@@ -242,12 +235,15 @@ export const upcoming: UpcomingSeed[] = [
   },
   {
     slug: 'stall',
+    accent: '#ff6a13',
+    ink: '#0e0e10',
+    paper: '#fefefe',
     name: 'Stall',
     category: 'Online shop',
     replaces: ['Shopify', 'Squarespace Commerce', 'BigCommerce'],
     primaryReplace: 'Shopify',
     line: 'An online shop with checkout, sales tax, shipping labels and returns.',
-    repo: repo('stall'),
+    repo: 'https://github.com/just-every/run-stall',
     homepage: homepage('stall'),
     homepageShot: shot('stall'),
     // Pastel from src/branding.json primaryColor #ff6a13 (hue 44).
@@ -256,12 +252,15 @@ export const upcoming: UpcomingSeed[] = [
   },
   {
     slug: 'strap',
+    accent: '#6e1041',
+    ink: '#1d1a2a',
+    paper: '#f5f8fb',
     name: 'Strap',
     category: 'Studio management',
     replaces: ['Mindbody', 'WellnessLiving', 'Vagaro'],
     primaryReplace: 'Mindbody',
     line: 'Studio classes, pack credits, waitlists and member balances.',
-    repo: repo('strap'),
+    repo: 'https://github.com/just-every/run-strap',
     homepage: homepage('strap'),
     homepageShot: shot('strap'),
     // Pastel from src/branding.json primaryColor #6e1041 (hue 354).
@@ -269,27 +268,16 @@ export const upcoming: UpcomingSeed[] = [
     mark: mark('strap'),
   },
   {
-    slug: 'terrace',
-    name: 'Terrace',
-    category: 'Property management',
-    replaces: ['AppFolio', 'Buildium', 'Rent Manager'],
-    primaryReplace: 'AppFolio',
-    line: 'Tenancies, recorded rent, photo inspections and maintenance for landlords.',
-    repo: repo('terrace'),
-    homepage: homepage('terrace'),
-    homepageShot: shot('terrace'),
-    // Pastel from src/branding.json primaryColor #12163a (hue 273).
-    pastel: '#cdd5f1',
-    mark: mark('terrace'),
-  },
-  {
     slug: 'vane',
+    accent: '#1d58f0',
+    ink: '#0b0d14',
+    paper: '#f5f9fd',
     name: 'Vane',
     category: 'Web analytics',
     replaces: ['Plausible', 'Fathom', 'Matomo'],
     primaryReplace: 'Plausible',
     line: 'Website visits, sources, campaigns and goals without cookies.',
-    repo: repo('vane'),
+    repo: 'https://github.com/just-every/run-vane',
     homepage: homepage('vane'),
     homepageShot: shot('vane'),
     // Pastel from src/branding.json primaryColor #1d58f0 (hue 264).

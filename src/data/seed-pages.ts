@@ -116,7 +116,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Pingdom', 'UptimeRobot', 'Better Stack Uptime', 'Site24x7'],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.4.2',
+    version: 'v0.4.3',
     contractUrl: 'https://run-uptime.com/contract',
     seoTitle: 'Uptime: free, open-source alternative to Pingdom',
     seoDescription:
@@ -190,7 +190,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Zendesk', 'Help Scout', 'Intercom', 'Freshdesk'],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.4.9',
+    version: 'v0.4.12',
     contractUrl: 'https://happytohelp.com/contract',
     seoTitle: 'HappyToHelp: free, open-source alternative to Zendesk',
     seoDescription:
@@ -352,7 +352,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Sorry',
     ],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v1.9.0',
+    version: 'v1.10.0',
     contractUrl: 'https://run-lamp.com/contract',
     seoTitle: 'Lamp: free, open-source alternative to Atlassian Statuspage',
     seoDescription:
@@ -513,7 +513,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Shortcut',
     ],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.3.0',
+    version: 'v0.4.1',
     contractUrl: 'https://run-vector.com/contract',
     seoTitle: 'Vector: free, open-source alternative to Linear',
     seoDescription:
@@ -587,7 +587,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Notion', 'Confluence', 'Guru', 'Markdown, HTML and Word files'],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.2.0',
+    version: 'v0.4.0',
     contractUrl: 'https://run-slate.com/contract',
     seoTitle: 'Slate: free, open-source alternative to Notion',
     seoDescription:
@@ -742,7 +742,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Outlook mail and calendar',
     ],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.2.0',
+    version: 'v0.3.0',
     contractUrl: 'https://run-orbit.com/contract',
     seoTitle: 'Orbit: free, open-source alternative to HubSpot',
     seoDescription:
@@ -822,7 +822,7 @@ export const seedPageContent: SeedPageContent[] = [
       'CSV files',
     ],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.3.0',
+    version: 'v0.4.0',
     contractUrl: 'https://run-mango.com/contract',
     seoTitle: 'Mango: free, open-source alternative to Mailchimp',
     seoDescription:
@@ -977,7 +977,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Canny', 'UserVoice', 'Productboard', 'Aha! Ideas', 'Featurebase'],
     runsOn: 'your own computer, or your own Cloudflare account',
-    version: 'v0.1.4',
+    version: 'v0.2.1',
     contractUrl: 'https://run-penny.com/contract',
     seoTitle: 'Penny: free, open-source alternative to Canny',
     seoDescription:
@@ -1051,7 +1051,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['PagerDuty', 'Opsgenie', 'Splunk On-Call', 'Better Stack'],
     runsOn: 'your own computer, or your own Cloudflare account',
-    version: 'v0.4.1',
+    version: 'v0.4.2',
     contractUrl: 'https://run-oncall.com/contract',
     seoTitle: 'Oncall: free, open-source alternative to PagerDuty',
     seoDescription:
@@ -1105,7 +1105,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Sentry', 'Datadog Error Tracking', 'Rollbar', 'Bugsnag'],
     runsOn: 'your own computer, or your own Cloudflare account',
-    version: 'v0.6.0',
+    version: 'v0.7.1',
     contractUrl: 'https://run-spool.com/contract',
     seoTitle: 'Spool: free, open-source alternative to Sentry',
     seoDescription:
@@ -1421,7 +1421,8 @@ export const seedPageContent: SeedPageContent[] = [
     runsOn: 'your own computer',
     version: 'v0.1.0',
     contractUrl: 'https://run-easel.com/contract',
-    seoTitle: 'Easel: free, open-source alternative to Jirav',
+    seoTitle:
+      'Easel: free, open-source alternative to Workday Adaptive Planning',
     seoDescription:
       'Easel is a free, open-source planning tool that builds a twelve-month plan from your actuals and shows the arithmetic behind every number.',
   },
@@ -1733,91 +1734,11 @@ export const seedPageContent: SeedPageContent[] = [
     moveIn: ['Katana', 'MRPeasy', 'Fishbowl', 'Odoo', 'Fulcrum', 'DOSS'],
     runsOn:
       'Your own computer to try it; your own Cloudflare account to run it for real',
-    version: 'v0.1.0',
+    version: 'v0.1.3',
     contractUrl: 'https://run-larder.com/contract',
     seoTitle: 'Larder: free, open-source alternative to Katana',
     seoDescription:
       'Larder is free, open-source manufacturing software that plans materials and machines, runs the shop floor, traces lots and costs every job.',
-  },
-  {
-    slug: 'linen',
-    summary:
-      'Linen is an IT service desk for growing companies. It answers IT requests in chat, grants access, sets up new hires, offboards leavers and tracks every laptop, then checks that each person can actually work. Your IT team decides only the choices that need a person.',
-    does: [
-      'Answer requests in Slack or the portal, do the access work under your standing rules, and check it worked',
-      "Plan each new hire's tasks for IT, HR and the manager back from their start date, and confirm every app sign-in on day one",
-      'Allocate, ship and enrol each laptop, track it to the door and get it back from leavers',
-      "Revoke every app on a leaver's last day, hand their files to a manager and close the loop on the return kit",
-      'Handle role changes by adding, removing and keeping the right apps, and reset locked-out accounts without passwords in chat',
-      'Plan changes with risk, approvals and a backout plan, and roll back when a check fails',
-      'Report the time saved per request type and the software licences you can reclaim',
-      'Move in your tickets, private notes, assets, catalogue and knowledge from Freshservice, Jira Service Management, ServiceNow or a CSV, and run both side by side until you switch',
-    ],
-    promises: [
-      {
-        id: 'A1',
-        text: 'Private notes, attachments and HR records stay hidden from anyone without the right access, on every screen, search and export, and erased content never returns.',
-        category: 'privacy',
-      },
-      {
-        id: 'A2',
-        text: 'Linen acts only where you have granted it; permissions are checked again at the moment it acts, every grant has an end, and nothing it reads can widen what it may do.',
-        category: 'access',
-      },
-      {
-        id: 'A3',
-        text: 'Every action is recorded before it happens and never repeated after a crash; if a cancelled request already had an effect, the remaining cleanup stays visible.',
-        category: 'reliability',
-      },
-      {
-        id: 'A4',
-        text: 'Work is shown as verified only on independent evidence; sending an instruction or closing a conversation is never treated as proof that someone can work again.',
-        category: 'evidence',
-      },
-      {
-        id: 'ACCESS-001',
-        text: 'Microsoft accounts, groups and licences are changed only under a grant, and each change is read back from Microsoft.',
-        category: 'access',
-      },
-      {
-        id: 'ACCESS-006',
-        text: 'Time-limited access is removed at expiry by a separately authorised step that is checked afterwards, and access the person already had is left alone.',
-        category: 'schedule',
-      },
-      {
-        id: 'LIFE-007',
-        text: 'Every join, move and leave produces an exportable record of what was granted or revoked, when, by whom and how it was checked.',
-        category: 'evidence',
-      },
-      {
-        id: 'AUDIT-001',
-        text: 'Privileged reads, exports, configuration changes, grants and actions are recorded with who and when, readable by auditors and exportable.',
-        category: 'history',
-      },
-      {
-        id: 'ERASURE-001',
-        text: "An owner can erase a person's content and attachments while keeping an anonymised record of the work, and a restore never brings it back.",
-        category: 'erasure',
-      },
-      {
-        id: 'PORT-001',
-        text: 'The owner can export every record, attachment and policy as a verified archive and restore it with work held until checked, so no action is repeated.',
-        category: 'export',
-      },
-    ],
-    moveIn: [
-      'Freshservice',
-      'Jira Service Management',
-      'ServiceNow',
-      'CSV files',
-    ],
-    runsOn:
-      'Your own computer to try it; your own Cloudflare account to run it for real',
-    version: 'v0.1.0',
-    contractUrl: 'https://run-linen.com/contract',
-    seoTitle: 'Linen: free, open-source alternative to ServiceNow',
-    seoDescription:
-      'Linen is a free, open-source IT service desk that grants access, onboards and offboards people, tracks laptops and checks everyone can work.',
   },
   {
     slug: 'locket',
@@ -1897,7 +1818,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     runsOn:
       'Your own computer to try it; your own Cloudflare account to run it for real',
-    version: 'v0.1.0',
+    version: 'v0.1.3',
     contractUrl: 'https://run-locket.com/contract',
     seoTitle: 'Locket: free, open-source alternative to Ironclad',
     seoDescription:
@@ -2129,7 +2050,7 @@ export const seedPageContent: SeedPageContent[] = [
     moveIn: ['QuickBooks Online', 'Xero', 'FreshBooks'],
     runsOn:
       'Your own computer to try it; your own Cloudflare account to run it for real',
-    version: 'v0.2.1',
+    version: 'v0.2.8',
     contractUrl: 'https://run-pantry.com/contract',
     seoTitle: 'Pantry: free, open-source alternative to QuickBooks Online',
     seoDescription:
@@ -2279,7 +2200,7 @@ export const seedPageContent: SeedPageContent[] = [
     moveIn: ['Procurify', 'Coupa', 'Precoro', 'Spreadsheets (CSV)'],
     runsOn:
       'Your own computer to try it; your own Cloudflare account to run it for real',
-    version: 'v0.1.0',
+    version: 'v0.1.1',
     contractUrl: 'https://run-purse.com/contract',
     seoTitle: 'Purse: free, open-source alternative to Procurify',
     seoDescription:
@@ -2516,92 +2437,11 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['WebPT', 'SimplePractice', 'Jane', 'Cliniko'],
     runsOn: 'your own Cloudflare account (or on your computer to try it)',
-    version: 'v0.1.0',
+    version: 'v0.1.4',
     contractUrl: 'https://run-balm.com/contract',
     seoTitle: 'Balm: free, open-source alternative to WebPT',
     seoDescription:
       'Balm is free, open-source practice software for US therapy clinics: scheduling, notes, reminders and insurance billing.',
-  },
-  {
-    slug: 'barrow',
-    summary:
-      'Barrow is wholesale ordering software for US brands and wholesalers. Each stockist gets its own prices and line sheets, orders come in online, from reps and at trade shows, and every order is followed through delivery and payment.',
-    does: [
-      'Send each stockist a line sheet with its own prices, and show every stockist only the products and prices assigned to it',
-      'Let stockists order online with their own purchase order reference, and let reps write orders size by size on an iPad with case packs and minimums checked',
-      "Keep reps selling when the hall's Wi-Fi drops, then sync every draft once and send any changed price back to the buyer to re-confirm",
-      'Take seasonal prebooks with more than one ship window and a deposit',
-      'Sign up a new stockist at the booth with a trade application and resale certificate, and approve them before their first order ships',
-      'Read a photographed or emailed purchase order into a draft, ask about unclear lines, and check prices and stock before a person approves it',
-      "Follow each order to the carrier's delivered scan and the bank's paid, and draft the note when delivery or payment slips",
-      'Keep stock and books in NetSuite, QuickBooks, Shopify, Faire or a nightly file, and move in from NuORDER, Pepperi, Brandboom, SparkLayer or WizCommerce',
-    ],
-    promises: [
-      {
-        id: 'BAR-001',
-        text: 'Every request checks who is signed in; supplier actions need an owner or admin, and each stockist can reach only its own account.',
-        category: 'access',
-      },
-      {
-        id: 'CAT-001',
-        text: 'A stockist sees only the products and agreed prices assigned to it; guessing another identifier returns nothing.',
-        category: 'privacy',
-      },
-      {
-        id: 'STK-001',
-        text: 'Stock is read live from your connected inventory system and checked again when an order is prepared; without a connection Barrow never invents a stock promise.',
-        category: 'reliability',
-      },
-      {
-        id: 'ORD-010',
-        text: 'An order keeps the prices, terms and approvers agreed at the time, so changing prices later cannot rewrite the order or its invoice.',
-        category: 'history',
-      },
-      {
-        id: 'BAR-002',
-        text: 'An order goes to your inventory system once, and a shortfall stays visible and cannot become a fully fulfilled invoice.',
-        category: 'reliability',
-      },
-      {
-        id: 'PRI-003',
-        text: "Quantities that break a case pack, minimum or increment get an explanation and a suggested correction, and no import quietly raises a buyer's commitment.",
-        category: 'other',
-      },
-      {
-        id: 'BAR-003',
-        text: "An assistant's credential lasts seven days, can be revoked, and can only read catalogues and prepare drafts; it cannot approve, export invoices, import or erase.",
-        category: 'ai',
-      },
-      {
-        id: 'BAR-004',
-        text: 'An account import is previewed first, kept in a journal with the original file, and undo is refused for accounts that were edited or already have orders.',
-        category: 'undo',
-      },
-      {
-        id: 'BAR-005',
-        text: 'Backups restore your commercial records but leave out sign-in details and connection secrets.',
-        category: 'export',
-      },
-      {
-        id: 'BAR-005',
-        text: 'Erasing an unused account also blocks an older backup from bringing it back; accounts with orders keep their commercial history.',
-        category: 'erasure',
-      },
-    ],
-    moveIn: [
-      'NuORDER',
-      'Pepperi',
-      'Brandboom',
-      'SparkLayer',
-      'WizCommerce',
-      'Trade-account spreadsheet (CSV)',
-    ],
-    runsOn: 'your own Cloudflare account (or on your computer to try it)',
-    version: '',
-    contractUrl: 'https://run-barrow.com/contract',
-    seoTitle: 'Barrow: free, open-source alternative to NuORDER',
-    seoDescription:
-      'Barrow is free, open-source wholesale ordering software: private line sheets and prices, rep and trade-show orders, then delivery and payment.',
   },
   {
     slug: 'blotter',
@@ -2759,7 +2599,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Velaris',
     ],
     runsOn: 'your own Cloudflare account (or on your computer to try it)',
-    version: '',
+    version: 'v0.1.3',
     contractUrl: 'https://run-buoy.com/contract',
     seoTitle: 'Buoy: free, open-source alternative to Gainsight',
     seoDescription:
@@ -3217,7 +3057,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Legion',
     ],
     runsOn: 'your own Cloudflare account (or on your computer to try it)',
-    version: '',
+    version: 'v0.1.3',
     contractUrl: 'https://run-lanyard.com/contract',
     seoTitle: 'Lanyard: free, open-source alternative to Deputy',
     seoDescription:
@@ -3550,7 +3390,7 @@ export const seedPageContent: SeedPageContent[] = [
     runsOn: 'Your own computer, or your own Cloudflare account',
     version: '',
     contractUrl: 'https://run-platter.com/contract',
-    seoTitle: 'Platter: free, open-source alternative to Qwilr',
+    seoTitle: 'Platter: free, open-source alternative to PandaDoc',
     seoDescription:
       'Free, open-source proposal software for US service businesses: two priced options, online acceptance with a verified email and a deposit invoice.',
   },
@@ -3962,7 +3802,7 @@ export const seedPageContent: SeedPageContent[] = [
       'TurboTenant',
     ],
     runsOn: 'Your own Cloudflare account, or your own computer to try it',
-    version: '',
+    version: 'v0.1.4',
     contractUrl: 'https://run-terrace.com/contract',
     seoTitle: 'Terrace: free, open-source alternative to AppFolio',
     seoDescription:

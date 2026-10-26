@@ -6,7 +6,6 @@ import { Header } from '@/components/landing/Header';
 import ui from '@/components/landing/label.module.css';
 import { Separator, separatorVariants } from '@/components/landing/Separator';
 import { AltLine } from '@/components/landing/AltLine';
-import { runCommand } from '@/components/landing/runCommand';
 import { Terminal } from '@/components/landing/Terminal';
 import { collection, runOne } from '@/content/landing';
 
@@ -167,7 +166,7 @@ export function SeedPage({ page }: { page: SeedPageModel }) {
                 Run it yourself
               </h2>
               <p className={styles.runLine}>{runOne.line}</p>
-              <Terminal command={runCommand(repoTarget(page))} />
+              <Terminal target={repoTarget(page)} />
               <AltLine target={repoTarget(page)} className={styles.altLine} />
             </section>
 
@@ -184,7 +183,7 @@ export function SeedPage({ page }: { page: SeedPageModel }) {
               ) : null}
               <div>
                 <dt>Licence</dt>
-                <dd>MIT, free</dd>
+                <dd>MIT, 100% free</dd>
               </div>
             </dl>
           </div>

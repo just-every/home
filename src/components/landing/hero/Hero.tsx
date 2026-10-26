@@ -4,10 +4,10 @@ import type { CSSProperties, KeyboardEvent, MouseEvent } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
 import { benefits, products } from '@/content/landing';
+import { heroCopy } from '@/content/meta';
 import { volumes } from '@/components/landing/volumes';
 import { incumbentPrices } from '@/data/incumbent-prices';
 import { upcoming } from '@/data/upcoming';
-import { numberWord } from '@/lib/number-word';
 import { X_EVENTS, track } from '@/lib/x-pixel';
 
 import { caveat } from './fonts';
@@ -131,8 +131,8 @@ export function Hero() {
     }
   };
 
-  const live = numberWord(volumes.length, true);
-  const coming = numberWord(upcoming.length);
+  const live = volumes.length;
+  const coming = upcoming.length;
 
   return (
     <section
@@ -144,13 +144,10 @@ export function Hero() {
       <div className={styles.canvas}>
         <div className={styles.intro}>
           <h1 id="hero-heading">
-            Stop renting <span className={styles.turn}>your software.</span>
+            {heroCopy.first}{' '}
+            <span className={styles.turn}>{heroCopy.second}</span>
           </h1>
-          <p className={styles.description}>
-            Switch to free, open-source alternatives for the tools your team
-            already uses. {live} are out now, with {coming} more on the way. MIT
-            licensed, forever yours.
-          </p>
+          <p className={styles.description}>{heroCopy.subhead(live, coming)}</p>
           <div className={styles.actionRow}>
             <a
               className={styles.cta}
