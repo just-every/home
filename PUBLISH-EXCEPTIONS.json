@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "exceptions": [
+    {
+      "rule": "license.holder",
+      "path": "LICENSE",
+      "holder": "Peter Industries Pty Ltd",
+      "date": "2026-10-26",
+      "sha256": "2bae6aa0e44a334770a1dec8608bf37fc28fe8378096b2e483269ab4ac4cd3c3",
+      "reason": "Owner-authorized holder: Peter Industries Pty Ltd holds copyright for 2025-2026, replacing Context (owner decision, 26 Oct 2026). Applies only to these complete LICENSE bytes."
+    }
+  ]
+}
