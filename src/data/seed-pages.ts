@@ -1421,7 +1421,8 @@ export const seedPageContent: SeedPageContent[] = [
     runsOn: 'your own computer',
     version: 'v0.1.0',
     contractUrl: 'https://run-easel.com/contract',
-    seoTitle: 'Easel: free, open-source alternative to Jirav',
+    seoTitle:
+      'Easel: free, open-source alternative to Workday Adaptive Planning',
     seoDescription:
       'Easel is a free, open-source planning tool that builds a twelve-month plan from your actuals and shows the arithmetic behind every number.',
   },
@@ -3389,7 +3390,7 @@ export const seedPageContent: SeedPageContent[] = [
     runsOn: 'Your own computer, or your own Cloudflare account',
     version: '',
     contractUrl: 'https://run-platter.com/contract',
-    seoTitle: 'Platter: free, open-source alternative to Qwilr',
+    seoTitle: 'Platter: free, open-source alternative to PandaDoc',
     seoDescription:
       'Free, open-source proposal software for US service businesses: two priced options, online acceptance with a verified email and a deposit invoice.',
   },

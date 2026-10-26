@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "findings": [
+    {
+      "rule": "hygiene.github-missing",
+      "path": "src/content/landing.ts",
+      "blob": "98b4e859be57dd0e1ed7c748eaf806baa3fd85e2",
+      "reason": "False positive. The address flagged is the JustEvery organisation's repository list filtered to its run- seeds (the /orgs/ route, the organisation name, then /repositories?q=run-), linked as 'Browse the repos'. The scanner reads the route word and the organisation name as an owner and repository; GitHub reserves that route word, so no such repository can exist. The address answered 200 without sign-in on 26 Oct 2026, and no other spelling shows the same filtered list: the organisation overview ignores the query and ?tab=repositories redirects to the overview.",
+      "reviewer": "Run Edit Run fleet (je-fix-1)",
+      "date": "2026-10-26"
+    },
+    {
+      "rule": "hygiene.github-missing",
+      "path": "src/data/upcoming.ts",
+      "blob": "bbde50940abcf85a4cf1920656bf8f5f44b1cb1c",
+      "reason": "False positive in the version of this file from commit 0f211c88, kept in history; the next commit spells each address out. That version built every coming-soon seed's address from a template that appends the seed's slug to the organisation's run- prefix, and the scanner reads the prefix before the placeholder as a repository. All 14 addresses the template produced name public repositories (checked through the GitHub API on 26 Oct 2026), and the rewritten file produces the same 14 addresses.",
+      "reviewer": "Run Edit Run fleet (je-fix-1)",
+      "date": "2026-10-26"
+    }
+  ]
+}
