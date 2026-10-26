@@ -40,6 +40,9 @@ import sharp from 'sharp';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const seedsDir = join(root, 'public', 'seeds');
 const dataFile = join(root, 'src', 'data', 'seed-gallery.ts');
+const hidden = new Set(
+  JSON.parse(readFileSync(join(root, 'src/data/hidden-seeds.json'), 'utf8'))
+);
 const manifestsDir = resolve(
   process.argv[2] ?? join(homedir(), '.orchestrator/evidence/home/gallery')
 );
@@ -191,6 +194,10 @@ async function main() {
       continue;
     }
     const slug = manifest?.slug;
+    if (hidden.has(slug)) {
+      lines.push(`${slug}: skipped, hidden product`);
+      continue;
+    }
     if (typeof slug !== 'string' || !SLUG.test(slug)) {
       lines.push(
         `${name}: skipped, slug ${JSON.stringify(slug)} is not a seed slug`

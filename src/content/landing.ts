@@ -1,4 +1,5 @@
 import type { SeedArea } from '@/data/seed-types';
+import cli from '@/data/rer-cli.generated.json';
 
 /**
  * Shared landing copy from the approved copy deck (COPY.md, section B),
@@ -248,7 +249,7 @@ export const runOne = {
   target: 'just-every/run-uptime',
   altLine: {
     before: 'No npm?',
-    command: 'curl -fsSL https://runeditrun.com/install.sh | sh',
+    command: `curl -fsSL ${cli.installUrl} | sh`,
     after: 'installs rer, then',
   },
 } as const;

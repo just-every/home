@@ -1,0 +1,232 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "brand/v1",
+  "description": "Portable public brand identity. Null profile means no published profile is claimed. Paths are relative to the brand origin.",
+  "definitions": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/(?:[A-Za-z0-9._-]+/)*[A-Za-z0-9._-]+$"
+        },
+        "sha256": {
+          "$ref": "#/definitions/hash"
+        },
+        "renderedFrom": {
+          "$ref": "#/definitions/hash"
+        }
+      }
+    },
+    "renderedAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256",
+        "renderedFrom"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/(?:[A-Za-z0-9._-]+/)*[A-Za-z0-9._-]+$"
+        },
+        "sha256": {
+          "$ref": "#/definitions/hash"
+        },
+        "renderedFrom": {
+          "$ref": "#/definitions/hash"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "name",
+    "url",
+    "tagline",
+    "hero",
+    "logo",
+    "favicons",
+    "ogImage",
+    "colours",
+    "profiles",
+    "look"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schema": {
+      "const": "brand/v1"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "url": {
+      "type": "string",
+      "pattern": "^https://[^\\s]+$"
+    },
+    "tagline": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hero": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "headline",
+        "subhead",
+        "image"
+      ],
+      "properties": {
+        "headline": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subhead": {
+          "type": "string",
+          "minLength": 1
+        },
+        "image": {
+          "$ref": "#/definitions/asset"
+        }
+      }
+    },
+    "logo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mark",
+        "wordmark",
+        "mono"
+      ],
+      "properties": {
+        "mark": {
+          "$ref": "#/definitions/asset"
+        },
+        "wordmark": {
+          "$ref": "#/definitions/asset"
+        },
+        "mono": {
+          "$ref": "#/definitions/asset"
+        }
+      }
+    },
+    "favicons": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/renderedAsset"
+      }
+    },
+    "ogImage": {
+      "$ref": "#/definitions/renderedAsset"
+    },
+    "colours": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ink",
+        "paper",
+        "accent"
+      ],
+      "properties": {
+        "ink": {
+          "type": "string",
+          "pattern": "^#[a-fA-F0-9]{6}$"
+        },
+        "paper": {
+          "type": "string",
+          "pattern": "^#[a-fA-F0-9]{6}$"
+        },
+        "accent": {
+          "type": "string",
+          "pattern": "^#[a-fA-F0-9]{6}$"
+        }
+      }
+    },
+    "cli": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "package",
+        "installUrl",
+        "devCommand"
+      ],
+      "properties": {
+        "package": {
+          "type": "string",
+          "minLength": 1
+        },
+        "installUrl": {
+          "type": "string",
+          "pattern": "^https://[^\\s]+$"
+        },
+        "devCommand": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "profiles": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "github",
+        "npm",
+        "x"
+      ],
+      "properties": {
+        "github": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^https://[^\\s]+$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "npm": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^https://[^\\s]+$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "x": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^https://[^\\s]+$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "look": {
+      "$ref": "#/definitions/hash"
+    }
+  }
+}

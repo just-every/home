@@ -1,13 +1,13 @@
 {
-  "syncedAt": "2026-10-20T03:31:43.432Z",
+  "syncedAt": "2026-10-26T12:21:43.418Z",
   "seeds": {
     "auth": {
-      "commit": "10c69bb7197d9016df002172cf7a97968eb1fbb9",
+      "commit": "50b92a47e171b4e20872c6222395f46554ba9bd3",
       "tag": "v0.1.0",
       "copy": {
-        "CONTRACT.md": "a2cb34ab8adccdb2",
-        "README.md": "66a7e48d1eb96990",
-        "seed.json": "b896d917581bbabf"
+        "CONTRACT.md": "6183feed1ae99f05",
+        "README.md": "0a561f21f7d4099d",
+        "seed.json": "12a810624fbbda31"
       },
       "brand": {
         "branding.primaryColor": "#14536e",
@@ -23,16 +23,15 @@
       "mark": "33cfe188b7598a55",
       "home": {
         "headline": "Sign in with a touch."
-      },
-      "open": ["53989d8604fb"]
+      }
     },
     "balm": {
-      "commit": "781c80b20655f51ddb90408d2b89f6baa47f6469",
-      "tag": "v0.1.0",
+      "commit": "b71aeceffbb681a73b6cc1ac12bb8ef5594c5bd1",
+      "tag": "v0.1.4",
       "copy": {
-        "CONTRACT.md": "65e47fe1cb07262d",
-        "README.md": "90063055e521e662",
-        "seed.json": "e68cf35e498ddd6b"
+        "CONTRACT.md": "2bc402f5db3e0dec",
+        "README.md": "d9bacfdec0ba9973",
+        "seed.json": "982b9bff67e8854f"
       },
       "brand": {
         "branding.primaryColor": "#356c60",
@@ -49,8 +48,7 @@
       "mark": "212cf242fa50d63e",
       "home": {
         "headline": "Back to your patients."
-      },
-      "open": ["cb6b2fee3b18", "c843303a1181"]
+      }
     },
     "barrow": {
       "commit": "205f5ee3abcf1e0303e16510d0bfe2f70628df14",
@@ -79,15 +77,20 @@
       "open": ["87b33fde45f1", "53989d8604fb"]
     },
     "beam": {
-      "commit": "1dbb248c346271f97b90b36e4dab2d93c6739b15",
+      "commit": "316e1282f536e7b3f1f8d82e805e0e81032bb64e",
       "tag": "v0.1.0",
       "copy": {
-        "CONTRACT.md": "4a3d7040080a3caf",
+        "CONTRACT.md": "f4d40ab9b92c8e0a",
         "README.md": "23ed0acaca3847b7",
-        "seed.json": "2bc623eae0587d64"
+        "seed.json": "2fd6860c32eb545b"
       },
       "brand": {
         "branding.primaryColor": "#191d29",
+        "theme.page": "#eef2fe",
+        "theme.text": "#0d1228",
+        "theme.focus": "#3b55c4",
+        "theme.link": "#0d1228",
+        "theme.accent": "#0d1228",
         "live.page": "#eef2fe",
         "live.text": "#0d1228",
         "live.action": "#0d1228",
@@ -96,19 +99,23 @@
       "mark": "a38b1060fd10d67f",
       "home": {
         "headline": "Everyone trained. Everyone current."
-      },
-      "open": ["1e7d89308176", "53989d8604fb"]
+      }
     },
     "blotter": {
-      "commit": "9ec41e793b01fd99de20095a3eb4ed8b3be928a0",
+      "commit": "e45ac7c81f908eee5009c7779de70eb022d95e8b",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "bb95d98acfe3113a",
+        "CONTRACT.md": "5e25699047a8f5d7",
         "README.md": "477e353516ba5586",
-        "seed.json": "92692aed35589bb9"
+        "seed.json": "9730eeb88853b55b"
       },
       "brand": {
         "branding.primaryColor": "#111111",
+        "theme.page": "#ffffff",
+        "theme.text": "#111111",
+        "theme.focus": "#7343cf",
+        "theme.link": "#111111",
+        "theme.accent": "#111111",
         "live.page": "#ffffff",
         "live.text": "#111111",
         "live.action": "#111111",
@@ -117,19 +124,23 @@
       "mark": "581a708ce785af38",
       "home": {
         "headline": "Client work, ahead of every deadline."
-      },
-      "open": ["52813456abd4", "53989d8604fb"]
+      }
     },
     "buoy": {
-      "commit": "c3d24fd5b8c234117e1fee1f99e9fc1d8a0177d1",
-      "tag": null,
+      "commit": "89dd70cafc15dbe88fbe4a8ddd9b80e8c0a80fca",
+      "tag": "v0.1.3",
       "copy": {
-        "CONTRACT.md": "6937cc30cf2974ab",
-        "README.md": "146cf1b9fae86a46",
-        "seed.json": "80da8d72c68c7dfe"
+        "CONTRACT.md": "5be54c8935399242",
+        "README.md": "8e920ffead3e66e4",
+        "seed.json": "09cc48148ebd5f32"
       },
       "brand": {
         "branding.primaryColor": "#0b0b1f",
+        "theme.page": "#ffffff",
+        "theme.text": "#0b0b1f",
+        "theme.link": "#0b0b1f",
+        "theme.focus": "#6e1d93",
+        "theme.accent": "#0b0b1f",
         "live.page": "#ffffff",
         "live.text": "#0b0b1f",
         "live.action": "#0b0b1f",
@@ -138,16 +149,15 @@
       "mark": "2de30ff983570e6c",
       "home": {
         "headline": "Spot the risk. Save the renewal."
-      },
-      "open": ["8d51fb92a262", "53989d8604fb"]
+      }
     },
     "cabin": {
-      "commit": "2c72273db425ce37fcd09b61391f938db4ae727e",
+      "commit": "26121bcf124798b2951c57a2f0ae5426c6b576a5",
       "tag": "v0.1.0",
       "copy": {
-        "CONTRACT.md": "8f6eb6b4b04a9f81",
-        "README.md": "772251da27bd8b2a",
-        "seed.json": "3d04c5eefb6c3178"
+        "CONTRACT.md": "ed40e97718af39b1",
+        "README.md": "5e185a4ba320d543",
+        "seed.json": "492595e120b52263"
       },
       "brand": {
         "branding.primaryColor": "#0f3d2e",
@@ -165,18 +175,23 @@
       "home": {
         "headline": "Ready before they arrive."
       },
-      "open": ["4e77d3f84088", "c843303a1181"]
+      "open": ["ef4f0110a4ae"]
     },
     "chest": {
-      "commit": "4135789ac1c9d6d88aa1757213f12edb836a0aeb",
+      "commit": "1c11e56ea4108655f604c48d3ff2d72f471d03a9",
       "tag": "v0.2.0",
       "copy": {
-        "CONTRACT.md": "38fd13b3a62ff845",
-        "README.md": "31bec8ba93f52051",
-        "seed.json": "600f5794116fb27f"
+        "CONTRACT.md": "2f528f60f20ecb5e",
+        "README.md": "28439bb7a655bd2a",
+        "seed.json": "24df2b0bc31bcdb0"
       },
       "brand": {
         "branding.primaryColor": "#181818",
+        "theme.page": "#fcfcff",
+        "theme.text": "#0b0b12",
+        "theme.focus": "#5a2ce8",
+        "theme.link": "#0b0b12",
+        "theme.accent": "#0b0b12",
         "live.page": "#fcfcff",
         "live.action": "#1c1c26",
         "live.themeColor": "#fcfcff"
@@ -184,16 +199,15 @@
       "mark": "10d31f3394f41ec8",
       "home": {
         "headline": "Every file, where it should be."
-      },
-      "open": ["c843303a1181"]
+      }
     },
     "coaster": {
-      "commit": "c148dc6a7f17aaf6e33ab9d4a4cb37d0aff79916",
+      "commit": "74d6ed312e6a6ac57ce4be414be92fc68db0cc4d",
       "tag": "v0.1.0",
       "copy": {
-        "CONTRACT.md": "2d254f17807c8985",
+        "CONTRACT.md": "83d91219eebf90fc",
         "README.md": "99806a1c692da2fd",
-        "seed.json": "c249b351a11fe153"
+        "seed.json": "d7ec99dfe7bf9b2a"
       },
       "brand": {
         "branding.primaryColor": "#1e9e3a",
@@ -210,16 +224,15 @@
       "mark": "8fa914fe2f7f518a",
       "home": {
         "headline": "Snap the receipt. Coaster does the rest."
-      },
-      "open": ["c843303a1181"]
+      }
     },
     "coffer": {
-      "commit": "99f63dfc55c8bdc3b7d407d153c01fcf2a8f4a12",
+      "commit": "1593836b46cc211337a0abb35a32ab6d22d13043",
       "tag": "v0.1.0",
       "copy": {
-        "CONTRACT.md": "61fa987f79262e41",
-        "README.md": "7b70a53a92bffe1b",
-        "seed.json": "0251ca1cc1e3d4f0"
+        "CONTRACT.md": "735246d9cfbcec91",
+        "README.md": "829c93be7eeb86dc",
+        "seed.json": "3118a8b70f265c44"
       },
       "brand": {
         "branding.primaryColor": "#7c4dff",
@@ -236,15 +249,15 @@
       "home": {
         "headline": "Every gift, thanked."
       },
-      "open": ["123555a56438", "4e77d3f84088", "c843303a1181"]
+      "open": ["ef4f0110a4ae"]
     },
     "cradle": {
-      "commit": "6422d6fa21bb215167d9335d41e02b862bb7ad65",
+      "commit": "b0c38e1ccacc518b087c0b98f681665a1c1eca42",
       "tag": "v0.4.0",
       "copy": {
-        "CONTRACT.md": "830e9bb227fe075b",
-        "README.md": "45364350502eb264",
-        "seed.json": "efb67fbc04ece21b"
+        "CONTRACT.md": "5867a82aa6b57f3b",
+        "README.md": "f75d98d22a0e80f0",
+        "seed.json": "dae931cc1df7ff16"
       },
       "brand": {
         "branding.primaryColor": "#173d32",
@@ -260,17 +273,16 @@
       "mark": "17d5227d2eafc87b",
       "home": {
         "headline": "Everything comes together in one place.",
-        "signature": "dddddccdceedeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeedeeeeeeeedeedeeeeedddccdccdcddddddddceedeeeeeeeeeeeeeeeeeeeeeeeecccabbbbbbcbbbbbbbabbccceeeeeeeeeeeecdceeeeeeeeeeedddddddddddddddddddeedeeeeeeeeeeed5769a9eeeeeeeeeeecdecdecdebeedeedeeeeeeeedeeceeccdc8a9798ccccdccd9eebeebdeaeeceedeeeeeedebac9abbdddddcbca9a9687abaffeffffffeedeeeeedbca9a99bacdb8a98a98999b8585abaefeeeeeeeeeeeeeddc9b8abadedeee8a98986868a85769baeeeeeeeeeeeeeeeddc787abaddcdec"
-      },
-      "open": ["c843303a1181"]
+        "signature": "dddddccdceedeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeedeeeeeeeedeedeeeeedddccdccdcddddddddceedeeeeeeeeeeeeeeeeeeeeeeeecccabbbbbbcbbbbbbbbbbccceeeeeeeeeeeecdceeeeeeeeeeedddddddddddddddddddeedeeeeeeeeeeed5769a9eeeeeeeeeeecdecdecdebeedeedeeeeeeeedeeceeccdc8a9798ccccdccd9eebeebdeaeeceedeeeeeedebac9abbdddddcbca9a9687abaffeffffffeedeeeeedbca9a99bacdb8a98a97999b8585abaefeeeeeeeeeeeeeddc9b8abadedeee8a98986868a85769baeeeeeeeeeeeeeeeddc787abaddcdec"
+      }
     },
     "crank": {
-      "commit": "bda6d03308887a18e76af4b6368a7e1a57120c87",
+      "commit": "e0a773990d47ad331b80d8f1d7364c0a4d7c8cd5",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "f1743e83d4d009e4",
+        "CONTRACT.md": "6966522122259313",
         "README.md": "583fec6b69027570",
-        "seed.json": "77a74dbb8552f854"
+        "seed.json": "cb3854ec69090483"
       },
       "brand": {
         "branding.primaryColor": "#011646",
@@ -287,16 +299,15 @@
       "mark": "c74c4cc416a21a22",
       "home": {
         "headline": "The busywork runs itself."
-      },
-      "open": ["53989d8604fb"]
+      }
     },
     "dial": {
-      "commit": "da9f7f3c8b60b1b1935de0a4c7384a5cad1256ac",
+      "commit": "8daa9fe1d2feb48faf19295f0d1c774cee2265bf",
       "tag": "v0.5.0",
       "copy": {
-        "CONTRACT.md": "00b29a37c96f5700",
-        "README.md": "011684636de51699",
-        "seed.json": "6852fee591cf7363"
+        "CONTRACT.md": "a47d512a9ec4006c",
+        "README.md": "4cd986979dd99a2d",
+        "seed.json": "14e8bcf681116522"
       },
       "brand": {
         "theme.page": "#f4f1ea",
@@ -311,45 +322,48 @@
       "home": {
         "headline": "Pick a time. That's it.",
         "signature": "dddddceeeffeffefeeeeeeeeeeeeeeeeeeeeeeeeeeeedeeeeedeeedddaaaaa9ccceeeeeeeeefeeeeefeeeeeeeeeeeeeeffebbb554333333874ed9feedddcccdddcccddceeeeeeeeeedd555555cccddcdb7a84ccbddcaa9baabbadddeeeeeeeeebbb333bbbeddcb9edc444988eeeddcddddddeedeedeedeeebbb333bbbeddccceed433988eeeddcdddddcddcdddeedeeeeed555555cccddd777433cccbbb666aaa777666bbbeedeedfeebbb554333555666999eeeeeddddeededdeddeedeeeeeeeeefeedddbbaddbdddccccbbfeeeeeeeeeeeeeeeeeeeeeee"
-      },
-      "open": ["c843303a1181"]
+      }
     },
     "easel": {
-      "commit": "3599c0b4e663a7689671e70c4360b93d3f4a5b91",
+      "commit": "21b830f4c7057e550d1c2435ef274fe784d030a5",
       "tag": "v0.1.0",
       "copy": {
-        "CONTRACT.md": "170decf80bffbf2a",
+        "CONTRACT.md": "12bab924ebbac8d3",
         "README.md": "4f224d5dc1c83808",
-        "seed.json": "fd403af34ff1dc1e"
+        "seed.json": "e3a3fc9fd70f2f07"
       },
       "brand": {
-        "branding.primaryColor": "#8c1a1f",
-        "theme.page": "#fbfaf5",
-        "theme.text": "#1c1d1c",
-        "theme.focus": "#1c1d1c",
-        "theme.link": "#1c1d1c",
-        "theme.accent": "#1c1d1c",
-        "live.page": "#fbfaf5",
-        "live.text": "#1c1d1c",
-        "live.action": "#1c1d1c",
-        "live.themeColor": "#fbfaf5"
+        "branding.primaryColor": "#f30270",
+        "theme.page": "#ffffff",
+        "theme.text": "#121010",
+        "theme.focus": "#f30270",
+        "theme.link": "#121010",
+        "theme.accent": "#121010",
+        "live.page": "#ffffff",
+        "live.text": "#121010",
+        "live.action": "#121010",
+        "live.themeColor": "#ffffff"
       },
-      "mark": "956d8812775c69e7",
+      "mark": "ede76b7fca8dc019",
       "home": {
-        "headline": "Know what you can afford."
-      },
-      "open": ["922fed04eacf"]
+        "headline": "Plan the year. Protect the cash."
+      }
     },
     "evidence": {
-      "commit": "b5840106be70d887c31e0219b2df002d5a4d2805",
+      "commit": "b035ad1909821399bec67baec29ca43deb9e0867",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "9c0aa5818528d517",
-        "README.md": "b9f1a4552d2dc2ff",
+        "CONTRACT.md": "117d73aa27d9f1ef",
+        "README.md": "ae329978506de515",
         "seed.json": "1e045353885e50c1"
       },
       "brand": {
         "branding.primaryColor": "#16181d",
+        "theme.page": "#f4f9fe",
+        "theme.text": "#080c1a",
+        "theme.focus": "#2563e0",
+        "theme.link": "#2563e0",
+        "theme.accent": "#080c1a",
         "live.page": "#f4f9fe",
         "live.text": "#080c1a",
         "live.action": "#061729",
@@ -362,12 +376,12 @@
       "open": ["ef4f0110a4ae"]
     },
     "gasket": {
-      "commit": "f48e93cdfb69d36253fc8afbb95655a9b6df3154",
+      "commit": "17cecc3ff09c32082143087c894b67313f7da7c9",
       "tag": "v0.1.0",
       "copy": {
-        "CONTRACT.md": "972bc17d846b3284",
+        "CONTRACT.md": "15b85100264c9ad5",
         "README.md": "bde8297119769af7",
-        "seed.json": "703ca7b6ee4f4767"
+        "seed.json": "13e41b8fd87dbcd4"
       },
       "brand": {
         "branding.primaryColor": "#1a40e2",
@@ -384,16 +398,15 @@
       "mark": "37a6ffc742697a18",
       "home": {
         "headline": "Ready for first shift."
-      },
-      "open": ["53989d8604fb"]
+      }
     },
     "gauge": {
-      "commit": "ba71792d81d29140e75b4b136cd3e8b6e1cd200e",
+      "commit": "aeb2b960cd6498dd4202b92a4f89865bb8873201",
       "tag": "v0.1.0",
       "copy": {
-        "CONTRACT.md": "0b02773250f845c0",
-        "README.md": "243e549bb64eda37",
-        "seed.json": "87c43690bc87168a"
+        "CONTRACT.md": "f65fd4c1789e0b4f",
+        "README.md": "0b026704ca0a216d",
+        "seed.json": "da1efa5161f12255"
       },
       "brand": {
         "branding.primaryColor": "#01b2bd",
@@ -410,15 +423,15 @@
       "home": {
         "headline": "Great work, paid in full."
       },
-      "open": ["53989d8604fb"]
+      "open": ["ef4f0110a4ae"]
     },
     "glove": {
-      "commit": "fd5b4189ba5acf3c9fed66c4b528b71d9473142c",
+      "commit": "161525f411143a7407b07ddd2293763d17086642",
       "tag": "v0.1.0",
       "copy": {
-        "CONTRACT.md": "678ab2b1e9e103c0",
+        "CONTRACT.md": "0873587c43dc8dab",
         "README.md": "2f1782f261811791",
-        "seed.json": "7c5e88c6a31a420a"
+        "seed.json": "461c101ccd8227cf"
       },
       "brand": {
         "branding.primaryColor": "#fd4b07",
@@ -426,7 +439,7 @@
         "theme.text": "#0c1631",
         "theme.focus": "#d23b05",
         "theme.link": "#0c1631",
-        "theme.accent": "#fd4b07",
+        "theme.accent": "#df3600",
         "live.page": "#f8fafd",
         "live.text": "#0c1631",
         "live.action": "#fd4b07",
@@ -435,16 +448,15 @@
       "mark": "1e84411f2578fb11",
       "home": {
         "headline": "Every call becomes a paid job."
-      },
-      "open": ["922fed04eacf"]
+      }
     },
     "happytohelp": {
-      "commit": "86205e34fd8c7d38734af9156d02cff7ad09a419",
-      "tag": "v0.4.9",
+      "commit": "1a5b61382c5e8efcf74185bc97be4225c160a7c3",
+      "tag": "v0.4.12",
       "copy": {
-        "CONTRACT.md": "c0a41779ac119e21",
-        "README.md": "cd7161eb78e33c94",
-        "seed.json": "4adc52ec9580a33c"
+        "CONTRACT.md": "0aa87b3180b780a3",
+        "README.md": "ad2e154f0fd297f2",
+        "seed.json": "cccdccfcd14566f2"
       },
       "brand": {
         "theme.page": "#faf9f6",
@@ -458,18 +470,17 @@
       },
       "mark": "211d1f291d7fff77",
       "home": {
-        "headline": "Customer Support, Solved.",
-        "signature": "eedddddddeedfeeeeeeeeeeeeeeeeeeedeedeeebaa887dddeeeeeeeeeeeefeefeefeeeeeeeeeeeeeeeeeeeeeededdeedeeeeedeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeefeefeedddbbabbacbbccbbbbccbdddeeeeeeeeeeeeeeeeeeeeeeeeeedbbbcbbdddeeeeedeeeeeeeeedeedeedeedeedeedeeeeeeeeeddeddeedeedeedeedeeedefceeceeceeceeceeceeeeeddc766666aa9eedeedeeeeeeeeeeeeeeeeeeddd9aadddeeeeddaaaaa9ccbeedeeeeeeeeeeeeeedeeeeeeeeeeeeeeeeeeeeeeedeedeedeedeeefeeeeedededdeedfeefeefeeeeeeee"
-      },
-      "open": ["7953403cd95d", "c843303a1181"]
+        "headline": "Knows what your customer needs before they do.",
+        "signature": "eedddddddeedeeeeeeeeeeeeeeeeeeeedeedeeebaa887dddeeeeeeeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededdeedeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddbbbcbbcbbbbbbbbeedeeeeeeeeedeeeeeeeeeeeeeeeeedddaaabaabaaaaaccbeeeeeeeeeeeeeeeeeedeeeeeeeeeeeeedddcddcddcddcdddeeeeeeeeedddcccdeedeedeedeeeeeeeddccddceddeeeeedeeeeeedeebbbaaacddeeedddccceeedcc555544999eedeedeeeeeeeeeeeeefeeeeeeeddddddeeeeeddccdccddceedeeefeededddddddeedeeededdddeddeee"
+      }
     },
     "inkwell": {
-      "commit": "96ed1402f2ea0a38138f7c187587b28da22255ce",
+      "commit": "275842cb5f08e6f0d5967ca719e324b98d7810b0",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "7f667d71996bc4d1",
-        "README.md": "dbc3e37b29cbd83b",
-        "seed.json": "99efc02d64f5e7af"
+        "CONTRACT.md": "2a3d74d9f63518f0",
+        "README.md": "aca2e7bba3c82c08",
+        "seed.json": "849ce13c443c0c2b"
       },
       "brand": {
         "branding.primaryColor": "#0a9e6c",
@@ -486,16 +497,15 @@
       "mark": "c9cc832ab455ad83",
       "home": {
         "headline": "Send it once. Get it signed."
-      },
-      "open": ["53989d8604fb"]
+      }
     },
     "lamp": {
-      "commit": "1e9c20c6a1f9c6692a9b95053badf66d3815eab6",
-      "tag": "v1.9.0",
+      "commit": "8adfde4a05eb7b2c89ece24692b47ba8921ae998",
+      "tag": "v1.10.0",
       "copy": {
-        "CONTRACT.md": "db54ca7c635eb5ba",
-        "README.md": "2891f26529626470",
-        "seed.json": "3cf8564664ad3608"
+        "CONTRACT.md": "7e12bd48a4aa38ee",
+        "README.md": "a555ceb8f6c0e17d",
+        "seed.json": "75d2d94e604c30aa"
       },
       "brand": {
         "theme.page": "#f8f6f0",
@@ -510,20 +520,24 @@
       "mark": "ebd49143e6f577de",
       "home": {
         "headline": "When something breaks, turn the light on.",
-        "signature": "eeddddeeefeefeefeeffeeeeeeeeeeeeefeeffeeee9a9ddcfeeeeefeefeefeefeeffeccccccffefeefeefeeeeeeeeeeefeeffefeefeefeeffeccc444454dccffefeefeefeeffeffefeefeefeeffeffeffeddcdcbdcbedcffeffeffefeefeefeefeefeeffeeeddddeedeedeedeedeededddddeeeffefeefeefeefeeffeeedddcccbccbbbbbbbbbaccbddceedffefeefeefeefeefeeffeeeeddcddcddcddcddcdddfeeffefeefeefeefeefeefeefeeffebbb898eedeedeedeeeeeefeefeefeefeefeefeefeefeeeeeeeddddeeeeeeeeeeeeeeefeefeefeefee"
-      },
-      "open": ["c843303a1181"]
+        "signature": "eeddddeeefeefeefeeffeeeeeeeffefeeeeeeeeeed9a9ddcfeeeeefeefeefeefeeffeccccccffefeefeefeeeeeeeeeeefeefeefeefeefeeffeccc444454dccffefeefeefeeffeffefeefeefeeffeffeffeddcdcbdcbedcffeffeffefeefeefeefeefeeffeeeddddeedeedeedeedeededddddeeeffefeefeefeefeeffeeedddcccbccbbbbbbbbbaccbddceedffefeefeefeefeefeeffeeeeddcedcddcddcddcdddfeeffefeefeefeefeefeefeefeeffebbb898eedeedeedeedeeefeefeefeefeefeefeefeefeeeeeeeddddeeeeeeeeeeeeeeefeefeefeefee"
+      }
     },
     "lanyard": {
-      "commit": "28b5acbf9fcd2c9f46aeb1a4372271977a992787",
-      "tag": null,
+      "commit": "bb90c65cae66c05389c0cfbe415907d1d23dea4f",
+      "tag": "v0.1.3",
       "copy": {
-        "CONTRACT.md": "f2059dde9a90f1fb",
-        "README.md": "2da50c32b5fa1ec9",
-        "seed.json": "728fe51fd80c2794"
+        "CONTRACT.md": "ebcd413299c938f2",
+        "README.md": "216d49f45f6e5124",
+        "seed.json": "922539c68f09a6ae"
       },
       "brand": {
         "branding.primaryColor": "#167a33",
+        "theme.page": "#ffffff",
+        "theme.text": "#22252a",
+        "theme.focus": "#3f8a79",
+        "theme.link": "#981338",
+        "theme.accent": "#9b1b3a",
         "live.page": "#ffffff",
         "live.text": "#981338",
         "live.action": "#9b1b3a",
@@ -532,16 +546,15 @@
       "mark": "a518b982ddc64159",
       "home": {
         "headline": "A full crew, paid right."
-      },
-      "open": ["53989d8604fb"]
+      }
     },
     "larder": {
-      "commit": "5571365ae7540ca796571aee1fd9e1860b3cc34d",
-      "tag": "v0.1.0",
+      "commit": "4904911743f141b591986b92ad3ad7354e09a7e1",
+      "tag": "v0.1.3",
       "copy": {
-        "CONTRACT.md": "147d2ef461438145",
-        "README.md": "3c02fd5490ae3588",
-        "seed.json": "1c40c6f917e28b50"
+        "CONTRACT.md": "f17aa97f6f20f94b",
+        "README.md": "e9202dbc15240869",
+        "seed.json": "9ef004c584e0ab33"
       },
       "brand": {
         "branding.primaryColor": "#e5261f",
@@ -558,8 +571,7 @@
       "mark": "a09df98dc8e7f5ce",
       "home": {
         "headline": "Promise dates you can keep."
-      },
-      "open": ["c843303a1181"]
+      }
     },
     "linen": {
       "commit": "dde30e5f34627041f1358a00c2e94c4ffa446476",
@@ -588,12 +600,12 @@
       "open": ["c843303a1181"]
     },
     "locket": {
-      "commit": "6ef19c712d164d272e137e1298eb3fc422bcebc3",
-      "tag": "v0.1.0",
+      "commit": "19daa4bcb748ee700e16ad001ae9a03f977225ba",
+      "tag": "v0.1.3",
       "copy": {
-        "CONTRACT.md": "95d7b7937d4bfac0",
-        "README.md": "252d572c63bcc6a2",
-        "seed.json": "79befffc736626bb"
+        "CONTRACT.md": "3cac082216112cc6",
+        "README.md": "59eab7ffdbb80fc0",
+        "seed.json": "14d4cde76112acae"
       },
       "brand": {
         "branding.primaryColor": "#8e0f34",
@@ -610,16 +622,15 @@
       "mark": "cdaaf68e318f45ee",
       "home": {
         "headline": "Contracts signed. Deadlines kept."
-      },
-      "open": ["53989d8604fb"]
+      }
     },
     "lodge": {
-      "commit": "d1ace6aae1bb0bf037c71b9d39a5df5dfa2daf98",
+      "commit": "3b984e2ff358c7c2fae1a069cdca3868f79582ec",
       "tag": "v0.1.0",
       "copy": {
-        "CONTRACT.md": "d112303a4b99ddc2",
+        "CONTRACT.md": "5611bebade1a6bfa",
         "README.md": "4a9e18d92c47fbc0",
-        "seed.json": "4ea67fb091fcab6f"
+        "seed.json": "58c0e58719598045"
       },
       "brand": {
         "branding.primaryColor": "#e02a21",
@@ -636,16 +647,15 @@
       "mark": "fa415a55f475856f",
       "home": {
         "headline": "Find them. Hire them. Welcome them."
-      },
-      "open": ["53989d8604fb"]
+      }
     },
     "mallet": {
-      "commit": "554e385486509ad76958b784c3ce6f95ce2ce35b",
+      "commit": "ea0785d422b4aa5fd91f1f80af8fb2e908986736",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "453f370805f0fddf",
+        "CONTRACT.md": "8458b3f3bf5f4564",
         "README.md": "bdcf1b90678e4fe8",
-        "seed.json": "7e280d8cdc7d75ad"
+        "seed.json": "9bde55c8776aa0f6"
       },
       "brand": {
         "branding.primaryColor": "#2a0a2b",
@@ -662,16 +672,15 @@
       "mark": "17a819765bac4489",
       "home": {
         "headline": "Full bays. Cars out on time."
-      },
-      "open": ["53989d8604fb"]
+      }
     },
     "mango": {
-      "commit": "847d67cdffd7b6b73fab607a42bc7c0aaa924b59",
-      "tag": "v0.3.0",
+      "commit": "354ce55f7ae058ca2053047e1a031c3c8605f789",
+      "tag": "v0.4.0",
       "copy": {
-        "CONTRACT.md": "4cc6965a76651e6d",
-        "README.md": "8d74fdc2e9d312bf",
-        "seed.json": "c7e25dd4f5d51227"
+        "CONTRACT.md": "40eb85b673a451c2",
+        "README.md": "0a8f3020315ae782",
+        "seed.json": "d5640fee9db1d8a6"
       },
       "brand": {
         "branding.primaryColor": "#b45935",
@@ -689,22 +698,24 @@
       "mark": "fcf75df884ee5237",
       "home": {
         "headline": "Newsletters people are glad to get.",
-        "signature": "feeeedeedffeffeffeffeffeffeffeffeffeeeeeeeeeefeeffefeefeeffeffeffeffeffeffeffeffefeefeefeefeeffefeedddedddddeddeddeddddceeeeeeeedfebeedeeefeeffeeeecccccbccbcccccbddcdddeeeeeeeedfedeedeedeeeffefeedddddddddeddddceeeffefeefedfededceeceeeeeefeefeeeedeedeedeedeedeeeffeffefededcedbedceedeedfeefeeeeceeceedeedeeefeefeefeeeedfedeedeedfeefeeffefedfd9fd9feceeeeeeeeeeeefedeedfeefeefeeeedeeeffeffeffeffeffeffeffeffeffefeefeefeefeeffeffeffeffe"
-      },
-      "open": ["c843303a1181"]
+        "signature": "feeeedeedffeffeffeffeffeffeffeffeffeeeeeeeeeefeeffefeefeeffeffeffeffeffeffeffeffefeefeefeefeeffefeedddedddddeddeddeddddceeeeeeeedfebeeeeeefeeffeeeedcccccccbcccccbddcdddeeeeeefedfedeedeedeeeffeeeedddddddddeddddceeeffefeefedfededceeceeeeeefeefeeeedeedeededdeedeeeffeffefededcedbedceedeedfeefeeeeceeceedeedeeefeefeefeeeedfedeedeedfeefeeffefedfd9fd9feceeeeeeeeeeeefedeedfeefeefeeeedeeeffeffeffeffeffeffeffeffeffefeefeefeefeeffeffeffeffe"
+      }
     },
     "nectar": {
-      "commit": "856d085c2929fa881f300558e6ace4965f9d2ac4",
+      "commit": "482d0bb90ab5db889e4f7aa4a4819e2cb3c4ae01",
       "tag": "v0.1.0",
       "copy": {
-        "CONTRACT.md": "556ef4f0d6aec6c1",
-        "README.md": "e6ac4993701a438e",
-        "seed.json": "92ee3fec0647121a"
+        "CONTRACT.md": "9648687eaa972bca",
+        "README.md": "d999abcdd3e81f9d",
+        "seed.json": "7e4fd2820afe4b6a"
       },
       "brand": {
         "branding.primaryColor": "#fc5450",
         "theme.page": "#ffffff",
+        "theme.text": "#14171b",
+        "theme.focus": "#14171b",
         "theme.link": "#c2410c",
+        "theme.accent": "#14171b",
         "live.page": "#ffffff",
         "live.text": "#14171b",
         "live.action": "#14171b",
@@ -713,16 +724,15 @@
       "mark": "f8723e6616773363",
       "home": {
         "headline": "Bill right. Get paid."
-      },
-      "open": ["c843303a1181"]
+      }
     },
     "nook": {
-      "commit": "7ff09f74e9643ed38a619bc04dad4271ddef9025",
+      "commit": "6baf5b6b20cef6ad1074395603775611d9f8aa7e",
       "tag": "v0.4.0",
       "copy": {
-        "CONTRACT.md": "0886157b0a532d31",
-        "README.md": "f02e6dd23bacdd35",
-        "seed.json": "15c069e8cfe530aa"
+        "CONTRACT.md": "c5dfa10978c25b10",
+        "README.md": "6737dfd6557c7db1",
+        "seed.json": "65ab8063c3ecb847"
       },
       "brand": {
         "branding.primaryColor": "#c24e5b",
@@ -738,17 +748,16 @@
       "mark": "10860e06fce77807",
       "home": {
         "headline": "Talk it through. Get it done.",
-        "signature": "feeddceddfeefeefeefeefeefeefeeffeffefeeeeeeeefeefeeeeefeefeefeefeefeefeefeeffefedecbecbedcfeefeefeeeeeeeeeeeeeeeeefeefeeffefddd98c65b65a75cbaffeffeccbbaabbbbaabbbeddffefeeecceaada9da9a76a75fedfeeddcccbccbcbbeedfeefeefeeeddeddfeefffdbaa65edcffecccaa9dccfeeeeeeeefeefeefedebbedceedecbb86edcffeccb999ccceddeddeddfeefeeeddeeeffffffda9a65eddfeeffeffeffefeefeefeefeefeedcbca9ebbdbaa77833eddfeefeefeefeefeefeefeefeefeeecccbadbadbadbadbafed"
-      },
-      "open": ["c843303a1181"]
+        "signature": "feeedceddfeefeefeefeefeefeefeeffeffefeeeeeeeefeefeeeeefeefeefeefeefeefeefeeffefedecbecbedcfeefeefeeeeeeeeeeeeeeeeefeefeeffefddd98c65b65a75cbaffeffeccbbaabbbbaabbbeddffefeeecceaada9da9a76a75fedfeeddcccbccbcbbeedfeefeefeeeddeddfeefffdbaa65edcffecccaa9dccfeefeeeeefeefeefedebbeddeedecbb86edcffeccb999ccceddeddeddfeefeeeddeeeffffffda9a65eddfeeffeffeffefeefeefeefeefeedcbca9ebbdbaa77833eddfeefeefeefeefeefeefeefeefeeecccbadbadbadbadbafed"
+      }
     },
     "oncall": {
-      "commit": "559b760b3f55a26b7d79770648a3e11c835ce1bd",
-      "tag": "v0.4.1",
+      "commit": "2383e767c14d04d0af45fa18149fc631711dd5ea",
+      "tag": "v0.4.2",
       "copy": {
-        "CONTRACT.md": "d0e5e508298ac8da",
+        "CONTRACT.md": "db20f6e2123eb246",
         "README.md": "89f9aa1330d0ff4b",
-        "seed.json": "a3b3ddc97c484c2c"
+        "seed.json": "447d7e25edf8e73a"
       },
       "brand": {
         "branding.primaryColor": "#1d2a35",
@@ -765,16 +774,15 @@
       "home": {
         "headline": "Everyone knows who's on call.",
         "signature": "feedddeeeffeffeffeffeffeffeffeffeffeffeffefeeffeffeffeffefffffefffffeffeffeffeffeffeffeffeffeffeeedccccccccccccccceedffeeeeeeeeedeeeffeffeffeffeeeebbbccccccbbbdddfeeffeedddcbccbeedeeefeeeeeffefeeeeeeeeeeeeeeeeefffdcbdb9ddcddddddcccdddeeeffeeed999999999dddeeeffeeccedcffeffeeedddcdcbecbabbeed99999aaaaeedfeeffeffeffeffeffeffeeeddccedc9aafeeeeeffeffeeeeeeeffeffeffeffeffeffeffeffeffeffeffeeeeffeffeffeffeffeffeffeffeffeffeffeffeffeffe"
-      },
-      "open": ["c843303a1181"]
+      }
     },
     "orbit": {
-      "commit": "d32b9c9b5b6b79d06ce0a2d0a3c105b1a78f5764",
-      "tag": "v0.2.0",
+      "commit": "49bf83940443b6473e54960a16e536145611fdaa",
+      "tag": "v0.3.0",
       "copy": {
-        "CONTRACT.md": "b00fe5c03554d704",
+        "CONTRACT.md": "1c77b8cbbb9c48cd",
         "README.md": "c4b8dc091d285b9f",
-        "seed.json": "467b6eccc6c6803f"
+        "seed.json": "f9b26d7acec8d76a"
       },
       "brand": {
         "theme.page": "#f5f1ea",
@@ -789,20 +797,24 @@
       "mark": "55580fd39d44cc15",
       "home": {
         "headline": "Your next deal finds you.",
-        "signature": "eedddceeefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeeeeeeeedeeeeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddaaabbbbaabbbbbbdddfeeeeeeeeeeeedcedceedeeeeeedddbaabbbaaaddceeeeeeeeeeeeeeeeede85e97eeeeeeeeeeeddddddddddeddeeefeeeeeeeeeeeeedecbedceeeecbeedeeeeddeddedddddeedeedeeeeeeeeeeeeeeeeeefeefeeeeeddd888aaaeddeedaaa777baafeeeeeeeeeeeecbeddeeeeeeeedddcdddeedeeedddcccdddeeeeeeeeedddddceddeedeeeeeeeeeeeeeeeeedeeeeeeeedeeeeeeeeeeeeeeeeeeeedeed"
-      },
-      "open": ["c843303a1181"]
+        "signature": "eedddceeefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeeeeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedddaaabbbaaabbbbbbdddfeeeeeeeeeeeedcedceedeeeeeedddbaabbbaaaddceeeeeeeeeeeeeeeeede85e97eeeeeeeeeeedddddddddddddeeefeeeeeeeeeeeeedecbedceeeecbeedeeeeddeddedddddeedeedeeeeeeeeeeeeeeeeeefeefeeeeeddd888aaaeddeedaaa777baafeeeeeeeeeeeecbeddeeeeeeeedddcdddeedeeedddcccdddeeeeeeeeedddddceddeedeeeeeeeeeeeeeeeeedeeeeeeeedeeeeeeeeeeeeeeeeeeeedeed"
+      }
     },
     "pane": {
-      "commit": "1955e62d1506b3d2eb47003df55aeee95bdd54b4",
+      "commit": "5e71efb5129fc5fb56d87e416407bbc98f2fb537",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "22b2bf8655fb9ee1",
+        "CONTRACT.md": "6203086289cdb7ad",
         "README.md": "ee5c9b4b719f8d74",
-        "seed.json": "683140d6d64b42a2"
+        "seed.json": "dc58da6adc999d74"
       },
       "brand": {
         "branding.primaryColor": "#e8176e",
+        "theme.page": "#ffffff",
+        "theme.text": "#1f0717",
+        "theme.focus": "#1f0717",
+        "theme.link": "#d4005f",
+        "theme.accent": "#e6116d",
         "live.page": "#ffffff",
         "live.text": "#ffffff",
         "live.themeColor": "#f5026f"
@@ -810,16 +822,15 @@
       "mark": "96a9e2a568f29a93",
       "home": {
         "headline": "Your website, finally yours."
-      },
-      "open": ["53989d8604fb"]
+      }
     },
     "pantry": {
-      "commit": "4d61f1fad8e099ad29eedcb8733d0c5914bdcd2d",
-      "tag": "v0.2.1",
+      "commit": "9d0c16cb5712187399255cbfd5fcb6f6d4c67ab8",
+      "tag": "v0.2.8",
       "copy": {
-        "CONTRACT.md": "488fa90902d8eb1a",
-        "README.md": "2c1cf61d956039b6",
-        "seed.json": "f59224d085d03a73"
+        "CONTRACT.md": "eb3232d574e5b67f",
+        "README.md": "6212bf1dbee94f89",
+        "seed.json": "9a35691c67dc1960"
       },
       "brand": {
         "branding.primaryColor": "#101a33",
@@ -836,16 +847,15 @@
       "mark": "dc3f4540fa94ac83",
       "home": {
         "headline": "Know where every dollar went."
-      },
-      "open": ["ef4f0110a4ae"]
+      }
     },
     "pencil": {
-      "commit": "241a063f2f40e1dcad915806c3b2784f8f450512",
+      "commit": "bb0fc0e67c0fb8fc67c19affe6eb4123aa194e7d",
       "tag": "v0.7.0",
       "copy": {
-        "CONTRACT.md": "bbfabc471c07e14c",
+        "CONTRACT.md": "ac9e814de1fa99d9",
         "README.md": "9e975c65ea6586eb",
-        "seed.json": "50827a7450666b4a"
+        "seed.json": "48736f65710eed62"
       },
       "brand": {
         "theme.page": "#fbfaf6",
@@ -861,17 +871,16 @@
       "mark": "fc707eff45d87e92",
       "home": {
         "headline": "Ask like you're listening.",
-        "signature": "feeeedeeefeeeeeffeffeffeffeffeffeffefffddd999eedffefeeffeffeffefffffeffeffeffeffeffefffeeeeedfeeffeffefeefeeffeeeeffeffeffeffffffffeffefffffffffeeeccccccccbdddcccdddfffffeffeffeffeffeffeffeffeeedccccccbbbdddfeeffeffeeedeedeedfeefeefeefeeffeeeeeeeeeeeedeeeeeeeeeffeeedeedeedeedeedffefffffeffeeeeeeeeeeeeeeeeeeefeeeeefeeeedfeeddbdc9ffefffddd788aaaaaa777ccbeeeeeeeeeeedeeeeeeeeeedbdc9eeeeeedddeedeeddddeeeffeffeffeffeffeffeffffffeedeee"
-      },
-      "open": ["922fed04eacf"]
+        "signature": "feeeedeeeffeeeeffeffeffeffeffeffeffefffddd999eedffefeeffeffeffefffffeffeffeffeffeffefffeeeeedfeeffeffefeefeeffeeeeffeffeffeffffffffeffefffffffffeeecccccccccdddcccdddfffffeffeffeffeffeffeffeffeeedccccccbbbdddfeeffeffeeedeedeedeeefeefeefeeffeeeeeeeeeeeedeedeeeeeeffeeedeedeedeedeedffefffffeffeeeeeeeeeeeeeeeeeeefeeeeefeeeedfeeddbdc9ffefffddd788aaaaaa777ccbeeeeeeeeeeedeeeeeeeeeedbdc9eeeeeedddeedeeddddeeeffeffeffeffeffeffeffffffeedeee"
+      }
     },
     "penny": {
-      "commit": "f3875a3ce3773a683ad906fa14559f75259cbc3b",
-      "tag": "v0.1.4",
+      "commit": "6bb48c55b64ef8aaa20a710fb196beb06fe21510",
+      "tag": "v0.2.1",
       "copy": {
-        "CONTRACT.md": "f21df591919b892f",
-        "README.md": "454178da41a74890",
-        "seed.json": "2ef0867cf2523f5a"
+        "CONTRACT.md": "40d68d5d705622af",
+        "README.md": "34a49dc8c82f1dab",
+        "seed.json": "a0271d2a72f48f93"
       },
       "brand": {
         "branding.accent": "#ad4a1f",
@@ -887,17 +896,16 @@
       "mark": "423590ef08eb1e00",
       "home": {
         "headline": "Every customer, heard.",
-        "signature": "eddddceedfeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeeeeeeeeeeeefeefeefeefeeeeeeedeedfeeeedeedeedeeeeeeeeddddeeddddddcdddeededcedbecbeeeedcdb9da8ecbfeedcca99baaccbccbcccddcedceddeedeeeeedeeddbaecbffeeeddcbdcceedeeeeeefeeedcedcedcedcedceedcbaccbeeeeeeeddeedddddddeedeeeeeeedccb9a98dcbeedaa9999ddddcc777aa9998887dccfeeeedeeddddddcedcedceedddcddceeddcceddeddeddeedfeeeeeeeeeedeededcedcedcdcbeedfeefeefeefeefeefeeeeeeeefeefeeeeeeedeedeedecbeed"
-      },
-      "open": ["c843303a1181"]
+        "signature": "eddddceedfeeeeeeeeeeeeeeeeeeeeeeefeefeeeeeeedeeeeeeeeeeeefeefeefeefeeeeeeedeedfeeeedeedeedeeeeeeeeddddeeddddddcdddeededcedbecbeeeedcdb9da8ecbfeedcca99baaccbccbcccddcedceddeedeeeeedeeddbaecbfeeeeddcbdcceedeeeeeefeeedcedcedcedcedceedcbaccbeeeeeeeddeddddddddeedeeeeeeedccb9a98dcbeedaaa999ddddcc777aa9998887dccfeeeedeeddddddcedcedceedddcddceeddcceddeddeddeedfeeeeeeeeeedeededcedcedcdcbeedfeefeefeefeefeefeeeeeeeefeefeeeeeeedeedeedecbeed"
+      }
     },
     "pier": {
-      "commit": "2e765586f301a4b9ea1710aaa5a1bf3d4ea3be5b",
+      "commit": "ad09f6f1bbadcbff9bf57ecbf034ecb4e4a57640",
       "tag": "v0.1.0",
       "copy": {
-        "CONTRACT.md": "062bd81ef16e4a55",
+        "CONTRACT.md": "775b10060bb362c4",
         "README.md": "fa5486100e529f1c",
-        "seed.json": "3a6f119c5a429571"
+        "seed.json": "3aee2eacfe4a5e79"
       },
       "brand": {
         "branding.primaryColor": "#1c50dc",
@@ -914,19 +922,23 @@
       "mark": "9eb74057ced776cd",
       "home": {
         "headline": "Know what's on every shelf."
-      },
-      "open": ["c4826016a19d", "53989d8604fb"]
+      }
     },
     "placemat": {
-      "commit": "c33ec7a2b3deb25d9da12077032effef2079900f",
+      "commit": "cd22581d68e3675db9a4fd3b69df9375976d6d46",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "c4ab5eac1f1af025",
-        "README.md": "0b9d7ab8fead1f5b",
-        "seed.json": "40427b929829f043"
+        "CONTRACT.md": "5ca7677b1b43a275",
+        "README.md": "7319507ba101b574",
+        "seed.json": "81b3d3aa7dbeafee"
       },
       "brand": {
         "branding.primaryColor": "#16583d",
+        "theme.page": "#fbf8f2",
+        "theme.text": "#0b2a20",
+        "theme.focus": "#16583d",
+        "theme.link": "#16583d",
+        "theme.accent": "#16583d",
         "live.page": "#fbf8f2",
         "live.text": "#06231c",
         "live.action": "#12482f",
@@ -936,38 +948,47 @@
       "home": {
         "headline": "Every table, filled."
       },
-      "open": ["53989d8604fb"]
+      "open": ["ef4f0110a4ae"]
     },
     "platter": {
-      "commit": "c777a2efecb042d082f2e000a2c87aabbbf2cacb",
+      "commit": "640988acd1ae2c18deb627b26f47a9bf82aa544f",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "52713d16fb985cbb",
-        "README.md": "ae53848b2961ba31",
+        "CONTRACT.md": "9457035322612a42",
+        "README.md": "26d2d8e7cc164845",
         "seed.json": "1175b76fe7042206"
       },
       "brand": {
         "branding.primaryColor": "#1f2121",
-        "live.page": "#f8f6f1",
-        "live.text": "#1f2121",
-        "live.action": "#1f2121"
+        "theme.page": "#ffffff",
+        "theme.text": "#1c1c24",
+        "theme.accent": "#1c1c24",
+        "theme.focus": "#961756",
+        "theme.link": "#1c1c24",
+        "live.page": "#ffffff",
+        "live.text": "#1c1c24",
+        "live.action": "#1c1c24"
       },
-      "mark": "471407696030bbcd",
+      "mark": "069fe1d1736040c3",
       "home": {
-        "headline": "Send a proposal. Get a yes."
-      },
-      "open": ["53989d8604fb"]
+        "headline": "Proposals clients sign and pay."
+      }
     },
     "plinth": {
-      "commit": "a63c6cd835eaf6ccb9d419b1d9d95288552d14e1",
+      "commit": "7c2471d4cbf2232f453aa5ee64b6200b29b1898a",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "bd41a7c8071a9ce6",
-        "README.md": "67b5aa235aa8cb6b",
-        "seed.json": "a27789dae5da775b"
+        "CONTRACT.md": "e1d268408105c301",
+        "README.md": "6e9ad35329fb9759",
+        "seed.json": "9391daa545d15481"
       },
       "brand": {
         "branding.primaryColor": "#801030",
+        "theme.page": "#ffffff",
+        "theme.text": "#061320",
+        "theme.focus": "#0a5482",
+        "theme.link": "#0a5482",
+        "theme.accent": "#801030",
         "live.page": "#ffffff",
         "live.text": "#061320",
         "live.action": "#801030",
@@ -976,40 +997,48 @@
       "mark": "42b7b04351f945c5",
       "home": {
         "headline": "Handover day, right on time."
-      },
-      "open": ["53989d8604fb"]
+      }
     },
     "purse": {
-      "commit": "15fe1f5cbfeb7d976fee898038fd138a1b522496",
-      "tag": "v0.1.0",
+      "commit": "bcc176a67230313ada27532a2ff26d444588371f",
+      "tag": "v0.1.1",
       "copy": {
-        "CONTRACT.md": "d1fd88123b886f0f",
+        "CONTRACT.md": "b307e2f791751ab6",
         "README.md": "c35f5099769e9bef",
-        "seed.json": "6c38770259043095"
+        "seed.json": "14809a56bca649e9"
       },
       "brand": {
-        "branding.primaryColor": "#9a2a4e",
-        "live.page": "#f7f5f0",
-        "live.text": "#1c2020",
-        "live.action": "#1c2020",
-        "live.themeColor": "#f7f5f0"
+        "branding.primaryColor": "#0067db",
+        "theme.page": "#ffffff",
+        "theme.text": "#23282d",
+        "theme.focus": "#0067db",
+        "theme.link": "#0067db",
+        "theme.accent": "#0067db",
+        "live.page": "#ffffff",
+        "live.text": "#040404",
+        "live.action": "#0067db",
+        "live.themeColor": "#ffffff"
       },
-      "mark": "3ce6ea710a9cceff",
+      "mark": "a70c855069a38590",
       "home": {
-        "headline": "Every purchase, accounted for."
-      },
-      "open": ["922fed04eacf"]
+        "headline": "Every team's purchases, request to payment."
+      }
     },
     "satchel": {
-      "commit": "74f396c64c1e776949caa59db11096039728af84",
+      "commit": "f03d31f0a27e1faa90ff38a27f148055693936db",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "e7a95165deb47200",
-        "README.md": "ae441e70a8bfe81a",
-        "seed.json": "2f29c92ccb3968fc"
+        "CONTRACT.md": "64ead05da2a15134",
+        "README.md": "24708392313a7cb5",
+        "seed.json": "7346886b444e2893"
       },
       "brand": {
         "branding.primaryColor": "#0f5c66",
+        "theme.page": "#f4f7f6",
+        "theme.text": "#0e333c",
+        "theme.focus": "#0e7c76",
+        "theme.link": "#0f5c66",
+        "theme.accent": "#0f5c66",
         "live.page": "#f4f7f6",
         "live.text": "#ffffff",
         "live.action": "#0f5c66",
@@ -1018,16 +1047,15 @@
       "mark": "2e7db746dfaa2377",
       "home": {
         "headline": "Every matter, under control."
-      },
-      "open": ["53989d8604fb"]
+      }
     },
     "slate": {
-      "commit": "8f1d99940ad31062545adb39a5f66f777d0eeab3",
-      "tag": "v0.2.0",
+      "commit": "ef7090c77f2150bc8fdbfdeed1be1cf69857b730",
+      "tag": "v0.4.0",
       "copy": {
-        "CONTRACT.md": "e8fffcab5b6226e9",
-        "README.md": "d0836d5cedce0fa3",
-        "seed.json": "60dd39e06886ec23"
+        "CONTRACT.md": "097421bbf4f42e1c",
+        "README.md": "73fe334ff982a01d",
+        "seed.json": "f22d3f9101d4b6a8"
       },
       "brand": {
         "branding.accent": "#526f62",
@@ -1044,17 +1072,16 @@
       "mark": "01854532d6b2d7f5",
       "home": {
         "headline": "One home for everything your team knows.",
-        "signature": "eeddddeedfeeeeefeefeefeeeeefeefeeeeeeeeeeeeedeeeeeeeeeeeeeeeeeeeedeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededeeddddeeeeedeedeedfeeeeeeeeeeeeeeeeeeeefeededccceedeedeedeeeeedeedfeeeeeeeeeeeeeeeeeeeefeeeeddddeeeeedeedeeededdedeeeeeeeeeeeeeeeeeeeeefeeeedccccccccbccccccccbeddfeeeeeeeeeeeeeeeeeeeeeeeeeedddccbccbcccccbddceedfeeeeeeeeeeeeeeeeeeeefeeeeebbabbabbaaaaddceedeeeeeeeeeeeeeeeeeeeeeeeefeeeedaa9bbaaaaa99ddceedeeeeeeeeeeeeeee"
-      },
-      "open": ["c843303a1181"]
+        "signature": "eeddddeedfeeeeefeefeefeeeeefeefeeeeeeeeeeeeedeeeeeeeeeeeeeeeeeeeedeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededeeddddeeeeedeedeedfeeeeeeeeeeeeeeeeeeeefeededccceeeeedeedeeeeedeedfeeeeeeeeeeeeeeeeeeeefeeeeddddeeeeedeedeeededdedeeeeeeeeeeeeeeeeeeeeefeeeedcccccccccccccccccbeddfeeeeeeeeeeeeeeeeeeeeeeeeeedddcccccbcccccbddceedfeeeeeeeeeeeeeeeeeeeefeeeeebbabbbbbaaa9ddceedeeeeeeeeeeeeeeeeeeeeeeeefeeeedaa9bbaaaaaa9ddceedeeeeeeeeeeeeeee"
+      }
     },
     "spool": {
-      "commit": "de0822c34a188f02075619e3de62fe1ad258f595",
-      "tag": "v0.6.0",
+      "commit": "da855d9386f083df0eb575ecb58e4ef8bafd6697",
+      "tag": "v0.7.1",
       "copy": {
-        "CONTRACT.md": "cb2d3801f8fd2af2",
-        "README.md": "2e42e1ef6d0332fb",
-        "seed.json": "5cdec53ebc257825"
+        "CONTRACT.md": "d4d1399c40ccdb53",
+        "README.md": "9acc5ee0f0bd13c7",
+        "seed.json": "72b7c96465073672"
       },
       "brand": {
         "branding.primaryColor": "#1c1c1b",
@@ -1071,17 +1098,16 @@
       "mark": "60b00db5ff82c8cd",
       "home": {
         "headline": "See exactly what broke.",
-        "signature": "eeddccddceedeedeedeeeeedeedeedeeeeeeeeeeedeedeedeeddddeedeedeeeeedeedeedeededdeedeedeedeedeedeedeedcccddcddcddcccbeddeeeeeddddddceedeedeedeedeedeeda99aa9999a99999ccceeeeedeeddddddddddeddeedeedeedbbaaa9bbabaaaaaccbeeeeededddddeedeedeedeedeedeedddcddcddcddceedeeeeeeeeddddddbedceeceeceedeedeededdedddddeedeedeeeeeeeedeededadc9edaedaedbeedeed999998aaabba888888bbbeedeedeededdeeeeeeeedeedeed999998baaccbaa9aa9ccbeeddddddceedeedeedeedeed"
-      },
-      "open": ["c843303a1181"]
+        "signature": "eeddccddceedeedeedeeeeedeedeedeeeeeeeeeeedeedeedeeddddeedeedeeeeeeeedeedeededdeedeedeedeedeedeedeedccbddcddcddcccbeddeeeeeddddddceedeedeedeedeedeed999aa9999999999cccfeeeedeededddddeddeedeedeedeedbaaaa9bbaaaaaa9ccbeeeeededddddeedeedeedeedeedeedddcddcddcddceedeeeeeeeeddddddbedceeceeceedeedeedeedeededdeedeeeeeeeeeeedeededaed9edaedaedbeedeed999988aaabba888888bbbeedeedeededdeeeeeeeedeedeeda99998baaccbaa9aa9ccbeeddddddceedeedeedeedeed"
+      }
     },
     "stall": {
-      "commit": "74256f6401f5b4e5ca13a244e550f42e8967ad32",
+      "commit": "c1150d729bec6640c8e9a3411e728135c9065944",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "d32df179cf6e6e5a",
+        "CONTRACT.md": "f82f476a59bbdd2a",
         "README.md": "7f2cfec75f03d6f2",
-        "seed.json": "b2f6761f97d8b9c2"
+        "seed.json": "79fb406a0d89e3e5"
       },
       "brand": {
         "branding.primaryColor": "#ff6a13",
@@ -1098,16 +1124,15 @@
       "mark": "a699267b06ab4db9",
       "home": {
         "headline": "Your stall never closes."
-      },
-      "open": ["53989d8604fb"]
+      }
     },
     "strap": {
-      "commit": "e15fed12a3c4e7816e504fe5b79f6b2ac8f2d420",
+      "commit": "da9058029521dedda22a35834ad9a2160fb26560",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "f4218b06a661946d",
-        "README.md": "8c469ff036701745",
-        "seed.json": "31a57b3c7aafac31"
+        "CONTRACT.md": "99b8be3e68d45630",
+        "README.md": "94ed63232ae8f1a7",
+        "seed.json": "18dc2029bf7a37ce"
       },
       "brand": {
         "branding.primaryColor": "#6e1041",
@@ -1123,19 +1148,23 @@
       "mark": "203fb688db785388",
       "home": {
         "headline": "Full classes. Members who stay."
-      },
-      "open": ["53989d8604fb"]
+      }
     },
     "terrace": {
-      "commit": "121cacde882586d71e2b88bcf7a3b0cafdf1afe7",
-      "tag": null,
+      "commit": "aaf775ee9c190e3a338292648b7ab36975d3791b",
+      "tag": "v0.1.4",
       "copy": {
-        "CONTRACT.md": "ca6f77b4eab945f7",
-        "README.md": "bb779a24a75a47b9",
-        "seed.json": "61d29a327c997481"
+        "CONTRACT.md": "55584f5a0caf1275",
+        "README.md": "5deb39ad10a6dd48",
+        "seed.json": "edc62660976c7d02"
       },
       "brand": {
         "branding.primaryColor": "#12163a",
+        "theme.page": "#f6f5fd",
+        "theme.text": "#12163a",
+        "theme.focus": "#6c4cff",
+        "theme.accent": "#12163a",
+        "theme.link": "#4a2fd6",
         "live.page": "#f6f5fd",
         "live.text": "#12163a",
         "live.action": "#12163a",
@@ -1144,16 +1173,15 @@
       "mark": "47aed1247cd7d700",
       "home": {
         "headline": "Rent in. Repairs done. Owners paid."
-      },
-      "open": ["53989d8604fb"]
+      }
     },
     "uptime": {
-      "commit": "591771f32f344114445febd3e50287244ae79682",
-      "tag": "v0.4.2",
+      "commit": "09b5de4f1347c971135c39ae610e42677f0c1082",
+      "tag": "v0.4.3",
       "copy": {
-        "CONTRACT.md": "bdbe1f4f6079b177",
-        "README.md": "5bdaf012b6b03de9",
-        "seed.json": "08933d0ca738f760"
+        "CONTRACT.md": "d5e84e0fff6edbb4",
+        "README.md": "250d75c3e63f1b51",
+        "seed.json": "451ad6087bbfddde"
       },
       "brand": {
         "branding.primaryColor": "#14204a",
@@ -1169,23 +1197,24 @@
       "mark": "23ce9643d52f9bed",
       "home": {
         "headline": "Sleep through the night.",
-        "signature": "eeeddeddeeefeefeefeefeefeefeefeefeefeeeddeddeeeeeeeddeeeeddeddeddeddeddeddeddeddeddeeeeeeeeeeeeeeeeeeeeefddebbcbbcbbcbbcbbcbbcbbcabcddeeefeeeeeeeeeeeeeeeeeeddeddeededdeddeddeddeddeeeeeeeeeeeeeeeeeeeeeeeeeccd99a89accdddeddedddedeeeeeeeeeeeeeeeeeeeeeeeeedddaab99adcdedeedeedeeeeeeeeeeeeeeeeedeeedeededdeddfeefeeeddeddeedfedfedeedeedeedeedfedfedfededcedcedceededcedceededcedcedcfdcfddfdd99bbbddcdedcedcedcfdcfdcfdcedcfdcfdcfdbfdbecccbc"
-      },
-      "open": ["c843303a1181"]
+        "signature": "eeedddddeeefeefeefeefeefeefeefeefeefeeeededdeeeeeeeddeeeeddeddeddeddeddeddeddeddeddeeeeeeeeeeeeeeeeeeeeefddebbcbbcbbcbbcbbcbbcbbcabcddeeeeeeeeeeeeeeeeeeeeeeddeddeededdeddeddeddeddeeeeeeeeeeeeeeeeeeeeeeeeedcd99a99accddddddddddedeeeeeeeeeeeeeedeeeeeeeeeedddaaaa9adddedeedeeddeeeeeeeeeeeeeeefedfedfededdeddfedfededdeddfedfedfddedcfddeddeddcccdddeddfdcedcedcfdcfdcfdcedcedcedcedbfdcfdcedc55888baacbbcbbccbcccceccdccdcceccedbfdceccbac77a"
+      }
     },
     "vane": {
-      "commit": "3084add34c0e6790922939f32ad568aaba5baaca",
+      "commit": "194ab42d385879b42c87b209abb7e4fa6177d6d8",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "6928931597c4ba4b",
-        "README.md": "2259b1894e533a26",
-        "seed.json": "1fbc75b31b59f20f"
+        "CONTRACT.md": "02d2627894e43070",
+        "README.md": "04f8da23a525158e",
+        "seed.json": "081299c93a3d3193"
       },
       "brand": {
         "branding.primaryColor": "#1d58f0",
         "theme.page": "#f5f9fd",
         "theme.text": "#0b0d14",
         "theme.accent": "#1d58f0",
+        "theme.focus": "#1d58f0",
+        "theme.link": "#0b0d14",
         "live.page": "#f5f9fd",
         "live.text": "#0b0d14",
         "live.action": "#1b1c22",
@@ -1194,16 +1223,15 @@
       "mark": "422414cce16a4cc2",
       "home": {
         "headline": "See which way the wind blows."
-      },
-      "open": ["c843303a1181"]
+      }
     },
     "vector": {
-      "commit": "472bafc725374961891d2c6be1e2300570d9f81c",
-      "tag": "v0.3.0",
+      "commit": "136d702a5890b6d47e54defb17f776278c2c7fe1",
+      "tag": "v0.4.1",
       "copy": {
-        "CONTRACT.md": "cef41b3768752f7e",
-        "README.md": "873f9283a9619b42",
-        "seed.json": "6c65a890179edc2e"
+        "CONTRACT.md": "b4dd99c93e5a1263",
+        "README.md": "798ae20ad70351ad",
+        "seed.json": "92d3e7aa08aef13e"
       },
       "brand": {
         "branding.color": "#171a20",
@@ -1219,17 +1247,16 @@
       "mark": "3983bae9f321e429",
       "home": {
         "headline": "Know what happens next.",
-        "signature": "eeddddeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeedeedeeeeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeedeedeedeedeedeedeedeedeeeeeeeeeeedeeeeedeedeedeeeeeeddcbbabbabbbaaaccceedeeeeeeeedeeeeeddddeedeedeeeeddbbbbbabbbccbbbbdddeeeeeedddeeddddccdeedeeeeeeeedeedeedeedeedeeeeeeeeeeeeeeeddeeddeedeedeeeeeeddc988999bba888aaaeddeedeeeeededdeededdeedeeeeeeeddaa9bbaccb999bbbeedeedeeeeedeedeedeedeedeeeeeeeeeffefeefeeffefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-      },
-      "open": ["c843303a1181"]
+        "signature": "eeddddeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeedeedeeeeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeedeedeedeedeedeedeedeedeeeeeeeeeeedeeeeedeedeedeeeeeeddcbbabbabbbbaadcceedeeeeeeeedeeeeeddddeedeedeeeeddbbbbbacbbccbbbbdddeeeeeedddeeddddccdeedeeeeeeeedeedeedeedeedeeeeeeeeeeeeeeeddeeedeedeedeeeeeeddc998999bba888aaaeddeedeeeeededdeedeedeedeeeeeeeddaa9bbaccb999bbbeedeedeeeeedeedeeeeedeedeeeeeeeeeffefeefeeffefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      }
     },
     "willow": {
-      "commit": "4511b1661cd97230d404f40e03b998596bc1a426",
+      "commit": "afc67a601f7e88e30b69ea865ab6b6e3518d795f",
       "tag": "v0.1.0",
       "copy": {
-        "CONTRACT.md": "da40d040719dcd95",
+        "CONTRACT.md": "f2f54db6b0920329",
         "README.md": "d31eab8edde1ed0e",
-        "seed.json": "f651cc4cf07343b9"
+        "seed.json": "d7fb69fdadefe94a"
       },
       "brand": {
         "branding.primaryColor": "#b1054f",
@@ -1246,8 +1273,7 @@
       "mark": "931cb26d3fbc7f68",
       "home": {
         "headline": "Look after every person."
-      },
-      "open": ["fbce17af26ae", "53989d8604fb"]
+      }
     }
   }
 }

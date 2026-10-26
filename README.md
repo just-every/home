@@ -70,3 +70,25 @@ to `justevery.com`. Reels are Git LFS files; `.husky/pre-push` runs
 `git lfs pre-push` so a push uploads them. Production secrets are set with
 `npx wrangler secret put ANTHROPIC_API_KEY`, and D1 migrations with
 `npm run db:migrate:remote`.
+
+## Public manifests
+
+- `npm run brand` writes `/brand.json` from the site's metadata, landing tokens
+  and real public assets. It follows `/brand.schema.json` (`brand/v1`); asset
+  hashes use actual bytes, and `look` hashes sorted unique `path\0sha256\n`
+  records for the logos, hero and OG image. Regenerate the share image with
+  `node scripts/og-image.mjs` after changing the hero, then refresh the manifest.
+- `npm run brand:rer` explicitly refreshes the committed
+  `src/data/rer-cli.generated.json` from RER's live brand manifest. Invalid or
+  unavailable input fails without replacing the snapshot. Production builds
+  consume this snapshot offline.
+- `npm run listings` writes `/data/listings.json` from the visible released,
+  coming-soon and page-content modules. A content change advances `generatedAt`;
+  running it again without changes preserves the timestamp.
+- `npm run brand -- --check` and `npm run listings -- --check` fail on stale
+  generated content. Branch verification runs both without network refreshes.
+- Retired and hidden slugs live in `src/data/hidden-seeds.json`. They are absent
+  from public data and assets; sync and gallery ingestion also exclude them.
+
+The gallery import remains a separate stage with supplied, validated manifests.
+Do not use an existing local capture directory as an input to listing sync.

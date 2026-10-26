@@ -2,9 +2,11 @@ import { Fragment } from 'react';
 
 import { CopyCommands } from './CopyCommands';
 import styles from './panels.module.css';
+import { runCommand } from './runCommand';
 
 /** The dark terminal that shows the run command, with a Copy button. */
-export function Terminal({ command }: { command: string }) {
+export function Terminal({ target }: { target: string }) {
+  const command = runCommand(target);
   return (
     <div className={styles.terminal}>
       <div className={styles.terminalHead}>
@@ -14,7 +16,7 @@ export function Terminal({ command }: { command: string }) {
           <span />
         </span>
         <span className={styles.terminalTitle}>Terminal</span>
-        <CopyCommands text={command} />
+        <CopyCommands target={target} />
       </div>
       <pre className={styles.commands}>
         <code>

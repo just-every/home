@@ -1,15 +1,24 @@
+import { numberWord } from '@/lib/number-word';
+
 /**
  * Page metadata, following the hero (hero G): its headline, "Stop renting
  * your software.", and its switch from the tools a team rents to open
  * source it owns.
  */
+export const heroCopy = {
+  first: 'Stop renting',
+  second: 'your software.',
+  subhead: (released: number, coming: number) =>
+    `Switch to free, open-source alternatives for the tools your team already uses. ${numberWord(released, true)} are out now, with ${numberWord(coming)} more on the way. MIT licensed, forever yours.`,
+} as const;
+
 export const siteMeta = {
   name: 'Just Every',
   url: 'https://justevery.com',
   title: 'Just Every · Stop renting your software.',
   description:
     'Switch from Notion, Slack, Intercom, Calendly and more to free, open-source alternatives you own. MIT licensed, yours to change.',
-  ogTitle: 'Stop renting your software.',
+  ogTitle: `${heroCopy.first} ${heroCopy.second}`,
   ogImage: {
     url: '/og-image.png',
     width: 1200,

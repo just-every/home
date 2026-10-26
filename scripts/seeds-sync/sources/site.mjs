@@ -3,7 +3,7 @@
  * (src/data/seeds.ts, upcoming.ts, seed-pages.ts and the hero's order.ts).
  * Needs `node --import tsx`, as `npm run seeds:sync` runs it.
  */
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
@@ -15,6 +15,9 @@ const SHARE_IMAGE_ROWS = 8;
 const load = (root, path) => import(pathToFileURL(join(root, path)).href);
 
 export async function loadSite(root) {
+  const hidden = new Set(
+    JSON.parse(readFileSync(join(root, 'src/data/hidden-seeds.json'), 'utf8'))
+  );
   const [
     { seeds },
     { upcoming },
@@ -91,7 +94,7 @@ export async function loadSite(root) {
 
   const heroRows = rows.map(volume => volume.slug);
   return {
-    seeds: [...released, ...soon],
+    seeds: [...released, ...soon].filter(seed => !hidden.has(seed.slug)),
     publicPath,
     hero: {
       rows: heroRows,

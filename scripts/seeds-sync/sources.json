@@ -9,6 +9,7 @@
     "mango": "public/favicon.svg",
     "dial": "public/rer-mark.svg",
     "penny": "public/brand/penny-mark.svg",
-    "spool": "public/theme/spool-mark.svg"
+    "spool": "public/theme/spool-mark.svg",
+    "pantry": "public/brand/pantry.svg"
   }
 }

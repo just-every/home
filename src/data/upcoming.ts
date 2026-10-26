@@ -17,6 +17,9 @@ import { numberWord } from '@/lib/number-word';
  */
 export interface UpcomingSeed {
   slug: string;
+  accent: string;
+  ink: string;
+  paper: string;
   name: string;
   /** What the seed is, in a few words. */
   category: string;
@@ -45,6 +48,9 @@ const shot = (slug: string) => `/seeds/${slug}/home.webp`;
 export const upcoming: UpcomingSeed[] = [
   {
     slug: 'auth',
+    accent: '#14536e',
+    ink: '#1f2428',
+    paper: '#fbf8f2',
     name: 'Auth',
     category: 'Identity provider',
     replaces: ['Auth0', 'Okta', 'Microsoft Entra'],
@@ -59,21 +65,10 @@ export const upcoming: UpcomingSeed[] = [
     mark: '/seeds/auth/mark-light.svg',
   },
   {
-    slug: 'barrow',
-    name: 'Barrow',
-    category: 'Wholesale ordering',
-    replaces: ['NuORDER', 'Pepperi', 'Brandboom'],
-    primaryReplace: 'NuORDER',
-    line: 'Wholesale ordering where each stockist sees its own prices.',
-    repo: repo('barrow'),
-    homepage: homepage('barrow'),
-    homepageShot: shot('barrow'),
-    // Pastel from the blue of its mark (#2348a8); its brand colour is near-black.
-    pastel: '#c2d6ff',
-    mark: mark('barrow'),
-  },
-  {
     slug: 'blotter',
+    accent: '#111111',
+    ink: '#111111',
+    paper: '#ffffff',
     name: 'Blotter',
     category: 'Accounting practice workflow',
     replaces: ['Karbon', 'TaxDome', 'Canopy'],
@@ -87,21 +82,10 @@ export const upcoming: UpcomingSeed[] = [
     mark: mark('blotter'),
   },
   {
-    slug: 'buoy',
-    name: 'Buoy',
-    category: 'Customer success and renewals',
-    replaces: ['Gainsight', 'ChurnZero', 'Totango'],
-    primaryReplace: 'Gainsight',
-    line: 'Renewal dates beside billing and support evidence, each decision recorded.',
-    repo: repo('buoy'),
-    homepage: homepage('buoy'),
-    homepageShot: shot('buoy'),
-    // Pastel from the purple of its mark's ring (#8a2eae, hue 315); its brand colour is near-black.
-    pastel: '#eac7fb',
-    mark: mark('buoy'),
-  },
-  {
     slug: 'crank',
+    accent: '#011646',
+    ink: '#061943',
+    paper: '#f3f8fd',
     name: 'Crank',
     category: 'Workflow automation',
     replaces: ['Zapier', 'Make', 'Workato'],
@@ -116,6 +100,9 @@ export const upcoming: UpcomingSeed[] = [
   },
   {
     slug: 'evidence',
+    accent: '#16181d',
+    ink: '#080c1a',
+    paper: '#f4f9fe',
     name: 'Evidence',
     category: 'Compliance automation',
     replaces: ['Vanta', 'Drata', 'Secureframe'],
@@ -130,6 +117,9 @@ export const upcoming: UpcomingSeed[] = [
   },
   {
     slug: 'inkwell',
+    accent: '#0a9e6c',
+    ink: '#0b0d12',
+    paper: '#ffffff',
     name: 'Inkwell',
     category: 'Electronic signatures',
     replaces: ['Docusign', 'Adobe Acrobat Sign', 'Dropbox Sign'],
@@ -143,20 +133,10 @@ export const upcoming: UpcomingSeed[] = [
     mark: mark('inkwell'),
   },
   {
-    slug: 'lanyard',
-    name: 'Lanyard',
-    category: 'Rostering and timesheets',
-    replaces: ['Deputy', 'When I Work', 'Homebase'],
-    primaryReplace: 'Deputy',
-    line: 'Weekly rosters, phone clocking and approved timesheets for payroll.',
-    repo: repo('lanyard'),
-    homepage: homepage('lanyard'),
-    homepageShot: shot('lanyard'),
-    pastel: '#bbe2bf',
-    mark: mark('lanyard'),
-  },
-  {
     slug: 'mallet',
+    accent: '#2a0a2b',
+    ink: '#22061f',
+    paper: '#f3f7fa',
     name: 'Mallet',
     category: 'Workshop repair jobs',
     replaces: ['Tekmetric', 'Shopmonkey', 'Mitchell 1 Manager SE'],
@@ -171,6 +151,9 @@ export const upcoming: UpcomingSeed[] = [
   },
   {
     slug: 'pane',
+    accent: '#e8176e',
+    ink: '#1f0717',
+    paper: '#ffffff',
     name: 'Pane',
     category: 'Small-business website',
     replaces: ['Squarespace', 'Wix', 'WordPress.com'],
@@ -185,6 +168,9 @@ export const upcoming: UpcomingSeed[] = [
   },
   {
     slug: 'placemat',
+    accent: '#16583d',
+    ink: '#0b2a20',
+    paper: '#fbf8f2',
     name: 'Placemat',
     category: 'Restaurant bookings',
     replaces: ['OpenTable', 'Resy', 'SevenRooms'],
@@ -199,21 +185,26 @@ export const upcoming: UpcomingSeed[] = [
   },
   {
     slug: 'platter',
+    accent: '#1f2121',
+    ink: '#1c1c24',
+    paper: '#ffffff',
     name: 'Platter',
     category: 'Proposals and quotes',
-    replaces: ['Qwilr', 'Proposify', 'PandaDoc'],
-    primaryReplace: 'Qwilr',
+    replaces: ['PandaDoc', 'Proposify', 'Better Proposals'],
+    primaryReplace: 'PandaDoc',
     line: 'Two-option proposals that clients accept online.',
     repo: repo('platter'),
     homepage: homepage('platter'),
     homepageShot: shot('platter'),
-    // Pastel from the teal of its mark (#8cbbba); its brand colour is near-black.
-    pastel: '#b8dfde',
-    // Its teal ring nearly vanishes on its own pastel: the same mark in ink.
-    mark: '/seeds/platter/mark-ink.svg',
+    // Pastel from the blue of its current published mark (#06699c).
+    pastel: '#b9dbf5',
+    mark: mark('platter'),
   },
   {
     slug: 'plinth',
+    accent: '#801030',
+    ink: '#061320',
+    paper: '#ffffff',
     name: 'Plinth',
     category: 'Contractor project management',
     replaces: ['Buildertrend', 'Procore', 'Houzz Pro'],
@@ -228,6 +219,9 @@ export const upcoming: UpcomingSeed[] = [
   },
   {
     slug: 'satchel',
+    accent: '#0f5c66',
+    ink: '#0e333c',
+    paper: '#f4f7f6',
     name: 'Satchel',
     category: 'Legal practice management',
     replaces: ['Clio', 'MyCase', 'Smokeball'],
@@ -242,6 +236,9 @@ export const upcoming: UpcomingSeed[] = [
   },
   {
     slug: 'stall',
+    accent: '#ff6a13',
+    ink: '#0e0e10',
+    paper: '#fefefe',
     name: 'Stall',
     category: 'Online shop',
     replaces: ['Shopify', 'Squarespace Commerce', 'BigCommerce'],
@@ -256,6 +253,9 @@ export const upcoming: UpcomingSeed[] = [
   },
   {
     slug: 'strap',
+    accent: '#6e1041',
+    ink: '#1d1a2a',
+    paper: '#f5f8fb',
     name: 'Strap',
     category: 'Studio management',
     replaces: ['Mindbody', 'WellnessLiving', 'Vagaro'],
@@ -269,21 +269,10 @@ export const upcoming: UpcomingSeed[] = [
     mark: mark('strap'),
   },
   {
-    slug: 'terrace',
-    name: 'Terrace',
-    category: 'Property management',
-    replaces: ['AppFolio', 'Buildium', 'Rent Manager'],
-    primaryReplace: 'AppFolio',
-    line: 'Tenancies, recorded rent, photo inspections and maintenance for landlords.',
-    repo: repo('terrace'),
-    homepage: homepage('terrace'),
-    homepageShot: shot('terrace'),
-    // Pastel from src/branding.json primaryColor #12163a (hue 273).
-    pastel: '#cdd5f1',
-    mark: mark('terrace'),
-  },
-  {
     slug: 'vane',
+    accent: '#1d58f0',
+    ink: '#0b0d14',
+    paper: '#f5f9fd',
     name: 'Vane',
     category: 'Web analytics',
     replaces: ['Plausible', 'Fathom', 'Matomo'],
