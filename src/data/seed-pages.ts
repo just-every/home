@@ -271,7 +271,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Mattermost',
     ],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.4.0',
+    version: 'v0.5.0',
     contractUrl: 'https://run-nook.com/contract',
     seoTitle: 'Nook: free, open-source alternative to Slack',
     seoDescription:

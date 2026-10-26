@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T12:22:58.295Z",
+  "generatedAt": "2026-10-26T23:45:04.964Z",
   "listings": [
     {
       "slug": "auth",
@@ -571,7 +571,7 @@
       "slug": "nook",
       "name": "Nook",
       "status": "released",
-      "version": "v0.4.0",
+      "version": "v0.5.0",
       "category": "Team chat",
       "line": "Team chat where a message becomes a decision.",
       "headline": "Talk it through. Get it done.",
