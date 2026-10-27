@@ -1005,7 +1005,7 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'OC-006',
-        text: 'Oncall sends nothing outward during an incident; any email it sends is for sign-in links only.',
+        text: 'Oncall sends signed response events only to endpoints an administrator approves; paging stays off, and email is for sign-in links only.',
         category: 'security',
       },
       {
@@ -1051,7 +1051,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['PagerDuty', 'Opsgenie', 'Splunk On-Call', 'Better Stack'],
     runsOn: 'your own computer, or your own Cloudflare account',
-    version: 'v0.4.2',
+    version: 'v0.5.0',
     contractUrl: 'https://run-oncall.com/contract',
     seoTitle: 'Oncall: free, open-source alternative to PagerDuty',
     seoDescription:
@@ -1105,7 +1105,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Sentry', 'Datadog Error Tracking', 'Rollbar', 'Bugsnag'],
     runsOn: 'your own computer, or your own Cloudflare account',
-    version: 'v0.7.1',
+    version: 'v0.7.3',
     contractUrl: 'https://run-spool.com/contract',
     seoTitle: 'Spool: free, open-source alternative to Sentry',
     seoDescription:
