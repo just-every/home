@@ -190,7 +190,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Zendesk', 'Help Scout', 'Intercom', 'Freshdesk'],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.4.12',
+    version: 'v0.4.13',
     contractUrl: 'https://happytohelp.com/contract',
     seoTitle: 'HappyToHelp: free, open-source alternative to Zendesk',
     seoDescription:

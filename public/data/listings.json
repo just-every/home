@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T01:05:23.036Z",
+  "generatedAt": "2026-10-28T23:06:00.131Z",
   "listings": [
     {
       "slug": "auth",
@@ -361,7 +361,7 @@
       "slug": "happytohelp",
       "name": "HappyToHelp",
       "status": "released",
-      "version": "v0.4.12",
+      "version": "v0.4.13",
       "category": "Customer support",
       "line": "Your Codex or Claude fixes the problem and writes the reply.",
       "headline": "Knows what your customer needs before they do.",

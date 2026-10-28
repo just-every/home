@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-28T01:04:53.461Z",
+  "syncedAt": "2026-10-28T23:05:20.102Z",
   "seeds": {
     "auth": {
       "commit": "219ed2b83f20789ea906740485092b2be00988fe",
@@ -464,12 +464,12 @@
       "open": ["ef4f0110a4ae"]
     },
     "happytohelp": {
-      "commit": "b5c21b282dd28de5056d917deb98c51ad6ac4418",
-      "tag": "v0.4.12",
+      "commit": "1880f1bc2b96415c4b33612f4c5fa97ec0707ec2",
+      "tag": "v0.4.13",
       "copy": {
-        "CONTRACT.md": "e2014c1ab35d3b40",
-        "README.md": "ad2e154f0fd297f2",
-        "seed.json": "cccdccfcd14566f2"
+        "CONTRACT.md": "5956d016b561d6e4",
+        "README.md": "6d45f0c240cadf9b",
+        "seed.json": "8843ac1c2e66fd59"
       },
       "brand": {
         "theme.page": "#faf9f6",
@@ -486,7 +486,7 @@
         "headline": "Knows what your customer needs before they do.",
         "signature": "eedddddddeedeeeeeeeeeeeeeeeeeeeedeedeeebaa887dddeeeeeeeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededdeedeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddbbbcbbcbbbbbbbbeedeeeeeeeeedeeeeeeeeeeeeeeeeedddaaabaabaaaaaccbeeeeeeeeeeeeeeeeeedeeeeeeeeeeeeedddcddcddcddcdddeeeeeeeeedddcccdeedeedeedeeeeeeeddccddceddeeeeedeeeeeedeebbbaaacddeeedddccceeedcc555544999eedeedeeeeeeeeeeeeefeeeeeeeddddddeeeeeddccdccddceedeeefeededddddddeedeeededdddeddeee"
       },
-      "open": ["ef4f0110a4ae"]
+      "open": ["c843303a1181"]
     },
     "inkwell": {
       "commit": "6350eebcb47474485023ffd73a8b00c56c50fb57",
