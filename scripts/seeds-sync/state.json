@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-27T23:47:54.259Z",
+  "syncedAt": "2026-10-28T01:04:53.461Z",
   "seeds": {
     "auth": {
       "commit": "219ed2b83f20789ea906740485092b2be00988fe",
@@ -105,10 +105,10 @@
       "open": ["ef4f0110a4ae"]
     },
     "blotter": {
-      "commit": "9153a2721f96fc50c2d9ab84798208443898100e",
+      "commit": "5477d8c7cc92ae778d66ddba5437af0573f85767",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "1fe02528f9374d02",
+        "CONTRACT.md": "018da7d25e4c4339",
         "README.md": "477e353516ba5586",
         "seed.json": "9730eeb88853b55b"
       },
@@ -183,12 +183,12 @@
       "open": ["ef4f0110a4ae"]
     },
     "chest": {
-      "commit": "e3472c9fa6ff01202ca2116139071bfade78e964",
+      "commit": "f98d9eec8af3c5ec24487b7218114eff5dc24d3f",
       "tag": "v0.2.0",
       "copy": {
-        "CONTRACT.md": "445059da83f048ac",
+        "CONTRACT.md": "b7be2c8ddfac9130",
         "README.md": "28439bb7a655bd2a",
-        "seed.json": "24df2b0bc31bcdb0"
+        "seed.json": "8fbb667bde2a05fd"
       },
       "brand": {
         "branding.primaryColor": "#181818",
@@ -205,7 +205,7 @@
       "home": {
         "headline": "Every file, where it should be."
       },
-      "open": ["ef4f0110a4ae"]
+      "open": ["922fed04eacf"]
     },
     "coaster": {
       "commit": "6426e9696bc64efac2780c607fe6ff6cf0bc4903",
@@ -776,7 +776,7 @@
     },
     "oncall": {
       "commit": "edf6d1e955a97e6458e81990c26b51812b02ff2a",
-      "tag": "v0.5.0",
+      "tag": "v0.5.1",
       "copy": {
         "CONTRACT.md": "619a7c115c0d4fad",
         "README.md": "cbdbfdfcc1328d1c",
@@ -797,8 +797,7 @@
       "home": {
         "headline": "Everyone knows who's on call.",
         "signature": "feedddeeeffeffeffeffeffeffeffeffeffeffeffefeeffeffeffeffefffffefffffeffeffeffeffeffeffeffeffeffeeedccccccccccccccceedffeeeeeeeeedeeeffeffeffeffeeeebbbccccccbbbdddfeeffeedddcbccbeedeeefeeeeeffefeeeeeeeeeeeeeeeeefffdcbdb9ddcddddddcccdddeeeffeeed999999999dddeeeffeeccedcffeffeeedddcdcbecbabbeed99999aaaaeedfeeffeffeffeffeffeffeeeddccedc9aafeeeeeffeffeeeeeeeffeffeffeffeffeffeffeffeffeffeffeeeeffeffeffeffeffeffeffeffeffeffeffeffeffeffe"
-      },
-      "open": ["c843303a1181"]
+      }
     },
     "orbit": {
       "commit": "4d4d96421eec420500c3aa57451aaffd43643ac5",
@@ -826,10 +825,10 @@
       "open": ["922fed04eacf"]
     },
     "pane": {
-      "commit": "3fdd7a11c2397ec4c67db2d6ab2c1cb4a2858918",
+      "commit": "99100dfa194e7c0df0977612d4d792925bef2a0e",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "2a447f76a35542a8",
+        "CONTRACT.md": "df10e749677fbad3",
         "README.md": "ee5c9b4b719f8d74",
         "seed.json": "dc58da6adc999d74"
       },
@@ -903,10 +902,10 @@
       "open": ["53989d8604fb"]
     },
     "penny": {
-      "commit": "48b05271ea2d931922738ae7ca04233e6f3ddc88",
+      "commit": "1318ae5f0e67aa183a200ec4c5e6143adb0013b5",
       "tag": "v0.2.1",
       "copy": {
-        "CONTRACT.md": "02c6e2a3668f51d6",
+        "CONTRACT.md": "84c64d6bb9cffa31",
         "README.md": "185dacea2e44c45b",
         "seed.json": "ebc68ba4f52ca0dd"
       },
@@ -926,7 +925,7 @@
         "headline": "Every customer, heard.",
         "signature": "eddddceedfeeeeeeeeeeeeeeeeeeeeeeefeefeeeeeeedeeeeeeeeeeeefeefeefeefeeeeeeedeedfeeeedeedeedeeeeeeeeddddeeddddddcdddeededcedbecbeeeedcdb9da8ecbfeedcca99baaccbccbcccddcedceddeedeeeeedeeddbaecbfeeeeddcbdcceedeeeeeefeeedcedcedcedcedceedcbaccbeeeeeeeddeddddddddeedeeeeeeedccb9a98dcbeedaaa999ddddcc777aa9998887dccfeeeedeeddddddcedcedceedddcddceeddcceddeddeddeedfeeeeeeeeeedeededcedcedcdcbeedfeefeefeefeefeefeeeeeeeefeefeeeeeeedeedeedecbeed"
       },
-      "open": ["53989d8604fb"]
+      "open": ["ef4f0110a4ae"]
     },
     "pier": {
       "commit": "b23893e4b0b46c454a14f98a8602ba508f350ddd",
@@ -981,10 +980,10 @@
       "open": ["ef4f0110a4ae"]
     },
     "platter": {
-      "commit": "97833426dd88fabeaa6d94a31c5f2f0fd8806be0",
+      "commit": "3604e36411fd9e3a90e84c87c7f03685976720fd",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "d1652123c6cfb19f",
+        "CONTRACT.md": "cd581f33fde6008c",
         "README.md": "7d91745d757ade65",
         "seed.json": "1175b76fe7042206"
       },
@@ -1003,7 +1002,7 @@
       "home": {
         "headline": "Proposals clients sign and pay."
       },
-      "open": ["53989d8604fb"]
+      "open": ["ef4f0110a4ae"]
     },
     "plinth": {
       "commit": "36f273c00a02abb36b73ec490929902790813009",

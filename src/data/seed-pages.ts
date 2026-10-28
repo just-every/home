@@ -1051,7 +1051,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['PagerDuty', 'Opsgenie', 'Splunk On-Call', 'Better Stack'],
     runsOn: 'your own computer, or your own Cloudflare account',
-    version: 'v0.5.0',
+    version: 'v0.5.1',
     contractUrl: 'https://run-oncall.com/contract',
     seoTitle: 'Oncall: free, open-source alternative to PagerDuty',
     seoDescription:
@@ -1237,7 +1237,7 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'undo',
       },
       {
-        id: 'CHEST-16',
+        id: 'VERSION-001',
         text: 'Every uploaded version of a file is kept with its number, author, time and size, and restoring an earlier one adds it as a new current version without deleting the later ones.',
         category: 'history',
       },
