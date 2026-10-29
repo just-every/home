@@ -77,6 +77,14 @@ export async function writeReport(out, run) {
       kind: result.seed.kind,
       status: result.status,
       reason: result.reason ?? null,
+      source: result.record
+        ? {
+            ref: result.record.sourceRef,
+            commit: result.record.commit,
+            reason: result.record.sourceReason,
+            copy: result.record.copy,
+          }
+        : null,
       findings,
     });
   }
@@ -105,10 +113,23 @@ function markdown(report) {
   lines.push(
     `${report.mode === 'apply' ? 'Applied' : 'Dry run'} over ${report.seeds.length} seeds: ` +
       `${changed.length} with changes, ${unreadable.length} unreadable. ` +
-      `Homepages read ${report.captureHost ? `on ${report.captureHost}` : 'here'} ` +
+      (report.copyOnly
+        ? 'Copy sources only; homepages not read '
+        : `Homepages read ${report.captureHost ? `on ${report.captureHost}` : 'here'} `) +
       `(load ${report.load.toFixed(1)}). State: ${report.statePath}.`,
     ''
   );
+  lines.push(
+    '## Copy source refs',
+    '',
+    '| Seed | Ref | Commit | Reason |',
+    '| --- | --- | --- | --- |'
+  );
+  for (const seed of report.seeds)
+    lines.push(
+      `| ${seed.slug} | ${seed.source?.ref ?? 'unresolved'} | ${seed.source?.commit ?? 'unresolved'} | ${seed.source?.reason ?? seed.reason} |`
+    );
+  lines.push('');
   if (!changed.length && !unreadable.length)
     lines.push('Nothing changed since the last sync.', '');
 

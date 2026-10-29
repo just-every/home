@@ -102,6 +102,18 @@ export async function headCommit(repo) {
   return head[0];
 }
 
+/** Resolve a release tag to its commit, peeling annotated tags. Never use HEAD. */
+export async function tagCommit(repo, tag) {
+  const ref = `refs/tags/${tag}`;
+  const rows = await lsRemote(repo, ['--tags'], [ref, `${ref}^{}`]);
+  const commit =
+    rows.find(([, name]) => name === `${ref}^{}`) ??
+    rows.find(([, name]) => name === ref);
+  if (!commit || !/^[0-9a-f]{40}$/.test(commit[0]))
+    throw new Unreadable(`release tag ${tag} of ${repo}`, 'no tag commit');
+  return commit[0];
+}
+
 /** Every vX.Y.Z tag, newest version first. */
 export async function versionTags(repo) {
   const rows = await lsRemote(repo, ['--tags', '--refs']);
