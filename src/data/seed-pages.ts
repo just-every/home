@@ -294,7 +294,7 @@ export const seedPageContent: SeedPageContent[] = [
     promises: [
       {
         id: 'INTAKE-002',
-        text: 'A monitoring alert only creates a draft. Nothing reaches customers until a person publishes it.',
+        text: "Monitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update.",
         category: 'approval',
       },
       {
@@ -2541,7 +2541,7 @@ export const seedPageContent: SeedPageContent[] = [
     promises: [
       {
         id: 'HTTP-001',
-        text: 'Every request checks the current sign-in, role and origin; assistant credentials can only read and prepare.',
+        text: "Every request checks its current authority, and browser writes also check the installation's origin. Agent credentials keep their named scopes; your company's policy decides their calls.",
         category: 'access',
       },
       {
@@ -2561,7 +2561,7 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'GOVERN-001',
-        text: 'Each agent has an expiring, revocable credential with named scopes, a spend budget and rate limits; it cannot approve its own proposals, every action is logged, and one switch stops all agents.',
+        text: "Each agent has an expiring, revocable credential with named scopes; your company's policy decides its calls and spending limits, every action is logged, and one switch stops agent work.",
         category: 'ai',
       },
       {
