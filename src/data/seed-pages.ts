@@ -164,7 +164,7 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'AI-001',
-        text: 'With no AI key, the AI is simply not assigned to new conversations and your team keeps them; automatic AI work has daily limits and uncertain attempts are never silently repeated.',
+        text: "With no AI key, the AI is simply not assigned to new conversations and your team keeps them; your company's policy sets AI spending limits and uncertain attempts are never silently repeated.",
         category: 'ai',
       },
       {
@@ -670,7 +670,7 @@ export const seedPageContent: SeedPageContent[] = [
   {
     slug: 'orbit',
     summary:
-      'Orbit puts a deal in your NOW queue when a customer replies, scores it from real signals, and shows you why. Every customer email is reviewed by a person before it is sent. It is free for the whole team, and you can try it beside your current CRM.',
+      "Orbit puts a deal in your NOW queue when a customer replies, scores it from real signals, and shows you why. Your company's policy controls agent sending; with approval required, a person reviews the exact email before it is sent. It is free for the whole team, and you can try it beside your current CRM.",
     does: [
       'Move a deal into your NOW queue when a customer replies, books a meeting or submits a form',
       'Score each deal from what customers actually did, with older activity counting for less and every signal behind the score shown',
@@ -684,7 +684,7 @@ export const seedPageContent: SeedPageContent[] = [
     promises: [
       {
         id: 'OUT-001',
-        text: 'No score, draft, AI result or automatic job can approve or start a customer message; a person must see the exact recipient, subject and body.',
+        text: "Signals, scores and AI text never grant permission to send. Your company's policy decides agent sending; when approval is required, a person approves the exact saved recipients, subject and body, and later changes invalidate it.",
         category: 'approval',
       },
       {
@@ -704,7 +704,7 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'OUT-012',
-        text: 'Every message carries a one-click unsubscribe; an opt-out marks the contact do-not-contact within a minute and cancels scheduled messages.',
+        text: 'Opt-out is on by default for sequence email and off for one-to-one email. Messages set to carry it include one-click unsubscribe; an identified opt-out marks the contact do-not-contact within a minute and cancels scheduled messages.',
         category: 'privacy',
       },
       {
@@ -742,7 +742,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Outlook mail and calendar',
     ],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.3.0',
+    version: 'v0.4.0',
     contractUrl: 'https://run-orbit.com/contract',
     seoTitle: 'Orbit: free, open-source alternative to HubSpot',
     seoDescription:
@@ -1706,8 +1706,8 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'evidence',
       },
       {
-        id: 'LARDER-011',
-        text: "Stock counts need a second person's approval, stale counts are refused, and corrections are linked entries that leave the original in place.",
+        id: 'LARDER-018',
+        text: "Stock counts need a second person's approval except when the owner approves their own count; stale counts are refused, and corrections are linked entries that leave the original in place.",
         category: 'undo',
       },
       {
@@ -1722,7 +1722,7 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'LARDER-015',
-        text: 'Agents can prepare order intake, replenishment and merges, but only people approve; pasted enquiries are kept as data and never obeyed.',
+        text: "Agents can prepare order intake, replenishment and merges; your company's policy decides consequential actions, and a person's approval always names that person and the exact inputs. Pasted enquiries are kept as data and never obeyed.",
         category: 'ai',
       },
       {
@@ -2118,7 +2118,7 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'AGENT-001',
-        text: 'Agents can propose replenishment and count work with assumptions, but people approve each stock or purchase consequence and a model never creates stock.',
+        text: "Agents can propose replenishment and count work with assumptions. Your company's policy decides consequential actions through the same native commands people use; agents never record a person's approval, and forecasts never become actual stock.",
         category: 'ai',
       },
     ],
