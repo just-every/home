@@ -1635,7 +1635,7 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'GLOVE-10',
-        text: "Your company's policy controls an agent's quote, dispatch and invoice actions; its preparation and any person's later decision are recorded separately.",
+        text: "An agent can prepare quote drafts, dispatch proposals and invoice drafts, but can never approve, decide its own work or perform a person's step.",
         category: 'ai',
       },
       {

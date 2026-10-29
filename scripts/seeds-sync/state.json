@@ -432,12 +432,12 @@
       "open": ["ef4f0110a4ae"]
     },
     "glove": {
-      "commit": "6c6dbc09d208164a2a3fe22033eaeafe9bd4195c",
+      "commit": "03068fa0291af47064f7b313bc8931aaffbfd5ca",
       "tag": "v0.1.0",
       "copy": {
-        "CONTRACT.md": "58aaa35497c5470f",
+        "CONTRACT.md": "dc010adfa5e4b1fa",
         "README.md": "0621c447eeb2d764",
-        "seed.json": "d2f1ebf823f1ba6c"
+        "seed.json": "461c101ccd8227cf"
       },
       "brand": {
         "branding.primaryColor": "#fd4b07",
@@ -455,7 +455,7 @@
       "home": {
         "headline": "Every call becomes a paid job."
       },
-      "open": ["922fed04eacf"]
+      "open": ["53989d8604fb"]
     },
     "happytohelp": {
       "commit": "f149f7c9e814f1fc25b7558c900e3432ed117cb2",
