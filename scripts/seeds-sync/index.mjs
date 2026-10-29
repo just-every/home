@@ -38,6 +38,7 @@ const MAX_LOAD = 36;
 const { values: args } = parseArgs({
   options: {
     apply: { type: 'boolean', default: false },
+    'copy-only': { type: 'boolean', default: false },
     only: { type: 'string' },
     out: { type: 'string' },
     'capture-host': { type: 'string' },
@@ -58,7 +59,7 @@ const out = resolve(
 const host =
   args['capture-host'] ?? process.env.SEEDS_SYNC_CAPTURE_HOST ?? null;
 const load = loadavg()[0];
-if (load > MAX_LOAD && !host) {
+if (load > MAX_LOAD && !host && !args['copy-only']) {
   console.error(
     `Load is ${load.toFixed(1)} (over ${MAX_LOAD}): read the homepages on another machine with --capture-host <ssh host>.`
   );
@@ -107,7 +108,7 @@ console.log(`Reading ${seeds.length} seed repositories...`);
 const repos = await mapLimit(seeds, 8, async seed => {
   try {
     const [repo, previous] = await Promise.all([
-      readRepo(seed),
+      readRepo(seed, { copyOnly: args['copy-only'] }),
       baselineFor(seed),
     ]);
     return { repo, previous };
@@ -120,19 +121,41 @@ const repos = await mapLimit(seeds, 8, async seed => {
   }
 });
 
-console.log(`Reading ${seeds.length} homepages${host ? ` on ${host}` : ''}...`);
-const homes = await captureHomepages(
-  seeds.map(seed => ({
-    slug: seed.slug,
-    name: seed.name,
-    url:
-      seed.homepage ??
-      overrides[seed.slug]?.homepage ??
-      `https://run-${seed.slug}.com`,
-  })),
-  join(out, 'captures'),
-  { host }
-);
+for (const [index, seed] of seeds.entries()) {
+  const repo = repos[index].repo;
+  console.log(
+    `${seed.slug}: source=${repo.sourceRef ?? 'unresolved'} commit=${repo.copyCommit ?? 'unresolved'} (${repo.sourceReason ?? repo.error})`
+  );
+}
+if (
+  repos.some(
+    ({ repo }, index) => repo.error && seeds[index].kind === 'released'
+  )
+) {
+  console.error(
+    'Blocked: a released seed source could not be resolved; no changes applied.'
+  );
+  process.exit(1);
+}
+
+if (!args['copy-only'])
+  console.log(
+    `Reading ${seeds.length} homepages${host ? ` on ${host}` : ''}...`
+  );
+const homes = args['copy-only']
+  ? new Map()
+  : await captureHomepages(
+      seeds.map(seed => ({
+        slug: seed.slug,
+        name: seed.name,
+        url:
+          seed.homepage ??
+          overrides[seed.slug]?.homepage ??
+          `https://run-${seed.slug}.com`,
+      })),
+      join(out, 'captures'),
+      { host }
+    );
 
 const results = [];
 for (const [index, seed] of seeds.entries()) {
@@ -145,6 +168,7 @@ for (const [index, seed] of seeds.entries()) {
       override: overrides[seed.slug] ?? {},
       site,
       texts,
+      copyOnly: args['copy-only'],
     })
   );
 }
@@ -164,6 +188,7 @@ const report = await writeReport(out, {
   meta: {
     startedAt: now.toISOString(),
     mode: args.apply ? 'apply' : 'dry-run',
+    copyOnly: args['copy-only'],
     captureHost: host,
     load,
     statePath: 'scripts/seeds-sync/state.json',

@@ -1,14 +1,18 @@
 /**
- * Reads what the sync compares from a seed's repository at one commit: its
- * designed mark, its brand declarations (src/branding.json and the
- * public/rer-theme.css every seed serves) and the copy sources a page
- * rewrite starts from (CONTRACT.md, README.md, seed.json), plus its tags.
+ * Reads copy sources at the released listing's tag (HEAD for coming-soon
+ * seeds). Designed marks and brand declarations continue to follow HEAD.
  */
 import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { headCommit, rawFile, versionTags } from '../lib/net.mjs';
+import {
+  headCommit,
+  rawFile,
+  tagCommit,
+  Unreadable,
+  versionTags,
+} from '../lib/net.mjs';
 import { normaliseHex } from '../lib/pastel.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -24,8 +28,10 @@ export const COPY_FILES = ['CONTRACT.md', 'README.md', 'seed.json'];
 export const markPath = slug => sources.marks[slug] ?? sources.defaultMark;
 
 /** The files the sync reads, at `commit`; a missing file is null. */
-export async function readFiles(repo, slug, commit) {
-  const paths = { mark: markPath(slug), branding: BRANDING, theme: THEME };
+export async function readFiles(repo, slug, commit, { copyOnly = false } = {}) {
+  const paths = copyOnly
+    ? {}
+    : { mark: markPath(slug), branding: BRANDING, theme: THEME };
   for (const file of COPY_FILES) paths[file] = file;
   const entries = await Promise.all(
     Object.entries(paths).map(async ([key, path]) => [
@@ -36,13 +42,54 @@ export async function readFiles(repo, slug, commit) {
   return { paths, files: Object.fromEntries(entries) };
 }
 
-export async function readRepo(seed) {
+export async function readRepo(seed, { copyOnly = false } = {}) {
   const [head, tags] = await Promise.all([
     headCommit(seed.repo),
     versionTags(seed.repo),
   ]);
-  const { paths, files } = await readFiles(seed.repo, seed.slug, head);
-  return { head, tags, latestTag: tags[0] ?? null, paths, files };
+  const released = seed.kind === 'released';
+  if (released && !seed.version)
+    throw new Unreadable(`release of ${seed.repo}`, 'listing has no version');
+  // The displayed version is the publication boundary. A newer tag is a
+  // finding for review, not permission to read unreleased/default-branch copy.
+  const sourceRef = released ? seed.version : 'HEAD';
+  const copyCommit = released ? await tagCommit(seed.repo, sourceRef) : head;
+  const sourceReason = released
+    ? 'released listing version'
+    : tags.length
+      ? 'coming-soon seed'
+      : 'coming-soon seed; no release tag';
+  const { paths, files } = await readFiles(seed.repo, seed.slug, copyCommit, {
+    copyOnly: true,
+  });
+  if (released && !files['CONTRACT.md'])
+    throw new Unreadable(
+      `CONTRACT.md of ${seed.repo}@${sourceRef}`,
+      'absent at release tag'
+    );
+  // Brand art still tracks HEAD; only the copy files follow the release.
+  if (!copyOnly) {
+    Object.assign(paths, {
+      mark: markPath(seed.slug),
+      branding: BRANDING,
+      theme: THEME,
+    });
+    await Promise.all(
+      ['mark', 'branding', 'theme'].map(async key => {
+        files[key] = await rawFile(seed.repo, head, paths[key]);
+      })
+    );
+  }
+  return {
+    head,
+    tags,
+    latestTag: tags[0] ?? null,
+    sourceRef,
+    sourceReason,
+    copyCommit,
+    paths,
+    files,
+  };
 }
 
 /**

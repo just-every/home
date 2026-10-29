@@ -7,6 +7,8 @@ from) and imports the mechanical part.
 ```sh
 npm run seeds:sync                    # dry run: report only, changes nothing
 npm run seeds:sync -- --apply         # import the mechanical updates, record the sync
+npm run seeds:sync -- --copy-only     # check repository copy, without browser or brand updates
+npm run seeds:sync -- --copy-only --apply # record copy sources only; preserve site copy and art
 ```
 
 Options: `--only nook,vane` (some seeds), `--capture-host m1-runner` (read the
@@ -31,9 +33,18 @@ before/after images to `~/.orchestrator/evidence/home/seeds-sync/<timestamp>/`.
 | f   | Copy sources changed       | `CONTRACT.md`, `README.md`, `seed.json`                                                                                           | never: reported with the commit range for an agent's rewrite                                                                       |
 | g   | Tag on a coming-soon seed  | `git ls-remote --tags`                                                                                                            | never: moving a seed to `seeds.ts` is a decision                                                                                   |
 
-Repository files are read through `gh api` at the head commit; tags and heads
-use `git ls-remote`. Authenticate `gh` before running. Failed reads are reported
-and never replaced with local files. `--baseline-date` also uses the API.
+Copy files (`CONTRACT.md`, `README.md`, `seed.json`) are read through `gh api`
+at the released listing's version tag, resolved to a commit with
+`git ls-remote --tags` (including annotated-tag peeling). The displayed version
+is the publication boundary even when a newer tag exists. Coming-soon seeds,
+including untagged seeds, read default-branch HEAD. Every run prints each seed's
+source ref, commit and reason and includes them in its report. A released seed
+whose tag or tagged contract cannot be read blocks the run before applying.
+Brand files continue to follow HEAD; live homepages remain separate observations.
+Authenticate `gh` before running. Failed reads are never replaced with local
+files. `--baseline-date` also uses the API. `--copy-only --apply` updates only
+copy provenance in state, preserving the previous brand/home observations and
+all published wording. Copy changes remain findings for an agent's review.
 
 ## Rules and thresholds
 
@@ -94,7 +105,7 @@ and never replaced with local files. `--baseline-date` also uses the API.
   `staysComingSoon`, and `keep` (kinds of update to report but never make:
   `mark`, `colours`, `homepage`, `shot`, `headline`, `replaces`, `version`).
   `why` records who decided and when.
-- `state.json`: what the last `--apply` saw per seed (head commit, latest tag,
+- `state.json`: what the last `--apply` saw per seed (copy source commit, source ref and reason, tag,
   copy-file hashes, brand tokens, mark hash, homepage headline and
   fingerprint, and findings left open), so the next run reports only what is
   new. Commit it with the update it describes.

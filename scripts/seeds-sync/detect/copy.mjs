@@ -23,14 +23,19 @@ export function detectCopy(seed, repo, previous) {
   );
   if (!changed.length) return [];
   const range =
-    previous.commit && previous.commit !== repo.head
-      ? `https://github.com/${seed.repo}/compare/${previous.commit.slice(0, 12)}...${repo.head.slice(0, 12)}`
+    previous.commit && previous.commit !== repo.copyCommit
+      ? `https://github.com/${seed.repo}/compare/${previous.commit.slice(0, 12)}...${repo.copyCommit.slice(0, 12)}`
       : null;
   return [
     {
       type: 'copy',
       summary: `${changed.join(', ')} changed since the last sync`,
-      details: { files: changed, range, from: previous.commit, to: repo.head },
+      details: {
+        files: changed,
+        range,
+        from: previous.commit,
+        to: repo.copyCommit,
+      },
       apply: null,
       copy: `rewrite the page copy from ${changed.join(', ')}${range ? ` (${range})` : ''}`,
     },

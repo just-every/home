@@ -26,8 +26,27 @@ export async function detectSeed({
   override,
   site,
   texts,
+  copyOnly = false,
 }) {
   if (repo.error) return { seed, status: 'unreadable', reason: repo.error };
+  const copyRecord = {
+    commit: repo.copyCommit,
+    sourceRef: repo.sourceRef,
+    sourceReason: repo.sourceReason,
+    tag: seed.kind === 'released' ? repo.sourceRef : repo.latestTag,
+    copy: copyHashes(repo.files),
+  };
+  if (copyOnly) {
+    const findings = detectCopy(seed, repo, previous);
+    for (const finding of findings) finding.key = keyOf(finding);
+    return {
+      seed,
+      status: 'ok',
+      findings,
+      copyOnly,
+      record: { ...previous, ...copyRecord },
+    };
+  }
   const homepage = await detectHomepage(
     seed,
     home,
@@ -96,9 +115,7 @@ export async function detectSeed({
   }
 
   const record = {
-    commit: repo.head,
-    tag: repo.latestTag ?? previous?.tag ?? null,
-    copy: copyHashes(repo.files),
+    ...copyRecord,
     brand: current,
     mark: repo.files.mark ? sha256(repo.files.mark).slice(0, 16) : null,
     home: homepage.record ?? previous?.home ?? null,
@@ -111,5 +128,8 @@ export function closeRecord(result) {
   const open = result.findings
     .filter(finding => !finding.applied)
     .map(finding => finding.key);
-  return open.length ? { ...result.record, open } : result.record;
+  const kept = result.copyOnly
+    ? [...new Set([...(result.record.open ?? []), ...open])]
+    : open;
+  return kept.length ? { ...result.record, open: kept } : result.record;
 }
