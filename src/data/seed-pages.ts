@@ -742,7 +742,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Outlook mail and calendar',
     ],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.4.0',
+    version: 'v0.4.1',
     contractUrl: 'https://run-orbit.com/contract',
     seoTitle: 'Orbit: free, open-source alternative to HubSpot',
     seoDescription:
@@ -1635,7 +1635,7 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'GLOVE-10',
-        text: "An agent can prepare quote drafts, dispatch proposals and invoice drafts, but can never approve, decide its own work or perform a person's step.",
+        text: "Your company's policy controls an agent's quote, dispatch and invoice actions; its preparation and any person's later decision are recorded separately.",
         category: 'ai',
       },
       {
@@ -3080,7 +3080,7 @@ export const seedPageContent: SeedPageContent[] = [
     promises: [
       {
         id: 'HTTP-001',
-        text: "Workshop pages, commands and downloads are private: every request checks the signed-in role, and an assistant's key can only prepare, never approve.",
+        text: 'Workshop pages, commands and downloads are private: every request checks the signed-in role, and a preparation-only assistant key cannot approve.',
         category: 'access',
       },
       {
@@ -3115,7 +3115,7 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'AGENT-001',
-        text: 'An assistant with an expiring, revocable key can only prepare estimates, dispatch and invoices; it cannot approve, share, export or erase.',
+        text: "A preparation-only assistant grant covers estimates, dispatch and invoices, expires and can be revoked; broader actions need separate permissions under your company's policy.",
         category: 'ai',
       },
       {
@@ -3335,7 +3335,7 @@ export const seedPageContent: SeedPageContent[] = [
       },
       {
         id: 'ACCESS-001',
-        text: "An assistant key can only read and draft; it cannot add clients, approve prices, send offers or export invoices, and a draft it touched always needs a person's approval.",
+        text: "Your company's policy controls an assistant's proposal actions within the sponsoring person's rights; any approval still binds the exact version.",
         category: 'ai',
       },
       {
