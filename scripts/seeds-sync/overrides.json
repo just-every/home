@@ -6,9 +6,5 @@
   "auth": {
     "staysComingSoon": true,
     "why": "Owner intent: Auth stays coming soon, tagged or not."
-  },
-  "oncall": {
-    "keep": ["version"],
-    "why": "Main/gr, 30 Oct 2026: Oncall v0.5.2 is not released (agent door fails BASE-AGENT-004 sponsor.changed-email); the listing stays at v0.5.1 until gr posts v0.5.3 RELEASED with a signed GitHub Release. Remove this override then."
   }
 }

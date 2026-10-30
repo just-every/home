@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T17:52:18.735Z",
+  "generatedAt": "2026-10-30T03:08:48.458Z",
   "listings": [
     {
       "slug": "auth",
@@ -591,7 +591,7 @@
       "slug": "oncall",
       "name": "Oncall",
       "status": "released",
-      "version": "v0.5.1",
+      "version": "v0.5.3",
       "category": "On-call rotas",
       "line": "Who's on now, who's next, and when they hand over.",
       "headline": "Everyone knows who's on call.",
