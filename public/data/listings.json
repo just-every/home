@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T00:54:54.340Z",
+  "generatedAt": "2026-10-31T03:59:19.163Z",
   "listings": [
     {
       "slug": "auth",
@@ -611,7 +611,7 @@
       "slug": "orbit",
       "name": "Orbit",
       "status": "released",
-      "version": "v0.4.1",
+      "version": "v0.4.2",
       "category": "Sales CRM",
       "line": "A CRM that shows which deal to work next, and why.",
       "headline": "Your next deal finds you.",
