@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-30T03:07:52.771Z",
+  "syncedAt": "2026-10-31T00:54:51.715Z",
   "seeds": {
     "auth": {
       "commit": "0765fc47d5724b4d1fa07c591bcee78798e71024",
@@ -804,14 +804,14 @@
       }
     },
     "oncall": {
-      "commit": "edf6d1e955a97e6458e81990c26b51812b02ff2a",
-      "sourceRef": "v0.5.1",
+      "commit": "eb7097989320cafa6976e93e7c72bf0528c8a0fb",
+      "sourceRef": "v0.5.4",
       "sourceReason": "released listing version",
-      "tag": "v0.5.1",
+      "tag": "v0.5.4",
       "copy": {
-        "CONTRACT.md": "619a7c115c0d4fad",
-        "README.md": "cbdbfdfcc1328d1c",
-        "seed.json": "f2ef3bfdbeb92366"
+        "CONTRACT.md": "5a88ba805ec22dcd",
+        "README.md": "742f39d79fa638ac",
+        "seed.json": "1fa03f02ef19386b"
       },
       "brand": {
         "branding.primaryColor": "#1d2a35",
@@ -828,7 +828,8 @@
       "home": {
         "headline": "Everyone knows who's on call.",
         "signature": "feedddeeeffeffeffeffeffeffeffeffeffeffeffefeeffeffeffeffefffffefffffeffeffeffeffeffeffeffeffeffeeedccccccccccccccceedffeeeeeeeeedeeeffeffeffeffeeeebbbccccccbbbdddfeeffeedddcbccbeedeeefeeeeeffefeeeeeeeeeeeeeeeeefffdcbdb9ddcddddddcccdddeeeffeeed999999999dddeeeffeeccedcffeffeeedddcdcbecbabbeed99999aaaaeedfeeffeffeffeffeffeffeeeddccedc9aafeeeeeffeffeeeeeeeffeffeffeffeffeffeffeffeffeffeffeeeeffeffeffeffeffeffeffeffeffeffeffeffeffeffe"
-      }
+      },
+      "open": ["c843303a1181"]
     },
     "orbit": {
       "commit": "79a91f9243af8708a9ae054d8de20af07efd9c1a",
