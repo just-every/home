@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-31T00:54:51.715Z",
+  "syncedAt": "2026-10-31T03:59:07.776Z",
   "seeds": {
     "auth": {
       "commit": "0765fc47d5724b4d1fa07c591bcee78798e71024",
@@ -832,14 +832,14 @@
       "open": ["c843303a1181"]
     },
     "orbit": {
-      "commit": "79a91f9243af8708a9ae054d8de20af07efd9c1a",
-      "sourceRef": "v0.4.1",
+      "commit": "f0133ef0a3b5b8b4cf18be051eff73f7bf18acc6",
+      "sourceRef": "v0.4.2",
       "sourceReason": "released listing version",
-      "tag": "v0.4.1",
+      "tag": "v0.4.2",
       "copy": {
-        "CONTRACT.md": "13d9d0200a7a47c6",
+        "CONTRACT.md": "d4e16f2b57c65f92",
         "README.md": "6a400f9c5fbee3e6",
-        "seed.json": "aabe6bd2d6d64a8f"
+        "seed.json": "15c67b74819c0e8f"
       },
       "brand": {
         "theme.page": "#f5f1ea",
@@ -855,7 +855,8 @@
       "home": {
         "headline": "Your next deal finds you.",
         "signature": "eedddceeefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeeeeeeeedeeeeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddaaabbbbaabbbbbbdddfeeeeeeeeeeeedcedceedeeeeeedddbaabbbaaaddceeeeeeeeeeeeeeeeede85e97eeeeeeeeeeeddddddddddeddeeefeeeeeeeeeeeeedecbedceeeecbeedeeeeddeddedddddeedeedeeeeeeeeeeeeeeeeeefeefeeeeeddd888aaaeddeedaaa777baafeeeeeeeeeeeecbeddeeeeeeeedddcdddeeeeeedddcccdddeeeeeeeeedddddceddeedeeeeeeeeeeeeeeeeedeeeeeeeedeeeeeeeeeeeeeeeeeeeedeed"
-      }
+      },
+      "open": ["922fed04eacf"]
     },
     "pane": {
       "commit": "cfdf3c103f002bc6db3a5ade6a352a52d1edcda1",
