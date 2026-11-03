@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T21:04:29.915Z",
+  "generatedAt": "2026-11-03T21:23:43.378Z",
   "listings": [
     {
       "slug": "auth",
@@ -404,7 +404,7 @@
       "slug": "lamp",
       "name": "Lamp",
       "status": "released",
-      "version": "v1.10.0",
+      "version": "v1.11.2",
       "category": "Status page",
       "line": "The status page that never leaves your customers in the dark.",
       "headline": "When something breaks, turn the light on.",
