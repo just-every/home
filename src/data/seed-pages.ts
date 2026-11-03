@@ -343,16 +343,9 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'alerts',
       },
     ],
-    moveIn: [
-      'Atlassian Statuspage',
-      'Status.io',
-      'Better Stack',
-      'Instatus',
-      'incident.io',
-      'Sorry',
-    ],
+    moveIn: ['Atlassian Statuspage', 'Better Stack', 'Instatus', 'Sorry'],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v1.11.2',
+    version: 'v1.11.3',
     contractUrl: 'https://run-lamp.com/contract',
     seoTitle: 'Lamp: free, open-source alternative to Atlassian Statuspage',
     seoDescription:
@@ -736,7 +729,6 @@ export const seedPageContent: SeedPageContent[] = [
     moveIn: [
       'HubSpot Sales Hub',
       'Pipedrive',
-      'Salesforce Sales Cloud',
       'CSV files',
       'Gmail and Google Calendar',
       'Outlook mail and calendar',
