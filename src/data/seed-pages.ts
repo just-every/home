@@ -352,7 +352,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Sorry',
     ],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v1.10.0',
+    version: 'v1.11.2',
     contractUrl: 'https://run-lamp.com/contract',
     seoTitle: 'Lamp: free, open-source alternative to Atlassian Statuspage',
     seoDescription:

@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-02T21:03:26.099Z",
+  "syncedAt": "2026-11-03T21:23:40.541Z",
   "seeds": {
     "auth": {
       "commit": "f07f60e355bc518ab3e2487350002811e78b1290",
@@ -25,8 +25,7 @@
       "mark": "33cfe188b7598a55",
       "home": {
         "headline": "Sign in with a touch."
-      },
-      "open": ["ef4f0110a4ae"]
+      }
     },
     "balm": {
       "commit": "fc2451647ed0263ae50bd8d3536038a9a5c379c0",
@@ -133,8 +132,7 @@
       "mark": "581a708ce785af38",
       "home": {
         "headline": "Client work, ahead of every deadline."
-      },
-      "open": ["ef4f0110a4ae"]
+      }
     },
     "buoy": {
       "commit": "e85c5fa796ccd03ba45e6bea5d5fd3b65b27d471",
@@ -321,8 +319,7 @@
       "mark": "c74c4cc416a21a22",
       "home": {
         "headline": "The busywork runs itself."
-      },
-      "open": ["53989d8604fb"]
+      }
     },
     "dial": {
       "commit": "da9f7f3c8b60b1b1935de0a4c7384a5cad1256ac",
@@ -534,18 +531,17 @@
       "mark": "c9cc832ab455ad83",
       "home": {
         "headline": "Send it once. Get it signed."
-      },
-      "open": ["ef4f0110a4ae"]
+      }
     },
     "lamp": {
-      "commit": "569e38fca9aa71bf97be233b730e52a7e4ac4f09",
-      "sourceRef": "v1.10.0",
+      "commit": "d8fb9a9e366e0d10175d66923de5ce52671a60bd",
+      "sourceRef": "v1.11.2",
       "sourceReason": "released listing version",
-      "tag": "v1.10.0",
+      "tag": "v1.11.2",
       "copy": {
-        "CONTRACT.md": "a8156b662c7b81bf",
-        "README.md": "a555ceb8f6c0e17d",
-        "seed.json": "c095605714aa9d72"
+        "CONTRACT.md": "ab5e7c7f9c6b491f",
+        "README.md": "31db4c946bd579a1",
+        "seed.json": "8d9b3cf86f187aa7"
       },
       "brand": {
         "theme.page": "#f8f6f0",
@@ -561,7 +557,8 @@
       "home": {
         "headline": "When something breaks, turn the light on.",
         "signature": "eeddddeeefeefeefeeffeeeeeeeffefeeeeeeeeeed9a9ddcfeeeeefeefeefeefeeffeccccccffefeefeefeeeeeeeeeeefeefeefeefeefeeffeccc444454dccffefeefeefeeffeffefeefeefeeffeffeffeddcdcbdcbedcffeffeffefeefeefeefeefeeffeeeddddeedeedeedeedeededddddeeeffefeefeefeefeeffeeedddcccbccbbbbbbbbbaccbddceedffefeefeefeefeefeeffeeeeddcedcddcddcddcdddfeeffefeefeefeefeefeefeefeeffebbb898eedeedeedeedfeefeefeefeefeefeefeefeefeefeeeeddddeedeeeeeeeeeeeefeefeefeefee"
-      }
+      },
+      "open": ["c843303a1181"]
     },
     "lanyard": {
       "commit": "db2a1ef37612248290e0efd85209c9b1f0da8c83",
@@ -698,12 +695,12 @@
       }
     },
     "mallet": {
-      "commit": "a1c2ff372f8a1b04048ad995fa9a160d34fe2110",
+      "commit": "e5bc44fa31a1ba2d2296be15474d8b7619a07d22",
       "sourceRef": "HEAD",
       "sourceReason": "coming-soon seed; no release tag",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "2ee131ef14ba685f",
+        "CONTRACT.md": "97fa20bc2aa24f32",
         "README.md": "bdcf1b90678e4fe8",
         "seed.json": "9bde55c8776aa0f6"
       },
@@ -809,14 +806,14 @@
       }
     },
     "oncall": {
-      "commit": "eb7097989320cafa6976e93e7c72bf0528c8a0fb",
-      "sourceRef": "v0.5.4",
+      "commit": "e2b4e1f7acabb49ea376f5c760fdbf9f3312b70a",
+      "sourceRef": "v0.5.5",
       "sourceReason": "released listing version",
-      "tag": "v0.5.4",
+      "tag": "v0.5.5",
       "copy": {
-        "CONTRACT.md": "5a88ba805ec22dcd",
-        "README.md": "742f39d79fa638ac",
-        "seed.json": "1fa03f02ef19386b"
+        "CONTRACT.md": "fd60118481e5c607",
+        "README.md": "b061e4eda74e4c59",
+        "seed.json": "f7ad0286a67b3be9"
       },
       "brand": {
         "branding.primaryColor": "#1d2a35",
@@ -833,17 +830,18 @@
       "home": {
         "headline": "Everyone knows who's on call.",
         "signature": "feedddeeeffeffeffeffeffeffeffeffeffeffeffefeeffeffeffeffefffffefffffeffeffeffeffeffeffeffeffeffeeedccccccccccccccceedffeeeeeeeeedeeeffeffeffeffeeeebbbccccccbbbdddfeeffeedddcbccbeedeeefeeeeeffefeeeeeeeeeeeeeeeeefffdcbdb9ddcddddddcccdddeeeffeeed999999999dddeeeffeeccedcffeffeeedddcdcbecbabbeed99999aaaaeedfeeffeffeffeffeffeffeeeddccedc9aaffefeeffeffeeeeeeefeeffeffeffeffeffeffeffeffeffeffeeeeeeeffeeeeeeeffefeefeeffefeeeeeffeffeffeffe"
-      }
+      },
+      "open": ["c843303a1181"]
     },
     "orbit": {
-      "commit": "f0133ef0a3b5b8b4cf18be051eff73f7bf18acc6",
-      "sourceRef": "v0.4.2",
+      "commit": "d06ba7473ab6ed7f5e12f5a1a0ca74e9b77812d5",
+      "sourceRef": "v0.4.3",
       "sourceReason": "released listing version",
-      "tag": "v0.4.2",
+      "tag": "v0.4.3",
       "copy": {
         "CONTRACT.md": "d4e16f2b57c65f92",
         "README.md": "6a400f9c5fbee3e6",
-        "seed.json": "15c67b74819c0e8f"
+        "seed.json": "54e7e7d7966fbcbf"
       },
       "brand": {
         "theme.page": "#f5f1ea",
@@ -859,7 +857,8 @@
       "home": {
         "headline": "Your next deal finds you.",
         "signature": "eedddceeefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeeeeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedddaaabbbaaabbbbbbdddfeeeeeeeeeeeedcedceedeeeeeedddbaabbbaaaddceeeeeeeeeeeeeeeeede85e97eeeeeeeeeeedddddddddddddeeeeeeeeeeeeeeeeedecbedceeeecbeedeeeeddeddddddddeedeeefeeeeeeeeeeeeeeeeefeefeeeeeddd888aaaeddeedaaa777baafeeeeeeeeeeeecbeddeeeeeeeedddcdddeeeeeedddcccdddeeeeeeeeedddddceddeedeeeeeeeeeeeeeeeeedeeeeeeeedeeeeeeeeeeeeeeeeeeeedeed"
-      }
+      },
+      "open": ["64cb07f6a0dd"]
     },
     "pane": {
       "commit": "16501ad7d10c5af6f04799aa44c700249a41e9b4",
@@ -885,8 +884,7 @@
       "mark": "96a9e2a568f29a93",
       "home": {
         "headline": "Your website, finally yours."
-      },
-      "open": ["ef4f0110a4ae"]
+      }
     },
     "pantry": {
       "commit": "b24aaab5aac7e4cd3b83ef39d93a07e8325b6a8e",
@@ -997,12 +995,12 @@
       }
     },
     "placemat": {
-      "commit": "071fbfffb8790b7c6d7991bba97cb5c9eb9ae36b",
+      "commit": "d4ff2ae9e7b6bd2451c344fefa228e1542f9cc5d",
       "sourceRef": "HEAD",
       "sourceReason": "coming-soon seed; no release tag",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "e1bc6a00b1903639",
+        "CONTRACT.md": "6d0cec938b2c565b",
         "README.md": "7319507ba101b574",
         "seed.json": "81b3d3aa7dbeafee"
       },
@@ -1025,12 +1023,12 @@
       "open": ["ef4f0110a4ae"]
     },
     "platter": {
-      "commit": "b00feb7a4cb76a8e53df732acf62222c27c72f76",
+      "commit": "43721821c8e0c4474057f4cfe02ccb4227e76dd2",
       "sourceRef": "HEAD",
       "sourceReason": "coming-soon seed; no release tag",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "d6698410250473b8",
+        "CONTRACT.md": "f4d9bae7443d57e7",
         "README.md": "7d91745d757ade65",
         "seed.json": "1175b76fe7042206"
       },
@@ -1076,8 +1074,7 @@
       "mark": "42b7b04351f945c5",
       "home": {
         "headline": "Handover day, right on time."
-      },
-      "open": ["ef4f0110a4ae"]
+      }
     },
     "purse": {
       "commit": "bab2cbe475ea23bd4831a71b441a6fb2b0d2cbdf",
@@ -1107,12 +1104,12 @@
       }
     },
     "satchel": {
-      "commit": "3431f2097f0a03535d2bb229f50a790fa5a56cd6",
+      "commit": "2af812089d21921640dbb8875c808f817a5c21b5",
       "sourceRef": "HEAD",
       "sourceReason": "coming-soon seed; no release tag",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "ee975b491de4ee38",
+        "CONTRACT.md": "e95947ec5aaf6d7d",
         "README.md": "3f0e86261c877c73",
         "seed.json": "7346886b444e2893"
       },
@@ -1132,7 +1129,7 @@
       "home": {
         "headline": "Every matter, under control."
       },
-      "open": ["53989d8604fb"]
+      "open": ["ef4f0110a4ae"]
     },
     "slate": {
       "commit": "635df53b1d055f31998b7a5dd448ce467dab07d2",
@@ -1159,8 +1156,9 @@
       "mark": "01854532d6b2d7f5",
       "home": {
         "headline": "One home for everything your team knows.",
-        "signature": "eeddddeedfeeeeefeefeefeeeeefeefeeeeeeeeeeeeedeeeeeeeeeeeeeeeeeeeedeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededeeddddeeeeedeedeedfeeeeeeeeeeeeeeeeeeeefeededccceeeeedeedeeeeedeedfeeeeeeeeeeeeeeeeeeeefeeeeddddeeeeedeedeeededdedeeeeeeeeeeeeeeeeeeeeefeeeedcccccccccccccccccbeddfeeeeeeeeeeeeeeeeeeeeeeeeeedddcccccbcccccbddceedfeeeeeeeeeeeeeeeeeeeefeeeeebbabbbbbaaa9ddceedeeeeeeeeeeeeeeeeeeeeeeeefeeeedaa9bbaaaaaa9ddceedeeeeeeeeeeeeeee"
-      }
+        "signature": "eeddddeedfeeeeefeefeefeeeeefeefeeeeeeeeeeeeedeeeeeeeeeeeeeeeeeeeedeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededeeddddeeeeedeedeedfeeeeeeeeeeeeeeeeeeeefeededccceeeeedeedeeeeedeedfeeeeeeeeeeeeeeeeeeeefeeeeddddeeeeedeedeeededdedeeeeeeeeeeeeeeeeeeeeefeeeedcccccccccccccccccbeddfeeeeeeeeeeeeeeeeeeeeeeeeedddcccbccbccbccbddceedfeeeeeeeeeeeeeeeeeeeeeeefeeeedbbbbaaddddddeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeebbaaa9eedeedeeeeeeeeeeeeeeeeee"
+      },
+      "open": ["2b3d410f3dd9"]
     },
     "spool": {
       "commit": "9654729a3be89c2516c755c4a595e8dc4590aeb4",
@@ -1218,12 +1216,12 @@
       }
     },
     "strap": {
-      "commit": "6fadf60e274a77ab9cf8b1f2e29f9df7218eaa1a",
+      "commit": "a0ad77620c82771e7cf39e2b46af5f76d36171a2",
       "sourceRef": "HEAD",
       "sourceReason": "coming-soon seed; no release tag",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "b96d357d4777c742",
+        "CONTRACT.md": "18190d4e4a36f7a5",
         "README.md": "25880674fb225aa3",
         "seed.json": "18dc2029bf7a37ce"
       },
@@ -1242,7 +1240,7 @@
       "home": {
         "headline": "Full classes. Members who stay."
       },
-      "open": ["53989d8604fb"]
+      "open": ["ef4f0110a4ae"]
     },
     "terrace": {
       "commit": "0afcac8b3a42c23d984078e6ff90e928c9ebc22f",
@@ -1272,14 +1270,14 @@
       }
     },
     "uptime": {
-      "commit": "2937efbdda7ff103938e4cf3ea9f1843f94a4fa2",
-      "sourceRef": "v0.4.3",
+      "commit": "4a2ababc3f2bfc3981a95808cc962a95303d9af2",
+      "sourceRef": "v0.5.0",
       "sourceReason": "released listing version",
-      "tag": "v0.4.3",
+      "tag": "v0.5.0",
       "copy": {
-        "CONTRACT.md": "0a82dbdb2f11ad5a",
-        "README.md": "5bdaf012b6b03de9",
-        "seed.json": "8b7468d201ad0143"
+        "CONTRACT.md": "9b01c8ad8aaa8794",
+        "README.md": "de187f86c66b87f5",
+        "seed.json": "9821b065e1df86f4"
       },
       "brand": {
         "branding.primaryColor": "#14204a",
@@ -1296,7 +1294,8 @@
       "home": {
         "headline": "Sleep through the night.",
         "signature": "eeedddddeeefeefeefeefeefeefeefeefeefeeeededdeeeeeeeddeeeeddeddeddeddeddeddeddeddeddeeeeeeeeeeeeeeeeeeeeefddebbcbbcbbcbbcbbcbbcbbcabcddeeeeeeeeeeeeeeeeeeeeeeededdeededdeddeddeddeddeeeeeeeeeeeeeeeeeeeeeeeeedcd99a99accddddddddddedeeeeeeeeeeeeeedeeeeeeeeeedddaaaa9adddeddedeeddeeeeeeeeeeeeeeefedfedfededdeddfedfededdeddfedfedfddedcfddeddeddcccdddeddfdcedcedcfdcfdcfdcedcedcedcedbfdcfdcedc55888baacbbcbbccbcccceccdccdcceccedbfdceccbac77a"
-      }
+      },
+      "open": ["c843303a1181"]
     },
     "vane": {
       "commit": "a2638146dc0faaefe358d203ac940389183151ef",
@@ -1323,8 +1322,7 @@
       "mark": "422414cce16a4cc2",
       "home": {
         "headline": "See which way the wind blows."
-      },
-      "open": ["ef4f0110a4ae"]
+      }
     },
     "vector": {
       "commit": "3c1e3de9f338b79206be339f7b594ed55e62c934",
