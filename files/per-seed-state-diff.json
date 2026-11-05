@@ -1,0 +1,126 @@
+[
+  {
+    "seed": "crank",
+    "changes": {
+      "copy": {
+        "before": {
+          "CONTRACT.md": "f9eddf45dc4760a1",
+          "README.md": "17ee4f7ea9911d08",
+          "seed.json": "cb3854ec69090483"
+        },
+        "after": {
+          "CONTRACT.md": "aac2d3d2ae3f5062",
+          "README.md": "17ee4f7ea9911d08",
+          "seed.json": "cb3854ec69090483"
+        }
+      },
+      "commit": {
+        "before": "85383fe22f35ff8f627feefb5f2156fbe1013348",
+        "after": "e2c146dc38eb64e685cf01d2c56e798404b3936e"
+      }
+    }
+  },
+  {
+    "seed": "placemat",
+    "changes": {
+      "copy": {
+        "before": {
+          "CONTRACT.md": "bcb26cf5b141538a",
+          "README.md": "7319507ba101b574",
+          "seed.json": "81b3d3aa7dbeafee"
+        },
+        "after": {
+          "CONTRACT.md": "f98f316649ad03f6",
+          "README.md": "7319507ba101b574",
+          "seed.json": "81b3d3aa7dbeafee"
+        }
+      },
+      "commit": {
+        "before": "80cfda9a755fac08ad1c5d0f30c8c91646b7943b",
+        "after": "9e6bb6147a834849683f30973a45a814a0ee0139"
+      }
+    }
+  },
+  {
+    "seed": "platter",
+    "changes": {
+      "copy": {
+        "before": {
+          "CONTRACT.md": "f07bbae03dee6d16",
+          "README.md": "7d91745d757ade65",
+          "seed.json": "1175b76fe7042206"
+        },
+        "after": {
+          "CONTRACT.md": "f11a88e1690bbbd0",
+          "README.md": "7d91745d757ade65",
+          "seed.json": "1175b76fe7042206"
+        }
+      },
+      "commit": {
+        "before": "3662a92c8630520c6deca5795989397b01814599",
+        "after": "696c5253a2a06ba928c1e6f5457b4d4e10aa7e1a"
+      }
+    }
+  },
+  {
+    "seed": "satchel",
+    "changes": {
+      "copy": {
+        "before": {
+          "CONTRACT.md": "cd92815749122266",
+          "README.md": "3f0e86261c877c73",
+          "seed.json": "7346886b444e2893"
+        },
+        "after": {
+          "CONTRACT.md": "bb45a7b8c3952de2",
+          "README.md": "3f0e86261c877c73",
+          "seed.json": "7346886b444e2893"
+        }
+      },
+      "commit": {
+        "before": "49349464fe624676a13bce36d05b3c7c0951ed1f",
+        "after": "798b3b2110cdeddb82f4772d6860d9650df3f695"
+      }
+    }
+  },
+  {
+    "seed": "strap",
+    "changes": {
+      "copy": {
+        "before": {
+          "CONTRACT.md": "18190d4e4a36f7a5",
+          "README.md": "25880674fb225aa3",
+          "seed.json": "18dc2029bf7a37ce"
+        },
+        "after": {
+          "CONTRACT.md": "18190d4e4a36f7a5",
+          "README.md": "d091a54bc841ed36",
+          "seed.json": "18dc2029bf7a37ce"
+        }
+      },
+      "commit": {
+        "before": "a0ad77620c82771e7cf39e2b46af5f76d36171a2",
+        "after": "5bc1e11b32150892809e3d81d525e46e506233cb"
+      }
+    }
+  },
+  {
+    "seed": "terrace",
+    "changes": {
+      "open": {
+        "before": null,
+        "after": [
+          "c47278a1546d"
+        ]
+      },
+      "home": {
+        "before": {
+          "headline": "Rent in. Repairs done. Owners paid."
+        },
+        "after": {
+          "headline": "Rent in. Repairs done. Owners informed."
+        }
+      }
+    }
+  }
+]

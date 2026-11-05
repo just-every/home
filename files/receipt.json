@@ -1,0 +1,108 @@
+{
+  "base_sha": "5e018f20cd79437a02bf826505a116eae9b288a9",
+  "branch": "cloud/je-sync-9",
+  "before_counts": {
+    "total": 49,
+    "coming-soon": 14,
+    "released": 35
+  },
+  "initial_dry_exit": 1,
+  "initial_dry_limitation": "Playwright missing; installed globally and repeated without product implementation changes",
+  "npm_ci": "passed",
+  "clause_status_changes": [],
+  "after_counts": {
+    "total": 49,
+    "coming-soon": 14,
+    "released": 35
+  },
+  "excluded_absent": [
+    "barrow",
+    "beacon",
+    "brook",
+    "delta",
+    "ferry",
+    "lily",
+    "linen",
+    "relay"
+  ],
+  "listings_generate": "unchanged (49 seeds)",
+  "listings_check": "passed",
+  "full_apply": "1 of 49 seeds changed; Terrace existing homepage still applied",
+  "copy_apply": "5 of 49 seeds changed; provenance only",
+  "public_claim_edits": [],
+  "version_promotions": [],
+  "status_promotions": [],
+  "dry_after": "0 of 49 seeds changed; 0 unreadable",
+  "remaining_unexplained_findings": [],
+  "prepublication_main": "5e018f20cd79437a02bf826505a116eae9b288a9",
+  "prepublication_rebase": "current branch up to date; autostash restored cleanly",
+  "local_checks": {
+    "npm ci": "passed",
+    "npm run listings": "unchanged (49 seeds)",
+    "npm run listings -- --check": "passed",
+    "npm run type-check": "passed",
+    "npm run lint": "passed",
+    "npm run build": "passed",
+    "git diff --check": "passed",
+    "scope_check": "passed: two allowed paths",
+    "credential_shape_scan": "passed"
+  },
+  "changed_paths": [
+    "public/seeds/terrace/home.webp",
+    "scripts/seeds-sync/state.json"
+  ],
+  "build_note": "Next.js printed existing middleware-to-proxy deprecation warning; build passed",
+  "product_head": "298570aa56137eb77a8a420fb98510d01e2e748d",
+  "candidate_commits_checked": [
+    "298570aa56137eb77a8a420fb98510d01e2e748d"
+  ],
+  "identity_and_trailers": "passed after local hook repair: fleet author and committer; no trailers",
+  "browser_proof": "passed at 1440; screenshots at 1440 and 390; visually inspected",
+  "local_runtime_note": "Initial network-idle wait timed out with missing local analytics tables. Applied documented local D1 migrations and used DOM/font/image readiness for proof; no product changes.",
+  "servers_and_browsers": "closed; recorded Next server PID terminated; subreaper finished",
+  "hook_compatibility_note": "Supplied symlinks failed Husky relative h lookup. Changed clone-local forwarding to exec original hook paths, retaining fleet commit-msg cleanup and original Husky lint-staged/prettier, which passed. Initial commit failed; an unintended base-only push attempt then failed locally at pre-push before publication. Repeated identity and message checks on the actual candidate.",
+  "product_push": "success",
+  "pr": {
+    "base": "main",
+    "head_sha": "298570aa56137eb77a8a420fb98510d01e2e748d",
+    "html_url": "https://github.com/just-every/home/pull/33",
+    "number": 33,
+    "state": "open"
+  },
+  "ci_discovery_at_epoch": 1793914003.1964393,
+  "ci_runs": [
+    {
+      "conclusion": null,
+      "event": "pull_request",
+      "head_sha": "298570aa56137eb77a8a420fb98510d01e2e748d",
+      "html_url": "https://github.com/just-every/home/actions/runs/42112668587",
+      "id": 42112668587,
+      "name": "Verify branch",
+      "status": "pending"
+    },
+    {
+      "conclusion": null,
+      "event": "dynamic",
+      "head_sha": "298570aa56137eb77a8a420fb98510d01e2e748d",
+      "html_url": "https://github.com/just-every/home/actions/runs/42112663189",
+      "id": 42112663189,
+      "name": "PR #33",
+      "status": "in_progress"
+    },
+    {
+      "conclusion": null,
+      "event": "push",
+      "head_sha": "298570aa56137eb77a8a420fb98510d01e2e748d",
+      "html_url": "https://github.com/just-every/home/actions/runs/42112620417",
+      "id": 42112620417,
+      "name": "Verify branch",
+      "status": "in_progress"
+    }
+  ],
+  "manual_github_calls_used": 7,
+  "manual_github_budget": 10,
+  "remote_ref_verified": true,
+  "working_tree_clean": true,
+  "packet_credential_shape_scan": "passed; no token-shaped strings or signed/credential-bearing URLs found",
+  "browser_visual_review": "New still renders in existing Terrace gallery at 1440 and 390. No new product gallery assets or layout changes. Background, mark and JE written copy preserved."
+}

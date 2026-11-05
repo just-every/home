@@ -1,0 +1,126 @@
+[
+  {
+    "seed": "lamp",
+    "command": "gh api repos/just-every/run-lamp/releases/latest",
+    "exit": 0,
+    "release": {
+      "assets": [
+        {
+          "browser_download_url": "https://github.com/just-every/run-lamp/releases/download/v1.11.3/rer-release.dsse.json",
+          "name": "rer-release.dsse.json",
+          "size": 3141
+        }
+      ],
+      "draft": false,
+      "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.3",
+      "prerelease": false,
+      "published_at": "2026-11-03T22:39:03Z",
+      "tag_name": "v1.11.3"
+    },
+    "error": null,
+    "signature_verified": false
+  },
+  {
+    "seed": "uptime",
+    "command": "gh api repos/just-every/run-uptime/releases/latest",
+    "exit": 0,
+    "release": {
+      "assets": [
+        {
+          "browser_download_url": "https://github.com/just-every/run-uptime/releases/download/v0.5.0/public-source.tar",
+          "name": "public-source.tar",
+          "size": 122878976
+        },
+        {
+          "browser_download_url": "https://github.com/just-every/run-uptime/releases/download/v0.5.0/publish-check.json",
+          "name": "publish-check.json",
+          "size": 610112
+        },
+        {
+          "browser_download_url": "https://github.com/just-every/run-uptime/releases/download/v0.5.0/release-receipt.json",
+          "name": "release-receipt.json",
+          "size": 1937
+        },
+        {
+          "browser_download_url": "https://github.com/just-every/run-uptime/releases/download/v0.5.0/rer-release.dsse.json",
+          "name": "rer-release.dsse.json",
+          "size": 3361
+        },
+        {
+          "browser_download_url": "https://github.com/just-every/run-uptime/releases/download/v0.5.0/uptime-v0.5.0-release.tar.gz",
+          "name": "uptime-v0.5.0-release.tar.gz",
+          "size": 97323493
+        }
+      ],
+      "draft": false,
+      "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.0",
+      "prerelease": false,
+      "published_at": "2026-11-01T17:37:52Z",
+      "tag_name": "v0.5.0"
+    },
+    "error": null,
+    "signature_verified": false
+  },
+  {
+    "seed": "orbit",
+    "command": "gh api repos/just-every/run-orbit/releases/latest",
+    "exit": 0,
+    "release": {
+      "assets": [
+        {
+          "browser_download_url": "https://github.com/just-every/run-orbit/releases/download/v0.4.3/orbit-v0.4.3-release.tar.gz",
+          "name": "orbit-v0.4.3-release.tar.gz",
+          "size": 81325426
+        },
+        {
+          "browser_download_url": "https://github.com/just-every/run-orbit/releases/download/v0.4.3/public-source.tar",
+          "name": "public-source.tar",
+          "size": 116327424
+        },
+        {
+          "browser_download_url": "https://github.com/just-every/run-orbit/releases/download/v0.4.3/publish-check.json",
+          "name": "publish-check.json",
+          "size": 483669
+        },
+        {
+          "browser_download_url": "https://github.com/just-every/run-orbit/releases/download/v0.4.3/release-receipt.json",
+          "name": "release-receipt.json",
+          "size": 2379
+        },
+        {
+          "browser_download_url": "https://github.com/just-every/run-orbit/releases/download/v0.4.3/rer-release.dsse.json",
+          "name": "rer-release.dsse.json",
+          "size": 3333
+        }
+      ],
+      "draft": false,
+      "html_url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.3",
+      "prerelease": false,
+      "published_at": "2026-11-01T17:37:37Z",
+      "tag_name": "v0.4.3"
+    },
+    "error": null,
+    "signature_verified": false
+  },
+  {
+    "seed": "oncall",
+    "command": "gh api repos/just-every/run-oncall/releases/latest",
+    "exit": 0,
+    "release": {
+      "assets": [
+        {
+          "browser_download_url": "https://github.com/just-every/run-oncall/releases/download/v0.5.5/rer-release.dsse.json",
+          "name": "rer-release.dsse.json",
+          "size": 3169
+        }
+      ],
+      "draft": false,
+      "html_url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.5",
+      "prerelease": false,
+      "published_at": "2026-11-02T16:43:15Z",
+      "tag_name": "v0.5.5"
+    },
+    "error": null,
+    "signature_verified": false
+  }
+]

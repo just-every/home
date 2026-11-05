@@ -1,0 +1,884 @@
+[
+  {
+    "slug": "nook",
+    "url": "https://run-nook.com",
+    "finalUrl": "https://run-nook.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Nook — Talk it through. Get it done.",
+    "h1": "Talk it through. Get it done.",
+    "headline": "Talk it through. Get it done.",
+    "alternativeTo": "An open source alternative to Slack and Microsoft Teams",
+    "theme": {
+      "page": "#ffffff",
+      "text": "#2a1d21",
+      "action": "#2a1d21",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "uptime",
+    "url": "https://run-uptime.com",
+    "finalUrl": "https://run-uptime.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Uptime — Sleep through the night",
+    "h1": "Sleep through the night.",
+    "headline": "Sleep through the night.",
+    "alternativeTo": "Open source alternative to Pingdom, UptimeRobot and Better Stack",
+    "theme": {
+      "page": "#f7f6fb",
+      "text": "#14204a",
+      "action": "#14204a",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "lamp",
+    "url": "https://run-lamp.com",
+    "finalUrl": "https://run-lamp.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Lamp — When something breaks, turn the light on.",
+    "h1": "When something breaks, turn the light on.",
+    "headline": "When something breaks, turn the light on.",
+    "alternativeTo": "Open source alternative to Atlassian Statuspage, Instatus and Better Stack",
+    "theme": {
+      "page": "#f8f6f0",
+      "text": "#182d24",
+      "action": "#182d24",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "cradle",
+    "url": "https://run-cradle.com",
+    "finalUrl": "https://run-cradle.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Cradle, a self-hosted records builder",
+    "h1": "Everything comes together in one place.",
+    "headline": "Everything comes together in one place.",
+    "alternativeTo": "An open source alternative to Airtable and Smartsheet",
+    "theme": {
+      "page": "#f3f3ee",
+      "text": "#0d302c",
+      "action": "#d4f166",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "slate",
+    "url": "https://run-slate.com",
+    "finalUrl": "https://run-slate.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Slate",
+    "h1": "Slate",
+    "headline": "One home for everything your team knows.",
+    "alternativeTo": "100% free, open source alternative to Notion, Confluence and Guru",
+    "theme": {
+      "page": "#f6f3e8",
+      "text": "#1b1b18",
+      "action": "#1b1b18",
+      "themeColor": "#f6f3e8"
+    }
+  },
+  {
+    "slug": "happytohelp",
+    "url": "https://happytohelp.com",
+    "finalUrl": "https://happytohelp.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "HappyToHelp — Customer Support, Solved.",
+    "h1": "Knows what your customer needs before they do.",
+    "headline": "Knows what your customer needs before they do.",
+    "alternativeTo": "Open source alternative to Zendesk, Intercom, Help Scout and Freshdesk",
+    "theme": {
+      "page": "#f6f2ea",
+      "text": "#141414",
+      "action": "#141414",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "vector",
+    "url": "https://run-vector.com",
+    "finalUrl": "https://run-vector.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Vector — Know what happens next.",
+    "h1": "Know what happens next.",
+    "headline": "Know what happens next.",
+    "alternativeTo": "100% free, open source alternative to Linear, Jira and Asana",
+    "theme": {
+      "page": "#f4f0e6",
+      "text": "#171a20",
+      "action": "#171a20",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "pencil",
+    "url": "https://run-pencil.com",
+    "finalUrl": "https://run-pencil.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Pencil, the open-source form builder: ask like you’re listening",
+    "h1": "Ask like you’re listening.",
+    "headline": "Ask like you’re listening.",
+    "alternativeTo": "100% free, open source alternative to Typeform, Google Forms and Jotform",
+    "theme": {
+      "page": "#fbfaf6",
+      "text": "#1e2124",
+      "action": "#1e2124",
+      "themeColor": "#fbfaf6"
+    }
+  },
+  {
+    "slug": "orbit",
+    "url": "https://run-orbit.com",
+    "finalUrl": "https://run-orbit.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Orbit — Your next deal finds you.",
+    "h1": "Your next deal finds you.",
+    "headline": "Your next deal finds you.",
+    "alternativeTo": "Open source alternative to HubSpot, Pipedrive and Salesforce",
+    "theme": {
+      "page": "#fdfaf6",
+      "text": "#16171d",
+      "action": "#16171d",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "dial",
+    "url": "https://run-dial.com",
+    "finalUrl": "https://run-dial.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Dial · Pick a time. That’s it.",
+    "h1": "Pick a time. That’s it.",
+    "headline": "Pick a time. That’s it.",
+    "alternativeTo": "100% free, open source alternative to Calendly, Acuity Scheduling and SavvyCal",
+    "theme": {
+      "page": "#f4f1ea",
+      "text": "#1d1c1a",
+      "action": "#1d1c1a",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "mango",
+    "url": "https://run-mango.com",
+    "finalUrl": "https://run-mango.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Mango — Newsletters people are glad to get",
+    "h1": "Newsletters people are glad to get.",
+    "headline": "Newsletters people are glad to get.",
+    "alternativeTo": "100% free, open source alternative to Mailchimp and Klaviyo",
+    "theme": {
+      "page": "#fbf7ee",
+      "text": "#1d1b17",
+      "action": "#ffcf47",
+      "themeColor": "#fbf7ee"
+    }
+  },
+  {
+    "slug": "penny",
+    "url": "https://run-penny.com",
+    "finalUrl": "https://run-penny.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Penny — Every customer, heard.",
+    "h1": "Every customer, heard.",
+    "headline": "Every customer, heard.",
+    "alternativeTo": "100% free, open source alternative to Canny, UserVoice and Productboard",
+    "theme": {
+      "page": "#faf7ef",
+      "text": "#20211f",
+      "action": "#20211f",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "spool",
+    "url": "https://run-spool.com",
+    "finalUrl": "https://run-spool.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Spool — see exactly what broke",
+    "h1": "See exactly what broke.",
+    "headline": "See exactly what broke.",
+    "alternativeTo": "Open source alternative to Sentry, Bugsnag and Rollbar",
+    "theme": {
+      "page": "#f3f0e6",
+      "text": "#1c1c1b",
+      "action": "#1c1c1b",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "oncall",
+    "url": "https://run-oncall.com",
+    "finalUrl": "https://run-oncall.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Oncall — who's on call, now and next",
+    "h1": "Everyone knows who's on call.",
+    "headline": "Everyone knows who's on call.",
+    "alternativeTo": "Open source alternative to PagerDuty and Opsgenie",
+    "theme": {
+      "page": "#f8f0e3",
+      "text": "#1d2a35",
+      "action": "#1d2a35",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "balm",
+    "url": "https://run-balm.com",
+    "finalUrl": "https://run-balm.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Balm — Back to your patients",
+    "h1": "Back to your patients.",
+    "headline": "Back to your patients.",
+    "alternativeTo": "100% free, open source alternative to WebPT, SimplePractice and Jane",
+    "theme": {
+      "page": "#faf7f2",
+      "text": "#13303a",
+      "action": "#16403d",
+      "themeColor": "#faf7f2"
+    }
+  },
+  {
+    "slug": "beam",
+    "url": "https://run-beam.com",
+    "finalUrl": "https://run-beam.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Beam — Everyone trained. Everyone current.",
+    "h1": "Everyone trained. Everyone current.",
+    "headline": "Everyone trained. Everyone current.",
+    "alternativeTo": "100% free, open source alternative to TalentLMS, Trainual and Docebo",
+    "theme": {
+      "page": "#eef2fe",
+      "text": "#0d1228",
+      "action": "#0d1228",
+      "themeColor": "#c5d7fd"
+    }
+  },
+  {
+    "slug": "cabin",
+    "url": "https://run-cabin.com",
+    "finalUrl": "https://run-cabin.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Cabin — Ready before they arrive",
+    "h1": "Ready before they arrive.",
+    "headline": "Ready before they arrive.",
+    "alternativeTo": "100% free, open source alternative to Guesty, Hostaway and OwnerRez",
+    "theme": {
+      "page": "#faf7f3",
+      "text": "#03221e",
+      "action": "#062620",
+      "themeColor": "#faf7f3"
+    }
+  },
+  {
+    "slug": "chest",
+    "url": "https://run-chest.com",
+    "finalUrl": "https://run-chest.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Chest · Every file, where it should be",
+    "h1": "Every file, where it should be.",
+    "headline": "Every file, where it should be.",
+    "alternativeTo": "100% free, open source alternative to Google Drive, Dropbox and Box",
+    "theme": {
+      "page": "#fcfcff",
+      "text": null,
+      "action": "#1c1c26",
+      "themeColor": "#fcfcff"
+    }
+  },
+  {
+    "slug": "coaster",
+    "url": "https://run-coaster.com",
+    "finalUrl": "https://run-coaster.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Coaster: snap the receipt, Coaster does the rest",
+    "h1": "Snap the receipt. Coaster does the rest.",
+    "headline": "Snap the receipt. Coaster does the rest.",
+    "alternativeTo": "100% free, open source alternative to Expensify, SAP Concur and Emburse",
+    "theme": {
+      "page": "#ffffff",
+      "text": "#14171b",
+      "action": "#14171b",
+      "themeColor": "#ffffff"
+    }
+  },
+  {
+    "slug": "coffer",
+    "url": "https://run-coffer.com",
+    "finalUrl": "https://run-coffer.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Coffer — Every gift, thanked.",
+    "h1": "Every gift, thanked.",
+    "headline": "Every gift, thanked.",
+    "alternativeTo": "100% free, open source alternative to Bloomerang, Little Green Light and Neon CRM",
+    "theme": {
+      "page": "#141b4e",
+      "text": "#ffffff",
+      "action": null,
+      "themeColor": "#141b4e"
+    }
+  },
+  {
+    "slug": "gasket",
+    "url": "https://run-gasket.com",
+    "finalUrl": "https://run-gasket.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Gasket · Ready for first shift",
+    "h1": "Ready for first shift.",
+    "headline": "Ready for first shift.",
+    "alternativeTo": "100% free, open source alternative to MaintainX, UpKeep and Fiix",
+    "theme": {
+      "page": "#ffffff",
+      "text": "#1a40e2",
+      "action": "#1a40e2",
+      "themeColor": "#ffffff"
+    }
+  },
+  {
+    "slug": "easel",
+    "url": "https://run-easel.com",
+    "finalUrl": "https://run-easel.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Easel · Plan the year. Protect the cash.",
+    "h1": "Plan the year. Protect the cash.",
+    "headline": "Plan the year. Protect the cash.",
+    "alternativeTo": "100% free, open source alternative to Workday Adaptive Planning, Planful and Anaplan",
+    "theme": {
+      "page": "#ffffff",
+      "text": "#121010",
+      "action": "#121010",
+      "themeColor": "#ffffff"
+    }
+  },
+  {
+    "slug": "gauge",
+    "url": "https://run-gauge.com",
+    "finalUrl": "https://run-gauge.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Gauge: Great work, paid in full.",
+    "h1": "Great work, paid in full.",
+    "headline": "Great work, paid in full.",
+    "alternativeTo": "100% free, open source alternative to Kantata, Harvest and Scoro",
+    "theme": {
+      "page": "#ffffff",
+      "text": "#0e1a2b",
+      "action": "#01b2bd",
+      "themeColor": "#ffffff"
+    }
+  },
+  {
+    "slug": "glove",
+    "url": "https://run-glove.com",
+    "finalUrl": "https://run-glove.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Glove — Every call becomes a paid job",
+    "h1": "Every call becomes a paid job.",
+    "headline": "Every call becomes a paid job.",
+    "alternativeTo": "100% free, open source alternative to Jobber, Housecall Pro and ServiceTitan",
+    "theme": {
+      "page": "#f8fafd",
+      "text": "#0c1631",
+      "action": "#fd4b07",
+      "themeColor": "#f8fafd"
+    }
+  },
+  {
+    "slug": "larder",
+    "url": "https://run-larder.com",
+    "finalUrl": "https://run-larder.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Larder — Promise dates you can keep",
+    "h1": "Promise dates you can keep.",
+    "headline": "Promise dates you can keep.",
+    "alternativeTo": "100% free, open source alternative to Katana, MRPeasy and Fishbowl",
+    "theme": {
+      "page": "#f4f4f4",
+      "text": "#ffffff",
+      "action": "#e03127",
+      "themeColor": "#2d2d2d"
+    }
+  },
+  {
+    "slug": "lodge",
+    "url": "https://run-lodge.com",
+    "finalUrl": "https://run-lodge.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Lodge · Find them. Hire them. Welcome them.",
+    "h1": "Find them. Hire them. Welcome them.",
+    "headline": "Find them. Hire them. Welcome them.",
+    "alternativeTo": "100% free, open source alternative to Greenhouse, Workable and Lever",
+    "theme": {
+      "page": "#f3f8fe",
+      "text": "#161e28",
+      "action": "#e02a21",
+      "themeColor": "#a0d2fe"
+    }
+  },
+  {
+    "slug": "locket",
+    "url": "https://run-locket.com",
+    "finalUrl": "https://run-locket.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Locket — contracts signed, deadlines kept",
+    "h1": "Contracts signed. Deadlines kept.",
+    "headline": "Contracts signed. Deadlines kept.",
+    "alternativeTo": "100% free, open source alternative to Ironclad, Icertis and Agiloft",
+    "theme": {
+      "page": "#ffffff",
+      "text": "#111111",
+      "action": "#111111",
+      "themeColor": "#ffffff"
+    }
+  },
+  {
+    "slug": "nectar",
+    "url": "https://run-nectar.com",
+    "finalUrl": "https://run-nectar.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Nectar · Bill right. Get paid.",
+    "h1": "Bill right. Get paid.",
+    "headline": "Bill right. Get paid.",
+    "alternativeTo": "100% free, open source alternative to Stripe Billing, Chargebee and Recurly",
+    "theme": {
+      "page": "#ffffff",
+      "text": "#14171b",
+      "action": "#14171b",
+      "themeColor": "#ffffff"
+    }
+  },
+  {
+    "slug": "pantry",
+    "url": "https://run-pantry.com",
+    "finalUrl": "https://run-pantry.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Pantry — Know where every dollar went",
+    "h1": "Know where every dollar went.",
+    "headline": "Know where every dollar went.",
+    "alternativeTo": "Open source accounting alternative to QuickBooks Online, Xero and FreshBooks",
+    "theme": {
+      "page": "#f7f6fb",
+      "text": "#0b1226",
+      "action": "#0b1226",
+      "themeColor": "#f7f6fb"
+    }
+  },
+  {
+    "slug": "purse",
+    "url": "https://run-purse.com",
+    "finalUrl": "https://run-purse.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Purse — Every team’s purchases, request to payment",
+    "h1": "Every team’s purchases, request to payment.",
+    "headline": "Every team’s purchases, request to payment.",
+    "alternativeTo": "100% free, open source alternative to Procurify, Coupa and Precoro",
+    "theme": {
+      "page": "#ffffff",
+      "text": "#040404",
+      "action": "#0067db",
+      "themeColor": "#ffffff"
+    }
+  },
+  {
+    "slug": "pier",
+    "url": "https://run-pier.com",
+    "finalUrl": "https://run-pier.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Pier — Know what’s on every shelf",
+    "h1": "Know what’s on every shelf.",
+    "headline": "Know what’s on every shelf.",
+    "alternativeTo": "100% free, open source alternative to Cin7, inFlow and Fishbowl",
+    "theme": {
+      "page": "#f9f8f4",
+      "text": "#0b1020",
+      "action": "#0b1020",
+      "themeColor": "#f9f8f4"
+    }
+  },
+  {
+    "slug": "willow",
+    "url": "https://run-willow.com",
+    "finalUrl": "https://run-willow.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Willow — Look after every person.",
+    "h1": "Look after every person.",
+    "headline": "Look after every person.",
+    "alternativeTo": "100% free, open source alternative to BambooHR, Rippling and HiBob",
+    "theme": {
+      "page": "#faf8f6",
+      "text": "#2a0b28",
+      "action": "#b1054f",
+      "themeColor": "#faf8f6"
+    }
+  },
+  {
+    "slug": "lanyard",
+    "url": "https://run-lanyard.com",
+    "finalUrl": "https://run-lanyard.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Lanyard — A full crew, paid right",
+    "h1": "A full crew, paid right.",
+    "headline": "A full crew, paid right.",
+    "alternativeTo": "100% free, open source alternative to Deputy, When I Work and Homebase",
+    "theme": {
+      "page": "#ffffff",
+      "text": "#981338",
+      "action": "#9b1b3a",
+      "themeColor": "#ffffff"
+    }
+  },
+  {
+    "slug": "buoy",
+    "url": "https://run-buoy.com",
+    "finalUrl": "https://run-buoy.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Buoy · Spot the risk. Save the renewal.",
+    "h1": "Spot the risk. Save the renewal.",
+    "headline": "Spot the risk. Save the renewal.",
+    "alternativeTo": "100% free, open source alternative to Gainsight, ChurnZero and Totango",
+    "theme": {
+      "page": "#ffffff",
+      "text": "#0b0b1f",
+      "action": "#0b0b1f",
+      "themeColor": "#ffffff"
+    }
+  },
+  {
+    "slug": "terrace",
+    "url": "https://run-terrace.com",
+    "finalUrl": "https://run-terrace.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Terrace · Rent in. Repairs done. Owners informed.",
+    "h1": "Rent in. Repairs done. Owners informed.",
+    "headline": "Rent in. Repairs done. Owners informed.",
+    "alternativeTo": "100% free, open source alternative to AppFolio, Buildium and Rent Manager",
+    "theme": {
+      "page": "#f6f5fd",
+      "text": "#12163a",
+      "action": "#12163a",
+      "themeColor": "#f6f5fd"
+    }
+  },
+  {
+    "slug": "auth",
+    "url": "https://run-auth.com",
+    "finalUrl": "https://run-auth.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Auth — Sign in with a touch",
+    "h1": "Sign in with a touch.",
+    "headline": "Sign in with a touch.",
+    "alternativeTo": "An open source alternative to Auth0, Okta and Microsoft Entra",
+    "theme": {
+      "page": "#fbf8f2",
+      "text": "#1f2428",
+      "action": "#1f2428",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "blotter",
+    "url": "https://run-blotter.com",
+    "finalUrl": "https://run-blotter.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Blotter — Client work, ahead of every deadline",
+    "h1": "Client work, ahead of every deadline.",
+    "headline": "Client work, ahead of every deadline.",
+    "alternativeTo": "100% free, open source alternative to Karbon, TaxDome and Canopy",
+    "theme": {
+      "page": "#ffffff",
+      "text": "#111111",
+      "action": "#111111",
+      "themeColor": "#ffffff"
+    }
+  },
+  {
+    "slug": "evidence",
+    "url": "https://run-evidence.com",
+    "finalUrl": "https://run-evidence.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Evidence: ready for the audit, any day",
+    "h1": "Ready for the audit, any day.",
+    "headline": "Ready for the audit, any day.",
+    "alternativeTo": "100% free, open source alternative to Vanta, Drata and Secureframe",
+    "theme": {
+      "page": "#f4f9fe",
+      "text": "#080c1a",
+      "action": "#061729",
+      "themeColor": "#f4f9fe"
+    }
+  },
+  {
+    "slug": "crank",
+    "url": "https://run-crank.com",
+    "finalUrl": "https://run-crank.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Crank · The busywork runs itself.",
+    "h1": "The busywork runs itself.",
+    "headline": "The busywork runs itself.",
+    "alternativeTo": "100% free, open source alternative to Zapier, Make and Workato",
+    "theme": {
+      "page": "#f3f8fd",
+      "text": "#061943",
+      "action": "#011646",
+      "themeColor": "#f3f8fd"
+    }
+  },
+  {
+    "slug": "inkwell",
+    "url": "https://run-inkwell.com",
+    "finalUrl": "https://run-inkwell.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Inkwell — Send it once. Get it signed.",
+    "h1": "Send it once. Get it signed.",
+    "headline": "Send it once. Get it signed.",
+    "alternativeTo": "100% free, open source alternative to Docusign, Adobe Acrobat Sign and Dropbox Sign",
+    "theme": {
+      "page": "#ffffff",
+      "text": "#0b0d12",
+      "action": "#12161f",
+      "themeColor": "#ffffff"
+    }
+  },
+  {
+    "slug": "mallet",
+    "url": "https://run-mallet.com",
+    "finalUrl": "https://run-mallet.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Mallet — Full bays. Cars out on time.",
+    "h1": "Full bays. Cars out on time.",
+    "headline": "Full bays. Cars out on time.",
+    "alternativeTo": "100% free, open source alternative to Tekmetric, Shopmonkey and Mitchell 1 Manager SE",
+    "theme": {
+      "page": "#ffffff",
+      "text": "#22061f",
+      "action": "#22061f",
+      "themeColor": "#ffffff"
+    }
+  },
+  {
+    "slug": "pane",
+    "url": "https://run-pane.com",
+    "finalUrl": "https://run-pane.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Pane — Your website, finally yours.",
+    "h1": "Your website, finally yours.",
+    "headline": "Your website, finally yours.",
+    "alternativeTo": "100% free, open source alternative to Squarespace, Wix and WordPress.com",
+    "theme": {
+      "page": "#ffffff",
+      "text": "#ffffff",
+      "action": null,
+      "themeColor": "#f5026f"
+    }
+  },
+  {
+    "slug": "placemat",
+    "url": "https://run-placemat.com",
+    "finalUrl": "https://run-placemat.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Placemat — Every table, filled.",
+    "h1": "Every table, filled.",
+    "headline": "Every table, filled.",
+    "alternativeTo": "100% free, open source alternative to OpenTable, Resy and SevenRooms",
+    "theme": {
+      "page": "#fbf8f2",
+      "text": "#06231c",
+      "action": "#12482f",
+      "themeColor": "#fbf8f2"
+    }
+  },
+  {
+    "slug": "platter",
+    "url": "https://run-platter.com",
+    "finalUrl": "https://run-platter.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Platter — proposals clients sign and pay",
+    "h1": "Proposals clients sign and pay.",
+    "headline": "Proposals clients sign and pay.",
+    "alternativeTo": "100% free, open source alternative to PandaDoc, Proposify and Better Proposals",
+    "theme": {
+      "page": "#ffffff",
+      "text": "#1c1c24",
+      "action": "#1c1c24",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "plinth",
+    "url": "https://run-plinth.com",
+    "finalUrl": "https://run-plinth.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Plinth — Handover day, right on time.",
+    "h1": "Handover day, right on time.",
+    "headline": "Handover day, right on time.",
+    "alternativeTo": "100% free, open source alternative to Buildertrend, Procore and Houzz Pro.",
+    "theme": {
+      "page": "#ffffff",
+      "text": "#061320",
+      "action": "#801030",
+      "themeColor": "#ffffff"
+    }
+  },
+  {
+    "slug": "satchel",
+    "url": "https://run-satchel.com",
+    "finalUrl": "https://run-satchel.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Satchel · Every matter, under control",
+    "h1": "Every matter, under control.",
+    "headline": "Every matter, under control.",
+    "alternativeTo": "100% free, open source alternative to Clio, MyCase and Smokeball",
+    "theme": {
+      "page": "#f4f7f6",
+      "text": "#ffffff",
+      "action": "#0f5c66",
+      "themeColor": "#0f3b42"
+    }
+  },
+  {
+    "slug": "stall",
+    "url": "https://run-stall.com",
+    "finalUrl": "https://run-stall.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Stall — Your stall never closes",
+    "h1": "Your stall never closes.",
+    "headline": "Your stall never closes.",
+    "alternativeTo": "100% free, open source alternative to Shopify, Squarespace Commerce and BigCommerce",
+    "theme": {
+      "page": "#fefefe",
+      "text": "#0e0e10",
+      "action": "#f25b07",
+      "themeColor": "#fefefe"
+    }
+  },
+  {
+    "slug": "strap",
+    "url": "https://run-strap.com",
+    "finalUrl": "https://run-strap.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Strap · Full classes. Members who stay.",
+    "h1": "Full classes. Members who stay.",
+    "headline": "Full classes. Members who stay.",
+    "alternativeTo": "100% free, open source alternative to Mindbody, WellnessLiving and Vagaro",
+    "theme": {
+      "page": "#ffffff",
+      "text": "#580934",
+      "action": null,
+      "themeColor": "#ffffff"
+    }
+  },
+  {
+    "slug": "vane",
+    "url": "https://run-vane.com",
+    "finalUrl": "https://run-vane.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Vane · See which way the wind blows",
+    "h1": "See which way the wind blows.",
+    "headline": "See which way the wind blows.",
+    "alternativeTo": "100% free, open source alternative to Plausible, Fathom and Matomo",
+    "theme": {
+      "page": "#f5f9fd",
+      "text": "#0b0d14",
+      "action": "#1b1c22",
+      "themeColor": "#f5f9fd"
+    }
+  }
+]

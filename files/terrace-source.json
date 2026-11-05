@@ -1,0 +1,11 @@
+{
+  "repository": "just-every/run-terrace",
+  "released_ref": "v0.1.4",
+  "released_commit": "0afcac8b3a42c23d984078e6ff90e928c9ebc22f",
+  "main_commit": "354b7960edf19cf7934767caea70080104fc6cc3",
+  "compare_url": "https://github.com/just-every/run-terrace/compare/v0.1.4...main",
+  "file": "src/identity.ts",
+  "line": 10,
+  "patch": "@@ -7,7 +7,7 @@ export const identity: EditionIdentity = {\n   product: branding.name,\n   deployment: branding.name,\n   purpose: '{deployment} keeps leases, rent, repairs and owner statements in one place.',\n-  tagline: 'Rent in. Repairs done. Owners paid.',\n+  tagline: 'Rent in. Repairs done. Owners informed.',\n   signInPath: '/signin',\n   // The run site `rer deploy --site` publishes (deploy-site.json).\n   runSite: 'https://run-terrace.com',",
+  "decision": "Refresh existing homepage still from committed main; preserve JE released wording. No public claim edit, version promotion or contract judgment change."
+}

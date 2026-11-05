@@ -1,0 +1,6 @@
+{
+  "title": "sync: seed listings 5 Nov",
+  "head": "cloud/je-sync-9",
+  "base": "main",
+  "body": "Refresh Terrace\u2019s existing homepage still to match its committed main source, whose tagline is now \u201cOwners informed.\u201d Record coming-soon copy-source provenance for Crank, Placemat, Platter, Satchel and Strap without changing published wording.\n\nCounts remain 49 listings: 35 released and 14 coming soon. No version, status, mark, colour, public copy, pricing or gallery change. The repeat dry sync reports 0 of 49 changed; listings generation/check, type-check, lint and production build pass. Browser proof of /terrace was inspected at 1440 and 390 pixels, with asset and rendering assertions at 1440.\n\nThe lane retains the landing hold, independent deciding gate, Mac publication scan, merge, deployment and live verification. Complete reports and receipts are returned independently on evidence/je-sync-9."
+}
