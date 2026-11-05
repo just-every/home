@@ -143,3 +143,11 @@ PLAN.md records the complete execution plan. Actual sync reports/logs, release o
 - Fleet author and committer identity confirmed for every candidate commit, including traversal of all parents; full messages have no co-author trailers. Current remote branch SHA was independently confirmed. The working tree is clean.
 - No clause status, version, release status, mark, colour, public wording or pricing changes; no fresh gallery capture/import. The only public asset update is the existing homepage still.
 - Mac publication scan, independent deciding gate, deployment and production viewport verification remain with the lane as instructed.
+
+## Terminal product custody
+
+Done. Product branch cloud/je-sync-9 at 298570aa56137eb77a8a420fb98510d01e2e748d is pushed with a clean working tree. PR: https://github.com/just-every/home/pull/33.
+
+Exact-SHA Verify branch push run 42112620417 completed successfully: https://github.com/just-every/home/actions/runs/42112620417. REST discovery was followed by one conclusive run observation at least 300 seconds later. The receipt retains the other discovery run IDs, but READY is based specifically on this successful push workflow and exact SHA. No generated-view exception was needed. No blocker remains; independent lane gates and landing hold still apply.
+
+Evidence is published independently on refs/heads/evidence/je-sync-9. After final publication, the disposable clone and node_modules are removed as requested; this packet remains under the fleet work directory. The final message supplies the exact final evidence ref/head.

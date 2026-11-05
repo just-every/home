@@ -99,10 +99,29 @@
       "status": "in_progress"
     }
   ],
-  "manual_github_calls_used": 7,
+  "manual_github_calls_used": 9,
   "manual_github_budget": 10,
   "remote_ref_verified": true,
   "working_tree_clean": true,
   "packet_credential_shape_scan": "passed; no token-shaped strings or signed/credential-bearing URLs found",
-  "browser_visual_review": "New still renders in existing Terrace gallery at 1440 and 390. No new product gallery assets or layout changes. Background, mark and JE written copy preserved."
+  "browser_visual_review": "New still renders in existing Terrace gallery at 1440 and 390. No new product gallery assets or layout changes. Background, mark and JE written copy preserved.",
+  "ci_final": {
+    "conclusion": "success",
+    "head_sha": "298570aa56137eb77a8a420fb98510d01e2e748d",
+    "html_url": "https://github.com/just-every/home/actions/runs/42112620417",
+    "status": "completed"
+  },
+  "ci_final_observed_at_epoch": 1793914305.526913,
+  "custody": "READY",
+  "blockers": [],
+  "clauses_changed": [],
+  "cleanup": "Browsers and servers stopped. Disposable clone and node_modules will be removed after successful final evidence publication.",
+  "required_workflow": "Verify branch push run 42112620417 completed/success on exact product SHA; no exception used",
+  "final_pr": {
+    "base": "main",
+    "head_sha": "298570aa56137eb77a8a420fb98510d01e2e748d",
+    "html_url": "https://github.com/just-every/home/pull/33",
+    "number": 33,
+    "state": "open"
+  }
 }
