@@ -1,0 +1,17 @@
+{
+  "ahead_by": 3,
+  "behind_by": 0,
+  "files": [
+    {
+      "additions": 1,
+      "changes": 2,
+      "deletions": 1,
+      "filename": "CONTRACT.md",
+      "patch": "@@ -2085,7 +2085,7 @@ See [the agent door's supported scope](docs/agent-door.md).\n \n ## Status\n \n-Judged from the code and tests at commit `39e7b596fc2a2a9cd592c139276f47f1611565d0` (30 October 2026).\n+Judged from the code and tests at commit `ef05bdd98623be2787920e14bf3aedb0d8d4f812` (30 October 2026).\n \n | Clauses | Done | Partial | Missing | Total |\n | --- | ---: | ---: | ---: | ---: |",
+      "status": "modified"
+    }
+  ],
+  "html_url": "https://github.com/just-every/run-mallet/compare/b5656076d025dcd521173057070e5f8fd3b5ff29...1331aef49644cea21ff44371ae4d7218bb588646",
+  "status": "ahead",
+  "total_commits": 3
+}

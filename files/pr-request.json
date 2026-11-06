@@ -1,0 +1,6 @@
+{
+  "title": "sync: seed listings 6 Nov",
+  "head": "cloud/je-sync-10",
+  "base": "main",
+  "body": "Refresh coming-soon copy provenance for Auth, Crank, Mallet, Placemat, Satchel and Strap, and clear Terrace's obsolete sync finding. Public listings, versions, release status, copy and artwork remain unchanged: 49 listings, 35 released and 14 coming soon.\n\nValidation: npm ci; complete dry sync, copy-only apply and full apply; listings generation/check; final dry sync (0/49 changed, 0 unreadable); type-check; lint; production build. Only scripts/seeds-sync/state.json changes."
+}

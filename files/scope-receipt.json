@@ -1,0 +1,17 @@
+{
+  "changedPaths": [
+    "scripts/seeds-sync/state.json"
+  ],
+  "scopeCheck": "pass",
+  "diffWhitespaceCheck": "pass",
+  "credentialShapeCheck": "pass",
+  "publicListingsByteIdentical": true,
+  "hiddenSeedsAbsent": true,
+  "finalDrySeeds": 49,
+  "finalDryFindings": 0,
+  "finalDryUnreadable": 0,
+  "clauseStatusChangesInJE": [],
+  "publicClaimEdits": [],
+  "promotions": [],
+  "dsseSignatureVerification": "not performed; no release/status promotion candidate"
+}

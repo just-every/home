@@ -1,0 +1,72 @@
+[
+  {
+    "seed": "auth",
+    "file": "CONTRACT.md",
+    "row": 781,
+    "clause": "BASE-AGENT-013",
+    "title": "Manifest, docs and the conformance journey",
+    "sourceBefore": "partial",
+    "sourceAfter": "partial",
+    "importedIntoJE": false
+  },
+  {
+    "seed": "crank",
+    "file": "CONTRACT.md",
+    "row": 1364,
+    "clause": "BASE-AGENT-001",
+    "title": "One MCP door per seed",
+    "sourceBefore": "partial",
+    "sourceAfter": "partial",
+    "importedIntoJE": false
+  },
+  {
+    "seed": "placemat",
+    "file": "CONTRACT.md",
+    "row": 699,
+    "clause": "MSG-003",
+    "title": "Resend email connection",
+    "sourceBefore": "missing",
+    "sourceAfter": "partial",
+    "importedIntoJE": false
+  },
+  {
+    "seed": "placemat",
+    "file": "CONTRACT.md",
+    "row": 787,
+    "clause": "BASE-AGENT-006",
+    "title": "Every action declares its risk class",
+    "sourceBefore": "partial",
+    "sourceAfter": "partial",
+    "importedIntoJE": false
+  },
+  {
+    "seed": "satchel",
+    "file": "CONTRACT.md",
+    "row": 843,
+    "clause": "BASE-AGENT-004",
+    "title": "Business identity and short-lived, audience-bound tokens",
+    "sourceBefore": "partial",
+    "sourceAfter": "partial",
+    "importedIntoJE": false
+  },
+  {
+    "seed": "strap",
+    "file": "CONTRACT.md",
+    "row": 534,
+    "clause": "BILL-011",
+    "title": "Payouts fees and deposit matching",
+    "sourceBefore": "missing",
+    "sourceAfter": "partial",
+    "importedIntoJE": false
+  },
+  {
+    "seed": "strap",
+    "file": "CONTRACT.md",
+    "row": 570,
+    "clause": "STAFF-001",
+    "title": "Manager front-desk instructor and finance rights",
+    "sourceBefore": "partial",
+    "sourceAfter": "partial",
+    "importedIntoJE": false
+  }
+]

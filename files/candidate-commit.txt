@@ -1,0 +1,10 @@
+commit fe5213e28a8b55c83c3ee02277fa980ca9eafc22
+Author:     Run Edit Run fleet <fleet@runeditrun.com>
+AuthorDate: Fri Nov 6 21:10:50 2026 +0000
+Commit:     Run Edit Run fleet <fleet@runeditrun.com>
+CommitDate: Fri Nov 6 21:10:50 2026 +0000
+
+    sync: seed listings 6 Nov
+
+ scripts/seeds-sync/state.json | 29 ++++++++++++++---------------
+ 1 file changed, 14 insertions(+), 15 deletions(-)

@@ -1,0 +1,55 @@
+[
+  {
+    "url": "https://justevery.com/data/listings.json",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://justevery.com/brand.json",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://runeditrun.com/seeds.json",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://justevery.com/data/listings.json",
+    "file": "live-listings.json",
+    "status": 200,
+    "bytes": 30081,
+    "sha256": "790e115fdf755eea1212b68df6df033fb9d2467dbff94cad0f61ad2928544bc8",
+    "observedAt": "2026-11-06T21:06:40.001002+00:00",
+    "userAgent": "browser",
+    "equalsBaseline": true
+  },
+  {
+    "url": "https://justevery.com/brand.json",
+    "file": "live-brand.json",
+    "status": 200,
+    "bytes": 2384,
+    "sha256": "a54bb68daa5f1590e5a6eaafecf38c627e42fa014f65c0d7efaf81bee809b7a4",
+    "observedAt": "2026-11-06T21:06:40.168628+00:00",
+    "userAgent": "browser",
+    "equalsBaseline": true
+  },
+  {
+    "url": "https://runeditrun.com/seeds.json",
+    "userAgent": "browser",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://runeditrun.com/data/seeds.json",
+    "file": "rer-seeds.json",
+    "status": 200,
+    "bytes": 962758,
+    "sha256": "0fc0f96a41a81b700692a04b9100ca6f6abed2b402dfb7f960ecf612e9561faf",
+    "observedAt": "2026-11-06T21:07:13.284112+00:00",
+    "rootType": "dict",
+    "rootKeys": [
+      "generatedAt",
+      "seeds"
+    ],
+    "counts": {
+      "seeds": 16
+    }
+  }
+]

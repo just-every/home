@@ -1,0 +1,1623 @@
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --out /home/agent/rer-consolidation/work/je-sync-10/packet/dry-before
+
+Reading 49 seed repositories...
+uptime: source=unresolved commit=unresolved (git ls-remote just-every/run-uptime: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-uptime/git/matching-refs/tags/']' returned non-zero exit status 1.)
+happytohelp: source=unresolved commit=unresolved (git ls-remote just-every/run-happytohelp: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-happytohelp/git/matching-refs/tags/']' returned non-zero exit status 1.)
+nook: source=unresolved commit=unresolved (git ls-remote just-every/run-nook: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-nook/git/matching-refs/tags/']' returned non-zero exit status 1.)
+lamp: source=unresolved commit=unresolved (git ls-remote just-every/run-lamp: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-lamp/git/matching-refs/tags/']' returned non-zero exit status 1.)
+cradle: source=unresolved commit=unresolved (git ls-remote just-every/run-cradle: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-cradle/git/matching-refs/tags/']' returned non-zero exit status 1.)
+vector: source=unresolved commit=unresolved (git ls-remote just-every/run-vector: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-vector/git/matching-refs/tags/']' returned non-zero exit status 1.)
+slate: source=unresolved commit=unresolved (git ls-remote just-every/run-slate: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-slate/git/matching-refs/tags/']' returned non-zero exit status 1.)
+pencil: source=unresolved commit=unresolved (git ls-remote just-every/run-pencil: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-pencil/git/matching-refs/tags/']' returned non-zero exit status 1.)
+orbit: source=unresolved commit=unresolved (git ls-remote just-every/run-orbit: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-orbit/git/matching-refs/tags/']' returned non-zero exit status 1.)
+mango: source=unresolved commit=unresolved (git ls-remote just-every/run-mango: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-mango/git/matching-refs/tags/']' returned non-zero exit status 1.)
+dial: source=unresolved commit=unresolved (git ls-remote just-every/run-dial: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-dial/git/matching-refs/tags/']' returned non-zero exit status 1.)
+penny: source=unresolved commit=unresolved (git ls-remote just-every/run-penny: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-penny/git/matching-refs/tags/']' returned non-zero exit status 1.)
+oncall: source=unresolved commit=unresolved (git ls-remote just-every/run-oncall: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-oncall/git/matching-refs/tags/']' returned non-zero exit status 1.)
+spool: source=unresolved commit=unresolved (git ls-remote just-every/run-spool: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-spool/git/matching-refs/tags/']' returned non-zero exit status 1.)
+balm: source=unresolved commit=unresolved (git ls-remote just-every/run-balm: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-balm/git/matching-refs/tags/']' returned non-zero exit status 1.)
+beam: source=unresolved commit=unresolved (git ls-remote just-every/run-beam: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-beam/git/matching-refs/tags/']' returned non-zero exit status 1.)
+cabin: source=unresolved commit=unresolved (git ls-remote just-every/run-cabin: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-cabin/git/matching-refs/tags/']' returned non-zero exit status 1.)
+chest: source=unresolved commit=unresolved (git ls-remote just-every/run-chest: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-chest/git/matching-refs/tags/']' returned non-zero exit status 1.)
+coaster: source=unresolved commit=unresolved (git ls-remote just-every/run-coaster: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-coaster/git/matching-refs/tags/']' returned non-zero exit status 1.)
+coffer: source=unresolved commit=unresolved (git ls-remote just-every/run-coffer: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-coffer/git/matching-refs/tags/']' returned non-zero exit status 1.)
+easel: source=unresolved commit=unresolved (git ls-remote just-every/run-easel: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-easel/git/matching-refs/tags/']' returned non-zero exit status 1.)
+gasket: source=unresolved commit=unresolved (git ls-remote just-every/run-gasket: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-gasket/git/matching-refs/tags/']' returned non-zero exit status 1.)
+gauge: source=unresolved commit=unresolved (git ls-remote just-every/run-gauge: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-gauge/git/matching-refs/tags/']' returned non-zero exit status 1.)
+glove: source=unresolved commit=unresolved (git ls-remote just-every/run-glove: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-glove/git/matching-refs/tags/']' returned non-zero exit status 1.)
+larder: source=unresolved commit=unresolved (git ls-remote just-every/run-larder: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-larder/git/matching-refs/tags/']' returned non-zero exit status 1.)
+locket: source=unresolved commit=unresolved (git ls-remote just-every/run-locket: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-locket/git/matching-refs/tags/']' returned non-zero exit status 1.)
+lodge: source=unresolved commit=unresolved (git ls-remote just-every/run-lodge: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-lodge/git/matching-refs/tags/']' returned non-zero exit status 1.)
+nectar: source=unresolved commit=unresolved (git ls-remote just-every/run-nectar: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-nectar/git/matching-refs/tags/']' returned non-zero exit status 1.)
+pantry: source=unresolved commit=unresolved (git ls-remote just-every/run-pantry: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-pantry/git/matching-refs/tags/']' returned non-zero exit status 1.)
+pier: source=unresolved commit=unresolved (git ls-remote just-every/run-pier: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-pier/git/matching-refs/tags/']' returned non-zero exit status 1.)
+purse: source=unresolved commit=unresolved (git ls-remote just-every/run-purse: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-purse/git/matching-refs/tags/']' returned non-zero exit status 1.)
+willow: source=unresolved commit=unresolved (git ls-remote just-every/run-willow: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-willow/git/matching-refs/tags/']' returned non-zero exit status 1.)
+buoy: source=unresolved commit=unresolved (git ls-remote just-every/run-buoy: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-buoy/git/matching-refs/tags/']' returned non-zero exit status 1.)
+lanyard: source=unresolved commit=unresolved (git ls-remote just-every/run-lanyard: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-lanyard/git/matching-refs/tags/']' returned non-zero exit status 1.)
+terrace: source=unresolved commit=unresolved (git ls-remote just-every/run-terrace: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-terrace/git/matching-refs/tags/']' returned non-zero exit status 1.)
+auth: source=unresolved commit=unresolved (git ls-remote just-every/run-auth: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-auth/git/matching-refs/tags/']' returned non-zero exit status 1.)
+blotter: source=unresolved commit=unresolved (git ls-remote just-every/run-blotter: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-blotter/git/matching-refs/tags/']' returned non-zero exit status 1.)
+crank: source=unresolved commit=unresolved (git ls-remote just-every/run-crank: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-crank/git/matching-refs/tags/']' returned non-zero exit status 1.)
+evidence: source=unresolved commit=unresolved (git ls-remote just-every/run-evidence: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-evidence/git/matching-refs/tags/']' returned non-zero exit status 1.)
+inkwell: source=unresolved commit=unresolved (git ls-remote just-every/run-inkwell: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-inkwell/git/matching-refs/tags/']' returned non-zero exit status 1.)
+mallet: source=unresolved commit=unresolved (git ls-remote just-every/run-mallet: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-mallet/git/matching-refs/tags/']' returned non-zero exit status 1.)
+pane: source=unresolved commit=unresolved (git ls-remote just-every/run-pane: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-pane/git/matching-refs/tags/']' returned non-zero exit status 1.)
+placemat: source=unresolved commit=unresolved (git ls-remote just-every/run-placemat: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-placemat/git/matching-refs/tags/']' returned non-zero exit status 1.)
+platter: source=unresolved commit=unresolved (git ls-remote just-every/run-platter: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-platter/git/matching-refs/tags/']' returned non-zero exit status 1.)
+plinth: source=unresolved commit=unresolved (git ls-remote just-every/run-plinth: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-plinth/git/matching-refs/tags/']' returned non-zero exit status 1.)
+satchel: source=unresolved commit=unresolved (git ls-remote just-every/run-satchel: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-satchel/git/matching-refs/tags/']' returned non-zero exit status 1.)
+stall: source=unresolved commit=unresolved (git ls-remote just-every/run-stall: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-stall/git/matching-refs/tags/']' returned non-zero exit status 1.)
+strap: source=unresolved commit=unresolved (git ls-remote just-every/run-strap: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-strap/git/matching-refs/tags/']' returned non-zero exit status 1.)
+vane: source=unresolved commit=unresolved (git ls-remote just-every/run-vane: unknown flag: --slurp
+
+Usage:  gh api <endpoint> [flags]
+
+Flags:
+      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
+  -F, --field key=value       Add a typed parameter in key=value format
+  -H, --header key:value      Add a HTTP request header in key:value format
+      --hostname string       The GitHub hostname for the request (default "github.com")
+  -i, --include               Include HTTP response status line and headers in the output
+      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
+  -q, --jq string             Query to select values from the response using jq syntax
+  -X, --method string         The HTTP method for the request (default "GET")
+      --paginate              Make additional HTTP requests to fetch all pages of results
+  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
+  -f, --raw-field key=value   Add a string parameter in key=value format
+      --silent                Do not print the response body
+  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+      --verbose               Include full HTTP request and response in the output
+  
+Traceback (most recent call last):
+  File "/tmp/je-sync-bin/git", line 19, in <module>
+    pages=subprocess.check_output(['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp',
+         'repos/'+repo+'/git/matching-refs/tags/'],text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 472, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/tmp/je-sync-bin/gh', 'api', '--paginate', '--slurp', 'repos/just-every/run-vane/git/matching-refs/tags/']' returned non-zero exit status 1.)
+Blocked: a released seed source could not be resolved; no changes applied.

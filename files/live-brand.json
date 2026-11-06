@@ -1,0 +1,67 @@
+{
+  "$schema": "/brand.schema.json",
+  "schema": "brand/v1",
+  "name": "Just Every",
+  "url": "https://justevery.com",
+  "tagline": "Stop renting your software.",
+  "hero": {
+    "headline": "Stop renting your software.",
+    "subhead": "Switch to free, open-source alternatives for the tools your team already uses. Thirty-five are out now, with fourteen more on the way. MIT licensed, forever yours.",
+    "image": {
+      "path": "/og-image.png",
+      "sha256": "22ad43e7e14fd302b5c79de45d5f1aaf214604fe62c8eea79c904911e99285d9"
+    }
+  },
+  "logo": {
+    "mark": {
+      "path": "/img/favicon.svg",
+      "sha256": "4c97c0499d3bbc3f99ebdd541bf36c9a8d0f023337a1d8e7dd99891095e07340"
+    },
+    "wordmark": {
+      "path": "/img/logo.svg",
+      "sha256": "a699a56695af2990bc39bcedd77a57e19e2521e53516f49bd356928d26a8ac24"
+    },
+    "mono": {
+      "path": "/img/logo-black.svg",
+      "sha256": "f07920c3a06e6c2ff527c29ec2698ae1ac8e6a71a364c44f286ec85c24e40355"
+    }
+  },
+  "favicons": [
+    {
+      "path": "/img/favicon.svg",
+      "sha256": "4c97c0499d3bbc3f99ebdd541bf36c9a8d0f023337a1d8e7dd99891095e07340",
+      "renderedFrom": "569eb6bf091cfda855eb7fb778e1717e3c761bb6627c473549104f49915885a8"
+    },
+    {
+      "path": "/img/favicon-32x32.png",
+      "sha256": "3bfc9514a4459a77be7652f5d1331fce840d99b72ba8e67d7dd0a09fc3a8830d",
+      "renderedFrom": "569eb6bf091cfda855eb7fb778e1717e3c761bb6627c473549104f49915885a8"
+    },
+    {
+      "path": "/img/favicon-16x16.png",
+      "sha256": "23649ccb96a4dfc5125fe5f22a60b4e58c26718734f43b4c32a988dd16dd7d98",
+      "renderedFrom": "569eb6bf091cfda855eb7fb778e1717e3c761bb6627c473549104f49915885a8"
+    },
+    {
+      "path": "/img/favicon-192x192.png",
+      "sha256": "76786ed43a9ff0b5fa679015642cf7a7df219405add578405f34095913a136cf",
+      "renderedFrom": "569eb6bf091cfda855eb7fb778e1717e3c761bb6627c473549104f49915885a8"
+    }
+  ],
+  "ogImage": {
+    "path": "/og-image.png",
+    "sha256": "22ad43e7e14fd302b5c79de45d5f1aaf214604fe62c8eea79c904911e99285d9",
+    "renderedFrom": "569eb6bf091cfda855eb7fb778e1717e3c761bb6627c473549104f49915885a8"
+  },
+  "colours": {
+    "ink": "#17171d",
+    "paper": "#fdfdff",
+    "accent": "#6a6880"
+  },
+  "profiles": {
+    "github": "https://github.com/just-every",
+    "npm": null,
+    "x": null
+  },
+  "look": "569eb6bf091cfda855eb7fb778e1717e3c761bb6627c473549104f49915885a8"
+}

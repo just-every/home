@@ -1,0 +1,20 @@
+[
+  {
+    "call": 1,
+    "purpose": "open requested PR",
+    "endpoint": "POST repos/just-every/home/pulls",
+    "observedAt": "2026-11-06T21:11:17.970729+00:00"
+  },
+  {
+    "call": 2,
+    "purpose": "exact-SHA Verify discovery",
+    "endpoint": "repos/just-every/home/actions/runs?head_sha=fe5213e28a8b55c83c3ee02277fa980ca9eafc22&per_page=100",
+    "observedAt": "2026-11-06T21:11:18.577676+00:00"
+  },
+  {
+    "call": 3,
+    "purpose": "single Verify run follow-up after >=300s",
+    "endpoint": "repos/just-every/home/actions/runs/42294583588",
+    "observedAt": "2026-11-06T21:16:20.005204+00:00"
+  }
+]
