@@ -1,0 +1,112 @@
+{
+  "files": [
+    {
+      "blob": "6c981857db23399f864ed5902a358ab7549b5044",
+      "bytes": 600,
+      "path": "FOLLOW-UPS.md",
+      "sha256": "f62221099404af180eee9a598434ac5bf7ad4d300db41520eff0be37eba8fa98"
+    },
+    {
+      "blob": "b1d1750356f2ffdd0097d96c331339900265ff3c",
+      "bytes": 745,
+      "path": "LANDING-NOTES.md",
+      "sha256": "794c1e91d9ba4a48fdda485d80f911f1053a0588e0d66e88a1af5783fa445630"
+    },
+    {
+      "blob": "d2820f6cd5206066c6071ffb5ac23f4ebcdb8ccf",
+      "bytes": 14366,
+      "path": "REPORT.md",
+      "sha256": "bc3cb74b2346205fc79b8df6bdc497e34bd5ee04473b1889fee2d5bd92907937"
+    },
+    {
+      "blob": "55bfeff023c4ae17dc59e12f86f446b1960e6b53",
+      "bytes": 85,
+      "path": "candidate-identities.txt",
+      "sha256": "148bad84b5b174568017df50d58e073566703d43c6c9fe7fa6f1af04420adf55"
+    },
+    {
+      "blob": "a74a1d18d986b5e316b7b0a09abffa089cc2e25b",
+      "bytes": 3422,
+      "path": "candidate.diff",
+      "sha256": "f83b1a76d2cf56e2dc8552986b688df7db36bb83c950b1446ca1df5d34f70b8c"
+    },
+    {
+      "blob": "718db7bb80a022f06c3f74c2112ac7434bfda342",
+      "bytes": 5927,
+      "path": "copy-detector-receipt.json",
+      "sha256": "7e1faf71362c76643964d381ee1d5216c5bf707f61b45b96e54e735798f0d313"
+    },
+    {
+      "blob": "eafe02ee0eaf582186eb1f2397d4498d7e2a8e34",
+      "bytes": 3827,
+      "path": "gate-receipt.json",
+      "sha256": "d75b8cf86aab549a6535a4281cf273c14b5a7568bb3e5a1e446e213120c97d4d"
+    },
+    {
+      "blob": "02abf0d4ed8ef1c3e0a62e98c0345d520742667a",
+      "bytes": 47,
+      "path": "lint.log",
+      "sha256": "02ef98276ac56c4ea2e84e7291740f26bb5d7d07639d8ce90366e463210307f3"
+    },
+    {
+      "blob": "60156ecabd3c09419694fdce62e47b7f1938de86",
+      "bytes": 109,
+      "path": "listings-check.log",
+      "sha256": "8cbef4f8b3f74fe74438c2725d5c9fc79521670c9f240ea2d11548bdc20775d9"
+    },
+    {
+      "blob": "eff859398d95fc4c8a89f2f0e81b6c0d4f858a9e",
+      "bytes": 103,
+      "path": "listings-write.log",
+      "sha256": "7b671fd81482bab64966dd028eb9567615f91219f8722031cd45cf326cfbfbb4"
+    },
+    {
+      "blob": "c628f9573c5c560a9c2599fd26dd6648404648d0",
+      "bytes": 204,
+      "path": "local-checks.json",
+      "sha256": "4922aa7d3c608f8bddb731466776ada7f62eca1b44395bc657b81bf33faf7b8f"
+    },
+    {
+      "blob": "1762d5ae9c30651f96fc2d34bfe9c74e9b51fc65",
+      "bytes": 296,
+      "path": "npm-ci.log",
+      "sha256": "ebe64e6c345e2d2e2568481c9ee0745052acca14f8c121e7bd4c32c1023cf435"
+    },
+    {
+      "blob": "5df34b0bf5b84afb1a037c0cf896aef1bbe2a7bb",
+      "bytes": 239,
+      "path": "pr-final.json",
+      "sha256": "e494e5fb6f372684c5a0cd5192bf1b6357826eb3394d7e6c660b7f8caeb80a0b"
+    },
+    {
+      "blob": "5df34b0bf5b84afb1a037c0cf896aef1bbe2a7bb",
+      "bytes": 239,
+      "path": "pr.json",
+      "sha256": "e494e5fb6f372684c5a0cd5192bf1b6357826eb3394d7e6c660b7f8caeb80a0b"
+    },
+    {
+      "blob": "d38d9b3be05d38660359e6de7b819c5ce508a120",
+      "bytes": 11134,
+      "path": "source-provenance.json",
+      "sha256": "87171579d6d558f8f2ceb6993220975d8ff5de4b4c769e5050be40bac69df9c8"
+    },
+    {
+      "blob": "781fc107c6de1f0fc7a78db73b8a4442fb7966b7",
+      "bytes": 49,
+      "path": "type-check.log",
+      "sha256": "5a848264e3d4f39bae1d347b4ff2be16348436fdcdd3a42c91c0fca2a8f23403"
+    },
+    {
+      "blob": "a2bbd80b71364d42ff9843a87754363f48753164",
+      "bytes": 337,
+      "path": "verify.json",
+      "sha256": "1148ffbe190f3151d4be3cc420f3b129060d730714c85cf16c7f30851d5183dd"
+    }
+  ],
+  "product_branch": "",
+  "product_head": "fe5213e28a8b55c83c3ee02277fa980ca9eafc22",
+  "ref": "refs/heads/evidence/je-gate-18",
+  "repository": "just-every/home",
+  "schema": 1,
+  "tag": "je-gate-18"
+}

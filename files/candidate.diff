@@ -1,0 +1,106 @@
+diff --git a/scripts/seeds-sync/state.json b/scripts/seeds-sync/state.json
+index 1fad602..003eed3 100644
+--- a/scripts/seeds-sync/state.json
++++ b/scripts/seeds-sync/state.json
+@@ -1,13 +1,13 @@
+ {
+-  "syncedAt": "2026-11-05T21:20:03.417Z",
++  "syncedAt": "2026-11-06T21:06:54.134Z",
+   "seeds": {
+     "auth": {
+-      "commit": "f07f60e355bc518ab3e2487350002811e78b1290",
++      "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
+       "sourceRef": "HEAD",
+       "sourceReason": "coming-soon seed",
+       "tag": "v0.1.0",
+       "copy": {
+-        "CONTRACT.md": "d89f2f7cf29804ec",
++        "CONTRACT.md": "efe84cf61df4d449",
+         "README.md": "0a561f21f7d4099d",
+         "seed.json": "12a810624fbbda31"
+       },
+@@ -295,12 +295,12 @@
+       }
+     },
+     "crank": {
+-      "commit": "e2c146dc38eb64e685cf01d2c56e798404b3936e",
++      "commit": "c16d7b09492b2c61c4cbfb4c0f892be6b0e9c1ef",
+       "sourceRef": "HEAD",
+       "sourceReason": "coming-soon seed; no release tag",
+       "tag": null,
+       "copy": {
+-        "CONTRACT.md": "aac2d3d2ae3f5062",
++        "CONTRACT.md": "e3dec2a78eefc328",
+         "README.md": "17ee4f7ea9911d08",
+         "seed.json": "cb3854ec69090483"
+       },
+@@ -694,12 +694,12 @@
+       }
+     },
+     "mallet": {
+-      "commit": "b5656076d025dcd521173057070e5f8fd3b5ff29",
++      "commit": "1331aef49644cea21ff44371ae4d7218bb588646",
+       "sourceRef": "HEAD",
+       "sourceReason": "coming-soon seed; no release tag",
+       "tag": null,
+       "copy": {
+-        "CONTRACT.md": "bb2b29175f71a418",
++        "CONTRACT.md": "06599a1925257db8",
+         "README.md": "bdcf1b90678e4fe8",
+         "seed.json": "9bde55c8776aa0f6"
+       },
+@@ -991,12 +991,12 @@
+       }
+     },
+     "placemat": {
+-      "commit": "9e6bb6147a834849683f30973a45a814a0ee0139",
++      "commit": "7736720683b5d4d9236cecf9434a64b3ed84a61e",
+       "sourceRef": "HEAD",
+       "sourceReason": "coming-soon seed; no release tag",
+       "tag": null,
+       "copy": {
+-        "CONTRACT.md": "f98f316649ad03f6",
++        "CONTRACT.md": "8670c33f798e4707",
+         "README.md": "7319507ba101b574",
+         "seed.json": "81b3d3aa7dbeafee"
+       },
+@@ -1098,12 +1098,12 @@
+       }
+     },
+     "satchel": {
+-      "commit": "798b3b2110cdeddb82f4772d6860d9650df3f695",
++      "commit": "2e07928ffcf1061422b85ce066b54dbe08e1e6c3",
+       "sourceRef": "HEAD",
+       "sourceReason": "coming-soon seed; no release tag",
+       "tag": null,
+       "copy": {
+-        "CONTRACT.md": "bb45a7b8c3952de2",
++        "CONTRACT.md": "fd03cc85b0953a2b",
+         "README.md": "3f0e86261c877c73",
+         "seed.json": "7346886b444e2893"
+       },
+@@ -1208,12 +1208,12 @@
+       }
+     },
+     "strap": {
+-      "commit": "5bc1e11b32150892809e3d81d525e46e506233cb",
++      "commit": "ceba5960cbe5ddc323624eb128280ce241f59e72",
+       "sourceRef": "HEAD",
+       "sourceReason": "coming-soon seed; no release tag",
+       "tag": null,
+       "copy": {
+-        "CONTRACT.md": "18190d4e4a36f7a5",
++        "CONTRACT.md": "de176ce40493ca6d",
+         "README.md": "d091a54bc841ed36",
+         "seed.json": "18dc2029bf7a37ce"
+       },
+@@ -1258,8 +1258,7 @@
+       "mark": "47aed1247cd7d700",
+       "home": {
+         "headline": "Rent in. Repairs done. Owners informed."
+-      },
+-      "open": ["c47278a1546d"]
++      }
+     },
+     "uptime": {
+       "commit": "4a2ababc3f2bfc3981a95808cc962a95303d9af2",

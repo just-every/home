@@ -1,0 +1,184 @@
+{
+  "head": "fe5213e28a8b55c83c3ee02277fa980ca9eafc22",
+  "scope": "Seven touched state entries; actual public source bytes, repository copyHashes and detectCopy; no remote read interception, no apply, no full homepage sync",
+  "counts": {
+    "before": 6,
+    "after": 0
+  },
+  "rows": [
+    {
+      "slug": "auth",
+      "kind": "soon",
+      "sourceRef": "HEAD",
+      "computedHashes": {
+        "CONTRACT.md": "efe84cf61df4d449",
+        "README.md": "0a561f21f7d4099d",
+        "seed.json": "12a810624fbbda31"
+      },
+      "before": [
+        {
+          "type": "copy",
+          "summary": "CONTRACT.md changed since the last sync",
+          "details": {
+            "files": [
+              "CONTRACT.md"
+            ],
+            "range": "https://github.com/just-every/run-auth/compare/f07f60e355bc...d55816c1f0e6",
+            "from": "f07f60e355bc518ab3e2487350002811e78b1290",
+            "to": "d55816c1f0e6b66f12d0c2846fdba6cf22965251"
+          },
+          "apply": null,
+          "copy": "rewrite the page copy from CONTRACT.md (https://github.com/just-every/run-auth/compare/f07f60e355bc...d55816c1f0e6)"
+        }
+      ],
+      "after": []
+    },
+    {
+      "slug": "crank",
+      "kind": "soon",
+      "sourceRef": "HEAD",
+      "computedHashes": {
+        "CONTRACT.md": "e3dec2a78eefc328",
+        "README.md": "17ee4f7ea9911d08",
+        "seed.json": "cb3854ec69090483"
+      },
+      "before": [
+        {
+          "type": "copy",
+          "summary": "CONTRACT.md changed since the last sync",
+          "details": {
+            "files": [
+              "CONTRACT.md"
+            ],
+            "range": "https://github.com/just-every/run-crank/compare/e2c146dc38eb...c16d7b09492b",
+            "from": "e2c146dc38eb64e685cf01d2c56e798404b3936e",
+            "to": "c16d7b09492b2c61c4cbfb4c0f892be6b0e9c1ef"
+          },
+          "apply": null,
+          "copy": "rewrite the page copy from CONTRACT.md (https://github.com/just-every/run-crank/compare/e2c146dc38eb...c16d7b09492b)"
+        }
+      ],
+      "after": []
+    },
+    {
+      "slug": "mallet",
+      "kind": "soon",
+      "sourceRef": "HEAD",
+      "computedHashes": {
+        "CONTRACT.md": "06599a1925257db8",
+        "README.md": "bdcf1b90678e4fe8",
+        "seed.json": "9bde55c8776aa0f6"
+      },
+      "before": [
+        {
+          "type": "copy",
+          "summary": "CONTRACT.md changed since the last sync",
+          "details": {
+            "files": [
+              "CONTRACT.md"
+            ],
+            "range": "https://github.com/just-every/run-mallet/compare/b5656076d025...1331aef49644",
+            "from": "b5656076d025dcd521173057070e5f8fd3b5ff29",
+            "to": "1331aef49644cea21ff44371ae4d7218bb588646"
+          },
+          "apply": null,
+          "copy": "rewrite the page copy from CONTRACT.md (https://github.com/just-every/run-mallet/compare/b5656076d025...1331aef49644)"
+        }
+      ],
+      "after": []
+    },
+    {
+      "slug": "placemat",
+      "kind": "soon",
+      "sourceRef": "HEAD",
+      "computedHashes": {
+        "CONTRACT.md": "8670c33f798e4707",
+        "README.md": "7319507ba101b574",
+        "seed.json": "81b3d3aa7dbeafee"
+      },
+      "before": [
+        {
+          "type": "copy",
+          "summary": "CONTRACT.md changed since the last sync",
+          "details": {
+            "files": [
+              "CONTRACT.md"
+            ],
+            "range": "https://github.com/just-every/run-placemat/compare/9e6bb6147a83...7736720683b5",
+            "from": "9e6bb6147a834849683f30973a45a814a0ee0139",
+            "to": "7736720683b5d4d9236cecf9434a64b3ed84a61e"
+          },
+          "apply": null,
+          "copy": "rewrite the page copy from CONTRACT.md (https://github.com/just-every/run-placemat/compare/9e6bb6147a83...7736720683b5)"
+        }
+      ],
+      "after": []
+    },
+    {
+      "slug": "satchel",
+      "kind": "soon",
+      "sourceRef": "HEAD",
+      "computedHashes": {
+        "CONTRACT.md": "fd03cc85b0953a2b",
+        "README.md": "3f0e86261c877c73",
+        "seed.json": "7346886b444e2893"
+      },
+      "before": [
+        {
+          "type": "copy",
+          "summary": "CONTRACT.md changed since the last sync",
+          "details": {
+            "files": [
+              "CONTRACT.md"
+            ],
+            "range": "https://github.com/just-every/run-satchel/compare/798b3b2110cd...2e07928ffcf1",
+            "from": "798b3b2110cdeddb82f4772d6860d9650df3f695",
+            "to": "2e07928ffcf1061422b85ce066b54dbe08e1e6c3"
+          },
+          "apply": null,
+          "copy": "rewrite the page copy from CONTRACT.md (https://github.com/just-every/run-satchel/compare/798b3b2110cd...2e07928ffcf1)"
+        }
+      ],
+      "after": []
+    },
+    {
+      "slug": "strap",
+      "kind": "soon",
+      "sourceRef": "HEAD",
+      "computedHashes": {
+        "CONTRACT.md": "de176ce40493ca6d",
+        "README.md": "d091a54bc841ed36",
+        "seed.json": "18dc2029bf7a37ce"
+      },
+      "before": [
+        {
+          "type": "copy",
+          "summary": "CONTRACT.md changed since the last sync",
+          "details": {
+            "files": [
+              "CONTRACT.md"
+            ],
+            "range": "https://github.com/just-every/run-strap/compare/5bc1e11b3215...ceba5960cbe5",
+            "from": "5bc1e11b32150892809e3d81d525e46e506233cb",
+            "to": "ceba5960cbe5ddc323624eb128280ce241f59e72"
+          },
+          "apply": null,
+          "copy": "rewrite the page copy from CONTRACT.md (https://github.com/just-every/run-strap/compare/5bc1e11b3215...ceba5960cbe5)"
+        }
+      ],
+      "after": []
+    },
+    {
+      "slug": "terrace",
+      "kind": "released",
+      "sourceRef": "v0.1.4",
+      "computedHashes": {
+        "CONTRACT.md": "98fbe43b4ddadbb8",
+        "README.md": "e332bd9614af85ee",
+        "seed.json": "59af82a351f8b233"
+      },
+      "before": [],
+      "after": []
+    }
+  ]
+}

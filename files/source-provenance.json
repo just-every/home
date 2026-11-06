@@ -1,0 +1,373 @@
+[
+  {
+    "slug": "auth",
+    "repository": "just-every/run-auth",
+    "public": true,
+    "commit": {
+      "oid": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
+      "committedDate": "2026-11-06T20:24:57Z",
+      "messageHeadline": "Reapply native group audit targets and regenerate the agent guide",
+      "url": "https://github.com/just-every/run-auth/commit/d55816c1f0e6b66f12d0c2846fdba6cf22965251"
+    },
+    "default_branch": {
+      "name": "main",
+      "target": {
+        "oid": "d55816c1f0e6b66f12d0c2846fdba6cf22965251"
+      }
+    },
+    "sourceRef": "HEAD",
+    "tag": "v0.1.0",
+    "tags": [
+      {
+        "name": "v0.1.0",
+        "target": {
+          "__typename": "Tag",
+          "oid": "412a3a93745ba21b920707013cf48a3432e35ceb",
+          "target": {
+            "__typename": "Commit",
+            "oid": "3c8d7d34f4ffaf3c17af298a86934fca0e57e87d"
+          }
+        }
+      }
+    ],
+    "files": {
+      "CONTRACT.md": {
+        "blob": "bcfc9a47454de4935299fe26b98c98cef56595a8",
+        "bytes": 270448,
+        "recorded_hash": "efe84cf61df4d449",
+        "computed_hash": "efe84cf61df4d449",
+        "matches": true
+      },
+      "README.md": {
+        "blob": "79a40977968b585eb8ccf18ebc00b85c4008f203",
+        "bytes": 5989,
+        "recorded_hash": "0a561f21f7d4099d",
+        "computed_hash": "0a561f21f7d4099d",
+        "matches": true
+      },
+      "seed.json": {
+        "blob": "469c2b90ea0fcdde5381da8ebbcd56bb8c806ead",
+        "bytes": 2182,
+        "recorded_hash": "12a810624fbbda31",
+        "computed_hash": "12a810624fbbda31",
+        "matches": true
+      }
+    }
+  },
+  {
+    "slug": "crank",
+    "repository": "just-every/run-crank",
+    "public": true,
+    "commit": {
+      "oid": "c16d7b09492b2c61c4cbfb4c0f892be6b0e9c1ef",
+      "committedDate": "2026-11-06T13:19:12Z",
+      "messageHeadline": "Bind restored Typeform responses to the requested identity",
+      "url": "https://github.com/just-every/run-crank/commit/c16d7b09492b2c61c4cbfb4c0f892be6b0e9c1ef"
+    },
+    "default_branch": {
+      "name": "main",
+      "target": {
+        "oid": "c16d7b09492b2c61c4cbfb4c0f892be6b0e9c1ef"
+      }
+    },
+    "sourceRef": "HEAD",
+    "tag": null,
+    "tags": [],
+    "files": {
+      "CONTRACT.md": {
+        "blob": "8599137320925b4e9e6f4d6f853f723732e5035e",
+        "bytes": 422004,
+        "recorded_hash": "e3dec2a78eefc328",
+        "computed_hash": "e3dec2a78eefc328",
+        "matches": true
+      },
+      "README.md": {
+        "blob": "df5b2eb8328e579be3c56f4a0e9378d78f31237b",
+        "bytes": 9711,
+        "recorded_hash": "17ee4f7ea9911d08",
+        "computed_hash": "17ee4f7ea9911d08",
+        "matches": true
+      },
+      "seed.json": {
+        "blob": "1617cecf3e39069fc1ae2da5d24cc3dc6d7adb93",
+        "bytes": 1801,
+        "recorded_hash": "cb3854ec69090483",
+        "computed_hash": "cb3854ec69090483",
+        "matches": true
+      }
+    }
+  },
+  {
+    "slug": "mallet",
+    "repository": "just-every/run-mallet",
+    "public": true,
+    "commit": {
+      "oid": "1331aef49644cea21ff44371ae4d7218bb588646",
+      "committedDate": "2026-11-06T15:46:09Z",
+      "messageHeadline": "Regenerate contract views from CONTRACT.md",
+      "url": "https://github.com/just-every/run-mallet/commit/1331aef49644cea21ff44371ae4d7218bb588646"
+    },
+    "default_branch": {
+      "name": "main",
+      "target": {
+        "oid": "1331aef49644cea21ff44371ae4d7218bb588646"
+      }
+    },
+    "sourceRef": "HEAD",
+    "tag": null,
+    "tags": [],
+    "files": {
+      "CONTRACT.md": {
+        "blob": "a0ec319549d32f4c827fef583d70e9bde6397c0b",
+        "bytes": 352372,
+        "recorded_hash": "06599a1925257db8",
+        "computed_hash": "06599a1925257db8",
+        "matches": true
+      },
+      "README.md": {
+        "blob": "01a1558d2bd4877e27e70ca62cfaee9688f70d98",
+        "bytes": 15672,
+        "recorded_hash": "bdcf1b90678e4fe8",
+        "computed_hash": "bdcf1b90678e4fe8",
+        "matches": true
+      },
+      "seed.json": {
+        "blob": "6d956e1182ef193d94780cf550a175e2c1e5f62e",
+        "bytes": 2599,
+        "recorded_hash": "9bde55c8776aa0f6",
+        "computed_hash": "9bde55c8776aa0f6",
+        "matches": true
+      }
+    }
+  },
+  {
+    "slug": "placemat",
+    "repository": "just-every/run-placemat",
+    "public": true,
+    "commit": {
+      "oid": "7736720683b5d4d9236cecf9434a64b3ed84a61e",
+      "committedDate": "2026-11-06T18:40:29Z",
+      "messageHeadline": "Regenerate contract views from CONTRACT.md",
+      "url": "https://github.com/just-every/run-placemat/commit/7736720683b5d4d9236cecf9434a64b3ed84a61e"
+    },
+    "default_branch": {
+      "name": "main",
+      "target": {
+        "oid": "7736720683b5d4d9236cecf9434a64b3ed84a61e"
+      }
+    },
+    "sourceRef": "HEAD",
+    "tag": null,
+    "tags": [],
+    "files": {
+      "CONTRACT.md": {
+        "blob": "fbae5197efc9bcd8c0606bfbc7c13fc0687d70ca",
+        "bytes": 309634,
+        "recorded_hash": "8670c33f798e4707",
+        "computed_hash": "8670c33f798e4707",
+        "matches": true
+      },
+      "README.md": {
+        "blob": "136d4719cf7ffa24198f79e0fba5577247d8ab62",
+        "bytes": 11365,
+        "recorded_hash": "7319507ba101b574",
+        "computed_hash": "7319507ba101b574",
+        "matches": true
+      },
+      "seed.json": {
+        "blob": "51c9eb89ec3672443f59e12cff8778bd43751f83",
+        "bytes": 1697,
+        "recorded_hash": "81b3d3aa7dbeafee",
+        "computed_hash": "81b3d3aa7dbeafee",
+        "matches": true
+      }
+    }
+  },
+  {
+    "slug": "satchel",
+    "repository": "just-every/run-satchel",
+    "public": true,
+    "commit": {
+      "oid": "2e07928ffcf1061422b85ce066b54dbe08e1e6c3",
+      "committedDate": "2026-11-06T15:39:02Z",
+      "messageHeadline": "Regenerate contract views from CONTRACT.md",
+      "url": "https://github.com/just-every/run-satchel/commit/2e07928ffcf1061422b85ce066b54dbe08e1e6c3"
+    },
+    "default_branch": {
+      "name": "main",
+      "target": {
+        "oid": "2e07928ffcf1061422b85ce066b54dbe08e1e6c3"
+      }
+    },
+    "sourceRef": "HEAD",
+    "tag": null,
+    "tags": [],
+    "files": {
+      "CONTRACT.md": {
+        "blob": "4d66826391b258a8ac1f9961f9b3203e27f47d67",
+        "bytes": 374836,
+        "recorded_hash": "fd03cc85b0953a2b",
+        "computed_hash": "fd03cc85b0953a2b",
+        "matches": true
+      },
+      "README.md": {
+        "blob": "972da49fe72ee5203a78dbbf16eaf446905796e7",
+        "bytes": 8037,
+        "recorded_hash": "3f0e86261c877c73",
+        "computed_hash": "3f0e86261c877c73",
+        "matches": true
+      },
+      "seed.json": {
+        "blob": "ae2290da259d39cff2df60a87fad07aca89e713e",
+        "bytes": 2048,
+        "recorded_hash": "7346886b444e2893",
+        "computed_hash": "7346886b444e2893",
+        "matches": true
+      }
+    }
+  },
+  {
+    "slug": "strap",
+    "repository": "just-every/run-strap",
+    "public": true,
+    "commit": {
+      "oid": "ceba5960cbe5ddc323624eb128280ce241f59e72",
+      "committedDate": "2026-11-06T17:46:38Z",
+      "messageHeadline": "Batch finance role lookups in reconciliation settings",
+      "url": "https://github.com/just-every/run-strap/commit/ceba5960cbe5ddc323624eb128280ce241f59e72"
+    },
+    "default_branch": {
+      "name": "main",
+      "target": {
+        "oid": "ceba5960cbe5ddc323624eb128280ce241f59e72"
+      }
+    },
+    "sourceRef": "HEAD",
+    "tag": null,
+    "tags": [],
+    "files": {
+      "CONTRACT.md": {
+        "blob": "2940c24bf08b7320272cab0d064d223150abab8a",
+        "bytes": 522107,
+        "recorded_hash": "de176ce40493ca6d",
+        "computed_hash": "de176ce40493ca6d",
+        "matches": true
+      },
+      "README.md": {
+        "blob": "553c01de0d8cf1a5226085845269ff32c19ea590",
+        "bytes": 12759,
+        "recorded_hash": "d091a54bc841ed36",
+        "computed_hash": "d091a54bc841ed36",
+        "matches": true
+      },
+      "seed.json": {
+        "blob": "030c98a414b49ef1a3ccd5249cdc35390d022dec",
+        "bytes": 1927,
+        "recorded_hash": "18dc2029bf7a37ce",
+        "computed_hash": "18dc2029bf7a37ce",
+        "matches": true
+      }
+    },
+    "source_delta_note": "Recorded full CONTRACT.md fetched via raw REST after GraphQL returned only 512000 of 522107 bytes. All hash verification uses full raw bytes."
+  },
+  {
+    "slug": "terrace",
+    "repository": "just-every/run-terrace",
+    "public": true,
+    "commit": {
+      "oid": "0afcac8b3a42c23d984078e6ff90e928c9ebc22f",
+      "committedDate": "2026-10-25T09:12:28Z",
+      "messageHeadline": "Release Terrace 0.1.4 with rer 0.2.80",
+      "url": "https://github.com/just-every/run-terrace/commit/0afcac8b3a42c23d984078e6ff90e928c9ebc22f"
+    },
+    "default_branch": {
+      "name": "main",
+      "target": {
+        "oid": "c945ca7d5fe1d73c52f3e09bfd59c616077b9fc2"
+      }
+    },
+    "sourceRef": "v0.1.4",
+    "tag": "v0.1.4",
+    "tags": [
+      {
+        "name": "v0.1.0",
+        "target": {
+          "__typename": "Tag",
+          "oid": "98e4890e5811c973eecb0bf5fd74faeafc438997",
+          "target": {
+            "__typename": "Commit",
+            "oid": "b959b309a27b0b24eda69acde5549807542f1832"
+          }
+        }
+      },
+      {
+        "name": "v0.1.1",
+        "target": {
+          "__typename": "Tag",
+          "oid": "807108da514f2c804b41948b002b82cd92a1bd83",
+          "target": {
+            "__typename": "Commit",
+            "oid": "945e6a19a945e2219ced96ff13943fa2eced6c2b"
+          }
+        }
+      },
+      {
+        "name": "v0.1.2",
+        "target": {
+          "__typename": "Tag",
+          "oid": "b69357db5b8f617d2d242196e3ba8058453d3894",
+          "target": {
+            "__typename": "Commit",
+            "oid": "911b026a3980f5db11e8c010a177bf954bdbefd9"
+          }
+        }
+      },
+      {
+        "name": "v0.1.3",
+        "target": {
+          "__typename": "Tag",
+          "oid": "c723c348eadbaff632c3f61cec1695eb110e203c",
+          "target": {
+            "__typename": "Commit",
+            "oid": "f8381e3b5b9e09c209f91c0f6d5c0ceeeb672538"
+          }
+        }
+      },
+      {
+        "name": "v0.1.4",
+        "target": {
+          "__typename": "Tag",
+          "oid": "88326407ecfd18240bdf6cccc443bceeb8e32156",
+          "target": {
+            "__typename": "Commit",
+            "oid": "0afcac8b3a42c23d984078e6ff90e928c9ebc22f"
+          }
+        }
+      }
+    ],
+    "files": {
+      "CONTRACT.md": {
+        "blob": "e5bca826d36ff3712aaebc1e10fc79907c72f238",
+        "bytes": 308050,
+        "recorded_hash": "98fbe43b4ddadbb8",
+        "computed_hash": "98fbe43b4ddadbb8",
+        "matches": true
+      },
+      "README.md": {
+        "blob": "a9a80416694fb3956ec9be3931a347605e9d4518",
+        "bytes": 11809,
+        "recorded_hash": "e332bd9614af85ee",
+        "computed_hash": "e332bd9614af85ee",
+        "matches": true
+      },
+      "seed.json": {
+        "blob": "578706f5d004f4bb6f375e4a7f9d600ac8884cb0",
+        "bytes": 2108,
+        "recorded_hash": "59af82a351f8b233",
+        "computed_hash": "59af82a351f8b233",
+        "matches": true
+      }
+    },
+    "release_tag_peeled_matches": true
+  }
+]

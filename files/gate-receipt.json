@@ -1,0 +1,130 @@
+{
+  "tag": "je-gate-18",
+  "candidate_branch": "cloud/je-sync-10",
+  "candidate_head": "fe5213e28a8b55c83c3ee02277fa980ca9eafc22",
+  "baseline": "3d6df7dcc63b57cb5eb4e231cd35dcccb934a081",
+  "changed_paths": [
+    "M\tscripts/seeds-sync/state.json"
+  ],
+  "delta": [
+    {
+      "path": "seeds.auth.commit",
+      "before": "f07f60e355bc518ab3e2487350002811e78b1290",
+      "after": "d55816c1f0e6b66f12d0c2846fdba6cf22965251"
+    },
+    {
+      "path": "seeds.auth.copy.CONTRACT.md",
+      "before": "d89f2f7cf29804ec",
+      "after": "efe84cf61df4d449"
+    },
+    {
+      "path": "seeds.crank.commit",
+      "before": "e2c146dc38eb64e685cf01d2c56e798404b3936e",
+      "after": "c16d7b09492b2c61c4cbfb4c0f892be6b0e9c1ef"
+    },
+    {
+      "path": "seeds.crank.copy.CONTRACT.md",
+      "before": "aac2d3d2ae3f5062",
+      "after": "e3dec2a78eefc328"
+    },
+    {
+      "path": "seeds.mallet.commit",
+      "before": "b5656076d025dcd521173057070e5f8fd3b5ff29",
+      "after": "1331aef49644cea21ff44371ae4d7218bb588646"
+    },
+    {
+      "path": "seeds.mallet.copy.CONTRACT.md",
+      "before": "bb2b29175f71a418",
+      "after": "06599a1925257db8"
+    },
+    {
+      "path": "seeds.placemat.commit",
+      "before": "9e6bb6147a834849683f30973a45a814a0ee0139",
+      "after": "7736720683b5d4d9236cecf9434a64b3ed84a61e"
+    },
+    {
+      "path": "seeds.placemat.copy.CONTRACT.md",
+      "before": "f98f316649ad03f6",
+      "after": "8670c33f798e4707"
+    },
+    {
+      "path": "seeds.satchel.commit",
+      "before": "798b3b2110cdeddb82f4772d6860d9650df3f695",
+      "after": "2e07928ffcf1061422b85ce066b54dbe08e1e6c3"
+    },
+    {
+      "path": "seeds.satchel.copy.CONTRACT.md",
+      "before": "bb45a7b8c3952de2",
+      "after": "fd03cc85b0953a2b"
+    },
+    {
+      "path": "seeds.strap.commit",
+      "before": "5bc1e11b32150892809e3d81d525e46e506233cb",
+      "after": "ceba5960cbe5ddc323624eb128280ce241f59e72"
+    },
+    {
+      "path": "seeds.strap.copy.CONTRACT.md",
+      "before": "18190d4e4a36f7a5",
+      "after": "de176ce40493ca6d"
+    },
+    {
+      "path": "seeds.terrace.open",
+      "before": [
+        "c47278a1546d"
+      ],
+      "after": null
+    },
+    {
+      "path": "syncedAt",
+      "before": "2026-11-05T21:20:03.417Z",
+      "after": "2026-11-06T21:06:54.134Z"
+    }
+  ],
+  "candidate_commits": [
+    "fe5213e28a8b55c83c3ee02277fa980ca9eafc22"
+  ],
+  "candidate_identity_check": "all candidate commits including side parents enumerated; fleet authors and committers; no trailers",
+  "credential_shaped_diff_scan": {
+    "github_token": false,
+    "private_key": false,
+    "credential_url": false,
+    "aws_access_key": false,
+    "provider_secret": false,
+    "secret_assignment": false
+  },
+  "before_counts": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "after_counts": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "excluded_absent": [
+    "beacon",
+    "relay",
+    "ferry",
+    "lily",
+    "brook",
+    "delta",
+    "barrow",
+    "linen"
+  ],
+  "public_data_identical": true,
+  "public_and_src_tree_identical": true,
+  "pricing": "All served files and src are byte-identical to baseline; accepted pricing is unchanged.",
+  "listings_sha256": "790e115fdf755eea1212b68df6df033fb9d2467dbff94cad0f61ad2928544bc8",
+  "state_before_sha256": "0293bf8694c28bb58f4f054bd2e19eddc6e6e606c4dc713f654a4938fe733a86",
+  "state_after_sha256": "061eb9473cbc20365632b1c1db395aa3c3c4f8d6b18aed7722568c3e1fc5c171",
+  "generated_sources_not_applicable": {
+    "CONTRACT.md": true,
+    "ACCEPTANCE.md": true,
+    "docs/CLAIMS.md": true,
+    "sources.lock.json": true
+  },
+  "migration_ledger": "No documented migration-ledger check in AGENTS.md or package.json; no migration path touched.",
+  "product_status": "",
+  "observed_at": "2026-11-06T21:33:19.434246+00:00"
+}
