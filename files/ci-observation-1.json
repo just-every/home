@@ -1,0 +1,22 @@
+{
+  "observedAt": "2026-11-07T22:05:56.102349+00:00",
+  "action": "exact-SHA discovery",
+  "head": "025b26efa66630787eaf2fb5bf0549ac5ec6732c",
+  "result": {
+    "total_count": 1,
+    "workflow_runs": [
+      {
+        "conclusion": null,
+        "created_at": "2026-11-07T22:05:39Z",
+        "event": "push",
+        "head_sha": "025b26efa66630787eaf2fb5bf0549ac5ec6732c",
+        "html_url": "https://github.com/just-every/home/actions/runs/42418959568",
+        "id": 42418959568,
+        "name": "Verify branch",
+        "path": ".github/workflows/verify.yml",
+        "status": "in_progress",
+        "updated_at": "2026-11-07T22:05:42Z"
+      }
+    ]
+  }
+}

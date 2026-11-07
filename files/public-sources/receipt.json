@@ -1,0 +1,28 @@
+[
+  {
+    "url": "https://justevery.com/data/listings.json",
+    "file": "listings.json",
+    "status": 200,
+    "bytes": 30081,
+    "sha256": "790e115fdf755eea1212b68df6df033fb9d2467dbff94cad0f61ad2928544bc8"
+  },
+  {
+    "url": "https://justevery.com/brand.json",
+    "file": "brand.json",
+    "status": 200,
+    "bytes": 2384,
+    "sha256": "a54bb68daa5f1590e5a6eaafecf38c627e42fa014f65c0d7efaf81bee809b7a4"
+  },
+  {
+    "url": "https://runeditrun.com/seeds.json",
+    "error": "curl: (22) The requested URL returned error: 404\n",
+    "exit": 22
+  },
+  {
+    "url": "https://runeditrun.com/data/seeds.json",
+    "status": 200,
+    "file": "rer-seeds.json",
+    "bytes": 962758,
+    "sha256": "0fc0f96a41a81b700692a04b9100ca6f6abed2b402dfb7f960ecf612e9561faf"
+  }
+]

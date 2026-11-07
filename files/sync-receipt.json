@@ -1,0 +1,62 @@
+{
+  "dry-before": {
+    "startedAt": "2026-11-07T21:58:32.877Z",
+    "mode": "dry-run",
+    "copyOnly": false,
+    "seeds": 49,
+    "findings": {
+      "copy": 3
+    },
+    "unreadable": [],
+    "apply": null,
+    "homepages": {
+      "read": 49,
+      "failed": 0
+    }
+  },
+  "copy-apply": {
+    "startedAt": "2026-11-07T22:00:01.242Z",
+    "mode": "apply",
+    "copyOnly": true,
+    "seeds": 49,
+    "findings": {
+      "copy": 3
+    },
+    "unreadable": [],
+    "apply": {
+      "applied": [],
+      "written": [],
+      "favicons": false
+    }
+  },
+  "full-apply": {
+    "startedAt": "2026-11-07T22:00:48.037Z",
+    "mode": "apply",
+    "copyOnly": false,
+    "seeds": 49,
+    "findings": {},
+    "unreadable": [],
+    "apply": {
+      "applied": [],
+      "written": [],
+      "favicons": false
+    },
+    "homepages": {
+      "read": 49,
+      "failed": 0
+    }
+  },
+  "dry-after": {
+    "startedAt": "2026-11-07T22:02:12.827Z",
+    "mode": "dry-run",
+    "copyOnly": false,
+    "seeds": 49,
+    "findings": {},
+    "unreadable": [],
+    "apply": null,
+    "homepages": {
+      "read": 49,
+      "failed": 0
+    }
+  }
+}

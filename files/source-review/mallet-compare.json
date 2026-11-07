@@ -1,0 +1,1 @@
+{"ahead_by":4,"files":[{"filename":".github/workflows/verify.yml","status":"modified"},{"filename":"scripts/verify-app.mjs","status":"modified"},{"filename":"sources.lock.json","status":"modified"}],"html_url":"https://github.com/just-every/run-mallet/compare/1331aef49644cea21ff44371ae4d7218bb588646...05f12bb25287d22654fda8b2a549712d14e94c1c","status":"ahead"}

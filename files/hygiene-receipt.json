@@ -1,0 +1,14 @@
+{
+  "paths": [
+    "scripts/seeds-sync/state.json"
+  ],
+  "diff_check": "passed",
+  "credential_shape_scan": "passed",
+  "public_listings_unchanged": true,
+  "only_seed_metadata_keys_changed": [
+    "commit",
+    "copy"
+  ],
+  "listing_sha256": "790e115fdf755eea1212b68df6df033fb9d2467dbff94cad0f61ad2928544bc8",
+  "state_sha256": "622ee818b1fbcf5e99a28aa09f199a5d5d124ea92b449cc0304ce0019f3b7586"
+}

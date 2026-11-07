@@ -1,0 +1,19 @@
+{
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-11",
+  "head": "025b26efa66630787eaf2fb5bf0549ac5ec6732c",
+  "remote_ref": "refs/heads/cloud/je-sync-11",
+  "push_guard": "python3 $HOME/rer-consolidation/.tools/cloud-push.py origin cloud/je-sync-11",
+  "push": "success",
+  "successful_guard_attempt": 1,
+  "main_after_fetch": "706ef98b603a948b1352be2089ccf614e6f16aca",
+  "rebase": "up to date before first successful publication",
+  "hooks": "fleet commit-msg cleanup active; Husky repository pre-commit and LFS pre-push ran from original absolute paths",
+  "diff_check": "passed",
+  "clean_tree": true,
+  "product_paths": [
+    "scripts/seeds-sync/state.json"
+  ],
+  "remote_verifiedAt": "2026-11-07T22:06:50.656624+00:00",
+  "remote_verified_head": "025b26efa66630787eaf2fb5bf0549ac5ec6732c"
+}

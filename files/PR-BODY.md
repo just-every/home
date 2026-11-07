@@ -1,0 +1,3 @@
+Refresh the committed sync provenance for Crank, Mallet, Placemat and Platter from their current source commits. Crank, Placemat and Platter have unreleased CONTRACT.md drift; Mallet's watched copy files are unchanged. Keep all public copy, versions, art and release statuses unchanged: 49 listings, 35 released and 14 coming soon. No seed contract implementation judgment is promoted.
+
+Validation: all 49 sources and homepages read; final dry sync has no remaining findings; listings generation/check, type-check, lint and production build pass. Only scripts/seeds-sync/state.json changes. Full reports and source-review receipts travel separately on the evidence ref; landing, deployment and independent publication checks remain with the lane.

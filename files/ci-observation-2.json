@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-11-07T22:11:01.507345+00:00",
+  "action": "exact-SHA run poll",
+  "run_id": 42418959568,
+  "result": {
+    "conclusion": "success",
+    "head_sha": "025b26efa66630787eaf2fb5bf0549ac5ec6732c",
+    "html_url": "https://github.com/just-every/home/actions/runs/42418959568",
+    "status": "completed"
+  }
+}

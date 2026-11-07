@@ -1,0 +1,23 @@
+[
+  {
+    "command": "nice -n 15 npm run type-check",
+    "startedAt": "2026-11-07T22:03:29.514848+00:00",
+    "durationSeconds": 3.85,
+    "exit": 0,
+    "log": "type-check.log"
+  },
+  {
+    "command": "nice -n 15 npm run lint",
+    "startedAt": "2026-11-07T22:03:33.363625+00:00",
+    "durationSeconds": 2.62,
+    "exit": 0,
+    "log": "lint.log"
+  },
+  {
+    "command": "nice -n 15 npm run build",
+    "startedAt": "2026-11-07T22:03:35.981875+00:00",
+    "durationSeconds": 29.69,
+    "exit": 0,
+    "log": "build.log"
+  }
+]

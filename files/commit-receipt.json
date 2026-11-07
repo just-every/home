@@ -1,0 +1,9 @@
+{
+  "branch": "cloud/je-sync-11",
+  "head": "025b26efa66630787eaf2fb5bf0549ac5ec6732c",
+  "candidate_commits": [
+    "025b26efa66630787eaf2fb5bf0549ac5ec6732c"
+  ],
+  "identity_and_trailers": "passed; all candidate commits including side parents inspected",
+  "clean": true
+}

@@ -1,0 +1,65 @@
+diff --git a/scripts/seeds-sync/state.json b/scripts/seeds-sync/state.json
+index 003eed3..aaf9a84 100644
+--- a/scripts/seeds-sync/state.json
++++ b/scripts/seeds-sync/state.json
+@@ -1,5 +1,5 @@
+ {
+-  "syncedAt": "2026-11-06T21:06:54.134Z",
++  "syncedAt": "2026-11-07T22:00:48.037Z",
+   "seeds": {
+     "auth": {
+       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
+@@ -295,12 +295,12 @@
+       }
+     },
+     "crank": {
+-      "commit": "c16d7b09492b2c61c4cbfb4c0f892be6b0e9c1ef",
++      "commit": "97dbba76c57a620110886e92a959fbf15b07d3d0",
+       "sourceRef": "HEAD",
+       "sourceReason": "coming-soon seed; no release tag",
+       "tag": null,
+       "copy": {
+-        "CONTRACT.md": "e3dec2a78eefc328",
++        "CONTRACT.md": "01dcf1fbed0c384d",
+         "README.md": "17ee4f7ea9911d08",
+         "seed.json": "cb3854ec69090483"
+       },
+@@ -694,7 +694,7 @@
+       }
+     },
+     "mallet": {
+-      "commit": "1331aef49644cea21ff44371ae4d7218bb588646",
++      "commit": "05f12bb25287d22654fda8b2a549712d14e94c1c",
+       "sourceRef": "HEAD",
+       "sourceReason": "coming-soon seed; no release tag",
+       "tag": null,
+@@ -991,12 +991,12 @@
+       }
+     },
+     "placemat": {
+-      "commit": "7736720683b5d4d9236cecf9434a64b3ed84a61e",
++      "commit": "187fa5c3720adb99a25412f029821a840d950867",
+       "sourceRef": "HEAD",
+       "sourceReason": "coming-soon seed; no release tag",
+       "tag": null,
+       "copy": {
+-        "CONTRACT.md": "8670c33f798e4707",
++        "CONTRACT.md": "2fc8167189ba0379",
+         "README.md": "7319507ba101b574",
+         "seed.json": "81b3d3aa7dbeafee"
+       },
+@@ -1018,12 +1018,12 @@
+       }
+     },
+     "platter": {
+-      "commit": "696c5253a2a06ba928c1e6f5457b4d4e10aa7e1a",
++      "commit": "b384813c64c78665f189b5aa1f6b8f2c0fca79da",
+       "sourceRef": "HEAD",
+       "sourceReason": "coming-soon seed; no release tag",
+       "tag": null,
+       "copy": {
+-        "CONTRACT.md": "f11a88e1690bbbd0",
++        "CONTRACT.md": "20c37e54ecce40a0",
+         "README.md": "7d91745d757ade65",
+         "seed.json": "1175b76fe7042206"
+       },

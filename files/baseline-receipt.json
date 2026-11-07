@@ -1,0 +1,103 @@
+{
+  "base_head": "706ef98b603a948b1352be2089ccf614e6f16aca",
+  "listings": 49,
+  "counts": {
+    "coming-soon": 14,
+    "released": 35
+  },
+  "rer_inventory": 16,
+  "excluded": [
+    "beacon",
+    "relay",
+    "ferry",
+    "lily",
+    "brook",
+    "delta",
+    "barrow",
+    "linen"
+  ],
+  "je_live_listings_matches_main": true,
+  "je_live_brand_matches_main": true,
+  "inventory_overlap": [
+    {
+      "slug": "happytohelp",
+      "rer_version": "0.4.12",
+      "je_version": "v0.4.13"
+    },
+    {
+      "slug": "lamp",
+      "rer_version": "1.10.0",
+      "je_version": "v1.11.3"
+    },
+    {
+      "slug": "pencil",
+      "rer_version": "0.7.0",
+      "je_version": "v0.7.0"
+    },
+    {
+      "slug": "dial",
+      "rer_version": "0.5.0",
+      "je_version": "v0.5.0"
+    },
+    {
+      "slug": "slate",
+      "rer_version": "0.4.0",
+      "je_version": "v0.4.0"
+    },
+    {
+      "slug": "cradle",
+      "rer_version": "0.4.0",
+      "je_version": "v0.4.0"
+    },
+    {
+      "slug": "uptime",
+      "rer_version": "0.4.3",
+      "je_version": "v0.5.0"
+    },
+    {
+      "slug": "penny",
+      "rer_version": "0.1.4",
+      "je_version": "v0.2.1"
+    },
+    {
+      "slug": "oncall",
+      "rer_version": "0.4.2",
+      "je_version": "v0.5.5"
+    },
+    {
+      "slug": "errors-workbench",
+      "rer_version": "0.6.0",
+      "je_version": null
+    },
+    {
+      "slug": "orbit",
+      "rer_version": "0.3.0",
+      "je_version": "v0.4.3"
+    },
+    {
+      "slug": "team-workspace",
+      "rer_version": "0.4.0",
+      "je_version": null
+    },
+    {
+      "slug": "mango",
+      "rer_version": "0.3.0",
+      "je_version": "v0.4.0"
+    },
+    {
+      "slug": "vector",
+      "rer_version": "0.3.0",
+      "je_version": "v0.4.1"
+    },
+    {
+      "slug": "coffer",
+      "rer_version": "0.1.0",
+      "je_version": "v0.1.0"
+    },
+    {
+      "slug": "pantry",
+      "rer_version": "0.2.5",
+      "je_version": "v0.2.8"
+    }
+  ]
+}

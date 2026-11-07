@@ -1,0 +1,93 @@
+{
+  "tag": "je-sync-11",
+  "repository": "just-every/home",
+  "outcome": "Done",
+  "custody": "READY",
+  "branch": "cloud/je-sync-11",
+  "head": "025b26efa66630787eaf2fb5bf0549ac5ec6732c",
+  "pr": "https://github.com/just-every/home/pull/35",
+  "ci_run_ids": [
+    42418959568
+  ],
+  "ci": {
+    "observedAt": "2026-11-07T22:11:01.507345+00:00",
+    "action": "exact-SHA run poll",
+    "run_id": 42418959568,
+    "result": {
+      "conclusion": "success",
+      "head_sha": "025b26efa66630787eaf2fb5bf0549ac5ec6732c",
+      "html_url": "https://github.com/just-every/home/actions/runs/42418959568",
+      "status": "completed"
+    }
+  },
+  "ci_api_calls": 2,
+  "ci_poll_interval_seconds": 305,
+  "before": {
+    "listings": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "after": {
+    "listings": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "changed_paths": [
+    "scripts/seeds-sync/state.json"
+  ],
+  "changed_seed_provenance": [
+    "crank",
+    "mallet",
+    "placemat",
+    "platter"
+  ],
+  "contract_hash_changes": [
+    "crank",
+    "placemat",
+    "platter"
+  ],
+  "public_claim_changes": [],
+  "version_changes": [],
+  "status_changes": [],
+  "clause_status_changes": [],
+  "blocked": [],
+  "local_checks": [
+    {
+      "command": "nice -n 15 npm run type-check",
+      "startedAt": "2026-11-07T22:03:29.514848+00:00",
+      "durationSeconds": 3.85,
+      "exit": 0,
+      "log": "type-check.log"
+    },
+    {
+      "command": "nice -n 15 npm run lint",
+      "startedAt": "2026-11-07T22:03:33.363625+00:00",
+      "durationSeconds": 2.62,
+      "exit": 0,
+      "log": "lint.log"
+    },
+    {
+      "command": "nice -n 15 npm run build",
+      "startedAt": "2026-11-07T22:03:35.981875+00:00",
+      "durationSeconds": 29.69,
+      "exit": 0,
+      "log": "build.log"
+    }
+  ],
+  "dry_sync_final": {
+    "startedAt": "2026-11-07T22:02:12.827Z",
+    "mode": "dry-run",
+    "copyOnly": false,
+    "seeds": 49,
+    "findings": {},
+    "unreadable": [],
+    "apply": null,
+    "homepages": {
+      "read": 49,
+      "failed": 0
+    }
+  },
+  "clone_cleanup": "remove node_modules before evidence publication; remove product clone after successful evidence custody",
+  "recordedAt": "2026-11-07T22:11:40.245896+00:00",
+  "node_modules_removed": true
+}
