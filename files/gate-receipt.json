@@ -1,0 +1,217 @@
+{
+  "schema": 1,
+  "tag": "je-gate-19",
+  "recordedAt": "2026-11-07T22:26:23.486940+00:00",
+  "repository": "just-every/home",
+  "candidate": "025b26efa66630787eaf2fb5bf0549ac5ec6732c",
+  "baseline": "706ef98b603a948b1352be2089ccf614e6f16aca",
+  "candidateBranch": "cloud/je-sync-11",
+  "productWorktree": "detached exact candidate; local cloud/je-gate-19 created at baseline, unpublished",
+  "pr": {
+    "base": {
+      "ref": "main",
+      "sha": "706ef98b603a948b1352be2089ccf614e6f16aca"
+    },
+    "head": {
+      "ref": "cloud/je-sync-11",
+      "sha": "025b26efa66630787eaf2fb5bf0549ac5ec6732c"
+    },
+    "html_url": "https://github.com/just-every/home/pull/35",
+    "number": 35,
+    "state": "open"
+  },
+  "ci": {
+    "conclusion": "success",
+    "event": "push",
+    "head_sha": "025b26efa66630787eaf2fb5bf0549ac5ec6732c",
+    "html_url": "https://github.com/just-every/home/actions/runs/42418959568",
+    "id": 42418959568,
+    "name": "Verify branch",
+    "status": "completed"
+  },
+  "githubApiInvocations": 3,
+  "githubApiBudget": 10,
+  "scope": {
+    "paths": [
+      "scripts/seeds-sync/state.json"
+    ],
+    "insertions": 8,
+    "deletions": 8,
+    "parsedValueChanges": [
+      {
+        "path": "syncedAt",
+        "before": "2026-11-06T21:06:54.134Z",
+        "after": "2026-11-07T22:00:48.037Z"
+      },
+      {
+        "path": "seeds.crank.commit",
+        "before": "c16d7b09492b2c61c4cbfb4c0f892be6b0e9c1ef",
+        "after": "97dbba76c57a620110886e92a959fbf15b07d3d0"
+      },
+      {
+        "path": "seeds.crank.copy.CONTRACT.md",
+        "before": "e3dec2a78eefc328",
+        "after": "01dcf1fbed0c384d"
+      },
+      {
+        "path": "seeds.mallet.commit",
+        "before": "1331aef49644cea21ff44371ae4d7218bb588646",
+        "after": "05f12bb25287d22654fda8b2a549712d14e94c1c"
+      },
+      {
+        "path": "seeds.placemat.commit",
+        "before": "7736720683b5d4d9236cecf9434a64b3ed84a61e",
+        "after": "187fa5c3720adb99a25412f029821a840d950867"
+      },
+      {
+        "path": "seeds.placemat.copy.CONTRACT.md",
+        "before": "8670c33f798e4707",
+        "after": "2fc8167189ba0379"
+      },
+      {
+        "path": "seeds.platter.commit",
+        "before": "696c5253a2a06ba928c1e6f5457b4d4e10aa7e1a",
+        "after": "b384813c64c78665f189b5aa1f6b8f2c0fca79da"
+      },
+      {
+        "path": "seeds.platter.copy.CONTRACT.md",
+        "before": "f11a88e1690bbbd0",
+        "after": "20c37e54ecce40a0"
+      }
+    ],
+    "credentialDeltaCheck": "All changed values restricted to 1 ISO timestamp, 4 full lowercase commit SHAs, 3 16-hex digest prefixes; no other field or value changed.",
+    "identities": "Fleet author and committer, no trailers; entire candidate range including all parents checked.",
+    "publicTrees": {
+      "src": {
+        "baseline": "c8a301f8f6dc1a90ad132d3638d98e52bfb93da9",
+        "candidate": "c8a301f8f6dc1a90ad132d3638d98e52bfb93da9",
+        "identical": true
+      },
+      "public": {
+        "baseline": "841a3a4bf943e604de8ceb5bce09d6fc212f4bad",
+        "candidate": "841a3a4bf943e604de8ceb5bce09d6fc212f4bad",
+        "identical": true
+      },
+      "tests": {
+        "baseline": "9a8a7ecf131c0b8ad4432dae0602784a445219d9",
+        "candidate": "9a8a7ecf131c0b8ad4432dae0602784a445219d9",
+        "identical": true
+      },
+      "scripts/listings.mjs": {
+        "baseline": "f615bd469a70f19027f099198fb1ede392c84bd4",
+        "candidate": "f615bd469a70f19027f099198fb1ede392c84bd4",
+        "identical": true
+      },
+      "scripts/seeds-sync/index.mjs": {
+        "baseline": "5013811f198ec852e0fec6c29c04c3c2044c2bf5",
+        "candidate": "5013811f198ec852e0fec6c29c04c3c2044c2bf5",
+        "identical": true
+      },
+      "scripts/seeds-sync/detect": {
+        "baseline": "89e4995596519d2c4ac8b9ae7cb179dfc2a69c18",
+        "candidate": "89e4995596519d2c4ac8b9ae7cb179dfc2a69c18",
+        "identical": true
+      },
+      "scripts/seeds-sync/sources": {
+        "baseline": "ddadba579c751626e2a4cabe9bb8cfb0eaeef177",
+        "candidate": "ddadba579c751626e2a4cabe9bb8cfb0eaeef177",
+        "identical": true
+      },
+      "scripts/seeds-sync/apply": {
+        "baseline": "9270438ed872a1c714b8bc9759e39574dafea378",
+        "candidate": "9270438ed872a1c714b8bc9759e39574dafea378",
+        "identical": true
+      },
+      "scripts/seeds-sync/overrides.json": {
+        "baseline": "12b8399b89129e2822a8c0d7495c29ed0de7d659",
+        "candidate": "12b8399b89129e2822a8c0d7495c29ed0de7d659",
+        "identical": true
+      }
+    }
+  },
+  "counts": {
+    "baseline": {
+      "total": 49,
+      "released": 35,
+      "coming-soon": 14,
+      "listings_sha256": "790e115fdf755eea1212b68df6df033fb9d2467dbff94cad0f61ad2928544bc8",
+      "excludedAbsent": [
+        "beacon",
+        "relay",
+        "ferry",
+        "lily",
+        "brook",
+        "delta",
+        "barrow",
+        "linen"
+      ]
+    },
+    "candidate": {
+      "total": 49,
+      "released": 35,
+      "coming-soon": 14,
+      "listings_sha256": "790e115fdf755eea1212b68df6df033fb9d2467dbff94cad0f61ad2928544bc8",
+      "excludedAbsent": [
+        "beacon",
+        "relay",
+        "ferry",
+        "lily",
+        "brook",
+        "delta",
+        "barrow",
+        "linen"
+      ]
+    }
+  },
+  "checks": [
+    {
+      "command": "npm ci",
+      "exit": 0,
+      "log": "npm-ci.log"
+    },
+    {
+      "command": "npm run listings -- --check",
+      "exit": 0,
+      "log": "listings-check.log"
+    },
+    {
+      "command": "npm run listings",
+      "exit": 0,
+      "log": "listings-write.log"
+    },
+    {
+      "command": "npm run type-check",
+      "exit": 0,
+      "log": "type-check.log"
+    },
+    {
+      "command": "npm run lint",
+      "exit": 0,
+      "log": "lint.log"
+    },
+    {
+      "command": "node --import tsx ../replay.mjs <clone>",
+      "exit": 0,
+      "log": "copy-replay.log"
+    },
+    {
+      "command": "git diff --check 706ef98b603a948b1352be2089ccf614e6f16aca HEAD",
+      "exit": 0
+    },
+    {
+      "command": "git status --porcelain=v1",
+      "exit": 0,
+      "result": "empty; tracked worktree and index clean"
+    }
+  ],
+  "independentGeneration": {
+    "sourceLock": "N/A: no sources.lock.json or source-lock command in this repository",
+    "contractViews": "N/A: no CONTRACT.md, ACCEPTANCE.md, docs/CLAIMS.md or documented generator",
+    "migrationLedger": "N/A: SQL migrations exist but no migration-ledger check is defined; unchanged",
+    "listings": "check and write both ran independently on exact candidate; no diff"
+  },
+  "clauseStatusChanges": [],
+  "findings": [],
+  "blockers": [],
+  "verdict": "GATE PASS 025b26efa66630787eaf2fb5bf0549ac5ec6732c"
+}

@@ -1,0 +1,1 @@
+M	scripts/seeds-sync/state.json

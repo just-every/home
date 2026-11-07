@@ -1,0 +1,124 @@
+{
+  "files": [
+    {
+      "blob": "96c0ff5ee39f21f9bb7615cf856c208ca68621b6",
+      "bytes": 10486,
+      "path": "REPORT.md",
+      "sha256": "b27373df85ebfc5738cfe8006b2268326a71ea49438276b82ff17f1695d9cd88"
+    },
+    {
+      "blob": "a924e3c7eccf11dd5a735f08bc31066361cd0533",
+      "bytes": 126,
+      "path": "candidate-identities.txt",
+      "sha256": "bbd70d9545d6edc645077b43a5ac0ba80993b54d95f0cd5c98a8780867cf9231"
+    },
+    {
+      "blob": "6904a2a9b42000a51b1458a56752c23fab909b6d",
+      "bytes": 2108,
+      "path": "candidate.diff",
+      "sha256": "1c0d5eba1610b3f2ae548cf0e8d510cacf55914d7e2228b3e10b13aed6c24444"
+    },
+    {
+      "blob": "46a7815c8b9012ab83306d9ce064d0f624de3264",
+      "bytes": 228,
+      "path": "ci.json",
+      "sha256": "8fc9dc405434ddee10882a4d535aabe7a0f7ce72ad24098500edb45ba9ffc6c5"
+    },
+    {
+      "blob": "f854fa8b9ed573d9875d45459f05e9a70ca3e0fb",
+      "bytes": 4829,
+      "path": "copy-replay.json",
+      "sha256": "6fe78430cb3ac86ead565c4c728e535d4e8b67bef4816af56426643886274959"
+    },
+    {
+      "blob": "f854fa8b9ed573d9875d45459f05e9a70ca3e0fb",
+      "bytes": 4829,
+      "path": "copy-replay.log",
+      "sha256": "6fe78430cb3ac86ead565c4c728e535d4e8b67bef4816af56426643886274959"
+    },
+    {
+      "blob": "80a90426c828b7d0dd343fccd97b66c85f5c17e0",
+      "bytes": 3978,
+      "path": "copy-replay.mjs",
+      "sha256": "48834ecf124c958dabc61d85145adc9995331d3d0f38ca8af6383684c1f4461d"
+    },
+    {
+      "blob": "966798069eda6924b3f70e1f401f1109056464db",
+      "bytes": 6678,
+      "path": "gate-receipt.json",
+      "sha256": "2c809acfa31ed7e29fefb7960468ba3f395ddbfe571a76b2862a8008f27fa1f6"
+    },
+    {
+      "blob": "02abf0d4ed8ef1c3e0a62e98c0345d520742667a",
+      "bytes": 47,
+      "path": "lint.log",
+      "sha256": "02ef98276ac56c4ea2e84e7291740f26bb5d7d07639d8ce90366e463210307f3"
+    },
+    {
+      "blob": "60156ecabd3c09419694fdce62e47b7f1938de86",
+      "bytes": 109,
+      "path": "listings-check.log",
+      "sha256": "8cbef4f8b3f74fe74438c2725d5c9fc79521670c9f240ea2d11548bdc20775d9"
+    },
+    {
+      "blob": "eff859398d95fc4c8a89f2f0e81b6c0d4f858a9e",
+      "bytes": 103,
+      "path": "listings-write.log",
+      "sha256": "7b671fd81482bab64966dd028eb9567615f91219f8722031cd45cf326cfbfbb4"
+    },
+    {
+      "blob": "2d7de99b0691b45364122761f1e3079068ed0bdb",
+      "bytes": 296,
+      "path": "npm-ci.log",
+      "sha256": "646fcd366b8d840643027d7a95e77b0a9b1996ca53ddfe9002db6f76f6d25aa6"
+    },
+    {
+      "blob": "57be4bc784f175b082129747ea6b81e66e3ea13e",
+      "bytes": 239,
+      "path": "pr.json",
+      "sha256": "7dc3213fa829d05d1cefd1623d8d554045ebbb9cc4416c938e481e8ee338b516"
+    },
+    {
+      "blob": "80c5bf52b35fefe0963782fe1f8c29fab16b0d3b",
+      "bytes": 32,
+      "path": "scope.txt",
+      "sha256": "a44274ef7a75d3a4a91e2bd169e36667747dced523379f9e94d82ff6f9acacc6"
+    },
+    {
+      "blob": "7ce38ccc5c298604f446a6c1b2632662e7ff9a8b",
+      "bytes": 5429,
+      "path": "source-query.graphql",
+      "sha256": "1d80584d4343596252a74edadeed643569ff278ede46793c73e0f7fc54b2ba51"
+    },
+    {
+      "blob": "f85590743992f17839718054ac894f3dac5c6c5e",
+      "bytes": 11558,
+      "path": "source-receipt.json",
+      "sha256": "5ab4e55970a96f9a3694233a3e583afd7aa3e1e10c4a9891017c489c1bd0447e"
+    },
+    {
+      "blob": "0c40ede38f77fda6e4de37e1b7c1fdbdd17986b9",
+      "bytes": 944,
+      "path": "surface-probe.log",
+      "sha256": "11b1018e4876209685531ffbf9cacdb7ac42bfa82fded081fb0971802806e911"
+    },
+    {
+      "blob": "07ce1554a605001caeb4cbb05f824157264e41bc",
+      "bytes": 5879,
+      "path": "surface-probe.py",
+      "sha256": "ec30fe7fdb6bff44b7c6458974b85e410ae8d5e153b61261e6c6c96822eeef3c"
+    },
+    {
+      "blob": "781fc107c6de1f0fc7a78db73b8a4442fb7966b7",
+      "bytes": 49,
+      "path": "type-check.log",
+      "sha256": "5a848264e3d4f39bae1d347b4ff2be16348436fdcdd3a42c91c0fca2a8f23403"
+    }
+  ],
+  "product_branch": "",
+  "product_head": "025b26efa66630787eaf2fb5bf0549ac5ec6732c",
+  "ref": "refs/heads/evidence/je-gate-19",
+  "repository": "just-every/home",
+  "schema": 1,
+  "tag": "je-gate-19"
+}

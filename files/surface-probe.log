@@ -1,0 +1,41 @@
+{
+  "candidate": "025b26efa66630787eaf2fb5bf0549ac5ec6732c",
+  "scope": "1 state file, 8 scalar changes",
+  "counts": {
+    "baseline": {
+      "total": 49,
+      "released": 35,
+      "coming-soon": 14,
+      "listings_sha256": "790e115fdf755eea1212b68df6df033fb9d2467dbff94cad0f61ad2928544bc8",
+      "excludedAbsent": [
+        "beacon",
+        "relay",
+        "ferry",
+        "lily",
+        "brook",
+        "delta",
+        "barrow",
+        "linen"
+      ]
+    },
+    "candidate": {
+      "total": 49,
+      "released": 35,
+      "coming-soon": 14,
+      "listings_sha256": "790e115fdf755eea1212b68df6df033fb9d2467dbff94cad0f61ad2928544bc8",
+      "excludedAbsent": [
+        "beacon",
+        "relay",
+        "ferry",
+        "lily",
+        "brook",
+        "delta",
+        "barrow",
+        "linen"
+      ]
+    }
+  },
+  "checks": "PASS",
+  "worktree": "clean",
+  "verdict": "GATE PASS 025b26efa66630787eaf2fb5bf0549ac5ec6732c"
+}

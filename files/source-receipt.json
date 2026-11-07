@@ -1,0 +1,373 @@
+{
+  "crank": {
+    "nameWithOwner": "just-every/run-crank",
+    "isPrivate": false,
+    "refs": {
+      "nodes": [],
+      "pageInfo": {
+        "hasNextPage": false
+      }
+    },
+    "defaultBranchRef": {
+      "name": "main",
+      "target": {
+        "oid": "97dbba76c57a620110886e92a959fbf15b07d3d0",
+        "history": {
+          "nodes": [
+            {
+              "oid": "97dbba76c57a620110886e92a959fbf15b07d3d0",
+              "committedDate": "2026-11-07T20:08:30Z"
+            }
+          ]
+        }
+      }
+    },
+    "beforeCommit": {
+      "oid": "c16d7b09492b2c61c4cbfb4c0f892be6b0e9c1ef",
+      "committedDate": "2026-11-06T13:19:12Z",
+      "messageHeadline": "Bind restored Typeform responses to the requested identity",
+      "parents": {
+        "nodes": [
+          {
+            "oid": "a64ade40380c0f7e44410e193ec045a24bac86e4"
+          }
+        ]
+      }
+    },
+    "afterCommit": {
+      "oid": "97dbba76c57a620110886e92a959fbf15b07d3d0",
+      "committedDate": "2026-11-07T20:08:30Z",
+      "messageHeadline": "ci: allow measured headroom for Crank shard jobs",
+      "parents": {
+        "nodes": [
+          {
+            "oid": "dd9a4d8f3476a4eb399ccea7960cc89cc2d2b674"
+          }
+        ]
+      }
+    },
+    "files": {
+      "CONTRACT.md": {
+        "before": {
+          "git_blob": "8599137320925b4e9e6f4d6f853f723732e5035e",
+          "bytes": 422004,
+          "sha256": "e3dec2a78eefc32866d3992e41160474ea2719ffc9c83eba3258a43a30927470",
+          "copy_hash": "e3dec2a78eefc328"
+        },
+        "after": {
+          "git_blob": "511b1d8e83bacef132068cec5e361023ce5f6457",
+          "bytes": 422626,
+          "sha256": "01dcf1fbed0c384dc8e28955c1eb77ea47fba3fcfc206bde934ec488b4c3cf76",
+          "copy_hash": "01dcf1fbed0c384d"
+        }
+      },
+      "README.md": {
+        "before": {
+          "git_blob": "df5b2eb8328e579be3c56f4a0e9378d78f31237b",
+          "bytes": 9711,
+          "sha256": "17ee4f7ea9911d082d8596caaf6a5e68878712d13dbbd5a7df997d336db3a9f6",
+          "copy_hash": "17ee4f7ea9911d08"
+        },
+        "after": {
+          "git_blob": "df5b2eb8328e579be3c56f4a0e9378d78f31237b",
+          "bytes": 9711,
+          "sha256": "17ee4f7ea9911d082d8596caaf6a5e68878712d13dbbd5a7df997d336db3a9f6",
+          "copy_hash": "17ee4f7ea9911d08"
+        }
+      },
+      "seed.json": {
+        "before": {
+          "git_blob": "1617cecf3e39069fc1ae2da5d24cc3dc6d7adb93",
+          "bytes": 1801,
+          "sha256": "cb3854ec6909048359e69027bfaaac2b8e4f8c7a0f6c5d5aba2433a184887f45",
+          "copy_hash": "cb3854ec69090483"
+        },
+        "after": {
+          "git_blob": "1617cecf3e39069fc1ae2da5d24cc3dc6d7adb93",
+          "bytes": 1801,
+          "sha256": "cb3854ec6909048359e69027bfaaac2b8e4f8c7a0f6c5d5aba2433a184887f45",
+          "copy_hash": "cb3854ec69090483"
+        }
+      }
+    }
+  },
+  "mallet": {
+    "nameWithOwner": "just-every/run-mallet",
+    "isPrivate": false,
+    "refs": {
+      "nodes": [],
+      "pageInfo": {
+        "hasNextPage": false
+      }
+    },
+    "defaultBranchRef": {
+      "name": "main",
+      "target": {
+        "oid": "05f12bb25287d22654fda8b2a549712d14e94c1c",
+        "history": {
+          "nodes": [
+            {
+              "oid": "05f12bb25287d22654fda8b2a549712d14e94c1c",
+              "committedDate": "2026-11-06T23:17:55Z"
+            }
+          ]
+        }
+      }
+    },
+    "beforeCommit": {
+      "oid": "1331aef49644cea21ff44371ae4d7218bb588646",
+      "committedDate": "2026-11-06T15:46:09Z",
+      "messageHeadline": "Regenerate contract views from CONTRACT.md",
+      "parents": {
+        "nodes": [
+          {
+            "oid": "f787b06a0559930cfbaf8db415794a446a77b21a"
+          }
+        ]
+      }
+    },
+    "afterCommit": {
+      "oid": "05f12bb25287d22654fda8b2a549712d14e94c1c",
+      "committedDate": "2026-11-06T23:17:55Z",
+      "messageHeadline": "Use positive skip selection for the fallback test shard",
+      "parents": {
+        "nodes": [
+          {
+            "oid": "f0316b3a7b651ef3e9597e804812b028ead0fe62"
+          }
+        ]
+      }
+    },
+    "files": {
+      "CONTRACT.md": {
+        "before": {
+          "git_blob": "a0ec319549d32f4c827fef583d70e9bde6397c0b",
+          "bytes": 352372,
+          "sha256": "06599a1925257db80e861355487f0642d04a93042428760932dc8e944f158803",
+          "copy_hash": "06599a1925257db8"
+        },
+        "after": {
+          "git_blob": "a0ec319549d32f4c827fef583d70e9bde6397c0b",
+          "bytes": 352372,
+          "sha256": "06599a1925257db80e861355487f0642d04a93042428760932dc8e944f158803",
+          "copy_hash": "06599a1925257db8"
+        }
+      },
+      "README.md": {
+        "before": {
+          "git_blob": "01a1558d2bd4877e27e70ca62cfaee9688f70d98",
+          "bytes": 15672,
+          "sha256": "bdcf1b90678e4fe8554708b575d6ac25f7456d986560a9d34c87a6d3d45592e7",
+          "copy_hash": "bdcf1b90678e4fe8"
+        },
+        "after": {
+          "git_blob": "01a1558d2bd4877e27e70ca62cfaee9688f70d98",
+          "bytes": 15672,
+          "sha256": "bdcf1b90678e4fe8554708b575d6ac25f7456d986560a9d34c87a6d3d45592e7",
+          "copy_hash": "bdcf1b90678e4fe8"
+        }
+      },
+      "seed.json": {
+        "before": {
+          "git_blob": "6d956e1182ef193d94780cf550a175e2c1e5f62e",
+          "bytes": 2599,
+          "sha256": "9bde55c8776aa0f65f86558903da716bc410e2fca64936a4cad6c8337228f75a",
+          "copy_hash": "9bde55c8776aa0f6"
+        },
+        "after": {
+          "git_blob": "6d956e1182ef193d94780cf550a175e2c1e5f62e",
+          "bytes": 2599,
+          "sha256": "9bde55c8776aa0f65f86558903da716bc410e2fca64936a4cad6c8337228f75a",
+          "copy_hash": "9bde55c8776aa0f6"
+        }
+      }
+    }
+  },
+  "placemat": {
+    "nameWithOwner": "just-every/run-placemat",
+    "isPrivate": false,
+    "refs": {
+      "nodes": [],
+      "pageInfo": {
+        "hasNextPage": false
+      }
+    },
+    "defaultBranchRef": {
+      "name": "main",
+      "target": {
+        "oid": "187fa5c3720adb99a25412f029821a840d950867",
+        "history": {
+          "nodes": [
+            {
+              "oid": "187fa5c3720adb99a25412f029821a840d950867",
+              "committedDate": "2026-11-07T21:17:34Z"
+            }
+          ]
+        }
+      }
+    },
+    "beforeCommit": {
+      "oid": "7736720683b5d4d9236cecf9434a64b3ed84a61e",
+      "committedDate": "2026-11-06T18:40:29Z",
+      "messageHeadline": "Regenerate contract views from CONTRACT.md",
+      "parents": {
+        "nodes": [
+          {
+            "oid": "b9641ca7b782a6a10c122f106b13748a938b6e97"
+          }
+        ]
+      }
+    },
+    "afterCommit": {
+      "oid": "187fa5c3720adb99a25412f029821a840d950867",
+      "committedDate": "2026-11-07T21:17:34Z",
+      "messageHeadline": "Merge current main into coordinator prompt candidate",
+      "parents": {
+        "nodes": [
+          {
+            "oid": "c6a09d53530980152bf39260649ed907ec6ea11c"
+          },
+          {
+            "oid": "6201f4a37c20992f3cab56a7d1d07a12ac67a92a"
+          }
+        ]
+      }
+    },
+    "files": {
+      "CONTRACT.md": {
+        "before": {
+          "git_blob": "fbae5197efc9bcd8c0606bfbc7c13fc0687d70ca",
+          "bytes": 309634,
+          "sha256": "8670c33f798e4707b825144a2d3687bada128f46633771e1eaf7678f35f093c9",
+          "copy_hash": "8670c33f798e4707"
+        },
+        "after": {
+          "git_blob": "acb604b42e9ea143dedba8093c99cd1795ace287",
+          "bytes": 312077,
+          "sha256": "2fc8167189ba0379b12c1a680cbbb99ba165b4039a967010c4848d4ceabce077",
+          "copy_hash": "2fc8167189ba0379"
+        }
+      },
+      "README.md": {
+        "before": {
+          "git_blob": "136d4719cf7ffa24198f79e0fba5577247d8ab62",
+          "bytes": 11365,
+          "sha256": "7319507ba101b574eefc7f1e9977b46ccbd929fdd43258fd7c374791fd9be48c",
+          "copy_hash": "7319507ba101b574"
+        },
+        "after": {
+          "git_blob": "136d4719cf7ffa24198f79e0fba5577247d8ab62",
+          "bytes": 11365,
+          "sha256": "7319507ba101b574eefc7f1e9977b46ccbd929fdd43258fd7c374791fd9be48c",
+          "copy_hash": "7319507ba101b574"
+        }
+      },
+      "seed.json": {
+        "before": {
+          "git_blob": "51c9eb89ec3672443f59e12cff8778bd43751f83",
+          "bytes": 1697,
+          "sha256": "81b3d3aa7dbeafee1720d4d37aadb7ab51db629c663264be5edc3fb8e9868614",
+          "copy_hash": "81b3d3aa7dbeafee"
+        },
+        "after": {
+          "git_blob": "51c9eb89ec3672443f59e12cff8778bd43751f83",
+          "bytes": 1697,
+          "sha256": "81b3d3aa7dbeafee1720d4d37aadb7ab51db629c663264be5edc3fb8e9868614",
+          "copy_hash": "81b3d3aa7dbeafee"
+        }
+      }
+    }
+  },
+  "platter": {
+    "nameWithOwner": "just-every/run-platter",
+    "isPrivate": false,
+    "refs": {
+      "nodes": [],
+      "pageInfo": {
+        "hasNextPage": false
+      }
+    },
+    "defaultBranchRef": {
+      "name": "main",
+      "target": {
+        "oid": "b384813c64c78665f189b5aa1f6b8f2c0fca79da",
+        "history": {
+          "nodes": [
+            {
+              "oid": "b384813c64c78665f189b5aa1f6b8f2c0fca79da",
+              "committedDate": "2026-11-07T03:11:28Z"
+            }
+          ]
+        }
+      }
+    },
+    "beforeCommit": {
+      "oid": "696c5253a2a06ba928c1e6f5457b4d4e10aa7e1a",
+      "committedDate": "2026-11-05T12:51:16Z",
+      "messageHeadline": "Regenerate contract views from CONTRACT.md",
+      "parents": {
+        "nodes": [
+          {
+            "oid": "4bd30c72ef1538b720a0d132926485890ec714b8"
+          }
+        ]
+      }
+    },
+    "afterCommit": {
+      "oid": "b384813c64c78665f189b5aa1f6b8f2c0fca79da",
+      "committedDate": "2026-11-07T03:11:28Z",
+      "messageHeadline": "Keep measured Verify rebalance with 17-minute shard limit",
+      "parents": {
+        "nodes": [
+          {
+            "oid": "4b7577be21b4266e06fd1858109a9b2ca482bcda"
+          }
+        ]
+      }
+    },
+    "files": {
+      "CONTRACT.md": {
+        "before": {
+          "git_blob": "c5b831e92d466b24e9648888aefe2ea9549037fd",
+          "bytes": 334523,
+          "sha256": "f11a88e1690bbbd0dd1865312b1dfc6790951dc367a14af7a00f3c8d713f6672",
+          "copy_hash": "f11a88e1690bbbd0"
+        },
+        "after": {
+          "git_blob": "4906922b73ab29442a3a7d71fd3c7a68594fb0f5",
+          "bytes": 336335,
+          "sha256": "20c37e54ecce40a08c2c1d690cc2abfd4b2a5f4752a1e9f221951d8ea2fa1511",
+          "copy_hash": "20c37e54ecce40a0"
+        }
+      },
+      "README.md": {
+        "before": {
+          "git_blob": "890692304a2398204fe87dfedb7cc643d0d0001b",
+          "bytes": 9710,
+          "sha256": "7d91745d757ade65a640848d33063a16499d0ecb1d9342116ceafc9478987fca",
+          "copy_hash": "7d91745d757ade65"
+        },
+        "after": {
+          "git_blob": "890692304a2398204fe87dfedb7cc643d0d0001b",
+          "bytes": 9710,
+          "sha256": "7d91745d757ade65a640848d33063a16499d0ecb1d9342116ceafc9478987fca",
+          "copy_hash": "7d91745d757ade65"
+        }
+      },
+      "seed.json": {
+        "before": {
+          "git_blob": "ffa3deec06f8a055b901272498c422ea72344662",
+          "bytes": 1729,
+          "sha256": "1175b76fe70422068aea4eaa3de32d9e991dbc26c47438c8da9259d017201abc",
+          "copy_hash": "1175b76fe7042206"
+        },
+        "after": {
+          "git_blob": "ffa3deec06f8a055b901272498c422ea72344662",
+          "bytes": 1729,
+          "sha256": "1175b76fe70422068aea4eaa3de32d9e991dbc26c47438c8da9259d017201abc",
+          "copy_hash": "1175b76fe7042206"
+        }
+      }
+    }
+  }
+}

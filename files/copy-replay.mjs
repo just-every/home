@@ -1,0 +1,52 @@
+import assert from 'node:assert/strict';
+import { readFileSync, writeFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { pathToFileURL } from 'node:url';
+const root = process.argv[2];
+const workspace = `${root}/..`;
+const { copyHashes, detectCopy } = await import(pathToFileURL(`${root}/scripts/seeds-sync/detect/copy.mjs`));
+const { loadSite } = await import(pathToFileURL(`${root}/scripts/seeds-sync/sources/site.mjs`));
+const baseSha = '706ef98b603a948b1352be2089ccf614e6f16aca';
+const headSha = '025b26efa66630787eaf2fb5bf0549ac5ec6732c';
+assert.equal(execFileSync('git',['-C',root,'rev-parse','HEAD'],{encoding:'utf8'}).trim(), headSha);
+const before = JSON.parse(execFileSync('git',['-C',root,'show',`${baseSha}:scripts/seeds-sync/state.json`],{encoding:'utf8'}));
+const after = JSON.parse(readFileSync(`${root}/scripts/seeds-sync/state.json`));
+const api = JSON.parse(readFileSync(`${workspace}/source-api.json`)).data;
+const site = await loadSite(root);
+const changed = Object.keys(after.seeds).filter(slug => JSON.stringify(before.seeds[slug]) !== JSON.stringify(after.seeds[slug]));
+assert.deepEqual(changed,['crank','mallet','placemat','platter']);
+assert.deepEqual(Object.keys(before.seeds), Object.keys(after.seeds));
+const rows=[];
+for(const slug of changed) {
+  const source=api[slug];
+  const seed=site.seeds.find(x=>x.slug===slug);
+  assert.equal(source.isPrivate, false);
+  assert.equal(seed.repo, source.nameWithOwner);
+  assert.equal(seed.kind, 'soon');
+  assert.equal(source.beforeCommit.oid,before.seeds[slug].commit);
+  assert.equal(source.afterCommit.oid,after.seeds[slug].commit);
+  assert.equal(source.defaultBranchRef.target.oid,after.seeds[slug].commit);
+  assert.deepEqual(source.refs.nodes,[]);
+  assert.equal(source.refs.pageInfo.hasNextPage,false);
+  assert.equal(after.seeds[slug].sourceRef,'HEAD');
+  assert.equal(after.seeds[slug].sourceReason,'coming-soon seed; no release tag');
+  assert.equal(after.seeds[slug].tag,null);
+  const getFiles=side=>Object.fromEntries(['CONTRACT.md','README.md','seed.json'].map((name,i)=>[name,source[`${side}${i}`] ? Buffer.from(source[`${side}${i}`].text,'utf8') : null]));
+  const current=getFiles('after');
+  assert.deepEqual(copyHashes(getFiles('before')),before.seeds[slug].copy);
+  assert.deepEqual(copyHashes(current),after.seeds[slug].copy);
+  const realRepo={files:current,copyCommit:source.afterCommit.oid};
+  const baselineFindings=detectCopy(seed,realRepo,before.seeds[slug]);
+  const candidateFindings=detectCopy(seed,realRepo,after.seeds[slug]);
+  assert.equal(baselineFindings.length,slug==='mallet'?0:1);
+  if(baselineFindings.length) assert.deepEqual(baselineFindings[0].details.files,['CONTRACT.md']);
+  assert.equal(candidateFindings.length,0);
+  const allowed=new Set(slug==='mallet'?['commit']:['commit','copy']);
+  for(const key of new Set([...Object.keys(before.seeds[slug]),...Object.keys(after.seeds[slug])])) {
+    if(!allowed.has(key)) assert.deepEqual(before.seeds[slug][key],after.seeds[slug][key],`${slug}.${key} changed`);
+  }
+  rows.push({slug,repository:seed.repo,sourceRef:after.seeds[slug].sourceRef,from:before.seeds[slug].commit,to:after.seeds[slug].commit,hashesBefore:copyHashes(getFiles('before')),hashesAfter:copyHashes(current),baselineFindings,candidateFindings,openUnchanged:JSON.stringify(before.seeds[slug].open)===JSON.stringify(after.seeds[slug].open)});
+}
+const result={candidate:headSha,baseline:baseSha,method:'Unchanged exported copyHashes and detectCopy on exact GitHub GraphQL Blob bytes (Git object IDs independently verified), with actual loadSite entries; no network or application stubs, no product writes.',changedEntries:changed,baselineFindingCount:rows.reduce((n,r)=>n+r.baselineFindings.length,0),candidateFindingCount:rows.reduce((n,r)=>n+r.candidateFindings.length,0),rows};
+writeFileSync(`${workspace}/packet/copy-replay.json`,JSON.stringify(result,null,2)+'\n');
+console.log(JSON.stringify(result,null,2));
