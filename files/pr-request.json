@@ -1,0 +1,6 @@
+{
+  "title": "sync: seed listings 8 Nov",
+  "head": "cloud/je-sync-12",
+  "base": "main",
+  "body": "Refresh the daily seed listing for 8 November: Lamp moves from v1.11.3 to v1.11.4, supported by its non-draft, non-prerelease [GitHub Release](https://github.com/just-every/run-lamp/releases/tag/v1.11.4) with `rer-release.dsse.json` present. The builder checked asset presence, not its signature. Sync provenance records four coming-soon contract changes plus Mallet/Strap HEAD movement; released copy remains valid and public wording is unchanged. Counts remain 49 listings: 35 released and 14 coming soon.\n\nValidation: final full dry sync has zero findings and all 49 sources readable; listings/brand checks, type-check, lint and production build pass. Browser assertion passes at 1440, with candidate screenshots at 1440 and 390. Complete reports and receipts are published separately under `evidence/je-sync-12`. The lane retains the independent deciding gate, publication scan, merge, deployment and live verification.\n"
+}

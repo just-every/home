@@ -1,0 +1,15 @@
+{
+  "repository": "just-every/run-lamp",
+  "old_ref": "v1.11.3",
+  "old_commit": "d42822f3281899cda3d5636ed30915e8bc287ae0",
+  "new_ref": "v1.11.4",
+  "new_commit": "720ee842bc0f69fe32b419f40cf9f78d0bf562c5",
+  "path": "CONTRACT.md",
+  "normative_prefix_bytes_equal": true,
+  "prefix_bytes": 216774,
+  "prefix_sha256": "609671875c97a6790a53c6d885f3da7e3d0104ea0e7f3353e35fae83d83f83ee",
+  "old_full_sha256": "99464caae4306e9c520f25d02a71689f9b72ce5ed611140d91ab8cac190497f4",
+  "new_full_sha256": "2a72e905c96ba05640e2b01ac04d573651f0cfe4f597d42e4895ef32de961a35",
+  "public_claim_edits": [],
+  "signature_verified": false
+}

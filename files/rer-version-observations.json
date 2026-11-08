@@ -1,0 +1,60 @@
+{
+  "inventory_count": 16,
+  "differences": [
+    {
+      "slug": "happytohelp",
+      "rer_version": "0.4.12",
+      "je_version": "v0.4.13",
+      "decision": "preserve JE; released-source rule governs"
+    },
+    {
+      "slug": "lamp",
+      "rer_version": "1.10.0",
+      "je_version": "v1.11.4",
+      "decision": "preserve JE; released-source rule governs"
+    },
+    {
+      "slug": "uptime",
+      "rer_version": "0.4.3",
+      "je_version": "v0.5.0",
+      "decision": "preserve JE; released-source rule governs"
+    },
+    {
+      "slug": "penny",
+      "rer_version": "0.1.4",
+      "je_version": "v0.2.1",
+      "decision": "preserve JE; released-source rule governs"
+    },
+    {
+      "slug": "oncall",
+      "rer_version": "0.4.2",
+      "je_version": "v0.5.5",
+      "decision": "preserve JE; released-source rule governs"
+    },
+    {
+      "slug": "orbit",
+      "rer_version": "0.3.0",
+      "je_version": "v0.4.3",
+      "decision": "preserve JE; released-source rule governs"
+    },
+    {
+      "slug": "mango",
+      "rer_version": "0.3.0",
+      "je_version": "v0.4.0",
+      "decision": "preserve JE; released-source rule governs"
+    },
+    {
+      "slug": "vector",
+      "rer_version": "0.3.0",
+      "je_version": "v0.4.1",
+      "decision": "preserve JE; released-source rule governs"
+    },
+    {
+      "slug": "pantry",
+      "rer_version": "0.2.5",
+      "je_version": "v0.2.8",
+      "decision": "preserve JE; released-source rule governs"
+    }
+  ],
+  "rer_changes": []
+}

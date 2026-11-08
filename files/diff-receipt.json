@@ -1,0 +1,99 @@
+{
+  "before": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "listings_changed": [
+    {
+      "slug": "lamp",
+      "public_changes": {
+        "version": {
+          "before": "v1.11.3",
+          "after": "v1.11.4"
+        }
+      }
+    }
+  ],
+  "state_changes": [
+    {
+      "slug": "blotter",
+      "fields": [
+        "commit",
+        "copy"
+      ],
+      "before_commit": "4e7612a8313d08773cf95527824ef60c214837f2",
+      "after_commit": "43da1e7f3312fc5463844e08b220eeff746c7902",
+      "source_ref": "HEAD"
+    },
+    {
+      "slug": "crank",
+      "fields": [
+        "commit",
+        "copy"
+      ],
+      "before_commit": "97dbba76c57a620110886e92a959fbf15b07d3d0",
+      "after_commit": "18cf94064499fd097f145cd1c45a681dadd08445",
+      "source_ref": "HEAD"
+    },
+    {
+      "slug": "lamp",
+      "fields": [
+        "commit",
+        "sourceRef",
+        "tag",
+        "copy",
+        "open"
+      ],
+      "before_commit": "d42822f3281899cda3d5636ed30915e8bc287ae0",
+      "after_commit": "720ee842bc0f69fe32b419f40cf9f78d0bf562c5",
+      "source_ref": "v1.11.4"
+    },
+    {
+      "slug": "mallet",
+      "fields": [
+        "commit"
+      ],
+      "before_commit": "05f12bb25287d22654fda8b2a549712d14e94c1c",
+      "after_commit": "095576e8bfe68bf364228679ff6bd34176a89907",
+      "source_ref": "HEAD"
+    },
+    {
+      "slug": "placemat",
+      "fields": [
+        "commit",
+        "copy"
+      ],
+      "before_commit": "187fa5c3720adb99a25412f029821a840d950867",
+      "after_commit": "6232d682d8356f2eb0f2d9e58b4e44bba51fd9cd",
+      "source_ref": "HEAD"
+    },
+    {
+      "slug": "platter",
+      "fields": [
+        "commit",
+        "copy"
+      ],
+      "before_commit": "b384813c64c78665f189b5aa1f6b8f2c0fca79da",
+      "after_commit": "85dee737177a6559448a012b2b6e22cad05f5e1a",
+      "source_ref": "HEAD"
+    },
+    {
+      "slug": "strap",
+      "fields": [
+        "commit"
+      ],
+      "before_commit": "ceba5960cbe5ddc323624eb128280ce241f59e72",
+      "after_commit": "008fef24f74b44bdb2aaf0fd95dcf50c45ceea7c",
+      "source_ref": "HEAD"
+    }
+  ],
+  "excluded_absent": true,
+  "public_copy_changed": false,
+  "contract_status_changes": []
+}

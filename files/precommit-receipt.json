@@ -1,0 +1,11 @@
+{
+  "changed_paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "scope_check": "passed",
+  "credential_shape_check": "passed",
+  "diff_check": "passed",
+  "base": "d9893baa5c4d862ab94e62cda6b9f43774a60e8f"
+}

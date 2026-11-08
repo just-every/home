@@ -1,0 +1,118 @@
+{
+  "tag": "je-sync-12",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-12",
+  "head": "fa8f9b53062373c3c4a0cab931fe7483f90fef34",
+  "base": "d9893baa5c4d862ab94e62cda6b9f43774a60e8f",
+  "product_changed_paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "checks": {
+    "npm ci": "passed",
+    "npm run seeds:sync (dry initial)": "passed after installing missing Playwright",
+    "npm run seeds:sync -- --copy-only --apply": "passed",
+    "npm run seeds:sync -- --apply": "passed; Lamp version only",
+    "npm run seeds:sync -- --copy-only --apply (release refresh)": "passed; new release provenance",
+    "npm run listings": "passed",
+    "npm run listings -- --check": "passed",
+    "npm run seeds:sync (dry final)": "passed: 0/49 changed, 0 unreadable",
+    "npm run type-check": "passed",
+    "npm run lint": "passed",
+    "npm run brand -- --check": "passed",
+    "npm run build": "passed",
+    "browser assertion at 1440": "passed",
+    "browser proof at 1440 and 390": "passed",
+    "git diff --check": "passed",
+    "scope and credential-shaped diff inspection": "passed",
+    "all candidate commit identities and trailers": "passed: fleet, no trailers",
+    "rebase origin/main before first push": "passed; main unchanged",
+    "cloud push guard": "passed on attempt 1"
+  },
+  "before_counts": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "after_counts": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "clause_status_changes": [],
+  "public_copy_changes": [],
+  "asset_changes": [],
+  "product_pushed": true,
+  "pr": {
+    "base": "main",
+    "head": "fa8f9b53062373c3c4a0cab931fe7483f90fef34",
+    "html_url": "https://github.com/just-every/home/pull/36",
+    "number": 36,
+    "state": "open"
+  },
+  "ci": {
+    "status": "passed",
+    "exact_sha": "fa8f9b53062373c3c4a0cab931fe7483f90fef34",
+    "verify": {
+      "conclusion": "success",
+      "created_at": "2026-11-08T23:36:10Z",
+      "event": "push",
+      "head_sha": "fa8f9b53062373c3c4a0cab931fe7483f90fef34",
+      "html_url": "https://github.com/just-every/home/actions/runs/42535960375",
+      "id": 42535960375,
+      "name": "Verify branch",
+      "status": "completed",
+      "updated_at": "2026-11-08T23:38:07Z"
+    },
+    "all_observed_runs": [
+      {
+        "conclusion": "skipped",
+        "created_at": "2026-11-08T23:36:31Z",
+        "event": "pull_request",
+        "head_sha": "fa8f9b53062373c3c4a0cab931fe7483f90fef34",
+        "html_url": "https://github.com/just-every/home/actions/runs/42535988718",
+        "id": 42535988718,
+        "name": "Verify branch",
+        "status": "completed",
+        "updated_at": "2026-11-08T23:38:08Z"
+      },
+      {
+        "conclusion": "success",
+        "created_at": "2026-11-08T23:36:29Z",
+        "event": "dynamic",
+        "head_sha": "fa8f9b53062373c3c4a0cab931fe7483f90fef34",
+        "html_url": "https://github.com/just-every/home/actions/runs/42535986609",
+        "id": 42535986609,
+        "name": "PR #36",
+        "status": "completed",
+        "updated_at": "2026-11-08T23:37:30Z"
+      },
+      {
+        "conclusion": "success",
+        "created_at": "2026-11-08T23:36:10Z",
+        "event": "push",
+        "head_sha": "fa8f9b53062373c3c4a0cab931fe7483f90fef34",
+        "html_url": "https://github.com/just-every/home/actions/runs/42535960375",
+        "id": 42535960375,
+        "name": "Verify branch",
+        "status": "completed",
+        "updated_at": "2026-11-08T23:38:07Z"
+      }
+    ],
+    "observation_time": "2026-11-08T23:38:16Z",
+    "control_api_calls": 2,
+    "call_budget": 10,
+    "failed_job_log_calls": 0
+  },
+  "limitations": [
+    "DSSE release envelope asset presence checked; cryptographic signature not verified.",
+    "Local standalone screenshot server has no Cloudflare caches global and no migrated page_views table; optional tokens/events endpoints logged errors. The public Lamp page and listings returned 200 with no browser page errors; no provider credentials were used."
+  ],
+  "runtime_recoveries": [
+    "Installed official Playwright 1.63.0 outside repository after initial missing-runtime dry-run failure.",
+    "Fleet hook symlinks needed a Git-local dispatcher to preserve Husky location-sensitive original hooks; repository eslint/prettier hook ran successfully.",
+    "Initial browser networkidle wait timed out; rerun used DOM readiness and explicit version visibility, with unchanged application code."
+  ],
+  "terminal_status": "READY"
+}

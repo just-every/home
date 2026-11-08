@@ -1,0 +1,10 @@
+{
+  "head": "fa8f9b53062373c3c4a0cab931fe7483f90fef34",
+  "changed_paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "working_tree_clean": true,
+  "patch_sha256": "55a50d9d79d8f112813eab535e2283cc6a7ff61d8f51e8df30043f9752b169a7"
+}

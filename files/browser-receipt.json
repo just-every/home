@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "testWidth": 1440,
+  "proofWidths": [
+    1440,
+    390
+  ],
+  "results": [
+    {
+      "url": "/lamp",
+      "width": 1440,
+      "height": 900,
+      "http": 200,
+      "version": "v1.11.4",
+      "overflow": false,
+      "pageErrors": [],
+      "screenshot": "browser/lamp-1440.png",
+      "assertionWidth": 1440
+    },
+    {
+      "url": "/lamp",
+      "width": 390,
+      "height": 900,
+      "http": 200,
+      "version": "v1.11.4",
+      "overflow": false,
+      "pageErrors": [],
+      "screenshot": "browser/lamp-390.png",
+      "assertionWidth": 1440
+    }
+  ]
+}
