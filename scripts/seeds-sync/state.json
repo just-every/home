@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-08T23:32:04.871Z",
+  "syncedAt": "2026-11-09T20:53:22.643Z",
   "seeds": {
     "auth": {
       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
@@ -108,7 +108,7 @@
       }
     },
     "blotter": {
-      "commit": "43da1e7f3312fc5463844e08b220eeff746c7902",
+      "commit": "4e18475e9bfd57e90da8141a1d6de13efa3f2231",
       "sourceRef": "HEAD",
       "sourceReason": "coming-soon seed; no release tag",
       "tag": null,
@@ -291,11 +291,11 @@
       "mark": "17d5227d2eafc87b",
       "home": {
         "headline": "Everything comes together in one place.",
-        "signature": "dddddccdceedeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeedeeeeeeeedeedeeeeedddccdccdcddddddddceedeeeeeeeeeeeeeeeeeeeeeeeecccabbbbbbcbbbbbbbbbbccceeeeeeeeeeeecdceeeeeeeeeeedddddddddddddddddddeedeeeeeeeeeeed5769a9eeeeeeeeeeecdecdecdebeedeeeeeeeeeeedeeceeccdc8a9798ccccdccd9eebeebdeaeeceedeeeeeedebac9abbdddddcbca9a9687abaffeffffffeedeeeeedbca9a99bacdb8a98a97999b8585abaefeeeeeeeeeeeeeddc9b8abadedeee8a98986868a85769baeeeeeeeeeeeeeeeddc787abaddcdec"
+        "signature": "dddddccdceedeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeedeeeeeeeedeedeeeeedddccdccdcddddddddceedeeeeeeeeeeeeeeeeeeeeeeeecccabbbbbbcbbbbbbbabbccceeeeeeeeeeeecdceeeeeeeeeeedddddddddddddddddddeedeeeeeeeeeeed5769a9eeeeeeeeeeecdecdecdebeedeedeeeeeeeedeeceeccdc8a9798ccccdccd9eebeebdeaeeceedeeeeeedebac9abbdddddcbca9a9687abaffeffffffeedeeeeedbca9a99bacdb8a98a98999b8585abaefeeeeeeeeeeeeeddc9b8abadedeee8a98986868a85769baeeeeeeeeeeeeeeeddc787abaddcdec"
       }
     },
     "crank": {
-      "commit": "18cf94064499fd097f145cd1c45a681dadd08445",
+      "commit": "bb3dcf82c3d388702744495c21cba814a659795c",
       "sourceRef": "HEAD",
       "sourceReason": "coming-soon seed; no release tag",
       "tag": null,
@@ -343,7 +343,7 @@
       "mark": "26e450d3a1075c06",
       "home": {
         "headline": "Pick a time. That's it.",
-        "signature": "dddddceeeffeffefeeeeeeeeeeeeeeeeeeeeeeeeeeeedeeeeedeeedddaaaaa9ccceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeffebbb554333333874ed9feeeeddddeeddddeedeeeeeeeeeedd555555cccddcdb7a84ccbcccaa9bbaaaaccceeeeeeeeebbb333bbbeddcb9edc444988eedccbcccddceeeeeeeeeeeebbb333bbbeddccceed433988feeeddeddedddddeedeedeeeeed555555cccddd777433cccccb887bbb988887ccbeedeedfeebbb554333555666999eeedddbbaddcbbbbbadddeeeeeeeeefeedddbbaddbdddcccbbbfeefeeeeefeefeeeeeeeeeee"
+        "signature": "dddddceeeffeffefeeeeeeeeeeeeeeeeeeeeeeeeeeeedeeeeedeeedddaaaaa9ccceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeffebbb554333333874ed9feeeeddddeeddddeedeeeeeeeeeedd555555cccddcdb7a84ccbcccaa9bbaaaaccceeeeeeeeebbb333bbbeddcb9edc444988eeeccccccddceeeeeeeeeeeebbb333bbbeddccceed433888feeeedeededddddeedeedeeeeed555555cccddd777433cccccb887bbb988887ccbeedeedfeebbb554333555666999eeedddbbaddcbbbbbadddeeeeeeeeefeedddbbaddbdddcccbbbfeefeeeeefeefeeeeeeeeeee"
       }
     },
     "easel": {
@@ -556,9 +556,8 @@
       "mark": "ebd49143e6f577de",
       "home": {
         "headline": "When something breaks, turn the light on.",
-        "signature": "eeddddeeefeefeefeeffeeeeeeeffefeeeeeeeeeed9a9ddcfeeeeefeefeefeefeeffeccccccffefeefeefeeeeeeeeeeefeefeefeefeefeeffeccc444454dccffefeefeefeeffeffefeefeefeeffeffeffeddcdcbdcbedcffeffeffefeefeefeefeefeeffeeeddddeedeedeedeedeededddddeeeffefeefeefeefeeffeeedddcccbccbbbbbbbbbaccbddceedffefeefeefeefeefeeffeeeeddcedcddcddcddcdddfeeffefeefeefeefeefeefeefeeffebbb898eedeedeedeedfeefeefeefeefeefeefeefeefeefeeeeddddeedeeeeeeeeeeeefeefeefeefee"
-      },
-      "open": ["c843303a1181"]
+        "signature": "eeddddeeefeefeefeeffeeeeeeeffefeeeeeeeeeed9a9ddcfeeeeefeefeefeefeeffeccccccffefeefeefeeeeeeeeeeefeeffefeefeefeeffeccc444454dccffefeefeefeeffeffefeefeefeeffeffeffeddcdcbdcbedcffeffeffefeefeefeefeefeeffeeeddddeedeedeedeedeededddddeeeffefeefeefeefeeffeeedddcccbccbbbbbbbbbaccbddceedffefeefeefeefeefeeffeeeeddcddcddcddcddcdddfeeffefeefeefeefeefeefeefeeffebbb898eedeedeedeedfeefeefeefeefeefeefeefeefeefeeeeddddeedeeeeeeeeeeeefeefeefeefee"
+      }
     },
     "lanyard": {
       "commit": "db2a1ef37612248290e0efd85209c9b1f0da8c83",
@@ -747,7 +746,7 @@
       "mark": "fcf75df884ee5237",
       "home": {
         "headline": "Newsletters people are glad to get.",
-        "signature": "feeeedeedffeffeffeffeffeffeffeffefeeeeefdafd9fedffefeefeeffeffeffeffeffeffeffeffefeefeefedfedffefeedddedddddeddeddeddddceeeeeeeedfebeeeeeefeeffeeeedcccccccbcccccbddcdddeeeeeefedfedeedeedeeeffeeeedddddddddeddddceeeffefeefedfededceeceeeeeefeefeeeedeedeededdeedeeeffeffefededcedbedceedeedfeefeeeeceeceedeedeeefeefeefeeeedfedeedeedfeefeeffefedfd9fd9feceeeeeeeeeeeefedeedfeefeefeeeedeeeffeffeffeffeffeffeffeffeffefeefeefeefeeffeffeffeffe"
+        "signature": "feeeedeedffeffeffeffeffeffeffeffefeeeeeedafd9fedffefeefeeffeffeffeffeffeffeffeffefeefeefedfedffefeedddedddddeddeddeddddceeeeeeeedfebeedeeefeeffeeeecccccbccbcccccbddcdddeeeeeeeedfedeedeedeeeffefeedddddddddeddddceeeffefeefedfededceeceeeeeefeefeeeedeedeedeedeedeeeffeffefededcedbedceedeedfeefeeeeceeceedeedeeefeefeefeeeedfedeedeedfeefeeffefedfd9fd9feceeeeeeeeeeeefedeedfeefeefeeeedeeeffeffeffeffeffeffeffeffeffefeefeefeefeeffeffeffeffe"
       }
     },
     "nectar": {
@@ -801,7 +800,7 @@
       "mark": "10860e06fce77807",
       "home": {
         "headline": "Talk it through. Get it done.",
-        "signature": "feeedceddfeefeefeefeefeefeefeeffeffefeeeeeeeefeefeeeeefeefeefeefeefeefeefeeffefedecbecbedcfeefeefeeeeeeeeeeeeeeeeefeefeeffefddd98c65b65a75cbaffeffeccbbaabbbbaabbbeddffefeeecceaada9da9a76a75fedfeeddcccbccbcbbeedfeefeefeeeddeddfeefffdbaa65edcffecccaa9dccfeefeeeeefeefeefedebbeddeedecbb86edcffeccb999ccceddeddeddfeefeeeddeeeffffffda9a65eddfeeffeffeffefeefeefeefeefeedcbca9ebbdbaa77833eddfeefeefeefeefeefeefeefeefeeecccbadbadbadbadbafed"
+        "signature": "feeddceddfeefeefeefeefeefeefeeffeffefeeeeeeeefeefeeeeefeefeefeefeefeefeefeeffefedecbecbedcfeefeefeeeeeeeeeeeeeeeeefeefeeffefddd98c65b65a75cbaffeffeccbbaabbbbaabbbeddffefeeecceaada9da9a76a75fedfeeddcccbccbcbbeedfeefeefeeeddeddfeefffdbaa65edcffecccaa9dccfeeeeeeeefeefeefedebbedceedecbb86edcffeccb999ccceddeddeddfeefeeeddeeeffffffda9a65eddfeeffeffeffefeefeefeefeefeedcbca9ebbdbaa77833eddfeefeefeefeefeefeefeefeefeeecccbadbadbadbadbafed"
       }
     },
     "oncall": {
@@ -828,7 +827,7 @@
       "mark": "8cd56e3a510b5d82",
       "home": {
         "headline": "Everyone knows who's on call.",
-        "signature": "feedddeeeffeffeffeffeffeffeffeffeffeffeffefeeffeffeffeffefffffefffffeffeffeffeffeffeffeffeffeffeeedccccccccccccccceedffeeeeeeeeedeeeffeffeffeffeeeebbbccccccbbbdddfeeffeedddcbccbeedeeefeeeeeffefeeeeeeeeeeeeeeeeefffdcbdb9ddcddddddcccdddeeeffeeed999999999dddeeeffeeccedcffeffeeedddcdcbecbabbeed99999aaaaeedfeeffeffeffeffeffeffeeeddccedc9aaffefeeffeffeeeeeeefeeffeffeffeffeffeffeffeffeffeffeeeeeeeffeeeeeeeffefeefeeffefeeeeeffeffeffeffe"
+        "signature": "feedddeeeffeffeffeffeffeffeffeffeffeffeffefeeffeffeffeffefffffefffffeffeffeffeffeffeffeffeffeffeeedccccccccccccccceedffeeeeeeeeedeeeffeffeffeffeeeebbbccccccbbbdddfeeffeedddcbccbeedeeefeeeeeffefeeeeeeeeeeeeeeeeefffdcbdb9ddcddddddcccdddeeeffeeed999999999dddeeeffeeccedcffeffeeedddcdcbecbabbeed99999aaaaeedfeeffeffeffeffeffeffeeeddccedc9aaffefeeffeffeeeeeeefeeffeffeffeffeffeffeffeffeffeffeeeeeeeffeeeeeeeffefeeeeeffefeeeeeffeffeffeffe"
       }
     },
     "orbit": {
@@ -854,7 +853,7 @@
       "mark": "55580fd39d44cc15",
       "home": {
         "headline": "Your next deal finds you.",
-        "signature": "eedddceeefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeeeeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedddaaabbbaaabbbbbbdddfeeeeeeeeeeeedcedceedeeeeeedddbaabbbaaaddceeeeeeeeeeeeeeeeede85e97eeeeeeeeeeedddddddddddddeeeeeeeeeeeeeeeeedecbedceeeecbeedeeeeddeddddddddeedeeefeeeeeeeeeeeeeeeeefeefeeeeeddd888aaaeddeedaaa777baafeeeeeeeeeeeecbeddeeeeeeeedddcdddeeeeeedddcccdddeeeeeeeeedddddceddeedeeeeeeeeeeeeeeeeedeeeeeeeedeeeeeeeeeeeeeeeeeeeedeed"
+        "signature": "eedddceeefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeeeeeeeedeeeeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddaaabbbbaabbbbbbdddfeeeeeeeeeeeedcedceedeeeeeedddbaabbbaaaddceeeeeeeeeeeeeeeeede85e97eeeeeeeeeeeddddddddddeddeeeeeeeeeeeeeeeeedecbedceeeecbeedeeeeddedddddeddeedeeefeeeeeeeeeeeeeeeeefeefeeeeeddd888aaaeddeedaaa777baafeeeeeeeeeeeecbeddeeeeeeeedddcdddeeeeeedddcccdddeeeeeeeeedddddceddeedeeeeeeeeeeeeeeeeedeeeeeeeedeeeeeeeeeeeeeeeeeeeedeed"
       }
     },
     "pane": {
@@ -934,7 +933,7 @@
       "mark": "fc707eff45d87e92",
       "home": {
         "headline": "Ask like you're listening.",
-        "signature": "feeeedeeeffeeeeffeffeffeffeffeffeffefffddd999eedffefeeffeffeffefffffeffeffeffeffeffefffeeeeedfeeffeffefeefeeffeeeeffeffeffeffffffffeffefffffffffeeecccccccccdddcccdddfffffeffeffeffeffeffeffeffeeedccccccbbbdddfeeffeffeeedeedeedeeefeefeefeeffeeeeeeeeeeeedeedeeeeeeffeeedeedeedeedeedffefffffeffeeeeeeeeeeeeeeeeeeefeeeeefeeeedfeeddbdc9ffefffddd788aaaaaa777ccbeeeeeeeeeeedeeeeeeeeeedbdc9eeeeeedddeedeeddddeeeffeffeffeffeffeffeffffffeedeee"
+        "signature": "feeeedeeefeeeeeffeffeffeffeffeffeffefffddd999eedffefeeffeffeffefffffeffeffeffeffeffefffeeeeedfeeffeffefeefeeffeeeeffeffeffeffffffffeffefffffffffeeeccccccccbdddcccdddfffffeffeffeffeffeffeffeffeeedccccccbbbdddfeeffeffeeedeedeedfeefeefeefeeffeeeeeeeeeeeedeeeeeeeeeffeeedeedeedeedeedffefffffeffeeeeeeeeeeeeeeeeeeefeeeeefeeeedfeeddbdc9ffefffddd788aaaaaa777ccbeeeeeeeeeeedeeeeeeeeeedbdc9eeeeeedddeedeeddddeeeffeffeffeffeffeffeffffffeedeee"
       }
     },
     "penny": {
@@ -961,7 +960,7 @@
       "mark": "423590ef08eb1e00",
       "home": {
         "headline": "Every customer, heard.",
-        "signature": "eddddceedfeeeeeeeeeeeeeeeeeeeeeeefeefeeeeeeedeeeeeeeeeeeefeefeefeefeeeeeeedeedfeeeedeedeedeeeeeeeeddddeeddddddcdddeededcedbecbeeeedcdb9da8ecbfeedcca99baaccbccbcccddcedceddeedeeeeedeeddbaecbfeeeeddcbdcceedeeeeeefeeedcedcedcedcedceedcbaccbeeeeeeeddeddddddddeedeeeeeeedccb9a98dcbeedaaa999ddddcc777aa9998887dccfeeeedeeddddddcedcedceedddcddceeddcceddeddeddeedfeeeeeeeeeedeededcedcedcdcbeedfeefeefeefeefeefeeeeeeeefeefeeeeeeedeedeedecbeed"
+        "signature": "eddddceedfeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeeeeeeeeeeeefeefeefeefeeeeeeedeedfeeeedeedeedeeeeeeeeddddeeddddddcdddeededcedbecbeeeedcdb9da8ecbfeedcca99baaccbccbcccddcedceddeedeeeeedeeddbaecbffeeeddcbdcceedeeeeeefeeedcedcedcedcedceedcbaccbeeeeeeeddeedddddddeedeeeeeeedccb9a98dcbeedaa9999ddddcc777aa9998887dccfeeeedeeddddddcedcedceedddcddceeddcceddeddeddeedfeeeeeeeeeedeededcedcedcdcbeedfeefeefeefeefeefeeeeeeeefeefeeeeeeedeedeedecbeed"
       }
     },
     "pier": {
@@ -1045,12 +1044,12 @@
       }
     },
     "plinth": {
-      "commit": "43a2d1228129a76cc7d124068badb4b8b1b5db73",
+      "commit": "1fd27e714032ffb16b4682e9409671bd272d0f11",
       "sourceRef": "HEAD",
       "sourceReason": "coming-soon seed; no release tag",
       "tag": null,
       "copy": {
-        "CONTRACT.md": "d369b675cd7d46d1",
+        "CONTRACT.md": "e5fac34ec51e20f0",
         "README.md": "b09f767e5fa73bde",
         "seed.json": "9391daa545d15481"
       },
@@ -1150,7 +1149,7 @@
       "mark": "01854532d6b2d7f5",
       "home": {
         "headline": "One home for everything your team knows.",
-        "signature": "eeddddeedfeeeeefeefeefeeeeefeefeeeeeeeeeeeeedeeeeeeeeeeeeeeeeeeeedeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededeeddddeeeeedeedeedfeeeeeeeeeeeeeeeeeeeefeededccceeeeedeedeeeeedeedfeeeeeeeeeeeeeeeeeeeefeeeeddddeeeeedeedeeededdedeeeeeeeeeeeeeeeeeeeeefeeeedcccccccccccccccccbeddfeeeeeeeeeeeeeeeeeeeeeeeeedddcccbccbccbccbddceedfeeeeeeeeeeeeeeeeeeeeeeefeeeedbbbbaaddddddeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeebbaaa9eedeedeeeeeeeeeeeeeeeeee"
+        "signature": "eeddddeedfeeeeefeefeefeeeeefeefeeeeeeeeeeeeedeeeeeeeeeeeeeeeeeeeedeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededeeddddeeeeedeedeedfeeeeeeeeeeeeeeeeeeeefeededccceedeedeedeeeeedeedfeeeeeeeeeeeeeeeeeeeefeeeeddddeeeeedeedeeededdedeeeeeeeeeeeeeeeeeeeeefeeeedccccccccbccccccccbeddfeeeeeeeeeeeeeeeeeeeeeeeeedddcccbccbccbccbddceedfeeeeeeeeeeeeeeeeeeeeeeefeeeedbbbbaadddeddeedfeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeebbaaa9eedeedeeeeeeeeeeeeeeeeee"
       }
     },
     "spool": {
@@ -1178,7 +1177,7 @@
       "mark": "60b00db5ff82c8cd",
       "home": {
         "headline": "See exactly what broke.",
-        "signature": "eeddccddceedeedeedeeeeedeedeedeeeeeeeeeeedeedeedeeddddeedeedeeeeeeeedeedeededdeedeedeedeedeedeedeedccbddcddcddcccbeddeeeeeddddddceedeedeedeedeedeed999aa9999999999cccfeeeedeededddddeddeedeedeedeedbaaaa9bbaaaaaa9ccbeeeeededddddeedeedeedeedeedeedddcddcddcddceedeeeeeeeeddddddbedceeceeceedeedeedeedeededdeedeeeffefeeeedeededaed9edaedaedbeedeed999988aaabba888888bbbeedeedeededdeeeeeeeedeedeeda99998baaccbaa9aa9ccbeeddddddceedeedeedeedeed"
+        "signature": "eeddccddceedeedeedeeeeedeedeedeeeeeeeeeeedeedeedeeddddeedeedeeeeedeedeedeededdeedeedeedeedeedeedeedcccddcddcddcccbeddeeeeeddddddceedeedeedeedeedeeda99aa9999a99999ccceeeeedeeddddddddddeddeedeedeedbbaaa9bbabaaaaaccbeeeeededddddeedeedeedeedeedeedddcddcddcddceedeeeeeeeeddddddbedceeceeceedeedeededdedddddeddeedffefeeeedeededadc9edaedaedbeedeed999998aaabba888888bbbeedeedeededdeeeeeeeedeedeed999998aaaccbaa9aa9ccbeeddddddceedeedeedeedeed"
       }
     },
     "stall": {
@@ -1285,7 +1284,7 @@
       "mark": "23ce9643d52f9bed",
       "home": {
         "headline": "Sleep through the night.",
-        "signature": "eeedddddeeefeefeefeefeefeefeefeefeefeeeededdeeeeeeeddeeeeddeddeddeddeddeddeddeddeddeeeeeeeeeeeeeeeeeeeeefddebbcbbcbbcbbcbbcbbcbbcabcddeeeeeeeeeeeeeeeeeeeeeeededdeededdeddeddeddeddeeeeeeeeeeeeeeeeeeeeeeeeedcd99a99accddddddddddedeeeeeeeeeeeeeedeeeeeeeeeedddaaaa9adddeddedeeddeeeeeeeeeeeeeeefedfedfededdeddfedfededdeddfedfedfddedcfddeddeddcccdddeddfdcedcedcfdcfdcfdcedcedcedcedbfdcfdcedc55888baacbbcbbccbcccceccdccdcceccedbfdceccbac77a"
+        "signature": "eeeddeddeeefeefeefeefeefeefeefeefeefeeeddeddeeeeeeeddeeeeddeddeddeddeddeddeddeddeddeeeeeeeeeeeeeeeeeeeeefddebbcbbcbbcbbcbbcbbcbbcabcddeeeeeeeeeeeeeeeeeeeeeeedeedeededdeddeddeddeddeeeeeeeeeeeeeeeeeeeeeeeeedcd99a89accddddddddddedeeeeeeeeeeeeeedeeeeeeeeeedddaaaa9adcdeddedeeddeeeeeeeeeeeeeeefedfedfededdeddfedfededdeddfedfedfddedcfddeddeddcccdddeddfdcedcedcfdcfdcfdcedcedcedcedbfdcfdcedc55888baacbbcbbccbcccceccdccdcceccedbfdceccbac77a"
       }
     },
     "vane": {
@@ -1339,7 +1338,7 @@
       "mark": "3983bae9f321e429",
       "home": {
         "headline": "Know what happens next.",
-        "signature": "eeddddeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeedeedeeeeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeedeedeedeedeedeedeedeedeeeeeeeeeeedeeeeedeedeedeeeeeeddcbbabbabbbbaadcceedeeeeeeeedeeeeeddddeedeedeeeeddbbbbbacbbccbbbbdddeeeeeedddeeddddccdeedeeeeeeeedeedeedeedeedeeeeeeeeeeeeeeeddeeedeedeedeeeeeeddc998999bba888aaaeddeedeeeeededdeedeedeedeeeeeeeddaa9bbaccb999bbbeedeedeeeeedeedeeeeedeedeeeeeeeeeffefeefeeffefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+        "signature": "eeddddeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeedeedeeeeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeedeedeedeedeedeedeedeedeeeeeeeeeeedeeeeedeedeedeeeeeeddcbbabbabbbaaaccceedeeeeeeeedeeeeeddddeedeedeeeeddbbbbbabbbccbbbbdddeeeeeedddeeddddccdeedeeeeeeeedeedeedeedeedeeeeeeeeeeeeeeeddeeddeedeedeeeeeeddc988999bba888aaaeddeedeeeeededdeededdeedeeeeeeeddaa9bbaccb999bbbeedeedeeeeedeedeedeedeedeeeeeeeeeffefeefeeffefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
       }
     },
     "willow": {
