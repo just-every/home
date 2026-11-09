@@ -3721,16 +3721,16 @@ export const seedPageContent: SeedPageContent[] = [
   {
     slug: 'terrace',
     summary:
-      "Terrace is property management for a US residential manager or landlord. It collects the rent, fills empty units, runs repairs from report to invoice, and keeps every owner's books reconciled to the cent. Residents, owners and vendors each get their own view.",
+      "Terrace is property management for a US residential manager or landlord. It keeps tenancies, the rent charged and received, renewals and photographed inspections in one place, runs repairs from a recorded request to the invoice, and keeps every owner's books reconciled to the cent. It records rent paid elsewhere; it does not collect rent or list units.",
     does: [
-      'Collect rent by bank transfer, card or cash at a store, with autopay, partial payments and late fees under your rules',
-      'List an empty unit on Zillow, Apartments.com and your own site, then take applications, screening and the signed lease',
-      "Run each repair from the resident's report to the matched vendor invoice, within the owner's spending limit",
-      'Draft renewals and payment plans for late rent, weighed in cash and vacant days, for a manager to approve',
+      'Record rent charges and rent received elsewhere in exact cents, with a unique reference so a receipt is never counted twice, and explained reductions',
+      'Preview recurring rent and lease charges before they post, so a retry or a month boundary never posts the same charge twice',
+      "Run each repair from a recorded request to the vendor invoice, checked against the approved work and within the owner's spending limit",
+      'Draft renewals, compared with the current rent and vacancy assumptions, and dated arrears follow-ups for a manager to approve; nothing is sent automatically',
       'Keep a trust ledger by owner, property and resident, matched to the bank line by line, and close each month',
-      "Send owner statements with receipts attached, pay owners by bank transfer and prepare the year's 1099 data",
+      'Prepare owner cash statements from the books for review, and download a period rent statement as a CSV',
       'Complete dated inspections with notes and photos kept as saved',
-      'Bring properties, leases, deposits and opening balances over from AppFolio or Buildium, checked against the old balances',
+      'Bring tenancies over from a spreadsheet, previewed and approved exactly as shown, and undo the import if nothing has changed since',
     ],
     promises: [
       {
@@ -3784,21 +3784,13 @@ export const seedPageContent: SeedPageContent[] = [
         category: 'erasure',
       },
     ],
-    moveIn: [
-      'Tenancy spreadsheet (CSV)',
-      'AppFolio',
-      'Buildium',
-      'Rent Manager',
-      'Yardi Breeze',
-      'DoorLoop',
-      'TurboTenant',
-    ],
+    moveIn: ['Tenancy spreadsheet (CSV)'],
     runsOn: 'Your own Cloudflare account, or your own computer to try it',
     version: 'v0.1.4',
     contractUrl: 'https://run-terrace.com/contract',
     seoTitle: 'Terrace: free, open-source alternative to AppFolio',
     seoDescription:
-      'Free, open-source property management for US residential landlords: rent collection, listings, repairs, owner statements and trust accounting.',
+      'Free, open-source property management for US residential landlords: tenancies, recorded rent, photographed inspections, repairs and owner statements.',
   },
   {
     slug: 'vane',
