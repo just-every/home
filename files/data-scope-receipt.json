@@ -1,0 +1,41 @@
+{
+  "head": "fa8f9b53062373c3c4a0cab931fe7483f90fef34",
+  "baseline": "d9893baa5c4d862ab94e62cda6b9f43774a60e8f",
+  "changedPaths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "numstat": "2\t2\tpublic/data/listings.json\n19\t18\tscripts/seeds-sync/state.json\n1\t1\tsrc/data/seed-pages.ts\n",
+  "identitiesValid": true,
+  "trailers": [],
+  "credentialShapeDiffScan": "no matches",
+  "before": {
+    "total": 49,
+    "coming-soon": 14,
+    "released": 35
+  },
+  "after": {
+    "total": 49,
+    "coming-soon": 14,
+    "released": 35
+  },
+  "excludedAbsent": [
+    "beacon",
+    "relay",
+    "ferry",
+    "lily",
+    "brook",
+    "delta",
+    "barrow",
+    "linen"
+  ],
+  "publicListingChangesOnly": [
+    "generatedAt",
+    "lamp.version"
+  ],
+  "seedPageChangesOnly": "lamp.version",
+  "comingSoonWordingUnchanged": true,
+  "pricingFilesUnchanged": true,
+  "clauseStatusChanges": []
+}

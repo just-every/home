@@ -1,0 +1,118 @@
+{
+  "head": "fa8f9b53062373c3c4a0cab931fe7483f90fef34",
+  "source": "actual gh api public pinned blobs; no live default-branch substitution",
+  "rows": [
+    {
+      "slug": "blotter",
+      "baselineFindings": [
+        {
+          "type": "copy",
+          "summary": "CONTRACT.md changed since the last sync",
+          "details": {
+            "files": [
+              "CONTRACT.md"
+            ],
+            "range": "https://github.com/just-every/run-blotter/compare/4e7612a8313d...43da1e7f3312",
+            "from": "4e7612a8313d08773cf95527824ef60c214837f2",
+            "to": "43da1e7f3312fc5463844e08b220eeff746c7902"
+          },
+          "apply": null,
+          "copy": "rewrite the page copy from CONTRACT.md (https://github.com/just-every/run-blotter/compare/4e7612a8313d...43da1e7f3312)"
+        }
+      ],
+      "headFindings": []
+    },
+    {
+      "slug": "crank",
+      "baselineFindings": [
+        {
+          "type": "copy",
+          "summary": "CONTRACT.md changed since the last sync",
+          "details": {
+            "files": [
+              "CONTRACT.md"
+            ],
+            "range": "https://github.com/just-every/run-crank/compare/97dbba76c57a...18cf94064499",
+            "from": "97dbba76c57a620110886e92a959fbf15b07d3d0",
+            "to": "18cf94064499fd097f145cd1c45a681dadd08445"
+          },
+          "apply": null,
+          "copy": "rewrite the page copy from CONTRACT.md (https://github.com/just-every/run-crank/compare/97dbba76c57a...18cf94064499)"
+        }
+      ],
+      "headFindings": []
+    },
+    {
+      "slug": "lamp",
+      "baselineFindings": [
+        {
+          "type": "copy",
+          "summary": "CONTRACT.md, README.md, seed.json changed since the last sync",
+          "details": {
+            "files": [
+              "CONTRACT.md",
+              "README.md",
+              "seed.json"
+            ],
+            "range": "https://github.com/just-every/run-lamp/compare/d42822f32818...720ee842bc0f",
+            "from": "d42822f3281899cda3d5636ed30915e8bc287ae0",
+            "to": "720ee842bc0f69fe32b419f40cf9f78d0bf562c5"
+          },
+          "apply": null,
+          "copy": "rewrite the page copy from CONTRACT.md, README.md, seed.json (https://github.com/just-every/run-lamp/compare/d42822f32818...720ee842bc0f)"
+        }
+      ],
+      "headFindings": []
+    },
+    {
+      "slug": "mallet",
+      "baselineFindings": [],
+      "headFindings": []
+    },
+    {
+      "slug": "placemat",
+      "baselineFindings": [
+        {
+          "type": "copy",
+          "summary": "CONTRACT.md changed since the last sync",
+          "details": {
+            "files": [
+              "CONTRACT.md"
+            ],
+            "range": "https://github.com/just-every/run-placemat/compare/187fa5c3720a...6232d682d835",
+            "from": "187fa5c3720adb99a25412f029821a840d950867",
+            "to": "6232d682d8356f2eb0f2d9e58b4e44bba51fd9cd"
+          },
+          "apply": null,
+          "copy": "rewrite the page copy from CONTRACT.md (https://github.com/just-every/run-placemat/compare/187fa5c3720a...6232d682d835)"
+        }
+      ],
+      "headFindings": []
+    },
+    {
+      "slug": "platter",
+      "baselineFindings": [
+        {
+          "type": "copy",
+          "summary": "CONTRACT.md changed since the last sync",
+          "details": {
+            "files": [
+              "CONTRACT.md"
+            ],
+            "range": "https://github.com/just-every/run-platter/compare/b384813c64c7...85dee737177a",
+            "from": "b384813c64c78665f189b5aa1f6b8f2c0fca79da",
+            "to": "85dee737177a6559448a012b2b6e22cad05f5e1a"
+          },
+          "apply": null,
+          "copy": "rewrite the page copy from CONTRACT.md (https://github.com/just-every/run-platter/compare/b384813c64c7...85dee737177a)"
+        }
+      ],
+      "headFindings": []
+    },
+    {
+      "slug": "strap",
+      "baselineFindings": [],
+      "headFindings": []
+    }
+  ]
+}

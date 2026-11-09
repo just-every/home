@@ -1,0 +1,6 @@
+{"call": 1, "args": ["api", "repos/just-every/home/pulls/36", "--jq", "{number,state,html_url,head:{ref:.head.ref,sha:.head.sha},base:{ref:.base.ref,sha:.base.sha},body}"]}
+{"call": 2, "args": ["api", "repos/just-every/home/actions/runs/42535960375", "--jq", "{id,name,status,conclusion,head_sha,html_url,event}"]}
+{"call": 3, "args": ["api", "repos/just-every/run-lamp/releases/tags/v1.11.4", "--jq", "{id,tag_name,draft,prerelease,html_url,target_commitish,published_at,assets:[.assets[]|{name,size}]}"]}
+{"call": 4, "args": ["api", "graphql", "-F", "query=@../source-query.graphql"]}
+{"call": 5, "args": ["api", "repos/just-every/run-strap/contents/CONTRACT.md?ref=008fef24f74b44bdb2aaf0fd95dcf50c45ceea7c", "-H", "Accept: application/vnd.github.raw+json"]}
+{"call": 6, "args": ["api", "repos/just-every/home/pulls/36", "--jq", "{number,state,html_url,head:{ref:.head.ref,sha:.head.sha},base:{ref:.base.ref,sha:.base.sha}}"]}

@@ -1,0 +1,132 @@
+{
+  "head": "fa8f9b53062373c3c4a0cab931fe7483f90fef34",
+  "baseline": "d9893baa5c4d862ab94e62cda6b9f43774a60e8f",
+  "assertionWidth": 1440,
+  "observations": [
+    {
+      "label": "baseline",
+      "url": "http://127.0.0.1:3336/lamp",
+      "width": 1440,
+      "status": 200,
+      "version": "v1.11.3",
+      "versionVisible": true,
+      "scrollWidth": 1440,
+      "title": "Lamp: free, open-source alternative to Atlassian Statuspage",
+      "servedHtmlSHA256": "82867f34c09bc54553b8b96780009a64a1d06769cb1fba3f54ea598db9773b5a",
+      "screenshot": "baseline-lamp-1440.png"
+    },
+    {
+      "label": "candidate",
+      "url": "http://127.0.0.1:3337/lamp",
+      "width": 1440,
+      "status": 200,
+      "version": "v1.11.4",
+      "versionVisible": true,
+      "scrollWidth": 1440,
+      "title": "Lamp: free, open-source alternative to Atlassian Statuspage",
+      "servedHtmlSHA256": "cf41ac9f1f5f83b8faf637fb574b501c3d49f8b51985fde906a03882d934b695",
+      "screenshot": "candidate-lamp-1440.png"
+    },
+    {
+      "label": "candidate",
+      "url": "http://127.0.0.1:3337/lamp",
+      "width": 390,
+      "status": 200,
+      "version": "v1.11.4",
+      "versionVisible": true,
+      "scrollWidth": 390,
+      "title": "Lamp: free, open-source alternative to Atlassian Statuspage",
+      "servedHtmlSHA256": "cf41ac9f1f5f83b8faf637fb574b501c3d49f8b51985fde906a03882d934b695",
+      "screenshot": "candidate-lamp-390.png"
+    }
+  ],
+  "baselineMain": "Lamp\n\nAlternative to Atlassian Statuspage\n\nAlso replaces Instatus, Better Stack\n\nThe status page that never leaves your customers in the dark.\n\nLamp in 51 seconds\nThe public status page during an outage\nWrite a public incident update\nSchedule maintenance windows\nSubscribers and where updates go\n\nrun-lamp.com\n↗\nGitHub\n→\n\nLamp is a status page that tells your customers who is affected, how badly and what still works. You write each update once, and the page, the feed, the site banner and subscriber emails all carry the same words. Your page keeps answering even when Lamp's own database is down.\n\nWhat it does\nShow a status page with each component's state, a 90-day record and a plain-words account of every incident\nWrite each update once and send it to the page, an Atom feed, a site banner and subscriber email together, with a preview first\nKeep the page answering from the last known state, labelled with its age, when Lamp's own database is down\nLet subscribers choose the components they follow and unsubscribe in one click, with no cookies and no CAPTCHA\nRun planned maintenance that starts, finishes and notifies subscribers by itself\nTurn alerts from your monitoring tools into one draft incident per problem, which you review and publish\nPublish post-incident reports, post to Slack or Microsoft Teams, send signed webhooks and keep a delivery log\nUse your own domain and colours, and export everything whenever you like\nWhat it promises\nMonitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update.\nA published update is never edited or deleted; a correction is a new update and both stay on the public timeline.\nPublishing is a single step: the update and the list of people to notify are saved together.\nUptime is rounded down, so a period with any downtime never shows 100 percent.\nPublishing still works while email, the queue or a subscriber's endpoint is failing.\nIf the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear.\nThe public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites.\nThe delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it.\nMoving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm.\nEvery notification email carries a one-click unsubscribe.\nRead the full contract\n→\nMove in from\nAtlassian Statuspage\nBetter Stack\nInstatus\nSorry\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-lamp\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-lamp.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv1.11.3\nLICENCE\nMIT, 100% free",
+  "baselineImages": [
+    "/landing/marks/lamp.svg",
+    "/seeds/lamp/gallery/01-status-page.webp",
+    "/seeds/lamp/gallery/02-incident.webp",
+    "/seeds/lamp/gallery/03-maintenance.webp",
+    "/seeds/lamp/gallery/04-subscribers.webp",
+    "/video/lamp-poster.webp",
+    "/seeds/lamp/gallery/thumbs/01-status-page.webp",
+    "/seeds/lamp/gallery/thumbs/02-incident.webp",
+    "/seeds/lamp/gallery/thumbs/03-maintenance.webp",
+    "/seeds/lamp/gallery/thumbs/04-subscribers.webp",
+    "/landing/separators/meadow-path.svg",
+    "/landing/separators/parts/meadow-flower-a.svg",
+    "/landing/separators/parts/meadow-fern-a.svg",
+    "/landing/separators/parts/meadow-flower-b.svg",
+    "/landing/separators/parts/meadow-tuft-b.svg",
+    "/landing/separators/parts/meadow-tuft-e.svg",
+    "/landing/separators/parts/meadow-tuft-a.svg"
+  ],
+  "baselineLinks": [
+    {
+      "text": "run-lamp.com ↗",
+      "href": "https://run-lamp.com"
+    },
+    {
+      "text": "GitHub→",
+      "href": "https://github.com/just-every/run-lamp"
+    },
+    {
+      "text": "Read the full contract→",
+      "href": "https://run-lamp.com/contract"
+    }
+  ],
+  "baselineServedListings": {
+    "status": 200,
+    "sha256": "790e115fdf755eea1212b68df6df033fb9d2467dbff94cad0f61ad2928544bc8",
+    "lampVersion": "v1.11.3",
+    "count": 49
+  },
+  "candidateMain": "Lamp\n\nAlternative to Atlassian Statuspage\n\nAlso replaces Instatus, Better Stack\n\nThe status page that never leaves your customers in the dark.\n\nLamp in 51 seconds\nThe public status page during an outage\nWrite a public incident update\nSchedule maintenance windows\nSubscribers and where updates go\n\nrun-lamp.com\n↗\nGitHub\n→\n\nLamp is a status page that tells your customers who is affected, how badly and what still works. You write each update once, and the page, the feed, the site banner and subscriber emails all carry the same words. Your page keeps answering even when Lamp's own database is down.\n\nWhat it does\nShow a status page with each component's state, a 90-day record and a plain-words account of every incident\nWrite each update once and send it to the page, an Atom feed, a site banner and subscriber email together, with a preview first\nKeep the page answering from the last known state, labelled with its age, when Lamp's own database is down\nLet subscribers choose the components they follow and unsubscribe in one click, with no cookies and no CAPTCHA\nRun planned maintenance that starts, finishes and notifies subscribers by itself\nTurn alerts from your monitoring tools into one draft incident per problem, which you review and publish\nPublish post-incident reports, post to Slack or Microsoft Teams, send signed webhooks and keep a delivery log\nUse your own domain and colours, and export everything whenever you like\nWhat it promises\nMonitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update.\nA published update is never edited or deleted; a correction is a new update and both stay on the public timeline.\nPublishing is a single step: the update and the list of people to notify are saved together.\nUptime is rounded down, so a period with any downtime never shows 100 percent.\nPublishing still works while email, the queue or a subscriber's endpoint is failing.\nIf the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear.\nThe public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites.\nThe delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it.\nMoving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm.\nEvery notification email carries a one-click unsubscribe.\nRead the full contract\n→\nMove in from\nAtlassian Statuspage\nBetter Stack\nInstatus\nSorry\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-lamp\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-lamp.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv1.11.4\nLICENCE\nMIT, 100% free",
+  "candidateImages": [
+    "/landing/marks/lamp.svg",
+    "/seeds/lamp/gallery/01-status-page.webp",
+    "/seeds/lamp/gallery/02-incident.webp",
+    "/seeds/lamp/gallery/03-maintenance.webp",
+    "/seeds/lamp/gallery/04-subscribers.webp",
+    "/video/lamp-poster.webp",
+    "/seeds/lamp/gallery/thumbs/01-status-page.webp",
+    "/seeds/lamp/gallery/thumbs/02-incident.webp",
+    "/seeds/lamp/gallery/thumbs/03-maintenance.webp",
+    "/seeds/lamp/gallery/thumbs/04-subscribers.webp",
+    "/landing/separators/meadow-path.svg",
+    "/landing/separators/parts/meadow-flower-a.svg",
+    "/landing/separators/parts/meadow-fern-a.svg",
+    "/landing/separators/parts/meadow-flower-b.svg",
+    "/landing/separators/parts/meadow-tuft-b.svg",
+    "/landing/separators/parts/meadow-tuft-e.svg",
+    "/landing/separators/parts/meadow-tuft-a.svg"
+  ],
+  "candidateLinks": [
+    {
+      "text": "run-lamp.com ↗",
+      "href": "https://run-lamp.com"
+    },
+    {
+      "text": "GitHub→",
+      "href": "https://github.com/just-every/run-lamp"
+    },
+    {
+      "text": "Read the full contract→",
+      "href": "https://run-lamp.com/contract"
+    }
+  ],
+  "candidateServedListings": {
+    "status": 200,
+    "sha256": "525d19a094409530b5f998d11ec42dad8f3ce10761f779952dc2a6908f236b6d",
+    "lampVersion": "v1.11.4",
+    "count": 49
+  },
+  "regressionComparison": "main rendered text differs only by Lamp version; main image and link lists identical at 1440",
+  "pageErrors": [],
+  "result": "PASS",
+  "serverPIDs": [
+    1892,
+    1920
+  ],
+  "browserClosed": true,
+  "serversStopped": true
+}

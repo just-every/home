@@ -1,0 +1,153 @@
+diff --git a/public/data/listings.json b/public/data/listings.json
+index 9fae90a..678d0bd 100644
+--- a/public/data/listings.json
++++ b/public/data/listings.json
+@@ -1,5 +1,5 @@
+ {
+-  "generatedAt": "2026-11-03T22:55:28.014Z",
++  "generatedAt": "2026-11-08T23:32:10.622Z",
+   "listings": [
+     {
+       "slug": "auth",
+@@ -404,7 +404,7 @@
+       "slug": "lamp",
+       "name": "Lamp",
+       "status": "released",
+-      "version": "v1.11.3",
++      "version": "v1.11.4",
+       "category": "Status page",
+       "line": "The status page that never leaves your customers in the dark.",
+       "headline": "When something breaks, turn the light on.",
+diff --git a/scripts/seeds-sync/state.json b/scripts/seeds-sync/state.json
+index aaf9a84..89f6a82 100644
+--- a/scripts/seeds-sync/state.json
++++ b/scripts/seeds-sync/state.json
+@@ -1,5 +1,5 @@
+ {
+-  "syncedAt": "2026-11-07T22:00:48.037Z",
++  "syncedAt": "2026-11-08T23:32:04.871Z",
+   "seeds": {
+     "auth": {
+       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
+@@ -108,12 +108,12 @@
+       }
+     },
+     "blotter": {
+-      "commit": "4e7612a8313d08773cf95527824ef60c214837f2",
++      "commit": "43da1e7f3312fc5463844e08b220eeff746c7902",
+       "sourceRef": "HEAD",
+       "sourceReason": "coming-soon seed; no release tag",
+       "tag": null,
+       "copy": {
+-        "CONTRACT.md": "f869fefcf8d00f51",
++        "CONTRACT.md": "0d95ed81c8c94cbc",
+         "README.md": "477e353516ba5586",
+         "seed.json": "9730eeb88853b55b"
+       },
+@@ -295,12 +295,12 @@
+       }
+     },
+     "crank": {
+-      "commit": "97dbba76c57a620110886e92a959fbf15b07d3d0",
++      "commit": "18cf94064499fd097f145cd1c45a681dadd08445",
+       "sourceRef": "HEAD",
+       "sourceReason": "coming-soon seed; no release tag",
+       "tag": null,
+       "copy": {
+-        "CONTRACT.md": "01dcf1fbed0c384d",
++        "CONTRACT.md": "9a6c7e17729df0ec",
+         "README.md": "17ee4f7ea9911d08",
+         "seed.json": "cb3854ec69090483"
+       },
+@@ -534,14 +534,14 @@
+       }
+     },
+     "lamp": {
+-      "commit": "d42822f3281899cda3d5636ed30915e8bc287ae0",
+-      "sourceRef": "v1.11.3",
++      "commit": "720ee842bc0f69fe32b419f40cf9f78d0bf562c5",
++      "sourceRef": "v1.11.4",
+       "sourceReason": "released listing version",
+-      "tag": "v1.11.3",
++      "tag": "v1.11.4",
+       "copy": {
+-        "CONTRACT.md": "99464caae4306e9c",
+-        "README.md": "349cd8405181bea1",
+-        "seed.json": "a52555646e9f30bb"
++        "CONTRACT.md": "2a72e905c96ba056",
++        "README.md": "f5f1c181227a5f90",
++        "seed.json": "a98f28f30a8ba7bb"
+       },
+       "brand": {
+         "theme.page": "#f8f6f0",
+@@ -557,7 +557,8 @@
+       "home": {
+         "headline": "When something breaks, turn the light on.",
+         "signature": "eeddddeeefeefeefeeffeeeeeeeffefeeeeeeeeeed9a9ddcfeeeeefeefeefeefeeffeccccccffefeefeefeeeeeeeeeeefeefeefeefeefeeffeccc444454dccffefeefeefeeffeffefeefeefeeffeffeffeddcdcbdcbedcffeffeffefeefeefeefeefeeffeeeddddeedeedeedeedeededddddeeeffefeefeefeefeeffeeedddcccbccbbbbbbbbbaccbddceedffefeefeefeefeefeeffeeeeddcedcddcddcddcdddfeeffefeefeefeefeefeefeefeeffebbb898eedeedeedeedfeefeefeefeefeefeefeefeefeefeeeeddddeedeeeeeeeeeeeefeefeefeefee"
+-      }
++      },
++      "open": ["c843303a1181"]
+     },
+     "lanyard": {
+       "commit": "db2a1ef37612248290e0efd85209c9b1f0da8c83",
+@@ -694,7 +695,7 @@
+       }
+     },
+     "mallet": {
+-      "commit": "05f12bb25287d22654fda8b2a549712d14e94c1c",
++      "commit": "095576e8bfe68bf364228679ff6bd34176a89907",
+       "sourceRef": "HEAD",
+       "sourceReason": "coming-soon seed; no release tag",
+       "tag": null,
+@@ -991,12 +992,12 @@
+       }
+     },
+     "placemat": {
+-      "commit": "187fa5c3720adb99a25412f029821a840d950867",
++      "commit": "6232d682d8356f2eb0f2d9e58b4e44bba51fd9cd",
+       "sourceRef": "HEAD",
+       "sourceReason": "coming-soon seed; no release tag",
+       "tag": null,
+       "copy": {
+-        "CONTRACT.md": "2fc8167189ba0379",
++        "CONTRACT.md": "5bd08f4a60b3c704",
+         "README.md": "7319507ba101b574",
+         "seed.json": "81b3d3aa7dbeafee"
+       },
+@@ -1018,12 +1019,12 @@
+       }
+     },
+     "platter": {
+-      "commit": "b384813c64c78665f189b5aa1f6b8f2c0fca79da",
++      "commit": "85dee737177a6559448a012b2b6e22cad05f5e1a",
+       "sourceRef": "HEAD",
+       "sourceReason": "coming-soon seed; no release tag",
+       "tag": null,
+       "copy": {
+-        "CONTRACT.md": "20c37e54ecce40a0",
++        "CONTRACT.md": "09ef88c02e5db4e8",
+         "README.md": "7d91745d757ade65",
+         "seed.json": "1175b76fe7042206"
+       },
+@@ -1208,7 +1209,7 @@
+       }
+     },
+     "strap": {
+-      "commit": "ceba5960cbe5ddc323624eb128280ce241f59e72",
++      "commit": "008fef24f74b44bdb2aaf0fd95dcf50c45ceea7c",
+       "sourceRef": "HEAD",
+       "sourceReason": "coming-soon seed; no release tag",
+       "tag": null,
+diff --git a/src/data/seed-pages.ts b/src/data/seed-pages.ts
+index fd8c58e..2f030bb 100644
+--- a/src/data/seed-pages.ts
++++ b/src/data/seed-pages.ts
+@@ -345,7 +345,7 @@ export const seedPageContent: SeedPageContent[] = [
+     ],
+     moveIn: ['Atlassian Statuspage', 'Better Stack', 'Instatus', 'Sorry'],
+     runsOn: 'Your computer, or your own Cloudflare account',
+-    version: 'v1.11.3',
++    version: 'v1.11.4',
+     contractUrl: 'https://run-lamp.com/contract',
+     seoTitle: 'Lamp: free, open-source alternative to Atlassian Statuspage',
+     seoDescription:

@@ -1,0 +1,295 @@
+{
+  "head": "fa8f9b53062373c3c4a0cab931fe7483f90fef34",
+  "baseline": "d9893baa5c4d862ab94e62cda6b9f43774a60e8f",
+  "allPublic": true,
+  "allCommitObjectsExist": true,
+  "all42CopyHashesMatch": true,
+  "lampAnnotatedTagPeelsToRecordedSHA": true,
+  "seeds": [
+    {
+      "slug": "blotter",
+      "repo": "just-every/run-blotter",
+      "before": "4e7612a8313d08773cf95527824ef60c214837f2",
+      "after": "43da1e7f3312fc5463844e08b220eeff746c7902",
+      "files": {
+        "CONTRACT.md": {
+          "before": {
+            "hash": "f869fefcf8d00f51",
+            "bytes": 423095
+          },
+          "after": {
+            "hash": "0d95ed81c8c94cbc",
+            "bytes": 424658
+          }
+        },
+        "README.md": {
+          "before": {
+            "hash": "477e353516ba5586",
+            "bytes": 8997
+          },
+          "after": {
+            "hash": "477e353516ba5586",
+            "bytes": 8997
+          }
+        },
+        "seed.json": {
+          "before": {
+            "hash": "9730eeb88853b55b",
+            "bytes": 1922
+          },
+          "after": {
+            "hash": "9730eeb88853b55b",
+            "bytes": 1922
+          }
+        }
+      },
+      "changedCopy": [
+        "CONTRACT.md"
+      ]
+    },
+    {
+      "slug": "crank",
+      "repo": "just-every/run-crank",
+      "before": "97dbba76c57a620110886e92a959fbf15b07d3d0",
+      "after": "18cf94064499fd097f145cd1c45a681dadd08445",
+      "files": {
+        "CONTRACT.md": {
+          "before": {
+            "hash": "01dcf1fbed0c384d",
+            "bytes": 422626
+          },
+          "after": {
+            "hash": "9a6c7e17729df0ec",
+            "bytes": 423543
+          }
+        },
+        "README.md": {
+          "before": {
+            "hash": "17ee4f7ea9911d08",
+            "bytes": 9711
+          },
+          "after": {
+            "hash": "17ee4f7ea9911d08",
+            "bytes": 9711
+          }
+        },
+        "seed.json": {
+          "before": {
+            "hash": "cb3854ec69090483",
+            "bytes": 1801
+          },
+          "after": {
+            "hash": "cb3854ec69090483",
+            "bytes": 1801
+          }
+        }
+      },
+      "changedCopy": [
+        "CONTRACT.md"
+      ]
+    },
+    {
+      "slug": "lamp",
+      "repo": "just-every/run-lamp",
+      "before": "d42822f3281899cda3d5636ed30915e8bc287ae0",
+      "after": "720ee842bc0f69fe32b419f40cf9f78d0bf562c5",
+      "files": {
+        "CONTRACT.md": {
+          "before": {
+            "hash": "99464caae4306e9c",
+            "bytes": 414220
+          },
+          "after": {
+            "hash": "2a72e905c96ba056",
+            "bytes": 439194
+          }
+        },
+        "README.md": {
+          "before": {
+            "hash": "349cd8405181bea1",
+            "bytes": 8775
+          },
+          "after": {
+            "hash": "f5f1c181227a5f90",
+            "bytes": 8775
+          }
+        },
+        "seed.json": {
+          "before": {
+            "hash": "a52555646e9f30bb",
+            "bytes": 41991
+          },
+          "after": {
+            "hash": "a98f28f30a8ba7bb",
+            "bytes": 43583
+          }
+        }
+      },
+      "changedCopy": [
+        "CONTRACT.md",
+        "README.md",
+        "seed.json"
+      ]
+    },
+    {
+      "slug": "mallet",
+      "repo": "just-every/run-mallet",
+      "before": "05f12bb25287d22654fda8b2a549712d14e94c1c",
+      "after": "095576e8bfe68bf364228679ff6bd34176a89907",
+      "files": {
+        "CONTRACT.md": {
+          "before": {
+            "hash": "06599a1925257db8",
+            "bytes": 352372
+          },
+          "after": {
+            "hash": "06599a1925257db8",
+            "bytes": 352372
+          }
+        },
+        "README.md": {
+          "before": {
+            "hash": "bdcf1b90678e4fe8",
+            "bytes": 15672
+          },
+          "after": {
+            "hash": "bdcf1b90678e4fe8",
+            "bytes": 15672
+          }
+        },
+        "seed.json": {
+          "before": {
+            "hash": "9bde55c8776aa0f6",
+            "bytes": 2599
+          },
+          "after": {
+            "hash": "9bde55c8776aa0f6",
+            "bytes": 2599
+          }
+        }
+      },
+      "changedCopy": []
+    },
+    {
+      "slug": "placemat",
+      "repo": "just-every/run-placemat",
+      "before": "187fa5c3720adb99a25412f029821a840d950867",
+      "after": "6232d682d8356f2eb0f2d9e58b4e44bba51fd9cd",
+      "files": {
+        "CONTRACT.md": {
+          "before": {
+            "hash": "2fc8167189ba0379",
+            "bytes": 312077
+          },
+          "after": {
+            "hash": "5bd08f4a60b3c704",
+            "bytes": 314789
+          }
+        },
+        "README.md": {
+          "before": {
+            "hash": "7319507ba101b574",
+            "bytes": 11365
+          },
+          "after": {
+            "hash": "7319507ba101b574",
+            "bytes": 11365
+          }
+        },
+        "seed.json": {
+          "before": {
+            "hash": "81b3d3aa7dbeafee",
+            "bytes": 1697
+          },
+          "after": {
+            "hash": "81b3d3aa7dbeafee",
+            "bytes": 1697
+          }
+        }
+      },
+      "changedCopy": [
+        "CONTRACT.md"
+      ]
+    },
+    {
+      "slug": "platter",
+      "repo": "just-every/run-platter",
+      "before": "b384813c64c78665f189b5aa1f6b8f2c0fca79da",
+      "after": "85dee737177a6559448a012b2b6e22cad05f5e1a",
+      "files": {
+        "CONTRACT.md": {
+          "before": {
+            "hash": "20c37e54ecce40a0",
+            "bytes": 336335
+          },
+          "after": {
+            "hash": "09ef88c02e5db4e8",
+            "bytes": 338545
+          }
+        },
+        "README.md": {
+          "before": {
+            "hash": "7d91745d757ade65",
+            "bytes": 9710
+          },
+          "after": {
+            "hash": "7d91745d757ade65",
+            "bytes": 9710
+          }
+        },
+        "seed.json": {
+          "before": {
+            "hash": "1175b76fe7042206",
+            "bytes": 1729
+          },
+          "after": {
+            "hash": "1175b76fe7042206",
+            "bytes": 1729
+          }
+        }
+      },
+      "changedCopy": [
+        "CONTRACT.md"
+      ]
+    },
+    {
+      "slug": "strap",
+      "repo": "just-every/run-strap",
+      "before": "ceba5960cbe5ddc323624eb128280ce241f59e72",
+      "after": "008fef24f74b44bdb2aaf0fd95dcf50c45ceea7c",
+      "files": {
+        "CONTRACT.md": {
+          "before": {
+            "hash": "de176ce40493ca6d",
+            "bytes": 522107
+          },
+          "after": {
+            "hash": "de176ce40493ca6d",
+            "bytes": 522107
+          }
+        },
+        "README.md": {
+          "before": {
+            "hash": "d091a54bc841ed36",
+            "bytes": 12759
+          },
+          "after": {
+            "hash": "d091a54bc841ed36",
+            "bytes": 12759
+          }
+        },
+        "seed.json": {
+          "before": {
+            "hash": "18dc2029bf7a37ce",
+            "bytes": 1927
+          },
+          "after": {
+            "hash": "18dc2029bf7a37ce",
+            "bytes": 1927
+          }
+        }
+      },
+      "changedCopy": []
+    }
+  ]
+}

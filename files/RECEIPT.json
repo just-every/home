@@ -1,0 +1,65 @@
+{
+  "tag": "je-gate-20",
+  "repository": "just-every/home",
+  "role": "gate",
+  "product_branch": "cloud/je-sync-12",
+  "head": "fa8f9b53062373c3c4a0cab931fe7483f90fef34",
+  "baseline": "d9893baa5c4d862ab94e62cda6b9f43774a60e8f",
+  "pr": "https://github.com/just-every/home/pull/36",
+  "verdict": "GATE PASS",
+  "rubric": {
+    "R1": "MET",
+    "R2": "MET",
+    "R3": "MET",
+    "R4": "MET"
+  },
+  "checks": {
+    "npm ci": 0,
+    "npm run listings -- --check": 0,
+    "npm run listings": 0,
+    "git diff --exit-code": 0,
+    "npm run type-check": 0,
+    "npm run lint": 0,
+    "npm run build": 0,
+    "baseline npm run build": 0,
+    "production browser proof": 0,
+    "public source provenance proof": 0,
+    "repository copy detector replay": 0
+  },
+  "counts_before": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "counts_after": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "clause_status_changes": [],
+  "findings": [],
+  "followups": 0,
+  "blockers": [],
+  "github_api_calls": 6,
+  "ci": {
+    "conclusion": "success",
+    "event": "push",
+    "head_sha": "fa8f9b53062373c3c4a0cab931fe7483f90fef34",
+    "html_url": "https://github.com/just-every/home/actions/runs/42535960375",
+    "id": 42535960375,
+    "name": "Verify branch",
+    "status": "completed"
+  },
+  "product_checkout_clean": true,
+  "product_commits_created": 0,
+  "product_pushes": 0,
+  "provider_credentials_used": false,
+  "signature_verified": false,
+  "browser": {
+    "result": "PASS",
+    "proof": "browser-receipt.json",
+    "closed": true,
+    "servers_stopped": true
+  },
+  "recorded_at": "2026-11-09T00:14:24.201105+00:00"
+}
