@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "assertionWidth": 1440,
+  "proofWidths": [
+    1440,
+    390
+  ],
+  "rows": [
+    {
+      "slug": "lamp",
+      "version": "v1.11.11",
+      "width": 1440,
+      "status": 200,
+      "screenshot": "lamp-1440.png",
+      "assertions": "HTTP 200, exact version once, page title, no horizontal overflow"
+    },
+    {
+      "slug": "happytohelp",
+      "version": "v0.4.21",
+      "width": 1440,
+      "status": 200,
+      "screenshot": "happytohelp-1440.png",
+      "assertions": "HTTP 200, exact version once, page title, no horizontal overflow"
+    },
+    {
+      "slug": "lamp",
+      "version": "v1.11.11",
+      "width": 390,
+      "status": 200,
+      "screenshot": "lamp-390.png",
+      "assertions": "visual proof only"
+    },
+    {
+      "slug": "happytohelp",
+      "version": "v0.4.21",
+      "width": 390,
+      "status": 200,
+      "screenshot": "happytohelp-390.png",
+      "assertions": "visual proof only"
+    }
+  ],
+  "visualInspection": "All four original screenshots inspected. Both new version fields are visible; desktop facts form a row and phone facts stack. Existing gallery/reel posters and carousel presentation are retained.",
+  "localPreviewLimitations": [
+    "The initial network-idle navigation timed out; subsequent proof used the configured HTTPS proxy and waited for DOM content and fonts.",
+    "Local /api/tokens lacks Cloudflare caches and /api/events lacks the unmigrated local page_views table. Changed pages return HTTP 200 and show the exact expected versions.",
+    "Existing reels show poster/loading state; playback is not qualified by this version-only round."
+  ]
+}

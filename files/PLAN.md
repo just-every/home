@@ -1,0 +1,11 @@
+# je-sync-19 plan
+
+1. Configure fleet identity and credential helper, refresh the authorized launcher, and read its AGENTS.md. Clone only just-every/home shallowly, branch cloud/je-sync-19 from fresh main, read repository AGENTS.md and committed sync implementation.
+2. Install pinned repository dependencies with npm ci and provision the documented Chromium/Playwright capture dependency outside versioned files. Run the committed full dry sync and retain its complete non-secret report, including all source refs and existing brand/status follow-ups.
+3. Verify each proposed released-version promotion against non-draft, non-prerelease GitHub Release metadata carrying rer-release.dsse.json. Record envelope presence separately from signature verification. Review release copy comparisons and relevant contract rows; retain existing wording unless released sources prove it false.
+4. Run --copy-only --apply to record copy provenance, then the full --apply. Keep only authorized paths and eligible mechanical updates. Record coming-soon drift without importing wording, keep excluded seeds absent, preserve pricing and contract judgments.
+5. Regenerate listings and check them. Repeat the full dry sync and explain every withheld or persistent item. Inspect all diffs for scope, secret-shaped content, incidental changes, stale source provenance and unexplained drift.
+6. Run type-check, lint and production build; inspect changed pages once at 1440 and 390 with assertions at 1440. Do not add permanent tests or run the full local suite.
+7. Fetch current main and rebase before the first publication if needed, using explicit fleet author/committer identity and active hooks. Commit only product files, inspect every candidate commit identity/trailer and push only cloud/je-sync-19 through cloud-push.py.
+8. Open the requested PR via GitHub REST, observe exact-SHA Verify within the ten manual-call budget and five-minute poll limit. Keep lane landing/deployment authority unchanged.
+9. Save full report, actual check/CI receipts and relevant public source evidence in this packet. Publish explicit regular files only to evidence/je-sync-19. After successful product and evidence publication, delete the disposable clone and node_modules. Report branch, exact SHA, PR, CI, counts, clause changes, limitations and the lane POST line.

@@ -1,0 +1,51 @@
+{
+  "scope": "passed",
+  "diffHygiene": "passed",
+  "credentialShapeScan": "passed",
+  "before": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "changes": [
+    {
+      "slug": "happytohelp",
+      "fields": {
+        "version": {
+          "before": "v0.4.20",
+          "after": "v0.4.21"
+        }
+      }
+    },
+    {
+      "slug": "lamp",
+      "fields": {
+        "version": {
+          "before": "v1.11.10",
+          "after": "v1.11.11"
+        }
+      }
+    }
+  ],
+  "excludedAbsent": [
+    "barrow",
+    "beacon",
+    "brook",
+    "delta",
+    "ferry",
+    "lily",
+    "linen",
+    "relay"
+  ],
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "pricing": "No pricing file changed; accepted Assisted US$10/month and Managed US$100/month preserved."
+}
