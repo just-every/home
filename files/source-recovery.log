@@ -1,0 +1,2 @@
+SOURCE_BACKOFF seconds=15 next_attempt=2/5
+SOURCE_ATTEMPT 2/5 refresh_exit=0 setup_exit=0 exit=0 result=06dccf2ce2a48aedabd482aee468fa22e6f4e8b1

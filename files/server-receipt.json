@@ -1,0 +1,7 @@
+{
+  "port": 3188,
+  "subreaper_pid": 18123,
+  "next_server_pid": 18137,
+  "stop_signal": "SIGTERM",
+  "browser_closed": true
+}

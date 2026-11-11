@@ -1,0 +1,13 @@
+fleet Git: removed 0 credential-bearing GitHub URL rewrite sections
+PUSH attempt=1/5 command=git push --porcelain origin HEAD:refs/heads/cloud/je-sync-18
+
+All candidate commits including side parents passed identity, message and trailer checks.
+
+PUSH_CREDENTIAL sha256_16=8addacf6ac95b0bc bundle_file_age_seconds=667 token_issue_age=unknown
+fleet Git: removed 0 credential-bearing GitHub URL rewrite sections
+/home/agent/rer-consolidation/work/je-sync-18/home/.git/fleet-cloud-hooks/pre-push: 2: .: cannot open /home/agent/rer-consolidation/work/je-sync-18/home/.git/fleet-cloud-hooks/h: No such file
+error: failed to push some refs to 'https://github.com/just-every/home'
+PUSH_REJECTED attempt=1 exit=1 HTTP=unknown (not supplied by Git) command=git push --porcelain origin HEAD:refs/heads/cloud/je-sync-18
+BUNDLE path=/home/agent/rer-consolidation/work/push-rescue/cloud_je-sync-18-20261111T154429Z-85aa3f936626.bundle head=85aa3f93662614840d92352f33f375b9ecca8b62 sha256=f3e1d0b701240cc9835c2d40f11d5c4064f9d91145c94deeb884e05769433f2e verified=true
+Preserve this VM/clone and retrieve the bundle before ending its retention period.
+BLOCKED command=git push --porcelain origin HEAD:refs/heads/cloud/je-sync-18 HTTP=unknown (not supplied by Git); retain verified bundle and clone

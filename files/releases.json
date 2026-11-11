@@ -1,0 +1,655 @@
+[
+  {
+    "seed": "uptime",
+    "tag": "v0.5.5",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-11T13:02:13Z",
+    "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.5",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3361,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.5.5/rer-release.dsse.json"
+      },
+      {
+        "name": "uptime-0.4.0-monitor-1440.png",
+        "size": 273042,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.5.5/uptime-0.4.0-monitor-1440.png"
+      }
+    ]
+  },
+  {
+    "seed": "uptime",
+    "tag": "v0.5.4",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-11T03:29:18Z",
+    "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.4",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3361,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.5.4/rer-release.dsse.json"
+      },
+      {
+        "name": "uptime-0.4.0-monitor-1440.png",
+        "size": 273042,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.5.4/uptime-0.4.0-monitor-1440.png"
+      }
+    ]
+  },
+  {
+    "seed": "uptime",
+    "tag": "v0.5.3",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-11T01:16:56Z",
+    "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.3",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3361,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.5.3/rer-release.dsse.json"
+      },
+      {
+        "name": "uptime-0.4.0-monitor-1440.png",
+        "size": 273042,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.5.3/uptime-0.4.0-monitor-1440.png"
+      }
+    ]
+  },
+  {
+    "seed": "uptime",
+    "tag": "v0.5.2",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-10T15:13:45Z",
+    "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.2",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3361,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.5.2/rer-release.dsse.json"
+      },
+      {
+        "name": "uptime-0.4.0-monitor-1440.png",
+        "size": 273042,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.5.2/uptime-0.4.0-monitor-1440.png"
+      }
+    ]
+  },
+  {
+    "seed": "uptime",
+    "tag": "v0.5.1",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-10T10:22:24Z",
+    "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.1",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3361,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.5.1/rer-release.dsse.json"
+      },
+      {
+        "name": "uptime-0.4.0-monitor-1440.png",
+        "size": 273042,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.5.1/uptime-0.4.0-monitor-1440.png"
+      }
+    ]
+  },
+  {
+    "seed": "uptime",
+    "tag": "v0.5.0",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-01T17:37:52Z",
+    "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.0",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "public-source.tar",
+        "size": 122878976,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.5.0/public-source.tar"
+      },
+      {
+        "name": "publish-check.json",
+        "size": 610112,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.5.0/publish-check.json"
+      },
+      {
+        "name": "release-receipt.json",
+        "size": 1937,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.5.0/release-receipt.json"
+      },
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3361,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.5.0/rer-release.dsse.json"
+      },
+      {
+        "name": "uptime-v0.5.0-release.tar.gz",
+        "size": 97323493,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.5.0/uptime-v0.5.0-release.tar.gz"
+      }
+    ]
+  },
+  {
+    "seed": "uptime",
+    "tag": "v0.4.3",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-20T11:46:23Z",
+    "url": "https://github.com/just-every/run-uptime/releases/tag/v0.4.3",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3169,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.4.3/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "uptime",
+    "tag": "v0.4.2",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-19T23:34:15Z",
+    "url": "https://github.com/just-every/run-uptime/releases/tag/v0.4.2",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3169,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.4.2/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "uptime",
+    "tag": "v0.4.1",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-19T23:34:11Z",
+    "url": "https://github.com/just-every/run-uptime/releases/tag/v0.4.1",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3169,
+        "url": "https://github.com/just-every/run-uptime/releases/download/v0.4.1/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.5.8",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-11T11:59:50Z",
+    "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.8",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3169,
+        "url": "https://github.com/just-every/run-oncall/releases/download/v0.5.8/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.5.7",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-11T08:31:26Z",
+    "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.7",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3169,
+        "url": "https://github.com/just-every/run-oncall/releases/download/v0.5.7/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.5.6",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-10T12:55:06Z",
+    "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.6",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3169,
+        "url": "https://github.com/just-every/run-oncall/releases/download/v0.5.6/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.5.5",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-02T16:43:15Z",
+    "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.5",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3169,
+        "url": "https://github.com/just-every/run-oncall/releases/download/v0.5.5/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.5.4",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-31T00:11:02Z",
+    "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.4",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3169,
+        "url": "https://github.com/just-every/run-oncall/releases/download/v0.5.4/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.5.3",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-30T03:05:46Z",
+    "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.3",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3169,
+        "url": "https://github.com/just-every/run-oncall/releases/download/v0.5.3/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.5.1",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-28T00:27:20Z",
+    "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.1",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "oncall-0.5.0-incident-1440.png",
+        "size": 223214,
+        "url": "https://github.com/just-every/run-oncall/releases/download/v0.5.1/oncall-0.5.0-incident-1440.png"
+      }
+    ]
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.4.2",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-20T06:54:05Z",
+    "url": "https://github.com/just-every/run-oncall/releases/tag/v0.4.2",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 2973,
+        "url": "https://github.com/just-every/run-oncall/releases/download/v0.4.2/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.4.1",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-19T23:34:30Z",
+    "url": "https://github.com/just-every/run-oncall/releases/tag/v0.4.1",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 2973,
+        "url": "https://github.com/just-every/run-oncall/releases/download/v0.4.1/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.20",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-11T14:29:30Z",
+    "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.20",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3061,
+        "url": "https://github.com/just-every/run-happytohelp/releases/download/v0.4.20/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.19",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-11T06:22:53Z",
+    "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.19",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3061,
+        "url": "https://github.com/just-every/run-happytohelp/releases/download/v0.4.19/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.18",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-10T23:43:46Z",
+    "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.18",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3061,
+        "url": "https://github.com/just-every/run-happytohelp/releases/download/v0.4.18/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.17",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-10T15:49:44Z",
+    "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.17",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3061,
+        "url": "https://github.com/just-every/run-happytohelp/releases/download/v0.4.17/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.16",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-10T01:16:13Z",
+    "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.16",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3061,
+        "url": "https://github.com/just-every/run-happytohelp/releases/download/v0.4.16/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.13",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-28T23:19:52Z",
+    "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.13",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3061,
+        "url": "https://github.com/just-every/run-happytohelp/releases/download/v0.4.13/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.12",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-21T19:31:58Z",
+    "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.12",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3057,
+        "url": "https://github.com/just-every/run-happytohelp/releases/download/v0.4.12/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.11",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-21T04:46:12Z",
+    "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.11",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3057,
+        "url": "https://github.com/just-every/run-happytohelp/releases/download/v0.4.11/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.10",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-20T08:43:46Z",
+    "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.10",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3057,
+        "url": "https://github.com/just-every/run-happytohelp/releases/download/v0.4.10/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.9",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-19T23:19:18Z",
+    "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.9",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3041,
+        "url": "https://github.com/just-every/run-happytohelp/releases/download/v0.4.9/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "lamp",
+    "tag": "v1.11.10",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-11T03:40:31Z",
+    "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.10",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3157,
+        "url": "https://github.com/just-every/run-lamp/releases/download/v1.11.10/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "lamp",
+    "tag": "v1.11.9",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-10T19:13:59Z",
+    "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.9",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3141,
+        "url": "https://github.com/just-every/run-lamp/releases/download/v1.11.9/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "lamp",
+    "tag": "v1.11.8",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-10T17:20:39Z",
+    "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.8",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3141,
+        "url": "https://github.com/just-every/run-lamp/releases/download/v1.11.8/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "lamp",
+    "tag": "v1.11.7",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-10T15:12:53Z",
+    "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.7",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3141,
+        "url": "https://github.com/just-every/run-lamp/releases/download/v1.11.7/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "lamp",
+    "tag": "v1.11.6",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-10T12:31:05Z",
+    "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.6",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3141,
+        "url": "https://github.com/just-every/run-lamp/releases/download/v1.11.6/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "lamp",
+    "tag": "v1.11.5",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-09T21:27:42Z",
+    "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.5",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3141,
+        "url": "https://github.com/just-every/run-lamp/releases/download/v1.11.5/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "lamp",
+    "tag": "v1.11.4",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-08T07:27:02Z",
+    "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.4",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3141,
+        "url": "https://github.com/just-every/run-lamp/releases/download/v1.11.4/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "lamp",
+    "tag": "v1.11.3",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-03T22:39:03Z",
+    "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.3",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3141,
+        "url": "https://github.com/just-every/run-lamp/releases/download/v1.11.3/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "lamp",
+    "tag": "v1.11.2",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-03T16:28:11Z",
+    "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.2",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3141,
+        "url": "https://github.com/just-every/run-lamp/releases/download/v1.11.2/rer-release.dsse.json"
+      }
+    ]
+  },
+  {
+    "seed": "lamp",
+    "tag": "v1.11.1",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-03T10:47:13Z",
+    "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.1",
+    "target_commitish": "main",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3145,
+        "url": "https://github.com/just-every/run-lamp/releases/download/v1.11.1/rer-release.dsse.json"
+      }
+    ]
+  }
+]

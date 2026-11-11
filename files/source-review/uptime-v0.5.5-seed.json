@@ -1,0 +1,1887 @@
+{
+  "id": "uptime",
+  "name": "Uptime",
+  "version": "0.5.5",
+  "maturity": "local-installer-and-owner-deploy-implemented-hosted-unverified",
+  "category": "monitoring",
+  "spine": {
+    "id": "monitor",
+    "record": "Immutable scheduled slot observations and explained private alert outbox"
+  },
+  "replaces": [
+    {
+      "name": "Pingdom",
+      "edition": null
+    },
+    {
+      "name": "UptimeRobot",
+      "edition": null
+    },
+    {
+      "name": "Better Stack",
+      "edition": null
+    }
+  ],
+  "description": "Monitor your sites and scheduled jobs, track outages and notify your team.",
+  "capabilities": [
+    {
+      "id": "scheduled-monitoring",
+      "description": "Run signed HTTP(S), keyword, and heartbeat checks with immutable observations and explicit Unknown state.",
+      "clauses": [
+        "HTTP-001",
+        "EVIDENCE-001",
+        "STATE-001",
+        "NETWORK-001",
+        "HEARTBEAT-001",
+        "UDP-001",
+        "PRIVATE-001",
+        "HEARTBEAT-002",
+        "HEARTBEAT-003",
+        "FLOW-004",
+        "PING-001",
+        "METRICS-001",
+        "EVIDENCE-002",
+        "DIAG-001",
+        "FLOW-001",
+        "READAPI-001",
+        "READAPI-002",
+        "READAPI-003",
+        "API-003",
+        "MAIL-001"
+      ]
+    },
+    {
+      "id": "portable-archives",
+      "description": "Export and restore versioned product archives with paused definitions, portable notification definitions and histories, and preserved original state.",
+      "clauses": [
+        "ARCHIVE-001",
+        "RETENTION-001"
+      ]
+    },
+    {
+      "id": "notification-delivery",
+      "description": "Send scheduled incident email, signed JSON, and Slack notifications to installation-wide destinations.",
+      "clauses": [
+        "NOTIFY-001",
+        "DELIVERY-001",
+        "NOTICE-001",
+        "WEBHOOK-001",
+        "ROUTING-002",
+        "SLOW-001"
+      ]
+    }
+  ],
+  "nonGoals": [
+    "Real provider or production target actions before explicit authority and verification",
+    "Public communication, people paging, and independent geographic monitoring",
+    "Fresh-account hosted operation and recipient acceptance remain unverified"
+  ],
+  "externals": [
+    {
+      "id": "cloudflare",
+      "required": false,
+      "requiredWhen": "When deploying a hosted Worker",
+      "why": "An owner-directed deployment sends the application, migrations, configured Worker bindings and secrets, resource settings, and health requests to the owner's Cloudflare account; Cloudflare hosts the Worker, D1 database, and scheduled Cron.",
+      "data": [
+        "Cloudflare API account and resource identities, deployment-token authorization, the Worker program and static assets, D1 schema and migrations, Cron settings, bindings, and configured deployment secret values",
+        "Deployment readiness requests and responses for the hosted Worker",
+        "Hosted Worker requests and responses carrying monitor definitions and target URLs, observations, owner identities and sessions, authentication mail state, notification events and delivery state, runner contact, and audit records",
+        "Product and installation records stored in the owner's Cloudflare D1 database, scheduled execution metadata, and configured secret bindings"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "sendgrid-mail",
+      "required": false,
+      "requiredWhen": "MAIL_PROVIDER selects sendgrid",
+      "why": "SendGrid sends hosted sign-in, incident email and monitoring watch mail when selected as the Base mail adapter.",
+      "data": [
+        "SendGrid API-key authorization, sender and recipient/operator email addresses, message subject and text/HTML body, and single-use sign-in links",
+        "Delivery ID in the rer_delivery_id custom argument; click, open and analytics tracking are disabled in the submitted provider settings",
+        "Incident/test title, target URL, state, monitor and incident identity when present, probe names/outcomes/reasons, explanation, observation time, and private console URL as rendered in message content",
+        "A dependency notice from a followed provider carries the provider and component names, the provider's stated status, its status-source URL and the catalog entry and version as rendered in message content",
+        "For an owner-run drill, the one-time recipient confirmation link and drill time",
+        "Owner stale-runner identity/network-label notice or all-healthy digest text, including any monitoring-configuration warning"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "incident-webhook",
+      "required": false,
+      "requiredWhen": "An owner enables a default signed JSON or custom-template webhook destination",
+      "why": "Owner-configured webhook (custom-webhook) sends to custom destination owner-configured-json-receiver: deliver scheduled incident events to the owner's public HTTPS endpoint. The endpoint runs outside this installation.",
+      "data": [
+        "The configured public HTTPS endpoint receives the selected GET, POST, PUT or PATCH request with JSON, form or query parameters, configured local custom header values, optional signature/timestamp headers, source address and delivery time",
+        "Event ID, type, incident key, monitor ID and revision, name, target URL, scheduled slot, state, observation time, probe outcomes and reasons, explanation, and private console URL",
+        "A dependency notice from a followed provider carries the provider and component names, the provider's stated status, its status-source URL and the catalog entry and version, with event type uptime.dependency.firing or uptime.dependency.recovered",
+        "Versioned custom templates may send the documented monitor, incident, location, timing, certificate/domain expiry and heartbeat facts, including owner-zone times. Custom header values and signing keys stay encrypted locally and are excluded from lists and archives. Only an explicit owner request preview shows the receiver URL; its header secrets and signatures are masked.",
+        "The owner-selected Oncall native webhook profile sends only source, eventId, service, environment, key, generation, intent, severity, title with monitor identity and distinct failing network labels, observedAt and the private incident evidence link, with the configured scoped bearer header and Uptime signatures. Only the receiver receipt UUID and acceptance time are retained as acknowledgment; received and human response stay unknown without independent evidence.",
+        "A drill event additionally carries the one-time recipient confirmation URL, start time, and expiry; ordinary incident and test events do not",
+        "The endpoint's bounded HTTP status, headers and response body return to the dispatcher; the owner sees status and an escaped, secret-scrubbed excerpt of at most 512 characters"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "slack-incoming-webhook",
+      "required": false,
+      "requiredWhen": "An owner enables a Slack incoming-webhook destination",
+      "why": "Slack (slack) sends to provider destination slack-incoming-webhook: post escaped notification content to the owner's incoming webhook. Slack runs outside this installation and accepts the configured remote request.",
+      "data": [
+        "The configured Slack webhook receives the escaped message body, source address, and delivery time",
+        "Incident title and state, monitor identity and target URL, probe outcomes and reasons, explanation, observation time, and console URL",
+        "A dependency notice from a followed provider carries the provider and component names, the provider's stated status, its status-source URL and the catalog entry and version",
+        "A drill message additionally carries the one-time recipient confirmation URL and drill time",
+        "The endpoint's bounded HTTP status, headers, and response body return to the runner for delivery classification"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "external-heartbeat",
+      "required": false,
+      "why": "Owner-selected independent HTTPS heartbeat service; optional empty GET while self-check passes. The configured URL is a capability and its path is sent to that service.",
+      "data": [
+        "HTTPS host and capability path from the owner-configured URL, request time, and source network address; no request body or product record",
+        "The heartbeat service's response status is read and its response body is canceled rather than retained"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "runner-watch",
+      "required": false,
+      "why": "Independent webhook or Slack notice configured only in the runner environment.",
+      "data": [
+        "Owner-configured webhook receives only unreachable/restored state and times; owner-configured Slack receives the same short notice text",
+        "Notification URL capability, runner source address, and request time; no monitor name, target URL, probe result, or product event",
+        "The destination's bounded status, response headers, and response body are read for transport classification"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "owner-app-readiness",
+      "required": false,
+      "requiredWhen": "The shared local lifecycle checks a selected application origin before starting its runner",
+      "why": "The local setup/dev/preview lifecycle checks the selected Uptime application readiness endpoint; it may be local loopback or an owner-selected remote origin.",
+      "data": [
+        "A GET request for the selected application's readiness URL and any HTTP redirect destinations followed by the CLI; no request body or configured authorization header is sent",
+        "The destination sees the CLI source address and request timing; the CLI reads only the returned health status and JSON readiness value"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "configured-dns-resolver",
+      "required": false,
+      "requiredWhen": "A target, discovery page, flow subresource, notification endpoint, heartbeat, runner control plane, or configured provider hostname needs DNS resolution",
+      "why": "Private runners and owner tools use their configured DNS resolver. Hosted public checks validate A/AAAA answers through Cloudflare DNS over HTTPS; Workers fetch uses Cloudflare\u2019s public Internet resolver and transport.",
+      "data": [
+        "Queried hostnames for A/AAAA or system address lookup, resolver source address, and lookup timing; DNS carries no URL path, request body, or HTTP credential",
+        "Hosted checks send the target and canary hostnames as A/AAAA queries to https://cloudflare-dns.com/dns-query; no target URL path, body or credential is included."
+      ],
+      "adapters": []
+    },
+    {
+      "id": "public-monitor-targets",
+      "required": false,
+      "requiredWhen": "An owner enables a public HTTP(S) monitor, assigns an external canary, or authorizes an OAuth HTTPS token endpoint in a monitor-bound runner credential file",
+      "why": "The hosted Worker or an explicitly assigned private runner sends scheduled requests to the owner\u2019s public target and optional canary URLs. A private runner also acquires or refreshes OAuth tokens only at the exact public HTTPS token URL authorized in that monitor's local credential file.",
+      "data": [
+        "Target hostname, path and query, method, request time and runner source address; configured headers and request body where the monitor has them",
+        "Hosted HTTP(S) and keyword target requests, including their public redirect hops, send a User-Agent naming Uptime, its installed release, the installation origin with the public probe documentation path, and a stable opaque monitor reference; no monitor name, owner identity, session or installation secret is included in that identification. Other request classes keep their existing identification",
+        "Owner-held Basic, bearer or Digest credentials, generated JWT authorization and configured headers/body are sent only to the exact authorized target origin and monitor; a configured client TLS certificate and proof of key possession may be sent there, while its private key remains local. Credentials, custom headers, body and client certificate are permanently stripped on a cross-origin redirect",
+        "Owner-authorized OAuth token acquisition and refresh send a form-encoded HTTPS POST to the exact public token URL: client ID and secret through the declared Basic or form authentication mode, grant type, requested scopes and the refresh token when applicable. Public DNS answers are validated and pinned; token redirects and target TLS trust exceptions are refused. Acquired access and rotated refresh tokens remain in owner-only runner-local state, outside observations, logs and product archives",
+        "The target returns status and headers plus a bounded response body used for assertions; raw response bodies are not retained in observations",
+        "An external canary is a status-only GET: it sends no request credential, custom header or body and reads zero response-body bytes; validated public redirect hops may also be contacted",
+        "Failing HTTP response excerpts are redacted before storage in a separate owner-only snapshot table; default retention is 90 days, configurable from 1 to 365 days. Body text is escaped in the console; no screenshot or script execution is enabled. Canary response bodies remain unread."
+      ],
+      "adapters": []
+    },
+    {
+      "id": "public-protocol-targets",
+      "required": false,
+      "requiredWhen": "An owner enables a TCP or TLS monitor",
+      "why": "The hosted Worker or an assigned private runner opens a connection to the owner's public host and port to check that it accepts connections, its banner or its certificate.",
+      "data": [
+        "Target host name, port, the validated public address connected to, connection time and the vantage's source address",
+        "A TCP check sends no data; with banner reading on, it reads at most 512 bytes the service sends first and keeps at most 256 printable characters",
+        "A TLS check sends a TLS ClientHello naming the host (SNI); the Worker reads the certificate chain from a TLS 1.2 handshake it does not complete and then makes one verified connection without sending application data; certificate subject, issuer, names, validity and SHA-256 fingerprint are retained",
+        "Private, loopback, link-local and metadata addresses are refused before connecting; the Worker also refuses Cloudflare addresses, which its sockets cannot reach, and reports that vantage Unknown"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "dns-over-https-resolvers",
+      "required": false,
+      "requiredWhen": "An owner enables a DNS monitor, or the Worker validates a TCP, TLS or registry host",
+      "why": "DNS monitors ask the owner-selected public resolvers (Cloudflare at cloudflare-dns.com, Google at dns.google) over HTTPS; the Worker also resolves TCP, TLS and registry hosts through Cloudflare before connecting.",
+      "data": [
+        "The queried name and record type, request time and the vantage's source address",
+        "The resolver returns its answer code and records; at most ten normalised records of at most 255 characters per resolver and the response time are retained"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "rdap-registries",
+      "required": false,
+      "requiredWhen": "An owner enables a domain registration monitor",
+      "why": "Domain monitors read IANA's RDAP bootstrap (data.iana.org), the domain's registry RDAP service it names and the registrar RDAP record the registry links, over HTTPS only.",
+      "data": [
+        "The monitored domain name, request time and the vantage's source address",
+        "Registry and registrar answers are read up to 64 KiB (the bootstrap up to 256 KiB); retained are each source URL and update time, the expiry date, registry status values and whether the date is redacted or the sources conflict"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "site-discovery",
+      "required": false,
+      "requiredWhen": "An owner asks to check a public website or configures UPTIME_START_URL",
+      "why": "The runner performs bounded read-only discovery of the owner's chosen site, following its public redirects and crawling permitted pages and related API/status hosts.",
+      "data": [
+        "The owner-selected URL, request host/path/query, GET or HEAD method, discovery User-Agent and other headers, request time, and runner source address",
+        "The initial URL's public redirect chain, then robots files, pages, JSON/spec documents and redirect destinations on its permitted registrable domains and linked status hosts are read with bounded bodies in runner memory",
+        "Only the input/final URL, contacted hostnames, request count and duration, short notes, and validated proposed monitor definitions return to the console; raw target HTML, JSON and response headers are not returned, stored, logged, or rendered as console HTML",
+        "An owner-started run of an authorized discovery source (DISCOVERY-001) sends DNS queries for the domain's usual host names and GET or HEAD requests to the hosts, sitemap routes, OpenAPI operations and deployed sites the source names, under the same robots, budget and public-address rules; only derived candidates with their provenance return"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "service-catalog-status-sources",
+      "required": false,
+      "requiredWhen": "An owner follows or reviews a provider from the third-party service catalog",
+      "why": "Before a provider is followed, the owner's runner (or a hosted demo's Worker) reads the catalog entry's own status source once to confirm it answers with the shape the catalog expects. Every scheduled check of a followed provider reads the same address with the same catalog reader.",
+      "data": [
+        "Only status-source addresses the catalog itself names (provider status APIs, feeds and pages), one read-only GET each, with the catalog check User-Agent; no owner data, credential or other address is sent",
+        "The provider's status service sees the request time and the runner's source address",
+        "The reader streams at most 1 MiB of a document, follows no redirect and keeps nothing but derived facts",
+        "Only derived facts return to the Worker: whether the source answered, whether it has the expected shape, what the provider states about the followed part and region, and the provider's own id for a component or product; no body or header is kept"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "discovery-cloudflare-dns",
+      "required": false,
+      "requiredWhen": "An owner authorizes a Cloudflare zone as a discovery source and runs it",
+      "why": "The owner's runner reads the zone and its DNS records read-only to propose monitors of the hosts the zone names.",
+      "data": [
+        "The zone ID, an API token holding Zone Read and DNS Read, GET /client/v4/zones/{zone_id} and GET /client/v4/zones/{zone_id}/dns_records, request time and the runner's source address",
+        "The provider credential stays in an owner-only file on the owner's runner; the Worker keeps only its reference name and never receives, stores, exports or logs the credential",
+        "Only A, AAAA and CNAME record names and values under the zone become candidates; nothing is written to Cloudflare"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "discovery-route53",
+      "required": false,
+      "requiredWhen": "An owner authorizes an Amazon Route 53 hosted zone as a discovery source and runs it",
+      "why": "The owner's runner reads the hosted zone and its record sets read-only, signed with Signature Version 4, to propose monitors of the hosts the zone names.",
+      "data": [
+        "The hosted zone ID, an IAM access key id with a Signature Version 4 signature (the secret key never leaves the runner), GET /2013-04-01/hostedzone/{Id} and GET /2013-04-01/hostedzone/{Id}/rrset, request time and the runner's source address",
+        "The provider credential stays in an owner-only file on the owner's runner; the Worker keeps only its reference name and never receives, stores, exports or logs the credential",
+        "Only A, AAAA and CNAME record names and values under the zone become candidates; nothing is written to Route 53"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "discovery-github-deployments",
+      "required": false,
+      "requiredWhen": "An owner authorizes a GitHub repository's Actions deployments as a discovery source and runs it",
+      "why": "The owner's runner reads the repository's deployments, their statuses and its workflow runs since the previous run, read-only, to propose monitors of the sites those deployments name.",
+      "data": [
+        "The repository owner and name, a fine-grained token with Deployments and Actions read, GET /repos/{owner}/{repo}/deployments, /deployments/{id}/statuses and /actions/runs, request time and the runner's source address",
+        "The provider credential stays in an owner-only file on the owner's runner; the Worker keeps only its reference name and never receives, stores, exports or logs the credential",
+        "Only deployment ids, times and environment URLs become candidates and notes; nothing is written to GitHub"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "discovery-vercel-deployments",
+      "required": false,
+      "requiredWhen": "An owner authorizes a Vercel project's deployments as a discovery source and runs it",
+      "why": "The owner's runner lists the project's production deployments since the previous run and its domains, read-only, to propose monitors of the project's sites.",
+      "data": [
+        "The project ID, an access token, GET /v6/deployments and GET /v9/projects/{id}/domains, request time and the runner's source address",
+        "The provider credential stays in an owner-only file on the owner's runner; the Worker keeps only its reference name and never receives, stores, exports or logs the credential",
+        "Only deployment ids and times and verified domain names become candidates and notes; nothing is written to Vercel"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "discovery-netlify-deploys",
+      "required": false,
+      "requiredWhen": "An owner authorizes a Netlify site's deploys as a discovery source and runs it",
+      "why": "The owner's runner lists the site's production deploys since the previous run and reads the site, read-only, to propose a monitor of its address.",
+      "data": [
+        "The site ID, a personal access token, GET /api/v1/sites/{site_id}/deploys and GET /api/v1/sites/{site_id}, request time and the runner's source address",
+        "The provider credential stays in an owner-only file on the owner's runner; the Worker keeps only its reference name and never receives, stores, exports or logs the credential",
+        "Only deploy ids and times and the site address become candidates and notes; nothing is written to Netlify"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "discovery-codedeploy",
+      "required": false,
+      "requiredWhen": "An owner authorizes an AWS CodeDeploy application and deployment group as a discovery source and runs it",
+      "why": "The owner's runner lists the deployment group's successful deployments since the previous run, read-only and signed with Signature Version 4, to propose a monitor of the site the owner declared for it.",
+      "data": [
+        "The region, application and deployment group names, an IAM access key id with a Signature Version 4 signature (the secret key never leaves the runner), the ListDeployments and BatchGetDeployments operations, request time and the runner's source address",
+        "The provider credential stays in an owner-only file on the owner's runner; the Worker keeps only its reference name and never receives, stores, exports or logs the credential",
+        "Only deployment ids and times become notes, and the declared site the candidate; nothing is written to CodeDeploy"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "isolated-browser-flow-targets",
+      "required": false,
+      "requiredWhen": "An owner enables a browser-flow monitor on a runner with a browser",
+      "why": "A fresh runner browser follows owner-defined flows through the filtering proxy; target pages and their public network dependencies receive ordinary browser requests.",
+      "data": [
+        "Owner-defined top-level URLs and paths, redirects that remain within the declared origins, and requests to public subresources and WebSocket destinations initiated by those pages; DNS names, source address, and request timing are visible at the relevant destinations",
+        "Browser-generated request headers, referrer/origin information, and cookies a destination sets may be sent to the relevant public destination; page content is processed locally in the runner to execute steps, while no raw page body or screenshot returns in the control-plane result or observation",
+        "A named owner-held flow credential is filled only at its exact configured origin and may be sent by that site-form submission; the secret itself remains in runner-local custody and is redacted from traces",
+        "Private, loopback, link-local and metadata addresses are blocked; top-level navigation is limited to declared origins, while public subresources and WebSockets are individually passed through the filtering proxy"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "runner-control-plane",
+      "required": false,
+      "requiredWhen": "A private runner is enrolled and polls the owner's configured UPTIME_CONTROL_ORIGIN",
+      "why": "The separately operated runner uses signed HTTPS requests to the configured Uptime Worker control plane for enrolment, claims, results, discovery, notification custody, and contact.",
+      "data": [
+        "Runner key authentication and signature, runner identity, declared network label, browser capability, request times, and claimed task identifiers",
+        "Assigned monitor and flow definitions, canary URLs, retry and lease data, and signed attempt evidence, including status, assertions, timings, and bounded flow trace",
+        "Discovery input URLs and derived host/proposal results; for a service catalog check, the catalog entry and chosen parts, and the derived check result",
+        "For notification delivery, the claimed endpoint URL, signing credential and event payload are returned to the runner for the one configured send; signed outcome and bounded provider response details return to the Worker",
+        "Redacted HTTP failure snapshots (16 KiB text, optional 64 KiB PNG, 120 KiB total) carry final request details, owner-approved safe header/email exceptions, measured phases and bounded diagnostics under the signed envelope. Opt-in isolated screenshots render the already received excerpt after inert parsing/redaction, without fetching any target or subresource; scripts, styling and media are removed. Generated PNGs are authenticated-encrypted at rest, read only by owners and explicitly granted per-monitor evidence viewers, portable as redacted archive data, and subject to snapshot retention and erasure. Masks and access grants stay installation-local. Alerts carry no artifact content."
+      ],
+      "adapters": []
+    },
+    {
+      "id": "optional-identity-provider-setup",
+      "required": false,
+      "requiredWhen": "Only when the owner selects an optional identity-provider address during setup; no provider sign-in is enabled by that selection",
+      "why": "The shared setup CLI can read selected provider discovery documents. The completed local probe read dependency metadata, then failed at unmounted application dependency approval (404) before owner creation or any provider link request. Uptime does not mount linked-provider routes; runtime OIDC callback, token, JWKS and dependency exchange are unsupported.",
+      "data": [
+        "Selected issuer hostname and read-only setup requests for its OIDC configuration, RER provider document, and dependency-interface metadata",
+        "A setup approval request to the Uptime origin carries issuer/interface and the configured setup token; the current unmounted route returns 404 before owner creation. The measured probe made no one-time provider link request. A future shared linking path may send app origin, interface and a temporary link capability, requiring separate adoption and evidence.",
+        "No linked sign-in, authorization-code callback, runtime token/JWKS exchange or user-profile exchange is implemented by the current Uptime server; do not infer an operational provider integration from the optional declaration"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "optional-management-editor",
+      "required": false,
+      "requiredWhen": "Only when the owner configures the exact RER_MANAGEMENT_ORIGIN and installation ID for the private management editor",
+      "why": "An authenticated owner page may create the configured management editor iframe while the editor is hidden. This is an explicit private management integration, not a public embeddable widget. This is the explicit BASE-DATA-005 exception: the configured origin may belong to the author and receive opted-in requests; the native product has no operational dependency on this integration.",
+      "data": [
+        "The exact configured management origin receives an iframe request containing the installation ID, parent page origin, and editor surface; after handshake it also receives the current page path",
+        "Rendered page title and up to 60 visible text/element descriptors are sent only after the owner opens the editor and explicitly enables context sharing; form values and private-marked elements are excluded",
+        "Editor protocol messages, live-edit requests and results are exchanged with the configured management origin"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "resend-mail",
+      "required": false,
+      "requiredWhen": "MAIL_PROVIDER selects resend",
+      "why": "Resend sends hosted sign-in, incident email and monitoring watch mail when selected as the Base mail adapter.",
+      "data": [
+        "Resend API-key authorization, sender and recipient/operator email addresses, message subject and text/HTML body, and single-use sign-in links",
+        "Delivery ID in the Idempotency-Key request header",
+        "Incident/test title, target URL, state, monitor and incident identity when present, probe names/outcomes/reasons, explanation, observation time, and private console URL as rendered in message content",
+        "A dependency notice from a followed provider carries the provider and component names, the provider's stated status, its status-source URL and the catalog entry and version as rendered in message content",
+        "For an owner-run drill, the one-time recipient confirmation link and drill time",
+        "Owner stale-runner identity/network-label notice or all-healthy digest text, including any monitoring-configuration warning"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "cloudflare-mail",
+      "required": false,
+      "requiredWhen": "MAIL_PROVIDER selects cloudflare",
+      "why": "Cloudflare Email Sending sends hosted sign-in, incident email and monitoring watch mail when selected as the Base mail adapter.",
+      "data": [
+        "Cloudflare API-key authorization and configured account identity, sender and recipient/operator email addresses, message subject and text/HTML body, and single-use sign-in links",
+        "Account-scoped email-sending API request with no Uptime attachment payload",
+        "Incident/test title, target URL, state, monitor and incident identity when present, probe names/outcomes/reasons, explanation, observation time, and private console URL as rendered in message content",
+        "A dependency notice from a followed provider carries the provider and component names, the provider's stated status, its status-source URL and the catalog entry and version as rendered in message content",
+        "For an owner-run drill, the one-time recipient confirmation link and drill time",
+        "Owner stale-runner identity/network-label notice or all-healthy digest text, including any monitoring-configuration warning"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "public-udp-targets",
+      "requiredWhen": "An owner enables a UDP monitor on an authorized public service using a private runner",
+      "why": "A pinned UDP socket sends one owner-configured packet and reads one bounded response; all resolved addresses must be public.",
+      "data": [
+        "Target hostname, port, source address and request timing",
+        "Owner-configured request payload (at most 256 bytes); response at most 1024 bytes",
+        "Response bytes retained as hexadecimal in authenticated immutable evidence, archives and monitor erasure; never put secrets in UDP payloads"
+      ],
+      "required": false
+    },
+    {
+      "id": "authorized-private-targets",
+      "required": false,
+      "requiredWhen": "An owner selects private network scope and provisions a protected runner-local grant for the assigned runner and monitor",
+      "why": "Private HTTP, TCP and isolated browser checks pin only RFC1918 or ULA addresses authorized by exact hostname, CIDR, port and expiry. Metadata and management targets remain forbidden.",
+      "data": [
+        "Configured request paths, headers, bodies and origin-bound credentials reach only approved private targets; redirects and browser dependencies recheck the grant before connecting",
+        "Private target address, bounded assertion facts and sanitized browser trace return as signed evidence to the configured control plane; retained definitions/evidence travel in owner archives and are erased with the monitor",
+        "Grant files and credentials stay runner-local and never travel in archives; restored or imported references do not authorize execution"
+      ]
+    },
+    {
+      "id": "icmp-targets",
+      "required": false,
+      "requiredWhen": "An owner configures a public ICMP ping monitor on a private runner",
+      "why": "The private runner sends one to five bounded ICMP echo packets to the validated numeric IPv4 or IPv6 target. Each location requires system ping permission; no HTTP substitute is used.",
+      "data": [
+        "Target IP address, source runner address, bounded echo packets and round-trip timing",
+        "Only sent/received counts, loss and minimum/mean/maximum RTT are retained in immutable observations; no raw packet capture. Evidence travels in inactive archives and is erased with its monitor."
+      ],
+      "adapters": []
+    },
+    {
+      "id": "metrics-export",
+      "required": false,
+      "requiredWhen": "Owner explicitly invokes scripts/metrics-export.mjs for Datadog or a signed HTTPS receiver",
+      "why": "One-shot metrics export from the same captured report window; no automatic scheduler or retries. Datadog sites are fixed and webhook DNS is validated and pinned.",
+      "data": [
+        "Bounded monitor/probe/runner identifiers, report window, availability and latency statistics, states, contact/evidence freshness, incident counts and delivery job counts",
+        "Datadog API key only to the selected official Datadog HTTPS API; HMAC signature to the owner-selected public webhook. Credentials are process environment values and never stored or archived.",
+        "No monitor names, target URLs, response bodies, provider credentials or Datadog-managed probe identities. The receiver owns its stored metrics; local erasure cannot recall exported data."
+      ],
+      "adapters": []
+    },
+    {
+      "id": "bounded-route-diagnostics",
+      "required": false,
+      "requiredWhen": "A private runner collects diagnostics for a failed HTTP connection",
+      "why": "Five numeric traceroute probes at most, using only the already validated public target address; no name lookup, request credentials or body. Private destinations and unsupported tools report unavailable.",
+      "data": [
+        "Target numeric address and probe source address, TTL and round-trip timing visible to the target and intermediate routers",
+        "Only bounded numeric hops, one-sample packet loss, phase timings and fixed unavailable codes return in the signed failure snapshot; same retention, authenticated access, archive and erasure as that snapshot"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "api-transaction-targets",
+      "required": false,
+      "requiredWhen": "An owner enables a multi-step API transaction on a private runner",
+      "why": "The runner performs the owner-configured ordered requests and cleanup against one exact public origin using monitor-bound local authentication and in-memory extracted values.",
+      "data": [
+        "Public target host, pinned address, source address, request timing, configured methods, paths, headers and bodies; runtime extracted values may be sent to later requests on that same origin",
+        "Local authentication is authorized for the monitor and exact origin; dynamic authentication headers require HTTPS and values extracted by earlier steps",
+        "Only fixed outcome reasons, HTTP status, per-step timing and cleanup outcomes are retained; request/response content and extracted values never enter observations or archives"
+      ],
+      "adapters": []
+    },
+    {
+      "id": "mail-protocol-targets",
+      "required": false,
+      "requiredWhen": "An owner enables an SMTP, POP3 or IMAP monitor on a private runner",
+      "why": "The runner opens pinned public mail-protocol connections, verifies TLS and optionally authenticates and sends one synthetic message to an explicitly dedicated test mailbox.",
+      "data": [
+        "Mail server host, port, public pinned address, TLS SNI, source address and connection timing",
+        "Monitor-bound runner-local username/password sent only after verified TLS; protocol commands and optional synthetic sender, recipient, Message-ID and fixed synthetic message",
+        "Optional receiving mailbox authentication, Message-ID search and exact-message removal; no mailbox content, password, authentication exchange or server greeting is retained",
+        "Observations retain protocol step outcomes/timing, synthetic Message-ID, SMTP acceptance, mailbox receipt and cleanup confirmation; an unobserved late message needs owner attention in the dedicated mailbox"
+      ],
+      "adapters": []
+    }
+  ],
+  "env": [
+    {
+      "name": "SENDGRID_API_KEY",
+      "required": false,
+      "requiredWhen": "When hosted sign-in or an email notification destination is enabled",
+      "secret": true,
+      "why": "Authenticates Base mail sending through SendGrid; load it from server-side secret storage and never expose it to browser code or logs."
+    },
+    {
+      "name": "UPTIME_HEARTBEAT_URL",
+      "required": false,
+      "secret": true,
+      "why": "External public HTTPS heartbeat capability URL; off when absent."
+    },
+    {
+      "name": "UPTIME_START_URL",
+      "required": false,
+      "secret": false,
+      "why": "Website the owner chose at setup; first-run setup asks the owner's runner to look at it. Off when absent."
+    },
+    {
+      "name": "IDENTITY_PROVIDER",
+      "required": false,
+      "secret": false,
+      "why": "Optional setup-only identity-provider address. Omitted uses native email-link setup; selecting a provider currently fails at unmounted dependency approval before owner creation and does not enable linked OIDC sign-in."
+    },
+    {
+      "name": "MAIL_PROVIDER_API_KEY",
+      "required": false,
+      "secret": true,
+      "why": "Resend API key selected at setup."
+    },
+    {
+      "name": "CLOUDFLARE_MAIL_API_KEY",
+      "required": false,
+      "secret": true,
+      "why": "Cloudflare Email Sending API key selected at setup."
+    },
+    {
+      "name": "MAIL_ACCOUNT_ID",
+      "required": false,
+      "secret": false,
+      "why": "Cloudflare Email Sending account selected at setup."
+    },
+    {
+      "name": "UPTIME_RUNNER_ID",
+      "required": false,
+      "secret": false,
+      "why": "Per-runner identity returned at enrolment or provisioning; legacy runner may omit it."
+    },
+    {
+      "name": "UPTIME_NETWORK_LABEL",
+      "required": false,
+      "secret": false,
+      "why": "Runner-local declared network label; must match its provisioned identity."
+    },
+    {
+      "name": "UPTIME_WATCH_WEBHOOK_URL",
+      "required": false,
+      "secret": true,
+      "why": "Independent HTTPS notice capability URL, kept only in the runner environment."
+    },
+    {
+      "name": "UPTIME_WATCH_SLACK_URL",
+      "required": false,
+      "secret": true,
+      "why": "Independent Slack notice capability URL, kept only in the runner environment."
+    },
+    {
+      "name": "UPTIME_WATCH_AFTER_MS",
+      "required": false,
+      "secret": false,
+      "why": "Runner-local failed-poll notice interval; defaults to three minutes."
+    },
+    {
+      "name": "UPTIME_WATCH_REPEAT_MS",
+      "required": false,
+      "secret": false,
+      "why": "Notice repeat interval on the runner or Worker; defaults to one hour."
+    },
+    {
+      "name": "UPTIME_RUNNER_STALE_MS",
+      "required": false,
+      "secret": false,
+      "why": "Worker stale-contact interval; defaults to two minutes."
+    },
+    {
+      "name": "UPTIME_HEARTBEAT_INTERVAL_MS",
+      "required": false,
+      "secret": false,
+      "why": "Worker external heartbeat interval; defaults to five minutes."
+    },
+    {
+      "name": "UPTIME_DIGEST_INTERVAL_MS",
+      "required": false,
+      "secret": false,
+      "why": "Worker healthy digest interval; defaults to one week."
+    }
+  ],
+  "deploy": {
+    "healthPath": "/health",
+    "publicPaths": [
+      {
+        "path": "/",
+        "match": "exact",
+        "kind": "document",
+        "class": "documents",
+        "authentication": "None; public product information.",
+        "environment": "all"
+      },
+      {
+        "path": "/docs",
+        "match": "exact",
+        "kind": "document",
+        "class": "documents",
+        "authentication": "None; public product information.",
+        "environment": "all"
+      },
+      {
+        "path": "/docs/",
+        "match": "prefix",
+        "kind": "document",
+        "class": "documents",
+        "authentication": "None; public product documentation.",
+        "environment": "all"
+      },
+      {
+        "path": "/health",
+        "match": "exact",
+        "kind": "health",
+        "class": "health",
+        "authentication": "None; deployment and database readiness only.",
+        "environment": "all"
+      },
+      {
+        "path": "/signin",
+        "match": "exact",
+        "kind": "document",
+        "class": "authentication",
+        "authentication": "None; admission form only, credentials checked on submission.",
+        "environment": "all"
+      },
+      {
+        "path": "/login",
+        "match": "exact",
+        "kind": "document",
+        "class": "authentication",
+        "authentication": "None; admission form only, credentials checked on submission.",
+        "environment": "all"
+      },
+      {
+        "path": "/claim",
+        "match": "exact",
+        "kind": "document",
+        "class": "authentication",
+        "authentication": "None; admission form only, credentials checked on submission.",
+        "environment": "all"
+      },
+      {
+        "path": "/auth/bootstrap",
+        "match": "exact",
+        "kind": "authentication",
+        "class": "authentication",
+        "authentication": "Installation setup token; first owner only.",
+        "environment": "all"
+      },
+      {
+        "path": "/auth/magic-link",
+        "match": "exact",
+        "kind": "authentication",
+        "class": "authentication",
+        "authentication": "None to request a link; allow-listed email and one-use token admit the operator.",
+        "environment": "all"
+      },
+      {
+        "path": "/auth/confirm",
+        "match": "exact",
+        "kind": "authentication",
+        "class": "authentication",
+        "authentication": "One-use magic-link or invitation token.",
+        "environment": "all"
+      },
+      {
+        "path": "/auth/owner-signin",
+        "match": "exact",
+        "kind": "authentication",
+        "class": "authentication",
+        "authentication": "One-use owner sign-in grant minted with this deployment\u2019s Cloudflare credentials.",
+        "environment": "all"
+      },
+      {
+        "path": "/auth/owner-claim",
+        "match": "exact",
+        "kind": "authentication",
+        "class": "authentication",
+        "authentication": "Signed installation-bound owner claim.",
+        "environment": "all"
+      },
+      {
+        "path": "/auth/one-click",
+        "match": "exact",
+        "kind": "authentication",
+        "class": "authentication",
+        "authentication": "Base one-click entry: a hosted demo visitor's own isolated copy, or the checkout's dev key locally; Base refuses it on any other installation.",
+        "environment": "all"
+      },
+      {
+        "path": "/auth/session",
+        "match": "exact",
+        "kind": "authentication",
+        "class": "authentication",
+        "authentication": "Base operator session; privileged account operations additionally require owner authority.",
+        "environment": "all"
+      },
+      {
+        "path": "/auth/operators",
+        "match": "exact",
+        "kind": "authentication",
+        "class": "authentication",
+        "authentication": "Base operator session; privileged account operations additionally require owner authority.",
+        "environment": "all"
+      },
+      {
+        "path": "/auth/sessions",
+        "match": "exact",
+        "kind": "authentication",
+        "class": "authentication",
+        "authentication": "Base operator session; privileged account operations additionally require owner authority.",
+        "environment": "all"
+      },
+      {
+        "path": "/auth/signout",
+        "match": "exact",
+        "kind": "authentication",
+        "class": "authentication",
+        "authentication": "Base operator session; privileged account operations additionally require owner authority.",
+        "environment": "all"
+      },
+      {
+        "path": "/auth/invite",
+        "match": "exact",
+        "kind": "authentication",
+        "class": "authentication",
+        "authentication": "Base operator session; privileged account operations additionally require owner authority.",
+        "environment": "all"
+      },
+      {
+        "path": "/auth/invite/cancel",
+        "match": "exact",
+        "kind": "authentication",
+        "class": "authentication",
+        "authentication": "Base operator session; privileged account operations additionally require owner authority.",
+        "environment": "all"
+      },
+      {
+        "path": "/auth/operator/status",
+        "match": "exact",
+        "kind": "authentication",
+        "class": "authentication",
+        "authentication": "Base operator session; privileged account operations additionally require owner authority.",
+        "environment": "all"
+      },
+      {
+        "path": "/auth/operator/role",
+        "match": "exact",
+        "kind": "authentication",
+        "class": "authentication",
+        "authentication": "Base operator session; privileged account operations additionally require owner authority.",
+        "environment": "all"
+      },
+      {
+        "path": "/auth/session/revoke",
+        "match": "exact",
+        "kind": "authentication",
+        "class": "authentication",
+        "authentication": "Base operator session; privileged account operations additionally require owner authority.",
+        "environment": "all"
+      },
+      {
+        "path": "/auth/setup-complete",
+        "match": "exact",
+        "kind": "authentication",
+        "class": "authentication",
+        "authentication": "Local CLI proof derived from the installation session secret, after the first owner exists; hosted mode refuses.",
+        "environment": "local"
+      },
+      {
+        "path": "/setup",
+        "match": "exact",
+        "kind": "setup",
+        "class": "setup",
+        "authentication": "Owner session required; unauthenticated requests redirect to login.",
+        "environment": "all"
+      },
+      {
+        "path": "/setup/state",
+        "match": "exact",
+        "kind": "setup",
+        "class": "setup",
+        "authentication": "None; answers only whether the owner has claimed this installation.",
+        "environment": "all"
+      },
+      {
+        "path": "/alert-drill",
+        "match": "exact",
+        "kind": "recipient-confirmation",
+        "class": "drills",
+        "authentication": "One-use alert drill capability in the link; GET only shows the page, a same-origin POST confirms. Unknown, used, expired or foreign capabilities answer 404.",
+        "environment": "all"
+      },
+      {
+        "path": "/api/editor/config",
+        "match": "exact",
+        "kind": "editor",
+        "class": "editor",
+        "authentication": "Owner session required; unauthenticated requests are denied.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor",
+        "match": "exact",
+        "kind": "redirect",
+        "class": "redirects",
+        "authentication": "None; redirect to session-gated monitor editor.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor/",
+        "match": "exact",
+        "kind": "redirect",
+        "class": "redirects",
+        "authentication": "None; redirect to session-gated monitor editor.",
+        "environment": "all"
+      },
+      {
+        "path": "/api/heartbeats/",
+        "match": "prefix",
+        "kind": "credentialed",
+        "class": "heartbeats",
+        "authentication": "Revision-scoped sequence-protected bearer or replay-unprotected hashed URL capability; GET/HEAD/POST; per-monitor durable ingress limit.",
+        "environment": "all"
+      },
+      {
+        "path": "/api/runner/",
+        "match": "prefix",
+        "kind": "credentialed",
+        "class": "runner",
+        "authentication": "Installation runner key; scoped runner identity and signed enrolment/results where required. /api/runner/join takes a location's one-time join key instead.",
+        "environment": "all"
+      },
+      {
+        "path": "/uptime-runner.mjs",
+        "match": "exact",
+        "kind": "download",
+        "class": "assets",
+        "authentication": "None; the open-source location runner script, the same for every installation, which an Add location command downloads.",
+        "environment": "all"
+      },
+      {
+        "path": "/api/rer/import/",
+        "match": "prefix",
+        "kind": "credentialed",
+        "class": "imports",
+        "authentication": "Off by default (404). When enabled, every request requires a short-lived installation-, namespace- and action-scoped ES256 Business grant.",
+        "environment": "all"
+      },
+      {
+        "path": "/api/rer/runner-status",
+        "match": "exact",
+        "kind": "credentialed",
+        "class": "imports",
+        "authentication": "POST only. A short-lived installation-scoped ES256 Run Edit Run grant of action runner-status under the owner-claim key ring; answers the private runner's contact state and time only.",
+        "environment": "all"
+      },
+      {
+        "path": "/api/rer/cutover-status",
+        "match": "exact",
+        "kind": "credentialed",
+        "class": "imports",
+        "authentication": "POST only. A short-lived installation-scoped ES256 Run Edit Run grant of action cutover-status under the owner-claim key ring; read-only, answers per-destination delivery counts and hosts and created monitor and incident counts since the body's ISO time, never content or secrets.",
+        "environment": "all"
+      },
+      {
+        "path": "/app.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/console-format.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/dom-patch.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor-coverage.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor-list.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor-page.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor-report.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/report-render.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/report-jobs.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/report.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor-status.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor-status-line.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor-rules-table.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor-rule-edit.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor-table-fit.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor-recent-checks.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor-folds.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor-links.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor-reads.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor-page.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor-timeline.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/notifications.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/delivery-chain.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/webhook-editor.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/notification-dialogs.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/alert-drills.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/alert-drill-schedules.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/app-theme.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/style.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/notifications.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/editor/discovery.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/editor.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/action-feedback.mjs",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/favicon.svg",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/assets/",
+        "match": "prefix",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resources only.",
+        "environment": "all"
+      },
+      {
+        "path": "/design-assets/",
+        "match": "prefix",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resources only.",
+        "environment": "all"
+      },
+      {
+        "path": "/rer-theme.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/brand/",
+        "match": "prefix",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resources only.",
+        "environment": "all"
+      },
+      {
+        "path": "/__dev/key",
+        "match": "exact",
+        "kind": "development",
+        "class": "development",
+        "authentication": "Local runtime only; private RER_DEV_KEY header or gate cookie, or key in exchange POST body. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/__dev/personas",
+        "match": "exact",
+        "kind": "development",
+        "class": "development",
+        "authentication": "Local runtime only; private RER_DEV_KEY header or gate cookie, or key in exchange POST body. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/auth/dev/enter",
+        "match": "exact",
+        "kind": "development",
+        "class": "development",
+        "authentication": "Local runtime only; private RER_DEV_KEY header or gate cookie, or key in exchange POST body. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/@vite/client",
+        "match": "exact",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local Vite HMR runtime only. The filesystem allowlist and private-file denies still apply. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/@id/virtual:tanstack-start-dev-client-entry",
+        "match": "exact",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local TanStack Vite client entry only. Filesystem allowlist and private-file denies still apply. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/@react-refresh",
+        "match": "exact",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local Vite compiler transport only. Vite filesystem allowlist and private-file denies remain authoritative. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/@tanstack-start/styles.css",
+        "match": "exact",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local Vite compiler transport only. Vite filesystem allowlist and private-file denies remain authoritative. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/@fs/",
+        "match": "prefix",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local dependency compiler transport only, restricted to a node_modules path segment and unencoded separators. Vite filesystem allowlist and private-file denies remain authoritative. Hosted mode returns 404.",
+        "environment": "local",
+        "withinDirectory": "node_modules"
+      },
+      {
+        "path": "/node_modules/.pnpm/",
+        "match": "prefix",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local Vite client runtime and dependency files imported by their package-store path, restricted to a node_modules path segment and unencoded separators. Vite filesystem allowlist and private-file denies remain authoritative. Hosted mode returns 404.",
+        "environment": "local",
+        "withinDirectory": "node_modules"
+      },
+      {
+        "path": "/node_modules/.vite/",
+        "match": "prefix",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local Vite optimized browser dependency files only. Filesystem allowlist and private-file denies remain authoritative. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/src/client.tsx",
+        "match": "exact",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local Vite application client entry only. Filesystem allowlist and private-file denies still apply. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/src/base/hydration/report.ts",
+        "match": "exact",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local Vite browser hydration reporter imported by the client entry only. Filesystem allowlist and private-file denies still apply. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/src/base/hydration/intro-guard.ts",
+        "match": "exact",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local Vite browser hydration guard imported by the root route only. Filesystem allowlist and private-file denies still apply. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/src/base/hydration/unit.tsx",
+        "match": "exact",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local Vite browser hydration boundary imported by the documentation routes only. Filesystem allowlist and private-file denies still apply. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/src/router.tsx",
+        "match": "exact",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local Vite application client module graph from src/router.tsx only. Private domain/server modules are not declared. Filesystem allowlist and private-file denies still apply. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/src/routeTree.gen.ts",
+        "match": "exact",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local Vite application client module graph from src/router.tsx only. Private domain/server modules are not declared. Filesystem allowlist and private-file denies still apply. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/src/routes/",
+        "match": "prefix",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local Vite application client module graph from src/router.tsx only. Private domain/server modules are not declared. Filesystem allowlist and private-file denies still apply. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/src/base/modules/editor/",
+        "match": "prefix",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local Vite application client module graph from src/router.tsx only. Private domain/server modules are not declared. Filesystem allowlist and private-file denies still apply. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/src/editor/",
+        "match": "prefix",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local Vite application client module graph from src/router.tsx only. Private domain/server modules are not declared. Filesystem allowlist and private-file denies still apply. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/src/site/",
+        "match": "prefix",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local Vite application client module graph from src/router.tsx only. Private domain/server modules are not declared. Filesystem allowlist and private-file denies still apply. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/src/ui/",
+        "match": "prefix",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local Vite application client module graph from src/router.tsx only. Private domain/server modules are not declared. Filesystem allowlist and private-file denies still apply. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/@id/__x00__virtual:uptime-docs",
+        "match": "exact",
+        "kind": "development-asset",
+        "class": "development-assets",
+        "authentication": "None; local Vite virtual module containing published product documentation only. Hosted mode returns 404.",
+        "environment": "local"
+      },
+      {
+        "path": "/locations.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/settings-view.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/settings-alerts.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/alert-health.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/alert-clauses.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/alert-destinations.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/alert-route-default.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/root-cause-categories.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/sent-alerts.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/settings-general.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/settings-people.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/settings-integrations.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/settings-backup.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/settings-save.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/installation-zone.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/archive-view.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor-rules.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/sections.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/business-import-settings.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/external-check.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/definitions.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/definition-changes.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/flow-panel.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/pagespeed-panel.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/pagespeed-rum.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/protocol-panel.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/monitor-incidents.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/heartbeat-key.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/catalog.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/catalog-dialogs.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/catalog.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/planned-maintenance.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/planned-maintenance.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/maintenance-calendar.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/maintenance-markup.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/incident-work.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/incident-work-markup.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/incident-work.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/heartbeat-jobs.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/heartbeat-jobs.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/slow-policy.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/slow-policy.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/followed-service.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/followed-service.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/incident-dependencies.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/editor/catalog.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/editor/sources.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/cleanup-debt.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/cleanup-debt.css",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/metrics.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; static console module; the metrics operations require owner or scoped read authority.",
+        "environment": "all"
+      },
+      {
+        "path": "/api/v1/metrics",
+        "match": "exact",
+        "kind": "api",
+        "class": "metrics",
+        "authentication": "Owner session or installation-local hashed metrics:read bearer key; no mutation authority.",
+        "environment": "all"
+      },
+      {
+        "path": "/rum/v1/s/",
+        "match": "prefix",
+        "kind": "beacon",
+        "class": "rum",
+        "authentication": "None; PERF-001 beacon script of one owner-registered site. Off (a script that does nothing) until the owner enables the site; carries only its sampling and excluded paths.",
+        "environment": "all"
+      },
+      {
+        "path": "/rum/v1/collect",
+        "match": "exact",
+        "kind": "beacon",
+        "class": "rum",
+        "authentication": "None; PERF-001 write door for one consented real-user beacon of at most 1 KiB, accepted only from the registered Origin of an enabled site. No cookie is read or set and no IP address, query string, fragment or identifier is stored; bots and excluded paths are only counted.",
+        "environment": "all"
+      },
+      {
+        "path": "/failure-snapshots.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/network-diagnostics.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/evidence-viewer.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/evidence-access.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/api/v1/openapi.json",
+        "match": "exact",
+        "kind": "api",
+        "class": "documents",
+        "authentication": "None; static OpenAPI description only, no installation records or credentials.",
+        "environment": "all"
+      },
+      {
+        "path": "/transaction-panel.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      },
+      {
+        "path": "/mail-panel.js",
+        "match": "exact",
+        "kind": "asset",
+        "class": "assets",
+        "authentication": "None; emitted static resource only.",
+        "environment": "all"
+      }
+    ],
+    "notes": "Console documents and APIs require a Base owner session; runner and heartbeat APIs use separately scoped credentials."
+  },
+  "extensionPoints": {
+    "contributions": [],
+    "policies": [],
+    "events": [],
+    "slots": [],
+    "adapters": []
+  },
+  "limits": {
+    "status": "estimated-not-tested",
+    "publicRequestsPerMinutePerIp": {
+      "documents": 180,
+      "health": 180,
+      "authentication": 120,
+      "setup": 180,
+      "editor": 180,
+      "redirects": 180,
+      "heartbeats": 600,
+      "runner": 1800,
+      "assets": 600,
+      "development": 600,
+      "drills": 30,
+      "development-assets": 1800,
+      "imports": 120,
+      "metrics": 60,
+      "rum": 120
+    },
+    "notes": "Owner-tunable source settings; each class shares one fixed 60-second D1 window per client. Production assets retain their own budget. Local Vite compiler assets use a separate budget for the unbundled browser graph: about 140 module requests per console load, with room for twelve loads per minute. These defaults are estimated, not load tested. Hosted CF-Connecting-IP must be a valid single IP; missing/malformed values share an unknown-client bucket. Local mode ignores all forwarding headers and uses one loopback bucket. Only keyed hashes of client identities are stored."
+  },
+  "accessibility": {
+    "level": "WCAG 2.2 AA",
+    "status": "target; unaudited"
+  },
+  "operatingCost": {
+    "status": "unmeasured"
+  },
+  "composition": {
+    "base": "base",
+    "family": "uptime",
+    "edition": "uptime",
+    "modules": [
+      "operator-auth",
+      "mail",
+      "integrations",
+      "deploy-kit",
+      "onboarding"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "filename": "seed.json",
+    "status": "modified",
+    "additions": 1,
+    "deletions": 1,
+    "patch": "@@ -1,7 +1,7 @@\n {\n   \"id\": \"uptime\",\n   \"name\": \"Uptime\",\n-  \"version\": \"0.5.4\",\n+  \"version\": \"0.5.5\",\n   \"maturity\": \"local-installer-and-owner-deploy-implemented-hosted-unverified\",\n   \"category\": \"monitoring\",\n   \"spine\": {"
+  }
+]

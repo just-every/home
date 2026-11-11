@@ -1,0 +1,73 @@
+{
+  "tag": "je-sync-18",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-18",
+  "starting_main": "85aa3f93662614840d92352f33f375b9ecca8b62",
+  "product_head": "c7c60bc1617ba017472cb25a91f419492bc4bef5",
+  "product_commit_created": true,
+  "product_pushed": true,
+  "pr": "https://github.com/just-every/home/pull/42",
+  "ci_runs": [],
+  "before_counts": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "after_counts": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "clause_status_changes": [],
+  "changed_paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "source_sync_status": "complete; HTTP 401 recovered at refresh attempt 2 after 15 seconds",
+  "npm_ci": {
+    "exit": 0,
+    "packages_added": 726
+  },
+  "source_boundary": "No sources resolved; no claim, version, status, asset or provenance updates applied.",
+  "brand_json_sha256": "a54bb68daa5f1590e5a6eaafecf38c627e42fa014f65c0d7efaf81bee809b7a4",
+  "release_asset_presence_confirmed": true,
+  "cryptographic_signature_verified": false,
+  "withheld": [
+    {
+      "seed": "happytohelp",
+      "tag": "v0.4.21",
+      "reason": "bare tag without non-draft eligible Release"
+    },
+    {
+      "seed": "lamp",
+      "tag": "v1.11.11",
+      "reason": "bare tag without non-draft eligible Release"
+    }
+  ],
+  "checks": [
+    {
+      "command": "npm run type-check",
+      "exit": 0,
+      "duration_seconds": 6.24,
+      "log": "type-check.log"
+    },
+    {
+      "command": "npm run lint",
+      "exit": 0,
+      "duration_seconds": 3.32,
+      "log": "lint.log"
+    },
+    {
+      "command": "npm run build",
+      "exit": 0,
+      "duration_seconds": 37.66,
+      "log": "build.log"
+    }
+  ],
+  "browser_receipt": "browser/receipt.json",
+  "ready": false,
+  "ci_observation": "ci-observations.json",
+  "repository_hooks": "active; Husky absolute-path dispatch repaired without tracked changes",
+  "working_tree_clean": true
+}

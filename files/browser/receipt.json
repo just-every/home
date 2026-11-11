@@ -1,0 +1,70 @@
+{
+  "browser": "/usr/bin/chromium",
+  "behavior_assertion_width": 1440,
+  "proof_widths": [
+    1440,
+    390
+  ],
+  "screens": [
+    {
+      "slug": "uptime",
+      "width": 1440,
+      "version": "v0.5.5",
+      "http_status": 200,
+      "screenshot": "browser/uptime-1440.png",
+      "assertions": [
+        "HTTP 200",
+        "displayed version",
+        "structured softwareVersion"
+      ]
+    },
+    {
+      "slug": "happytohelp",
+      "width": 1440,
+      "version": "v0.4.20",
+      "http_status": 200,
+      "screenshot": "browser/happytohelp-1440.png",
+      "assertions": [
+        "HTTP 200",
+        "displayed version",
+        "structured softwareVersion"
+      ]
+    },
+    {
+      "slug": "oncall",
+      "width": 1440,
+      "version": "v0.5.8",
+      "http_status": 200,
+      "screenshot": "browser/oncall-1440.png",
+      "assertions": [
+        "HTTP 200",
+        "displayed version",
+        "structured softwareVersion"
+      ]
+    },
+    {
+      "slug": "uptime",
+      "width": 390,
+      "version": "v0.5.5",
+      "http_status": 200,
+      "screenshot": "browser/uptime-390.png",
+      "assertions": []
+    },
+    {
+      "slug": "happytohelp",
+      "width": 390,
+      "version": "v0.4.20",
+      "http_status": 200,
+      "screenshot": "browser/happytohelp-390.png",
+      "assertions": []
+    },
+    {
+      "slug": "oncall",
+      "width": 390,
+      "version": "v0.5.8",
+      "http_status": 200,
+      "screenshot": "browser/oncall-390.png",
+      "assertions": []
+    }
+  ]
+}

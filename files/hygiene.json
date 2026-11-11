@@ -1,0 +1,12 @@
+{
+  "diff_check": 0,
+  "changed_paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "scope": "exactly allowed three paths",
+  "credential_shape_hits": [],
+  "product_code_or_sync_implementation_changed": false,
+  "brand_json_git_blob": "fc4ab372de524f2c6420b2b5d537d30f2562e277"
+}

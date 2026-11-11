@@ -1,0 +1,26 @@
+[
+  {
+    "seed": "happytohelp",
+    "old": "v0.4.19",
+    "new": "v0.4.20",
+    "changed_fields": [
+      "version"
+    ]
+  },
+  {
+    "seed": "oncall",
+    "old": "v0.5.7",
+    "new": "v0.5.8",
+    "changed_fields": [
+      "version"
+    ]
+  },
+  {
+    "seed": "uptime",
+    "old": "v0.5.4",
+    "new": "v0.5.5",
+    "changed_fields": [
+      "version"
+    ]
+  }
+]

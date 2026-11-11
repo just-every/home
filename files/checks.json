@@ -1,0 +1,20 @@
+[
+  {
+    "command": "npm run type-check",
+    "exit": 0,
+    "duration_seconds": 6.24,
+    "log": "type-check.log"
+  },
+  {
+    "command": "npm run lint",
+    "exit": 0,
+    "duration_seconds": 3.32,
+    "log": "lint.log"
+  },
+  {
+    "command": "npm run build",
+    "exit": 0,
+    "duration_seconds": 37.66,
+    "log": "build.log"
+  }
+]
