@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-11T15:38:44.635Z",
+  "syncedAt": "2026-11-11T16:42:08.061Z",
   "seeds": {
     "auth": {
       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
@@ -481,14 +481,14 @@
       }
     },
     "happytohelp": {
-      "commit": "1c9051307419c22530c4b1f7aab80a53bd4eb9d8",
-      "sourceRef": "v0.4.20",
+      "commit": "51492e5d3cbaa94b42df1bef063fb00131038a19",
+      "sourceRef": "v0.4.21",
       "sourceReason": "released listing version",
-      "tag": "v0.4.20",
+      "tag": "v0.4.21",
       "copy": {
         "CONTRACT.md": "ae8feea8b7998aa7",
-        "README.md": "33f250cb2fb8e7df",
-        "seed.json": "b2e8b7d8f41fd3c0"
+        "README.md": "c0b9dd31c64006c4",
+        "seed.json": "b2a884123d723f99"
       },
       "brand": {
         "theme.page": "#faf9f6",
@@ -535,14 +535,14 @@
       }
     },
     "lamp": {
-      "commit": "511a966c34f2d95eba3766d1cfa4b4a47b10d76e",
-      "sourceRef": "v1.11.10",
+      "commit": "9bbe26c4fe8cd806fb1d25e23412f2f6b198028c",
+      "sourceRef": "v1.11.11",
       "sourceReason": "released listing version",
-      "tag": "v1.11.10",
+      "tag": "v1.11.11",
       "copy": {
         "CONTRACT.md": "2dc299fabd2361bf",
-        "README.md": "2b724e67fb78c083",
-        "seed.json": "83a967a90c763f10"
+        "README.md": "5b506fc6177e9b70",
+        "seed.json": "d583b5717792359e"
       },
       "brand": {
         "theme.page": "#f8f6f0",
@@ -558,7 +558,8 @@
       "home": {
         "headline": "When something breaks, turn the light on.",
         "signature": "eeddddeeefeefeefeeffeeeeeeeffefeeeeeeeeeed9a9ddcfeeeeefeefeefeefeeffeccccccffefeefeefeeeeeeeeeeefeefeefeefeefeeffeccc444454dccffefeefeefeeffeffefeefeefeeffeffeffeddcdcbdcbedcffeffeffefeefeefeefeefeeffeeeddddeedeedeedeedeededddddeeeffefeefeefeefeeffeeedddcccbccbbbbbbbbbaccbddceedffefeefeefeefeefeeffeeeeddcedcddcddcddcdddfeeffefeefeefeefeefeefeefeeffebbb898eedeedeedeedfeefeefeefeefeefeefeefeefeefeeeeddddeedeeeeeeeeeeeefeefeefeefee"
-      }
+      },
+      "open": ["42983364b373"]
     },
     "lanyard": {
       "commit": "db2a1ef37612248290e0efd85209c9b1f0da8c83",
@@ -829,8 +830,7 @@
       "home": {
         "headline": "Everyone knows who's on call.",
         "signature": "feedddeeeffeffeffeffeffeffeffeffeffeffeffefeeffeffeffeffefffffefffffeffeffeffeffeffeffeffeffeffeeedccccccccccccccceedffeeeeeeeeedeeeffeffeffeffeeeebbbccccccbbbdddfeeffeedddcbccbeedeeefeeeeeffefeeeeeeeeeeeeeeeeefffdcbdb9ddcddddddcccdddeeeffeeed999999999dddeeeffeeccedcffeffeeedddcdcbecbabbeed99999aaaaeedfeeffeffeffeffeffeffeeeddccedc9aaffefeeffeffeeeeeeefeeffeffeffeffeffeffeffeffeffeffeeeeeeeffeeeeeeeffefeefeeffefeeeeeffeffeffeffe"
-      },
-      "open": ["42983364b373"]
+      }
     },
     "orbit": {
       "commit": "36f701cc53e127f0ed4baf367625af329fef6768",
@@ -1287,8 +1287,7 @@
       "home": {
         "headline": "Sleep through the night.",
         "signature": "eeedddddeeefeefeefeefeefeefeefeefeefeeeededdeeeeeeeddeeeeddeddeddeddeddeddeddeddeddeeeeeeeeeeeeeeeeeeeeefddebbcbbcbbcbbcbbcbbcbbcabcddeeeeeeeeeeeeeeeeeeeeeeededdeededdeddeddeddeddeeeeeeeeeeeeeeeeeeeeeeeeedcd99a99accddddddddddedeeeeeeeeeeeeeedeeeeeeeeeedddaaaa9adddeddedeeddeeeeeeeeeeeeeeefedfedfededdeddfedfededdeddfedfedfddedcfddeddeddcccdddeddfdcedcedcfdcfdcfdcedcedcedcedbfdcfdcedc55888baacbbcbbccbcccceccdccdcceccedbfdceccbac77a"
-      },
-      "open": ["64cb07f6a0dd"]
+      }
     },
     "vane": {
       "commit": "a2638146dc0faaefe358d203ac940389183151ef",

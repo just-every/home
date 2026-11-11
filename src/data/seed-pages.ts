@@ -190,7 +190,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Zendesk', 'Help Scout', 'Intercom', 'Freshdesk'],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.4.20',
+    version: 'v0.4.21',
     contractUrl: 'https://happytohelp.com/contract',
     seoTitle: 'HappyToHelp: free, open-source alternative to Zendesk',
     seoDescription:
@@ -345,7 +345,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Atlassian Statuspage', 'Better Stack', 'Instatus', 'Sorry'],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v1.11.10',
+    version: 'v1.11.11',
     contractUrl: 'https://run-lamp.com/contract',
     seoTitle: 'Lamp: free, open-source alternative to Atlassian Statuspage',
     seoDescription:
