@@ -1,4 +1,4 @@
-# je-sync-18 results
+# Done: je-sync-18 results
 
 Product candidate pushed on cloud/je-sync-18 at c7c60bc1617ba017472cb25a91f419492bc4bef5. PR: https://github.com/just-every/home/pull/42. No landing or deployment is part of this task.
 
@@ -58,3 +58,9 @@ Type-check, lint, production build, brand consistency and listings checks all pa
 The supplied hook installer's symlinks caused Husky to resolve its h helper in the wrong directory. The first commit and attempted push both stopped locally; neither published anything. The initial guard bundle contains the unchanged base only, and is not candidate custody. Repaired hook dispatch only under .git, preserving the fleet commit-msg cleanup and all original repository hooks at their absolute paths; pre-commit lint-staged and pre-push Git LFS then ran successfully. See hook-repair.md and the initial/successful push logs. No hooks bypassed.
 
 Fetched current main and rebased before the first successful push (already up to date). Commit identity: Run Edit Run fleet <fleet@runeditrun.com>, author and committer. Every candidate commit, including side parents, and its full message/trailers passed the scan. Only the named branch was pushed, without force. Clean final product tree. PR and CI receipts are kept separately.
+
+## Exact-SHA Verify and terminal disposition
+
+PR https://github.com/just-every/home/pull/42 remains open for the lane. Product branch cloud/je-sync-18, head **c7c60bc1617ba017472cb25a91f419492bc4bef5**. Verify branch push run **43051508549**: https://github.com/just-every/home/actions/runs/43051508549 — completed/success on that exact head. Initial REST discovery observed in_progress; the one terminal REST recheck occurred after the required 300-second interval. Three CI/PR API calls total (PR creation, exact-SHA run discovery, terminal run poll); no failed job logs needed. Source-read API traffic is the separately required sync/release review.
+
+**READY**. No remaining blockers. No landing, merge, deployment, provider credential use or main push occurred. The product tree is clean and the remote branch was independently checked against the exact candidate SHA. All actual reports/receipts/captures were selected explicitly as regular non-secret files for the report-only evidence ref. Initial evidence custody is recorded in evidence-first.json; the final publication's exact ref/head is emitted in the terminal handoff. The disposable clone and node_modules are removed after final evidence publication, while the full packet remains under $HOME/rer-consolidation/work/je-sync-18/packet/.

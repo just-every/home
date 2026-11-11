@@ -7,7 +7,15 @@
   "product_commit_created": true,
   "product_pushed": true,
   "pr": "https://github.com/just-every/home/pull/42",
-  "ci_runs": [],
+  "ci_runs": [
+    {
+      "id": 43051508549,
+      "conclusion": "success",
+      "head_sha": "c7c60bc1617ba017472cb25a91f419492bc4bef5",
+      "html_url": "https://github.com/just-every/home/actions/runs/43051508549",
+      "status": "completed"
+    }
+  ],
   "before_counts": {
     "total": 49,
     "released": 35,
@@ -63,11 +71,35 @@
       "exit": 0,
       "duration_seconds": 37.66,
       "log": "build.log"
+    },
+    {
+      "command": "npm run listings",
+      "exit": 0
+    },
+    {
+      "command": "npm run listings -- --check",
+      "exit": 0
+    },
+    {
+      "command": "npm run brand -- --check",
+      "exit": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit": 0
+    },
+    {
+      "command": "browser proof / version assertions at 1440",
+      "exit": 0
     }
   ],
   "browser_receipt": "browser/receipt.json",
-  "ready": false,
+  "ready": true,
   "ci_observation": "ci-observations.json",
   "repository_hooks": "active; Husky absolute-path dispatch repaired without tracked changes",
-  "working_tree_clean": true
+  "working_tree_clean": true,
+  "product_custody_receipt": "product-custody.json",
+  "blockers": [],
+  "ci_pr_calls": 3,
+  "initial_evidence_receipt": "evidence-first.json"
 }

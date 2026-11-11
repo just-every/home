@@ -66,5 +66,12 @@
       "screenshot": "browser/oncall-390.png",
       "assertions": []
     }
-  ]
+  ],
+  "candidate_head": "c7c60bc1617ba017472cb25a91f419492bc4bef5",
+  "visual_inspection": "All six version-fact screenshots inspected: versions legible at both widths.",
+  "source_bindings": {
+    "public/data/listings.json": "3079f738589cf3fd563b9a317c775dcb5a691386dee9a45c17273b084eba342c",
+    "scripts/seeds-sync/state.json": "1bd171625f4f2ef048174babb5efc876d5f9a678eda7f52a6e8c13b9d73fddaa",
+    "src/data/seed-pages.ts": "9a5cfccf2b34facefa2f10201d1d9b2f1b0fc94bd71a438d7ed6d7e771abf653"
+  }
 }
