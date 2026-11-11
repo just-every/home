@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-11T16:42:08.061Z",
+  "syncedAt": "2026-11-11T21:39:21.804Z",
   "seeds": {
     "auth": {
       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
@@ -504,8 +504,7 @@
       "home": {
         "headline": "Knows what your customer needs before they do.",
         "signature": "eedddddddeedeeeeeeeeeeeeeeeeeeeedeedeeebaa887dddeeeeeeeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededdeedeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddbbbcbbcbbbbbbbbeedeeeeeeeeedeeeeeeeeeeeeeeeeedddaaabaabaaaaaccbeeeeeeeeeeeeeeeeeedeeeeeeeeeeeeedddcddcddcddcdddeeeeeeeeedddcccdeedeedeedeeeeeeeddccddceddeeeeedeeeeeedeebbbaaacddeeedddccceeedcc555544999eedeedeeeeeeeeeeeeefeeeeeeeddddddeeeeeddccdccdddeedeeefeededddddddeedeeededdddeddeee"
-      },
-      "open": ["42983364b373"]
+      }
     },
     "inkwell": {
       "commit": "e4e3c2dd4bdf48fe16111f9d447568d6c4366a84",
@@ -535,14 +534,14 @@
       }
     },
     "lamp": {
-      "commit": "9bbe26c4fe8cd806fb1d25e23412f2f6b198028c",
-      "sourceRef": "v1.11.11",
+      "commit": "62e6a2c30f7f87ad29c5e9d3eec2e0946315cc6b",
+      "sourceRef": "v1.11.12",
       "sourceReason": "released listing version",
-      "tag": "v1.11.11",
+      "tag": "v1.11.12",
       "copy": {
         "CONTRACT.md": "2dc299fabd2361bf",
-        "README.md": "5b506fc6177e9b70",
-        "seed.json": "d583b5717792359e"
+        "README.md": "9a302ec84c04413a",
+        "seed.json": "f1d8571b6a85d9f5"
       },
       "brand": {
         "theme.page": "#f8f6f0",
@@ -833,14 +832,14 @@
       }
     },
     "orbit": {
-      "commit": "36f701cc53e127f0ed4baf367625af329fef6768",
-      "sourceRef": "v0.4.5",
+      "commit": "9e7f46ce42c6bde7c5f29a6ab7cdb07e82978c8f",
+      "sourceRef": "v0.4.6",
       "sourceReason": "released listing version",
-      "tag": "v0.4.5",
+      "tag": "v0.4.6",
       "copy": {
         "CONTRACT.md": "3885c2c472212429",
         "README.md": "3d0e7ae842a3f123",
-        "seed.json": "cf14e610e37c73b5"
+        "seed.json": "7640b80eff0bff78"
       },
       "brand": {
         "theme.page": "#f5f1ea",
@@ -856,7 +855,8 @@
       "home": {
         "headline": "Your next deal finds you.",
         "signature": "eedddceeefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeeeeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedddaaabbbaaabbbbbbdddfeeeeeeeeeeeedcedceedeeeeeedddbaabbbaaaddceeeeeeeeeeeeeeeeede85e97eeeeeeeeeeedddddddddddddeeeeeeeeeeeeeeeeedecbedceeeecbeedeeeeddeddddddddeedeeefeeeeeeeeeeeeeeeeefeefeeeeeddd888aaaeddeedaaa777baafeeeeeeeeeeeecbeddeeeeeeeedddcdddeeeeeedddcccdddeeeeeeeeedddddceddeedeeeeeeeeeeeeeeeeedeeeeeeeedeeeeeeeeeeeeeeeeeeeedeed"
-      }
+      },
+      "open": ["64cb07f6a0dd"]
     },
     "pane": {
       "commit": "16501ad7d10c5af6f04799aa44c700249a41e9b4",
@@ -1155,14 +1155,14 @@
       }
     },
     "spool": {
-      "commit": "5886617d17da50761fb442f66b03ce623d5e9559",
-      "sourceRef": "v0.7.5",
+      "commit": "2e12affd54e9b3bfe759e0eaec60906e3548f876",
+      "sourceRef": "v0.7.6",
       "sourceReason": "released listing version",
-      "tag": "v0.7.5",
+      "tag": "v0.7.6",
       "copy": {
         "CONTRACT.md": "ab1e2b5eff5e8170",
-        "README.md": "9b9687b7e5001444",
-        "seed.json": "109db094b590a3e3"
+        "README.md": "e74b55288639ed2e",
+        "seed.json": "b28368280b748228"
       },
       "brand": {
         "branding.primaryColor": "#1c1c1b",
@@ -1180,7 +1180,8 @@
       "home": {
         "headline": "See exactly what broke.",
         "signature": "eeddccddceedeedeedeeeeedeedeedeeeeeeeeeeedeedeedeeddddeedeedeeeeeeeedeedeededdeedeedeedeedeedeedeedccbddcddcddcccbeddeeeeeddddddceedeedeedeedeedeed999aa9999999999cccfeeeedeededddddeddeedeedeedeedbaaaa9bbaaaaaa9ccbeeeeededddddeedeedeedeedeedeedddcddcddcddceedeeeeeeeeddddddbedceeceeceedeedeedeedeededdeedeeeffefeeeedeededaed9edaedaedbeedeed999988aaabba888888bbbeedeedeededdeeeeeeeedeedeeda99998baaccbaa9aa9ccbeeddddddceedeedeedeedeed"
-      }
+      },
+      "open": ["42983364b373"]
     },
     "stall": {
       "commit": "8ee1f25df4f0b10b9a62e7fe221453499f27b297",
@@ -1263,14 +1264,14 @@
       }
     },
     "uptime": {
-      "commit": "3caf61f087a59a0cc009f1eb1c87077be0eb985b",
-      "sourceRef": "v0.5.5",
+      "commit": "65953b2f1288fb5010f17391761abeee16923793",
+      "sourceRef": "v0.5.6",
       "sourceReason": "released listing version",
-      "tag": "v0.5.5",
+      "tag": "v0.5.6",
       "copy": {
         "CONTRACT.md": "879a0aeaeb48188b",
-        "README.md": "0c82b26f97388136",
-        "seed.json": "40e1b525bdbd45d2"
+        "README.md": "7cb5fc83462cc8ca",
+        "seed.json": "6b442dcadd723598"
       },
       "brand": {
         "branding.primaryColor": "#14204a",
@@ -1287,7 +1288,8 @@
       "home": {
         "headline": "Sleep through the night.",
         "signature": "eeedddddeeefeefeefeefeefeefeefeefeefeeeededdeeeeeeeddeeeeddeddeddeddeddeddeddeddeddeeeeeeeeeeeeeeeeeeeeefddebbcbbcbbcbbcbbcbbcbbcabcddeeeeeeeeeeeeeeeeeeeeeeededdeededdeddeddeddeddeeeeeeeeeeeeeeeeeeeeeeeeedcd99a99accddddddddddedeeeeeeeeeeeeeedeeeeeeeeeedddaaaa9adddeddedeeddeeeeeeeeeeeeeeefedfedfededdeddfedfededdeddfedfedfddedcfddeddeddcccdddeddfdcedcedcfdcfdcfdcedcedcedcedbfdcfdcedc55888baacbbcbbccbcccceccdccdcceccedbfdceccbac77a"
-      }
+      },
+      "open": ["42983364b373"]
     },
     "vane": {
       "commit": "a2638146dc0faaefe358d203ac940389183151ef",
