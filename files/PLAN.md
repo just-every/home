@@ -1,0 +1,9 @@
+je-gate-28 execution plan and completion record
+
+1. Configure fleet identity and launcher authentication; use one fresh shallow just-every/home clone. Preserve origin/main, create the local cloud/je-gate-28 review branch, then detach at the requested PR head. Confirm PR #44 is open at exactly the requested head and base. Completed.
+2. Compare every changed path and hunk against main; inspect all candidate authors, committers and trailers, the changed values, test preservation, page copy and listing/status invariants. Completed.
+3. Independently read each of the four release lists once and each released CONTRACT.md through gh api; verify release eligibility, displayed version agreement and claim honesty without treating incomplete evidence as proof of false behavior. Completed.
+4. Run npm ci, the listing generator check and write/no-diff check, type-check, lint and production build on the candidate. Determine whether source-lock, contract-view and migration-ledger commands exist in this repository. Completed; the three seed-specific mechanisms are inapplicable here.
+5. Open the four real built routes, assert the version/render behavior at 1440 and observe/capture 1440 and 390. Build baseline separately and compare rendered copy and layout geometry at 1440. Completed after correcting a local serving-harness error.
+6. Read existing exact-head Verify runs once. Completed: push Verify 43105519553 is completed/success. No dispatch, rerun or poll was needed. Total GitHub API budget: 10 calls.
+7. Tier findings, write the complete report and receipts, select only non-secret regular files, publish reports through evidence/je-gate-28, and remove browser/server processes, node_modules and the review checkout. Evidence transfer precedes final checkout removal; no product commits, product pushes, PR writes, merges or deployment.

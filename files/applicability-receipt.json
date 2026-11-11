@@ -1,0 +1,21 @@
+{
+  "CONTRACT.md": false,
+  "ACCEPTANCE.md": false,
+  "docs/CLAIMS.md": false,
+  "sources.lock.json": false,
+  "contract_generator_files": [],
+  "migration_ledger_files": [],
+  "pricing_related_diff_paths": [],
+  "literal_pricing_blocks_present_in_either_tree": [
+    {
+      "ref": "origin/main",
+      "exit": 1,
+      "matches": []
+    },
+    {
+      "ref": "HEAD",
+      "exit": 1,
+      "matches": []
+    }
+  ]
+}

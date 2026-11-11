@@ -1,0 +1,37 @@
+{
+  "tag": "je-gate-28",
+  "repository": "just-every/home",
+  "candidate_branch": "cloud/je-sync-20",
+  "head": "393067c8e694cb7d088fd44685a9d4dd37b0ae9d",
+  "base": "71a913e8667dc8a68e8cfc7e8fc04a1c401de2fa",
+  "pr_url": "https://github.com/just-every/home/pull/44",
+  "rows": {
+    "R1": "MET",
+    "R2": "MET",
+    "R3": "MET",
+    "R4": "MET",
+    "R5": "MET"
+  },
+  "verdict": "GATE PASS",
+  "blocking_findings": 0,
+  "new_c_followups": 0,
+  "known_preexisting_out_of_scope": [
+    "Spool ERR-006 copy mismatch"
+  ],
+  "clause_status_changes": [],
+  "counts_before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "counts_after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "verify_run": 43105519553,
+  "verify_conclusion": "success",
+  "github_api_calls": 10,
+  "product_commits_created": 0,
+  "product_pushes": 0
+}

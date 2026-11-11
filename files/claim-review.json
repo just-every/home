@@ -1,0 +1,330 @@
+[
+  {
+    "seed": "uptime",
+    "status_counts": {
+      "done": 37,
+      "partial": 58,
+      "missing": 20
+    },
+    "promises": [
+      {
+        "id": "STATE-001",
+        "text": "One failed check never raises an alarm. A monitor is called Failing only after confirmation, a missing check shows as Unknown, and it recovers only on fresh passing checks.",
+        "category": "reliability",
+        "contract_line": 1512,
+        "status": "partial",
+        "gap": "Two configured runner networks still prove confirmed Failing and the scheduled confirmation/recovery thresholds. Gap: exactly one failing vantage reading Degraded; Unknown for partial, missing and stale evidence; the intermediate Recovering state; and no fabricated recovery from a manual pass during an outage, an absent selected probe or maintenance expiry lack assertions in the cited files. Maintenance expiry is asserted only in tests/maintenance-windows.mjs, which this clause does not cite."
+      },
+      {
+        "id": "EVIDENCE-001",
+        "text": "Every scheduled check and every retry is kept with its time, result and error type, and a retry never erases an earlier failure.",
+        "category": "evidence",
+        "contract_line": 1511,
+        "status": "done",
+        "gap": ""
+      },
+      {
+        "id": "NOTIFY-001",
+        "text": "Only confirmed incident changes send automatic alerts, and a test send never changes a monitor's status.",
+        "category": "alerts",
+        "contract_line": 1523,
+        "status": "done",
+        "gap": ""
+      },
+      {
+        "id": "DELIVERY-001",
+        "text": "Each alert gets one automatic send per destination where a repeat could double up, an unclear outcome is not sent again, and 'accepted' is never reported as 'read'.",
+        "category": "alerts",
+        "contract_line": 1524,
+        "status": "done",
+        "gap": ""
+      },
+      {
+        "id": "DRILL-001",
+        "text": "An alert drill sends a clearly marked test with a one-time confirmation link, and a confirmation is the recipient's own report, never proof of monitoring.",
+        "category": "alerts",
+        "contract_line": 1527,
+        "status": "done",
+        "gap": ""
+      },
+      {
+        "id": "TLS-001",
+        "text": "Certificate checks look at trust, host name and expiry from each location, warn in stages before a certificate runs out, and clear only after a new valid certificate is seen.",
+        "category": "alerts",
+        "contract_line": 1540,
+        "status": "done",
+        "gap": ""
+      },
+      {
+        "id": "MAINT-001",
+        "text": "Planned and recurring maintenance windows use US time zones and daylight saving, and keep the underlying check results so reports still show what happened.",
+        "category": "schedule",
+        "contract_line": 1553,
+        "status": "done",
+        "gap": ""
+      },
+      {
+        "id": "ARCHIVE-001",
+        "text": "A backup restores only into an empty installation: monitors come back paused, destinations disabled and old alerts held back.",
+        "category": "import",
+        "contract_line": 1516,
+        "status": "done",
+        "gap": ""
+      },
+      {
+        "id": "NETWORK-001",
+        "text": "Every address and redirect is validated, unsafe addresses are refused, and a redirect that downgrades from HTTPS is rejected.",
+        "category": "security",
+        "contract_line": 1514,
+        "status": "partial",
+        "gap": "Cross-origin authentication, client-certificate and body stripping are asserted. Gap: mixed DNS answers, rebinding before connection, TLS hostname mismatch, re-resolution of every redirect, HTTPS downgrade and forbidden redirect refusal, exact-origin credential binding, timeout/body/encoding bounds and zero connections to rejected destinations lack assertions in the cited files. tests/tls-auth.mjs calls assertions in helper files this clause does not cite."
+      },
+      {
+        "id": "ERASURE-001",
+        "text": "An owner can erase a monitor with its evidence, an alert destination, or an operator, and gets a receipt of what was removed.",
+        "category": "erasure",
+        "contract_line": 1519,
+        "status": "done",
+        "gap": ""
+      }
+    ]
+  },
+  {
+    "seed": "lamp",
+    "status_counts": {
+      "partial": 132,
+      "done": 57,
+      "missing": 55
+    },
+    "promises": [
+      {
+        "id": "INTAKE-002",
+        "text": "Monitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update.",
+        "category": "approval",
+        "contract_line": 3345,
+        "status": "partial",
+        "gap": "The cited journey asserts a private draft and page exclusion. It does not measure the 30-second create/update bound or compare all public surfaces. The class/policy wording carries no promotion."
+      },
+      {
+        "id": "INCIDENT-004",
+        "text": "A published update is never edited or deleted; a correction is a new update and both stay on the public timeline.",
+        "category": "history",
+        "contract_line": 3253,
+        "status": "partial",
+        "gap": "Asserted: original wording retained; correction identifies original; both updates retained. Unasserted in old cited evidence: published deletion refused; public publication order."
+      },
+      {
+        "id": "UPDATE-008",
+        "text": "Publishing is a single step: the update and the list of people to notify are saved together.",
+        "category": "reliability",
+        "contract_line": 3271,
+        "status": "partial",
+        "gap": "Asserted: update once; recipients once; no failed recipient. Unasserted in old cited evidence: narrowing preserves delivery; unsubscribe suppresses delivery; failed update not public; retry to success; dispatch does not block."
+      },
+      {
+        "id": "NOTIFY-009",
+        "text": "Publishing still works while email, the queue or a subscriber's endpoint is failing.",
+        "category": "reliability",
+        "contract_line": 3329,
+        "status": "partial",
+        "gap": "Old cited evidence asserts only the previously described delivered slice. It does not assert: mail provider failure publish; queue failure publish; endpoint failure publish; public page survives delivery failure; feed survives delivery failure; widget survives delivery failure; recovery preserves and delivers committed set."
+      },
+      {
+        "id": "UPTIME-001",
+        "text": "Uptime is rounded down, so a period with any downtime never shows 100 percent.",
+        "category": "evidence",
+        "contract_line": 3239,
+        "status": "done",
+        "gap": ""
+      },
+      {
+        "id": "PAGE-006",
+        "text": "If the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear.",
+        "category": "reliability",
+        "contract_line": 3199,
+        "status": "partial",
+        "gap": "Old cited evidence asserts The page body still contains Partially unavailable after database removal; Stale page content is labeled Last known state; The generation instant is visible in stale page content; The retained failure body contains Partially unavailable. Unasserted: The Atom feed survives database outage; The widget survives database outage; Page content survives queue outage; Atom feed content survives queue outage; Widget content survives queue outage; Page content survives object-storage outage; Atom feed content survives object-storage outage; Widget content survives object-storage outage; Origin outage uses the specified cached-response window; Page is unavailable only before first publication; Atom feed is unavailable only before first publication; Widget is unavailable only before first publication."
+      },
+      {
+        "id": "PAGE-013",
+        "text": "The public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites.",
+        "category": "privacy",
+        "contract_line": 3206,
+        "status": "done",
+        "gap": ""
+      },
+      {
+        "id": "NOTIFY-004",
+        "text": "The delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it.",
+        "category": "privacy",
+        "contract_line": 3323,
+        "status": "partial",
+        "gap": "Old cited evidence asserts outcome field; queued outcome; delivered outcome; bounced outcome. Unasserted: subscriber field readback; channel field readback; update field readback; queue time readback; outcome time readback; complained outcome readback; message pixel absence; tracked-link absence; the outcome filter returns all and only matching rows throughout its result set; channel filter reconciliation; update filter reconciliation; all 101 distinct expected destinations occur once and match the full filtered view."
+      },
+      {
+        "id": "MOVE-002",
+        "text": "Moving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm.",
+        "category": "import",
+        "contract_line": 3408,
+        "status": "partial",
+        "gap": "Old cited evidence asserts Sorry incident update timestamps equal source times; Past Sorry maintenance is completed; Imported Better Stack maintenance has no native notice; Import queues no notification delivery. Unasserted: Complete imported component history derives from original update times; Concurrent repeated applies send no mail; Preview sends no mail; Every resume sends no mail; Cutover checks send no mail; Each imported email subscriber is pending."
+      },
+      {
+        "id": "SUB-006",
+        "text": "Every notification email carries a one-click unsubscribe.",
+        "category": "alerts",
+        "contract_line": 3301,
+        "status": "partial",
+        "gap": "Old cited evidence asserts mail unsubscribe value is present; web unsubscribe value is present; one-click declaration; URL-encoded deactivation. Unasserted: visible unsubscribe link in notification body; multipart form deactivation; DKIM coverage of both unsubscribe headers; per-token allowance independence."
+      }
+    ]
+  },
+  {
+    "seed": "orbit",
+    "status_counts": {
+      "partial": 130,
+      "done": 42,
+      "missing": 32
+    },
+    "promises": [
+      {
+        "id": "OUT-001",
+        "text": "Signals, scores and AI text never grant permission to send. Your company's policy decides agent sending; when approval is required, a person approves the exact saved recipients, subject and body, and later changes invalidate it.",
+        "category": "approval",
+        "contract_line": 2455,
+        "status": "partial",
+        "gap": "Unasserted in the carried evidence: ingestion cannot dispatch; unreviewed agent call has no effect under held policy; signed-in person approves unchanged saved revision. Asserted: exact reviewed bytes dispatched."
+      },
+      {
+        "id": "OPP-004",
+        "text": "A deal's score shows every signal it used, with source, time and weight, beside the reason for the recommendation.",
+        "category": "evidence",
+        "contract_line": 2444,
+        "status": "partial",
+        "gap": "Not reachable in the product, so unasserted: following each contribution to its source evidence. A contribution in the deal's Why this is first list has no link or visible signal ID, Recorded details lists each signal's subject, kind, source and linking basis without ids, and no route serves a signal's source evidence; `tests/e2e/operator.spec.mjs` resolves each contribution's signal ID from the opportunity API inside the test and then finds its Recorded details line by subject text. Asserted at 390 and 1440 in the browser: every contribution shown with its signal subject, type, signed points and source; the current recommendation's reason and next action beside them; each contributing signal's Recorded details line names its source and how it was linked."
+      },
+      {
+        "id": "SIGNAL-007",
+        "text": "Orbit uses no tracking script, pixel or cookie, and does not fingerprint visitors.",
+        "category": "privacy",
+        "contract_line": 2429,
+        "status": "partial",
+        "gap": "Unasserted in the carried evidence: no tracking script/pixel/cookie in public assets/network; identity-free chat held; unsupported identity absent from customer history. Asserted: identity-free page view held."
+      },
+      {
+        "id": "OUT-007",
+        "text": "A reply, a booked meeting, an unsubscribe or a permanent bounce cancels that contact's scheduled messages.",
+        "category": "alerts",
+        "contract_line": 2461,
+        "status": "partial",
+        "gap": "Unasserted in the carried evidence: booking cancels scheduled mail; unsubscribe cancels scheduled mail; bounce cancels scheduled mail; manual stop cancels scheduled mail; replay has no second effect. Asserted: reply cancels scheduled mail; stop stales unsent draft."
+      },
+      {
+        "id": "OUT-012",
+        "text": "Opt-out is on by default for sequence email and off for one-to-one email. Messages set to carry it include one-click unsubscribe; an identified opt-out marks the contact do-not-contact within a minute and cancels scheduled messages.",
+        "category": "privacy",
+        "contract_line": 2466,
+        "status": "done",
+        "gap": ""
+      },
+      {
+        "id": "ACTION-005",
+        "text": "A draft goes stale when the customer replies or the deal changes, and a stale draft cannot be sent until you have seen what changed.",
+        "category": "approval",
+        "contract_line": 2454,
+        "status": "partial",
+        "gap": "Unasserted in the carried evidence: customer/deal mutation stales draft; stale send refused; current differences shown before new review. Asserted: reply stop stales draft."
+      },
+      {
+        "id": "CAPTURE-005",
+        "text": "Capture never writes a draft or sends a message, and a contact created from captured mail is do-not-contact until you clear it.",
+        "category": "approval",
+        "contract_line": 2436,
+        "status": "partial",
+        "gap": "Unasserted in the carried evidence: delegation credential refused; address-only intake works; proposed new contact stays blocked. Asserted: native intake works; collaborator intake refused; source signature refused."
+      },
+      {
+        "id": "AI-003",
+        "text": "If the AI is unavailable, records, scoring, search, hand-written drafts and sending still work.",
+        "category": "ai",
+        "contract_line": 2469,
+        "status": "partial",
+        "gap": "Unasserted in the carried evidence: configured-outage continuity; manual CRM updates; ingestion and linking continuity; scoring and queue placement continuity; search continuity; recommendation action and evidence readback; rendered generation-failure qualification. Connected mailboxes and live model or provider qualification remain unclaimed. Asserted: unconfigured generation unavailable; handwritten drafting, exact approval and one accepted customer-mail submission continue with AI unconfigured."
+      },
+      {
+        "id": "RECORD-004",
+        "text": "Merging duplicates needs you to choose the surviving record and every conflicting value, and refuses if either record changed after your review.",
+        "category": "approval",
+        "contract_line": 2413,
+        "status": "done",
+        "gap": ""
+      },
+      {
+        "id": "DATA-002",
+        "text": "Deleting a contact removes their email, signals, drafts and message bodies from records, search, exports and later AI or mail requests within five minutes.",
+        "category": "erasure",
+        "contract_line": 2483,
+        "status": "partial",
+        "gap": "Unasserted in the carried evidence: contact erasure redacts stored Slack content; company erasure redacts stored Slack content; deal erasure redacts stored Slack content; provider delete requests tracked; each provider-deletion outcome visible; aliases erased; imported/captured evidence erased; drafts erased; transfer copies withdrawn; AI absence; mail absence; anonymous audit; completion within five minutes; replay cannot recreate erased content. Asserted: search absence; export absence."
+      }
+    ]
+  },
+  {
+    "seed": "spool",
+    "status_counts": {
+      "done": 23,
+      "partial": 53,
+      "missing": 29
+    },
+    "promises": [
+      {
+        "id": "ERR-003",
+        "text": "Error details are scrubbed before they are stored: emails, tokens and passwords are removed, and headers, cookies and request bodies are not kept by default.",
+        "category": "privacy",
+        "contract_line": 1683,
+        "status": "done",
+        "gap": ""
+      },
+      {
+        "id": "ERR-004",
+        "text": "Owner sign-in, error sending and read-only agent access are separate, revoking one takes effect on the next request, and your source maps are never public.",
+        "category": "access",
+        "contract_line": 1684,
+        "status": "done",
+        "gap": ""
+      },
+      {
+        "id": "ERR-002",
+        "text": "An error is only counted once it is fully saved, and a repeated send never counts twice.",
+        "category": "reliability",
+        "contract_line": 1682,
+        "status": "done",
+        "gap": ""
+      },
+      {
+        "id": "ERR-006",
+        "text": "Changes to an issue are recorded, and a resolved issue reopens as returning only when it appears in a later release, so an old release's error raises no false alarm.",
+        "category": "history",
+        "contract_line": 1686,
+        "status": "done",
+        "gap": ""
+      },
+      {
+        "id": "ERR-007",
+        "text": "The evidence packet is size-limited and never includes your source code.",
+        "category": "evidence",
+        "contract_line": 1687,
+        "status": "done",
+        "gap": ""
+      },
+      {
+        "id": "ERR-008",
+        "text": "Counts of errors accepted and rejected are visible, and a quiet period is never reported as proof an error is fixed.",
+        "category": "evidence",
+        "contract_line": 1688,
+        "status": "done",
+        "gap": ""
+      }
+    ]
+  }
+]

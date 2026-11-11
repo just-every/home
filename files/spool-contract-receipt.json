@@ -1,0 +1,6 @@
+{
+  "command": "gh api repos/just-every/run-spool/contents/CONTRACT.md?ref=v0.7.6",
+  "sha": "2be0fe59b0663f4bffa20177d02bfa32f788a60a",
+  "size": 323588,
+  "html_url": "https://github.com/just-every/run-spool/blob/v0.7.6/CONTRACT.md"
+}

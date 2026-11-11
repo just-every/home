@@ -1,0 +1,27 @@
+{
+  "browsers_closed_by_finally": true,
+  "terminated_recorded_servers_and_their_descendants": [
+    {
+      "pid": 2332,
+      "role": "server.pid",
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 2327,
+      "role": "server.pid",
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 2061,
+      "role": "server.pid",
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 2682,
+      "role": "baseline-server.pid",
+      "signal": "SIGTERM"
+    }
+  ],
+  "baseline_worktree_removed": true,
+  "candidate_node_modules_removed": true
+}

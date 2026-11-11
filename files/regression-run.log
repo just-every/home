@@ -1,0 +1,4 @@
+{"slug":"uptime","baselineVersion":"v0.5.5","candidateVersion":"v0.5.6","bodyIdenticalExceptVersion":true,"geometryIdentical":true,"scrollWidth":1440}
+{"slug":"lamp","baselineVersion":"v1.11.11","candidateVersion":"v1.11.12","bodyIdenticalExceptVersion":true,"geometryIdentical":true,"scrollWidth":1440}
+{"slug":"orbit","baselineVersion":"v0.4.5","candidateVersion":"v0.4.6","bodyIdenticalExceptVersion":true,"geometryIdentical":true,"scrollWidth":1440}
+{"slug":"spool","baselineVersion":"v0.7.5","candidateVersion":"v0.7.6","bodyIdenticalExceptVersion":true,"geometryIdentical":true,"scrollWidth":1440}

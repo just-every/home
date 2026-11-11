@@ -1,0 +1,42 @@
+{
+  "command": "gh api repos/just-every/home/actions/runs?head_sha=393067c8e694cb7d088fd44685a9d4dd37b0ae9d&per_page=100",
+  "runs": [
+    {
+      "id": 43105592978,
+      "name": "Verify branch",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "skipped",
+      "head_sha": "393067c8e694cb7d088fd44685a9d4dd37b0ae9d",
+      "head_branch": "cloud/je-sync-20",
+      "html_url": "https://github.com/just-every/home/actions/runs/43105592978",
+      "created_at": "2026-11-11T21:43:42Z",
+      "updated_at": "2026-11-11T21:44:30Z"
+    },
+    {
+      "id": 43105588825,
+      "name": "PR #44",
+      "event": "dynamic",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "393067c8e694cb7d088fd44685a9d4dd37b0ae9d",
+      "head_branch": "refs/pull/44/head",
+      "html_url": "https://github.com/just-every/home/actions/runs/43105588825",
+      "created_at": "2026-11-11T21:43:40Z",
+      "updated_at": "2026-11-11T21:44:49Z"
+    },
+    {
+      "id": 43105519553,
+      "name": "Verify branch",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "393067c8e694cb7d088fd44685a9d4dd37b0ae9d",
+      "head_branch": "cloud/je-sync-20",
+      "html_url": "https://github.com/just-every/home/actions/runs/43105519553",
+      "created_at": "2026-11-11T21:43:12Z",
+      "updated_at": "2026-11-11T21:44:30Z"
+    }
+  ],
+  "github_api_calls_used": 10
+}

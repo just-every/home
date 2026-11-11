@@ -1,0 +1,5 @@
+Use candidate cloud/je-sync-20 at 393067c8e694cb7d088fd44685a9d4dd37b0ae9d and PR https://github.com/just-every/home/pull/44. The observed main/PR base is 71a913e8667dc8a68e8cfc7e8fc04a1c401de2fa. Push Verify 43105519553 is completed/success on that exact SHA. PR Verify 43105592978 is deliberately skipped for cloud branches; dynamic PR run 43105588825 is successful.
+
+No clause changes, no new C follow-ups and no product changes were made by the gate. Counts stay 49 = 35 released + 14 coming soon. Signature verification was not claimed: only the required rer-release.dsse.json asset presence was observed. Preserve the existing landing hold, Mac publication scan, PR merge rules, deployment and live verification.
+
+The brief's Assisted/Managed literal price blocks do not occur in either baseline or candidate landing sources; the gate establishes that no pricing content changed. The evidence manifest records the exact detached review HEAD; an empty product_branch in that manifest is intentional, not a new product branch or READY signal.

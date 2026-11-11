@@ -1,0 +1,19 @@
+{
+  "command": "gh api repos/just-every/home/pulls/44 --jq {number,state,head:.head.sha,head_ref:.head.ref,base:.base.sha,base_ref:.base.ref,html_url}",
+  "result": {
+    "number": 44,
+    "state": "open",
+    "head": "393067c8e694cb7d088fd44685a9d4dd37b0ae9d",
+    "head_ref": "cloud/je-sync-20",
+    "base": "71a913e8667dc8a68e8cfc7e8fc04a1c401de2fa",
+    "base_ref": "main",
+    "html_url": "https://github.com/just-every/home/pull/44"
+  },
+  "github_api_calls": {
+    "pr": 1,
+    "release_lists": 4,
+    "tagged_contracts": 4,
+    "exact_head_runs": 1,
+    "total": 10
+  }
+}

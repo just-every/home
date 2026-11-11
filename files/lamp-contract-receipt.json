@@ -1,0 +1,6 @@
+{
+  "command": "gh api repos/just-every/run-lamp/contents/CONTRACT.md?ref=v1.11.12",
+  "sha": "30ea726f6b3295c6bb100fbb0015de3cd18b45e1",
+  "size": 440779,
+  "html_url": "https://github.com/just-every/run-lamp/blob/v1.11.12/CONTRACT.md"
+}

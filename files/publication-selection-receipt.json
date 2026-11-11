@@ -1,0 +1,9 @@
+{
+  "head": "393067c8e694cb7d088fd44685a9d4dd37b0ae9d",
+  "worktree_clean": true,
+  "index_clean": true,
+  "candidate_identity_log_command": "git log origin/main..HEAD --format=\"%an <%ae>%n%cn <%ce>%n%(trailers:only,unfold)\"",
+  "regular_file_selection": true,
+  "credential_shaped_text_matches": 0,
+  "files_reviewed": 48
+}
