@@ -1,0 +1,2 @@
+{"passed":true,"screens":8,"assertionWidth":1440,"proofWidths":[1440,390]}
+server stopped pid=29923

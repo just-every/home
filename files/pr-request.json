@@ -1,0 +1,6 @@
+{
+  "title": "sync: seed listings 11 Nov (3)",
+  "head": "cloud/je-sync-17",
+  "base": "main",
+  "body": "Advance Orbit v0.4.4 → v0.4.5, Spool v0.7.4 → v0.7.5 and HappyToHelp v0.4.18 → v0.4.19. Fresh sync also found Oncall v0.5.7 (released 08:31 UTC), so advance it from v0.5.6. All four have non-draft, non-prerelease GitHub Releases carrying rer-release.dsse.json; asset presence was checked, signatures were not cryptographically verified.\n\nRegenerate listings and record copy provenance at the new tags. Existing public wording remains unchanged after released-source review. No mark, colour, homepage, gallery or status changes. Counts remain 49 listings: 35 released, 14 coming soon. Excluded seeds and accepted pricing remain unchanged.\n\nValidation: npm ci, complete dry sync before/apply/after (final: zero findings across 49 readable seeds), copy-only apply, listings generation/check, type-check, lint, brand check and production build passed. Browser assertions at 1440 and proof at 1440/390 passed for all four changed pages. Only public/data/listings.json, scripts/seeds-sync/state.json and src/data/seed-pages.ts changed.\n\nCandidate a5fcb3ad373f028a71c9271daf5a682af20614f4. The lane retains deciding review, publication scan, landing, deployment and live verification."
+}

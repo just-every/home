@@ -1,0 +1,54 @@
+{
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-17",
+  "head": "a5fcb3ad373f028a71c9271daf5a682af20614f4",
+  "base": "c520b40c7b5bec6943a7e08bbb8fbdccc5ad535a",
+  "pr": "https://github.com/just-every/home/pull/41",
+  "product_push": "succeeded",
+  "push_log": "product-push.txt",
+  "candidate_commits": 1,
+  "public_claim_edits": 0,
+  "je_clause_status_changes": [],
+  "before_counts": {
+    "listings": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "after_counts": {
+    "listings": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "versions": {
+    "orbit": "v0.4.5",
+    "spool": "v0.7.5",
+    "happytohelp": "v0.4.19",
+    "oncall": "v0.5.7"
+  },
+  "withheld_eligible_changes": [],
+  "signature_verification": "not performed; DSSE asset presence checked",
+  "landing": "lane custody; not performed",
+  "verify": {
+    "run_id": 43004692443,
+    "observed_at": "2026-11-11T10:40:08.333203+00:00",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/home/actions/runs/43004692443",
+      "--jq",
+      "{status,conclusion,head_sha,html_url}"
+    ],
+    "result": {
+      "conclusion": "success",
+      "head_sha": "a5fcb3ad373f028a71c9271daf5a682af20614f4",
+      "html_url": "https://github.com/just-every/home/actions/runs/43004692443",
+      "status": "completed"
+    },
+    "ci_rest_calls": 2,
+    "pr_api_calls": 1,
+    "monitoring_call_budget": 10
+  },
+  "terminal_status": "READY",
+  "blockers": [],
+  "clone_cleanup": "scheduled after successful evidence publication and transfer verification"
+}

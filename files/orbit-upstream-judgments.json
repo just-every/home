@@ -1,0 +1,37 @@
+[
+  {
+    "clause": "RECORD-008",
+    "line": 2417,
+    "old_status": "partial",
+    "new_status": "done",
+    "only_evidence_changed": false
+  },
+  {
+    "clause": "BRIEF-002",
+    "line": 2472,
+    "old_status": "partial",
+    "new_status": "done",
+    "only_evidence_changed": false
+  },
+  {
+    "clause": "PUBLIC-002",
+    "line": 2479,
+    "old_status": "partial",
+    "new_status": "done",
+    "only_evidence_changed": false
+  },
+  {
+    "clause": "FORM-002",
+    "line": 2512,
+    "old_status": "partial",
+    "new_status": "done",
+    "only_evidence_changed": false
+  },
+  {
+    "clause": "AGENT-002",
+    "line": 2580,
+    "old_status": "partial",
+    "new_status": "done",
+    "only_evidence_changed": false
+  }
+]

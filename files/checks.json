@@ -1,0 +1,75 @@
+{
+  "head": "a5fcb3ad373f028a71c9271daf5a682af20614f4",
+  "checks": [
+    {
+      "command": "npm ci",
+      "exit_code": 0,
+      "log": "npm-ci.txt"
+    },
+    {
+      "command": "npm run seeds:sync -- --out ../packet/dry-before",
+      "exit_code": 0,
+      "log": "dry-before.txt"
+    },
+    {
+      "command": "npm run seeds:sync -- --copy-only --apply --out ../packet/copy-before",
+      "exit_code": 0,
+      "log": "copy-before.txt"
+    },
+    {
+      "command": "npm run seeds:sync -- --apply --out ../packet/apply",
+      "exit_code": 0,
+      "log": "apply.txt"
+    },
+    {
+      "command": "npm run seeds:sync -- --copy-only --apply --out ../packet/copy-after",
+      "exit_code": 0,
+      "log": "copy-after.txt"
+    },
+    {
+      "command": "npm run listings && npm run listings -- --check",
+      "exit_code": 0,
+      "log": "listings.txt"
+    },
+    {
+      "command": "npm run seeds:sync -- --out ../packet/dry-after",
+      "exit_code": 0,
+      "log": "dry-after.txt"
+    },
+    {
+      "command": "npm run type-check",
+      "exit_code": 0,
+      "log": "type-check.txt"
+    },
+    {
+      "command": "npm run lint",
+      "exit_code": 0,
+      "log": "lint.txt"
+    },
+    {
+      "command": "npm run build",
+      "exit_code": 0,
+      "log": "build.txt"
+    },
+    {
+      "command": "npm run brand -- --check",
+      "exit_code": 0,
+      "log": "brand-check.txt"
+    },
+    {
+      "command": "cloud_run nice -n 15 python3 /tmp/je-browser-run.py",
+      "exit_code": 0,
+      "log": "browser.txt"
+    }
+  ],
+  "browser_assertion_width": 1440,
+  "browser_proof_widths": [
+    1440,
+    390
+  ],
+  "browser_screens": 8,
+  "final_dry_sync_findings": 0,
+  "final_dry_sync_sources_readable": 49,
+  "local_full_suite": "not run, per brief",
+  "brand_sha256": "a54bb68daa5f1590e5a6eaafecf38c627e42fa014f65c0d7efaf81bee809b7a4"
+}

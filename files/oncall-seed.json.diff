@@ -1,0 +1,14 @@
+--- v0.5.6
+
++++ v0.5.7
+
+@@ -1,7 +1,7 @@
+
+ {
+   "id": "oncall",
+   "name": "Oncall",
+-  "version": "0.5.6",
++  "version": "0.5.7",
+   "maturity": "maintained",
+   "category": "operations",
+   "replaces": [

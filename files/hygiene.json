@@ -1,0 +1,10 @@
+{
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "scope_check": "pass",
+  "diff_whitespace_check": "pass",
+  "credential_shape_check": "pass"
+}

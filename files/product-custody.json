@@ -1,0 +1,10 @@
+{
+  "head": "a5fcb3ad373f028a71c9271daf5a682af20614f4",
+  "remote_advertised_head": "a5fcb3ad373f028a71c9271daf5a682af20614f4",
+  "clean": true,
+  "changed_paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ]
+}

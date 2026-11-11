@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "orbit",
+    "file": "README.md",
+    "diff_lines": 0
+  },
+  {
+    "slug": "orbit",
+    "file": "seed.json",
+    "diff_lines": 11
+  },
+  {
+    "slug": "spool",
+    "file": "README.md",
+    "diff_lines": 29
+  },
+  {
+    "slug": "spool",
+    "file": "seed.json",
+    "diff_lines": 11
+  },
+  {
+    "slug": "happytohelp",
+    "file": "README.md",
+    "diff_lines": 41
+  },
+  {
+    "slug": "happytohelp",
+    "file": "seed.json",
+    "diff_lines": 11
+  },
+  {
+    "slug": "oncall",
+    "file": "README.md",
+    "diff_lines": 11
+  },
+  {
+    "slug": "oncall",
+    "file": "seed.json",
+    "diff_lines": 11
+  }
+]

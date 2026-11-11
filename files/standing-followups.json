@@ -1,0 +1,56 @@
+[
+  {
+    "seed": "happytohelp",
+    "ref": "v0.4.19",
+    "file": "CONTRACT.md",
+    "row": 1269,
+    "clause": "`IDENTITY-003`",
+    "publication": "target",
+    "status": "partial"
+  },
+  {
+    "seed": "happytohelp",
+    "ref": "v0.4.19",
+    "file": "CONTRACT.md",
+    "row": 1279,
+    "clause": "`PORTABILITY-001`",
+    "publication": "target",
+    "status": "partial"
+  },
+  {
+    "seed": "terrace",
+    "ref": "v0.1.4",
+    "file": "CONTRACT.md",
+    "row": 546,
+    "clause": "`ACCT-001`",
+    "publication": "target",
+    "status": "done"
+  },
+  {
+    "seed": "terrace",
+    "ref": "v0.1.4",
+    "file": "CONTRACT.md",
+    "row": 547,
+    "clause": "`ACCT-002`",
+    "publication": "target",
+    "status": "partial"
+  },
+  {
+    "seed": "terrace",
+    "ref": "v0.1.4",
+    "file": "CONTRACT.md",
+    "row": 551,
+    "clause": "`ACCT-006`",
+    "publication": "target",
+    "status": "done"
+  },
+  {
+    "seed": "terrace",
+    "ref": "v0.1.4",
+    "file": "CONTRACT.md",
+    "row": 557,
+    "clause": "`ACCT-012`",
+    "publication": "target",
+    "status": "partial"
+  }
+]

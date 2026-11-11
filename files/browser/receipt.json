@@ -1,0 +1,89 @@
+{
+  "assertionWidth": 1440,
+  "proofWidths": [
+    1440,
+    390
+  ],
+  "results": [
+    {
+      "slug": "happytohelp",
+      "width": 1440,
+      "status": 200,
+      "version": "v0.4.19",
+      "screen": "browser/happytohelp-1440.png",
+      "assertions": [
+        "HTTP 200",
+        "updated version visible",
+        "structured data version matches",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "slug": "orbit",
+      "width": 1440,
+      "status": 200,
+      "version": "v0.4.5",
+      "screen": "browser/orbit-1440.png",
+      "assertions": [
+        "HTTP 200",
+        "updated version visible",
+        "structured data version matches",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "slug": "oncall",
+      "width": 1440,
+      "status": 200,
+      "version": "v0.5.7",
+      "screen": "browser/oncall-1440.png",
+      "assertions": [
+        "HTTP 200",
+        "updated version visible",
+        "structured data version matches",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "slug": "spool",
+      "width": 1440,
+      "status": 200,
+      "version": "v0.7.5",
+      "screen": "browser/spool-1440.png",
+      "assertions": [
+        "HTTP 200",
+        "updated version visible",
+        "structured data version matches",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "slug": "happytohelp",
+      "width": 390,
+      "status": 200,
+      "version": "v0.4.19",
+      "screen": "browser/happytohelp-390.png"
+    },
+    {
+      "slug": "orbit",
+      "width": 390,
+      "status": 200,
+      "version": "v0.4.5",
+      "screen": "browser/orbit-390.png"
+    },
+    {
+      "slug": "oncall",
+      "width": 390,
+      "status": 200,
+      "version": "v0.5.7",
+      "screen": "browser/oncall-390.png"
+    },
+    {
+      "slug": "spool",
+      "width": 390,
+      "status": 200,
+      "version": "v0.7.5",
+      "screen": "browser/spool-390.png"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "observed_at": "2026-11-11T10:35:06.832944+00:00",
+  "command": [
+    "gh",
+    "api",
+    "repos/just-every/home/actions/runs?head_sha=a5fcb3ad373f028a71c9271daf5a682af20614f4&per_page=100"
+  ],
+  "ci_calls": 1,
+  "runs": [
+    {
+      "id": 43004735242,
+      "name": "Verify branch",
+      "event": "pull_request",
+      "status": "pending",
+      "conclusion": null,
+      "head_sha": "a5fcb3ad373f028a71c9271daf5a682af20614f4",
+      "html_url": "https://github.com/just-every/home/actions/runs/43004735242"
+    },
+    {
+      "id": 43004731353,
+      "name": "PR #41",
+      "event": "dynamic",
+      "status": "in_progress",
+      "conclusion": null,
+      "head_sha": "a5fcb3ad373f028a71c9271daf5a682af20614f4",
+      "html_url": "https://github.com/just-every/home/actions/runs/43004731353"
+    },
+    {
+      "id": 43004692443,
+      "name": "Verify branch",
+      "event": "push",
+      "status": "in_progress",
+      "conclusion": null,
+      "head_sha": "a5fcb3ad373f028a71c9271daf5a682af20614f4",
+      "html_url": "https://github.com/just-every/home/actions/runs/43004692443"
+    }
+  ]
+}
