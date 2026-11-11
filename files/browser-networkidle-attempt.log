@@ -1,0 +1,10 @@
+page.goto: Timeout 60000ms exceeded.
+Call log:
+[2m  - navigating to "http://127.0.0.1:4317/orbit", waiting until "networkidle"[22m
+
+    at /tmp/je-browser.cjs:17:31 {
+  log: [
+    '  - navigating to "http://127.0.0.1:4317/orbit", waiting until "networkidle"'
+  ],
+  name: 'TimeoutError'
+}

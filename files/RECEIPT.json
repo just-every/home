@@ -1,0 +1,178 @@
+{
+  "schema": 1,
+  "tag": "je-gate-25",
+  "repository": "just-every/home",
+  "role": "independent deciding gate",
+  "candidate_branch": "cloud/je-sync-17",
+  "gate_branch": "cloud/je-gate-25 (local only)",
+  "candidate_head": "a5fcb3ad373f028a71c9271daf5a682af20614f4",
+  "baseline_head": "c520b40c7b5bec6943a7e08bbb8fbdccc5ad535a",
+  "pr": "https://github.com/just-every/home/pull/41",
+  "observed_at": "2026-11-11T11:02:54.188046+00:00",
+  "checks": [
+    {
+      "command": "npm ci",
+      "exit_code": 0,
+      "log": "npm-ci.log",
+      "log_sha256": "091c76c1c0f10c73107def4515b54aa70444205addd3d7aa506c05e1f2081962",
+      "head": "a5fcb3ad373f028a71c9271daf5a682af20614f4"
+    },
+    {
+      "command": "npm run listings -- --check",
+      "exit_code": 0,
+      "log": "listings-check.log",
+      "log_sha256": "8cbef4f8b3f74fe74438c2725d5c9fc79521670c9f240ea2d11548bdc20775d9",
+      "head": "a5fcb3ad373f028a71c9271daf5a682af20614f4"
+    },
+    {
+      "command": "npm run listings",
+      "exit_code": 0,
+      "log": "listings-write.log",
+      "log_sha256": "7b671fd81482bab64966dd028eb9567615f91219f8722031cd45cf326cfbfbb4",
+      "head": "a5fcb3ad373f028a71c9271daf5a682af20614f4"
+    },
+    {
+      "command": "git diff --exit-code",
+      "exit_code": 0,
+      "log": "generated-diff.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "head": "a5fcb3ad373f028a71c9271daf5a682af20614f4"
+    },
+    {
+      "command": "npm run type-check",
+      "exit_code": 0,
+      "log": "type-check.log",
+      "log_sha256": "5a848264e3d4f39bae1d347b4ff2be16348436fdcdd3a42c91c0fca2a8f23403",
+      "head": "a5fcb3ad373f028a71c9271daf5a682af20614f4"
+    },
+    {
+      "command": "npm run lint",
+      "exit_code": 0,
+      "log": "lint.log",
+      "log_sha256": "02ef98276ac56c4ea2e84e7291740f26bb5d7d07639d8ce90366e463210307f3",
+      "head": "a5fcb3ad373f028a71c9271daf5a682af20614f4"
+    },
+    {
+      "command": "cloud_run npm run build",
+      "exit_code": 0,
+      "log": "build.log",
+      "log_sha256": "6b35f49164360b6de3668caa1c3b3ebd6036fd5c27098f9c795d2fefba957608",
+      "head": "a5fcb3ad373f028a71c9271daf5a682af20614f4"
+    },
+    {
+      "command": "cloud_run node /tmp/je-browser.cjs candidate",
+      "exit_code": 0,
+      "log": "candidate-browser.log",
+      "log_sha256": "f9080d90eea958286fc3c824e280f2b4d9cfcda5f6a20d7a354988b5dc36cf90",
+      "head": "a5fcb3ad373f028a71c9271daf5a682af20614f4"
+    },
+    {
+      "command": "cloud_run npm run build (baseline main)",
+      "exit_code": 0,
+      "log": "baseline-build.log",
+      "log_sha256": "67db225ec6bf122f05534d77c47c05a4771d0c150c20c380fd7f49aa7548da5a",
+      "head": "c520b40c7b5bec6943a7e08bbb8fbdccc5ad535a"
+    },
+    {
+      "command": "cloud_run node /tmp/je-browser.cjs baseline",
+      "exit_code": 0,
+      "log": "baseline-browser.log",
+      "log_sha256": "5fb75aad65b9a16c5665c784b9984986fd371f0ad08aef184cbdda2bd75cbf01",
+      "head": "c520b40c7b5bec6943a7e08bbb8fbdccc5ad535a"
+    },
+    {
+      "command": "python3 /tmp/je-audit.py",
+      "exit_code": 0,
+      "log": "audit-command.log",
+      "log_sha256": "63f98ea0c5ded207210387243d3ab05e39603139b219cf4efbd6a4847b6c4557",
+      "head": "a5fcb3ad373f028a71c9271daf5a682af20614f4"
+    }
+  ],
+  "ci": {
+    "total_count": 3,
+    "workflow_runs": [
+      {
+        "conclusion": "skipped",
+        "event": "pull_request",
+        "head_branch": "cloud/je-sync-17",
+        "head_sha": "a5fcb3ad373f028a71c9271daf5a682af20614f4",
+        "html_url": "https://github.com/just-every/home/actions/runs/43004735242",
+        "id": 43004735242,
+        "name": "Verify branch",
+        "path": ".github/workflows/verify.yml",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "event": "dynamic",
+        "head_branch": "refs/pull/41/head",
+        "head_sha": "a5fcb3ad373f028a71c9271daf5a682af20614f4",
+        "html_url": "https://github.com/just-every/home/actions/runs/43004731353",
+        "id": 43004731353,
+        "name": "PR #41",
+        "path": "dynamic/github-code-scanning/codeql",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "event": "push",
+        "head_branch": "cloud/je-sync-17",
+        "head_sha": "a5fcb3ad373f028a71c9271daf5a682af20614f4",
+        "html_url": "https://github.com/just-every/home/actions/runs/43004692443",
+        "id": 43004692443,
+        "name": "Verify branch",
+        "path": ".github/workflows/verify.yml",
+        "status": "completed"
+      }
+    ]
+  },
+  "api_calls_used": 10,
+  "api_budget": 10,
+  "contract_status_changes": [],
+  "product_commits_created": 0,
+  "product_pushes": 0,
+  "findings": {
+    "blocking": 0,
+    "new_followups": 0,
+    "out_of_scope_D": 1,
+    "process_note_G": 1
+  },
+  "public_door_proof": {
+    "candidate_widths": [
+      1440,
+      390
+    ],
+    "assertion_width": 1440,
+    "baseline_widths": [
+      1440
+    ],
+    "routes": [
+      "/orbit",
+      "/spool",
+      "/happytohelp",
+      "/oncall"
+    ],
+    "mocking": false
+  },
+  "toolchain": {
+    "node": "v24.19.0",
+    "pnpm": "10.12.4",
+    "browser": "/usr/bin/chromium --no-sandbox"
+  },
+  "applicable_generators": {
+    "listings": "check passes, write no diff",
+    "source_lock": "not present or documented in this repository",
+    "contract_views": "no CONTRACT.md/ACCEPTANCE.md/docs/CLAIMS.md or generator present in this repository",
+    "migration_ledger": "no documented migration-ledger command; no migration changes"
+  },
+  "server_pids_started": [
+    1473,
+    2316
+  ],
+  "server_pids_stopped": [
+    1473,
+    2316
+  ],
+  "browsers_closed": true,
+  "verdict": "GATE PASS a5fcb3ad373f028a71c9271daf5a682af20614f4"
+}

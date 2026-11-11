@@ -1,0 +1,362 @@
+[
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.19",
+    "sentence": "Imports are reviewed before anything is written, send no messages to your customers, can be undone as a whole, and keep source dates, private notes and publication state.",
+    "clause": "MOVE-IN-001",
+    "source_status": "done",
+    "source_line": 1207,
+    "gap": "",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.19",
+    "sentence": "Customer and agent messages are stored once, and two conflicting final replies can never both be accepted.",
+    "clause": "CONVERSATION-001",
+    "source_status": "partial",
+    "source_line": 1204,
+    "gap": "Main re-audit: unasserted in the cited Evidence set: model writer race; import writer race; lost-response final-reply race. Asserted: competing visitor revisions admit one writer; exact duplicate replay; changed replay refused; stale operator frontier refused; operator admission; erased message identity; erased message revision; erased message content removed; erased transcript frontier. Prior-reference qualification (before test consolidation): Carried-done audit: unasserted in the cited Evidence set: model writer race; import writer race; lost-response final-reply race. Asserted: competing visitor revisions admit one writer; exact duplicate replay; changed replay refused; stale operator frontier refused; operator admission; erased message identity; erased message revision; erased message content removed; erased transcript frontier.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.19",
+    "sentence": "Messages are saved before they are shown live, so a reload or dropped connection recovers everything that was sent, and an AI draft never becomes a final answer until it is safely accepted.",
+    "clause": "DELIVERY-001",
+    "source_status": "partial",
+    "source_line": 1205,
+    "gap": "Carried-done audit: unasserted in the cited Evidence set: widget reconnect replay; operator reconnect replay; runtime restart replay; committed messages recovered; committed attachments recovered; unauthorized replay denied; superseded provisional AI never becomes final. The cited registry invokes the delivered workflow, but its helper assertions are not named in this clause\u2019s old Evidence set; no direct outcome assertion is claimed here.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.19",
+    "sentence": "Customers can rate a resolution with a thumbs up or down and a short comment, and comments are removed if the contact is erased.",
+    "clause": "OUTCOMES-001",
+    "source_status": "partial",
+    "source_line": 1208,
+    "gap": "Main re-audit: unasserted in the cited Evidence set: rerating retains history; other actors cannot rate; revoked session cannot rate; reopened cycle cannot use previous rating; erasure redacts comment history. Asserted: close and initial eligible rating; rerating preserves latest value; expired session cannot rate; second close has a distinct cycle; operator reads past-cycle feedback after reopen; erasure redacts current comments; human outcome from visible answer; assisted outcome from visible answer; AI-only outcome from visible answer; missing provenance stays unknown.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.19",
+    "sentence": "Reports use your own calendar and time zone, count each conversation once, and export to a spreadsheet file that is safe to open.",
+    "clause": "REPORTS-001",
+    "source_status": "done",
+    "source_line": 1209,
+    "gap": "",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.19",
+    "sentence": "With no AI key, the AI is simply not assigned to new conversations and your team keeps them; your company's policy sets AI spending limits and uncertain attempts are never silently repeated.",
+    "clause": "AI-001",
+    "source_status": "partial",
+    "source_line": 1212,
+    "gap": "Carried-done audit: unasserted in the cited Evidence set: configured suggestion; configured reply; normalized stream events; per-round usage; bounded context; bounded tools; policy budgets; missing-provider error; durable daily skip; crash never replays; ambiguous attempt never replays. The cited registry invokes the delivered workflow, but its helper assertions are not named in this clause\u2019s old Evidence set; no direct outcome assertion is claimed here.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.19",
+    "sentence": "Revoking a computer's access ends its authority at once, and HappyToHelp never claims that work already running there was stopped.",
+    "clause": "DELEGATION-001",
+    "source_status": "partial",
+    "source_line": 1215,
+    "gap": "Carried-done audit: unasserted in the cited Evidence set: packaged connector pairing; read-only investigation; separately authorized child fix; distinct read-only observation; human Send; exact-request replay; stale work refused; revoked work refused; offline work refused; unverified work refused; uncertain work not replayed; resolve versus resolve-and-reply; revocation does not assert cancellation. The cited registry invokes the delivered workflow, but its helper assertions are not named in this clause\u2019s old Evidence set; no direct outcome assertion is claimed here.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.19",
+    "sentence": "API tokens have chosen scopes, are shown once, are stored hashed and can expire; an unclear webhook result is not sent again.",
+    "clause": "CONNECTIONS-001",
+    "source_status": "partial",
+    "source_line": 1210,
+    "gap": "Main re-audit: unasserted in the cited Evidence set: issued token has exact scopes; issued token has expiry; show-once secret; hashed secret storage; unsafe literal destination refused; outgoing byte bound. Asserted: scoped native API use; token revocation; token expiry; erasure replay fences; signed events; Slack escaped customer text; redirect target never requested; declared response bound; streamed response bound; timeout remains uncertain; server error remains uncertain; uncertain work never replays; rate-limit retry retains same event. Prior-reference qualification (before test consolidation): Carried-done audit: unasserted in the cited Evidence set: show-once secret; hashed secret storage; unsafe literal destination refused. Asserted: issued token has exact scopes; issued token has expiry; scoped native API use; token revocation; token expiry; erasure replay fences; signed events; Slack escaped customer text; redirect target never requested; outgoing byte bound; declared response bound; streamed response bound; timeout remains uncertain; server error remains uncertain; uncertain work never replays; rate-limit retry retains same event.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.19",
+    "sentence": "Teammates can sign in with an authenticator app or a security key plus one-time recovery codes, and an owner can require it for everyone or by role.",
+    "clause": "IDENTITY-003",
+    "source_status": "partial",
+    "source_line": 1269,
+    "gap": "Carried-done audit: unasserted in the cited Evidence set: TOTP enrollment; role policy forces factor enrollment; single-use recovery codes; missing factor refused; wrong factor refused; replayed TOTP refused; used recovery refused; passkey sign-in; owner reset needs own step-up; reset notification; reset audit; refund needs recent step-up; export needs recent step-up; installation owner recovery; existing no-factor sessions revoked. The direct enrollment call asserts only HTTP 201. Enrollment state and recovery-code assertions are in `tests/helpers/identity/two-factor.mjs`, outside the carried Evidence set.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.19",
+    "sentence": "You can export your conversations, files, contacts, help articles, settings and history in one checked archive and restore it into a clean installation; sign-ins and provider secrets are left out.",
+    "clause": "PORTABILITY-001",
+    "source_status": "partial",
+    "source_line": 1279,
+    "gap": "Carried-done audit: unasserted in the cited Evidence set: nonempty target refused. Asserted: source destroyed before restore; clean independent install; each populated portable business record; native support store equality; every attachment byte; R2 metadata equality; erasure fences preserved; corrupt archive refused; oversized archive refused; refusal has no partial restore; restored work is inert; Durable Object history captured; interrupted business action state retained inertly.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "orbit",
+    "tag": "v0.4.5",
+    "sentence": "Signals, scores and AI text never grant permission to send. Your company's policy decides agent sending; when approval is required, a person approves the exact saved recipients, subject and body, and later changes invalidate it.",
+    "clause": "OUT-001",
+    "source_status": "partial",
+    "source_line": 2455,
+    "gap": "Unasserted in the carried evidence: ingestion cannot dispatch; unreviewed agent call has no effect under held policy; signed-in person approves unchanged saved revision. Asserted: exact reviewed bytes dispatched.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "orbit",
+    "tag": "v0.4.5",
+    "sentence": "A deal's score shows every signal it used, with source, time and weight, beside the reason for the recommendation.",
+    "clause": "OPP-004",
+    "source_status": "partial",
+    "source_line": 2444,
+    "gap": "Not reachable in the product, so unasserted: following each contribution to its source evidence. A contribution in the deal's Why this is first list has no link or visible signal ID, Recorded details lists each signal's subject, kind, source and linking basis without ids, and no route serves a signal's source evidence; `tests/e2e/operator.spec.mjs` resolves each contribution's signal ID from the opportunity API inside the test and then finds its Recorded details line by subject text. Asserted at 390 and 1440 in the browser: every contribution shown with its signal subject, type, signed points and source; the current recommendation's reason and next action beside them; each contributing signal's Recorded details line names its source and how it was linked.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "orbit",
+    "tag": "v0.4.5",
+    "sentence": "Orbit uses no tracking script, pixel or cookie, and does not fingerprint visitors.",
+    "clause": "SIGNAL-007",
+    "source_status": "partial",
+    "source_line": 2429,
+    "gap": "Unasserted in the carried evidence: no tracking script/pixel/cookie in public assets/network; identity-free chat held; unsupported identity absent from customer history. Asserted: identity-free page view held.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "orbit",
+    "tag": "v0.4.5",
+    "sentence": "A reply, a booked meeting, an unsubscribe or a permanent bounce cancels that contact's scheduled messages.",
+    "clause": "OUT-007",
+    "source_status": "partial",
+    "source_line": 2461,
+    "gap": "Unasserted in the carried evidence: booking cancels scheduled mail; unsubscribe cancels scheduled mail; bounce cancels scheduled mail; manual stop cancels scheduled mail; replay has no second effect. Asserted: reply cancels scheduled mail; stop stales unsent draft.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "orbit",
+    "tag": "v0.4.5",
+    "sentence": "Opt-out is on by default for sequence email and off for one-to-one email. Messages set to carry it include one-click unsubscribe; an identified opt-out marks the contact do-not-contact within a minute and cancels scheduled messages.",
+    "clause": "OUT-012",
+    "source_status": "done",
+    "source_line": 2466,
+    "gap": "",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "orbit",
+    "tag": "v0.4.5",
+    "sentence": "A draft goes stale when the customer replies or the deal changes, and a stale draft cannot be sent until you have seen what changed.",
+    "clause": "ACTION-005",
+    "source_status": "partial",
+    "source_line": 2454,
+    "gap": "Unasserted in the carried evidence: customer/deal mutation stales draft; stale send refused; current differences shown before new review. Asserted: reply stop stales draft.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "orbit",
+    "tag": "v0.4.5",
+    "sentence": "Capture never writes a draft or sends a message, and a contact created from captured mail is do-not-contact until you clear it.",
+    "clause": "CAPTURE-005",
+    "source_status": "partial",
+    "source_line": 2436,
+    "gap": "Unasserted in the carried evidence: delegation credential refused; address-only intake works; proposed new contact stays blocked. Asserted: native intake works; collaborator intake refused; source signature refused.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "orbit",
+    "tag": "v0.4.5",
+    "sentence": "If the AI is unavailable, records, scoring, search, hand-written drafts and sending still work.",
+    "clause": "AI-003",
+    "source_status": "partial",
+    "source_line": 2469,
+    "gap": "Unasserted in the carried evidence: configured-outage continuity; manual CRM updates; ingestion and linking continuity; scoring and queue placement continuity; search continuity; recommendation action and evidence readback; rendered generation-failure qualification. Connected mailboxes and live model or provider qualification remain unclaimed. Asserted: unconfigured generation unavailable; handwritten drafting, exact approval and one accepted customer-mail submission continue with AI unconfigured.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "orbit",
+    "tag": "v0.4.5",
+    "sentence": "Merging duplicates needs you to choose the surviving record and every conflicting value, and refuses if either record changed after your review.",
+    "clause": "RECORD-004",
+    "source_status": "done",
+    "source_line": 2413,
+    "gap": "",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "orbit",
+    "tag": "v0.4.5",
+    "sentence": "Deleting a contact removes their email, signals, drafts and message bodies from records, search, exports and later AI or mail requests within five minutes.",
+    "clause": "DATA-002",
+    "source_status": "partial",
+    "source_line": 2483,
+    "gap": "Unasserted in the carried evidence: contact erasure redacts stored Slack content; company erasure redacts stored Slack content; deal erasure redacts stored Slack content; provider delete requests tracked; each provider-deletion outcome visible; aliases erased; imported/captured evidence erased; drafts erased; transfer copies withdrawn; AI absence; mail absence; anonymous audit; completion within five minutes; replay cannot recreate erased content. Asserted: search absence; export absence.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.5.7",
+    "sentence": "Oncall sends no texts, calls or push alerts, so your existing pager stays in charge while you use it.",
+    "clause": "OC-012",
+    "source_status": "done",
+    "source_line": 1442,
+    "gap": "",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.5.7",
+    "sentence": "Oncall sends signed response events only to endpoints an administrator approves; paging stays off, and email is for sign-in links only.",
+    "clause": "OC-006",
+    "source_status": "partial",
+    "source_line": 1436,
+    "gap": "No cited test asserts the absence of an AI call, that an exported draft stays marked unreviewed, or that a source link grants no access; no paging receipt, no production action and no Lamp publication are asserted. This is the current-release safety boundary, not the final product boundary.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.5.7",
+    "sentence": "A runbook is copied into the incident when it is declared, so later edits never rewrite instructions mid-incident.",
+    "clause": "OC-005",
+    "source_status": "done",
+    "source_line": 1435,
+    "gap": "",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.5.7",
+    "sentence": "Resolving an incident needs recovery evidence and a summary, and every change is recorded in an attributed timeline.",
+    "clause": "OC-004",
+    "source_status": "done",
+    "source_line": 1434,
+    "gap": "",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.5.7",
+    "sentence": "Incident records you write are never deleted automatically.",
+    "clause": "OC-008",
+    "source_status": "done",
+    "source_line": 1438,
+    "gap": "",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.5.7",
+    "sentence": "Rotations hand over by wall-clock time in your named zone, and clock-change gaps show up as visible gaps.",
+    "clause": "OC-011",
+    "source_status": "done",
+    "source_line": 1441,
+    "gap": "",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.5.7",
+    "sentence": "Viewers can only read, responders coordinate, and admins manage; alert-sending credentials grant no read access, and removed access stops on the next request.",
+    "clause": "OC-003",
+    "source_status": "done",
+    "source_line": 1433,
+    "gap": "",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.5.7",
+    "sentence": "Replaying alert routing only reads: it creates no alert, incident or outside effect.",
+    "clause": "OC-002",
+    "source_status": "done",
+    "source_line": 1432,
+    "gap": "",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.5.7",
+    "sentence": "A move-in preview writes nothing, a person must review it before it is applied, and imported schedules stay paused.",
+    "clause": "OC-021",
+    "source_status": "done",
+    "source_line": 1451,
+    "gap": "",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "oncall",
+    "tag": "v0.5.7",
+    "sentence": "A move-in can be undone, and edits you made afterwards are kept rather than overwritten.",
+    "clause": "OC-022",
+    "source_status": "partial",
+    "source_line": 1452,
+    "gap": "Synthetic signed standing replacement/addition, restart/reconcile and newest-first undo are exercised; gone/over-allowance/native-edit refusals preserve records and paging stays OFF. No cited test resumes an interrupted import to completion: the restart in the shape journey falls between apply calls without asserting the job was unfinished, and the lease-expired import is refused and rolled back. Apply, interruption, restart, undo, revoked authority, SQL rollback, idempotent and conflicting replays and named undo conflicts are asserted.",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "spool",
+    "tag": "v0.7.5",
+    "sentence": "Error details are scrubbed before they are stored: emails, tokens and passwords are removed, and headers, cookies and request bodies are not kept by default.",
+    "clause": "ERR-003",
+    "source_status": "done",
+    "source_line": 1683,
+    "gap": "",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "spool",
+    "tag": "v0.7.5",
+    "sentence": "Owner sign-in, error sending and read-only agent access are separate, revoking one takes effect on the next request, and your source maps are never public.",
+    "clause": "ERR-004",
+    "source_status": "done",
+    "source_line": 1684,
+    "gap": "",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "spool",
+    "tag": "v0.7.5",
+    "sentence": "An error is only counted once it is fully saved, and a repeated send never counts twice.",
+    "clause": "ERR-002",
+    "source_status": "done",
+    "source_line": 1682,
+    "gap": "",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "spool",
+    "tag": "v0.7.5",
+    "sentence": "Changes to an issue are recorded, and a resolved issue reopens as returning only when it appears in a later release, so an old release's error raises no false alarm.",
+    "clause": "ERR-006",
+    "source_status": "done",
+    "source_line": 1686,
+    "gap": "",
+    "assessment": "pre-existing overbroad plain-Resolve wording, tier D"
+  },
+  {
+    "seed": "spool",
+    "tag": "v0.7.5",
+    "sentence": "The evidence packet is size-limited and never includes your source code.",
+    "clause": "ERR-007",
+    "source_status": "done",
+    "source_line": 1687,
+    "gap": "",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  },
+  {
+    "seed": "spool",
+    "tag": "v0.7.5",
+    "sentence": "Counts of errors accepted and rejected are visible, and a quiet period is never reported as proof an error is fixed.",
+    "clause": "ERR-008",
+    "source_status": "done",
+    "source_line": 1688,
+    "gap": "",
+    "assessment": "no explicit source contradiction; partial evidence alone is not a finding"
+  }
+]

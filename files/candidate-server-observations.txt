@@ -1,0 +1,7 @@
+Extracted from the observed candidate next start terminal output (not a full server log).
+Server ready on 127.0.0.1:4317; server PID 1473; stopped by SIGTERM after candidate browser completion.
+Warning: next start with output: standalone recommends node .next/standalone/server.js.
+Token snapshot unavailable ReferenceError: caches is not defined.
+Unhandled API error D1_ERROR: no such table: page_views: SQLITE_ERROR.
+These ancillary token/analytics runtime limitations were also observed with baseline main in baseline-server.log.
+Product page HTTP responses, version rendering, geometry and browser pageerror checks passed.

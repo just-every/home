@@ -1,0 +1,7 @@
+# Landing notes for je-gate-25
+
+NOTE G: Local `next start` on candidate and baseline lacks production Cloudflare cache/analytics bindings: token snapshot reads report `caches is not defined`, and analytics writes report missing local `page_views`. Both versions return all four product pages successfully with no browser page errors and identical geometry. The first browser harness waited for networkidle while gallery media kept loading and timed out; the same public-door probe then completed using DOMContentLoaded and loaded fonts. No application route, response or network request was mocked. These local harness/runtime observations do not demonstrate a regression and do not affect the gate.
+
+The fleet hook installer linked Husky dispatcher hooks through a new directory. A checkout initially reported its missing `h` companion; local untracked Git metadata forwarding was adjusted to exec original hook paths, preserving Husky's own path resolution. No product commit was created, and all hooks remain active. This is setup metadata, not product code.
+
+The prescribed shallow gate clone cannot run the fleet Mac's full-history publication scan. The gate checked all added product lines for credential shapes and selected only actual non-secret public evidence. The Mac publication scan and PR landing/deployment remain lane responsibilities. No READY line is issued for an unpushed gate product branch.

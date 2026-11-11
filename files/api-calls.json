@@ -1,0 +1,122 @@
+[
+  {
+    "number": 1,
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/home/pulls/41",
+      "--jq",
+      "{number,state,html_url,head:{ref:.head.ref,sha:.head.sha},base:{ref:.base.ref,sha:.base.sha},merged,mergeable}"
+    ],
+    "time": "2026-11-11T10:51:04Z",
+    "exit_code": 0
+  },
+  {
+    "number": 2,
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/home/actions/runs?head_sha=a5fcb3ad373f028a71c9271daf5a682af20614f4&per_page=100",
+      "--jq",
+      "{total_count,workflow_runs:[.workflow_runs[]|{id,name,event,status,conclusion,head_sha,html_url,head_branch,path}]}"
+    ],
+    "time": "2026-11-11T10:52:13Z",
+    "exit_code": 0
+  },
+  {
+    "number": 3,
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-orbit/releases?per_page=100",
+      "--jq",
+      "[.[]|select(.tag_name==\"v0.4.5\")|{id,tag_name,draft,prerelease,published_at,html_url,target_commitish,assets:[.assets[]|{name,size,browser_download_url}]}]"
+    ],
+    "time": "2026-11-11T10:52:13Z",
+    "exit_code": 0
+  },
+  {
+    "number": 4,
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-spool/releases?per_page=100",
+      "--jq",
+      "[.[]|select(.tag_name==\"v0.7.5\")|{id,tag_name,draft,prerelease,published_at,html_url,target_commitish,assets:[.assets[]|{name,size,browser_download_url}]}]"
+    ],
+    "time": "2026-11-11T10:52:14Z",
+    "exit_code": 0
+  },
+  {
+    "number": 5,
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-happytohelp/releases?per_page=100",
+      "--jq",
+      "[.[]|select(.tag_name==\"v0.4.19\")|{id,tag_name,draft,prerelease,published_at,html_url,target_commitish,assets:[.assets[]|{name,size,browser_download_url}]}]"
+    ],
+    "time": "2026-11-11T10:52:15Z",
+    "exit_code": 0
+  },
+  {
+    "number": 6,
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-oncall/releases?per_page=100",
+      "--jq",
+      "[.[]|select(.tag_name==\"v0.5.7\")|{id,tag_name,draft,prerelease,published_at,html_url,target_commitish,assets:[.assets[]|{name,size,browser_download_url}]}]"
+    ],
+    "time": "2026-11-11T10:52:16Z",
+    "exit_code": 0
+  },
+  {
+    "number": 7,
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-orbit/contents/CONTRACT.md?ref=v0.4.5",
+      "-H",
+      "Accept: application/vnd.github.raw+json"
+    ],
+    "time": "2026-11-11T10:52:17Z",
+    "exit_code": 0
+  },
+  {
+    "number": 8,
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-spool/contents/CONTRACT.md?ref=v0.7.5",
+      "-H",
+      "Accept: application/vnd.github.raw+json"
+    ],
+    "time": "2026-11-11T10:52:17Z",
+    "exit_code": 0
+  },
+  {
+    "number": 9,
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-happytohelp/contents/CONTRACT.md?ref=v0.4.19",
+      "-H",
+      "Accept: application/vnd.github.raw+json"
+    ],
+    "time": "2026-11-11T10:52:18Z",
+    "exit_code": 0
+  },
+  {
+    "number": 10,
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-oncall/contents/CONTRACT.md?ref=v0.5.7",
+      "-H",
+      "Accept: application/vnd.github.raw+json"
+    ],
+    "time": "2026-11-11T10:52:19Z",
+    "exit_code": 0
+  }
+]

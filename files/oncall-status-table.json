@@ -1,0 +1,911 @@
+[
+  {
+    "id": "OC-001",
+    "title": "Event identity and alerts",
+    "kind": "published",
+    "status": "done",
+    "evidence": "`src/api.ts`; `src/family/response-operations/domain.ts`; `src/intake/lifecycle.ts`; `tests/runtime.mjs`; `tests/intake.mjs`",
+    "gap": "",
+    "line": 1431
+  },
+  {
+    "id": "OC-002",
+    "title": "Routing replay",
+    "kind": "published",
+    "status": "done",
+    "evidence": "`src/api.ts`; `src/orchestration/replay.ts`; `src/family/response-operations/domain.ts`; `tests/runtime.mjs` \u2014 coordinationJourney (the OC-002 native replay block): a severity-routed event is admitted under a policy, the policy is changed by an attributed command, and the authorized replay request for a newer-generation event then the original returns decisions in submitted order, each historical decision, owner, policy version and evaluation snapshot equal to the immutable admission record beside the proposed decision under the changed policy, with unchanged application state, workspace revision and permanent audit rows before and after (zero writes), and anonymous and revoked sessions refused with no comparison.",
+    "gap": "",
+    "line": 1432
+  },
+  {
+    "id": "OC-003",
+    "title": "Roles and authority",
+    "kind": "published",
+    "status": "done",
+    "evidence": "`tests/runtime.mjs` \u2014 coordinationJourney: session roles, responder workspace reads, attributed acknowledgment and note, administrator refusals, held downgrade and revoke mutations, minimal bearer and signed intake receipts; `tests/member-coordination-browser.mjs` \u2014 responder coordinates and reloads attributed history.",
+    "gap": "",
+    "line": 1433
+  },
+  {
+    "id": "OC-004",
+    "title": "Incident state transitions",
+    "kind": "published",
+    "status": "done",
+    "evidence": "`tests/runtime.mjs` \u2014 coordinationJourney: exact admitted alert links, responder commander, stale and concurrent refusal, source recovery independence, unchanged state after recovery without evidence and resolution without a summary, evidenced recovery, resolved state and human-attributed lifecycle history; `tests/triage.mjs` \u2014 bulk resolution refuses missing recovery evidence.",
+    "gap": "",
+    "line": 1434
+  },
+  {
+    "id": "OC-005",
+    "title": "Copied runbooks",
+    "kind": "published",
+    "status": "done",
+    "evidence": "`tests/runtime.mjs` \u2014 coordinationJourney: declaration copies every service step; an accepted service runbook edit reads back while the declared incident, its copied steps and revision stay unchanged; an owned, due-dated action reads back open with no evidence; completion without a URL is refused with every record unchanged; an evidenced submission awaits human acceptance and is accepted; the unfinished action, copied steps with checklist progress and an editable review are retained after resolution.; `tests/runtime.mjs` (coordinationJourney)",
+    "gap": "",
+    "line": 1435
+  },
+  {
+    "id": "OC-006",
+    "title": "Bounded outbound incident effects",
+    "kind": "published",
+    "status": "partial",
+    "evidence": "`src/delivery.ts`; `src/handoff-api.ts`; `src/mail.server.mjs`; `tests/runtime.mjs`; `tests/activation.mjs`",
+    "gap": "No cited test asserts the absence of an AI call, that an exported draft stays marked unreviewed, or that a source link grants no access; no paging receipt, no production action and no Lamp publication are asserted. This is the current-release safety boundary, not the final product boundary.",
+    "line": 1436
+  },
+  {
+    "id": "OC-007",
+    "title": "Native archive",
+    "kind": "published",
+    "status": "done",
+    "evidence": "`src/api.ts`; `src/family/response-operations/domain.ts`; `tests/runtime.mjs`",
+    "gap": "",
+    "line": 1437
+  },
+  {
+    "id": "OC-008",
+    "title": "User-authored records kept",
+    "kind": "published",
+    "status": "done",
+    "evidence": "`src/api.ts`; `src/native-incomplete.ts`; `src/family/response-operations/domain.ts`; `tests/runtime.mjs`; `tests/product-browser-journey.mjs`; `tests/product-browser.mjs`",
+    "gap": "",
+    "line": 1438
+  },
+  {
+    "id": "OC-009",
+    "title": "Accessible interface",
+    "kind": "published",
+    "status": "partial",
+    "evidence": "`src/forms.tsx`; `src/app/AlertsPanel.tsx`; `tests/product-browser-journey.mjs` \u2014 keyboardCoordination: native-key declaration, acknowledgment, literal attributed notes, action-dialog focus containment and Escape return at 1440 and 390, plus the desktop real-409 alert with no saved claim; productSchedule: native-key rota person order, date and time entry, phone preview disclosure, cover preparation, zero-write review, Escape, explicit confirmation and protected assignment and preview readback at 1440 and 390. `tests/product-browser.mjs` runs these legs in push Verify with a controlled platform and browser clock; `tests/keyboard.mjs` checks visible focus; selected states check labels, overflow and serious or critical axe findings.",
+    "gap": "Maintained keyboard/responsive journeys exist; full accessibility conformance is not established. BASE-ACCESSIBILITY-001 is not established across every Oncall journey and the OC-029 apps; the human passes and the VPAT are register rows R-3 and R-4.",
+    "line": 1439
+  },
+  {
+    "id": "OC-010",
+    "title": "Health and honest commands",
+    "kind": "published",
+    "status": "done",
+    "evidence": "`tests/runtime.mjs` \u2014 coordinationHealth: check and describe with storage available and unavailable, exact emitted build identity, storage-loss 503 and recovery with unchanged records; hosted production output: actual source and artifact identity, supplied version binding and linked-page results. `tests/transfer.mjs` \u2014 managed installation transfer: observed CLI outcomes, populated inactive restore and erasure fences. `tests/health-outcomes.mjs` \u2014 separate local and locally executed hosted-mode records, dated prior R-1 and R-2 provider receipts with their source SHAs, and R-8 explicitly not run. Paging health and measured capacity remain with OC-026 to OC-029 and OC-064.",
+    "gap": "",
+    "line": 1440
+  },
+  {
+    "id": "OC-011",
+    "title": "Calendar-day rotations",
+    "kind": "published",
+    "status": "done",
+    "evidence": "`src/family/response-operations/schedules.ts`; `src/paging-api.ts`; `src/schedule-api.ts`; `tests/activation.mjs` \u2014 savedRotationCoverage (run by scheduleCoordination in the changes shard): saves primary and backup rotations over HTTP and reads the HTTP preview and now-next for the fall New York 09:00 hand-off (a 25-hour civil day), a repeated 01:30 and a nonexistent 02:30 under earlier, later and reject with explained gaps, primary and backup override edges (start included, end excluded, a different role may share an interval, a same-role overlap refused with no write, a touching interval accepted), viewer and missing member slots retained as explained gaps with later turns unmoved, and identical primary and backup rotations leaving the backup unavailable; every read leaves all durable rows and outbound requests unchanged.",
+    "gap": "",
+    "line": 1441
+  },
+  {
+    "id": "OC-012",
+    "title": "Paging off",
+    "kind": "published",
+    "status": "done",
+    "evidence": "`tests/activation.mjs` \u2014 normal-installation refusal loop: delivery, job, tick, callback and resume each explain paging OFF, the existing pager, independent standby and a passed real-phone drill, preserve workspace and paging records and revisions, retain refusal audit, create no receipt and attempt no outbound request; labelled demo HTTP flow: emitted HTML Demo decoration and title plus the workspace demo flag identify all four simulated channel outcomes, with no production receipt or outbound request.",
+    "gap": "",
+    "line": 1442
+  },
+  {
+    "id": "OC-013",
+    "title": "Held history stays historical",
+    "kind": "published",
+    "status": "done",
+    "evidence": "`src/family/response-operations/escalation.ts`; `src/paging-api.ts`; `tests/runtime.mjs`; `tests/activation.mjs`",
+    "gap": "",
+    "line": 1443
+  },
+  {
+    "id": "OC-014",
+    "title": "Side-effect-free previews",
+    "kind": "published",
+    "status": "partial",
+    "evidence": "`src/schedule-api.ts`; `src/paging-api.ts`; `src/family/response-operations/paging-archive.ts`; `tests/activation.mjs` \u2014 **scheduleCoordination** and **pagingHistory** (preview isolation); `tests/routing.mjs` \u2014 **OC-014 service routing preview isolation**",
+    "gap": "No cited test compares durable state, receipt counts, timers or provider actions before and after a now/next, schedule or routing preview, or reads the synthetic label on historical delivery data.",
+    "line": 1444
+  },
+  {
+    "id": "OC-015",
+    "title": "Strict module archives",
+    "kind": "published",
+    "status": "done",
+    "evidence": "`tests/activation.mjs` pagingHistory: current-admin populated archive round trip; anonymous 401 and active viewer and responder 403 at both archive and restore doors, no disclosure, unchanged module records and both revisions with refusal audit; unknown fields, broken references, retained callbacks, paused pending jobs and injected SQL rollback.",
+    "gap": "",
+    "line": 1445
+  },
+  {
+    "id": "OC-016",
+    "title": "Recovery checkpoint",
+    "kind": "published",
+    "status": "done",
+    "evidence": "`src/api.ts`; `src/family/response-operations/recovery.ts`; `scripts/checkpoint.mjs`; `tests/activation.mjs`; `tests/checkpoint-cli.mjs`",
+    "gap": "",
+    "line": 1446
+  },
+  {
+    "id": "OC-017",
+    "title": "Reviewed handoffs",
+    "kind": "published",
+    "status": "partial",
+    "evidence": "`src/handoff-api.ts`; `src/family/response-operations/handoffs.ts`; `tests/activation.mjs`",
+    "gap": "The exported packet's copy is not compared with the reviewed copy in the cited test (`tests/checkpoint-cli.mjs` holds that comparison); preparation, review, inspection, eligibility, holds, identities, attribution, every bound and the unsent export are asserted. Connected communication is a separate target in OC-034/051.",
+    "line": 1447
+  },
+  {
+    "id": "OC-018",
+    "title": "Maintained root commands",
+    "kind": "published",
+    "status": "partial",
+    "evidence": "`scripts/installer/seed.mjs`; `src/auth.server.ts`; `tests/transfer.mjs`; `tests/member-coordination-browser.mjs`; `tests/member-coordination-browser.mjs`; `tests/product-browser-journey.mjs`",
+    "gap": "No cited test asserts `rer build` or the deploy dry-run; setup, dev, preview, reset, archive, owner entry and member password sign-in are asserted. The real-account hosted journey is register row R-1; no maintained test repeats the account steps.",
+    "line": 1448
+  },
+  {
+    "id": "OC-019",
+    "title": "Additive upgrade",
+    "kind": "published",
+    "status": "done",
+    "evidence": "`src/workspace-store.ts`; `migrations/core/0106_relational_workspace.sql`; `tests/runtime.mjs`; `tests/runtime.mjs`",
+    "gap": "",
+    "line": 1449
+  },
+  {
+    "id": "OC-020",
+    "title": "Now/next and calendar feed",
+    "kind": "published",
+    "status": "done",
+    "evidence": "`src/calendar.ts`; `src/schedule-api.ts`; `tests/activation.mjs` \u2014 the main HTTP journey (run in the changes shard after scheduleCoordination): now/next at the 13:00 UTC hand-off and with an override (primary, backup and next hand-off); the ICS feed with no session refused 401; the seven-day default window, an explicit override window and the 31-day limit each compare every primary and backup event to the resolved UTC preview intervals (distinct UIDs, DST-day boundaries, override start and end); 31 days plus one second, a zero and a reverse window refused 400 with only the refusal audit written; an inactive responder shows primary and backup Coverage gap events with exact intervals and explanations; a scoped source credential admits an immutable event and active alert with the saved paging policy unchanged, a retry returns the original event, a revoked key is refused 401, and zero outbound requests are made.",
+    "gap": "",
+    "line": 1450
+  },
+  {
+    "id": "OC-021",
+    "title": "Move-in preview",
+    "kind": "published",
+    "status": "done",
+    "evidence": "`src/move-in/owner-door.ts`; `src/move-in/source.ts`; `src/move-in/adoption.ts`; `tests/activation.mjs`; `tests/import-door.mjs`; `tests/product-browser-journey.mjs`; `tests/import-door.mjs`",
+    "gap": "",
+    "line": 1451
+  },
+  {
+    "id": "OC-022",
+    "title": "Resume and undo",
+    "kind": "published",
+    "status": "partial",
+    "evidence": "`src/move-in/owner-door.ts`; `src/move-in/api.ts`; `src/move-in/journal.ts`; `tests/activation.mjs`; `tests/import-door.mjs`; `tests/import-door.mjs`; `tests/import-door.mjs`",
+    "gap": "Synthetic signed standing replacement/addition, restart/reconcile and newest-first undo are exercised; gone/over-allowance/native-edit refusals preserve records and paging stays OFF. No cited test resumes an interrupted import to completion: the restart in the shape journey falls between apply calls without asserting the job was unfinished, and the lease-expired import is refused and rolled back. Apply, interruption, restart, undo, revoked authority, SQL rollback, idempotent and conflicting replays and named undo conflicts are asserted.",
+    "line": 1452
+  },
+  {
+    "id": "OC-023",
+    "title": "Services, teams and ownership",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/family/response-operations/domain.ts`; `src/changes/Dependencies.tsx`; `src/app/AlertsPanel.tsx`; `tests/changes.mjs`; `tests/member-coordination-browser.mjs`; `tests/transfer.mjs`; `src/teams/backstage.ts`; `src/teams/api.ts`; `src/teams/BackstageImport.tsx`; `tests/changes.mjs` \u2014 reviewed dependency import, zero-write preview, bounded references, digest/conflict refusals, atomic provenance and audit rollback; `tests/member-coordination-browser.mjs` \u2014 dependency conflict choice, Apply, lost-response Retry and reload; `tests/transfer.mjs` and `tests/checkpoint-cli.mjs` \u2014 immutable dependency provenance and inactive restore.",
+    "gap": "Explicit unassigned service ownership is workspace-visible; unmatched intake retains null ownership and archive/handoff restore retains the ownership gap. Services, copied incident runbooks, alert-level service runbooks, workspace roles and revision-checked direct dependencies ship. Team privacy, managers/ownership scope and Backstage remain missing. OC-041 audit and durable crash/lease outcomes for team-scoped audit export remain this clause's pre-shipping acceptance. Receiving Gap: OC-065 private-team recent-change scope; mixed source sentences remain in OC-065. Received duties remain unbuilt: team subscribers and private-team business-service visibility (OC-061); per-team create-page and request-responder permissions (OC-068); swap manager rules and team privacy (OC-025, OC-060).",
+    "line": 1453
+  },
+  {
+    "id": "OC-024",
+    "title": "Follow-the-sun, PTO and holiday coverage",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/schedule-coverage/review.ts`; `src/schedule-coverage/ReviewedChange.tsx`; `src/schedule-api.ts`; `tests/activation.mjs`; `tests/product-browser-journey.mjs`; `docs/schedules.md`",
+    "gap": "P1: 366-day bounded coverage and digest-bound review in `src/family/response-operations/schedules.ts` and `src/schedule-coverage/review.ts`. P2: ordered named-zone layers and explicit precedence in `src/schedule-coverage/layers.ts`. P3: selected federal observed holidays and revisioned company dates. P4: stored PTO and reviewed local ICS upload in `src/schedule-api.ts` and `src/schedule-coverage/pto-ics.ts`; existing rota editor controls in `src/schedule-coverage/CoverageRules.tsx`; member-owned PTO and ICS at `/api/schedules/:id/pto-review` and `/api/schedules/:id/pto-apply` scoped by `memberPTO` in `src/teams/model.ts`; public-door proof in `tests/activation.mjs` (PASS OC-024 member PTO) and `tests/product-browser-journey.mjs` (ordinary-member browser 1440). Public Worker journeys in `tests/activation.mjs`; browser journey in `tests/product-browser-journey.mjs`; custody in `tests/transfer.mjs` and `tests/checkpoint-cli.mjs`. Gap: Google and Outlook consent-based PTO import (R-14: dated one-time owner-role evidence, not run); verified-route counts and degraded coverage (OC-076 and OC-066); real-phone London handoff; paging OFF.",
+    "line": 1454
+  },
+  {
+    "id": "OC-025",
+    "title": "Swaps, reminders and calendar subscriptions",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/schedule-coordination/`; `src/calendar.ts`; `src/schedule-api.ts`; `src/paging-store.ts`; `tests/activation.mjs`; `tests/activation.mjs`; `tests/runtime.mjs`; `tests/import-door.mjs`; `tests/product-browser-journey.mjs`; `tests/member-coordination-browser.mjs`; `tests/transfer.mjs`; `tests/checkpoint-cli.mjs`",
+    "gap": "Current holders name one substitute and a bounded interval. Only that substitute accepts or declines; the versioned none/admin setting starts at workspace admin approval. Acceptance revision-checks one override, keeps the other role's effective holder at every boundary, and commits its recorded notices with the permanent audit; racing decisions commit once. Requesters cancel, and overdue requests remain undecided. Each affected configured responder and service owner gets one schedule-change recorded obligation, visibly not deliverable without a verified channel. Per-member reminder lead/channel settings show a due time and not sent (no timer). Schedule/service/own-shift bearer feeds expose schedule windows only, show the raw URL once, store its hash and support at most 20 subscription records per member; owner/admin revocation refuses immediately without changing assignments. The new category is validated and audited, transfers and restores inactive with cleared hashes, and participates in subject erasure. Gap: mobile (OC-029), team managers/privacy (OC-023), dated Google/Outlook viewing not run (R-14). Automatic notice delivery is OC-077 and reminder delivery OC-027 (RL-3). PARTIAL; paging OFF.",
+    "line": 1455
+  },
+  {
+    "id": "OC-026",
+    "title": "Native US phone, SMS, push and email paging",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. Only the paging refusal exists; no live providers, responder rules or carrier drill. OC-041 audit and durable crash/lease outcomes for provider attempts and outcomes remain this clause's pre-shipping acceptance (door rule D-1). Received duties remain unbuilt: live cutover and parallel routing within this clause's own subject (OC-038); phone-within-bar and creator-naming notification (OC-068). Source-recovery cancellation, route counts and change notices are OC-075 to OC-077. Paging OFF.",
+    "line": 1456
+  },
+  {
+    "id": "OC-075",
+    "title": "Source recovery cancels attempts and sends recovered notices",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. Actual attempt cancellation and recovered-notice delivery are unbuilt; OC-056's recorded-state proof cannot satisfy them, and the current email receipt records only the labelled non-automatic paging-OFF stopped state.",
+    "line": 1457
+  },
+  {
+    "id": "OC-076",
+    "title": "Verified route counts and degraded coverage before a shift",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. Verified high-urgency route counts and degraded-coverage flags are unbuilt (received from OC-024).",
+    "line": 1458
+  },
+  {
+    "id": "OC-077",
+    "title": "Schedule-change notices are delivered",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. Automatic schedule-change notice delivery and retained delivery failures are unbuilt (received from OC-025); schedule changes record notice obligations that are visibly not deliverable.",
+    "line": 1459
+  },
+  {
+    "id": "OC-027",
+    "title": "Durable escalation until acknowledged",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/paging-api.ts`; `src/family/response-operations/escalation.ts`; `src/delivery.ts`; `tests/activation.mjs`",
+    "gap": "Inspectable policies and historical acknowledge/cancel exist; active timers, reassignment, repeat and round-robin execution are absent. OC-041 audit and durable crash/lease outcomes for escalation workers and provider attempts remain this clause's pre-shipping acceptance. Received duties remain unbuilt: live cutover and parallel routing within this clause's own subject (OC-038); automatic user-assignment repeat/escalation (OC-068). The source-recovery, support-start and reminder duties are OC-078.",
+    "line": 1460
+  },
+  {
+    "id": "OC-078",
+    "title": "Source recovery and support hours stop or start escalation",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. The browser-closed deadline, no-further-notification and reminder-firing duties received from OC-056, and the support-start raise of OC-057, remain unbuilt: Oncall has no durable timer, and an open low alert shows the raise as not automatic.",
+    "line": 1461
+  },
+  {
+    "id": "OC-028",
+    "title": "Independent standby and tested takeover",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. One Cloudflare coordination deployment is not independent pager continuity. OC-041 audit and durable crash/lease outcomes for standby authority moves and dispatch remain this clause's pre-shipping acceptance. Receiving Gap from OC-038: live cutover and parallel routing within this clause\u2019s own subject remain unbuilt; the mixed DST-comparison/cutover sentence stays verbatim in OC-038.",
+    "line": 1462
+  },
+  {
+    "id": "OC-029",
+    "title": "Native iOS and Android responder apps",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. Responsive web is implemented, but no native apps, entitlements or live critical-push acceptance exist. OC-041 audit and durable crash/lease outcomes for mobile actions and device delivery remain this clause's pre-shipping acceptance. Receiving Gap from OC-038: live cutover and parallel routing within this clause\u2019s own subject remain unbuilt; the mixed DST-comparison/cutover sentence stays verbatim in OC-038. Receiving Gap: OC-065 mobile recent-changes panel; mixed source sentences remain in OC-065. Received duties remain unbuilt: mobile status/subscription access and push delivery (OC-061); mobile manual pages (OC-068); mobile swaps (OC-025); mobile queries and bulk coordination (OC-060).",
+    "line": 1463
+  },
+  {
+    "id": "OC-030",
+    "title": "Datadog, Prometheus and Grafana intake",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/monitoring/api.ts`; `src/monitoring/providers.ts`; `src/integrations/SourcePage.tsx`; `tests/intake.mjs`; `docs/monitoring-providers.md`",
+    "gap": "Bearer-authenticated Alertmanager/Grafana groups and explicit Datadog templates retain provider identities, precise generations, bounded context and source links. Retry/reordering, recovery tombstones, old-cycle recovery, routed labels/tags, named local checks and rejection diagnostics are maintained tests; a local check is not provider acceptance. The real-provider journey (each provider's own test/send door, then fire and recover a real rule, and an Alertmanager on a routed key) has not been run (R-12, RL-7). Datadog's journey needs an owner Datadog account and a provider-reachable deployment. Grafana optionally requires a sealed per-integration HMAC-SHA256 secret with bearer authentication, raw-body or timestamp:body verification, timestamp checks, named rejection diagnostics, rotation fences and audit rollback. `tests/intake.mjs` \u2014 **OC-030 optional Grafana HMAC**; `tests/product-browser.mjs` \u2014 **OC-065/030 templates and signing settings** at 1440/390. Header/signing assumptions remain unverified against a live sender. Intake capacity is the explicit local receipt guard (429); team privacy is OC-023's, mobile OC-029's, paging OC-026's and measured load OC-064's.",
+    "line": 1464
+  },
+  {
+    "id": "OC-031",
+    "title": "AWS CloudWatch and SNS intake",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. No AWS adapter or subscription validation is implemented.",
+    "line": 1465
+  },
+  {
+    "id": "OC-032",
+    "title": "Error and uptime integrations with sibling products",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. Only the generic event schema is implemented; no Sentry/Spool/Uptime connector acceptance exists.",
+    "line": 1466
+  },
+  {
+    "id": "OC-033",
+    "title": "Generic email and Events API",
+    "kind": "target",
+    "status": "done",
+    "evidence": "`tests/runtime.mjs` \u2014 coordinationJourney: signed and bearer Events API admission, scoped credentials, revocation, limits and minimal receipts; `tests/intake.mjs` \u2014 emitted-Worker intake journey: authenticated email, duplicate message IDs, spoof and MIME quarantine, bounded diagnostics, unauthorized reads and incident mutations, and custom failure deduplication with canonical source-recovery stop; `tests/routing.mjs` \u2014 public Worker journey: email modes and versioned trigger and resolve rules; `tests/triage.mjs` \u2014 source-recovery journey: canonical obligations and declared-incident independence. Real-provider field proof remains the dated R-2 record; paging remains OFF.",
+    "gap": "",
+    "line": 1467
+  },
+  {
+    "id": "OC-034",
+    "title": "Slack and Microsoft Teams response",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. Internal handoff drafts do not implement either collaboration app. OC-041 audit and durable crash/lease outcomes for chat grants, commands and delivery remain this clause's pre-shipping acceptance.",
+    "line": 1468
+  },
+  {
+    "id": "OC-035",
+    "title": "Incident bridges and live call routing",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. No telephony routing or conferencing connector exists.",
+    "line": 1469
+  },
+  {
+    "id": "OC-036",
+    "title": "Post-incident review and completion policy",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/reviews/material.ts`; `src/reviews/review-controls.ts`; `src/reviews/ReviewsHome.tsx`; `src/reviews/ReviewSheet.tsx`; `tests/runtime.mjs`; `docs/reviews.md`; `tests/triage.mjs` \u2014 Response learning: retained pre-resolution P1 custody, revision-bound review correction/refusal, both attributed accepted snapshots and archive/restart retention",
+    "gap": "Generated source-attributed observations, literal human assertions, response source entries, changes and follow-ups remain separate from revision-bound human acceptance of root cause, impact and review. Accepted assessments retain immutable timeline snapshots. Priority, UTC due dates, manual escalation contacts and evidence/human-review completion policies ship; P1 evidence submission stays open until explicit acceptance. Automatic reminders/escalation, recurring review, hypotheses/chat context and remote ticket synchronization remain missing.",
+    "line": 1470
+  },
+  {
+    "id": "OC-037",
+    "title": "Response analytics and fair on-call load",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/reviews/report.ts`; `src/reviews/load.ts`; `src/reviews/noise.ts`; `src/reviews/csv.ts`; `src/reviews/api.ts`; `src/reviews/ResponseReport.tsx`; `src/family/response-operations/schedules.ts`; `tests/runtime.mjs`; `docs/reviews.md`; `tests/triage.mjs` \u2014 Response learning and OC-037 response report: resolved, open, unknown and repeated cohorts, DST hours, exact late acknowledgement, named-zone night coverage, outside-coverage load, percentiles and matching frozen CSV and API; `tests/product-browser.mjs` \u2014 responseReportBrowser: rendered response figures and downloaded CSV match one frozen API observation",
+    "gap": "Imported incidents, late acknowledgment, after-hours shifts, the dashboard's figures and foreign-team export refusal are not asserted in the cited test; resolved, open and never-acknowledged cohorts, DST hours, repeat and noisy alerts, CSV and API figures against coverage hours and the fairness ratio are asserted. Page volume/delivery (OC-026/064), escalation/reassignment latency (OC-027), after-hours interruptions (OC-024/026), team load and export scope (OC-023), import provenance (OC-038), erasure-proof denominators (OC-040) and verified recovery (OC-048) are inherited.",
+    "line": 1471
+  },
+  {
+    "id": "OC-038",
+    "title": "Complete incumbent migration and controlled cutover",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/move-in/vendor-formats.ts`; `src/move-in/source.ts`; `src/move-in/mapping.ts`; `src/move-in/SavedExportHelp.tsx`; `tests/import-door.mjs`; `tests/import-door.mjs`; `tests/product-browser-journey.mjs`; `tests/transfer.mjs`; `docs/move-in.md`; `src/move-in/ExportHelp.tsx`; `tests/product-browser-journey.mjs` \u2014 providerExport and opsgenieReadiness via `tests/product-browser.mjs`: actual Opsgenie selection and saved-response help reach the dated readiness checklist and saved-export instructions, names all five official references and blocked account gates, preserves native and paging records with zero migration, provider authorization or external requests; visual proof at 1440 and 390",
+    "gap": "Splunk On-Call, JSM Ops and Better Stack saved responses use the reviewed apply, restart, reconcile and undo path. JSM single rotations use the strict converter; imported integration inventory stays inactive and keyless, contacts unverified, unsupported objects individually retained with erasable source provenance. Acceptance 5 has account-free checklist guidance reviewed on 31 October 2026; authenticated provider and export availability remain blocked and unrun, with R-11 not run. Gap: unverified live-account export shapes; Splunk and Better Stack recurring schedule conversion; complete contact, team, service and history conversion; live-API pull and account reconciliation; real-phone cutover and parallel routing (OC-026\u2013029); Terraform (OC-062), automation actions (OC-063), routed-key import (OC-083), chat (OC-067), email modes (OC-070), business services (OC-061). No delivery or login grants. Live cutover and parallel routing are receiving duties in OC-026\u2013029, and live-API pull and account reconciliation are co-held with OC-074 (RL-3, RL-5).",
+    "line": 1472
+  },
+  {
+    "id": "OC-074",
+    "title": "Live incumbent API pull and account reconciliation",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "Live API pull, reconciliation and live-account shape proof remain unbuilt; OC-038 retains saved-response adapters.",
+    "line": 1473
+  },
+  {
+    "id": "OC-039",
+    "title": "Enterprise access and responder lifecycle",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/auth.server.ts`; `src/api.ts`; `tests/runtime.mjs`; `tests/member-coordination-browser.mjs`",
+    "gap": "Native owner email links and admin-created local member passwords exist; invitations, federated identity, MFA and SCIM are not adopted product flows. SSO/SCIM stakeholder assignment (OC-061) remains unbuilt.",
+    "line": 1474
+  },
+  {
+    "id": "OC-040",
+    "title": "Retention, erasure and custody",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/subject-erasure.ts`; `src/changes/erasure.ts`; `src/move-in/erasure.ts`; `src/move-in/native-erasure.ts`; `src/subject-erasure-identity.ts`; `tests/activation.mjs`; `tests/runtime.mjs`; `tests/checkpoint-cli.mjs`; `tests/transfer.mjs`; `tests/product-browser.mjs`; `docs/data.md`; `docs/changes.md`; `tests/runtime.mjs`; `tests/activation.mjs`; `migrations/core/0144_erased_report_cases.sql`",
+    "gap": "Exact imported-person custody/fence proof and local change-event erasure exist. `src/subject-erasure.ts`; `tests/activation.mjs` (activation, **OC-040 incident erasure**, **integration erasure**); `tests/runtime.mjs` via runtime (**OC-040 integration erasure**) exercise native incident/credential custody, failure rollback, queued/in-flight delivery races and stale/forged-journal restore refusal; `tests/product-browser.mjs` asserts the existing erasure form at 1440/390. Change erasure commits per-table local counts, last-receipt cleanup, transfer-copy invalidation, retry/restore fences and identity unlinking; audit failure rolls back and completion explicitly excludes standby reconciliation. OC-028 standby reconciliation remains incomplete. Cross-site erasure must reconcile standby before success is claimed. Email integration erasure uses the shared receipt, source unlinking, credential deletion, transfer invalidation, permanent-audit identity unlinking and restore/reuse fences; `tests/intake.mjs` (intake \u2014 **OC-040 email integration erasure**) proves authority, stale refusal, audit/table rollback, committed counts and restart; `tests/product-browser.mjs` (product-browser) proves its review and receipt at 1440/390. Linked imported integration originals/plans and both incumbent/native credentials retire atomically through `src/move-in/native-erasure.ts`; `tests/activation.mjs` (**OC-040 imported integration erasure**) proves rollback and committed per-store counts, with the receipt at 1440/390 in product-browser. Conflicting imported bindings refuse without erasure. Native incident and native/routed/change/API integration erasure use the shared committed receipt, transfer-copy invalidation, restore fences and permanent-audit identity unlinking. Sending and uncleared uncertain/expired-lease response work refuses erasure with 409; queued work is removed atomically. Already-sent external messages cannot be recalled. Receiving Gap from OC-065: change-event local object erasure is exercised; cross-site custody still needs OC-028 standby reconciliation. Mixed source sentences remain in OC-065.",
+    "line": 1475
+  },
+  {
+    "id": "OC-041",
+    "title": "Durable operational audit",
+    "kind": "target",
+    "status": "done",
+    "evidence": "`src/audit-store.ts`; `src/audit-database.ts`; `src/audit-request.ts`; `migrations/core/0129_admin_audit.sql`; `migrations/core/0130_import_audit_lifecycle.sql`; `tests/runtime.mjs`; `tests/transfer.mjs`; `tests/activation.mjs`; `tests/triage.mjs`; `docs/audit.md`; `tests/routing.mjs` \u2014 journey OC-041 accepted state and its audit entry commit together, survive subject erasure and export without secrets across: (1) `tests/runtime.mjs` workspace-command and member and access changes under injected audit failure (injected_audit_failure, synthetic_oncall_437_audit), password change (synthetic_oncall_password_audit: credential and session custody roll back, retry commits one revision-bound fact); `tests/activation.mjs` schedule accept, every handoff action (handoffMutation, one accepted fact at the committed handoff revision), paging refusals, historical acknowledgment and cancellation, erasure kinds and the import door (injected_import_failure); `tests/routing.mjs` routing publication (synthetic_oncall_publication_audit) and source and intake key admission; `tests/changes.mjs` change keys; `tests/intake.mjs` email and monitoring admission; `tests/triage.mjs` bulk actions (synthetic_bulk_audit). (2) `tests/runtime.mjs` viewer 403, anonymous 401, revoked-session 401 and bearer 401 on the audit export, administrator export secret-free; member erasure keeps the permanent label with no association and no reassignment (PASS OC-053 named-responder erasure); `tests/activation.mjs` erased subjects. (3) `tests/activation.mjs` import apply with injected_import_exit, expired lease (import_interrupted_lease), durable interrupted audit across a Worker restart and refused retry; `tests/transfer.mjs` restored pending import work interrupted. (4) `tests/transfer.mjs` portable restore keeps every audit row unchanged, grants no session or Business authority, and PROBE OC-041 portable labels: restored identity associations absent, fresh actor, subject and source labels never adopt retained history.",
+    "gap": "",
+    "line": 1476
+  },
+  {
+    "id": "OC-042",
+    "title": "Credential custody and declared external flows",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/native-sources.ts`; `src/changes/credentials.ts`; `src/changes/api.ts`; `migrations/core/0127_source_signing_custody.sql`; `src/portability-policy.mjs`; `tests/runtime.mjs`; `tests/changes.mjs`; `tests/transfer.mjs`",
+    "gap": "No cited test inspects outbound traffic at a network edge, submits a hostile URL or redirect, or proves which endpoint receives which content, and there is no model request to inspect; native source custody, rotation, revocation, echo refusal and archive exclusion are asserted. Subscriber delivery under this clause's custody (OC-061) remains unbuilt, pending delivery proof with the held SendGrid sender.",
+    "line": 1477
+  },
+  {
+    "id": "OC-043",
+    "title": "Explainable grouping and event orchestration",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/orchestration/correlation.ts`; `src/orchestration/Settings.tsx`; `src/family/response-operations/domain.ts`; `src/routing/preview.ts`; `tests/routing.mjs`; `tests/routing.mjs`; `tests/runtime.mjs`; `tests/product-browser.mjs`; `tests/transfer.mjs`; `docs/routed-intake.md`; `src/triage-orchestration.ts`; `tests/product-browser-journey.mjs`; `src/orchestration/transformation.ts`; `src/orchestration/workflows.ts`; `src/orchestration/workflow-api.ts`",
+    "gap": "Routed-key selection precedes versioned service grouping and OC-057 urgency. Declared keys/titles/provider labels group inside original-event timestamp windows; missing fields, exact-end and other-environment signals stay visible. Direct-dependency association, both original/current service-rule versions and the preceding routing version are retained. Independent source/service/generation identity, severity and immutable originals remain; completed/retriggered flapping generations are held as one visible source signal with a reason. Private ordered replay compares grouping and both urgency decisions with zero durable/permanent-audit writes; initial urgency lowering requires the explicit OC-057 rule and never silently lowers an open high alert. Audit rollback, restart/duplicate admission, original-integration erasure references and inactive archive/checkpoint/portable custody are exercised. Finite maintenance remains admission-time and timer-free. `tests/runtime.mjs` (runtime \u2014 **OC-043 durable coordination workflow**) proves a frozen ordered selected-alert reassignment plan in existing triage custody, restart after two committed steps, explicit authorized resume, atomic audit rollback with interrupted outcome, completed-step idempotency and recipient-erasure/export custody. `tests/product-browser-journey.mjs` via product-browser proves authoring, saved pending progress after reload and completion at 1440/390. No timer or sender runs. Rule-launched recorded workflows retain pending declaration/notification steps until explicit authorized resume; unattended continuation and live responder delivery remain unproved under OC-027/OC-026/OC-042, with paging OFF. Retained scope: \"severity/urgency transformations\"; \"no noise rule deletes evidence or silently lowers severity\"; \"Durable idempotent workflows can declare an incident, notify responders and launch approved coordination steps; dry-run/replay produces an ordered comparison without effects.\" OC-041 inheritance remains binding: \"Orchestration automation must commit accepted state with its permanent audit entry and retain a durable failed, interrupted or uncertain outcome on crash or lease expiry before shipping. Its own acceptance proves atomic rollback, subject-erasure-safe export and interruption at the execution boundary.\"",
+    "line": 1478
+  },
+  {
+    "id": "OC-044",
+    "title": "US operating boundaries and transparent cost",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`docs/limits.md`; `tests/product-browser.mjs` \u2014 limitationsBrowser: emitted public limitations document, Readiness navigation, desktop accessibility and visual proof at 1440 and 390; `tests/readiness.mjs` \u2014 readinessHealth: paging OFF, unbuilt standby and unmeasured reference load; `src/delivery.ts`; `src/family/response-operations/domain.ts`; `tests/runtime.mjs`",
+    "gap": "Current release hold, structured bounds and explicit local capacity refusal exist; provider usage/budget and target integration acceptance do not. Acceptance 2 guidance names no availability or regulated-data guarantee; applicable agreements and validated controls are absent. Acceptance 1 remains unproved: complete US installation and dependency checklist, real USD usage by channel and country, budget warning during a real paging obligation, provider or capacity quota alternate or escalation, and Lamp, Spool and Uptime journeys with independent access controls. Paging remains OFF; provider authorization, A2P registration, live delivery, independent standby, real-phone drills and OC-064 reference-load measurements remain required. R-1 and R-2 are dated prior evidence; not-run field rows supply no new proof or authorization.",
+    "line": 1479
+  },
+  {
+    "id": "OC-050",
+    "title": "Incident command, severity and response workflows",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/incident-workflows/`; `src/family/response-operations/incident-controls.ts`; `src/app/IncidentResponseControls.tsx`; `tests/product-browser.mjs` \u2014 incidentWorkflowBrowser: template publication, typed declaration, commander checklist, merge, alias and split; `tests/product-browser-journey.mjs` \u2014 incidentRolesBrowser: Lead transfer and Scribe and Communications assignment and transfer through native controls, protected HTTP and reloaded values, exact revisions and human-attributed old and new role history, administrator refusals for a responder holding command roles, unchanged paging and zero outbound attempts; desktop assertions and selected role screens at 1440 and 390. Existing keyboardCoordination proves the initial Lead choice. `tests/triage.mjs` retains stale, viewer, authority and workflow custody coverage; `tests/transfer.mjs`; `tests/checkpoint-cli.mjs`; `docs/incidents.md`",
+    "gap": "Stakeholder update cadence and automatic reminders for unfilled roles, stalled actions and overdue updates need OC-027 timers; current role/action state remains labelled non-automatic. Additional-responder requests that page a named user or policy await OC-068/OC-026. Web/chat workflows await OC-034/OC-067; broader eligible-alert workflow automation awaits OC-043/OC-056\u2019s workflow engine beyond the explicit service response rules. Paging stays OFF. The unbuilt backup-request/chat and browser-closed timer/reminder duties of both acceptance sentences remain this Gap.",
+    "line": 1480
+  },
+  {
+    "id": "OC-051",
+    "title": "Reviewed Lamp and Statuspage communication",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/handoff-api.ts`; `src/family/response-operations/handoffs.ts`; `src/family/response-operations/integrations.ts`; `tests/activation.mjs`",
+    "gap": "Reviewed minimum handoffs and Lamp-compatible export exist; connected submission, status synchronization and reminders are missing. OC-041 audit and durable crash/lease outcomes for Lamp/Statuspage publication remain this clause's pre-shipping acceptance.",
+    "line": 1481
+  },
+  {
+    "id": "OC-052",
+    "title": "Complete portable target archive and Base replacements",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`scripts/installer/archive-policy.mjs`; `src/portability-policy.mjs`; `tests/transfer.mjs`; `tests/transfer.mjs`; `tests/checkpoint-cli.mjs`; `tests/activation.mjs`",
+    "gap": "No cited test denies optional AI network access while native coordination runs, verifies literal input, or checks for the absence of an undeclared public embed or upload door; populated HTTP and CLI export, inactive restore with local reauthorization, refusal of malformed, over-limit, erased and unknown records and rollback under storage and concurrency faults are asserted. All current durable categories restore inactive without authority or replay.",
+    "line": 1482
+  },
+  {
+    "id": "OC-053",
+    "title": "Public API, outbound events and reliable automation",
+    "kind": "target",
+    "status": "done",
+    "evidence": "`tests/runtime.mjs`; `tests/transfer.mjs`; `tests/checkpoint-cli.mjs`; `tests/product-browser-journey.mjs`",
+    "gap": "",
+    "line": 1483
+  },
+  {
+    "id": "OC-054",
+    "title": "Operational readiness and switching acceptance",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/api.ts`; `src/delivery.ts`; `tests/runtime.mjs`; `tests/activation.mjs`",
+    "gap": "Storage health, local flows and honest paging refusal exist; end-to-end production readiness, independent watches and measured paging availability do not.",
+    "line": 1484
+  },
+  {
+    "id": "OC-055",
+    "title": "Drop-in PagerDuty, Opsgenie and Splunk On-Call intake",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/intake/api.ts`; `src/intake/providers.ts`; `src/intake/incumbent.ts`; `src/intake/IncumbentActivation.tsx`; `tests/intake.mjs`; `tests/import-door.mjs`; `tests/product-browser-journey.mjs`; `tests/transfer.mjs`; `tests/checkpoint-cli.mjs`; `tests/routing.mjs`; `docs/compatible-intake.md`",
+    "gap": "Service-bound and routed compatible intake retains derived generations, attributed acknowledgment and no-effect receipts. Reviewed keyless integration inventory has separate administrator key supply, inactive hash-only custody, explicit activation accepting incumbent and native keys, rotation/revocation, atomic audit rollback and keyless inactive restore. PD v1/v2 identity bounds are 255, Opsgenie 512; identities are refused rather than truncated. Gap: live unmodified sender acceptance (PagerDuty, Opsgenie, Splunk, Datadog and Alertmanager), routed-key import, complete provider character rules and confirmed Splunk/key limits remain unobserved; Splunk 200 and printable-key rules are conservative local assumptions. Proxy URL-log redaction is an operator duty, not proved by these local application tests. Incomplete intake remains OC-059; paging stays OFF.",
+    "line": 1485
+  },
+  {
+    "id": "OC-056",
+    "title": "Alert-only pages, and source recovery that stops paging",
+    "kind": "target",
+    "status": "done",
+    "evidence": "`src/response-policy/`; `src/alert-obligation.ts`; `tests/triage.mjs`; `tests/runtime.mjs`; `tests/intake.mjs`; `tests/intake.mjs`; `tests/product-browser.mjs`; `tests/transfer.mjs`; `tests/checkpoint-cli.mjs`; `docs/incidents.md`",
+    "gap": "",
+    "line": 1486
+  },
+  {
+    "id": "OC-057",
+    "title": "Urgency, support hours and per-urgency notification",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/urgency/rules.ts`; `src/urgency/support-hours.ts`; `src/urgency/model.ts`; `src/urgency/api.ts`; `src/urgency/UrgencyPolicy.tsx`; `src/urgency/AlertUrgency.tsx`; `tests/routing.mjs` \u2014 urgency routing: severity mapping, no silent lowering, attributed human change and DST previews; `tests/product-browser.mjs` \u2014 productBrowserJourney and supportStartBrowser in `tests/product-browser-journey.mjs`: acceptance 8, emitted Settings saves New York weekday 09:00\u201317:00 hours without holidays; an active low warning at 2026-11-03T08:00:00Z shows the not-automatic notice and exact next support start 2026-11-03T14:00:00Z, with retained rendered history and low urgency after a pre-support reload, unchanged native records and paging jobs and receipts, zero outbound requests and screens at 1440 and 390. Supplemental browser proof retains the current partial judgment and Gap pending reassessment.",
+    "gap": "Low-urgency-only notification, the absence of voice, SMS and escalation past level one, the 09:00 raise and escalation start, escalation of a high alert and the not-automatic support-start label are not asserted in the cited test, because paging is OFF, Oncall has no timer and the label is not read; the urgency decisions, severity mapping, no silent lowering, the attributed human change and DST previews are asserted. Applying the raise is carried by OC-027 and OC-078, per-urgency notification rules by OC-026, low-urgency escalation behavior by OC-027 and the alert triage list by OC-060; paging stays OFF.",
+    "line": 1487
+  },
+  {
+    "id": "OC-058",
+    "title": "Snooze and acknowledgment-timeout re-trigger",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/incident-deadlines/`; `src/server.ts`; `tests/triage.mjs`; `tests/routing.mjs`; `tests/runtime.mjs`; `tests/member-coordination-browser.mjs`; `tests/transfer.mjs`; `tests/checkpoint-cli.mjs`",
+    "gap": "Absolute incident snooze and acknowledgment-timeout deadlines persist with actor, duration, due time and outcome. A scheduled workspace/schedule revision guard records one deterministic non-automatic re-trigger obligation, resolves current coverage at firing, and retains an operator-visible failure when the recorded level has no eligible on-call. Default timeout is off; admin publication is versioned. Resolution, source recovery and cancellation stop pending work. Archive, checkpoint and portable recovery retain deadlines held without resuming execution; erasure severs destinations. Gap: actual deadline delivery (OC-026), the unmeasured OC-064 lateness bar, standby takeover (OC-028), Slack/Teams (OC-067), mobile (OC-029) and actual alert-only deadline execution remain unbuilt. Alert-only bulk acknowledgment and no-timer snooze records are exercised under OC-079. The existing model has primary/backup coverage, not a running escalation level; a snooze with no identifiable level records an operator failure rather than inventing one. Recorded obligations only; paging OFF.",
+    "line": 1488
+  },
+  {
+    "id": "OC-059",
+    "title": "Large and partly readable payloads still page",
+    "kind": "target",
+    "status": "done",
+    "evidence": "`tests/intake.mjs`; `tests/runtime.mjs`; `tests/routing.mjs`; `tests/routing.mjs`; `tests/product-browser.mjs`; `tests/transfer.mjs`; `tests/checkpoint-cli.mjs`",
+    "gap": "",
+    "line": 1489
+  },
+  {
+    "id": "OC-060",
+    "title": "Incident triage list: search, filters and \"mine\"",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/triage-api.ts`; `src/triage-store.ts`; `src/triage-alerts.ts`; `src/family/response-operations/triage.ts`; `src/app/IncidentTriage.tsx`; `tests/triage.mjs` \u2014 existing 50-incident storm: exact service, urgency, triggered, declared, acknowledged, recorded snoozed and mine cohorts; triageBulkCompletion: independent low-alert retention, populated viewer reads with anonymous and intake-only refusals, attributed acknowledgment and explicit closure, retained history and source-recovery independence despite duplicate intake and source revocation; `tests/product-browser-journey.mjs` \u2014 triageFiltersBrowser, invoked by `tests/product-browser.mjs`: rendered IDs and counts agree with protected HTTP, controls and shared URLs, low urgency across reloads, acknowledged and resolved views retained after duplicate and revoked intake, unchanged durable rows, permanent audit and paging records with zero outbound requests; assertions at 1440 and changed-screen proof at 1440 and 390.",
+    "gap": "Incident search and context, filters, mine, URL and personal saved views and cursor pagination are retained. Recorded snoozes are a read-only triage status, including overdue records; reads never fire or resume execution and declared-status queries remain compatible. Gap: team filtering, foreign-team listing and selection refusals and my-teams privacy across all doors (OC-023); native-mobile storm, mine and shared-query journeys (OC-029). Existing workspace capacity bounds apply; this 50-incident proof supplies no hosted-capacity qualification. Bulk actions remain OC-079. Automatic timers, production paging and delivery, independent standby and real-phone prerequisites remain unchanged. PARTIAL; paging OFF.",
+    "line": 1490
+  },
+  {
+    "id": "OC-079",
+    "title": "Bulk triage actions with per-item results",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/triage-api.ts`; `src/triage-store.ts`; `tests/triage.mjs` \u2014 triageBulkCompletion: 50 successful incident acknowledgments with shared operation history and completed retry, incident snooze and merge, stale-source isolation, viewer refusal, audit rollback and inactive archive and restart; triageAlertResolveBounds: authenticated native intake of 1,500 distinct alerts, complete cursor enumeration, 500 selected and separately 1,000 confirmed matching alert-only resolutions with identical-payload continuations, exact successful results, expected revisions and responder history, wrong-count and over-bound refusals, completed retry with only value-free attempt audit, retained source identity, unchanged paging custody and zero outbound requests; existing storm journey: 49 successful acknowledgments and one stale refusal, 50-item viewer refusal, downgrade fencing and declared-incident summary and evidence requirements; `tests/product-browser-journey.mjs`",
+    "gap": "The replay-safe per-item bulk path is retained: bulk snooze records the existing incident deadline; bulk merge commits each source and target, retained explanations and shared operation ID atomically; alert-only items support acknowledgment, assignment, priority and urgency changes, recorded no-timer snooze and explicit human closure without a declared-incident summary or fabricated source recovery. Exact 500-selected and 1,000-matching execution is observed only for native alert-only resolve; the successful 50-incident acknowledgment is separate proof. Gap: upper-bound execution of other bulk actions remains unproved. Bundled-phone acknowledge-all and resolve-all, acceptance 7 SMS acknowledge-all and OC-071 and OC-082 reply-code and keypress delivery and commits remain unbuilt, with provider authorization, A2P, independent standby and real-phone prerequisites held. Every per-item authority and revision check and declared-incident summary and evidence obligation remains binding. No hosted-capacity, timing, automatic-timer, native-device, delivery or cutover qualification follows; OC-073's failed memory result, predecessor and hosted-measurement-plan prerequisite remain unchanged. PARTIAL; paging OFF.",
+    "line": 1491
+  },
+  {
+    "id": "OC-061",
+    "title": "Business services, stakeholder subscriptions and internal status",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/business-status/`; `src/alert-obligation.ts`; `tests/triage.mjs`; `tests/member-coordination-browser.mjs`; `tests/transfer.mjs`; `tests/checkpoint-cli.mjs`; `tests/activation.mjs`",
+    "gap": "Explicit member audiences deny stakeholder access by default. Only an active communications owner or admin may override. Impact notices are recorded non-automatic obligations with paging OFF and no sender; email, push and chat delivery (OC-042 custody/OC-029) are not built. Team and channel subscribers, SSO/SCIM assignment (OC-039), the private-team acceptance sentence (OC-023), OC-051 approved updates beyond the absent current source, and mobile remain gaps. Records only; email-list subscriber records are exercised here, and delivery remains under OC-042 with the held SendGrid sender.",
+    "line": 1492
+  },
+  {
+    "id": "OC-062",
+    "title": "Configuration as code with Terraform and OpenTofu",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. No Terraform/OpenTofu provider, dry-run plan endpoint, drift labeling or PagerDuty module converter exists.",
+    "line": 1493
+  },
+  {
+    "id": "OC-063",
+    "title": "Curated automation actions and named executors",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. No action library, runner or executor connector exists. OC-041 audit and durable crash/lease outcomes for library automation and executor actions remain this clause's pre-shipping acceptance.",
+    "line": 1494
+  },
+  {
+    "id": "OC-064",
+    "title": "Stated paging timing bars and reference load",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. No paging exists to measure; no reference-load harness or published measurements exist. OC-041 audit and durable crash/lease outcomes for provider attempts and timing outcomes remain this clause's pre-shipping acceptance. Received from OC-068: phone-within-bar and creator-naming notification remain unproved; paging OFF.",
+    "line": 1495
+  },
+  {
+    "id": "OC-065",
+    "title": "Change events and recent changes for responders",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/changes/api.ts`; `src/changes/providers.ts`; `src/changes/RecentChanges.tsx`; `tests/changes.mjs`; `docs/changes.md`",
+    "gap": "Native bearer/signed CI, PagerDuty-compatible nested Change Events, repository-bound GitHub deployment, release and merged-PR and signed GitLab deployment intake retain bounded context without paging; service, alert and incident panels show direct-dependency changes over 1\u2013168 hours. Argo CD signed templates and Terraform Cloud SHA-512 run notifications retain bounded context and stable retained identities without alerts or obligations. A visible 1,000-record oldest-first cap protects retained incident context and refuses protected capacity; the workspace byte limit can refuse earlier. `tests/changes.mjs` \u2014 **OC-065 named source templates** and **OC-065 bounded oldest-first retention**; `tests/product-browser.mjs` \u2014 **OC-065/030 templates and signing settings** at 1440/390; `tests/transfer.mjs` \u2014 **sd-oncall-c14 OC-065/030**. Gap: live GitHub/GitLab/Argo CD/Terraform acceptance (dated one-time evidence not run, R-12), mobile panel (OC-029), Slack/Teams summary (OC-067), private-team scope (OC-023), object erasure (OC-040). Argo signing-template and Terraform field assumptions are unverified; Terraform raw-body signatures make no delivery-freshness claim.",
+    "line": 1496
+  },
+  {
+    "id": "OC-066",
+    "title": "International SMS and voice paging for follow-the-sun responders",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. Only the paging refusal exists; no SMS/voice provider, country list, E.164 country check or sender registration exists in any country. Received from OC-024: verified route counts and degraded coverage remain unbuilt. Delivery is OC-080.",
+    "line": 1497
+  },
+  {
+    "id": "OC-080",
+    "title": "International delivery, failover and per-country measurement",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. No international provider, per-country measurement or charge exists; OC-041 audit and durable crash/lease outcomes for international provider attempts remain this clause's pre-shipping acceptance (door rule D-1).",
+    "line": 1498
+  },
+  {
+    "id": "OC-067",
+    "title": "Service alert channels and interactive alert messages",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. No Slack/Teams app, service channel connection or interactive alert message exists. OC-041 audit and durable crash/lease outcomes for chat publication remain this clause's pre-shipping acceptance (door rule D-1). Received duties remain unbuilt: Slack/Teams recent-change summaries (OC-065); Slack/Teams channel subscribers and chat delivery (OC-061). The chat commands are OC-081.",
+    "line": 1499
+  },
+  {
+    "id": "OC-081",
+    "title": "Chat on-call lookup, page and mine commands",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. No chat command exists; Slack/Teams manual pages and responder requests (OC-068) remain unbuilt.",
+    "line": 1500
+  },
+  {
+    "id": "OC-068",
+    "title": "Manual pages, responder requests and paging a person directly",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/manual-pages/model.ts`; `src/manual-pages/Controls.tsx`; `src/api.ts`; `tests/activation.mjs`; `tests/runtime.mjs`; `tests/product-browser-journey.mjs`; `tests/triage.mjs`; `tests/member-coordination-browser.mjs`; `tests/transfer.mjs`; `tests/checkpoint-cli.mjs`",
+    "gap": "Recorded manual pages retain creator, urgency, optional description/priority, real user/policy targets, versioned user-assignment settings and replay/conflict-safe operation keys. Each responder request has its own accept/decline, timeline response and recorded requester notice; acceptance adds a responder without acknowledging the primary, acknowledgment preserves pending requests, and resolution/requester cancellation ends them. Viewer and stakeholder attempts create nothing. `tests/activation.mjs` proves these public doors and permanent-audit rollback; `tests/runtime.mjs` proves scoped policy-targeted API pages and repeated keys; `tests/product-browser-journey.mjs`, `tests/triage.mjs` and `tests/member-coordination-browser.mjs` exercise web controls and refusals; `tests/transfer.mjs` and `tests/checkpoint-cli.mjs` retain records inactive on archive/checkpoint/portable restore and sever erased destinations. Gap: phone delivery/timing and creator-naming notifications (OC-026/064), mobile (OC-029), Slack/Teams (OC-067, OC-081), per-team and Support-team workspace permissions (OC-023), automatic assignment repeat/escalation (OC-027), and standby continuity (OC-028) remain unbuilt. Role-gated recorded obligations only; paging OFF.",
+    "line": 1501
+  },
+  {
+    "id": "OC-069",
+    "title": "Google Workspace, generic SAML and OIDC sign-in, and just-in-time accounts",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. Sign-in is native owner email links and admin-created local passwords (`src/auth.server.ts`); no Google, SAML or OIDC connection, just-in-time account or required-SSO setting exists.",
+    "line": 1502
+  },
+  {
+    "id": "OC-070",
+    "title": "Email integration modes, trigger and resolve rules",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/server.ts`; `src/email/`; `tests/intake.mjs`; `tests/routing.mjs`; `tests/transfer.mjs`; `docs/compatible-intake.md`; `docs/incidents.md`",
+    "gap": "No cited test shows two pages and the second generation still escalating (paging is OFF and there are no escalation timers), or imports PagerDuty email settings and Opsgenie filters into a mapping report (OC-038's inherited duty); subject deduplication with one recorded page, custom trigger and resolve rules with source recovery, no-effect resolves, both fallbacks, the pathological regex, per-service keys and zero-write draft replay are asserted. A real inbound provider email is register row R-2.",
+    "line": 1503
+  },
+  {
+    "id": "OC-071",
+    "title": "Notification bundling per responder and channel",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. Paging is OFF and sends refuse (`src/delivery.ts`); no notification composition or bundling exists. Reply codes and keys are OC-082.",
+    "line": 1504
+  },
+  {
+    "id": "OC-082",
+    "title": "Per-message reply codes, voice keys and bundle commits",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. No SMS reply code or DTMF handling exists; bundled-call/SMS acknowledge-all and resolve-all received from OC-060 remain unbuilt.",
+    "line": 1505
+  },
+  {
+    "id": "OC-072",
+    "title": "Routed intake keys that pick the service per event",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/routing/management.ts`; `src/routing/engine.ts`; `src/monitoring/admission.ts`; `src/routing/RoutingWorkspace.tsx`; `tests/routing.mjs`; `tests/intake.mjs`",
+    "gap": "Workspace-admin compatible and Alertmanager/Grafana/Datadog routed keys choose fixed or dynamic in-scope services with ordered versioned RE2 rules, catch-all/unrouted custody, idempotent attributed re-admission and both routing stages. Read-only replay retains open-generation warnings. Native bearer/HMAC routed credentials reuse native authentication and retain original retry decisions, scoped recovery and secret-free inactive archives (`tests/routing.mjs` / `tests/routing.mjs`). Team authority, SNS routed credentials, incumbent account/router import and move reports, OC-053 routing-management API, Terraform and dated unmodified Alertmanager acceptance remain gaps. Per-key allowances are OC-084. Native authenticated oversized/unparseable input retains bounded incomplete custody and returns 202 (`tests/runtime.mjs`, `tests/routing.mjs`). Record-unrouted retains incomplete-intake alerts with recorded high-urgency integration-owner obligations, while ordinary unrouted events remain receipts; re-admission requires workspace admin; general `/api/replay` lacks routed-key metadata (the routed-key preview retains it). Incomplete intake follows OC-059 (catch-all or unrouted custody with a recorded owner notice; paging inherited by OC-026/OC-068). Paging stays OFF.",
+    "line": 1506
+  },
+  {
+    "id": "OC-083",
+    "title": "Routed keys keep per-service generations, bounds and imports",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/routing/engine.ts`; `src/monitoring/admission.ts`; `tests/routing.mjs`; `tests/intake.mjs`",
+    "gap": "Per-service generations, scoped recovery and routed incomplete-intake custody are exercised; incumbent account and router import with move reports and SNS routed credentials remain gaps.",
+    "line": 1507
+  },
+  {
+    "id": "OC-084",
+    "title": "Per-key rolling intake allowances",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`src/intake-rate/`; `tests/routing.mjs` OC-084 per-record rolling allowances; `tests/intake.mjs` OC-084 authenticated email allowance before grouping",
+    "gap": "Per-key rolling request/event accounting, rotation continuity, isolation, grouped refusal, owner notices and actual-window recovery are exercised through native and currently built compatible/monitoring HTTP doors (`tests/routing.mjs`). Inherently over-allowance atomic batches are refused whole with a machine-readable count/allowance and split/raise instruction, without a fabricated Retry-After (RL-6). Team authority and SNS routed credentials remain unbuilt, so these outcomes are not established through those doors. Email keeps its separate per-address new-receipt allowance. At fixed platform time, 60 distinct authenticated same-subject messages share one generation and recorded obligation; the next message is refused before grouping with exact alert, event, sample and prior D1 custody preserved, one refusal receipt, quarantine and audit. Later refusals add no per-message custody, and another address still admits (`tests/intake.mjs` OC-084 authenticated email allowance before grouping). Receipt capacity remains a separate local storage bound until OC-073. Paging stays OFF.",
+    "line": 1508
+  },
+  {
+    "id": "OC-073",
+    "title": "Intake stays inside the Workers memory limit at stated receipt capacity",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "Unbuilt: every request loads the whole workspace (`src/workspace-store.ts` loadWorkspace); local workerd RSS exceeded 128 MB at 4,500 held receipts (sd-oncall-oc072-fix2).",
+    "line": 1509
+  },
+  {
+    "id": "SURFACE-001",
+    "title": "The registry equals this table, and the Base harness passes",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. No MCP door, tool registry or conformance harness exists; machine clients use only the OC-053 service-account API.",
+    "line": 1510
+  },
+  {
+    "id": "SURFACE-002",
+    "title": "Oncall computes each class from the call and its records",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. No tool or server-side class computation exists.",
+    "line": 1511
+  },
+  {
+    "id": "SURFACE-003",
+    "title": "A stranger agent runs a seeded on-call week under two company policies",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. No MCP door, company policy or specialist journey exists.",
+    "line": 1512
+  },
+  {
+    "id": "SURFACE-004",
+    "title": "Configuration, restore and erasure carry every affected class",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`tests/oncall-agent-erase-replay.mjs` \u2014 eraseClasses and eraseReplay through emitted Worker MCP; `tests/agent-door-browser.mjs` \u2014 native erasure approval and receiver removal.",
+    "gap": "Acceptance 4: fresh native erasures compute destructive with conditional access, security and live (live also covers coverage, windowed maintenance, grouping and approved-workflow members, intake and pending deliveries), and retain witnessed facts atomically. Held member erasure redacts its own saved approval; Base returns subject_erased before completed-retry classification, so class-aware replay of that approval still needs a Base seam. Older receipts without facts refuse rather than infer history. Acceptances 1, 2, 3, 5, 6, 7 and 8 remain unproved: intake-key changes, service paging changes, member-update classification, archive restore, SSO, executor settings and remote follow-up synchronization. OC-040 still needs OC-028 standby reconciliation; external deletion, uncertain-send clearance and new erasure categories are omitted. OC-023 team privacy, identity, executor and agent egress authority holds remain; paging stays OFF and provider delivery, independent standby and real-phone proof remain unproved.",
+    "line": 1513
+  },
+  {
+    "id": "OC-045",
+    "title": "Investigate before the responder opens the alert",
+    "kind": "push-further",
+    "status": "partial",
+    "evidence": "`src/family/response-operations/domain.ts`; `tests/runtime.mjs`",
+    "gap": "Incident/alert/runbook context exists as in the audit; no investigator, telemetry or deploy connector is implemented. OC-041 audit and durable crash/lease outcomes for investigation agent grants and actions remain this clause's pre-shipping acceptance.",
+    "line": 1514
+  },
+  {
+    "id": "OC-046",
+    "title": "Keep ownership and runbooks current from changes",
+    "kind": "push-further",
+    "status": "partial",
+    "evidence": "`src/family/response-operations/domain.ts`; `tests/runtime.mjs`",
+    "gap": "Services, copied runbooks and human follow-ups exist; change watching/proposals are missing. OC-041 audit and durable crash/lease outcomes for ownership/runbook agent grants and actions remain this clause's pre-shipping acceptance.",
+    "line": 1515
+  },
+  {
+    "id": "OC-047",
+    "title": "Continuously rehearse coverage and standby readiness",
+    "kind": "push-further",
+    "status": "partial",
+    "evidence": "`src/schedule-api.ts`; `src/delivery.ts`; `tests/activation.mjs`",
+    "gap": "Now/next reveals static gaps and production sends refuse; continuous readiness and scheduled live drills are missing. OC-041 audit and durable crash/lease outcomes for readiness agent grants, actions and drills remain this clause's pre-shipping acceptance.",
+    "line": 1516
+  },
+  {
+    "id": "OC-048",
+    "title": "Bounded remediation with independent recovery evidence",
+    "kind": "push-further",
+    "status": "missing",
+    "evidence": "",
+    "gap": "No implementing flow. No remediation planner, production executor or independent recovery integration exists. OC-041 audit and durable crash/lease outcomes for remediation agent grants and executor actions remain this clause's pre-shipping acceptance.",
+    "line": 1517
+  },
+  {
+    "id": "OC-049",
+    "title": "Close the loop on recurrence",
+    "kind": "push-further",
+    "status": "partial",
+    "evidence": "`src/family/response-operations/domain.ts`; `tests/runtime.mjs`",
+    "gap": "Owned evidenced follow-ups and retained reviews exist; recurrence comparison and follow-through agents are missing. OC-041 audit and durable crash/lease outcomes for recurrence agent grants and actions remain this clause's pre-shipping acceptance.",
+    "line": 1518
+  },
+  {
+    "id": "BASE-AGENT-001",
+    "title": "One MCP door per seed",
+    "kind": "target",
+    "status": "done",
+    "evidence": "`tests/oncall-agent-flow.mjs` \u2014 nativeTransport in `tests/oncall-agent-transport.mjs`, through emitted Worker HTTP under autonomous and held company policies: points 1\u20135 reuse discoverDoor and listedDoor for discovery, modern stateless requests, legacy initialization parity, version refusal, deterministic private cached lists, Origin and HeaderMismatch refusals; point 6 sends an authenticated native resolution padded only with legal JSON whitespace beyond the advertised bound, observes 413 and identical retained tables including native revisions, timeline, permanent audit, replay, approval, review and paging custody, then completes the identical unpadded action through its ordinary policy; point 7 reuses refusalPhase for every undeclared capability, preserving native and decision custody with only capacity bookkeeping and its required refusal audit. All probes retain zero outbound requests.",
+    "gap": "",
+    "line": 1519
+  },
+  {
+    "id": "BASE-AGENT-002",
+    "title": "The seed's jobs are tools, through the UI's own actions",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "Not yet judged through this seed's own doors.",
+    "line": 1520
+  },
+  {
+    "id": "BASE-AGENT-003",
+    "title": "Records are resources",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "Not yet judged through this seed's own doors.",
+    "line": 1521
+  },
+  {
+    "id": "BASE-AGENT-004",
+    "title": "Business identity and short-lived, audience-bound tokens",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "`tests/oncall-agent-flow.mjs` \u2014 consentRevocationMatrix via `tests/agent-door-runtime.mjs`: emitted Worker and D1, both company policies, admitted throwaway agents and retained originating consents, exact still-unexpired bearers refused on the next valid native read and coordination mutation within 60 seconds, no private outcome, unchanged application records, revisions, timeline, approval and review custody and paging records apart from attributed refusal audit and its bookkeeping, zero outbound requests; separately consented controls retain policy-appropriate reads and coordination.",
+    "gap": "Not yet judged through this seed's own doors. Bounded receiving-door regression evidence is retained without an acceptance judgment. Main\u2019s missing judgment is retained; this bounded receiving-door evidence does not complete the clause. The regression exercises the acceptance-6 receiving-door scenario through signed fixtures only; acceptance 6 remains unjudged. Seed consent revocation and actual Business consent UI and account propagation remain unproved; existing installation agent revocation conformance is not complete consent proof. Acceptances 1 to 5 and 7 remain unjudged here: full metadata and challenge, real sibling-audience refusal, expiration and lifetime judgment, complete scope challenge, query-token nonlogging and unpairing with independent native sign-in. Signed fixtures supply no external-account proof. Model, investigation, ownership, remediation, recurrence and executor flows remain omitted under OC-045, OC-046, OC-048 and OC-049 agent and AI egress authority holds; existing live work, replay-seam and release prerequisites remain unchanged. Paging remains OFF; production delivery, independent standby and real-phone obligations remain unproved.",
+    "line": 1522
+  },
+  {
+    "id": "BASE-AGENT-005",
+    "title": "An agent acts as a person in a role, never more",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "`tests/oncall-agent-flow.mjs` \u2014 Business sponsor current-role and suspension journey: acceptance 3 under autonomous and held company policies, exact approval by the named sponsor, one preissued unexpired token, attributed note, viewer write refusal with permitted read, suspension 401, unchanged native records and pending work, zero outbound requests; `tests/oncall-agent-native.mjs` \u2014 local-client sponsor demotion.",
+    "gap": "Not yet judged through this seed's own doors. Main's current missing judgment is retained pending acceptance review; the bounded sponsor-transition assertions do not promote this clause. Acceptances 1, 2, 4 and 5 remain unproved: every-tool and every-role UI parity; complete resource, action and budget grant intersection with argument-widening refusal; self-escalation refusal and permitted self-narrowing; complete hostile-record injection matrix. OC-045, OC-046, OC-048 and OC-049 retain their agent and AI egress authority holds; OC-023 team privacy and scoped ownership remain held. No new grant capability, federation, model or execution authority is claimed; paging remains OFF with production delivery, independent standby and real-phone proof omitted.",
+    "line": 1523
+  },
+  {
+    "id": "BASE-AGENT-006",
+    "title": "Every action declares its risk class",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`tests/oncall-agent-flow.mjs` \u2014 every emitted MCP listed tool declares only fleet-catalog classes; incident resolution classification: emitted MCP declarations, server-computed commitment and sensitive facts, autonomous resolution, isolated commitment and sensitive refusals, pending and stale approval state preservation, caller and record claims, attributed effect-free retry and audit classes; `tests/transfer.mjs` \u2014 pinned CLI catalog refusal: passing clean check, one actually exposed tool with an uncatalogued class refused with its tool and class diagnostic, exact declaration-byte restoration and passing clean recheck; `tests/agent-door-browser.mjs` \u2014 exact saved incident-resolution approval and attributed once-only resolution; `tests/agent-door.mjs` \u2014 generic conformance with the resolution fixture.",
+    "gap": "Point 5 and only the native incident-resolution slice of points 1, 2, 3 and 6 are proved. Full surface-table equality for every listed tool, every other tool's class combinations, remaining per-class fixtures, injection checks, class facts and refused-call auditing remain unproved here. Model, investigation, ownership, remediation, recurrence and executor flows remain omitted; OC-045, OC-046, OC-048 and OC-049 retain their agent and AI egress authority hold. Paging stays OFF; provider delivery, independent standby and real-phone duties remain held.",
+    "line": 1524
+  },
+  {
+    "id": "BASE-AGENT-007",
+    "title": "The company's policy decides, at one chokepoint",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`tests/oncall-agent-flow.mjs` \u2014 signed native policy adoption, using `tests/agent-door-runtime.mjs` policyAdoption: the same admitted bearer performs native MCP service reads and coordination notes before signed adoption, during refusal and after restoration under autonomous and held policies; immediate standard-class refusal within 60 seconds, new rule and revision in decisions and retained audit, unchanged application and paging state after each refusal, no queued approval, zero outbound requests, and policy-appropriate restoration with the original refusal audit preserved and the restored read, note and approved execution audited at the restored revision.",
+    "gap": "Acceptance 7 is proved only through the native MCP door; actual Business UI propagation remains unproved. Acceptances 1 to 6 and 8 retain unproved complete tool, class and disposition coverage; setup and upgrade behavior; monetary and daily thresholds; complete multi-class and approval lifecycle matrices; cross-door decision equality; and signature and Business-identity judgments. Model, investigation, ownership, remediation, recurrence and executor flows remain omitted. OC-045, OC-046, OC-048 and OC-049 retain their agent and AI egress authority hold. BASE-AGENT-006, BASE-AGENT-008, BASE-AGENT-011, SURFACE-004 and all release prerequisites remain unchanged. Paging remains OFF; production delivery, independent standby and real-phone obligations remain omitted.",
+    "line": 1525
+  },
+  {
+    "id": "BASE-AGENT-008",
+    "title": "Truthful attribution",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`tests/oncall-agent-flow.mjs` \u2014 person-only coordination: real pending non-erasure resolution approvals and open declaration reviews; valid saved action bodies return person_session_required for agent bearer alone and with the owner cookie under held and autonomous policies, preserving all D1 records, marks, policy, native state and outbound work. Held preparation precedes the autonomous-policy observation. Separate human-session controls retain the actual reviewer and approver, the agent preparer and once-only resolution; existing distinct-responder acceptance remains.",
+    "gap": "Only acceptance 2's native agent-token approval and Mark reviewed observations are proved here. Acceptance 2's device-token and policy-question outcomes, acceptance 1's full confirmation and class matrix, acceptance 3's form-mode elicitation refusal, acceptances 4 to 6's complete record, activity, export and certificate attribution, and acceptance 7's outside-mail sender proof remain unproved. Device qualification, connected sends, model and executor flows retain their prerequisites; OC-045, OC-046, OC-048 and OC-049 still need agent and AI egress authority. BASE-AGENT-006 live classification and SURFACE-004's held Base replay dependency remain unchanged. Paging stays OFF; production delivery, independent standby and real-phone proof remain omitted.",
+    "line": 1526
+  },
+  {
+    "id": "BASE-AGENT-009",
+    "title": "Every agent action is audited with its class and decision",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`tests/agent-door-browser.mjs` \u2014 weekly-counts: native MCP calls at controlled UTC week boundaries, the complete cursor-paginated audit, all rendered class and decision cohorts at 1440 and 390, each carried class counted once, unchanged durable records across reloads and zero outbound requests.",
+    "gap": "Only acceptance 3 is proved. Acceptance 1's complete-write schema; acceptance 2's complete refused, pending, unset and self-escalation matrix; acceptance 4's exact review feed, attributed Mark reviewed and reversible Undo; acceptance 5's filters and full-field export; acceptance 6's removed-agent retention; and acceptance 7's whole-page accessibility remain unproved here beyond existing cited proof. Cross-seed Business reporting, model and executor activity and every unbuilt execution class retain their obligations. OC-045, OC-046, OC-048 and OC-049 retain their agent and AI egress authority hold; BASE-AGENT-006 and SURFACE-004 remain unchanged. Paging stays OFF; delivery, independent standby and real-phone duties remain held.",
+    "line": 1527
+  },
+  {
+    "id": "BASE-AGENT-010",
+    "title": "Agents can follow changes",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "",
+    "gap": "Not yet judged through this seed's own doors.",
+    "line": 1528
+  },
+  {
+    "id": "BASE-AGENT-011",
+    "title": "Limits are policy, and Pause stops everything",
+    "kind": "target",
+    "status": "partial",
+    "evidence": "`tests/oncall-agent-flow.mjs` \u2014 independent Pause flags via `tests/agent-door-runtime.mjs` pauseMatrix: emitted Worker and D1, both company policies, valid next MCP read and coordination mutation refused within 60 seconds, independent flag clearing, bearer resume refused even with the owner cookie, unchanged native and paging state, zero outbound requests, attributed human coordination and policy-appropriate resume. `tests/agent-door-browser.mjs` \u2014 the same matrix through the signed-in Pause agents and Resume agents controls; local, Business-only and resumed screens at 1440 and 390; pending dispatch approval remains refused during local Pause.",
+    "gap": "Acceptances 1 to 5 remain unproved: request-rate refusal, recipient caps, provider spend caps, no-cap spending and the complete usage view; paid AI spend caps are explicitly not enforced. Acceptance 6 proves only the native local control and signed fixture policy-adoption door, not actual Business UI propagation or device continuity. Model and provider spending and executor flows remain omitted under OC-045, OC-046, OC-048 and OC-049 authority holds. BASE-AGENT-006 and SURFACE-004 holds remain unchanged. Paging remains OFF; production delivery, independent standby and real-phone prerequisites remain.",
+    "line": 1529
+  },
+  {
+    "id": "BASE-AGENT-012",
+    "title": "Writes are idempotent and conflict-safe",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "`tests/oncall-agent-flow.mjs` \u2014 droppedDeclarationReplay, invoked by `tests/runtime.mjs`: real MCP declaration response destroyed at headers without reading its body under autonomous and held policies; native D1 confirms the original call and incident before a new JSON-RPC id replays the stored structured outcome, with one declaration, one application revision and state-changing audit commit, a separate linked replay-attempt audit, one original held review and zero outbound requests. `tests/agent-door-runtime.mjs` \u2014 discardToolResponse uses the real HTTP socket with no response-body consumer. `tests/oncall-agent-flow.mjs` \u2014 changedArgumentConflicts, invoked by `tests/runtime.mjs`: completed standard-only oncall.incidents.declare and oncall.notes.add under autonomous and held policies; changed title or note text with the original key returns isError and idempotency_conflict, preserving native records, revisions, timeline, state-changing audit, original call and outcome custody, approvals, reviews and paging; exact original arguments with a new JSON-RPC id return the stored outcome without another effect or held review, with zero outbound requests. `tests/agent-door-runtime.mjs` \u2014 agentEffectSnapshot compares retained effects, allowing attempt audit and capacity bookkeeping. `tests/oncall-agent-flow.mjs` \u2014 staleNoteRevision: autonomous and held MCP note calls carry the current required native revision and a stale optional expected revision; both return isError, revision_conflict and the exact current_revision in metadata and text, preserving native records, revisions, timeline, state-changing audit, replay, approval, review and paging custody apart from refusal audit and capacity bookkeeping. A fresh key using that returned revision adds one attributed note with the autonomous or open-review outcome; retry preserves that single effect and review, with zero outbound requests. `tests/oncall-agent-flow.mjs` \u2014 staleCoordinationRevision, invoked by `tests/runtime.mjs`: on separate ordinary incidents, oncall.incidents.acknowledge and oncall.actions.create carry the current required native revision and stale optional expected_revision under autonomous and held policies. Each refusal returns isError and revision_conflict with the exact authorized parent current_revision in metadata and text and no private structured result, preserving native records, revisions, timeline, state-changing permanent audit, original calls and outcomes, approvals, reviews and paging. A fresh key using the returned revision produces one agent-attributed acknowledgment naming an active responder or one owned, due-dated P1 human-review follow-up that remains open, with the autonomous or single open-review outcome. An identical-argument retry with a new JSON-RPC id returns the stored result without another effect or review; missing and scoped-out targets return not_found without a revision or private result, with zero outbound requests. `tests/oncall-agent-service-replay.mjs` \u2014 changedServiceNameReplay, invoked by `tests/oncall-agent-flow.mjs` through `tests/runtime.mjs`: under autonomous and held policies, a completed standard-only oncall.services.update changes only the authorized service name, retaining environment, owner, runbook, pager and dependencies, with one workspace revision and an agent-attributed native service audit. Reusing its original key and projected ETag with only another schema-valid name returns isError and idempotency_conflict in metadata and text without private structured content. Exact original arguments with a new JSON-RPC id return the stored result and original review identity, without another native effect or held review; native records, revisions, incident timelines, state-changing audit, original call and outcome custody, approvals, reviews and paging remain unchanged apart from attributed refusal and linked replay-attempt audit and capacity bookkeeping, with zero outbound requests.",
+    "gap": "Main's missing judgment is retained; these bounded acceptance-2 and acceptance-3 observations do not complete the clause. Acceptance 2 is proved only for the shipped oncall.incidents.declare tool. Acceptance 1's complete mutating-tool coverage, acceptance 3's remaining tools and argument combinations, acceptance 4's remaining current-revision diagnostics, acceptance 5's foreign-person job-handle refusal, the full 24-hour retention bar and long-work status independent of the Tasks extension remain unproved here. Erasure and approval replay, including SURFACE-004's ambiguous hold and Base seam, are outside this slice; BASE-AGENT-006's live campaign is not repeated. Model, investigation, ownership, remediation, recurrence and executor flows remain omitted; OC-045, OC-046, OC-048 and OC-049 retain their agent and AI egress authority hold. Paging stays OFF; production delivery, independent standby and real-phone duties remain held. Acceptance 3 is proved here only for changed declaration title, standard-only note text and the standard-only service name edit under both company policies; its remaining tools and argument combinations remain unproved. Acceptance 4 is proved here only for a stale optional expected revision on oncall.notes.add, oncall.incidents.acknowledge and oncall.actions.create under both company policies; this bounded observation does not complete the clause, and acceptance 4's other tools and native required-revision diagnostics remain unproved.",
+    "line": 1530
+  },
+  {
+    "id": "BASE-AGENT-013",
+    "title": "Manifest, docs and the conformance journey",
+    "kind": "target",
+    "status": "missing",
+    "evidence": "`scripts/write-agent-surface.mjs` \u2014 native registry generation and freshness check; `tests/oncall-agent-flow.mjs` \u2014 complete generated and served guide inventory against emitted Worker discovery under autonomous and held policies, maintained computed-class fixture references, unchanged native and paging state with zero outbound requests; `tests/agent-door-browser.mjs` \u2014 rendered inventory agrees with live MCP under both policies, desktop assertions and guide proof at 1440 and 390; `tests/agent-door.mjs` \u2014 existing computed-class execution through the Base conformance journey.",
+    "gap": "Main's missing judgment is retained; this bounded native inventory proof does not complete the clause. Acceptances 1 and 2 are proved only for the current native surface: all 39 exposed tools, their scopes, possible classes and maintained class-test fixture IDs; the source manifest retains 40 tools but withholds oncall.events.list, and no resource templates are exposed. Gap: unshipped tools and their class and test documentation; undeclared resources, events and prompts; complete discovery-instruction generation and judgment; acceptance 3 complete harness rejection matrix; acceptance 4 every-point coverage under both policies; acceptance 5 stranger-agent specialist completion. OC-045, OC-046, OC-048 and OC-049 retain the agent egress authority hold; model, investigation, ownership, remediation, recurrence and executor flows remain omitted. Existing BASE-AGENT-005 work and BASE-AGENT-006 and BASE-AGENT-008 holds, SURFACE-004 ambiguous hold and Base replay seam, and all release prerequisites remain unchanged. PARTIAL; paging OFF; no production delivery, independent standby, real-phone or publication authority.",
+    "line": 1531
+  }
+]

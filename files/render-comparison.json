@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "orbit",
+    "text_diff": "version only",
+    "geometry_equal": true,
+    "baseline_version": "v0.4.4",
+    "candidate_version": "v0.4.5",
+    "baseline_status": 200,
+    "candidate_status": 200
+  },
+  {
+    "slug": "spool",
+    "text_diff": "version only",
+    "geometry_equal": true,
+    "baseline_version": "v0.7.4",
+    "candidate_version": "v0.7.5",
+    "baseline_status": 200,
+    "candidate_status": 200
+  },
+  {
+    "slug": "happytohelp",
+    "text_diff": "version only",
+    "geometry_equal": true,
+    "baseline_version": "v0.4.18",
+    "candidate_version": "v0.4.19",
+    "baseline_status": 200,
+    "candidate_status": 200
+  },
+  {
+    "slug": "oncall",
+    "text_diff": "version only",
+    "geometry_equal": true,
+    "baseline_version": "v0.5.6",
+    "candidate_version": "v0.5.7",
+    "baseline_status": 200,
+    "candidate_status": 200
+  }
+]

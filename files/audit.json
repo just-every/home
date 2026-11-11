@@ -1,0 +1,89 @@
+{
+  "head": "a5fcb3ad373f028a71c9271daf5a682af20614f4",
+  "base": "c520b40c7b5bec6943a7e08bbb8fbdccc5ad535a",
+  "changed_paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "candidate_commits": [
+    "a5fcb3ad373f028a71c9271daf5a682af20614f4"
+  ],
+  "identities": "fleet author and committer, no trailers",
+  "credential_shape_check": "no added matches in six pattern families; hashes and homepage color fingerprints reviewed",
+  "counts_before": {
+    "all": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "counts_after": {
+    "all": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "versions": {
+    "orbit": [
+      "v0.4.4",
+      "v0.4.5"
+    ],
+    "spool": [
+      "v0.7.4",
+      "v0.7.5"
+    ],
+    "happytohelp": [
+      "v0.4.18",
+      "v0.4.19"
+    ],
+    "oncall": [
+      "v0.5.6",
+      "v0.5.7"
+    ]
+  },
+  "unrelated_versions_status_wording": "unchanged",
+  "excluded_slugs": "all eight absent",
+  "pricing": "all pricing-bearing source paths unchanged",
+  "state_changes": [
+    "/seeds/cradle/home/signature",
+    "/seeds/dial/home/signature",
+    "/seeds/happytohelp/commit",
+    "/seeds/happytohelp/copy/README.md",
+    "/seeds/happytohelp/copy/seed.json",
+    "/seeds/happytohelp/home/signature",
+    "/seeds/happytohelp/open",
+    "/seeds/happytohelp/sourceRef",
+    "/seeds/happytohelp/tag",
+    "/seeds/lamp/home/signature",
+    "/seeds/lamp/open",
+    "/seeds/mango/home/signature",
+    "/seeds/nook/home/signature",
+    "/seeds/oncall/commit",
+    "/seeds/oncall/copy/README.md",
+    "/seeds/oncall/copy/seed.json",
+    "/seeds/oncall/home/signature",
+    "/seeds/oncall/open",
+    "/seeds/oncall/sourceRef",
+    "/seeds/oncall/tag",
+    "/seeds/orbit/commit",
+    "/seeds/orbit/copy/CONTRACT.md",
+    "/seeds/orbit/copy/seed.json",
+    "/seeds/orbit/home/signature",
+    "/seeds/orbit/open",
+    "/seeds/orbit/sourceRef",
+    "/seeds/orbit/tag",
+    "/seeds/pencil/home/signature",
+    "/seeds/penny/home/signature",
+    "/seeds/slate/home/signature",
+    "/seeds/spool/commit",
+    "/seeds/spool/copy/README.md",
+    "/seeds/spool/copy/seed.json",
+    "/seeds/spool/home/signature",
+    "/seeds/spool/open",
+    "/seeds/spool/sourceRef",
+    "/seeds/spool/tag",
+    "/seeds/uptime/home/signature",
+    "/seeds/uptime/open",
+    "/seeds/vector/home/signature",
+    "/syncedAt"
+  ],
+  "contract_hashes_match_provenance": true
+}
