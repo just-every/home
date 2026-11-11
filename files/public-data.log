@@ -1,0 +1,94 @@
+$ node --import tsx /tmp/je-gate-data.mjs
+{
+  "head": "47e7f9a6c01147c49c6c39403db3bdd9442ad045",
+  "baseline": "464302fb78beebdfb13de67529124fb5602d88e8",
+  "beforeCounts": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "afterCounts": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "checks": "all assertions passed",
+  "stateChanges": [
+    {
+      "path": "syncedAt",
+      "before": "2026-11-11T15:38:44.635Z",
+      "after": "2026-11-11T16:42:08.061Z"
+    },
+    {
+      "path": "seeds.happytohelp.commit",
+      "before": "1c9051307419c22530c4b1f7aab80a53bd4eb9d8",
+      "after": "51492e5d3cbaa94b42df1bef063fb00131038a19"
+    },
+    {
+      "path": "seeds.happytohelp.sourceRef",
+      "before": "v0.4.20",
+      "after": "v0.4.21"
+    },
+    {
+      "path": "seeds.happytohelp.tag",
+      "before": "v0.4.20",
+      "after": "v0.4.21"
+    },
+    {
+      "path": "seeds.happytohelp.copy.README.md",
+      "before": "33f250cb2fb8e7df",
+      "after": "c0b9dd31c64006c4"
+    },
+    {
+      "path": "seeds.happytohelp.copy.seed.json",
+      "before": "b2e8b7d8f41fd3c0",
+      "after": "b2a884123d723f99"
+    },
+    {
+      "path": "seeds.lamp.commit",
+      "before": "511a966c34f2d95eba3766d1cfa4b4a47b10d76e",
+      "after": "9bbe26c4fe8cd806fb1d25e23412f2f6b198028c"
+    },
+    {
+      "path": "seeds.lamp.sourceRef",
+      "before": "v1.11.10",
+      "after": "v1.11.11"
+    },
+    {
+      "path": "seeds.lamp.tag",
+      "before": "v1.11.10",
+      "after": "v1.11.11"
+    },
+    {
+      "path": "seeds.lamp.copy.README.md",
+      "before": "2b724e67fb78c083",
+      "after": "5b506fc6177e9b70"
+    },
+    {
+      "path": "seeds.lamp.copy.seed.json",
+      "before": "83a967a90c763f10",
+      "after": "d583b5717792359e"
+    },
+    {
+      "path": "seeds.lamp.open",
+      "before": null,
+      "after": [
+        "42983364b373"
+      ]
+    },
+    {
+      "path": "seeds.oncall.open",
+      "before": [
+        "42983364b373"
+      ],
+      "after": null
+    },
+    {
+      "path": "seeds.uptime.open",
+      "before": [
+        "64cb07f6a0dd"
+      ],
+      "after": null
+    }
+  ]
+}

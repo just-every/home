@@ -1,0 +1,5 @@
+$ timeout 300 npm run lint
+
+> next-project@0.1.0 lint
+> eslint src tests
+

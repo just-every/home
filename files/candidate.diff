@@ -1,0 +1,132 @@
+diff --git a/public/data/listings.json b/public/data/listings.json
+index 85570a7..d33baa7 100644
+--- a/public/data/listings.json
++++ b/public/data/listings.json
+@@ -1,5 +1,5 @@
+ {
+-  "generatedAt": "2026-11-11T15:38:55.826Z",
++  "generatedAt": "2026-11-11T16:42:17.482Z",
+   "listings": [
+     {
+       "slug": "auth",
+@@ -361,7 +361,7 @@
+       "slug": "happytohelp",
+       "name": "HappyToHelp",
+       "status": "released",
+-      "version": "v0.4.20",
++      "version": "v0.4.21",
+       "category": "Customer support",
+       "line": "Your Codex or Claude fixes the problem and writes the reply.",
+       "headline": "Knows what your customer needs before they do.",
+@@ -404,7 +404,7 @@
+       "slug": "lamp",
+       "name": "Lamp",
+       "status": "released",
+-      "version": "v1.11.10",
++      "version": "v1.11.11",
+       "category": "Status page",
+       "line": "The status page that never leaves your customers in the dark.",
+       "headline": "When something breaks, turn the light on.",
+diff --git a/scripts/seeds-sync/state.json b/scripts/seeds-sync/state.json
+index 87e5a26..d5a5694 100644
+--- a/scripts/seeds-sync/state.json
++++ b/scripts/seeds-sync/state.json
+@@ -1,5 +1,5 @@
+ {
+-  "syncedAt": "2026-11-11T15:38:44.635Z",
++  "syncedAt": "2026-11-11T16:42:08.061Z",
+   "seeds": {
+     "auth": {
+       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
+@@ -481,14 +481,14 @@
+       }
+     },
+     "happytohelp": {
+-      "commit": "1c9051307419c22530c4b1f7aab80a53bd4eb9d8",
+-      "sourceRef": "v0.4.20",
++      "commit": "51492e5d3cbaa94b42df1bef063fb00131038a19",
++      "sourceRef": "v0.4.21",
+       "sourceReason": "released listing version",
+-      "tag": "v0.4.20",
++      "tag": "v0.4.21",
+       "copy": {
+         "CONTRACT.md": "ae8feea8b7998aa7",
+-        "README.md": "33f250cb2fb8e7df",
+-        "seed.json": "b2e8b7d8f41fd3c0"
++        "README.md": "c0b9dd31c64006c4",
++        "seed.json": "b2a884123d723f99"
+       },
+       "brand": {
+         "theme.page": "#faf9f6",
+@@ -535,14 +535,14 @@
+       }
+     },
+     "lamp": {
+-      "commit": "511a966c34f2d95eba3766d1cfa4b4a47b10d76e",
+-      "sourceRef": "v1.11.10",
++      "commit": "9bbe26c4fe8cd806fb1d25e23412f2f6b198028c",
++      "sourceRef": "v1.11.11",
+       "sourceReason": "released listing version",
+-      "tag": "v1.11.10",
++      "tag": "v1.11.11",
+       "copy": {
+         "CONTRACT.md": "2dc299fabd2361bf",
+-        "README.md": "2b724e67fb78c083",
+-        "seed.json": "83a967a90c763f10"
++        "README.md": "5b506fc6177e9b70",
++        "seed.json": "d583b5717792359e"
+       },
+       "brand": {
+         "theme.page": "#f8f6f0",
+@@ -558,7 +558,8 @@
+       "home": {
+         "headline": "When something breaks, turn the light on.",
+         "signature": "eeddddeeefeefeefeeffeeeeeeeffefeeeeeeeeeed9a9ddcfeeeeefeefeefeefeeffeccccccffefeefeefeeeeeeeeeeefeefeefeefeefeeffeccc444454dccffefeefeefeeffeffefeefeefeeffeffeffeddcdcbdcbedcffeffeffefeefeefeefeefeeffeeeddddeedeedeedeedeededddddeeeffefeefeefeefeeffeeedddcccbccbbbbbbbbbaccbddceedffefeefeefeefeefeeffeeeeddcedcddcddcddcdddfeeffefeefeefeefeefeefeefeeffebbb898eedeedeedeedfeefeefeefeefeefeefeefeefeefeeeeddddeedeeeeeeeeeeeefeefeefeefee"
+-      }
++      },
++      "open": ["42983364b373"]
+     },
+     "lanyard": {
+       "commit": "db2a1ef37612248290e0efd85209c9b1f0da8c83",
+@@ -829,8 +830,7 @@
+       "home": {
+         "headline": "Everyone knows who's on call.",
+         "signature": "feedddeeeffeffeffeffeffeffeffeffeffeffeffefeeffeffeffeffefffffefffffeffeffeffeffeffeffeffeffeffeeedccccccccccccccceedffeeeeeeeeedeeeffeffeffeffeeeebbbccccccbbbdddfeeffeedddcbccbeedeeefeeeeeffefeeeeeeeeeeeeeeeeefffdcbdb9ddcddddddcccdddeeeffeeed999999999dddeeeffeeccedcffeffeeedddcdcbecbabbeed99999aaaaeedfeeffeffeffeffeffeffeeeddccedc9aaffefeeffeffeeeeeeefeeffeffeffeffeffeffeffeffeffeffeeeeeeeffeeeeeeeffefeefeeffefeeeeeffeffeffeffe"
+-      },
+-      "open": ["42983364b373"]
++      }
+     },
+     "orbit": {
+       "commit": "36f701cc53e127f0ed4baf367625af329fef6768",
+@@ -1287,8 +1287,7 @@
+       "home": {
+         "headline": "Sleep through the night.",
+         "signature": "eeedddddeeefeefeefeefeefeefeefeefeefeeeededdeeeeeeeddeeeeddeddeddeddeddeddeddeddeddeeeeeeeeeeeeeeeeeeeeefddebbcbbcbbcbbcbbcbbcbbcabcddeeeeeeeeeeeeeeeeeeeeeeededdeededdeddeddeddeddeeeeeeeeeeeeeeeeeeeeeeeeedcd99a99accddddddddddedeeeeeeeeeeeeeedeeeeeeeeeedddaaaa9adddeddedeeddeeeeeeeeeeeeeeefedfedfededdeddfedfededdeddfedfedfddedcfddeddeddcccdddeddfdcedcedcfdcfdcfdcedcedcedcedbfdcfdcedc55888baacbbcbbccbcccceccdccdcceccedbfdceccbac77a"
+-      },
+-      "open": ["64cb07f6a0dd"]
++      }
+     },
+     "vane": {
+       "commit": "a2638146dc0faaefe358d203ac940389183151ef",
+diff --git a/src/data/seed-pages.ts b/src/data/seed-pages.ts
+index dbbdbbd..5ad3011 100644
+--- a/src/data/seed-pages.ts
++++ b/src/data/seed-pages.ts
+@@ -190,7 +190,7 @@ export const seedPageContent: SeedPageContent[] = [
+     ],
+     moveIn: ['Zendesk', 'Help Scout', 'Intercom', 'Freshdesk'],
+     runsOn: 'Your computer, or your own Cloudflare account',
+-    version: 'v0.4.20',
++    version: 'v0.4.21',
+     contractUrl: 'https://happytohelp.com/contract',
+     seoTitle: 'HappyToHelp: free, open-source alternative to Zendesk',
+     seoDescription:
+@@ -345,7 +345,7 @@ export const seedPageContent: SeedPageContent[] = [
+     ],
+     moveIn: ['Atlassian Statuspage', 'Better Stack', 'Instatus', 'Sorry'],
+     runsOn: 'Your computer, or your own Cloudflare account',
+-    version: 'v1.11.10',
++    version: 'v1.11.11',
+     contractUrl: 'https://run-lamp.com/contract',
+     seoTitle: 'Lamp: free, open-source alternative to Atlassian Statuspage',
+     seoDescription:

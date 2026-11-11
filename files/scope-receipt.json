@@ -1,0 +1,34 @@
+{
+  "head": "47e7f9a6c01147c49c6c39403db3bdd9442ad045",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "diffStat": {
+    "files": 3,
+    "insertions": 20,
+    "deletions": 21
+  },
+  "candidateCommits": [
+    {
+      "sha": "47e7f9a6c01147c49c6c39403db3bdd9442ad045",
+      "author": [
+        "Run Edit Run fleet",
+        "fleet@runeditrun.com"
+      ],
+      "committer": [
+        "Run Edit Run fleet",
+        "fleet@runeditrun.com"
+      ],
+      "trailers": []
+    }
+  ],
+  "credentialShapedMatches": [],
+  "diffCheck": "passed",
+  "seedContractLockLedger": {
+    "applicable": false,
+    "reason": "home has no CONTRACT.md, ACCEPTANCE.md, docs/CLAIMS.md, sources.lock.json, contract generator or migration-ledger checker. AGENTS.md and package.json document no such commands. Its documented public listing generator was independently checked and run."
+  },
+  "noTestsChanged": true
+}

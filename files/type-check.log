@@ -1,0 +1,5 @@
+$ timeout 300 npm run type-check
+
+> next-project@0.1.0 type-check
+> tsc --noEmit
+

@@ -1,0 +1,352 @@
+{
+  "head": "47e7f9a6c01147c49c6c39403db3bdd9442ad045",
+  "assertionWidth": 1440,
+  "rows": [
+    {
+      "mode": "head",
+      "sha": "47e7f9a6c01147c49c6c39403db3bdd9442ad045",
+      "slug": "lamp",
+      "width": 1440,
+      "http": 200,
+      "version": "v1.11.11",
+      "versionMatches": 1,
+      "layout": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440,
+        "height": 4891,
+        "h1": [
+          {
+            "text": "Lamp",
+            "x": 380,
+            "width": 680
+          }
+        ],
+        "overflow": [
+          {
+            "tag": "DIV",
+            "class": "gallery_slide__dzaBC",
+            "text": "The public status page during an outage"
+          },
+          {
+            "tag": "FIGURE",
+            "class": "frame_figure__4ifd3 frame_fill__BzJLl",
+            "text": "The public status page during an outage"
+          },
+          {
+            "tag": "DIV",
+            "class": "frame_window__yFI_L",
+            "text": ""
+          },
+          {
+            "tag": "DIV",
+            "class": "frame_bar__kLxgq",
+            "text": ""
+          },
+          {
+            "tag": "DIV",
+            "class": "frame_screen__twPum",
+            "text": ""
+          },
+          {
+            "tag": "IMG",
+            "class": "",
+            "text": ""
+          },
+          {
+            "tag": "FIGCAPTION",
+            "class": "frame_caption__4E939",
+            "text": "The public status page during an outage"
+          },
+          {
+            "tag": "DIV",
+            "class": "gallery_slide__dzaBC",
+            "text": "Write a public incident update"
+          },
+          {
+            "tag": "FIGURE",
+            "class": "frame_figure__4ifd3 frame_fill__BzJLl",
+            "text": "Write a public incident update"
+          },
+          {
+            "tag": "DIV",
+            "class": "frame_window__yFI_L",
+            "text": ""
+          },
+          {
+            "tag": "DIV",
+            "class": "frame_bar__kLxgq",
+            "text": ""
+          },
+          {
+            "tag": "SPAN",
+            "class": "frame_dots__ORooB",
+            "text": ""
+          }
+        ]
+      },
+      "pageErrors": [],
+      "bodyText": "Products\nProcess\nJourney\nContact\nGitHub\nLamp\n\nAlternative to Atlassian Statuspage\n\nAlso replaces Instatus, Better Stack\n\nThe status page that never leaves your customers in the dark.\n\nLamp in 51 seconds\nThe public status page during an outage\nWrite a public incident update\nSchedule maintenance windows\nSubscribers and where updates go\n\nrun-lamp.com\n\u2197\nGitHub\n\u2192\n\nLamp is a status page that tells your customers who is affected, how badly and what still works. You write each update once, and the page, the feed, the site banner and subscriber emails all carry the same words. Your page keeps answering even when Lamp's own database is down.\n\nWhat it does\nShow a status page with each component's state, a 90-day record and a plain-words account of every incident\nWrite each update once and send it to the page, an Atom feed, a site banner and subscriber email together, with a preview first\nKeep the page answering from the last known state, labelled with its age, when Lamp's own database is down\nLet subscribers choose the components they follow and unsubscribe in one click, with no cookies and no CAPTCHA\nRun planned maintenance that starts, finishes and notifies subscribers by itself\nTurn alerts from your monitoring tools into one draft incident per problem, which you review and publish\nPublish post-incident reports, post to Slack or Microsoft Teams, send signed webhooks and keep a delivery log\nUse your own domain and colours, and export everything whenever you like\nWhat it promises\nMonitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update.\nA published update is never edited or deleted; a correction is a new update and both stay on the public timeline.\nPublishing is a single step: the update and the list of people to notify are saved together.\nUptime is rounded down, so a period with any downtime never shows 100 percent.\nPublishing still works while email, the queue or a subscriber's endpoint is failing.\nIf the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear.\nThe public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites.\nThe delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it.\nMoving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm.\nEvery notification email carries a one-click unsubscribe.\nRead the full contract\n\u2192\nMove in from\nAtlassian Statuspage\nBetter Stack\nInstatus\nSorry\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-lamp\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-lamp.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv1.11.11\nLICENCE\nMIT, 100% free\n\nMade with care and a lot of coding agents.\n\nProducts\nAll 49 products\n(so far)\nEssays\nProcess\nJourney\nGet in touch\nContact\nGitHub"
+    },
+    {
+      "mode": "head",
+      "sha": "47e7f9a6c01147c49c6c39403db3bdd9442ad045",
+      "slug": "happytohelp",
+      "width": 1440,
+      "http": 200,
+      "version": "v0.4.21",
+      "versionMatches": 1,
+      "layout": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440,
+        "height": 5058,
+        "h1": [
+          {
+            "text": "HappyToHelp",
+            "x": 380,
+            "width": 680
+          }
+        ],
+        "overflow": [
+          {
+            "tag": "DIV",
+            "class": "gallery_slide__dzaBC",
+            "text": "A support conversation beside the AI helper"
+          },
+          {
+            "tag": "FIGURE",
+            "class": "frame_figure__4ifd3 frame_fill__BzJLl",
+            "text": "A support conversation beside the AI helper"
+          },
+          {
+            "tag": "DIV",
+            "class": "frame_window__yFI_L",
+            "text": ""
+          },
+          {
+            "tag": "DIV",
+            "class": "frame_bar__kLxgq",
+            "text": ""
+          },
+          {
+            "tag": "DIV",
+            "class": "frame_screen__twPum",
+            "text": ""
+          },
+          {
+            "tag": "IMG",
+            "class": "",
+            "text": ""
+          },
+          {
+            "tag": "FIGCAPTION",
+            "class": "frame_caption__4E939",
+            "text": "A support conversation beside the AI helper"
+          },
+          {
+            "tag": "DIV",
+            "class": "gallery_slide__dzaBC",
+            "text": "Move in your support history from an export"
+          },
+          {
+            "tag": "FIGURE",
+            "class": "frame_figure__4ifd3 frame_fill__BzJLl",
+            "text": "Move in your support history from an export"
+          },
+          {
+            "tag": "DIV",
+            "class": "frame_window__yFI_L",
+            "text": ""
+          },
+          {
+            "tag": "DIV",
+            "class": "frame_bar__kLxgq",
+            "text": ""
+          },
+          {
+            "tag": "SPAN",
+            "class": "frame_dots__ORooB",
+            "text": ""
+          }
+        ]
+      },
+      "pageErrors": [],
+      "bodyText": "Products\nProcess\nJourney\nContact\nGitHub\nHappyToHelp\n\nAlternative to Zendesk\n\nAlso replaces Intercom, Help Scout, Freshdesk\n\nYour Codex or Claude fixes the problem and writes the reply.\n\nHappyToHelp in 56 seconds\nA support conversation beside the AI helper\nMove in your support history from an export\n\nhappytohelp.com\n\u2197\nGitHub\n\u2192\n\nHappyToHelp is a customer support desk where your own Codex or Claude investigates the problem, fixes it and drafts the reply, and you press Send. It brings a website chat widget, a shared inbox for chat and email, a help center and replies drafted from your own articles into one place. You can try it beside your current helpdesk and bring your history over when you are ready.\n\nWhat it does\nLet your own Codex or Claude, running on your computer, investigate a customer's problem, fix it and draft the reply for you to send\nPut a chat widget on your website that offers a hand when a visitor seems stuck\nAnswer chat and email from one shared inbox, with customer details beside each conversation, assignment rules, saved-reply macros, snoozing and merging of duplicates\nPublish a searchable help center that customers use to find answers themselves\nGet suggested replies drafted from your own articles, with the source shown\nCollect a thumbs up or down on resolved conversations and see reports you can export\nConnect with scoped API tokens, signed webhooks and Slack\nBring over your help center and history from Zendesk, Help Scout, Intercom or Freshdesk while your current helpdesk keeps running\nWhat it promises\nImports are reviewed before anything is written, send no messages to your customers, can be undone as a whole, and keep source dates, private notes and publication state.\nCustomer and agent messages are stored once, and two conflicting final replies can never both be accepted.\nCustomers can rate a resolution with a thumbs up or down and a short comment, and comments are removed if the contact is erased.\nReports use your own calendar and time zone, count each conversation once, and export to a spreadsheet file that is safe to open.\nMessages are saved before they are shown live, so a reload or dropped connection recovers everything that was sent, and an AI draft never becomes a final answer until it is safely accepted.\nWith no AI key, the AI is simply not assigned to new conversations and your team keeps them; your company's policy sets AI spending limits and uncertain attempts are never silently repeated.\nRevoking a computer's access ends its authority at once, and HappyToHelp never claims that work already running there was stopped.\nAPI tokens have chosen scopes, are shown once, are stored hashed and can expire; an unclear webhook result is not sent again.\nTeammates can sign in with an authenticator app or a security key plus one-time recovery codes, and an owner can require it for everyone or by role.\nYou can export your conversations, files, contacts, help articles, settings and history in one checked archive and restore it into a clean installation; sign-ins and provider secrets are left out.\nRead the full contract\n\u2192\nMove in from\nZendesk\nHelp Scout\nIntercom\nFreshdesk\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-happytohelp\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-happytohelp.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.4.21\nLICENCE\nMIT, 100% free\n\nMade with care and a lot of coding agents.\n\nProducts\nAll 49 products\n(so far)\nEssays\nProcess\nJourney\nGet in touch\nContact\nGitHub"
+    },
+    {
+      "mode": "head",
+      "sha": "47e7f9a6c01147c49c6c39403db3bdd9442ad045",
+      "slug": "lamp",
+      "width": 390,
+      "http": 200,
+      "version": "v1.11.11",
+      "versionMatches": 1,
+      "layout": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "height": 4876,
+        "h1": [
+          {
+            "text": "Lamp",
+            "x": 20,
+            "width": 350
+          }
+        ],
+        "overflow": [
+          {
+            "tag": "DIV",
+            "class": "gallery_slide__dzaBC",
+            "text": "The public status page during an outage"
+          },
+          {
+            "tag": "FIGURE",
+            "class": "frame_figure__4ifd3 frame_fill__BzJLl",
+            "text": "The public status page during an outage"
+          },
+          {
+            "tag": "DIV",
+            "class": "frame_window__yFI_L",
+            "text": ""
+          },
+          {
+            "tag": "DIV",
+            "class": "frame_bar__kLxgq",
+            "text": ""
+          },
+          {
+            "tag": "SPAN",
+            "class": "frame_dots__ORooB",
+            "text": ""
+          },
+          {
+            "tag": "SPAN",
+            "class": "",
+            "text": ""
+          },
+          {
+            "tag": "SPAN",
+            "class": "",
+            "text": ""
+          },
+          {
+            "tag": "DIV",
+            "class": "frame_screen__twPum",
+            "text": ""
+          },
+          {
+            "tag": "IMG",
+            "class": "",
+            "text": ""
+          },
+          {
+            "tag": "FIGCAPTION",
+            "class": "frame_caption__4E939",
+            "text": "The public status page during an outage"
+          },
+          {
+            "tag": "DIV",
+            "class": "gallery_slide__dzaBC",
+            "text": "Write a public incident update"
+          },
+          {
+            "tag": "FIGURE",
+            "class": "frame_figure__4ifd3 frame_fill__BzJLl",
+            "text": "Write a public incident update"
+          }
+        ]
+      },
+      "pageErrors": [],
+      "bodyText": "Products\nProcess\nJourney\nContact\nGitHub\nLamp\n\nAlternative to Atlassian Statuspage\n\nAlso replaces Instatus, Better Stack\n\nThe status page that never leaves your customers in the dark.\n\nLamp in 51 seconds\nThe public status page during an outage\nWrite a public incident update\nSchedule maintenance windows\nSubscribers and where updates go\n\nrun-lamp.com\n\u2197\nGitHub\n\u2192\n\nLamp is a status page that tells your customers who is affected, how badly and what still works. You write each update once, and the page, the feed, the site banner and subscriber emails all carry the same words. Your page keeps answering even when Lamp's own database is down.\n\nWhat it does\nShow a status page with each component's state, a 90-day record and a plain-words account of every incident\nWrite each update once and send it to the page, an Atom feed, a site banner and subscriber email together, with a preview first\nKeep the page answering from the last known state, labelled with its age, when Lamp's own database is down\nLet subscribers choose the components they follow and unsubscribe in one click, with no cookies and no CAPTCHA\nRun planned maintenance that starts, finishes and notifies subscribers by itself\nTurn alerts from your monitoring tools into one draft incident per problem, which you review and publish\nPublish post-incident reports, post to Slack or Microsoft Teams, send signed webhooks and keep a delivery log\nUse your own domain and colours, and export everything whenever you like\nWhat it promises\nMonitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update.\nA published update is never edited or deleted; a correction is a new update and both stay on the public timeline.\nPublishing is a single step: the update and the list of people to notify are saved together.\nUptime is rounded down, so a period with any downtime never shows 100 percent.\nPublishing still works while email, the queue or a subscriber's endpoint is failing.\nIf the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear.\nThe public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites.\nThe delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it.\nMoving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm.\nEvery notification email carries a one-click unsubscribe.\nRead the full contract\n\u2192\nMove in from\nAtlassian Statuspage\nBetter Stack\nInstatus\nSorry\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-lamp\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-lamp.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv1.11.11\nLICENCE\nMIT, 100% free\n\nMade with care and a lot of coding agents.\n\nProducts\nAll 49 products\n(so far)\nEssays\nProcess\nJourney\nGet in touch\nContact\nGitHub"
+    },
+    {
+      "mode": "head",
+      "sha": "47e7f9a6c01147c49c6c39403db3bdd9442ad045",
+      "slug": "happytohelp",
+      "width": 390,
+      "http": 200,
+      "version": "v0.4.21",
+      "versionMatches": 1,
+      "layout": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "height": 5250,
+        "h1": [
+          {
+            "text": "HappyToHelp",
+            "x": 20,
+            "width": 350
+          }
+        ],
+        "overflow": [
+          {
+            "tag": "DIV",
+            "class": "gallery_slide__dzaBC",
+            "text": "A support conversation beside the AI helper"
+          },
+          {
+            "tag": "FIGURE",
+            "class": "frame_figure__4ifd3 frame_fill__BzJLl",
+            "text": "A support conversation beside the AI helper"
+          },
+          {
+            "tag": "DIV",
+            "class": "frame_window__yFI_L",
+            "text": ""
+          },
+          {
+            "tag": "DIV",
+            "class": "frame_bar__kLxgq",
+            "text": ""
+          },
+          {
+            "tag": "SPAN",
+            "class": "frame_dots__ORooB",
+            "text": ""
+          },
+          {
+            "tag": "SPAN",
+            "class": "",
+            "text": ""
+          },
+          {
+            "tag": "SPAN",
+            "class": "",
+            "text": ""
+          },
+          {
+            "tag": "DIV",
+            "class": "frame_screen__twPum",
+            "text": ""
+          },
+          {
+            "tag": "IMG",
+            "class": "",
+            "text": ""
+          },
+          {
+            "tag": "FIGCAPTION",
+            "class": "frame_caption__4E939",
+            "text": "A support conversation beside the AI helper"
+          },
+          {
+            "tag": "DIV",
+            "class": "gallery_slide__dzaBC",
+            "text": "Move in your support history from an export"
+          },
+          {
+            "tag": "FIGURE",
+            "class": "frame_figure__4ifd3 frame_fill__BzJLl",
+            "text": "Move in your support history from an export"
+          }
+        ]
+      },
+      "pageErrors": [],
+      "bodyText": "Products\nProcess\nJourney\nContact\nGitHub\nHappyToHelp\n\nAlternative to Zendesk\n\nAlso replaces Intercom, Help Scout, Freshdesk\n\nYour Codex or Claude fixes the problem and writes the reply.\n\nHappyToHelp in 56 seconds\nA support conversation beside the AI helper\nMove in your support history from an export\n\nhappytohelp.com\n\u2197\nGitHub\n\u2192\n\nHappyToHelp is a customer support desk where your own Codex or Claude investigates the problem, fixes it and drafts the reply, and you press Send. It brings a website chat widget, a shared inbox for chat and email, a help center and replies drafted from your own articles into one place. You can try it beside your current helpdesk and bring your history over when you are ready.\n\nWhat it does\nLet your own Codex or Claude, running on your computer, investigate a customer's problem, fix it and draft the reply for you to send\nPut a chat widget on your website that offers a hand when a visitor seems stuck\nAnswer chat and email from one shared inbox, with customer details beside each conversation, assignment rules, saved-reply macros, snoozing and merging of duplicates\nPublish a searchable help center that customers use to find answers themselves\nGet suggested replies drafted from your own articles, with the source shown\nCollect a thumbs up or down on resolved conversations and see reports you can export\nConnect with scoped API tokens, signed webhooks and Slack\nBring over your help center and history from Zendesk, Help Scout, Intercom or Freshdesk while your current helpdesk keeps running\nWhat it promises\nImports are reviewed before anything is written, send no messages to your customers, can be undone as a whole, and keep source dates, private notes and publication state.\nCustomer and agent messages are stored once, and two conflicting final replies can never both be accepted.\nCustomers can rate a resolution with a thumbs up or down and a short comment, and comments are removed if the contact is erased.\nReports use your own calendar and time zone, count each conversation once, and export to a spreadsheet file that is safe to open.\nMessages are saved before they are shown live, so a reload or dropped connection recovers everything that was sent, and an AI draft never becomes a final answer until it is safely accepted.\nWith no AI key, the AI is simply not assigned to new conversations and your team keeps them; your company's policy sets AI spending limits and uncertain attempts are never silently repeated.\nRevoking a computer's access ends its authority at once, and HappyToHelp never claims that work already running there was stopped.\nAPI tokens have chosen scopes, are shown once, are stored hashed and can expire; an unclear webhook result is not sent again.\nTeammates can sign in with an authenticator app or a security key plus one-time recovery codes, and an owner can require it for everyone or by role.\nYou can export your conversations, files, contacts, help articles, settings and history in one checked archive and restore it into a clean installation; sign-ins and provider secrets are left out.\nRead the full contract\n\u2192\nMove in from\nZendesk\nHelp Scout\nIntercom\nFreshdesk\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-happytohelp\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-happytohelp.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.4.21\nLICENCE\nMIT, 100% free\n\nMade with care and a lot of coding agents.\n\nProducts\nAll 49 products\n(so far)\nEssays\nProcess\nJourney\nGet in touch\nContact\nGitHub"
+    }
+  ],
+  "ownServerPid": 2019,
+  "ownServerStopped": true
+}

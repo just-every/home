@@ -1,0 +1,6 @@
+$ npm run listings -- --check
+
+> next-project@0.1.0 listings
+> node --import tsx scripts/listings.mjs --check
+
+Listings current (49 seeds)

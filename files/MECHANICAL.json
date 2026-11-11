@@ -1,0 +1,216 @@
+{
+  "schema": 1,
+  "tag": "je-gate-27",
+  "role": "independent deciding gate",
+  "repository": "just-every/home",
+  "pr": "https://github.com/just-every/home/pull/43",
+  "candidateBranch": "cloud/je-sync-19",
+  "candidateHead": "47e7f9a6c01147c49c6c39403db3bdd9442ad045",
+  "baseline": "464302fb78beebdfb13de67529124fb5602d88e8",
+  "gateBranchCreatedLocally": "cloud/je-gate-27",
+  "productCommitsCreated": 0,
+  "productPushes": 0,
+  "productTreeClean": true,
+  "rows": {
+    "R1": "MET",
+    "R2": "MET",
+    "R3": "MET",
+    "R4": "MET",
+    "R5": "MET"
+  },
+  "beforeCounts": {
+    "listings": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "afterCounts": {
+    "listings": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "clauseStatusChanges": [],
+  "reviewedPromiseStatuses": {
+    "done": 4,
+    "partial": 16
+  },
+  "newBlockingFindings": 0,
+  "newCFollowups": 0,
+  "exactHeadVerify": {
+    "conclusion": "success",
+    "event": "push",
+    "head_branch": "cloud/je-sync-19",
+    "head_sha": "47e7f9a6c01147c49c6c39403db3bdd9442ad045",
+    "html_url": "https://github.com/just-every/home/actions/runs/43061634641",
+    "id": 43061634641,
+    "name": "Verify branch",
+    "path": ".github/workflows/verify.yml",
+    "status": "completed"
+  },
+  "githubCallsUsed": 9,
+  "checks": [
+    {
+      "check": "npm-ci",
+      "command": [
+        "timeout",
+        "600",
+        "npm",
+        "ci"
+      ],
+      "utc": "2026-11-11T17:07:59.534699+00:00",
+      "exit": 0,
+      "duration_seconds": 23.528,
+      "head": "47e7f9a6c01147c49c6c39403db3bdd9442ad045"
+    },
+    {
+      "check": "listings-check",
+      "command": [
+        "npm",
+        "run",
+        "listings",
+        "--",
+        "--check"
+      ],
+      "utc": "2026-11-11T17:08:35.826475+00:00",
+      "exit": 0,
+      "duration_seconds": 0.514,
+      "head": "47e7f9a6c01147c49c6c39403db3bdd9442ad045"
+    },
+    {
+      "check": "listings-generate",
+      "command": [
+        "npm",
+        "run",
+        "listings"
+      ],
+      "utc": "2026-11-11T17:08:36.407915+00:00",
+      "exit": 0,
+      "duration_seconds": 0.479,
+      "head": "47e7f9a6c01147c49c6c39403db3bdd9442ad045"
+    },
+    {
+      "check": "generator-clean",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code"
+      ],
+      "utc": "2026-11-11T17:08:36.984367+00:00",
+      "exit": 0,
+      "duration_seconds": 0.007,
+      "head": "47e7f9a6c01147c49c6c39403db3bdd9442ad045"
+    },
+    {
+      "check": "type-check",
+      "command": [
+        "timeout",
+        "300",
+        "npm",
+        "run",
+        "type-check"
+      ],
+      "utc": "2026-11-11T17:08:37.054225+00:00",
+      "exit": 0,
+      "duration_seconds": 5.303,
+      "head": "47e7f9a6c01147c49c6c39403db3bdd9442ad045"
+    },
+    {
+      "check": "lint",
+      "command": [
+        "timeout",
+        "300",
+        "npm",
+        "run",
+        "lint"
+      ],
+      "utc": "2026-11-11T17:08:42.471120+00:00",
+      "exit": 0,
+      "duration_seconds": 3.94,
+      "head": "47e7f9a6c01147c49c6c39403db3bdd9442ad045"
+    },
+    {
+      "check": "public-data",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "/tmp/je-gate-data.mjs"
+      ],
+      "utc": "2026-11-11T17:09:07.869930+00:00",
+      "exit": 0,
+      "duration_seconds": 0.391,
+      "head": "47e7f9a6c01147c49c6c39403db3bdd9442ad045"
+    },
+    {
+      "check": "production-build",
+      "command": [
+        "timeout",
+        "600",
+        "npm",
+        "run",
+        "build"
+      ],
+      "utc": "2026-11-11T17:08:46.563689+00:00",
+      "exit": 0,
+      "duration_seconds": 36.935,
+      "head": "47e7f9a6c01147c49c6c39403db3bdd9442ad045"
+    },
+    {
+      "check": "head-browser",
+      "command": [
+        "timeout",
+        "180",
+        "python3",
+        "/tmp/je-gate-browser.py",
+        "head"
+      ],
+      "utc": "2026-11-11T17:10:15.139938+00:00",
+      "exit": 1,
+      "duration_seconds": 63.894,
+      "head": "47e7f9a6c01147c49c6c39403db3bdd9442ad045"
+    },
+    {
+      "check": "head-browser-render",
+      "command": [
+        "timeout",
+        "180",
+        "python3",
+        "/tmp/je-gate-browser.py",
+        "head"
+      ],
+      "utc": "2026-11-11T17:11:39.081622+00:00",
+      "exit": 0,
+      "duration_seconds": 7.84,
+      "head": "47e7f9a6c01147c49c6c39403db3bdd9442ad045"
+    },
+    {
+      "check": "baseline-build",
+      "command": [
+        "timeout",
+        "600",
+        "npm",
+        "run",
+        "build"
+      ],
+      "utc": "2026-11-11T17:12:14.957511+00:00",
+      "exit": 0,
+      "duration_seconds": 28.795,
+      "head": "464302fb78beebdfb13de67529124fb5602d88e8"
+    },
+    {
+      "check": "baseline-browser",
+      "command": [
+        "timeout",
+        "180",
+        "python3",
+        "/tmp/je-gate-browser.py",
+        "baseline"
+      ],
+      "utc": "2026-11-11T17:12:43.828286+00:00",
+      "exit": 0,
+      "duration_seconds": 5.932,
+      "head": "464302fb78beebdfb13de67529124fb5602d88e8"
+    }
+  ],
+  "ownServersStopped": true,
+  "verdict": "GATE PASS 47e7f9a6c01147c49c6c39403db3bdd9442ad045"
+}

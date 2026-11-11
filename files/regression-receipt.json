@@ -1,0 +1,58 @@
+{
+  "head": "47e7f9a6c01147c49c6c39403db3bdd9442ad045",
+  "baseline": "464302fb78beebdfb13de67529124fb5602d88e8",
+  "assertionWidth": 1440,
+  "rows": [
+    {
+      "slug": "lamp",
+      "width": 1440,
+      "baselineVersion": "v1.11.10",
+      "candidateVersion": "v1.11.11",
+      "sameTextExceptVersion": true,
+      "sameMeasuredLayout": true,
+      "candidateHttp": 200,
+      "baselineHttp": 200,
+      "candidatePageErrors": [],
+      "baselinePageErrors": []
+    },
+    {
+      "slug": "happytohelp",
+      "width": 1440,
+      "baselineVersion": "v0.4.20",
+      "candidateVersion": "v0.4.21",
+      "sameTextExceptVersion": true,
+      "sameMeasuredLayout": true,
+      "candidateHttp": 200,
+      "baselineHttp": 200,
+      "candidatePageErrors": [],
+      "baselinePageErrors": []
+    },
+    {
+      "slug": "lamp",
+      "width": 390,
+      "baselineVersion": "v1.11.10",
+      "candidateVersion": "v1.11.11",
+      "sameTextExceptVersion": true,
+      "sameMeasuredLayout": true,
+      "candidateHttp": 200,
+      "baselineHttp": 200,
+      "candidatePageErrors": [],
+      "baselinePageErrors": []
+    },
+    {
+      "slug": "happytohelp",
+      "width": 390,
+      "baselineVersion": "v0.4.20",
+      "candidateVersion": "v0.4.21",
+      "sameTextExceptVersion": true,
+      "sameMeasuredLayout": true,
+      "candidateHttp": 200,
+      "baselineHttp": 200,
+      "candidatePageErrors": [],
+      "baselinePageErrors": []
+    }
+  ],
+  "bothOwnServersStopped": true,
+  "pricingPreservation": "All public source is identical except the two version tokens; both rendered pages retain MIT, 100% free. Assisted/Managed plan price literals are absent from home source on both revisions, so no claim is made that they were independently observed here. No pricing change was introduced.",
+  "tagCommitProvenance": "Both resolved tag commits equal state.json copy commits."
+}

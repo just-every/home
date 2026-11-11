@@ -1,0 +1,52 @@
+[
+  {
+    "seed": "lamp",
+    "tag": "v1.11.11",
+    "commit": "9bbe26c4fe8cd806fb1d25e23412f2f6b198028c",
+    "release": {
+      "assets": [
+        {
+          "name": "rer-release.dsse.json",
+          "size": 3157
+        }
+      ],
+      "draft": false,
+      "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.11",
+      "id": 441883245,
+      "prerelease": false,
+      "published_at": "2026-11-11T15:38:16Z",
+      "tag_name": "v1.11.11",
+      "target_commitish": "main"
+    },
+    "contractUrl": "https://github.com/just-every/run-lamp/blob/v1.11.11/CONTRACT.md",
+    "contractBlob": "30ea726f6b3295c6bb100fbb0015de3cd18b45e1",
+    "contractSha256": "2dc299fabd2361bf0fc61199d664c27646c2b38cd1ccb50d50a7ee581382c33c",
+    "contractUnchangedFromRecordedBaseline": true,
+    "signatureVerified": false
+  },
+  {
+    "seed": "happytohelp",
+    "tag": "v0.4.21",
+    "commit": "51492e5d3cbaa94b42df1bef063fb00131038a19",
+    "release": {
+      "assets": [
+        {
+          "name": "rer-release.dsse.json",
+          "size": 3061
+        }
+      ],
+      "draft": false,
+      "html_url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.21",
+      "id": 441930303,
+      "prerelease": false,
+      "published_at": "2026-11-11T16:22:35Z",
+      "tag_name": "v0.4.21",
+      "target_commitish": "main"
+    },
+    "contractUrl": "https://github.com/just-every/run-happytohelp/blob/v0.4.21/CONTRACT.md",
+    "contractBlob": "dc29251bc6ee4b69de8ae440b3154a890a60db5b",
+    "contractSha256": "ae8feea8b7998aa729edadf621d7f3809aa83bbe073fd3e053e1c1fb8b9b04ec",
+    "contractUnchangedFromRecordedBaseline": true,
+    "signatureVerified": false
+  }
+]

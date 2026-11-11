@@ -1,0 +1,249 @@
+{
+  "head": "47e7f9a6c01147c49c6c39403db3bdd9442ad045",
+  "baseline": "464302fb78beebdfb13de67529124fb5602d88e8",
+  "beforeCounts": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "afterCounts": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "checks": "all assertions passed",
+  "stateChanges": [
+    {
+      "path": "syncedAt",
+      "before": "2026-11-11T15:38:44.635Z",
+      "after": "2026-11-11T16:42:08.061Z"
+    },
+    {
+      "path": "seeds.happytohelp.commit",
+      "before": "1c9051307419c22530c4b1f7aab80a53bd4eb9d8",
+      "after": "51492e5d3cbaa94b42df1bef063fb00131038a19"
+    },
+    {
+      "path": "seeds.happytohelp.sourceRef",
+      "before": "v0.4.20",
+      "after": "v0.4.21"
+    },
+    {
+      "path": "seeds.happytohelp.tag",
+      "before": "v0.4.20",
+      "after": "v0.4.21"
+    },
+    {
+      "path": "seeds.happytohelp.copy.README.md",
+      "before": "33f250cb2fb8e7df",
+      "after": "c0b9dd31c64006c4"
+    },
+    {
+      "path": "seeds.happytohelp.copy.seed.json",
+      "before": "b2e8b7d8f41fd3c0",
+      "after": "b2a884123d723f99"
+    },
+    {
+      "path": "seeds.lamp.commit",
+      "before": "511a966c34f2d95eba3766d1cfa4b4a47b10d76e",
+      "after": "9bbe26c4fe8cd806fb1d25e23412f2f6b198028c"
+    },
+    {
+      "path": "seeds.lamp.sourceRef",
+      "before": "v1.11.10",
+      "after": "v1.11.11"
+    },
+    {
+      "path": "seeds.lamp.tag",
+      "before": "v1.11.10",
+      "after": "v1.11.11"
+    },
+    {
+      "path": "seeds.lamp.copy.README.md",
+      "before": "2b724e67fb78c083",
+      "after": "5b506fc6177e9b70"
+    },
+    {
+      "path": "seeds.lamp.copy.seed.json",
+      "before": "83a967a90c763f10",
+      "after": "d583b5717792359e"
+    },
+    {
+      "path": "seeds.lamp.open",
+      "before": null,
+      "after": [
+        "42983364b373"
+      ]
+    },
+    {
+      "path": "seeds.oncall.open",
+      "before": [
+        "42983364b373"
+      ],
+      "after": null
+    },
+    {
+      "path": "seeds.uptime.open",
+      "before": [
+        "64cb07f6a0dd"
+      ],
+      "after": null
+    }
+  ],
+  "claims": {
+    "happytohelp": {
+      "slug": "happytohelp",
+      "summary": "HappyToHelp is a customer support desk where your own Codex or Claude investigates the problem, fixes it and drafts the reply, and you press Send. It brings a website chat widget, a shared inbox for chat and email, a help center and replies drafted from your own articles into one place. You can try it beside your current helpdesk and bring your history over when you are ready.",
+      "does": [
+        "Let your own Codex or Claude, running on your computer, investigate a customer's problem, fix it and draft the reply for you to send",
+        "Put a chat widget on your website that offers a hand when a visitor seems stuck",
+        "Answer chat and email from one shared inbox, with customer details beside each conversation, assignment rules, saved-reply macros, snoozing and merging of duplicates",
+        "Publish a searchable help center that customers use to find answers themselves",
+        "Get suggested replies drafted from your own articles, with the source shown",
+        "Collect a thumbs up or down on resolved conversations and see reports you can export",
+        "Connect with scoped API tokens, signed webhooks and Slack",
+        "Bring over your help center and history from Zendesk, Help Scout, Intercom or Freshdesk while your current helpdesk keeps running"
+      ],
+      "promises": [
+        {
+          "id": "MOVE-IN-001",
+          "text": "Imports are reviewed before anything is written, send no messages to your customers, can be undone as a whole, and keep source dates, private notes and publication state.",
+          "category": "import"
+        },
+        {
+          "id": "CONVERSATION-001",
+          "text": "Customer and agent messages are stored once, and two conflicting final replies can never both be accepted.",
+          "category": "reliability"
+        },
+        {
+          "id": "DELIVERY-001",
+          "text": "Messages are saved before they are shown live, so a reload or dropped connection recovers everything that was sent, and an AI draft never becomes a final answer until it is safely accepted.",
+          "category": "reliability"
+        },
+        {
+          "id": "OUTCOMES-001",
+          "text": "Customers can rate a resolution with a thumbs up or down and a short comment, and comments are removed if the contact is erased.",
+          "category": "erasure"
+        },
+        {
+          "id": "REPORTS-001",
+          "text": "Reports use your own calendar and time zone, count each conversation once, and export to a spreadsheet file that is safe to open.",
+          "category": "export"
+        },
+        {
+          "id": "AI-001",
+          "text": "With no AI key, the AI is simply not assigned to new conversations and your team keeps them; your company's policy sets AI spending limits and uncertain attempts are never silently repeated.",
+          "category": "ai"
+        },
+        {
+          "id": "DELEGATION-001",
+          "text": "Revoking a computer's access ends its authority at once, and HappyToHelp never claims that work already running there was stopped.",
+          "category": "approval"
+        },
+        {
+          "id": "CONNECTIONS-001",
+          "text": "API tokens have chosen scopes, are shown once, are stored hashed and can expire; an unclear webhook result is not sent again.",
+          "category": "security"
+        },
+        {
+          "id": "IDENTITY-003",
+          "text": "Teammates can sign in with an authenticator app or a security key plus one-time recovery codes, and an owner can require it for everyone or by role.",
+          "category": "security"
+        },
+        {
+          "id": "PORTABILITY-001",
+          "text": "You can export your conversations, files, contacts, help articles, settings and history in one checked archive and restore it into a clean installation; sign-ins and provider secrets are left out.",
+          "category": "export"
+        }
+      ],
+      "moveIn": [
+        "Zendesk",
+        "Help Scout",
+        "Intercom",
+        "Freshdesk"
+      ],
+      "runsOn": "Your computer, or your own Cloudflare account",
+      "version": "v0.4.21",
+      "contractUrl": "https://happytohelp.com/contract",
+      "seoTitle": "HappyToHelp: free, open-source alternative to Zendesk",
+      "seoDescription": "HappyToHelp is a free support desk: your Codex or Claude fixes the problem and drafts the reply, you press Send. A Zendesk, Intercom and Freshdesk alternative."
+    },
+    "lamp": {
+      "slug": "lamp",
+      "summary": "Lamp is a status page that tells your customers who is affected, how badly and what still works. You write each update once, and the page, the feed, the site banner and subscriber emails all carry the same words. Your page keeps answering even when Lamp's own database is down.",
+      "does": [
+        "Show a status page with each component's state, a 90-day record and a plain-words account of every incident",
+        "Write each update once and send it to the page, an Atom feed, a site banner and subscriber email together, with a preview first",
+        "Keep the page answering from the last known state, labelled with its age, when Lamp's own database is down",
+        "Let subscribers choose the components they follow and unsubscribe in one click, with no cookies and no CAPTCHA",
+        "Run planned maintenance that starts, finishes and notifies subscribers by itself",
+        "Turn alerts from your monitoring tools into one draft incident per problem, which you review and publish",
+        "Publish post-incident reports, post to Slack or Microsoft Teams, send signed webhooks and keep a delivery log",
+        "Use your own domain and colours, and export everything whenever you like"
+      ],
+      "promises": [
+        {
+          "id": "INTAKE-002",
+          "text": "Monitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update.",
+          "category": "approval"
+        },
+        {
+          "id": "INCIDENT-004",
+          "text": "A published update is never edited or deleted; a correction is a new update and both stay on the public timeline.",
+          "category": "history"
+        },
+        {
+          "id": "UPDATE-008",
+          "text": "Publishing is a single step: the update and the list of people to notify are saved together.",
+          "category": "reliability"
+        },
+        {
+          "id": "NOTIFY-009",
+          "text": "Publishing still works while email, the queue or a subscriber's endpoint is failing.",
+          "category": "reliability"
+        },
+        {
+          "id": "UPTIME-001",
+          "text": "Uptime is rounded down, so a period with any downtime never shows 100 percent.",
+          "category": "evidence"
+        },
+        {
+          "id": "PAGE-006",
+          "text": "If the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear.",
+          "category": "reliability"
+        },
+        {
+          "id": "PAGE-013",
+          "text": "The public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites.",
+          "category": "privacy"
+        },
+        {
+          "id": "NOTIFY-004",
+          "text": "The delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it.",
+          "category": "privacy"
+        },
+        {
+          "id": "MOVE-002",
+          "text": "Moving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm.",
+          "category": "import"
+        },
+        {
+          "id": "SUB-006",
+          "text": "Every notification email carries a one-click unsubscribe.",
+          "category": "alerts"
+        }
+      ],
+      "moveIn": [
+        "Atlassian Statuspage",
+        "Better Stack",
+        "Instatus",
+        "Sorry"
+      ],
+      "runsOn": "Your computer, or your own Cloudflare account",
+      "version": "v1.11.11",
+      "contractUrl": "https://run-lamp.com/contract",
+      "seoTitle": "Lamp: free, open-source alternative to Atlassian Statuspage",
+      "seoDescription": "Lamp is a free status page that tells customers who is affected and what still works, and keeps answering when your own systems are down."
+    }
+  }
+}

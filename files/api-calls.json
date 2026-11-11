@@ -1,0 +1,110 @@
+[
+  {
+    "call": 1,
+    "utc": "2026-11-11T17:04:45.572607+00:00",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/home/pulls/43",
+      "--jq",
+      "{number,state,html_url,draft,head:{sha:.head.sha,ref:.head.ref,repo:.head.repo.full_name},base:{sha:.base.sha,ref:.base.ref,repo:.base.repo.full_name},mergeable,merged_at}"
+    ],
+    "exit": 0
+  },
+  {
+    "call": 2,
+    "utc": "2026-11-11T17:07:31.616377+00:00",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/home/actions/runs?head_sha=47e7f9a6c01147c49c6c39403db3bdd9442ad045&per_page=100",
+      "--jq",
+      "{total_count,workflow_runs:[.workflow_runs[]|{id,name,event,head_sha,head_branch,status,conclusion,html_url,path}]}"
+    ],
+    "exit": 0
+  },
+  {
+    "call": 3,
+    "utc": "2026-11-11T17:07:32.470010+00:00",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-lamp/releases?per_page=100",
+      "--jq",
+      "[.[]|select(.tag_name==\"v1.11.11\")|{id,tag_name,draft,prerelease,published_at,html_url,target_commitish,assets:[.assets[]|{name,size}]}]"
+    ],
+    "exit": 0
+  },
+  {
+    "call": 4,
+    "utc": "2026-11-11T17:07:33.213689+00:00",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-happytohelp/releases?per_page=100",
+      "--jq",
+      "[.[]|select(.tag_name==\"v0.4.21\")|{id,tag_name,draft,prerelease,published_at,html_url,target_commitish,assets:[.assets[]|{name,size}]}]"
+    ],
+    "exit": 0
+  },
+  {
+    "call": 5,
+    "utc": "2026-11-11T17:07:33.985024+00:00",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-lamp/contents/CONTRACT.md?ref=v1.11.11",
+      "--jq",
+      "{sha,html_url,content,encoding}"
+    ],
+    "exit": 0
+  },
+  {
+    "call": 6,
+    "utc": "2026-11-11T17:07:34.671685+00:00",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-happytohelp/contents/CONTRACT.md?ref=v0.4.21",
+      "--jq",
+      "{sha,html_url,content,encoding}"
+    ],
+    "exit": 0
+  },
+  {
+    "call": 7,
+    "utc": "2026-11-11T17:13:06.808960+00:00",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-lamp/commits/v1.11.11",
+      "--jq",
+      "{sha,html_url}"
+    ],
+    "exit": 0
+  },
+  {
+    "call": 8,
+    "utc": "2026-11-11T17:13:07.456679+00:00",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-happytohelp/commits/v0.4.21",
+      "--jq",
+      "{sha,html_url}"
+    ],
+    "exit": 0
+  },
+  {
+    "call": 9,
+    "utc": "2026-11-11T17:14:16.372506+00:00",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/home/pulls/43",
+      "--jq",
+      "{number,state,html_url,draft,head:{sha:.head.sha,ref:.head.ref,repo:.head.repo.full_name},base:{sha:.base.sha,ref:.base.ref,repo:.base.repo.full_name},mergeable,merged_at}"
+    ],
+    "exit": 0
+  }
+]
