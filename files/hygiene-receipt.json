@@ -1,0 +1,60 @@
+{
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-20",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "perSeedChanges": [
+    {
+      "slug": "lamp",
+      "fields": [
+        "version"
+      ],
+      "from": "v1.11.11",
+      "to": "v1.11.12"
+    },
+    {
+      "slug": "orbit",
+      "fields": [
+        "version"
+      ],
+      "from": "v0.4.5",
+      "to": "v0.4.6"
+    },
+    {
+      "slug": "spool",
+      "fields": [
+        "version"
+      ],
+      "from": "v0.7.5",
+      "to": "v0.7.6"
+    },
+    {
+      "slug": "uptime",
+      "fields": [
+        "version"
+      ],
+      "from": "v0.5.5",
+      "to": "v0.5.6"
+    }
+  ],
+  "countsBefore": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "countsAfter": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "excludedSeedsAbsent": true,
+  "publicCopyUnchanged": true,
+  "brandJsonSha256": "a54bb68daa5f1590e5a6eaafecf38c627e42fa014f65c0d7efaf81bee809b7a4",
+  "pricingPresentationUnchanged": true,
+  "credentialShapeScan": "pass; no matching values",
+  "diffWhitespace": "pass",
+  "contractStatusChanges": []
+}

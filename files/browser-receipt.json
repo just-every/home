@@ -1,0 +1,75 @@
+{
+  "origin": "http://127.0.0.1:3000",
+  "browser": "system Chromium, --no-sandbox",
+  "assertionWidth": 1440,
+  "proofWidths": [
+    1440,
+    390
+  ],
+  "screens": [
+    {
+      "slug": "uptime",
+      "width": 1440,
+      "path": "screens/uptime-1440.png",
+      "status": 200,
+      "version": "v0.5.6",
+      "asserted": true
+    },
+    {
+      "slug": "lamp",
+      "width": 1440,
+      "path": "screens/lamp-1440.png",
+      "status": 200,
+      "version": "v1.11.12",
+      "asserted": true
+    },
+    {
+      "slug": "orbit",
+      "width": 1440,
+      "path": "screens/orbit-1440.png",
+      "status": 200,
+      "version": "v0.4.6",
+      "asserted": true
+    },
+    {
+      "slug": "spool",
+      "width": 1440,
+      "path": "screens/spool-1440.png",
+      "status": 200,
+      "version": "v0.7.6",
+      "asserted": true
+    },
+    {
+      "slug": "uptime",
+      "width": 390,
+      "path": "screens/uptime-390.png",
+      "status": 200,
+      "version": "v0.5.6",
+      "asserted": false
+    },
+    {
+      "slug": "lamp",
+      "width": 390,
+      "path": "screens/lamp-390.png",
+      "status": 200,
+      "version": "v1.11.12",
+      "asserted": false
+    },
+    {
+      "slug": "orbit",
+      "width": 390,
+      "path": "screens/orbit-390.png",
+      "status": 200,
+      "version": "v0.4.6",
+      "asserted": false
+    },
+    {
+      "slug": "spool",
+      "width": 390,
+      "path": "screens/spool-390.png",
+      "status": 200,
+      "version": "v0.7.6",
+      "asserted": false
+    }
+  ]
+}

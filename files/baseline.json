@@ -1,0 +1,12 @@
+{
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-20",
+  "base": "71a913e8667dc8a68e8cfc7e8fc04a1c401de2fa",
+  "beforeCounts": {
+    "coming-soon": 14,
+    "released": 35
+  },
+  "beforeTotal": 49,
+  "brandJsonSha256": "a54bb68daa5f1590e5a6eaafecf38c627e42fa014f65c0d7efaf81bee809b7a4",
+  "clauseStatusChanges": []
+}

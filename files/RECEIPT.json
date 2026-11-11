@@ -1,0 +1,56 @@
+{
+  "tag": "je-sync-20",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-20",
+  "head": "393067c8e694cb7d088fd44685a9d4dd37b0ae9d",
+  "base": "71a913e8667dc8a68e8cfc7e8fc04a1c401de2fa",
+  "pr": {
+    "base": "main",
+    "head": "393067c8e694cb7d088fd44685a9d4dd37b0ae9d",
+    "html_url": "https://github.com/just-every/home/pull/44",
+    "number": 44
+  },
+  "ci": {
+    "conclusion": "success",
+    "head_sha": "393067c8e694cb7d088fd44685a9d4dd37b0ae9d",
+    "html_url": "https://github.com/just-every/home/actions/runs/43105519553",
+    "status": "completed",
+    "run_id": 43105519553
+  },
+  "localChecks": {
+    "type-check": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "brand-check": "passed",
+    "listings-check": "passed"
+  },
+  "finalDry": {
+    "seeds": 49,
+    "changed": 0,
+    "unreadable": 0
+  },
+  "countsBefore": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "countsAfter": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "clauseStatusChanges": [],
+  "withheldNewEligibleChanges": [],
+  "preservedFollowups": [
+    "Terrace reconciliation wording",
+    "HappyToHelp eight partial-evidence promise clauses",
+    "Uptime STATE-001 and NETWORK-001 partial evidence",
+    "Lamp eight partial-evidence promise clauses"
+  ],
+  "signatureVerification": "Not performed; qualifying release envelope asset presence only",
+  "productPush": "succeeded on first transport attempt",
+  "browserProof": "four changed version facts asserted at 1440; eight screenshots at 1440 and 390; browser closed and recorded proof server stopped",
+  "unreadableSources": [],
+  "blockers": [],
+  "cleanup": "after verified evidence transfer, delete published product clone and node_modules"
+}
