@@ -1,0 +1,24 @@
+{
+  "hash_method": "sha256(type + colon + summary) first 12 hex, scripts/seeds-sync/detect/index.mjs keyOf",
+  "markers": [
+    {
+      "seed": "orbit",
+      "id": "922fed04eacf",
+      "change": "removed",
+      "summary": "CONTRACT.md, seed.json changed since the last sync"
+    },
+    {
+      "seed": "spool",
+      "id": "42983364b373",
+      "change": "removed",
+      "summary": "README.md, seed.json changed since the last sync"
+    },
+    {
+      "seed": "uptime",
+      "id": "64cb07f6a0dd",
+      "change": "added",
+      "summary": "seed.json changed since the last sync"
+    }
+  ],
+  "wording_changed": false
+}

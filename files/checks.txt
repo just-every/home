@@ -1,0 +1,8 @@
+listings -- --check exit=0
+listings exit=0
+type-check exit=0
+lint exit=0
+build exit=0
+baseline build exit=0
+browser exit=1
+browser corrected navigation exit=0

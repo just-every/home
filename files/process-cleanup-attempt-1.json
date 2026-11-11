@@ -1,0 +1,17 @@
+{
+  "servers": [
+    {
+      "pid": 1649,
+      "port": 3260,
+      "stopped": true,
+      "returncode": 143
+    },
+    {
+      "pid": 1650,
+      "port": 3261,
+      "stopped": true,
+      "returncode": 143
+    }
+  ],
+  "browser": "browser.close in finally"
+}

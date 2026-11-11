@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "tag": "je-gate-26",
+  "repository": "just-every/home",
+  "pr": 42,
+  "candidate_branch": "cloud/je-sync-18",
+  "head": "c7c60bc1617ba017472cb25a91f419492bc4bef5",
+  "baseline": "85aa3f93662614840d92352f33f375b9ecca8b62",
+  "verdict": "GATE PASS",
+  "rubric": {
+    "R1": "MET",
+    "R2": "MET",
+    "R3": "MET",
+    "R4": "MET",
+    "R5": "MET"
+  },
+  "blocking_findings": 0,
+  "new_c_followups": 0,
+  "clause_status_changes": [],
+  "before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "verify": {
+    "run_id": 43051508549,
+    "head_sha": "c7c60bc1617ba017472cb25a91f419492bc4bef5",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/just-every/home/actions/runs/43051508549"
+  },
+  "github_api_calls": 9,
+  "product_edits": false,
+  "product_push": false,
+  "provider_actions": false,
+  "blockers": []
+}

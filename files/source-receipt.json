@@ -1,0 +1,76 @@
+{
+  "result": "pass",
+  "sources": [
+    {
+      "seed": "uptime",
+      "tag": "v0.5.5",
+      "release": {
+        "assets": [
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3361
+          },
+          {
+            "name": "uptime-0.4.0-monitor-1440.png",
+            "size": 273042
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.5",
+        "prerelease": false,
+        "published_at": "2026-11-11T13:02:13Z",
+        "tag_name": "v0.5.5",
+        "target_commitish": "main"
+      },
+      "tag_ref_read": "repos/just-every/run-uptime/contents/CONTRACT.md?ref=v0.5.5",
+      "contract_sha256": "879a0aeaeb48188b88efb518206a1f298c527772c4a86c077c9dbe88437eb849",
+      "contract_matches_state_hash": true,
+      "dsse": "asset presence verified; signature not verified"
+    },
+    {
+      "seed": "oncall",
+      "tag": "v0.5.8",
+      "release": {
+        "assets": [
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3169
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.8",
+        "prerelease": false,
+        "published_at": "2026-11-11T11:59:50Z",
+        "tag_name": "v0.5.8",
+        "target_commitish": "main"
+      },
+      "tag_ref_read": "repos/just-every/run-oncall/contents/CONTRACT.md?ref=v0.5.8",
+      "contract_sha256": "18eeac1c52740d240c9c82de27ff3ef90f22e2fd82749c256367781a15731e79",
+      "contract_matches_state_hash": true,
+      "dsse": "asset presence verified; signature not verified"
+    },
+    {
+      "seed": "happytohelp",
+      "tag": "v0.4.20",
+      "release": {
+        "assets": [
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3061
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.20",
+        "prerelease": false,
+        "published_at": "2026-11-11T14:29:30Z",
+        "tag_name": "v0.4.20",
+        "target_commitish": "main"
+      },
+      "tag_ref_read": "repos/just-every/run-happytohelp/contents/CONTRACT.md?ref=v0.4.20",
+      "contract_sha256": "ae8feea8b7998aa729edadf621d7f3809aa83bbe073fd3e053e1c1fb8b9b04ec",
+      "contract_matches_state_hash": true,
+      "dsse": "asset presence verified; signature not verified"
+    }
+  ],
+  "github_calls_so_far": 8
+}

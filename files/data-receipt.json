@@ -1,0 +1,158 @@
+{
+  "base": "85aa3f93662614840d92352f33f375b9ecca8b62",
+  "head": "c7c60bc1617ba017472cb25a91f419492bc4bef5",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "before": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "listing_changes": {
+    "happytohelp": {
+      "version": [
+        "v0.4.19",
+        "v0.4.20"
+      ]
+    },
+    "oncall": {
+      "version": [
+        "v0.5.7",
+        "v0.5.8"
+      ]
+    },
+    "uptime": {
+      "version": [
+        "v0.5.4",
+        "v0.5.5"
+      ]
+    }
+  },
+  "state_changes": {
+    "uptime": {
+      "tag": [
+        "v0.5.4",
+        "v0.5.5"
+      ],
+      "open": [
+        null,
+        [
+          "64cb07f6a0dd"
+        ]
+      ],
+      "commit": [
+        "0c8bd80cefc3d9ea8528b810ce160b614e18b528",
+        "3caf61f087a59a0cc009f1eb1c87077be0eb985b"
+      ],
+      "sourceRef": [
+        "v0.5.4",
+        "v0.5.5"
+      ],
+      "copy": [
+        {
+          "CONTRACT.md": "879a0aeaeb48188b",
+          "README.md": "0c82b26f97388136",
+          "seed.json": "f46c03df4364a2cd"
+        },
+        {
+          "CONTRACT.md": "879a0aeaeb48188b",
+          "README.md": "0c82b26f97388136",
+          "seed.json": "40e1b525bdbd45d2"
+        }
+      ]
+    },
+    "orbit": {
+      "open": [
+        [
+          "922fed04eacf"
+        ],
+        null
+      ]
+    },
+    "happytohelp": {
+      "tag": [
+        "v0.4.19",
+        "v0.4.20"
+      ],
+      "commit": [
+        "63b6217aae78be1cdaf5d1b8f8ac6f1d04ce83ad",
+        "1c9051307419c22530c4b1f7aab80a53bd4eb9d8"
+      ],
+      "sourceRef": [
+        "v0.4.19",
+        "v0.4.20"
+      ],
+      "copy": [
+        {
+          "CONTRACT.md": "ae8feea8b7998aa7",
+          "README.md": "5723534837be3849",
+          "seed.json": "b05f7899e41d0698"
+        },
+        {
+          "CONTRACT.md": "ae8feea8b7998aa7",
+          "README.md": "33f250cb2fb8e7df",
+          "seed.json": "b2e8b7d8f41fd3c0"
+        }
+      ]
+    },
+    "oncall": {
+      "tag": [
+        "v0.5.7",
+        "v0.5.8"
+      ],
+      "commit": [
+        "4d80176140c138d0d9b01830b75e2edc18f9b8da",
+        "0dac089dba93dc1209c3a2317d5e7a4392d44c4e"
+      ],
+      "sourceRef": [
+        "v0.5.7",
+        "v0.5.8"
+      ],
+      "copy": [
+        {
+          "CONTRACT.md": "18eeac1c52740d24",
+          "README.md": "d6378f1dcd3f1500",
+          "seed.json": "03b84c43bc03a252"
+        },
+        {
+          "CONTRACT.md": "18eeac1c52740d24",
+          "README.md": "9cef79d797d0bec2",
+          "seed.json": "6a5f66f9b4035e67"
+        }
+      ]
+    },
+    "spool": {
+      "open": [
+        [
+          "42983364b373"
+        ],
+        null
+      ]
+    }
+  },
+  "excluded_absent": [
+    "barrow",
+    "beacon",
+    "brook",
+    "delta",
+    "ferry",
+    "lily",
+    "linen",
+    "relay"
+  ],
+  "unchanged_versions": {
+    "orbit": "v0.4.5",
+    "spool": "v0.7.5",
+    "lamp": "v1.11.10"
+  },
+  "credential_shape_scan": "no matches in added lines; no secret values printed",
+  "tests_deleted_or_weakened": false
+}
