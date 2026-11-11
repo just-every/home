@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-11T00:49:05.160Z",
+  "syncedAt": "2026-11-11T05:43:32.135Z",
   "seeds": {
     "auth": {
       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
@@ -535,14 +535,14 @@
       }
     },
     "lamp": {
-      "commit": "6df2cf86b8c679313750530365d3f1e94b77d0c8",
-      "sourceRef": "v1.11.9",
+      "commit": "511a966c34f2d95eba3766d1cfa4b4a47b10d76e",
+      "sourceRef": "v1.11.10",
       "sourceReason": "released listing version",
-      "tag": "v1.11.9",
+      "tag": "v1.11.10",
       "copy": {
         "CONTRACT.md": "2dc299fabd2361bf",
-        "README.md": "71c658e21890218c",
-        "seed.json": "0aa1465067254f1e"
+        "README.md": "2b724e67fb78c083",
+        "seed.json": "83a967a90c763f10"
       },
       "brand": {
         "theme.page": "#f8f6f0",
@@ -558,7 +558,8 @@
       "home": {
         "headline": "When something breaks, turn the light on.",
         "signature": "eeddddeeefeefeefeeffeeeeeeeffefeeeeeeeeeed9a9ddcfeeeeefeefeefeefeeffeccccccffefeefeefeeeeeeeeeeefeeffefeefeefeeffeccc444454dccffefeefeefeeffeffefeefeefeeffeffeffeddcdcbdcbedcffeffeffefeefeefeefeefeeffeeeddddeedeedeedeedeededddddeeeffefeefeefeefeeffeeedddcccbccbbbbbbbbbaccbddceedffefeefeefeefeefeeffeeeeddcddcddcddcddcdddfeeffefeefeefeefeefeefeefeeffebbb898eedeedeedeedfeefeefeefeefeefeefeefeefeefeeeeddddeedeeeeeeeeeeeefeefeefeefee"
-      }
+      },
+      "open": ["42983364b373"]
     },
     "lanyard": {
       "commit": "db2a1ef37612248290e0efd85209c9b1f0da8c83",
@@ -1262,14 +1263,14 @@
       }
     },
     "uptime": {
-      "commit": "76b704b7f489a0cfbf8b4ecf25bfbfd58f292050",
-      "sourceRef": "v0.5.2",
+      "commit": "0c8bd80cefc3d9ea8528b810ce160b614e18b528",
+      "sourceRef": "v0.5.4",
       "sourceReason": "released listing version",
-      "tag": "v0.5.2",
+      "tag": "v0.5.4",
       "copy": {
         "CONTRACT.md": "879a0aeaeb48188b",
         "README.md": "0c82b26f97388136",
-        "seed.json": "d2578d60f3607781"
+        "seed.json": "f46c03df4364a2cd"
       },
       "brand": {
         "branding.primaryColor": "#14204a",
@@ -1286,7 +1287,8 @@
       "home": {
         "headline": "Sleep through the night.",
         "signature": "eeeddeddeeefeefeefeefeefeefeefeefeefeeeddeddeeeeeeeddeeeeddeddeddeddeddeddeddeddeddeeeeeeeeeeeeeeeeeeeeefddebbcbbcbbcbbcbbcbbcbbcabcddeeeeeeeeeeeeeeeeeeeeeeedeedeededdeddeddeddeddeeeeeeeeeeeeeeeeeeeeeeeeedcd99a89accddddddddddedeeeeeeeeeeeeeedeeeeeeeeeedddaaaa9adcdeddedeeddeeeeeeeeeeeeeeefedfedfededdeddfedfededdeddfedfedfddedcfddeddeddcccdddeddfdcedcedcfdcfdcfdcedcedcedcedbfdcfdcedc55888baacbbcbbccbcccceccdccdcceccedbfdceccbac77a"
-      }
+      },
+      "open": ["64cb07f6a0dd"]
     },
     "vane": {
       "commit": "a2638146dc0faaefe358d203ac940389183151ef",

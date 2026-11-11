@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T00:49:27.498Z",
+  "generatedAt": "2026-11-11T05:43:52.959Z",
   "listings": [
     {
       "slug": "auth",
@@ -404,7 +404,7 @@
       "slug": "lamp",
       "name": "Lamp",
       "status": "released",
-      "version": "v1.11.9",
+      "version": "v1.11.10",
       "category": "Status page",
       "line": "The status page that never leaves your customers in the dark.",
       "headline": "When something breaks, turn the light on.",
@@ -947,7 +947,7 @@
       "slug": "uptime",
       "name": "Uptime",
       "status": "released",
-      "version": "v0.5.2",
+      "version": "v0.5.4",
       "category": "Uptime monitoring",
       "line": "Alerts you only when a failure is confirmed.",
       "headline": "Sleep through the night.",
