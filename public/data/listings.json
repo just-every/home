@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T21:39:35.441Z",
+  "generatedAt": "2026-11-12T06:45:51.234Z",
   "listings": [
     {
       "slug": "auth",
@@ -947,7 +947,7 @@
       "slug": "uptime",
       "name": "Uptime",
       "status": "released",
-      "version": "v0.5.6",
+      "version": "v0.5.7",
       "category": "Uptime monitoring",
       "line": "Alerts you only when a failure is confirmed.",
       "headline": "Sleep through the night.",
