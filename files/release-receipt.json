@@ -1,0 +1,188 @@
+{
+  "spool": {
+    "tag": {
+      "name": "v0.7.8",
+      "target": {
+        "oid": "09c2ac4ddbfa21fd2a3d28844b3f19036aeb8717",
+        "target": {
+          "oid": "47ecaeeec8c442aa4648ad3b7f4fc1d7e1f115e2"
+        }
+      }
+    },
+    "release": {
+      "name": "Spool 0.7.8",
+      "tagName": "v0.7.8",
+      "isDraft": false,
+      "isPrerelease": false,
+      "publishedAt": "2026-11-12T16:30:33Z",
+      "url": "https://github.com/just-every/run-spool/releases/tag/v0.7.8",
+      "tagCommit": {
+        "oid": "47ecaeeec8c442aa4648ad3b7f4fc1d7e1f115e2"
+      },
+      "releaseAssets": {
+        "nodes": [
+          {
+            "name": "spool-issue-page-1600.png"
+          },
+          {
+            "name": "rer-release.dsse.json"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    "contract_blob": "98d20645c67acd0ea21f39ea97855ba566a79e62",
+    "contract_sha256": "ee9c871bfa25a110d3f3e61924164c75cc17ea412cb775f2e0621f114ab3594b",
+    "signature_verified": false,
+    "releases_read_once": true
+  },
+  "lamp": {
+    "tag": {
+      "name": "v1.11.13",
+      "target": {
+        "oid": "43527136562b8439c5001a86637703c7c889bb6e",
+        "target": {
+          "oid": "e82bc349b98af44c440efa2960927e327deda1a5"
+        }
+      }
+    },
+    "release": {
+      "name": "Lamp 1.11.13",
+      "tagName": "v1.11.13",
+      "isDraft": false,
+      "isPrerelease": false,
+      "publishedAt": "2026-11-12T16:30:00Z",
+      "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.13",
+      "tagCommit": {
+        "oid": "e82bc349b98af44c440efa2960927e327deda1a5"
+      },
+      "releaseAssets": {
+        "nodes": [
+          {
+            "name": "rer-release.dsse.json"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    "contract_blob": "7e3aeee348aa73d49eaf7e0fb5289ae9ea5378fd",
+    "contract_sha256": "8b575f27ee607ce3f259e3ec0d733febbf5536d9906cb99a0d9a2ede09c5096f",
+    "signature_verified": false,
+    "releases_read_once": true
+  },
+  "orbit": {
+    "tag": {
+      "name": "v0.4.7",
+      "target": {
+        "oid": "cbb1ff48665b7e7bd8762e95904a9649cb2daf01",
+        "target": {
+          "oid": "eab0faafccd2eb0945dddb7d0f52c30ce573c04c"
+        }
+      }
+    },
+    "release": {
+      "name": "Orbit 0.4.7",
+      "tagName": "v0.4.7",
+      "isDraft": false,
+      "isPrerelease": false,
+      "publishedAt": "2026-11-12T15:49:46Z",
+      "url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.7",
+      "tagCommit": {
+        "oid": "eab0faafccd2eb0945dddb7d0f52c30ce573c04c"
+      },
+      "releaseAssets": {
+        "nodes": [
+          {
+            "name": "rer-release.dsse.json"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    "contract_blob": "c5e1855eac1c82bf4b0aa271c8693c4062e11810",
+    "contract_sha256": "faa136fb56b398c3a3ba80defbe1789b3cfe2aca153dc9a5e7c4205e6aa2c32f",
+    "signature_verified": false,
+    "releases_read_once": true
+  },
+  "oncall": {
+    "tag": {
+      "name": "v0.5.10",
+      "target": {
+        "oid": "8df79321d1c25b2a369a77b1f1fb7cc6bb2e4f0f",
+        "target": {
+          "oid": "1dc0069324de17933e7b65bffefa14de7dabea9a"
+        }
+      }
+    },
+    "release": {
+      "name": "Oncall 0.5.10",
+      "tagName": "v0.5.10",
+      "isDraft": false,
+      "isPrerelease": false,
+      "publishedAt": "2026-11-12T14:03:26Z",
+      "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.10",
+      "tagCommit": {
+        "oid": "1dc0069324de17933e7b65bffefa14de7dabea9a"
+      },
+      "releaseAssets": {
+        "nodes": [
+          {
+            "name": "rer-release.dsse.json"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    "contract_blob": "ddfeda84ff861f3c7b2a54a5372997dcbd485ca9",
+    "contract_sha256": "3ba769d11b265482949e571b667cd835e61b0de3b4fa92d56c490d93d604add8",
+    "signature_verified": false,
+    "releases_read_once": true
+  },
+  "uptime": {
+    "tag": {
+      "name": "v0.5.8",
+      "target": {
+        "oid": "e9e930cabc936d216c649c3123f0873bed99207a",
+        "target": {
+          "oid": "ed5429192d18503c4c8caa8d797d82ffdcc78f54"
+        }
+      }
+    },
+    "release": {
+      "name": "Uptime 0.5.8",
+      "tagName": "v0.5.8",
+      "isDraft": false,
+      "isPrerelease": false,
+      "publishedAt": "2026-11-12T13:38:20Z",
+      "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.8",
+      "tagCommit": {
+        "oid": "ed5429192d18503c4c8caa8d797d82ffdcc78f54"
+      },
+      "releaseAssets": {
+        "nodes": [
+          {
+            "name": "uptime-0.4.0-monitor-1440.png"
+          },
+          {
+            "name": "rer-release.dsse.json"
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": false
+        }
+      }
+    },
+    "contract_blob": "4a4d0ade2fc6841efedadc3b995eb741f7af7135",
+    "contract_sha256": "879a0aeaeb48188b88efb518206a1f298c527772c4a86c077c9dbe88437eb849",
+    "signature_verified": false,
+    "releases_read_once": true
+  }
+}

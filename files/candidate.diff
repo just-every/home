@@ -1,0 +1,267 @@
+diff --git a/public/data/listings.json b/public/data/listings.json
+index 235eacc..0b1fd52 100644
+--- a/public/data/listings.json
++++ b/public/data/listings.json
+@@ -1,5 +1,5 @@
+ {
+-  "generatedAt": "2026-11-12T11:45:53.358Z",
++  "generatedAt": "2026-11-12T17:02:07.783Z",
+   "listings": [
+     {
+       "slug": "auth",
+@@ -404,7 +404,7 @@
+       "slug": "lamp",
+       "name": "Lamp",
+       "status": "released",
+-      "version": "v1.11.12",
++      "version": "v1.11.13",
+       "category": "Status page",
+       "line": "The status page that never leaves your customers in the dark.",
+       "headline": "When something breaks, turn the light on.",
+@@ -591,7 +591,7 @@
+       "slug": "oncall",
+       "name": "Oncall",
+       "status": "released",
+-      "version": "v0.5.9",
++      "version": "v0.5.10",
+       "category": "On-call rotas",
+       "line": "Who's on now, who's next, and when they hand over.",
+       "headline": "Everyone knows who's on call.",
+@@ -611,7 +611,7 @@
+       "slug": "orbit",
+       "name": "Orbit",
+       "status": "released",
+-      "version": "v0.4.6",
++      "version": "v0.4.7",
+       "category": "Sales CRM",
+       "line": "A CRM that shows which deal to work next, and why.",
+       "headline": "Your next deal finds you.",
+@@ -863,7 +863,7 @@
+       "slug": "spool",
+       "name": "Spool",
+       "status": "released",
+-      "version": "v0.7.7",
++      "version": "v0.7.8",
+       "category": "Error tracking",
+       "line": "JavaScript errors, traced to the exact line in your source.",
+       "headline": "See exactly what broke.",
+@@ -947,7 +947,7 @@
+       "slug": "uptime",
+       "name": "Uptime",
+       "status": "released",
+-      "version": "v0.5.7",
++      "version": "v0.5.8",
+       "category": "Uptime monitoring",
+       "line": "Alerts you only when a failure is confirmed.",
+       "headline": "Sleep through the night.",
+diff --git a/scripts/seeds-sync/state.json b/scripts/seeds-sync/state.json
+index c2d0f70..7bd1528 100644
+--- a/scripts/seeds-sync/state.json
++++ b/scripts/seeds-sync/state.json
+@@ -1,5 +1,5 @@
+ {
+-  "syncedAt": "2026-11-12T11:45:50.071Z",
++  "syncedAt": "2026-11-12T17:02:02.549Z",
+   "seeds": {
+     "auth": {
+       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
+@@ -504,8 +504,7 @@
+       "home": {
+         "headline": "Knows what your customer needs before they do.",
+         "signature": "eedddddddeedeeeeeeeeeeeeeeeeeeeedeedeeebaa887dddeeeeeeeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededdeedeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddbbbcbbcbbbbbbbbeedeeeeeeeeedeeeeeeeeeeeeeeeeedddaaabaabaaaaaccbeeeeeeeeeeeeeeeeeedeeeeeeeeeeeeedddcddcddcddcdddeeeeeeeeedddcccdeedeedeedeeeeeeeddccddceddeeeeedeeeeeedeebbbaaacddeeedddccceeedcc555544999eedeedeeeeeeeeeeeeefeeeeeeeddddddeeeeeddccdccdddeedeeefeededddddddeedeeededdddeddeee"
+-      },
+-      "open": ["42983364b373"]
++      }
+     },
+     "inkwell": {
+       "commit": "e4e3c2dd4bdf48fe16111f9d447568d6c4366a84",
+@@ -535,14 +534,14 @@
+       }
+     },
+     "lamp": {
+-      "commit": "62e6a2c30f7f87ad29c5e9d3eec2e0946315cc6b",
+-      "sourceRef": "v1.11.12",
++      "commit": "e82bc349b98af44c440efa2960927e327deda1a5",
++      "sourceRef": "v1.11.13",
+       "sourceReason": "released listing version",
+-      "tag": "v1.11.12",
++      "tag": "v1.11.13",
+       "copy": {
+-        "CONTRACT.md": "2dc299fabd2361bf",
+-        "README.md": "9a302ec84c04413a",
+-        "seed.json": "f1d8571b6a85d9f5"
++        "CONTRACT.md": "8b575f27ee607ce3",
++        "README.md": "94de338c80d02a07",
++        "seed.json": "484de0cd89690f4d"
+       },
+       "brand": {
+         "theme.page": "#f8f6f0",
+@@ -558,7 +557,8 @@
+       "home": {
+         "headline": "When something breaks, turn the light on.",
+         "signature": "eeddddeeefeefeefeeffeeeeeeeffefeeeeeeeeeed9a9ddcfeeeeefeefeefeefeeffeccccccffefeefeefeeeeeeeeeeefeefeefeefeefeeffeccc444454dccffefeefeefeeffeffefeefeefeeffeffeffeddcdcbdcbedcffeffeffefeefeefeefeefeeffeeeddddeedeedeedeedeededddddeeeffefeefeefeefeeffeeedddcccbccbbbbbbbbbaccbddceedffefeefeefeefeefeeffeeeeddcedcddcddcddcdddfeeffefeefeefeefeefeefeefeeffebbb898eedeedeedeedfeefeefeefeefeefeefeefeefeefeeeeddddeedeeeeeeeeeeeefeefeefeefee"
+-      }
++      },
++      "open": ["c843303a1181"]
+     },
+     "lanyard": {
+       "commit": "db2a1ef37612248290e0efd85209c9b1f0da8c83",
+@@ -805,14 +805,14 @@
+       }
+     },
+     "oncall": {
+-      "commit": "59af2f80bb67eb3382828f5c736698491006254c",
+-      "sourceRef": "v0.5.9",
++      "commit": "1dc0069324de17933e7b65bffefa14de7dabea9a",
++      "sourceRef": "v0.5.10",
+       "sourceReason": "released listing version",
+-      "tag": "v0.5.9",
++      "tag": "v0.5.10",
+       "copy": {
+-        "CONTRACT.md": "b5bd97065b050462",
+-        "README.md": "1b2b85115d842bc6",
+-        "seed.json": "d9e8a2ffdc94d60d"
++        "CONTRACT.md": "3ba769d11b265482",
++        "README.md": "2d9dbf3b535d454b",
++        "seed.json": "45420aadbcefcb11"
+       },
+       "brand": {
+         "branding.primaryColor": "#1d2a35",
+@@ -833,14 +833,14 @@
+       "open": ["c843303a1181"]
+     },
+     "orbit": {
+-      "commit": "9e7f46ce42c6bde7c5f29a6ab7cdb07e82978c8f",
+-      "sourceRef": "v0.4.6",
++      "commit": "eab0faafccd2eb0945dddb7d0f52c30ce573c04c",
++      "sourceRef": "v0.4.7",
+       "sourceReason": "released listing version",
+-      "tag": "v0.4.6",
++      "tag": "v0.4.7",
+       "copy": {
+-        "CONTRACT.md": "3885c2c472212429",
++        "CONTRACT.md": "faa136fb56b398c3",
+         "README.md": "3d0e7ae842a3f123",
+-        "seed.json": "7640b80eff0bff78"
++        "seed.json": "17da9caaba1cb15f"
+       },
+       "brand": {
+         "theme.page": "#f5f1ea",
+@@ -856,7 +856,8 @@
+       "home": {
+         "headline": "Your next deal finds you.",
+         "signature": "eedddceeefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeeeeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedddaaabbbaaabbbbbbdddfeeeeeeeeeeeedcedceedeeeeeedddbaabbbaaaddceeeeeeeeeeeeeeeeede85e97eeeeeeeeeeedddddddddddddeeeeeeeeeeeeeeeeedecbedceeeecbeedeeeeddeddddddddeedeeefeeeeeeeeeeeeeeeeefeefeeeeeddd888aaaeddeedaaa777baafeeeeeeeeeeeecbeddeeeeeeeedddcdddeeeeeedddcccdddeeeeeeeeedddddceddeedeeeeeeeeeeeeeeeeedeeeeeeeedeeeeeeeeeeeeeeeeeeeedeed"
+-      }
++      },
++      "open": ["922fed04eacf"]
+     },
+     "pane": {
+       "commit": "16501ad7d10c5af6f04799aa44c700249a41e9b4",
+@@ -1155,14 +1156,14 @@
+       }
+     },
+     "spool": {
+-      "commit": "26d13d4f574298851f25778818c1af0b9b2a2386",
+-      "sourceRef": "v0.7.7",
++      "commit": "47ecaeeec8c442aa4648ad3b7f4fc1d7e1f115e2",
++      "sourceRef": "v0.7.8",
+       "sourceReason": "released listing version",
+-      "tag": "v0.7.7",
++      "tag": "v0.7.8",
+       "copy": {
+         "CONTRACT.md": "ee9c871bfa25a110",
+-        "README.md": "bff27b2cfdded428",
+-        "seed.json": "50242715acf7191b"
++        "README.md": "681c10b41dbc712a",
++        "seed.json": "abe07bec13dcc59f"
+       },
+       "brand": {
+         "branding.primaryColor": "#1c1c1b",
+@@ -1181,7 +1182,7 @@
+         "headline": "See exactly what broke.",
+         "signature": "eeddccddceedeedeedeeeeedeedeedeeeeeeeeeeedeedeedeeddddeedeedeeeeeeeedeedeededdeedeedeedeedeedeedeedccbddcddcddcccbeddeeeeeddddddceedeedeedeedeedeed999aa9999999999cccfeeeedeededddddeddeedeedeedeedbaaaa9bbaaaaaa9ccbeeeeededddddeedeedeedeedeedeedddcddcddcddceedeeeeeeeeddddddbedceeceeceedeedeedeedeededdeedeeeffefeeeedeededaed9edaedaedbeedeed999988aaabba888888bbbeedeedeededdeeeeeeeedeedeeda99998baaccbaa9aa9ccbeeddddddceedeedeedeedeed"
+       },
+-      "open": ["c843303a1181"]
++      "open": ["42983364b373"]
+     },
+     "stall": {
+       "commit": "8ee1f25df4f0b10b9a62e7fe221453499f27b297",
+@@ -1264,14 +1265,14 @@
+       }
+     },
+     "uptime": {
+-      "commit": "a715d2188b5d38cc563465292bc8c461b93c6528",
+-      "sourceRef": "v0.5.7",
++      "commit": "ed5429192d18503c4c8caa8d797d82ffdcc78f54",
++      "sourceRef": "v0.5.8",
+       "sourceReason": "released listing version",
+-      "tag": "v0.5.7",
++      "tag": "v0.5.8",
+       "copy": {
+         "CONTRACT.md": "879a0aeaeb48188b",
+-        "README.md": "7cb5fc83462cc8ca",
+-        "seed.json": "050aee15381cb711"
++        "README.md": "df1ed0eb35eea156",
++        "seed.json": "478c4d0c0101101e"
+       },
+       "brand": {
+         "branding.primaryColor": "#14204a",
+@@ -1288,7 +1289,8 @@
+       "home": {
+         "headline": "Sleep through the night.",
+         "signature": "eeedddddeeefeefeefeefeefeefeefeefeefeeeededdeeeeeeeddeeeeddeddeddeddeddeddeddeddeddeeeeeeeeeeeeeeeeeeeeefddebbcbbcbbcbbcbbcbbcbbcabcddeeeeeeeeeeeeeeeeeeeeeeededdeededdeddeddeddeddeeeeeeeeeeeeeeeeeeeeeeeeedcd99a99accddddddddddedeeeeeeeeeeeeeedeeeeeeeeeedddaaaa9adddeddedeeddeeeeeeeeeeeeeeefedfedfededdeddfedfededdeddfedfedfddedcfddeddeddcccdddeddfdcedcedcfdcfdcfdcedcedcedcedbfdcfdcedc55888baacbbcbbccbcccceccdccdcceccedbfdceccbac77a"
+-      }
++      },
++      "open": ["42983364b373"]
+     },
+     "vane": {
+       "commit": "a2638146dc0faaefe358d203ac940389183151ef",
+diff --git a/src/data/seed-pages.ts b/src/data/seed-pages.ts
+index 50382c7..f86c5a4 100644
+--- a/src/data/seed-pages.ts
++++ b/src/data/seed-pages.ts
+@@ -116,7 +116,7 @@ export const seedPageContent: SeedPageContent[] = [
+     ],
+     moveIn: ['Pingdom', 'UptimeRobot', 'Better Stack Uptime', 'Site24x7'],
+     runsOn: 'Your computer, or your own Cloudflare account',
+-    version: 'v0.5.7',
++    version: 'v0.5.8',
+     contractUrl: 'https://run-uptime.com/contract',
+     seoTitle: 'Uptime: free, open-source alternative to Pingdom',
+     seoDescription:
+@@ -345,7 +345,7 @@ export const seedPageContent: SeedPageContent[] = [
+     ],
+     moveIn: ['Atlassian Statuspage', 'Better Stack', 'Instatus', 'Sorry'],
+     runsOn: 'Your computer, or your own Cloudflare account',
+-    version: 'v1.11.12',
++    version: 'v1.11.13',
+     contractUrl: 'https://run-lamp.com/contract',
+     seoTitle: 'Lamp: free, open-source alternative to Atlassian Statuspage',
+     seoDescription:
+@@ -734,7 +734,7 @@ export const seedPageContent: SeedPageContent[] = [
+       'Outlook mail and calendar',
+     ],
+     runsOn: 'Your computer, or your own Cloudflare account',
+-    version: 'v0.4.6',
++    version: 'v0.4.7',
+     contractUrl: 'https://run-orbit.com/contract',
+     seoTitle: 'Orbit: free, open-source alternative to HubSpot',
+     seoDescription:
+@@ -1043,7 +1043,7 @@ export const seedPageContent: SeedPageContent[] = [
+     ],
+     moveIn: ['PagerDuty', 'Opsgenie', 'Splunk On-Call', 'Better Stack'],
+     runsOn: 'your own computer, or your own Cloudflare account',
+-    version: 'v0.5.9',
++    version: 'v0.5.10',
+     contractUrl: 'https://run-oncall.com/contract',
+     seoTitle: 'Oncall: free, open-source alternative to PagerDuty',
+     seoDescription:
+@@ -1097,7 +1097,7 @@ export const seedPageContent: SeedPageContent[] = [
+     ],
+     moveIn: ['Sentry', 'Datadog Error Tracking', 'Rollbar', 'Bugsnag'],
+     runsOn: 'your own computer, or your own Cloudflare account',
+-    version: 'v0.7.7',
++    version: 'v0.7.8',
+     contractUrl: 'https://run-spool.com/contract',
+     seoTitle: 'Spool: free, open-source alternative to Sentry',
+     seoDescription:

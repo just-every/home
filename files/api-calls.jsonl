@@ -1,0 +1,4 @@
+{"time": 1794504632.2453914, "name": "pr", "command": ["gh", "api", "repos/just-every/home/pulls/47"]}
+{"time": 1794504649.5287611, "name": "ci", "command": ["gh", "api", "repos/just-every/home/actions/runs?head_sha=14bbb698b7d9e77a3d041794d84b56420fbbf737&per_page=100"]}
+{"time": 1794504661.4826834, "name": "sources", "command": ["gh", "api", "graphql", "-F", "query=@/tmp/je-gate-query.graphql"]}
+{"time": 1794505079.5914125, "name": "pr-final", "command": ["gh", "api", "repos/just-every/home/pulls/47"]}

@@ -1,0 +1,225 @@
+{
+  "head": "14bbb698b7d9e77a3d041794d84b56420fbbf737",
+  "baseline": "705bb0253c0285659279a6acb862437b25bcc2c4",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "listings_before": {
+    "coming-soon": 14,
+    "released": 35
+  },
+  "listings_after": {
+    "coming-soon": 14,
+    "released": 35
+  },
+  "version_changes": [
+    {
+      "slug": "lamp",
+      "version": [
+        "v1.11.12",
+        "v1.11.13"
+      ]
+    },
+    {
+      "slug": "oncall",
+      "version": [
+        "v0.5.9",
+        "v0.5.10"
+      ]
+    },
+    {
+      "slug": "orbit",
+      "version": [
+        "v0.4.6",
+        "v0.4.7"
+      ]
+    },
+    {
+      "slug": "spool",
+      "version": [
+        "v0.7.7",
+        "v0.7.8"
+      ]
+    },
+    {
+      "slug": "uptime",
+      "version": [
+        "v0.5.7",
+        "v0.5.8"
+      ]
+    }
+  ],
+  "state_changes": {
+    "happytohelp": {
+      "open": [
+        [
+          "42983364b373"
+        ],
+        null
+      ]
+    },
+    "lamp": {
+      "copy": [
+        {
+          "CONTRACT.md": "2dc299fabd2361bf",
+          "README.md": "9a302ec84c04413a",
+          "seed.json": "f1d8571b6a85d9f5"
+        },
+        {
+          "CONTRACT.md": "8b575f27ee607ce3",
+          "README.md": "94de338c80d02a07",
+          "seed.json": "484de0cd89690f4d"
+        }
+      ],
+      "sourceRef": [
+        "v1.11.12",
+        "v1.11.13"
+      ],
+      "commit": [
+        "62e6a2c30f7f87ad29c5e9d3eec2e0946315cc6b",
+        "e82bc349b98af44c440efa2960927e327deda1a5"
+      ],
+      "tag": [
+        "v1.11.12",
+        "v1.11.13"
+      ],
+      "open": [
+        null,
+        [
+          "c843303a1181"
+        ]
+      ]
+    },
+    "oncall": {
+      "copy": [
+        {
+          "CONTRACT.md": "b5bd97065b050462",
+          "README.md": "1b2b85115d842bc6",
+          "seed.json": "d9e8a2ffdc94d60d"
+        },
+        {
+          "CONTRACT.md": "3ba769d11b265482",
+          "README.md": "2d9dbf3b535d454b",
+          "seed.json": "45420aadbcefcb11"
+        }
+      ],
+      "sourceRef": [
+        "v0.5.9",
+        "v0.5.10"
+      ],
+      "commit": [
+        "59af2f80bb67eb3382828f5c736698491006254c",
+        "1dc0069324de17933e7b65bffefa14de7dabea9a"
+      ],
+      "tag": [
+        "v0.5.9",
+        "v0.5.10"
+      ]
+    },
+    "orbit": {
+      "copy": [
+        {
+          "CONTRACT.md": "3885c2c472212429",
+          "README.md": "3d0e7ae842a3f123",
+          "seed.json": "7640b80eff0bff78"
+        },
+        {
+          "CONTRACT.md": "faa136fb56b398c3",
+          "README.md": "3d0e7ae842a3f123",
+          "seed.json": "17da9caaba1cb15f"
+        }
+      ],
+      "sourceRef": [
+        "v0.4.6",
+        "v0.4.7"
+      ],
+      "commit": [
+        "9e7f46ce42c6bde7c5f29a6ab7cdb07e82978c8f",
+        "eab0faafccd2eb0945dddb7d0f52c30ce573c04c"
+      ],
+      "tag": [
+        "v0.4.6",
+        "v0.4.7"
+      ],
+      "open": [
+        null,
+        [
+          "922fed04eacf"
+        ]
+      ]
+    },
+    "spool": {
+      "copy": [
+        {
+          "CONTRACT.md": "ee9c871bfa25a110",
+          "README.md": "bff27b2cfdded428",
+          "seed.json": "50242715acf7191b"
+        },
+        {
+          "CONTRACT.md": "ee9c871bfa25a110",
+          "README.md": "681c10b41dbc712a",
+          "seed.json": "abe07bec13dcc59f"
+        }
+      ],
+      "sourceRef": [
+        "v0.7.7",
+        "v0.7.8"
+      ],
+      "commit": [
+        "26d13d4f574298851f25778818c1af0b9b2a2386",
+        "47ecaeeec8c442aa4648ad3b7f4fc1d7e1f115e2"
+      ],
+      "tag": [
+        "v0.7.7",
+        "v0.7.8"
+      ],
+      "open": [
+        [
+          "c843303a1181"
+        ],
+        [
+          "42983364b373"
+        ]
+      ]
+    },
+    "uptime": {
+      "copy": [
+        {
+          "CONTRACT.md": "879a0aeaeb48188b",
+          "README.md": "7cb5fc83462cc8ca",
+          "seed.json": "050aee15381cb711"
+        },
+        {
+          "CONTRACT.md": "879a0aeaeb48188b",
+          "README.md": "df1ed0eb35eea156",
+          "seed.json": "478c4d0c0101101e"
+        }
+      ],
+      "sourceRef": [
+        "v0.5.7",
+        "v0.5.8"
+      ],
+      "commit": [
+        "a715d2188b5d38cc563465292bc8c461b93c6528",
+        "ed5429192d18503c4c8caa8d797d82ffdcc78f54"
+      ],
+      "tag": [
+        "v0.5.7",
+        "v0.5.8"
+      ],
+      "open": [
+        null,
+        [
+          "42983364b373"
+        ]
+      ]
+    }
+  },
+  "wording_changed": false,
+  "secret_shaped_values_found": false,
+  "test_changes": false,
+  "happytohelp": "v0.4.22",
+  "result": "PASS"
+}

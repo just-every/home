@@ -1,0 +1,16 @@
+node:internal/process/promises:394
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+page.goto: Timeout 30000ms exceeded.
+Call log:
+[2m  - navigating to "http://127.0.0.1:3187/spool", waiting until "networkidle"[22m
+
+    at /tmp/je-browser.cjs:14:30 {
+  log: [
+    '  - navigating to "http://127.0.0.1:3187/spool", waiting until "networkidle"'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.19.0

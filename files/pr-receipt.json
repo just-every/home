@@ -1,0 +1,10 @@
+{
+  "number": 47,
+  "state": "open",
+  "url": "https://github.com/just-every/home/pull/47",
+  "head_ref": "cloud/je-sync-23",
+  "head_sha": "14bbb698b7d9e77a3d041794d84b56420fbbf737",
+  "base_ref": "main",
+  "base_sha": "705bb0253c0285659279a6acb862437b25bcc2c4",
+  "observed_twice_unchanged": true
+}

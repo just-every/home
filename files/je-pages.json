@@ -1,0 +1,368 @@
+[
+  {
+    "slug": "uptime",
+    "summary": "Uptime watches your websites and APIs on a schedule and tells you only when a failure is confirmed. It never calls a missing check healthy, and it keeps the evidence behind every incident. Alerts go to email, Slack or a signed webhook.",
+    "does": [
+      "Check web pages and API responses for the right status, text, headers, data values and speed",
+      "Check that a server port answers, that DNS records are right, and that SSL certificates and domain registrations are not about to expire",
+      "Choose how many failed checks in a row open an incident and how many passes close it",
+      "Show a time as Unknown when no check arrived, instead of guessing it was fine",
+      "Watch cron jobs and nightly backups through heartbeat check-ins",
+      "Alert you by email, Slack or a signed webhook, and run an alert drill to learn whether a message really reaches someone",
+      "Pause alerts during planned maintenance windows",
+      "Run checks from a machine on your own network and export your monitors, evidence and alert history any time"
+    ],
+    "promises": [
+      {
+        "id": "STATE-001",
+        "text": "One failed check never raises an alarm. A monitor is called Failing only after confirmation, a missing check shows as Unknown, and it recovers only on fresh passing checks.",
+        "category": "reliability"
+      },
+      {
+        "id": "EVIDENCE-001",
+        "text": "Every scheduled check and every retry is kept with its time, result and error type, and a retry never erases an earlier failure.",
+        "category": "evidence"
+      },
+      {
+        "id": "NOTIFY-001",
+        "text": "Only confirmed incident changes send automatic alerts, and a test send never changes a monitor's status.",
+        "category": "alerts"
+      },
+      {
+        "id": "DELIVERY-001",
+        "text": "Each alert gets one automatic send per destination where a repeat could double up, an unclear outcome is not sent again, and 'accepted' is never reported as 'read'.",
+        "category": "alerts"
+      },
+      {
+        "id": "DRILL-001",
+        "text": "An alert drill sends a clearly marked test with a one-time confirmation link, and a confirmation is the recipient's own report, never proof of monitoring.",
+        "category": "alerts"
+      },
+      {
+        "id": "TLS-001",
+        "text": "Certificate checks look at trust, host name and expiry from each location, warn in stages before a certificate runs out, and clear only after a new valid certificate is seen.",
+        "category": "alerts"
+      },
+      {
+        "id": "MAINT-001",
+        "text": "Planned and recurring maintenance windows use US time zones and daylight saving, and keep the underlying check results so reports still show what happened.",
+        "category": "schedule"
+      },
+      {
+        "id": "ARCHIVE-001",
+        "text": "A backup restores only into an empty installation: monitors come back paused, destinations disabled and old alerts held back.",
+        "category": "import"
+      },
+      {
+        "id": "NETWORK-001",
+        "text": "Every address and redirect is validated, unsafe addresses are refused, and a redirect that downgrades from HTTPS is rejected.",
+        "category": "security"
+      },
+      {
+        "id": "ERASURE-001",
+        "text": "An owner can erase a monitor with its evidence, an alert destination, or an operator, and gets a receipt of what was removed.",
+        "category": "erasure"
+      }
+    ],
+    "moveIn": [
+      "Pingdom",
+      "UptimeRobot",
+      "Better Stack Uptime",
+      "Site24x7"
+    ],
+    "runsOn": "Your computer, or your own Cloudflare account",
+    "version": "v0.5.8",
+    "contractUrl": "https://run-uptime.com/contract",
+    "seoTitle": "Uptime: free, open-source alternative to Pingdom",
+    "seoDescription": "Uptime checks your websites, APIs, DNS and certificates, confirms failures before alerting, and tells you by email, Slack or webhook."
+  },
+  {
+    "slug": "lamp",
+    "summary": "Lamp is a status page that tells your customers who is affected, how badly and what still works. You write each update once, and the page, the feed, the site banner and subscriber emails all carry the same words. Your page keeps answering even when Lamp's own database is down.",
+    "does": [
+      "Show a status page with each component's state, a 90-day record and a plain-words account of every incident",
+      "Write each update once and send it to the page, an Atom feed, a site banner and subscriber email together, with a preview first",
+      "Keep the page answering from the last known state, labelled with its age, when Lamp's own database is down",
+      "Let subscribers choose the components they follow and unsubscribe in one click, with no cookies and no CAPTCHA",
+      "Run planned maintenance that starts, finishes and notifies subscribers by itself",
+      "Turn alerts from your monitoring tools into one draft incident per problem, which you review and publish",
+      "Publish post-incident reports, post to Slack or Microsoft Teams, send signed webhooks and keep a delivery log",
+      "Use your own domain and colours, and export everything whenever you like"
+    ],
+    "promises": [
+      {
+        "id": "INTAKE-002",
+        "text": "Monitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update.",
+        "category": "approval"
+      },
+      {
+        "id": "INCIDENT-004",
+        "text": "A published update is never edited or deleted; a correction is a new update and both stay on the public timeline.",
+        "category": "history"
+      },
+      {
+        "id": "UPDATE-008",
+        "text": "Publishing is a single step: the update and the list of people to notify are saved together.",
+        "category": "reliability"
+      },
+      {
+        "id": "NOTIFY-009",
+        "text": "Publishing still works while email, the queue or a subscriber's endpoint is failing.",
+        "category": "reliability"
+      },
+      {
+        "id": "UPTIME-001",
+        "text": "Uptime is rounded down, so a period with any downtime never shows 100 percent.",
+        "category": "evidence"
+      },
+      {
+        "id": "PAGE-006",
+        "text": "If the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear.",
+        "category": "reliability"
+      },
+      {
+        "id": "PAGE-013",
+        "text": "The public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites.",
+        "category": "privacy"
+      },
+      {
+        "id": "NOTIFY-004",
+        "text": "The delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it.",
+        "category": "privacy"
+      },
+      {
+        "id": "MOVE-002",
+        "text": "Moving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm.",
+        "category": "import"
+      },
+      {
+        "id": "SUB-006",
+        "text": "Every notification email carries a one-click unsubscribe.",
+        "category": "alerts"
+      }
+    ],
+    "moveIn": [
+      "Atlassian Statuspage",
+      "Better Stack",
+      "Instatus",
+      "Sorry"
+    ],
+    "runsOn": "Your computer, or your own Cloudflare account",
+    "version": "v1.11.13",
+    "contractUrl": "https://run-lamp.com/contract",
+    "seoTitle": "Lamp: free, open-source alternative to Atlassian Statuspage",
+    "seoDescription": "Lamp is a free status page that tells customers who is affected and what still works, and keeps answering when your own systems are down."
+  },
+  {
+    "slug": "orbit",
+    "summary": "Orbit puts a deal in your NOW queue when a customer replies, scores it from real signals, and shows you why. Your company's policy controls agent sending; with approval required, a person reviews the exact email before it is sent. It is free for the whole team, and you can try it beside your current CRM.",
+    "does": [
+      "Move a deal into your NOW queue when a customer replies, books a meeting or submits a form",
+      "Score each deal from what customers actually did, with older activity counting for less and every signal behind the score shown",
+      "Keep contacts, companies and deals, with your own fields, in a pipeline with your own stages",
+      "Let a contact form on your site drop each enquiry onto the right contact",
+      "Draft follow-ups, with optional AI, that you review and approve one by one, and schedule them with quiet hours",
+      "Cancel scheduled follow-ups automatically when the customer replies",
+      "Pull in emails and meetings from Gmail, Google Calendar, Outlook, forwarded mail or a calendar link",
+      "Import contacts from a CSV, and export or restore a complete archive of your workspace any time"
+    ],
+    "promises": [
+      {
+        "id": "OUT-001",
+        "text": "Signals, scores and AI text never grant permission to send. Your company's policy decides agent sending; when approval is required, a person approves the exact saved recipients, subject and body, and later changes invalidate it.",
+        "category": "approval"
+      },
+      {
+        "id": "OPP-004",
+        "text": "A deal's score shows every signal it used, with source, time and weight, beside the reason for the recommendation.",
+        "category": "evidence"
+      },
+      {
+        "id": "SIGNAL-007",
+        "text": "Orbit uses no tracking script, pixel or cookie, and does not fingerprint visitors.",
+        "category": "privacy"
+      },
+      {
+        "id": "OUT-007",
+        "text": "A reply, a booked meeting, an unsubscribe or a permanent bounce cancels that contact's scheduled messages.",
+        "category": "alerts"
+      },
+      {
+        "id": "OUT-012",
+        "text": "Opt-out is on by default for sequence email and off for one-to-one email. Messages set to carry it include one-click unsubscribe; an identified opt-out marks the contact do-not-contact within a minute and cancels scheduled messages.",
+        "category": "privacy"
+      },
+      {
+        "id": "ACTION-005",
+        "text": "A draft goes stale when the customer replies or the deal changes, and a stale draft cannot be sent until you have seen what changed.",
+        "category": "approval"
+      },
+      {
+        "id": "CAPTURE-005",
+        "text": "Capture never writes a draft or sends a message, and a contact created from captured mail is do-not-contact until you clear it.",
+        "category": "approval"
+      },
+      {
+        "id": "AI-003",
+        "text": "If the AI is unavailable, records, scoring, search, hand-written drafts and sending still work.",
+        "category": "ai"
+      },
+      {
+        "id": "RECORD-004",
+        "text": "Merging duplicates needs you to choose the surviving record and every conflicting value, and refuses if either record changed after your review.",
+        "category": "approval"
+      },
+      {
+        "id": "DATA-002",
+        "text": "Deleting a contact removes their email, signals, drafts and message bodies from records, search, exports and later AI or mail requests within five minutes.",
+        "category": "erasure"
+      }
+    ],
+    "moveIn": [
+      "HubSpot Sales Hub",
+      "Pipedrive",
+      "CSV files",
+      "Gmail and Google Calendar",
+      "Outlook mail and calendar"
+    ],
+    "runsOn": "Your computer, or your own Cloudflare account",
+    "version": "v0.4.7",
+    "contractUrl": "https://run-orbit.com/contract",
+    "seoTitle": "Orbit: free, open-source alternative to HubSpot",
+    "seoDescription": "Orbit is a free sales CRM that puts a deal in your NOW queue when a customer replies, scores it from real signals and shows why."
+  },
+  {
+    "slug": "oncall",
+    "summary": "Oncall shows everyone who is on call now, who is next and exactly when they hand over. It keeps rotations, swaps, incidents, runbooks and follow-ups in one place, and runs alongside the pager you already use while you move your schedules over.",
+    "does": [
+      "Show who is on call now, who is next and when the next hand-over happens",
+      "Build primary and backup rotations in your team's timezone, so a hand-over stays on the same clock time when clocks change",
+      "Cover a few hours with an override or swap without touching the rotation",
+      "Subscribe to a private calendar feed of the next seven days of shifts",
+      "Record alerts from monitoring, route them to the right service and replay the routing safely",
+      "Declare an incident, assign a commander, follow the runbook and keep every decision on a timeline",
+      "Resolve with recovery evidence and a summary, then track follow-up tasks and review",
+      "Preview your Opsgenie or PagerDuty schedules before anything is imported"
+    ],
+    "promises": [
+      {
+        "id": "OC-012",
+        "text": "Oncall sends no texts, calls or push alerts, so your existing pager stays in charge while you use it.",
+        "category": "alerts"
+      },
+      {
+        "id": "OC-006",
+        "text": "Oncall sends signed response events only to endpoints an administrator approves; paging stays off, and email is for sign-in links only.",
+        "category": "security"
+      },
+      {
+        "id": "OC-005",
+        "text": "A runbook is copied into the incident when it is declared, so later edits never rewrite instructions mid-incident.",
+        "category": "history"
+      },
+      {
+        "id": "OC-004",
+        "text": "Resolving an incident needs recovery evidence and a summary, and every change is recorded in an attributed timeline.",
+        "category": "evidence"
+      },
+      {
+        "id": "OC-008",
+        "text": "Incident records you write are never deleted automatically.",
+        "category": "history"
+      },
+      {
+        "id": "OC-011",
+        "text": "Rotations hand over by wall-clock time in your named zone, and clock-change gaps show up as visible gaps.",
+        "category": "schedule"
+      },
+      {
+        "id": "OC-003",
+        "text": "Viewers can only read, responders coordinate, and admins manage; alert-sending credentials grant no read access, and removed access stops on the next request.",
+        "category": "access"
+      },
+      {
+        "id": "OC-002",
+        "text": "Replaying alert routing only reads: it creates no alert, incident or outside effect.",
+        "category": "reliability"
+      },
+      {
+        "id": "OC-021",
+        "text": "A move-in preview writes nothing, a person must review it before it is applied, and imported schedules stay paused.",
+        "category": "import"
+      },
+      {
+        "id": "OC-022",
+        "text": "A move-in can be undone, and edits you made afterwards are kept rather than overwritten.",
+        "category": "undo"
+      }
+    ],
+    "moveIn": [
+      "PagerDuty",
+      "Opsgenie",
+      "Splunk On-Call",
+      "Better Stack"
+    ],
+    "runsOn": "your own computer, or your own Cloudflare account",
+    "version": "v0.5.10",
+    "contractUrl": "https://run-oncall.com/contract",
+    "seoTitle": "Oncall: free, open-source alternative to PagerDuty",
+    "seoDescription": "Oncall is a free, open-source on-call schedule and incident tool that shows who is on now and next. An alternative to PagerDuty and Opsgenie."
+  },
+  {
+    "slug": "spool",
+    "summary": "Spool catches the errors in your app, groups repeats into one issue and points to the exact line in your own source code where it broke. It tells you when a fixed error comes back in a later release, and gives your coding agent a read-only view of one project's evidence.",
+    "does": [
+      "Catch errors from JavaScript, Python and Go apps, using the same reporting libraries Sentry uses",
+      "Group repeats into a single issue and show exactly where in your original source each error happened",
+      "Keep your source maps private and match them to the right release",
+      "Download an evidence packet to hand to whoever is fixing the issue",
+      "Create a read-only agent key so a coding agent can read one project's issues and evidence, and change nothing",
+      "Reopen a resolved issue when it returns in a later release, and name that release",
+      "Scrub emails, tokens and passwords before anything is saved",
+      "Export everything to one file and restore it into a fresh copy"
+    ],
+    "promises": [
+      {
+        "id": "ERR-003",
+        "text": "Error details are scrubbed before they are stored: emails, tokens and passwords are removed, and headers, cookies and request bodies are not kept by default.",
+        "category": "privacy"
+      },
+      {
+        "id": "ERR-004",
+        "text": "Owner sign-in, error sending and read-only agent access are separate, revoking one takes effect on the next request, and your source maps are never public.",
+        "category": "access"
+      },
+      {
+        "id": "ERR-002",
+        "text": "An error is only counted once it is fully saved, and a repeated send never counts twice.",
+        "category": "reliability"
+      },
+      {
+        "id": "ERR-006",
+        "text": "Changes to an issue are recorded, and a resolved issue reopens as returning only when it appears in a later release, so an old release's error raises no false alarm.",
+        "category": "history"
+      },
+      {
+        "id": "ERR-007",
+        "text": "The evidence packet is size-limited and never includes your source code.",
+        "category": "evidence"
+      },
+      {
+        "id": "ERR-008",
+        "text": "Counts of errors accepted and rejected are visible, and a quiet period is never reported as proof an error is fixed.",
+        "category": "evidence"
+      }
+    ],
+    "moveIn": [
+      "Sentry",
+      "Datadog Error Tracking",
+      "Rollbar",
+      "Bugsnag"
+    ],
+    "runsOn": "your own computer, or your own Cloudflare account",
+    "version": "v0.7.8",
+    "contractUrl": "https://run-spool.com/contract",
+    "seoTitle": "Spool: free, open-source alternative to Sentry",
+    "seoDescription": "Spool is a free, open-source error tracker that shows the exact line that broke and tells you when a fixed error returns. An alternative to Sentry and Bugsnag."
+  }
+]

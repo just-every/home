@@ -1,0 +1,208 @@
+{
+  "head": "14bbb698b7d9e77a3d041794d84b56420fbbf737",
+  "baseline": "705bb0253c0285659279a6acb862437b25bcc2c4",
+  "result": "PASS",
+  "rows": [
+    {
+      "slug": "spool",
+      "width": 1440,
+      "head_version": "v0.7.8",
+      "main_version": "v0.7.7",
+      "head_status": 200,
+      "main_status": 200,
+      "head_scroll_width": 1440,
+      "main_scroll_width": 1440,
+      "head_errors": [],
+      "main_errors": [],
+      "head_full_image_size": [
+        1440,
+        4419
+      ],
+      "main_full_image_size": [
+        1440,
+        4419
+      ]
+    },
+    {
+      "slug": "lamp",
+      "width": 1440,
+      "head_version": "v1.11.13",
+      "main_version": "v1.11.12",
+      "head_status": 200,
+      "main_status": 200,
+      "head_scroll_width": 1440,
+      "main_scroll_width": 1440,
+      "head_errors": [],
+      "main_errors": [],
+      "head_full_image_size": [
+        1440,
+        4798
+      ],
+      "main_full_image_size": [
+        1440,
+        4798
+      ]
+    },
+    {
+      "slug": "orbit",
+      "width": 1440,
+      "head_version": "v0.4.7",
+      "main_version": "v0.4.6",
+      "head_status": 200,
+      "main_status": 200,
+      "head_scroll_width": 1440,
+      "main_scroll_width": 1440,
+      "head_errors": [],
+      "main_errors": [],
+      "head_full_image_size": [
+        1440,
+        4973
+      ],
+      "main_full_image_size": [
+        1440,
+        4973
+      ]
+    },
+    {
+      "slug": "oncall",
+      "width": 1440,
+      "head_version": "v0.5.10",
+      "main_version": "v0.5.9",
+      "head_status": 200,
+      "main_status": 200,
+      "head_scroll_width": 1440,
+      "main_scroll_width": 1440,
+      "head_errors": [],
+      "main_errors": [],
+      "head_full_image_size": [
+        1440,
+        4712
+      ],
+      "main_full_image_size": [
+        1440,
+        4712
+      ]
+    },
+    {
+      "slug": "uptime",
+      "width": 1440,
+      "head_version": "v0.5.8",
+      "main_version": "v0.5.7",
+      "head_status": 200,
+      "main_status": 200,
+      "head_scroll_width": 1440,
+      "main_scroll_width": 1440,
+      "head_errors": [],
+      "main_errors": [],
+      "head_full_image_size": [
+        1440,
+        4869
+      ],
+      "main_full_image_size": [
+        1440,
+        4869
+      ]
+    },
+    {
+      "slug": "spool",
+      "width": 390,
+      "head_version": "v0.7.8",
+      "main_version": "v0.7.7",
+      "head_status": 200,
+      "main_status": 200,
+      "head_scroll_width": 390,
+      "main_scroll_width": 390,
+      "head_errors": [],
+      "main_errors": [],
+      "head_full_image_size": [
+        390,
+        4367
+      ],
+      "main_full_image_size": [
+        390,
+        4367
+      ]
+    },
+    {
+      "slug": "lamp",
+      "width": 390,
+      "head_version": "v1.11.13",
+      "main_version": "v1.11.12",
+      "head_status": 200,
+      "main_status": 200,
+      "head_scroll_width": 390,
+      "main_scroll_width": 390,
+      "head_errors": [],
+      "main_errors": [],
+      "head_full_image_size": [
+        390,
+        4876
+      ],
+      "main_full_image_size": [
+        390,
+        4876
+      ]
+    },
+    {
+      "slug": "orbit",
+      "width": 390,
+      "head_version": "v0.4.7",
+      "main_version": "v0.4.6",
+      "head_status": 200,
+      "main_status": 200,
+      "head_scroll_width": 390,
+      "main_scroll_width": 390,
+      "head_errors": [],
+      "main_errors": [],
+      "head_full_image_size": [
+        390,
+        5137
+      ],
+      "main_full_image_size": [
+        390,
+        5137
+      ]
+    },
+    {
+      "slug": "oncall",
+      "width": 390,
+      "head_version": "v0.5.10",
+      "main_version": "v0.5.9",
+      "head_status": 200,
+      "main_status": 200,
+      "head_scroll_width": 390,
+      "main_scroll_width": 390,
+      "head_errors": [],
+      "main_errors": [],
+      "head_full_image_size": [
+        390,
+        4761
+      ],
+      "main_full_image_size": [
+        390,
+        4761
+      ]
+    },
+    {
+      "slug": "uptime",
+      "width": 390,
+      "head_version": "v0.5.8",
+      "main_version": "v0.5.7",
+      "head_status": 200,
+      "main_status": 200,
+      "head_scroll_width": 390,
+      "main_scroll_width": 390,
+      "head_errors": [],
+      "main_errors": [],
+      "head_full_image_size": [
+        390,
+        5033
+      ],
+      "main_full_image_size": [
+        390,
+        5033
+      ]
+    }
+  ],
+  "observation": "Version facts change as expected. Page structure and horizontal fit preserved at both widths; static source differs only at five version strings."
+}
