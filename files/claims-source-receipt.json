@@ -1,0 +1,78 @@
+{
+  "repository": "just-every/run-uptime",
+  "ref": "v0.5.7",
+  "commit": "a715d2188b5d38cc563465292bc8c461b93c6528",
+  "CONTRACT.md_sha256": "879a0aeaeb48188b88efb518206a1f298c527772c4a86c077c9dbe88437eb849",
+  "rows": [
+    {
+      "id": "EVIDENCE-001",
+      "title": "Immutable scheduled evidence",
+      "status": "done",
+      "gap": "",
+      "line": 1511
+    },
+    {
+      "id": "STATE-001",
+      "title": "Fixed coverage and incident hysteresis",
+      "status": "partial",
+      "gap": "Two configured runner networks still prove confirmed Failing and the scheduled confirmation/recovery thresholds. Gap: exactly one failing vantage reading Degraded; Unknown for partial, missing and stale evidence; the intermediate Recovering state; and no fabricated recovery from a manual pass during an outage, an absent selected probe or maintenance expiry lack assertions in the cited files. Maintenance expiry is asserted only in tests/maintenance-windows.mjs, which this clause does not cite.",
+      "line": 1512
+    },
+    {
+      "id": "NETWORK-001",
+      "title": "Pinned bounded destination execution",
+      "status": "partial",
+      "gap": "Cross-origin authentication, client-certificate and body stripping are asserted. Gap: mixed DNS answers, rebinding before connection, TLS hostname mismatch, re-resolution of every redirect, HTTPS downgrade and forbidden redirect refusal, exact-origin credential binding, timeout/body/encoding bounds and zero connections to rejected destinations lack assertions in the cited files. tests/tls-auth.mjs calls assertions in helper files this clause does not cite.",
+      "line": 1514
+    },
+    {
+      "id": "ARCHIVE-001",
+      "title": "Inactive validated restore",
+      "status": "done",
+      "gap": "",
+      "line": 1516
+    },
+    {
+      "id": "ERASURE-001",
+      "title": "Operator-directed entity erasure",
+      "status": "done",
+      "gap": "",
+      "line": 1519
+    },
+    {
+      "id": "NOTIFY-001",
+      "title": "Authorized installation-wide destinations",
+      "status": "done",
+      "gap": "",
+      "line": 1523
+    },
+    {
+      "id": "DELIVERY-001",
+      "title": "Bounded notification acknowledgment",
+      "status": "done",
+      "gap": "",
+      "line": 1524
+    },
+    {
+      "id": "DRILL-001",
+      "title": "Recipient-reported alert drills",
+      "status": "done",
+      "gap": "",
+      "line": 1527
+    },
+    {
+      "id": "TLS-001",
+      "title": "SSL certificate and chain monitoring",
+      "status": "done",
+      "gap": "",
+      "line": 1540
+    },
+    {
+      "id": "MAINT-001",
+      "title": "Planned and recurring maintenance",
+      "status": "done",
+      "gap": "",
+      "line": 1553
+    }
+  ]
+}

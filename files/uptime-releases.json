@@ -1,0 +1,228 @@
+[
+  {
+    "id": 442563004,
+    "tag_name": "v0.5.7",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-12T06:17:12Z",
+    "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.7",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "id": 738316779,
+        "size": 3361
+      }
+    ]
+  },
+  {
+    "id": 442081228,
+    "tag_name": "v0.5.6",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-11T18:44:41Z",
+    "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.6",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "id": 736565463,
+        "size": 3361
+      },
+      {
+        "name": "uptime-0.4.0-monitor-1440.png",
+        "id": 736565452,
+        "size": 273042
+      }
+    ]
+  },
+  {
+    "id": 441701287,
+    "tag_name": "v0.5.5",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-11T13:02:13Z",
+    "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.5",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "id": 735550515,
+        "size": 3361
+      },
+      {
+        "name": "uptime-0.4.0-monitor-1440.png",
+        "id": 735550511,
+        "size": 273042
+      }
+    ]
+  },
+  {
+    "id": 441203901,
+    "tag_name": "v0.5.4",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-11T03:29:18Z",
+    "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.4",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "id": 733972812,
+        "size": 3361
+      },
+      {
+        "name": "uptime-0.4.0-monitor-1440.png",
+        "id": 733972811,
+        "size": 273042
+      }
+    ]
+  },
+  {
+    "id": 441123446,
+    "tag_name": "v0.5.3",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-11T01:16:56Z",
+    "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.3",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "id": 733629478,
+        "size": 3361
+      },
+      {
+        "name": "uptime-0.4.0-monitor-1440.png",
+        "id": 733629482,
+        "size": 273042
+      }
+    ]
+  },
+  {
+    "id": 440521929,
+    "tag_name": "v0.5.2",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-10T15:13:45Z",
+    "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.2",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "id": 731866792,
+        "size": 3361
+      },
+      {
+        "name": "uptime-0.4.0-monitor-1440.png",
+        "id": 731866788,
+        "size": 273042
+      }
+    ]
+  },
+  {
+    "id": 440212012,
+    "tag_name": "v0.5.1",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-10T10:22:24Z",
+    "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.1",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "id": 730993355,
+        "size": 3361
+      },
+      {
+        "name": "uptime-0.4.0-monitor-1440.png",
+        "id": 730993352,
+        "size": 273042
+      }
+    ]
+  },
+  {
+    "id": 430744902,
+    "tag_name": "v0.5.0",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-01T17:37:52Z",
+    "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.0",
+    "assets": [
+      {
+        "name": "public-source.tar",
+        "id": 699027517,
+        "size": 122878976
+      },
+      {
+        "name": "publish-check.json",
+        "id": 699027521,
+        "size": 610112
+      },
+      {
+        "name": "release-receipt.json",
+        "id": 699027524,
+        "size": 1937
+      },
+      {
+        "name": "rer-release.dsse.json",
+        "id": 699027520,
+        "size": 3361
+      },
+      {
+        "name": "uptime-v0.5.0-release.tar.gz",
+        "id": 699027523,
+        "size": 97323493
+      }
+    ]
+  },
+  {
+    "id": 418336915,
+    "tag_name": "v0.4.3",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-20T11:46:23Z",
+    "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.4.3",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "id": 659175921,
+        "size": 3169
+      }
+    ]
+  },
+  {
+    "id": 417854599,
+    "tag_name": "v0.4.2",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-19T23:34:15Z",
+    "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.4.2",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "id": 657728910,
+        "size": 3169
+      }
+    ]
+  },
+  {
+    "id": 417854570,
+    "tag_name": "v0.4.1",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-19T23:34:11Z",
+    "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.4.1",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "id": 657728850,
+        "size": 3169
+      }
+    ]
+  }
+]

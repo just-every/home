@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "tag": "je-gate-29",
+  "repository": "just-every/home",
+  "candidate_branch": "cloud/je-sync-21",
+  "candidate_head": "fa1c59e71759a7f959e106e8102ff4c7edd76a55",
+  "baseline": "66fa2fe27a8837a94676fc6515acba517ddee867",
+  "pr": "https://github.com/just-every/home/pull/45",
+  "gate_branch_created": "cloud/je-gate-29 (local baseline only; no product commits or pushes)",
+  "decision": "PASS",
+  "blockingFindings": 0,
+  "newFollowups": 0,
+  "clauseStatusChanges": [],
+  "checks": [
+    {
+      "row": "R1",
+      "status": "MET",
+      "command": "git diff --name-only origin/main HEAD; git diff origin/main HEAD; git diff --check origin/main HEAD; git log origin/main..HEAD --format=\"%an <%ae>%n%cn <%ce>%n%(trailers:only,unfold)\"",
+      "result": "Exactly three allowed paths, one candidate commit, fleet author/committer, no trailers, no changed tests, no credential-shaped added values. Only version/timestamps/provenance/open-copy markers changed."
+    },
+    {
+      "row": "R2",
+      "status": "MET",
+      "command": "gh api repos/just-every/run-uptime/releases?per_page=100; gh api repos/just-every/run-uptime/git/ref/tags/v0.5.7; gh api repos/just-every/run-uptime/git/tags/88959316ab47c342db0ac6ec636958321624d7ed; independent JSON/tree comparisons",
+      "result": "v0.5.7 exists, annotated tag resolves to a715d2188b5d38cc563465292bc8c461b93c6528, non-draft/non-prerelease Release published 2026-11-12T06:17:12Z has rer-release.dsse.json. All three files agree. Other versions/statuses and wording unchanged. HappyToHelp v0.4.22 Release HTTP 404, withheld."
+    },
+    {
+      "row": "R3",
+      "status": "MET",
+      "command": "npm ci; npm run listings -- --check; npm run listings; git diff --exit-code; npm run type-check; npm run lint; npm run build; npm start -- --hostname 127.0.0.1 --port 3129; node browser-probe.mjs head v0.5.7 3129",
+      "result": "All final checks exit 0. Listings current and unchanged: 49=35+14; eight excluded seeds absent. Existing pricing content unchanged by complete tree comparison. Production /uptime HTTP 200 and v0.5.7 at 1440/390. Assertions at 1440; 390 observed/screenshot. No overflow or page errors. Baseline production build/render comparison passed and rendered text differs only in version."
+    },
+    {
+      "row": "R4",
+      "status": "MET",
+      "command": "gh api repos/just-every/home/actions/runs?head_sha=fa1c59e71759a7f959e106e8102ff4c7edd76a55&per_page=100",
+      "result": "Push Verify branch 43171250875 completed/success on exact SHA. PR Verify 43171318486 completed/skipped as workflow specifies for cloud branches. Dynamic PR #45 run 43171315415 completed/success. One CI observation; no polling/dispatch/rerun."
+    },
+    {
+      "row": "R5",
+      "status": "MET",
+      "command": "gh api repos/just-every/run-uptime/contents/CONTRACT.md?ref=v0.5.7; gh api repos/just-every/run-uptime/contents/seed.json?ref=v0.5.7; inspect src/data/seed-pages.ts and built /uptime",
+      "result": "Tagged CONTRACT.md and seed.json SHA256 prefixes independently match state; seed.json version is 0.5.7. Eight displayed promise clauses done; STATE-001 and NETWORK-001 partial with assertion/evidence gaps. No released-source statement proving a new false JE claim found; all JE wording unchanged."
+    }
+  ],
+  "sourceLock": "not applicable: repository has no sources.lock.json or documented lock generator",
+  "contractViews": "not applicable: repository has no CONTRACT.md, contract-docs generator, ACCEPTANCE.md or docs/CLAIMS.md",
+  "migrationLedger": "not applicable: no migration-ledger checker is tracked or documented; diff does not touch migrations",
+  "apiCalls": 9,
+  "browserHarnessCorrections": [
+    "Initial networkidle wait timed out on ongoing gallery media; used document-ready and fonts-ready instead.",
+    "Two early headline assertions assumed the data headline was printed; the renderer uses its line field. Removed the out-of-rubric headline assumption. Final version/layout checks pass on head and main."
+  ],
+  "localSetupNote": "Husky post-checkout symlink from prescribed fleet hook setup reported a missing relative h. Checkouts still selected the intended SHAs; source tree verified clean. A local wrapper now invokes the repository hook at its original path. No product hook or test changed.",
+  "productCommitCreated": false,
+  "productRefPushed": false,
+  "mergeCommentDeploy": false,
+  "generatedProductDiff": "empty",
+  "observedAt": "2026-11-12T07:21:24.134875+00:00"
+}

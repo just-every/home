@@ -1,0 +1,28 @@
+[
+  {
+    "label": "head",
+    "width": 1440,
+    "status": 200,
+    "doc": 1440,
+    "body": 1440,
+    "h1": "Uptime",
+    "version": "v0.5.7",
+    "pageErrors": [],
+    "screenshot": "head-uptime-1440.png",
+    "asserted": true,
+    "observedNoOverflow": true
+  },
+  {
+    "label": "head",
+    "width": 390,
+    "status": 200,
+    "doc": 390,
+    "body": 390,
+    "h1": "Uptime",
+    "version": "v0.5.7",
+    "pageErrors": [],
+    "screenshot": "head-uptime-390.png",
+    "asserted": false,
+    "observedNoOverflow": true
+  }
+]

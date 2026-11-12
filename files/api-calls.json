@@ -1,0 +1,55 @@
+[
+  {
+    "call": 1,
+    "command": "gh api repos/just-every/home/pulls/45",
+    "exit": 0
+  },
+  {
+    "call": 2,
+    "command": "gh api repos/just-every/run-uptime/releases?per_page=100",
+    "exit": 0,
+    "observedAt": "2026-11-12T07:12:23.252258+00:00"
+  },
+  {
+    "call": 3,
+    "command": "gh api repos/just-every/run-uptime/git/ref/tags/v0.5.7",
+    "exit": 0,
+    "observedAt": "2026-11-12T07:12:23.715629+00:00"
+  },
+  {
+    "call": 4,
+    "command": "gh api repos/just-every/run-uptime/contents/CONTRACT.md?ref=v0.5.7",
+    "exit": 0,
+    "observedAt": "2026-11-12T07:12:24.373297+00:00"
+  },
+  {
+    "call": 5,
+    "command": "gh api repos/just-every/run-happytohelp/releases/tags/v0.4.22",
+    "exit": 1,
+    "observedAt": "2026-11-12T07:12:24.866629+00:00"
+  },
+  {
+    "call": 6,
+    "command": "gh api repos/just-every/home/actions/runs?head_sha=fa1c59e71759a7f959e106e8102ff4c7edd76a55&per_page=100",
+    "exit": 0,
+    "observedAt": "2026-11-12T07:12:25.451436+00:00"
+  },
+  {
+    "call": 7,
+    "command": "gh api repos/just-every/run-uptime/git/tags/88959316ab47c342db0ac6ec636958321624d7ed",
+    "exit": 0,
+    "observedAt": "2026-11-12T07:12:36.729391+00:00"
+  },
+  {
+    "call": 8,
+    "command": "gh api repos/just-every/run-uptime/contents/seed.json?ref=v0.5.7",
+    "exit": 0,
+    "observedAt": "2026-11-12T07:12:37.242454+00:00"
+  },
+  {
+    "call": 9,
+    "command": "gh api repos/just-every/home/pulls/45",
+    "exit": 0,
+    "observedAt": "2026-11-12T07:17:50.271919+00:00"
+  }
+]

@@ -1,0 +1,95 @@
+{
+  "head": "fa1c59e71759a7f959e106e8102ff4c7edd76a55",
+  "baseline": "66fa2fe27a8837a94676fc6515acba517ddee867",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "countsBefore": {
+    "released": 35,
+    "coming-soon": 14
+  },
+  "countsAfter": {
+    "released": 35,
+    "coming-soon": 14
+  },
+  "listingChanges": [
+    {
+      "slug": "uptime",
+      "key": "version",
+      "before": "v0.5.6",
+      "after": "v0.5.7"
+    }
+  ],
+  "stateChanges": [
+    {
+      "path": "/seeds/lamp/open",
+      "before": [
+        "42983364b373"
+      ],
+      "after": null
+    },
+    {
+      "path": "/seeds/orbit/open",
+      "before": [
+        "64cb07f6a0dd"
+      ],
+      "after": null
+    },
+    {
+      "path": "/seeds/spool/open",
+      "before": [
+        "42983364b373"
+      ],
+      "after": null
+    },
+    {
+      "path": "/seeds/uptime/commit",
+      "before": "65953b2f1288fb5010f17391761abeee16923793",
+      "after": "a715d2188b5d38cc563465292bc8c461b93c6528"
+    },
+    {
+      "path": "/seeds/uptime/copy/seed.json",
+      "before": "6b442dcadd723598",
+      "after": "050aee15381cb711"
+    },
+    {
+      "path": "/seeds/uptime/open",
+      "before": [
+        "42983364b373"
+      ],
+      "after": [
+        "64cb07f6a0dd"
+      ]
+    },
+    {
+      "path": "/seeds/uptime/sourceRef",
+      "before": "v0.5.6",
+      "after": "v0.5.7"
+    },
+    {
+      "path": "/seeds/uptime/tag",
+      "before": "v0.5.6",
+      "after": "v0.5.7"
+    },
+    {
+      "path": "/syncedAt",
+      "before": "2026-11-11T21:39:21.804Z",
+      "after": "2026-11-12T06:45:28.972Z"
+    }
+  ],
+  "versions": {
+    "uptime": "v0.5.7",
+    "lamp": "v1.11.12",
+    "orbit": "v0.4.6",
+    "spool": "v0.7.6",
+    "happytohelp": "v0.4.21",
+    "oncall": "v0.5.8"
+  },
+  "excludedAbsent": true,
+  "copyUnchanged": true,
+  "credentialShapeScan": "PASS",
+  "sourceHashes": "CONTRACT.md and seed.json match state SHA256 prefixes",
+  "identity": "fleet author and committer; no trailers; one candidate commit"
+}

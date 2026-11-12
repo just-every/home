@@ -1,0 +1,44 @@
+{
+  "total_count": 3,
+  "workflow_runs": [
+    {
+      "id": 43171318486,
+      "name": "Verify branch",
+      "head_branch": "cloud/je-sync-21",
+      "head_sha": "fa1c59e71759a7f959e106e8102ff4c7edd76a55",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "skipped",
+      "html_url": "https://github.com/just-every/home/actions/runs/43171318486",
+      "created_at": "2026-11-12T06:53:42Z",
+      "updated_at": "2026-11-12T06:55:09Z",
+      "run_attempt": 1
+    },
+    {
+      "id": 43171315415,
+      "name": "PR #45",
+      "head_branch": "refs/pull/45/head",
+      "head_sha": "fa1c59e71759a7f959e106e8102ff4c7edd76a55",
+      "event": "dynamic",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/just-every/home/actions/runs/43171315415",
+      "created_at": "2026-11-12T06:53:40Z",
+      "updated_at": "2026-11-12T06:54:48Z",
+      "run_attempt": 1
+    },
+    {
+      "id": 43171250875,
+      "name": "Verify branch",
+      "head_branch": "cloud/je-sync-21",
+      "head_sha": "fa1c59e71759a7f959e106e8102ff4c7edd76a55",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/just-every/home/actions/runs/43171250875",
+      "created_at": "2026-11-12T06:53:06Z",
+      "updated_at": "2026-11-12T06:55:08Z",
+      "run_attempt": 1
+    }
+  ]
+}
