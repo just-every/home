@@ -116,7 +116,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Pingdom', 'UptimeRobot', 'Better Stack Uptime', 'Site24x7'],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.5.6',
+    version: 'v0.5.7',
     contractUrl: 'https://run-uptime.com/contract',
     seoTitle: 'Uptime: free, open-source alternative to Pingdom',
     seoDescription:
