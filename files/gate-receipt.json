@@ -178,7 +178,7 @@
     "candidateServerPID": 1367,
     "baselineServerPID": 2220,
     "bothServersTerminatedByRecordedPID": true,
-    "cloneDeletion": "scheduled immediately after evidence transport succeeds; final cleanup receipt retained outside clone"
+    "cloneDeletion": "After final evidence transport; terminal response confirms completion."
   },
   "limitations": [
     "Release DSSE envelope asset presence only; signature not verified as rubric specifies.",

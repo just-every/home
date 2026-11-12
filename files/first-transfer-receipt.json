@@ -1,0 +1,8 @@
+{
+  "repository": "just-every/home",
+  "ref": "refs/heads/evidence/je-gate-32",
+  "head": "6614d04c0a024e991f7f476f455694de7e2d903f",
+  "verified": true,
+  "files": 42,
+  "method": "fresh Git fetch; exact ref/head, manifest product provenance, every blob id/length/SHA256/local byte match"
+}

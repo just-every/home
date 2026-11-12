@@ -19,10 +19,10 @@
       "sha256": "14c437965f8c7e6e926c053c2263f379401b331cb16dbaf3a6c869539404b238"
     },
     {
-      "blob": "8f9f28dcf7d2b1004331d6335062ad6bb8708ed9",
-      "bytes": 14093,
+      "blob": "cdf9d0438620f5d457541794c7a4b60c51cf8208",
+      "bytes": 14245,
       "path": "REPORT.md",
-      "sha256": "9aa0e00965237ff443969a6dde5a868b4a59a4d4b1190f239d20552e1f31e4b2"
+      "sha256": "0b84b8b0630ca536e1f7b1c0022f095d013bf92a0a96b6605414fe1288638066"
     },
     {
       "blob": "368d5f66d94e8d8f7a110e4f486ed971e97b3da4",
@@ -163,6 +163,12 @@
       "sha256": "822593426a7e58b0539015feddd8bff62c68b2d81681fac85efb36d1f04b55dd"
     },
     {
+      "blob": "3e3275e07cf475ab39ea44d6cc507db901ff6558",
+      "bytes": 394,
+      "path": "cleanup-receipt.json",
+      "sha256": "2096fe763ae4fa749d8a5e0543d6707b3322be3140fc752e33ad3ab7da633d13"
+    },
+    {
       "blob": "2807749982cb673aac96f34f0e62c006f016475a",
       "bytes": 126,
       "path": "commit-identities.txt",
@@ -187,10 +193,22 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "blob": "b80a3a0ee3f2519037a79bf262976c1c3f748f00",
-      "bytes": 5370,
+      "blob": "b62996ca12e3e8d2c1cf511dbdab2713b6c9c1c7",
+      "bytes": 7728,
+      "path": "first-publication.log",
+      "sha256": "febfda5db04675124c2d25316158ba4c868640a15ea4bde3ae6867a037e4ede3"
+    },
+    {
+      "blob": "f0afc62c388566e80f732d485a372ca0dc38fcb4",
+      "bytes": 292,
+      "path": "first-transfer-receipt.json",
+      "sha256": "0651d8bae72e85145857ab68c6e10a73a9a7558a1382ef9c81aa5a9741145821"
+    },
+    {
+      "blob": "a5a900970698201cdb193b349623f7ce7a18baad",
+      "bytes": 5339,
       "path": "gate-receipt.json",
-      "sha256": "7d9686bc64a60e838c7680d3e4708be6ddce5bfd4462089f798176673fb0886b"
+      "sha256": "04435498c682f173f519819dcab7b1577bd9b8f53da335e220d2d7d7cd9ca253"
     },
     {
       "blob": "df780ccd4b03f690ff6c3c4278860a953a47e39f",
