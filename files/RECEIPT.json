@@ -1,0 +1,161 @@
+{
+  "schema": 1,
+  "tag": "je-sync-24",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-24",
+  "head": "e971bef20b72603b026c871bc32a4d3fd6b45491",
+  "tree": "6ea81940081fce6d6692a95d28ed9213f3f7fb48",
+  "base": "1bc79fecf2ded7323c7047836f1046398cd0ef21",
+  "product_status": "READY",
+  "pr": {
+    "base": {
+      "ref": "main",
+      "sha": "1bc79fecf2ded7323c7047836f1046398cd0ef21"
+    },
+    "head": {
+      "ref": "cloud/je-sync-24",
+      "sha": "e971bef20b72603b026c871bc32a4d3fd6b45491"
+    },
+    "html_url": "https://github.com/just-every/home/pull/48",
+    "number": 48,
+    "state": "open"
+  },
+  "ci": {
+    "conclusion": "success",
+    "head_sha": "e971bef20b72603b026c871bc32a4d3fd6b45491",
+    "html_url": "https://github.com/just-every/home/actions/runs/43317092344",
+    "status": "completed",
+    "run_id": 43317092344,
+    "observed_at": "2026-11-12T22:14:01.528637+00:00",
+    "api_observation": 1
+  },
+  "counts_before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "counts_after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "clause_status_changes": [],
+  "public_copy_changes": [],
+  "seed_diffs": {
+    "lamp": {
+      "open": {
+        "before": [
+          "c843303a1181"
+        ],
+        "after": null
+      }
+    },
+    "oncall": {
+      "open": {
+        "before": [
+          "c843303a1181"
+        ],
+        "after": null
+      }
+    },
+    "orbit": {
+      "open": {
+        "before": [
+          "922fed04eacf"
+        ],
+        "after": null
+      }
+    },
+    "spool": {
+      "open": {
+        "before": [
+          "42983364b373"
+        ],
+        "after": null
+      }
+    },
+    "uptime": {
+      "commit": {
+        "before": "ed5429192d18503c4c8caa8d797d82ffdcc78f54",
+        "after": "88c586f6fabdaed6768ddc8072af2340310a7ace"
+      },
+      "copy": {
+        "before": {
+          "CONTRACT.md": "879a0aeaeb48188b",
+          "README.md": "df1ed0eb35eea156",
+          "seed.json": "478c4d0c0101101e"
+        },
+        "after": {
+          "CONTRACT.md": "f6685342c00a3826",
+          "README.md": "ec45a6ff0815ba77",
+          "seed.json": "ae5eb94cbf16587c"
+        }
+      },
+      "open": {
+        "before": [
+          "42983364b373"
+        ],
+        "after": [
+          "c843303a1181"
+        ]
+      },
+      "sourceRef": {
+        "before": "v0.5.8",
+        "after": "v0.5.9"
+      },
+      "tag": {
+        "before": "v0.5.8",
+        "after": "v0.5.9"
+      }
+    }
+  },
+  "changed_paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "working_tree_clean": true,
+  "checks": {
+    "npm_ci": "passed",
+    "initial_dry_sync": "1/49 changed, 0 unreadable",
+    "copy_only_apply": "0/49 changed",
+    "mechanical_apply": "Uptime version applied",
+    "post_release_copy_refresh": "Uptime tagged CONTRACT.md, README.md, seed.json recorded; no wording applied",
+    "listings": "generated 49; check passed",
+    "final_dry_sync": "0/49 changed, 0 unreadable",
+    "type_check": "passed",
+    "lint": "passed",
+    "production_build": "passed",
+    "browser_assertions_1440": "passed",
+    "browser_captures_1440_390": "reviewed",
+    "identity_and_trailers_including_side_parents": "passed",
+    "diff_and_scope_hygiene": "passed",
+    "credential_shaped_value_scan": "passed"
+  },
+  "release": {
+    "assets": [
+      {
+        "browser_download_url": "https://github.com/just-every/run-uptime/releases/download/v0.5.9/rer-release.dsse.json",
+        "digest": "sha256:d82d277f5d0810841a9e08ecfefee57959847ba4a29ae3702a0952a6cb7ec67a",
+        "name": "rer-release.dsse.json",
+        "size": 3361
+      },
+      {
+        "browser_download_url": "https://github.com/just-every/run-uptime/releases/download/v0.5.9/uptime-0.4.0-monitor-1440.png",
+        "digest": "sha256:0269a0e480982211aa19e9a84caeeef052a2fd1bfb2ca24f2338b47615fb0196",
+        "name": "uptime-0.4.0-monitor-1440.png",
+        "size": 273042
+      }
+    ],
+    "draft": false,
+    "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.9",
+    "id": 443324890,
+    "prerelease": false,
+    "published_at": "2026-11-12T18:01:29Z",
+    "tag_name": "v0.5.9",
+    "target_commitish": "main"
+  },
+  "signature_verification": "not performed; envelope asset presence only",
+  "blockers": [],
+  "observed_at": "2026-11-12T22:14:12.374887+00:00"
+}

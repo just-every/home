@@ -1,0 +1,13 @@
+▲ Next.js 16.4.3
+- Local:         http://127.0.0.1:3000
+- Network:       http://127.0.0.1:3000
+✓ Ready in 106ms
+✓ Running next.config.ts took 89ms
+⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+Token snapshot unavailable ReferenceError: caches is not defined
+    at h (.next/server/app/api/tokens/route.js:2:339)
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+Token snapshot unavailable ReferenceError: caches is not defined
+    at h (.next/server/app/api/tokens/route.js:2:339)

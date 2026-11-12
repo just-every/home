@@ -1,0 +1,31 @@
+{
+  "url": "http://127.0.0.1:3000/uptime",
+  "results": [
+    {
+      "width": 1440,
+      "status": 200,
+      "facts": "RUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.5.9\nLICENCE\nMIT, 100% free",
+      "dimensions": {
+        "width": 1440,
+        "scrollWidth": 1440
+      },
+      "pageErrors": [],
+      "hydrationErrors": [],
+      "assertions": "passed",
+      "screenshot": "uptime-1440.png"
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "facts": "RUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.5.9\nLICENCE\nMIT, 100% free",
+      "dimensions": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "pageErrors": [],
+      "hydrationErrors": [],
+      "assertions": "capture only",
+      "screenshot": "uptime-390.png"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "pid": 37124,
+  "started_by": "je-sync-24",
+  "command": "node node_modules/next/dist/bin/next start --hostname 127.0.0.1 --port 3000",
+  "stopped": true,
+  "exit_code": 143
+}
