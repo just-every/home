@@ -1,0 +1,20 @@
+{
+  "observedAtEpoch": 1794484276.2676096,
+  "head": "876d1edb1024b65d722eff36a2182193a2aa34f0",
+  "runs": [
+    {
+      "id": 43212634338,
+      "name": "Verify branch",
+      "event": "push",
+      "status": "in_progress",
+      "conclusion": null,
+      "head_sha": "876d1edb1024b65d722eff36a2182193a2aa34f0",
+      "html_url": "https://github.com/just-every/home/actions/runs/43212634338",
+      "created_at": "2026-11-12T11:50:44Z",
+      "updated_at": "2026-11-12T11:50:47Z"
+    }
+  ],
+  "CIControlCallsUsed": 2,
+  "CIControlCallsBudget": 10,
+  "note": "Source reads required by committed sync and release review are tracked separately from the CI/control budget."
+}

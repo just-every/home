@@ -1,0 +1,62 @@
+[
+  {
+    "seed": "spool",
+    "clause": "BASE-AGENT-006",
+    "before": {
+      "line": 1778,
+      "status": "missing"
+    },
+    "after": {
+      "line": 1778,
+      "status": "partial"
+    },
+    "beforeTag": "v0.7.6",
+    "afterTag": "v0.7.7",
+    "custody": "upstream released judgment observed only; no JE or seed status edited"
+  },
+  {
+    "seed": "oncall",
+    "clause": "OC-006",
+    "before": {
+      "line": 1436,
+      "status": "partial"
+    },
+    "after": {
+      "line": 1438,
+      "status": "done"
+    },
+    "beforeTag": "v0.5.8",
+    "afterTag": "v0.5.9",
+    "custody": "upstream released judgment observed only; no JE or seed status edited"
+  },
+  {
+    "seed": "oncall",
+    "clause": "OC-017",
+    "before": {
+      "line": 1447,
+      "status": "partial"
+    },
+    "after": {
+      "line": 1449,
+      "status": "done"
+    },
+    "beforeTag": "v0.5.8",
+    "afterTag": "v0.5.9",
+    "custody": "upstream released judgment observed only; no JE or seed status edited"
+  },
+  {
+    "seed": "oncall",
+    "clause": "OC-022",
+    "before": {
+      "line": 1452,
+      "status": "partial"
+    },
+    "after": {
+      "line": 1454,
+      "status": "done"
+    },
+    "beforeTag": "v0.5.8",
+    "afterTag": "v0.5.9",
+    "custody": "upstream released judgment observed only; no JE or seed status edited"
+  }
+]

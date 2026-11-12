@@ -1,0 +1,59 @@
+{
+  "status": "pass",
+  "baseUrl": "http://127.0.0.1:3100",
+  "browser": "/usr/bin/chromium",
+  "results": [
+    {
+      "slug": "happytohelp",
+      "width": 1440,
+      "version": "v0.4.22",
+      "httpStatus": 200,
+      "assertions": "version, structured data, HTTP 200, no horizontal overflow",
+      "screenshot": "happytohelp-1440.png"
+    },
+    {
+      "slug": "oncall",
+      "width": 1440,
+      "version": "v0.5.9",
+      "httpStatus": 200,
+      "assertions": "version, structured data, HTTP 200, no horizontal overflow",
+      "screenshot": "oncall-1440.png"
+    },
+    {
+      "slug": "spool",
+      "width": 1440,
+      "version": "v0.7.7",
+      "httpStatus": 200,
+      "assertions": "version, structured data, HTTP 200, no horizontal overflow",
+      "screenshot": "spool-1440.png"
+    },
+    {
+      "slug": "happytohelp",
+      "width": 390,
+      "version": "v0.4.22",
+      "httpStatus": 200,
+      "assertions": "visual proof only",
+      "screenshot": "happytohelp-390.png"
+    },
+    {
+      "slug": "oncall",
+      "width": 390,
+      "version": "v0.5.9",
+      "httpStatus": 200,
+      "assertions": "visual proof only",
+      "screenshot": "oncall-390.png"
+    },
+    {
+      "slug": "spool",
+      "width": 390,
+      "version": "v0.7.7",
+      "httpStatus": 200,
+      "assertions": "visual proof only",
+      "screenshot": "spool-390.png"
+    }
+  ],
+  "productHead": "876d1edb1024b65d722eff36a2182193a2aa34f0",
+  "productTree": "d621fe799916544721dd7a4ff5398f77ce07c97d",
+  "sourceContentMatchesCandidate": true,
+  "visuallyReviewed": true
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "id": 442707135,
+    "tag_name": "v0.7.7",
+    "html_url": "https://github.com/just-every/run-spool/releases/tag/v0.7.7",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-12T09:07:23Z",
+    "target_commitish": "main",
+    "repository": "just-every/run-spool",
+    "assets": [
+      {
+        "id": 738801478,
+        "name": "public-source.tar",
+        "size": 84696576,
+        "digest": "sha256:412044749a08af852abd1bfc95be78e64ddf272f57c6c219f97ff1ce6df09d4e",
+        "browser_download_url": "https://github.com/just-every/run-spool/releases/download/v0.7.7/public-source.tar"
+      },
+      {
+        "id": 738801470,
+        "name": "publish-check.json",
+        "size": 977823,
+        "digest": "sha256:7c77945dbe8b8276c49015137012ad68be436c59d534df31f34a566911cc9b59",
+        "browser_download_url": "https://github.com/just-every/run-spool/releases/download/v0.7.7/publish-check.json"
+      },
+      {
+        "id": 738801473,
+        "name": "release-receipt.json",
+        "size": 2386,
+        "digest": "sha256:6f2bbfbf8320dcf3ee95acb2d0d5649c3b0b8b2bef52c7062799301f3e389031",
+        "browser_download_url": "https://github.com/just-every/run-spool/releases/download/v0.7.7/release-receipt.json"
+      },
+      {
+        "id": 738801479,
+        "name": "rer-release.dsse.json",
+        "size": 3089,
+        "digest": "sha256:59a42be548395a9368de92c63cb718207c28d8d93078cc79e45b5b34d597393b",
+        "browser_download_url": "https://github.com/just-every/run-spool/releases/download/v0.7.7/rer-release.dsse.json"
+      },
+      {
+        "id": 738801468,
+        "name": "spool-issue-page-1600.png",
+        "size": 166594,
+        "digest": "sha256:803e68493512833b379113098418003a88ce29a3f5fe4915af5d4a3a7f743baf",
+        "browser_download_url": "https://github.com/just-every/run-spool/releases/download/v0.7.7/spool-issue-page-1600.png"
+      }
+    ],
+    "eligible": true,
+    "signature_verification": "not performed; envelope asset presence only"
+  },
+  {
+    "id": 442704873,
+    "tag_name": "v0.5.9",
+    "html_url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.9",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-12T09:04:59Z",
+    "target_commitish": "main",
+    "repository": "just-every/run-oncall",
+    "assets": [
+      {
+        "id": 738794364,
+        "name": "rer-release.dsse.json",
+        "size": 3169,
+        "digest": "sha256:dde02b0d80769e2322824b6cce834dcc53e6311547c78d7f2dcf0055d93e00c0",
+        "browser_download_url": "https://github.com/just-every/run-oncall/releases/download/v0.5.9/rer-release.dsse.json"
+      }
+    ],
+    "eligible": true,
+    "signature_verification": "not performed; envelope asset presence only"
+  },
+  {
+    "id": 442613680,
+    "tag_name": "v0.4.22",
+    "html_url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.22",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-12T07:26:55Z",
+    "target_commitish": "main",
+    "repository": "just-every/run-happytohelp",
+    "assets": [
+      {
+        "id": 738506786,
+        "name": "rer-release.dsse.json",
+        "size": 3061,
+        "digest": "sha256:6842bd2bdc073ef4f15684ef2e44914d3016202e29141eb6c8d5f0ba8505d1f0",
+        "browser_download_url": "https://github.com/just-every/run-happytohelp/releases/download/v0.4.22/rer-release.dsse.json"
+      }
+    ],
+    "eligible": true,
+    "signature_verification": "not performed; envelope asset presence only"
+  }
+]

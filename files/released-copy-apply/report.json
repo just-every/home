@@ -1,0 +1,130 @@
+{
+  "startedAt": "2026-11-12T11:45:50.071Z",
+  "mode": "apply",
+  "copyOnly": true,
+  "captureHost": null,
+  "load": 4.28,
+  "statePath": "scripts/seeds-sync/state.json",
+  "baselineDate": null,
+  "seeds": [
+    {
+      "slug": "happytohelp",
+      "name": "HappyToHelp",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.22",
+        "commit": "4dee2432081a64cee0bd12c59a31cb84371c3ab3",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ae8feea8b7998aa7",
+          "README.md": "5483ddb9e5f071e5",
+          "seed.json": "c283958a928aa942"
+        }
+      },
+      "findings": [
+        {
+          "type": "copy",
+          "summary": "README.md, seed.json changed since the last sync",
+          "status": "reported",
+          "manual": null,
+          "copy": "rewrite the page copy from README.md, seed.json (https://github.com/just-every/run-happytohelp/compare/51492e5d3cba...4dee2432081a)",
+          "details": {
+            "files": [
+              "README.md",
+              "seed.json"
+            ],
+            "range": "https://github.com/just-every/run-happytohelp/compare/51492e5d3cba...4dee2432081a",
+            "from": "51492e5d3cbaa94b42df1bef063fb00131038a19",
+            "to": "4dee2432081a64cee0bd12c59a31cb84371c3ab3"
+          },
+          "repeat": false,
+          "images": null
+        }
+      ]
+    },
+    {
+      "slug": "oncall",
+      "name": "Oncall",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.5.9",
+        "commit": "59af2f80bb67eb3382828f5c736698491006254c",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "b5bd97065b050462",
+          "README.md": "1b2b85115d842bc6",
+          "seed.json": "d9e8a2ffdc94d60d"
+        }
+      },
+      "findings": [
+        {
+          "type": "copy",
+          "summary": "CONTRACT.md, README.md, seed.json changed since the last sync",
+          "status": "reported",
+          "manual": null,
+          "copy": "rewrite the page copy from CONTRACT.md, README.md, seed.json (https://github.com/just-every/run-oncall/compare/0dac089dba93...59af2f80bb67)",
+          "details": {
+            "files": [
+              "CONTRACT.md",
+              "README.md",
+              "seed.json"
+            ],
+            "range": "https://github.com/just-every/run-oncall/compare/0dac089dba93...59af2f80bb67",
+            "from": "0dac089dba93dc1209c3a2317d5e7a4392d44c4e",
+            "to": "59af2f80bb67eb3382828f5c736698491006254c"
+          },
+          "repeat": false,
+          "images": null
+        }
+      ]
+    },
+    {
+      "slug": "spool",
+      "name": "Spool",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.7.7",
+        "commit": "26d13d4f574298851f25778818c1af0b9b2a2386",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ee9c871bfa25a110",
+          "README.md": "bff27b2cfdded428",
+          "seed.json": "50242715acf7191b"
+        }
+      },
+      "findings": [
+        {
+          "type": "copy",
+          "summary": "CONTRACT.md, README.md, seed.json changed since the last sync",
+          "status": "reported",
+          "manual": null,
+          "copy": "rewrite the page copy from CONTRACT.md, README.md, seed.json (https://github.com/just-every/run-spool/compare/2e12affd54e9...26d13d4f5742)",
+          "details": {
+            "files": [
+              "CONTRACT.md",
+              "README.md",
+              "seed.json"
+            ],
+            "range": "https://github.com/just-every/run-spool/compare/2e12affd54e9...26d13d4f5742",
+            "from": "2e12affd54e9b3bfe759e0eaec60906e3548f876",
+            "to": "26d13d4f574298851f25778818c1af0b9b2a2386"
+          },
+          "repeat": false,
+          "images": null
+        }
+      ]
+    }
+  ],
+  "shareImage": [],
+  "apply": {
+    "applied": [],
+    "written": [],
+    "favicons": false
+  }
+}

@@ -1,0 +1,1 @@
+The supplied symlinks invoked Husky with a relocated argv[0], which made its relative h support-file lookup fail. Existing executable original hooks are forwarded with exec at their original path. commit-msg cleanup remains installed, core.hooksPath is unchanged, missing original hooks remain inactive symlinks, and no hook is skipped.

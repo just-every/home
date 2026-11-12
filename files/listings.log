@@ -1,0 +1,10 @@
+
+> next-project@0.1.0 listings
+> node --import tsx scripts/listings.mjs
+
+Listings generated (49 seeds)
+
+> next-project@0.1.0 listings
+> node --import tsx scripts/listings.mjs --check
+
+Listings current (49 seeds)

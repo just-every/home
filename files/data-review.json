@@ -1,0 +1,81 @@
+{
+  "status": "pass",
+  "counts": {
+    "before": {
+      "total": 49,
+      "released": 35,
+      "comingSoon": 14
+    },
+    "after": {
+      "total": 49,
+      "released": 35,
+      "comingSoon": 14
+    }
+  },
+  "changes": [
+    {
+      "slug": "happytohelp",
+      "from": "v0.4.21",
+      "to": "v0.4.22"
+    },
+    {
+      "slug": "oncall",
+      "from": "v0.5.8",
+      "to": "v0.5.9"
+    },
+    {
+      "slug": "spool",
+      "from": "v0.7.6",
+      "to": "v0.7.7"
+    }
+  ],
+  "excludedAbsent": [
+    "beacon",
+    "relay",
+    "ferry",
+    "lily",
+    "brook",
+    "delta",
+    "barrow",
+    "linen"
+  ],
+  "auth": "coming-soon",
+  "otherListingFields": "identical",
+  "publicClaimEdits": 0,
+  "JEClauseStatusChanges": 0,
+  "brandSha256": "a54bb68daa5f1590e5a6eaafecf38c627e42fa014f65c0d7efaf81bee809b7a4",
+  "stateChanges": {
+    "happytohelp": {
+      "beforeRef": "v0.4.21",
+      "beforeCommit": "51492e5d3cbaa94b42df1bef063fb00131038a19",
+      "afterRef": "v0.4.22",
+      "afterCommit": "4dee2432081a64cee0bd12c59a31cb84371c3ab3"
+    },
+    "oncall": {
+      "beforeRef": "v0.5.8",
+      "beforeCommit": "0dac089dba93dc1209c3a2317d5e7a4392d44c4e",
+      "afterRef": "v0.5.9",
+      "afterCommit": "59af2f80bb67eb3382828f5c736698491006254c"
+    },
+    "spool": {
+      "beforeRef": "v0.7.6",
+      "beforeCommit": "2e12affd54e9b3bfe759e0eaec60906e3548f876",
+      "afterRef": "v0.7.7",
+      "afterCommit": "26d13d4f574298851f25778818c1af0b9b2a2386"
+    }
+  },
+  "previousAcknowledgedFindingCleared": {
+    "slug": "uptime",
+    "key": "64cb07f6a0dd",
+    "finding": "seed.json changed since the last sync",
+    "reason": "source already current; full apply clears the previously observed copy finding"
+  },
+  "retainedHiddenStateEntries": [
+    "barrow",
+    "linen"
+  ],
+  "drySync": {
+    "before": "3 of 49 seeds changed; 0 unreadable",
+    "after": "0 of 49 seeds changed; 0 unreadable"
+  }
+}

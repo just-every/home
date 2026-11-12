@@ -1,0 +1,8 @@
+1. Fresh shallow clone main; read repository guidance and committed sync implementation. Keep one writer and declared product scope.
+2. Run npm ci and full dry sync; preserve actual output and reports. Read other repositories only through gh api, including an external transport adapter for the tool's source-ref git ls-remote reads. Load gh credentials privately from the fleet bundle each use.
+3. Run copy-only apply; review released-source changes against published JE wording, including known C follow-ups. Preserve true wording; record upcoming/unreleased drift without importing claims.
+4. Verify every proposed version/status against non-draft, non-prerelease Releases with rer-release.dsse.json. Run mechanical apply; withhold unsupported versions, unsupported new gallery/still provenance, and excluded seeds.
+5. Regenerate listings, check listings, and rerun dry sync. Explain remaining findings. Run type-check, lint, production build. Preserve actual non-secret reports and receipts outside product branch.
+6. Rebase onto current main before first publication; install fleet hooks after dependency setup; audit all candidate identities/messages, diff scope, hygiene and credential patterns. Commit product changes and immediately guard-push cloud/je-sync-22.
+7. Open one PR via REST; inspect exact-SHA Verify via REST with one watcher, <=1 call/run/300s, and the ten-call CI/control budget. Record full provenance and terminal status.
+8. Publish explicitly selected public-safe packet through evidence/je-sync-22, verify custody, remove successful clone/node_modules, and relay POST lines and READY/PUSHED status.

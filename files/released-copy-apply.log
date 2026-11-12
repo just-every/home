@@ -1,0 +1,21 @@
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --copy-only --apply --only happytohelp,oncall,spool --out ../packet/released-copy-apply
+
+Reading 3 seed repositories...
+happytohelp: source=v0.4.22 commit=4dee2432081a64cee0bd12c59a31cb84371c3ab3 (released listing version)
+oncall: source=v0.5.9 commit=59af2f80bb67eb3382828f5c736698491006254c (released listing version)
+spool: source=v0.7.7 commit=26d13d4f574298851f25778818c1af0b9b2a2386 (released listing version)
+
+Applied: 3 of 3 seeds changed.
+
+HappyToHelp
+  copy      README.md, seed.json changed since the last sync [reported]
+
+Oncall
+  copy      CONTRACT.md, README.md, seed.json changed since the last sync [reported]
+
+Spool
+  copy      CONTRACT.md, README.md, seed.json changed since the last sync [reported]
+
+Report: /home/agent/rer-consolidation/work/je-sync-22/packet/released-copy-apply/report.md

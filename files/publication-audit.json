@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "candidateCommits": 1,
+  "allParentsIncluded": true,
+  "head": "876d1edb1024b65d722eff36a2182193a2aa34f0",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "identity": "fleet",
+  "trailers": "allowed only; no OpenAI/Codex coauthor",
+  "diffHygiene": "pass",
+  "credentialPatternScan": "pass",
+  "MacPublicationScan": "pending lane; unavailable in cloud"
+}

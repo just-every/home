@@ -1,0 +1,6 @@
+{
+  "title": "sync: seed listings 12 Nov (3)",
+  "head": "cloud/je-sync-22",
+  "base": "main",
+  "body": "Updates HappyToHelp v0.4.21 \u2192 v0.4.22, Oncall v0.5.8 \u2192 v0.5.9 and Spool v0.7.6 \u2192 v0.7.7, and records their released copy-source provenance. All three have non-draft, non-prerelease GitHub Releases with rer-release.dsse.json assets; signature verification was not performed. Counts stay at 49 listings: 35 released and 14 coming soon. Released-source review requires no public wording changes.\n\nValidated: final dry sync reports 0 of 49 seeds changed; listings and brand checks, type-check, lint and production build pass. Chromium checks verify versions and structured data at 1440; screenshots show all three updated version sections at 1440 and 390. [Report, receipts and browser proof](https://github.com/just-every/home/tree/evidence/je-sync-22/files) are published separately from the product branch. Lane landing hold, independent gate and Mac publication scan remain required.\n"
+}

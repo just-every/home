@@ -1,0 +1,45 @@
+{
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-22",
+  "head": "876d1edb1024b65d722eff36a2182193a2aa34f0",
+  "base": "4c5444b557b0a2f6fbafcc6612572fa12f0ed7d5",
+  "tree": "d621fe799916544721dd7a4ff5398f77ce07c97d",
+  "push": "success on first guarded attempt",
+  "productPaths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "cleanWorktree": true,
+  "publicClauseStatusChanges": 0,
+  "signatureVerification": "not performed",
+  "landing": "pending lane independent gate, Mac publication scan, PR merge and deployment",
+  "PR": "https://github.com/just-every/home/pull/46",
+  "remoteHead": "876d1edb1024b65d722eff36a2182193a2aa34f0",
+  "localChecks": {
+    "typeCheck": "pass",
+    "lint": "pass",
+    "productionBuild": "pass",
+    "brandCheck": "pass",
+    "listingsCheck": "pass",
+    "finalDrySync": "0 of 49 seeds changed; 0 unreadable",
+    "dataReview": "pass",
+    "browser": "pass; assertions at 1440, screenshots at 1440 and 390"
+  },
+  "sourceSignatures": "not verified; envelope asset presence confirmed",
+  "publicClaimEdits": 0,
+  "terminalStatus": "READY",
+  "CI": {
+    "conclusion": "success",
+    "head_sha": "876d1edb1024b65d722eff36a2182193a2aa34f0",
+    "html_url": "https://github.com/just-every/home/actions/runs/43212634338",
+    "status": "completed",
+    "runId": 43212634338,
+    "workflow": "Verify branch",
+    "event": "push",
+    "observedAtEpoch": 1794484576.8580625,
+    "CIControlCallsUsed": 3,
+    "CIControlCallsBudget": 10,
+    "previousObservationEpoch": 1794484276.2676096
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "status": "pass",
+  "publicCopyUnchanged": true,
+  "brandAndHomepageStateUnchanged": true,
+  "otherSeedsUnchangedExceptAcknowledgedUptimeOpenKey": true,
+  "sourceFiles": [
+    {
+      "seed": "happytohelp",
+      "tag": "v0.4.22",
+      "commit": "4dee2432081a64cee0bd12c59a31cb84371c3ab3",
+      "file": "CONTRACT.md",
+      "sha256": "ae8feea8b7998aa729edadf621d7f3809aa83bbe073fd3e053e1c1fb8b9b04ec",
+      "matchesFinalSyncAndState": true
+    },
+    {
+      "seed": "happytohelp",
+      "tag": "v0.4.22",
+      "commit": "4dee2432081a64cee0bd12c59a31cb84371c3ab3",
+      "file": "README.md",
+      "sha256": "5483ddb9e5f071e5f23012776110bca7619a08e424166dd23e5839bc5bf30e55",
+      "matchesFinalSyncAndState": true
+    },
+    {
+      "seed": "happytohelp",
+      "tag": "v0.4.22",
+      "commit": "4dee2432081a64cee0bd12c59a31cb84371c3ab3",
+      "file": "seed.json",
+      "sha256": "c283958a928aa9426e561fcf573ae88b967a107968cbb18fd5689692f93daa3d",
+      "matchesFinalSyncAndState": true
+    },
+    {
+      "seed": "oncall",
+      "tag": "v0.5.9",
+      "commit": "59af2f80bb67eb3382828f5c736698491006254c",
+      "file": "CONTRACT.md",
+      "sha256": "b5bd97065b050462b37c85a7cfdcb88cce44144aaa16202f186bce6fc403f2c0",
+      "matchesFinalSyncAndState": true
+    },
+    {
+      "seed": "oncall",
+      "tag": "v0.5.9",
+      "commit": "59af2f80bb67eb3382828f5c736698491006254c",
+      "file": "README.md",
+      "sha256": "1b2b85115d842bc68ac17e8d36a6130a7ad9f914400ce17a29120a29743699a2",
+      "matchesFinalSyncAndState": true
+    },
+    {
+      "seed": "oncall",
+      "tag": "v0.5.9",
+      "commit": "59af2f80bb67eb3382828f5c736698491006254c",
+      "file": "seed.json",
+      "sha256": "d9e8a2ffdc94d60d29f4f7d59b0742c78c5c53ab47b42e797a9f08fe872d907d",
+      "matchesFinalSyncAndState": true
+    },
+    {
+      "seed": "spool",
+      "tag": "v0.7.7",
+      "commit": "26d13d4f574298851f25778818c1af0b9b2a2386",
+      "file": "CONTRACT.md",
+      "sha256": "ee9c871bfa25a110d3f3e61924164c75cc17ea412cb775f2e0621f114ab3594b",
+      "matchesFinalSyncAndState": true
+    },
+    {
+      "seed": "spool",
+      "tag": "v0.7.7",
+      "commit": "26d13d4f574298851f25778818c1af0b9b2a2386",
+      "file": "README.md",
+      "sha256": "bff27b2cfdded428c060477c659865274ec51b3cb66f017de27b76a48cebb043",
+      "matchesFinalSyncAndState": true
+    },
+    {
+      "seed": "spool",
+      "tag": "v0.7.7",
+      "commit": "26d13d4f574298851f25778818c1af0b9b2a2386",
+      "file": "seed.json",
+      "sha256": "50242715acf7191b405e0158db82937ea445347847a8df1aa09015f67a43ec23",
+      "matchesFinalSyncAndState": true
+    }
+  ]
+}
