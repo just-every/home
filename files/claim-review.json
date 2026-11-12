@@ -1,0 +1,59 @@
+{
+  "source": "just-every/run-uptime@v0.5.9/CONTRACT.md",
+  "sourceCommit": "88c586f6fabdaed6768ddc8072af2340310a7ace",
+  "statuses": [
+    {
+      "id": "STATE-001",
+      "status": "partial"
+    },
+    {
+      "id": "EVIDENCE-001",
+      "status": "done"
+    },
+    {
+      "id": "NOTIFY-001",
+      "status": "done"
+    },
+    {
+      "id": "DELIVERY-001",
+      "status": "done"
+    },
+    {
+      "id": "DRILL-001",
+      "status": "done"
+    },
+    {
+      "id": "TLS-001",
+      "status": "done"
+    },
+    {
+      "id": "MAINT-001",
+      "status": "done"
+    },
+    {
+      "id": "ARCHIVE-001",
+      "status": "done"
+    },
+    {
+      "id": "NETWORK-001",
+      "status": "partial"
+    },
+    {
+      "id": "ERASURE-001",
+      "status": "done"
+    }
+  ],
+  "incumbents": [
+    "Pingdom (SolarWinds)",
+    "UptimeRobot",
+    "Better Stack Uptime",
+    "Site24x7"
+  ],
+  "copyChanged": false,
+  "newlyFalseClaimsFound": [],
+  "existingPartialEvidenceClaims": {
+    "STATE-001": "One failed check never raises an alarm. A monitor is called Failing only after confirmation, a missing check shows as Unknown, and it recovers only on fresh passing checks.",
+    "NETWORK-001": "Every address and redirect is validated, unsafe addresses are refused, and a redirect that downgrades from HTTPS is rejected."
+  },
+  "assessment": "Partial evidence is not source proof of falsehood; both named partial clauses are explicitly pre-existing in the frozen brief. No new reportable follow-up or blocking finding."
+}

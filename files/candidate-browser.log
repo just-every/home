@@ -1,0 +1,56 @@
+[
+  {
+    "mode": "candidate",
+    "width": 1440,
+    "status": 200,
+    "title": "Uptime: free, open-source alternative to Pingdom",
+    "h1": "Uptime",
+    "version": "v0.5.9",
+    "versionBounds": {
+      "x": 617.328125,
+      "y": 512.640625,
+      "width": 205.328125,
+      "height": 23.09375
+    },
+    "viewportWidth": 1440,
+    "documentWidth": 1440,
+    "sections": [
+      "What it does",
+      "What it promises",
+      "Move in from",
+      "Run it yourself",
+      "Products",
+      "Essays",
+      "Get in touch"
+    ],
+    "errors": [],
+    "assertions": "public /uptime status, heading, version, horizontal bounds, runtime errors; candidate public JSON version agreement"
+  },
+  {
+    "mode": "candidate",
+    "width": 390,
+    "status": 200,
+    "title": "Uptime: free, open-source alternative to Pingdom",
+    "h1": "Uptime",
+    "version": "v0.5.9",
+    "versionBounds": {
+      "x": 20,
+      "y": 513.078125,
+      "width": 350,
+      "height": 23.09375
+    },
+    "viewportWidth": 390,
+    "documentWidth": 390,
+    "sections": [
+      "What it does",
+      "What it promises",
+      "Move in from",
+      "Run it yourself",
+      "Products",
+      "Essays",
+      "Get in touch"
+    ],
+    "errors": [],
+    "assertions": "visual proof only"
+  }
+]

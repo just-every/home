@@ -1,0 +1,19 @@
+{
+  "sourceLock": {
+    "applicable": false,
+    "reason": "No sources.lock.json, source-lock generator or source-lock check documented/present in home."
+  },
+  "contractViews": {
+    "applicable": false,
+    "reason": "No CONTRACT.md, ACCEPTANCE.md, docs/CLAIMS.md or documented Lander-Regenerate command in home."
+  },
+  "migrationLedger": {
+    "applicable": false,
+    "reason": "Home has D1 migration SQL files but no documented migration-ledger generator/check. No migration changed."
+  },
+  "pricing": {
+    "changed": false,
+    "literalStatementFiles": [],
+    "result": "No Assisted/Managed US$10/US$100 literal pricing statements occur in current tracked src on main or candidate. All src content except the single Uptime version token is byte-identical. No new pricing/GST/country restriction copy introduced. This establishes unchanged pricing surface; it does not assert those phrases are rendered here."
+  }
+}

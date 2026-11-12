@@ -1,0 +1,36 @@
+{
+  "rows": [
+    {
+      "width": 1440,
+      "bodyTextEqualAfterVersionSubstitution": true,
+      "versionGeometryUnchanged": true,
+      "mainVersion": "v0.5.8",
+      "candidateVersion": "v0.5.9",
+      "mainDocumentWidth": 1440,
+      "candidateDocumentWidth": 1440,
+      "mainRuntimeErrors": [],
+      "candidateRuntimeErrors": []
+    },
+    {
+      "width": 390,
+      "bodyTextEqualAfterVersionSubstitution": true,
+      "versionGeometryUnchanged": true,
+      "mainVersion": "v0.5.8",
+      "candidateVersion": "v0.5.9",
+      "mainDocumentWidth": 390,
+      "candidateDocumentWidth": 390,
+      "mainRuntimeErrors": [],
+      "candidateRuntimeErrors": []
+    }
+  ],
+  "sharedPlainNodeDiagnostics": {
+    "Token snapshot unavailable ReferenceError: caches is not defined": {
+      "candidate": true,
+      "baseline": true
+    },
+    "no such table: page_views": {
+      "candidate": true,
+      "baseline": true
+    }
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "schema": 1,
+  "tag": "je-gate-32",
+  "recordedAt": "2026-11-12T22:30:16.353166+00:00",
+  "repository": "just-every/home",
+  "productBranch": "cloud/je-sync-24",
+  "head": "e971bef20b72603b026c871bc32a4d3fd6b45491",
+  "baseline": "1bc79fecf2ded7323c7047836f1046398cd0ef21",
+  "prUrl": "https://github.com/just-every/home/pull/48",
+  "prHeadAndBaseUnchangedAtFinalRead": true,
+  "verdict": "GATE PASS",
+  "blockingFindings": 0,
+  "newFollowUps": 0,
+  "clauseStatusChanges": [],
+  "rows": [
+    {
+      "id": "R1",
+      "status": "MET",
+      "receipts": [
+        "candidate.diff",
+        "commit-identities.txt",
+        "data-audit.json",
+        "diff-check.log"
+      ]
+    },
+    {
+      "id": "R2",
+      "status": "MET",
+      "receipts": [
+        "release.json",
+        "uptime-tag.json",
+        "uptime-tag-target.json",
+        "data-audit.json"
+      ]
+    },
+    {
+      "id": "R3",
+      "status": "MET",
+      "receipts": [
+        "npm-ci.log",
+        "local-checks.log",
+        "data-audit.json",
+        "candidate-browser.json",
+        "browser-comparison.json",
+        "applicability.json"
+      ]
+    },
+    {
+      "id": "R4",
+      "status": "MET",
+      "receipts": [
+        "ci.json"
+      ]
+    },
+    {
+      "id": "R5",
+      "status": "MET",
+      "receipts": [
+        "claim-review.json",
+        "uptime-contract-v0.5.9.md",
+        "FOLLOW-UPS.md"
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "command": "npm ci",
+      "exit": 0
+    },
+    {
+      "command": "npm run listings -- --check",
+      "exit": 0,
+      "result": "Listings current (49 seeds)"
+    },
+    {
+      "command": "npm run listings",
+      "exit": 0,
+      "result": "Listings unchanged (49 seeds)"
+    },
+    {
+      "command": "git diff --exit-code",
+      "exit": 0,
+      "result": "clean after listing generation and again after production build/probes"
+    },
+    {
+      "command": "npm run type-check",
+      "exit": 0
+    },
+    {
+      "command": "npm run lint",
+      "exit": 0
+    },
+    {
+      "command": "npm run build (candidate)",
+      "exit": 0
+    },
+    {
+      "command": "cloud_run node ../browser/probe.mjs candidate (initial networkidle readiness)",
+      "exit": 1,
+      "result": "30-second page.goto networkidle timeout; browser closed in finally; superseded by content-readiness replay"
+    },
+    {
+      "command": "cloud_run node ../browser/probe.mjs candidate (content readiness)",
+      "exit": 0
+    },
+    {
+      "command": "npm run build (baseline)",
+      "exit": 0
+    },
+    {
+      "command": "cloud_run node ../browser/probe.mjs baseline",
+      "exit": 0
+    },
+    {
+      "command": "python3 ../audit.py",
+      "exit": 0
+    },
+    {
+      "command": "git diff --check origin/main..HEAD",
+      "exit": 0
+    }
+  ],
+  "ci": {
+    "conclusion": "success",
+    "event": "push",
+    "head_sha": "e971bef20b72603b026c871bc32a4d3fd6b45491",
+    "html_url": "https://github.com/just-every/home/actions/runs/43317092344",
+    "id": 43317092344,
+    "name": "Verify branch",
+    "status": "completed"
+  },
+  "apiBudget": {
+    "used": 9,
+    "limit": 10,
+    "calls": [
+      "PR #48 initial",
+      "exact-head actions runs discovery",
+      "Uptime releases once",
+      "Uptime tagged CONTRACT.md",
+      "Uptime tag ref",
+      "Uptime tagged README.md",
+      "Uptime tagged seed.json",
+      "Uptime annotated tag object",
+      "PR #48 final"
+    ],
+    "workflowDispatches": 0,
+    "workflowReruns": 0,
+    "pollsAfterDiscovery": 0
+  },
+  "independentEvidenceApplicability": {
+    "sourceLock": {
+      "applicable": false,
+      "reason": "No sources.lock.json, source-lock generator or source-lock check documented/present in home."
+    },
+    "contractViews": {
+      "applicable": false,
+      "reason": "No CONTRACT.md, ACCEPTANCE.md, docs/CLAIMS.md or documented Lander-Regenerate command in home."
+    },
+    "migrationLedger": {
+      "applicable": false,
+      "reason": "Home has D1 migration SQL files but no documented migration-ledger generator/check. No migration changed."
+    },
+    "pricing": {
+      "changed": false,
+      "literalStatementFiles": [],
+      "result": "No Assisted/Managed US$10/US$100 literal pricing statements occur in current tracked src on main or candidate. All src content except the single Uptime version token is byte-identical. No new pricing/GST/country restriction copy introduced. This establishes unchanged pricing surface; it does not assert those phrases are rendered here."
+    }
+  },
+  "publication": {
+    "productCommitsCreated": 0,
+    "productPushes": 0,
+    "productChanges": false,
+    "evidenceOnlyRef": "refs/heads/evidence/je-gate-32",
+    "macPublicationScanClaimed": false
+  },
+  "cleanup": {
+    "browserContextsAndBrowsersClosed": true,
+    "candidateServerPID": 1367,
+    "baselineServerPID": 2220,
+    "bothServersTerminatedByRecordedPID": true,
+    "cloneDeletion": "scheduled immediately after evidence transport succeeds; final cleanup receipt retained outside clone"
+  },
+  "limitations": [
+    "Release DSSE envelope asset presence only; signature not verified as rubric specifies.",
+    "Plain Node local server lacks Cloudflare analytics D1/cache bindings; both head and main emit the same diagnostics.",
+    "Assisted/Managed literal prices absent in both source trees; preservation verified, literal display not claimed."
+  ]
+}

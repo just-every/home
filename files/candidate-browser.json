@@ -1,0 +1,58 @@
+[
+  {
+    "mode": "candidate",
+    "width": 1440,
+    "status": 200,
+    "title": "Uptime: free, open-source alternative to Pingdom",
+    "h1": "Uptime",
+    "version": "v0.5.9",
+    "versionBounds": {
+      "x": 617.328125,
+      "y": 512.640625,
+      "width": 205.328125,
+      "height": 23.09375
+    },
+    "viewportWidth": 1440,
+    "documentWidth": 1440,
+    "bodyText": "Products\nProcess\nJourney\nContact\nGitHub\nUptime\n\nAlternative to Pingdom\n\nAlso replaces UptimeRobot, Better Stack\n\nAlerts you only when a failure is confirmed.\n\nUptime in 49 seconds\nThe monitor list, with counts and filters\nOne monitor: status, coverage and recent checks\nAdd a monitor from a website address\nA scheduled job watched and recovered\n\nrun-uptime.com\n↗\nGitHub\n→\n\nUptime watches your websites and APIs on a schedule and tells you only when a failure is confirmed. It never calls a missing check healthy, and it keeps the evidence behind every incident. Alerts go to email, Slack or a signed webhook.\n\nWhat it does\nCheck web pages and API responses for the right status, text, headers, data values and speed\nCheck that a server port answers, that DNS records are right, and that SSL certificates and domain registrations are not about to expire\nChoose how many failed checks in a row open an incident and how many passes close it\nShow a time as Unknown when no check arrived, instead of guessing it was fine\nWatch cron jobs and nightly backups through heartbeat check-ins\nAlert you by email, Slack or a signed webhook, and run an alert drill to learn whether a message really reaches someone\nPause alerts during planned maintenance windows\nRun checks from a machine on your own network and export your monitors, evidence and alert history any time\nWhat it promises\nOne failed check never raises an alarm. A monitor is called Failing only after confirmation, a missing check shows as Unknown, and it recovers only on fresh passing checks.\nEvery scheduled check and every retry is kept with its time, result and error type, and a retry never erases an earlier failure.\nOnly confirmed incident changes send automatic alerts, and a test send never changes a monitor's status.\nPlanned and recurring maintenance windows use US time zones and daylight saving, and keep the underlying check results so reports still show what happened.\nEach alert gets one automatic send per destination where a repeat could double up, an unclear outcome is not sent again, and 'accepted' is never reported as 'read'.\nAn alert drill sends a clearly marked test with a one-time confirmation link, and a confirmation is the recipient's own report, never proof of monitoring.\nCertificate checks look at trust, host name and expiry from each location, warn in stages before a certificate runs out, and clear only after a new valid certificate is seen.\nA backup restores only into an empty installation: monitors come back paused, destinations disabled and old alerts held back.\nEvery address and redirect is validated, unsafe addresses are refused, and a redirect that downgrades from HTTPS is rejected.\nAn owner can erase a monitor with its evidence, an alert destination, or an operator, and gets a receipt of what was removed.\nRead the full contract\n→\nMove in from\nPingdom\nUptimeRobot\nBetter Stack Uptime\nSite24x7\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-uptime\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-uptime.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.5.9\nLICENCE\nMIT, 100% free\n\nMade with care and a lot of coding agents.\n\nProducts\nAll 49 products\n(so far)\nEssays\nProcess\nJourney\nGet in touch\nContact\nGitHub",
+    "sections": [
+      "What it does",
+      "What it promises",
+      "Move in from",
+      "Run it yourself",
+      "Products",
+      "Essays",
+      "Get in touch"
+    ],
+    "errors": [],
+    "assertions": "public /uptime status, heading, version, horizontal bounds, runtime errors; candidate public JSON version agreement"
+  },
+  {
+    "mode": "candidate",
+    "width": 390,
+    "status": 200,
+    "title": "Uptime: free, open-source alternative to Pingdom",
+    "h1": "Uptime",
+    "version": "v0.5.9",
+    "versionBounds": {
+      "x": 20,
+      "y": 513.078125,
+      "width": 350,
+      "height": 23.09375
+    },
+    "viewportWidth": 390,
+    "documentWidth": 390,
+    "bodyText": "Products\nProcess\nJourney\nContact\nGitHub\nUptime\n\nAlternative to Pingdom\n\nAlso replaces UptimeRobot, Better Stack\n\nAlerts you only when a failure is confirmed.\n\nUptime in 49 seconds\nThe monitor list, with counts and filters\nOne monitor: status, coverage and recent checks\nAdd a monitor from a website address\nA scheduled job watched and recovered\n\nrun-uptime.com\n↗\nGitHub\n→\n\nUptime watches your websites and APIs on a schedule and tells you only when a failure is confirmed. It never calls a missing check healthy, and it keeps the evidence behind every incident. Alerts go to email, Slack or a signed webhook.\n\nWhat it does\nCheck web pages and API responses for the right status, text, headers, data values and speed\nCheck that a server port answers, that DNS records are right, and that SSL certificates and domain registrations are not about to expire\nChoose how many failed checks in a row open an incident and how many passes close it\nShow a time as Unknown when no check arrived, instead of guessing it was fine\nWatch cron jobs and nightly backups through heartbeat check-ins\nAlert you by email, Slack or a signed webhook, and run an alert drill to learn whether a message really reaches someone\nPause alerts during planned maintenance windows\nRun checks from a machine on your own network and export your monitors, evidence and alert history any time\nWhat it promises\nOne failed check never raises an alarm. A monitor is called Failing only after confirmation, a missing check shows as Unknown, and it recovers only on fresh passing checks.\nEvery scheduled check and every retry is kept with its time, result and error type, and a retry never erases an earlier failure.\nOnly confirmed incident changes send automatic alerts, and a test send never changes a monitor's status.\nPlanned and recurring maintenance windows use US time zones and daylight saving, and keep the underlying check results so reports still show what happened.\nEach alert gets one automatic send per destination where a repeat could double up, an unclear outcome is not sent again, and 'accepted' is never reported as 'read'.\nAn alert drill sends a clearly marked test with a one-time confirmation link, and a confirmation is the recipient's own report, never proof of monitoring.\nCertificate checks look at trust, host name and expiry from each location, warn in stages before a certificate runs out, and clear only after a new valid certificate is seen.\nA backup restores only into an empty installation: monitors come back paused, destinations disabled and old alerts held back.\nEvery address and redirect is validated, unsafe addresses are refused, and a redirect that downgrades from HTTPS is rejected.\nAn owner can erase a monitor with its evidence, an alert destination, or an operator, and gets a receipt of what was removed.\nRead the full contract\n→\nMove in from\nPingdom\nUptimeRobot\nBetter Stack Uptime\nSite24x7\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-uptime\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-uptime.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.5.9\nLICENCE\nMIT, 100% free\n\nMade with care and a lot of coding agents.\n\nProducts\nAll 49 products\n(so far)\nEssays\nProcess\nJourney\nGet in touch\nContact\nGitHub",
+    "sections": [
+      "What it does",
+      "What it promises",
+      "Move in from",
+      "Run it yourself",
+      "Products",
+      "Essays",
+      "Get in touch"
+    ],
+    "errors": [],
+    "assertions": "visual proof only"
+  }
+]

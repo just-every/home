@@ -1,0 +1,134 @@
+{
+  "head": "e971bef20b72603b026c871bc32a4d3fd6b45491",
+  "baseline": "1bc79fecf2ded7323c7047836f1046398cd0ef21",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "identities": [
+    "Run Edit Run fleet <fleet@runeditrun.com>",
+    "Run Edit Run fleet <fleet@runeditrun.com>"
+  ],
+  "trailers": [],
+  "credentialShapeScan": {
+    "surface": "all added diff lines; manual review all hunks",
+    "categories": [
+      "provider_token",
+      "private_key",
+      "credential_url",
+      "aws_access_key",
+      "secret_assignment"
+    ],
+    "matches": 0
+  },
+  "before": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "excludedAbsent": [
+    "beacon",
+    "relay",
+    "ferry",
+    "lily",
+    "brook",
+    "delta",
+    "barrow",
+    "linen"
+  ],
+  "happytohelpVersion": "v0.4.22",
+  "listingChanges": [
+    {
+      "path": "/uptime/version",
+      "before": "v0.5.8",
+      "after": "v0.5.9"
+    }
+  ],
+  "stateChanges": [
+    {
+      "path": "/seeds/lamp/open",
+      "before": [
+        "c843303a1181"
+      ],
+      "after": null
+    },
+    {
+      "path": "/seeds/oncall/open",
+      "before": [
+        "c843303a1181"
+      ],
+      "after": null
+    },
+    {
+      "path": "/seeds/orbit/open",
+      "before": [
+        "922fed04eacf"
+      ],
+      "after": null
+    },
+    {
+      "path": "/seeds/spool/open",
+      "before": [
+        "42983364b373"
+      ],
+      "after": null
+    },
+    {
+      "path": "/seeds/uptime/commit",
+      "before": "ed5429192d18503c4c8caa8d797d82ffdcc78f54",
+      "after": "88c586f6fabdaed6768ddc8072af2340310a7ace"
+    },
+    {
+      "path": "/seeds/uptime/copy/CONTRACT.md",
+      "before": "879a0aeaeb48188b",
+      "after": "f6685342c00a3826"
+    },
+    {
+      "path": "/seeds/uptime/copy/README.md",
+      "before": "df1ed0eb35eea156",
+      "after": "ec45a6ff0815ba77"
+    },
+    {
+      "path": "/seeds/uptime/copy/seed.json",
+      "before": "478c4d0c0101101e",
+      "after": "ae5eb94cbf16587c"
+    },
+    {
+      "path": "/seeds/uptime/open",
+      "before": [
+        "42983364b373"
+      ],
+      "after": [
+        "c843303a1181"
+      ]
+    },
+    {
+      "path": "/seeds/uptime/sourceRef",
+      "before": "v0.5.8",
+      "after": "v0.5.9"
+    },
+    {
+      "path": "/seeds/uptime/tag",
+      "before": "v0.5.8",
+      "after": "v0.5.9"
+    },
+    {
+      "path": "/syncedAt",
+      "before": "2026-11-12T17:02:02.549Z",
+      "after": "2026-11-12T22:03:16.352Z"
+    }
+  ],
+  "copyHashesVerified": {
+    "CONTRACT.md": "f6685342c00a3826",
+    "README.md": "ec45a6ff0815ba77",
+    "seed.json": "ae5eb94cbf16587c"
+  },
+  "publishedWordingChanged": false,
+  "testsDeletedOrWeakened": false
+}
