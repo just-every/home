@@ -1,0 +1,102 @@
+diff --git a/public/data/listings.json b/public/data/listings.json
+index 4eef356..27b2acc 100644
+--- a/public/data/listings.json
++++ b/public/data/listings.json
+@@ -1,5 +1,5 @@
+ {
+-  "generatedAt": "2026-11-11T21:39:35.441Z",
++  "generatedAt": "2026-11-12T06:45:51.234Z",
+   "listings": [
+     {
+       "slug": "auth",
+@@ -947,7 +947,7 @@
+       "slug": "uptime",
+       "name": "Uptime",
+       "status": "released",
+-      "version": "v0.5.6",
++      "version": "v0.5.7",
+       "category": "Uptime monitoring",
+       "line": "Alerts you only when a failure is confirmed.",
+       "headline": "Sleep through the night.",
+diff --git a/scripts/seeds-sync/state.json b/scripts/seeds-sync/state.json
+index 91a1a74..ce7878a 100644
+--- a/scripts/seeds-sync/state.json
++++ b/scripts/seeds-sync/state.json
+@@ -1,5 +1,5 @@
+ {
+-  "syncedAt": "2026-11-11T21:39:21.804Z",
++  "syncedAt": "2026-11-12T06:45:28.972Z",
+   "seeds": {
+     "auth": {
+       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
+@@ -557,8 +557,7 @@
+       "home": {
+         "headline": "When something breaks, turn the light on.",
+         "signature": "eeddddeeefeefeefeeffeeeeeeeffefeeeeeeeeeed9a9ddcfeeeeefeefeefeefeeffeccccccffefeefeefeeeeeeeeeeefeefeefeefeefeeffeccc444454dccffefeefeefeeffeffefeefeefeeffeffeffeddcdcbdcbedcffeffeffefeefeefeefeefeeffeeeddddeedeedeedeedeededddddeeeffefeefeefeefeeffeeedddcccbccbbbbbbbbbaccbddceedffefeefeefeefeefeeffeeeeddcedcddcddcddcdddfeeffefeefeefeefeefeefeefeeffebbb898eedeedeedeedfeefeefeefeefeefeefeefeefeefeeeeddddeedeeeeeeeeeeeefeefeefeefee"
+-      },
+-      "open": ["42983364b373"]
++      }
+     },
+     "lanyard": {
+       "commit": "db2a1ef37612248290e0efd85209c9b1f0da8c83",
+@@ -855,8 +854,7 @@
+       "home": {
+         "headline": "Your next deal finds you.",
+         "signature": "eedddceeefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeeeeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedddaaabbbaaabbbbbbdddfeeeeeeeeeeeedcedceedeeeeeedddbaabbbaaaddceeeeeeeeeeeeeeeeede85e97eeeeeeeeeeedddddddddddddeeeeeeeeeeeeeeeeedecbedceeeecbeedeeeeddeddddddddeedeeefeeeeeeeeeeeeeeeeefeefeeeeeddd888aaaeddeedaaa777baafeeeeeeeeeeeecbeddeeeeeeeedddcdddeeeeeedddcccdddeeeeeeeeedddddceddeedeeeeeeeeeeeeeeeeedeeeeeeeedeeeeeeeeeeeeeeeeeeeedeed"
+-      },
+-      "open": ["64cb07f6a0dd"]
++      }
+     },
+     "pane": {
+       "commit": "16501ad7d10c5af6f04799aa44c700249a41e9b4",
+@@ -1180,8 +1178,7 @@
+       "home": {
+         "headline": "See exactly what broke.",
+         "signature": "eeddccddceedeedeedeeeeedeedeedeeeeeeeeeeedeedeedeeddddeedeedeeeeeeeedeedeededdeedeedeedeedeedeedeedccbddcddcddcccbeddeeeeeddddddceedeedeedeedeedeed999aa9999999999cccfeeeedeededddddeddeedeedeedeedbaaaa9bbaaaaaa9ccbeeeeededddddeedeedeedeedeedeedddcddcddcddceedeeeeeeeeddddddbedceeceeceedeedeedeedeededdeedeeeffefeeeedeededaed9edaedaedbeedeed999988aaabba888888bbbeedeedeededdeeeeeeeedeedeeda99998baaccbaa9aa9ccbeeddddddceedeedeedeedeed"
+-      },
+-      "open": ["42983364b373"]
++      }
+     },
+     "stall": {
+       "commit": "8ee1f25df4f0b10b9a62e7fe221453499f27b297",
+@@ -1264,14 +1261,14 @@
+       }
+     },
+     "uptime": {
+-      "commit": "65953b2f1288fb5010f17391761abeee16923793",
+-      "sourceRef": "v0.5.6",
++      "commit": "a715d2188b5d38cc563465292bc8c461b93c6528",
++      "sourceRef": "v0.5.7",
+       "sourceReason": "released listing version",
+-      "tag": "v0.5.6",
++      "tag": "v0.5.7",
+       "copy": {
+         "CONTRACT.md": "879a0aeaeb48188b",
+         "README.md": "7cb5fc83462cc8ca",
+-        "seed.json": "6b442dcadd723598"
++        "seed.json": "050aee15381cb711"
+       },
+       "brand": {
+         "branding.primaryColor": "#14204a",
+@@ -1289,7 +1286,7 @@
+         "headline": "Sleep through the night.",
+         "signature": "eeedddddeeefeefeefeefeefeefeefeefeefeeeededdeeeeeeeddeeeeddeddeddeddeddeddeddeddeddeeeeeeeeeeeeeeeeeeeeefddebbcbbcbbcbbcbbcbbcbbcabcddeeeeeeeeeeeeeeeeeeeeeeededdeededdeddeddeddeddeeeeeeeeeeeeeeeeeeeeeeeeedcd99a99accddddddddddedeeeeeeeeeeeeeedeeeeeeeeeedddaaaa9adddeddedeeddeeeeeeeeeeeeeeefedfedfededdeddfedfededdeddfedfedfddedcfddeddeddcccdddeddfdcedcedcfdcfdcfdcedcedcedcedbfdcfdcedc55888baacbbcbbccbcccceccdccdcceccedbfdceccbac77a"
+       },
+-      "open": ["42983364b373"]
++      "open": ["64cb07f6a0dd"]
+     },
+     "vane": {
+       "commit": "a2638146dc0faaefe358d203ac940389183151ef",
+diff --git a/src/data/seed-pages.ts b/src/data/seed-pages.ts
+index 2b3ab64..93d72ec 100644
+--- a/src/data/seed-pages.ts
++++ b/src/data/seed-pages.ts
+@@ -116,7 +116,7 @@ export const seedPageContent: SeedPageContent[] = [
+     ],
+     moveIn: ['Pingdom', 'UptimeRobot', 'Better Stack Uptime', 'Site24x7'],
+     runsOn: 'Your computer, or your own Cloudflare account',
+-    version: 'v0.5.6',
++    version: 'v0.5.7',
+     contractUrl: 'https://run-uptime.com/contract',
+     seoTitle: 'Uptime: free, open-source alternative to Pingdom',
+     seoDescription:

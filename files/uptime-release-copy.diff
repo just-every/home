@@ -1,0 +1,11 @@
+--- uptime@v0.5.6/seed.json
++++ uptime@v0.5.7/seed.json
+@@ -1,7 +1,7 @@
+ {
+   "id": "uptime",
+   "name": "Uptime",
+-  "version": "0.5.6",
++  "version": "0.5.7",
+   "maturity": "local-installer-and-owner-deploy-implemented-hosted-unverified",
+   "category": "monitoring",
+   "spine": {

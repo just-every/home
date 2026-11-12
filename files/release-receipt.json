@@ -1,0 +1,23 @@
+{
+  "id": 442563004,
+  "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.7",
+  "tag_name": "v0.5.7",
+  "target_commitish": "main",
+  "draft": false,
+  "prerelease": false,
+  "published_at": "2026-11-12T06:17:12Z",
+  "assets": [
+    {
+      "id": 738316779,
+      "name": "rer-release.dsse.json",
+      "size": 3361,
+      "digest": "sha256:fd5c24c57b4d7f85063120fab1d2afaa0efceff775740dfdf972dd5f06d2aa71",
+      "browser_download_url": "https://github.com/just-every/run-uptime/releases/download/v0.5.7/rer-release.dsse.json"
+    }
+  ],
+  "envelope_present": true,
+  "signature_verified": false,
+  "verification_scope": "GitHub Release metadata and envelope asset presence only; no cryptographic signature verification claimed.",
+  "observed_at": "2026-11-12T06:40:55.288559+00:00",
+  "tag_commit": "a715d2188b5d38cc563465292bc8c461b93c6528"
+}

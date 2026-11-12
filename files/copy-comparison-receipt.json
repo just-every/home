@@ -1,0 +1,20 @@
+[
+  {
+    "file": "CONTRACT.md",
+    "before_sha256": "879a0aeaeb48188b88efb518206a1f298c527772c4a86c077c9dbe88437eb849",
+    "after_sha256": "879a0aeaeb48188b88efb518206a1f298c527772c4a86c077c9dbe88437eb849",
+    "identical": true
+  },
+  {
+    "file": "README.md",
+    "before_sha256": "7cb5fc83462cc8ca607588518bbd87e8c1170f34971ba14a3190cfe233c93523",
+    "after_sha256": "7cb5fc83462cc8ca607588518bbd87e8c1170f34971ba14a3190cfe233c93523",
+    "identical": true
+  },
+  {
+    "file": "seed.json",
+    "before_sha256": "6b442dcadd7235980408fc5c225cc719af08ce33a5106f81f7d24136de343d5d",
+    "after_sha256": "050aee15381cb711afd29246aa11dd8afc4296d3b71741c06e3f134bfd35acbb",
+    "identical": false
+  }
+]

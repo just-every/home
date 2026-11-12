@@ -1,0 +1,11 @@
+{
+  "repository": "just-every/run-happytohelp",
+  "tag": "v0.4.22",
+  "command": "gh api repos/just-every/run-happytohelp/releases/tags/v0.4.22",
+  "exit_code": 1,
+  "response": "{\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/releases/releases#get-a-release-by-tag-name\",\"status\":\"404\"}",
+  "diagnostic": "gh: Not Found (HTTP 404)",
+  "decision": "Withhold v0.4.22: no readable qualifying GitHub Release; preserve v0.4.21.",
+  "signature_verified": false,
+  "observed_at": "2026-11-12T06:43:02.951225+00:00"
+}

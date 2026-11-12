@@ -1,0 +1,14 @@
+{
+  "changed_paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "within_write_scope": true,
+  "diff_whitespace_check": "passed",
+  "credential_shape_scan": "passed",
+  "implementation_changes": false,
+  "public_claim_wording_changes": false,
+  "gallery_changes": false,
+  "pricing_changes": false
+}

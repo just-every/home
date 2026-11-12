@@ -1,0 +1,38 @@
+{
+  "before_counts": {
+    "coming-soon": 14,
+    "released": 35
+  },
+  "after_counts": {
+    "coming-soon": 14,
+    "released": 35
+  },
+  "before_total": 49,
+  "after_total": 49,
+  "public_listing_changes": [
+    {
+      "slug": "uptime",
+      "fields": {
+        "version": {
+          "before": "v0.5.6",
+          "after": "v0.5.7"
+        }
+      }
+    }
+  ],
+  "excluded_absent": [
+    "barrow",
+    "beacon",
+    "brook",
+    "delta",
+    "ferry",
+    "lily",
+    "linen",
+    "relay"
+  ],
+  "brand_paths": [
+    "public/brand.json"
+  ],
+  "clauses_promoted": [],
+  "public/brand.json_sha256": "a54bb68daa5f1590e5a6eaafecf38c627e42fa014f65c0d7efaf81bee809b7a4"
+}

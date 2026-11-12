@@ -1,0 +1,25 @@
+{
+  "path": "/uptime",
+  "assertedWidth": 1440,
+  "screenshots": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "file": "uptime-1440.png",
+      "url": "http://127.0.0.1:3210/uptime"
+    },
+    {
+      "width": 390,
+      "height": 1000,
+      "file": "uptime-390.png",
+      "url": "http://127.0.0.1:3210/uptime"
+    }
+  ],
+  "assertions": [
+    "Visible version v0.5.7",
+    "Structured softwareVersion v0.5.7",
+    "Public Uptime listing v0.5.7",
+    "Public HappyToHelp listing remains v0.4.21"
+  ],
+  "result": "passed"
+}

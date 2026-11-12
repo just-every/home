@@ -1,0 +1,7 @@
+commit fa1c59e71759a7f959e106e8102ff4c7edd76a55
+Author:     Run Edit Run fleet <fleet@runeditrun.com>
+AuthorDate: Thu Nov 12 06:52:55 2026 +0000
+Commit:     Run Edit Run fleet <fleet@runeditrun.com>
+CommitDate: Thu Nov 12 06:52:55 2026 +0000
+
+    sync: seed listings 12 Nov

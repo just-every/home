@@ -1,0 +1,26 @@
+{
+  "npm_ci": "passed",
+  "type_check": "passed",
+  "lint": "passed",
+  "production_build": "passed",
+  "listings_generate": "passed",
+  "listings_check": "passed",
+  "final_dry": "one deliberately withheld bare HappyToHelp tag v0.4.22; no unexplained drift",
+  "permanent_tests_added": false,
+  "local_full_suite_run": false,
+  "notes": [
+    "Production build emitted existing middleware deprecation and standalone start guidance; no checks weakened.",
+    "The first dry attempt failed because Playwright was absent; installed playwright@1.63.0 globally outside product checkout and reran successfully."
+  ],
+  "browser": "passed: version/structured metadata/public listings at 1440; 1440 and 390 screenshots inspected",
+  "commit_hooks": "passed: native lint-staged ESLint/Prettier and fleet commit-msg cleanup active",
+  "browser_setup_notes": [
+    "Initial networkidle wait timed out because the page retains media/network activity. Re-ran using domcontentloaded plus document.fonts.ready; all intended version assertions passed.",
+    "Initialized the native local D1 schema with npm run db:migrate:local for the local production preview only. No remote migration or provider action.",
+    "Stopped recorded next-server PID 34078; Playwright closed both browser contexts and Chromium."
+  ],
+  "hook_setup_notes": [
+    "Supplied symlinks expose Husky wrappers to the fleet directory path, breaking their relative h lookup. First commit and push failed locally; no remote ref was created.",
+    "Replaced active original-hook symlinks with executable forwarding wrappers invoking the original canonical path. Original Husky hooks and fleet co-author cleanup remained active. Candidate commit, rebase and push then passed."
+  ]
+}
