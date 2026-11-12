@@ -223,6 +223,18 @@
       "sha256": "24db6db85c16cebf72e288149390a2460ed3e5212d1a06d82407e9d3d980d08f"
     },
     {
+      "blob": "92d402a1d615b4553374daa2200fdc087ac2f43c",
+      "bytes": 12032,
+      "path": "evidence-initial-publication-receipt.json",
+      "sha256": "3ffb1e56b941f75cedc57991a1fef23c1273df64310efc2becb449e89ed5ae49"
+    },
+    {
+      "blob": "862b0e56ed6110e2aa53509f51dbed403ed0456e",
+      "bytes": 12369,
+      "path": "evidence-roundtrip-receipt.json",
+      "sha256": "e009ec30f178217c1b035496ba4a28a3df9c0c4a9d81b6ae6ca84f785bd0a33b"
+    },
+    {
       "blob": "1b1586ebffd2c32b29fb02abf79abcb17d72551c",
       "bytes": 548,
       "path": "happytohelp-release-receipt.json",
