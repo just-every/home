@@ -1,0 +1,16 @@
+{
+  "base": "705bb0253c0285659279a6acb862437b25bcc2c4",
+  "before": {
+    "listings": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "versions": {
+    "happytohelp": "v0.4.22",
+    "lamp": "v1.11.12",
+    "oncall": "v0.5.9",
+    "orbit": "v0.4.6",
+    "spool": "v0.7.7",
+    "uptime": "v0.5.7"
+  }
+}

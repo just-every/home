@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "spool",
+    "width": 1440,
+    "displayed": "v0.7.8",
+    "response": 200,
+    "overflow": {
+      "scroll": 1440,
+      "viewport": 1440
+    },
+    "screenshot": "browser/spool-1440.png",
+    "asserted": true
+  },
+  {
+    "slug": "lamp",
+    "width": 1440,
+    "displayed": "v1.11.13",
+    "response": 200,
+    "overflow": {
+      "scroll": 1440,
+      "viewport": 1440
+    },
+    "screenshot": "browser/lamp-1440.png",
+    "asserted": true
+  },
+  {
+    "slug": "orbit",
+    "width": 1440,
+    "displayed": "v0.4.7",
+    "response": 200,
+    "overflow": {
+      "scroll": 1440,
+      "viewport": 1440
+    },
+    "screenshot": "browser/orbit-1440.png",
+    "asserted": true
+  },
+  {
+    "slug": "oncall",
+    "width": 1440,
+    "displayed": "v0.5.10",
+    "response": 200,
+    "overflow": {
+      "scroll": 1440,
+      "viewport": 1440
+    },
+    "screenshot": "browser/oncall-1440.png",
+    "asserted": true
+  },
+  {
+    "slug": "uptime",
+    "width": 1440,
+    "displayed": "v0.5.8",
+    "response": 200,
+    "overflow": {
+      "scroll": 1440,
+      "viewport": 1440
+    },
+    "screenshot": "browser/uptime-1440.png",
+    "asserted": true
+  },
+  {
+    "slug": "spool",
+    "width": 390,
+    "displayed": "v0.7.8",
+    "response": 200,
+    "overflow": {
+      "scroll": 390,
+      "viewport": 390
+    },
+    "screenshot": "browser/spool-390.png",
+    "asserted": false
+  },
+  {
+    "slug": "lamp",
+    "width": 390,
+    "displayed": "v1.11.13",
+    "response": 200,
+    "overflow": {
+      "scroll": 390,
+      "viewport": 390
+    },
+    "screenshot": "browser/lamp-390.png",
+    "asserted": false
+  },
+  {
+    "slug": "orbit",
+    "width": 390,
+    "displayed": "v0.4.7",
+    "response": 200,
+    "overflow": {
+      "scroll": 390,
+      "viewport": 390
+    },
+    "screenshot": "browser/orbit-390.png",
+    "asserted": false
+  },
+  {
+    "slug": "oncall",
+    "width": 390,
+    "displayed": "v0.5.10",
+    "response": 200,
+    "overflow": {
+      "scroll": 390,
+      "viewport": 390
+    },
+    "screenshot": "browser/oncall-390.png",
+    "asserted": false
+  },
+  {
+    "slug": "uptime",
+    "width": 390,
+    "displayed": "v0.5.8",
+    "response": 200,
+    "overflow": {
+      "scroll": 390,
+      "viewport": 390
+    },
+    "screenshot": "browser/uptime-390.png",
+    "asserted": false
+  }
+]

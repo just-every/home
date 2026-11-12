@@ -1,0 +1,16 @@
+{
+  "head": "14bbb698b7d9e77a3d041794d84b56420fbbf737",
+  "base": "705bb0253c0285659279a6acb862437b25bcc2c4",
+  "candidateCommits": [
+    "14bbb698b7d9e77a3d041794d84b56420fbbf737"
+  ],
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "allParentIdentityTrailerMessageAudit": "pass",
+  "diffCheck": "pass",
+  "credentialPatternScan": "pass",
+  "worktree": "clean"
+}

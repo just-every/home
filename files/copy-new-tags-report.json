@@ -1,0 +1,204 @@
+{
+  "startedAt": "2026-11-12T17:02:02.549Z",
+  "mode": "apply",
+  "copyOnly": true,
+  "captureHost": null,
+  "load": 3.23,
+  "statePath": "scripts/seeds-sync/state.json",
+  "baselineDate": null,
+  "seeds": [
+    {
+      "slug": "uptime",
+      "name": "Uptime",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.5.8",
+        "commit": "ed5429192d18503c4c8caa8d797d82ffdcc78f54",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "879a0aeaeb48188b",
+          "README.md": "df1ed0eb35eea156",
+          "seed.json": "478c4d0c0101101e"
+        }
+      },
+      "findings": [
+        {
+          "type": "copy",
+          "summary": "README.md, seed.json changed since the last sync",
+          "status": "reported",
+          "manual": null,
+          "copy": "rewrite the page copy from README.md, seed.json (https://github.com/just-every/run-uptime/compare/a715d2188b5d...ed5429192d18)",
+          "details": {
+            "files": [
+              "README.md",
+              "seed.json"
+            ],
+            "range": "https://github.com/just-every/run-uptime/compare/a715d2188b5d...ed5429192d18",
+            "from": "a715d2188b5d38cc563465292bc8c461b93c6528",
+            "to": "ed5429192d18503c4c8caa8d797d82ffdcc78f54"
+          },
+          "repeat": false,
+          "images": null
+        }
+      ]
+    },
+    {
+      "slug": "lamp",
+      "name": "Lamp",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v1.11.13",
+        "commit": "e82bc349b98af44c440efa2960927e327deda1a5",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "8b575f27ee607ce3",
+          "README.md": "94de338c80d02a07",
+          "seed.json": "484de0cd89690f4d"
+        }
+      },
+      "findings": [
+        {
+          "type": "copy",
+          "summary": "CONTRACT.md, README.md, seed.json changed since the last sync",
+          "status": "reported",
+          "manual": null,
+          "copy": "rewrite the page copy from CONTRACT.md, README.md, seed.json (https://github.com/just-every/run-lamp/compare/62e6a2c30f7f...e82bc349b98a)",
+          "details": {
+            "files": [
+              "CONTRACT.md",
+              "README.md",
+              "seed.json"
+            ],
+            "range": "https://github.com/just-every/run-lamp/compare/62e6a2c30f7f...e82bc349b98a",
+            "from": "62e6a2c30f7f87ad29c5e9d3eec2e0946315cc6b",
+            "to": "e82bc349b98af44c440efa2960927e327deda1a5"
+          },
+          "repeat": false,
+          "images": null
+        }
+      ]
+    },
+    {
+      "slug": "orbit",
+      "name": "Orbit",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.7",
+        "commit": "eab0faafccd2eb0945dddb7d0f52c30ce573c04c",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "faa136fb56b398c3",
+          "README.md": "3d0e7ae842a3f123",
+          "seed.json": "17da9caaba1cb15f"
+        }
+      },
+      "findings": [
+        {
+          "type": "copy",
+          "summary": "CONTRACT.md, seed.json changed since the last sync",
+          "status": "reported",
+          "manual": null,
+          "copy": "rewrite the page copy from CONTRACT.md, seed.json (https://github.com/just-every/run-orbit/compare/9e7f46ce42c6...eab0faafccd2)",
+          "details": {
+            "files": [
+              "CONTRACT.md",
+              "seed.json"
+            ],
+            "range": "https://github.com/just-every/run-orbit/compare/9e7f46ce42c6...eab0faafccd2",
+            "from": "9e7f46ce42c6bde7c5f29a6ab7cdb07e82978c8f",
+            "to": "eab0faafccd2eb0945dddb7d0f52c30ce573c04c"
+          },
+          "repeat": false,
+          "images": null
+        }
+      ]
+    },
+    {
+      "slug": "oncall",
+      "name": "Oncall",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.5.10",
+        "commit": "1dc0069324de17933e7b65bffefa14de7dabea9a",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "3ba769d11b265482",
+          "README.md": "2d9dbf3b535d454b",
+          "seed.json": "45420aadbcefcb11"
+        }
+      },
+      "findings": [
+        {
+          "type": "copy",
+          "summary": "CONTRACT.md, README.md, seed.json changed since the last sync",
+          "status": "reported",
+          "manual": null,
+          "copy": "rewrite the page copy from CONTRACT.md, README.md, seed.json (https://github.com/just-every/run-oncall/compare/59af2f80bb67...1dc0069324de)",
+          "details": {
+            "files": [
+              "CONTRACT.md",
+              "README.md",
+              "seed.json"
+            ],
+            "range": "https://github.com/just-every/run-oncall/compare/59af2f80bb67...1dc0069324de",
+            "from": "59af2f80bb67eb3382828f5c736698491006254c",
+            "to": "1dc0069324de17933e7b65bffefa14de7dabea9a"
+          },
+          "repeat": false,
+          "images": null
+        }
+      ]
+    },
+    {
+      "slug": "spool",
+      "name": "Spool",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.7.8",
+        "commit": "47ecaeeec8c442aa4648ad3b7f4fc1d7e1f115e2",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ee9c871bfa25a110",
+          "README.md": "681c10b41dbc712a",
+          "seed.json": "abe07bec13dcc59f"
+        }
+      },
+      "findings": [
+        {
+          "type": "copy",
+          "summary": "README.md, seed.json changed since the last sync",
+          "status": "reported",
+          "manual": null,
+          "copy": "rewrite the page copy from README.md, seed.json (https://github.com/just-every/run-spool/compare/26d13d4f5742...47ecaeeec8c4)",
+          "details": {
+            "files": [
+              "README.md",
+              "seed.json"
+            ],
+            "range": "https://github.com/just-every/run-spool/compare/26d13d4f5742...47ecaeeec8c4",
+            "from": "26d13d4f574298851f25778818c1af0b9b2a2386",
+            "to": "47ecaeeec8c442aa4648ad3b7f4fc1d7e1f115e2"
+          },
+          "repeat": false,
+          "images": null
+        }
+      ]
+    }
+  ],
+  "shareImage": [],
+  "apply": {
+    "applied": [],
+    "written": [],
+    "favicons": false
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "checks": [
+    {
+      "command": "npm ci",
+      "exit": 0
+    },
+    {
+      "command": "npm run seeds:sync (initial dry)",
+      "exit": 0,
+      "seeds": 49,
+      "changed": 5,
+      "unreadable": 0
+    },
+    {
+      "command": "npm run seeds:sync -- --copy-only --apply",
+      "exit": 0,
+      "changed": 0,
+      "unreadable": 0
+    },
+    {
+      "command": "npm run seeds:sync -- --apply",
+      "exit": 0,
+      "appliedVersions": 5
+    },
+    {
+      "command": "npm run seeds:sync -- --copy-only --apply --only spool,lamp,orbit,oncall,uptime",
+      "exit": 0,
+      "copyReviewed": 5,
+      "publicCopyEdits": 0
+    },
+    {
+      "command": "npm run listings",
+      "exit": 0,
+      "listings": 49
+    },
+    {
+      "command": "npm run listings -- --check",
+      "exit": 0,
+      "listings": 49
+    },
+    {
+      "command": "npm run type-check",
+      "exit": 0
+    },
+    {
+      "command": "npm run seeds:sync (final dry)",
+      "exit": 0,
+      "seeds": 49,
+      "changed": 0,
+      "unreadable": 0
+    },
+    {
+      "command": "npm run lint",
+      "exit": 0
+    },
+    {
+      "command": "npm run build",
+      "exit": 0,
+      "staticPages": 61,
+      "workers": 4
+    },
+    {
+      "command": "local production browser proof",
+      "exit": 0,
+      "assertionWidth": 1440,
+      "proofWidths": [
+        1440,
+        390
+      ],
+      "pages": [
+        "spool",
+        "lamp",
+        "orbit",
+        "oncall",
+        "uptime"
+      ],
+      "receipt": "browser-receipt.json"
+    },
+    {
+      "command": "exact-SHA push Verify via gh api REST discovery",
+      "exit": 0,
+      "runId": 43266034973,
+      "head": "14bbb698b7d9e77a3d041794d84b56420fbbf737",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "contractStatusChanges": [],
+  "signatureVerification": "not performed; envelope asset presence only",
+  "browserNotes": [
+    "Initial harness waited for global networkidle and timed out; rerun waited for DOM readiness and fonts with all version/JSON-LD/overflow assertions intact.",
+    "Local next start serves the production pages. Ancillary token API cache binding and unmigrated page_views telemetry produce environment warnings; version proof does not exercise those unchanged API features.",
+    "The recorded production server and all browser contexts were stopped; no server or watcher is left running."
+  ]
+}

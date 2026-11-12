@@ -1,0 +1,38 @@
+{
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-23",
+  "head": "14bbb698b7d9e77a3d041794d84b56420fbbf737",
+  "base": "705bb0253c0285659279a6acb862437b25bcc2c4",
+  "pushed": true,
+  "observedAt": "2026-11-12T17:07:33.353418+00:00",
+  "pr": {
+    "base": {
+      "ref": "main",
+      "sha": "705bb0253c0285659279a6acb862437b25bcc2c4"
+    },
+    "head": {
+      "ref": "cloud/je-sync-23",
+      "sha": "14bbb698b7d9e77a3d041794d84b56420fbbf737"
+    },
+    "html_url": "https://github.com/just-every/home/pull/47",
+    "number": 47,
+    "state": "open"
+  },
+  "trackedState": "",
+  "contractClauseChanges": [],
+  "terminal": "READY",
+  "verifyRunId": 43266034973,
+  "verifyConclusion": "success",
+  "verifyUrl": "https://github.com/just-every/home/actions/runs/43266034973",
+  "beforeCounts": {
+    "listings": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "afterCounts": {
+    "listings": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "blockers": []
+}

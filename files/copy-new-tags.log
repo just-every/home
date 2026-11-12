@@ -1,0 +1,29 @@
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --copy-only --apply --only spool,lamp,orbit,oncall,uptime --out /home/agent/rer-consolidation/work/je-sync-23/copy-new-tags
+
+Reading 5 seed repositories...
+uptime: source=v0.5.8 commit=ed5429192d18503c4c8caa8d797d82ffdcc78f54 (released listing version)
+lamp: source=v1.11.13 commit=e82bc349b98af44c440efa2960927e327deda1a5 (released listing version)
+orbit: source=v0.4.7 commit=eab0faafccd2eb0945dddb7d0f52c30ce573c04c (released listing version)
+oncall: source=v0.5.10 commit=1dc0069324de17933e7b65bffefa14de7dabea9a (released listing version)
+spool: source=v0.7.8 commit=47ecaeeec8c442aa4648ad3b7f4fc1d7e1f115e2 (released listing version)
+
+Applied: 5 of 5 seeds changed.
+
+Uptime
+  copy      README.md, seed.json changed since the last sync [reported]
+
+Lamp
+  copy      CONTRACT.md, README.md, seed.json changed since the last sync [reported]
+
+Orbit
+  copy      CONTRACT.md, seed.json changed since the last sync [reported]
+
+Oncall
+  copy      CONTRACT.md, README.md, seed.json changed since the last sync [reported]
+
+Spool
+  copy      README.md, seed.json changed since the last sync [reported]
+
+Report: /home/agent/rer-consolidation/work/je-sync-23/copy-new-tags/report.md

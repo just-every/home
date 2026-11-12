@@ -1,0 +1,210 @@
+{
+  "before": {
+    "listings": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "after": {
+    "listings": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "publicListingChanges": {
+    "lamp": {
+      "version": {
+        "from": "v1.11.12",
+        "to": "v1.11.13"
+      }
+    },
+    "oncall": {
+      "version": {
+        "from": "v0.5.9",
+        "to": "v0.5.10"
+      }
+    },
+    "orbit": {
+      "version": {
+        "from": "v0.4.6",
+        "to": "v0.4.7"
+      }
+    },
+    "spool": {
+      "version": {
+        "from": "v0.7.7",
+        "to": "v0.7.8"
+      }
+    },
+    "uptime": {
+      "version": {
+        "from": "v0.5.7",
+        "to": "v0.5.8"
+      }
+    }
+  },
+  "stateChanges": {
+    "happytohelp": {},
+    "lamp": {
+      "commit": {
+        "from": "62e6a2c30f7f87ad29c5e9d3eec2e0946315cc6b",
+        "to": "e82bc349b98af44c440efa2960927e327deda1a5"
+      },
+      "sourceRef": {
+        "from": "v1.11.12",
+        "to": "v1.11.13"
+      },
+      "tag": {
+        "from": "v1.11.12",
+        "to": "v1.11.13"
+      },
+      "copy": {
+        "from": {
+          "CONTRACT.md": "2dc299fabd2361bf",
+          "README.md": "9a302ec84c04413a",
+          "seed.json": "f1d8571b6a85d9f5"
+        },
+        "to": {
+          "CONTRACT.md": "8b575f27ee607ce3",
+          "README.md": "94de338c80d02a07",
+          "seed.json": "484de0cd89690f4d"
+        }
+      },
+      "open": {
+        "from": null,
+        "to": [
+          "c843303a1181"
+        ]
+      }
+    },
+    "oncall": {
+      "commit": {
+        "from": "59af2f80bb67eb3382828f5c736698491006254c",
+        "to": "1dc0069324de17933e7b65bffefa14de7dabea9a"
+      },
+      "sourceRef": {
+        "from": "v0.5.9",
+        "to": "v0.5.10"
+      },
+      "tag": {
+        "from": "v0.5.9",
+        "to": "v0.5.10"
+      },
+      "copy": {
+        "from": {
+          "CONTRACT.md": "b5bd97065b050462",
+          "README.md": "1b2b85115d842bc6",
+          "seed.json": "d9e8a2ffdc94d60d"
+        },
+        "to": {
+          "CONTRACT.md": "3ba769d11b265482",
+          "README.md": "2d9dbf3b535d454b",
+          "seed.json": "45420aadbcefcb11"
+        }
+      }
+    },
+    "orbit": {
+      "commit": {
+        "from": "9e7f46ce42c6bde7c5f29a6ab7cdb07e82978c8f",
+        "to": "eab0faafccd2eb0945dddb7d0f52c30ce573c04c"
+      },
+      "sourceRef": {
+        "from": "v0.4.6",
+        "to": "v0.4.7"
+      },
+      "tag": {
+        "from": "v0.4.6",
+        "to": "v0.4.7"
+      },
+      "copy": {
+        "from": {
+          "CONTRACT.md": "3885c2c472212429",
+          "README.md": "3d0e7ae842a3f123",
+          "seed.json": "7640b80eff0bff78"
+        },
+        "to": {
+          "CONTRACT.md": "faa136fb56b398c3",
+          "README.md": "3d0e7ae842a3f123",
+          "seed.json": "17da9caaba1cb15f"
+        }
+      },
+      "open": {
+        "from": null,
+        "to": [
+          "922fed04eacf"
+        ]
+      }
+    },
+    "spool": {
+      "commit": {
+        "from": "26d13d4f574298851f25778818c1af0b9b2a2386",
+        "to": "47ecaeeec8c442aa4648ad3b7f4fc1d7e1f115e2"
+      },
+      "sourceRef": {
+        "from": "v0.7.7",
+        "to": "v0.7.8"
+      },
+      "tag": {
+        "from": "v0.7.7",
+        "to": "v0.7.8"
+      },
+      "copy": {
+        "from": {
+          "CONTRACT.md": "ee9c871bfa25a110",
+          "README.md": "bff27b2cfdded428",
+          "seed.json": "50242715acf7191b"
+        },
+        "to": {
+          "CONTRACT.md": "ee9c871bfa25a110",
+          "README.md": "681c10b41dbc712a",
+          "seed.json": "abe07bec13dcc59f"
+        }
+      },
+      "open": {
+        "from": [
+          "c843303a1181"
+        ],
+        "to": [
+          "42983364b373"
+        ]
+      }
+    },
+    "uptime": {
+      "commit": {
+        "from": "a715d2188b5d38cc563465292bc8c461b93c6528",
+        "to": "ed5429192d18503c4c8caa8d797d82ffdcc78f54"
+      },
+      "sourceRef": {
+        "from": "v0.5.7",
+        "to": "v0.5.8"
+      },
+      "tag": {
+        "from": "v0.5.7",
+        "to": "v0.5.8"
+      },
+      "copy": {
+        "from": {
+          "CONTRACT.md": "879a0aeaeb48188b",
+          "README.md": "7cb5fc83462cc8ca",
+          "seed.json": "050aee15381cb711"
+        },
+        "to": {
+          "CONTRACT.md": "879a0aeaeb48188b",
+          "README.md": "df1ed0eb35eea156",
+          "seed.json": "478c4d0c0101101e"
+        }
+      },
+      "open": {
+        "from": null,
+        "to": [
+          "42983364b373"
+        ]
+      }
+    }
+  },
+  "removedFields": {
+    "happytohelp": {
+      "open": [
+        "42983364b373"
+      ]
+    }
+  }
+}
