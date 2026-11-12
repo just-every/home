@@ -1,0 +1,32 @@
+[
+  {
+    "command": "npm run listings -- --check",
+    "exit_code": 0,
+    "seconds": 0.47,
+    "log": "listings---check.log"
+  },
+  {
+    "command": "npm run listings",
+    "exit_code": 0,
+    "seconds": 0.37,
+    "log": "listings.log"
+  },
+  {
+    "command": "npm run type-check",
+    "exit_code": 0,
+    "seconds": 4.5,
+    "log": "type-check.log"
+  },
+  {
+    "command": "npm run lint",
+    "exit_code": 0,
+    "seconds": 2.84,
+    "log": "lint.log"
+  },
+  {
+    "command": "npm run build",
+    "exit_code": 0,
+    "seconds": 28.84,
+    "log": "build.log"
+  }
+]

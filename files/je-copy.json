@@ -1,0 +1,213 @@
+[
+  {
+    "slug": "happytohelp",
+    "summary": "HappyToHelp is a customer support desk where your own Codex or Claude investigates the problem, fixes it and drafts the reply, and you press Send. It brings a website chat widget, a shared inbox for chat and email, a help center and replies drafted from your own articles into one place. You can try it beside your current helpdesk and bring your history over when you are ready.",
+    "does": [
+      "Let your own Codex or Claude, running on your computer, investigate a customer's problem, fix it and draft the reply for you to send",
+      "Put a chat widget on your website that offers a hand when a visitor seems stuck",
+      "Answer chat and email from one shared inbox, with customer details beside each conversation, assignment rules, saved-reply macros, snoozing and merging of duplicates",
+      "Publish a searchable help center that customers use to find answers themselves",
+      "Get suggested replies drafted from your own articles, with the source shown",
+      "Collect a thumbs up or down on resolved conversations and see reports you can export",
+      "Connect with scoped API tokens, signed webhooks and Slack",
+      "Bring over your help center and history from Zendesk, Help Scout, Intercom or Freshdesk while your current helpdesk keeps running"
+    ],
+    "promises": [
+      {
+        "id": "MOVE-IN-001",
+        "text": "Imports are reviewed before anything is written, send no messages to your customers, can be undone as a whole, and keep source dates, private notes and publication state.",
+        "category": "import"
+      },
+      {
+        "id": "CONVERSATION-001",
+        "text": "Customer and agent messages are stored once, and two conflicting final replies can never both be accepted.",
+        "category": "reliability"
+      },
+      {
+        "id": "DELIVERY-001",
+        "text": "Messages are saved before they are shown live, so a reload or dropped connection recovers everything that was sent, and an AI draft never becomes a final answer until it is safely accepted.",
+        "category": "reliability"
+      },
+      {
+        "id": "OUTCOMES-001",
+        "text": "Customers can rate a resolution with a thumbs up or down and a short comment, and comments are removed if the contact is erased.",
+        "category": "erasure"
+      },
+      {
+        "id": "REPORTS-001",
+        "text": "Reports use your own calendar and time zone, count each conversation once, and export to a spreadsheet file that is safe to open.",
+        "category": "export"
+      },
+      {
+        "id": "AI-001",
+        "text": "With no AI key, the AI is simply not assigned to new conversations and your team keeps them; your company's policy sets AI spending limits and uncertain attempts are never silently repeated.",
+        "category": "ai"
+      },
+      {
+        "id": "DELEGATION-001",
+        "text": "Revoking a computer's access ends its authority at once, and HappyToHelp never claims that work already running there was stopped.",
+        "category": "approval"
+      },
+      {
+        "id": "CONNECTIONS-001",
+        "text": "API tokens have chosen scopes, are shown once, are stored hashed and can expire; an unclear webhook result is not sent again.",
+        "category": "security"
+      },
+      {
+        "id": "IDENTITY-003",
+        "text": "Teammates can sign in with an authenticator app or a security key plus one-time recovery codes, and an owner can require it for everyone or by role.",
+        "category": "security"
+      },
+      {
+        "id": "PORTABILITY-001",
+        "text": "You can export your conversations, files, contacts, help articles, settings and history in one checked archive and restore it into a clean installation; sign-ins and provider secrets are left out.",
+        "category": "export"
+      }
+    ],
+    "moveIn": [
+      "Zendesk",
+      "Help Scout",
+      "Intercom",
+      "Freshdesk"
+    ],
+    "runsOn": "Your computer, or your own Cloudflare account",
+    "version": "v0.4.22",
+    "contractUrl": "https://happytohelp.com/contract",
+    "seoTitle": "HappyToHelp: free, open-source alternative to Zendesk",
+    "seoDescription": "HappyToHelp is a free support desk: your Codex or Claude fixes the problem and drafts the reply, you press Send. A Zendesk, Intercom and Freshdesk alternative."
+  },
+  {
+    "slug": "oncall",
+    "summary": "Oncall shows everyone who is on call now, who is next and exactly when they hand over. It keeps rotations, swaps, incidents, runbooks and follow-ups in one place, and runs alongside the pager you already use while you move your schedules over.",
+    "does": [
+      "Show who is on call now, who is next and when the next hand-over happens",
+      "Build primary and backup rotations in your team's timezone, so a hand-over stays on the same clock time when clocks change",
+      "Cover a few hours with an override or swap without touching the rotation",
+      "Subscribe to a private calendar feed of the next seven days of shifts",
+      "Record alerts from monitoring, route them to the right service and replay the routing safely",
+      "Declare an incident, assign a commander, follow the runbook and keep every decision on a timeline",
+      "Resolve with recovery evidence and a summary, then track follow-up tasks and review",
+      "Preview your Opsgenie or PagerDuty schedules before anything is imported"
+    ],
+    "promises": [
+      {
+        "id": "OC-012",
+        "text": "Oncall sends no texts, calls or push alerts, so your existing pager stays in charge while you use it.",
+        "category": "alerts"
+      },
+      {
+        "id": "OC-006",
+        "text": "Oncall sends signed response events only to endpoints an administrator approves; paging stays off, and email is for sign-in links only.",
+        "category": "security"
+      },
+      {
+        "id": "OC-005",
+        "text": "A runbook is copied into the incident when it is declared, so later edits never rewrite instructions mid-incident.",
+        "category": "history"
+      },
+      {
+        "id": "OC-004",
+        "text": "Resolving an incident needs recovery evidence and a summary, and every change is recorded in an attributed timeline.",
+        "category": "evidence"
+      },
+      {
+        "id": "OC-008",
+        "text": "Incident records you write are never deleted automatically.",
+        "category": "history"
+      },
+      {
+        "id": "OC-011",
+        "text": "Rotations hand over by wall-clock time in your named zone, and clock-change gaps show up as visible gaps.",
+        "category": "schedule"
+      },
+      {
+        "id": "OC-003",
+        "text": "Viewers can only read, responders coordinate, and admins manage; alert-sending credentials grant no read access, and removed access stops on the next request.",
+        "category": "access"
+      },
+      {
+        "id": "OC-002",
+        "text": "Replaying alert routing only reads: it creates no alert, incident or outside effect.",
+        "category": "reliability"
+      },
+      {
+        "id": "OC-021",
+        "text": "A move-in preview writes nothing, a person must review it before it is applied, and imported schedules stay paused.",
+        "category": "import"
+      },
+      {
+        "id": "OC-022",
+        "text": "A move-in can be undone, and edits you made afterwards are kept rather than overwritten.",
+        "category": "undo"
+      }
+    ],
+    "moveIn": [
+      "PagerDuty",
+      "Opsgenie",
+      "Splunk On-Call",
+      "Better Stack"
+    ],
+    "runsOn": "your own computer, or your own Cloudflare account",
+    "version": "v0.5.9",
+    "contractUrl": "https://run-oncall.com/contract",
+    "seoTitle": "Oncall: free, open-source alternative to PagerDuty",
+    "seoDescription": "Oncall is a free, open-source on-call schedule and incident tool that shows who is on now and next. An alternative to PagerDuty and Opsgenie."
+  },
+  {
+    "slug": "spool",
+    "summary": "Spool catches the errors in your app, groups repeats into one issue and points to the exact line in your own source code where it broke. It tells you when a fixed error comes back in a later release, and gives your coding agent a read-only view of one project's evidence.",
+    "does": [
+      "Catch errors from JavaScript, Python and Go apps, using the same reporting libraries Sentry uses",
+      "Group repeats into a single issue and show exactly where in your original source each error happened",
+      "Keep your source maps private and match them to the right release",
+      "Download an evidence packet to hand to whoever is fixing the issue",
+      "Create a read-only agent key so a coding agent can read one project's issues and evidence, and change nothing",
+      "Reopen a resolved issue when it returns in a later release, and name that release",
+      "Scrub emails, tokens and passwords before anything is saved",
+      "Export everything to one file and restore it into a fresh copy"
+    ],
+    "promises": [
+      {
+        "id": "ERR-003",
+        "text": "Error details are scrubbed before they are stored: emails, tokens and passwords are removed, and headers, cookies and request bodies are not kept by default.",
+        "category": "privacy"
+      },
+      {
+        "id": "ERR-004",
+        "text": "Owner sign-in, error sending and read-only agent access are separate, revoking one takes effect on the next request, and your source maps are never public.",
+        "category": "access"
+      },
+      {
+        "id": "ERR-002",
+        "text": "An error is only counted once it is fully saved, and a repeated send never counts twice.",
+        "category": "reliability"
+      },
+      {
+        "id": "ERR-006",
+        "text": "Changes to an issue are recorded, and a resolved issue reopens as returning only when it appears in a later release, so an old release's error raises no false alarm.",
+        "category": "history"
+      },
+      {
+        "id": "ERR-007",
+        "text": "The evidence packet is size-limited and never includes your source code.",
+        "category": "evidence"
+      },
+      {
+        "id": "ERR-008",
+        "text": "Counts of errors accepted and rejected are visible, and a quiet period is never reported as proof an error is fixed.",
+        "category": "evidence"
+      }
+    ],
+    "moveIn": [
+      "Sentry",
+      "Datadog Error Tracking",
+      "Rollbar",
+      "Bugsnag"
+    ],
+    "runsOn": "your own computer, or your own Cloudflare account",
+    "version": "v0.7.7",
+    "contractUrl": "https://run-spool.com/contract",
+    "seoTitle": "Spool: free, open-source alternative to Sentry",
+    "seoDescription": "Spool is a free, open-source error tracker that shows the exact line that broke and tells you when a fixed error returns. An alternative to Sentry and Bugsnag."
+  }
+]

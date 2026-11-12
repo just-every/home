@@ -1,0 +1,44 @@
+{
+  "tag": "je-gate-30",
+  "role": "independent deciding gate",
+  "repository": "just-every/home",
+  "pr": "https://github.com/just-every/home/pull/46",
+  "candidate_branch": "cloud/je-sync-22",
+  "head": "876d1edb1024b65d722eff36a2182193a2aa34f0",
+  "baseline": "4c5444b557b0a2f6fbafcc6612572fa12f0ed7d5",
+  "rubric": {
+    "R1": "MET",
+    "R2": "MET",
+    "R3": "MET",
+    "R4": "MET",
+    "R5": "MET"
+  },
+  "blocking_findings": 0,
+  "new_followups": 0,
+  "clause_status_changes": [],
+  "counts_before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "counts_after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "verify": {
+    "id": 43212634338,
+    "status": "completed",
+    "conclusion": "success",
+    "head_sha": "876d1edb1024b65d722eff36a2182193a2aa34f0"
+  },
+  "github_api_calls": 9,
+  "product_commits_created": 0,
+  "product_refs_pushed": [],
+  "browser_closed": true,
+  "server_pids_stopped": [
+    1388,
+    1644
+  ],
+  "verdict": "GATE PASS"
+}

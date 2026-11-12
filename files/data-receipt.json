@@ -1,0 +1,158 @@
+{
+  "head": "876d1edb1024b65d722eff36a2182193a2aa34f0",
+  "baseline": "4c5444b557b0a2f6fbafcc6612572fa12f0ed7d5",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "before_counts": {
+    "coming-soon": 14,
+    "released": 35
+  },
+  "after_counts": {
+    "coming-soon": 14,
+    "released": 35
+  },
+  "public_changes": [
+    {
+      "slug": "happytohelp",
+      "before": "v0.4.21",
+      "after": "v0.4.22"
+    },
+    {
+      "slug": "oncall",
+      "before": "v0.5.8",
+      "after": "v0.5.9"
+    },
+    {
+      "slug": "spool",
+      "before": "v0.7.6",
+      "after": "v0.7.7"
+    }
+  ],
+  "state_leaf_changes": [
+    {
+      "path": "/seeds/happytohelp/commit",
+      "before": "51492e5d3cbaa94b42df1bef063fb00131038a19",
+      "after": "4dee2432081a64cee0bd12c59a31cb84371c3ab3"
+    },
+    {
+      "path": "/seeds/happytohelp/copy/README.md",
+      "before": "c0b9dd31c64006c4",
+      "after": "5483ddb9e5f071e5"
+    },
+    {
+      "path": "/seeds/happytohelp/copy/seed.json",
+      "before": "b2a884123d723f99",
+      "after": "c283958a928aa942"
+    },
+    {
+      "path": "/seeds/happytohelp/open",
+      "before": null,
+      "after": [
+        "42983364b373"
+      ]
+    },
+    {
+      "path": "/seeds/happytohelp/sourceRef",
+      "before": "v0.4.21",
+      "after": "v0.4.22"
+    },
+    {
+      "path": "/seeds/happytohelp/tag",
+      "before": "v0.4.21",
+      "after": "v0.4.22"
+    },
+    {
+      "path": "/seeds/oncall/commit",
+      "before": "0dac089dba93dc1209c3a2317d5e7a4392d44c4e",
+      "after": "59af2f80bb67eb3382828f5c736698491006254c"
+    },
+    {
+      "path": "/seeds/oncall/copy/CONTRACT.md",
+      "before": "18eeac1c52740d24",
+      "after": "b5bd97065b050462"
+    },
+    {
+      "path": "/seeds/oncall/copy/README.md",
+      "before": "9cef79d797d0bec2",
+      "after": "1b2b85115d842bc6"
+    },
+    {
+      "path": "/seeds/oncall/copy/seed.json",
+      "before": "6a5f66f9b4035e67",
+      "after": "d9e8a2ffdc94d60d"
+    },
+    {
+      "path": "/seeds/oncall/open",
+      "before": null,
+      "after": [
+        "c843303a1181"
+      ]
+    },
+    {
+      "path": "/seeds/oncall/sourceRef",
+      "before": "v0.5.8",
+      "after": "v0.5.9"
+    },
+    {
+      "path": "/seeds/oncall/tag",
+      "before": "v0.5.8",
+      "after": "v0.5.9"
+    },
+    {
+      "path": "/seeds/spool/commit",
+      "before": "2e12affd54e9b3bfe759e0eaec60906e3548f876",
+      "after": "26d13d4f574298851f25778818c1af0b9b2a2386"
+    },
+    {
+      "path": "/seeds/spool/copy/CONTRACT.md",
+      "before": "ab1e2b5eff5e8170",
+      "after": "ee9c871bfa25a110"
+    },
+    {
+      "path": "/seeds/spool/copy/README.md",
+      "before": "e74b55288639ed2e",
+      "after": "bff27b2cfdded428"
+    },
+    {
+      "path": "/seeds/spool/copy/seed.json",
+      "before": "b28368280b748228",
+      "after": "50242715acf7191b"
+    },
+    {
+      "path": "/seeds/spool/open",
+      "before": null,
+      "after": [
+        "c843303a1181"
+      ]
+    },
+    {
+      "path": "/seeds/spool/sourceRef",
+      "before": "v0.7.6",
+      "after": "v0.7.7"
+    },
+    {
+      "path": "/seeds/spool/tag",
+      "before": "v0.7.6",
+      "after": "v0.7.7"
+    },
+    {
+      "path": "/seeds/uptime/open",
+      "before": [
+        "64cb07f6a0dd"
+      ],
+      "after": null
+    },
+    {
+      "path": "/syncedAt",
+      "before": "2026-11-12T06:45:28.972Z",
+      "after": "2026-11-12T11:45:50.071Z"
+    }
+  ],
+  "wording_unchanged": true,
+  "excluded_absent": true,
+  "credential_shape_scan": "no matches in added lines",
+  "worktree_clean": true
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "seed": "spool",
+    "actual_contract_hash16": "ee9c871bfa25a110",
+    "state_contract_hash16": "ee9c871bfa25a110",
+    "match": true
+  },
+  {
+    "seed": "oncall",
+    "actual_contract_hash16": "b5bd97065b050462",
+    "state_contract_hash16": "b5bd97065b050462",
+    "match": true
+  },
+  {
+    "seed": "happytohelp",
+    "actual_contract_hash16": "ae8feea8b7998aa7",
+    "state_contract_hash16": "ae8feea8b7998aa7",
+    "match": true
+  }
+]

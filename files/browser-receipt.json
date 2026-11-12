@@ -1,0 +1,194 @@
+[
+  {
+    "target": "main",
+    "slug": "uptime",
+    "width": 1440,
+    "status": 200,
+    "title": "Uptime",
+    "version": "RUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.5.7\nLICENCE\nMIT, 100% free",
+    "geometry": {
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440
+    },
+    "pageErrors": [],
+    "screenshot": "main-uptime-1440.png",
+    "assertions": "status, heading, version, no horizontal overflow, no page errors"
+  },
+  {
+    "target": "main",
+    "slug": "spool",
+    "width": 1440,
+    "status": 200,
+    "title": "Spool",
+    "version": "RUNS ON\nyour own computer, or your own Cloudflare account\nVERSION\nv0.7.6\nLICENCE\nMIT, 100% free",
+    "geometry": {
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440
+    },
+    "pageErrors": [],
+    "screenshot": "main-spool-1440.png",
+    "assertions": "status, heading, version, no horizontal overflow, no page errors"
+  },
+  {
+    "target": "main",
+    "slug": "oncall",
+    "width": 1440,
+    "status": 200,
+    "title": "Oncall",
+    "version": "RUNS ON\nyour own computer, or your own Cloudflare account\nVERSION\nv0.5.8\nLICENCE\nMIT, 100% free",
+    "geometry": {
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440
+    },
+    "pageErrors": [],
+    "screenshot": "main-oncall-1440.png",
+    "assertions": "status, heading, version, no horizontal overflow, no page errors"
+  },
+  {
+    "target": "main",
+    "slug": "happytohelp",
+    "width": 1440,
+    "status": 200,
+    "title": "HappyToHelp",
+    "version": "RUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.4.21\nLICENCE\nMIT, 100% free",
+    "geometry": {
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440
+    },
+    "pageErrors": [],
+    "screenshot": "main-happytohelp-1440.png",
+    "assertions": "status, heading, version, no horizontal overflow, no page errors"
+  },
+  {
+    "target": "head",
+    "slug": "uptime",
+    "width": 1440,
+    "status": 200,
+    "title": "Uptime",
+    "version": "RUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.5.7\nLICENCE\nMIT, 100% free",
+    "geometry": {
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440
+    },
+    "pageErrors": [],
+    "screenshot": "head-uptime-1440.png",
+    "assertions": "status, heading, version, no horizontal overflow, no page errors"
+  },
+  {
+    "target": "head",
+    "slug": "spool",
+    "width": 1440,
+    "status": 200,
+    "title": "Spool",
+    "version": "RUNS ON\nyour own computer, or your own Cloudflare account\nVERSION\nv0.7.7\nLICENCE\nMIT, 100% free",
+    "geometry": {
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440
+    },
+    "pageErrors": [],
+    "screenshot": "head-spool-1440.png",
+    "assertions": "status, heading, version, no horizontal overflow, no page errors"
+  },
+  {
+    "target": "head",
+    "slug": "oncall",
+    "width": 1440,
+    "status": 200,
+    "title": "Oncall",
+    "version": "RUNS ON\nyour own computer, or your own Cloudflare account\nVERSION\nv0.5.9\nLICENCE\nMIT, 100% free",
+    "geometry": {
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440
+    },
+    "pageErrors": [],
+    "screenshot": "head-oncall-1440.png",
+    "assertions": "status, heading, version, no horizontal overflow, no page errors"
+  },
+  {
+    "target": "head",
+    "slug": "happytohelp",
+    "width": 1440,
+    "status": 200,
+    "title": "HappyToHelp",
+    "version": "RUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.4.22\nLICENCE\nMIT, 100% free",
+    "geometry": {
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440
+    },
+    "pageErrors": [],
+    "screenshot": "head-happytohelp-1440.png",
+    "assertions": "status, heading, version, no horizontal overflow, no page errors"
+  },
+  {
+    "target": "head",
+    "slug": "uptime",
+    "width": 390,
+    "status": 200,
+    "title": "Uptime",
+    "version": "RUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.5.7\nLICENCE\nMIT, 100% free",
+    "geometry": {
+      "viewport": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390
+    },
+    "pageErrors": [],
+    "screenshot": "head-uptime-390.png",
+    "assertions": "visual proof only"
+  },
+  {
+    "target": "head",
+    "slug": "spool",
+    "width": 390,
+    "status": 200,
+    "title": "Spool",
+    "version": "RUNS ON\nyour own computer, or your own Cloudflare account\nVERSION\nv0.7.7\nLICENCE\nMIT, 100% free",
+    "geometry": {
+      "viewport": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390
+    },
+    "pageErrors": [],
+    "screenshot": "head-spool-390.png",
+    "assertions": "visual proof only"
+  },
+  {
+    "target": "head",
+    "slug": "oncall",
+    "width": 390,
+    "status": 200,
+    "title": "Oncall",
+    "version": "RUNS ON\nyour own computer, or your own Cloudflare account\nVERSION\nv0.5.9\nLICENCE\nMIT, 100% free",
+    "geometry": {
+      "viewport": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390
+    },
+    "pageErrors": [],
+    "screenshot": "head-oncall-390.png",
+    "assertions": "visual proof only"
+  },
+  {
+    "target": "head",
+    "slug": "happytohelp",
+    "width": 390,
+    "status": 200,
+    "title": "HappyToHelp",
+    "version": "RUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.4.22\nLICENCE\nMIT, 100% free",
+    "geometry": {
+      "viewport": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390
+    },
+    "pageErrors": [],
+    "screenshot": "head-happytohelp-390.png",
+    "assertions": "visual proof only"
+  }
+]

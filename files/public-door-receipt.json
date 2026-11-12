@@ -1,0 +1,15 @@
+{
+  "head": "876d1edb1024b65d722eff36a2182193a2aa34f0",
+  "http_status": 200,
+  "public_listing_bytes_equal_committed_file": true,
+  "sha256": "099a116e7f976e9c0d75214587b7690798d8dfd965b71402852f26d6694554ee",
+  "tag_commits_match_state": true,
+  "final_pr_and_base_match": true,
+  "tracked_and_untracked_status": "clean",
+  "applicable_generators": {
+    "listings": "write and check both exit=0; no diff",
+    "sources_lock": "not applicable: absent, no AGENTS command",
+    "contract_views": "not applicable: no CONTRACT.md/ACCEPTANCE.md/docs/CLAIMS.md generator",
+    "migration_ledger": "not applicable: no migration-ledger checker documented"
+  }
+}
