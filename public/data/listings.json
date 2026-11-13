@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T12:21:08.975Z",
+  "generatedAt": "2026-11-13T13:23:14.204Z",
   "listings": [
     {
       "slug": "auth",
@@ -863,7 +863,7 @@
       "slug": "spool",
       "name": "Spool",
       "status": "released",
-      "version": "v0.7.8",
+      "version": "v0.7.9",
       "category": "Error tracking",
       "line": "JavaScript errors, traced to the exact line in your source.",
       "headline": "See exactly what broke.",
