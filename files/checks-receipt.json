@@ -1,0 +1,80 @@
+{
+  "at": "2026-11-13T19:11:45.544583+00:00",
+  "head": "edfb1132486eaac9f87843199561c3230d5132df",
+  "checks": [
+    {
+      "command": "npm ci",
+      "exit": 0,
+      "log": "npm-ci.log",
+      "sha256": "033bbe083e1eb8ec379f355644c53a762f1ec0f0a057d24c1fb77b586f299daa"
+    },
+    {
+      "command": "npm run type-check",
+      "exit": 0,
+      "log": "type-check.log",
+      "sha256": "5a848264e3d4f39bae1d347b4ff2be16348436fdcdd3a42c91c0fca2a8f23403"
+    },
+    {
+      "command": "npm run lint",
+      "exit": 0,
+      "log": "lint.log",
+      "sha256": "02ef98276ac56c4ea2e84e7291740f26bb5d7d07639d8ce90366e463210307f3"
+    },
+    {
+      "command": "npm run build",
+      "exit": 0,
+      "log": "build.log",
+      "sha256": "fcf2ab3ff0f4df50f4b690b4522e4edaba9c79023728dbabecf22da53328d41e"
+    },
+    {
+      "command": "baseline: npm run build",
+      "exit": 0,
+      "log": "baseline-build.log",
+      "sha256": "ded999c9d90eb7f1f827bb9cd9b38b2538b17a587edfac3e4a828738cc024eba"
+    },
+    {
+      "command": "cloud_run timeout 180 node /tmp/gate-browser.cjs",
+      "exit": 0,
+      "log": "browser.log",
+      "sha256": "4dd9b40fa43abbdb0637e5cbbe444f666097fd70db2579702287298c6a67c3b2"
+    }
+  ],
+  "listings": {
+    "check": {
+      "command": "npm run listings -- --check",
+      "exit": 0,
+      "observed": "Listings current (49 seeds)"
+    },
+    "write": {
+      "command": "npm run listings",
+      "exit": 0,
+      "observed": "Listings unchanged (49 seeds)"
+    },
+    "diff": {
+      "command": "git diff --exit-code HEAD -- public/data/listings.json",
+      "exit": 0
+    }
+  },
+  "diff_check": {
+    "command": "git diff --check origin/main HEAD",
+    "exit": 0
+  },
+  "final_worktree": {
+    "command": "git diff --exit-code HEAD; git status --short",
+    "exit": 0,
+    "tracked_diff": "none",
+    "untracked": "none"
+  },
+  "api_calls": 10,
+  "local_test_files_added": 0,
+  "source_lock": "inapplicable: absent and no documented generator",
+  "contract_views": "inapplicable: absent and no documented generator",
+  "migration_ledger": "inapplicable: no documented ledger check; migrations untouched",
+  "cleanup": {
+    "browser": "closed in finally",
+    "baseline_server_pid": 1689,
+    "candidate_server_pid": 1709,
+    "both_server_pids": "confirmed absent after test",
+    "clone": "scheduled for deletion only after successful verified evidence transport"
+  }
+}

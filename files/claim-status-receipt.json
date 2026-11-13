@@ -1,0 +1,305 @@
+{
+  "rows": [
+    {
+      "seed": "uptime",
+      "clause": "EVIDENCE-001",
+      "source_line": 1521,
+      "title": "Immutable scheduled evidence",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`src/domain/evidence.server.ts`; `src/domain/history.server.ts`; `docs/evidence/contracts/release-0.4.0/`; `tests/evidence-integrity-support.mjs` proveEvidenceIntegrity (called by `tests/probe-native-evidence.mjs`) \u2014 actual signed failure accepted with observation, history, outbox and job committed together, duplicate first-copy-wins and late fresh-signature and expired-window refusals each leaving every durable table unchanged (lines 15-151); `tests/control-runtime.mjs` \u2014 real private runners keep each probe's failed first attempt beside its retry (line 19), exact observations, revisions, outbox and incidents survive a Worker process restart (lines 35-44), a real expired acceptance window is refused (lines 46-49) and scheduled history reads back its revision (lines 61-63); `tests/probe-json-evidence-support.mjs` proveJsonSelectors (called by `tests/probe-native-evidence.mjs`) \u2014 each failed probe retains its original attempt and its retry (line 52)",
+      "gap": ""
+    },
+    {
+      "seed": "uptime",
+      "clause": "STATE-001",
+      "source_line": 1522,
+      "title": "Fixed coverage and incident hysteresis",
+      "kind": "published",
+      "status": "partial",
+      "evidence": "`src/domain/policy.mjs`; `tests/control-runtime.mjs`; `tests/control-runtime.mjs`; `docs/evidence/contracts/release-0.4.0/`; `tests/control-state-support.mjs`: proveStateHysteresis, two signed assigned runners show mixed-vantage Degraded, first complete scheduled Recovering, manual-pass isolation and absent-probe Unknown without recovery, then one recovery after the second complete scheduled pass, retaining the fixed denominator, original observations and incident identity; `tests/control-cadence-support.mjs`: proveCadenceRevision, incomplete selected coverage and missing-region Unknown; `tests/maintenance-windows.mjs`: MAINT-001 expiry and ordinary scheduled reevaluation without orphan recovery. Qualification pending; current main judgment and gap retained.",
+      "gap": "Two configured runner networks still prove confirmed Failing and the scheduled confirmation/recovery thresholds. Gap: exactly one failing vantage reading Degraded; Unknown for partial, missing and stale evidence; the intermediate Recovering state; and no fabricated recovery from a manual pass during an outage, an absent selected probe or maintenance expiry lack assertions in the cited files. Maintenance expiry is asserted only in tests/maintenance-windows.mjs, which this clause does not cite."
+    },
+    {
+      "seed": "uptime",
+      "clause": "NETWORK-001",
+      "source_line": 1524,
+      "title": "Pinned bounded destination execution",
+      "kind": "published",
+      "status": "partial",
+      "evidence": "`runners/src/public-http.mjs`; `src/domain/worker-http.server.ts`; `tests/tls-auth.mjs`; `tests/api-auth-journey.mjs`; `tests/probe-native-evidence.mjs` \u2014 existing mixed-answer runner refusal and Unknown assertions; `tests/network-mixed-dns.mjs` \u2014 mixed DNS connection refusal journey: owner-created monitor, actual signed runners and retained scheduled evidence; an allowed public answer qualifies target socket and request counters, then both public-first and private-first mixed answers cause zero target connections and requests, retained network runner_error, Unknown with the fixed coverage denominator and no fabricated trigger or recovery. Qualification pending; current main judgment and gap retained.",
+      "gap": "Cross-origin authentication, client-certificate and body stripping are asserted. Gap: mixed DNS answers, rebinding before connection, TLS hostname mismatch, re-resolution of every redirect, HTTPS downgrade and forbidden redirect refusal, exact-origin credential binding, timeout/body/encoding bounds and zero connections to rejected destinations lack assertions in the cited files. tests/tls-auth.mjs calls assertions in helper files this clause does not cite."
+    },
+    {
+      "seed": "uptime",
+      "clause": "ARCHIVE-001",
+      "source_line": 1526,
+      "title": "Inactive validated restore",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`src/domain/archive.server.ts`; `src/domain/archive-monitor-validation.ts`; `docs/evidence/contracts/archives/`; `docs/evidence/contracts/release-0.4.0/`; `tests/archive-roundtrip.mjs` \u2014 populated export including TCP, DNS, TLS and domain monitors, separate receiving owner, import into empty data, exact settings, revisions and slots, paused definitions, interrupted leases, quarantined delivery, absent secrets, corrupt and nonempty refusal writing nothing, repeated restore (lines 17-58); `tests/erasure-audit.mjs` \u2014 restore with a later erasure journal refused through the owner restore route with no monitor or audit write (lines 153-158); `tests/failure-page-custody-support.mjs` proveFailureSnapshotErasure \u2014 old snapshot-bearing archive refused by the source's later journal with every table unchanged (lines 79-91)",
+      "gap": ""
+    },
+    {
+      "seed": "uptime",
+      "clause": "ERASURE-001",
+      "source_line": 1529,
+      "title": "Operator-directed entity erasure",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`tests/erasure-audit.mjs` \u2014 public owner erasure and later-journal restore: monitor, destination and second-operator erasure, populated per-table receipts, atomic audit and portability fences, held runner and notification refusal, anonymized actors and old-archive refusal; `tests/erasure-race-support.mjs` \u2014 erasureRaceProof, mounted once by the erasure journey: an actual owner PATCH based on revision 3 stays open across monitor erasure, resumes with refusal and cannot restore any durable row; unsigned, wrong-name and last-owner erasure refusals preserve all 197 durable tables, including populated transfer custody, receipts, audit and fences; `tests/alert-routes.mjs` \u2014 owned routes preview inheritance, deliver matched triggers and recoveries and retain auditable changes, calling `tests/catalog-routes-support.mjs` proveCatalogRoutes: original-owner erasure with an enrolled successor, anonymized retained ownership and surviving fresh sign-in and factor authority.",
+      "gap": ""
+    },
+    {
+      "seed": "uptime",
+      "clause": "NOTIFY-001",
+      "source_line": 1533,
+      "title": "Authorized installation-wide destinations",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`src/domain/notification-destinations.server.ts`; `src/domain/notification-protocols.ts`; `docs/evidence/contracts/release-0.4.0/`; `tests/notify-delivery.mjs` \u2014 email, Slack and signed webhook destinations, scheduled failure, recovery and test sends through the actual runner and Worker doors, one job per destination, credential custody, receiver-verified signing, escaping and unchanged health for tests (lines 53-142, lines 216-221); `tests/alert-drill.mjs` \u2014 webhook credential rotation through the owner door and an email address change reset proof, and rotated secrets stay out of reads and logs (lines 145-157); `tests/alert-routes.mjs` \u2014 a disabled destination is excluded from the effective route (lines 18-38), and `tests/alert-routing-filters-support.mjs` proveRoutingFilters (called by that journey) \u2014 a primary disabled before dispatch sends nothing (lines 51-55)",
+      "gap": ""
+    },
+    {
+      "seed": "uptime",
+      "clause": "DELIVERY-001",
+      "source_line": 1534,
+      "title": "Bounded notification acknowledgment",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`src/domain/notification-claims.server.ts`; `docs/evidence/contracts/release-0.4.0/`; `tests/notify-delivery.mjs` \u2014 accepted, HTTP 500, 4xx and single-attempt 429, lost connections, stalled timeouts and in-progress claim restart: uncertain sends never replay and a non-deduplicating 429 never requeues (lines 143-215); `tests/relay-mail-support.mjs` proveRelayMail (called by `tests/hosted-alerts.mjs`) \u2014 proven-unaccepted relay 429 with Retry-After kept as a durable not-before time across Worker restart, exactly one due submission, accepted jobs terminal and acceptance kept apart from recipient proof (lines 12-127)",
+      "gap": ""
+    },
+    {
+      "seed": "uptime",
+      "clause": "DRILL-001",
+      "source_line": 1537,
+      "title": "Recipient-reported alert drills",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`src/domain/alert-drills.server.ts`; `tests/alert-drill.mjs`",
+      "gap": ""
+    },
+    {
+      "seed": "uptime",
+      "clause": "TLS-001",
+      "source_line": 1550,
+      "title": "SSL certificate and chain monitoring",
+      "kind": "target",
+      "status": "done",
+      "evidence": "`src/domain/protocol/x509.mjs`; `src/domain/protocol/tls12-certificates.mjs`; `src/domain/expiry-notices.server.ts`; `tests/protocol-monitors.mjs` \u2014 TLS block: expiring certificate warns once naming the certificate and accountable owner, wrong-name and untrusted-chain failures as location evidence, renewal resolves the warning (lines 123-136); `tests/tls-stages-support.mjs` proveTlsExpiryStages (called by that journey) \u2014 one real certificate crosses every saved warning stage with an advancing clock, one durable warning per stage across probes and Worker restarts, renewal resolves their shared identity and earlier evidence is unchanged (lines 18-127)",
+      "gap": ""
+    },
+    {
+      "seed": "uptime",
+      "clause": "MAINT-001",
+      "source_line": 1563,
+      "title": "Planned and recurring maintenance",
+      "kind": "target",
+      "status": "done",
+      "evidence": "`src/domain/planned-maintenance/`; `src/domain/planned-maintenance.server.ts`; `public/planned-maintenance.js`; `tests/maintenance-windows.mjs` (run by the test:operations script in Verify) \u2014 DST previews (spring gap skipped, fall repeat first), stale-review refusal, one-time group pause and suppression with failing monitors, in-flight retention, Worker and runner restart, cancellation, expiry without orphan recovery, preserved observations and separate maintenance report and CSV denominators, then calls `tests/maintenance-recurring-support.mjs` proveRecurringAcrossDst \u2014 its own installation on a pinned clock: an America/New_York Sunday 01:30 recurring suppress window across the next November fall-back (preview shows three Sundays, the middle one first-repeat spanning the clock change; applied through preview digest), a failing monitor fails before and after the clock change with no notification, a Worker restart keeps every observation and the calendar, recovery inside the window emits no orphan recovery, the window ends by itself and a new failure after expiry raises exactly one ordinary trigger and no recovery, the report keeps the window's maintenance milliseconds apart from availability, and the window cancels; `tests/archive-roundtrip.mjs`; `docs/evidence/contracts/maintenance/`",
+      "gap": ""
+    },
+    {
+      "seed": "oncall",
+      "clause": "OC-002",
+      "source_line": 1434,
+      "title": "Routing replay",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`src/api.ts`; `src/orchestration/replay.ts`; `src/family/response-operations/domain.ts`; `tests/runtime.mjs` \u2014 coordinationJourney (the OC-002 native replay block): a severity-routed event is admitted under a policy, the policy is changed by an attributed command, and the authorized replay request for a newer-generation event then the original returns decisions in submitted order, each historical decision, owner, policy version and evaluation snapshot equal to the immutable admission record beside the proposed decision under the changed policy, with unchanged application state, workspace revision and permanent audit rows before and after (zero writes), and anonymous and revoked sessions refused with no comparison.",
+      "gap": ""
+    },
+    {
+      "seed": "oncall",
+      "clause": "OC-003",
+      "source_line": 1435,
+      "title": "Roles and authority",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`tests/runtime.mjs` \u2014 coordinationJourney: session roles, responder workspace reads, attributed acknowledgment and note, administrator refusals, held downgrade and revoke mutations, minimal bearer and signed intake receipts; `tests/member-coordination-browser.mjs` \u2014 responder coordinates and reloads attributed history.",
+      "gap": ""
+    },
+    {
+      "seed": "oncall",
+      "clause": "OC-004",
+      "source_line": 1436,
+      "title": "Incident state transitions",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`tests/runtime.mjs` \u2014 coordinationJourney: exact admitted alert links, responder commander, stale and concurrent refusal, source recovery independence, unchanged state after recovery without evidence and resolution without a summary, evidenced recovery, resolved state and human-attributed lifecycle history; `tests/triage.mjs` \u2014 bulk resolution refuses missing recovery evidence.",
+      "gap": ""
+    },
+    {
+      "seed": "oncall",
+      "clause": "OC-005",
+      "source_line": 1437,
+      "title": "Copied runbooks",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`tests/runtime.mjs` \u2014 coordinationJourney: declaration copies every service step; an accepted service runbook edit reads back while the declared incident, its copied steps and revision stay unchanged; an owned, due-dated action reads back open with no evidence; completion without a URL is refused with every record unchanged; an evidenced submission awaits human acceptance and is accepted; the unfinished action, copied steps with checklist progress and an editable review are retained after resolution.; `tests/runtime.mjs` (coordinationJourney)",
+      "gap": ""
+    },
+    {
+      "seed": "oncall",
+      "clause": "OC-006",
+      "source_line": 1438,
+      "title": "Bounded outbound incident effects",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`src/delivery.ts`; `src/handoff-api.ts`; `src/mail.server.mjs`; `tests/runtime.mjs`; `tests/activation.mjs`; `tests/activation.mjs` (PROBE OC-006 1); `tests/activation.mjs` (PROBE OC-006 2); `tests/runtime.mjs` (coordinationJourney)",
+      "gap": ""
+    },
+    {
+      "seed": "oncall",
+      "clause": "OC-008",
+      "source_line": 1440,
+      "title": "User-authored records kept",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`src/api.ts`; `src/native-incomplete.ts`; `src/family/response-operations/domain.ts`; `tests/runtime.mjs`; `tests/product-browser-journey.mjs`; `tests/product-browser.mjs`",
+      "gap": ""
+    },
+    {
+      "seed": "oncall",
+      "clause": "OC-011",
+      "source_line": 1443,
+      "title": "Calendar-day rotations",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`src/family/response-operations/schedules.ts`; `src/paging-api.ts`; `src/schedule-api.ts`; `tests/activation.mjs` \u2014 savedRotationCoverage (run by scheduleCoordination in the changes shard): saves primary and backup rotations over HTTP and reads the HTTP preview and now-next for the fall New York 09:00 hand-off (a 25-hour civil day), a repeated 01:30 and a nonexistent 02:30 under earlier, later and reject with explained gaps, primary and backup override edges (start included, end excluded, a different role may share an interval, a same-role overlap refused with no write, a touching interval accepted), viewer and missing member slots retained as explained gaps with later turns unmoved, and identical primary and backup rotations leaving the backup unavailable; every read leaves all durable rows and outbound requests unchanged.",
+      "gap": ""
+    },
+    {
+      "seed": "oncall",
+      "clause": "OC-012",
+      "source_line": 1444,
+      "title": "Paging off",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`tests/activation.mjs` \u2014 normal-installation refusal loop: delivery, job, tick, callback and resume each explain paging OFF, the existing pager, independent standby and a passed real-phone drill, preserve workspace and paging records and revisions, retain refusal audit, create no receipt and attempt no outbound request; labelled demo HTTP flow: emitted HTML Demo decoration and title plus the workspace demo flag identify all four simulated channel outcomes, with no production receipt or outbound request.",
+      "gap": ""
+    },
+    {
+      "seed": "oncall",
+      "clause": "OC-021",
+      "source_line": 1453,
+      "title": "Move-in preview",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`src/move-in/owner-door.ts`; `src/move-in/source.ts`; `src/move-in/adoption.ts`; `tests/activation.mjs`; `tests/import-door.mjs`; `tests/product-browser-journey.mjs`; `tests/import-door.mjs`",
+      "gap": ""
+    },
+    {
+      "seed": "oncall",
+      "clause": "OC-022",
+      "source_line": 1454,
+      "title": "Resume and undo",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`src/move-in/owner-door.ts`; `src/move-in/api.ts`; `src/move-in/journal.ts`; `tests/activation.mjs`; `tests/import-door.mjs`; `tests/import-door.mjs`; `tests/import-door.mjs`; `tests/activation.mjs` (OC-022 pagerduty: unfinished checkpoint); `tests/activation.mjs` (OC-022 opsgenie: unfinished checkpoint); `tests/import-door.mjs` (OC-038 PagerDuty account HTTP)",
+      "gap": ""
+    },
+    {
+      "seed": "orbit",
+      "clause": "RECORD-004",
+      "source_line": 2418,
+      "title": "Duplicate merge",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`tests/core/records-merge-review.test.ts` \u2014 RECORD-004 RECORD-009 matching names across companies remain review-only and native merges refuse missing and stale reviews (acceptance 1: reviewed survivor and conflicting values, stale refusal without writes, stops on either participant after review, both schedules cancelled, associations and both nonempty timelines transferred once, audited retired identity and replay refusal; signed later retired-email ingress read back on the survivor and both deals; native readback preserves existing signals, recommendations and outreach exactly, with no state created by the merge); `tests/e2e/imports.spec.mjs` \u2014 RECORD-008 reviewed vendor files and plain CSV import and undo through the responsive native wizard (native duplicate merge before and after a stop, inherited contactability without a choice, retired identity absent; screens at 1440 and 390).",
+      "gap": ""
+    },
+    {
+      "seed": "orbit",
+      "clause": "SIGNAL-007",
+      "source_line": 2434,
+      "title": "No tracking",
+      "kind": "published",
+      "status": "partial",
+      "evidence": "`src/core/features/ingestion/routes.ts`; `src/core/features/ingestion/repository.ts`; `tests/core/signals-outreach.test.ts`",
+      "gap": "Unasserted in the carried evidence: no tracking script/pixel/cookie in public assets/network; identity-free chat held; unsupported identity absent from customer history. Asserted: identity-free page view held."
+    },
+    {
+      "seed": "orbit",
+      "clause": "CAPTURE-005",
+      "source_line": 2441,
+      "title": "Human boundary",
+      "kind": "published",
+      "status": "partial",
+      "evidence": "`src/core/features/capture/providers/oauth.ts`; `tests/core/capture-providers.test.ts`; `tests/core/capture-boundaries.test.ts`",
+      "gap": "Unasserted in the carried evidence: delegation credential refused; address-only intake works; proposed new contact stays blocked. Asserted: native intake works; collaborator intake refused; source signature refused."
+    },
+    {
+      "seed": "orbit",
+      "clause": "OPP-004",
+      "source_line": 2449,
+      "title": "Explainability",
+      "kind": "published",
+      "status": "partial",
+      "evidence": "`tests/e2e/operator.spec.mjs` \u2014 OPP-004 \u2014 the mobile detail renders current score evidence and recommendation reason; push Verify runtime-browser in shards (batch-13); `src/core/features/opportunities/repository.ts`; `src/core/features/operator/ui/record/next-action.tsx`; `src/core/features/operator/ui/record/recorded-details.tsx`",
+      "gap": "Not reachable in the product, so unasserted: following each contribution to its source evidence. A contribution in the deal's Why this is first list has no link or visible signal ID, Recorded details lists each signal's subject, kind, source and linking basis without ids, and no route serves a signal's source evidence; `tests/e2e/operator.spec.mjs` resolves each contribution's signal ID from the opportunity API inside the test and then finds its Recorded details line by subject text. Asserted at 390 and 1440 in the browser: every contribution shown with its signal subject, type, signed points and source; the current recommendation's reason and next action beside them; each contributing signal's Recorded details line names its source and how it was linked."
+    },
+    {
+      "seed": "orbit",
+      "clause": "ACTION-005",
+      "source_line": 2459,
+      "title": "Stale draft",
+      "kind": "published",
+      "status": "partial",
+      "evidence": "`src/core/features/drafts/service.ts`; `tests/e2e/stale-review.spec.mjs`; `tests/core/capture-boundaries.test.ts`",
+      "gap": "Unasserted in the carried evidence: customer/deal mutation stales draft; stale send refused; current differences shown before new review. Asserted: reply stop stales draft."
+    },
+    {
+      "seed": "orbit",
+      "clause": "OUT-001",
+      "source_line": 2460,
+      "title": "Exact-content customer sending",
+      "kind": "published",
+      "status": "partial",
+      "evidence": "`src/core/features/outreach/service.ts`; `src/core/features/outreach/scheduler.ts`; `tests/core/signals-outreach.test.ts`; `tests/core/source-onboarding.test.ts` (source onboarding authenticates inert connection tests, ranks real evidence and preserves customer reply through reviewed send); `tests/rer/onboarding.test.mjs`",
+      "gap": "Unasserted in the carried evidence: an actual agent customer-message call under held company policy through its owning agent-surface tool. Asserted: the current source signature ingests evidence but cannot approve or dispatch a saved draft without a native session; refusal is 401 with unchanged saved content and effect inventories and no mail submission, followed by signed-in exact-revision approval and exact reviewed bytes dispatched."
+    },
+    {
+      "seed": "orbit",
+      "clause": "OUT-007",
+      "source_line": 2466,
+      "title": "Stop conditions",
+      "kind": "published",
+      "status": "partial",
+      "evidence": "`src/core/features/outreach/service.ts`; `src/core/features/outreach/scheduler.ts`; `tests/core/signals-outreach.test.ts`",
+      "gap": "Unasserted in the carried evidence: booking cancels scheduled mail; unsubscribe cancels scheduled mail; bounce cancels scheduled mail; manual stop cancels scheduled mail; replay has no second effect. Asserted: reply cancels scheduled mail; stop stales unsent draft."
+    },
+    {
+      "seed": "orbit",
+      "clause": "OUT-012",
+      "source_line": 2471,
+      "title": "Unsubscribe",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`tests/core/outbound-boundaries.test.ts`; `tests/core/outreach-limits.test.ts` \u2014 OUT-007 OUT-009 OUT-012 a signed provider unsubscribe stops the recipient and schedule within sixty seconds and returns the opportunity to NOW once (after the signed unsubscribe a new draft to the contact is refused, and the workbench approval of an earlier draft, sent with the recipient-time confirmation so quiet hours cannot be the reason, answers 409 \"Revision already approved, changed, or is no longer permitted.\" at any hour with no outbound message and no mail call); push Verify core-9 in shards (batch-10) and core-8 in shards (batch-16)",
+      "gap": ""
+    },
+    {
+      "seed": "orbit",
+      "clause": "AI-003",
+      "source_line": 2474,
+      "title": "Provider failure",
+      "kind": "published",
+      "status": "partial",
+      "evidence": "`src/core/features/assistance/provider.ts`; `tests/core/assistance.test.ts` \u2014 AI-002 invented evidence fails visibly; AI-003 unconfigured provider generates nothing and handwritten outreach submits once (after the unconfigured generation 503, the same installation creates a handwritten draft, reads its exact rendered content, opt-out state and recipient time, approves through native Workbench, compares the real mail adapter request with the saved approval snapshot, reads one accepted provider receipt and refuses repeated approval without another submission; no AI call, generated draft or explanation).",
+      "gap": "Unasserted in the carried evidence: configured-outage continuity; manual CRM updates; ingestion and linking continuity; scoring and queue placement continuity; search continuity; recommendation action and evidence readback; rendered generation-failure qualification. Connected mailboxes and live model or provider qualification remain unclaimed. Asserted: unconfigured generation unavailable; handwritten drafting, exact approval and one accepted customer-mail submission continue with AI unconfigured."
+    },
+    {
+      "seed": "orbit",
+      "clause": "DATA-002",
+      "source_line": 2488,
+      "title": "Contact erasure",
+      "kind": "published",
+      "status": "partial",
+      "evidence": "`src/core/features/records/data.ts`; `tests/core/contact-erasure.test.ts`; `tests/core/crm-import-erasure.test.ts`; `tests/core/assistance.test.ts` \u2014 AI-001 DATA-002 changed or deleted preview context never leaves deployment (confirmed authenticated contact erasure withdraws its saved recipient-bound preview; the original preview ID returns 409 with zero provider calls and unchanged post-erasure AI call, draft and generated explanation inventories; changed-context refusal retained)",
+      "gap": "Unasserted in the carried evidence: contact erasure redacts stored Slack content; company erasure redacts stored Slack content; deal erasure redacts stored Slack content; provider delete requests tracked; each provider-deletion outcome visible; aliases erased; imported/captured evidence erased; drafts erased; transfer copies withdrawn; AI absence; mail absence; anonymous audit; completion within five minutes; replay cannot recreate erased content. Asserted: search absence; export absence."
+    }
+  ],
+  "verdict": "No newly demonstrated false claim; partial evidence alone is not falsity; clause statuses unchanged"
+}

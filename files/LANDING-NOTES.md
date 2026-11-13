@@ -1,0 +1,9 @@
+# Landing notes — je-gate-37-c1
+
+- PR #53 remains the lane's landing route. The gate creates no product commit and makes no product push or PR mutation.
+- Exact-head push Verify branch run 43484468818 completed/success. The pull_request invocation 43484538130 is skipped by the existing workflow condition for cloud/* PR heads; it is not a failed run. Code scanning run 43484531808 also completed/success.
+- Release envelope asset presence was independently verified. No envelope signature verification is claimed or required by the frozen rubric.
+- Complete Base publication scan and landing/deployment stay with the fleet Mac as stipulated by the cloud adaptation; this gate checked candidate identities and added-line credential shapes.
+- just-every/home has no tracked CONTRACT.md, ACCEPTANCE.md, docs/CLAIMS.md, sources.lock.json, source-lock regeneration command, contract view generator or migration-ledger check in its documented scripts/AGENTS.md. Seed-specific source-lock/view/migration regeneration is inapplicable here; the documented public listings generator check/write was independently run and produced no diff. Existing D1 migrations were not changed and no provider binding or credentials were used.
+- Assisted/Managed price strings do not occur in the baseline or candidate checkout. This version-only diff changes no price or billing wording. The standing accepted Assisted US$10/month and Managed US$100/month prices are preserved by leaving all pricing-related sources and wording unchanged; no external pricing-site behavior is claimed.
+- The production Next.js build emits an existing middleware deprecation warning. The separate baseline archive build also warns that its reused node_modules symlink sits outside that archive's file-tracing root; it exits 0 and its local production pages load. These are not introduced product changes.

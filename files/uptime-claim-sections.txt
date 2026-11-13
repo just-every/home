@@ -1,0 +1,78 @@
+106: #### EVIDENCE-001 — Immutable scheduled evidence
+107: 
+108: **Requirement.** Definitions, scheduled slots and every retry attempt retain revision, policy, fixed selected probes, runner identity, timings, status, assertions and error category; retries never erase failures, and observation/state/outbox commit atomically. See [Evidence and state](docs/contract/safety-rules.md#evidence-and-state) and [Integrity and authority](docs/contract/safety-rules.md#integrity-and-authority).
+109: 
+110: **Acceptance.**
+111: 1. Through signed claim/result routes submit failure, retry, late and duplicate attempts, restart, and read history; each attempt and its revision remains identifiable and observation/state/outbox either all commit or none do.
+112: 
+113: #### STATE-001 — Fixed coverage and incident hysteresis
+114: 
+115: **Requirement.** Missing or expired passing coverage is Unknown, partial failure stays visible, independent-vantage agreement and scheduled confirmation determine Failing, and complete fresh scheduled passing evidence plus recovery threshold is required for recovery; manual checks and maintenance never rewrite observations or scheduled policy. See [Evidence and state](docs/contract/safety-rules.md#evidence-and-state).
+116: 
+117: **Acceptance.**
+118: 1. Run two assigned network vantages through partial, missing, stale, failing and recovering slots; inspect Unknown/Degraded/Failing and thresholds.
+119: 2. A manual pass, absent probe or maintenance expiry cannot fabricate recovery.
+120: 
+128: #### NETWORK-001 — Pinned bounded destination execution
+129: 
+130: **Requirement.** Every public DNS answer and redirect hop is validated fail closed; private-runner numeric sockets preserve Host and TLS identity, hosted checks use Cloudflare’s public Internet fetch transport, unsafe/mixed addresses and HTTPS downgrade are rejected, cross-origin redirects strip request authority, and synthetic grants and protected origin-bound local credential files retain their separate custody limits. The PROBE-002 identification header follows these credential rules and is stripped on cross-origin redirects. See [Network and credentials](docs/contract/safety-rules.md#network-and-credentials).
+131: 
+132: **Acceptance.**
+133: 1. Exercise real controlled HTTP/TLS endpoints with mixed DNS, rebinding, hostname mismatch, redirects, downgrade, forbidden addresses, credentials and execution bounds; inspect requests and prove rejected destinations receive no connection or authority.
+134: 
+142: #### ARCHIVE-001 — Inactive validated restore
+143: 
+144: **Requirement.** Bounded versioned archives require integrity and semantic validation before transactional restore into empty product data, preserve historical evidence, erasure receipts and the permanent anonymized action audit, create paused current revisions, interrupt leases and quarantine alerts; installation-local sessions, keys, grants, request credential values, heartbeat authority, contact, webhook and Slack URLs, and signing keys are excluded; destination definitions and retained notification histories are portable, and imported evidence cannot establish current health or replay events. The source erasure journal fences copies made before a later erasure when that journal accompanies the restore. A local CLI receiving checkout must run setup first to establish its owner and settings. Supersedes `BASE-DATA-001` for installation authority and endpoint credentials only: the owner accepted this archive policy on 2026-10-13 (RL-1), as an intentional replacement, not BASE-DATA-001 equivalence. See [Portability and retention](docs/contract/safety-rules.md#portability-and-retention) and [Integrity and authority](docs/contract/safety-rules.md#integrity-and-authority).
+145: 
+146: **Acceptance.**
+147: 1. Export a populated installation including TCP, DNS, TLS and domain monitors, establish a different receiving owner, import into empty product data, then export/read history and repeat the restore.
+148: 2. Each protocol’s settings and immutable revisions/slots survive; definitions are paused, leases interrupted, delivery quarantined, secrets/authority absent, history retained and later erasure journals enforced; corrupt/nonempty imports write nothing.
+149: 
+166: #### ERASURE-001 — Operator-directed entity erasure
+167: 
+168: **Requirement.** An owner can erase a monitor with its evidence and dependent notification/heartbeat records, a destination with its credential copies, or an operator while another active owner remains. Monitor erasure requires typing the current monitor name. Each completed erasure returns a receipt with entity kind, per-table counts and completion time, and returns it only after the transaction containing the erasure, audit entry and portability fence succeeds. Requests based on stale monitor or destination state cannot re-create erased rows. The last active owner cannot be erased: local installations use `rer reset --yes`, while hosted installations require replacement by redeployment. Uptime has no R2 attachment feature; import-door uploads, plan snapshots and archive bytes are held in installation-local custody under the erasure rule in [Erasure and audit](docs/contract/safety-rules.md#erasure-and-audit). Already downloaded archives, messages already sent to external recipients and requests already in progress remain outside local erasure. See [Erasure and audit](docs/contract/safety-rules.md#erasure-and-audit).
+169: 
+170: **Acceptance.**
+171: 1. Erase each supported entity through the owner API, including stale concurrent requests and the original owner with a successor.
+172: 2. Inspect the atomic per-table receipt, audit and journal; the last owner is protected and an old archive with the later journal cannot resurrect erased records.
+173: 
+196: #### NOTIFY-001 — Authorized installation-wide destinations
+197: 
+198: **Requirement.** An owner may configure email, signed JSON webhook, or Slack incoming webhook destinations for all monitors in one installation; only scheduled incident transitions generate automatic notifications, and a test send cannot change monitor evidence or incident state. The hosted Worker submits email through the configured Base mail adapter and sends webhooks and Slack without a private runner; a private runner can also claim notification work. Webhook destinations also take WEBHOOK-001's configurable method, content type, custom headers and payload template. Destination credentials are installation-local and are not restored from archives. See [Contact, interface and delivery](docs/contract/safety-rules.md#contact-interface-and-delivery) and [Network and credentials](docs/contract/safety-rules.md#network-and-credentials).
+199: 
+200: **Acceptance.**
+201: 1. Create/rotate/disable email, Slack and signed webhook destinations, cause scheduled failure/recovery and a test send through actual Worker/runner delivery doors; inspect one job per enabled destination, credentials, exact signing, escaping and unchanged health for tests.
+202: 
+203: #### DELIVERY-001 — Bounded notification acknowledgment
+204: 
+205: **Requirement.** Each event and destination without receiver-side deduplication (email, Slack incoming webhooks and the other channels DELIVERY-002 names), every test send and every drill gets one automatic send attempt. A RER relay 429 with Retry-After confirms non-acceptance and queues another submission after that delay. For those sends HTTP 500, connection loss, timeout, and unknown outcomes remain uncertain and are not automatically sent again; deduplicating destinations retry and every route can fall back to another contact under DELIVERY-002. Accepted means the configured provider or endpoint acknowledged the request; it does not mean a person received, read, or acted on it. See [Contact, interface and delivery](docs/contract/safety-rules.md#contact-interface-and-delivery).
+206: 
+207: **Acceptance.**
+208: 1. At authorized provider edges return accepted, proven-unaccepted relay 429, HTTP 500, timeout and connection loss; restart during claims.
+209: 2. Only the proven-unaccepted case requeues automatically; uncertain started sends never replay and acceptance remains distinct from receipt.
+210: 
+226: #### DRILL-001 — Recipient-reported alert drills
+227: 
+228: **Requirement.** An owner can run an alert drill on one destination: the existing test event with drill wording, sent once through the same path with no automatic resend, plus a one-time confirmation link (random capability, stored only as a bound hash, single use, 24-hour expiry, one drill and one destination). Opening the link shows a page; only a same-origin POST confirms, and unknown, used, expired and foreign links answer 404 alike. The console keeps Submitted, Acknowledged (or Uncertain/Failed with its code) and Recipient confirmed as separate lines, and does not measure whether anyone acted. A confirmed drill is a report by the recipient that one message reached a person at one time. It is never evidence of monitoring, a delivery guarantee or a human response, and it changes no monitor evidence, state or incident. Proof belongs to the destination's current credential: a new address or URL or a rotated secret makes it Never proven, and drill history stays with the installation, so a restored destination is Never proven. See [Alert drills](docs/contract/safety-rules.md#alert-drills).
+229: 
+230: **Acceptance.**
+231: 1. Drill email, Slack and signed webhook through the actual delivery runtime: GET/HEAD never confirm, same-origin POST confirms once, expired/replayed/foreign links refuse, 500 stays uncertain, rotation resets proof and archives/logs contain no capability or endpoint secret.
+232: 
+352: #### TLS-001 — SSL certificate and chain monitoring
+353: 
+354: *Tier:* Core
+355: 
+356: **Requirement.** TLS checks verify hostname/SNI, certificate chain/trust, validity, expiry and renewal on HTTPS or configured TLS ports from each location. Staged configurable expiry warnings name the certificate and accountable owner, track renewal and resolve only after a newly observed valid chain.
+357: 
+358: **Acceptance.**
+359: 1. Monitor a controlled TLS service; present an expiring certificate, broken chain, wrong name and then renewed certificate, advance the clock and inspect deduplicated warnings, location evidence and renewal resolution.
+360: 
+490: #### MAINT-001 — Planned and recurring maintenance
+491: 
+492: *Tier:* Core
+493: 
+494: **Requirement.** One-time and recurring windows target monitors/groups with US time zones, daylight-saving handling, preview and audit. Buyers choose notification suppression or execution pause explicitly; reports show maintenance separately and retain denominator and underlying observations. Expiry re-evaluates actual evidence and cannot emit orphan recovery.
+495: 
+496: **Acceptance.**
+497: 1. Schedule a New York recurring maintenance window across a DST transition and a one-time group window; fail a monitor during each, restart, end/cancel the window and inspect preserved results, suppression and reports.
+498: 

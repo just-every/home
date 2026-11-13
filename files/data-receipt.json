@@ -1,0 +1,207 @@
+{
+  "at": "2026-11-13T19:05:48.242086+00:00",
+  "base": "1b7c84f81246cce3a6d7b26bffc31ea1ca0370a0",
+  "head": "edfb1132486eaac9f87843199561c3230d5132df",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "state_changes": [
+    {
+      "path": "seeds.oncall.commit",
+      "before": "457a0a194a0dc97f653cdc12224cae27b6f1a79f",
+      "after": "1ab915f6efdfe3398c8d7645fe56e46e123299b6"
+    },
+    {
+      "path": "seeds.oncall.copy.README.md",
+      "before": "85320012c9ad629f",
+      "after": "1fcdb805e9c64257"
+    },
+    {
+      "path": "seeds.oncall.copy.seed.json",
+      "before": "392a8bd5b81d6866",
+      "after": "6a14ea9f338c97ad"
+    },
+    {
+      "path": "seeds.oncall.open",
+      "before": null,
+      "after": [
+        "42983364b373"
+      ]
+    },
+    {
+      "path": "seeds.oncall.sourceRef",
+      "before": "v0.5.11",
+      "after": "v0.5.12"
+    },
+    {
+      "path": "seeds.oncall.tag",
+      "before": "v0.5.11",
+      "after": "v0.5.12"
+    },
+    {
+      "path": "seeds.orbit.commit",
+      "before": "0e9e55cf150dfcc781d1d9e62b2d88c15c9b6a63",
+      "after": "a5f471626aea1bfcb2c79f5dbee2250fdb38fd49"
+    },
+    {
+      "path": "seeds.orbit.copy.seed.json",
+      "before": "f837b4dbf149e9da",
+      "after": "e4b909cf7a1e6ab6"
+    },
+    {
+      "path": "seeds.orbit.open",
+      "before": null,
+      "after": [
+        "64cb07f6a0dd"
+      ]
+    },
+    {
+      "path": "seeds.orbit.sourceRef",
+      "before": "v0.4.8",
+      "after": "v0.4.9"
+    },
+    {
+      "path": "seeds.orbit.tag",
+      "before": "v0.4.8",
+      "after": "v0.4.9"
+    },
+    {
+      "path": "seeds.spool.open",
+      "before": [
+        "42983364b373"
+      ],
+      "after": null
+    },
+    {
+      "path": "seeds.uptime.commit",
+      "before": "bd7b21317cae0ae0082fa88127cef6842c377504",
+      "after": "04016399e1e879e7be3b8e891baf02d975bb3901"
+    },
+    {
+      "path": "seeds.uptime.copy.README.md",
+      "before": "fea4ebfad576667a",
+      "after": "52c9d14b06fdfff8"
+    },
+    {
+      "path": "seeds.uptime.copy.seed.json",
+      "before": "21ae7503d4968683",
+      "after": "6683864c580c2486"
+    },
+    {
+      "path": "seeds.uptime.open",
+      "before": null,
+      "after": [
+        "42983364b373"
+      ]
+    },
+    {
+      "path": "seeds.uptime.sourceRef",
+      "before": "v0.5.10",
+      "after": "v0.5.11"
+    },
+    {
+      "path": "seeds.uptime.tag",
+      "before": "v0.5.10",
+      "after": "v0.5.11"
+    },
+    {
+      "path": "syncedAt",
+      "before": "2026-11-13T13:22:47.701Z",
+      "after": "2026-11-13T18:33:06.093Z"
+    }
+  ],
+  "releases": [
+    {
+      "seed": "uptime",
+      "before": "v0.5.10",
+      "after": "v0.5.11",
+      "commit": "04016399e1e879e7be3b8e891baf02d975bb3901",
+      "contract_sha256": "0b70cec7f900fbc59542b6ae32afec508997695edda128142db3e88c8b770221",
+      "release": {
+        "assets": [
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3381,
+            "state": "uploaded"
+          },
+          {
+            "name": "uptime-0.4.0-monitor-1440.png",
+            "size": 273042,
+            "state": "uploaded"
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.11",
+        "prerelease": false,
+        "published_at": "2026-11-13T15:41:29Z",
+        "tag_name": "v0.5.11",
+        "target_commitish": "main"
+      },
+      "contract_unchanged_from_baseline_record": true
+    },
+    {
+      "seed": "oncall",
+      "before": "v0.5.11",
+      "after": "v0.5.12",
+      "commit": "1ab915f6efdfe3398c8d7645fe56e46e123299b6",
+      "contract_sha256": "c04517abc904f1e5618a858e191fd0a9ae1dc54484b6fb993a56c794a9193cac",
+      "release": {
+        "assets": [
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3185,
+            "state": "uploaded"
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.12",
+        "prerelease": false,
+        "published_at": "2026-11-13T15:39:37Z",
+        "tag_name": "v0.5.12",
+        "target_commitish": "main"
+      },
+      "contract_unchanged_from_baseline_record": true
+    },
+    {
+      "seed": "orbit",
+      "before": "v0.4.8",
+      "after": "v0.4.9",
+      "commit": "a5f471626aea1bfcb2c79f5dbee2250fdb38fd49",
+      "contract_sha256": "faa136fb56b398c3a3ba80defbe1789b3cfe2aca153dc9a5e7c4205e6aa2c32f",
+      "release": {
+        "assets": [
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3333,
+            "state": "uploaded"
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.9",
+        "prerelease": false,
+        "published_at": "2026-11-13T17:49:50Z",
+        "tag_name": "v0.4.9",
+        "target_commitish": "main"
+      },
+      "contract_unchanged_from_baseline_record": true
+    }
+  ],
+  "wording_unchanged": true,
+  "other_versions_and_statuses_unchanged": true,
+  "excluded_absent": true,
+  "credential_shape_scan": "pass; added lines only",
+  "identities": "pass; one candidate commit; fleet author and committer; no trailers",
+  "pricing": "No pricing path or wording changed; Assisted/Managed price text does not occur in this checkout at either revision"
+}

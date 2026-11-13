@@ -1,0 +1,71 @@
+215: #### RECORD-004 — Duplicate merge
+216: 
+217: **Requirement.** Merging two contacts or two companies requires an operator to choose the surviving record and the value of every conflicting field. The request is bound to both reviewed record states; a changed record refuses the merge without modifying either record, requiring a new review. Contactability is not a reviewed choice: a do-not-contact stop that lands after review is inherited by the merge. The merge moves associations and timeline entries once, retires the other record's key as an alias so later signals carrying it link to the survivor, creates no signal, recommendation, or outreach, and records the retired ID in the audit trail.
+218: 
+219: **Acceptance.**
+220: 1. Review two duplicates, choose field values and survivor, then change one reviewed record and require refusal; review again and merge once, inheriting a concurrent stop.
+221: 
+330: #### SIGNAL-007 — No tracking
+331: 
+332: **Requirement.** Orbit serves no tracking script, pixel, or cookie, and performs no fingerprinting or cross-site collection. A page-view, chat, or download signal is accepted only when its source supplies the visitor identity it already holds and the basis for holding it; without that basis the event is held unlinked under SIGNAL-004 and never becomes contact history. The one exception is OUT-016's disclosed, opt-in, per-message open and link-click tracking of Orbit-sent customer mail, which adds nothing to Orbit's public pages, its app or any other site.
+333: 
+334: **Acceptance.**
+335: 1. Inspect public assets/network and submit identity-free page/chat events; no Orbit tracker runs and unsupported identity stays outside customer history.
+336: 
+381: #### CAPTURE-005 — Human boundary
+382: 
+383: **Requirement.** Capture never creates a draft, approves or starts a message, or makes a contact contactable. A contact created from a proposal is do-not-contact until an operator clears it under RECORD-012; the person accepting a CAPTURE-012 new-prospect proposal makes that choice explicitly in the same review, with the basis it records, and an unsubscribe request in a captured message is a do-not-contact proposal. Capture endpoints accept only a full native operator's session: a source signature, a delegation credential or an invited collaborator is refused, and the signed paths of SIGNAL-009 cannot write into a capture source. Mail delivered to an operator-created Orbit address (CAPTURE-008) is the only intake without a session; its authority is that address's private tag, and it writes only into that address's source.
+384: 
+385: **Acceptance.**
+386: 1. Attempt capture with native, collaborator, source and delegation authority; only permitted native/address intake succeeds, and a proposed new contact stays blocked.
+387: 
+439: #### OPP-004 — Explainability
+440: 
+441: **Requirement.** The opportunity view shows every signal the current score used, by ID, with its source, occurred time, confidence, and positive or negative contribution, and shows the reason for the current recommendation beside them.
+442: 
+443: **Acceptance.**
+444: 1. Open a scored deal and follow every contribution to its source evidence and current action reason.
+445: 
+511: #### ACTION-005 — Stale draft
+512: 
+513: **Requirement.** A reply, meeting, unsubscribe, do-not-contact, permanent bounce, changed recipient, changed opportunity, or replaced recommendation marks a draft stale. A stale draft is shown as stale, and sending it returns 409 and writes no outbound message until an operator opens it, sees what changed, and confirms.
+514: 
+515: **Acceptance.**
+516: 1. Change the customer/deal or deliver a stop event after drafting; refuse sending until the operator sees and explicitly reviews current differences.
+517: 
+520: #### OUT-001 — Exact-content customer sending
+521: 
+522: **Requirement.** A person’s send binds the exact saved recipients, subject, body, attachments and message settings, and scheduled dispatch uses that unchanged snapshot. Signals, scores, recommendations and generated text are evidence, never authority. An agent’s customer-message call carries external; the company’s policy decides whether it runs, enters review, waits for approval or is off. Under the held company policy a signed-in person approves the exact saved revision before it dispatches. A later content, recipient, permission or evidence change invalidates that approval. Batch and sequence messages retain the exact per-item snapshots in their own clauses.
+523: 
+524: **Acceptance.**
+525: 1. Under the held company policy, attempt sending from ingestion, an agent and an unreviewed draft; only a signed-in person’s approval of the unchanged saved recipient, subject and body permits dispatch.
+526: 
+562: #### OUT-007 — Stop conditions
+563: 
+564: **Requirement.** A reply, a booked meeting, an unsubscribe, a do-not-contact, or a permanent bounce cancels that contact's scheduled messages and marks their unsent drafts stale under ACTION-005. A reply or a bounce ends awaiting response and returns the opportunity to NOW with the reply or the delivery problem as its next action. An OUT-031 unattributed stop request pauses, rather than cancels, the scheduled messages and sequence enrollments of every external recipient of its message until a user resolves it.
+565: 
+566: **Acceptance.**
+567: 1. Schedule a message, deliver reply/booking/unsubscribe/bounce or a manual stop, then advance dispatch; cancel the message and stale the draft without duplicates.
+568: 
+597: #### OUT-012 — Unsubscribe
+598: 
+599: **Requirement.** An outbound customer message that carries opt-out under OUT-020 carries the opt-out URL header and the one-click opt-out header headers handled by the mail provider, or by the installation origin for managed relay mail and OUT-013 mailbox sends. An unsubscribe event that identifies one recipient sets that contact do-not-contact under RECORD-012 within 60 seconds and cancels their scheduled messages. OUT-020 sets which message types carry opt-out (sequence email on and one-to-one email off by default) and the scope of an opt-out from a message with more than one external recipient.
+600: 
+601: **Acceptance.**
+602: 1. Inspect unsubscribe headers on actual submitted mail of a type set to carry opt-out, receive a signed unsubscribe and confirm future sending and scheduled work are suppressed.
+603: 
+620: #### AI-003 — Provider failure
+621: 
+622: **Requirement.** When the AI provider is unconfigured or unavailable, records, signal ingestion, linking, scoring, queue placement, search, manual updates, hand-written drafts, and sending all continue to work, and a recommendation still names its action and evidence. A generation request shows the failure and produces no explanation or draft.
+623: 
+624: **Acceptance.**
+625: 1. Leave AI unconfigured and fail a configured request; finish manual CRM, ingestion, scoring and handwritten outreach flows while generation reports failure.
+626: 
+729: #### DATA-002 — Contact erasure
+730: 
+731: **Requirement.** Within 5 minutes of an operator deleting a contact, their email addresses, signal payloads, drafts, message bodies, and the notifications naming them are absent from records, search results, exports, and every later AI or mail request. Erasing a contact, company or deal redacts INTEGRATE-005’s stored notice content and issues tracked chat.delete requests for its bot messages, with each deletion outcome visible. Copies already held outside Slack cannot be recalled. Copies already held outside Slack cannot be recalled.
+732: 
+733: **Acceptance.**
+734: 1. Erasing a contact, company or deal redacts INTEGRATE-005’s stored notice content and issues tracked chat.delete requests for its bot messages, with each deletion outcome visible.
+735: 2. Delete a contact containing aliases, imported/captured mail and notes, drafts and transfer copies; verify search/export/AI/mail absence and anonymized audit within five minutes, including replay.
+736: 
