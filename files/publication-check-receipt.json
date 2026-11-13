@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "candidate_commits": [
+    "e6fe389a5b80b60ed8d7c97db717f653651143f2"
+  ],
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "identity": "fleet author and committer; no trailers",
+  "diff_hygiene": "passed",
+  "credential_shape_scan": "passed"
+}

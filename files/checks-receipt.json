@@ -1,0 +1,98 @@
+{
+  "head": "e6fe389a5b80b60ed8d7c97db717f653651143f2",
+  "checks": [
+    {
+      "command": "npm ci",
+      "status": "passed",
+      "exit_code": 0,
+      "log": "npm-ci.log",
+      "sha256": "41ccd0801ff814864e9014413f7d999f4fcdf953502f7994d1bd0acc976abab6"
+    },
+    {
+      "command": "npm run seeds:sync (full initial dry)",
+      "status": "passed",
+      "exit_code": 0,
+      "log": "dry-initial.log",
+      "sha256": "ce0e8d485cd580be8d8d0d6ee37573124c7dad8707d2aaa416e6a429b0e05581"
+    },
+    {
+      "command": "npm run seeds:sync -- --copy-only --apply",
+      "status": "passed",
+      "exit_code": 0,
+      "log": "copy-apply.log",
+      "sha256": "3a2ad9e37f57bf28a674137a2b501facbfaf4a4aeb1e777bc711677c15581379"
+    },
+    {
+      "command": "npm run seeds:sync -- --apply",
+      "status": "passed",
+      "exit_code": 0,
+      "log": "mechanical-apply.log",
+      "sha256": "fc39e1360c9575ad6c3094af952a1a03e076dcf5bdfd71f6a5e0f3a8271f155e"
+    },
+    {
+      "command": "npm run seeds:sync -- --copy-only --apply (new listing release boundary)",
+      "status": "passed",
+      "exit_code": 0,
+      "log": "copy-new-release.log",
+      "sha256": "f04cec2292e509cbba0961a09ba4fcd26576705ffcb12d23b56a0eab8e88f521"
+    },
+    {
+      "command": "npm run listings",
+      "status": "passed",
+      "exit_code": 0,
+      "log": "listings.log",
+      "sha256": "e29ba2f14c9a32f200d9e8956d6e4a524102837b5f12a181e9ab0807f1eff33a"
+    },
+    {
+      "command": "npm run listings -- --check",
+      "status": "passed",
+      "exit_code": 0,
+      "log": "listings-check.log",
+      "sha256": "8cbef4f8b3f74fe74438c2725d5c9fc79521670c9f240ea2d11548bdc20775d9"
+    },
+    {
+      "command": "npm run seeds:sync (full final dry)",
+      "status": "passed",
+      "exit_code": 0,
+      "log": "dry-final.log",
+      "sha256": "62d219294152afe739992784c22e78cef32878d9edfc452637877c4fd246a2d8"
+    },
+    {
+      "command": "npm run type-check",
+      "status": "passed",
+      "exit_code": 0,
+      "log": "type-check.log",
+      "sha256": "5a848264e3d4f39bae1d347b4ff2be16348436fdcdd3a42c91c0fca2a8f23403"
+    },
+    {
+      "command": "npm run lint",
+      "status": "passed",
+      "exit_code": 0,
+      "log": "lint.log",
+      "sha256": "02ef98276ac56c4ea2e84e7291740f26bb5d7d07639d8ce90366e463210307f3"
+    },
+    {
+      "command": "npm run brand -- --check",
+      "status": "passed",
+      "exit_code": 0,
+      "log": "brand-check.log",
+      "sha256": "96d9e82098a633f80a49497e7c565a01f182c73f37aae8204277739d13905f61"
+    },
+    {
+      "command": "npm run build",
+      "status": "passed",
+      "exit_code": 0,
+      "log": "build.log",
+      "sha256": "026ac7b801fb0f84701471d5990d2ad06538d0da4af8be4a76dbc2f7f678ff10"
+    },
+    {
+      "command": "candidate production browser proof",
+      "status": "passed",
+      "exit_code": 0,
+      "log": "browser-proof.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "permanent_tests_added": false,
+  "local_full_suite_run": false
+}

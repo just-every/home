@@ -1,0 +1,11 @@
+{
+  "head": "e6fe389a5b80b60ed8d7c97db717f653651143f2",
+  "tree": "5b8fef81eb71fc612b46ad9628469a65e1ae9b97",
+  "files": {
+    "public/data/listings.json": "32f26a7017f5812bec0a9c29ab49033d058e976e",
+    "scripts/seeds-sync/state.json": "7b12a6230b290143f64c8b9bf8010f7e520197d9",
+    "src/data/seed-pages.ts": "489cbc5483c6a3cd84c003a8064057ddec48c479"
+  },
+  "worktree_clean": true,
+  "preserved_brand_sha256": "a54bb68daa5f1590e5a6eaafecf38c627e42fa014f65c0d7efaf81bee809b7a4"
+}

@@ -1,0 +1,33 @@
+{
+  "before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "changes": [
+    {
+      "slug": "happytohelp",
+      "fields": {
+        "version": {
+          "before": "v0.4.22",
+          "after": "v0.4.23"
+        }
+      }
+    }
+  ],
+  "excluded_absent": [
+    "beacon",
+    "relay",
+    "ferry",
+    "lily",
+    "brook",
+    "delta",
+    "barrow",
+    "linen"
+  ]
+}

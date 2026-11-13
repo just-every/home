@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "browser": "Chromium /usr/bin/chromium --no-sandbox",
+  "screens": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "url": "http://127.0.0.1:3000/happytohelp",
+      "screenshot": "happytohelp-1440.png",
+      "assertions": [
+        "version v0.4.23 once",
+        "v0.4.22 absent",
+        "listings version v0.4.23",
+        "49 total / 35 released"
+      ]
+    },
+    {
+      "width": 390,
+      "height": 1000,
+      "url": "http://127.0.0.1:3000/happytohelp",
+      "screenshot": "happytohelp-390.png",
+      "assertions": []
+    }
+  ]
+}

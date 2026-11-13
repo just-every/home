@@ -1,0 +1,10 @@
+# je-sync-25 plan
+
+1. Configure fleet identity, decrypted-bundle Git authentication, preserved repository hooks, and pinned cloud toolchain. Clone only just-every/home at fresh main, create cloud/je-sync-25, and read repository instructions and sync implementation.
+2. Install with npm ci. Run the committed full dry sync and preserve its actual reports. Read seed repositories only through gh api (external Git ls-remote adapter; no product script edits). Preserve a task snapshot of source API reads to keep the multi-pass comparison coherent.
+3. Review every proposal and existing mark/colour/status follow-up. Independently require a non-draft/non-prerelease GitHub Release and rer-release.dsse.json asset before a version or released-status update. Envelope presence is not cryptographic signature verification.
+4. Run copy-only apply, review released copy drift and known Terrace/HappyToHelp/Uptime/Lamp follow-ups against released source rows; retain wording unless proven false. Record unreleased copy drift without importing it.
+5. Run mechanical apply. Keep all withheld changes explicit; preserve excluded slugs, accepted Assisted US$10/month and Managed US$100/month pricing, gallery custody and contract statuses.
+6. Regenerate listings, check listings, rerun full dry sync, and explain residual findings. Run type-check, lint and production build for changed product data only. Capture the changed page at 1440 and 390 using the candidate build; no design or capture campaign.
+7. Before first push, fetch/rebase current main, preserve hooks and fleet identity, inspect all candidate authors/committers/trailers and diff hygiene. Commit scoped product changes and push through cloud-push.py. Open one PR titled “sync: seed listings 12 Nov (1)”. Observe exact-SHA Verify through REST with one watcher and the ten-call CI/PR budget; never merge or deploy.
+8. Save complete non-secret reports and actual receipts outside the product tree, publish explicitly selected packet files only to evidence/je-sync-25, report custody and lane POST, then remove the successfully published product clone and node_modules. Preserve clone/bundle if publication is blocked.

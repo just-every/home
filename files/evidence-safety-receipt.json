@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "selection": "explicit filename allowlist",
+  "files": 72,
+  "symlinks": false,
+  "credential_shapes": false,
+  "source": "public released seed documents and task reports only",
+  "excluded": "credentials, environment dumps, private held-out gate material, raw unchanged homepage image inputs"
+}
