@@ -1,0 +1,7 @@
+START 2026-11-13T21:44:32Z
+
+> next-project@0.1.0 lint
+> eslint src tests
+
+END 2026-11-13T21:44:39Z
+EXIT=0

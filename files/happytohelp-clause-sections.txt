@@ -1,0 +1,360 @@
+175: #### MOVE-IN-001 — Reviewed history import
+176: 
+177: **Requirement.** Current workspace owner/admin reviewers privately upload, inspect per-kind plans, source-located omissions, rejections, conflicts and publication changes, then explicitly apply bounded, resumable imports of conversations, contacts, tags, saved replies and articles. Preserve source identities, timestamps, private notes and publication state; reject unsupported meaning rather than inventing it. Recheck current role and workspace authority for apply, resume and whole-import undo. Retain immutable source custody and conflict-safe reversal journals. Imports and undo send no mail, widget messages, model requests, assignment or connection notifications; imports are excluded from Reports. Native tag controls enforce workspace scope. RL-2 requires exact business-state repeat/undo equality, including contacts, conversations, messages, private notes, tags, source links and every other imported business table. Only platform counters/sequences, audit history and import journals are excluded. Synthetic 1,000-conversation datasets for Zendesk and Help Scout qualify this local flow.
+178: 
+179: **Acceptance.**
+180: 1. Through Move in, exercise all five kinds, source custody, per-row omissions/rejections/conflicts, current-role denials, inert apply/resume/repeat/undo and exact business-state equality for synthetic 1,000-conversation Zendesk and Help Scout datasets; counters/sequences, audit and journals are the only named exclusions.
+181: 
+182: #### OUTCOMES-001 — Resolution feedback and provenance
+183: 
+184: **Requirement.** Current original visitor sessions may rate a closed resolution with thumbs up/down and an optional comment up to 1,000 characters. Changes retain history; reopened cycles cannot receive the previous resolution's rating. Operators retain access to each past resolution's latest feedback after reopening; visitor eligibility and report denominators remain tied to the current cycle. Erasure removes rating comments. Confirmed operator-sent drafts establish assisted outcomes, otherwise confirmed human replies establish human outcomes. AI requires a complete visible answer history without a person handoff; missing evidence remains unknown. Status, assignment and cancellation transitions recheck current authority atomically.
+185: 
+186: **Acceptance.**
+187: 1. Close, rate, rerate, reopen and close again via widget/operator routes; prevent previous-session/cycle feedback, retain old-cycle operator visibility, redact erased comments and verify human/assisted/AI/unknown attribution from actual visible answers.
+188: 
+189: #### REPORTS-001 — Workspace calendar reports
+190: 
+191: **Requirement.** Native conversations created in the workspace IANA calendar range with at least one persisted message form the cohort; Move in and legacy imports are excluded. First visitor-to-visible-answer response and creation-to-first known-resolution durations use median and nearest-rank p90. Each conversation contributes its latest closed cycle once to outcome and satisfaction rates. Reopened conversations leave those denominators. Aggregate queries return bounded data; CSV streams every matching conversation with formula-safe cells. Empty widget conversations stay durable but are excluded from Reports and its analytics CSVs. A separate step-up guarded JSON export includes all workspace conversations, messages, private notes and attachment names across dates and imports; attachment bytes stay in the portable backup.
+192: 
+193: **Acceptance.**
+194: 1. Compare Reports and formula-safe CSV to hand-calculated response/resolution median and p90, latest-cycle outcome and satisfaction cohorts across DST and tenants, including more than 10,000 rows and excluded imports/reopened cycles.
+195: 
+196: #### CONNECTIONS-001 — Workspace integrations
+197: 
+198: **Requirement.** Owner/admin tokens have explicit scopes, optional expiry, one-time display, hashed storage and durable audit. Bearer-only API calls have no CORS, per-token limits and native guarded writes. Contact erasure fences API identity restoration and pending event payloads. Native events commit tenant-bound webhook and Slack intents; historical import apply and undo do not emit them. Slack projects bounded native visitor text through Base escaping. The owner-authorized ordinary HTTPS exception retains redirect refusal, bounded requests/responses and literal-destination checks instead of DNS pinning (RL-3). See [the full transport exception](docs/contract/support-protocols.md).
+199: 
+200: **Acceptance.**
+201: 1. Issue, use, expire and revoke each scoped show-once token; exercise native API operations, erasure fences, signed events and Slack escaping.
+202: 2. Refuse redirects/unsafe literal destinations and over-limit traffic; preserve timeout, streamed bounds, uncertain 500 without replay and bounded 429 behavior under the recorded HTTPS override.
+203: 
+204: #### ACTIVATION-001 — Observed owner setup
+205: 
+206: **Requirement.** An owner sees the durable, project-scoped eight-step list on the Setup page; the genuinely empty inbox shows one next action and a link to it, and loads none of it. A step is confirmed only by an observation, never by a saved configuration, an installer default or a preset, so a workspace with nothing observed yet is zero of its applicable steps. The system runs its own checks: while an owner is signed in the page asks the server to observe, bounded by freshness windows. These checks are non-generative metadata, domain and DNS reads and never send mail. They distinguish saved configuration from observed sender DNS, authenticated model metadata, an inbound receipt, effective runtime ceilings, allowed origin and an authenticated widget ping; whether an article is published is not one of them (that step stays among the eight ids but is hidden and never counted). Mail to the owner is confirmed by a used emailed sign-in link, or by the provider's reported outcome for the welcome or test email; local development mail is suppressed and never confirms delivery, and provider acceptance or queueing is pending. Reading Setup performs no provider work and writes nothing. Only an explicit owner action (Create workspace, or Send me a test) may send mail, to that owner's mailbox, with durable identity; ambiguous work is never replayed. Missing provider permissions and unsupported status APIs remain unavailable. Configuration changes invalidate observations; model and DNS validation expire after 15 minutes and every observation shows its time. The owner can skip an owner-only step (the widget, the AI service, the sending domain) for now, and undo it. A skip is stored on the server for the workspace, can be made by an owner or admin only, makes no provider request, and moves the step out of Needs you and out of the confirmed count and its total; a skipped step is never shown as confirmed. An observation always wins: a skipped step that is later observed is confirmed and counted, and a rejected provider key stays under Needs you whether or not it was skipped. Provider keys and their fingerprints never enter API responses or browser storage. Details are in [the support protocol guide](docs/contract/support-protocols.md).
+207: 
+208: **Acceptance.**
+209: 1. Read Setup without side effects, observe fresh/expired/rejected configuration and explicit provider outcomes, skip/undo owner steps and reload.
+
+153: #### CONVERSATION-001 — Durable transcript
+154: 
+155: **Requirement.** Customer, operator, generation, import and administrative writers preserve stable message/command identity, revision/frontier, attachment ownership and final-reply admission atomically. Competing or repeated writes cannot admit two incompatible final replies. Owner/admin contact erasure removes message content while keeping identity, revision and frontier, so erased transcripts stay coherent.
+156: 
+157: **Acceptance.**
+158: 1. Race visitor, operator, model and import writers through conversation routes with duplicate and lost responses; admit only compatible final replies.
+159: 2. Erase a contact through the owner door and verify coherent identity/revision/frontier with content removed.
+160: 
+161: #### DELIVERY-001 — Live delivery and recovery
+162: 
+163: **Requirement.** Persist before broadcast; reconnect/outbox replay and socket authorization recover committed messages after reload, disconnection or process wake. Provisional AI deltas never become durable final answers until guarded admission succeeds.
+164: 
+165: **Acceptance.**
+166: 1. Disconnect/reconnect widget and operator sockets after persisted writes, restart the runtime and recover the same committed messages/attachments; unauthorized replay is denied and superseded AI deltas never become final replies.
+167: 
+168: #### UI-001 — Existing editable experience
+169: 
+170: **Requirement.** Reuse the original React dashboard, transcripts/drafts/suggestions, settings and Shadow DOM widget; preserve useful desktop/mobile flows, attachment display, collector/privacy controls and errors. Native routing and transport use the configured application origin.
+171: 
+172: **Acceptance.**
+173: 1. Use the native dashboard and separately installed widget at 1440 and 390 pixels with realistic conversations, attachments, drafts, errors and workspace switching; retain the approved desktop/mobile navigation and configured-origin transport.
+174: 
+175: #### MOVE-IN-001 — Reviewed history import
+176: 
+177: **Requirement.** Current workspace owner/admin reviewers privately upload, inspect per-kind plans, source-located omissions, rejections, conflicts and publication changes, then explicitly apply bounded, resumable imports of conversations, contacts, tags, saved replies and articles. Preserve source identities, timestamps, private notes and publication state; reject unsupported meaning rather than inventing it. Recheck current role and workspace authority for apply, resume and whole-import undo. Retain immutable source custody and conflict-safe reversal journals. Imports and undo send no mail, widget messages, model requests, assignment or connection notifications; imports are excluded from Reports. Native tag controls enforce workspace scope. RL-2 requires exact business-state repeat/undo equality, including contacts, conversations, messages, private notes, tags, source links and every other imported business table. Only platform counters/sequences, audit history and import journals are excluded. Synthetic 1,000-conversation datasets for Zendesk and Help Scout qualify this local flow.
+178: 
+179: **Acceptance.**
+180: 1. Through Move in, exercise all five kinds, source custody, per-row omissions/rejections/conflicts, current-role denials, inert apply/resume/repeat/undo and exact business-state equality for synthetic 1,000-conversation Zendesk and Help Scout datasets; counters/sequences, audit and journals are the only named exclusions.
+181: 
+182: #### OUTCOMES-001 — Resolution feedback and provenance
+183: 
+184: **Requirement.** Current original visitor sessions may rate a closed resolution with thumbs up/down and an optional comment up to 1,000 characters. Changes retain history; reopened cycles cannot receive the previous resolution's rating. Operators retain access to each past resolution's latest feedback after reopening; visitor eligibility and report denominators remain tied to the current cycle. Erasure removes rating comments. Confirmed operator-sent drafts establish assisted outcomes, otherwise confirmed human replies establish human outcomes. AI requires a complete visible answer history without a person handoff; missing evidence remains unknown. Status, assignment and cancellation transitions recheck current authority atomically.
+185: 
+186: **Acceptance.**
+187: 1. Close, rate, rerate, reopen and close again via widget/operator routes; prevent previous-session/cycle feedback, retain old-cycle operator visibility, redact erased comments and verify human/assisted/AI/unknown attribution from actual visible answers.
+
+161: #### DELIVERY-001 — Live delivery and recovery
+162: 
+163: **Requirement.** Persist before broadcast; reconnect/outbox replay and socket authorization recover committed messages after reload, disconnection or process wake. Provisional AI deltas never become durable final answers until guarded admission succeeds.
+164: 
+165: **Acceptance.**
+166: 1. Disconnect/reconnect widget and operator sockets after persisted writes, restart the runtime and recover the same committed messages/attachments; unauthorized replay is denied and superseded AI deltas never become final replies.
+167: 
+168: #### UI-001 — Existing editable experience
+169: 
+170: **Requirement.** Reuse the original React dashboard, transcripts/drafts/suggestions, settings and Shadow DOM widget; preserve useful desktop/mobile flows, attachment display, collector/privacy controls and errors. Native routing and transport use the configured application origin.
+171: 
+172: **Acceptance.**
+173: 1. Use the native dashboard and separately installed widget at 1440 and 390 pixels with realistic conversations, attachments, drafts, errors and workspace switching; retain the approved desktop/mobile navigation and configured-origin transport.
+174: 
+175: #### MOVE-IN-001 — Reviewed history import
+176: 
+177: **Requirement.** Current workspace owner/admin reviewers privately upload, inspect per-kind plans, source-located omissions, rejections, conflicts and publication changes, then explicitly apply bounded, resumable imports of conversations, contacts, tags, saved replies and articles. Preserve source identities, timestamps, private notes and publication state; reject unsupported meaning rather than inventing it. Recheck current role and workspace authority for apply, resume and whole-import undo. Retain immutable source custody and conflict-safe reversal journals. Imports and undo send no mail, widget messages, model requests, assignment or connection notifications; imports are excluded from Reports. Native tag controls enforce workspace scope. RL-2 requires exact business-state repeat/undo equality, including contacts, conversations, messages, private notes, tags, source links and every other imported business table. Only platform counters/sequences, audit history and import journals are excluded. Synthetic 1,000-conversation datasets for Zendesk and Help Scout qualify this local flow.
+178: 
+179: **Acceptance.**
+180: 1. Through Move in, exercise all five kinds, source custody, per-row omissions/rejections/conflicts, current-role denials, inert apply/resume/repeat/undo and exact business-state equality for synthetic 1,000-conversation Zendesk and Help Scout datasets; counters/sequences, audit and journals are the only named exclusions.
+181: 
+182: #### OUTCOMES-001 — Resolution feedback and provenance
+183: 
+184: **Requirement.** Current original visitor sessions may rate a closed resolution with thumbs up/down and an optional comment up to 1,000 characters. Changes retain history; reopened cycles cannot receive the previous resolution's rating. Operators retain access to each past resolution's latest feedback after reopening; visitor eligibility and report denominators remain tied to the current cycle. Erasure removes rating comments. Confirmed operator-sent drafts establish assisted outcomes, otherwise confirmed human replies establish human outcomes. AI requires a complete visible answer history without a person handoff; missing evidence remains unknown. Status, assignment and cancellation transitions recheck current authority atomically.
+185: 
+186: **Acceptance.**
+187: 1. Close, rate, rerate, reopen and close again via widget/operator routes; prevent previous-session/cycle feedback, retain old-cycle operator visibility, redact erased comments and verify human/assisted/AI/unknown attribution from actual visible answers.
+188: 
+189: #### REPORTS-001 — Workspace calendar reports
+190: 
+191: **Requirement.** Native conversations created in the workspace IANA calendar range with at least one persisted message form the cohort; Move in and legacy imports are excluded. First visitor-to-visible-answer response and creation-to-first known-resolution durations use median and nearest-rank p90. Each conversation contributes its latest closed cycle once to outcome and satisfaction rates. Reopened conversations leave those denominators. Aggregate queries return bounded data; CSV streams every matching conversation with formula-safe cells. Empty widget conversations stay durable but are excluded from Reports and its analytics CSVs. A separate step-up guarded JSON export includes all workspace conversations, messages, private notes and attachment names across dates and imports; attachment bytes stay in the portable backup.
+192: 
+193: **Acceptance.**
+194: 1. Compare Reports and formula-safe CSV to hand-calculated response/resolution median and p90, latest-cycle outcome and satisfaction cohorts across DST and tenants, including more than 10,000 rows and excluded imports/reopened cycles.
+195: 
+
+182: #### OUTCOMES-001 — Resolution feedback and provenance
+183: 
+184: **Requirement.** Current original visitor sessions may rate a closed resolution with thumbs up/down and an optional comment up to 1,000 characters. Changes retain history; reopened cycles cannot receive the previous resolution's rating. Operators retain access to each past resolution's latest feedback after reopening; visitor eligibility and report denominators remain tied to the current cycle. Erasure removes rating comments. Confirmed operator-sent drafts establish assisted outcomes, otherwise confirmed human replies establish human outcomes. AI requires a complete visible answer history without a person handoff; missing evidence remains unknown. Status, assignment and cancellation transitions recheck current authority atomically.
+185: 
+186: **Acceptance.**
+187: 1. Close, rate, rerate, reopen and close again via widget/operator routes; prevent previous-session/cycle feedback, retain old-cycle operator visibility, redact erased comments and verify human/assisted/AI/unknown attribution from actual visible answers.
+188: 
+189: #### REPORTS-001 — Workspace calendar reports
+190: 
+191: **Requirement.** Native conversations created in the workspace IANA calendar range with at least one persisted message form the cohort; Move in and legacy imports are excluded. First visitor-to-visible-answer response and creation-to-first known-resolution durations use median and nearest-rank p90. Each conversation contributes its latest closed cycle once to outcome and satisfaction rates. Reopened conversations leave those denominators. Aggregate queries return bounded data; CSV streams every matching conversation with formula-safe cells. Empty widget conversations stay durable but are excluded from Reports and its analytics CSVs. A separate step-up guarded JSON export includes all workspace conversations, messages, private notes and attachment names across dates and imports; attachment bytes stay in the portable backup.
+192: 
+193: **Acceptance.**
+194: 1. Compare Reports and formula-safe CSV to hand-calculated response/resolution median and p90, latest-cycle outcome and satisfaction cohorts across DST and tenants, including more than 10,000 rows and excluded imports/reopened cycles.
+195: 
+196: #### CONNECTIONS-001 — Workspace integrations
+197: 
+198: **Requirement.** Owner/admin tokens have explicit scopes, optional expiry, one-time display, hashed storage and durable audit. Bearer-only API calls have no CORS, per-token limits and native guarded writes. Contact erasure fences API identity restoration and pending event payloads. Native events commit tenant-bound webhook and Slack intents; historical import apply and undo do not emit them. Slack projects bounded native visitor text through Base escaping. The owner-authorized ordinary HTTPS exception retains redirect refusal, bounded requests/responses and literal-destination checks instead of DNS pinning (RL-3). See [the full transport exception](docs/contract/support-protocols.md).
+199: 
+200: **Acceptance.**
+201: 1. Issue, use, expire and revoke each scoped show-once token; exercise native API operations, erasure fences, signed events and Slack escaping.
+202: 2. Refuse redirects/unsafe literal destinations and over-limit traffic; preserve timeout, streamed bounds, uncertain 500 without replay and bounded 429 behavior under the recorded HTTPS override.
+203: 
+204: #### ACTIVATION-001 — Observed owner setup
+205: 
+206: **Requirement.** An owner sees the durable, project-scoped eight-step list on the Setup page; the genuinely empty inbox shows one next action and a link to it, and loads none of it. A step is confirmed only by an observation, never by a saved configuration, an installer default or a preset, so a workspace with nothing observed yet is zero of its applicable steps. The system runs its own checks: while an owner is signed in the page asks the server to observe, bounded by freshness windows. These checks are non-generative metadata, domain and DNS reads and never send mail. They distinguish saved configuration from observed sender DNS, authenticated model metadata, an inbound receipt, effective runtime ceilings, allowed origin and an authenticated widget ping; whether an article is published is not one of them (that step stays among the eight ids but is hidden and never counted). Mail to the owner is confirmed by a used emailed sign-in link, or by the provider's reported outcome for the welcome or test email; local development mail is suppressed and never confirms delivery, and provider acceptance or queueing is pending. Reading Setup performs no provider work and writes nothing. Only an explicit owner action (Create workspace, or Send me a test) may send mail, to that owner's mailbox, with durable identity; ambiguous work is never replayed. Missing provider permissions and unsupported status APIs remain unavailable. Configuration changes invalidate observations; model and DNS validation expire after 15 minutes and every observation shows its time. The owner can skip an owner-only step (the widget, the AI service, the sending domain) for now, and undo it. A skip is stored on the server for the workspace, can be made by an owner or admin only, makes no provider request, and moves the step out of Needs you and out of the confirmed count and its total; a skipped step is never shown as confirmed. An observation always wins: a skipped step that is later observed is confirmed and counted, and a rejected provider key stays under Needs you whether or not it was skipped. Provider keys and their fingerprints never enter API responses or browser storage. Details are in [the support protocol guide](docs/contract/support-protocols.md).
+207: 
+208: **Acceptance.**
+209: 1. Read Setup without side effects, observe fresh/expired/rejected configuration and explicit provider outcomes, skip/undo owner steps and reload.
+210: 2. A skip or preset never counts as confirmation; local suppression never proves delivery; keys/fingerprints remain server-only and uncertain explicit test/welcome mail is never replayed.
+211: 
+212: #### AI-001 — Configured model execution
+213: 
+214: **Requirement.** Retain Ensemble model selection, context/tools, streamed events, normalization, raw per-round provider usage, attribution, bounded suggestions and reply lifecycle. Missing providers fail explicitly when AI is asked for, and a default assistant whose provider has no key is simply not assigned to new conversations; uncertain provider attempts remain uncertain and are not replayed automatically. Usage is diagnostic/provider accounting data, not an active payment, balance or debit system. Visitor-caused model work carries the classes of its eventual action, and the company’s policy sets its project and installation AI spending limits; a skipped reply is recorded as terminal and never replayed. Each workspace's AI reply mode is auto (the default), draft or off: in draft AI writes only drafts its team sends themselves, in off AI generates nothing, no AI-authored message reaches a customer in draft or off by any path (a local computer agent's reply becomes a draft its operator sends themselves, and a visitor whose assistant will not answer is handled as one without an assistant), in draft or off a conversation whose visitor has written since its assistant last answered is listed in the team's normal views as one without an assistant, and switching back to auto releases nothing queued, written or due during that time.
+215: 
+216: **Acceptance.**
+
+189: #### REPORTS-001 — Workspace calendar reports
+190: 
+191: **Requirement.** Native conversations created in the workspace IANA calendar range with at least one persisted message form the cohort; Move in and legacy imports are excluded. First visitor-to-visible-answer response and creation-to-first known-resolution durations use median and nearest-rank p90. Each conversation contributes its latest closed cycle once to outcome and satisfaction rates. Reopened conversations leave those denominators. Aggregate queries return bounded data; CSV streams every matching conversation with formula-safe cells. Empty widget conversations stay durable but are excluded from Reports and its analytics CSVs. A separate step-up guarded JSON export includes all workspace conversations, messages, private notes and attachment names across dates and imports; attachment bytes stay in the portable backup.
+192: 
+193: **Acceptance.**
+194: 1. Compare Reports and formula-safe CSV to hand-calculated response/resolution median and p90, latest-cycle outcome and satisfaction cohorts across DST and tenants, including more than 10,000 rows and excluded imports/reopened cycles.
+195: 
+196: #### CONNECTIONS-001 — Workspace integrations
+197: 
+198: **Requirement.** Owner/admin tokens have explicit scopes, optional expiry, one-time display, hashed storage and durable audit. Bearer-only API calls have no CORS, per-token limits and native guarded writes. Contact erasure fences API identity restoration and pending event payloads. Native events commit tenant-bound webhook and Slack intents; historical import apply and undo do not emit them. Slack projects bounded native visitor text through Base escaping. The owner-authorized ordinary HTTPS exception retains redirect refusal, bounded requests/responses and literal-destination checks instead of DNS pinning (RL-3). See [the full transport exception](docs/contract/support-protocols.md).
+199: 
+200: **Acceptance.**
+201: 1. Issue, use, expire and revoke each scoped show-once token; exercise native API operations, erasure fences, signed events and Slack escaping.
+202: 2. Refuse redirects/unsafe literal destinations and over-limit traffic; preserve timeout, streamed bounds, uncertain 500 without replay and bounded 429 behavior under the recorded HTTPS override.
+203: 
+204: #### ACTIVATION-001 — Observed owner setup
+205: 
+206: **Requirement.** An owner sees the durable, project-scoped eight-step list on the Setup page; the genuinely empty inbox shows one next action and a link to it, and loads none of it. A step is confirmed only by an observation, never by a saved configuration, an installer default or a preset, so a workspace with nothing observed yet is zero of its applicable steps. The system runs its own checks: while an owner is signed in the page asks the server to observe, bounded by freshness windows. These checks are non-generative metadata, domain and DNS reads and never send mail. They distinguish saved configuration from observed sender DNS, authenticated model metadata, an inbound receipt, effective runtime ceilings, allowed origin and an authenticated widget ping; whether an article is published is not one of them (that step stays among the eight ids but is hidden and never counted). Mail to the owner is confirmed by a used emailed sign-in link, or by the provider's reported outcome for the welcome or test email; local development mail is suppressed and never confirms delivery, and provider acceptance or queueing is pending. Reading Setup performs no provider work and writes nothing. Only an explicit owner action (Create workspace, or Send me a test) may send mail, to that owner's mailbox, with durable identity; ambiguous work is never replayed. Missing provider permissions and unsupported status APIs remain unavailable. Configuration changes invalidate observations; model and DNS validation expire after 15 minutes and every observation shows its time. The owner can skip an owner-only step (the widget, the AI service, the sending domain) for now, and undo it. A skip is stored on the server for the workspace, can be made by an owner or admin only, makes no provider request, and moves the step out of Needs you and out of the confirmed count and its total; a skipped step is never shown as confirmed. An observation always wins: a skipped step that is later observed is confirmed and counted, and a rejected provider key stays under Needs you whether or not it was skipped. Provider keys and their fingerprints never enter API responses or browser storage. Details are in [the support protocol guide](docs/contract/support-protocols.md).
+207: 
+208: **Acceptance.**
+209: 1. Read Setup without side effects, observe fresh/expired/rejected configuration and explicit provider outcomes, skip/undo owner steps and reload.
+210: 2. A skip or preset never counts as confirmation; local suppression never proves delivery; keys/fingerprints remain server-only and uncertain explicit test/welcome mail is never replayed.
+211: 
+212: #### AI-001 — Configured model execution
+213: 
+214: **Requirement.** Retain Ensemble model selection, context/tools, streamed events, normalization, raw per-round provider usage, attribution, bounded suggestions and reply lifecycle. Missing providers fail explicitly when AI is asked for, and a default assistant whose provider has no key is simply not assigned to new conversations; uncertain provider attempts remain uncertain and are not replayed automatically. Usage is diagnostic/provider accounting data, not an active payment, balance or debit system. Visitor-caused model work carries the classes of its eventual action, and the company’s policy sets its project and installation AI spending limits; a skipped reply is recorded as terminal and never replayed. Each workspace's AI reply mode is auto (the default), draft or off: in draft AI writes only drafts its team sends themselves, in off AI generates nothing, no AI-authored message reaches a customer in draft or off by any path (a local computer agent's reply becomes a draft its operator sends themselves, and a visitor whose assistant will not answer is handled as one without an assistant), in draft or off a conversation whose visitor has written since its assistant last answered is listed in the team's normal views as one without an assistant, and switching back to auto releases nothing queued, written or due during that time.
+215: 
+216: **Acceptance.**
+217: 1. Request configured suggestions/replies through native routes; inspect normalized streaming events, per-round usage, context/tool and budget bounds, explicit missing-provider errors and durable daily-cap skips; crash/ambiguous attempts must not automatically replay.
+218: 
+219: #### KNOWLEDGE-001 — Published knowledge
+220: 
+221: **Requirement.** Dataset ingestion/crawl, retained corpus, lexical/selected semantic retrieval, citations and article/category authoring maintain project scope and publication state. A failed refresh cannot replace the last usable published corpus. Public pages exclude drafts/deleted projects and preserve original canonical article/search routes.
+222: 
+223: **Acceptance.**
+
+212: #### AI-001 — Configured model execution
+213: 
+214: **Requirement.** Retain Ensemble model selection, context/tools, streamed events, normalization, raw per-round provider usage, attribution, bounded suggestions and reply lifecycle. Missing providers fail explicitly when AI is asked for, and a default assistant whose provider has no key is simply not assigned to new conversations; uncertain provider attempts remain uncertain and are not replayed automatically. Usage is diagnostic/provider accounting data, not an active payment, balance or debit system. Visitor-caused model work carries the classes of its eventual action, and the company’s policy sets its project and installation AI spending limits; a skipped reply is recorded as terminal and never replayed. Each workspace's AI reply mode is auto (the default), draft or off: in draft AI writes only drafts its team sends themselves, in off AI generates nothing, no AI-authored message reaches a customer in draft or off by any path (a local computer agent's reply becomes a draft its operator sends themselves, and a visitor whose assistant will not answer is handled as one without an assistant), in draft or off a conversation whose visitor has written since its assistant last answered is listed in the team's normal views as one without an assistant, and switching back to auto releases nothing queued, written or due during that time.
+215: 
+216: **Acceptance.**
+217: 1. Request configured suggestions/replies through native routes; inspect normalized streaming events, per-round usage, context/tool and budget bounds, explicit missing-provider errors and durable daily-cap skips; crash/ambiguous attempts must not automatically replay.
+218: 
+219: #### KNOWLEDGE-001 — Published knowledge
+220: 
+221: **Requirement.** Dataset ingestion/crawl, retained corpus, lexical/selected semantic retrieval, citations and article/category authoring maintain project scope and publication state. A failed refresh cannot replace the last usable published corpus. Public pages exclude drafts/deleted projects and preserve original canonical article/search routes.
+222: 
+223: **Acceptance.**
+224: 1. Publish and search articles/categories through authoring and public help-center doors; deny draft/deleted/cross-project access, verify citations and canonical links and retain the last usable published corpus after a failed refresh.
+225: 
+226: #### CONTEXT-001 — Attributed customer context
+227: 
+228: **Requirement.** Profiles, monitoring, insights and context packets preserve evidence attribution, source bounds, consent and project ownership. Provider output must satisfy the selected schemas before becoming usable customer context.
+229: 
+230: **Acceptance.**
+231: 1. Generate/read profile, monitoring, insight and context packets through native routes; reject ungrounded/schema-invalid or cross-project content, preserve attributed evidence and respect consent/source bounds.
+232: 
+233: #### DELEGATION-001 — Explicit local authority
+234: 
+235: **Requirement.** Pairing, devices/grants, revocation, tool context and work/result states preserve investigation, resolve and advance-authorized resolve-and-reply distinctions. Revocation withdraws authority and never asserts that a local process stopped: started work becomes terminal with an unconfirmed outcome, and only the device may report cancellation. Local processes remain in the optional connector, never an implicit Worker capability. Agent calls use the company’s policy for their computed classes; any approval or review in this journey is under the held company policy.
+236: 
+237: **Acceptance.**
+238: 1. Under the held company policy, pair the packaged connector, investigate, separately authorize a child fix, obtain a distinct read-only observation and use human Send with exact-request replay.
+239: 2. Under the held company policy, refuse stale/revoked/offline/unverified/uncertain work and distinguish resolve from advance-authorized resolve-and-reply; revocation cannot assert process cancellation.
+240: 
+241: #### TRAINING-001 — Durable evaluation
+242: 
+243: **Requirement.** Training and evaluation preserve run/case state, model/budget selection, raw provider usage and cancellation/recovery. Synthetic data admission is explicitly local/test-only. Historical pending attempts require reconciliation; a fixture pass is not live-provider quality acceptance.
+244: 
+245: **Acceptance.**
+246: 1. Create, run, cancel and recover persisted evaluations through training routes with model/budget selection and raw usage; reconcile historical pending/uncertain attempts and keep synthetic admission local/test-only.
+
+233: #### DELEGATION-001 — Explicit local authority
+234: 
+235: **Requirement.** Pairing, devices/grants, revocation, tool context and work/result states preserve investigation, resolve and advance-authorized resolve-and-reply distinctions. Revocation withdraws authority and never asserts that a local process stopped: started work becomes terminal with an unconfirmed outcome, and only the device may report cancellation. Local processes remain in the optional connector, never an implicit Worker capability. Agent calls use the company’s policy for their computed classes; any approval or review in this journey is under the held company policy.
+236: 
+237: **Acceptance.**
+238: 1. Under the held company policy, pair the packaged connector, investigate, separately authorize a child fix, obtain a distinct read-only observation and use human Send with exact-request replay.
+239: 2. Under the held company policy, refuse stale/revoked/offline/unverified/uncertain work and distinguish resolve from advance-authorized resolve-and-reply; revocation cannot assert process cancellation.
+240: 
+241: #### TRAINING-001 — Durable evaluation
+242: 
+243: **Requirement.** Training and evaluation preserve run/case state, model/budget selection, raw provider usage and cancellation/recovery. Synthetic data admission is explicitly local/test-only. Historical pending attempts require reconciliation; a fixture pass is not live-provider quality acceptance.
+244: 
+245: **Acceptance.**
+246: 1. Create, run, cancel and recover persisted evaluations through training routes with model/budget selection and raw usage; reconcile historical pending/uncertain attempts and keep synthetic admission local/test-only.
+247: 
+248: #### INTEGRATION-001 — Honest external effects
+249: 
+250: **Requirement.** Email/inbound mail, GitHub, branding and knowledge imports use configured native adapters, tenant-scoped credentials, durable identity and ambiguous-outcome handling. Website previews use a separate origin, scoped expiring grants and public-network restrictions. Machine-generated inbound mail is a loop-suppression input, not a customer request or notification trigger; its classification is recorded before admission and survives recovery and redelivery. The `email:` message local-id prefix is reserved for inbound claims and refused by the message API. Shopify, Stripe and CRM support actions are required by COMMERCE-001, BILLING-001 and CRM-001. HappyToHelp never holds funds or becomes a payment processor; historical imported balances remain custody records, not executable authority.
+251: 
+252: **Acceptance.**
+253: 1. Use configured email, inbound mail, GitHub and knowledge-import public doors; test idempotency, machine-generated-mail suppression, separate-origin preview grants and network denial.
+254: 2. An operator reply emails the visitor even with an online/unverified widget; a visitor address matching the reply sender is intentionally excluded and the message status explains that cause.
+255: 3. Test accepted, failed and uncertain outcomes without invented delivery; business-action evidence is also required by COMMERCE-001, BILLING-001 and CRM-001.
+256: 
+257: #### PUBLIC-001 — Homepage hero and two support moments
+258: 
+259: **Requirement.** The retained homepage hero (RL-10) places the headline “Knows what your customer needs before they do.” stands left-aligned beside one hand-drawn picture of both moments on a pale aqua blob, joined by an aqua pen arrow: 1, a checkout page in its window with the widget's offer card (signed with the speech-bubble mark) floating over its corner; 2, a conversation already solved (a customer, Maya, cannot turn on the Spanish version of her store; the agent's fix, beside a code glyph, says it is fixed; the reply to Maya carries Send inside it, the only step left), each numbered on a filled aqua disc; with the subhead “Some customers who get stuck never write in. They just leave.”, the line “100% free, open source alternative to Zendesk, Intercom, Help Scout and Freshdesk”, an aqua pen-stroke flourish under the calls to action that draws itself in once, and under the picture the captions “Before they ask” (“When someone seems stuck, the widget offers a hand.”) and “When they ask” (“Your Codex or Claude fixes the problem and writes the reply. You press Send.”) on filled aqua number discs;
+260: 
+261: **Acceptance.**
+262: 1. The homepage leads with “Knows what your customer needs before they do.”, the retained subhead and free alternative line.
+263: 2. The wide layout places the left-aligned headline beside the checkout and solved-conversation drawing on one aqua blob; the phone layout stacks them.
+264: 3. The checkout offer and solved Spanish-store conversation retain the numbered aqua discs, connecting arrow, captions, speech-bubble mark and Send inside the prepared reply.
+265: 4. Calls to action retain the once-drawn aqua flourish; under reduced motion the final drawing is complete.
+266: 
+267: #### PUBLIC-002 — Free product promise
+
+196: #### CONNECTIONS-001 — Workspace integrations
+197: 
+198: **Requirement.** Owner/admin tokens have explicit scopes, optional expiry, one-time display, hashed storage and durable audit. Bearer-only API calls have no CORS, per-token limits and native guarded writes. Contact erasure fences API identity restoration and pending event payloads. Native events commit tenant-bound webhook and Slack intents; historical import apply and undo do not emit them. Slack projects bounded native visitor text through Base escaping. The owner-authorized ordinary HTTPS exception retains redirect refusal, bounded requests/responses and literal-destination checks instead of DNS pinning (RL-3). See [the full transport exception](docs/contract/support-protocols.md).
+199: 
+200: **Acceptance.**
+201: 1. Issue, use, expire and revoke each scoped show-once token; exercise native API operations, erasure fences, signed events and Slack escaping.
+202: 2. Refuse redirects/unsafe literal destinations and over-limit traffic; preserve timeout, streamed bounds, uncertain 500 without replay and bounded 429 behavior under the recorded HTTPS override.
+203: 
+204: #### ACTIVATION-001 — Observed owner setup
+205: 
+206: **Requirement.** An owner sees the durable, project-scoped eight-step list on the Setup page; the genuinely empty inbox shows one next action and a link to it, and loads none of it. A step is confirmed only by an observation, never by a saved configuration, an installer default or a preset, so a workspace with nothing observed yet is zero of its applicable steps. The system runs its own checks: while an owner is signed in the page asks the server to observe, bounded by freshness windows. These checks are non-generative metadata, domain and DNS reads and never send mail. They distinguish saved configuration from observed sender DNS, authenticated model metadata, an inbound receipt, effective runtime ceilings, allowed origin and an authenticated widget ping; whether an article is published is not one of them (that step stays among the eight ids but is hidden and never counted). Mail to the owner is confirmed by a used emailed sign-in link, or by the provider's reported outcome for the welcome or test email; local development mail is suppressed and never confirms delivery, and provider acceptance or queueing is pending. Reading Setup performs no provider work and writes nothing. Only an explicit owner action (Create workspace, or Send me a test) may send mail, to that owner's mailbox, with durable identity; ambiguous work is never replayed. Missing provider permissions and unsupported status APIs remain unavailable. Configuration changes invalidate observations; model and DNS validation expire after 15 minutes and every observation shows its time. The owner can skip an owner-only step (the widget, the AI service, the sending domain) for now, and undo it. A skip is stored on the server for the workspace, can be made by an owner or admin only, makes no provider request, and moves the step out of Needs you and out of the confirmed count and its total; a skipped step is never shown as confirmed. An observation always wins: a skipped step that is later observed is confirmed and counted, and a rejected provider key stays under Needs you whether or not it was skipped. Provider keys and their fingerprints never enter API responses or browser storage. Details are in [the support protocol guide](docs/contract/support-protocols.md).
+207: 
+208: **Acceptance.**
+209: 1. Read Setup without side effects, observe fresh/expired/rejected configuration and explicit provider outcomes, skip/undo owner steps and reload.
+210: 2. A skip or preset never counts as confirmation; local suppression never proves delivery; keys/fingerprints remain server-only and uncertain explicit test/welcome mail is never replayed.
+211: 
+212: #### AI-001 — Configured model execution
+213: 
+214: **Requirement.** Retain Ensemble model selection, context/tools, streamed events, normalization, raw per-round provider usage, attribution, bounded suggestions and reply lifecycle. Missing providers fail explicitly when AI is asked for, and a default assistant whose provider has no key is simply not assigned to new conversations; uncertain provider attempts remain uncertain and are not replayed automatically. Usage is diagnostic/provider accounting data, not an active payment, balance or debit system. Visitor-caused model work carries the classes of its eventual action, and the company’s policy sets its project and installation AI spending limits; a skipped reply is recorded as terminal and never replayed. Each workspace's AI reply mode is auto (the default), draft or off: in draft AI writes only drafts its team sends themselves, in off AI generates nothing, no AI-authored message reaches a customer in draft or off by any path (a local computer agent's reply becomes a draft its operator sends themselves, and a visitor whose assistant will not answer is handled as one without an assistant), in draft or off a conversation whose visitor has written since its assistant last answered is listed in the team's normal views as one without an assistant, and switching back to auto releases nothing queued, written or due during that time.
+215: 
+216: **Acceptance.**
+217: 1. Request configured suggestions/replies through native routes; inspect normalized streaming events, per-round usage, context/tool and budget bounds, explicit missing-provider errors and durable daily-cap skips; crash/ambiguous attempts must not automatically replay.
+218: 
+219: #### KNOWLEDGE-001 — Published knowledge
+220: 
+221: **Requirement.** Dataset ingestion/crawl, retained corpus, lexical/selected semantic retrieval, citations and article/category authoring maintain project scope and publication state. A failed refresh cannot replace the last usable published corpus. Public pages exclude drafts/deleted projects and preserve original canonical article/search routes.
+222: 
+223: **Acceptance.**
+224: 1. Publish and search articles/categories through authoring and public help-center doors; deny draft/deleted/cross-project access, verify citations and canonical links and retain the last usable published corpus after a failed refresh.
+225: 
+226: #### CONTEXT-001 — Attributed customer context
+227: 
+228: **Requirement.** Profiles, monitoring, insights and context packets preserve evidence attribution, source bounds, consent and project ownership. Provider output must satisfy the selected schemas before becoming usable customer context.
+229: 
+230: **Acceptance.**
+
+784: #### IDENTITY-003 — Two-factor authentication for native accounts
+785: 
+786: *Tier:* Core · *Cites:* BASE-SIGNIN-002, BASE-ACCESS-002, BASE-AGENT-006, BASE-AGENT-008
+787: 
+788: **Requirement.** Native accounts have ten single-use recovery codes shown once, alongside the shared native-factor duty. An owner can require two-factor sign-in for every teammate or by role; affected users must enroll at their next sign-in before reaching any data, and existing sessions without the factor end.  Owner-assisted reset of a teammate's factor requires the owner's own recent factor, notifies the teammate and is audited; an owner who loses every factor recovers through the documented installation-level owner recovery through `rer`, never by email alone. Refund and billing approval (COMMERCE-001, BILLING-001), integration and credential installation, exports, erasure, role changes and the two-factor policy itself require a recent second-factor step-up. API access uses scoped tokens (CONNECTIONS-001), never a password alone. SSO users follow their identity provider's MFA (ACCESS-001). This adds to the retained native password identity (IDENTITY-002) and never replaces it.
+789: 
+790: **Acceptance.**
+791: 1. As owner require two-factor sign-in; sign in as a support operator and be forced to enroll TOTP and receive recovery codes; sign out and verify refusal without the factor, with a wrong code, with a reused code and with a used recovery code; sign in with a passkey.
+792: 2. Reset the support operator’s factor as owner with a step-up and observe the notification and audit.
+793: 3. Approve a test refund and start an export with and without a recent step-up; recover a locked-out owner through `rer`; verify sessions without the factor ended when the policy was turned on.
+794: 
+795: #### MOBILE-001 — Support from a phone
+796: 
+797: *Tier:* Core · *Register:* R-14, R-19, R-20
+798: 
+799: **Requirement.** Provide responsive operator/customer web flows and native iOS/Android operator apps for shared queues, push notifications, assignment, notes, attachments, knowledge, approval and reply. Show offline state and protect cached customer data; drafts may persist safely, but reconnect must revalidate role/frontier and scheduled effects. Deep links return to the correct permitted workspace and push payloads omit sensitive content by default.
+800: 
+801: **Acceptance.**
+802: 1. At 1440 and 390 use realistic end-to-end web tickets; on iOS and Android receive a push, deep-link, assign/note/reply with attachment, go offline, lose authority and reconnect.
+803: 2. Verify no stale duplicate send, leaked push content or retained cache after sign-out/revocation.
+804: 
+805: #### OUTCOMES-002 — CSAT across support channels
+806: 
+807: *Tier:* Core · *Rules:* D-2 · *Register:* R-3
+808: 
+809: **Requirement.** Offer configurable post-resolution satisfaction surveys via widget, portal, email and permitted messaging channels with rating scale, optional comment, locale, send timing and opt-out. Associate one latest response with the exact resolution cycle and channel; preserve previous-cycle history and reconcile signed response links without requiring a widget session. Leads inspect low-score follow-up and customer recovery without auto-closing complaints.
+810: 
+811: **Acceptance.**
+812: 1. Resolve tickets across the channels, receive/answer a survey as the eligible customer, rerate, reopen and revoke/expire a response link; compare cycle-level CSAT and opt-out behavior, ensure no duplicate invitation and verify erased comments disappear everywhere.
+813: 
+814: #### REPORTS-002 — Workload, service and agent outcomes
+815: 
+816: *Tier:* Core · *Rules:* D-2 · *Register:* R-16
+817: 
+818: **Requirement.** Leads explore team/agent workload, backlog age, incoming volume, response/resolution time, SLA compliance, reopened requests, CSAT and AI containment/handoff/resolution by channel, brand, account, tag and procedure version. Publish inspectable numerators, denominators, timezone and exclusion rules; distinguish bot closure from verified resolution and include failures/unknowns. Operators record time spent per ticket (a timer while the ticket is open, with manual adjustment) and leads report handle time by agent, form and intent. Export complete formula-safe records and schedule permission-scoped reports; no sampling or silent truncation.
+
+884: #### PORTABILITY-001 — Complete customer-owned portable support data
+885: 
+886: *Tier:* Core · *Cites:* BASE-DATA-001, BASE-BACKUP-001, BASE-SECRET-001
+887: 
+888: **Requirement.** Export versioned machine-readable conversations, attachments, contacts/companies, knowledge/versions, settings, rules/procedures/evaluations, outcomes and audit with the documented support-data inventory. Validate a bounded archive before atomic inactive restore to a clean installation; do not transfer sessions, provider secrets or connector authority and do not replay imported actions. Include D1, R2 and Durable Object business state or a lossless reconstruction; retain erasure fences and receiving-owner identity. This target replaces the current documented incomplete-storage boundary without pretending the held Base-data equivalence is done.
+889: 
+890: **Acceptance.**
+891: 1. Through rer export/import and owner data controls, populate each business store, export, destroy the disposable source and restore to a clean installation.
+892: 2. Compare every portable record and attachment byte, preserve erasure fences, refuse corrupt/oversized/nonempty targets and verify all restored work is inert until separately authorized.
+893: 3. Include Durable Object history and interrupted actions.
+894: 
+895: #### ASSURANCE-001 — Qualified regulated support deployments
+896: 
+897: *Tier:* Core · *Cites:* BASE-DATA-006, BASE-ROLE-001, BASE-AUDIT-001 · *Register:* R-18
+898: 
+899: **Requirement.** US-first support uses USD, US provider contracts, IANA calendars and channel/recording consent controls. A regulated buyer can qualify an isolated deployment with required DPA/BAA, approved subprocessors/model data handling, access controls, audit, retention, incident response and validated deletion/export; health-data support is gated on those agreements and technical acceptance. The work remains a product obligation, with a named partner/provider path, rather than a claim that self-hosting alone supplies compliance.
+900: 
+901: **Acceptance.**
+902: 1. Before enabling a regulated workspace, an authorized administrator records required executed agreements/provider settings and runs tenant isolation, permission, audit, retention, recovery and erasure journeys with representative sensitive data.
+903: 2. Missing agreements/controls block that configuration visibly; verify access only after qualification and withdrawal upon expiry/revocation.
+904: 
+905: ### Agent surface
+906: 
+907: **Specialist: support agent.** It triages and resolves support requests, finds permitted knowledge and business context, carries out permitted repair and keeps customer recovery and follow-up attached to the original request.
+908: 
+909: Inherits BASE-AGENT-001 to BASE-AGENT-013. The company’s policy decides every call.
+910: 
+911: **How HappyToHelp computes each class.**
+912: - **standard:** reversible internal drafts, ticket organization, triage, private knowledge edits and obligations; facts include affected item count.
+913: - **external:** a reply, notification, share, published article or destination newly exposes support content outside the business; facts include recipients and known customer/vendor, new counterparty or public exposure. A proactive insight saved or generated for a visitor whose widget will show it is external, with recipient count and known, new or public counterparty facts.
+914: - **money:** a Shopify refund, Stripe refund/subscription charge change or changed support-provider spending; facts include amount, currency and merchant/customer.
+915: - **commitment:** a customer promise, accepted offer or editorial sign-off others rely on; facts include value and counterparty.
+916: - **accounts:** connecting a service creates an outside provider account, number or paid resource; facts include provider and resource.
+917: - **gated:** the provider reserves consent, hosted checkout, verification or personal terms to a person, including a provider response requiring that step; facts include provider and step.
+918: - **access:** staff, selected knowledge, customer entitlements, devices or integration/agent grants change authority; facts include affected people and whether it widens or narrows.
+

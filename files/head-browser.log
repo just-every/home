@@ -1,0 +1,122 @@
+START head happytohelp 1440 2026-11-13T21:47:59.920Z
+START head oncall 1440 2026-11-13T21:48:02.494Z
+START head spool 1440 2026-11-13T21:48:04.997Z
+START head happytohelp 390 2026-11-13T21:48:06.772Z
+START head oncall 390 2026-11-13T21:48:07.880Z
+START head spool 390 2026-11-13T21:48:08.977Z
+[
+  {
+    "mode": "head",
+    "slug": "happytohelp",
+    "width": 1440,
+    "status": 200,
+    "expectedVersion": "v0.4.25",
+    "assertions": "HTTP 200, rendered version, no horizontal overflow, no page error",
+    "h1": "HappyToHelp",
+    "version": "v0.4.25",
+    "viewport": 1440,
+    "scrollWidth": 1440,
+    "versionRect": {
+      "x": 617.328125,
+      "y": 3963.640625,
+      "width": 205.328125,
+      "height": 23.09375
+    },
+    "errors": []
+  },
+  {
+    "mode": "head",
+    "slug": "oncall",
+    "width": 1440,
+    "status": 200,
+    "expectedVersion": "v0.5.13",
+    "assertions": "HTTP 200, rendered version, no horizontal overflow, no page error",
+    "h1": "Oncall",
+    "version": "v0.5.13",
+    "viewport": 1440,
+    "scrollWidth": 1440,
+    "versionRect": {
+      "x": 617.328125,
+      "y": 3686.890625,
+      "width": 205.328125,
+      "height": 23.09375
+    },
+    "errors": []
+  },
+  {
+    "mode": "head",
+    "slug": "spool",
+    "width": 1440,
+    "status": 200,
+    "expectedVersion": "v0.7.10",
+    "assertions": "HTTP 200, rendered version, no horizontal overflow, no page error",
+    "h1": "Spool",
+    "version": "v0.7.10",
+    "viewport": 1440,
+    "scrollWidth": 1440,
+    "versionRect": {
+      "x": 617.328125,
+      "y": 3394.390625,
+      "width": 205.328125,
+      "height": 23.09375
+    },
+    "errors": []
+  },
+  {
+    "mode": "head",
+    "slug": "happytohelp",
+    "width": 390,
+    "status": 200,
+    "expectedVersion": "v0.4.25",
+    "assertions": "visual proof and measured facts",
+    "h1": "HappyToHelp",
+    "version": "v0.4.25",
+    "viewport": 390,
+    "scrollWidth": 390,
+    "versionRect": {
+      "x": 20,
+      "y": 4371.390625,
+      "width": 350,
+      "height": 23.09375
+    },
+    "errors": []
+  },
+  {
+    "mode": "head",
+    "slug": "oncall",
+    "width": 390,
+    "status": 200,
+    "expectedVersion": "v0.5.13",
+    "assertions": "visual proof and measured facts",
+    "h1": "Oncall",
+    "version": "v0.5.13",
+    "viewport": 390,
+    "scrollWidth": 390,
+    "versionRect": {
+      "x": 20,
+      "y": 3881.828125,
+      "width": 350,
+      "height": 23.09375
+    },
+    "errors": []
+  },
+  {
+    "mode": "head",
+    "slug": "spool",
+    "width": 390,
+    "status": 200,
+    "expectedVersion": "v0.7.10",
+    "assertions": "visual proof and measured facts",
+    "h1": "Spool",
+    "version": "v0.7.10",
+    "viewport": 390,
+    "scrollWidth": 390,
+    "versionRect": {
+      "x": 20,
+      "y": 3487.46875,
+      "width": 350,
+      "height": 23.09375
+    },
+    "errors": []
+  }
+]

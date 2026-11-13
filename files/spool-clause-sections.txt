@@ -1,0 +1,288 @@
+100: #### ERR-001 — Bounded admission
+101: 
+102: **Requirement.** Native version-1 JavaScript, Python and Go exception envelopes require active exact-project ingest credentials, registered release/build identity and bounded fields. Invalid, oversized, volume-limited and conflicting retries have explicit outcomes. Each project admits at most 120 outcomes a minute (`minute_budget`) and retains at most 10,000 events (`retained_event_budget`); over-limit intake returns 429 with `Retry-After` and a counted outcome. GOV-003 carries the target that replaces both limits with its named volume reasons and published sustained rate. Artifact URLs in envelopes are never fetched. Sentry error intake follows SDK-009's default acceptance with no release or an automatically created release/dist; only SDK-028's opt-in registered-sequence-only policy requires registration. Native version-1 intake keeps the registered release/build prerequisite. The broader SDK target is SDK-001, and runtime SDK compatibility is SDK-001 and SDK-012 to SDK-019.
+103: 
+104: **Acceptance.** Through public ingest:
+105: 1. A valid native envelope is accepted, with its outcome.
+106: 2. Invalid, oversize, foreign-project and conflicting-retry envelopes each get their explicit refusal outcome, and the stored rows are unchanged.
+107: 3. Exceeding the per-minute limit returns 429 with `Retry-After` and a counted reason, with no partial rows.
+108: 4. Exceeding the retained-event limit returns 429 with `Retry-After` and a counted reason, with no partial rows.
+109: 
+110: #### ERR-002 — Atomic acceptance
+111: 
+112: **Requirement.** Accepted means a sanitized occurrence, its group aggregate and its local new/regression alert commit atomically. Retry identity is project plus event ID and SHA-256 of canonical original accepted JSON before scrubbing: identical retry never increments, changed raw content conflicts even if its sanitized result matches. Raw bytes are not retained. Group algorithm version and basis remain inspectable.
+113: 
+114: **Acceptance.** Through public ingest:
+115: 1. An event ingested twice yields one occurrence and one aggregate increment.
+116: 2. It raises one local alert.
+117: 3. The same event ID with a changed raw secret is an explicit conflict, with no partial rows.
+118: 
+119: #### ERR-003 — Scrub before storage
+120: 
+121: **Requirement.** Apply the native allowlist, bounded text, query/fragment removal and sensitive-text scrubbing before persistence. Native envelopes contain no headers, cookies, request bodies or personal user identity; the `user` interface that unmodified Sentry SDKs send is governed by SDK-008's project identity policy instead. An optional random installation identifier supports bounded exposure measurement; it is never a name or address. Telemetry, source and notes are untrusted data and cannot authorize execution. The event fields SDK-010 keeps from unmodified Sentry SDKs (frame local variables, SDK-sent source context lines, exception values, tags, contexts, request, extra and thread stacks) pass through these scrubbers and SDK-003's server-side rules before storage, and default secret names are masked inside frame variables. Default protection persists when SDK-003 and CTX-002 introduce opt-in context; those captures require their own field policies and previews. Redaction does not promise removal of arbitrary semantic personal data.
+122: 
+123: **Acceptance.** Privacy canaries ingested through public ingest:
+124: 1. are absent from stored events;
+125: 2. are absent from issue views;
+126: 3. are absent from evidence packets;
+127: 4. are absent from archives;
+128: 5. are absent from alert delivery content;
+129: 6. while the ordinary diagnostic content beside them survives.
+130: 
+131: #### ERR-004 — Separated authority
+132: 
+133: **Requirement.** Every private API/document checks the current owner session or its exact ingest, deploy or read-only project grant itself. Cookie writes enforce same origin. Revocation and identity fencing take effect on the next request; confidential maps are never public. Ingest cannot read, deploy can only register releases/upload artifacts and record deployment starts/callbacks, and read-only agent grants cannot mutate. TEAM-001 extends this model to collaborative membership without broadening existing credentials.
+134: 
+
+110: #### ERR-002 — Atomic acceptance
+111: 
+112: **Requirement.** Accepted means a sanitized occurrence, its group aggregate and its local new/regression alert commit atomically. Retry identity is project plus event ID and SHA-256 of canonical original accepted JSON before scrubbing: identical retry never increments, changed raw content conflicts even if its sanitized result matches. Raw bytes are not retained. Group algorithm version and basis remain inspectable.
+113: 
+114: **Acceptance.** Through public ingest:
+115: 1. An event ingested twice yields one occurrence and one aggregate increment.
+116: 2. It raises one local alert.
+117: 3. The same event ID with a changed raw secret is an explicit conflict, with no partial rows.
+118: 
+119: #### ERR-003 — Scrub before storage
+120: 
+121: **Requirement.** Apply the native allowlist, bounded text, query/fragment removal and sensitive-text scrubbing before persistence. Native envelopes contain no headers, cookies, request bodies or personal user identity; the `user` interface that unmodified Sentry SDKs send is governed by SDK-008's project identity policy instead. An optional random installation identifier supports bounded exposure measurement; it is never a name or address. Telemetry, source and notes are untrusted data and cannot authorize execution. The event fields SDK-010 keeps from unmodified Sentry SDKs (frame local variables, SDK-sent source context lines, exception values, tags, contexts, request, extra and thread stacks) pass through these scrubbers and SDK-003's server-side rules before storage, and default secret names are masked inside frame variables. Default protection persists when SDK-003 and CTX-002 introduce opt-in context; those captures require their own field policies and previews. Redaction does not promise removal of arbitrary semantic personal data.
+122: 
+123: **Acceptance.** Privacy canaries ingested through public ingest:
+124: 1. are absent from stored events;
+125: 2. are absent from issue views;
+126: 3. are absent from evidence packets;
+127: 4. are absent from archives;
+128: 5. are absent from alert delivery content;
+129: 6. while the ordinary diagnostic content beside them survives.
+130: 
+131: #### ERR-004 — Separated authority
+132: 
+133: **Requirement.** Every private API/document checks the current owner session or its exact ingest, deploy or read-only project grant itself. Cookie writes enforce same origin. Revocation and identity fencing take effect on the next request; confidential maps are never public. Ingest cannot read, deploy can only register releases/upload artifacts and record deployment starts/callbacks, and read-only agent grants cannot mutate. TEAM-001 extends this model to collaborative membership without broadening existing credentials.
+134: 
+135: **Acceptance.** Each private transport:
+136: 1. refuses an anonymous call;
+137: 2. refuses a wrong-scope grant;
+138: 3. refuses a foreign-project grant;
+139: 4. refuses a revoked grant on the next request;
+140: 5. refuses an identity-fenced grant;
+141: 6. leaves state unchanged after every denied write;
+142: 7. and a direct map URL reveals no private bytes.
+143: 
+144: #### ERR-005 — Source map identity
+
+119: #### ERR-003 — Scrub before storage
+120: 
+121: **Requirement.** Apply the native allowlist, bounded text, query/fragment removal and sensitive-text scrubbing before persistence. Native envelopes contain no headers, cookies, request bodies or personal user identity; the `user` interface that unmodified Sentry SDKs send is governed by SDK-008's project identity policy instead. An optional random installation identifier supports bounded exposure measurement; it is never a name or address. Telemetry, source and notes are untrusted data and cannot authorize execution. The event fields SDK-010 keeps from unmodified Sentry SDKs (frame local variables, SDK-sent source context lines, exception values, tags, contexts, request, extra and thread stacks) pass through these scrubbers and SDK-003's server-side rules before storage, and default secret names are masked inside frame variables. Default protection persists when SDK-003 and CTX-002 introduce opt-in context; those captures require their own field policies and previews. Redaction does not promise removal of arbitrary semantic personal data.
+122: 
+123: **Acceptance.** Privacy canaries ingested through public ingest:
+124: 1. are absent from stored events;
+125: 2. are absent from issue views;
+126: 3. are absent from evidence packets;
+127: 4. are absent from archives;
+128: 5. are absent from alert delivery content;
+129: 6. while the ordinary diagnostic content beside them survives.
+130: 
+131: #### ERR-004 — Separated authority
+132: 
+133: **Requirement.** Every private API/document checks the current owner session or its exact ingest, deploy or read-only project grant itself. Cookie writes enforce same origin. Revocation and identity fencing take effect on the next request; confidential maps are never public. Ingest cannot read, deploy can only register releases/upload artifacts and record deployment starts/callbacks, and read-only agent grants cannot mutate. TEAM-001 extends this model to collaborative membership without broadening existing credentials.
+134: 
+135: **Acceptance.** Each private transport:
+136: 1. refuses an anonymous call;
+137: 2. refuses a wrong-scope grant;
+138: 3. refuses a foreign-project grant;
+139: 4. refuses a revoked grant on the next request;
+140: 5. refuses an identity-fenced grant;
+141: 6. leaves state unchanged after every denied write;
+142: 7. and a direct map URL reveals no private bytes.
+143: 
+144: #### ERR-005 — Source map identity
+145: 
+146: **Requirement.** Private flat Source Map V3 lookup matches project, release, build, debug ID and SHA-256 before presenting original coordinates. Missing, invalid or mismatched maps retain generated frames and a reason. Late uploads never rewrite immutable admission snapshots; current lookup is labeled separately. Lines are one-based, columns zero-based. SRC-004 carries indexed maps, `sourceRoot`, published capacity and opt-in source fetching; outside that opt-in, Spool never fetches a remote URL. SDK-010 rich stacks retain up to 1,000 frames per exception; SRC-004 and this clause inherit expanded mapped lookup without discarding retained SDK stack evidence. Broader artifact processing is SRC-001 and SDK-002.
+147: 
+148: **Acceptance.** A minified exception from a second origin:
+149: 1. captured before its matching map is uploaded keeps generated frames with a reason;
+150: 2. captured after the upload shows its original coordinates;
+151: 3. keeps its earlier admission diagnostics unchanged after the late upload, with current lookup labelled separately;
+152: 4. keeps generated frames with a reason when the uploaded map does not match;
+153: 5. and its evidence packet excludes the confidential source.
+
+131: #### ERR-004 — Separated authority
+132: 
+133: **Requirement.** Every private API/document checks the current owner session or its exact ingest, deploy or read-only project grant itself. Cookie writes enforce same origin. Revocation and identity fencing take effect on the next request; confidential maps are never public. Ingest cannot read, deploy can only register releases/upload artifacts and record deployment starts/callbacks, and read-only agent grants cannot mutate. TEAM-001 extends this model to collaborative membership without broadening existing credentials.
+134: 
+135: **Acceptance.** Each private transport:
+136: 1. refuses an anonymous call;
+137: 2. refuses a wrong-scope grant;
+138: 3. refuses a foreign-project grant;
+139: 4. refuses a revoked grant on the next request;
+140: 5. refuses an identity-fenced grant;
+141: 6. leaves state unchanged after every denied write;
+142: 7. and a direct map URL reveals no private bytes.
+143: 
+144: #### ERR-005 — Source map identity
+145: 
+146: **Requirement.** Private flat Source Map V3 lookup matches project, release, build, debug ID and SHA-256 before presenting original coordinates. Missing, invalid or mismatched maps retain generated frames and a reason. Late uploads never rewrite immutable admission snapshots; current lookup is labeled separately. Lines are one-based, columns zero-based. SRC-004 carries indexed maps, `sourceRoot`, published capacity and opt-in source fetching; outside that opt-in, Spool never fetches a remote URL. SDK-010 rich stacks retain up to 1,000 frames per exception; SRC-004 and this clause inherit expanded mapped lookup without discarding retained SDK stack evidence. Broader artifact processing is SRC-001 and SDK-002.
+147: 
+148: **Acceptance.** A minified exception from a second origin:
+149: 1. captured before its matching map is uploaded keeps generated frames with a reason;
+150: 2. captured after the upload shows its original coordinates;
+151: 3. keeps its earlier admission diagnostics unchanged after the late upload, with current lookup labelled separately;
+152: 4. keeps generated frames with a reason when the uploaded map does not match;
+153: 5. and its evidence packet excludes the confidential source.
+154: 
+155: #### ERR-006 — Audited triage and regression
+156: 
+157: **Requirement.** Revision-checked open, acknowledged, resolved and suppressed changes are audited. An issue resolved in its current release reopens as a regression on a recurrence in a later release; delayed older-release events cannot invent one. For native version-1 events the order is the registered sequence, never guessed semver; Sentry events follow the project's stated rule in SDK-028, including releases later enriched by registration. SDK-009 carries resolve in the next or a named release and plain Resolve, and plain Resolve regresses on the next accepted event in any release; TEAM-004 inherits resolution from a commit's release, and TEAM-003 carries same-release recurrence policies, bulk actions and collaborative triage. Recognized JavaScript bundle hash suffixes do not split grouping; native anchors and reported frames stay immutable. Corrections retain exact occurrence provenance and reversible fenced apply/undo.
+158: 
+159: **Acceptance.**
+160: 1. A captured issue resolved in its current release reopens as a regression when its fingerprint arrives in a newer release.
+161: 2. A later event from an older release does not reopen it.
+162: 3. Split and merge previews through the owner HTTP door and the issue view move nothing.
+163: 4. Split and merge apply and undo through the owner HTTP door and the issue view.
+164: 5. A stale revision is refused.
+165: 6. Original membership stays inspectable after apply and undo.
+
+144: #### ERR-005 — Source map identity
+145: 
+146: **Requirement.** Private flat Source Map V3 lookup matches project, release, build, debug ID and SHA-256 before presenting original coordinates. Missing, invalid or mismatched maps retain generated frames and a reason. Late uploads never rewrite immutable admission snapshots; current lookup is labeled separately. Lines are one-based, columns zero-based. SRC-004 carries indexed maps, `sourceRoot`, published capacity and opt-in source fetching; outside that opt-in, Spool never fetches a remote URL. SDK-010 rich stacks retain up to 1,000 frames per exception; SRC-004 and this clause inherit expanded mapped lookup without discarding retained SDK stack evidence. Broader artifact processing is SRC-001 and SDK-002.
+147: 
+148: **Acceptance.** A minified exception from a second origin:
+149: 1. captured before its matching map is uploaded keeps generated frames with a reason;
+150: 2. captured after the upload shows its original coordinates;
+151: 3. keeps its earlier admission diagnostics unchanged after the late upload, with current lookup labelled separately;
+152: 4. keeps generated frames with a reason when the uploaded map does not match;
+153: 5. and its evidence packet excludes the confidential source.
+154: 
+155: #### ERR-006 — Audited triage and regression
+156: 
+157: **Requirement.** Revision-checked open, acknowledged, resolved and suppressed changes are audited. An issue resolved in its current release reopens as a regression on a recurrence in a later release; delayed older-release events cannot invent one. For native version-1 events the order is the registered sequence, never guessed semver; Sentry events follow the project's stated rule in SDK-028, including releases later enriched by registration. SDK-009 carries resolve in the next or a named release and plain Resolve, and plain Resolve regresses on the next accepted event in any release; TEAM-004 inherits resolution from a commit's release, and TEAM-003 carries same-release recurrence policies, bulk actions and collaborative triage. Recognized JavaScript bundle hash suffixes do not split grouping; native anchors and reported frames stay immutable. Corrections retain exact occurrence provenance and reversible fenced apply/undo.
+158: 
+159: **Acceptance.**
+160: 1. A captured issue resolved in its current release reopens as a regression when its fingerprint arrives in a newer release.
+161: 2. A later event from an older release does not reopen it.
+162: 3. Split and merge previews through the owner HTTP door and the issue view move nothing.
+163: 4. Split and merge apply and undo through the owner HTTP door and the issue view.
+164: 5. A stale revision is refused.
+165: 6. Original membership stays inspectable after apply and undo.
+166: 
+167: #### ERR-007 — Sanitized evidence packet
+168: 
+169: **Requirement.** A compatible v1 packet exposes issue/lifecycle/grouping, retained release sequence and per-event release/build/environment, generated/original coordinates, immutable diagnostics beside current lookup, links and coded coverage gaps. UTF-8 JSON is bounded to 256 KiB and ten events, removing oldest events first and naming included/available counts even if none fit. It excludes source snippets, sourcesContent and artifact bytes. It carries the latest computed repair observation and newest three owner-recorded repairs, with omitted history named. CLI and stdio MCP keep exact-project read authority and untrusted/no-execution labels; they cause no model egress.
+170: 
+171: **Acceptance.**
+172: 1. The same packet reads through HTTP, the CLI and the official MCP transport, with equal projections.
+173: 2. At the size boundary the oldest events are removed first and the included and available counts are named.
+174: 3. At the retention, import and loss boundaries the packet carries each coded coverage gap.
+175: 4. The packet carries no secrets.
+176: 5. It carries no source bytes.
+177: 6. Reading it performs no write.
+178: 7. A cross-project read is refused.
+
+155: #### ERR-006 — Audited triage and regression
+156: 
+157: **Requirement.** Revision-checked open, acknowledged, resolved and suppressed changes are audited. An issue resolved in its current release reopens as a regression on a recurrence in a later release; delayed older-release events cannot invent one. For native version-1 events the order is the registered sequence, never guessed semver; Sentry events follow the project's stated rule in SDK-028, including releases later enriched by registration. SDK-009 carries resolve in the next or a named release and plain Resolve, and plain Resolve regresses on the next accepted event in any release; TEAM-004 inherits resolution from a commit's release, and TEAM-003 carries same-release recurrence policies, bulk actions and collaborative triage. Recognized JavaScript bundle hash suffixes do not split grouping; native anchors and reported frames stay immutable. Corrections retain exact occurrence provenance and reversible fenced apply/undo.
+158: 
+159: **Acceptance.**
+160: 1. A captured issue resolved in its current release reopens as a regression when its fingerprint arrives in a newer release.
+161: 2. A later event from an older release does not reopen it.
+162: 3. Split and merge previews through the owner HTTP door and the issue view move nothing.
+163: 4. Split and merge apply and undo through the owner HTTP door and the issue view.
+164: 5. A stale revision is refused.
+165: 6. Original membership stays inspectable after apply and undo.
+166: 
+167: #### ERR-007 — Sanitized evidence packet
+168: 
+169: **Requirement.** A compatible v1 packet exposes issue/lifecycle/grouping, retained release sequence and per-event release/build/environment, generated/original coordinates, immutable diagnostics beside current lookup, links and coded coverage gaps. UTF-8 JSON is bounded to 256 KiB and ten events, removing oldest events first and naming included/available counts even if none fit. It excludes source snippets, sourcesContent and artifact bytes. It carries the latest computed repair observation and newest three owner-recorded repairs, with omitted history named. CLI and stdio MCP keep exact-project read authority and untrusted/no-execution labels; they cause no model egress.
+170: 
+171: **Acceptance.**
+172: 1. The same packet reads through HTTP, the CLI and the official MCP transport, with equal projections.
+173: 2. At the size boundary the oldest events are removed first and the included and available counts are named.
+174: 3. At the retention, import and loss boundaries the packet carries each coded coverage gap.
+175: 4. The packet carries no secrets.
+176: 5. It carries no source bytes.
+177: 6. Reading it performs no write.
+178: 7. A cross-project read is refused.
+179: 
+180: #### ERR-008 — Loss counters and repair observation
+181: 
+182: **Requirement.** Expose windowed accepted/rejected/budget outcomes, SDK-reported discards by category and reason, and unknown pre-transport loss. Reported discarded errors are a loss input and prevent a quiet feed from proving a repair; other discarded categories do not imply lost errors. Only the owner records revision-checked repair links, scrubbed notes, checks, approval/merge/deploy facts and an exercised-flow record. Links are HTTPS origin/path text and never fetched. Manual repair writes send no notifications or external work. Compute recur/reasoned inconclusive/no-recurrence-after-exercise from stored release sequence, maps, events, exercise and loss; list older-release events separately. Missing exercise, capture, map, exposure or retention yields inconclusive. Never label a quiet feed fixed. Repair recurrence counts retained native admission membership, current membership and exact occurrence membership during the repair's lifetime, even after further corrections or undo; any applied or undone correction involving the issue leaves a `grouping_changed` coverage gap, so without retained recurrence its observation is inconclusive. AI-004 adds rate-based live proof.
+183: 
+184: **Acceptance.**
+185: 1. The owner records a repair through the HTTP door.
+186: 2. Every project-grant write to repairs is denied, with the rows unchanged.
+187: 3. A deployed repair with no events reads inconclusive, with a named reason.
+188: 4. A healthy exercised window reads no recurrence after exercise.
+189: 5. An older-release event is listed separately and does not count as recurrence.
+
+167: #### ERR-007 — Sanitized evidence packet
+168: 
+169: **Requirement.** A compatible v1 packet exposes issue/lifecycle/grouping, retained release sequence and per-event release/build/environment, generated/original coordinates, immutable diagnostics beside current lookup, links and coded coverage gaps. UTF-8 JSON is bounded to 256 KiB and ten events, removing oldest events first and naming included/available counts even if none fit. It excludes source snippets, sourcesContent and artifact bytes. It carries the latest computed repair observation and newest three owner-recorded repairs, with omitted history named. CLI and stdio MCP keep exact-project read authority and untrusted/no-execution labels; they cause no model egress.
+170: 
+171: **Acceptance.**
+172: 1. The same packet reads through HTTP, the CLI and the official MCP transport, with equal projections.
+173: 2. At the size boundary the oldest events are removed first and the included and available counts are named.
+174: 3. At the retention, import and loss boundaries the packet carries each coded coverage gap.
+175: 4. The packet carries no secrets.
+176: 5. It carries no source bytes.
+177: 6. Reading it performs no write.
+178: 7. A cross-project read is refused.
+179: 
+180: #### ERR-008 — Loss counters and repair observation
+181: 
+182: **Requirement.** Expose windowed accepted/rejected/budget outcomes, SDK-reported discards by category and reason, and unknown pre-transport loss. Reported discarded errors are a loss input and prevent a quiet feed from proving a repair; other discarded categories do not imply lost errors. Only the owner records revision-checked repair links, scrubbed notes, checks, approval/merge/deploy facts and an exercised-flow record. Links are HTTPS origin/path text and never fetched. Manual repair writes send no notifications or external work. Compute recur/reasoned inconclusive/no-recurrence-after-exercise from stored release sequence, maps, events, exercise and loss; list older-release events separately. Missing exercise, capture, map, exposure or retention yields inconclusive. Never label a quiet feed fixed. Repair recurrence counts retained native admission membership, current membership and exact occurrence membership during the repair's lifetime, even after further corrections or undo; any applied or undone correction involving the issue leaves a `grouping_changed` coverage gap, so without retained recurrence its observation is inconclusive. AI-004 adds rate-based live proof.
+183: 
+184: **Acceptance.**
+185: 1. The owner records a repair through the HTTP door.
+186: 2. Every project-grant write to repairs is denied, with the rows unchanged.
+187: 3. A deployed repair with no events reads inconclusive, with a named reason.
+188: 4. A healthy exercised window reads no recurrence after exercise.
+189: 5. An older-release event is listed separately and does not count as recurrence.
+190: 6. A loss case reads inconclusive.
+191: 7. A recurrence reads recurred.
+192: 8. Manual repair records send no notification and start no external work.
+193: 
+194: #### ERR-009 — Archive, restore and retention
+195: 
+196: **Requirement.** Versioned private archives carry stored source bytes, checksums, migration identity, triage, maps, repairs/checks, operator corrections and inert agent grouping proposals (including server-computed review snapshots), reproduction/fix/exposure history, sanitized Sentry evidence, feedback, capture/grouping/release policies and erasure journal. HTTP/CLI and legacy v1/v2 decoding share semantic validation. Source and maps are portable; run tokens, step leases, owner sessions, project grants, alert destination records/credentials and dispatch queues never travel; retained alert rules restore disabled and delivery history is historical. Restored schedules and quiet hours are disabled, restored snoozes and scheduled mail are historical and never send, and raw recipient receipts and passing-test authority do not travel. Older archives restore newly introduced collections empty under versioned rules. An archive holds at most 10,000 events per project and refuses more with `Archive event budget`; GOV-003 carries streaming archives of any retained volume, SRC-004 the artifact capacity and GOV-002 scheduled policies. Manual cutoff retention removes private derived content, keeps repair snapshots with coverage gaps and exposes the deduplication horizon. Imported history creates no active grant, dispatch or current repair proof.
+197: 
+198: **Acceptance.**
+199: 1. A populated installation exports through the browser and through `rer`.
+200: 2. Each archive restores into an independent empty destination, and the retained records compare equal.
+201: 3. Restored work is inert: no active grant, dispatch or current repair proof.
+
+180: #### ERR-008 — Loss counters and repair observation
+181: 
+182: **Requirement.** Expose windowed accepted/rejected/budget outcomes, SDK-reported discards by category and reason, and unknown pre-transport loss. Reported discarded errors are a loss input and prevent a quiet feed from proving a repair; other discarded categories do not imply lost errors. Only the owner records revision-checked repair links, scrubbed notes, checks, approval/merge/deploy facts and an exercised-flow record. Links are HTTPS origin/path text and never fetched. Manual repair writes send no notifications or external work. Compute recur/reasoned inconclusive/no-recurrence-after-exercise from stored release sequence, maps, events, exercise and loss; list older-release events separately. Missing exercise, capture, map, exposure or retention yields inconclusive. Never label a quiet feed fixed. Repair recurrence counts retained native admission membership, current membership and exact occurrence membership during the repair's lifetime, even after further corrections or undo; any applied or undone correction involving the issue leaves a `grouping_changed` coverage gap, so without retained recurrence its observation is inconclusive. AI-004 adds rate-based live proof.
+183: 
+184: **Acceptance.**
+185: 1. The owner records a repair through the HTTP door.
+186: 2. Every project-grant write to repairs is denied, with the rows unchanged.
+187: 3. A deployed repair with no events reads inconclusive, with a named reason.
+188: 4. A healthy exercised window reads no recurrence after exercise.
+189: 5. An older-release event is listed separately and does not count as recurrence.
+190: 6. A loss case reads inconclusive.
+191: 7. A recurrence reads recurred.
+192: 8. Manual repair records send no notification and start no external work.
+193: 
+194: #### ERR-009 — Archive, restore and retention
+195: 
+196: **Requirement.** Versioned private archives carry stored source bytes, checksums, migration identity, triage, maps, repairs/checks, operator corrections and inert agent grouping proposals (including server-computed review snapshots), reproduction/fix/exposure history, sanitized Sentry evidence, feedback, capture/grouping/release policies and erasure journal. HTTP/CLI and legacy v1/v2 decoding share semantic validation. Source and maps are portable; run tokens, step leases, owner sessions, project grants, alert destination records/credentials and dispatch queues never travel; retained alert rules restore disabled and delivery history is historical. Restored schedules and quiet hours are disabled, restored snoozes and scheduled mail are historical and never send, and raw recipient receipts and passing-test authority do not travel. Older archives restore newly introduced collections empty under versioned rules. An archive holds at most 10,000 events per project and refuses more with `Archive event budget`; GOV-003 carries streaming archives of any retained volume, SRC-004 the artifact capacity and GOV-002 scheduled policies. Manual cutoff retention removes private derived content, keeps repair snapshots with coverage gaps and exposes the deduplication horizon. Imported history creates no active grant, dispatch or current repair proof.
+197: 
+198: **Acceptance.**
+199: 1. A populated installation exports through the browser and through `rer`.
+200: 2. Each archive restores into an independent empty destination, and the retained records compare equal.
+201: 3. Restored work is inert: no active grant, dispatch or current repair proof.
+202: 4. A tampered archive is refused before any mutation.
+203: 5. A conflicting archive is refused before any mutation.
+204: 6. An import into a nonempty target is refused before any mutation.
+205: 7. After a manual retention cutoff, repair snapshots keep their coverage gaps.
+206: 
+207: #### ERR-010 — Release gates
+208: 
+209: **Requirement.** A release must exercise real capture, symbolication, privacy, permissions, persistence and independent restore through the shipped app. Fresh setup has no demo rows. Private flows are accessible and responsive with explicit empty, failure and unavailable states. Source presence, local providers or a green build cannot substitute for hosted, mobile, integration or real-account acceptance; physical-device and buyer-account qualification are register rows. UX-001 and each connector clause specify the expanded product gates.
+210: 
+211: **Acceptance.**
+212: 1. The named implemented journeys run on the emitted Worker.
+213: 2. Their end states are inspected at 1440 and 390.
+214: 3. Each supported runtime passes its qualification run (D-5) and each configured provider its sandbox or official-schema journey.
+

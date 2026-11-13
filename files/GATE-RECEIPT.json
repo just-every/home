@@ -1,0 +1,79 @@
+{
+  "tag": "je-gate-38",
+  "repository": "just-every/home",
+  "timestamp": "2026-11-13T21:53:20Z",
+  "candidate_branch": "cloud/je-sync-30",
+  "head": "2ae43f9e53a68f2a998af6df95ed13e038c66c68",
+  "base": "ac2df380f2770a76aaee8a2dac8a1992554eb117",
+  "pr": "https://github.com/just-every/home/pull/54",
+  "verdict": "GATE PASS",
+  "rows": {
+    "R1": "MET",
+    "R2": "MET",
+    "R3": "MET",
+    "R4": "MET",
+    "R5": "MET"
+  },
+  "blocking_findings": 0,
+  "new_followups": 0,
+  "clause_status_changes": [],
+  "before_counts": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "after_counts": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "checks": {
+    "listings-check": {
+      "exit": 0,
+      "log": "listings-check.log"
+    },
+    "listings": {
+      "exit": 0,
+      "log": "listings.log"
+    },
+    "type-check": {
+      "exit": 0,
+      "log": "type-check.log"
+    },
+    "lint": {
+      "exit": 0,
+      "log": "lint.log"
+    },
+    "build": {
+      "exit": 0,
+      "log": "build.log"
+    },
+    "npm-ci": {
+      "exit": 0,
+      "log": "npm-ci.log"
+    },
+    "browser": {
+      "exit": 0,
+      "candidate_receipt": "head-BROWSER.json",
+      "baseline_receipt": "main-BROWSER.json",
+      "comparison": "REGRESSION.json",
+      "assertion_width": 1440,
+      "visual_widths": [
+        1440,
+        390
+      ]
+    },
+    "exact_sha_verify": {
+      "id": 43510379593,
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "2ae43f9e53a68f2a998af6df95ed13e038c66c68"
+    }
+  },
+  "gh_calls": 9,
+  "product_tree_clean": true,
+  "product_commits_created": 0,
+  "product_pushes": 0,
+  "product_sha": "2ae43f9e53a68f2a998af6df95ed13e038c66c68",
+  "report_sha256": "f7067a8cc2d7c947401c01a839cc603dbad88f9619c31f140269f452567464be"
+}

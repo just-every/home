@@ -1,0 +1,9 @@
+{
+  "pricing_invariance": "All public prose and rendering code unchanged; the exact Assisted / Managed tier labels in the brief are absent from both tracked text snapshots. No amount, tax wording or billing-country condition changed.",
+  "literal_labels": {
+    "ac2df380f2770a76aaee8a2dac8a1992554eb117": [],
+    "2ae43f9e53a68f2a998af6df95ed13e038c66c68": []
+  },
+  "42983364b373": "sha256(copy:README.md, seed.json changed since the last sync)[:12]",
+  "64cb07f6a0dd": "finding identity, never public copy"
+}

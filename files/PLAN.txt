@@ -1,0 +1,7 @@
+1. Confirm PR #54 retains the fixed head and main base; shallow clone only just-every/home and fetch pull/54/head.
+2. Compare every hunk, full candidate commit identity and trailers, listing counts/versions/status/copy, state provenance, and excluded seeds against baseline main.
+3. Read each promoted seed's releases once and tagged CONTRACT.md via gh api; validate release eligibility, tag resolution, contract provenance and claim status against unchanged JE copy.
+4. Independently run npm ci, listings check and regeneration, type-check, lint and production build. Determine whether source-lock, contract-view and migration-ledger commands apply from this repository's AGENTS.md and scripts.
+5. Serve built real seed routes locally and inspect each at 1440 and 390; compare their output with a genuine baseline-main build. Assert at 1440 only, retain screenshots and DOM receipts for both widths.
+6. Observe exact-head Verify once via REST, respecting the ten-call budget and 300-second cadence. Never dispatch, rerun or alter CI.
+7. Report R1-R5, classify only demonstrated findings under the frozen rubric, write actual non-secret report and receipts, publish only the separate evidence ref, then delete clone/dependencies and stop only owned processes. No product edit, commit, push, PR modification, merge or deploy.

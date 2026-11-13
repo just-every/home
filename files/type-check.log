@@ -1,0 +1,7 @@
+START 2026-11-13T21:44:24Z
+
+> next-project@0.1.0 type-check
+> tsc --noEmit
+
+END 2026-11-13T21:44:32Z
+EXIT=0

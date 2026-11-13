@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-11-13T21:54:10Z",
+  "head": "2ae43f9e53a68f2a998af6df95ed13e038c66c68",
+  "tracked_status": "",
+  "node_modules_removed": true,
+  "head_build_removed": true,
+  "main_build_removed": true,
+  "browser_contexts_closed": true,
+  "owned_servers_stopped": true,
+  "clone_removal": "after report-only evidence transfer verification"
+}

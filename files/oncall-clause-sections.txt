@@ -1,0 +1,315 @@
+116: #### OC-002 — Routing replay
+117: 
+118: **Requirement.** Retain the routing policy version and explanation at admission. Release 1 routes coordination ownership, with no timed escalation or paging. Replay is read-only: it returns the historical decision, ownership, policy and evaluation snapshot beside the proposed current decision, in submitted order, and produces no alert, incident or external effect; it does not claim schedule replay. Unmatched signals remain visible and unowned; suppression reasons remain inspectable.
+119: 
+120: **Acceptance.**
+121: 1. Admit a severity-routed event, change the policy and replay it: the immutable admission explanation is compared with the proposed decision in submitted order, and durable state is unchanged before and after (zero writes).
+122: 
+123: #### OC-003 — Roles and authority
+124: 
+125: **Requirement.** Incident changes require an active authorized human session or an explicitly scoped OC-053 service-account capability (RL-2). A machine is attributed as a service account and never gains human-session, member-management or human-review authority. Viewer reads; responder coordinates; admin manages services, policies, members and import. All active members see all workspace incident data, and admin, responder and viewer permissions are separate from incident-commander attribution. Ingest credentials grant no read or human authority. Bearer and signed intake return only `duplicate`, the stored event `id`, the source `eventId`, `service`, `observedAt` and `acceptedAt` (201 accepted; 200 deduplicated). Routing decisions, snapshots and alert identities stay behind authorized read and export doors; scoped OC-053 reads disclose only granted service records, and archive and export authority remains session-protected. The status-only stakeholder role, with no incident, alert, runbook or archive access, is specified and tracked in OC-061.
+126: 
+127: **Acceptance.**
+128: 1. Anonymous, expired, revoked, viewer, responder and admin sessions each get their role's outcome on reads, commands, sources and archives, and a real HTTP mutation held open while its author is revoked or downgraded publishes nothing.
+129: 2. Minimal intake receipts disclose no private routing data.
+130: 
+131: #### OC-004 — Incident state transitions
+132: 
+133: **Requirement.** Incident state transitions are explicit. Acknowledgment assigns responsibility. Resolution requires recovery evidence and a summary, independently of alert recovery. Optimistic revision checks reject stale edits. All accepted changes append an attributed timeline transactionally with state. Any active responder or admin can attest recovery and follow-up evidence; attestation is a human claim, not automatic measurement verification. This resolution rule governs declared incidents; an alert-only page that its source recovers closes without a human summary under OC-056.
+134: 
+135: **Acceptance.**
+136: 1. Declare from admitted alerts and acknowledge; stale and concurrent changes are rejected; the source alert clears; resolution without evidence and a summary is refused; the incident then resolves, and its attributed timeline reads back over HTTP.
+137: 
+138: #### OC-005 — Copied runbooks
+139: 
+140: **Requirement.** Runbooks are copied into the incident at declaration; future service edits never silently rewrite incident instructions. Follow-ups carry owner, due date, open or completed state and completion evidence. Resolved incidents retain open work and editable review.
+141: 
+142: **Acceptance.**
+143: 1. Declare an incident and edit its service runbook, and the copied incident steps remain unchanged; an owned, due-dated action requires completion evidence; unfinished work and the review are retained after resolution.
+144: 
+145: #### OC-006 — Bounded outbound incident effects
+146: 
+147: **Requirement.** In release 1, only signed OC-053 response events to an endpoint a current administrator explicitly approved may leave the incident workspace (RL-2). No paging provider notification, AI call, production action or Lamp publication occurs in release 1. Configured remote mail sends sign-in links only. Handoffs are minimum summaries with stable identity and visibility; an exported draft is explicitly unreviewed. Source links grant no access. External acceptance, delivery and acknowledgment are distinct later records. Approved OC-053 events are proved under OC-053.
+148: 
+149: **Acceptance.** On a normal installation with no approved OC-053 endpoint:
+150: 1. Coordination and handoff preparation and export create no paging receipt, production action, AI call or external publication.
+
+123: #### OC-003 — Roles and authority
+124: 
+125: **Requirement.** Incident changes require an active authorized human session or an explicitly scoped OC-053 service-account capability (RL-2). A machine is attributed as a service account and never gains human-session, member-management or human-review authority. Viewer reads; responder coordinates; admin manages services, policies, members and import. All active members see all workspace incident data, and admin, responder and viewer permissions are separate from incident-commander attribution. Ingest credentials grant no read or human authority. Bearer and signed intake return only `duplicate`, the stored event `id`, the source `eventId`, `service`, `observedAt` and `acceptedAt` (201 accepted; 200 deduplicated). Routing decisions, snapshots and alert identities stay behind authorized read and export doors; scoped OC-053 reads disclose only granted service records, and archive and export authority remains session-protected. The status-only stakeholder role, with no incident, alert, runbook or archive access, is specified and tracked in OC-061.
+126: 
+127: **Acceptance.**
+128: 1. Anonymous, expired, revoked, viewer, responder and admin sessions each get their role's outcome on reads, commands, sources and archives, and a real HTTP mutation held open while its author is revoked or downgraded publishes nothing.
+129: 2. Minimal intake receipts disclose no private routing data.
+130: 
+131: #### OC-004 — Incident state transitions
+132: 
+133: **Requirement.** Incident state transitions are explicit. Acknowledgment assigns responsibility. Resolution requires recovery evidence and a summary, independently of alert recovery. Optimistic revision checks reject stale edits. All accepted changes append an attributed timeline transactionally with state. Any active responder or admin can attest recovery and follow-up evidence; attestation is a human claim, not automatic measurement verification. This resolution rule governs declared incidents; an alert-only page that its source recovers closes without a human summary under OC-056.
+134: 
+135: **Acceptance.**
+136: 1. Declare from admitted alerts and acknowledge; stale and concurrent changes are rejected; the source alert clears; resolution without evidence and a summary is refused; the incident then resolves, and its attributed timeline reads back over HTTP.
+137: 
+138: #### OC-005 — Copied runbooks
+139: 
+140: **Requirement.** Runbooks are copied into the incident at declaration; future service edits never silently rewrite incident instructions. Follow-ups carry owner, due date, open or completed state and completion evidence. Resolved incidents retain open work and editable review.
+141: 
+142: **Acceptance.**
+143: 1. Declare an incident and edit its service runbook, and the copied incident steps remain unchanged; an owned, due-dated action requires completion evidence; unfinished work and the review are retained after resolution.
+144: 
+145: #### OC-006 — Bounded outbound incident effects
+146: 
+147: **Requirement.** In release 1, only signed OC-053 response events to an endpoint a current administrator explicitly approved may leave the incident workspace (RL-2). No paging provider notification, AI call, production action or Lamp publication occurs in release 1. Configured remote mail sends sign-in links only. Handoffs are minimum summaries with stable identity and visibility; an exported draft is explicitly unreviewed. Source links grant no access. External acceptance, delivery and acknowledgment are distinct later records. Approved OC-053 events are proved under OC-053.
+148: 
+149: **Acceptance.** On a normal installation with no approved OC-053 endpoint:
+150: 1. Coordination and handoff preparation and export create no paging receipt, production action, AI call or external publication.
+151: 2. Draft exports remain unreviewed, and source links confer no access.
+152: 
+153: #### OC-007 — Native archive
+154: 
+155: **Requirement.** The native archive preserves services, policies, incident, alert, event and timeline identity and attribution, runbook and follow-up history. Archive and restore require current admin authority, and handoffs remain internal. Schema and references are validated before an atomic restore, and an invalid restore preserves existing data. Restore replaces application state while preserving the current administrator identity; credentials remain installation-local, other sessions are revoked, clients reload state, and historical and inactive identities are retained. Authentication secrets and sessions are never exported. Released migrations remain immutable. The full future paging archive is OC-052.
+156: 
+157: **Acceptance.** Through the protected native archive door:
+
+131: #### OC-004 — Incident state transitions
+132: 
+133: **Requirement.** Incident state transitions are explicit. Acknowledgment assigns responsibility. Resolution requires recovery evidence and a summary, independently of alert recovery. Optimistic revision checks reject stale edits. All accepted changes append an attributed timeline transactionally with state. Any active responder or admin can attest recovery and follow-up evidence; attestation is a human claim, not automatic measurement verification. This resolution rule governs declared incidents; an alert-only page that its source recovers closes without a human summary under OC-056.
+134: 
+135: **Acceptance.**
+136: 1. Declare from admitted alerts and acknowledge; stale and concurrent changes are rejected; the source alert clears; resolution without evidence and a summary is refused; the incident then resolves, and its attributed timeline reads back over HTTP.
+137: 
+138: #### OC-005 — Copied runbooks
+139: 
+140: **Requirement.** Runbooks are copied into the incident at declaration; future service edits never silently rewrite incident instructions. Follow-ups carry owner, due date, open or completed state and completion evidence. Resolved incidents retain open work and editable review.
+141: 
+142: **Acceptance.**
+143: 1. Declare an incident and edit its service runbook, and the copied incident steps remain unchanged; an owned, due-dated action requires completion evidence; unfinished work and the review are retained after resolution.
+144: 
+145: #### OC-006 — Bounded outbound incident effects
+146: 
+147: **Requirement.** In release 1, only signed OC-053 response events to an endpoint a current administrator explicitly approved may leave the incident workspace (RL-2). No paging provider notification, AI call, production action or Lamp publication occurs in release 1. Configured remote mail sends sign-in links only. Handoffs are minimum summaries with stable identity and visibility; an exported draft is explicitly unreviewed. Source links grant no access. External acceptance, delivery and acknowledgment are distinct later records. Approved OC-053 events are proved under OC-053.
+148: 
+149: **Acceptance.** On a normal installation with no approved OC-053 endpoint:
+150: 1. Coordination and handoff preparation and export create no paging receipt, production action, AI call or external publication.
+151: 2. Draft exports remain unreviewed, and source links confer no access.
+152: 
+153: #### OC-007 — Native archive
+154: 
+155: **Requirement.** The native archive preserves services, policies, incident, alert, event and timeline identity and attribution, runbook and follow-up history. Archive and restore require current admin authority, and handoffs remain internal. Schema and references are validated before an atomic restore, and an invalid restore preserves existing data. Restore replaces application state while preserving the current administrator identity; credentials remain installation-local, other sessions are revoked, clients reload state, and historical and inactive identities are retained. Authentication secrets and sessions are never exported. Released migrations remain immutable. The full future paging archive is OC-052.
+156: 
+157: **Acceptance.** Through the protected native archive door:
+158: 1. Export the archive, restore valid held records, and reject malformed references and storage failures without losing prior data.
+159: 2. Event, incident, runbook, action, timeline and attribution identity survive, and authentication material is absent from the archive.
+160: 
+161: #### OC-008 — User-authored records kept
+162: 
+163: **Requirement.** Authored incident records are kept through restart and export. Ingress accepts bounded structured fields. Provider and incumbent-compatible intake retain bounded structured evidence and no raw bodies under OC-059. Native Events API parsing is bounded to 64 KiB; authenticated oversized, malformed or incomplete native input retains only its first 64 KiB or fewer of exact raw bytes as untrusted incomplete custody under OC-059, never parsed or routed from that prefix. Incumbent-compatible endpoints and provider adapters use the larger per-provider bounds of OC-059. There is no arbitrary remote fetching or runbook execution. Complete retention controls are OC-040.
+164: 
+165: **Acceptance.**
+
+138: #### OC-005 — Copied runbooks
+139: 
+140: **Requirement.** Runbooks are copied into the incident at declaration; future service edits never silently rewrite incident instructions. Follow-ups carry owner, due date, open or completed state and completion evidence. Resolved incidents retain open work and editable review.
+141: 
+142: **Acceptance.**
+143: 1. Declare an incident and edit its service runbook, and the copied incident steps remain unchanged; an owned, due-dated action requires completion evidence; unfinished work and the review are retained after resolution.
+144: 
+145: #### OC-006 — Bounded outbound incident effects
+146: 
+147: **Requirement.** In release 1, only signed OC-053 response events to an endpoint a current administrator explicitly approved may leave the incident workspace (RL-2). No paging provider notification, AI call, production action or Lamp publication occurs in release 1. Configured remote mail sends sign-in links only. Handoffs are minimum summaries with stable identity and visibility; an exported draft is explicitly unreviewed. Source links grant no access. External acceptance, delivery and acknowledgment are distinct later records. Approved OC-053 events are proved under OC-053.
+148: 
+149: **Acceptance.** On a normal installation with no approved OC-053 endpoint:
+150: 1. Coordination and handoff preparation and export create no paging receipt, production action, AI call or external publication.
+151: 2. Draft exports remain unreviewed, and source links confer no access.
+152: 
+153: #### OC-007 — Native archive
+154: 
+155: **Requirement.** The native archive preserves services, policies, incident, alert, event and timeline identity and attribution, runbook and follow-up history. Archive and restore require current admin authority, and handoffs remain internal. Schema and references are validated before an atomic restore, and an invalid restore preserves existing data. Restore replaces application state while preserving the current administrator identity; credentials remain installation-local, other sessions are revoked, clients reload state, and historical and inactive identities are retained. Authentication secrets and sessions are never exported. Released migrations remain immutable. The full future paging archive is OC-052.
+156: 
+157: **Acceptance.** Through the protected native archive door:
+158: 1. Export the archive, restore valid held records, and reject malformed references and storage failures without losing prior data.
+159: 2. Event, incident, runbook, action, timeline and attribution identity survive, and authentication material is absent from the archive.
+160: 
+161: #### OC-008 — User-authored records kept
+162: 
+163: **Requirement.** Authored incident records are kept through restart and export. Ingress accepts bounded structured fields. Provider and incumbent-compatible intake retain bounded structured evidence and no raw bodies under OC-059. Native Events API parsing is bounded to 64 KiB; authenticated oversized, malformed or incomplete native input retains only its first 64 KiB or fewer of exact raw bytes as untrusted incomplete custody under OC-059, never parsed or routed from that prefix. Incumbent-compatible endpoints and provider adapters use the larger per-provider bounds of OC-059. There is no arbitrary remote fetching or runbook execution. Complete retention controls are OC-040.
+164: 
+165: **Acceptance.**
+166: 1. Over-limit and malformed intake is neither parsed nor retained beyond its bound, and over-limit command input is refused.
+167: 2. Hostile structured text and runbook links display literally, with no script execution and no fetch.
+168: 3. Authored history is preserved after restart and export.
+169: 
+170: #### OC-009 — Accessible interface
+171: 
+172: **Requirement.** Apply BASE-ACCESSIBILITY-001 to Oncall's web journeys and the native apps in OC-029. A failed write is visible and never shown as saved. An unavailable UI is never described as a pager coverage failure, because release 1 supplies no pager. Each release publishes a conformance report (VPAT 2.5 Accessibility Conformance Report, WCAG 2.2 edition) stating the result per success criterion and per surface; an unsupported criterion is named, never omitted (R-4). Named assistive-technology passes cover VoiceOver with Safari on macOS and NVDA with Chrome on Windows for web, and VoiceOver on iOS and TalkBack on Android for the apps; each completes sign-in, finding an incident in the filtered list (OC-060), acknowledge, snooze, reassign, schedule view and override (R-3).
+
+145: #### OC-006 — Bounded outbound incident effects
+146: 
+147: **Requirement.** In release 1, only signed OC-053 response events to an endpoint a current administrator explicitly approved may leave the incident workspace (RL-2). No paging provider notification, AI call, production action or Lamp publication occurs in release 1. Configured remote mail sends sign-in links only. Handoffs are minimum summaries with stable identity and visibility; an exported draft is explicitly unreviewed. Source links grant no access. External acceptance, delivery and acknowledgment are distinct later records. Approved OC-053 events are proved under OC-053.
+148: 
+149: **Acceptance.** On a normal installation with no approved OC-053 endpoint:
+150: 1. Coordination and handoff preparation and export create no paging receipt, production action, AI call or external publication.
+151: 2. Draft exports remain unreviewed, and source links confer no access.
+152: 
+153: #### OC-007 — Native archive
+154: 
+155: **Requirement.** The native archive preserves services, policies, incident, alert, event and timeline identity and attribution, runbook and follow-up history. Archive and restore require current admin authority, and handoffs remain internal. Schema and references are validated before an atomic restore, and an invalid restore preserves existing data. Restore replaces application state while preserving the current administrator identity; credentials remain installation-local, other sessions are revoked, clients reload state, and historical and inactive identities are retained. Authentication secrets and sessions are never exported. Released migrations remain immutable. The full future paging archive is OC-052.
+156: 
+157: **Acceptance.** Through the protected native archive door:
+158: 1. Export the archive, restore valid held records, and reject malformed references and storage failures without losing prior data.
+159: 2. Event, incident, runbook, action, timeline and attribution identity survive, and authentication material is absent from the archive.
+160: 
+161: #### OC-008 — User-authored records kept
+162: 
+163: **Requirement.** Authored incident records are kept through restart and export. Ingress accepts bounded structured fields. Provider and incumbent-compatible intake retain bounded structured evidence and no raw bodies under OC-059. Native Events API parsing is bounded to 64 KiB; authenticated oversized, malformed or incomplete native input retains only its first 64 KiB or fewer of exact raw bytes as untrusted incomplete custody under OC-059, never parsed or routed from that prefix. Incumbent-compatible endpoints and provider adapters use the larger per-provider bounds of OC-059. There is no arbitrary remote fetching or runbook execution. Complete retention controls are OC-040.
+164: 
+165: **Acceptance.**
+166: 1. Over-limit and malformed intake is neither parsed nor retained beyond its bound, and over-limit command input is refused.
+167: 2. Hostile structured text and runbook links display literally, with no script execution and no fetch.
+168: 3. Authored history is preserved after restart and export.
+169: 
+170: #### OC-009 — Accessible interface
+171: 
+172: **Requirement.** Apply BASE-ACCESSIBILITY-001 to Oncall's web journeys and the native apps in OC-029. A failed write is visible and never shown as saved. An unavailable UI is never described as a pager coverage failure, because release 1 supplies no pager. Each release publishes a conformance report (VPAT 2.5 Accessibility Conformance Report, WCAG 2.2 edition) stating the result per success criterion and per surface; an unsupported criterion is named, never omitted (R-4). Named assistive-technology passes cover VoiceOver with Safari on macOS and NVDA with Chrome on Windows for web, and VoiceOver on iOS and TalkBack on Android for the apps; each completes sign-in, finding an incident in the filtered list (OC-060), acknowledge, snooze, reassign, schedule view and override (R-3).
+173: 
+174: **Acceptance.**
+175: 1. Run declaration, acknowledgment, notes, schedules, overrides and preview against BASE-ACCESSIBILITY-001.
+176: 2. A real stale-write failure is announced with no saved claim.
+177: 
+178: #### OC-010 — Health and honest commands
+179: 
+
+161: #### OC-008 — User-authored records kept
+162: 
+163: **Requirement.** Authored incident records are kept through restart and export. Ingress accepts bounded structured fields. Provider and incumbent-compatible intake retain bounded structured evidence and no raw bodies under OC-059. Native Events API parsing is bounded to 64 KiB; authenticated oversized, malformed or incomplete native input retains only its first 64 KiB or fewer of exact raw bytes as untrusted incomplete custody under OC-059, never parsed or routed from that prefix. Incumbent-compatible endpoints and provider adapters use the larger per-provider bounds of OC-059. There is no arbitrary remote fetching or runbook execution. Complete retention controls are OC-040.
+164: 
+165: **Acceptance.**
+166: 1. Over-limit and malformed intake is neither parsed nor retained beyond its bound, and over-limit command input is refused.
+167: 2. Hostile structured text and runbook links display literally, with no script execution and no fetch.
+168: 3. Authored history is preserved after restart and export.
+169: 
+170: #### OC-009 — Accessible interface
+171: 
+172: **Requirement.** Apply BASE-ACCESSIBILITY-001 to Oncall's web journeys and the native apps in OC-029. A failed write is visible and never shown as saved. An unavailable UI is never described as a pager coverage failure, because release 1 supplies no pager. Each release publishes a conformance report (VPAT 2.5 Accessibility Conformance Report, WCAG 2.2 edition) stating the result per success criterion and per surface; an unsupported criterion is named, never omitted (R-4). Named assistive-technology passes cover VoiceOver with Safari on macOS and NVDA with Chrome on Windows for web, and VoiceOver on iOS and TalkBack on Android for the apps; each completes sign-in, finding an incident in the filtered list (OC-060), acknowledge, snooze, reassign, schedule view and override (R-3).
+173: 
+174: **Acceptance.**
+175: 1. Run declaration, acknowledgment, notes, schedules, overrides and preview against BASE-ACCESSIBILITY-001.
+176: 2. A real stale-write failure is announced with no saved claim.
+177: 
+178: #### OC-010 — Health and honest commands
+179: 
+180: **Requirement.** Health identifies the deployed version, operating commands describe actual local and hosted effects, and acceptance records distinguish local evidence from remote, provider and pilot outcomes. Capacity promises require measured evidence. Pager, timer, mobile and standby health are OC-026 to OC-029's, and paging measurements are OC-064's. Each new execution class proves its own durable failure diagnostics under door rule D-1 before it ships.
+181: 
+182: **Acceptance.**
+183: 1. check and describe run with storage available and unavailable, health reports both states, and the deployed identity matches the actual build.
+184: 2. Local, hosted, provider and human-drill outcomes are recorded separately.
+185: 
+186: ### Scheduling and held history
+187: 
+188: #### OC-011 — Calendar-day rotations
+189: 
+190: **Requirement.** Named-zone calendar-day rotations retain fixed primary and backup member slots. Hand-offs use the wall minute plus integer civil days, not fixed elapsed seconds. Repeated minutes explicitly choose earlier, later or reject; nonexistent or rejected boundaries produce visible gaps. Override intervals include their start and exclude their end; an overlap in the same role is rejected. Inactive, viewer and missing members do not shift slots. A duplicated primary and backup assignment leaves the backup unavailable.
+191: 
+192: **Acceptance.**
+193: 1. Save primary and backup schedules and query the HTTP preview across spring and fall DST, ambiguous and nonexistent minutes, override edges and an overlap refusal; inactive, viewer and missing slots are retained as gaps, and duplicate primary and backup responders are detected.
+194: 
+195: #### OC-012 — Paging off
+
+188: #### OC-011 — Calendar-day rotations
+189: 
+190: **Requirement.** Named-zone calendar-day rotations retain fixed primary and backup member slots. Hand-offs use the wall minute plus integer civil days, not fixed elapsed seconds. Repeated minutes explicitly choose earlier, later or reject; nonexistent or rejected boundaries produce visible gaps. Override intervals include their start and exclude their end; an overlap in the same role is rejected. Inactive, viewer and missing members do not shift slots. A duplicated primary and backup assignment leaves the backup unavailable.
+191: 
+192: **Acceptance.**
+193: 1. Save primary and backup schedules and query the HTTP preview across spring and fall DST, ambiguous and nonexistent minutes, override edges and an overlap refusal; inactive, viewer and missing slots are retained as gaps, and duplicate primary and backup responders are detected.
+194: 
+195: #### OC-012 — Paging off
+196: 
+197: **Requirement.** Production paging is OFF, and the existing pager is authoritative (RL-1). Every normal-installation delivery attempt refuses with an explanation that an independent standby and a real-phone drill are required. No production paging provider sends, synthetic delivery proof, cron delivery, SMS, voice or push are performed. Escalation policies are inspectable configuration data, not active timers. A labeled demo simulation is not production delivery or acceptance. Native cutover additionally requires OC-026 to OC-029 and OC-038 real-phone and provider-failure acceptance.
+198: 
+199: **Acceptance.**
+200: 1. On a normal installation, each delivery, job, tick, callback and resume door returns the paging-OFF refusal and creates no receipt.
+201: 2. Demo simulations are treated as simulations.
+202: 
+203: #### OC-013 — Held history stays historical
+204: 
+205: **Requirement.** Held synthetic job, receipt and callback identities remain historical data. Restore pauses pending jobs. Historical acknowledgment and explicit cancellation retain attribution; resume and new timer starts refuse while paging is OFF. An acknowledgment never proves recovery.
+206: 
+207: **Acceptance.**
+208: 1. Restore held synthetic jobs, receipts and callbacks: pending work is paused, acknowledgment and cancellation keep their attribution, resume is refused, and incident recovery remains unchanged.
+209: 
+210: #### OC-014 — Side-effect-free previews
+211: 
+212: **Requirement.** Schedule preview, now/next and replay are side-effect-free; actual historical delivery claims remain labeled synthetic. Nothing in this release certifies production delivery.
+213: 
+214: **Acceptance.**
+215: 1. Read now/next and the schedule and routing previews: durable state and receipt counts are unchanged, no timers or provider actions are created, and historical synthetic data stays labeled.
+216: 
+217: #### OC-015 — Strict module archives
+218: 
+219: **Requirement.** Strict module archive validation and atomic replacement remain supported. Imported pending historical jobs pause. Scope and local capacity limits remain explicit.
+220: 
+221: **Acceptance.**
+222: 1. Round-trip the strict module archive through protected HTTP; unknown fields, broken references and an injected SQL failure are rejected atomically, callbacks are retained and pending historical jobs pause.
+
+195: #### OC-012 — Paging off
+196: 
+197: **Requirement.** Production paging is OFF, and the existing pager is authoritative (RL-1). Every normal-installation delivery attempt refuses with an explanation that an independent standby and a real-phone drill are required. No production paging provider sends, synthetic delivery proof, cron delivery, SMS, voice or push are performed. Escalation policies are inspectable configuration data, not active timers. A labeled demo simulation is not production delivery or acceptance. Native cutover additionally requires OC-026 to OC-029 and OC-038 real-phone and provider-failure acceptance.
+198: 
+199: **Acceptance.**
+200: 1. On a normal installation, each delivery, job, tick, callback and resume door returns the paging-OFF refusal and creates no receipt.
+201: 2. Demo simulations are treated as simulations.
+202: 
+203: #### OC-013 — Held history stays historical
+204: 
+205: **Requirement.** Held synthetic job, receipt and callback identities remain historical data. Restore pauses pending jobs. Historical acknowledgment and explicit cancellation retain attribution; resume and new timer starts refuse while paging is OFF. An acknowledgment never proves recovery.
+206: 
+207: **Acceptance.**
+208: 1. Restore held synthetic jobs, receipts and callbacks: pending work is paused, acknowledgment and cancellation keep their attribution, resume is refused, and incident recovery remains unchanged.
+209: 
+210: #### OC-014 — Side-effect-free previews
+211: 
+212: **Requirement.** Schedule preview, now/next and replay are side-effect-free; actual historical delivery claims remain labeled synthetic. Nothing in this release certifies production delivery.
+213: 
+214: **Acceptance.**
+215: 1. Read now/next and the schedule and routing previews: durable state and receipt counts are unchanged, no timers or provider actions are created, and historical synthetic data stays labeled.
+216: 
+217: #### OC-015 — Strict module archives
+218: 
+219: **Requirement.** Strict module archive validation and atomic replacement remain supported. Imported pending historical jobs pause. Scope and local capacity limits remain explicit.
+220: 
+221: **Acceptance.**
+222: 1. Round-trip the strict module archive through protected HTTP; unknown fields, broken references and an injected SQL failure are rejected atomically, callbacks are retained and pending historical jobs pause.
+223: 
+224: ### Consistent recovery checkpoint
+225: 
+226: #### OC-016 — Recovery checkpoint
+227: 
+228: **Requirement.** A paired recovery checkpoint captures coordination and scheduling records with both revisions in one consistent storage snapshot, excludes authentication, and validates its envelope and intrinsic record integrity. Explicit current-admin restore replaces both datasets atomically, pauses imported pending jobs, preserves the current-password mapping rule and revokes prior authority exactly as coordination restore does. Missing references in retained paused or finished history remain evidence, never dispatch authority; missing references for pending jobs are invalid. Invalid input, capacity failures, storage failure or losing concurrent writes preserve the previous complete state and cannot revoke a winning restore's new session. Proof runs through the actual emitted Worker and D1 and the private local CLI.
+229: 
+
+267: #### OC-021 — Move-in preview
+268: 
+269: **Requirement.** The shared Base import-kit D1 file door accepts PagerDuty, Opsgenie, Splunk On-Call, Jira Service Management Ops and Better Stack saved exports. Preview writes zero native objects; retained upload custody, plan snapshots and grant/bookkeeping rows exist. A current administrator must review the exact source fingerprint before applying. Users are matched by normalized email and grant no login rights; schedules and policy data stay paused. Original bytes, unmapped fields, rejected objects, the journal and provenance are retained. Every unmappable rotation or rule is named; no partial rotation approximation is allowed. Missing detail exports reject. No account or API calls or routing credentials are activated. Complete incumbent migration and real-export acceptance remain OC-038. The shared file door and its proof limits are documented in [Move-in](docs/move-in.md#shared-file-door-implementation-and-proof-limits).
+270: 
+271: **Acceptance.**
+272: 1. Following the provider export instructions, saved Opsgenie and PagerDuty list and detail bundles preview with zero native-object writes, exact rejected and unmapped rules and fingerprints are shown, and the apply stays paused, with people and services explicitly mapped before native coverage is adopted.
+273: 
+274: #### OC-022 — Resume and undo
+275: 
+276: **Requirement.** Journaled imports support bounded resume after restart and explicit undo. SQL checks current actor, session and admin authority inside publication and reversal. Changed source identities require a reviewed catch-up through the shared door; outside that lifecycle they conflict. Duplicate unchanged sources are idempotent. Undo removes only unchanged attributed native objects; edits are preserved with an explicit conflict. Invalid input or failed publication leaves prior committed state unchanged; partial progress remains visible and resumable.
+277: 
+278: **Native proof.** In `tests/activation.mjs`, the per-vendor “unfinished checkpoint” journey applies one bounded batch of a PagerDuty or Opsgenie saved file, proves its checkpoint is strictly inside the reviewed total, restarts the Worker, and completes the same job and fingerprint. It compares the committed prefix unchanged, checks each remaining object exists once, retries the completed job without new effects, and undoes exactly that import while native membership and paging state remain unchanged. The injected native SQL failure and expired publication lease legs distinguish rolled-back publication from retained partial effects that require explicit rollback. The same file's saved-response journeys cover unchanged replay, and its native-edit and later-import journeys preserve records under `NATIVE_EDIT_CONFLICT` and `IMPORT_SUPERSEDED`, including revoked-session refusal. In `tests/import-door.mjs`, the PagerDuty account HTTP journey revokes Business import authority inside the committing batch, injects publication failure, and checks unchanged native records; its identical-byte and reviewed catch-up journeys cover unchanged and changed identities. These are synthetic saved-file proofs with imported objects inactive and paging OFF; live account conversion and cutover remain with OC-038 and OC-074.
+279: 
+280: **Acceptance.**
+281: 1. Apply, interrupt and restart, resume and undo both vendor imports over HTTP; revoke authority at publication, inject an SQL failure, replay unchanged and changed identities, and preserve native edits as named undo conflicts.
+282: 
+
+274: #### OC-022 — Resume and undo
+275: 
+276: **Requirement.** Journaled imports support bounded resume after restart and explicit undo. SQL checks current actor, session and admin authority inside publication and reversal. Changed source identities require a reviewed catch-up through the shared door; outside that lifecycle they conflict. Duplicate unchanged sources are idempotent. Undo removes only unchanged attributed native objects; edits are preserved with an explicit conflict. Invalid input or failed publication leaves prior committed state unchanged; partial progress remains visible and resumable.
+277: 
+278: **Native proof.** In `tests/activation.mjs`, the per-vendor “unfinished checkpoint” journey applies one bounded batch of a PagerDuty or Opsgenie saved file, proves its checkpoint is strictly inside the reviewed total, restarts the Worker, and completes the same job and fingerprint. It compares the committed prefix unchanged, checks each remaining object exists once, retries the completed job without new effects, and undoes exactly that import while native membership and paging state remain unchanged. The injected native SQL failure and expired publication lease legs distinguish rolled-back publication from retained partial effects that require explicit rollback. The same file's saved-response journeys cover unchanged replay, and its native-edit and later-import journeys preserve records under `NATIVE_EDIT_CONFLICT` and `IMPORT_SUPERSEDED`, including revoked-session refusal. In `tests/import-door.mjs`, the PagerDuty account HTTP journey revokes Business import authority inside the committing batch, injects publication failure, and checks unchanged native records; its identical-byte and reviewed catch-up journeys cover unchanged and changed identities. These are synthetic saved-file proofs with imported objects inactive and paging OFF; live account conversion and cutover remain with OC-038 and OC-074.
+279: 
+280: **Acceptance.**
+281: 1. Apply, interrupt and restart, resume and undo both vendor imports over HTTP; revoke authority at publication, inject an SQL failure, replay unchanged and changed identities, and preserve native edits as named undo conflicts.
+282: 
+

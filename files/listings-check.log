@@ -1,0 +1,8 @@
+START 2026-11-13T21:44:23Z
+
+> next-project@0.1.0 listings
+> node --import tsx scripts/listings.mjs --check
+
+Listings current (49 seeds)
+END 2026-11-13T21:44:24Z
+EXIT=0

@@ -1,0 +1,151 @@
+{
+  "timestamp": "2026-11-13T21:44:23.357543+00:00",
+  "base": "ac2df380f2770a76aaee8a2dac8a1992554eb117",
+  "head": "2ae43f9e53a68f2a998af6df95ed13e038c66c68",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "before_counts": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "after_counts": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "versions": {
+    "happytohelp": [
+      "v0.4.24",
+      "v0.4.25"
+    ],
+    "oncall": [
+      "v0.5.12",
+      "v0.5.13"
+    ],
+    "spool": [
+      "v0.7.9",
+      "v0.7.10"
+    ]
+  },
+  "unchanged_versions": {
+    "lamp": "v1.11.14",
+    "uptime": "v0.5.11",
+    "orbit": "v0.4.9"
+  },
+  "state_changes": {
+    "happytohelp": {
+      "commit": {
+        "before": "6acf8a4c50dfeb94ca9ab705b1e386d282ea8e0f",
+        "after": "333af4b0580c4284616783f1d79fcc9aad3aefc5"
+      },
+      "copy": {
+        "before": {
+          "CONTRACT.md": "ae8feea8b7998aa7",
+          "README.md": "ff2699e21edf96c7",
+          "seed.json": "de762362ebcab2ec"
+        },
+        "after": {
+          "CONTRACT.md": "ae8feea8b7998aa7",
+          "README.md": "45a28e3132618824",
+          "seed.json": "321e3d3d615cbcde"
+        }
+      },
+      "open": {
+        "before": null,
+        "after": [
+          "42983364b373"
+        ]
+      },
+      "sourceRef": {
+        "before": "v0.4.24",
+        "after": "v0.4.25"
+      },
+      "tag": {
+        "before": "v0.4.24",
+        "after": "v0.4.25"
+      }
+    },
+    "oncall": {
+      "commit": {
+        "before": "1ab915f6efdfe3398c8d7645fe56e46e123299b6",
+        "after": "8adae6c836f2fabda29e8a091b052450410c8ca5"
+      },
+      "copy": {
+        "before": {
+          "CONTRACT.md": "c04517abc904f1e5",
+          "README.md": "1fcdb805e9c64257",
+          "seed.json": "6a14ea9f338c97ad"
+        },
+        "after": {
+          "CONTRACT.md": "c04517abc904f1e5",
+          "README.md": "872282ad16baf429",
+          "seed.json": "e91a0fe23123ca2a"
+        }
+      },
+      "sourceRef": {
+        "before": "v0.5.12",
+        "after": "v0.5.13"
+      },
+      "tag": {
+        "before": "v0.5.12",
+        "after": "v0.5.13"
+      }
+    },
+    "orbit": {
+      "open": {
+        "before": [
+          "64cb07f6a0dd"
+        ],
+        "after": null
+      }
+    },
+    "spool": {
+      "commit": {
+        "before": "8049c9153f1d987bba6211bc05b8405b06101a6f",
+        "after": "417ab513b3032370091479fa28f41a5a67b50c53"
+      },
+      "copy": {
+        "before": {
+          "CONTRACT.md": "ee9c871bfa25a110",
+          "README.md": "8e4935c8e07d3150",
+          "seed.json": "9df4692f3993614c"
+        },
+        "after": {
+          "CONTRACT.md": "ee9c871bfa25a110",
+          "README.md": "d3558bee3c5f1d96",
+          "seed.json": "76b608fdf01eeaa9"
+        }
+      },
+      "open": {
+        "before": null,
+        "after": [
+          "42983364b373"
+        ]
+      },
+      "sourceRef": {
+        "before": "v0.7.9",
+        "after": "v0.7.10"
+      },
+      "tag": {
+        "before": "v0.7.9",
+        "after": "v0.7.10"
+      }
+    },
+    "uptime": {
+      "open": {
+        "before": [
+          "42983364b373"
+        ],
+        "after": null
+      }
+    }
+  },
+  "copy_unchanged": true,
+  "identity": "fleet author and committer; no trailers",
+  "credential_shape_scan": "no match on candidate diff",
+  "generated_contract_source_lock_migration_ledger": "not applicable: no CONTRACT.md, source lock, generator or migration-ledger check in this repository"
+}

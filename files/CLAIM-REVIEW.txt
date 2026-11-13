@@ -1,0 +1,29 @@
+happytohelp
+- MOVE-IN-001 — done (happytohelp-CONTRACT.md:1207): Imports are reviewed before anything is written, send no messages to your customers, can be undone as a whole, and keep source dates, private notes and publication state.
+- CONVERSATION-001 — partial (happytohelp-CONTRACT.md:1204): Customer and agent messages are stored once, and two conflicting final replies can never both be accepted.
+- DELIVERY-001 — partial (happytohelp-CONTRACT.md:1205): Messages are saved before they are shown live, so a reload or dropped connection recovers everything that was sent, and an AI draft never becomes a final answer until it is safely accepted.
+- OUTCOMES-001 — partial (happytohelp-CONTRACT.md:1208): Customers can rate a resolution with a thumbs up or down and a short comment, and comments are removed if the contact is erased.
+- REPORTS-001 — done (happytohelp-CONTRACT.md:1209): Reports use your own calendar and time zone, count each conversation once, and export to a spreadsheet file that is safe to open.
+- AI-001 — partial (happytohelp-CONTRACT.md:1212): With no AI key, the AI is simply not assigned to new conversations and your team keeps them; your company's policy sets AI spending limits and uncertain attempts are never silently repeated.
+- DELEGATION-001 — partial (happytohelp-CONTRACT.md:1215): Revoking a computer's access ends its authority at once, and HappyToHelp never claims that work already running there was stopped.
+- CONNECTIONS-001 — partial (happytohelp-CONTRACT.md:1210): API tokens have chosen scopes, are shown once, are stored hashed and can expire; an unclear webhook result is not sent again.
+- IDENTITY-003 — partial (happytohelp-CONTRACT.md:1269): Teammates can sign in with an authenticator app or a security key plus one-time recovery codes, and an owner can require it for everyone or by role.
+- PORTABILITY-001 — partial (happytohelp-CONTRACT.md:1279): You can export your conversations, files, contacts, help articles, settings and history in one checked archive and restore it into a clean installation; sign-ins and provider secrets are left out.
+oncall
+- OC-012 — done (oncall-CONTRACT.md:1444): Oncall sends no texts, calls or push alerts, so your existing pager stays in charge while you use it.
+- OC-006 — done (oncall-CONTRACT.md:1438): Oncall sends signed response events only to endpoints an administrator approves; paging stays off, and email is for sign-in links only.
+- OC-005 — done (oncall-CONTRACT.md:1437): A runbook is copied into the incident when it is declared, so later edits never rewrite instructions mid-incident.
+- OC-004 — done (oncall-CONTRACT.md:1436): Resolving an incident needs recovery evidence and a summary, and every change is recorded in an attributed timeline.
+- OC-008 — done (oncall-CONTRACT.md:1440): Incident records you write are never deleted automatically.
+- OC-011 — done (oncall-CONTRACT.md:1443): Rotations hand over by wall-clock time in your named zone, and clock-change gaps show up as visible gaps.
+- OC-003 — done (oncall-CONTRACT.md:1435): Viewers can only read, responders coordinate, and admins manage; alert-sending credentials grant no read access, and removed access stops on the next request.
+- OC-002 — done (oncall-CONTRACT.md:1434): Replaying alert routing only reads: it creates no alert, incident or outside effect.
+- OC-021 — done (oncall-CONTRACT.md:1453): A move-in preview writes nothing, a person must review it before it is applied, and imported schedules stay paused.
+- OC-022 — done (oncall-CONTRACT.md:1454): A move-in can be undone, and edits you made afterwards are kept rather than overwritten.
+spool
+- ERR-003 — done (spool-CONTRACT.md:1683): Error details are scrubbed before they are stored: emails, tokens and passwords are removed, and headers, cookies and request bodies are not kept by default.
+- ERR-004 — done (spool-CONTRACT.md:1684): Owner sign-in, error sending and read-only agent access are separate, revoking one takes effect on the next request, and your source maps are never public.
+- ERR-002 — done (spool-CONTRACT.md:1682): An error is only counted once it is fully saved, and a repeated send never counts twice.
+- ERR-006 — done (spool-CONTRACT.md:1686): Changes to an issue are recorded, and a resolved issue reopens as returning only when it appears in a later release, so an old release's error raises no false alarm.
+- ERR-007 — done (spool-CONTRACT.md:1687): The evidence packet is size-limited and never includes your source code.
+- ERR-008 — done (spool-CONTRACT.md:1688): Counts of errors accepted and rejected are visible, and a quiet period is never reported as proof an error is fixed.
