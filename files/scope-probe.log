@@ -1,0 +1,8 @@
+PASS exact three paths; no tests changed
+PASS listings 49 = 35 released + 14 coming soon on main and head; eight exclusions absent; only HappyToHelp version changes; all public wording identical
+PASS state only timestamp, HappyToHelp released commit/ref/tag/file hashes and open finding marker; Uptime only removes open finding marker. No state wording/brand/home/status change.
+PASS all candidate commits including side parents: exactly one, fleet author/committer, no trailers
+PASS added-hunk credential patterns; manual full-hunk review contains only timestamps/version, source hashes and open marker ids
+PASS no pricing file or statement changed. Current JE sources contain no Assisted/Managed pricing sentence; US$10/month and US$100/month are not independently re-observed on this surface.
+N/A source lock, contract views, migration ledger: no such tracked files or documented AGENTS/package commands in this website repository; listings generator independently write/check exercised.
+PASS scope probe

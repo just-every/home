@@ -1,0 +1,152 @@
+{
+  "baseline": "d1ffd164f0a362da8a6e1f9a8d27db8bf5130a99",
+  "blocking_findings": [],
+  "candidate_branch": "cloud/je-sync-25",
+  "candidate_head": "e6fe389a5b80b60ed8d7c97db717f653651143f2",
+  "checks": [
+    {
+      "command": "npm ci",
+      "log": "npm-ci.log",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run listings -- --check",
+      "log": "listings-check.log",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run listings",
+      "log": "listings-write.log",
+      "result": "PASS unchanged"
+    },
+    {
+      "command": "git diff --exit-code",
+      "log": "post-listings.diff",
+      "result": "PASS clean"
+    },
+    {
+      "command": "npm run type-check",
+      "log": "type-check.log",
+      "result": "PASS no errors"
+    },
+    {
+      "command": "npm run lint",
+      "log": "lint.log",
+      "result": "PASS no errors"
+    },
+    {
+      "command": "cloud_run npm run build",
+      "log": "build.log",
+      "result": "PASS exit 0"
+    },
+    {
+      "command": "cloud_run npm run build (baseline worktree)",
+      "log": "baseline-build.log",
+      "result": "PASS exit 0"
+    },
+    {
+      "command": "python3 ../packet/scope-probe.py",
+      "log": "scope-probe.log",
+      "result": "PASS exit 0"
+    },
+    {
+      "command": "cloud_run node ../packet/browser-probe.mjs",
+      "log": "browser-probe.log",
+      "receipt": "browser-receipt.json",
+      "result": "PASS exit 0"
+    }
+  ],
+  "ci": {
+    "runs": [
+      {
+        "conclusion": "skipped",
+        "event": "pull_request",
+        "head_sha": "e6fe389a5b80b60ed8d7c97db717f653651143f2",
+        "html_url": "https://github.com/just-every/home/actions/runs/43356681112",
+        "id": 43356681112,
+        "name": "Verify branch",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "event": "dynamic",
+        "head_sha": "e6fe389a5b80b60ed8d7c97db717f653651143f2",
+        "html_url": "https://github.com/just-every/home/actions/runs/43356678568",
+        "id": 43356678568,
+        "name": "PR #49",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "event": "push",
+        "head_sha": "e6fe389a5b80b60ed8d7c97db717f653651143f2",
+        "html_url": "https://github.com/just-every/home/actions/runs/43356623475",
+        "id": 43356623475,
+        "name": "Verify branch",
+        "status": "completed"
+      }
+    ],
+    "total_count": 3
+  },
+  "clause_status_changes": [],
+  "counts_after": {
+    "coming_soon": 14,
+    "released": 35,
+    "total": 49
+  },
+  "counts_before": {
+    "coming_soon": 14,
+    "released": 35,
+    "total": 49
+  },
+  "gh_api_calls": 9,
+  "new_followups": [],
+  "not_applicable": [
+    "seed source lock: none documented or tracked",
+    "seed contract views: no CONTRACT.md or generated views",
+    "migration ledger: none documented or tracked"
+  ],
+  "observed_utc": "2026-11-13T03:30:33.604633+00:00",
+  "pr": "https://github.com/just-every/home/pull/49",
+  "product_push": false,
+  "product_tree_clean": true,
+  "product_writes": false,
+  "provider_credentials_used": false,
+  "release": [
+    {
+      "assets": [
+        {
+          "name": "rer-release.dsse.json",
+          "size": 3061
+        }
+      ],
+      "draft": false,
+      "html_url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.23",
+      "prerelease": false,
+      "published_at": "2026-11-13T00:12:39Z",
+      "tag_name": "v0.4.23",
+      "target_commitish": "main"
+    }
+  ],
+  "release_tag_target": {
+    "object": {
+      "sha": "3c45a60a6debb0886ae8c41eee18a95e6fee694d",
+      "type": "commit",
+      "url": "https://api.github.com/repos/just-every/run-happytohelp/git/commits/3c45a60a6debb0886ae8c41eee18a95e6fee694d"
+    },
+    "tag": "v0.4.23"
+  },
+  "repository": "just-every/home",
+  "role": "independent gate",
+  "rows": {
+    "R1": "MET",
+    "R2": "MET",
+    "R3": "MET",
+    "R4": "MET",
+    "R5": "MET"
+  },
+  "schema": 1,
+  "signature_verified": false,
+  "tag": "je-gate-33",
+  "verdict": "GATE PASS"
+}
