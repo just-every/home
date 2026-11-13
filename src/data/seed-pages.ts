@@ -345,7 +345,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Atlassian Statuspage', 'Better Stack', 'Instatus', 'Sorry'],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v1.11.14',
+    version: 'v1.11.15',
     contractUrl: 'https://run-lamp.com/contract',
     seoTitle: 'Lamp: free, open-source alternative to Atlassian Statuspage',
     seoDescription:

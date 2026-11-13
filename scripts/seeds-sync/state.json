@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-13T21:20:59.504Z",
+  "syncedAt": "2026-11-13T22:47:41.473Z",
   "seeds": {
     "auth": {
       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
@@ -504,8 +504,7 @@
       "home": {
         "headline": "Knows what your customer needs before they do.",
         "signature": "eedddddddeedeeeeeeeeeeeeeeeeeeeedeedeeebaa887dddeeeeeeeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededdeedeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddbbbcbbcbbbbbbbbeedeeeeeeeeedeeeeeeeeeeeeeeeeedddaaabaabaaaaaccbeeeeeeeeeeeeeeeeeedeeeeeeeeeeeeedddcddcddcddcdddeeeeeeeeedddcccdeedeedeedeeeeeeeddccddceddeeeeedeeeeeedeebbbaaacddeeedddccceeedcc555544999eedeedeeeeeeeeeeeeefeeeeeeeddddddeeeeeddccdccdddeedeeefeededddddddeedeeededdddeddeee"
-      },
-      "open": ["42983364b373"]
+      }
     },
     "inkwell": {
       "commit": "e4e3c2dd4bdf48fe16111f9d447568d6c4366a84",
@@ -535,14 +534,14 @@
       }
     },
     "lamp": {
-      "commit": "733e2ce1e2fc618183a93632218bb86456a06a79",
-      "sourceRef": "v1.11.14",
+      "commit": "5dd84e13f6b0478edc2fc5e759d513f5eccf6d57",
+      "sourceRef": "v1.11.15",
       "sourceReason": "released listing version",
-      "tag": "v1.11.14",
+      "tag": "v1.11.15",
       "copy": {
         "CONTRACT.md": "8b575f27ee607ce3",
-        "README.md": "778c7cf2ed2f6527",
-        "seed.json": "b42cf20347b50d08"
+        "README.md": "1a20f137749ab26b",
+        "seed.json": "074cb758ae0a8d8f"
       },
       "brand": {
         "theme.page": "#f8f6f0",
@@ -558,7 +557,8 @@
       "home": {
         "headline": "When something breaks, turn the light on.",
         "signature": "eeddddeeefeefeefeeffeeeeeeeffefeeeeeeeeeed9a9ddcfeeeeefeefeefeefeeffeccccccffefeefeefeeeeeeeeeeefeefeefeefeefeeffeccc444454dccffefeefeefeeffeffefeefeefeeffeffeffeddcdcbdcbedcffeffeffefeefeefeefeefeeffeeeddddeedeedeedeedeededddddeeeffefeefeefeefeeffeeedddcccbccbbbbbbbbbaccbddceedffefeefeefeefeefeeffeeeeddcedcddcddcddcdddfeeffefeefeefeefeefeefeefeeffebbb898eedeedeedeedfeefeefeefeefeefeefeefeefeefeeeeddddeedeeeeeeeeeeeefeefeefeefee"
-      }
+      },
+      "open": ["42983364b373"]
     },
     "lanyard": {
       "commit": "db2a1ef37612248290e0efd85209c9b1f0da8c83",
@@ -829,8 +829,7 @@
       "home": {
         "headline": "Everyone knows who's on call.",
         "signature": "feedddeeeffeffeffeffeffeffeffeffeffeffeffefeeffeffeffeffefffffefffffeffeffeffeffeffeffeffeffeffeeedccccccccccccccceedffeeeeeeeeedeeeffeffeffeffeeeebbbccccccbbbdddfeeffeedddcbccbeedeeefeeeeeffefeeeeeeeeeeeeeeeeefffdcbdb9ddcddddddcccdddeeeffeeed999999999dddeeeffeeccedcffeffeeedddcdcbecbabbeed99999aaaaeedfeeffeffeffeffeffeffeeeddccedc9aaffefeeffeffeeeeeeefeeffeffeffeffeffeffeffeffeffeffeeeeeeeffeeeeeeeffefeefeeffefeeeeeffeffeffeffe"
-      },
-      "open": ["42983364b373"]
+      }
     },
     "orbit": {
       "commit": "a5f471626aea1bfcb2c79f5dbee2250fdb38fd49",
@@ -1180,8 +1179,7 @@
       "home": {
         "headline": "See exactly what broke.",
         "signature": "eeddccddceedeedeedeeeeedeedeedeeeeeeeeeeedeedeedeeddddeedeedeeeeeeeedeedeededdeedeedeedeedeedeedeedccbddcddcddcccbeddeeeeeddddddceedeedeedeedeedeed999aa9999999999cccfeeeedeededddddeddeedeedeedeedbaaaa9bbaaaaaa9ccbeeeeededddddeedeedeedeedeedeedddcddcddcddceedeeeeeeeeddddddbedceeceeceedeedeedeedeededdeedeeeffefeeeedeededaed9edaedaedbeedeed999988aaabba888888bbbeedeedeededdeeeeeeeedeedeeda99998baaccbaa9aa9ccbeeddddddceedeedeedeedeed"
-      },
-      "open": ["42983364b373"]
+      }
     },
     "stall": {
       "commit": "8ee1f25df4f0b10b9a62e7fe221453499f27b297",
