@@ -31,6 +31,12 @@
       "sha256": "bf5445084bd156ea0bf20a97c94a47f645c350df1a5ba71912aa613a6c539304"
     },
     {
+      "blob": "6cab47aa0eda6479e1e3865714cc56d14a7eb0cd",
+      "bytes": 12775,
+      "path": "TRANSFER-RECEIPT.json",
+      "sha256": "6b0382aff89a4fc725ac633ed4ccb456150f0d2ea3fb6bd02bf7b5abd2d991d3"
+    },
+    {
       "blob": "834997cbec14ade3a863a3925c5c8c8af10377e0",
       "bytes": 3972,
       "path": "baseline-build.log",
