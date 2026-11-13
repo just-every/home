@@ -1,0 +1,80 @@
+{
+  "files": [
+    {
+      "path": "public-source.tar",
+      "sha256": "813deb42a8d06074c027646a6d66a41aafeb899635441de1285cafa702ac40c5",
+      "size": 44387328
+    },
+    {
+      "path": "publish-check.json",
+      "sha256": "249703d56f8a21c2b5b223c4775e8cd62aee6cef5ededa0368a21106360403bd",
+      "size": 924382
+    },
+    {
+      "path": "release-receipt.json",
+      "sha256": "b1c5ccba0c19510fca9e29bcd1a7a3e33bb1f6656ff69a6c721c2623d4dc7261",
+      "size": 1937
+    },
+    {
+      "path": "site/lamp/1.11.15/documents/ACCEPTANCE.md",
+      "sha256": "51c66053f34d3f803ab56d6e9f92c72d5fe22692a370b26629fb3cafeb92a766",
+      "size": 392474
+    },
+    {
+      "path": "site/lamp/1.11.15/documents/AGENTS.md",
+      "sha256": "278d93c1e624b8c85063a99cde61fac58c84ab92c183b90022a3a69960c99e37",
+      "size": 11794
+    },
+    {
+      "path": "site/lamp/1.11.15/documents/BASELINE.md",
+      "sha256": "18359d4085d1e983d5c5308ac3f9d2ad9f4d27ac4957b5aa82b9d89541f1164b",
+      "size": 28969
+    },
+    {
+      "path": "site/lamp/1.11.15/documents/CONTRACT.md",
+      "sha256": "8b575f27ee607ce3f259e3ec0d733febbf5536d9906cb99a0d9a2ede09c5096f",
+      "size": 440141
+    },
+    {
+      "path": "site/lamp/1.11.15/documents/LICENSE",
+      "sha256": "2f5076ef027045b9e0e72df8aa61ca8551e54b1877d531656d6e7985b2c32324",
+      "size": 1069
+    },
+    {
+      "path": "site/lamp/1.11.15/documents/OPERATIONS.md",
+      "sha256": "ce943a4ee5f8bc01b3150104742cb606719d20e5d5fbfddaee2f4f21d699d1e7",
+      "size": 46753
+    },
+    {
+      "path": "site/lamp/1.11.15/documents/README.md",
+      "sha256": "1a20f137749ab26bb365e00f19345f2eb11df7d68141088a16f89448266b31c5",
+      "size": 9373
+    },
+    {
+      "path": "site/lamp/1.11.15/documents/RELEASE.json",
+      "sha256": "7645ad91ce437360799fc4741c3b46a95f94afac2d0561ac1c5599d1fd49c7ab",
+      "size": 2923
+    },
+    {
+      "path": "site/lamp/1.11.15/documents/seed.json",
+      "sha256": "074cb758ae0a8d8f638090fc2106190c1fab4551322762c3a09eb4f5cdea603f",
+      "size": 43584
+    },
+    {
+      "path": "site/lamp/1.11.15/release.json",
+      "sha256": "d9bea9e079ed182356b19e657f03d4c80d6311f19033191a7e1d40d9ab1ddc5e",
+      "size": 89629
+    }
+  ],
+  "issuedAt": "2026-11-13T22:11:08Z",
+  "keyId": "rer-ed25519-5a42fb9c9c4f8acb2b32386e9e40461c",
+  "project": "just-every/lamp",
+  "publicCommit": "5dd84e13f6b0478edc2fc5e759d513f5eccf6d57",
+  "publicTree": "1e82bc9a9689482f4d613f52e9fab0facdbb4dee",
+  "publisher": "just-every",
+  "repository": "https://github.com/just-every/run-lamp",
+  "schemaVersion": 1,
+  "tag": "v1.11.15",
+  "tagObject": "6db107e62b0260abbaaf4312890c8038348c5630",
+  "version": "1.11.15"
+}

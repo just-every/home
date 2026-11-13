@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-13T22:52:20Z",
+  "from": "733e2ce1e2fc618183a93632218bb86456a06a79",
+  "to": "5dd84e13f6b0478edc2fc5e759d513f5eccf6d57",
+  "files": [
+    {
+      "path": "CONTRACT.md",
+      "old_sha256": "8b575f27ee607ce3f259e3ec0d733febbf5536d9906cb99a0d9a2ede09c5096f",
+      "new_sha256": "8b575f27ee607ce3f259e3ec0d733febbf5536d9906cb99a0d9a2ede09c5096f",
+      "identical": true
+    },
+    {
+      "path": "README.md",
+      "old_sha256": "778c7cf2ed2f6527a7d6800d2572d429fbcc3f50b3991b1415f6154e4fc8b033",
+      "new_sha256": "1a20f137749ab26bb365e00f19345f2eb11df7d68141088a16f89448266b31c5",
+      "identical": false
+    },
+    {
+      "path": "seed.json",
+      "old_sha256": "b42cf20347b50d087a5670deac9e159ba1f9491d1de174e0918cd3c3a780d6f9",
+      "new_sha256": "074cb758ae0a8d8f638090fc2106190c1fab4551322762c3a09eb4f5cdea603f",
+      "identical": false
+    }
+  ],
+  "decision": "README.md:87-101 clarifies published release clone guidance; seed.json:4 changes only version. CONTRACT.md is byte-identical. Preserve all JE claim wording and existing partial-evidence follow-ups."
+}

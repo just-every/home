@@ -1,0 +1,28 @@
+{
+  "before": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "changes": [
+    {
+      "slug": "lamp",
+      "fields": {
+        "version": {
+          "before": "v1.11.14",
+          "after": "v1.11.15"
+        }
+      }
+    }
+  ],
+  "changed_paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ]
+}

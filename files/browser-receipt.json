@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-13T22:52:20Z",
+  "head": "055dc4dbed1ae33d95a9cf0412464558c5ff5aef",
+  "url": "http://127.0.0.1:3131/lamp",
+  "probes": [
+    {
+      "width": 1440,
+      "http_status": 200,
+      "displayed_version": "v1.11.15",
+      "assertions": [
+        "rendered release agrees with generated public listing",
+        "softwareVersion metadata agrees with public listing",
+        "served public listing agrees with rendered release"
+      ],
+      "screenshot": "lamp-1440.png"
+    },
+    {
+      "width": 390,
+      "http_status": 200,
+      "displayed_version": "v1.11.15",
+      "assertions": [],
+      "screenshot": "lamp-390.png"
+    }
+  ]
+}
