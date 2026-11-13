@@ -1,0 +1,25 @@
+{
+  "result": "PASS",
+  "publicDoor": "production /spool and /data/listings.json",
+  "geometry": [
+    {
+      "width": 1440,
+      "httpStatus": 200,
+      "scrollWidth": 1440,
+      "height": 4512,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "httpStatus": 200,
+      "scrollWidth": 390,
+      "height": 4367,
+      "errors": []
+    }
+  ],
+  "visibleText": "Byte-identical after only v0.7.9 -> v0.7.8 normalization",
+  "visualInspection": "Candidate and main screenshots inspected at 1440 and 390; no introduced layout break. Gallery slides intentionally clip inside their own carousel; page scrollWidth equals viewport. Deferred lazy footer artwork is not a candidate change.",
+  "localRuntimeNotes": [
+    "Both unconfigured plain-Next production servers log caches is not defined for the token snapshot and missing local D1 page_views table for analytics; no page JavaScript errors, HTTP page/data status 200 and unchanged on main. No provider credentials or schema changes used."
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "result": "PASS",
+  "credentialShapeMatches": 0,
+  "symlinks": 0,
+  "scope": "Actual report, public release sources/receipts, probe code, command logs and screenshots only. No credentials, secret values, environment dumps or held-out material selected.",
+  "publicationTarget": "just-every/home refs/heads/evidence/je-gate-36",
+  "productPushes": 0
+}

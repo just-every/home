@@ -1,0 +1,73 @@
+{
+  "head": "181ca0a1b0d41af1dc4b9566412fc64f11267787",
+  "baseline": "42d2b3bfd372f151c993e36128249d7e059091de",
+  "commands": [
+    {
+      "command": "npm ci",
+      "exit": 0,
+      "log": "npm-ci.log"
+    },
+    {
+      "command": "npm run listings -- --check",
+      "exit": 0,
+      "result": "Listings current (49 seeds)"
+    },
+    {
+      "command": "npm run listings",
+      "exit": 0,
+      "result": "Listings unchanged (49 seeds)"
+    },
+    {
+      "command": "git diff --exit-code",
+      "exit": 0,
+      "result": "zero generated or tracked changes"
+    },
+    {
+      "command": "npm run type-check",
+      "exit": 0
+    },
+    {
+      "command": "npm run lint",
+      "exit": 0
+    },
+    {
+      "command": "npm run build",
+      "exit": 0,
+      "result": "61 static pages generated; local-checks.log"
+    },
+    {
+      "command": "node static-probe.mjs (ephemeral gate probe)",
+      "exit": 0,
+      "receipt": "static-receipt.json"
+    },
+    {
+      "command": "npm run build on baseline main",
+      "exit": 0,
+      "log": "main-build.log"
+    }
+  ],
+  "browserHarnessAttempts": [
+    {
+      "attempt": 1,
+      "result": "page.goto waiting for networkidle timed out at 60000 ms; browser closed by finally",
+      "productAssertionFailure": false
+    },
+    {
+      "attempt": 2,
+      "result": "wait for all images in upper document timed out at 15000 ms because hidden/lazy gallery slides are intentionally deferred; browser closed by finally",
+      "productAssertionFailure": false
+    },
+    {
+      "attempt": 3,
+      "result": "Wait for real Version fact and document fonts, inspect pending images rather than waiting for hidden lazy slides; head passed at 1440 and captured 1440/390",
+      "receipt": "head-browser-receipt.json"
+    }
+  ],
+  "notRun": [],
+  "notApplicable": [
+    "source lock regeneration/check: no sources.lock.json or documented command in home",
+    "contract-view write/check: no CONTRACT.md or documented generator in home",
+    "migration-ledger check: none documented or present; no schema changes"
+  ],
+  "productMutations": 0
+}

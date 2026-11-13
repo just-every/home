@@ -1,0 +1,35 @@
+{
+  "repository": "just-every/home",
+  "candidateBranch": "cloud/je-sync-28",
+  "productCheckout": "detached candidate head",
+  "head": "181ca0a1b0d41af1dc4b9566412fc64f11267787",
+  "tree": "e6a4bd8a37a28513b8de59b71c3f5c338693aeb1",
+  "baseline": "42d2b3bfd372f151c993e36128249d7e059091de",
+  "pr": "https://github.com/just-every/home/pull/52",
+  "workingTree": "clean",
+  "index": "unchanged",
+  "productCommitsCreated": 0,
+  "productPushes": 0,
+  "clauseStatusChanges": [],
+  "ciRunIds": [
+    43433866088,
+    43433898192,
+    43433902415
+  ],
+  "verdict": "GATE PASS",
+  "blockingFindings": 0,
+  "newFollowUps": 0,
+  "countsBefore": {
+    "all": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "countsAfter": {
+    "all": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "browserProcesses": "closed by finally",
+  "serverProcesses": "only recorded head/main Next PIDs sent SIGTERM; subreapers finished",
+  "cleanup": "Clone and node_modules to be deleted after successful report-only publication; packet retained separately."
+}

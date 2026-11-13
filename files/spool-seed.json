@@ -1,0 +1,375 @@
+{
+  "id": "errors-workbench",
+  "name": "Spool",
+  "version": "0.7.9",
+  "maturity": "Local-first JavaScript, Python and Go evidence product with one owner and isolated projects; bounded native, Sentry and OTLP-log intake, private source maps, operator corrections, owner/project erasure, sandbox reproducer, granted GitHub fix branches and exposure measurement. Runtime checks and review evidence are recorded separately; source metadata does not establish hosted, provider or npm publication acceptance.",
+  "category": "monitoring",
+  "replaces": [
+    { "name": "Sentry", "edition": null },
+    { "name": "Bugsnag", "edition": null },
+    { "name": "Rollbar", "edition": null }
+  ],
+  "spine": {
+    "id": "javascript-evidence",
+    "record": "A sanitized JavaScript, Python or Go exception occurrence grouped into a project-scoped issue."
+  },
+  "description": "Investigate application errors with grouped issues, source maps and evidence for reviewing fixes.",
+  "scope": "One owner identity per installation with multiple isolated projects and project-scoped ingest and read grants.",
+  "capabilities": [
+    {
+      "id": "bounded-js-ingest",
+      "description": "Capture bounded native JSON and supported Sentry exception envelope/store evidence through project-scoped ingest authority, scrub common sensitive patterns, count/discard unsupported Sentry telemetry, and commit accepted events, groups, and local alerts atomically in D1. Unmodified browser/node SDK 11.6.0 verification programs exist; results are separate evidence, not inferred from package pins. See docs/SENTRY-SWITCHING.md.",
+      "clauses": [
+        "ERR-001",
+        "ERR-002",
+        "ERR-003",
+        "ERR-008"
+      ]
+    },
+    {
+      "id": "source-map-evidence",
+      "description": "Match bounded flat Source Map V3 artifacts to exact project, release, build, and debug identities; support owner uploads and CLI/Rollup/Vite plugin uploads using release/map-only project deploy keys. See docs/SENTRY-SWITCHING.md.",
+      "clauses": [
+        "ERR-005"
+      ]
+    },
+    {
+      "id": "issue-triage",
+      "description": "Inspect grouped issues and update revision-checked triage state with an audit trail.",
+      "clauses": [
+        "ERR-006"
+      ]
+    },
+    {
+      "id": "scoped-private-evidence",
+      "description": "Separate owner sessions, project ingest keys, and project read-only evidence grants.",
+      "clauses": [
+        "ERR-004",
+        "ERR-007"
+      ]
+    },
+    {
+      "id": "portable-retained-evidence",
+      "description": "Export Base portability archives and restore validated new or legacy data into an empty destination; manual retention invalidates stored snapshots and records occurrence tombstones. Owner-only project erasure uses the adopted Base helper with complete project cascades, anonymised audits, count-only receipts and restore fences. The owner-only Base import-kit organization adapter supports reviewed dry run, apply/resume and guarded undo, qualified with synthetic fixtures only. See docs/SENTRY-SWITCHING.md, docs/PROJECT-ERASURE.md, CONTRACT.md and ACCEPTANCE.md for custody, scope exceptions, external limits and five-minute timing.",
+      "clauses": [
+        "ERR-009",
+        "ERASE-001"
+      ]
+    },
+    {
+      "id": "bounded-operator-ui",
+      "description": "Show stored project evidence and capture-coverage caveats in a responsive workbench, with per-project new-issue, regression and spike feeds, rules, delivery logs and scheduled evaluation/retry. Base Mail needs provider acceptance; HMAC webhook delivery requires a separately installed enforcing egress service with no ordinary-fetch fallback. No Oncall dependency or Slack integration is required. See docs/ALERT-WEBHOOKS.md.",
+      "clauses": [
+        "ERR-010"
+      ]
+    },
+    {
+      "id": "optional-managed-admission",
+      "description": "Provide signed first-owner admission with an additive durable claim ledger, a native-owner-gated editor lease and pinned managed producer/package/setup metadata. Hosted installation and editor acceptance remain separate.",
+      "clauses": [
+        "ERR-004",
+        "ERR-007"
+      ]
+    },
+    {
+      "id": "multilingual-exception-evidence",
+      "description": "Accept bounded native and Sentry Python/Go exceptions with language-specific grouping, scrubbed structured or parsed-text frames and release-bound repository path mappings. Python/Go remain evidence only: no JavaScript source-map lookup, binary symbolication or sandbox execution. See docs/SUPPORTED-LANGUAGES.md.",
+      "clauses": [
+        "ERR-001",
+        "ERR-002",
+        "ERR-003",
+        "ERR-005",
+        "ERR-006"
+      ]
+    },
+    {
+      "id": "bounded-otlp-logs",
+      "description": "Accept the documented bounded OTLP/HTTP JSON error-log profile through project ingest authority, registered release/build and origin checks. Traces, metrics, protobuf, compressed payloads and general OTLP compatibility are outside this adapter. See docs/OTLP-INTAKE.md.",
+      "clauses": [
+        "ERR-001",
+        "ERR-002",
+        "ERR-003",
+        "ERR-008"
+      ]
+    },
+    {
+      "id": "operator-corrections",
+      "description": "Preview exact retained-occurrence split/merge corrections, apply and undo with revision and occurrence fences, retain original grouping provenance, assign operator labels, apply event-time literal suppression policies, and register immutable release/environment deployment manifests. Recognized bundle hashes support stable grouping without replacing native evidence. See docs/OPERATOR-CORRECTIONS.md.",
+      "clauses": [
+        "ERR-002",
+        "ERR-006",
+        "ERR-008",
+        "ERR-009"
+      ]
+    },
+    {
+      "id": "sandbox-reproducer",
+      "description": "Record supported mapped JavaScript ES-module reproducers and run them only in the separate local workerd sandbox with no network, secrets, files or app bindings, using a single-use expiring run token. Spool computes reproduced/not-reproduced/failed from runner observations and labels the verdict as evidence from uploaded source; unsupported inputs never run. See docs/REPRODUCE-AND-FIX.md.",
+      "clauses": [
+        "ERR-003",
+        "ERR-004",
+        "ERR-007",
+        "ERR-009"
+      ]
+    },
+    {
+      "id": "granted-fix-branch",
+      "description": "After owner approval, carry a reproducer record through one GitHub fix branch and a draft pull request under an exact repository-scoped, expiring grant. Record provider receipts and revoke step tokens; never write the base branch, merge, force-push, tag, release or deploy. Requires the owner GitHub App connection. See docs/REPRODUCE-AND-FIX.md.",
+      "clauses": [
+        "ERR-004",
+        "ERR-008",
+        "ERR-009"
+      ]
+    },
+    {
+      "id": "exposure-measurement",
+      "description": "Measure affected-client cohorts, flow exposure, rollout, recurrence and capture gaps from stored reports and deployment manifests; missing denominators remain inconclusive. Random client identifiers and flow reports require SDK 0.2.0, which is owner-held and unpublished on npm. See docs/REPRODUCE-AND-FIX.md.",
+      "clauses": [
+        "ERR-003",
+        "ERR-008",
+        "ERR-009"
+      ]
+    },
+    {
+      "id": "owner-self-erasure",
+      "description": "Erase the authenticated owner personal data only after a verified successor takes installation authority, using count-only preview, typed confirmation, resumable Base erasure and restore fences. Unsupported attribution and shared custody are explicit holds; external copies and configuration remain outside the fence. See docs/OWNER-ERASURE.md.",
+      "clauses": [
+        "ERR-004",
+        "ERR-009",
+        "ERASE-001"
+      ]
+    },
+    {
+      "id": "owner-signin-link",
+      "description": "Allow the original deploying checkout and its provider credentials to request a private, one-use owner sign-in link with rer signin when mail is unavailable. Links expire within 15 minutes and remain owner-version-fenced; ordinary mail sign-in remains available. See docs/HOSTED.md.",
+      "clauses": [
+        "ERR-004"
+      ]
+    }
+  ],
+  "nonGoals": [
+    "Automatic hosted provisioning during local setup; actual owner-account deployment and mail sender acceptance require explicit owner action.",
+    "Sentry feature parity or a completed-migration claim; organization import has been exercised with synthetic fixtures only, and owner-export qualification is pending.",
+    "External paging, automatic retention, or guarantees of complete capture coverage.",
+    "Unbounded event payloads, remote artifact URL fetching, or execution of telemetry-provided instructions."
+  ],
+  "externals": [],
+  "env": [
+    {
+      "name": "OWNER_EMAIL",
+      "required": true,
+      "secret": true,
+      "why": "First owner identity for Base operator-auth; supplied during local setup or through the owner deployment secret source."
+    },
+    {
+      "name": "SESSION_SECRET",
+      "required": true,
+      "secret": true,
+      "why": "Sign owner sessions; generated by local setup and supplied privately for deployment."
+    },
+    {
+      "name": "SETUP_TOKEN",
+      "required": false,
+      "requiredWhen": "Claiming the first owner; generated by local setup and supplied privately for owner-account deployment.",
+      "secret": true,
+      "why": "Authorize the one-time first owner claim."
+    },
+    {
+      "name": "AUTH_ORIGIN",
+      "required": true,
+      "secret": false,
+      "why": "Exact trusted application origin; local setup manages it and deploy-kit derives the owner target origin."
+    },
+    {
+      "name": "AUTH_LOCAL",
+      "required": false,
+      "requiredWhen": "Using the loopback development outbox.",
+      "secret": false,
+      "why": "Explicit local auth mode; local setup selects true and deploy.json selects false."
+    },
+    {
+      "name": "MAIL_PROVIDER",
+      "required": true,
+      "secret": false,
+      "why": "Deliver sign-in links; local setup selects development and deploy.json selects resend."
+    },
+    {
+      "name": "MAIL_FROM",
+      "required": true,
+      "secret": true,
+      "why": "Sender for sign-in links; local setup uses auth@localhost.test and deployment requires an owner-approved sender."
+    },
+    {
+      "name": "MAIL_API_KEY",
+      "required": false,
+      "requiredWhen": "Using a production mail provider.",
+      "secret": true,
+      "why": "Authenticate hosted mail delivery; not required by the development outbox or deploy dry-run."
+    },
+    {
+      "name": "MAIL_ACCOUNT_ID",
+      "required": false,
+      "requiredWhen": "Selecting the Cloudflare mail provider instead of the declared Resend deployment.",
+      "secret": false,
+      "why": "Select the Cloudflare mail account for that optional server mail adapter."
+    },
+    {
+      "name": "CLOUDFLARE_ACCOUNT_ID",
+      "required": false,
+      "requiredWhen": "Performing an actual owner-account deployment.",
+      "secret": false,
+      "why": "Select the owner Cloudflare account for deploy-kit; not needed for dry-run."
+    },
+    {
+      "name": "CLOUDFLARE_API_TOKEN",
+      "required": false,
+      "requiredWhen": "Performing an actual owner-account deployment.",
+      "secret": true,
+      "why": "Authorize deploy-kit provider operations; not needed for dry-run."
+    },
+    {
+      "name": "GITHUB_CONNECTION",
+      "required": false,
+      "requiredWhen": "Advancing an approved GitHub fix-branch workflow against GitHub.",
+      "secret": true,
+      "why": "Server-only JSON containing the owner GitHub App appId, installationId and privateKey; absent configuration stops at Approved, awaiting connection without provider calls."
+    },
+    {
+      "name": "ALERT_DESTINATIONS",
+      "required": false,
+      "requiredWhen": "Delivering project alerts to configured mail or webhook destinations; may remain empty when external delivery is unused.",
+      "secret": true,
+      "why": "Server-only destination JSON holds recipients, webhook URLs and signing keys; only safe IDs and labels are shown to the owner."
+    },
+    {
+      "name": "ALERT_DESTINATION_HASH_KEY",
+      "required": false,
+      "requiredWhen": "Using configured mail or webhook alert destinations.",
+      "secret": true,
+      "why": "Stable Base64 key of at least 32 bytes for destination fingerprint HMACs; preserve it while deliveries are active. Setup generates it when missing."
+    },
+    {
+      "name": "ALERT_PUBLIC_ORIGIN",
+      "required": false,
+      "requiredWhen": "Including issue links in outgoing alert payloads; otherwise issueUrl is null.",
+      "secret": false,
+      "why": "Trusted exact HTTPS application origin for alert links; incoming Host is never used."
+    },
+    {
+      "name": "INTEGRATION_EGRESS",
+      "required": false,
+      "requiredWhen": "Delivering signed webhook alerts through the separately installed enforcing egress service.",
+      "secret": false,
+      "why": "Trusted service RPC binding exposing send(WireRequest), not a secret string or ordinary fetch URL. The shipped deployment has no binding, so webhook delivery stays blocked until configured."
+    },
+    {
+      "name": "RER_OWNER_CLAIM_ISSUER",
+      "required": false,
+      "requiredWhen": "Enabling signed managed admission.",
+      "secret": false,
+      "why": "Exact trusted issuer origin for signed first-owner admission."
+    },
+    {
+      "name": "RER_OWNER_CLAIM_INSTALLATION_ID",
+      "required": false,
+      "requiredWhen": "Enabling signed managed admission.",
+      "secret": false,
+      "why": "Trusted installation identity bound into signed first-owner claims."
+    },
+    {
+      "name": "RER_OWNER_CLAIM_APP_ORIGIN",
+      "required": false,
+      "requiredWhen": "Enabling signed managed admission.",
+      "secret": false,
+      "why": "Exact application audience for signed claims; must equal AUTH_ORIGIN."
+    },
+    {
+      "name": "RER_OWNER_CLAIM_PUBLIC_KEYS",
+      "required": false,
+      "requiredWhen": "Enabling signed managed admission.",
+      "secret": false,
+      "why": "Public ES256 verification keys indexed by key ID; no private signing key belongs in Spool."
+    },
+    {
+      "name": "RER_IMPORT_DOOR",
+      "required": false,
+      "requiredWhen": "RER provisions the install for a Business plan the owner approved; self-host rer deploy never sets it.",
+      "secret": false,
+      "why": "Exactly on: the owner's first claim opens the Business import door, which the owner can turn off in Settings. Any other value leaves it off."
+    },
+    {
+      "name": "RER_MANAGEMENT_ORIGIN",
+      "required": false,
+      "requiredWhen": "Enabling the optional owner editor.",
+      "secret": false,
+      "why": "Exact authorized management origin for the optional owner editor and frame policy."
+    },
+    {
+      "name": "RER_INSTALLATION_ID",
+      "required": false,
+      "requiredWhen": "Enabling the optional owner editor.",
+      "secret": false,
+      "why": "Installation identity used by the optional owner editor."
+    }
+  ],
+  "deploy": {
+    "healthPath": "/health",
+    "operatorPath": "/",
+    "apiPath": "/api",
+    "publicPaths": [
+      "/health",
+      "/sign-in",
+      "/auth/bootstrap",
+      "/auth/magic-link",
+      "/auth/confirm",
+      "/api/ingest/",
+      "/errors-capture.js",
+      "/design/",
+      "/assets/",
+      "/auth/owner-claim",
+      "/api/rer/cutover-status"
+    ],
+    "notes": "Owner documents redirect unauthenticated requests to /sign-in. Bootstrap requires the one-time setup token; confirmation requires a valid sign-in token; ingest requires the project scoped Bearer key. Other auth and private API handlers enforce their own session or grant checks. /__dev/outbox is available only in explicit loopback development mode with host and request-context checks and the checkout private dev-key header or exchanged gate cookie. Deploy dry-run builds and validates Worker/assets, migrations and deploy.json without provider calls. Actual deploy-kit owner-account deployment needs explicit owner authorization, account credentials and mail configuration; live provider acceptance remains unperformed. Optional signed owner claim validates trusted deployment authority and creates only the first owner. /api/rer/cutover-status is POST only and needs a short-lived installation-scoped ES256 Run Edit Run grant of action cutover-status under the owner-claim key ring; it answers event and issue counts and the newest event time only, and 404 without that trust. Editor configuration independently requires a native owner session; project grants cannot authorize it."
+  },
+  "extensionPoints": {
+    "contributions": [],
+    "policies": [],
+    "events": [],
+    "slots": [],
+    "adapters": []
+  },
+  "limits": {
+    "status": "Product bounds are implemented locally; representative capacity and large-instance economics are unmeasured.",
+    "newEventAdmissionsPerMinutePerProject": 120,
+    "retainedOccurrencesPerProject": 10000,
+    "ingestRequestBytes": 32768,
+    "framesPerEvent": 30,
+    "breadcrumbsPerEvent": 20,
+    "flatSourceMapsPerProject": 20,
+    "sourceMapBytes": 262144,
+    "groupsPerQuery": 100,
+    "eventsPerEvidencePacket": 10,
+    "legacyRestoreRequestBytes": 16777216,
+    "legacyRestoreRowsPerTable": 10000,
+    "portabilityArchiveLineBytes": 25165824,
+    "portabilityArchivePartBytes": 16777216,
+    "portabilityArchiveRowsPerPart": 1000,
+    "restoreSemantics": "Native v1/v2 and Base portability JSONL restore into an empty domain database, preserve private maps and browser origins, and exclude owner/authentication state and credential grants. All formats validate domain integrity and per-project capacities. JSONL has per-line and per-part bounds, not a 16 MiB total archive or 10,000-row per-table limit."
+  },
+  "accessibility": {
+    "level": "WCAG 2.2 AA",
+    "status": "Automated axe and responsive checks cover bounded local operator states; full conformance is not claimed.",
+    "includes": [
+      "Local owner and project workbench states"
+    ]
+  },
+  "operatingCost": {
+    "status": "Unmeasured; owner-account deploy dry-run is implemented, but no live deployment or provider acceptance is claimed."
+  },
+  "composition": {
+    "base": "base",
+    "family": "errors",
+    "edition": "errors-workbench",
+    "modules": []
+  }
+}

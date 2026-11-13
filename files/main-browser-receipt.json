@@ -1,0 +1,636 @@
+{
+  "revision": "main",
+  "result": "PASS",
+  "route": "/spool",
+  "expected": "v0.7.8",
+  "observations": [
+    {
+      "width": 1440,
+      "httpStatus": 200,
+      "title": "Spool: free, open-source alternative to Sentry",
+      "scrollWidth": 1440,
+      "height": 4512,
+      "version": "v0.7.8",
+      "images": [
+        {
+          "src": "/seeds/spool/mark.svg",
+          "complete": true,
+          "naturalWidth": 150,
+          "loading": "auto"
+        },
+        {
+          "src": "/seeds/spool/gallery/01-issues.webp",
+          "complete": true,
+          "naturalWidth": 1600,
+          "loading": "lazy"
+        },
+        {
+          "src": "/seeds/spool/gallery/02-issue-detail.webp",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/seeds/spool/gallery/03-issues-filtered.webp",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/video/spool-poster.webp",
+          "complete": true,
+          "naturalWidth": 1280,
+          "loading": "lazy"
+        },
+        {
+          "src": "/seeds/spool/gallery/thumbs/01-issues.webp",
+          "complete": true,
+          "naturalWidth": 200,
+          "loading": "lazy"
+        },
+        {
+          "src": "/seeds/spool/gallery/thumbs/02-issue-detail.webp",
+          "complete": true,
+          "naturalWidth": 200,
+          "loading": "lazy"
+        },
+        {
+          "src": "/seeds/spool/gallery/thumbs/03-issues-filtered.webp",
+          "complete": true,
+          "naturalWidth": 200,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/garden.svg",
+          "complete": true,
+          "naturalWidth": 300,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-peach-a.svg",
+          "complete": true,
+          "naturalWidth": 158,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-peach-b.svg",
+          "complete": true,
+          "naturalWidth": 281,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-pink-b.svg",
+          "complete": true,
+          "naturalWidth": 189,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-pink-c.svg",
+          "complete": true,
+          "naturalWidth": 131,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-pink-a.svg",
+          "complete": true,
+          "naturalWidth": 88,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-herb-a.svg",
+          "complete": true,
+          "naturalWidth": 154,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-herb-b.svg",
+          "complete": true,
+          "naturalWidth": 131,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-sprout-b.svg",
+          "complete": true,
+          "naturalWidth": 88,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-sprout-a.svg",
+          "complete": true,
+          "naturalWidth": 87,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/footer-art.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/glints-1.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/glints-2.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/glints-3.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/bird1.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/bird2.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/bird3.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/head.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/ear.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        }
+      ],
+      "headings": [
+        "Spool",
+        "What it does",
+        "What it promises",
+        "Move in from",
+        "Run it yourself",
+        "Products",
+        "Essays",
+        "Get in touch"
+      ],
+      "offscreen": [
+        {
+          "tag": "DIV",
+          "cls": "gallery_slide__dzaBC",
+          "left": 1288,
+          "right": 2328
+        },
+        {
+          "tag": "FIGURE",
+          "cls": "frame_figure__4ifd3 frame_fill__BzJLl",
+          "left": 1340,
+          "right": 2276
+        },
+        {
+          "tag": "DIV",
+          "cls": "frame_window__yFI_L",
+          "left": 1340,
+          "right": 2276
+        },
+        {
+          "tag": "DIV",
+          "cls": "frame_bar__kLxgq",
+          "left": 1341,
+          "right": 2275
+        },
+        {
+          "tag": "DIV",
+          "cls": "frame_screen__twPum",
+          "left": 1341,
+          "right": 2275
+        },
+        {
+          "tag": "IMG",
+          "cls": "",
+          "left": 1341,
+          "right": 2275
+        },
+        {
+          "tag": "FIGCAPTION",
+          "cls": "frame_caption__4E939",
+          "left": 1340,
+          "right": 2276
+        },
+        {
+          "tag": "DIV",
+          "cls": "gallery_slide__dzaBC",
+          "left": 2376,
+          "right": 3416
+        },
+        {
+          "tag": "FIGURE",
+          "cls": "frame_figure__4ifd3 frame_fill__BzJLl",
+          "left": 2428,
+          "right": 3364
+        },
+        {
+          "tag": "DIV",
+          "cls": "frame_window__yFI_L",
+          "left": 2428,
+          "right": 3364
+        },
+        {
+          "tag": "DIV",
+          "cls": "frame_bar__kLxgq",
+          "left": 2429,
+          "right": 3363
+        },
+        {
+          "tag": "SPAN",
+          "cls": "frame_dots__ORooB",
+          "left": 2443,
+          "right": 2490
+        }
+      ],
+      "errors": [],
+      "failedRequests": [],
+      "screenshot": "main-spool-1440.png",
+      "assertions": "status 200; version label; old version absent; no document overflow; no page errors; real listings URL counts/version"
+    },
+    {
+      "width": 390,
+      "httpStatus": 200,
+      "title": "Spool: free, open-source alternative to Sentry",
+      "scrollWidth": 390,
+      "height": 4367,
+      "version": "v0.7.8",
+      "images": [
+        {
+          "src": "/seeds/spool/mark.svg",
+          "complete": true,
+          "naturalWidth": 150,
+          "loading": "auto"
+        },
+        {
+          "src": "/seeds/spool/gallery/01-issues.webp",
+          "complete": true,
+          "naturalWidth": 1600,
+          "loading": "lazy"
+        },
+        {
+          "src": "/seeds/spool/gallery/02-issue-detail.webp",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/seeds/spool/gallery/03-issues-filtered.webp",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/video/spool-poster.webp",
+          "complete": false,
+          "naturalWidth": 1280,
+          "loading": "lazy"
+        },
+        {
+          "src": "/seeds/spool/gallery/thumbs/01-issues.webp",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/seeds/spool/gallery/thumbs/02-issue-detail.webp",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/seeds/spool/gallery/thumbs/03-issues-filtered.webp",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/garden.svg",
+          "complete": true,
+          "naturalWidth": 300,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-peach-a.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-peach-b.svg",
+          "complete": true,
+          "naturalWidth": 281,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-pink-b.svg",
+          "complete": true,
+          "naturalWidth": 189,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-pink-c.svg",
+          "complete": true,
+          "naturalWidth": 131,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-pink-a.svg",
+          "complete": true,
+          "naturalWidth": 88,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-herb-a.svg",
+          "complete": true,
+          "naturalWidth": 154,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-herb-b.svg",
+          "complete": true,
+          "naturalWidth": 131,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-sprout-b.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/separators/parts/garden-sprout-a.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/footer-art.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/glints-1.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/glints-2.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/glints-3.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/bird1.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/bird2.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/bird3.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/head.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/ear.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0,
+          "loading": "lazy"
+        }
+      ],
+      "headings": [
+        "Spool",
+        "What it does",
+        "What it promises",
+        "Move in from",
+        "Run it yourself",
+        "Products",
+        "Essays",
+        "Get in touch"
+      ],
+      "offscreen": [
+        {
+          "tag": "DIV",
+          "cls": "gallery_slide__dzaBC",
+          "left": 358.796875,
+          "right": 685.59375
+        },
+        {
+          "tag": "FIGURE",
+          "cls": "frame_figure__4ifd3 frame_fill__BzJLl",
+          "left": 358.796875,
+          "right": 685.59375
+        },
+        {
+          "tag": "DIV",
+          "cls": "frame_window__yFI_L",
+          "left": 358.796875,
+          "right": 685.59375
+        },
+        {
+          "tag": "DIV",
+          "cls": "frame_bar__kLxgq",
+          "left": 359.796875,
+          "right": 684.59375
+        },
+        {
+          "tag": "SPAN",
+          "cls": "frame_dots__ORooB",
+          "left": 370.796875,
+          "right": 404.796875
+        },
+        {
+          "tag": "SPAN",
+          "cls": "",
+          "left": 383.796875,
+          "right": 391.796875
+        },
+        {
+          "tag": "SPAN",
+          "cls": "",
+          "left": 396.796875,
+          "right": 404.796875
+        },
+        {
+          "tag": "DIV",
+          "cls": "frame_screen__twPum",
+          "left": 359.796875,
+          "right": 684.59375
+        },
+        {
+          "tag": "IMG",
+          "cls": "",
+          "left": 359.796875,
+          "right": 684.59375
+        },
+        {
+          "tag": "FIGCAPTION",
+          "cls": "frame_caption__4E939",
+          "left": 358.796875,
+          "right": 685.59375
+        },
+        {
+          "tag": "DIV",
+          "cls": "gallery_slide__dzaBC",
+          "left": 697.59375,
+          "right": 1024.390625
+        },
+        {
+          "tag": "FIGURE",
+          "cls": "frame_figure__4ifd3 frame_fill__BzJLl",
+          "left": 697.59375,
+          "right": 1024.390625
+        }
+      ],
+      "errors": [],
+      "failedRequests": [],
+      "screenshot": "main-spool-390.png",
+      "assertions": "visual proof and metrics only"
+    }
+  ]
+}

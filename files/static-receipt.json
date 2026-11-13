@@ -1,0 +1,99 @@
+{
+  "result": "PASS",
+  "head": "181ca0a1b0d41af1dc4b9566412fc64f11267787",
+  "baseline": "42d2b3bfd372f151c993e36128249d7e059091de",
+  "changedPaths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "countsBefore": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "countsAfter": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "versions": {
+    "happytohelp": {
+      "version": "v0.4.24",
+      "status": "released"
+    },
+    "lamp": {
+      "version": "v1.11.14",
+      "status": "released"
+    },
+    "oncall": {
+      "version": "v0.5.11",
+      "status": "released"
+    },
+    "orbit": {
+      "version": "v0.4.8",
+      "status": "released"
+    },
+    "spool": {
+      "version": "v0.7.9",
+      "status": "released"
+    },
+    "uptime": {
+      "version": "v0.5.10",
+      "status": "released"
+    }
+  },
+  "stateChanges": [
+    {
+      "path": "syncedAt",
+      "before": "2026-11-13T12:21:04.934Z",
+      "after": "2026-11-13T13:22:47.701Z"
+    },
+    {
+      "path": "seeds.happytohelp.open",
+      "before": [
+        "42983364b373"
+      ],
+      "after": null
+    },
+    {
+      "path": "seeds.spool.commit",
+      "before": "47ecaeeec8c442aa4648ad3b7f4fc1d7e1f115e2",
+      "after": "8049c9153f1d987bba6211bc05b8405b06101a6f"
+    },
+    {
+      "path": "seeds.spool.sourceRef",
+      "before": "v0.7.8",
+      "after": "v0.7.9"
+    },
+    {
+      "path": "seeds.spool.tag",
+      "before": "v0.7.8",
+      "after": "v0.7.9"
+    },
+    {
+      "path": "seeds.spool.copy.README.md",
+      "before": "681c10b41dbc712a",
+      "after": "8e4935c8e07d3150"
+    },
+    {
+      "path": "seeds.spool.copy.seed.json",
+      "before": "abe07bec13dcc59f",
+      "after": "9df4692f3993614c"
+    },
+    {
+      "path": "seeds.spool.open",
+      "before": null,
+      "after": [
+        "42983364b373"
+      ]
+    }
+  ],
+  "wording": "byte-identical after reverting the one version literal",
+  "credentialPatternScan": "No credential-shaped values in diff",
+  "identity": "one candidate commit; fleet author and committer; no trailers",
+  "pricing": "All pricing/rendering implementation files byte-identical to main. Assisted/Managed price statements are absent from this checkout in both revisions; current licence line is MIT, 100% free.",
+  "notApplicable": [
+    "home has no CONTRACT.md, sources.lock.json, contract-view generator or migration-ledger check; none declared in AGENTS.md/package scripts/Verify"
+  ]
+}

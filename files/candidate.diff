@@ -1,0 +1,84 @@
+diff --git a/public/data/listings.json b/public/data/listings.json
+index bb91b57..e77e63d 100644
+--- a/public/data/listings.json
++++ b/public/data/listings.json
+@@ -1,5 +1,5 @@
+ {
+-  "generatedAt": "2026-11-13T12:21:08.975Z",
++  "generatedAt": "2026-11-13T13:23:14.204Z",
+   "listings": [
+     {
+       "slug": "auth",
+@@ -863,7 +863,7 @@
+       "slug": "spool",
+       "name": "Spool",
+       "status": "released",
+-      "version": "v0.7.8",
++      "version": "v0.7.9",
+       "category": "Error tracking",
+       "line": "JavaScript errors, traced to the exact line in your source.",
+       "headline": "See exactly what broke.",
+diff --git a/scripts/seeds-sync/state.json b/scripts/seeds-sync/state.json
+index bc35bc2..e30e151 100644
+--- a/scripts/seeds-sync/state.json
++++ b/scripts/seeds-sync/state.json
+@@ -1,5 +1,5 @@
+ {
+-  "syncedAt": "2026-11-13T12:21:04.934Z",
++  "syncedAt": "2026-11-13T13:22:47.701Z",
+   "seeds": {
+     "auth": {
+       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
+@@ -504,8 +504,7 @@
+       "home": {
+         "headline": "Knows what your customer needs before they do.",
+         "signature": "eedddddddeedeeeeeeeeeeeeeeeeeeeedeedeeebaa887dddeeeeeeeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededdeedeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddbbbcbbcbbbbbbbbeedeeeeeeeeedeeeeeeeeeeeeeeeeedddaaabaabaaaaaccbeeeeeeeeeeeeeeeeeedeeeeeeeeeeeeedddcddcddcddcdddeeeeeeeeedddcccdeedeedeedeeeeeeeddccddceddeeeeedeeeeeedeebbbaaacddeeedddccceeedcc555544999eedeedeeeeeeeeeeeeefeeeeeeeddddddeeeeeddccdccdddeedeeefeededddddddeedeeededdddeddeee"
+-      },
+-      "open": ["42983364b373"]
++      }
+     },
+     "inkwell": {
+       "commit": "e4e3c2dd4bdf48fe16111f9d447568d6c4366a84",
+@@ -1154,14 +1153,14 @@
+       }
+     },
+     "spool": {
+-      "commit": "47ecaeeec8c442aa4648ad3b7f4fc1d7e1f115e2",
+-      "sourceRef": "v0.7.8",
++      "commit": "8049c9153f1d987bba6211bc05b8405b06101a6f",
++      "sourceRef": "v0.7.9",
+       "sourceReason": "released listing version",
+-      "tag": "v0.7.8",
++      "tag": "v0.7.9",
+       "copy": {
+         "CONTRACT.md": "ee9c871bfa25a110",
+-        "README.md": "681c10b41dbc712a",
+-        "seed.json": "abe07bec13dcc59f"
++        "README.md": "8e4935c8e07d3150",
++        "seed.json": "9df4692f3993614c"
+       },
+       "brand": {
+         "branding.primaryColor": "#1c1c1b",
+@@ -1179,7 +1178,8 @@
+       "home": {
+         "headline": "See exactly what broke.",
+         "signature": "eeddccddceedeedeedeeeeedeedeedeeeeeeeeeeedeedeedeeddddeedeedeeeeeeeedeedeededdeedeedeedeedeedeedeedccbddcddcddcccbeddeeeeeddddddceedeedeedeedeedeed999aa9999999999cccfeeeedeededddddeddeedeedeedeedbaaaa9bbaaaaaa9ccbeeeeededddddeedeedeedeedeedeedddcddcddcddceedeeeeeeeeddddddbedceeceeceedeedeedeedeededdeedeeeffefeeeedeededaed9edaedaedbeedeed999988aaabba888888bbbeedeedeededdeeeeeeeedeedeeda99998baaccbaa9aa9ccbeeddddddceedeedeedeedeed"
+-      }
++      },
++      "open": ["42983364b373"]
+     },
+     "stall": {
+       "commit": "8ee1f25df4f0b10b9a62e7fe221453499f27b297",
+diff --git a/src/data/seed-pages.ts b/src/data/seed-pages.ts
+index 5be50d6..f6b43bd 100644
+--- a/src/data/seed-pages.ts
++++ b/src/data/seed-pages.ts
+@@ -1097,7 +1097,7 @@ export const seedPageContent: SeedPageContent[] = [
+     ],
+     moveIn: ['Sentry', 'Datadog Error Tracking', 'Rollbar', 'Bugsnag'],
+     runsOn: 'your own computer, or your own Cloudflare account',
+-    version: 'v0.7.8',
++    version: 'v0.7.9',
+     contractUrl: 'https://run-spool.com/contract',
+     seoTitle: 'Spool: free, open-source alternative to Sentry',
+     seoDescription:

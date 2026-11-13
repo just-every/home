@@ -1,0 +1,49 @@
+{
+  "callsUsed": 9,
+  "budget": 10,
+  "allExitCodes": 0,
+  "calls": [
+    {
+      "command": "gh api repos/just-every/home/pulls/52",
+      "receipt": "pr.json"
+    },
+    {
+      "command": "gh api 'repos/just-every/run-spool/releases?per_page=100'",
+      "receipt": "spool-release.json"
+    },
+    {
+      "command": "gh api repos/just-every/run-spool/git/ref/tags/v0.7.9",
+      "receipt": "spool-tag.json"
+    },
+    {
+      "command": "gh api 'repos/just-every/run-spool/contents/CONTRACT.md?ref=v0.7.9' -H 'Accept: application/vnd.github.raw+json'",
+      "receipt": "spool-CONTRACT.md"
+    },
+    {
+      "command": "gh api 'repos/just-every/home/actions/runs?head_sha=181ca0a1b0d41af1dc4b9566412fc64f11267787&per_page=100'",
+      "receipt": "ci-runs.json"
+    },
+    {
+      "command": "gh api repos/just-every/run-spool/git/tags/e5a543bcbe2f77f4d11b86eb02f3f983e05fae05",
+      "receipt": "spool-tag-target.json"
+    },
+    {
+      "command": "gh api 'repos/just-every/run-spool/contents/README.md?ref=v0.7.9' -H 'Accept: application/vnd.github.raw+json'",
+      "receipt": "spool-README.md"
+    },
+    {
+      "command": "gh api 'repos/just-every/run-spool/contents/seed.json?ref=v0.7.9' -H 'Accept: application/vnd.github.raw+json'",
+      "receipt": "spool-seed.json"
+    },
+    {
+      "command": "gh api repos/just-every/home/pulls/52 (final identity recheck)",
+      "receipt": "pr-final.json"
+    }
+  ],
+  "credentials": "Each gh subprocess loaded GH_TOKEN from the authorized bundle without logging any values.",
+  "ciDiscoveryCalls": 1,
+  "dispatches": 0,
+  "reruns": 0,
+  "comments": 0,
+  "productPushes": 0
+}
