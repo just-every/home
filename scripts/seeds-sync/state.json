@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-12T22:03:16.352Z",
+  "syncedAt": "2026-11-13T03:01:48.929Z",
   "seeds": {
     "auth": {
       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
@@ -481,14 +481,14 @@
       }
     },
     "happytohelp": {
-      "commit": "4dee2432081a64cee0bd12c59a31cb84371c3ab3",
-      "sourceRef": "v0.4.22",
+      "commit": "3c45a60a6debb0886ae8c41eee18a95e6fee694d",
+      "sourceRef": "v0.4.23",
       "sourceReason": "released listing version",
-      "tag": "v0.4.22",
+      "tag": "v0.4.23",
       "copy": {
         "CONTRACT.md": "ae8feea8b7998aa7",
-        "README.md": "5483ddb9e5f071e5",
-        "seed.json": "c283958a928aa942"
+        "README.md": "2b37c66810922da8",
+        "seed.json": "573d1f0fa88958a5"
       },
       "brand": {
         "theme.page": "#faf9f6",
@@ -504,7 +504,8 @@
       "home": {
         "headline": "Knows what your customer needs before they do.",
         "signature": "eedddddddeedeeeeeeeeeeeeeeeeeeeedeedeeebaa887dddeeeeeeeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededdeedeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddbbbcbbcbbbbbbbbeedeeeeeeeeedeeeeeeeeeeeeeeeeedddaaabaabaaaaaccbeeeeeeeeeeeeeeeeeedeeeeeeeeeeeeedddcddcddcddcdddeeeeeeeeedddcccdeedeedeedeeeeeeeddccddceddeeeeedeeeeeedeebbbaaacddeeedddccceeedcc555544999eedeedeeeeeeeeeeeeefeeeeeeeddddddeeeeeddccdccdddeedeeefeededddddddeedeeededdddeddeee"
-      }
+      },
+      "open": ["42983364b373"]
     },
     "inkwell": {
       "commit": "e4e3c2dd4bdf48fe16111f9d447568d6c4366a84",
@@ -1285,8 +1286,7 @@
       "home": {
         "headline": "Sleep through the night.",
         "signature": "eeedddddeeefeefeefeefeefeefeefeefeefeeeededdeeeeeeeddeeeeddeddeddeddeddeddeddeddeddeeeeeeeeeeeeeeeeeeeeefddebbcbbcbbcbbcbbcbbcbbcabcddeeeeeeeeeeeeeeeeeeeeeeededdeededdeddeddeddeddeeeeeeeeeeeeeeeeeeeeeeeeedcd99a99accddddddddddedeeeeeeeeeeeeeedeeeeeeeeeedddaaaa9adddeddedeeddeeeeeeeeeeeeeeefedfedfededdeddfedfededdeddfedfedfddedcfddeddeddcccdddeddfdcedcedcfdcfdcfdcedcedcedcedbfdcfdcedc55888baacbbcbbccbcccceccdccdcceccedbfdceccbac77a"
-      },
-      "open": ["c843303a1181"]
+      }
     },
     "vane": {
       "commit": "a2638146dc0faaefe358d203ac940389183151ef",
