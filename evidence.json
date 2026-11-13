@@ -19,6 +19,12 @@
       "sha256": "818790744948ff8ef3dd86fd5a1283b4a6255f7a18643f6250d85c9a3310188a"
     },
     {
+      "blob": "a172a572019fed39ef5433a3d7acae443b0911c2",
+      "bytes": 6146,
+      "path": "PUBLICATION-RECEIPT.log",
+      "sha256": "76666de7344b1e65eed0998e22a81c9f6a3d2bb4e119b03517b54790d69c4b78"
+    },
+    {
       "blob": "d0069a1a2a3b713b706d04691e407f45b76b7251",
       "bytes": 4032,
       "path": "RECEIPT.json",
@@ -29,6 +35,12 @@
       "bytes": 14928,
       "path": "REPORT.md",
       "sha256": "95313f79dc1456e507aa1e3b63e7506a61dacc4e054e150b84f37c38d933c6f9"
+    },
+    {
+      "blob": "797ea788f4d34daba6ce7e018bf94208354b72ed",
+      "bytes": 197,
+      "path": "TRANSFER-RECEIPT.txt",
+      "sha256": "9759f202ce5c070f35064f21f15dae1786c4373e52c5f3cbc1e56b8e58bf4c6e"
     },
     {
       "blob": "7f67d2a59b7840296e89de16ccd1e6d38d181b8f",
