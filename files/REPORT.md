@@ -2,7 +2,7 @@
 
 Repository: just-every/home. Branch: `cloud/je-sync-28`. Full product SHA: `181ca0a1b0d41af1dc4b9566412fc64f11267787`. Base: `42d2b3bfd372f151c993e36128249d7e059091de`. PR: https://github.com/just-every/home/pull/52.
 
-Exact-SHA Verify branch run: 43433866088; status in_progress; conclusion None. https://github.com/just-every/home/actions/runs/43433866088
+Exact-SHA Verify branch run: 43433866088; status completed; conclusion success. https://github.com/just-every/home/actions/runs/43433866088
 
 ## Outcome
 
@@ -129,4 +129,4 @@ Reports and receipts are selected explicitly as regular non-symlink files under 
 
 Blockers: none in the pushed candidate. Cryptographic envelope verification was not claimed. Initial missing Playwright, browser wait timeout and Husky path issues were recovered and are retained as actual receipts. The disposable product clone and node_modules will be removed after the evidence transfer is verified, as requested.
 
-CI observation: in_progress / None on exact SHA 181ca0a1b0d41af1dc4b9566412fc64f11267787; run 43433866088. The REST watcher observes the 300-second minimum between discovery/polls. PR/CI calls and times are recorded separately; source reads use the committed sync tool plus two batched provenance GraphQL reads.
+CI observation: completed / success on exact SHA 181ca0a1b0d41af1dc4b9566412fc64f11267787; run 43433866088. The REST watcher observes the 300-second minimum between discovery/polls. PR/CI calls and times are recorded separately; source reads use the committed sync tool plus two batched provenance GraphQL reads.

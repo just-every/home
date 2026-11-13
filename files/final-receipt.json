@@ -1,0 +1,26 @@
+{
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-28",
+  "head": "181ca0a1b0d41af1dc4b9566412fc64f11267787",
+  "pr": "https://github.com/just-every/home/pull/52",
+  "ciRun": 43433866088,
+  "ciStatus": "completed",
+  "ciConclusion": "success",
+  "before": {
+    "listings": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "after": {
+    "listings": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "clauseStatusChanges": [],
+  "candidateBlockers": [],
+  "productChanges": [
+    "Spool version v0.7.8 -> v0.7.9",
+    "generated listings and copy provenance"
+  ],
+  "custody": "READY product candidate; evidence transport separate"
+}

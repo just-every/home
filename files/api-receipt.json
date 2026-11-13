@@ -1,0 +1,32 @@
+{
+  "sourceReadCalls": "committed sync reads plus two batched gh api graphql provenance queries",
+  "prCalls": [
+    {
+      "method": "POST",
+      "path": "repos/just-every/home/pulls",
+      "result": 52
+    }
+  ],
+  "ciCalls": [
+    {
+      "method": "GET",
+      "path": "repos/just-every/home/actions/runs?head_sha=181ca0a1b0d41af1dc4b9566412fc64f11267787&per_page=100",
+      "timestamp": "2026-11-13T13:28:11+00:00",
+      "run": 43433866088,
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "method": "GET",
+      "path": "repos/just-every/home/actions/runs/43433866088",
+      "timestamp": "2026-11-13T13:33:11+00:00",
+      "secondsSinceDiscovery": 300,
+      "conclusion": "success",
+      "head_sha": "181ca0a1b0d41af1dc4b9566412fc64f11267787",
+      "html_url": "https://github.com/just-every/home/actions/runs/43433866088",
+      "status": "completed"
+    }
+  ],
+  "minimumPollSeconds": 300,
+  "prAndCiCallCount": 3
+}

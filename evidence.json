@@ -1033,16 +1033,22 @@
       "sha256": "922c37bb8fb7a8ad4e45c7a6b658e2171e5010c0e59214f4571e66ae6b0a162d"
     },
     {
-      "blob": "7ef103bd8bfe18badb06346094fa1469a7b124f2",
-      "bytes": 13647,
+      "blob": "4e6c36b6b87be7adba9ec32b7af0ae0712b42b82",
+      "bytes": 13649,
       "path": "REPORT.md",
-      "sha256": "e5be1f705da0b64839b6525533ba1538d376327472305753841319fb7f1bf0bc"
+      "sha256": "9be9a43de7244ebea4508850b9eb188a51badd32ab3518227839b8632d858a4e"
     },
     {
       "blob": "53a6f6c82b03736661c193346b5f792c28ac18cb",
       "bytes": 27967,
       "path": "after-listings.json",
       "sha256": "498eed4e46e2925fd9508c59bccf0dceec38832a3267392482a5500bfe1d879d"
+    },
+    {
+      "blob": "7dc28f72cb693c161645d2037c25db232d9979b6",
+      "bytes": 959,
+      "path": "api-receipt.json",
+      "sha256": "54888ebe6a873d718484ae78124b671a7e9536c6b6fcfabe30687a9018dba9d6"
     },
     {
       "blob": "ede74ce664ebc2cc2bc3f222e2b1002b813083a2",
@@ -1091,6 +1097,24 @@
       "bytes": 245,
       "path": "ci-discovery.json",
       "sha256": "57adf737037dd42cf021ac9b02037853890c9b8265a3fc8ec43f7c0ac84def95"
+    },
+    {
+      "blob": "1245016303b57d969892e2b83a3862814a43b7fa",
+      "bytes": 173,
+      "path": "ci-final.json",
+      "sha256": "c9a046045c9ed323ada4c594791ebccaf7b2e90548d635b5682ae8ba98196f7b"
+    },
+    {
+      "blob": "179cf8b4a757b69bf2a3d87d3b8a944dec37587c",
+      "bytes": 41302,
+      "path": "evidence-first-fetch-receipt.json",
+      "sha256": "6f837c86ad427f40d345ab3046a3aaeccc5338b9eae450e2818418af21a2d858"
+    },
+    {
+      "blob": "20e5de216df72f610610c265717aa37f7ef30213",
+      "bytes": 652,
+      "path": "final-receipt.json",
+      "sha256": "17641d14c1d21bff6939886c0afd6fd6358c30c68c3eb977bbe8fee609e67a49"
     },
     {
       "blob": "11a9e9cc38f635c07a042a07c08dd0d02caf4630",
@@ -1147,10 +1171,10 @@
       "sha256": "0112518b84ac1367b8e61b02af71464d52767f191ddfd220a48b02e2f52e6399"
     },
     {
-      "blob": "1bfb07ef5632f95e51bfbec1c8e5ed301de5b37b",
-      "bytes": 7603,
+      "blob": "cc3343de48b4e8caea7d9c96d41e3fcafb267fc4",
+      "bytes": 7715,
       "path": "publication-selection.json",
-      "sha256": "a39905a4b0d5aff8fe851e4e80c04d96d7b4274197d9986465e80901c6fb4271"
+      "sha256": "5f2cb3d650e34a04b31e5821cc3eeb4e514fdcb6eef442745e88e0de44928c94"
     },
     {
       "blob": "0274a406b98a7e06903c89802716c9693caaf786",
