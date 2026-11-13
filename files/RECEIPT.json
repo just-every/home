@@ -1,0 +1,54 @@
+{
+  "tag": "je-sync-30",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-30",
+  "head": "2ae43f9e53a68f2a998af6df95ed13e038c66c68",
+  "base": "ac2df380f2770a76aaee8a2dac8a1992554eb117",
+  "pr": {
+    "base": {
+      "ref": "main",
+      "sha": "ac2df380f2770a76aaee8a2dac8a1992554eb117"
+    },
+    "head": {
+      "ref": "cloud/je-sync-30",
+      "sha": "2ae43f9e53a68f2a998af6df95ed13e038c66c68"
+    },
+    "html_url": "https://github.com/just-every/home/pull/54",
+    "number": 54
+  },
+  "product_push": "success",
+  "local_checks": {
+    "npm_ci": "pass",
+    "initial_dry_sync": "49 readable; 3 version findings",
+    "copy_before_apply": "pass; 0 copy drift in six paths",
+    "mechanical_apply": "pass; 3 version updates",
+    "copy_after_apply": "pass; README.md/seed.json changes in promoted three; CONTRACT.md unchanged",
+    "listings_generate": "pass",
+    "listings_check": "pass; 49 seeds",
+    "type_check": "pass",
+    "lint": "pass",
+    "production_build": "pass",
+    "final_dry_sync": "pass; 0 changes and 0 unreadable across 49 sources",
+    "browser": "pass; three changed pages, 1440 assertions and 1440/390 captures",
+    "identity_and_trailers": "pass; fleet author and committer; no trailers",
+    "scope_and_diff_hygiene": "pass; three allowed paths"
+  },
+  "clause_status_changes": [],
+  "withheld_new_drift": [],
+  "signature_verification": "not performed; envelope asset presence only",
+  "ci": {
+    "conclusion": "success",
+    "event": "push",
+    "head_sha": "2ae43f9e53a68f2a998af6df95ed13e038c66c68",
+    "html_url": "https://github.com/just-every/home/actions/runs/43510379593",
+    "id": 43510379593,
+    "name": "Verify branch",
+    "status": "completed"
+  },
+  "publication_scan": "deferred to independent Mac lane per cloud instructions",
+  "remaining_landing_steps": "independent gate; publication scan; PR merge; deployment; live proof",
+  "observed_at": "2026-11-13T21:26:37Z",
+  "ci_observed_at": "2026-11-13T21:29:40Z",
+  "administration_api_calls": 3,
+  "candidate_status": "READY"
+}

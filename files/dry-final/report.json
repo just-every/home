@@ -1,0 +1,895 @@
+{
+  "startedAt": "2026-11-13T21:21:01.535Z",
+  "mode": "dry-run",
+  "copyOnly": false,
+  "captureHost": null,
+  "load": 2.68,
+  "statePath": "scripts/seeds-sync/state.json",
+  "baselineDate": null,
+  "seeds": [
+    {
+      "slug": "uptime",
+      "name": "Uptime",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.5.11",
+        "commit": "04016399e1e879e7be3b8e891baf02d975bb3901",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "0b70cec7f900fbc5",
+          "README.md": "52c9d14b06fdfff8",
+          "seed.json": "6683864c580c2486"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "happytohelp",
+      "name": "HappyToHelp",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.25",
+        "commit": "333af4b0580c4284616783f1d79fcc9aad3aefc5",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ae8feea8b7998aa7",
+          "README.md": "45a28e3132618824",
+          "seed.json": "321e3d3d615cbcde"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "nook",
+      "name": "Nook",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.5.0",
+        "commit": "7fc9516570502e9066b7f3a16d08ad63610d608e",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "e5ba61253d40e0dd",
+          "README.md": "6737dfd6557c7db1",
+          "seed.json": "65ab8063c3ecb847"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "lamp",
+      "name": "Lamp",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v1.11.14",
+        "commit": "733e2ce1e2fc618183a93632218bb86456a06a79",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "8b575f27ee607ce3",
+          "README.md": "778c7cf2ed2f6527",
+          "seed.json": "b42cf20347b50d08"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "cradle",
+      "name": "Cradle",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.0",
+        "commit": "6422d6fa21bb215167d9335d41e02b862bb7ad65",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "830e9bb227fe075b",
+          "README.md": "45364350502eb264",
+          "seed.json": "efb67fbc04ece21b"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "vector",
+      "name": "Vector",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.1",
+        "commit": "3c1e3de9f338b79206be339f7b594ed55e62c934",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "027719efe290afbb",
+          "README.md": "0f0c6939763c0421",
+          "seed.json": "92d3e7aa08aef13e"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "slate",
+      "name": "Slate",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.0",
+        "commit": "635df53b1d055f31998b7a5dd448ce467dab07d2",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ec5a4d210e2a7c0d",
+          "README.md": "d0836d5cedce0fa3",
+          "seed.json": "ca4b5646a38d81b6"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "pencil",
+      "name": "Pencil",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.7.0",
+        "commit": "97a985113cfadb9b7edaa8171bac9f5bd31718cb",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "097d80d5e2a5e3c9",
+          "README.md": "9e975c65ea6586eb",
+          "seed.json": "50827a7450666b4a"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "orbit",
+      "name": "Orbit",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.9",
+        "commit": "a5f471626aea1bfcb2c79f5dbee2250fdb38fd49",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "faa136fb56b398c3",
+          "README.md": "20ef6d3a4cdc967d",
+          "seed.json": "e4b909cf7a1e6ab6"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "mango",
+      "name": "Mango",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.0",
+        "commit": "b40be01dcfcf8d793a92780252859eeccdaeb754",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "0e2b89f3c5ecc6fa",
+          "README.md": "0a8f3020315ae782",
+          "seed.json": "c2ce6eb54d4df95a"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "dial",
+      "name": "Dial",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.5.0",
+        "commit": "da9f7f3c8b60b1b1935de0a4c7384a5cad1256ac",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "00b29a37c96f5700",
+          "README.md": "011684636de51699",
+          "seed.json": "6852fee591cf7363"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "penny",
+      "name": "Penny",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.2.1",
+        "commit": "4befdc40491a1a2f0ce66a77cb67ca5c49a31135",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "2e49250e2c0dad05",
+          "README.md": "056e9a81e6a788b8",
+          "seed.json": "ed522bf957c1d2a2"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "oncall",
+      "name": "Oncall",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.5.13",
+        "commit": "8adae6c836f2fabda29e8a091b052450410c8ca5",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "c04517abc904f1e5",
+          "README.md": "872282ad16baf429",
+          "seed.json": "e91a0fe23123ca2a"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "spool",
+      "name": "Spool",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.7.10",
+        "commit": "417ab513b3032370091479fa28f41a5a67b50c53",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ee9c871bfa25a110",
+          "README.md": "d3558bee3c5f1d96",
+          "seed.json": "76b608fdf01eeaa9"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "balm",
+      "name": "Balm",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.4",
+        "commit": "fc2451647ed0263ae50bd8d3536038a9a5c379c0",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "25fb9ad432c5156e",
+          "README.md": "0fd529199d351ed9",
+          "seed.json": "982b9bff67e8854f"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "beam",
+      "name": "Beam",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.0",
+        "commit": "3278cad69eab0cf0a591ddf993f6549fbc4097c4",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "927ac72564780933",
+          "README.md": "7217dbf1c84ab2a6",
+          "seed.json": "526bc1110936ae84"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "cabin",
+      "name": "Cabin",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.0",
+        "commit": "37464b4468f5967f381951737d3c3cba46a736fe",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "c8993b9bbf91641b",
+          "README.md": "772251da27bd8b2a",
+          "seed.json": "e499d77641139843"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "chest",
+      "name": "Chest",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.2.0",
+        "commit": "219ca4f53eed1448409e979823eac80ad8a24400",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "aed27e0506be50e4",
+          "README.md": "31bec8ba93f52051",
+          "seed.json": "c996dee1e58af938"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "coaster",
+      "name": "Coaster",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.0",
+        "commit": "568ad6d10bdf64f7a1f40a3ff2bbf3e16785fb51",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "e3ce1f10bb059721",
+          "README.md": "2f13e859c50bc1ac",
+          "seed.json": "db0cfbd33835399d"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "coffer",
+      "name": "Coffer",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.0",
+        "commit": "87b6d2c62e187385f72debfc5c9bbd3e3d1df458",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "018e9ba4dd51d28c",
+          "README.md": "7b70a53a92bffe1b",
+          "seed.json": "0251ca1cc1e3d4f0"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "easel",
+      "name": "Easel",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.0",
+        "commit": "82c03999852d81ca96e04c50b87ee81adb2abeb2",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "2bba2624e3e346b8",
+          "README.md": "f6ccb225461b4a04",
+          "seed.json": "44029d4e412bb35a"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "gasket",
+      "name": "Gasket",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.0",
+        "commit": "33769933eaf2bafeb75c80eb2093b1400d282bc5",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "cf2274bf14126c18",
+          "README.md": "ee8db134ceefcae8",
+          "seed.json": "703ca7b6ee4f4767"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "gauge",
+      "name": "Gauge",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.0",
+        "commit": "cf3745f66aff3b27a4111e30b7cf59824395b4cd",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "efe5802ef2357509",
+          "README.md": "3d9284ad2ded51e3",
+          "seed.json": "5f202416d74345df"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "glove",
+      "name": "Glove",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.0",
+        "commit": "a9086f381d9c15af4aec26baafcb6aba619a374d",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "6dc16d8772de3c5b",
+          "README.md": "4d6e68a4f9061087",
+          "seed.json": "c287824fa8adcc95"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "larder",
+      "name": "Larder",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.3",
+        "commit": "10758c4295dec89b655e30ef8e26fa4f472e223d",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "f63fde2551574253",
+          "README.md": "e9202dbc15240869",
+          "seed.json": "9ef004c584e0ab33"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "locket",
+      "name": "Locket",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.3",
+        "commit": "b16525ec322de963fa48e6f4aafd78790ff58b41",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "0619484b0bd09740",
+          "README.md": "59eab7ffdbb80fc0",
+          "seed.json": "14d4cde76112acae"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "lodge",
+      "name": "Lodge",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.0",
+        "commit": "5d58f08b12819305f62e0e617edb1398b07654ca",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "f3155c1e62a34365",
+          "README.md": "f6ecc223be775083",
+          "seed.json": "607ff3933b2aa255"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "nectar",
+      "name": "Nectar",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.0",
+        "commit": "59215a083b5f8a1248b1ab53c4c3ea4e51aa110b",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "d043b89c2c8a715f",
+          "README.md": "35e8925deb7769fa",
+          "seed.json": "71af0f9c883a944e"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "pantry",
+      "name": "Pantry",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.2.8",
+        "commit": "b24aaab5aac7e4cd3b83ef39d93a07e8325b6a8e",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "98d686ecb8bf9592",
+          "README.md": "6212bf1dbee94f89",
+          "seed.json": "9a35691c67dc1960"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "pier",
+      "name": "Pier",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.0",
+        "commit": "67c944bf027977ad161aa209e1ff22b0afa9e812",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "aa919d7e9cebb644",
+          "README.md": "c16b4ad1f5ae0543",
+          "seed.json": "02ee84db401de286"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "purse",
+      "name": "Purse",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.1",
+        "commit": "bab2cbe475ea23bd4831a71b441a6fb2b0d2cbdf",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "f3709617bb6af9cb",
+          "README.md": "c35f5099769e9bef",
+          "seed.json": "14809a56bca649e9"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "willow",
+      "name": "Willow",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.0",
+        "commit": "def0450eb8de870eed4b41fbe3ebdfdb35e6166f",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "4badf98dd46a1c16",
+          "README.md": "ea0feb195f92ecc6",
+          "seed.json": "f651cc4cf07343b9"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "buoy",
+      "name": "Buoy",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.3",
+        "commit": "e85c5fa796ccd03ba45e6bea5d5fd3b65b27d471",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "10965bf146de3cb8",
+          "README.md": "8e920ffead3e66e4",
+          "seed.json": "09cc48148ebd5f32"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "lanyard",
+      "name": "Lanyard",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.3",
+        "commit": "db2a1ef37612248290e0efd85209c9b1f0da8c83",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "671961c71287784e",
+          "README.md": "99ea322fc7ca62b9",
+          "seed.json": "922539c68f09a6ae"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "terrace",
+      "name": "Terrace",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.1.4",
+        "commit": "0afcac8b3a42c23d984078e6ff90e928c9ebc22f",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "98fbe43b4ddadbb8",
+          "README.md": "e332bd9614af85ee",
+          "seed.json": "59af82a351f8b233"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "auth",
+      "name": "Auth",
+      "kind": "soon",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "HEAD",
+        "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
+        "reason": "coming-soon seed",
+        "copy": {
+          "CONTRACT.md": "efe84cf61df4d449",
+          "README.md": "0a561f21f7d4099d",
+          "seed.json": "12a810624fbbda31"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "blotter",
+      "name": "Blotter",
+      "kind": "soon",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "HEAD",
+        "commit": "4e18475e9bfd57e90da8141a1d6de13efa3f2231",
+        "reason": "coming-soon seed; no release tag",
+        "copy": {
+          "CONTRACT.md": "0d95ed81c8c94cbc",
+          "README.md": "477e353516ba5586",
+          "seed.json": "9730eeb88853b55b"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "crank",
+      "name": "Crank",
+      "kind": "soon",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "HEAD",
+        "commit": "4c92d9469bda9d3e1a21bc03f4c7f9d20f97c047",
+        "reason": "coming-soon seed; no release tag",
+        "copy": {
+          "CONTRACT.md": "9a6c7e17729df0ec",
+          "README.md": "17ee4f7ea9911d08",
+          "seed.json": "cb3854ec69090483"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "evidence",
+      "name": "Evidence",
+      "kind": "soon",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "HEAD",
+        "commit": "2a064b4ce1e9e30350a6ea887ff8e4d057f4ef8d",
+        "reason": "coming-soon seed; no release tag",
+        "copy": {
+          "CONTRACT.md": "c1503f1e632a7495",
+          "README.md": "6eb0c9aaefb5bbb7",
+          "seed.json": "1e045353885e50c1"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "inkwell",
+      "name": "Inkwell",
+      "kind": "soon",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "HEAD",
+        "commit": "e4e3c2dd4bdf48fe16111f9d447568d6c4366a84",
+        "reason": "coming-soon seed; no release tag",
+        "copy": {
+          "CONTRACT.md": "96e567233f2f7241",
+          "README.md": "aca2e7bba3c82c08",
+          "seed.json": "849ce13c443c0c2b"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "mallet",
+      "name": "Mallet",
+      "kind": "soon",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "HEAD",
+        "commit": "095576e8bfe68bf364228679ff6bd34176a89907",
+        "reason": "coming-soon seed; no release tag",
+        "copy": {
+          "CONTRACT.md": "06599a1925257db8",
+          "README.md": "bdcf1b90678e4fe8",
+          "seed.json": "9bde55c8776aa0f6"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "pane",
+      "name": "Pane",
+      "kind": "soon",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "HEAD",
+        "commit": "16501ad7d10c5af6f04799aa44c700249a41e9b4",
+        "reason": "coming-soon seed; no release tag",
+        "copy": {
+          "CONTRACT.md": "87b3881c477f953e",
+          "README.md": "ee5c9b4b719f8d74",
+          "seed.json": "dc58da6adc999d74"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "placemat",
+      "name": "Placemat",
+      "kind": "soon",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "HEAD",
+        "commit": "6232d682d8356f2eb0f2d9e58b4e44bba51fd9cd",
+        "reason": "coming-soon seed; no release tag",
+        "copy": {
+          "CONTRACT.md": "5bd08f4a60b3c704",
+          "README.md": "7319507ba101b574",
+          "seed.json": "81b3d3aa7dbeafee"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "platter",
+      "name": "Platter",
+      "kind": "soon",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "HEAD",
+        "commit": "85dee737177a6559448a012b2b6e22cad05f5e1a",
+        "reason": "coming-soon seed; no release tag",
+        "copy": {
+          "CONTRACT.md": "09ef88c02e5db4e8",
+          "README.md": "7d91745d757ade65",
+          "seed.json": "1175b76fe7042206"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "plinth",
+      "name": "Plinth",
+      "kind": "soon",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "HEAD",
+        "commit": "1fd27e714032ffb16b4682e9409671bd272d0f11",
+        "reason": "coming-soon seed; no release tag",
+        "copy": {
+          "CONTRACT.md": "e5fac34ec51e20f0",
+          "README.md": "b09f767e5fa73bde",
+          "seed.json": "9391daa545d15481"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "satchel",
+      "name": "Satchel",
+      "kind": "soon",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "HEAD",
+        "commit": "2e07928ffcf1061422b85ce066b54dbe08e1e6c3",
+        "reason": "coming-soon seed; no release tag",
+        "copy": {
+          "CONTRACT.md": "fd03cc85b0953a2b",
+          "README.md": "3f0e86261c877c73",
+          "seed.json": "7346886b444e2893"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "stall",
+      "name": "Stall",
+      "kind": "soon",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "HEAD",
+        "commit": "8ee1f25df4f0b10b9a62e7fe221453499f27b297",
+        "reason": "coming-soon seed; no release tag",
+        "copy": {
+          "CONTRACT.md": "f5de57afef4b4c22",
+          "README.md": "7f2cfec75f03d6f2",
+          "seed.json": "79fb406a0d89e3e5"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "strap",
+      "name": "Strap",
+      "kind": "soon",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "HEAD",
+        "commit": "008fef24f74b44bdb2aaf0fd95dcf50c45ceea7c",
+        "reason": "coming-soon seed; no release tag",
+        "copy": {
+          "CONTRACT.md": "de176ce40493ca6d",
+          "README.md": "d091a54bc841ed36",
+          "seed.json": "18dc2029bf7a37ce"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "vane",
+      "name": "Vane",
+      "kind": "soon",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "HEAD",
+        "commit": "a2638146dc0faaefe358d203ac940389183151ef",
+        "reason": "coming-soon seed; no release tag",
+        "copy": {
+          "CONTRACT.md": "14fdfd65203f037a",
+          "README.md": "cb4aa7039a9b3da7",
+          "seed.json": "081299c93a3d3193"
+        }
+      },
+      "findings": []
+    }
+  ],
+  "shareImage": [],
+  "apply": null
+}

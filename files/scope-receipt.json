@@ -1,0 +1,47 @@
+{
+  "before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "promotions": [
+    {
+      "slug": "happytohelp",
+      "before": "v0.4.24",
+      "after": "v0.4.25"
+    },
+    {
+      "slug": "oncall",
+      "before": "v0.5.12",
+      "after": "v0.5.13"
+    },
+    {
+      "slug": "spool",
+      "before": "v0.7.9",
+      "after": "v0.7.10"
+    }
+  ],
+  "changed_paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "changed_state_seeds": [
+    "happytohelp",
+    "oncall",
+    "orbit",
+    "spool",
+    "uptime"
+  ],
+  "contract_hashes_unchanged_for_promotions": true,
+  "excluded_slugs_absent": true,
+  "all_other_listing_fields_unchanged": true,
+  "diff_check": "pass",
+  "credential_shape_diff_check": "pass",
+  "publication_scan": "Mac lane required; unavailable in this cloud by task contract"
+}

@@ -1,0 +1,38 @@
+{
+  "happytohelp": {
+    "tag": "v0.4.25",
+    "commit": "333af4b0580c4284616783f1d79fcc9aad3aefc5",
+    "repository": "just-every/run-happytohelp",
+    "release_url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.25"
+  },
+  "lamp": {
+    "tag": "v1.11.14",
+    "commit": "733e2ce1e2fc618183a93632218bb86456a06a79",
+    "repository": "just-every/run-lamp",
+    "release_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.14"
+  },
+  "uptime": {
+    "tag": "v0.5.11",
+    "commit": "04016399e1e879e7be3b8e891baf02d975bb3901",
+    "repository": "just-every/run-uptime",
+    "release_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.11"
+  },
+  "oncall": {
+    "tag": "v0.5.13",
+    "commit": "8adae6c836f2fabda29e8a091b052450410c8ca5",
+    "repository": "just-every/run-oncall",
+    "release_url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.13"
+  },
+  "orbit": {
+    "tag": "v0.4.9",
+    "commit": "a5f471626aea1bfcb2c79f5dbee2250fdb38fd49",
+    "repository": "just-every/run-orbit",
+    "release_url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.9"
+  },
+  "spool": {
+    "tag": "v0.7.10",
+    "commit": "417ab513b3032370091479fa28f41a5a67b50c53",
+    "repository": "just-every/run-spool",
+    "release_url": "https://github.com/just-every/run-spool/releases/tag/v0.7.10"
+  }
+}

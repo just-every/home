@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "happytohelp",
+    "brand_source_ref": "HEAD",
+    "brand_source_commit": "333af4b0580c4284616783f1d79fcc9aad3aefc5",
+    "copy_source_ref": "v0.4.25",
+    "copy_source_commit": "333af4b0580c4284616783f1d79fcc9aad3aefc5",
+    "mark_source_path": "public/homepage/media/brands/happytohelp-mark.svg"
+  },
+  {
+    "slug": "lamp",
+    "brand_source_ref": "HEAD",
+    "brand_source_commit": "8d980ecc58b7a683b942293033d42ed254af6ffb",
+    "copy_source_ref": "v1.11.14",
+    "copy_source_commit": "733e2ce1e2fc618183a93632218bb86456a06a79",
+    "mark_source_path": "public/app-assets/brand/lamp-mark.svg"
+  },
+  {
+    "slug": "uptime",
+    "brand_source_ref": "HEAD",
+    "brand_source_commit": "83b2f2692149c9171a12cba0d7397734a1e8096b",
+    "copy_source_ref": "v0.5.11",
+    "copy_source_commit": "04016399e1e879e7be3b8e891baf02d975bb3901",
+    "mark_source_path": "public/favicon.svg"
+  },
+  {
+    "slug": "oncall",
+    "brand_source_ref": "HEAD",
+    "brand_source_commit": "8adae6c836f2fabda29e8a091b052450410c8ca5",
+    "copy_source_ref": "v0.5.13",
+    "copy_source_commit": "8adae6c836f2fabda29e8a091b052450410c8ca5",
+    "mark_source_path": "public/brand/mark.svg"
+  },
+  {
+    "slug": "orbit",
+    "brand_source_ref": "HEAD",
+    "brand_source_commit": "31ee78c0d348ba5c0d9e5ad530d8d23dbde5f47d",
+    "copy_source_ref": "v0.4.9",
+    "copy_source_commit": "a5f471626aea1bfcb2c79f5dbee2250fdb38fd49",
+    "mark_source_path": "public/brand/mark.svg"
+  },
+  {
+    "slug": "spool",
+    "brand_source_ref": "HEAD",
+    "brand_source_commit": "417ab513b3032370091479fa28f41a5a67b50c53",
+    "copy_source_ref": "v0.7.10",
+    "copy_source_commit": "417ab513b3032370091479fa28f41a5a67b50c53",
+    "mark_source_path": "public/theme/spool-mark.svg"
+  }
+]
