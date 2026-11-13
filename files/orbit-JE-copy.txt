@@ -1,0 +1,78 @@
+
+    summary:
+      "Orbit puts a deal in your NOW queue when a customer replies, scores it from real signals, and shows you why. Your company's policy controls agent sending; with approval required, a person reviews the exact email before it is sent. It is free for the whole team, and you can try it beside your current CRM.",
+    does: [
+      'Move a deal into your NOW queue when a customer replies, books a meeting or submits a form',
+      'Score each deal from what customers actually did, with older activity counting for less and every signal behind the score shown',
+      'Keep contacts, companies and deals, with your own fields, in a pipeline with your own stages',
+      'Let a contact form on your site drop each enquiry onto the right contact',
+      'Draft follow-ups, with optional AI, that you review and approve one by one, and schedule them with quiet hours',
+      'Cancel scheduled follow-ups automatically when the customer replies',
+      'Pull in emails and meetings from Gmail, Google Calendar, Outlook, forwarded mail or a calendar link',
+      'Import contacts from a CSV, and export or restore a complete archive of your workspace any time',
+    ],
+    promises: [
+      {
+        id: 'OUT-001',
+        text: "Signals, scores and AI text never grant permission to send. Your company's policy decides agent sending; when approval is required, a person approves the exact saved recipients, subject and body, and later changes invalidate it.",
+        category: 'approval',
+      },
+      {
+        id: 'OPP-004',
+        text: "A deal's score shows every signal it used, with source, time and weight, beside the reason for the recommendation.",
+        category: 'evidence',
+      },
+      {
+        id: 'SIGNAL-007',
+        text: 'Orbit uses no tracking script, pixel or cookie, and does not fingerprint visitors.',
+        category: 'privacy',
+      },
+      {
+        id: 'OUT-007',
+        text: "A reply, a booked meeting, an unsubscribe or a permanent bounce cancels that contact's scheduled messages.",
+        category: 'alerts',
+      },
+      {
+        id: 'OUT-012',
+        text: 'Opt-out is on by default for sequence email and off for one-to-one email. Messages set to carry it include one-click unsubscribe; an identified opt-out marks the contact do-not-contact within a minute and cancels scheduled messages.',
+        category: 'privacy',
+      },
+      {
+        id: 'ACTION-005',
+        text: 'A draft goes stale when the customer replies or the deal changes, and a stale draft cannot be sent until you have seen what changed.',
+        category: 'approval',
+      },
+      {
+        id: 'CAPTURE-005',
+        text: 'Capture never writes a draft or sends a message, and a contact created from captured mail is do-not-contact until you clear it.',
+        category: 'approval',
+      },
+      {
+        id: 'AI-003',
+        text: 'If the AI is unavailable, records, scoring, search, hand-written drafts and sending still work.',
+        category: 'ai',
+      },
+      {
+        id: 'RECORD-004',
+        text: 'Merging duplicates needs you to choose the surviving record and every conflicting value, and refuses if either record changed after your review.',
+        category: 'approval',
+      },
+      {
+        id: 'DATA-002',
+        text: 'Deleting a contact removes their email, signals, drafts and message bodies from records, search, exports and later AI or mail requests within five minutes.',
+        category: 'erasure',
+      },
+    ],
+    moveIn: [
+      'HubSpot Sales Hub',
+      'Pipedrive',
+      'CSV files',
+      'Gmail and Google Calendar',
+      'Outlook mail and calendar',
+    ],
+    runsOn: 'Your computer, or your own Cloudflare account',
+    version: 'v0.4.8',
+    contractUrl: 'https://run-orbit.com/contract',
+    seoTitle: 'Orbit: free, open-source alternative to HubSpot',
+    seoDescription:
+      'Orbit is a free sales CRM that puts a deal in your NOW queue when a customer replies, scores it from real signals and shows why.',

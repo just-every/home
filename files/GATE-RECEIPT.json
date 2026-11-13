@@ -1,0 +1,217 @@
+{
+  "tag": "je-gate-34",
+  "repository": "just-every/home",
+  "role": "independent gate",
+  "pr": "https://github.com/just-every/home/pull/50",
+  "candidate_branch": "cloud/je-sync-26",
+  "head": "0396a50284d16568b52f397e13787cf9440f3ad5",
+  "base": "7212b2fd1cb0bfe9241752dc64d37a407f0b004f",
+  "verdict": "GATE PASS",
+  "rubric": {
+    "R1": "MET",
+    "R2": "MET",
+    "R3": "MET",
+    "R4": "MET",
+    "R5": "MET"
+  },
+  "blocking_findings": 0,
+  "new_followups": 0,
+  "clause_status_changes": [],
+  "counts_before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "counts_after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "commands": [
+    {
+      "command": "npm ci",
+      "exit": 0,
+      "log": "npm-ci.log"
+    },
+    {
+      "command": "npm run listings -- --check",
+      "exit": 0,
+      "log": "local-checks.log"
+    },
+    {
+      "command": "npm run listings",
+      "exit": 0,
+      "result": "Listings unchanged (49 seeds)",
+      "log": "local-checks.log"
+    },
+    {
+      "command": "git diff --exit-code",
+      "exit": 0
+    },
+    {
+      "command": "npm run type-check",
+      "exit": 0,
+      "log": "local-checks.log"
+    },
+    {
+      "command": "npm run lint",
+      "exit": 0,
+      "log": "local-checks.log"
+    },
+    {
+      "command": "npm run build",
+      "exit": 0,
+      "log": "local-checks.log",
+      "tree": "candidate"
+    },
+    {
+      "command": "npm run build",
+      "exit": 0,
+      "log": "baseline-build.log",
+      "tree": "baseline"
+    },
+    {
+      "command": "cloud_run python3 /tmp/je-gate-serve.py",
+      "exit": 0,
+      "log": "browser.log"
+    }
+  ],
+  "not_applicable": [
+    "seed source-lock generator/check",
+    "seed contract-view write/check",
+    "migration-ledger checker"
+  ],
+  "api_calls": {
+    "total": 10,
+    "pull_request": 1,
+    "release_lists": 4,
+    "tagged_contracts": 4,
+    "exact_sha_actions": 1
+  },
+  "ci_runs": [
+    {
+      "id": 43386406510,
+      "name": "Verify branch",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "exact_head": true
+    },
+    {
+      "id": 43386457193,
+      "name": "Verify branch",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "skipped",
+      "exact_head": true
+    },
+    {
+      "id": 43386457973,
+      "name": "PR #50",
+      "event": "dynamic",
+      "status": "completed",
+      "conclusion": "success",
+      "exact_head": true
+    }
+  ],
+  "browser": {
+    "assertion_width": 1440,
+    "proof_widths": [
+      1440,
+      390
+    ],
+    "routes": [
+      "/lamp",
+      "/uptime",
+      "/oncall",
+      "/orbit"
+    ],
+    "initial_attempt": "baseline networkidle timed out; browser/owned servers closed; DOM/fonts/facts-based readiness pass succeeded"
+  },
+  "product_mutations": false,
+  "product_pushes": false,
+  "publication_scan": "Mac lane responsibility; gate diff/identity checks passed",
+  "report_packet_scan": {
+    "result": "PASS",
+    "credential_patterns": [
+      "GitHub token",
+      "private key",
+      "AWS key",
+      "credential URL",
+      "JWT"
+    ],
+    "hits": []
+  },
+  "selected_files": [
+    "REPORT.md",
+    "PLAN.md",
+    "FOLLOW-UPS.md",
+    "LANDING-NOTES.md",
+    "pr.json",
+    "ci.json",
+    "candidate.diff",
+    "commit.txt",
+    "identity.log",
+    "pre-evidence-identity.log",
+    "scope-data-receipt.json",
+    "npm-ci.log",
+    "local-checks.log",
+    "baseline-build.log",
+    "browser.log",
+    "browser-initial-attempt.log",
+    "browser-initial-cleanup.json",
+    "browser-receipt.json",
+    "browser-probe.mjs",
+    "browser-servers.py",
+    "server-pids.json",
+    "server-cleanup.json",
+    "home-server.log",
+    "baseline-server.log",
+    "final-refs.txt",
+    "terminal-status.txt",
+    "visual-review-1440.png",
+    "visual-review-390.png",
+    "lamp-releases.json",
+    "lamp-CONTRACT.md",
+    "lamp-JE-copy.txt",
+    "lamp-status-table.json",
+    "lamp-status-table.txt",
+    "lamp-claim-receipt.json",
+    "baseline-lamp-1440.png",
+    "baseline-lamp-390.png",
+    "candidate-lamp-1440.png",
+    "candidate-lamp-390.png",
+    "uptime-releases.json",
+    "uptime-CONTRACT.md",
+    "uptime-JE-copy.txt",
+    "uptime-status-table.json",
+    "uptime-status-table.txt",
+    "uptime-claim-receipt.json",
+    "baseline-uptime-1440.png",
+    "baseline-uptime-390.png",
+    "candidate-uptime-1440.png",
+    "candidate-uptime-390.png",
+    "oncall-releases.json",
+    "oncall-CONTRACT.md",
+    "oncall-JE-copy.txt",
+    "oncall-status-table.json",
+    "oncall-status-table.txt",
+    "oncall-claim-receipt.json",
+    "baseline-oncall-1440.png",
+    "baseline-oncall-390.png",
+    "candidate-oncall-1440.png",
+    "candidate-oncall-390.png",
+    "orbit-releases.json",
+    "orbit-CONTRACT.md",
+    "orbit-JE-copy.txt",
+    "orbit-status-table.json",
+    "orbit-status-table.txt",
+    "orbit-claim-receipt.json",
+    "baseline-orbit-1440.png",
+    "baseline-orbit-390.png",
+    "candidate-orbit-1440.png",
+    "candidate-orbit-390.png",
+    "GATE-RECEIPT.json"
+  ],
+  "recorded_utc": "2026-11-13T07:57:58.108327+00:00"
+}

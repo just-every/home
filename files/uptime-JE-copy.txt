@@ -1,0 +1,72 @@
+
+    summary:
+      'Uptime watches your websites and APIs on a schedule and tells you only when a failure is confirmed. It never calls a missing check healthy, and it keeps the evidence behind every incident. Alerts go to email, Slack or a signed webhook.',
+    does: [
+      'Check web pages and API responses for the right status, text, headers, data values and speed',
+      'Check that a server port answers, that DNS records are right, and that SSL certificates and domain registrations are not about to expire',
+      'Choose how many failed checks in a row open an incident and how many passes close it',
+      'Show a time as Unknown when no check arrived, instead of guessing it was fine',
+      'Watch cron jobs and nightly backups through heartbeat check-ins',
+      'Alert you by email, Slack or a signed webhook, and run an alert drill to learn whether a message really reaches someone',
+      'Pause alerts during planned maintenance windows',
+      'Run checks from a machine on your own network and export your monitors, evidence and alert history any time',
+    ],
+    promises: [
+      {
+        id: 'STATE-001',
+        text: 'One failed check never raises an alarm. A monitor is called Failing only after confirmation, a missing check shows as Unknown, and it recovers only on fresh passing checks.',
+        category: 'reliability',
+      },
+      {
+        id: 'EVIDENCE-001',
+        text: 'Every scheduled check and every retry is kept with its time, result and error type, and a retry never erases an earlier failure.',
+        category: 'evidence',
+      },
+      {
+        id: 'NOTIFY-001',
+        text: "Only confirmed incident changes send automatic alerts, and a test send never changes a monitor's status.",
+        category: 'alerts',
+      },
+      {
+        id: 'DELIVERY-001',
+        text: "Each alert gets one automatic send per destination where a repeat could double up, an unclear outcome is not sent again, and 'accepted' is never reported as 'read'.",
+        category: 'alerts',
+      },
+      {
+        id: 'DRILL-001',
+        text: "An alert drill sends a clearly marked test with a one-time confirmation link, and a confirmation is the recipient's own report, never proof of monitoring.",
+        category: 'alerts',
+      },
+      {
+        id: 'TLS-001',
+        text: 'Certificate checks look at trust, host name and expiry from each location, warn in stages before a certificate runs out, and clear only after a new valid certificate is seen.',
+        category: 'alerts',
+      },
+      {
+        id: 'MAINT-001',
+        text: 'Planned and recurring maintenance windows use US time zones and daylight saving, and keep the underlying check results so reports still show what happened.',
+        category: 'schedule',
+      },
+      {
+        id: 'ARCHIVE-001',
+        text: 'A backup restores only into an empty installation: monitors come back paused, destinations disabled and old alerts held back.',
+        category: 'import',
+      },
+      {
+        id: 'NETWORK-001',
+        text: 'Every address and redirect is validated, unsafe addresses are refused, and a redirect that downgrades from HTTPS is rejected.',
+        category: 'security',
+      },
+      {
+        id: 'ERASURE-001',
+        text: 'An owner can erase a monitor with its evidence, an alert destination, or an operator, and gets a receipt of what was removed.',
+        category: 'erasure',
+      },
+    ],
+    moveIn: ['Pingdom', 'UptimeRobot', 'Better Stack Uptime', 'Site24x7'],
+    runsOn: 'Your computer, or your own Cloudflare account',
+    version: 'v0.5.10',
+    contractUrl: 'https://run-uptime.com/contract',
+    seoTitle: 'Uptime: free, open-source alternative to Pingdom',
+    seoDescription:
+      'Uptime checks your websites, APIs, DNS and certificates, confirms failures before alerting, and tells you by email, Slack or webhook.',

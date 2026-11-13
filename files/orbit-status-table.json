@@ -1,0 +1,1530 @@
+[
+  {
+    "id": "TEAM-001",
+    "title": "Equal operators",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unproved: equality across every workspace action beyond the CRM journey. Existing FORECAST-001, OUT-014 and TEAM-007 authority rules refuse a second active full operator forecast configuration and shared-library writes; private library, report and dashboard audiences also retain feature-specific restrictions under REPORT-001 and REPORT-003, and sign-in policy administration remains owner-only. These authority boundaries require ct reconciliation with TEAM-001 before whole-clause DONE; no access is widened by this evidence change.",
+    "line": 2411
+  },
+  {
+    "id": "TEAM-002",
+    "title": "Management",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2412
+  },
+  {
+    "id": "TEAM-003",
+    "title": "One workspace",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: persisted US timezone; persisted USD default; persisted working hours; persisted stale intervals; reload reads the settings across records. The cited evidence does not assert this complete journey; implementation or a test title alone is not proof.",
+    "line": 2413
+  },
+  {
+    "id": "TEAM-004",
+    "title": "Removal handover",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: delegated handoff unassignment; scheduled-message cancellation; choice recorded for every set; one attributed owner-change entry. Asserted: reviewed task handover; reviewed opportunity handover; revoked session; historical note retains its actor.",
+    "line": 2414
+  },
+  {
+    "id": "RECORD-001",
+    "title": "Core records",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: contact create/read through authenticated Records; contact edits persist; company create/read through authenticated Records; company edits persist; USD opportunity create/edit; custom-field values read back; associations read back. The cited evidence does not assert this complete journey; implementation or a test title alone is not proof.",
+    "line": 2415
+  },
+  {
+    "id": "RECORD-002",
+    "title": "Associations",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2416
+  },
+  {
+    "id": "RECORD-003",
+    "title": "Identity keys",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: case and whitespace contact-email create and edit collisions, including existing identity and no-write results; free-mail keys excluded; keyless record create and edit; keyless records never link automatically. Import and Workbench duplicate proofs remain; guided provider migrations remain MIGRATE-001, MIGRATE-002 and MIGRATE-003; expanded roles retain TEAM-005 qualification and contract-cleanup prerequisites. The RECORD-007 creation-default conflict and every existing plan hold remain outside this slice.",
+    "line": 2417
+  },
+  {
+    "id": "RECORD-004",
+    "title": "Duplicate merge",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2418
+  },
+  {
+    "id": "RECORD-005",
+    "title": "Timeline",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: combined mail, meeting, note, stage and owner change, and merge coverage; exact per-entry occurred and recorded times, source and actor. The browser journey asserts native Records and opportunity reads before and after reload and visible note order at 1440 and 390 for late older arrivals and equal-time ID ties; it does not qualify the complete combined journey.",
+    "line": 2419
+  },
+  {
+    "id": "RECORD-006",
+    "title": "Search and views",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2420
+  },
+  {
+    "id": "RECORD-007",
+    "title": "Ownership",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: assign owner; reassign owner; unassign owner; owner persists after reload; attributed timeline entry; score unchanged. The cited evidence does not assert this complete journey; implementation or a test title alone is not proof.",
+    "line": 2421
+  },
+  {
+    "id": "RECORD-008",
+    "title": "Import",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2422
+  },
+  {
+    "id": "RECORD-009",
+    "title": "Duplicate candidates",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: keyless candidate listed. Asserted: same-name contacts across companies listed; same-name companies listed; review changes no records; chosen merge retires exactly one record.",
+    "line": 2423
+  },
+  {
+    "id": "RECORD-010",
+    "title": "Manual entries",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unqualified remainder: call editing; remaining combinations of entry kinds and record kinds; duration and attendee editing controls; mentions and attachments under RECORD-017 and RECORD-018; provider activity qualification. Existing three-kind creation, note creation, editing and deletion, call creation and deletion, and note and call independence remain credited. The selected manual meeting lifecycle, retained fields and author, attributed deletion and score and mail independence are asserted by the named journeys. No clause-specific hold is released.",
+    "line": 2424
+  },
+  {
+    "id": "RECORD-011",
+    "title": "Related records",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2425
+  },
+  {
+    "id": "RECORD-012",
+    "title": "Contactability",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2426
+  },
+  {
+    "id": "RECORD-013",
+    "title": "Deletion",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: deletion confirmation enforced; company deletion detaches contacts; company deletion detaches opportunities. Asserted: deal deletion preserves sent history; contact deletion erases mail and linked signals.",
+    "line": 2427
+  },
+  {
+    "id": "SIGNAL-001",
+    "title": "Ingestion",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2428
+  },
+  {
+    "id": "SIGNAL-002",
+    "title": "Signal types",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2429
+  },
+  {
+    "id": "SIGNAL-003",
+    "title": "Idempotency",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: replay after restart. Asserted: concurrent delivery returns one identity; one persisted effect; changed payload returns conflict.",
+    "line": 2430
+  },
+  {
+    "id": "SIGNAL-004",
+    "title": "Linking",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: ambiguous identity held; exactly one evaluation after link. Asserted: exact identity affects the intended deal; unknown identity held; one manual link allowed; linked timeline retains event time.",
+    "line": 2431
+  },
+  {
+    "id": "SIGNAL-005",
+    "title": "Event time",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: history sorted around newer evidence; fresh evaluation after late event; later-written fields not overwritten. Asserted: older event retains occurred time.",
+    "line": 2432
+  },
+  {
+    "id": "SIGNAL-006",
+    "title": "Evidence confidence",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2433
+  },
+  {
+    "id": "SIGNAL-007",
+    "title": "No tracking",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: no tracking script/pixel/cookie in public assets/network; identity-free chat held; unsupported identity absent from customer history. Asserted: identity-free page view held.",
+    "line": 2434
+  },
+  {
+    "id": "SIGNAL-008",
+    "title": "Ingestion failure",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2435
+  },
+  {
+    "id": "SIGNAL-009",
+    "title": "Signed sources",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2436
+  },
+  {
+    "id": "CAPTURE-001",
+    "title": "File capture",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2437
+  },
+  {
+    "id": "CAPTURE-002",
+    "title": "Known participants only",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2438
+  },
+  {
+    "id": "CAPTURE-003",
+    "title": "What capture applies at once",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: booked meeting cancels scheduled work; drafts staled atomically; automatic reply stops no scheduled work. Asserted: threaded reply linked; permanent bounce stops contact.",
+    "line": 2439
+  },
+  {
+    "id": "CAPTURE-004",
+    "title": "Reviewed proposals",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2440
+  },
+  {
+    "id": "CAPTURE-005",
+    "title": "Human boundary",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: delegation credential refused; address-only intake works; proposed new contact stays blocked. Asserted: native intake works; collaborator intake refused; source signature refused.",
+    "line": 2441
+  },
+  {
+    "id": "CAPTURE-006",
+    "title": "Capture sources",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: Google adapter read; Microsoft adapter read; selected folders/calendars. Asserted: interruption before cursor commit; resumed cursor and deduplication; revoke halts reads and preserves records; reconnect restores capture; disconnect removes credential; visible error reason.",
+    "line": 2442
+  },
+  {
+    "id": "CAPTURE-007",
+    "title": "Captured data",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2443
+  },
+  {
+    "id": "CAPTURE-008",
+    "title": "Orbit address",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: oversized mail counted; oversized content not retained. Asserted: private tagged address created; tag rotation differs; exact envelope tag accepted; wrong envelope tag stores no signal; forwarded/BCC mail captured; Gmail confirmation read back.",
+    "line": 2444
+  },
+  {
+    "id": "CAPTURE-009",
+    "title": "Calendar link",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: calendar link validated; clock advancement refreshes; event changes deduplicate; event cancellation retained; original event times retained. Asserted: broken link halts with reason.",
+    "line": 2445
+  },
+  {
+    "id": "OPP-001",
+    "title": "Lifecycle",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: lost close retains reason; closing operator and time; later evidence never silently reopens; explicit reopen restores correct queue; stage and owner remain unchanged on reopening; history records every lifecycle transition. The cited evidence does not assert this complete journey; implementation or a test title alone is not proof.",
+    "line": 2446
+  },
+  {
+    "id": "OPP-002",
+    "title": "Independent state",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: stage/owner changes preserve independent fields. Asserted: lifecycle independently visible; stage independently visible; owner independently visible; score independently visible; band independently visible; queue independently visible.",
+    "line": 2447
+  },
+  {
+    "id": "OPP-003",
+    "title": "Evaluation",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: band; contribution values; policy version; decay; closed-deal exclusion. Asserted: computed score after signal.",
+    "line": 2448
+  },
+  {
+    "id": "OPP-004",
+    "title": "Explainability",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Not reachable in the product, so unasserted: following each contribution to its source evidence. A contribution in the deal's Why this is first list has no link or visible signal ID, Recorded details lists each signal's subject, kind, source and linking basis without ids, and no route serves a signal's source evidence; `tests/e2e/operator.spec.mjs` resolves each contribution's signal ID from the opportunity API inside the test and then finds its Recorded details line by subject text. Asserted at 390 and 1440 in the browser: every contribution shown with its signal subject, type, signed points and source; the current recommendation's reason and next action beside them; each contributing signal's Recorded details line names its source and how it was linked.",
+    "line": 2449
+  },
+  {
+    "id": "OPP-005",
+    "title": "Evaluation failure",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2450
+  },
+  {
+    "id": "OPP-006",
+    "title": "NOW ordering",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: tied NOW order; rep filter; stage filter; band filter; ordering persists after reload. Asserted: untied NOW order.",
+    "line": 2451
+  },
+  {
+    "id": "OPP-007",
+    "title": "Queue entry",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: stale clock; genuine five-working-day awaiting-response deadline construction in the workspace timezone; complete form, reply, booking and failure reason and transition reconciliation; all NEXT and removal paths; the complete event matrix and one transition per triggering event beyond the close-deadline case. Asserted: close clock and its single explained transition; failed-send NOW reason.",
+    "line": 2452
+  },
+  {
+    "id": "OPP-008",
+    "title": "Manual completion",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: skip retains historical recommendation; no message sent. Asserted: manual completion changes queue; only new recommendation gets a new identity.",
+    "line": 2453
+  },
+  {
+    "id": "OPP-009",
+    "title": "Pipeline stages",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2454
+  },
+  {
+    "id": "ACTION-001",
+    "title": "Current recommendation",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: current action evidence; current action version; named action remains with AI disabled; no invented explanation. The cited evidence does not assert this complete journey; implementation or a test title alone is not proof.",
+    "line": 2455
+  },
+  {
+    "id": "ACTION-002",
+    "title": "Replacement",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: new evidence supersedes old recommendation; operator change supersedes recommendation; old action stays historical; old action cannot draft; old action cannot send; old action cannot complete. The cited evidence does not assert this complete journey; implementation or a test title alone is not proof.",
+    "line": 2456
+  },
+  {
+    "id": "ACTION-003",
+    "title": "Draft on request",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: draft facts cite current evidence; configured instructions honored. Asserted: request preview matches generated input; draft saved; no outbound message created.",
+    "line": 2457
+  },
+  {
+    "id": "ACTION-004",
+    "title": "Durable draft",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2458
+  },
+  {
+    "id": "ACTION-005",
+    "title": "Stale draft",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: customer/deal mutation stales draft; stale send refused; current differences shown before new review. Asserted: reply stop stales draft.",
+    "line": 2459
+  },
+  {
+    "id": "OUT-001",
+    "title": "Exact-content customer sending",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: an actual agent customer-message call under held company policy through its owning agent-surface tool. Asserted: the current source signature ingests evidence but cannot approve or dispatch a saved draft without a native session; refusal is 401 with unchanged saved content and effect inventories and no mail submission, followed by signed-in exact-revision approval and exact reviewed bytes dispatched.",
+    "line": 2460
+  },
+  {
+    "id": "OUT-002",
+    "title": "Message states",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: provider acceptance state; bounce state; persisted buyer-visible labels distinct. Asserted: delivery state; failed state; ambiguous state.",
+    "line": 2461
+  },
+  {
+    "id": "OUT-003",
+    "title": "Send idempotency",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: concurrent approval has one outbound intent; same key after restart; at most one provider submission. The cited evidence does not assert this complete journey; implementation or a test title alone is not proof.",
+    "line": 2462
+  },
+  {
+    "id": "OUT-004",
+    "title": "Threading",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2463
+  },
+  {
+    "id": "OUT-005",
+    "title": "Accepted outcome",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: one sent timeline activity; recommendation completed; NEXT transition (assertion is in uncited tests/core/source-onboarding.test.ts); one notification; replayed provider response has no second effect. The cited evidence does not assert this complete journey; implementation or a test title alone is not proof.",
+    "line": 2464
+  },
+  {
+    "id": "OUT-006",
+    "title": "Delivery failure",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: ambiguous outcome distinct; permanent bounce stops contact; provider reason retained. Asserted: known-unsent retry bounded to five attempts; exhausted failure visible; one failure notification.",
+    "line": 2465
+  },
+  {
+    "id": "OUT-007",
+    "title": "Stop conditions",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: booking cancels scheduled mail; unsubscribe cancels scheduled mail; bounce cancels scheduled mail; manual stop cancels scheduled mail; replay has no second effect. Asserted: reply cancels scheduled mail; stop stales unsent draft.",
+    "line": 2466
+  },
+  {
+    "id": "OUT-008",
+    "title": "Quiet hours",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2467
+  },
+  {
+    "id": "OUT-009",
+    "title": "Scheduled send",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: schedule and cancel; changed evidence blocks dispatch; changed permission blocks dispatch; changed recipient blocks dispatch; unchanged authorized content submitted. The cited evidence does not assert this complete journey; implementation or a test title alone is not proof.",
+    "line": 2468
+  },
+  {
+    "id": "OUT-010",
+    "title": "Sending limits",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: immediate submission limit; scheduled submission limit. Asserted: per-minute limit visibly holds; per-user daily limit visibly holds; held item shows reason; next permitted time; no silent retry.",
+    "line": 2469
+  },
+  {
+    "id": "OUT-011",
+    "title": "Unresolved submission",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: lost acceptance transaction; restart reconciles durable intent; unresolved stays visible. Asserted: lost provider response becomes uncertain; provider never resubmitted; one accepted final outcome.",
+    "line": 2470
+  },
+  {
+    "id": "OUT-012",
+    "title": "Unsubscribe",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2471
+  },
+  {
+    "id": "AI-001",
+    "title": "Provider and input",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2472
+  },
+  {
+    "id": "AI-002",
+    "title": "Output validation",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: invalid schema visibly fails; transport error visibly fails; no fabricated repair; bounded transport retries. Asserted: foreign citation leaves no draft.",
+    "line": 2473
+  },
+  {
+    "id": "AI-003",
+    "title": "Provider failure",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: configured-outage continuity; manual CRM updates; ingestion and linking continuity; scoring and queue placement continuity; search continuity; recommendation action and evidence readback; rendered generation-failure qualification. Connected mailboxes and live model or provider qualification remain unclaimed. Asserted: unconfigured generation unavailable; handwritten drafting, exact approval and one accepted customer-mail submission continue with AI unconfigured.",
+    "line": 2474
+  },
+  {
+    "id": "AI-004",
+    "title": "Cost",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: failed call accounting; provider; model; duration; cost; daily totals; feature totals in Settings. Asserted: successful token counts; status.",
+    "line": 2475
+  },
+  {
+    "id": "BRIEF-001",
+    "title": "Today's brief",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2476
+  },
+  {
+    "id": "BRIEF-002",
+    "title": "Overdue promises",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2477
+  },
+  {
+    "id": "BRIEF-003",
+    "title": "Account summary",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2478
+  },
+  {
+    "id": "BRIEF-004",
+    "title": "Meeting plan",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2479
+  },
+  {
+    "id": "BRIEF-005",
+    "title": "Agent handoff",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2480
+  },
+  {
+    "id": "NOTIFY-001",
+    "title": "Responsible operator",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: assigned-deal responsible recipient (the fixture leaves the deal unassigned). Asserted: unassigned queue recipient; unassigned reply recipient and replay count; delivery-problem recipient once; no-actor fallback goes to every active operator.",
+    "line": 2481
+  },
+  {
+    "id": "NOTIFY-002",
+    "title": "Read state",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: read state persists after a new sign-in session. Asserted: recipient read mark stored; another recipient cannot mark it; unread count returns to previous value; queue notice not duplicated.",
+    "line": 2482
+  },
+  {
+    "id": "PUBLIC-001",
+    "title": "Landing page",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: app Lobby branding and sign-in links; separate run-site branding and sign-in links; no customer data in public HTML; no customer data in network responses. The cited evidence does not assert this complete journey; implementation or a test title alone is not proof.",
+    "line": 2483
+  },
+  {
+    "id": "PUBLIC-002",
+    "title": "Safe demo",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2484
+  },
+  {
+    "id": "PUBLIC-003",
+    "title": "Unconfigured sign-in",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2485
+  },
+  {
+    "id": "PUBLIC-004",
+    "title": "Native sign-in",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: expired link refused; linked provider admits no new operator. Asserted: valid native link creates current person session; unknown/inactive response matches; single-use link signs in only once; sign-out revokes session.",
+    "line": 2486
+  },
+  {
+    "id": "DATA-001",
+    "title": "Export contents",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 2487
+  },
+  {
+    "id": "DATA-002",
+    "title": "Contact erasure",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: contact erasure redacts stored Slack content; company erasure redacts stored Slack content; deal erasure redacts stored Slack content; provider delete requests tracked; each provider-deletion outcome visible; aliases erased; imported/captured evidence erased; drafts erased; transfer copies withdrawn; AI absence; mail absence; anonymous audit; completion within five minutes; replay cannot recreate erased content. Asserted: search absence; export absence.",
+    "line": 2488
+  },
+  {
+    "id": "DELEGATE-001",
+    "title": "Selected application authority",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: Slack mapping grants no delegation authority; Slack mapping grants no outreach authority; Slack acknowledgment does not accept a proposed handoff; Slack writes only acknowledgment/internal task; task retains current native access and actor; native consent and PKCE scope; remaining selected-record kinds and outside-scope cases. Asserted: active selected-opportunity grant reads its opportunity, refuses its existing unselected linked contact with 404, omits that contact from delegated records and changes no records, history or write effects; internal handoff proposed; revocation stops every door; restored credential authority absent; restored history preserved.",
+    "line": 2489
+  },
+  {
+    "id": "TEAM-005",
+    "title": "Sales roles and assigned records",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Implemented first slice: author-controlled privacy for a note, logged call/meeting, task note or handoff; collaborator record/shared/search/mention/notification reads withhold private entries regardless of the record grant. Visibility changes are audited, flags round-trip through the CLI archive and disappear with deleted entries. Private entry, task-note and handoff controls and collaborator Shared records are exercised at 1440 and 390. FORM-001 round robin retains its explicit active full-operator lists; ownership alone grants no current access. Native teams, team mentions, restricted sales roles, team queues and chosen-user/team notifications remain gaps.",
+    "line": 2490
+  },
+  {
+    "id": "TEAM-006",
+    "title": "Team forecast, reports and dashboards",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Implemented first slice: author-controlled privacy for a note, logged call/meeting, task note or handoff; collaborator record/shared/search/mention/notification reads withhold private entries regardless of the record grant. Visibility changes are audited, flags round-trip through the CLI archive and disappear with deleted entries. Private entry, task-note and handoff controls and collaborator Shared records are exercised at 1440 and 390. FORM-001 round robin retains its explicit active full-operator lists; ownership alone grants no current access. Native teams, team mentions, restricted sales roles, team queues and chosen-user/team notifications remain gaps.",
+    "line": 2491
+  },
+  {
+    "id": "TEAM-007",
+    "title": "Team libraries, mentions and entry privacy",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Implemented first slice: author-controlled privacy for a note, logged call/meeting, task note or handoff; collaborator record/shared/search/mention/notification reads withhold private entries regardless of the record grant. Visibility changes are audited, flags round-trip through the CLI archive and disappear with deleted entries. Private entry, task-note and handoff controls and collaborator Shared records are exercised at 1440 and 390. FORM-001 round robin retains its explicit active full-operator lists; ownership alone grants no current access. Native teams, team mentions, restricted sales roles, team queues and chosen-user/team notifications remain gaps.",
+    "line": 2492
+  },
+  {
+    "id": "TEAM-008",
+    "title": "Team sending budgets and Slack audiences",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Implemented first slice: author-controlled privacy for a note, logged call/meeting, task note or handoff; collaborator record/shared/search/mention/notification reads withhold private entries regardless of the record grant. Visibility changes are audited, flags round-trip through the CLI archive and disappear with deleted entries. Private entry, task-note and handoff controls and collaborator Shared records are exercised at 1440 and 390. FORM-001 round robin retains its explicit active full-operator lists; ownership alone grants no current access. Native teams, team mentions, restricted sales roles, team queues and chosen-user/team notifications remain gaps.",
+    "line": 2493
+  },
+  {
+    "id": "RECORD-014",
+    "title": "Configurable sales data and custom objects",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Owner-defined text, number, date and picklist fields on contacts, companies and deals retain required/unique validation, affected-record preview and read-only archived values. Settings now reads immutable definition revisions with their original labels, types, choices, required/unique and archived state; paged native HTTP reads and fresh-session reads after local archive restore preserve that meaning. This is definition history, not a claim of per-record value history. Custom objects and explicit relationships/layouts, lead qualification/conversion preserving source, activities and consent, saved filtered lists with column choice and sorting, reviewed bulk field edits with individual failures, and field-value history naming the user/import/capture/API source remain gaps. Workflow-change approval and workflow/version history inherit AUTO-002. Future lead/custom-object intake retains FORM-001 notification, consent, abuse, export and erasure duties, with no custom-object intake carve-out.",
+    "line": 2494
+  },
+  {
+    "id": "RECORD-015",
+    "title": "Deal stakeholders and buying context",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: champion association; evaluator association; verified decision-maker; second-company relationship; primary association move; history preserved; authorization preserved. The cited evidence does not assert this complete journey; implementation or a test title alone is not proof.",
+    "line": 2495
+  },
+  {
+    "id": "RECORD-016",
+    "title": "Owners for contacts, leads, companies and custom objects",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Contact/company record-page and list/search bulk assignment, attributed history, per-item refusals, guarded undo and grouped native in-app notices ship. Full operators retain existing workspace access; collaborators receive no new ownership mutation authority or content-bearing assignment notice. CSV owner mapping, My/Unassigned default views, owner grouping and report/dashboard filters, company/first-email assignment rules, deal assignment notices and removal handover remain gaps. Leads/custom objects inherit RECORD-014; restricted sellers inherit TEAM-005 and owners never grant access; email/push/Slack delivery inherits NOTIFY-003; connected-mailbox writes inherit OUT-013/CAPTURE-010/CAPTURE-012, workflows AUTO-001 and public responses API-001. Import-provider mappings remain MIGRATE-001/002/003.",
+    "line": 2496
+  },
+  {
+    "id": "RECORD-019",
+    "title": "Owner mapping on import and migration",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Contact/company record-page and list/search bulk assignment, attributed history, per-item refusals, guarded undo and grouped native in-app notices ship. Full operators retain existing workspace access; collaborators receive no new ownership mutation authority or content-bearing assignment notice. CSV owner mapping, My/Unassigned default views, owner grouping and report/dashboard filters, company/first-email assignment rules, deal assignment notices and removal handover remain gaps. Leads/custom objects inherit RECORD-014; restricted sellers inherit TEAM-005 and owners never grant access; email/push/Slack delivery inherits NOTIFY-003; connected-mailbox writes inherit OUT-013/CAPTURE-010/CAPTURE-012, workflows AUTO-001 and public responses API-001. Import-provider mappings remain MIGRATE-001/002/003.",
+    "line": 2497
+  },
+  {
+    "id": "RECORD-020",
+    "title": "Automatic record-owner rules",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Contact/company record-page and list/search bulk assignment, attributed history, per-item refusals, guarded undo and grouped native in-app notices ship. Full operators retain existing workspace access; collaborators receive no new ownership mutation authority or content-bearing assignment notice. CSV owner mapping, My/Unassigned default views, owner grouping and report/dashboard filters, company/first-email assignment rules, deal assignment notices and removal handover remain gaps. Leads/custom objects inherit RECORD-014; restricted sellers inherit TEAM-005 and owners never grant access; email/push/Slack delivery inherits NOTIFY-003; connected-mailbox writes inherit OUT-013/CAPTURE-010/CAPTURE-012, workflows AUTO-001 and public responses API-001. Import-provider mappings remain MIGRATE-001/002/003.",
+    "line": 2498
+  },
+  {
+    "id": "RECORD-021",
+    "title": "Assignment notifications",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Contact/company record-page and list/search bulk assignment, attributed history, per-item refusals, guarded undo and grouped native in-app notices ship. Full operators retain existing workspace access; collaborators receive no new ownership mutation authority or content-bearing assignment notice. CSV owner mapping, My/Unassigned default views, owner grouping and report/dashboard filters, company/first-email assignment rules, deal assignment notices and removal handover remain gaps. Leads/custom objects inherit RECORD-014; restricted sellers inherit TEAM-005 and owners never grant access; email/push/Slack delivery inherits NOTIFY-003; connected-mailbox writes inherit OUT-013/CAPTURE-010/CAPTURE-012, workflows AUTO-001 and public responses API-001. Import-provider mappings remain MIGRATE-001/002/003.",
+    "line": 2499
+  },
+  {
+    "id": "RECORD-022",
+    "title": "Owner views, grouping and removal",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Contact/company record-page and list/search bulk assignment, attributed history, per-item refusals, guarded undo and grouped native in-app notices ship. Full operators retain existing workspace access; collaborators receive no new ownership mutation authority or content-bearing assignment notice. CSV owner mapping, My/Unassigned default views, owner grouping and report/dashboard filters, company/first-email assignment rules, deal assignment notices and removal handover remain gaps. Leads/custom objects inherit RECORD-014; restricted sellers inherit TEAM-005 and owners never grant access; email/push/Slack delivery inherits NOTIFY-003; connected-mailbox writes inherit OUT-013/CAPTURE-010/CAPTURE-012, workflows AUTO-001 and public responses API-001. Import-provider mappings remain MIGRATE-001/002/003.",
+    "line": 2500
+  },
+  {
+    "id": "RECORD-017",
+    "title": "Mentions in notes and activities",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 2501
+  },
+  {
+    "id": "RECORD-023",
+    "title": "Collaborator entry grants and mention access",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 2502
+  },
+  {
+    "id": "RECORD-024",
+    "title": "Mention delivery through personal channels",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Unasserted in the cited evidence: Slack acknowledgment never accepts an application-proposed handoff. Asserted: an opted-in personal Slack mention carries no entry text, a private entry gets a generic notice with an authenticated link, and deleting the source withdraws an undelivered mention. Personal email and push channels are not offered.",
+    "line": 2503
+  },
+  {
+    "id": "RECORD-018",
+    "title": "Files and versions on records and activities",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. There is no file storage, upload route or Files list on any record or activity, and `src/core/features/capture/mime.ts` skips every `Content-Disposition: attachment` part when parsing captured mail, so captured attachments are dropped; migration presets carry no files.",
+    "line": 2504
+  },
+  {
+    "id": "RECORD-025",
+    "title": "File access, previews and deletion",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. There is no file storage, upload route or Files list on any record or activity, and `src/core/features/capture/mime.ts` skips every `Content-Disposition: attachment` part when parsing captured mail, so captured attachments are dropped; migration presets carry no files.",
+    "line": 2505
+  },
+  {
+    "id": "RECORD-026",
+    "title": "Captured and sent mail attachments",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. There is no file storage, upload route or Files list on any record or activity, and `src/core/features/capture/mime.ts` skips every `Content-Disposition: attachment` part when parsing captured mail, so captured attachments are dropped; migration presets carry no files.",
+    "line": 2506
+  },
+  {
+    "id": "RECORD-027",
+    "title": "File migration and portable bytes",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. There is no file storage, upload route or Files list on any record or activity, and `src/core/features/capture/mime.ts` skips every `Content-Disposition: attachment` part when parsing captured mail, so captured attachments are dropped; migration presets carry no files.",
+    "line": 2507
+  },
+  {
+    "id": "MIGRATE-001",
+    "title": "HubSpot Sales Hub migration",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Reviewed HubSpot CSV presets cover core records/deals/prepared notes; connected migration and full activity/owner/pipeline and attachment coverage are missing.",
+    "line": 2508
+  },
+  {
+    "id": "MIGRATE-002",
+    "title": "Pipedrive migration",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Pipedrive core CSV presets exist; complete connected migration, products, activity history and files remain missing.",
+    "line": 2509
+  },
+  {
+    "id": "MIGRATE-003",
+    "title": "Salesforce Sales Cloud migration",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. No implementation of this complete target flow was found.",
+    "line": 2510
+  },
+  {
+    "id": "CAPTURE-010",
+    "title": "Continuous authorized mail and calendar reads",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Durable provider reads retain their selected-scope and OAuth safeguards. The owner chooses held review (default), most recently active open deal or all open deals for exact-contact connected mail; trusted message identity retains priority. Automatic evidence names its rule, and one reviewed action moves or removes deal links without rewriting the original. No-open-deal mail links only the contact and primary company. Reviewed corrections permit any deal the current full operator may view and change, including closed deals and deals unrelated to the captured contact; the original contact and company history remain. TEAM-005 retains real administrator and restricted-record policy; current full operators retain existing workspace access and collaborators gain no capture door. Live Gmail and Microsoft acceptance requires the owner's authorized journey and remains unmeasured; attachments inherit RECORD-018, unknown-participant proposals CAPTURE-012, and the fixed calendar window still needs explicit extension. Implemented first slice: the installation owner acts as administrator until TEAM-005 supplies sales roles. An open deal's activity is the latest recorded source or operator timeline entry, or its creation time when no later entry exists; ties use deal identity order. Active full operators may move captured mail to any currently accessible, changeable deal or remove its deal links. A fingerprint binds the reviewed association, correction history and offered deal revisions; stale reviews return 409, unavailable targets return 403, and collaborators or restricted roles are refused. Replay repeats no mutation or audit.",
+    "line": 2511
+  },
+  {
+    "id": "CAPTURE-011",
+    "title": "Two-way calendar and CRM activity",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Implemented first slice: separate opt-in OAuth write consent requests Google `calendar.events` or Microsoft `Calendars.ReadWrite`; exact saved attendees, message and times are reviewed before one create, reschedule or cancellation attempt. Provider revisions and source/customer authority fence writes; provider edits become conflicts for fresh review, ambiguous outcomes remain held, and cancelling one written occurrence leaves the other intact. Activities retain one entry per written meeting. Google and Microsoft consent screens show the requested read scopes and add write scope only after separate opt-in, at 1440 and 390; their native form submissions request those exact scopes. Read-only tokens contain no write scope, unsolicited write grants are refused, and read-only consent cannot authorize writeback. Invitation review and conflict screens are exercised at 1440 and 390. Writeback currently changes single meetings created by Orbit; provider-captured meeting editing, recurring-series authoring and live-account proof remain gaps.",
+    "line": 2512
+  },
+  {
+    "id": "CAPTURE-012",
+    "title": "Unknown-participant proposal custody",
+    "scope": "target",
+    "status": "partial",
+    "gap": "CAPTURE-012: connected unknown-participant proposals, explicit reviewed contactability basis, exclusion and retention enforcement, all named back-fill doors, replay and erasure, authorized Gmail and Microsoft proof, provider qualification and jurisdiction-specific legal qualification remain unproved. Same-thread mailbox sending remains OUT-013, record composition OUT-017, reply all OUT-019, expanded roles TEAM-005 and ownership behavior RECORD-016.",
+    "line": 2513
+  },
+  {
+    "id": "CAPTURE-013",
+    "title": "Prospect acceptance and history back-fill",
+    "scope": "target",
+    "status": "partial",
+    "gap": "CAPTURE-012: connected unknown-participant proposals, explicit reviewed contactability basis, exclusion and retention enforcement, all named back-fill doors, replay and erasure, authorized Gmail and Microsoft proof, provider qualification and jurisdiction-specific legal qualification remain unproved. Same-thread mailbox sending remains OUT-013, record composition OUT-017, reply all OUT-019, expanded roles TEAM-005 and ownership behavior RECORD-016.",
+    "line": 2514
+  },
+  {
+    "id": "CAPTURE-014",
+    "title": "Prospect purpose, retention and suppression",
+    "scope": "target",
+    "status": "partial",
+    "gap": "CAPTURE-012: connected unknown-participant proposals, explicit reviewed contactability basis, exclusion and retention enforcement, all named back-fill doors, replay and erasure, authorized Gmail and Microsoft proof, provider qualification and jurisdiction-specific legal qualification remain unproved. Same-thread mailbox sending remains OUT-013, record composition OUT-017, reply all OUT-019, expanded roles TEAM-005 and ownership behavior RECORD-016.",
+    "line": 2515
+  },
+  {
+    "id": "FORM-001",
+    "title": "Forms on the buyer\u2019s website",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Implemented first slice: Reviewed fixed forms retain consent, atomic intake, honeypot, signed fill proof, per-form/network limits, optional Turnstile, counted refusals, erasable spam and exactly-once release. Allowlisted HTTPS direct posts use the same admission without cookies or tracking. Required and optional free-text and picklist fields map to contact/company/new-deal native and custom JSON properties; exact business domains link/create companies, chosen stages enter NOW, empty values fill and populated differences wait as CAPTURE-004 proposals. A picklist accepts only its reviewed choices. Hidden fields carry a fixed value from the reviewed definition or one declared query parameter, read from the hosted page address, copied from the embedding page by the generated framed embed or sent by a direct post; publication review lists them, and a saved definition change takes effect only after its new revision is compiled, reviewed and published. Forged choices, undeclared names and fixed-value overrides are refused as `invalid_fields` without a customer or proposal write. Existing contact owners remain; fixed, durable active-user round robin and unassigned rules record each choice and notify the selected full operator once per accepted submission. Team selection, team queues and team notifications inherit TEAM-005; explicit full-operator lists are used meanwhile. Lead/custom-object kinds inherit RECORD-014 and email/push delivery NOTIFY-003.",
+    "line": 2516
+  },
+  {
+    "id": "FORM-002",
+    "title": "Form abuse refusals and release",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 2517
+  },
+  {
+    "id": "FORM-003",
+    "title": "Form customer identity and consent",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 2518
+  },
+  {
+    "id": "FORM-004",
+    "title": "Form owner routing and sales follow-up",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Implemented first slice: Reviewed fixed forms retain consent, atomic intake, honeypot, signed fill proof, per-form/network limits, optional Turnstile, counted refusals, erasable spam and exactly-once release. Allowlisted HTTPS direct posts use the same admission without cookies or tracking. Required and optional free-text and picklist fields map to contact/company/new-deal native and custom JSON properties; exact business domains link/create companies, chosen stages enter NOW, empty values fill and populated differences wait as CAPTURE-004 proposals. A picklist accepts only its reviewed choices. Hidden fields carry a fixed value from the reviewed definition or one declared query parameter, read from the hosted page address, copied from the embedding page by the generated framed embed or sent by a direct post; publication review lists them, and a saved definition change takes effect only after its new revision is compiled, reviewed and published. Forged choices, undeclared names and fixed-value overrides are refused as `invalid_fields` without a customer or proposal write. Existing contact owners remain; fixed, durable active-user round robin and unassigned rules record each choice and notify the selected full operator once per accepted submission. The mapped native HTTP journey (`newtests/t096/forms-mapped-journey.ts`, `formsMappedJourney`, invoked by the mapped capture case in `newtests/t096/forms-native.test.ts`) also publishes an explicitly reviewed unassigned rule, rereads its fresh contact with a persisted null owner and exact submission-linked source assignment entry, and replays the same intake with unchanged ownership, assignment entry, submission inventory and notification inventory. Team selection, team queues and team notifications inherit TEAM-005; explicit full-operator lists are used meanwhile. Lead/custom-object kinds inherit RECORD-014 and email/push delivery NOTIFY-003.",
+    "line": 2519
+  },
+  {
+    "id": "OUT-013",
+    "title": "Gmail and Microsoft 365 mailbox sending",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. No implementation of this complete target flow was found.",
+    "line": 2520
+  },
+  {
+    "id": "OUT-014",
+    "title": "Reusable personalized templates and sales content",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: another operator reads/uses library; signature bytes; reviewed opt-out state; library screen at 1440; library screen at 390; rendered review at 1440; rendered review at 390. Asserted: owner creates template/snippet/signature; private entry hidden from others; shared entry write refused; two distinct contact renders; exact body read back; collaborator read refused; collaborator authoring refused; collaborator sharing refused; collaborator application refused; missing field prevents rendering; missing field prevents approval; changed merge value prevents approval; stale preview cannot approve; saved subject/body match rendered snapshot; library revision does not alter approved body; library revision does not alter approved subject; snapshot remains byte-identical; provider receives exactly approved rendered bytes once.",
+    "line": 2521
+  },
+  {
+    "id": "OUT-015",
+    "title": "Honest open and reply tracking",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: no new tracking pixel; no redirect collection; no tracking token collection. Asserted: acceptance distinct from delivery; delivery time read back; historical open/click inference; human reply stored once; source on each timeline; occurred time; recorded time; duplicate event retained once; automatic reply changes no business state; foreign sender changes no business state; ambiguous thread changes no business state; manually linked nonhuman evidence changes no business state; no-tracking label; exact-identity genuine reply stops work.",
+    "line": 2522
+  },
+  {
+    "id": "OUT-016",
+    "title": "Disclosed per-message tracking",
+    "scope": "target",
+    "status": "missing",
+    "gap": "OUT-016: the complete original tracking journey, token and retention controls, classification and notification behavior, authorized provider acceptance and legal qualification remain unproved. Mailbox delivery remains OUT-013, sequence execution SEQUENCE-001 and SEQUENCE-003, additional notification channels NOTIFY-003 and multi-recipient behavior OUT-019.",
+    "line": 2523
+  },
+  {
+    "id": "OUT-021",
+    "title": "Tracking classification and notifications",
+    "scope": "target",
+    "status": "missing",
+    "gap": "OUT-016: the complete original tracking journey, token and retention controls, classification and notification behavior, authorized provider acceptance and legal qualification remain unproved. Mailbox delivery remains OUT-013, sequence execution SEQUENCE-001 and SEQUENCE-003, additional notification channels NOTIFY-003 and multi-recipient behavior OUT-019.",
+    "line": 2524
+  },
+  {
+    "id": "OUT-022",
+    "title": "Tracking expiry, suppression and sales meaning",
+    "scope": "target",
+    "status": "missing",
+    "gap": "OUT-016: the complete original tracking journey, token and retention controls, classification and notification behavior, authorized provider acceptance and legal qualification remain unproved. Mailbox delivery remains OUT-013, sequence execution SEQUENCE-001 and SEQUENCE-003, additional notification channels NOTIFY-003 and multi-recipient behavior OUT-019.",
+    "line": 2525
+  },
+  {
+    "id": "OUT-017",
+    "title": "One-to-one email from any permitted record",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Reviewed manual composition from contacts, companies and closed deals uses one explicitly selected recipient, an optional current open-deal link and separate closed-deal history; sending creates or reopens no deal. Exact rendered approval, active/contactable identity, shared sending budgets, clocks, scheduling, reconciliation and contact-wide stops apply to the additive mail store. One accepted activity links reviewed content and provider identity to the contact, primary company and linked/history deal; verified native message headers thread one genuine reply, while missing headers are held. An unlinked accepted message opens one sender-owned contact promise, due in workspace working days and shown in Today when overdue; human replies, booked meetings, later acceptance and explicit sender completion close it. Automatic replies do not; permanent bounce suppresses and cancels contact schedules. Sender/owner reply notices and contact outcomes are native in-app. Full operators retain current authority and collaborators get no new mail door. Record AI drafting from contacts and explicitly selected company contacts uses the assistance preview, exact unchanged evidence and configured instructions through ai.provider.v1, validated citations and length, durable editable unsent drafts and ai_calls accounting; unavailable providers fail visibly. Existing held-reply review attaches genuine or automatic replies to the contact and primary company or dismisses them once with operator attribution; automatic replies and dismissal leave promises open. Removal review includes open contact promises, explicit receiving full operator or unassignment, stale-set refusal and atomic handover with one attributed contact/company entry; original sender attribution remains, receiving overdue promises appear in Today, and unassigned promises remain on their contact. Remaining gaps: additional To/CC/BCC and reply-all inherit OUT-019, mailbox sending and live replies OUT-013, leads RECORD-014, provider-thread capture CAPTURE-010, sequence steps SEQUENCE-001/003 and tracking choice OUT-016.",
+    "line": 2526
+  },
+  {
+    "id": "OUT-023",
+    "title": "Record mail history and deal-less obligations",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Reviewed manual composition from contacts, companies and closed deals uses one explicitly selected recipient, an optional current open-deal link and separate closed-deal history; sending creates or reopens no deal. Exact rendered approval, active/contactable identity, shared sending budgets, clocks, scheduling, reconciliation and contact-wide stops apply to the additive mail store. One accepted activity links reviewed content and provider identity to the contact, primary company and linked/history deal; verified native message headers thread one genuine reply, while missing headers are held. An unlinked accepted message opens one sender-owned contact promise, due in workspace working days and shown in Today when overdue; human replies, booked meetings, later acceptance and explicit sender completion close it. Automatic replies do not; permanent bounce suppresses and cancels contact schedules. Sender/owner reply notices and contact outcomes are native in-app. Full operators retain current authority and collaborators get no new mail door. Record AI drafting from contacts and explicitly selected company contacts uses the assistance preview, exact unchanged evidence and configured instructions through ai.provider.v1, validated citations and length, durable editable unsent drafts and ai_calls accounting; unavailable providers fail visibly. Existing held-reply review attaches genuine or automatic replies to the contact and primary company or dismisses them once with operator attribution; automatic replies and dismissal leave promises open. Removal review includes open contact promises, explicit receiving full operator or unassignment, stale-set refusal and atomic handover with one attributed contact/company entry; original sender attribution remains, receiving overdue promises appear in Today, and unassigned promises remain on their contact. Remaining gaps: additional To/CC/BCC and reply-all inherit OUT-019, mailbox sending and live replies OUT-013, leads RECORD-014, provider-thread capture CAPTURE-010, sequence steps SEQUENCE-001/003 and tracking choice OUT-016.",
+    "line": 2527
+  },
+  {
+    "id": "OUT-018",
+    "title": "Sending budgets for each user",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: separate sequence budget; provider-submitted count once across recipients; sequence budget of 50 isolates one SDR; other SDR continues; everyone\u2019s one-to-one continues. Asserted: one-to-one budget independent per user; changed limit applies next claim.",
+    "line": 2528
+  },
+  {
+    "id": "OUT-024",
+    "title": "Connected-mailbox pace and provider quotas",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Unasserted in the carried evidence: Gmail account-specific pace; Microsoft 365 account-specific pace; trial/consumer lower limits; no deployment-wide mailbox throttle; only throttled mailbox deferred; visible provider next window; no transport switch; no identity switch. The cited evidence does not assert this complete journey; implementation or a test title alone is not proof.",
+    "line": 2529
+  },
+  {
+    "id": "OUT-025",
+    "title": "Shared-transport priority and fair draining",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: 12-user mixed-mailbox/shared morning; 40 one-to-one approvals each; two 100-recipient four-step batches; every one-to-one submitted within 60 seconds; both 100-first-step batches drain in business day; batches interleave; provider/mailbox limits respected; 75-percent sequence share; reserved one-to-one capacity; per-user round-robin; per-user enrollment order. The cited evidence does not assert this complete journey; implementation or a test title alone is not proof.",
+    "line": 2530
+  },
+  {
+    "id": "OUT-026",
+    "title": "Sending usage and submission latency",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: declared 25-user measured submission latencies; sequence budget refusal; mailbox pace refusal; provider throttle refusal; mailbox usage; 12-user mixed-transport morning. Asserted: one-to-one budget refusal reason/value/time; shared rate refusal reason/value/time; own budget use and remaining; administrator sees all users.",
+    "line": 2531
+  },
+  {
+    "id": "OUT-019",
+    "title": "To, CC and BCC recipient review",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. Drafts and outbound messages hold a single `recipient_email` matched to one `contact_id`, and the dispatcher in `src/core/features/outreach/service.ts` joins on it; there are no CC or BCC lists, internal or one-off recipients, reply-all pre-fill or per-recipient landing.",
+    "line": 2532
+  },
+  {
+    "id": "OUT-027",
+    "title": "Reply and reply-all threads",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. Drafts and outbound messages hold a single `recipient_email` matched to one `contact_id`, and the dispatcher in `src/core/features/outreach/service.ts` joins on it; there are no CC or BCC lists, internal or one-off recipients, reply-all pre-fill or per-recipient landing.",
+    "line": 2533
+  },
+  {
+    "id": "OUT-028",
+    "title": "Multi-recipient delivery and disclosure",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. Drafts and outbound messages hold a single `recipient_email` matched to one `contact_id`, and the dispatcher in `src/core/features/outreach/service.ts` joins on it; there are no CC or BCC lists, internal or one-off recipients, reply-all pre-fill or per-recipient landing.",
+    "line": 2534
+  },
+  {
+    "id": "OUT-020",
+    "title": "Opt-out settings and exact message state",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: established-installation upgrade; pre-setting approvals; Gmail one-to-one no opt-out header/link; sequence step includes both; relationship-marked sequence step omits both. Asserted: approved unsent state preserved; Settings counts unchanged for bound state; new-installation defaults; allowed removal; forbidden removal; explicit addition; SendGrid-to-relay opt-out continuity; explicit off state; historical transport refusal.",
+    "line": 2535
+  },
+  {
+    "id": "OUT-029",
+    "title": "Single-recipient opt-out capabilities",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: record-mail capability archive round-trip; review at 1440 and 390; settings at 1440 and 390; confirmation at 1440 and 390; unsubscribed state at 1440 and 390; invalid state at 1440 and 390. Asserted: durable capability bound to message; exact footer bytes; matching opt-out URL header; one-click header; configured installation origin; GET changes no state; plain POST suppresses bound contact; RFC 8058 replay preserves digest; all held/claimed/scheduled work cancelled; different contact untouched; different contact\u2019s schedule untouched; late dispatch sends nothing; malformed and foreign same refusal; invalid request leaves state unchanged; erasure invalidates capability; invalid response discloses no recipient; capability has no arbitrary expiry; deal-bound private capability rows retain exact token, message, contact, origin and creation time through Records HTTP and local portability; original restored links accept plain and RFC 8058 POST ten years later without expiry, rotation or provider resend; source rows and another contact remain unchanged; restored dispatch authority stays cancelled.",
+    "line": 2536
+  },
+  {
+    "id": "OUT-030",
+    "title": "Several-recipient opt-out",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Unasserted in the carried evidence: three-recipient message has no one-click header; one opt-out page link; posted recipient address; only named recipient stopped; basis and message citation stored; other recipients remain contactable; other recipients retain schedules; nonrecipient refusal leaks no identity; one-off address stopped without creating a contact. The cited evidence does not assert this complete journey; implementation or a test title alone is not proof.",
+    "line": 2537
+  },
+  {
+    "id": "OUT-031",
+    "title": "Unattributed stop requests",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Unasserted in the carried evidence: unattributed provider stop creates one request; nobody becomes do-not-contact; all external schedules/enrollments visibly paused; new mail refused with request; later inbound reply exception; sender and distinct owners notified once; named people stopped; others\u2019 paused work resumes; cannot-determine stops everyone; resolution user and time in message and audit. The cited evidence does not assert this complete journey; implementation or a test title alone is not proof.",
+    "line": 2538
+  },
+  {
+    "id": "OUT-032",
+    "title": "Opt-out upgrades and transport changes",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Established upgrades keep one-to-one opt-out on with the retained basis visible in authenticated Settings and after page reload; historical approval bytes and state remain unchanged with no provider submissions. Remaining unproved execution: connected mailbox, sequence, batch and workflow paths preserving the exact reviewed opt-out choice, with OUT-013 owner-consented mailbox replies and Base relay sequence proof, OUT-019 Base relay recipient support (one To today), and OUT-013, OUT-019, SEQUENCE-001, SEQUENCE-003 and AUTO-001 prerequisites retained; AUTO-001 retains its ambiguous remainder after one continuation. Asserted in the retained outbound boundary journey: new-installation off default, pre-setting approvals retaining opt-out, SendGrid-to-relay exact header and link continuity, explicit off, historical transport refusal, unsupported review and dispatch refusal, and audited Settings refusal counts.",
+    "line": 2539
+  },
+  {
+    "id": "TASK-001",
+    "title": "Assigned prioritized recurring sales tasks",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: personal email visibly unavailable; personal push visibly unavailable; personal Slack preference unavailable; channel due-work notice does not claim a personal preference; Slack task names mapped operator; Slack task retains source attribution.; single-use action identity; high-priority due call; weekly follow-up; assignment and reassignment; daily task view completion; restart around recurrence; exactly one next occurrence. Asserted: operator removal handover; reassignment reaches the receiving full operator native inbox once, links to the task readable by that receiver, and stale replay preserves the same inbox identities without another notice.",
+    "line": 2540
+  },
+  {
+    "id": "NOTIFY-003",
+    "title": "Reminders that reach an absent seller",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Native personal mention DMs use self-managed opt-in bound to an explicit current installation mapping and active full-operator authority; generic private-entry notices contain only an authenticated exact-entry link. Team and restricted-role audiences remain TEAM-005. Due and overdue reminders, daily digests, working-hours and timezone scheduling, missed-run recovery and configured-manager escalation remain unbuilt. Personal assignment and form external channels, system notification email, REPORT-002 recipient-specific email, personal-DM provider deletion tracking, real opted-in Slack DM qualification and real mailbox and device receipt remain unproved. Dashboard email stays paused for the system sender and attachment transport prerequisites; mobile push needs Apple and Google accounts. Existing native in-app assignment and form notices, dashboard schedule definitions and Slack delivery history remain intact.",
+    "line": 2541
+  },
+  {
+    "id": "SEQUENCE-001",
+    "title": "Versioned sales sequence authoring",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Reviewed single scheduled messages exist; multi-step definitions, rep authoring and sharing, deal-less enrollments, step threading, internal CC and manual step execution are missing.",
+    "line": 2542
+  },
+  {
+    "id": "SEQUENCE-004",
+    "title": "Sequence enrollment and scheduled steps",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Reviewed single scheduled messages exist; multi-step definitions, rep authoring and sharing, deal-less enrollments, step threading, internal CC and manual step execution are missing.",
+    "line": 2543
+  },
+  {
+    "id": "SEQUENCE-005",
+    "title": "Sequence outcome reports",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Reviewed single scheduled messages exist; multi-step definitions, rep authoring and sharing, deal-less enrollments, step threading, internal CC and manual step execution are missing.",
+    "line": 2544
+  },
+  {
+    "id": "SEQUENCE-002",
+    "title": "Immediate sequence exits and accountable outcomes",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: external colleague reply exit; unsubscribe/permanent-bounce stop; complete due-step races for every exit event; persisted-store and process restart preserves exit. Asserted: native human cancellation of one exact reviewed single scheduled message, fresh cancelled-state and first-reason readback, one attributed message.cancelled timeline entry, repeated cancellation refused with unchanged effects, and zero submission from a fresh late dispatcher (not restart proof); reply exit; booking exit; stage exit atomic with stage change; one first exit reason; replay/reopen/late dispatch revive nothing; separate customer outcome counts.",
+    "line": 2545
+  },
+  {
+    "id": "SEQUENCE-003",
+    "title": "Bulk enrollment and rendered batch review",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. Reviewed single scheduled messages exist under OUT-009; sequences, batch rendering and batch approval do not.",
+    "line": 2546
+  },
+  {
+    "id": "SEQUENCE-006",
+    "title": "Batch dispatch and isolated review holds",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. Reviewed single scheduled messages exist under OUT-009; sequences, batch rendering and batch approval do not.",
+    "line": 2547
+  },
+  {
+    "id": "SEQUENCE-007",
+    "title": "Workflow-triggered enrollment review",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. Reviewed single scheduled messages exist under OUT-009; sequences, batch rendering and batch approval do not.",
+    "line": 2548
+  },
+  {
+    "id": "AUTO-001",
+    "title": "Configurable sales workflows and visible execution",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Native version drafts, retained-snapshot dry runs, preview and activation, persisted runs, internal writes, tasks, explicit operator notices and declared static webhooks are implemented. Remaining: TEAM-005 real sales-admin grants, teams and team rotation or notices; RECORD-014 leads and custom objects; captured and provider call activity trigger integration; ENRICH-001 authorized provider signals; SEQUENCE-003 approval-queue enrollment and inherited sequence exits; OUT-018 and OUT-020 workflow-email obligations; pre-journal 30-day reconstruction, large-population previews and complete execution-history pagination. The conservative interim administration boundary is the installation owner under the standing scope rule; scoped delegation and provider boundaries remain unproved. Exact candidate qualification is recorded in Verify.",
+    "line": 2549
+  },
+  {
+    "id": "AUTO-002",
+    "title": "Workflow record-changing actions",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Native contact, company and deal set, copy, stamp, clear, arithmetic, stage and associated-deal writes are implemented with typed validation, per-record material approval, current-value guards, durable receipts, loop stops and conditional field or stage undo. Remaining: TEAM-005 scoped sales-admin record and field grants; RECORD-014 leads, custom objects and related targets; product, quote and forecast sidecar actions; created-record archival undo and complete owner-rule selection; pre-journal 30-day reconstruction, form-copy previews without a submission value, per-action preview counts, large previews and full-history pagination; complete per-field intervening-edit attribution and record-atomic failure qualification; named typed-user rendering in record summaries; workflow source in reports and API change webhooks; migration mappings and declared rate-limit qualification. The conservative interim activator is the installation owner under the standing scope rule. Exact candidate qualification is recorded in Verify.",
+    "line": 2550
+  },
+  {
+    "id": "AUTO-003",
+    "title": "Workflow activation and history",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Implemented: versioned activation recording the activating administrator, a preview with past-30-day history and its coverage, internal writes applied without a per-record proposal, and a replaced version stopping its delayed runs. Remaining: pre-journal 30-day reconstruction and large previews; workflow as the change source in reports and API change webhooks; migration mappings that list each action. No cited test asserts all three acceptance points.",
+    "line": 2551
+  },
+  {
+    "id": "AUTO-004",
+    "title": "Material workflow changes",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Implemented: amount, close date, won or lost, product, line-item, quote-value and forecast changes and fields marked for approval create one guarded approval item that is accepted, declined or closed after 7 days. Unasserted: the \"needs approval\" editor label and preview counts; that a workflow cannot create contactability, change consent, delete or merge. Quote and forecast targets await QUOTE-001 and FORECAST-001.",
+    "line": 2552
+  },
+  {
+    "id": "AUTO-005",
+    "title": "Workflow guards and recovery",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Implemented: an authority check that marks a version needs re-activation, current-value guards, typed validation, a queued write-rate limit and restart-safe resume of failed runs. Remaining: TEAM-005 field-level grants, so no refusal names a protected field at activation; complete per-field intervening-edit attribution and record-atomic failure qualification; the loop depth limit is not asserted by a cited test.",
+    "line": 2553
+  },
+  {
+    "id": "AUTO-006",
+    "title": "Undo workflow effects",
+    "scope": "target",
+    "status": "partial",
+    "gap": "No remaining implementation gap is recorded: the done judgment on this row has not been run through a gate.",
+    "line": 2554
+  },
+  {
+    "id": "CALL-001",
+    "title": "Provider-backed click-to-call",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Implemented first slice: owner-managed encrypted Twilio configuration, replacement and disconnect; contact and linked-deal exact-number review with one attempt; signed ordered callbacks, replay refusal, outside-Orbit logs and owner review of unknown numbers; one call per Rep activities row; contact erasure replay fences and credential-free Records/CLI archives. Calling settings, held review, contact/deal call review and logs are exercised at 1440 and 390. A Twilio test-credential application receipt (sd-orbit-hk1, 26 October 2026) ran the built Worker at an HTTPS loopback origin: the owner saved the account's test credentials through the calling-settings door, and the real dial door made one Calls request, which Twilio accepted with a call receipt (attempt submitted); replaying that operation key was refused before any second request; each of Twilio's documented test refusals (invalid, unroutable, internationally unpermitted and blocked To; invalid From) made one request, returned Twilio's error code and was recorded as an uncertain attempt with no call. Test credentials place no call and send no callbacks, so callbacks, inbound and outside-Orbit logging remain proven only by the signed network-edge fixtures, which cover completed and ringing events; no-answer, busy, canceled and failed dispositions have neither a provider proof nor a fixture. Aircall, a live-account call to an authorized test number with its real callbacks and dispositions, a distinct failed state for Twilio's definite refusals (recorded as uncertain today) and the complete inherited buyer journey remain gaps.",
+    "line": 2555
+  },
+  {
+    "id": "CALL-002",
+    "title": "Consented recordings and cited transcripts",
+    "scope": "target",
+    "status": "partial",
+    "gap": "CALL-002: recording and participant-consent enforcement, cited transcripts and speaker review, stale proposals, transcript-based risk evidence, current-access playback, retention, local derivatives and confirmed provider deletion, original buyer-walk steps, provider qualification and state-specific legal qualification remain unproved. Dialing authority remains CALL-001; the complete cross-product steps remain with BOUNDARY-001\u2019s named receiving clauses.",
+    "line": 2556
+  },
+  {
+    "id": "CALL-003",
+    "title": "Participant recording consent and provider deletion",
+    "scope": "target",
+    "status": "partial",
+    "gap": "CALL-002: recording and participant-consent enforcement, cited transcripts and speaker review, stale proposals, transcript-based risk evidence, current-access playback, retention, local derivatives and confirmed provider deletion, original buyer-walk steps, provider qualification and state-specific legal qualification remain unproved. Dialing authority remains CALL-001; the complete cross-product steps remain with BOUNDARY-001\u2019s named receiving clauses.",
+    "line": 2557
+  },
+  {
+    "id": "REPORT-001",
+    "title": "Sales dashboards and saved reports",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 2558
+  },
+  {
+    "id": "REPORT-002",
+    "title": "Saved dashboard tiles and filters",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Nine-tile composition, viewer-fenced figures/drill rows, Owner/Pipeline/US date/Region filters, named/workspace sharing, personal defaults, unavailable/error/no-value/late evidence, PDF and tile CSV, versioned custody, paused restore and erasure are implemented. TEAM-005 inherits team filter/sharing/default/restricted sellers; RECORD-016 later owner kinds; NOTIFY-003 the later delivery model. Owner-chosen Dashboard ready routing and separately audited owner enablement send one generic Slack notice and authenticated link per occurrence/channel; replay, rate limits, failure/retry, held uncertainty and non-resuming safety suspension are proven. Email remains paused: the relay rejects attachments and no system notification sender exists; weekly recipient-specific email, next-send email revocation, email attempts and email retry/uncertain behavior remain gaps. PDF rejects text outside WinAnsi. Live forecasts apply the workspace calendar day and shared-field bindings; saved forecasts keep their original UTC definition and measured result. Every composed response rechecks its original dashboard, saved sources and permitted source rows after the final metadata read. Real team roles, audiences/defaults and restricted sellers remain TEAM-005; daily/weekly/monthly recipient-specific email and its revocation, failure, uncertainty and no-resend provider proof remain blocked on the system sender and attachment transport. No real provider delivery or release acceptance is claimed.",
+    "line": 2559
+  },
+  {
+    "id": "REPORT-003",
+    "title": "Dashboard sharing and defaults",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Nine-tile composition, viewer-fenced figures/drill rows, Owner/Pipeline/US date/Region filters, named/workspace sharing, personal defaults, unavailable/error/no-value/late evidence, PDF and tile CSV, versioned custody, paused restore and erasure are implemented. TEAM-005 inherits team filter/sharing/default/restricted sellers; RECORD-016 later owner kinds; NOTIFY-003 the later delivery model. Owner-chosen Dashboard ready routing and separately audited owner enablement send one generic Slack notice and authenticated link per occurrence/channel; replay, rate limits, failure/retry, held uncertainty and non-resuming safety suspension are proven. Email remains paused: the relay rejects attachments and no system notification sender exists; weekly recipient-specific email, next-send email revocation, email attempts and email retry/uncertain behavior remain gaps. PDF rejects text outside WinAnsi. Live forecasts apply the workspace calendar day and shared-field bindings; saved forecasts keep their original UTC definition and measured result. Every composed response rechecks its original dashboard, saved sources and permitted source rows after the final metadata read. Real team roles, audiences/defaults and restricted sellers remain TEAM-005; daily/weekly/monthly recipient-specific email and its revocation, failure, uncertainty and no-resend provider proof remain blocked on the system sender and attachment transport. No real provider delivery or release acceptance is claimed.",
+    "line": 2560
+  },
+  {
+    "id": "REPORT-004",
+    "title": "Dashboard export and scheduled delivery",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Nine-tile composition, viewer-fenced figures/drill rows, Owner/Pipeline/US date/Region filters, named/workspace sharing, personal defaults, unavailable/error/no-value/late evidence, PDF and tile CSV, versioned custody, paused restore and erasure are implemented. TEAM-005 inherits team filter/sharing/default/restricted sellers; RECORD-016 later owner kinds; NOTIFY-003 the later delivery model. Owner-chosen Dashboard ready routing and separately audited owner enablement send one generic Slack notice and authenticated link per occurrence/channel; replay, rate limits, failure/retry, held uncertainty and non-resuming safety suspension are proven. Email remains paused: the relay rejects attachments and no system notification sender exists; weekly recipient-specific email, next-send email revocation, email attempts and email retry/uncertain behavior remain gaps. PDF rejects text outside WinAnsi. Live forecasts apply the workspace calendar day and shared-field bindings; saved forecasts keep their original UTC definition and measured result. Every composed response rechecks its original dashboard, saved sources and permitted source rows after the final metadata read. Real team roles, audiences/defaults and restricted sellers remain TEAM-005; daily/weekly/monthly recipient-specific email and its revocation, failure, uncertainty and no-resend provider proof remain blocked on the system sender and attachment transport. No real provider delivery or release acceptance is claimed. the managed mail relay cannot carry PDF/CSV attachments and Orbit has no system notification sender for active operators or collaborators. Email stays paused with no outbound. Weekly recipient-specific email copies, next-send email revocation, queued/sent/failed/uncertain email attempts and email retry/uncertain behavior remain unproven.",
+    "line": 2561
+  },
+  {
+    "id": "FORECAST-001",
+    "title": "Weighted forecasts, quotas and revenue schedules",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 2562
+  },
+  {
+    "id": "QUOTE-001",
+    "title": "Products, quotes and signatures",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. No implementation of this complete target flow was found.",
+    "line": 2563
+  },
+  {
+    "id": "INTEGRATE-001",
+    "title": "Dial and Calendly bookings",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Calendly signed booking ingestion and guided callback registration exist; native Dial links and complete reschedule/completion lifecycle are missing.",
+    "line": 2564
+  },
+  {
+    "id": "INTEGRATE-002",
+    "title": "Zoom meetings and preparation",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. No implementation of this complete target flow was found.",
+    "line": 2565
+  },
+  {
+    "id": "INTEGRATE-003",
+    "title": "Nectar and Stripe billing context",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. No implementation of this complete target flow was found.",
+    "line": 2566
+  },
+  {
+    "id": "INTEGRATE-004",
+    "title": "HappyToHelp, Help Scout and Zendesk account context",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. No implementation of this complete target flow was found.",
+    "line": 2567
+  },
+  {
+    "id": "INTEGRATE-005",
+    "title": "Slack notice routing and allowed content",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 2568
+  },
+  {
+    "id": "INTEGRATE-009",
+    "title": "Slack identity and single-use actions",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: foreign app refused; foreign enterprise refused; foreign user.team_id refused; lost native access refused; changed timestamp cannot reuse spent action id; no mail editing; no mail approval; acknowledgment cannot accept proposed handoff; mapping grants no native/content/delegation authority. Asserted: unsigned signature refusal; stale signature refusal; unmapped/foreign/revoked/removed identities leave state unchanged; acknowledgment names operator; task names creator/owner; task retains Slack source attribution.; no customer send from Slack. Atomic action consumption rolls back with failed task insertion, and the same issued action retries once without replay effects.",
+    "line": 2569
+  },
+  {
+    "id": "INTEGRATE-010",
+    "title": "Slack delivery failures and destination safety",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 2570
+  },
+  {
+    "id": "INTEGRATE-011",
+    "title": "Slack portable definitions and deletion",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: restored pending deletion held for fresh confirmation; Settings/status/unresolved at 1440; Settings/status/unresolved at 390; call/meeting notice; exact allowed field/link safety. Asserted: history portable exactly; bot/signing credentials absent; routing restored paused; mapping provenance portable without authority; no restored action credentials; stored notice content redacted; provider deletion requested; nonempty deletion set has confirmed outcomes; booking notice; won-deal and handoff notices.",
+    "line": 2571
+  },
+  {
+    "id": "INTEGRATE-006",
+    "title": "QuickBooks Online and Xero accounting handoff",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. No implementation of this complete target flow was found.",
+    "line": 2572
+  },
+  {
+    "id": "INTEGRATE-007",
+    "title": "Mailchimp audience and suppression handoff",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Remaining: the consent and member ledger is not yet reconciled by a populated DATA-003 export and restore comparison; refusals for a non-owner administering the connection and for a collaborator handing off are not asserted; Settings reads connected before Mailchimp has checked the webhook address; an unchanged member gets no provider read; Orbit shows its webhook address and the owner adds it in Mailchimp (Orbit does not register it), and only a quick tunnel to a loopback harness has received Mailchimp\u2019s calls, not a hosted installation; Mailchimp\u2019s optional webhook signing is not verified, so the unguessable address is the authority; merging contacts does not carry consent or member links to the survivor, which previews as unknown until consent is recorded again; one handoff makes at most 100 provider requests and reports what remains; the installation owner administers the connection until TEAM-005; Mailchimp deletions are sent after Orbit\u2019s accepted changes and on the owner\u2019s confirmation, not by the scheduled Worker run. The third Acceptance sentence, the complete US buyer walk, belongs to whichever BOUNDARY-001 clause ships last and is not met here: INTEGRATE-001, CALL-001 and CALL-002 are partial, and INTEGRATE-002, INTEGRATE-003, INTEGRATE-004, INTEGRATE-006, INTEGRATE-008 and QUOTE-001 are missing.",
+    "line": 2573
+  },
+  {
+    "id": "INTEGRATE-008",
+    "title": "Buoy post-sale handoff",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation found. No implementation of this complete target flow was found.",
+    "line": 2574
+  },
+  {
+    "id": "ENRICH-001",
+    "title": "Licensed enrichment and change signals",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Captured evidence proposes field changes; licensed sources, scheduled news/job signals and enrichment waterfalls are missing.",
+    "line": 2575
+  },
+  {
+    "id": "API-001",
+    "title": "Versioned public record API",
+    "scope": "target",
+    "status": "partial",
+    "gap": "API-001: the remaining original versioned resource surface and complete acceptance journey, outbound subscription security, delivery and replay controls, their custody and erasure, provider security and legal qualification remain unproved. The standalone scoped deal credential journey is asserted; current inbound-source authority remains SIGNAL-009; narrow application delegation remains DELEGATE-001; later resource behavior remains with its named owning clauses. API-004 now proves live scoped close-date, owner-id and buying-context product reads across two installations; the remaining original resource obligations above stay unproved.",
+    "line": 2576
+  },
+  {
+    "id": "API-002",
+    "title": "Named API credential lifecycle",
+    "scope": "target",
+    "status": "partial",
+    "gap": "API-001: the remaining original versioned resource surface and complete acceptance journey, outbound subscription security, delivery and replay controls, their custody and erasure, provider security and legal qualification remain unproved. The standalone scoped deal credential journey is asserted; current inbound-source authority remains SIGNAL-009; narrow application delegation remains DELEGATE-001; later resource behavior remains with its named owning clauses. API-004 now proves live scoped close-date, owner-id and buying-context product reads across two installations; the remaining original resource obligations above stay unproved.",
+    "line": 2577
+  },
+  {
+    "id": "API-003",
+    "title": "Outgoing webhooks and safe replay",
+    "scope": "target",
+    "status": "partial",
+    "gap": "API-001: the remaining original versioned resource surface and complete acceptance journey, outbound subscription security, delivery and replay controls, their custody and erasure, provider security and legal qualification remain unproved. The standalone scoped deal credential journey is asserted; current inbound-source authority remains SIGNAL-009; narrow application delegation remains DELEGATE-001; later resource behavior remains with its named owning clauses.",
+    "line": 2578
+  },
+  {
+    "id": "API-004",
+    "title": "A scoped integration reads a deal's close date, owner and product fields",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 2579
+  },
+  {
+    "id": "MOBILE-001",
+    "title": "Sales on mobile and desktop",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Responsive native web journeys exist; native mobile apps, offline conflict handling, push reminders and phone composing under OUT-017/OUT-019 are missing.",
+    "line": 2580
+  },
+  {
+    "id": "DATA-003",
+    "title": "Full-target portability, privacy and audit",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 2581
+  },
+  {
+    "id": "OPS-001",
+    "title": "Owned operation and explicit provider failures",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Implemented first slice: installation-owner per-domain requirements on the linked OIDC provider; atomic active full-operator and matching verified-email admission; policy, operator and linked-provider fences on subsequent requests; an uninvited or unverified identity is refused. The existing `/auth/oidc/auth/callback` remains unchanged. Required domains fence non-owner email sessions while owner email recovery and unrestricted-domain magic links remain available. Policy and refused sign-in screens are exercised at 1440 and 390. Direct Google Workspace/Microsoft Entra account proof and the remaining operational, connector and mobile surface remain gaps.",
+    "line": 2582
+  },
+  {
+    "id": "BOUNDARY-001",
+    "title": "Separate products and US-first delivery",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Unasserted in the carried evidence: product states and owned jobs; 1440 browser proof; 390 browser proof; full CRM scope retained. Asserted: no products, commitments or amounts in the exact won-deal and person-authored internal handoff Slack notices; Slack disconnected state; signed Calendly intake links deal; manual call log on deal; exact review and send; USD amount unchanged; booking, manual work and setup send no mail; connected and awaiting Calendly and Cal.com state; unavailable products enumerated; Slack actual state; no substituted connector. The complete buyer walk stays with the last-shipping named clause; live Slack and TEAM-005 qualification and all existing provider, consent and receiving-product prerequisites remain unchanged.",
+    "line": 2583
+  },
+  {
+    "id": "AGENT-001",
+    "title": "Keep the customer graph current with evidence",
+    "scope": "push-further",
+    "status": "partial",
+    "gap": "Reviewed provenance-bound capture updates exist; call/enrichment graph maintenance and stakeholder inference are not complete.",
+    "line": 2584
+  },
+  {
+    "id": "AGENT-002",
+    "title": "Explain stalled deals and contradictory commitments",
+    "scope": "push-further",
+    "status": "done",
+    "gap": "",
+    "line": 2585
+  },
+  {
+    "id": "AGENT-003",
+    "title": "Follow the next action through to a customer outcome",
+    "scope": "push-further",
+    "status": "partial",
+    "gap": "Brief promises, handoffs and reviewed scheduled outreach exist; durable cross-step quote-to-close outcome supervision is missing.",
+    "line": 2586
+  },
+  {
+    "id": "AGENT-004",
+    "title": "Controlled research and workflow evidence",
+    "scope": "push-further",
+    "status": "partial",
+    "gap": "AGENT-004: configurable selected-account research, licensed adapter qualification, allowlisted MCP tools, exact egress preview, enforceable USD budgets, cited schema-valid workflow proposals, hostile-content and revocation journeys, custody, provider retention and legal qualification remain unproved. Purchased enrichment remains ENRICH-001, workflow execution AUTO-001 and AUTO-002, narrow delegation DELEGATE-001 and expanded roles TEAM-005.",
+    "line": 2587
+  },
+  {
+    "id": "AGENT-005",
+    "title": "Licensed research adapters and bounded spend",
+    "scope": "push-further",
+    "status": "partial",
+    "gap": "AGENT-004: configurable selected-account research, licensed adapter qualification, allowlisted MCP tools, exact egress preview, enforceable USD budgets, cited schema-valid workflow proposals, hostile-content and revocation journeys, custody, provider retention and legal qualification remain unproved. Purchased enrichment remains ENRICH-001, workflow execution AUTO-001 and AUTO-002, narrow delegation DELEGATE-001 and expanded roles TEAM-005.",
+    "line": 2588
+  },
+  {
+    "id": "SURFACE-001",
+    "title": "Registry and complete sales jobs",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Implemented: a registry of 23 tools, 10 resources and two non-tool reasons, and a seller-day journey on Orbit's own fixtures. Remaining: tools for customer messages, sequences, quotes, files and integrations, and Core ids and non-tool reasons covering every row of this table; the Base conformance result for the complete registry is not asserted by a cited test.",
+    "line": 2589
+  },
+  {
+    "id": "SURFACE-002",
+    "title": "Internal sales work",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Implemented: record, draft, handoff, forecast and report-definition writes compute standard under company policy. Remaining: no task, deal-move or Undo tool is declared, and read item counts are not asserted.",
+    "line": 2590
+  },
+  {
+    "id": "SURFACE-003",
+    "title": "Customer and provider exposure",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No complete MCP registry, class computation and company-policy conformance journey proves this Orbit delta.",
+    "line": 2591
+  },
+  {
+    "id": "SURFACE-004",
+    "title": "Money and commitments",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No complete MCP registry, class computation and company-policy conformance journey proves this Orbit delta.",
+    "line": 2592
+  },
+  {
+    "id": "SURFACE-005",
+    "title": "Provider person-only steps",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No complete MCP registry, class computation and company-policy conformance journey proves this Orbit delta.",
+    "line": 2593
+  },
+  {
+    "id": "SURFACE-006",
+    "title": "Access and protective settings",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No complete MCP registry, class computation and company-policy conformance journey proves this Orbit delta.",
+    "line": 2594
+  },
+  {
+    "id": "SURFACE-007",
+    "title": "Irreversible and sensitive data",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No complete MCP registry, class computation and company-policy conformance journey proves this Orbit delta.",
+    "line": 2595
+  },
+  {
+    "id": "SURFACE-008",
+    "title": "Running automation",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No complete MCP registry, class computation and company-policy conformance journey proves this Orbit delta.",
+    "line": 2596
+  },
+  {
+    "id": "SURFACE-009",
+    "title": "Saved sales actions under company policy",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No complete MCP registry, class computation and company-policy conformance journey proves this Orbit delta.",
+    "line": 2597
+  },
+  {
+    "id": "SURFACE-010",
+    "title": "Sales events and handoffs",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Implemented: orbit.events.list returns attributed native activity, and records, signals, drafts, reports and operations read as resources. Remaining: the declared contact, company, deal, message, sequence, workflow, quote and file resources, and booking, reply, stage, quote and Buoy handoff events by one identity across channels.",
+    "line": 2598
+  },
+  {
+    "id": "SURFACE-011",
+    "title": "Sales overview and provider spend",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Implemented: the /agents audit reads every call of the seller-day journey with its policy decision and reports no difference from policy. Remaining: reconciliation by class and decision for customer messages, binding quotes and financial work, reserved and actual provider cost with explicit caps, and the seeded fixture week.",
+    "line": 2599
+  },
+  {
+    "id": "SURFACE-012",
+    "title": "Embedded sales agents",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No complete MCP registry, class computation and company-policy conformance journey proves this Orbit delta.",
+    "line": 2600
+  },
+  {
+    "id": "SURFACE-013",
+    "title": "Stranger specialist\u2019s seeded week",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Implemented: a seller-day journey that reads fixtures, updates a record, replays a write and refuses a stale handoff, then reads the audited write. Remaining: link arrivals, explain a stalled deal, follow a promise, send permitted follow-up and hand a won deal to Buoy; the held-policy leg and the cross-run comparison.",
+    "line": 2601
+  }
+]

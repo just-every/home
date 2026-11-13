@@ -1,0 +1,90 @@
+{
+  "seed": "lamp",
+  "tag": "v1.11.14",
+  "contract_sha256": "8b575f27ee607ce3f259e3ec0d733febbf5536d9906cb99a0d9a2ede09c5096f",
+  "contract_status_row_count": 241,
+  "promise_rows": [
+    {
+      "id": "PAGE-006",
+      "title": "Serving through a failure",
+      "scope": "published",
+      "status": "partial",
+      "gap": "Old cited evidence asserts The page body still contains Partially unavailable after database removal; Stale page content is labeled Last known state; The generation instant is visible in stale page content; The retained failure body contains Partially unavailable. Unasserted: The Atom feed survives database outage; The widget survives database outage; Page content survives queue outage; Atom feed content survives queue outage; Widget content survives queue outage; Page content survives object-storage outage; Atom feed content survives object-storage outage; Widget content survives object-storage outage; Origin outage uses the specified cached-response window; Page is unavailable only before first publication; Atom feed is unavailable only before first publication; Widget is unavailable only before first publication.",
+      "line": 3199
+    },
+    {
+      "id": "PAGE-013",
+      "title": "Enforced isolation",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 3206
+    },
+    {
+      "id": "UPTIME-001",
+      "title": "Definition",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 3239
+    },
+    {
+      "id": "INCIDENT-004",
+      "title": "Published updates are immutable",
+      "scope": "published",
+      "status": "partial",
+      "gap": "Asserted: original wording retained; correction identifies original; both updates retained. Unasserted in old cited evidence: published deletion refused; public publication order.",
+      "line": 3253
+    },
+    {
+      "id": "UPDATE-008",
+      "title": "Atomic publication and recipients",
+      "scope": "published",
+      "status": "partial",
+      "gap": "Asserted: update once; recipients once; no failed recipient. Unasserted in old cited evidence: narrowing preserves delivery; unsubscribe suppresses delivery; failed update not public; retry to success; dispatch does not block.",
+      "line": 3271
+    },
+    {
+      "id": "SUB-006",
+      "title": "One-click unsubscribe",
+      "scope": "published",
+      "status": "partial",
+      "gap": "Old cited evidence asserts mail unsubscribe value is present; web unsubscribe value is present; one-click declaration; URL-encoded deactivation. Unasserted: visible unsubscribe link in notification body; multipart form deactivation; DKIM coverage of both unsubscribe headers; per-token allowance independence.",
+      "line": 3301
+    },
+    {
+      "id": "NOTIFY-004",
+      "title": "Delivery log, without tracking",
+      "scope": "published",
+      "status": "partial",
+      "gap": "Old cited evidence asserts outcome field; queued outcome; delivered outcome; bounced outcome. Unasserted: subscriber field readback; channel field readback; update field readback; queue time readback; outcome time readback; complained outcome readback; message pixel absence; tracked-link absence; the outcome filter returns all and only matching rows throughout its result set; channel filter reconciliation; update filter reconciliation; all 101 distinct expected destinations occur once and match the full filtered view.",
+      "line": 3323
+    },
+    {
+      "id": "NOTIFY-009",
+      "title": "Delivery never blocks publication",
+      "scope": "published",
+      "status": "partial",
+      "gap": "Old cited evidence asserts only the previously described delivered slice. It does not assert: mail provider failure publish; queue failure publish; endpoint failure publish; public page survives delivery failure; feed survives delivery failure; widget survives delivery failure; recovery preserves and delivers committed set.",
+      "line": 3329
+    },
+    {
+      "id": "INTAKE-002",
+      "title": "Alerts never publish",
+      "scope": "published",
+      "status": "partial",
+      "gap": "The cited journey asserts a private draft and page exclusion. It does not measure the 30-second create/update bound or compare all public surfaces. The class/policy wording carries no promotion.",
+      "line": 3345
+    },
+    {
+      "id": "MOVE-002",
+      "title": "Retroactive and silent",
+      "scope": "published",
+      "status": "partial",
+      "gap": "Old cited evidence asserts Sorry incident update timestamps equal source times; Past Sorry maintenance is completed; Imported Better Stack maintenance has no native notice; Import queues no notification delivery. Unasserted: Complete imported component history derives from original update times; Concurrent repeated applies send no mail; Preview sends no mail; Every resume sends no mail; Cutover checks send no mail; Each imported email subscriber is pending.",
+      "line": 3408
+    }
+  ],
+  "je_copy_file": "lamp-JE-copy.txt",
+  "review": "No new source-proven false JE sentence identified. Evidence gaps alone do not prove a false implementation claim. No copy changes on this candidate."
+}

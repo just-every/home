@@ -1,0 +1,90 @@
+{
+  "seed": "uptime",
+  "tag": "v0.5.10",
+  "contract_sha256": "0b70cec7f900fbc59542b6ae32afec508997695edda128142db3e88c8b770221",
+  "contract_status_row_count": 102,
+  "promise_rows": [
+    {
+      "id": "EVIDENCE-001",
+      "title": "Immutable scheduled evidence",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 1521
+    },
+    {
+      "id": "STATE-001",
+      "title": "Fixed coverage and incident hysteresis",
+      "scope": "published",
+      "status": "partial",
+      "gap": "Two configured runner networks still prove confirmed Failing and the scheduled confirmation/recovery thresholds. Gap: exactly one failing vantage reading Degraded; Unknown for partial, missing and stale evidence; the intermediate Recovering state; and no fabricated recovery from a manual pass during an outage, an absent selected probe or maintenance expiry lack assertions in the cited files. Maintenance expiry is asserted only in tests/maintenance-windows.mjs, which this clause does not cite.",
+      "line": 1522
+    },
+    {
+      "id": "NETWORK-001",
+      "title": "Pinned bounded destination execution",
+      "scope": "published",
+      "status": "partial",
+      "gap": "Cross-origin authentication, client-certificate and body stripping are asserted. Gap: mixed DNS answers, rebinding before connection, TLS hostname mismatch, re-resolution of every redirect, HTTPS downgrade and forbidden redirect refusal, exact-origin credential binding, timeout/body/encoding bounds and zero connections to rejected destinations lack assertions in the cited files. tests/tls-auth.mjs calls assertions in helper files this clause does not cite.",
+      "line": 1524
+    },
+    {
+      "id": "ARCHIVE-001",
+      "title": "Inactive validated restore",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 1526
+    },
+    {
+      "id": "ERASURE-001",
+      "title": "Operator-directed entity erasure",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 1529
+    },
+    {
+      "id": "NOTIFY-001",
+      "title": "Authorized installation-wide destinations",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 1533
+    },
+    {
+      "id": "DELIVERY-001",
+      "title": "Bounded notification acknowledgment",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 1534
+    },
+    {
+      "id": "DRILL-001",
+      "title": "Recipient-reported alert drills",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 1537
+    },
+    {
+      "id": "TLS-001",
+      "title": "SSL certificate and chain monitoring",
+      "scope": "target",
+      "status": "done",
+      "gap": "",
+      "line": 1550
+    },
+    {
+      "id": "MAINT-001",
+      "title": "Planned and recurring maintenance",
+      "scope": "target",
+      "status": "done",
+      "gap": "",
+      "line": 1563
+    }
+  ],
+  "je_copy_file": "uptime-JE-copy.txt",
+  "review": "No new source-proven false JE sentence identified. Evidence gaps alone do not prove a false implementation claim. No copy changes on this candidate."
+}

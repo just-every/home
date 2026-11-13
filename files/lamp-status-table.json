@@ -1,0 +1,1930 @@
+[
+  {
+    "id": "DOCS-001",
+    "title": "Public owner documentation",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts The unauthenticated documentation index returns HTTP 200; A representative selected VPAT page contains its released version and required chapter text; The selected VPAT page renders the version and chapter text held in its repository Markdown; The status-page host does not serve documentation. Unasserted: The documentation index\u2019s usable guidance and navigation content are asserted.",
+    "line": 3193
+  },
+  {
+    "id": "PAGE-001",
+    "title": "Contents",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Overall status appears; The total daily-mark count is between six times ninety and six times ninety-one. Unasserted: Every visible component is present; Each visible component\u2019s current state is present; Each visible component\u2019s exact note is present; Every unresolved incident appears; Five most recent updates are shown in newest-first order; Each incident links its complete permanent timeline; All in-progress maintenance appears; The 14-day scheduled-maintenance inclusion boundary is asserted; Daily-mark coverage is reconciled separately for every visible component; Each visible component uptime figure is asserted.",
+    "line": 3194
+  },
+  {
+    "id": "PAGE-002",
+    "title": "Readable without script",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Initial HTML contains the overall Operational label; Initial HTML contains the representative component name; Initial HTML contains a timestamp; Initial HTML contains the subscription form. Unasserted: All PAGE-001 content is reconciled in initial HTML; Every status, update and timestamp is readable with scripting disabled; The public subscription form successfully submits without scripting; Public timestamp text remains in the configured zone; Operator entry uses the configured zone; Timeline timestamps use the configured zone; Preview timestamps use the configured zone.",
+    "line": 3195
+  },
+  {
+    "id": "PAGE-003",
+    "title": "Weight",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3196
+  },
+  {
+    "id": "PAGE-004",
+    "title": "Overall status",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3197
+  },
+  {
+    "id": "PAGE-005",
+    "title": "Snapshot read path",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts A rendered public-page artifact exists; An Atom-feed artifact exists; A widget artifact exists; A failed build remains stale until a retry. Unasserted: Every PAGE-001 change triggers a complete snapshot; The public page remains readable without the database; The feed remains readable without the database; The widget remains readable without the database; The old publication body is read back while the unrecoverable replica failure is in force; Public snapshot reads issue no database query rather than merely surviving missing tables.",
+    "line": 3198
+  },
+  {
+    "id": "PAGE-006",
+    "title": "Serving through a failure",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts The page body still contains Partially unavailable after database removal; Stale page content is labeled Last known state; The generation instant is visible in stale page content; The retained failure body contains Partially unavailable. Unasserted: The Atom feed survives database outage; The widget survives database outage; Page content survives queue outage; Atom feed content survives queue outage; Widget content survives queue outage; Page content survives object-storage outage; Atom feed content survives object-storage outage; Widget content survives object-storage outage; Origin outage uses the specified cached-response window; Page is unavailable only before first publication; Atom feed is unavailable only before first publication; Widget is unavailable only before first publication.",
+    "line": 3199
+  },
+  {
+    "id": "PAGE-007",
+    "title": "Publish latency and caching",
+    "scope": "published",
+    "status": "partial",
+    "gap": "The cited evidence asserts the other audited outcomes; unasserted: Advancing a generation makes all earlier healthy cache entries ineligible; Update publication reaches public page within ten seconds; Update publication reaches history within ten seconds; Update publication reaches incident permanent page within ten seconds; Update publication reaches maintenance permanent page within ten seconds; Update publication reaches Atom feed within ten seconds; Update publication reaches widget within ten seconds; Update publication reaches public JSON within ten seconds; Component-state change reaches public page within ten seconds; Component-state change reaches history within ten seconds; Component-state change reaches incident permanent page within ten seconds; Component-state change reaches maintenance permanent page within ten seconds; Component-state change reaches Atom feed within ten seconds; Component-state change reaches widget within ten seconds; Component-state change reaches public JSON within ten seconds; Maintenance transition reaches public page within ten seconds; Maintenance transition reaches history within ten seconds; Maintenance transition reaches incident permanent page within ten seconds; Maintenance transition reaches maintenance permanent page within ten seconds; Maintenance transition reaches Atom feed within ten seconds; Maintenance transition reaches widget within ten seconds; Maintenance transition reaches public JSON within ten seconds; Origin-failure retention lasts exactly the promised one-hour window. Additional freshness assertions are in tests/e2e/helpers/public-freshness-flow.mjs, which the old Evidence cell did not cite.",
+    "line": 3200
+  },
+  {
+    "id": "PAGE-008",
+    "title": "Public read paths are not rate limited",
+    "scope": "published",
+    "status": "partial",
+    "gap": "The cited evidence asserts the other audited outcomes; unasserted: Healthy generation validation performs no database query; Artifact caching reduces object-byte reads.",
+    "line": 3201
+  },
+  {
+    "id": "PAGE-009",
+    "title": "Time display",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Scripted public timestamp retains the exact instant; The initial scripted generation label is relative. Unasserted: Initial public timestamp text uses the configured zone and exact instant; Scripted public timestamp uses the configured zone and offset; Notification timestamps use the configured zone and offset; The generation tooltip preserves the absolute instant and configured zone; The relative label\u2019s later refresh is asserted rather than only awaited; Initial public HTML retains absolute timestamps; Script-disabled generation text remains absolute; Maintenance, feed and notification text remains absolute.",
+    "line": 3202
+  },
+  {
+    "id": "PAGE-010",
+    "title": "Atom feed",
+    "scope": "published",
+    "status": "partial",
+    "gap": "The cited evidence asserts the other audited outcomes; unasserted: Full Atom 1.0 validation is asserted; Exactly one entry exists for each included event; Event identities are never reused.",
+    "line": 3203
+  },
+  {
+    "id": "PAGE-011",
+    "title": "Embeddable widget",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3204
+  },
+  {
+    "id": "PAGE-012",
+    "title": "Branding",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Changing the page name reaches the public page; Footer credit begins enabled; Enabled credit displays Powered by Lamp; Disabling credit removes it. Unasserted: Logo is changed and read back; Accent color is changed and read back; Time zone is changed and read back; Hostname is changed and read back; Disabling credit has no network effect; The direct first-party logo response bytes are read back as the configured logo; Open Graph title states the current overall status.",
+    "line": 3205
+  },
+  {
+    "id": "PAGE-013",
+    "title": "Enforced isolation",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3206
+  },
+  {
+    "id": "PAGE-014",
+    "title": "Live refresh",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3207
+  },
+  {
+    "id": "PAGE-015",
+    "title": "Served independently of what it reports",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Configured hostname and isolated public routing are delivered; custom-hostname provisioning, certificate issuance and DNS-record guidance are absent.",
+    "line": 3208
+  },
+  {
+    "id": "PAGE-022",
+    "title": "Secondary snapshot mirror",
+    "scope": "target",
+    "status": "missing",
+    "gap": "The secondary origin, supported-provider setup, mirror writes and lag reporting are absent.",
+    "line": 3209
+  },
+  {
+    "id": "PAGE-023",
+    "title": "Independent DNS failover",
+    "scope": "target",
+    "status": "missing",
+    "gap": "The serving probe, failover configuration, local DNS harness, setup check and failover/failback journey are absent.",
+    "line": 3210
+  },
+  {
+    "id": "PAGE-024",
+    "title": "Read-only standby surfaces",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Read-only standby publication, write refusals, paused-subscription wording and failover delivery recovery are absent.",
+    "line": 3211
+  },
+  {
+    "id": "PAGE-016",
+    "title": "Statuspage-compatible public API",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Statuspage v2 responses, stable imported IDs, an unmodified Statuspage embed client, and paginated native timelines and reports ship from retained snapshots. MAINT-009 wording, Verifying and per-window automation switches remain unbuilt; maintenance responses expose existing native lifecycle notices.",
+    "line": 3212
+  },
+  {
+    "id": "PAGE-017",
+    "title": "RSS and per-component feeds",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts RSS parses without XML errors; RSS event identities equal Atom identities in order; The history RSS alias equals the native RSS feed; A populated Web application component feed contains the affected incident. Unasserted: RSS 2.0 semantic validation is asserted; Both history aliases work on an installation with no import; An unrelated component\u2019s populated feed excludes the incident while retaining its own event; Both feed forms of every visible component reconcile all applicable incident and maintenance events; All feed variants are asserted snapshot-backed; The W3C validator accepts every feed; A newly published event is asserted in the polled history RSS alias within ten seconds.",
+    "line": 3213
+  },
+  {
+    "id": "PAGE-018",
+    "title": "Status badges",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Component-state SVG has the changed label; The component-state SVG stays within two KiB; The component-uptime SVG stays within two KiB; The component-state badge uses its page state color or no-data ink. Unasserted: Every shields.io endpoint field and a shields.io rendering are asserted; Database-unavailable badge serving is directly asserted.",
+    "line": 3214
+  },
+  {
+    "id": "PAGE-019",
+    "title": "Embed variants",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3215
+  },
+  {
+    "id": "PAGE-020",
+    "title": "Accessible to the standard US buyers require",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Public, email and operator browser accessibility slices and the app-host report are delivered. The full Base keyboard and accessibility-tree journeys remain unproved; private-page work follows AUD-002. Manual screen-reader evaluation and criterion-complete VPAT proof remain not run in R-1 and R-2.",
+    "line": 3216
+  },
+  {
+    "id": "PAGE-021",
+    "title": "Public read capacity of the hosted page",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Generation-cached public reads and a local ten-requests-per-second floor are delivered. The declared-hardware sustained, burst, single-address, latency, concurrent-publication and zero-query scale run is absent; hosted measurements in R-3 remain not run.",
+    "line": 3217
+  },
+  {
+    "id": "THEME-001",
+    "title": "Full brand theming",
+    "scope": "target",
+    "status": "partial",
+    "gap": "PAGE-012 branding is delivered. Full palette, contrast-refusal feedback, fonts, header image, custom links and layout choices are absent.",
+    "line": 3218
+  },
+  {
+    "id": "THEME-002",
+    "title": "Owner stylesheet",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Custom CSS acceptance, refusal feedback, scoping and snapshot stylesheet integration are absent.",
+    "line": 3219
+  },
+  {
+    "id": "THEME-003",
+    "title": "Custom header and footer markup",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Custom header/footer markup editing, sanitization removal reports and snapshot rendering are absent.",
+    "line": 3220
+  },
+  {
+    "id": "THEME-004",
+    "title": "A dark palette that passes the 4.5:1 check keeps every dashboard card (Uptime, Regions and the other status cards) readable",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Shared card contrast validation, dark card backgrounds, named-card refusal and the two-page public-door journey at 1440/390 are unproven.",
+    "line": 3221
+  },
+  {
+    "id": "THEME-005",
+    "title": "Turning the custom palette off never erases the owner's chosen colours",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Preservation of all nine colours through untick, save, reload, other theme saves and re-tick, and the default public look while off, are unproven.",
+    "line": 3222
+  },
+  {
+    "id": "COMP-001",
+    "title": "States and their order",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts The component-state vocabulary is exact; Degraded performance outranks Under maintenance; Degraded performance outranks Operational; Major outage outranks Partially unavailable. Unasserted: Partially unavailable outranks Degraded performance; Under maintenance outranks Operational.",
+    "line": 3226
+  },
+  {
+    "id": "COMP-002",
+    "title": "Grouping and order",
+    "scope": "published",
+    "status": "partial",
+    "gap": "The cited evidence asserts the other audited outcomes; unasserted: Multiple group membership is refused or excluded.",
+    "line": 3227
+  },
+  {
+    "id": "COMP-003",
+    "title": "Append-only state history",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts A history row records the previous Operational state; The same history row records the new Operational state; The same history row records a standing-claim cause; A correction row names the operator. Unasserted: Every public-state change records the causing operator or incident; Prior history values are unchanged rather than only present.",
+    "line": 3228
+  },
+  {
+    "id": "COMP-004",
+    "title": "State note",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3229
+  },
+  {
+    "id": "COMP-005",
+    "title": "Internal components",
+    "scope": "published",
+    "status": "partial",
+    "gap": "No journey requests an internal component's component-uptime badge, component badge or component feeds, or reads the uptime template's overall uptime figure while an internal component carries downtime, so absence from every uptime figure is unasserted.",
+    "line": 3230
+  },
+  {
+    "id": "COMP-006",
+    "title": "Component state is claimed, not set",
+    "scope": "published",
+    "status": "partial",
+    "gap": "The cited evidence asserts the other audited outcomes; unasserted: In-progress maintenance contributes its chosen claim; No claims gives Operational; Incident resolution recomputes public state within ten seconds; Maintenance completion recomputes public state within ten seconds; Component attachment recomputes public state within ten seconds; Component detachment recomputes public state within ten seconds; Setting a standing claim recomputes public state within ten seconds; Clearing a standing claim recomputes public state within ten seconds.",
+    "line": 3231
+  },
+  {
+    "id": "COMP-007",
+    "title": "Deletion",
+    "scope": "published",
+    "status": "partial",
+    "gap": "The cited evidence asserts the other audited outcomes; unasserted: Component and uptime disappearance is observed on the public page within ten seconds; Published maintenance history retains the deleted name.",
+    "line": 3232
+  },
+  {
+    "id": "COMP-008",
+    "title": "Monitor claims from measured evidence",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Linked-monitor claims are absent. COMP-006 remains the three-claimant published requirement until the release that adds this fourth claimant records the change.",
+    "line": 3233
+  },
+  {
+    "id": "COMP-009",
+    "title": "Component bulk editing and descriptions",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Preview reports fifty created components; Preview reports zero changed components; Preview reports zero deleted components; Preview reports two created groups. Unasserted: Table creation is asserted for components; Table creation is asserted for groups; Table editing is asserted for components; Table editing is asserted for groups; Table reordering is asserted for components; Table reordering is asserted for groups; Table deletion is asserted for components; Table deletion is asserted for groups; CSV creation is asserted for components; CSV creation is asserted for groups; CSV editing is asserted for components; CSV editing is asserted for groups; CSV reordering is asserted for components; CSV reordering is asserted for groups; CSV deletion is asserted for components; CSV deletion is asserted for groups.",
+    "line": 3234
+  },
+  {
+    "id": "COMP-010",
+    "title": "Shown only while affected",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts After recovery the conditional component is absent from the populated page; After recovery the conditional component is absent from the populated incident Atom feed; After recovery the conditional component is absent from the populated v2 component list; The affected component appears publicly. Unasserted: The widget omits an Operational conditional component; The uptime figure and daily record are hidden; Uptime is retained throughout; The conditional component always contributes to overall status.",
+    "line": 3235
+  },
+  {
+    "id": "DEP-001",
+    "title": "Vendor components that follow vendor status",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3236
+  },
+  {
+    "id": "DEP-002",
+    "title": "Vendor state never silently becomes the buyer's outage",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3237
+  },
+  {
+    "id": "DEP-003",
+    "title": "Vendor watch for the team",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3238
+  },
+  {
+    "id": "UPTIME-001",
+    "title": "Definition",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3239
+  },
+  {
+    "id": "UPTIME-002",
+    "title": "Downtime weights",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3240
+  },
+  {
+    "id": "UPTIME-003",
+    "title": "Short history",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3241
+  },
+  {
+    "id": "UPTIME-004",
+    "title": "Corrections",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3242
+  },
+  {
+    "id": "UPTIME-005",
+    "title": "Stated method",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3243
+  },
+  {
+    "id": "UPTIME-006",
+    "title": "Daily record",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts The aggregate mark count divided by two hundred lies between ninety and ninety-one; A day\u2019s sixty downtime minutes are retained; Untracked days have null downtime; Tracked healthy days have zero downtime. Unasserted: The complete trailing daily-record length is reconciled for every component separately; The rendered downtime-day label contains its exact minute count; Rendered untracked days are visually distinct from healthy days.",
+    "line": 3244
+  },
+  {
+    "id": "UPTIME-007",
+    "title": "Measured uptime bars",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3245
+  },
+  {
+    "id": "UPTIME-008",
+    "title": "Public performance metrics",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3246
+  },
+  {
+    "id": "UPTIME-009",
+    "title": "Availability reports",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts CSV is an attached CSV document; PDF is an attached PDF document; The CSV summary contains the computed uptime; The CSV summary contains the expected weighted downtime. Unasserted: The CSV month and quarter incident lists are completely reconciled; The PDF month and quarter incident lists are completely reconciled; Complete maintenance membership is reconciled in the CSV report; Complete maintenance membership is reconciled in the PDF report; The complete quarter incident-membership set is reconciled; A current-period report stops at elapsed current time; Every overlapping scheduled maintenance retains its state label; Every overlapping cancelled maintenance retains its state label; Every overlapping completed maintenance retains its state label.",
+    "line": 3247
+  },
+  {
+    "id": "UPTIME-010",
+    "title": "Measured availability exports",
+    "scope": "target",
+    "status": "partial",
+    "gap": "The original evidence does not assert this part\u2019s complete outcome; unasserted: Linked measured availability appears in CSV; Linked measured availability appears in PDF; Claimed results remain unchanged when measured figures are added.",
+    "line": 3248
+  },
+  {
+    "id": "UPTIME-011",
+    "title": "Audience availability report sharing",
+    "scope": "target",
+    "status": "partial",
+    "gap": "The original evidence does not assert this part\u2019s complete outcome; unasserted: The selected audience receives the report on its private page; The shared numbers equal the component page\u2019s figures.",
+    "line": 3249
+  },
+  {
+    "id": "INCIDENT-001",
+    "title": "Lifecycle",
+    "scope": "published",
+    "status": "partial",
+    "gap": "No journey tries to save an update with two lifecycles or with a lifecycle outside Investigating, Identified, Monitoring and Resolved and checks that it is refused with the incident and draft unchanged, so exactly one state is unasserted.",
+    "line": 3250
+  },
+  {
+    "id": "INCIDENT-002",
+    "title": "Impact",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3251
+  },
+  {
+    "id": "INCIDENT-003",
+    "title": "Reference",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts numeric reference; The numeric-reference permalink returns that incident\u2019s title; increasing sequence; legacy reference unchanged. Unasserted: manual and intake share sequence; public address unchanged.",
+    "line": 3252
+  },
+  {
+    "id": "INCIDENT-004",
+    "title": "Published updates are immutable",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Asserted: original wording retained; correction identifies original; both updates retained. Unasserted in old cited evidence: published deletion refused; public publication order.",
+    "line": 3253
+  },
+  {
+    "id": "INCIDENT-005",
+    "title": "Reopening",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3254
+  },
+  {
+    "id": "INCIDENT-006",
+    "title": "Overdue update",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3255
+  },
+  {
+    "id": "INCIDENT-007",
+    "title": "Deletion",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts missing reason refused. Unasserted: public page removal; history removal after demonstrated pre-deletion public visibility; Atom removal after demonstrated pre-deletion public visibility; ten-second removal; deletion actor; deletion reason; deletion time.",
+    "line": 3256
+  },
+  {
+    "id": "INCIDENT-008",
+    "title": "Internal notes",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts none of the audited outcomes. Unasserted: stored operator note read; populated note absent publicly after reading back the stored private note; populated note absent from Atom after reading back the stored private note; populated note absent from widget after reading back the stored private note; note absent from notifications; note absent from AI requests.",
+    "line": 3257
+  },
+  {
+    "id": "INCIDENT-009",
+    "title": "Retroactive incidents",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3258
+  },
+  {
+    "id": "INCIDENT-010",
+    "title": "Update due",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Asserted: before lead no reminder; due at lead; list due time; Overview due; one due email; one overdue email; scheduled trigger without browser; public commitment; no due or overdue label. Unasserted in old cited evidence: composer and brief action; resolved suppression; newer-publication suppression; retroactive suppression; old expired commitment silent.",
+    "line": 3259
+  },
+  {
+    "id": "INCIDENT-011",
+    "title": "A named communication owner",
+    "scope": "target",
+    "status": "partial",
+    "gap": "An unresolved incident defaults to its opener as communication owner; private take-over and active-operator reassignment doors write an attributed audit entry atomically and refuse resolved incidents. Owner-only due/overdue email, one escalation per commitment at ten minutes overdue, and unowned fallback to every active operator ship; every operator has publish rights until TEAM-004. Overview and the composer show ownership privately, with takeover/reassignment and unowned journeys at 1440/390. The registered reminder journey covers owner movement, escalation, unowned fallback, audit JSON/CSV and public/email-renderer privacy. Gap: push (MOBILE-002) and Oncall's current on-call responder (INTAKE-012) remain unbuilt. The seed policy inventory registration is held by uip; the policy is replaceable through the typed extension mount without editing that held file.",
+    "line": 3260
+  },
+  {
+    "id": "INCIDENT-012",
+    "title": "Run the incident from Slack or Teams",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3261
+  },
+  {
+    "id": "INCIDENT-014",
+    "title": "Link and authenticate chat operators",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Slack linked in Settings; A second redemption of the same successfully redeemed code is refused; After both transport link flows exactly two durable links exist; unlinked actor creates no incident. Unasserted: Entra linked from Settings.",
+    "line": 3262
+  },
+  {
+    "id": "INCIDENT-013",
+    "title": "Impact set by the operator",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts above derived impact; none below derived impact; clear restores derived; The incident-specific permalink contains the overridden major impact. Unasserted: critical choice; The public page\u2019s major-impact marker is bound to this overridden incident; The history page\u2019s major-impact marker is bound to this overridden incident; notifications; Populated historical uptime day values remain unchanged by the override; current uptime figure unchanged; imported recorded impact.",
+    "line": 3263
+  },
+  {
+    "id": "UPDATE-001",
+    "title": "Template",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts unresolved next-update time required; resolved needs no next-update time; A legacy resolved promise is absent from public renderer fields; A legacy resolved promise is absent from email renderer text. Unasserted: component required; affected audience required; customer impact required; what-still-works optional and bounded; details optional and bounded; HTML literal; Markdown literal; communication commitment not resolution estimate; legacy resolved time omitted by every public and notification surface.",
+    "line": 3264
+  },
+  {
+    "id": "UPDATE-002",
+    "title": "One rendering",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3265
+  },
+  {
+    "id": "UPDATE-003",
+    "title": "Sets the lifecycle",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3266
+  },
+  {
+    "id": "UPDATE-004",
+    "title": "Preview",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3267
+  },
+  {
+    "id": "UPDATE-005",
+    "title": "Drafts",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts page excludes populated draft; Atom excludes populated draft; widget excludes populated draft; two-second save. Unasserted: Reload independently asserts unchanged audience; Reload independently asserts unchanged impact; Reload independently asserts unchanged what-still-works; Reload independently asserts unchanged lifecycle; After publication the next draft\u2019s other wording fields are independently asserted empty; lifecycle prompts; stale tab cannot revive publication; stale tab cannot overwrite newer draft; draft write requires acknowledged version; template requires acknowledged version; schedule requires acknowledged version; publication requires acknowledged version; fresh draft not falsely saved; Publish requires acknowledged complete draft; attempted write identified; later workflow changes retained.",
+    "line": 3268
+  },
+  {
+    "id": "UPDATE-006",
+    "title": "Scheduled publish",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3269
+  },
+  {
+    "id": "UPDATE-007",
+    "title": "Review",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Asserted: part of the existing workflow. Unasserted in old cited evidence: unreviewed publication refused; reviewer recorded; review time recorded; review-disabled publication succeeds.",
+    "line": 3270
+  },
+  {
+    "id": "UPDATE-008",
+    "title": "Atomic publication and recipients",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Asserted: update once; recipients once; no failed recipient. Unasserted in old cited evidence: narrowing preserves delivery; unsubscribe suppresses delivery; failed update not public; retry to success; dispatch does not block.",
+    "line": 3271
+  },
+  {
+    "id": "UPDATE-009",
+    "title": "Templates",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Asserted: lifecycle retained; details retained; no publication; not public. Unasserted in old cited evidence: other fields retained; components and claims retained; composer and staged choices.",
+    "line": 3272
+  },
+  {
+    "id": "UPDATE-010",
+    "title": "Audience-specific updates",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3273
+  },
+  {
+    "id": "UPDATE-011",
+    "title": "Deterministic wording checks",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Asserted: part of the existing workflow. Unasserted in old cited evidence: resolution-time promise finding; internal hostname finding; IP address finding; email address finding; owner-blocked term finding; owner length finding; beside field; rule named; dismissal; findings do not block.",
+    "line": 3274
+  },
+  {
+    "id": "UPDATE-012",
+    "title": "Stage component changes with an update",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Native drafts stage state changes, attachments and releases; review, scheduling and templates keep the choices. One transaction publishes claims, aggregate history, immutable timeline changes and recipients; mail and signed webhooks retain the published changes after later recovery. Gap: management-token and Statuspage write APIs, automation, chat desks, SMS and component-only/Statuspage webhook subscriptions are not built. The acceptance's two overlap cases (one Major outage \u2192 Partially unavailable entry beside a Partially unavailable claimant; none while another claimant holds Major outage) have no named journey yet; history is written from the aggregate state.",
+    "line": 3275
+  },
+  {
+    "id": "UPDATE-014",
+    "title": "Publish component changes atomically",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Native drafts stage state changes, attachments and releases; review, scheduling and templates keep the choices. One transaction publishes claims, aggregate history, immutable timeline changes and recipients; mail and signed webhooks retain the published changes after later recovery. Gap: management-token and Statuspage write APIs, automation, chat desks, SMS and component-only/Statuspage webhook subscriptions are not built. The acceptance's two overlap cases (one Major outage \u2192 Partially unavailable entry beside a Partially unavailable claimant; none while another claimant holds Major outage) have no named journey yet; history is written from the aggregate state.",
+    "line": 3276
+  },
+  {
+    "id": "UPDATE-015",
+    "title": "Component changes through every publication door",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Native drafts stage state changes, attachments and releases; review, scheduling and templates keep the choices. One transaction publishes claims, aggregate history, immutable timeline changes and recipients; mail and signed webhooks retain the published changes after later recovery. Gap: management-token and Statuspage write APIs, automation, chat desks, SMS and component-only/Statuspage webhook subscriptions are not built. The acceptance's two overlap cases (one Major outage \u2192 Partially unavailable entry beside a Partially unavailable claimant; none while another claimant holds Major outage) have no named journey yet; history is written from the aggregate state.",
+    "line": 3277
+  },
+  {
+    "id": "UPDATE-013",
+    "title": "Safe direct links in update text",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts own URL visible; period outside; Trailing comma stays outside the direct link; Trailing closing parenthesis stays outside the direct link. Unasserted: Markdown remains literal on every public surface; labelled-link syntax remains literal on every public surface.",
+    "line": 3278
+  },
+  {
+    "id": "UPDATE-016",
+    "title": "Safe links in mail and chat",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Email text retains affected-audience wording; Email text retains customer-impact wording with its bare URL; Email text retains what-still-works wording with its bare URLs; Email text retains details wording with its bare URLs. Unasserted: Teams independently asserts literal HTTP-scheme text; Teams independently asserts retained escaped HTML markup.",
+    "line": 3279
+  },
+  {
+    "id": "UPDATE-017",
+    "title": "Safe link webhook formats",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Slack fields reassemble; Slack link text equals URL; only HTTPS links; Slack-webhook text retains period punctuation outside its URL. Unasserted: Lamp fields byte-for-byte.",
+    "line": 3280
+  },
+  {
+    "id": "MAINT-001",
+    "title": "Distinct from incidents",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Asserted: independent SCH sequence; legacy reference unchanged; SCH sequence survives restart. Unasserted in old cited evidence: window and attachments retained; separate incident/maintenance display; deleted and failed SCH reference never reused.",
+    "line": 3281
+  },
+  {
+    "id": "MAINT-002",
+    "title": "Automatic transitions",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3282
+  },
+  {
+    "id": "MAINT-003",
+    "title": "Component states",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3283
+  },
+  {
+    "id": "MAINT-004",
+    "title": "Overrun",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3284
+  },
+  {
+    "id": "MAINT-005",
+    "title": "Reminders",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts A scheduled maintenance notice record exists; A twenty-four-hour reminder notice record exists. Unasserted: The scheduling notice reaches subscribers; The twenty-four-hour reminder reaches subscribers; start subscriber notification; completion subscriber notification.",
+    "line": 3285
+  },
+  {
+    "id": "MAINT-006",
+    "title": "Rescheduling and cancellation",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Asserted: reschedule notice; cancel notice; cancelled record retained. Unasserted in old cited evidence: all previous recipients notified; same previous recipients notified; upcoming removal within ten seconds; public history labelled cancelled.",
+    "line": 3286
+  },
+  {
+    "id": "MAINT-007",
+    "title": "Maintenance calendar",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3287
+  },
+  {
+    "id": "MAINT-008",
+    "title": "Maintenance from deploy pipelines",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3288
+  },
+  {
+    "id": "MAINT-009",
+    "title": "Maintenance wording",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Required-wording refusal and length limits, optional wording, Verifying and other notice wording, calendar wording, remaining non-email surfaces and Statuspage-format bodies remain unbuilt or unproven. The deleted migration proof for legacy null wording and unchanged title-only notices has no equivalent assertion in the current tests; no-backfill preservation is unproven.",
+    "line": 3289
+  },
+  {
+    "id": "MAINT-011",
+    "title": "Maintenance drafts and previews",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Wording drafts and previews are unbuilt; notice-to-preview parity remains unproven. The surviving scheduling and mail journeys do not exercise a maintenance draft or preview.",
+    "line": 3290
+  },
+  {
+    "id": "MAINT-012",
+    "title": "Maintenance updates during the window",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Maintenance updates, Verifying lifecycle, channel-specific notices and update timelines are unbuilt. The surviving start, completion and window-edit journeys do not prove immutable wording updates or selected-channel publication.",
+    "line": 3291
+  },
+  {
+    "id": "MAINT-013",
+    "title": "Maintenance automation chosen per window",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Page-default inheritance, auto-start-off at five minutes, exactly one start-due/overrun operator alert, NOTIFY-016 push, AUTO-003 listing, the precise fifteen/twenty-minute boundaries, Verifying and lifecycle through published maintenance updates remain unbuilt or unproven.",
+    "line": 3292
+  },
+  {
+    "id": "MAINT-014",
+    "title": "Maintenance wording through every write door",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Native wording-update publication, management-token, Statuspage-compatible, GitHub Action, Terraform and agent wording/update doors and compatibility mappings are unbuilt or unproven.",
+    "line": 3293
+  },
+  {
+    "id": "MAINT-015",
+    "title": "Imported maintenance automation and updates",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Imported Statuspage automation and maintenance-message mapping are unbuilt. Native scheduling and owner SQL rollback/restore do not prove source switch preservation or silent two-message maintenance-update import.",
+    "line": 3294
+  },
+  {
+    "id": "MAINT-010",
+    "title": "Maintenance calendar clients and mail attachments",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Calendar-client use and maintenance-email .ics attachments carved from MAINT-007; not built.",
+    "line": 3295
+  },
+  {
+    "id": "SUB-001",
+    "title": "Subscribing",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3296
+  },
+  {
+    "id": "SUB-002",
+    "title": "Confirmation",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3297
+  },
+  {
+    "id": "SUB-003",
+    "title": "Pending expiry",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3298
+  },
+  {
+    "id": "SUB-004",
+    "title": "Component selection",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3299
+  },
+  {
+    "id": "SUB-005",
+    "title": "Cookieless subscriber tokens",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts referrer suppression; indexing suppression. Unasserted: one-subscription scope and no unrelated capability; at least 128 bits of entropy; a previously usable management token is refused after unsubscribe; deletion revokes every token.",
+    "line": 3300
+  },
+  {
+    "id": "SUB-006",
+    "title": "One-click unsubscribe",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts mail unsubscribe value is present; web unsubscribe value is present; one-click declaration; URL-encoded deactivation. Unasserted: visible unsubscribe link in notification body; multipart form deactivation; DKIM coverage of both unsubscribe headers; per-token allowance independence.",
+    "line": 3301
+  },
+  {
+    "id": "SUB-007",
+    "title": "Managing a subscription",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3302
+  },
+  {
+    "id": "SUB-008",
+    "title": "Unsubscribe integrity",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3303
+  },
+  {
+    "id": "SUB-009",
+    "title": "Webhook subscribers",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts two active signature values; exact-body signature; incident reference; subscriber address absent. Unasserted: webhook subscription creation read back; both rotation signatures verify; complete update array; complete previous/new component states; 30-second receiver deadline; rich-text URL labels equal their URLs on a nonempty set of link elements; Slack bracket and punctuation asserted in tests/e2e/helpers/update-link-evidence.mjs outside the old Evidence set; all Lamp fields are asserted in tests/e2e/helpers/update-component-flow.mjs outside the old Evidence set.",
+    "line": 3304
+  },
+  {
+    "id": "SUB-010",
+    "title": "Failing destinations",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3305
+  },
+  {
+    "id": "SUB-011",
+    "title": "Operator view",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts the expected 101st fixture subscriber appears on the second page; channel; deactivated state; the operator list preserves the exact selected component identifiers. Unasserted: the complete subscriber identity set reconciles across all pages; pending and active states visible in operator view.",
+    "line": 3306
+  },
+  {
+    "id": "SUB-012",
+    "title": "No enumeration",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts same status; same body; the existing-address email contains its management link; repeated submissions send no second management email per address. Unasserted: duplicate subscription absence; only management content in email.",
+    "line": 3307
+  },
+  {
+    "id": "SUB-013",
+    "title": "SMS subscribers",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Twilio test-account receipt pending (held-key Mac run); released seed.json nonGoals SMS exclusion is removed by the release that ships the full clause; page names or support contacts whose complete carrier wording exceeds two segments are refused rather than truncated.",
+    "line": 3308
+  },
+  {
+    "id": "SUB-021",
+    "title": "Literal links in SMS",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Twilio test-account receipt pending (held-key Mac run); released seed.json nonGoals SMS exclusion is removed by the release that ships the full clause; page names or support contacts whose complete carrier wording exceeds two segments are refused rather than truncated.",
+    "line": 3309
+  },
+  {
+    "id": "SUB-014",
+    "title": "Self-serve Slack subscriptions",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3310
+  },
+  {
+    "id": "SUB-015",
+    "title": "Self-serve Microsoft Teams subscriptions",
+    "scope": "target",
+    "status": "partial",
+    "gap": "The journey never records requests to the refused host, so a card reaching it is unobserved; no published update carries another scheme or markup, so never links is checked only on text without them; and no update for an unselected component is published while the Teams subscriber exists, so component selection's exclusion is unasserted.",
+    "line": 3311
+  },
+  {
+    "id": "SUB-016",
+    "title": "Preferences on every channel",
+    "scope": "target",
+    "status": "partial",
+    "gap": "single-incident following waits for SUB-019; audience subscriptions wait for AUD-004. SMS component-only status notifications remain unbuilt.",
+    "line": 3312
+  },
+  {
+    "id": "SUB-017",
+    "title": "Subscriber import and export",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3313
+  },
+  {
+    "id": "SUB-018",
+    "title": "Statuspage-format webhooks",
+    "scope": "target",
+    "status": "partial",
+    "gap": "New webhook subscriptions choose Lamp or Statuspage through the operator add, legacy creation and optional CSV webhook_format doors; omission defaults new subscriptions to Lamp and preserves an existing recipient choice on legacy retry. The recipient management form changes the format inside its existing token-authorized transaction. A canonical subscriber column preserves it through technical archives and page-data JSON. The public API and webhook renderer use one status, stable native/imported ID and record projection. A strict controlled receiver accepts the three incident bodies with complete one/two/three-update arrays and existing maintenance notices/windows; exact-body HMAC signatures verify, unsubscribe links work, no subscriber address is present, and the impact text See https://help.example.com/kb/123. remains plain and unchanged. Browser proof in tests/e2e/delivery-contract.test.mjs and tests/e2e/helpers/webhook-format-browser-flow.mjs covers the private chooser and public management form at 1440 and 390. Component-change bodies and acceptance belong to NOTIFY-017; imported webhook format belongs to MOVE-010, and maintenance in-window wording/updates to MAINT-009, after the approved carves. Gap: The existing public subscribe form accepts email only, so there is no public webhook form in which to mount a format chooser. Operator creation, CSV and token-authorized management expose the choice. The public creation door and format chooser required by RL-102 remain unbuilt.",
+    "line": 3314
+  },
+  {
+    "id": "SUB-019",
+    "title": "Follow one incident",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3315
+  },
+  {
+    "id": "SUB-022",
+    "title": "Single-incident subscription lifetime",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3316
+  },
+  {
+    "id": "SUB-020",
+    "title": "Subscriber limits are stated, enforced and reported",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts total capacity; the full seeded webhook channel refuses another destination; freeing one webhook slot admits a pending subscriber; that pending subscriber exhausts the recovered webhook slot. Unasserted: the reported combined-chat count and limit are explicitly 1000; incident subscriptions consume capacity; deleted subscribers release capacity; each channel count in Settings browser assertions; no subscriber row in any other state is created; every channel crossing alert; the full-channel refusal creates no subscriber in another state.",
+    "line": 3317
+  },
+  {
+    "id": "SUB-023",
+    "title": "Import subscriber capacity",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts move-in excess named; move-in refused rows; CSV excess named; CSV refused rows. Unasserted: move-in database comparison asserted in tests/e2e/helpers/subscriber-management-fixture.mjs outside the old Evidence set; CSV database comparison asserted in tests/e2e/helpers/subscriber-management-fixture.mjs outside the old Evidence set; the narrowed apply persists all expected non-subscriber records; the over-limit apply creates no subscriber in another state; the email-free apply persists the expected source component; the fitting CSV apply actually stores one pending subscriber.",
+    "line": 3318
+  },
+  {
+    "id": "SUB-024",
+    "title": "Pre-launch page",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Built on this branch (owner-controlled switch, five refusing routes, noindex header and robots.txt); the judge has not yet recorded it against `tests/e2e/delivery-contract.test.mjs`.",
+    "line": 3319
+  },
+  {
+    "id": "NOTIFY-001",
+    "title": "What notifies subscribers",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts only the previously described delivered slice. It does not assert: first incident notification; subsequent incident notification; resolution notification; maintenance lifecycle notification events; component change silence or opted-in replacement.",
+    "line": 3320
+  },
+  {
+    "id": "NOTIFY-002",
+    "title": "Delivery time",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts 1000 recipient-capture records exist for the event; 1000 attempts carry provider identifiers; 1000 messages reach the capture adapter; five-minute measured bound. Unasserted: every expected eligible recipient has a provider acceptance without a missing recipient hidden by duplicates.",
+    "line": 3321
+  },
+  {
+    "id": "NOTIFY-003",
+    "title": "Retry",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts six total attempts; durable failed outcome; the failure event identifies the expected delivery; the failure event identifies the expected notification event. Unasserted: exponential backoff timing over one hour.",
+    "line": 3322
+  },
+  {
+    "id": "NOTIFY-004",
+    "title": "Delivery log, without tracking",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts outcome field; queued outcome; delivered outcome; bounced outcome. Unasserted: subscriber field readback; channel field readback; update field readback; queue time readback; outcome time readback; complained outcome readback; message pixel absence; tracked-link absence; the outcome filter returns all and only matching rows throughout its result set; channel filter reconciliation; update filter reconciliation; all 101 distinct expected destinations occur once and match the full filtered view.",
+    "line": 3323
+  },
+  {
+    "id": "NOTIFY-005",
+    "title": "At most once",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts repeated capture leaves one recipient record; repeated capture leaves one dispatcher job; two intended healthy-delivery scenarios produce two healthy-host requests in aggregate. Unasserted: the concurrently dispatched delivery alone produces exactly one request; email queue redelivery never resends.",
+    "line": 3324
+  },
+  {
+    "id": "NOTIFY-006",
+    "title": "Operator alerts",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts due email once; overdue email once; one terminal-failure alert queued. It does not assert: maintenance overrun email once; scheduled review hold email once; alert-created draft email once; actual terminal-failure operator email count.",
+    "line": 3325
+  },
+  {
+    "id": "NOTIFY-007",
+    "title": "Channels are per update",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3326
+  },
+  {
+    "id": "NOTIFY-008",
+    "title": "Who the deployment emails",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts active subscriber destination; configured From address. It does not assert: operator-only mail authorization; pending single-confirmation restriction.",
+    "line": 3327
+  },
+  {
+    "id": "NOTIFY-010",
+    "title": "Mail headers",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts List-Id is present; List-Archive is present; List-Help is present; page identity. Unasserted: setup missing DKIM refusal; deployment missing DKIM refusal; setup missing DMARC refusal; deployment missing DMARC refusal; missing record named; aligned DKIM without From-domain SPF.",
+    "line": 3328
+  },
+  {
+    "id": "NOTIFY-009",
+    "title": "Delivery never blocks publication",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts only the previously described delivered slice. It does not assert: mail provider failure publish; queue failure publish; endpoint failure publish; public page survives delivery failure; feed survives delivery failure; widget survives delivery failure; recovery preserves and delivers committed set.",
+    "line": 3329
+  },
+  {
+    "id": "NOTIFY-011",
+    "title": "Slack and Teams channels",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3330
+  },
+  {
+    "id": "NOTIFY-012",
+    "title": "Channel posts",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts one Slack send; one Teams send; unrelated channel silent. It does not assert: atomic update/post commit; publication retry duplicate absence; retroactive publication silence.",
+    "line": 3331
+  },
+  {
+    "id": "NOTIFY-013",
+    "title": "Redundant email delivery",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Native provider adapters and controlled failover are evidenced. Reported-outage switching remains unbuilt; safe versus uncertain provider outcomes and reconciliation must meet RL-101 without treating every server error as rejection. Controlled fixtures do not prove mailbox receipt or exact-once mailbox delivery.",
+    "line": 3332
+  },
+  {
+    "id": "NOTIFY-014",
+    "title": "SMS delivery",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Twilio test-account receipt remains pending. Plivo callback signatures and retryable failover are unbuilt; the stated acceptance-time bound is unmeasured. The SMS non-goal exclusion remains until the release shipping the full clause. NOTIFY-021 separately carries the wholly absent cost and cap controls.",
+    "line": 3333
+  },
+  {
+    "id": "NOTIFY-021",
+    "title": "SMS cost and spend controls",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Settings cost estimation, the monthly SMS spend cap and its confirmation queue are all unbuilt. Existing Twilio consent and delivery fixtures do not deliver these controls.",
+    "line": 3334
+  },
+  {
+    "id": "NOTIFY-015",
+    "title": "Reach of each update",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts email committed10; email delivered9; email bounced1; webhook committed2. Unasserted: suppressed count reconciliation; failed count reconciliation; incident webhook totals and distinct recipient counts reconcile across updates; webhook CSV parity.",
+    "line": 3335
+  },
+  {
+    "id": "NOTIFY-016",
+    "title": "Operator alerts beyond email",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Push to installed operator devices (MOBILE-002), DEP-003 vendor alerts and HIST-006 traffic alerts remain unbuilt.",
+    "line": 3336
+  },
+  {
+    "id": "NOTIFY-017",
+    "title": "Component status changes reach webhook subscribers",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Monitor or alert-source claims under AUTO-001, automation email under INTAKE-013, vendor feeds under DEP-001 and AUTO-002\u2019s flap guard are not built. Current claimants are operator standing claims, incidents and maintenance.",
+    "line": 3337
+  },
+  {
+    "id": "NOTIFY-018",
+    "title": "Delivery time on every channel",
+    "scope": "target",
+    "status": "partial",
+    "gap": "NOTIFY-002's 5-minute bound ships and is tested for email at the subscriber limit. No bound is stated or tested for webhooks, Slack, Teams or SMS.",
+    "line": 3338
+  },
+  {
+    "id": "NOTIFY-019",
+    "title": "Notification email the owner can brand",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Display name and Reply-To work with SendGrid and Resend. Subject prefixes, uploaded same-host logos, plain-text headers/footers, shared preview, immutable retry envelopes and page-data export/restore ship. Managed mail supports subject/logo/wording but owns From and does not accept Reply-To; Settings and restore refuse unsupported identity settings. Audience-specific settings await AUD-001. Provider transport is proven against network-edge fixtures, not live inbox receipt.",
+    "line": 3339
+  },
+  {
+    "id": "NOTIFY-022",
+    "title": "Mandatory notification links",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Display name and Reply-To work with SendGrid and Resend. Subject prefixes, uploaded same-host logos, plain-text headers/footers, shared preview, immutable retry envelopes and page-data export/restore ship. Managed mail supports subject/logo/wording but owns From and does not accept Reply-To; Settings and restore refuse unsupported identity settings. Audience-specific settings await AUD-001. Provider transport is proven against network-edge fixtures, not live inbox receipt.",
+    "line": 3340
+  },
+  {
+    "id": "NOTIFY-020",
+    "title": "Delivery at Statuspage Business and Enterprise scale",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Durable queued email delivery ships, with the 5-minute bound qualified only locally at 1,000 subscribers under a 10-per-second fake quota (seed.json \u2192 limits). There is no hosted run, no qualification above 1,000, no provider batch sending, and no check of the provider account's rate.",
+    "line": 3341
+  },
+  {
+    "id": "NOTIFY-023",
+    "title": "Dispatch throughput at subscriber scale",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Current queued email dispatch is proven locally at 1,000 recipients. Parallel scale qualification at 150 acceptances per second and provider batch routes are absent.",
+    "line": 3342
+  },
+  {
+    "id": "NOTIFY-024",
+    "title": "Provider sending-rate advice",
+    "scope": "target",
+    "status": "missing",
+    "gap": "There is no provider-account sending-rate inquiry or entered-rate advice; the current 1,000-recipient local delivery qualification does not implement this capability.",
+    "line": 3343
+  },
+  {
+    "id": "INTAKE-001",
+    "title": "Authenticated requests",
+    "scope": "published",
+    "status": "partial",
+    "gap": "The cited HMAC journey asserts signed admission and wrong-signature refusal. It does not assert the five-minute boundary, bearer admission, absent/stale credential cases or unchanged complete records after refusal; intake-byte and preset helpers carrying these assertions are outside this clause\u2019s old Evidence set.",
+    "line": 3344
+  },
+  {
+    "id": "INTAKE-002",
+    "title": "Alerts never publish",
+    "scope": "published",
+    "status": "partial",
+    "gap": "The cited journey asserts a private draft and page exclusion. It does not measure the 30-second create/update bound or compare all public surfaces. The class/policy wording carries no promotion.",
+    "line": 3345
+  },
+  {
+    "id": "INTAKE-003",
+    "title": "Deduplication",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3346
+  },
+  {
+    "id": "INTAKE-004",
+    "title": "Recovery alerts",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3347
+  },
+  {
+    "id": "INTAKE-005",
+    "title": "Payload mapping",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Configured key path controls acceptance; Configured generic firing state is read back; Missing key returns 400; Visible rejected mapping reason. Unasserted: Configured title read back; Configured generic recovered state is read back.",
+    "line": 3348
+  },
+  {
+    "id": "INTAKE-006",
+    "title": "Monitor presets",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3349
+  },
+  {
+    "id": "INTAKE-007",
+    "title": "Preset recovery",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3350
+  },
+  {
+    "id": "INTAKE-008",
+    "title": "Uptime preset",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3351
+  },
+  {
+    "id": "INTAKE-009",
+    "title": "PagerDuty",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3352
+  },
+  {
+    "id": "INTAKE-015",
+    "title": "PagerDuty publication notes",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts PagerDuty note contains the public audience statement; PagerDuty note contains public customer impact; PagerDuty note contains public still-working text; PagerDuty note contains public details. Unasserted: Note-author sealed and redacted.",
+    "line": 3353
+  },
+  {
+    "id": "INTAKE-010",
+    "title": "Prometheus Alertmanager and Grafana Alerting",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3354
+  },
+  {
+    "id": "INTAKE-011",
+    "title": "New Relic, Datadog and Pingdom depth",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3355
+  },
+  {
+    "id": "INTAKE-016",
+    "title": "Monitoring metric connectors",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3356
+  },
+  {
+    "id": "INTAKE-012",
+    "title": "Oncall",
+    "scope": "target",
+    "status": "missing",
+    "gap": "The Oncall preset, signed timeline intake, publication feedback and linked escalation are not built.",
+    "line": 3357
+  },
+  {
+    "id": "INTAKE-013",
+    "title": "Email automation for each component",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Lamp has no inbound email path, component address, rotation, mail-routing setup check or sender-policy controls.",
+    "line": 3358
+  },
+  {
+    "id": "INTAKE-017",
+    "title": "Automation email interpretation",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Lamp has no mail interpretation, mail-session refusal, ordered processing or mail-identity deduplication.",
+    "line": 3359
+  },
+  {
+    "id": "INTAKE-018",
+    "title": "Automation email effects and cutover",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No automation-mail effects or old/new address cutover mapping exists.",
+    "line": 3360
+  },
+  {
+    "id": "INTAKE-014",
+    "title": "Jira Service Management and Opsgenie",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Wrong token 401; Wrong-token refusal preserves every incident row; Wrong-token refusal preserves every draft row; Wrong-token refusal preserves every published-update row. Unasserted: Repeated Create retains operator-authored still-working text and next-update time; Each brief summary time equals that action\u2019s exact fixture timestamp; Unmapped reason read back; Recovery record read back; Credential replacement explicit Save asserted.",
+    "line": 3361
+  },
+  {
+    "id": "INTAKE-019",
+    "title": "Responder publication feedback",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3362
+  },
+  {
+    "id": "AUTO-001",
+    "title": "Owner rules for what an alert may do",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Agent calls still need server-computed standard, live and external classes, company-policy decisions and agent-for-person attribution under BASE-AGENT-006, BASE-AGENT-007 and BASE-AGENT-008. The held Base pin has no company-policy decision API. Agent automation stays unavailable; owner and admin approval remains the conservative default. SURFACE-002 and SURFACE-003 retain these inherited duties.",
+    "line": 3363
+  },
+  {
+    "id": "AUTO-002",
+    "title": "Flap guard and undo for automatic changes",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3364
+  },
+  {
+    "id": "AUTO-003",
+    "title": "Every follow-up obligation is visible",
+    "scope": "target",
+    "status": "partial",
+    "gap": "The private panel aggregates next-update, scheduled publication, maintenance, report, imported invitation and notification obligations. Vendor-feed staleness, secondary-origin lag and SMS spend-cap carriers remain absent. Owner/operator access and reasoned dismissal are the adopted scope; no public exposure or outbound action is added.",
+    "line": 3365
+  },
+  {
+    "id": "AUTO-004",
+    "title": "Post-incident report follow-up",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3366
+  },
+  {
+    "id": "DRAFT-001",
+    "title": "Suggested update",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Known references retained; Unknown and question references removed; Suggestion result has no lifecycle field; Suggestion result has no next-update field. Unasserted: Nonempty fields filled and empty results preserved; Every field editable; Unsourced text visibly marked; Sources beside fields open brief.",
+    "line": 3367
+  },
+  {
+    "id": "DRAFT-002",
+    "title": "Inputs",
+    "scope": "published",
+    "status": "partial",
+    "gap": "The exact brief and exclusion of populated internal notes/components are asserted. The configured tone instructions are not read back from the provider request in the old Evidence set.",
+    "line": 3368
+  },
+  {
+    "id": "DRAFT-004",
+    "title": "Incident brief",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Alert count; Alert source record.; Alert time; The brief lists exactly the attached public component names. Unasserted: No-component question; Building brief sends no model request; Collapsed page matches model input.",
+    "line": 3369
+  },
+  {
+    "id": "DRAFT-003",
+    "title": "Absent or failing provider",
+    "scope": "published",
+    "status": "partial",
+    "gap": "The old Evidence asserts no-provider suppression, visible failure, timeout error before 21 seconds and ordinary publication after both failures. It does not assert the exact 20-second bound or every other publication path. Agent-policy parity remains a new SURFACE obligation; these product-source statuses are not promoted.",
+    "line": 3370
+  },
+  {
+    "id": "TEAM-001",
+    "title": "Equal operators",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3371
+  },
+  {
+    "id": "TEAM-002",
+    "title": "Management",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Native operator-removal route durably deactivates the identity; Native operator-removal route anonymizes the email; Another owner cannot revoke setup owner; Self-removal succeeds. Unasserted: Settings invitation outcome; Settings removal is completed through the browser; Other owner cannot delete setup owner while still active.",
+    "line": 3372
+  },
+  {
+    "id": "TEAM-003",
+    "title": "Attribution",
+    "scope": "published",
+    "status": "partial",
+    "gap": "The old Evidence asserts subscriber-deletion audit attribution. It does not assert the listed publication, component, maintenance and correction actors, private display names or their absence from public representations. Assertions in other files cannot be added to carried-done Evidence in this rewrite.",
+    "line": 3373
+  },
+  {
+    "id": "TEAM-004",
+    "title": "Roles",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3374
+  },
+  {
+    "id": "TEAM-005",
+    "title": "Access scoped to pages and audiences",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Page- and audience-scoped roles are not built.",
+    "line": 3375
+  },
+  {
+    "id": "TEAM-006",
+    "title": "Enforced SSO and SCIM",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Optional OIDC sign-in ships. Enforcement, break-glass enforcement, SAML-only provider coverage, SCIM lifecycle and group-to-role mapping remain absent; this replaces ACCESS-001\u2019s SCIM/role-sync exclusion when shipped.",
+    "line": 3376
+  },
+  {
+    "id": "TEAM-007",
+    "title": "Audit log view",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Settings audit filters, pagination, CSV, many event families and anonymized references ship. Logo removal/replacement, standing-claim removal without aggregate change and archive-restored subscriber expiry proof remain absent; role, rule and token event authority belongs to TEAM-004, AUTO-001 and API-001. The original proof and mechanism record is preserved in intake details.",
+    "line": 3377
+  },
+  {
+    "id": "HIST-001",
+    "title": "Public history",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3378
+  },
+  {
+    "id": "HIST-002",
+    "title": "Post-incident report",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts The saved report retains summary; The saved report retains timeline; The saved report retains cause; The saved report retains remediation. Unasserted: Ten-second bound; Selected report channels and omitted channels.",
+    "line": 3379
+  },
+  {
+    "id": "HIST-003",
+    "title": "Report due",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3380
+  },
+  {
+    "id": "HIST-004",
+    "title": "Export contents",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts The exported incident table is populated; The exported update table is populated; The exported component table is populated; The exported component state-history table is populated. Unasserted: Every source incident record is present in the export; Every source update record is present in the export; Every source component record is present in the export; Every source component state-history record is present in the export; Every source maintenance record is present in the export; Every source subscriber record is present in the export; Every exported subscriber retains its expected source channel; Every exported subscriber retains its expected source state; Every source delivery record is present in the export; Every source post-incident report record is present in the export; The archive contains the full source entity graph; Every source setting is present with its expected source value; Every source audit entry is present with its complete source contents.",
+    "line": 3381
+  },
+  {
+    "id": "HIST-005",
+    "title": "Communication performance",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts First latency; Second latency; Third latency; Two of three kept. Unasserted: Every incident CSV field and channel matches its report value; Every monthly CSV value equals the corresponding displayed monthly report value; Delivery failure rate exact denominator.",
+    "line": 3382
+  },
+  {
+    "id": "HIST-006",
+    "title": "Traffic spike alert without visitor tracking",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Stored keys only surface minute count; Visitor identifiers and raw path absent; No database binding; Public page responds 200 with no database binding. Unasserted: Public page retains its expected full content without the database; Atom feed retains its expected full content without the database; Widget retains its expected full content without the database; The feed counter records its no-database request; The widget counter records its no-database request; The provider message binds ten to the observed minute request count; The provider message binds two to the same-hour baseline mean; Traffic alerts create no customer-facing incident; Traffic alerts preserve public page, feed and widget bytes; Zero baseline never infers spike.",
+    "line": 3383
+  },
+  {
+    "id": "HIST-009",
+    "title": "Traffic alert configuration",
+    "scope": "target",
+    "status": "partial",
+    "gap": "The cited journey asserts default and chosen thresholds, invalid-state retention, persisted reload, layout and hydration. It does not explicitly hold competing writes to assert serial autosave ordering.",
+    "line": 3384
+  },
+  {
+    "id": "HIST-010",
+    "title": "Traffic evidence at resolution",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Unknown surface not tracked; Only known surfaces evidence; All unknown surfaces learning; Backdated refusal. Unasserted: Every field of the retained incident and draft remains unchanged; The complete held scheduled draft retains its saved fields; Near-baseline scheduled publication creates no override audit or other override record.",
+    "line": 3385
+  },
+  {
+    "id": "HIST-007",
+    "title": "Subscriber reporting",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Current total equals whole list; Each returned channel/state bucket equals the matching complete-list filter count; Component count; Deactivation reason. Unasserted: Every nonzero channel/state bucket is present in the report; Daily opening inventory matches its actual baseline or the previous day\u2019s closing inventory; Daily closing inventory equals the actual eligible subscriber inventory; The channel move records its exact individual join and leave atomically; Erasure records its exact individual leave atomically; Import undo records its exact individual leave atomically; Every remaining displayed aggregate and CSV value agree; Audience count/trend/CSV; Language count/trend/CSV; Expiry facts update atomically; The source\u2019s complete nonempty observed subscriber-reporting facts are present in that archive.",
+    "line": 3386
+  },
+  {
+    "id": "HIST-008",
+    "title": "Complete browsable history",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3387
+  },
+  {
+    "id": "AUD-001",
+    "title": "Several pages in one deployment",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Multiple public, private and audience-scoped pages are not built. This replaces the earlier one-page and public-page-only exclusions when delivered.",
+    "line": 3388
+  },
+  {
+    "id": "AUD-002",
+    "title": "Private page access",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Private-page access, its configured access methods and retained reading without the database are not built.",
+    "line": 3389
+  },
+  {
+    "id": "AUD-003",
+    "title": "Audiences for named customers",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3390
+  },
+  {
+    "id": "AUD-004",
+    "title": "Audience subscribers",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3391
+  },
+  {
+    "id": "AUD-005",
+    "title": "Isolation is proven, not assumed",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3392
+  },
+  {
+    "id": "API-001",
+    "title": "Token-authenticated management API",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Read is built only for components, groups and metric definitions; the other read resources, components:write, incidents:write, maintenance:write, subscribers:write and admin scopes, OpenAPI 3.1 and a generated incident-lifecycle client remain unbuilt. Component-state token attribution, incident-publication refusal and audit-view acceptance remain unproved.",
+    "line": 3393
+  },
+  {
+    "id": "API-002",
+    "title": "Statuspage-compatible management API",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3394
+  },
+  {
+    "id": "API-003",
+    "title": "Operator event webhooks",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3395
+  },
+  {
+    "id": "API-004",
+    "title": "Terraform provider",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3396
+  },
+  {
+    "id": "API-005",
+    "title": "Configuration file planning",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3397
+  },
+  {
+    "id": "API-006",
+    "title": "Deployment workflow actions",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3398
+  },
+  {
+    "id": "INTEG-001",
+    "title": "Incident context in the support desk",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3399
+  },
+  {
+    "id": "INTEG-002",
+    "title": "Updates posted to the page's social accounts",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Cited evidence asserts persisted token connections, Bluesky app-password exchange, Mastodon bearer posting, owner defaults/deselection, bounded prefixed content, threading, selected maintenance, duplicate suppression, five retries, terminal outcomes/operator alert, failure isolation and import/retroactive silence. Unasserted: X ownership of developer application and API tier; owner network API charges; exponential retry intervals across the exact promised hour; precise recipient account identity and queue time in social log; channel, outcome and update filters; complete filtered CSV; absence of tracking pixels and tracked links; exact equality between logged post identity and provider-returned identifier.",
+    "line": 3400
+  },
+  {
+    "id": "MOBILE-001",
+    "title": "The operator desk works on a phone",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Native signed-alert, draft reload, publication and resolution assertions exist. The cited phone helper only waits on the visible standing-claim label and maintenance heading; it does not read back either persisted result. It also reads only the impact field after reload, rather than every saved draft field. Unasserted outcomes: The native terminal link signs in at both widths; Every other saved draft field survives reload; Email preview contains the expected complete notification; Publication has its complete visible result; Resolution has its complete visible result; Standing claim persisted and visible result; Scheduled maintenance persisted and visible result.",
+    "line": 3401
+  },
+  {
+    "id": "MOBILE-002",
+    "title": "Installable app with push",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3402
+  },
+  {
+    "id": "SETUP-001",
+    "title": "Setup readiness",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Form check is at or after publication; Overview shows the public address; Publication time is present; Checked page/form wording is visible. Unasserted: Lamp actually reads the rendered public page after publication; Lamp actually inspects the rendered subscription form after publication; Every change republishes; Each minute scheduled check repeats; Changing the hosted sender authenticates against its provider; Sender check repeats daily; Page/form check times are displayed; Review page opens the preview and checks; Change address opens Settings; Failure has one corrective action; Results belong to the address actually checked after address changes; A custom domain is optional; Local outgoing mail is suppressed; No captured-mail inbox exists; Automatic one-click local owner entry needs no email; A subscriber publication records a suppressed outcome; Suppressed outcome is visible in Notifications; Suppressed outcome is not provider acknowledgement; Public reading makes no database query.",
+    "line": 3403
+  },
+  {
+    "id": "SETUP-002",
+    "title": "First-run setup",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts No website script request occurs; Reload makes no second site read; Observed page name is stored; Observed tagline is stored. Unasserted: Every operator document gates incomplete first run; Signed-out setup returns through sign-in to setup; Every redirect refuses private/loopback destinations; Instatus and Better Stack linked/subdomain source selection; History imports no maintenance; History imports no subscriber; Omitted website leaves editable plain defaults; A status feed with no components changes none; Completion durably persists; All settings remain editable after completion; Every pre-existing operator installation is migration-complete; Completed setup redirects to app.",
+    "line": 3404
+  },
+  {
+    "id": "ACCESS-001",
+    "title": "Owner-terminal sign-in",
+    "scope": "published",
+    "status": "partial",
+    "gap": "The old cited evidence proves provider linking, identity upgrade and archive continuity, but contains no terminal-link issuance, one-time stdout, missing-secret, expiry or actor-refusal assertions. The relevant terminal-link browser assertions are in tests/e2e/publishing-browser.test.mjs, outside this clause's old Evidence set. Unasserted outcomes: The command reads the session secret only from its environment; Missing secret is refused by name; Hashed twenty-minute link; Single-use consumption; Exactly one stdout raw-link copy; Terminal-link creation audit event; No account is created by issuance; No session is created by issuance; Consumption creates the Base session; Unknown operator gets the common refusal; Deactivated operator gets the common refusal; Erased operator gets the common refusal.",
+    "line": 3405
+  },
+  {
+    "id": "ACCESS-002",
+    "title": "Optional identity-provider sign-in",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3406
+  },
+  {
+    "id": "MOVE-001",
+    "title": "Dry run first",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Dry run leaves components unwritten; Changed source refuses apply; Changed target refuses apply and names the stale review; Stale-target refusal leaves no import job. Unasserted: Each named provider accepts API-key and saved-response input; Source credential is read once from fixed source origin; Source credential is never stored; Dry run counts every source category before application; Dry run leaves every other table unwritten; Each imported/changed/skipped/refused item has a named reason; Each channel capacity excess is named; Excess subscribers are refused during dry run; An over-limit apply writes nothing.",
+    "line": 3407
+  },
+  {
+    "id": "MOVE-002",
+    "title": "Retroactive and silent",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Sorry incident update timestamps equal source times; Past Sorry maintenance is completed; Imported Better Stack maintenance has no native notice; Import queues no notification delivery. Unasserted: Complete imported component history derives from original update times; Concurrent repeated applies send no mail; Preview sends no mail; Every resume sends no mail; Cutover checks send no mail; Each imported email subscriber is pending.",
+    "line": 3408
+  },
+  {
+    "id": "MOVE-013",
+    "title": "Explicit imported invitations",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3409
+  },
+  {
+    "id": "MOVE-003",
+    "title": "One import per source",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 3410
+  },
+  {
+    "id": "MOVE-004",
+    "title": "Undo",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Untouched Sorry undo returns the component count to baseline; Untouched Sorry undo returns the component-group count to baseline; Untouched Sorry undo returns the incident count to baseline; Untouched Sorry undo returns the maintenance count to baseline. Unasserted: Untouched undo removes every other imported record kind; Every required dependent component survives undo; Every required dependent group identity survives undo; Undo names the specific retained incident and its explanation; Undo names the specific retained maintenance and its explanation; Undo creates no outbound notification work.",
+    "line": 3411
+  },
+  {
+    "id": "MOVE-005",
+    "title": "Old public addresses",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Public imported addresses permanently redirect to their target; Native record page contains imported title; Aliases are absent on operator host; Sorry notice redirects to matching incident. Unasserted: Instatus source Atom serves native feed; Better Stack source Atom serves native feed; Feed aliases exist with no incident history; Complete undo removes feed alias; Aliases and feeds make no database query; The refusal names the rejected address itself; Every native-route collision is named/refused; Retained legacy unusable aliases warn without suppressing snapshot; Missing shortlinks are never fabricated; A source-owned hostname is outside Lamp control; Better Stack reports get aliases only from exact unchanged matching webhook shortlinks; Better Stack maintenance messages retain original historical updates; Better Stack history creates no lifecycle notice; Better Stack history creates no replayed notification.",
+    "line": 3412
+  },
+  {
+    "id": "MOVE-006",
+    "title": "Cutover preview",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Nonempty cutover rows have native targets; The large preview returns at most 25 rows; Its reported total exceeds the displayed row count; Eligible imported invitation count is complete. Unasserted: Its total equals the complete source address count; A nonempty large preview has an address in every row; A nonempty large preview has a source path in every row; A nonempty large preview has a native target in every row; Unavailable addresses are displayed; Source-host limits are displayed; Each source feed answer is displayed; JSON reader limitation is displayed; RSS reader limitation is displayed; Widget reader limitation is displayed; Original expiry deadline is displayed in Cutover; Opens requests omit credentials; Opens validates final native address; Opens validates successful HTML; Unreachable checks remain visibly failed; Guide orders import before preview; Guide orders explicit invitations and hostname instructions; Guide includes custom-domain steps; Guide includes rechecking; Guide retains source through confirmation window.",
+    "line": 3413
+  },
+  {
+    "id": "MOVE-007",
+    "title": "From Status.io",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3414
+  },
+  {
+    "id": "MOVE-008",
+    "title": "From incident.io Status Pages",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3415
+  },
+  {
+    "id": "MOVE-009",
+    "title": "Statuspage consumers keep working at cutover",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Statuspage summary endpoint returns nonempty content; Source Atom equals native feed; RSS response is nonempty; Guide includes the correction-update note. Unasserted: An unmodified Statuspage client parses the summary; An old embed tag renders the floating notice after import; Each reader is listed served after import; Webhook and automation readers are unavailable before implementation; Shipped automation shows old/new component addresses.",
+    "line": 3416
+  },
+  {
+    "id": "MOVE-010",
+    "title": "Every subscriber channel moves",
+    "scope": "target",
+    "status": "missing",
+    "gap": "Released imports carry email subscribers only (src/core/features/statuspage-import/).",
+    "line": 3417
+  },
+  {
+    "id": "MOVE-011",
+    "title": "Postmortems move intact",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Imported report retains original publication time; The fixture source text markers survive in the summary; The ordinary source link URL survives; The HTML source link URL survives. Unasserted: Published report with source notify flag creates no notification of any kind; Every word of the complete source body survives; Paragraph/list item line boundaries survive; Heading line boundaries survive; Image URL is never fetched; Empty timeline/cause/remediation fields are omitted from rendered report; HIST-003 counts the imported report as published; Dry run writes no report or other native record; Apply imports only reviewed reports; Undo names the specific retained edited incident; Undo names the specific retained edited template; Undo names the specific retained edited component.",
+    "line": 3418
+  },
+  {
+    "id": "MOVE-014",
+    "title": "Incident templates move intact",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 3419
+  },
+  {
+    "id": "MOVE-012",
+    "title": "Private and audience pages move as private",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Better Stack, Instatus, Sorry and Statuspage readers refuse private or unknown visibility rather than publishing it. Importing those sources into private pages, audience membership, private admission, visibility-preserving subscribers and undo are not built.",
+    "line": 3420
+  },
+  {
+    "id": "PORT-001",
+    "title": "Every new record travels",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Export, clean restore and equivalent re-export cover every released record (HIST-004). Built target records (Uptime and grouped intake sources and their mappings, PagerDuty sources) travel in the full-table archive, with the PagerDuty REST key written as NULL so the restored source asks to reconnect. Gap: Slack and Teams channel_destinations.sealed_url ciphertext travels in both archives (scripts/export.mjs, scripts/installer/archive-policy.mjs), and a restore with the same WEBHOOK_SIGNING_SECRET posts without reconnecting, so restored integrations are not all disabled until reconnected. Pages, audiences, roles, vendor components, metrics, translations, SMS consent and API-token metadata are not built.",
+    "line": 3421
+  },
+  {
+    "id": "PORT-002",
+    "title": "Erasure reaches every new identifier",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Subscriber and operator erasure ship for released records. The identifiers that target clauses add are not built.",
+    "line": 3422
+  },
+  {
+    "id": "AGENT-001",
+    "title": "The public story matches responder evidence",
+    "scope": "push-further",
+    "status": "partial",
+    "gap": "The model-free brief flags a monitor recovery with a non-resolved lifecycle and a passed commitment, and an operator can request a cited suggestion (DRAFT-001, DRAFT-004). Continuous comparison against responder, monitor and support evidence does not exist.",
+    "line": 3423
+  },
+  {
+    "id": "AGENT-002",
+    "title": "The next-update promise is kept",
+    "scope": "push-further",
+    "status": "partial",
+    "gap": "Old cited evidence asserts Ten-minute preparation trigger creates a draft before any later tick; Draft restates last public impact; Draft names changed evidence refs; No-change draft states nothing changed. Unasserted: A nonempty prepared evidence set is rendered completely in the private composer; Preparation preserves other published surface bytes; Company policy computes and permits the standard preparation call.",
+    "line": 3424
+  },
+  {
+    "id": "AGENT-003",
+    "title": "Audience-specific impact",
+    "scope": "push-further",
+    "status": "partial",
+    "gap": "Each update carries an operator-written affected-audience statement (UPDATE-001). There are no audiences and no drafted variants.",
+    "line": 3425
+  },
+  {
+    "id": "AGENT-004",
+    "title": "Customer-visible recovery is checked before close",
+    "scope": "push-further",
+    "status": "partial",
+    "gap": "Old cited evidence asserts The recovery response contains the linked firing item; That item names its source record.; That item carries a parseable evidence time; Unreasoned resolution is refused. Unasserted: Held company policy decides the resolution class; The audit actor equals the operator who published the override; Five-minute recovery threshold is applied at its boundary; Repeated grouped recovery restarts the hold; All linked alert keys participate; The same failing draft identity and wording are retained; Historical resolution follows the same recovery check; An override cannot authorize a later scheduled resolution; Missing vendor evidence is specifically not tracked; Missing traffic evidence is specifically not tracked; Missing support evidence is specifically not tracked; Missing continuous-monitor evidence is specifically not tracked.",
+    "line": 3426
+  },
+  {
+    "id": "AGENT-005",
+    "title": "A post-incident report drafted from the record",
+    "scope": "push-further",
+    "status": "partial",
+    "gap": "Old cited evidence asserts The timeline represents every available alert reference; The timeline represents every available published-update reference; The timeline line count equals the total available source count; Every timeline line cites a real source record. Unasserted: Report explicitly labels recorded rather than measured downtime; An empty cause with completed remediation refuses publication; An untouched cause prompt with completed remediation refuses publication; An untouched remediation prompt with completed cause refuses publication; Held policy decides report publication class; The complete persisted report state is unchanged after the refused edit.",
+    "line": 3427
+  },
+  {
+    "id": "AGENT-006",
+    "title": "Unreported incidents surface early",
+    "scope": "push-further",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3428
+  },
+  {
+    "id": "AGENT-007",
+    "title": "Translations drafted from the glossary",
+    "scope": "push-further",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3429
+  },
+  {
+    "id": "AGENT-008",
+    "title": "Scoped MCP tools for outside agents",
+    "scope": "push-further",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3430
+  },
+  {
+    "id": "AGENT-009",
+    "title": "Maintenance notices drafted from change plans",
+    "scope": "push-further",
+    "status": "missing",
+    "gap": "Not built.",
+    "line": 3431
+  },
+  {
+    "id": "SURFACE-001",
+    "title": "Lamp jobs and records in the registry",
+    "scope": "target",
+    "status": "missing",
+    "gap": "The Lamp MCP registry, server-computed risk classifiers and company-policy conformance journey are not built.",
+    "line": 3432
+  },
+  {
+    "id": "SURFACE-002",
+    "title": "Draft, exposure and sign-off classes",
+    "scope": "target",
+    "status": "missing",
+    "gap": "The Lamp MCP registry, server-computed risk classifiers and company-policy conformance journey are not built.",
+    "line": 3433
+  },
+  {
+    "id": "SURFACE-003",
+    "title": "Authority, removal and provider-step classes",
+    "scope": "target",
+    "status": "missing",
+    "gap": "The Lamp MCP registry, server-computed risk classifiers and company-policy conformance journey are not built.",
+    "line": 3434
+  },
+  {
+    "id": "SURFACE-004",
+    "title": "Incident communication handoffs",
+    "scope": "target",
+    "status": "missing",
+    "gap": "The Lamp MCP registry, server-computed risk classifiers and company-policy conformance journey are not built.",
+    "line": 3435
+  },
+  {
+    "id": "SURFACE-005",
+    "title": "A stranger specialist runs an incident week",
+    "scope": "target",
+    "status": "missing",
+    "gap": "The Lamp MCP registry, server-computed risk classifiers and company-policy conformance journey are not built.",
+    "line": 3436
+  }
+]

@@ -1,0 +1,90 @@
+{
+  "seed": "oncall",
+  "tag": "v0.5.11",
+  "contract_sha256": "c04517abc904f1e5618a858e191fd0a9ae1dc54484b6fb993a56c794a9193cac",
+  "contract_status_row_count": 88,
+  "promise_rows": [
+    {
+      "id": "OC-002",
+      "title": "Routing replay",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 1434
+    },
+    {
+      "id": "OC-003",
+      "title": "Roles and authority",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 1435
+    },
+    {
+      "id": "OC-004",
+      "title": "Incident state transitions",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 1436
+    },
+    {
+      "id": "OC-005",
+      "title": "Copied runbooks",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 1437
+    },
+    {
+      "id": "OC-006",
+      "title": "Bounded outbound incident effects",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 1438
+    },
+    {
+      "id": "OC-008",
+      "title": "User-authored records kept",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 1440
+    },
+    {
+      "id": "OC-011",
+      "title": "Calendar-day rotations",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 1443
+    },
+    {
+      "id": "OC-012",
+      "title": "Paging off",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 1444
+    },
+    {
+      "id": "OC-021",
+      "title": "Move-in preview",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 1453
+    },
+    {
+      "id": "OC-022",
+      "title": "Resume and undo",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 1454
+    }
+  ],
+  "je_copy_file": "oncall-JE-copy.txt",
+  "review": "No new source-proven false JE sentence identified. Evidence gaps alone do not prove a false implementation claim. No copy changes on this candidate."
+}

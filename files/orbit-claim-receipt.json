@@ -1,0 +1,90 @@
+{
+  "seed": "orbit",
+  "tag": "v0.4.8",
+  "contract_sha256": "faa136fb56b398c3a3ba80defbe1789b3cfe2aca153dc9a5e7c4205e6aa2c32f",
+  "contract_status_row_count": 191,
+  "promise_rows": [
+    {
+      "id": "RECORD-004",
+      "title": "Duplicate merge",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 2418
+    },
+    {
+      "id": "SIGNAL-007",
+      "title": "No tracking",
+      "scope": "published",
+      "status": "partial",
+      "gap": "Unasserted in the carried evidence: no tracking script/pixel/cookie in public assets/network; identity-free chat held; unsupported identity absent from customer history. Asserted: identity-free page view held.",
+      "line": 2434
+    },
+    {
+      "id": "CAPTURE-005",
+      "title": "Human boundary",
+      "scope": "published",
+      "status": "partial",
+      "gap": "Unasserted in the carried evidence: delegation credential refused; address-only intake works; proposed new contact stays blocked. Asserted: native intake works; collaborator intake refused; source signature refused.",
+      "line": 2441
+    },
+    {
+      "id": "OPP-004",
+      "title": "Explainability",
+      "scope": "published",
+      "status": "partial",
+      "gap": "Not reachable in the product, so unasserted: following each contribution to its source evidence. A contribution in the deal's Why this is first list has no link or visible signal ID, Recorded details lists each signal's subject, kind, source and linking basis without ids, and no route serves a signal's source evidence; `tests/e2e/operator.spec.mjs` resolves each contribution's signal ID from the opportunity API inside the test and then finds its Recorded details line by subject text. Asserted at 390 and 1440 in the browser: every contribution shown with its signal subject, type, signed points and source; the current recommendation's reason and next action beside them; each contributing signal's Recorded details line names its source and how it was linked.",
+      "line": 2449
+    },
+    {
+      "id": "ACTION-005",
+      "title": "Stale draft",
+      "scope": "published",
+      "status": "partial",
+      "gap": "Unasserted in the carried evidence: customer/deal mutation stales draft; stale send refused; current differences shown before new review. Asserted: reply stop stales draft.",
+      "line": 2459
+    },
+    {
+      "id": "OUT-001",
+      "title": "Exact-content customer sending",
+      "scope": "published",
+      "status": "partial",
+      "gap": "Unasserted in the carried evidence: an actual agent customer-message call under held company policy through its owning agent-surface tool. Asserted: the current source signature ingests evidence but cannot approve or dispatch a saved draft without a native session; refusal is 401 with unchanged saved content and effect inventories and no mail submission, followed by signed-in exact-revision approval and exact reviewed bytes dispatched.",
+      "line": 2460
+    },
+    {
+      "id": "OUT-007",
+      "title": "Stop conditions",
+      "scope": "published",
+      "status": "partial",
+      "gap": "Unasserted in the carried evidence: booking cancels scheduled mail; unsubscribe cancels scheduled mail; bounce cancels scheduled mail; manual stop cancels scheduled mail; replay has no second effect. Asserted: reply cancels scheduled mail; stop stales unsent draft.",
+      "line": 2466
+    },
+    {
+      "id": "OUT-012",
+      "title": "Unsubscribe",
+      "scope": "published",
+      "status": "done",
+      "gap": "",
+      "line": 2471
+    },
+    {
+      "id": "AI-003",
+      "title": "Provider failure",
+      "scope": "published",
+      "status": "partial",
+      "gap": "Unasserted in the carried evidence: configured-outage continuity; manual CRM updates; ingestion and linking continuity; scoring and queue placement continuity; search continuity; recommendation action and evidence readback; rendered generation-failure qualification. Connected mailboxes and live model or provider qualification remain unclaimed. Asserted: unconfigured generation unavailable; handwritten drafting, exact approval and one accepted customer-mail submission continue with AI unconfigured.",
+      "line": 2474
+    },
+    {
+      "id": "DATA-002",
+      "title": "Contact erasure",
+      "scope": "published",
+      "status": "partial",
+      "gap": "Unasserted in the carried evidence: contact erasure redacts stored Slack content; company erasure redacts stored Slack content; deal erasure redacts stored Slack content; provider delete requests tracked; each provider-deletion outcome visible; aliases erased; imported/captured evidence erased; drafts erased; transfer copies withdrawn; AI absence; mail absence; anonymous audit; completion within five minutes; replay cannot recreate erased content. Asserted: search absence; export absence.",
+      "line": 2488
+    }
+  ],
+  "je_copy_file": "orbit-JE-copy.txt",
+  "review": "No new source-proven false JE sentence identified. Evidence gaps alone do not prove a false implementation claim. No copy changes on this candidate."
+}

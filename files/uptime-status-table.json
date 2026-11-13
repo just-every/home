@@ -1,0 +1,818 @@
+[
+  {
+    "id": "HTTP-001",
+    "title": "Signed HTTP monitoring",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 1520
+  },
+  {
+    "id": "EVIDENCE-001",
+    "title": "Immutable scheduled evidence",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 1521
+  },
+  {
+    "id": "STATE-001",
+    "title": "Fixed coverage and incident hysteresis",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Two configured runner networks still prove confirmed Failing and the scheduled confirmation/recovery thresholds. Gap: exactly one failing vantage reading Degraded; Unknown for partial, missing and stale evidence; the intermediate Recovering state; and no fabricated recovery from a manual pass during an outage, an absent selected probe or maintenance expiry lack assertions in the cited files. Maintenance expiry is asserted only in tests/maintenance-windows.mjs, which this clause does not cite.",
+    "line": 1522
+  },
+  {
+    "id": "AUTHORITY-001",
+    "title": "Server-side scoped authority",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 1523
+  },
+  {
+    "id": "NETWORK-001",
+    "title": "Pinned bounded destination execution",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Cross-origin authentication, client-certificate and body stripping are asserted. Gap: mixed DNS answers, rebinding before connection, TLS hostname mismatch, re-resolution of every redirect, HTTPS downgrade and forbidden redirect refusal, exact-origin credential binding, timeout/body/encoding bounds and zero connections to rejected destinations lack assertions in the cited files. tests/tls-auth.mjs calls assertions in helper files this clause does not cite.",
+    "line": 1524
+  },
+  {
+    "id": "HEARTBEAT-001",
+    "title": "Revision-scoped receipt evaluation",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 1525
+  },
+  {
+    "id": "ARCHIVE-001",
+    "title": "Inactive validated restore",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 1526
+  },
+  {
+    "id": "IMPORT-001",
+    "title": "Reviewed definition files and inactive imports",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Synthetic saved-page/JSON tests only; real export and hosted import remain unmeasured. Apply resumes in atomic batches, not one whole-plan transaction; the intended whole-plan atomicity guarantee remains unresolved.",
+    "line": 1527
+  },
+  {
+    "id": "RETENTION-001",
+    "title": "Explicit storage custody",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 1528
+  },
+  {
+    "id": "ERASURE-001",
+    "title": "Operator-directed entity erasure",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 1529
+  },
+  {
+    "id": "AUDIT-001",
+    "title": "Durable anonymized audit",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 1530
+  },
+  {
+    "id": "PRESENCE-001",
+    "title": "Contact separate from health",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 1531
+  },
+  {
+    "id": "INTERFACE-001",
+    "title": "Honest durable operator feedback",
+    "scope": "published",
+    "status": "partial",
+    "gap": "The cited console journeys assert textual health/freshness/reasons, assertion editing and refusal, read/action errors, polling, keyboard focus, overflow, accessibility-tree semantics and axe at 1440. Gap: those same journeys at the required 390 width are unasserted after removal of their 390 runs.",
+    "line": 1532
+  },
+  {
+    "id": "NOTIFY-001",
+    "title": "Authorized installation-wide destinations",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 1533
+  },
+  {
+    "id": "DELIVERY-001",
+    "title": "Bounded notification acknowledgment",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 1534
+  },
+  {
+    "id": "PUBLIC-001",
+    "title": "Public landing and documentation",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 1535
+  },
+  {
+    "id": "BOUNDARY-001",
+    "title": "Monitoring ownership and honest delivery claims",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Native Oncall handoff ships through signed-webhook configuration and private delivery and incident reads. Received remains unknown: Oncall exposes no scoped native alert receipt read door. Responded remains unknown: no scoped native door attributes human response to the source, key and generation. Handoff-specific console rendering remains with uip; other named connectors remain under their own clauses.",
+    "line": 1536
+  },
+  {
+    "id": "DRILL-001",
+    "title": "Recipient-reported alert drills",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 1537
+  },
+  {
+    "id": "STARTUP-001",
+    "title": "Required configuration diagnostics",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Missing SESSION_SECRET returns Worker health 503 with a named, value-free diagnostic, and restored configuration returns 200. Gap: other missing/malformed and conditional bindings, scheduled/local-app/preview/setup/deployment/private-runner entry points, missing ASSETS, a D1 readiness fault and the three-second fault-response budget lack assertions in the cited files. Retained bounded evidence (qualification pending; current partial judgment and unscoped gaps retained): the new command proof covers only missing and malformed UPTIME_CONTROL_ORIGIN and UPTIME_RUNNER_KEY and corrected idle enrollment. It does not qualify the complete private-runner binding matrix or the other runtime entry points, ASSETS, D1 faults or readiness timing. Console requalification, hosted readiness and capacity, and provider-account qualification remain held.",
+    "line": 1538
+  },
+  {
+    "id": "PUBLIC-002",
+    "title": "Declared sessionless paths and rate limits",
+    "scope": "published",
+    "status": "done",
+    "gap": "",
+    "line": 1539
+  },
+  {
+    "id": "FLOW-001",
+    "title": "Supported isolated browser transactions",
+    "scope": "published",
+    "status": "partial",
+    "gap": "Login, synthetic signup and sandbox order submission now run through the real Worker and two isolated signed runner processes, with retained missing-control, HTTP-error, missing-outcome, navigation-timeout, private-redirect, metadata and extra-origin failures, unchanged-definition scheduled recovery and unavailable-browser Unknown. Navigation timeouts no longer claim a clicked control was missing; numeric forbidden destinations are refused before browser dispatch as well as at the proxy. Local 1440/390 evidence and guide journeys are proven; independently placed browser-vantage and hosted customer-path qualification remain open.",
+    "line": 1540
+  },
+  {
+    "id": "MONITOR-001",
+    "title": "Owned monitor catalog and lifecycle",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Catalog metadata, retained URL search/filter/selection and reviewed undoable lifecycle/URL/CSV batches ship. Existing monitor/service/group/installation recipient selection and matched recovery remain supported. Immutable named copies of reviewed explicit monitor routes now have owner-only fresh-MFA API/CLI selection preview (counts, per-monitor before/after, refusals and no-confirmed-recipient warning), atomic assignment and undo. The existing routing registration proves zero-write preview; admin/email-only and stale/race refusal; an actual confirmed incident reaching the route's separately confirmed fake-mail recipient while an unassigned monitor sends nothing; undo restoring inheritance/overrides after checks run without touching definitions, evidence or consent; later-route conflict refusal; local-only archive authority; monitor erasure and anonymized batch ownership. Issuer erasure removes session-bound MFA rows before invitation-derived Base sessions and preserves the surviving owner's factor and fresh sign-in. The existing catalog registration proves undo retains a clone's real signed HTTP observation, its scheduled slot and every history record. The list journey in `tests/operator-browser.mjs` proves planned, recurring, quick and inactive maintenance at 1440 and 390 with zero axe violations, no overflow or console errors. Gaps: held console batch-route control; naming is limited to reviewed explicit monitor policies and saved names have no edit/remove door; route defaults during URL/CSV bulk creation; removal of a never-probed clone; USD pricing; the 500-monitor target; hosted capacity/timing acceptance. Current installation cap: 100 monitors. History-bearing clones remain paused and retained by undo.",
+    "line": 1541
+  },
+  {
+    "id": "API-001",
+    "title": "Complete HTTP and API assertions",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1542
+  },
+  {
+    "id": "SLOW-001",
+    "title": "Slow-response alerts distinct from outages",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1543
+  },
+  {
+    "id": "API-002",
+    "title": "Authenticated monitoring and secret lifecycle",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Digest, OAuth acquisition/refresh, JWT, mTLS, expiry, rotation/revocation, cross-origin stripping, failure/recovery and archive secret exclusion remain asserted. Gap: Basic authentication, standalone bearer credentials scoped to their own monitor, foreign-reference refusal and planted-secret absence from storage, logs and browser artifacts lack assertions in the cited files.",
+    "line": 1544
+  },
+  {
+    "id": "API-003",
+    "title": "Multi-step API transactions",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1545
+  },
+  {
+    "id": "API-004",
+    "title": "Safe setup and teardown",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1546
+  },
+  {
+    "id": "TCP-001",
+    "title": "TCP service checks",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Carried-done audit: every cited TCP check runs from one location, so running from two locations is unasserted. Owner-API creation, open, refused and blackholed ports, the pinned address and banner evidence and trigger and recovery events are asserted.",
+    "line": 1547
+  },
+  {
+    "id": "PING-001",
+    "title": "ICMP reachability and packet quality",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1548
+  },
+  {
+    "id": "DNS-001",
+    "title": "DNS records and change detection",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1549
+  },
+  {
+    "id": "TLS-001",
+    "title": "SSL certificate and chain monitoring",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1550
+  },
+  {
+    "id": "DOMAIN-001",
+    "title": "Domain registration expiry",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Carried-done audit: the cited test adds the domain through the owner API, not the console. Approaching-expiry warnings, Unknown for conflicting, redacted and unavailable data, registry and registrar source times and renewal follow-through are asserted.",
+    "line": 1551
+  },
+  {
+    "id": "UDP-001",
+    "title": "UDP request and response checks",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1552
+  },
+  {
+    "id": "MAIL-001",
+    "title": "SMTP and mailbox protocol checks",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1553
+  },
+  {
+    "id": "NETWORK-002",
+    "title": "Explicit TLS trust exceptions for legacy targets",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1554
+  },
+  {
+    "id": "HEARTBEAT-002",
+    "title": "Cron and job heartbeat schedules",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Cron/IANA schedules with explicit DST skip/first-repeat rules, deadline previews and masked exit/duration history ship, and Worker and signed-runner failure/recovery and desktop/phone save/error/reload/focus/axe/reflow are proven. Remaining: hosted SCHEDULE-002 timing.",
+    "line": 1555
+  },
+  {
+    "id": "HEARTBEAT-003",
+    "title": "Heartbeat receipt forms and scheduler snippets",
+    "scope": "target",
+    "status": "partial",
+    "gap": "GET/HEAD/POST receipts, hashed rotatable replay-unprotected URL capabilities, protected header sequences and nine generated scheduler examples ship. Executed curl/wget/Bash wrappers, parsed GitHub Actions workflow steps and Kubernetes command/args and parsed systemd service/timer units with executed ExecStart are proven, all six formats preserving start/completion receipts, measured duration and success/failure exit codes; YAML uses a real parser and systemd calendars use systemd-analyze, and no cluster, user manager or hosted Actions run is claimed. Remaining: native PowerShell/Windows and actual systemd user-manager/Kubernetes cluster/GitHub scheduler execution; arbitrary cron conversion for the labeled daily scheduler examples.",
+    "line": 1556
+  },
+  {
+    "id": "HEARTBEAT-004",
+    "title": "Heartbeat settings from incumbents",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Saved UptimeRobot and Better Stack 60-minute period plus five-minute grace previews and paused apply, explicit owner activation with a newly issued local URL, signed local evaluation with no early failure and a 65-minute deadline incident, retained labeled late-success recovery, no ingress health changes or source-alert replay are proven. Remaining: remaining documented UptimeRobot and Better Stack source mappings and separate alert-setting reconciliation; Site24x7 threshold review and explicit owner-selected local period/grace conversion; live source-account cutover. Pingdom has no heartbeat check; nothing to migrate.",
+    "line": 1557
+  },
+  {
+    "id": "SCHEDULE-001",
+    "title": "Explicit cadence, retries and confirmation",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1558
+  },
+  {
+    "id": "SCHEDULE-002",
+    "title": "Interval floor, on-time execution and alert latency",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Intervals from 5 seconds (60-second default, 5-minute browser floor) are accepted and due times are enforced; hosted Cron runs each minute, and on-time rate at scale, alert latency and the detection-time display are unmeasured or absent.",
+    "line": 1559
+  },
+  {
+    "id": "PROBE-001",
+    "title": "US and global independent locations",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Multiple signed runners, labels and agreement exist; managed geographic placement and independent hosted coverage are not provided or proven.",
+    "line": 1560
+  },
+  {
+    "id": "PROBE-002",
+    "title": "Published probe addresses and identification",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Hosted and runner requests send a release-identifying User-Agent; dedicated egress, published address files/DNS/API, change notice and the WAF header do not exist.",
+    "line": 1561
+  },
+  {
+    "id": "PRIVATE-001",
+    "title": "Buyer-network private locations",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1562
+  },
+  {
+    "id": "MAINT-001",
+    "title": "Planned and recurring maintenance",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1563
+  },
+  {
+    "id": "REPORT-001",
+    "title": "Latency, uptime and SLA reporting",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Per-monitor custom/24h/7d/30d/90d snapshots share immutable coverage, location latency, root causes, Unknown/paused/maintenance denominators, SLA and separate Slow time across console/CSV/JSON/API/PDF. Heartbeat runs retain paged zone-aware receipt records; snapshots and paging focus survive polling. One-time per-monitor schedules freeze the same period-engine figures for an existing enabled email or Slack destination, retain initiating owner and due time, and use existing single-attempt delivery custody. API/CLI proof covers future-send refusal, restart before due, durable email uncertainty/Slack failure, matching period/zone/denominator figures and no duplicate on resume. The Notifications console shows scheduled delivery outcomes and one-time creation/cancellation controls at 1440/390. Queued cancellation is atomic, idempotent and retained with the report_cancelled reason across restart through API/CLI; a delivery that has started cannot be recalled. Daily/weekly/monthly schedules now retain an IANA zone, immutable anchor and owner admission; due occurrence snapshot, unique delivery and next occurrence commit together. The public calendar preview and CLI prove DST gaps/repeats and month-end clamping; missed occurrences skip to the next anchored time without a catch-up burst. Per-monitor and named service-member figures use the same period engine and summed observed denominators; READAPI-002 JSON/CSV and frozen console downloads agree. tests/report-recurrences-support.mjs (proveRecurringReports within tests/reporting.mjs and tests/reporting.mjs) proves real due/restart, single-attempt email/Slack outcomes, owner/destination revocation, cancellation, scoped service reads, inactive snapshot restore without recurrence authority, corrupt service-denominator refusal before restore writes, and aggregate-member erasure. tests/reporting.mjs (proveRecurringReportConsole) proves creation for each cadence, previews, service selection, frozen outcome/download and stop reasons at 1440/390 with axe/reflow. Gap: HISTORY-001 other-incumbent history, source-segment charts and source incident lists in the held monitor report view, and service charts. UptimeRobot source segments, denominators and labeled blending now ship through report JSON/CSV/PDF and explicit read-API source selection. Recurrence authority stays installation-local; frozen scheduled report history restores inactive. No combined service percentile is claimed; each member retains its own latency figures. The held public/monitor-report.js is unchanged. No live provider receipt is claimed.",
+    "line": 1564
+  },
+  {
+    "id": "EVIDENCE-002",
+    "title": "Failure snapshot and incident report",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1565
+  },
+  {
+    "id": "DIAG-001",
+    "title": "Connection and network diagnostics",
+    "scope": "target",
+    "status": "partial",
+    "gap": "HTTP/keyword and TCP, TLS, DNS, UDP, ping and mail connection failures retain bounded diagnostics in the existing failure-snapshot custody. Original pinned transports supply measured phases; numeric traceroute stays at five hops, one packet per hop, a three-second deadline and 16 KiB native-output cap, without another resolution or connection. Controlled TCP/TLS timeouts and refusals, DNS/certificate failures, UDP timeout, ICMP loss and mail connection/TLS failures (including a distinct receiving-mailbox pin) pass signed intake, incident detail/report, healthy-peer comparison, blocked-path reasons, unchanged verdicts, forged/oversized refusal, inactive restore and erasure. Incident diagnostics have 1440px reflow/axe assertions and 1440/390 browser proof; hosted socket phases/tracing and private-network tracing are explicitly unavailable. Gap: real independent-location route/TLS/DNS qualification remains unproved.",
+    "line": 1566
+  },
+  {
+    "id": "PERF-001",
+    "title": "Page speed and real-user performance",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Synthetic budgets, waterfall and timing, consented sampled RUM and separate denominators are asserted. RUM error-count accuracy, percentile ranks and missing-metric denominators, US subdivision grouping, bot exclusion, erasure and populated restore/upgrade remain unqualified (RL-8).",
+    "line": 1567
+  },
+  {
+    "id": "DEPENDENCY-001",
+    "title": "External dependency checks",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1568
+  },
+  {
+    "id": "DEPENDENCY-002",
+    "title": "Third-party service catalog",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Gap: Auth0 and Fastly cannot be followed from the catalog. Following Auth0 needs the disclosed tenant-domain egress RL-101 permits, which is not built: Auth0 publishes its regional status feeds only by tenant domain (`status.auth0.com/rss?domain={tenant}`; a build-host GET with a tenant that does not exist answered 400 \u201ccheck your domain parameter\u201d). Fastly's official feed (`https://www.fastlystatus.com/rss`, 85,172 bytes, confirmed by a build-host GET on 22 October 2026) is a history of free-text postings with no status, component or region field, so it stays Unknown and no stated status is read from it (RL-101).",
+    "line": 1569
+  },
+  {
+    "id": "DISCOVERY-001",
+    "title": "Reviewed automatic endpoint discovery",
+    "scope": "target",
+    "status": "partial",
+    "gap": "USD cost projection (blocked on COST-001) remains absent. Gap: Route 53, Cloudflare, GitHub Actions, Vercel, Netlify and CodeDeploy are proven at an authorized provider edge only; live provider-account authorization is Not proved. Continuous upkeep: see AGENT-001. Held-key round (26 October 2026), SD receipt report only: domain discovery for run-uptime.com recorded apex and www A and AAAA answers using the runner's default system resolver without a controlled listener or resolver override, seven proposals from three GETs and one rejection; GitHub Actions discovery for the run-uptime repository owned by just-every and its owner-started rediscovery recorded 12 and 2 allowlisted GETs, all HTTP 200, zero proposals and no rejection, using the production owner's broader classic PAT rather than the specified fine-grained read-only credential; Cloudflare receipts recorded zone metadata at HTTP 200 and DNS records at HTTP 403 with the original token, followed by six GETs, including zone metadata and a three-record DNS response both at HTTP 200, ten proposals and one rejection with a separately supplied credential described as restricted to run-uptime.com with Zone Read and DNS Read. The receipts recorded three incorrect DNS expectations of 100:: for proxied Cloudflare names and zero adopted monitors or created provider objects. The existing tagged discovery journey asserts that proxied names do not propose hidden origin DNS expectations, including mixed proxy flags, while DNS-only records retain their published-answer proposal. These historical receipt-reported provider observations are not retained assertions or proof here of live provider-account authorization or a live GitHub rejection. Public domain qualification is independently retained by the named public DNS journey; it supplies no provider-account authority. Route 53, Vercel, Netlify and CodeDeploy remain at the authorized provider edge only, USD cost projection remains blocked on COST-001, continuous upkeep remains AGENT-001's, and DISCOVERY-001 remains partial.",
+    "line": 1570
+  },
+  {
+    "id": "FLOW-002",
+    "title": "Reusable Playwright monitoring as code",
+    "scope": "target",
+    "status": "partial",
+    "gap": "The supported real Playwright subset (RL-13) imports JSON fixtures and an npm v3 dependency lock without executing buyer code; unsupported constructs refuse by file and line. The checked-in workflow shell runs CLI import, Worker preview and apply with the fixture owner session, names immutable flow digests and reapplies the same source without changing revisions. Imported login/signup/checkout and a separate API check use ordinary deployment and scheduled runners. Broken setup, assertion and forbidden metadata calls retain distinct manual and scheduled outcomes and revision digests; ambiguous locators fail, and selected secrets stay runner-local. Definition export and inactive archive restore retain exact source/fixture/lock bytes and flow digests; erasure removes them and dependent custody. Gap: arbitrary Playwright execution requires an OS-level runner sandbox; console import-source and revision views are held UI. Hosted GitHub execution and least-scope CI credentials are not claimed (CODE-001).",
+    "line": 1571
+  },
+  {
+    "id": "FLOW-003",
+    "title": "Useful and safe browser failure artifacts",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1572
+  },
+  {
+    "id": "FLOW-004",
+    "title": "Cross-browser and mobile transactions",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1573
+  },
+  {
+    "id": "ROUTING-001",
+    "title": "Monitor, service and team alert routing",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Monitor \u2192 service \u2192 group \u2192 installation inheritance, explicit empty selection, credential/disabled/missing exclusions, recipient and affected-monitor previews, stale-plan guards, labeled tests, durable audit and original accepted-trigger recipient/credential recovery now ship. ROUTING-002 now supplies per-contact delay/repeat/cap, recovery preference and acknowledgment-stop policies, plus reviewed saved UptimeRobot/Pingdom schedule previews. DELIVERY-002 supplies transport retry and fallback chains. Contact quiet holds (optional daily IANA-zone windows, overnight and DST boundaries, persisted hold rechecked at handoff, restart) are built toward this clause's quiet hours and apply to fallback contacts. Explicit team membership and a live scope-eligible member's opt-in to their verified email destination now govern API/CLI selection. Paused, disabled, stale-role and rotated-credential recipients do not count. Environment filters use monitor metadata; region selectors are exact configured non-pass probe IDs; severity is derived critical/warning/info for outage/Slow/dependency; origin is monitor/slow/dependency, never the console URL. Omitted dimensions allow all, empty lists match none and missing values cannot satisfy nonempty filters. Route quiet combines with contact quiet and is snapshotted onto fallback contacts. Gap: The original two-team production and staging journey is not fully qualified through both UI and API. Console controls for teams, route filters, route quiet and weekly business selection remain required, and a console edit must preserve all saved extended fields. Basic geographic-region routing remains unqualified; exact non-pass probe-ID matching alone is not geographic qualification. Route-aware sending drills and weekly business-hour selection are unshipped, expiry and renewal notices still bypass effective routes (RL-11), and the two-team all-class inside-and-outside-quiet qualification is incomplete. Present-time quiet holds and fallback restart are proven, but real-alert DST dispatch remains unqualified. Per-contact delay and repeat remain ROUTING-002 duties; transport retry and fallback-chain behavior remain DELIVERY-002 duties. Richer optional provenance, geographic hierarchy, portable detailed route history and configurable severity are separate work candidates, without removing the original routing duties.",
+    "line": 1574
+  },
+  {
+    "id": "ROUTING-002",
+    "title": "Per-contact alert delay and repeat",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1575
+  },
+  {
+    "id": "DELIVERY-002",
+    "title": "Deduplicated retry and fallback contacts",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1576
+  },
+  {
+    "id": "NOTICE-001",
+    "title": "Actionable trigger and recovery notice content",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1577
+  },
+  {
+    "id": "WEBHOOK-001",
+    "title": "Custom webhook requests and payload templates",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Carried-done audit: no cited line compares the preview with the received request byte for byte. The imported UptimeRobot contact, substituted field names, header and content type on trigger and recovery, escaping and valid JSON, query, form and GET modes, CR/LF refusal, the named unmappable variable, HMAC signing and archives without header values are asserted.",
+    "line": 1578
+  },
+  {
+    "id": "CHAT-001",
+    "title": "Teams, Discord, Telegram and workplace chat",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation; acceptance journey above is required.",
+    "line": 1579
+  },
+  {
+    "id": "PHONE-001",
+    "title": "US SMS and voice alerts",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation; acceptance journey above is required.",
+    "line": 1580
+  },
+  {
+    "id": "PHONE-002",
+    "title": "Uptime-provided compliant US sender",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation; no telephony relay or registered sender exists. Acceptance journey above is required.",
+    "line": 1581
+  },
+  {
+    "id": "MOBILE-001",
+    "title": "Mobile operator access and push",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Responsive web exists; native clients, APNs/FCM, Pushover and Pushbullet do not.",
+    "line": 1582
+  },
+  {
+    "id": "FOLLOWUP-001",
+    "title": "Ongoing outage follow-up and correlation",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Acceptance points 1 and 2 are proved through their doors on the candidate: tests/incident-work.mjs runs proveCombinedIncident with incidentConsole, in which the owner's signed-in console compares the rendered owner, response state, next-due kind and exact time and every timeline row with READAPI-003 at each phase (before and after Worker restart), reassigns the owner through the console, and a service-scoped responder signs in with its second factor, reads the in-scope incident and reassigns ownership through the API door; the final account shows confirmation, notification and escalation attempts with outcomes, the acknowledgment with actor and channel, both owner changes with their actors, the due reminder and the recovery in order, with axe and reflow checks at 1440 and 390. Remaining Gap: ONCALL-001 handoff-check scheduling and handoff attempts/outcomes remain a missing dependency of FOLLOWUP-001 (RL-5, RL-6, RL-7), not an exclusion from its acceptance; every current notification, reminder, fallback escalation, ownership and timeline door remains required. Adopted default (no ruling covers it; conservative owner-only): the console shell and setup stay owner-only, so a narrowed responder who signs in with a second factor is refused at the console with no incident exposed and takes or reassigns ownership through the API and CLI doors; responder console shell, navigation and in-console follow-up use are not built or proved and need a ct ruling. Response resolution never changes monitor health. ROUTING-002 supplies current contact notification and reminder scheduling, DELIVERY-002 supplies current fallback escalation scheduling, and ONCALL-001 will supply native handoff-check and responder-policy scheduling. FOLLOWUP-001 retains named ownership, next-due kind/time and every attempt/outcome in the incident timeline through the existing console, API/CLI and READAPI-003 doors, including restart and inactive archive behavior.",
+    "line": 1583
+  },
+  {
+    "id": "INCIDENT-001",
+    "title": "Incident comments and edit history",
+    "scope": "target",
+    "status": "partial",
+    "gap": "The bounded API/CLI slice adds live scoped responder/editor/admin/owner comments and author/admin edits and deletion; existing incident JSON and edit history remain. Gap: the held console comment, edit and delete role workflows.",
+    "line": 1584
+  },
+  {
+    "id": "INCIDENT-002",
+    "title": "Comment mentions",
+    "scope": "target",
+    "status": "partial",
+    "gap": "ID/display-name-only eligible member suggestions and Base email mentions with durable single-attempt outcomes ship through the API/CLI. Gap: the held console mention and outcome workflows and MOBILE-001 push.",
+    "line": 1585
+  },
+  {
+    "id": "INCIDENT-003",
+    "title": "Incident root cause",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Root causes, categories and report filters ship through the API/CLI. Gap: the held console root-cause workflow; category administration remains owner-only.",
+    "line": 1586
+  },
+  {
+    "id": "INCIDENT-004",
+    "title": "Publish a comment to the status page",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation: LAMP-001 publication does not exist, so there is no Publish to status page action, preview, idempotent handoff, publication outcome or correction.",
+    "line": 1587
+  },
+  {
+    "id": "INCIDENT-005",
+    "title": "Comment and root-cause custody",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Safe archive history and operator/monitor erasure ship. Gap: sourced incumbent incident imports.",
+    "line": 1588
+  },
+  {
+    "id": "ONCALL-001",
+    "title": "Responder handoff and automatic resolution",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation; acceptance journey above is required. Missing: every named connector\u2019s confirmed-failure/repeat, interrupted or uncertain handoff, deduplication, acknowledgment, responder-policy and same-incident recovery journey, including handoff-check kind/time and attempt/outcome projection into FOLLOWUP-001 and READAPI-003. Existing Uptime delivery and incident acceptance is not deferred by this missing implementation. ONCALL-001 receives connector-native handoff-check and configured responder-escalation policy, including handoff attempts/outcomes and the existing PagerDuty destination-kind inheritance. Its scheduling and outcomes must feed FOLLOWUP-001\u2019s incident timeline and next-due projection and READAPI-003\u2019s incident reads. Handoff acknowledgment remains separate from responder status, and recovery resolves the same remote incident.",
+    "line": 1589
+  },
+  {
+    "id": "LAMP-001",
+    "title": "Status communication through Lamp",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation; acceptance journey above is required.",
+    "line": 1590
+  },
+  {
+    "id": "AUTOMATION-001",
+    "title": "Zapier, Make and custom automation",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation; acceptance journey above is required.",
+    "line": 1591
+  },
+  {
+    "id": "MANAGE-001",
+    "title": "Monitor and contact API",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1592
+  },
+  {
+    "id": "READAPI-001",
+    "title": "Versioned read API keys, limits and documentation",
+    "scope": "target",
+    "status": "partial",
+    "gap": "The bounded API/CLI key slice adds Base-generated hash-only monitoring:read tokens, immutable installation/workspace resources, intersecting monitor/tag restrictions, explicit expiry/revocation/last use, per-key limits and owner-only fresh ACCESS-003 issuance; every v1 monitoring GET/HEAD, including metrics and CSV/PDF reports, uses resource fences before pagination/aggregation, and bearer writes cannot fall back to session authority. Public OpenAPI and Owner Settings key creation/list/revocation with shown-once custody are proven at 1440/390, including stale-proof step-up, selected monitors/tags/expiry, usage, immediate real-read 401 and nonowner refusal (RL-14). CODE-001 CI uses the same credential store with separate environment/tag authority. Acceptance 4 has an executable migration example preserving requested 1-, 7- and 30-day horizons as 24h, 7d and 30d in America/Chicago; native ratios remain separate from provider fixture data. Gap: delegated issuance.",
+    "line": 1593
+  },
+  {
+    "id": "READAPI-002",
+    "title": "Uptime and response-time reads",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Owner-session monitor list/detail expose current state, last check and fixed coverage with stable ID cursors and tag filters. Bulk uptime shares exact console/report availability, SLA, incident and Slow figures with explicit seconds and CSV. Month/quarter/year-to-date and last-month periods honor IANA/DST boundaries and the owner-selected default zone; response-time ranges over 90 days refuse. Uptime/UptimeRobot/blended source selection now ships for uptime and reports, with Uptime/UptimeRobot selection for response times, exact documented selections and named unknown/unavailable-source refusals. Gap: HISTORY-001 other-incumbent history, held console source-segment views and 500-monitor hosted capacity.",
+    "line": 1594
+  },
+  {
+    "id": "READAPI-003",
+    "title": "Incident reads",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Incident CSV preserves filters and cursor pages, and FOLLOWUP-001 exposes the durable DELIVERY-002 escalation deadline and ROUTING-002 reminder time in incident reads and the incident console at 1440/390. Paginated UptimeRobot source incidents now read separately with source comments and root cause. Gap: ONCALL-001 handoff next-due policy (RL-7).",
+    "line": 1595
+  },
+  {
+    "id": "CODE-001",
+    "title": "CLI, TypeScript and CI deployment",
+    "scope": "target",
+    "status": "partial",
+    "gap": "JSON and trusted local TypeScript monitor definitions use the same native schema, preview digest and bounded apply. TypeScript executes only on the buyer machine; the Worker receives evaluated JSON. Shared shown-once hashed credentials narrow preview/apply to one explicit environment and selected tags; current and proposed definitions must remain in scope, and each resumed operation repeats live issuer, expiry and revocation fences. CI cannot read secrets, export, change roles or undo applied work; preview-only keys cannot apply. A checked-in fixture workflow exercises actual CLI preview, definition-validation test and apply against the controlled Worker; owner export and undo round-trip evaluated definitions and changed live revisions refuse reviewed apply (RL-15). Gap: runtime probe execution from CLI test, TypeScript route/maintenance deployment, mail-check/private/synthetic and cross-monitor dependency grants, Checkly suite migration (MIGRATE-005) and live GitHub execution.",
+    "line": 1596
+  },
+  {
+    "id": "CODE-002",
+    "title": "Terraform provider",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation; acceptance journey above is required.",
+    "line": 1597
+  },
+  {
+    "id": "METRICS-001",
+    "title": "Grafana and Prometheus integration",
+    "scope": "target",
+    "status": "done",
+    "gap": "",
+    "line": 1598
+  },
+  {
+    "id": "MIGRATE-001",
+    "title": "Complete UptimeRobot migration",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Reviewed saved monitor pages and documented webhook create payloads retain their existing mappings and secret withholding. Owner-only read-only API previews now reconcile saved contact lists and login/notify-only seat rows, propose email/webhook kinds for local review, refuse other kinds with named handoffs, and flag legacy Teams connectors with replacement steps. Source status never becomes consent; no contact, confirmation, invitation or send is created. Contact/seat console file routing and apply remain absent. Incident comments and root cause are absent from these lists; the current source API exposes them separately, but labelled source-history import remains a HISTORY-001/INCIDENT-005 gap. Live extraction, complete contacts/history, sibling handoffs and authorized account cutover remain absent.",
+    "line": 1599
+  },
+  {
+    "id": "MIGRATE-002",
+    "title": "Pingdom migration",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Saved HTTP check details retain cadence, literal criteria, local credential references and explicit certificate behavior, now with tag labels. Every requested probe filter is refused by name when no installed geographic choice matches; saved script/recording TMS and other unsupported types name the owning clause and reconcile counts. Page-speed export shape was not established in the published API 3.1 schema and is not invented. Account extraction, transaction/page-speed conversion, geographic placement, complete teams/contacts and schedule extraction, source history, Lamp handoff and representative cutover remain absent. ROUTING-002 retains its separate contact delay/repeat/recovery preview.",
+    "line": 1600
+  },
+  {
+    "id": "MIGRATE-003",
+    "title": "Better Stack Uptime migration",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Saved heartbeat pages retain the existing period/grace mapping and need a new local URL. Saved monitor-only pages now convert HTTP/status, expected status, keyword/absence, ping and single-port TCP settings; group identifiers and regions become labels, with every unavailable geographic location named. Provider status addresses retain DEPENDENCY-002 catalog mapping; mixed heartbeat/status-page resources still use the existing reader and should be saved separately. Live extraction, geographic placement, source time-based confirmation/recovery, contacts, maintenance, history, Oncall/Lamp handoffs and side-by-side cutover remain absent.",
+    "line": 1601
+  },
+  {
+    "id": "MIGRATE-004",
+    "title": "Site24x7 website monitoring migration",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Saved documented monitor lists now convert complete Website, REST API, plain Port, Ping and expressible DNS settings to paused definitions with per-field differences and reconciled counts. Unsupported browser, expiry, heartbeat and resolver settings name their owning clauses. Existing DEPENDENCY-002 catalog mappings remain unchanged. Accounts/live extraction, regional placement, threshold and notification groups/profiles, reports, history and representative cutover remain absent; DNS transport and local timeout/confirmation/ping-policy differences require review.",
+    "line": 1602
+  },
+  {
+    "id": "MIGRATE-005",
+    "title": "Challenger and advanced synthetic migration",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation; acceptance journey above is required.",
+    "line": 1603
+  },
+  {
+    "id": "HISTORY-001",
+    "title": "Sourced incumbent uptime history",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Owner API/CLI saved UptimeRobot overall/per-monitor log CSV and v3 incidents preview source-ID mapping, named unmapped rows, date/count/downtime figures and a reviewed digest. Apply stores idempotent source rows separately with provenance, source comments/root cause and response-time samples; populated upgrades, unchanged native monitoring, re-import and batch removal are asserted. Reports retain separate source/Uptime denominators, labeled weighted blending and overlap cutover adjustment; owner/scoped-key reads select the documented sources and refuse unknown/unavailable ones. Source labels, batch IDs and digests round-trip inactive, and erasure receipts account for all source tables. Gap: Pingdom, Better Stack, Site24x7 and challenger history; held owner-console move-in history preview and report-view source segments; real export, authorized account and hosted import unmeasured. IMPORT-001 remains partial.",
+    "line": 1604
+  },
+  {
+    "id": "ACCESS-001",
+    "title": "Teams, roles and accountable ownership",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Edition roles bind to live Base IDs and ceilings: owner/admin plus explicit editor/responder/read-only member narrowings. Service/team (existing group label) scopes intersect and never expand authority; no scopes means the role's workspace. Public API/CLI invitations, role/scope assignment and removal use Base's lifecycle; unchanged assignments are no-ops. One request policy gates ordinary documents/APIs/imports; later mutation batches repeat session/version/role/scope authority and commit opaque actor audit. Scoped workspace overview/list/runners/destinations/discovery/routes/export/archive/import doors refuse rather than leak unfiltered data. Populated upgrade, archive exclusion/inactive authority, erasure, allowed/refused role actions and stale/forged claims are proven through the existing public-door registrations. Bounded INCIDENT-001 responder collaboration, READAPI-001 monitoring credentials and CODE-001 environment/tag-scoped CI credentials now use the shared permission model. Settings invitations for admin/editor/responder/read-only, service/team scopes, no-op saves, removal and readable self-assignment refusal use Base's live lifecycle at 1440/390 (`public/assets/access-member-controls.js`; `tests/access-member-controls-browser-support.mjs` within the existing access matrix). Owner key management, live member issuance refusal, and the initiating-owner/authorized-batch/refused-next-operation/revoked-stop console now have 1440/390 proof (tests/security-controls-browser-support.mjs within tests/operator-security.mjs). tests/definitions-ci-support.mjs proves the same durable job projection through API/CLI and restart, while the native engine checkpoint remains retained. Gap: broader UI refusal coverage, initial narrowed-role console navigation and delegated key issuance; owner-only operator imports, erasure, metrics-key/identity/private-management and optional RUM administration remain conservative limits. Explicit site-discovery jobs record their initiating owner and stop with visible failure/cancellation metadata at live member authority boundaries; completed authorized outcomes survive revocation. CI-definition proof preserves an attributed authorized 20-record batch and refuses the next batch after token revocation. Background gaps: setup/catalog/source discovery jobs still lack the explicit site-job initiating-authority metadata; cleanup debt lacks assignee/due metadata; recurring report cancellation and initiating-member revocation now have API/CLI and 1440/390 console proof (tests/report-recurrences-support.mjs, tests/reporting.mjs); retry/fallback chains lack responsible owners and individual resolution; auth-mail and monitoring watches lack console outcomes and stop/resolution; synchronous exports record authorization but lack durable completion/download receipts and general jobs lack reloadable progress. Base authentication is unchanged; MFA is ACCESS-003 scope. Already-open-document member actions do not establish narrowed-role sign-in, initial MFA challenge, console shell entry or navigation. Those journeys remain required at 1440 and 390. The failed exact-pin console verification remains open.",
+    "line": 1605
+  },
+  {
+    "id": "ACCESS-002",
+    "title": "Enterprise identity lifecycle",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation; acceptance journey above is required.",
+    "line": 1606
+  },
+  {
+    "id": "ACCESS-003",
+    "title": "Multi-factor sign-in and step-up",
+    "scope": "target",
+    "status": "partial",
+    "gap": "TOTP and WebAuthn second factors bind live Base session IDs/versions; ten hashed single-use recovery codes, sealed edition-local factor/challenge custody, require-all policy, session revocation, fresh five-minute sensitive-action guards, member reset, opaque audit and separate member notices are implemented (RL-16). Local archive commands require the same live cookie and recheck authority at each progress boundary. Settings enrollment and fresh step-up cover owner/member factors, recovery codes, stale policy/key refusal, factor removal and require-all policy at 1440/390. Member proof uses live native sessions in an already-open Settings document. A signed-in owner who owes the second factor is forwarded from /login and /signin to the factor step, and /alert-drill shows the step instead of raw JSON (real-browser probe at 1440 and 390 in the landing round's EVIDENCE.md). Gap: a member who enrolled a factor is still refused at sign-in because the step is owner-only by design today (approved direction: show members the same step, access still decided by role afterwards; not yet built), and narrowed-role shell entry still needs held app.js/console-document work; provider MFA assertions depend on ACCESS-002 SSO, and recovery from total loss of all owner factors/codes or the sealing key needs local installation authority. API/CI key creation remains bounded by the credential features that actually ship. Already-open-document member actions do not establish narrowed-role sign-in, initial MFA challenge, console shell entry or navigation. Those journeys remain required at 1440 and 390.",
+    "line": 1607
+  },
+  {
+    "id": "COST-001",
+    "title": "US buyer budgets and capacity transparency",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation; acceptance journey above is required.",
+    "line": 1608
+  },
+  {
+    "id": "OPS-001",
+    "title": "Recovery of monitoring itself",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Independent Worker and runner interruption, retry and recovery notices, retained uncertain executions, no duplicate uncertain sends and inactive archive recovery retain their existing proof. Gap: a missed external heartbeat causing an independent service alarm remains owed; its existing campaign is not repeated here. Broader Worker and runner interruption, watch and auth-mail, notification, weekly digest, backup and archive, and console requalification remain owed beyond the retained proof. Uip-owned console work is not released; public-DNS qualification is unavailable and the sd-uptime-c-f39 predecessor and landing hold remain unchanged. Real external-service and other-host qualification, hosted readiness and capacity, and managed-location obligations remain omitted.",
+    "line": 1609
+  },
+  {
+    "id": "ARCHIVE-002",
+    "title": "Whole-workspace archives at monitoring scale",
+    "scope": "target",
+    "status": "partial",
+    "gap": "Validated inactive archives ship and refuse exports beyond 10,000 rows per table, 100 monitors or 2 MiB; streamed, resumable, range/subset archives at SCHEDULE-002 scale do not exist. Storage capacity and archive size at this monitoring scale remain unmeasured; current view/archive bounds are not storage-capacity measurements.",
+    "line": 1610
+  },
+  {
+    "id": "SURFACE-001",
+    "title": "The registry equals this table and the Base harness passes",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation: Uptime has no MCP door, tool registry, resource templates or Base conformance harness run.",
+    "line": 1611
+  },
+  {
+    "id": "SURFACE-002",
+    "title": "Live and security are computed per call",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation: no tool declares or computes live or security classes.",
+    "line": 1612
+  },
+  {
+    "id": "SURFACE-003",
+    "title": "External and money are computed per call",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation: no tool declares or computes external or money classes.",
+    "line": 1613
+  },
+  {
+    "id": "SURFACE-004",
+    "title": "Access, destructive and gated are computed per call",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation: no tool declares or computes access, destructive or gated classes, and no incident record attributes an agent act. Retained bounded evidence (qualification pending; current missing judgment and unscoped gaps retained): `agent-surface.json` declares access for `uptime.access.update`; `src/agent-door/registry.server.ts` computes widening or narrowing for one member's role and service and team scopes. The native door at `tests/agent-door.mjs` line 50 mounts `tests/agent-access-facts-support.mjs` proveAccessFacts: independently observed native authority and exact access measure 1 and direction (lines 13\u201396), eight role and scope cases (lines 100\u2013130), direction-selective approval and named-person attribution (lines 132\u2013172), and current-version refusal (lines 174\u2013181). These retained assertions do not qualify acceptance 1's other invitation and removal, runner, key or automation-authority operations. Destructive and gated class qualification and incident-record attribution remain unproved.",
+    "line": 1614
+  },
+  {
+    "id": "SURFACE-005",
+    "title": "The monitoring-operator journey under two company policies",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation: no MCP door exists for a stranger agent to run the monitoring-operator week under either company policy.",
+    "line": 1615
+  },
+  {
+    "id": "SURFACE-006",
+    "title": "One-way operational actions carry their effects",
+    "scope": "target",
+    "status": "missing",
+    "gap": "No implementation: no tool computes irreversible cleanup-debt or incident transitions, setup resumption or reminder and fallback suppression across affected monitors, incidents and routes.",
+    "line": 1616
+  },
+  {
+    "id": "AGENT-001",
+    "title": "Continuously maintain meaningful coverage",
+    "scope": "push-further",
+    "status": "partial",
+    "gap": "Reviewed one-shot discovery exists; continuous agent planning, analytics/deploy comparison and maintenance are absent.",
+    "line": 1617
+  },
+  {
+    "id": "AGENT-002",
+    "title": "Distinguish outage, network and broken check",
+    "scope": "push-further",
+    "status": "partial",
+    "gap": "Canary/network evidence exists; AI explanation and competing release/dependency investigation do not.",
+    "line": 1618
+  },
+  {
+    "id": "AGENT-003",
+    "title": "Repair browser drift without weakening intent",
+    "scope": "push-further",
+    "status": "missing",
+    "gap": "No implementation; acceptance journey above is required.",
+    "line": 1619
+  },
+  {
+    "id": "AGENT-004",
+    "title": "Keep alert routes accountable",
+    "scope": "push-further",
+    "status": "done",
+    "gap": "",
+    "line": 1620
+  },
+  {
+    "id": "AGENT-005",
+    "title": "Coordinate evidence handoff and verified recovery",
+    "scope": "push-further",
+    "status": "partial",
+    "gap": "Original-assertion recovery/changed-definition labeling exists; agent repair coordination, supported browser verification and sibling handoff do not.",
+    "line": 1621
+  }
+]

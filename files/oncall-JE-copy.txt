@@ -1,0 +1,72 @@
+
+    summary:
+      'Oncall shows everyone who is on call now, who is next and exactly when they hand over. It keeps rotations, swaps, incidents, runbooks and follow-ups in one place, and runs alongside the pager you already use while you move your schedules over.',
+    does: [
+      'Show who is on call now, who is next and when the next hand-over happens',
+      "Build primary and backup rotations in your team's timezone, so a hand-over stays on the same clock time when clocks change",
+      'Cover a few hours with an override or swap without touching the rotation',
+      'Subscribe to a private calendar feed of the next seven days of shifts',
+      'Record alerts from monitoring, route them to the right service and replay the routing safely',
+      'Declare an incident, assign a commander, follow the runbook and keep every decision on a timeline',
+      'Resolve with recovery evidence and a summary, then track follow-up tasks and review',
+      'Preview your Opsgenie or PagerDuty schedules before anything is imported',
+    ],
+    promises: [
+      {
+        id: 'OC-012',
+        text: 'Oncall sends no texts, calls or push alerts, so your existing pager stays in charge while you use it.',
+        category: 'alerts',
+      },
+      {
+        id: 'OC-006',
+        text: 'Oncall sends signed response events only to endpoints an administrator approves; paging stays off, and email is for sign-in links only.',
+        category: 'security',
+      },
+      {
+        id: 'OC-005',
+        text: 'A runbook is copied into the incident when it is declared, so later edits never rewrite instructions mid-incident.',
+        category: 'history',
+      },
+      {
+        id: 'OC-004',
+        text: 'Resolving an incident needs recovery evidence and a summary, and every change is recorded in an attributed timeline.',
+        category: 'evidence',
+      },
+      {
+        id: 'OC-008',
+        text: 'Incident records you write are never deleted automatically.',
+        category: 'history',
+      },
+      {
+        id: 'OC-011',
+        text: 'Rotations hand over by wall-clock time in your named zone, and clock-change gaps show up as visible gaps.',
+        category: 'schedule',
+      },
+      {
+        id: 'OC-003',
+        text: 'Viewers can only read, responders coordinate, and admins manage; alert-sending credentials grant no read access, and removed access stops on the next request.',
+        category: 'access',
+      },
+      {
+        id: 'OC-002',
+        text: 'Replaying alert routing only reads: it creates no alert, incident or outside effect.',
+        category: 'reliability',
+      },
+      {
+        id: 'OC-021',
+        text: 'A move-in preview writes nothing, a person must review it before it is applied, and imported schedules stay paused.',
+        category: 'import',
+      },
+      {
+        id: 'OC-022',
+        text: 'A move-in can be undone, and edits you made afterwards are kept rather than overwritten.',
+        category: 'undo',
+      },
+    ],
+    moveIn: ['PagerDuty', 'Opsgenie', 'Splunk On-Call', 'Better Stack'],
+    runsOn: 'your own computer, or your own Cloudflare account',
+    version: 'v0.5.11',
+    contractUrl: 'https://run-oncall.com/contract',
+    seoTitle: 'Oncall: free, open-source alternative to PagerDuty',
+    seoDescription:
+      'Oncall is a free, open-source on-call schedule and incident tool that shows who is on now and next. An alternative to PagerDuty and Opsgenie.',

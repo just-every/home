@@ -1,0 +1,199 @@
+{
+  "head": "0396a50284d16568b52f397e13787cf9440f3ad5",
+  "base": "7212b2fd1cb0bfe9241752dc64d37a407f0b004f",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "counts_before": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "counts_after": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "version_changes": {
+    "lamp": {
+      "version": [
+        "v1.11.13",
+        "v1.11.14"
+      ]
+    },
+    "oncall": {
+      "version": [
+        "v0.5.10",
+        "v0.5.11"
+      ]
+    },
+    "orbit": {
+      "version": [
+        "v0.4.7",
+        "v0.4.8"
+      ]
+    },
+    "uptime": {
+      "version": [
+        "v0.5.9",
+        "v0.5.10"
+      ]
+    }
+  },
+  "state_changes": {
+    "happytohelp": {
+      "open": [
+        [
+          "42983364b373"
+        ],
+        null
+      ]
+    },
+    "lamp": {
+      "open": [
+        null,
+        [
+          "42983364b373"
+        ]
+      ],
+      "copy": [
+        {
+          "CONTRACT.md": "8b575f27ee607ce3",
+          "README.md": "94de338c80d02a07",
+          "seed.json": "484de0cd89690f4d"
+        },
+        {
+          "CONTRACT.md": "8b575f27ee607ce3",
+          "README.md": "778c7cf2ed2f6527",
+          "seed.json": "b42cf20347b50d08"
+        }
+      ],
+      "tag": [
+        "v1.11.13",
+        "v1.11.14"
+      ],
+      "sourceRef": [
+        "v1.11.13",
+        "v1.11.14"
+      ],
+      "commit": [
+        "e82bc349b98af44c440efa2960927e327deda1a5",
+        "733e2ce1e2fc618183a93632218bb86456a06a79"
+      ]
+    },
+    "oncall": {
+      "open": [
+        null,
+        [
+          "c843303a1181"
+        ]
+      ],
+      "copy": [
+        {
+          "CONTRACT.md": "3ba769d11b265482",
+          "README.md": "2d9dbf3b535d454b",
+          "seed.json": "45420aadbcefcb11"
+        },
+        {
+          "CONTRACT.md": "c04517abc904f1e5",
+          "README.md": "85320012c9ad629f",
+          "seed.json": "392a8bd5b81d6866"
+        }
+      ],
+      "tag": [
+        "v0.5.10",
+        "v0.5.11"
+      ],
+      "sourceRef": [
+        "v0.5.10",
+        "v0.5.11"
+      ],
+      "commit": [
+        "1dc0069324de17933e7b65bffefa14de7dabea9a",
+        "457a0a194a0dc97f653cdc12224cae27b6f1a79f"
+      ]
+    },
+    "orbit": {
+      "open": [
+        null,
+        [
+          "42983364b373"
+        ]
+      ],
+      "copy": [
+        {
+          "CONTRACT.md": "faa136fb56b398c3",
+          "README.md": "3d0e7ae842a3f123",
+          "seed.json": "17da9caaba1cb15f"
+        },
+        {
+          "CONTRACT.md": "faa136fb56b398c3",
+          "README.md": "20ef6d3a4cdc967d",
+          "seed.json": "f837b4dbf149e9da"
+        }
+      ],
+      "tag": [
+        "v0.4.7",
+        "v0.4.8"
+      ],
+      "sourceRef": [
+        "v0.4.7",
+        "v0.4.8"
+      ],
+      "commit": [
+        "eab0faafccd2eb0945dddb7d0f52c30ce573c04c",
+        "0e9e55cf150dfcc781d1d9e62b2d88c15c9b6a63"
+      ]
+    },
+    "uptime": {
+      "open": [
+        null,
+        [
+          "c843303a1181"
+        ]
+      ],
+      "copy": [
+        {
+          "CONTRACT.md": "f6685342c00a3826",
+          "README.md": "ec45a6ff0815ba77",
+          "seed.json": "ae5eb94cbf16587c"
+        },
+        {
+          "CONTRACT.md": "0b70cec7f900fbc5",
+          "README.md": "fea4ebfad576667a",
+          "seed.json": "21ae7503d4968683"
+        }
+      ],
+      "tag": [
+        "v0.5.9",
+        "v0.5.10"
+      ],
+      "sourceRef": [
+        "v0.5.9",
+        "v0.5.10"
+      ],
+      "commit": [
+        "88c586f6fabdaed6768ddc8072af2340310a7ace",
+        "bd7b21317cae0ae0082fa88127cef6842c377504"
+      ]
+    }
+  },
+  "unchanged_versions": {
+    "happytohelp": "v0.4.23",
+    "spool": "v0.7.8"
+  },
+  "credential_patterns_checked": [
+    "GitHub token",
+    "private key",
+    "AWS key",
+    "JWT",
+    "credential URL",
+    "assigned secret"
+  ],
+  "credential_hits": [],
+  "contracts_hash_match": true,
+  "wording_unchanged": true,
+  "all_other_version_status_unchanged": true
+}

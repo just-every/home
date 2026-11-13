@@ -1,0 +1,2060 @@
+{
+  "head": "0396a50284d16568b52f397e13787cf9440f3ad5",
+  "baseline": "7212b2fd1cb0bfe9241752dc64d37a407f0b004f",
+  "assertionWidth": 1440,
+  "proofWidths": [
+    1440,
+    390
+  ],
+  "browser": "154.0.8037.57",
+  "rows": [
+    {
+      "label": "baseline",
+      "slug": "lamp",
+      "width": 1440,
+      "status": 200,
+      "expected": "v1.11.13",
+      "errors": [],
+      "text": "Lamp\n\nAlternative to Atlassian Statuspage\n\nAlso replaces Instatus, Better Stack\n\nThe status page that never leaves your customers in the dark.\n\nLamp in 51 seconds\nThe public status page during an outage\nWrite a public incident update\nSchedule maintenance windows\nSubscribers and where updates go\n\nrun-lamp.com\n↗\nGitHub\n→\n\nLamp is a status page that tells your customers who is affected, how badly and what still works. You write each update once, and the page, the feed, the site banner and subscriber emails all carry the same words. Your page keeps answering even when Lamp's own database is down.\n\nWhat it does\nShow a status page with each component's state, a 90-day record and a plain-words account of every incident\nWrite each update once and send it to the page, an Atom feed, a site banner and subscriber email together, with a preview first\nKeep the page answering from the last known state, labelled with its age, when Lamp's own database is down\nLet subscribers choose the components they follow and unsubscribe in one click, with no cookies and no CAPTCHA\nRun planned maintenance that starts, finishes and notifies subscribers by itself\nTurn alerts from your monitoring tools into one draft incident per problem, which you review and publish\nPublish post-incident reports, post to Slack or Microsoft Teams, send signed webhooks and keep a delivery log\nUse your own domain and colours, and export everything whenever you like\nWhat it promises\nMonitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update.\nA published update is never edited or deleted; a correction is a new update and both stay on the public timeline.\nPublishing is a single step: the update and the list of people to notify are saved together.\nUptime is rounded down, so a period with any downtime never shows 100 percent.\nPublishing still works while email, the queue or a subscriber's endpoint is failing.\nIf the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear.\nThe public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites.\nThe delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it.\nMoving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm.\nEvery notification email carries a one-click unsubscribe.\nRead the full contract\n→\nMove in from\nAtlassian Statuspage\nBetter Stack\nInstatus\nSorry\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-lamp\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-lamp.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv1.11.13\nLICENCE\nMIT, 100% free",
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "contentHeight": 4798,
+      "facts": [
+        {
+          "label": "RUNS ON",
+          "value": "Your computer, or your own Cloudflare account",
+          "rect": {
+            "x": 380,
+            "y": 3775.390625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "VERSION",
+          "value": "v1.11.13",
+          "rect": {
+            "x": 617.328125,
+            "y": 3775.390625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "LICENCE",
+          "value": "MIT, 100% free",
+          "rect": {
+            "x": 854.65625,
+            "y": 3775.390625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        }
+      ],
+      "claims": [
+        {
+          "id": "INTAKE-002",
+          "text": "Monitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update."
+        },
+        {
+          "id": "INCIDENT-004",
+          "text": "A published update is never edited or deleted; a correction is a new update and both stay on the public timeline."
+        },
+        {
+          "id": "UPDATE-008",
+          "text": "Publishing is a single step: the update and the list of people to notify are saved together."
+        },
+        {
+          "id": "UPTIME-001",
+          "text": "Uptime is rounded down, so a period with any downtime never shows 100 percent."
+        },
+        {
+          "id": "NOTIFY-009",
+          "text": "Publishing still works while email, the queue or a subscriber's endpoint is failing."
+        },
+        {
+          "id": "PAGE-006",
+          "text": "If the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear."
+        },
+        {
+          "id": "PAGE-013",
+          "text": "The public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites."
+        },
+        {
+          "id": "NOTIFY-004",
+          "text": "The delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it."
+        },
+        {
+          "id": "MOVE-002",
+          "text": "Moving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm."
+        },
+        {
+          "id": "SUB-006",
+          "text": "Every notification email carries a one-click unsubscribe."
+        }
+      ],
+      "horizontalOverflow": [
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_bar__kLxgq"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_screen__twPum"
+        },
+        {
+          "tag": "IMG",
+          "class": ""
+        },
+        {
+          "tag": "FIGCAPTION",
+          "class": "frame_caption__4E939"
+        },
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        }
+      ]
+    },
+    {
+      "label": "candidate",
+      "slug": "lamp",
+      "width": 1440,
+      "status": 200,
+      "expected": "v1.11.14",
+      "errors": [],
+      "text": "Lamp\n\nAlternative to Atlassian Statuspage\n\nAlso replaces Instatus, Better Stack\n\nThe status page that never leaves your customers in the dark.\n\nLamp in 51 seconds\nThe public status page during an outage\nWrite a public incident update\nSchedule maintenance windows\nSubscribers and where updates go\n\nrun-lamp.com\n↗\nGitHub\n→\n\nLamp is a status page that tells your customers who is affected, how badly and what still works. You write each update once, and the page, the feed, the site banner and subscriber emails all carry the same words. Your page keeps answering even when Lamp's own database is down.\n\nWhat it does\nShow a status page with each component's state, a 90-day record and a plain-words account of every incident\nWrite each update once and send it to the page, an Atom feed, a site banner and subscriber email together, with a preview first\nKeep the page answering from the last known state, labelled with its age, when Lamp's own database is down\nLet subscribers choose the components they follow and unsubscribe in one click, with no cookies and no CAPTCHA\nRun planned maintenance that starts, finishes and notifies subscribers by itself\nTurn alerts from your monitoring tools into one draft incident per problem, which you review and publish\nPublish post-incident reports, post to Slack or Microsoft Teams, send signed webhooks and keep a delivery log\nUse your own domain and colours, and export everything whenever you like\nWhat it promises\nMonitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update.\nA published update is never edited or deleted; a correction is a new update and both stay on the public timeline.\nPublishing is a single step: the update and the list of people to notify are saved together.\nUptime is rounded down, so a period with any downtime never shows 100 percent.\nPublishing still works while email, the queue or a subscriber's endpoint is failing.\nIf the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear.\nThe public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites.\nThe delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it.\nMoving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm.\nEvery notification email carries a one-click unsubscribe.\nRead the full contract\n→\nMove in from\nAtlassian Statuspage\nBetter Stack\nInstatus\nSorry\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-lamp\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-lamp.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv1.11.14\nLICENCE\nMIT, 100% free",
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "contentHeight": 4798,
+      "facts": [
+        {
+          "label": "RUNS ON",
+          "value": "Your computer, or your own Cloudflare account",
+          "rect": {
+            "x": 380,
+            "y": 3775.390625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "VERSION",
+          "value": "v1.11.14",
+          "rect": {
+            "x": 617.328125,
+            "y": 3775.390625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "LICENCE",
+          "value": "MIT, 100% free",
+          "rect": {
+            "x": 854.65625,
+            "y": 3775.390625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        }
+      ],
+      "claims": [
+        {
+          "id": "INTAKE-002",
+          "text": "Monitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update."
+        },
+        {
+          "id": "INCIDENT-004",
+          "text": "A published update is never edited or deleted; a correction is a new update and both stay on the public timeline."
+        },
+        {
+          "id": "UPDATE-008",
+          "text": "Publishing is a single step: the update and the list of people to notify are saved together."
+        },
+        {
+          "id": "UPTIME-001",
+          "text": "Uptime is rounded down, so a period with any downtime never shows 100 percent."
+        },
+        {
+          "id": "NOTIFY-009",
+          "text": "Publishing still works while email, the queue or a subscriber's endpoint is failing."
+        },
+        {
+          "id": "PAGE-006",
+          "text": "If the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear."
+        },
+        {
+          "id": "PAGE-013",
+          "text": "The public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites."
+        },
+        {
+          "id": "NOTIFY-004",
+          "text": "The delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it."
+        },
+        {
+          "id": "MOVE-002",
+          "text": "Moving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm."
+        },
+        {
+          "id": "SUB-006",
+          "text": "Every notification email carries a one-click unsubscribe."
+        }
+      ],
+      "horizontalOverflow": [
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_bar__kLxgq"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_screen__twPum"
+        },
+        {
+          "tag": "IMG",
+          "class": ""
+        },
+        {
+          "tag": "FIGCAPTION",
+          "class": "frame_caption__4E939"
+        },
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        }
+      ]
+    },
+    {
+      "label": "baseline",
+      "slug": "uptime",
+      "width": 1440,
+      "status": 200,
+      "expected": "v0.5.9",
+      "errors": [],
+      "text": "Uptime\n\nAlternative to Pingdom\n\nAlso replaces UptimeRobot, Better Stack\n\nAlerts you only when a failure is confirmed.\n\nUptime in 49 seconds\nThe monitor list, with counts and filters\nOne monitor: status, coverage and recent checks\nAdd a monitor from a website address\nA scheduled job watched and recovered\n\nrun-uptime.com\n↗\nGitHub\n→\n\nUptime watches your websites and APIs on a schedule and tells you only when a failure is confirmed. It never calls a missing check healthy, and it keeps the evidence behind every incident. Alerts go to email, Slack or a signed webhook.\n\nWhat it does\nCheck web pages and API responses for the right status, text, headers, data values and speed\nCheck that a server port answers, that DNS records are right, and that SSL certificates and domain registrations are not about to expire\nChoose how many failed checks in a row open an incident and how many passes close it\nShow a time as Unknown when no check arrived, instead of guessing it was fine\nWatch cron jobs and nightly backups through heartbeat check-ins\nAlert you by email, Slack or a signed webhook, and run an alert drill to learn whether a message really reaches someone\nPause alerts during planned maintenance windows\nRun checks from a machine on your own network and export your monitors, evidence and alert history any time\nWhat it promises\nOne failed check never raises an alarm. A monitor is called Failing only after confirmation, a missing check shows as Unknown, and it recovers only on fresh passing checks.\nEvery scheduled check and every retry is kept with its time, result and error type, and a retry never erases an earlier failure.\nOnly confirmed incident changes send automatic alerts, and a test send never changes a monitor's status.\nPlanned and recurring maintenance windows use US time zones and daylight saving, and keep the underlying check results so reports still show what happened.\nEach alert gets one automatic send per destination where a repeat could double up, an unclear outcome is not sent again, and 'accepted' is never reported as 'read'.\nAn alert drill sends a clearly marked test with a one-time confirmation link, and a confirmation is the recipient's own report, never proof of monitoring.\nCertificate checks look at trust, host name and expiry from each location, warn in stages before a certificate runs out, and clear only after a new valid certificate is seen.\nA backup restores only into an empty installation: monitors come back paused, destinations disabled and old alerts held back.\nEvery address and redirect is validated, unsafe addresses are refused, and a redirect that downgrades from HTTPS is rejected.\nAn owner can erase a monitor with its evidence, an alert destination, or an operator, and gets a receipt of what was removed.\nRead the full contract\n→\nMove in from\nPingdom\nUptimeRobot\nBetter Stack Uptime\nSite24x7\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-uptime\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-uptime.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.5.9\nLICENCE\nMIT, 100% free",
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "contentHeight": 4869,
+      "facts": [
+        {
+          "label": "RUNS ON",
+          "value": "Your computer, or your own Cloudflare account",
+          "rect": {
+            "x": 380,
+            "y": 3846.390625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "VERSION",
+          "value": "v0.5.9",
+          "rect": {
+            "x": 617.328125,
+            "y": 3846.390625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "LICENCE",
+          "value": "MIT, 100% free",
+          "rect": {
+            "x": 854.65625,
+            "y": 3846.390625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        }
+      ],
+      "claims": [
+        {
+          "id": "STATE-001",
+          "text": "One failed check never raises an alarm. A monitor is called Failing only after confirmation, a missing check shows as Unknown, and it recovers only on fresh passing checks."
+        },
+        {
+          "id": "EVIDENCE-001",
+          "text": "Every scheduled check and every retry is kept with its time, result and error type, and a retry never erases an earlier failure."
+        },
+        {
+          "id": "NOTIFY-001",
+          "text": "Only confirmed incident changes send automatic alerts, and a test send never changes a monitor's status."
+        },
+        {
+          "id": "MAINT-001",
+          "text": "Planned and recurring maintenance windows use US time zones and daylight saving, and keep the underlying check results so reports still show what happened."
+        },
+        {
+          "id": "DELIVERY-001",
+          "text": "Each alert gets one automatic send per destination where a repeat could double up, an unclear outcome is not sent again, and 'accepted' is never reported as 'read'."
+        },
+        {
+          "id": "DRILL-001",
+          "text": "An alert drill sends a clearly marked test with a one-time confirmation link, and a confirmation is the recipient's own report, never proof of monitoring."
+        },
+        {
+          "id": "TLS-001",
+          "text": "Certificate checks look at trust, host name and expiry from each location, warn in stages before a certificate runs out, and clear only after a new valid certificate is seen."
+        },
+        {
+          "id": "ARCHIVE-001",
+          "text": "A backup restores only into an empty installation: monitors come back paused, destinations disabled and old alerts held back."
+        },
+        {
+          "id": "NETWORK-001",
+          "text": "Every address and redirect is validated, unsafe addresses are refused, and a redirect that downgrades from HTTPS is rejected."
+        },
+        {
+          "id": "ERASURE-001",
+          "text": "An owner can erase a monitor with its evidence, an alert destination, or an operator, and gets a receipt of what was removed."
+        }
+      ],
+      "horizontalOverflow": [
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_bar__kLxgq"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_screen__twPum"
+        },
+        {
+          "tag": "IMG",
+          "class": ""
+        },
+        {
+          "tag": "FIGCAPTION",
+          "class": "frame_caption__4E939"
+        },
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        }
+      ]
+    },
+    {
+      "label": "candidate",
+      "slug": "uptime",
+      "width": 1440,
+      "status": 200,
+      "expected": "v0.5.10",
+      "errors": [],
+      "text": "Uptime\n\nAlternative to Pingdom\n\nAlso replaces UptimeRobot, Better Stack\n\nAlerts you only when a failure is confirmed.\n\nUptime in 49 seconds\nThe monitor list, with counts and filters\nOne monitor: status, coverage and recent checks\nAdd a monitor from a website address\nA scheduled job watched and recovered\n\nrun-uptime.com\n↗\nGitHub\n→\n\nUptime watches your websites and APIs on a schedule and tells you only when a failure is confirmed. It never calls a missing check healthy, and it keeps the evidence behind every incident. Alerts go to email, Slack or a signed webhook.\n\nWhat it does\nCheck web pages and API responses for the right status, text, headers, data values and speed\nCheck that a server port answers, that DNS records are right, and that SSL certificates and domain registrations are not about to expire\nChoose how many failed checks in a row open an incident and how many passes close it\nShow a time as Unknown when no check arrived, instead of guessing it was fine\nWatch cron jobs and nightly backups through heartbeat check-ins\nAlert you by email, Slack or a signed webhook, and run an alert drill to learn whether a message really reaches someone\nPause alerts during planned maintenance windows\nRun checks from a machine on your own network and export your monitors, evidence and alert history any time\nWhat it promises\nOne failed check never raises an alarm. A monitor is called Failing only after confirmation, a missing check shows as Unknown, and it recovers only on fresh passing checks.\nEvery scheduled check and every retry is kept with its time, result and error type, and a retry never erases an earlier failure.\nOnly confirmed incident changes send automatic alerts, and a test send never changes a monitor's status.\nPlanned and recurring maintenance windows use US time zones and daylight saving, and keep the underlying check results so reports still show what happened.\nEach alert gets one automatic send per destination where a repeat could double up, an unclear outcome is not sent again, and 'accepted' is never reported as 'read'.\nAn alert drill sends a clearly marked test with a one-time confirmation link, and a confirmation is the recipient's own report, never proof of monitoring.\nCertificate checks look at trust, host name and expiry from each location, warn in stages before a certificate runs out, and clear only after a new valid certificate is seen.\nA backup restores only into an empty installation: monitors come back paused, destinations disabled and old alerts held back.\nEvery address and redirect is validated, unsafe addresses are refused, and a redirect that downgrades from HTTPS is rejected.\nAn owner can erase a monitor with its evidence, an alert destination, or an operator, and gets a receipt of what was removed.\nRead the full contract\n→\nMove in from\nPingdom\nUptimeRobot\nBetter Stack Uptime\nSite24x7\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-uptime\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-uptime.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.5.10\nLICENCE\nMIT, 100% free",
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "contentHeight": 4869,
+      "facts": [
+        {
+          "label": "RUNS ON",
+          "value": "Your computer, or your own Cloudflare account",
+          "rect": {
+            "x": 380,
+            "y": 3846.390625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "VERSION",
+          "value": "v0.5.10",
+          "rect": {
+            "x": 617.328125,
+            "y": 3846.390625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "LICENCE",
+          "value": "MIT, 100% free",
+          "rect": {
+            "x": 854.65625,
+            "y": 3846.390625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        }
+      ],
+      "claims": [
+        {
+          "id": "STATE-001",
+          "text": "One failed check never raises an alarm. A monitor is called Failing only after confirmation, a missing check shows as Unknown, and it recovers only on fresh passing checks."
+        },
+        {
+          "id": "EVIDENCE-001",
+          "text": "Every scheduled check and every retry is kept with its time, result and error type, and a retry never erases an earlier failure."
+        },
+        {
+          "id": "NOTIFY-001",
+          "text": "Only confirmed incident changes send automatic alerts, and a test send never changes a monitor's status."
+        },
+        {
+          "id": "MAINT-001",
+          "text": "Planned and recurring maintenance windows use US time zones and daylight saving, and keep the underlying check results so reports still show what happened."
+        },
+        {
+          "id": "DELIVERY-001",
+          "text": "Each alert gets one automatic send per destination where a repeat could double up, an unclear outcome is not sent again, and 'accepted' is never reported as 'read'."
+        },
+        {
+          "id": "DRILL-001",
+          "text": "An alert drill sends a clearly marked test with a one-time confirmation link, and a confirmation is the recipient's own report, never proof of monitoring."
+        },
+        {
+          "id": "TLS-001",
+          "text": "Certificate checks look at trust, host name and expiry from each location, warn in stages before a certificate runs out, and clear only after a new valid certificate is seen."
+        },
+        {
+          "id": "ARCHIVE-001",
+          "text": "A backup restores only into an empty installation: monitors come back paused, destinations disabled and old alerts held back."
+        },
+        {
+          "id": "NETWORK-001",
+          "text": "Every address and redirect is validated, unsafe addresses are refused, and a redirect that downgrades from HTTPS is rejected."
+        },
+        {
+          "id": "ERASURE-001",
+          "text": "An owner can erase a monitor with its evidence, an alert destination, or an operator, and gets a receipt of what was removed."
+        }
+      ],
+      "horizontalOverflow": [
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_bar__kLxgq"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_screen__twPum"
+        },
+        {
+          "tag": "IMG",
+          "class": ""
+        },
+        {
+          "tag": "FIGCAPTION",
+          "class": "frame_caption__4E939"
+        },
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        }
+      ]
+    },
+    {
+      "label": "baseline",
+      "slug": "oncall",
+      "width": 1440,
+      "status": 200,
+      "expected": "v0.5.10",
+      "errors": [],
+      "text": "Oncall\n\nAlternative to PagerDuty\n\nAlso replaces Opsgenie\n\nWho's on now, who's next, and when they hand over.\n\nOncall in 54 seconds\nA live incident with runbook and decision log\nWho is on call, and the coverage windows\nIncident timeline with follow-up owners\n\nrun-oncall.com\n↗\nGitHub\n→\n\nOncall shows everyone who is on call now, who is next and exactly when they hand over. It keeps rotations, swaps, incidents, runbooks and follow-ups in one place, and runs alongside the pager you already use while you move your schedules over.\n\nWhat it does\nShow who is on call now, who is next and when the next hand-over happens\nBuild primary and backup rotations in your team's timezone, so a hand-over stays on the same clock time when clocks change\nCover a few hours with an override or swap without touching the rotation\nSubscribe to a private calendar feed of the next seven days of shifts\nRecord alerts from monitoring, route them to the right service and replay the routing safely\nDeclare an incident, assign a commander, follow the runbook and keep every decision on a timeline\nResolve with recovery evidence and a summary, then track follow-up tasks and review\nPreview your Opsgenie or PagerDuty schedules before anything is imported\nWhat it promises\nOncall sends no texts, calls or push alerts, so your existing pager stays in charge while you use it.\nOncall sends signed response events only to endpoints an administrator approves; paging stays off, and email is for sign-in links only.\nA runbook is copied into the incident when it is declared, so later edits never rewrite instructions mid-incident.\nResolving an incident needs recovery evidence and a summary, and every change is recorded in an attributed timeline.\nIncident records you write are never deleted automatically.\nRotations hand over by wall-clock time in your named zone, and clock-change gaps show up as visible gaps.\nViewers can only read, responders coordinate, and admins manage; alert-sending credentials grant no read access, and removed access stops on the next request.\nReplaying alert routing only reads: it creates no alert, incident or outside effect.\nA move-in preview writes nothing, a person must review it before it is applied, and imported schedules stay paused.\nA move-in can be undone, and edits you made afterwards are kept rather than overwritten.\nRead the full contract\n→\nMove in from\nPagerDuty\nOpsgenie\nSplunk On-Call\nBetter Stack\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-oncall\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-oncall.\n\nRUNS ON\nyour own computer, or your own Cloudflare account\nVERSION\nv0.5.10\nLICENCE\nMIT, 100% free",
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "contentHeight": 4712,
+      "facts": [
+        {
+          "label": "RUNS ON",
+          "value": "your own computer, or your own Cloudflare account",
+          "rect": {
+            "x": 380,
+            "y": 3665.640625,
+            "width": 205.328125,
+            "height": 90.53125
+          }
+        },
+        {
+          "label": "VERSION",
+          "value": "v0.5.10",
+          "rect": {
+            "x": 617.328125,
+            "y": 3665.640625,
+            "width": 205.328125,
+            "height": 90.53125
+          }
+        },
+        {
+          "label": "LICENCE",
+          "value": "MIT, 100% free",
+          "rect": {
+            "x": 854.65625,
+            "y": 3665.640625,
+            "width": 205.328125,
+            "height": 90.53125
+          }
+        }
+      ],
+      "claims": [
+        {
+          "id": "OC-012",
+          "text": "Oncall sends no texts, calls or push alerts, so your existing pager stays in charge while you use it."
+        },
+        {
+          "id": "OC-006",
+          "text": "Oncall sends signed response events only to endpoints an administrator approves; paging stays off, and email is for sign-in links only."
+        },
+        {
+          "id": "OC-005",
+          "text": "A runbook is copied into the incident when it is declared, so later edits never rewrite instructions mid-incident."
+        },
+        {
+          "id": "OC-004",
+          "text": "Resolving an incident needs recovery evidence and a summary, and every change is recorded in an attributed timeline."
+        },
+        {
+          "id": "OC-008",
+          "text": "Incident records you write are never deleted automatically."
+        },
+        {
+          "id": "OC-011",
+          "text": "Rotations hand over by wall-clock time in your named zone, and clock-change gaps show up as visible gaps."
+        },
+        {
+          "id": "OC-003",
+          "text": "Viewers can only read, responders coordinate, and admins manage; alert-sending credentials grant no read access, and removed access stops on the next request."
+        },
+        {
+          "id": "OC-002",
+          "text": "Replaying alert routing only reads: it creates no alert, incident or outside effect."
+        },
+        {
+          "id": "OC-021",
+          "text": "A move-in preview writes nothing, a person must review it before it is applied, and imported schedules stay paused."
+        },
+        {
+          "id": "OC-022",
+          "text": "A move-in can be undone, and edits you made afterwards are kept rather than overwritten."
+        }
+      ],
+      "horizontalOverflow": [
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_bar__kLxgq"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_screen__twPum"
+        },
+        {
+          "tag": "IMG",
+          "class": ""
+        },
+        {
+          "tag": "FIGCAPTION",
+          "class": "frame_caption__4E939"
+        },
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        }
+      ]
+    },
+    {
+      "label": "candidate",
+      "slug": "oncall",
+      "width": 1440,
+      "status": 200,
+      "expected": "v0.5.11",
+      "errors": [],
+      "text": "Oncall\n\nAlternative to PagerDuty\n\nAlso replaces Opsgenie\n\nWho's on now, who's next, and when they hand over.\n\nOncall in 54 seconds\nA live incident with runbook and decision log\nWho is on call, and the coverage windows\nIncident timeline with follow-up owners\n\nrun-oncall.com\n↗\nGitHub\n→\n\nOncall shows everyone who is on call now, who is next and exactly when they hand over. It keeps rotations, swaps, incidents, runbooks and follow-ups in one place, and runs alongside the pager you already use while you move your schedules over.\n\nWhat it does\nShow who is on call now, who is next and when the next hand-over happens\nBuild primary and backup rotations in your team's timezone, so a hand-over stays on the same clock time when clocks change\nCover a few hours with an override or swap without touching the rotation\nSubscribe to a private calendar feed of the next seven days of shifts\nRecord alerts from monitoring, route them to the right service and replay the routing safely\nDeclare an incident, assign a commander, follow the runbook and keep every decision on a timeline\nResolve with recovery evidence and a summary, then track follow-up tasks and review\nPreview your Opsgenie or PagerDuty schedules before anything is imported\nWhat it promises\nOncall sends no texts, calls or push alerts, so your existing pager stays in charge while you use it.\nOncall sends signed response events only to endpoints an administrator approves; paging stays off, and email is for sign-in links only.\nA runbook is copied into the incident when it is declared, so later edits never rewrite instructions mid-incident.\nResolving an incident needs recovery evidence and a summary, and every change is recorded in an attributed timeline.\nIncident records you write are never deleted automatically.\nRotations hand over by wall-clock time in your named zone, and clock-change gaps show up as visible gaps.\nViewers can only read, responders coordinate, and admins manage; alert-sending credentials grant no read access, and removed access stops on the next request.\nReplaying alert routing only reads: it creates no alert, incident or outside effect.\nA move-in preview writes nothing, a person must review it before it is applied, and imported schedules stay paused.\nA move-in can be undone, and edits you made afterwards are kept rather than overwritten.\nRead the full contract\n→\nMove in from\nPagerDuty\nOpsgenie\nSplunk On-Call\nBetter Stack\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-oncall\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-oncall.\n\nRUNS ON\nyour own computer, or your own Cloudflare account\nVERSION\nv0.5.11\nLICENCE\nMIT, 100% free",
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "contentHeight": 4712,
+      "facts": [
+        {
+          "label": "RUNS ON",
+          "value": "your own computer, or your own Cloudflare account",
+          "rect": {
+            "x": 380,
+            "y": 3665.640625,
+            "width": 205.328125,
+            "height": 90.53125
+          }
+        },
+        {
+          "label": "VERSION",
+          "value": "v0.5.11",
+          "rect": {
+            "x": 617.328125,
+            "y": 3665.640625,
+            "width": 205.328125,
+            "height": 90.53125
+          }
+        },
+        {
+          "label": "LICENCE",
+          "value": "MIT, 100% free",
+          "rect": {
+            "x": 854.65625,
+            "y": 3665.640625,
+            "width": 205.328125,
+            "height": 90.53125
+          }
+        }
+      ],
+      "claims": [
+        {
+          "id": "OC-012",
+          "text": "Oncall sends no texts, calls or push alerts, so your existing pager stays in charge while you use it."
+        },
+        {
+          "id": "OC-006",
+          "text": "Oncall sends signed response events only to endpoints an administrator approves; paging stays off, and email is for sign-in links only."
+        },
+        {
+          "id": "OC-005",
+          "text": "A runbook is copied into the incident when it is declared, so later edits never rewrite instructions mid-incident."
+        },
+        {
+          "id": "OC-004",
+          "text": "Resolving an incident needs recovery evidence and a summary, and every change is recorded in an attributed timeline."
+        },
+        {
+          "id": "OC-008",
+          "text": "Incident records you write are never deleted automatically."
+        },
+        {
+          "id": "OC-011",
+          "text": "Rotations hand over by wall-clock time in your named zone, and clock-change gaps show up as visible gaps."
+        },
+        {
+          "id": "OC-003",
+          "text": "Viewers can only read, responders coordinate, and admins manage; alert-sending credentials grant no read access, and removed access stops on the next request."
+        },
+        {
+          "id": "OC-002",
+          "text": "Replaying alert routing only reads: it creates no alert, incident or outside effect."
+        },
+        {
+          "id": "OC-021",
+          "text": "A move-in preview writes nothing, a person must review it before it is applied, and imported schedules stay paused."
+        },
+        {
+          "id": "OC-022",
+          "text": "A move-in can be undone, and edits you made afterwards are kept rather than overwritten."
+        }
+      ],
+      "horizontalOverflow": [
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_bar__kLxgq"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_screen__twPum"
+        },
+        {
+          "tag": "IMG",
+          "class": ""
+        },
+        {
+          "tag": "FIGCAPTION",
+          "class": "frame_caption__4E939"
+        },
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        }
+      ]
+    },
+    {
+      "label": "baseline",
+      "slug": "orbit",
+      "width": 1440,
+      "status": 200,
+      "expected": "v0.4.7",
+      "errors": [],
+      "text": "Orbit\n\nAlternative to HubSpot\n\nAlso replaces Pipedrive, Salesforce\n\nA CRM that shows which deal to work next, and why.\n\nOrbit in 51 seconds\nThe NOW queue of deals to act on\nYour brief: what changed since last look\nReview a follow-up before it is sent\nSignal sources feeding the queue\n\nrun-orbit.com\n↗\nGitHub\n→\n\nOrbit puts a deal in your NOW queue when a customer replies, scores it from real signals, and shows you why. Your company's policy controls agent sending; with approval required, a person reviews the exact email before it is sent. It is free for the whole team, and you can try it beside your current CRM.\n\nWhat it does\nMove a deal into your NOW queue when a customer replies, books a meeting or submits a form\nScore each deal from what customers actually did, with older activity counting for less and every signal behind the score shown\nKeep contacts, companies and deals, with your own fields, in a pipeline with your own stages\nLet a contact form on your site drop each enquiry onto the right contact\nDraft follow-ups, with optional AI, that you review and approve one by one, and schedule them with quiet hours\nCancel scheduled follow-ups automatically when the customer replies\nPull in emails and meetings from Gmail, Google Calendar, Outlook, forwarded mail or a calendar link\nImport contacts from a CSV, and export or restore a complete archive of your workspace any time\nWhat it promises\nSignals, scores and AI text never grant permission to send. Your company's policy decides agent sending; when approval is required, a person approves the exact saved recipients, subject and body, and later changes invalidate it.\nA deal's score shows every signal it used, with source, time and weight, beside the reason for the recommendation.\nOrbit uses no tracking script, pixel or cookie, and does not fingerprint visitors.\nA reply, a booked meeting, an unsubscribe or a permanent bounce cancels that contact's scheduled messages.\nOpt-out is on by default for sequence email and off for one-to-one email. Messages set to carry it include one-click unsubscribe; an identified opt-out marks the contact do-not-contact within a minute and cancels scheduled messages.\nA draft goes stale when the customer replies or the deal changes, and a stale draft cannot be sent until you have seen what changed.\nCapture never writes a draft or sends a message, and a contact created from captured mail is do-not-contact until you clear it.\nIf the AI is unavailable, records, scoring, search, hand-written drafts and sending still work.\nMerging duplicates needs you to choose the surviving record and every conflicting value, and refuses if either record changed after your review.\nDeleting a contact removes their email, signals, drafts and message bodies from records, search, exports and later AI or mail requests within five minutes.\nRead the full contract\n→\nMove in from\nHubSpot Sales Hub\nPipedrive\nCSV files\nGmail and Google Calendar\nOutlook mail and calendar\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-orbit\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-orbit.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.4.7\nLICENCE\nMIT, 100% free",
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "contentHeight": 4973,
+      "facts": [
+        {
+          "label": "RUNS ON",
+          "value": "Your computer, or your own Cloudflare account",
+          "rect": {
+            "x": 380,
+            "y": 3950.140625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "VERSION",
+          "value": "v0.4.7",
+          "rect": {
+            "x": 617.328125,
+            "y": 3950.140625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "LICENCE",
+          "value": "MIT, 100% free",
+          "rect": {
+            "x": 854.65625,
+            "y": 3950.140625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        }
+      ],
+      "claims": [
+        {
+          "id": "OUT-001",
+          "text": "Signals, scores and AI text never grant permission to send. Your company's policy decides agent sending; when approval is required, a person approves the exact saved recipients, subject and body, and later changes invalidate it."
+        },
+        {
+          "id": "OPP-004",
+          "text": "A deal's score shows every signal it used, with source, time and weight, beside the reason for the recommendation."
+        },
+        {
+          "id": "SIGNAL-007",
+          "text": "Orbit uses no tracking script, pixel or cookie, and does not fingerprint visitors."
+        },
+        {
+          "id": "OUT-007",
+          "text": "A reply, a booked meeting, an unsubscribe or a permanent bounce cancels that contact's scheduled messages."
+        },
+        {
+          "id": "OUT-012",
+          "text": "Opt-out is on by default for sequence email and off for one-to-one email. Messages set to carry it include one-click unsubscribe; an identified opt-out marks the contact do-not-contact within a minute and cancels scheduled messages."
+        },
+        {
+          "id": "ACTION-005",
+          "text": "A draft goes stale when the customer replies or the deal changes, and a stale draft cannot be sent until you have seen what changed."
+        },
+        {
+          "id": "CAPTURE-005",
+          "text": "Capture never writes a draft or sends a message, and a contact created from captured mail is do-not-contact until you clear it."
+        },
+        {
+          "id": "AI-003",
+          "text": "If the AI is unavailable, records, scoring, search, hand-written drafts and sending still work."
+        },
+        {
+          "id": "RECORD-004",
+          "text": "Merging duplicates needs you to choose the surviving record and every conflicting value, and refuses if either record changed after your review."
+        },
+        {
+          "id": "DATA-002",
+          "text": "Deleting a contact removes their email, signals, drafts and message bodies from records, search, exports and later AI or mail requests within five minutes."
+        }
+      ],
+      "horizontalOverflow": [
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_bar__kLxgq"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_screen__twPum"
+        },
+        {
+          "tag": "IMG",
+          "class": ""
+        },
+        {
+          "tag": "FIGCAPTION",
+          "class": "frame_caption__4E939"
+        },
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        }
+      ]
+    },
+    {
+      "label": "candidate",
+      "slug": "orbit",
+      "width": 1440,
+      "status": 200,
+      "expected": "v0.4.8",
+      "errors": [],
+      "text": "Orbit\n\nAlternative to HubSpot\n\nAlso replaces Pipedrive, Salesforce\n\nA CRM that shows which deal to work next, and why.\n\nOrbit in 51 seconds\nThe NOW queue of deals to act on\nYour brief: what changed since last look\nReview a follow-up before it is sent\nSignal sources feeding the queue\n\nrun-orbit.com\n↗\nGitHub\n→\n\nOrbit puts a deal in your NOW queue when a customer replies, scores it from real signals, and shows you why. Your company's policy controls agent sending; with approval required, a person reviews the exact email before it is sent. It is free for the whole team, and you can try it beside your current CRM.\n\nWhat it does\nMove a deal into your NOW queue when a customer replies, books a meeting or submits a form\nScore each deal from what customers actually did, with older activity counting for less and every signal behind the score shown\nKeep contacts, companies and deals, with your own fields, in a pipeline with your own stages\nLet a contact form on your site drop each enquiry onto the right contact\nDraft follow-ups, with optional AI, that you review and approve one by one, and schedule them with quiet hours\nCancel scheduled follow-ups automatically when the customer replies\nPull in emails and meetings from Gmail, Google Calendar, Outlook, forwarded mail or a calendar link\nImport contacts from a CSV, and export or restore a complete archive of your workspace any time\nWhat it promises\nSignals, scores and AI text never grant permission to send. Your company's policy decides agent sending; when approval is required, a person approves the exact saved recipients, subject and body, and later changes invalidate it.\nA deal's score shows every signal it used, with source, time and weight, beside the reason for the recommendation.\nOrbit uses no tracking script, pixel or cookie, and does not fingerprint visitors.\nA reply, a booked meeting, an unsubscribe or a permanent bounce cancels that contact's scheduled messages.\nOpt-out is on by default for sequence email and off for one-to-one email. Messages set to carry it include one-click unsubscribe; an identified opt-out marks the contact do-not-contact within a minute and cancels scheduled messages.\nA draft goes stale when the customer replies or the deal changes, and a stale draft cannot be sent until you have seen what changed.\nCapture never writes a draft or sends a message, and a contact created from captured mail is do-not-contact until you clear it.\nIf the AI is unavailable, records, scoring, search, hand-written drafts and sending still work.\nMerging duplicates needs you to choose the surviving record and every conflicting value, and refuses if either record changed after your review.\nDeleting a contact removes their email, signals, drafts and message bodies from records, search, exports and later AI or mail requests within five minutes.\nRead the full contract\n→\nMove in from\nHubSpot Sales Hub\nPipedrive\nCSV files\nGmail and Google Calendar\nOutlook mail and calendar\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-orbit\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-orbit.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.4.8\nLICENCE\nMIT, 100% free",
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "contentHeight": 4973,
+      "facts": [
+        {
+          "label": "RUNS ON",
+          "value": "Your computer, or your own Cloudflare account",
+          "rect": {
+            "x": 380,
+            "y": 3950.140625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "VERSION",
+          "value": "v0.4.8",
+          "rect": {
+            "x": 617.328125,
+            "y": 3950.140625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "LICENCE",
+          "value": "MIT, 100% free",
+          "rect": {
+            "x": 854.65625,
+            "y": 3950.140625,
+            "width": 205.328125,
+            "height": 67.4375
+          }
+        }
+      ],
+      "claims": [
+        {
+          "id": "OUT-001",
+          "text": "Signals, scores and AI text never grant permission to send. Your company's policy decides agent sending; when approval is required, a person approves the exact saved recipients, subject and body, and later changes invalidate it."
+        },
+        {
+          "id": "OPP-004",
+          "text": "A deal's score shows every signal it used, with source, time and weight, beside the reason for the recommendation."
+        },
+        {
+          "id": "SIGNAL-007",
+          "text": "Orbit uses no tracking script, pixel or cookie, and does not fingerprint visitors."
+        },
+        {
+          "id": "OUT-007",
+          "text": "A reply, a booked meeting, an unsubscribe or a permanent bounce cancels that contact's scheduled messages."
+        },
+        {
+          "id": "OUT-012",
+          "text": "Opt-out is on by default for sequence email and off for one-to-one email. Messages set to carry it include one-click unsubscribe; an identified opt-out marks the contact do-not-contact within a minute and cancels scheduled messages."
+        },
+        {
+          "id": "ACTION-005",
+          "text": "A draft goes stale when the customer replies or the deal changes, and a stale draft cannot be sent until you have seen what changed."
+        },
+        {
+          "id": "CAPTURE-005",
+          "text": "Capture never writes a draft or sends a message, and a contact created from captured mail is do-not-contact until you clear it."
+        },
+        {
+          "id": "AI-003",
+          "text": "If the AI is unavailable, records, scoring, search, hand-written drafts and sending still work."
+        },
+        {
+          "id": "RECORD-004",
+          "text": "Merging duplicates needs you to choose the surviving record and every conflicting value, and refuses if either record changed after your review."
+        },
+        {
+          "id": "DATA-002",
+          "text": "Deleting a contact removes their email, signals, drafts and message bodies from records, search, exports and later AI or mail requests within five minutes."
+        }
+      ],
+      "horizontalOverflow": [
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_bar__kLxgq"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_screen__twPum"
+        },
+        {
+          "tag": "IMG",
+          "class": ""
+        },
+        {
+          "tag": "FIGCAPTION",
+          "class": "frame_caption__4E939"
+        },
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        }
+      ]
+    },
+    {
+      "label": "baseline",
+      "slug": "lamp",
+      "width": 390,
+      "status": 200,
+      "expected": "v1.11.13",
+      "errors": [],
+      "text": "Lamp\n\nAlternative to Atlassian Statuspage\n\nAlso replaces Instatus, Better Stack\n\nThe status page that never leaves your customers in the dark.\n\nLamp in 51 seconds\nThe public status page during an outage\nWrite a public incident update\nSchedule maintenance windows\nSubscribers and where updates go\n\nrun-lamp.com\n↗\nGitHub\n→\n\nLamp is a status page that tells your customers who is affected, how badly and what still works. You write each update once, and the page, the feed, the site banner and subscriber emails all carry the same words. Your page keeps answering even when Lamp's own database is down.\n\nWhat it does\nShow a status page with each component's state, a 90-day record and a plain-words account of every incident\nWrite each update once and send it to the page, an Atom feed, a site banner and subscriber email together, with a preview first\nKeep the page answering from the last known state, labelled with its age, when Lamp's own database is down\nLet subscribers choose the components they follow and unsubscribe in one click, with no cookies and no CAPTCHA\nRun planned maintenance that starts, finishes and notifies subscribers by itself\nTurn alerts from your monitoring tools into one draft incident per problem, which you review and publish\nPublish post-incident reports, post to Slack or Microsoft Teams, send signed webhooks and keep a delivery log\nUse your own domain and colours, and export everything whenever you like\nWhat it promises\nMonitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update.\nA published update is never edited or deleted; a correction is a new update and both stay on the public timeline.\nPublishing is a single step: the update and the list of people to notify are saved together.\nUptime is rounded down, so a period with any downtime never shows 100 percent.\nPublishing still works while email, the queue or a subscriber's endpoint is failing.\nIf the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear.\nThe public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites.\nThe delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it.\nMoving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm.\nEvery notification email carries a one-click unsubscribe.\nRead the full contract\n→\nMove in from\nAtlassian Statuspage\nBetter Stack\nInstatus\nSorry\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-lamp\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-lamp.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv1.11.13\nLICENCE\nMIT, 100% free",
+      "viewport": 390,
+      "scrollWidth": 390,
+      "contentHeight": 4876,
+      "facts": [
+        {
+          "label": "RUNS ON",
+          "value": "Your computer, or your own Cloudflare account",
+          "rect": {
+            "x": 20,
+            "y": 3894.03125,
+            "width": 350,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "VERSION",
+          "value": "v1.11.13",
+          "rect": {
+            "x": 20,
+            "y": 3975.46875,
+            "width": 350,
+            "height": 44.34375
+          }
+        },
+        {
+          "label": "LICENCE",
+          "value": "MIT, 100% free",
+          "rect": {
+            "x": 20,
+            "y": 4033.8125,
+            "width": 350,
+            "height": 44.34375
+          }
+        }
+      ],
+      "claims": [
+        {
+          "id": "INTAKE-002",
+          "text": "Monitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update."
+        },
+        {
+          "id": "INCIDENT-004",
+          "text": "A published update is never edited or deleted; a correction is a new update and both stay on the public timeline."
+        },
+        {
+          "id": "UPDATE-008",
+          "text": "Publishing is a single step: the update and the list of people to notify are saved together."
+        },
+        {
+          "id": "UPTIME-001",
+          "text": "Uptime is rounded down, so a period with any downtime never shows 100 percent."
+        },
+        {
+          "id": "NOTIFY-009",
+          "text": "Publishing still works while email, the queue or a subscriber's endpoint is failing."
+        },
+        {
+          "id": "PAGE-006",
+          "text": "If the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear."
+        },
+        {
+          "id": "PAGE-013",
+          "text": "The public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites."
+        },
+        {
+          "id": "NOTIFY-004",
+          "text": "The delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it."
+        },
+        {
+          "id": "MOVE-002",
+          "text": "Moving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm."
+        },
+        {
+          "id": "SUB-006",
+          "text": "Every notification email carries a one-click unsubscribe."
+        }
+      ],
+      "horizontalOverflow": [
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_bar__kLxgq"
+        },
+        {
+          "tag": "SPAN",
+          "class": "frame_dots__ORooB"
+        },
+        {
+          "tag": "SPAN",
+          "class": ""
+        },
+        {
+          "tag": "SPAN",
+          "class": ""
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_screen__twPum"
+        },
+        {
+          "tag": "IMG",
+          "class": ""
+        },
+        {
+          "tag": "FIGCAPTION",
+          "class": "frame_caption__4E939"
+        }
+      ]
+    },
+    {
+      "label": "candidate",
+      "slug": "lamp",
+      "width": 390,
+      "status": 200,
+      "expected": "v1.11.14",
+      "errors": [],
+      "text": "Lamp\n\nAlternative to Atlassian Statuspage\n\nAlso replaces Instatus, Better Stack\n\nThe status page that never leaves your customers in the dark.\n\nLamp in 51 seconds\nThe public status page during an outage\nWrite a public incident update\nSchedule maintenance windows\nSubscribers and where updates go\n\nrun-lamp.com\n↗\nGitHub\n→\n\nLamp is a status page that tells your customers who is affected, how badly and what still works. You write each update once, and the page, the feed, the site banner and subscriber emails all carry the same words. Your page keeps answering even when Lamp's own database is down.\n\nWhat it does\nShow a status page with each component's state, a 90-day record and a plain-words account of every incident\nWrite each update once and send it to the page, an Atom feed, a site banner and subscriber email together, with a preview first\nKeep the page answering from the last known state, labelled with its age, when Lamp's own database is down\nLet subscribers choose the components they follow and unsubscribe in one click, with no cookies and no CAPTCHA\nRun planned maintenance that starts, finishes and notifies subscribers by itself\nTurn alerts from your monitoring tools into one draft incident per problem, which you review and publish\nPublish post-incident reports, post to Slack or Microsoft Teams, send signed webhooks and keep a delivery log\nUse your own domain and colours, and export everything whenever you like\nWhat it promises\nMonitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update.\nA published update is never edited or deleted; a correction is a new update and both stay on the public timeline.\nPublishing is a single step: the update and the list of people to notify are saved together.\nUptime is rounded down, so a period with any downtime never shows 100 percent.\nPublishing still works while email, the queue or a subscriber's endpoint is failing.\nIf the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear.\nThe public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites.\nThe delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it.\nMoving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm.\nEvery notification email carries a one-click unsubscribe.\nRead the full contract\n→\nMove in from\nAtlassian Statuspage\nBetter Stack\nInstatus\nSorry\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-lamp\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-lamp.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv1.11.14\nLICENCE\nMIT, 100% free",
+      "viewport": 390,
+      "scrollWidth": 390,
+      "contentHeight": 4876,
+      "facts": [
+        {
+          "label": "RUNS ON",
+          "value": "Your computer, or your own Cloudflare account",
+          "rect": {
+            "x": 20,
+            "y": 3894.03125,
+            "width": 350,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "VERSION",
+          "value": "v1.11.14",
+          "rect": {
+            "x": 20,
+            "y": 3975.46875,
+            "width": 350,
+            "height": 44.34375
+          }
+        },
+        {
+          "label": "LICENCE",
+          "value": "MIT, 100% free",
+          "rect": {
+            "x": 20,
+            "y": 4033.8125,
+            "width": 350,
+            "height": 44.34375
+          }
+        }
+      ],
+      "claims": [
+        {
+          "id": "INTAKE-002",
+          "text": "Monitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update."
+        },
+        {
+          "id": "INCIDENT-004",
+          "text": "A published update is never edited or deleted; a correction is a new update and both stay on the public timeline."
+        },
+        {
+          "id": "UPDATE-008",
+          "text": "Publishing is a single step: the update and the list of people to notify are saved together."
+        },
+        {
+          "id": "UPTIME-001",
+          "text": "Uptime is rounded down, so a period with any downtime never shows 100 percent."
+        },
+        {
+          "id": "NOTIFY-009",
+          "text": "Publishing still works while email, the queue or a subscriber's endpoint is failing."
+        },
+        {
+          "id": "PAGE-006",
+          "text": "If the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear."
+        },
+        {
+          "id": "PAGE-013",
+          "text": "The public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites."
+        },
+        {
+          "id": "NOTIFY-004",
+          "text": "The delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it."
+        },
+        {
+          "id": "MOVE-002",
+          "text": "Moving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm."
+        },
+        {
+          "id": "SUB-006",
+          "text": "Every notification email carries a one-click unsubscribe."
+        }
+      ],
+      "horizontalOverflow": [
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_bar__kLxgq"
+        },
+        {
+          "tag": "SPAN",
+          "class": "frame_dots__ORooB"
+        },
+        {
+          "tag": "SPAN",
+          "class": ""
+        },
+        {
+          "tag": "SPAN",
+          "class": ""
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_screen__twPum"
+        },
+        {
+          "tag": "IMG",
+          "class": ""
+        },
+        {
+          "tag": "FIGCAPTION",
+          "class": "frame_caption__4E939"
+        }
+      ]
+    },
+    {
+      "label": "baseline",
+      "slug": "uptime",
+      "width": 390,
+      "status": 200,
+      "expected": "v0.5.9",
+      "errors": [],
+      "text": "Uptime\n\nAlternative to Pingdom\n\nAlso replaces UptimeRobot, Better Stack\n\nAlerts you only when a failure is confirmed.\n\nUptime in 49 seconds\nThe monitor list, with counts and filters\nOne monitor: status, coverage and recent checks\nAdd a monitor from a website address\nA scheduled job watched and recovered\n\nrun-uptime.com\n↗\nGitHub\n→\n\nUptime watches your websites and APIs on a schedule and tells you only when a failure is confirmed. It never calls a missing check healthy, and it keeps the evidence behind every incident. Alerts go to email, Slack or a signed webhook.\n\nWhat it does\nCheck web pages and API responses for the right status, text, headers, data values and speed\nCheck that a server port answers, that DNS records are right, and that SSL certificates and domain registrations are not about to expire\nChoose how many failed checks in a row open an incident and how many passes close it\nShow a time as Unknown when no check arrived, instead of guessing it was fine\nWatch cron jobs and nightly backups through heartbeat check-ins\nAlert you by email, Slack or a signed webhook, and run an alert drill to learn whether a message really reaches someone\nPause alerts during planned maintenance windows\nRun checks from a machine on your own network and export your monitors, evidence and alert history any time\nWhat it promises\nOne failed check never raises an alarm. A monitor is called Failing only after confirmation, a missing check shows as Unknown, and it recovers only on fresh passing checks.\nEvery scheduled check and every retry is kept with its time, result and error type, and a retry never erases an earlier failure.\nOnly confirmed incident changes send automatic alerts, and a test send never changes a monitor's status.\nPlanned and recurring maintenance windows use US time zones and daylight saving, and keep the underlying check results so reports still show what happened.\nEach alert gets one automatic send per destination where a repeat could double up, an unclear outcome is not sent again, and 'accepted' is never reported as 'read'.\nAn alert drill sends a clearly marked test with a one-time confirmation link, and a confirmation is the recipient's own report, never proof of monitoring.\nCertificate checks look at trust, host name and expiry from each location, warn in stages before a certificate runs out, and clear only after a new valid certificate is seen.\nA backup restores only into an empty installation: monitors come back paused, destinations disabled and old alerts held back.\nEvery address and redirect is validated, unsafe addresses are refused, and a redirect that downgrades from HTTPS is rejected.\nAn owner can erase a monitor with its evidence, an alert destination, or an operator, and gets a receipt of what was removed.\nRead the full contract\n→\nMove in from\nPingdom\nUptimeRobot\nBetter Stack Uptime\nSite24x7\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-uptime\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-uptime.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.5.9\nLICENCE\nMIT, 100% free",
+      "viewport": 390,
+      "scrollWidth": 390,
+      "contentHeight": 5033,
+      "facts": [
+        {
+          "label": "RUNS ON",
+          "value": "Your computer, or your own Cloudflare account",
+          "rect": {
+            "x": 20,
+            "y": 4051.390625,
+            "width": 350,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "VERSION",
+          "value": "v0.5.9",
+          "rect": {
+            "x": 20,
+            "y": 4132.828125,
+            "width": 350,
+            "height": 44.34375
+          }
+        },
+        {
+          "label": "LICENCE",
+          "value": "MIT, 100% free",
+          "rect": {
+            "x": 20,
+            "y": 4191.171875,
+            "width": 350,
+            "height": 44.34375
+          }
+        }
+      ],
+      "claims": [
+        {
+          "id": "STATE-001",
+          "text": "One failed check never raises an alarm. A monitor is called Failing only after confirmation, a missing check shows as Unknown, and it recovers only on fresh passing checks."
+        },
+        {
+          "id": "EVIDENCE-001",
+          "text": "Every scheduled check and every retry is kept with its time, result and error type, and a retry never erases an earlier failure."
+        },
+        {
+          "id": "NOTIFY-001",
+          "text": "Only confirmed incident changes send automatic alerts, and a test send never changes a monitor's status."
+        },
+        {
+          "id": "MAINT-001",
+          "text": "Planned and recurring maintenance windows use US time zones and daylight saving, and keep the underlying check results so reports still show what happened."
+        },
+        {
+          "id": "DELIVERY-001",
+          "text": "Each alert gets one automatic send per destination where a repeat could double up, an unclear outcome is not sent again, and 'accepted' is never reported as 'read'."
+        },
+        {
+          "id": "DRILL-001",
+          "text": "An alert drill sends a clearly marked test with a one-time confirmation link, and a confirmation is the recipient's own report, never proof of monitoring."
+        },
+        {
+          "id": "TLS-001",
+          "text": "Certificate checks look at trust, host name and expiry from each location, warn in stages before a certificate runs out, and clear only after a new valid certificate is seen."
+        },
+        {
+          "id": "ARCHIVE-001",
+          "text": "A backup restores only into an empty installation: monitors come back paused, destinations disabled and old alerts held back."
+        },
+        {
+          "id": "NETWORK-001",
+          "text": "Every address and redirect is validated, unsafe addresses are refused, and a redirect that downgrades from HTTPS is rejected."
+        },
+        {
+          "id": "ERASURE-001",
+          "text": "An owner can erase a monitor with its evidence, an alert destination, or an operator, and gets a receipt of what was removed."
+        }
+      ],
+      "horizontalOverflow": [
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_bar__kLxgq"
+        },
+        {
+          "tag": "SPAN",
+          "class": "frame_dots__ORooB"
+        },
+        {
+          "tag": "SPAN",
+          "class": ""
+        },
+        {
+          "tag": "SPAN",
+          "class": ""
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_screen__twPum"
+        },
+        {
+          "tag": "IMG",
+          "class": ""
+        },
+        {
+          "tag": "FIGCAPTION",
+          "class": "frame_caption__4E939"
+        }
+      ]
+    },
+    {
+      "label": "candidate",
+      "slug": "uptime",
+      "width": 390,
+      "status": 200,
+      "expected": "v0.5.10",
+      "errors": [],
+      "text": "Uptime\n\nAlternative to Pingdom\n\nAlso replaces UptimeRobot, Better Stack\n\nAlerts you only when a failure is confirmed.\n\nUptime in 49 seconds\nThe monitor list, with counts and filters\nOne monitor: status, coverage and recent checks\nAdd a monitor from a website address\nA scheduled job watched and recovered\n\nrun-uptime.com\n↗\nGitHub\n→\n\nUptime watches your websites and APIs on a schedule and tells you only when a failure is confirmed. It never calls a missing check healthy, and it keeps the evidence behind every incident. Alerts go to email, Slack or a signed webhook.\n\nWhat it does\nCheck web pages and API responses for the right status, text, headers, data values and speed\nCheck that a server port answers, that DNS records are right, and that SSL certificates and domain registrations are not about to expire\nChoose how many failed checks in a row open an incident and how many passes close it\nShow a time as Unknown when no check arrived, instead of guessing it was fine\nWatch cron jobs and nightly backups through heartbeat check-ins\nAlert you by email, Slack or a signed webhook, and run an alert drill to learn whether a message really reaches someone\nPause alerts during planned maintenance windows\nRun checks from a machine on your own network and export your monitors, evidence and alert history any time\nWhat it promises\nOne failed check never raises an alarm. A monitor is called Failing only after confirmation, a missing check shows as Unknown, and it recovers only on fresh passing checks.\nEvery scheduled check and every retry is kept with its time, result and error type, and a retry never erases an earlier failure.\nOnly confirmed incident changes send automatic alerts, and a test send never changes a monitor's status.\nPlanned and recurring maintenance windows use US time zones and daylight saving, and keep the underlying check results so reports still show what happened.\nEach alert gets one automatic send per destination where a repeat could double up, an unclear outcome is not sent again, and 'accepted' is never reported as 'read'.\nAn alert drill sends a clearly marked test with a one-time confirmation link, and a confirmation is the recipient's own report, never proof of monitoring.\nCertificate checks look at trust, host name and expiry from each location, warn in stages before a certificate runs out, and clear only after a new valid certificate is seen.\nA backup restores only into an empty installation: monitors come back paused, destinations disabled and old alerts held back.\nEvery address and redirect is validated, unsafe addresses are refused, and a redirect that downgrades from HTTPS is rejected.\nAn owner can erase a monitor with its evidence, an alert destination, or an operator, and gets a receipt of what was removed.\nRead the full contract\n→\nMove in from\nPingdom\nUptimeRobot\nBetter Stack Uptime\nSite24x7\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-uptime\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-uptime.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.5.10\nLICENCE\nMIT, 100% free",
+      "viewport": 390,
+      "scrollWidth": 390,
+      "contentHeight": 5033,
+      "facts": [
+        {
+          "label": "RUNS ON",
+          "value": "Your computer, or your own Cloudflare account",
+          "rect": {
+            "x": 20,
+            "y": 4051.390625,
+            "width": 350,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "VERSION",
+          "value": "v0.5.10",
+          "rect": {
+            "x": 20,
+            "y": 4132.828125,
+            "width": 350,
+            "height": 44.34375
+          }
+        },
+        {
+          "label": "LICENCE",
+          "value": "MIT, 100% free",
+          "rect": {
+            "x": 20,
+            "y": 4191.171875,
+            "width": 350,
+            "height": 44.34375
+          }
+        }
+      ],
+      "claims": [
+        {
+          "id": "STATE-001",
+          "text": "One failed check never raises an alarm. A monitor is called Failing only after confirmation, a missing check shows as Unknown, and it recovers only on fresh passing checks."
+        },
+        {
+          "id": "EVIDENCE-001",
+          "text": "Every scheduled check and every retry is kept with its time, result and error type, and a retry never erases an earlier failure."
+        },
+        {
+          "id": "NOTIFY-001",
+          "text": "Only confirmed incident changes send automatic alerts, and a test send never changes a monitor's status."
+        },
+        {
+          "id": "MAINT-001",
+          "text": "Planned and recurring maintenance windows use US time zones and daylight saving, and keep the underlying check results so reports still show what happened."
+        },
+        {
+          "id": "DELIVERY-001",
+          "text": "Each alert gets one automatic send per destination where a repeat could double up, an unclear outcome is not sent again, and 'accepted' is never reported as 'read'."
+        },
+        {
+          "id": "DRILL-001",
+          "text": "An alert drill sends a clearly marked test with a one-time confirmation link, and a confirmation is the recipient's own report, never proof of monitoring."
+        },
+        {
+          "id": "TLS-001",
+          "text": "Certificate checks look at trust, host name and expiry from each location, warn in stages before a certificate runs out, and clear only after a new valid certificate is seen."
+        },
+        {
+          "id": "ARCHIVE-001",
+          "text": "A backup restores only into an empty installation: monitors come back paused, destinations disabled and old alerts held back."
+        },
+        {
+          "id": "NETWORK-001",
+          "text": "Every address and redirect is validated, unsafe addresses are refused, and a redirect that downgrades from HTTPS is rejected."
+        },
+        {
+          "id": "ERASURE-001",
+          "text": "An owner can erase a monitor with its evidence, an alert destination, or an operator, and gets a receipt of what was removed."
+        }
+      ],
+      "horizontalOverflow": [
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_bar__kLxgq"
+        },
+        {
+          "tag": "SPAN",
+          "class": "frame_dots__ORooB"
+        },
+        {
+          "tag": "SPAN",
+          "class": ""
+        },
+        {
+          "tag": "SPAN",
+          "class": ""
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_screen__twPum"
+        },
+        {
+          "tag": "IMG",
+          "class": ""
+        },
+        {
+          "tag": "FIGCAPTION",
+          "class": "frame_caption__4E939"
+        }
+      ]
+    },
+    {
+      "label": "baseline",
+      "slug": "oncall",
+      "width": 390,
+      "status": 200,
+      "expected": "v0.5.10",
+      "errors": [],
+      "text": "Oncall\n\nAlternative to PagerDuty\n\nAlso replaces Opsgenie\n\nWho's on now, who's next, and when they hand over.\n\nOncall in 54 seconds\nA live incident with runbook and decision log\nWho is on call, and the coverage windows\nIncident timeline with follow-up owners\n\nrun-oncall.com\n↗\nGitHub\n→\n\nOncall shows everyone who is on call now, who is next and exactly when they hand over. It keeps rotations, swaps, incidents, runbooks and follow-ups in one place, and runs alongside the pager you already use while you move your schedules over.\n\nWhat it does\nShow who is on call now, who is next and when the next hand-over happens\nBuild primary and backup rotations in your team's timezone, so a hand-over stays on the same clock time when clocks change\nCover a few hours with an override or swap without touching the rotation\nSubscribe to a private calendar feed of the next seven days of shifts\nRecord alerts from monitoring, route them to the right service and replay the routing safely\nDeclare an incident, assign a commander, follow the runbook and keep every decision on a timeline\nResolve with recovery evidence and a summary, then track follow-up tasks and review\nPreview your Opsgenie or PagerDuty schedules before anything is imported\nWhat it promises\nOncall sends no texts, calls or push alerts, so your existing pager stays in charge while you use it.\nOncall sends signed response events only to endpoints an administrator approves; paging stays off, and email is for sign-in links only.\nA runbook is copied into the incident when it is declared, so later edits never rewrite instructions mid-incident.\nResolving an incident needs recovery evidence and a summary, and every change is recorded in an attributed timeline.\nIncident records you write are never deleted automatically.\nRotations hand over by wall-clock time in your named zone, and clock-change gaps show up as visible gaps.\nViewers can only read, responders coordinate, and admins manage; alert-sending credentials grant no read access, and removed access stops on the next request.\nReplaying alert routing only reads: it creates no alert, incident or outside effect.\nA move-in preview writes nothing, a person must review it before it is applied, and imported schedules stay paused.\nA move-in can be undone, and edits you made afterwards are kept rather than overwritten.\nRead the full contract\n→\nMove in from\nPagerDuty\nOpsgenie\nSplunk On-Call\nBetter Stack\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-oncall\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-oncall.\n\nRUNS ON\nyour own computer, or your own Cloudflare account\nVERSION\nv0.5.10\nLICENCE\nMIT, 100% free",
+      "viewport": 390,
+      "scrollWidth": 390,
+      "contentHeight": 4761,
+      "facts": [
+        {
+          "label": "RUNS ON",
+          "value": "your own computer, or your own Cloudflare account",
+          "rect": {
+            "x": 20,
+            "y": 3779.140625,
+            "width": 350,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "VERSION",
+          "value": "v0.5.10",
+          "rect": {
+            "x": 20,
+            "y": 3860.578125,
+            "width": 350,
+            "height": 44.34375
+          }
+        },
+        {
+          "label": "LICENCE",
+          "value": "MIT, 100% free",
+          "rect": {
+            "x": 20,
+            "y": 3918.921875,
+            "width": 350,
+            "height": 44.34375
+          }
+        }
+      ],
+      "claims": [
+        {
+          "id": "OC-012",
+          "text": "Oncall sends no texts, calls or push alerts, so your existing pager stays in charge while you use it."
+        },
+        {
+          "id": "OC-006",
+          "text": "Oncall sends signed response events only to endpoints an administrator approves; paging stays off, and email is for sign-in links only."
+        },
+        {
+          "id": "OC-005",
+          "text": "A runbook is copied into the incident when it is declared, so later edits never rewrite instructions mid-incident."
+        },
+        {
+          "id": "OC-004",
+          "text": "Resolving an incident needs recovery evidence and a summary, and every change is recorded in an attributed timeline."
+        },
+        {
+          "id": "OC-008",
+          "text": "Incident records you write are never deleted automatically."
+        },
+        {
+          "id": "OC-011",
+          "text": "Rotations hand over by wall-clock time in your named zone, and clock-change gaps show up as visible gaps."
+        },
+        {
+          "id": "OC-003",
+          "text": "Viewers can only read, responders coordinate, and admins manage; alert-sending credentials grant no read access, and removed access stops on the next request."
+        },
+        {
+          "id": "OC-002",
+          "text": "Replaying alert routing only reads: it creates no alert, incident or outside effect."
+        },
+        {
+          "id": "OC-021",
+          "text": "A move-in preview writes nothing, a person must review it before it is applied, and imported schedules stay paused."
+        },
+        {
+          "id": "OC-022",
+          "text": "A move-in can be undone, and edits you made afterwards are kept rather than overwritten."
+        }
+      ],
+      "horizontalOverflow": [
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_bar__kLxgq"
+        },
+        {
+          "tag": "SPAN",
+          "class": "frame_dots__ORooB"
+        },
+        {
+          "tag": "SPAN",
+          "class": ""
+        },
+        {
+          "tag": "SPAN",
+          "class": ""
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_screen__twPum"
+        },
+        {
+          "tag": "IMG",
+          "class": ""
+        },
+        {
+          "tag": "FIGCAPTION",
+          "class": "frame_caption__4E939"
+        }
+      ]
+    },
+    {
+      "label": "candidate",
+      "slug": "oncall",
+      "width": 390,
+      "status": 200,
+      "expected": "v0.5.11",
+      "errors": [],
+      "text": "Oncall\n\nAlternative to PagerDuty\n\nAlso replaces Opsgenie\n\nWho's on now, who's next, and when they hand over.\n\nOncall in 54 seconds\nA live incident with runbook and decision log\nWho is on call, and the coverage windows\nIncident timeline with follow-up owners\n\nrun-oncall.com\n↗\nGitHub\n→\n\nOncall shows everyone who is on call now, who is next and exactly when they hand over. It keeps rotations, swaps, incidents, runbooks and follow-ups in one place, and runs alongside the pager you already use while you move your schedules over.\n\nWhat it does\nShow who is on call now, who is next and when the next hand-over happens\nBuild primary and backup rotations in your team's timezone, so a hand-over stays on the same clock time when clocks change\nCover a few hours with an override or swap without touching the rotation\nSubscribe to a private calendar feed of the next seven days of shifts\nRecord alerts from monitoring, route them to the right service and replay the routing safely\nDeclare an incident, assign a commander, follow the runbook and keep every decision on a timeline\nResolve with recovery evidence and a summary, then track follow-up tasks and review\nPreview your Opsgenie or PagerDuty schedules before anything is imported\nWhat it promises\nOncall sends no texts, calls or push alerts, so your existing pager stays in charge while you use it.\nOncall sends signed response events only to endpoints an administrator approves; paging stays off, and email is for sign-in links only.\nA runbook is copied into the incident when it is declared, so later edits never rewrite instructions mid-incident.\nResolving an incident needs recovery evidence and a summary, and every change is recorded in an attributed timeline.\nIncident records you write are never deleted automatically.\nRotations hand over by wall-clock time in your named zone, and clock-change gaps show up as visible gaps.\nViewers can only read, responders coordinate, and admins manage; alert-sending credentials grant no read access, and removed access stops on the next request.\nReplaying alert routing only reads: it creates no alert, incident or outside effect.\nA move-in preview writes nothing, a person must review it before it is applied, and imported schedules stay paused.\nA move-in can be undone, and edits you made afterwards are kept rather than overwritten.\nRead the full contract\n→\nMove in from\nPagerDuty\nOpsgenie\nSplunk On-Call\nBetter Stack\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-oncall\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-oncall.\n\nRUNS ON\nyour own computer, or your own Cloudflare account\nVERSION\nv0.5.11\nLICENCE\nMIT, 100% free",
+      "viewport": 390,
+      "scrollWidth": 390,
+      "contentHeight": 4761,
+      "facts": [
+        {
+          "label": "RUNS ON",
+          "value": "your own computer, or your own Cloudflare account",
+          "rect": {
+            "x": 20,
+            "y": 3779.140625,
+            "width": 350,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "VERSION",
+          "value": "v0.5.11",
+          "rect": {
+            "x": 20,
+            "y": 3860.578125,
+            "width": 350,
+            "height": 44.34375
+          }
+        },
+        {
+          "label": "LICENCE",
+          "value": "MIT, 100% free",
+          "rect": {
+            "x": 20,
+            "y": 3918.921875,
+            "width": 350,
+            "height": 44.34375
+          }
+        }
+      ],
+      "claims": [
+        {
+          "id": "OC-012",
+          "text": "Oncall sends no texts, calls or push alerts, so your existing pager stays in charge while you use it."
+        },
+        {
+          "id": "OC-006",
+          "text": "Oncall sends signed response events only to endpoints an administrator approves; paging stays off, and email is for sign-in links only."
+        },
+        {
+          "id": "OC-005",
+          "text": "A runbook is copied into the incident when it is declared, so later edits never rewrite instructions mid-incident."
+        },
+        {
+          "id": "OC-004",
+          "text": "Resolving an incident needs recovery evidence and a summary, and every change is recorded in an attributed timeline."
+        },
+        {
+          "id": "OC-008",
+          "text": "Incident records you write are never deleted automatically."
+        },
+        {
+          "id": "OC-011",
+          "text": "Rotations hand over by wall-clock time in your named zone, and clock-change gaps show up as visible gaps."
+        },
+        {
+          "id": "OC-003",
+          "text": "Viewers can only read, responders coordinate, and admins manage; alert-sending credentials grant no read access, and removed access stops on the next request."
+        },
+        {
+          "id": "OC-002",
+          "text": "Replaying alert routing only reads: it creates no alert, incident or outside effect."
+        },
+        {
+          "id": "OC-021",
+          "text": "A move-in preview writes nothing, a person must review it before it is applied, and imported schedules stay paused."
+        },
+        {
+          "id": "OC-022",
+          "text": "A move-in can be undone, and edits you made afterwards are kept rather than overwritten."
+        }
+      ],
+      "horizontalOverflow": [
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_bar__kLxgq"
+        },
+        {
+          "tag": "SPAN",
+          "class": "frame_dots__ORooB"
+        },
+        {
+          "tag": "SPAN",
+          "class": ""
+        },
+        {
+          "tag": "SPAN",
+          "class": ""
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_screen__twPum"
+        },
+        {
+          "tag": "IMG",
+          "class": ""
+        },
+        {
+          "tag": "FIGCAPTION",
+          "class": "frame_caption__4E939"
+        }
+      ]
+    },
+    {
+      "label": "baseline",
+      "slug": "orbit",
+      "width": 390,
+      "status": 200,
+      "expected": "v0.4.7",
+      "errors": [],
+      "text": "Orbit\n\nAlternative to HubSpot\n\nAlso replaces Pipedrive, Salesforce\n\nA CRM that shows which deal to work next, and why.\n\nOrbit in 51 seconds\nThe NOW queue of deals to act on\nYour brief: what changed since last look\nReview a follow-up before it is sent\nSignal sources feeding the queue\n\nrun-orbit.com\n↗\nGitHub\n→\n\nOrbit puts a deal in your NOW queue when a customer replies, scores it from real signals, and shows you why. Your company's policy controls agent sending; with approval required, a person reviews the exact email before it is sent. It is free for the whole team, and you can try it beside your current CRM.\n\nWhat it does\nMove a deal into your NOW queue when a customer replies, books a meeting or submits a form\nScore each deal from what customers actually did, with older activity counting for less and every signal behind the score shown\nKeep contacts, companies and deals, with your own fields, in a pipeline with your own stages\nLet a contact form on your site drop each enquiry onto the right contact\nDraft follow-ups, with optional AI, that you review and approve one by one, and schedule them with quiet hours\nCancel scheduled follow-ups automatically when the customer replies\nPull in emails and meetings from Gmail, Google Calendar, Outlook, forwarded mail or a calendar link\nImport contacts from a CSV, and export or restore a complete archive of your workspace any time\nWhat it promises\nSignals, scores and AI text never grant permission to send. Your company's policy decides agent sending; when approval is required, a person approves the exact saved recipients, subject and body, and later changes invalidate it.\nA deal's score shows every signal it used, with source, time and weight, beside the reason for the recommendation.\nOrbit uses no tracking script, pixel or cookie, and does not fingerprint visitors.\nA reply, a booked meeting, an unsubscribe or a permanent bounce cancels that contact's scheduled messages.\nOpt-out is on by default for sequence email and off for one-to-one email. Messages set to carry it include one-click unsubscribe; an identified opt-out marks the contact do-not-contact within a minute and cancels scheduled messages.\nA draft goes stale when the customer replies or the deal changes, and a stale draft cannot be sent until you have seen what changed.\nCapture never writes a draft or sends a message, and a contact created from captured mail is do-not-contact until you clear it.\nIf the AI is unavailable, records, scoring, search, hand-written drafts and sending still work.\nMerging duplicates needs you to choose the surviving record and every conflicting value, and refuses if either record changed after your review.\nDeleting a contact removes their email, signals, drafts and message bodies from records, search, exports and later AI or mail requests within five minutes.\nRead the full contract\n→\nMove in from\nHubSpot Sales Hub\nPipedrive\nCSV files\nGmail and Google Calendar\nOutlook mail and calendar\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-orbit\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-orbit.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.4.7\nLICENCE\nMIT, 100% free",
+      "viewport": 390,
+      "scrollWidth": 390,
+      "contentHeight": 5137,
+      "facts": [
+        {
+          "label": "RUNS ON",
+          "value": "Your computer, or your own Cloudflare account",
+          "rect": {
+            "x": 20,
+            "y": 4155.171875,
+            "width": 350,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "VERSION",
+          "value": "v0.4.7",
+          "rect": {
+            "x": 20,
+            "y": 4236.609375,
+            "width": 350,
+            "height": 44.34375
+          }
+        },
+        {
+          "label": "LICENCE",
+          "value": "MIT, 100% free",
+          "rect": {
+            "x": 20,
+            "y": 4294.953125,
+            "width": 350,
+            "height": 44.34375
+          }
+        }
+      ],
+      "claims": [
+        {
+          "id": "OUT-001",
+          "text": "Signals, scores and AI text never grant permission to send. Your company's policy decides agent sending; when approval is required, a person approves the exact saved recipients, subject and body, and later changes invalidate it."
+        },
+        {
+          "id": "OPP-004",
+          "text": "A deal's score shows every signal it used, with source, time and weight, beside the reason for the recommendation."
+        },
+        {
+          "id": "SIGNAL-007",
+          "text": "Orbit uses no tracking script, pixel or cookie, and does not fingerprint visitors."
+        },
+        {
+          "id": "OUT-007",
+          "text": "A reply, a booked meeting, an unsubscribe or a permanent bounce cancels that contact's scheduled messages."
+        },
+        {
+          "id": "OUT-012",
+          "text": "Opt-out is on by default for sequence email and off for one-to-one email. Messages set to carry it include one-click unsubscribe; an identified opt-out marks the contact do-not-contact within a minute and cancels scheduled messages."
+        },
+        {
+          "id": "ACTION-005",
+          "text": "A draft goes stale when the customer replies or the deal changes, and a stale draft cannot be sent until you have seen what changed."
+        },
+        {
+          "id": "CAPTURE-005",
+          "text": "Capture never writes a draft or sends a message, and a contact created from captured mail is do-not-contact until you clear it."
+        },
+        {
+          "id": "AI-003",
+          "text": "If the AI is unavailable, records, scoring, search, hand-written drafts and sending still work."
+        },
+        {
+          "id": "RECORD-004",
+          "text": "Merging duplicates needs you to choose the surviving record and every conflicting value, and refuses if either record changed after your review."
+        },
+        {
+          "id": "DATA-002",
+          "text": "Deleting a contact removes their email, signals, drafts and message bodies from records, search, exports and later AI or mail requests within five minutes."
+        }
+      ],
+      "horizontalOverflow": [
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_bar__kLxgq"
+        },
+        {
+          "tag": "SPAN",
+          "class": "frame_dots__ORooB"
+        },
+        {
+          "tag": "SPAN",
+          "class": ""
+        },
+        {
+          "tag": "SPAN",
+          "class": ""
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_screen__twPum"
+        },
+        {
+          "tag": "IMG",
+          "class": ""
+        },
+        {
+          "tag": "FIGCAPTION",
+          "class": "frame_caption__4E939"
+        }
+      ]
+    },
+    {
+      "label": "candidate",
+      "slug": "orbit",
+      "width": 390,
+      "status": 200,
+      "expected": "v0.4.8",
+      "errors": [],
+      "text": "Orbit\n\nAlternative to HubSpot\n\nAlso replaces Pipedrive, Salesforce\n\nA CRM that shows which deal to work next, and why.\n\nOrbit in 51 seconds\nThe NOW queue of deals to act on\nYour brief: what changed since last look\nReview a follow-up before it is sent\nSignal sources feeding the queue\n\nrun-orbit.com\n↗\nGitHub\n→\n\nOrbit puts a deal in your NOW queue when a customer replies, scores it from real signals, and shows you why. Your company's policy controls agent sending; with approval required, a person reviews the exact email before it is sent. It is free for the whole team, and you can try it beside your current CRM.\n\nWhat it does\nMove a deal into your NOW queue when a customer replies, books a meeting or submits a form\nScore each deal from what customers actually did, with older activity counting for less and every signal behind the score shown\nKeep contacts, companies and deals, with your own fields, in a pipeline with your own stages\nLet a contact form on your site drop each enquiry onto the right contact\nDraft follow-ups, with optional AI, that you review and approve one by one, and schedule them with quiet hours\nCancel scheduled follow-ups automatically when the customer replies\nPull in emails and meetings from Gmail, Google Calendar, Outlook, forwarded mail or a calendar link\nImport contacts from a CSV, and export or restore a complete archive of your workspace any time\nWhat it promises\nSignals, scores and AI text never grant permission to send. Your company's policy decides agent sending; when approval is required, a person approves the exact saved recipients, subject and body, and later changes invalidate it.\nA deal's score shows every signal it used, with source, time and weight, beside the reason for the recommendation.\nOrbit uses no tracking script, pixel or cookie, and does not fingerprint visitors.\nA reply, a booked meeting, an unsubscribe or a permanent bounce cancels that contact's scheduled messages.\nOpt-out is on by default for sequence email and off for one-to-one email. Messages set to carry it include one-click unsubscribe; an identified opt-out marks the contact do-not-contact within a minute and cancels scheduled messages.\nA draft goes stale when the customer replies or the deal changes, and a stale draft cannot be sent until you have seen what changed.\nCapture never writes a draft or sends a message, and a contact created from captured mail is do-not-contact until you clear it.\nIf the AI is unavailable, records, scoring, search, hand-written drafts and sending still work.\nMerging duplicates needs you to choose the surviving record and every conflicting value, and refuses if either record changed after your review.\nDeleting a contact removes their email, signals, drafts and message bodies from records, search, exports and later AI or mail requests within five minutes.\nRead the full contract\n→\nMove in from\nHubSpot Sales Hub\nPipedrive\nCSV files\nGmail and Google Calendar\nOutlook mail and calendar\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-orbit\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-orbit.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.4.8\nLICENCE\nMIT, 100% free",
+      "viewport": 390,
+      "scrollWidth": 390,
+      "contentHeight": 5137,
+      "facts": [
+        {
+          "label": "RUNS ON",
+          "value": "Your computer, or your own Cloudflare account",
+          "rect": {
+            "x": 20,
+            "y": 4155.171875,
+            "width": 350,
+            "height": 67.4375
+          }
+        },
+        {
+          "label": "VERSION",
+          "value": "v0.4.8",
+          "rect": {
+            "x": 20,
+            "y": 4236.609375,
+            "width": 350,
+            "height": 44.34375
+          }
+        },
+        {
+          "label": "LICENCE",
+          "value": "MIT, 100% free",
+          "rect": {
+            "x": 20,
+            "y": 4294.953125,
+            "width": 350,
+            "height": 44.34375
+          }
+        }
+      ],
+      "claims": [
+        {
+          "id": "OUT-001",
+          "text": "Signals, scores and AI text never grant permission to send. Your company's policy decides agent sending; when approval is required, a person approves the exact saved recipients, subject and body, and later changes invalidate it."
+        },
+        {
+          "id": "OPP-004",
+          "text": "A deal's score shows every signal it used, with source, time and weight, beside the reason for the recommendation."
+        },
+        {
+          "id": "SIGNAL-007",
+          "text": "Orbit uses no tracking script, pixel or cookie, and does not fingerprint visitors."
+        },
+        {
+          "id": "OUT-007",
+          "text": "A reply, a booked meeting, an unsubscribe or a permanent bounce cancels that contact's scheduled messages."
+        },
+        {
+          "id": "OUT-012",
+          "text": "Opt-out is on by default for sequence email and off for one-to-one email. Messages set to carry it include one-click unsubscribe; an identified opt-out marks the contact do-not-contact within a minute and cancels scheduled messages."
+        },
+        {
+          "id": "ACTION-005",
+          "text": "A draft goes stale when the customer replies or the deal changes, and a stale draft cannot be sent until you have seen what changed."
+        },
+        {
+          "id": "CAPTURE-005",
+          "text": "Capture never writes a draft or sends a message, and a contact created from captured mail is do-not-contact until you clear it."
+        },
+        {
+          "id": "AI-003",
+          "text": "If the AI is unavailable, records, scoring, search, hand-written drafts and sending still work."
+        },
+        {
+          "id": "RECORD-004",
+          "text": "Merging duplicates needs you to choose the surviving record and every conflicting value, and refuses if either record changed after your review."
+        },
+        {
+          "id": "DATA-002",
+          "text": "Deleting a contact removes their email, signals, drafts and message bodies from records, search, exports and later AI or mail requests within five minutes."
+        }
+      ],
+      "horizontalOverflow": [
+        {
+          "tag": "DIV",
+          "class": "gallery_slide__dzaBC"
+        },
+        {
+          "tag": "FIGURE",
+          "class": "frame_figure__4ifd3 frame_fill__BzJLl"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_window__yFI_L"
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_bar__kLxgq"
+        },
+        {
+          "tag": "SPAN",
+          "class": "frame_dots__ORooB"
+        },
+        {
+          "tag": "SPAN",
+          "class": ""
+        },
+        {
+          "tag": "SPAN",
+          "class": ""
+        },
+        {
+          "tag": "DIV",
+          "class": "frame_screen__twPum"
+        },
+        {
+          "tag": "IMG",
+          "class": ""
+        },
+        {
+          "tag": "FIGCAPTION",
+          "class": "frame_caption__4E939"
+        }
+      ]
+    }
+  ]
+}
