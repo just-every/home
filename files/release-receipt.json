@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-13T23:13:44.200298+00:00",
+  "head": "055dc4dbed1ae33d95a9cf0412464558c5ff5aef",
+  "base": "8d4a1a7af1f507fb24e1f6e2502bf0e967f31663",
+  "release": "https://github.com/just-every/run-lamp/releases/tag/v1.11.15",
+  "draft": false,
+  "prerelease": false,
+  "annotatedTagObject": "6db107e62b0260abbaaf4312890c8038348c5630",
+  "peeledCommit": "5dd84e13f6b0478edc2fc5e759d513f5eccf6d57",
+  "dsseSha256": "e9081372615ae76b5c832d71c40bf15023d783369fd64e49b762f93b76fa6350",
+  "dsseBytes": 3157,
+  "signatureVerified": false,
+  "copyHashes": {
+    "CONTRACT.md": "8b575f27ee607ce3",
+    "README.md": "1a20f137749ab26b",
+    "seed.json": "074cb758ae0a8d8f"
+  },
+  "prerequisites": "PR head and base unchanged on final read",
+  "githubCalls": 10
+}

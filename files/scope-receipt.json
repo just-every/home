@@ -1,0 +1,112 @@
+{
+  "at": "2026-11-13T23:09:30.120549+00:00",
+  "base": "8d4a1a7af1f507fb24e1f6e2502bf0e967f31663",
+  "head": "055dc4dbed1ae33d95a9cf0412464558c5ff5aef",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "commitsReviewed": [
+    "055dc4dbed1ae33d95a9cf0412464558c5ff5aef"
+  ],
+  "credentialShapedDiffValues": 0,
+  "trailerCount": 0,
+  "countsBefore": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "countsAfter": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "listingChanges": [
+    {
+      "slug": "lamp",
+      "field": "version",
+      "before": "v1.11.14",
+      "after": "v1.11.15"
+    }
+  ],
+  "versions": {
+    "happytohelp": "v0.4.25",
+    "lamp": "v1.11.15",
+    "uptime": "v0.5.11",
+    "oncall": "v0.5.13",
+    "orbit": "v0.4.9",
+    "spool": "v0.7.10"
+  },
+  "stateChanges": [
+    {
+      "slug": "happytohelp",
+      "field": "open",
+      "before": [
+        "42983364b373"
+      ],
+      "after": null
+    },
+    {
+      "slug": "lamp",
+      "field": "copy",
+      "before": {
+        "CONTRACT.md": "8b575f27ee607ce3",
+        "README.md": "778c7cf2ed2f6527",
+        "seed.json": "b42cf20347b50d08"
+      },
+      "after": {
+        "CONTRACT.md": "8b575f27ee607ce3",
+        "README.md": "1a20f137749ab26b",
+        "seed.json": "074cb758ae0a8d8f"
+      }
+    },
+    {
+      "slug": "lamp",
+      "field": "commit",
+      "before": "733e2ce1e2fc618183a93632218bb86456a06a79",
+      "after": "5dd84e13f6b0478edc2fc5e759d513f5eccf6d57"
+    },
+    {
+      "slug": "lamp",
+      "field": "open",
+      "before": null,
+      "after": [
+        "42983364b373"
+      ]
+    },
+    {
+      "slug": "lamp",
+      "field": "tag",
+      "before": "v1.11.14",
+      "after": "v1.11.15"
+    },
+    {
+      "slug": "lamp",
+      "field": "sourceRef",
+      "before": "v1.11.14",
+      "after": "v1.11.15"
+    },
+    {
+      "slug": "oncall",
+      "field": "open",
+      "before": [
+        "42983364b373"
+      ],
+      "after": null
+    },
+    {
+      "slug": "spool",
+      "field": "open",
+      "before": [
+        "42983364b373"
+      ],
+      "after": null
+    }
+  ],
+  "wordingChanged": false,
+  "pricingSourceUnchanged": true,
+  "sourceLock": "not applicable: no sources.lock.json or lock generator in this repository",
+  "contractViews": "not applicable: no CONTRACT.md, ACCEPTANCE.md or docs/CLAIMS.md or generator",
+  "migrationLedger": "not applicable: no migration-ledger check documented; migrations untouched"
+}

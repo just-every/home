@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-13T23:12:33.775Z",
+  "head": "055dc4dbed1ae33d95a9cf0412464558c5ff5aef",
+  "browser": "154.0.8037.57",
+  "route": "/lamp",
+  "rows": [
+    {
+      "width": 1440,
+      "status": 200,
+      "versionVisible": true,
+      "metrics": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440,
+        "title": "Lamp",
+        "clippedText": []
+      },
+      "errors": [],
+      "assertionsRun": true,
+      "fullPageScreenshot": "lamp-1440.png",
+      "versionScreenshot": "lamp-version-1440.png"
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "versionVisible": true,
+      "metrics": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "title": "Lamp",
+        "clippedText": []
+      },
+      "errors": [],
+      "assertionsRun": false,
+      "fullPageScreenshot": "lamp-390.png",
+      "versionScreenshot": "lamp-version-390.png"
+    }
+  ],
+  "publicListingsStatus": 200
+}

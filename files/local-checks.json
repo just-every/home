@@ -1,0 +1,76 @@
+[
+  {
+    "name": "listings-check",
+    "command": [
+      "npm",
+      "run",
+      "listings",
+      "--",
+      "--check"
+    ],
+    "startedAt": "2026-11-13T23:08:23.085608+00:00",
+    "completedAt": "2026-11-13T23:08:23.471274+00:00",
+    "exit": 0,
+    "head": "055dc4dbed1ae33d95a9cf0412464558c5ff5aef"
+  },
+  {
+    "name": "listings-write",
+    "command": [
+      "npm",
+      "run",
+      "listings"
+    ],
+    "startedAt": "2026-11-13T23:08:23.473629+00:00",
+    "completedAt": "2026-11-13T23:08:23.842591+00:00",
+    "exit": 0,
+    "head": "055dc4dbed1ae33d95a9cf0412464558c5ff5aef"
+  },
+  {
+    "name": "listings-no-diff",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code"
+    ],
+    "startedAt": "2026-11-13T23:08:23.844619+00:00",
+    "completedAt": "2026-11-13T23:08:23.868510+00:00",
+    "exit": 0,
+    "head": "055dc4dbed1ae33d95a9cf0412464558c5ff5aef"
+  },
+  {
+    "name": "type-check",
+    "command": [
+      "npm",
+      "run",
+      "type-check"
+    ],
+    "startedAt": "2026-11-13T23:08:23.869964+00:00",
+    "completedAt": "2026-11-13T23:08:27.717145+00:00",
+    "exit": 0,
+    "head": "055dc4dbed1ae33d95a9cf0412464558c5ff5aef"
+  },
+  {
+    "name": "lint",
+    "command": [
+      "npm",
+      "run",
+      "lint"
+    ],
+    "startedAt": "2026-11-13T23:08:27.718963+00:00",
+    "completedAt": "2026-11-13T23:08:30.262158+00:00",
+    "exit": 0,
+    "head": "055dc4dbed1ae33d95a9cf0412464558c5ff5aef"
+  },
+  {
+    "name": "build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "startedAt": "2026-11-13T23:08:30.264256+00:00",
+    "completedAt": "2026-11-13T23:08:58.261710+00:00",
+    "exit": 0,
+    "head": "055dc4dbed1ae33d95a9cf0412464558c5ff5aef"
+  }
+]

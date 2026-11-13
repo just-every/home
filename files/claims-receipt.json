@@ -1,0 +1,79 @@
+{
+  "at": "2026-11-13T23:15:36.716950+00:00",
+  "head": "055dc4dbed1ae33d95a9cf0412464558c5ff5aef",
+  "sourceRef": "v1.11.15",
+  "contractHash": "8b575f27ee607ce3",
+  "newFalseClaims": 0,
+  "claims": [
+    {
+      "clause": "INTAKE-002",
+      "sentence": "Monitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update.",
+      "releaseStatus": "partial",
+      "gap": "The cited journey asserts a private draft and page exclusion. It does not measure the 30-second create/update bound or compare all public surfaces. The class/policy wording carries no promotion.",
+      "conclusion": "No source-proven falsity; partial proof is not a false claim under R5."
+    },
+    {
+      "clause": "INCIDENT-004",
+      "sentence": "A published update is never edited or deleted; a correction is a new update and both stay on the public timeline.",
+      "releaseStatus": "partial",
+      "gap": "Asserted: original wording retained; correction identifies original; both updates retained. Unasserted in old cited evidence: published deletion refused; public publication order.",
+      "conclusion": "No source-proven falsity; partial proof is not a false claim under R5."
+    },
+    {
+      "clause": "UPDATE-008",
+      "sentence": "Publishing is a single step: the update and the list of people to notify are saved together.",
+      "releaseStatus": "partial",
+      "gap": "Asserted: update once; recipients once; no failed recipient. Unasserted in old cited evidence: narrowing preserves delivery; unsubscribe suppresses delivery; failed update not public; retry to success; dispatch does not block.",
+      "conclusion": "No source-proven falsity; partial proof is not a false claim under R5."
+    },
+    {
+      "clause": "NOTIFY-009",
+      "sentence": "Publishing still works while email, the queue or a subscriber's endpoint is failing.",
+      "releaseStatus": "partial",
+      "gap": "Old cited evidence asserts only the previously described delivered slice. It does not assert: mail provider failure publish; queue failure publish; endpoint failure publish; public page survives delivery failure; feed survives delivery failure; widget survives delivery failure; recovery preserves and delivers committed set.",
+      "conclusion": "No source-proven falsity; partial proof is not a false claim under R5."
+    },
+    {
+      "clause": "UPTIME-001",
+      "sentence": "Uptime is rounded down, so a period with any downtime never shows 100 percent.",
+      "releaseStatus": "done",
+      "gap": "",
+      "conclusion": "No source-proven falsity; partial proof is not a false claim under R5."
+    },
+    {
+      "clause": "PAGE-006",
+      "sentence": "If the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear.",
+      "releaseStatus": "partial",
+      "gap": "Old cited evidence asserts The page body still contains Partially unavailable after database removal; Stale page content is labeled Last known state; The generation instant is visible in stale page content; The retained failure body contains Partially unavailable. Unasserted: The Atom feed survives database outage; The widget survives database outage; Page content survives queue outage; Atom feed content survives queue outage; Widget content survives queue outage; Page content survives object-storage outage; Atom feed content survives object-storage outage; Widget content survives object-storage outage; Origin outage uses the specified cached-response window; Page is unavailable only before first publication; Atom feed is unavailable only before first publication; Widget is unavailable only before first publication.",
+      "conclusion": "No source-proven falsity; partial proof is not a false claim under R5."
+    },
+    {
+      "clause": "PAGE-013",
+      "sentence": "The public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites.",
+      "releaseStatus": "done",
+      "gap": "",
+      "conclusion": "No source-proven falsity; partial proof is not a false claim under R5."
+    },
+    {
+      "clause": "NOTIFY-004",
+      "sentence": "The delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it.",
+      "releaseStatus": "partial",
+      "gap": "Old cited evidence asserts outcome field; queued outcome; delivered outcome; bounced outcome. Unasserted: subscriber field readback; channel field readback; update field readback; queue time readback; outcome time readback; complained outcome readback; message pixel absence; tracked-link absence; the outcome filter returns all and only matching rows throughout its result set; channel filter reconciliation; update filter reconciliation; all 101 distinct expected destinations occur once and match the full filtered view.",
+      "conclusion": "No source-proven falsity; partial proof is not a false claim under R5."
+    },
+    {
+      "clause": "MOVE-002",
+      "sentence": "Moving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm.",
+      "releaseStatus": "partial",
+      "gap": "Old cited evidence asserts Sorry incident update timestamps equal source times; Past Sorry maintenance is completed; Imported Better Stack maintenance has no native notice; Import queues no notification delivery. Unasserted: Complete imported component history derives from original update times; Concurrent repeated applies send no mail; Preview sends no mail; Every resume sends no mail; Cutover checks send no mail; Each imported email subscriber is pending.",
+      "conclusion": "No source-proven falsity; partial proof is not a false claim under R5."
+    },
+    {
+      "clause": "SUB-006",
+      "sentence": "Every notification email carries a one-click unsubscribe.",
+      "releaseStatus": "partial",
+      "gap": "Old cited evidence asserts mail unsubscribe value is present; web unsubscribe value is present; one-click declaration; URL-encoded deactivation. Unasserted: visible unsubscribe link in notification body; multipart form deactivation; DKIM coverage of both unsubscribe headers; per-token allowance independence.",
+      "conclusion": "No source-proven falsity; partial proof is not a false claim under R5."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-13T23:13:01.371Z",
+  "head": "055dc4dbed1ae33d95a9cf0412464558c5ff5aef",
+  "base": "8d4a1a7af1f507fb24e1f6e2502bf0e967f31663",
+  "width": 1440,
+  "status": 200,
+  "metrics": {
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "title": "Lamp"
+  },
+  "visibleTextDiff": "only v1.11.14 -> v1.11.15",
+  "assertion": "baseline visible body text with version replacement equals candidate visible body text"
+}

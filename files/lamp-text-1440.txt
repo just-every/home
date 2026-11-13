@@ -1,0 +1,81 @@
+Products
+Process
+Journey
+Contact
+GitHub
+Lamp
+
+Alternative to Atlassian Statuspage
+
+Also replaces Instatus, Better Stack
+
+The status page that never leaves your customers in the dark.
+
+Lamp in 51 seconds
+The public status page during an outage
+Write a public incident update
+Schedule maintenance windows
+Subscribers and where updates go
+
+run-lamp.com
+↗
+GitHub
+→
+
+Lamp is a status page that tells your customers who is affected, how badly and what still works. You write each update once, and the page, the feed, the site banner and subscriber emails all carry the same words. Your page keeps answering even when Lamp's own database is down.
+
+What it does
+Show a status page with each component's state, a 90-day record and a plain-words account of every incident
+Write each update once and send it to the page, an Atom feed, a site banner and subscriber email together, with a preview first
+Keep the page answering from the last known state, labelled with its age, when Lamp's own database is down
+Let subscribers choose the components they follow and unsubscribe in one click, with no cookies and no CAPTCHA
+Run planned maintenance that starts, finishes and notifies subscribers by itself
+Turn alerts from your monitoring tools into one draft incident per problem, which you review and publish
+Publish post-incident reports, post to Slack or Microsoft Teams, send signed webhooks and keep a delivery log
+Use your own domain and colours, and export everything whenever you like
+What it promises
+Monitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update.
+A published update is never edited or deleted; a correction is a new update and both stay on the public timeline.
+Publishing is a single step: the update and the list of people to notify are saved together.
+Uptime is rounded down, so a period with any downtime never shows 100 percent.
+Publishing still works while email, the queue or a subscriber's endpoint is failing.
+If the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear.
+The public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites.
+The delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it.
+Moving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm.
+Every notification email carries a one-click unsubscribe.
+Read the full contract
+→
+Move in from
+Atlassian Statuspage
+Better Stack
+Instatus
+Sorry
+Run it yourself
+
+One command clones a product and starts it.
+
+Terminal
+Copy
+$ npx -y @runeditrun/rer dev just-every/run-lamp
+
+No npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-lamp.
+
+RUNS ON
+Your computer, or your own Cloudflare account
+VERSION
+v1.11.15
+LICENCE
+MIT, 100% free
+
+Made with care and a lot of coding agents.
+
+Products
+All 49 products
+(so far)
+Essays
+Process
+Journey
+Get in touch
+Contact
+GitHub

@@ -1,0 +1,37 @@
+{
+  "at": "2026-11-13T23:15:36.716950+00:00",
+  "tag": "je-gate-39",
+  "repository": "just-every/home",
+  "candidateBranch": "cloud/je-sync-31",
+  "head": "055dc4dbed1ae33d95a9cf0412464558c5ff5aef",
+  "base": "8d4a1a7af1f507fb24e1f6e2502bf0e967f31663",
+  "pr": "https://github.com/just-every/home/pull/55",
+  "rows": {
+    "R1": "MET",
+    "R2": "MET",
+    "R3": "MET",
+    "R4": "MET",
+    "R5": "MET"
+  },
+  "blockingFindings": 0,
+  "newCFollowups": 0,
+  "clauseStatusChanges": [],
+  "countsBefore": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "countsAfter": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "verifyRunId": 43522518973,
+  "verifyConclusion": "success",
+  "otherRunIds": [
+    43522577260,
+    43522582393
+  ],
+  "productChanged": false,
+  "verdict": "GATE PASS"
+}

@@ -1,0 +1,84 @@
+
+> next-project@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.4.3 (webpack)
+✓ Running next.config.ts took 35ms
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+✓ Compiled successfully in 10.6s
+  Running TypeScript ...
+  Finished TypeScript in 3.7s ...
+  Collecting page data using 4 workers ...
+  Generating static pages using 4 workers (0/61) ...
+  Generating static pages using 4 workers (15/61) 
+  Generating static pages using 4 workers (30/61) 
+  Generating static pages using 4 workers (45/61) 
+✓ Generating static pages using 4 workers (61/61) in 781ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+⚠ 27 traced files were not included in the standalone output
+because their paths are outside of `outputFileTracingRoot`.
+First 100 skipped files:
+  - ../home/node_modules/next/dist/compiled/jest-worker/processChild.js
+  - ../home/node_modules/next/dist/compiled/jest-worker/threadChild.js
+  - ../home/node_modules/next/dist/server/lib/start-server.js
+  - ../home/node_modules/next/dist/server/next-server.js
+  - ../home/node_modules/next/dist/server/next.js
+  - ../home/node_modules/next/dist/server/require-hook.js
+  - ../home/node_modules/next/dist/server/route-modules/app-page/module.compiled.js
+  - ../home/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/app-router-context.js
+  - ../home/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/entrypoints.js
+  - ../home/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/head-manager-context.js
+  - ../home/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/hooks-client-context.js
+  - ../home/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/image-config-context.js
+  - ../home/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/router-context.js
+  - ../home/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/server-inserted-html.js
+  - ../home/node_modules/next/dist/server/route-modules/pages/module.compiled.js
+  - ../home/node_modules/next/dist/server/route-modules/pages/vendored/contexts/app-router-context.js
+  - ../home/node_modules/next/dist/server/route-modules/pages/vendored/contexts/entrypoints.js
+  - ../home/node_modules/next/dist/server/route-modules/pages/vendored/contexts/head-manager-context.js
+  - ../home/node_modules/next/dist/server/route-modules/pages/vendored/contexts/hooks-client-context.js
+  - ../home/node_modules/next/dist/server/route-modules/pages/vendored/contexts/html-context.js
+  - ../home/node_modules/next/dist/server/route-modules/pages/vendored/contexts/image-config-context.js
+  - ../home/node_modules/next/dist/server/route-modules/pages/vendored/contexts/loadable-context.js
+  - ../home/node_modules/next/dist/server/route-modules/pages/vendored/contexts/loadable.js
+  - ../home/node_modules/next/dist/server/route-modules/pages/vendored/contexts/router-context.js
+  - ../home/node_modules/next/dist/server/route-modules/pages/vendored/contexts/server-inserted-html.js
+  - ../home/node_modules/styled-jsx/index.js
+  - ../home/node_modules/styled-jsx/style.js
+Set `outputFileTracingRoot` to a common parent directory
+to include these files.
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├   /[slug]
+│ ├ ● /uptime
+│ ├ ● /happytohelp
+│ ├ ● /nook
+│ └ ● [+46 more paths]
+├ ƒ /api/contact
+├ ƒ /api/events
+├ ƒ /api/match
+├ ƒ /api/suggest
+├ ƒ /api/tokens
+├ ○ /contact
+├ ○ /journey
+├ ○ /process
+├ ○ /products
+└ ○ /sitemap.xml
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
