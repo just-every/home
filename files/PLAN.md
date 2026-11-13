@@ -1,0 +1,10 @@
+# je-sync-28 plan
+
+1. Configure fleet Git identity, refresh the authorized launcher bundle, install credential/push helpers and commit hooks. Clone only just-every/home shallowly from main and read its AGENTS.md and seeds-sync implementation before installing dependencies.
+2. Run the committed seeds-sync dry run across all 49 visible seeds. Read other repositories through gh api only; a task-local Git adapter translates the sync tool's cross-repository ls-remote reads to GitHub ref/commit API results, caching that fresh task snapshot outside the checkout. No sync implementation changes.
+3. Read GitHub Releases freshly for all listed seeds. Require a non-draft, non-prerelease Release with rer-release.dsse.json before importing any newer version; report asset presence separately from cryptographic verification.
+4. Apply copy-only provenance, review source drift and the named existing copy follow-ups against tagged source, preserving true wording and all contract statuses. Record unreleased drift without publishing its copy.
+5. Apply the mechanical sync, inspect its actual mark/colour/status/homepage output and retain only eligible scoped changes. Generate/check listings and repeat the dry run. Explain every retained open finding.
+6. Run type-check, lint and production build sequentially, check scoped diff hygiene, and capture any changed screen at 1440 and 390 with a meaningful assertion at one width.
+7. Fetch/rebase current main before the first product push, commit with explicit fleet author/committer environment and active hooks, audit all candidate identities/messages, and publish only cloud/je-sync-28 with the fleet push guard. Open the requested PR and observe exact-SHA Verify through REST with the prescribed interval and budget.
+8. Write complete non-secret reports and actual receipts here, explicitly publish them only to evidence/je-sync-28, preserve pushed provenance and remove the disposable product checkout/node_modules after evidence publication. Relay the lane POST and terminal custody line.

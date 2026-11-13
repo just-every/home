@@ -1,0 +1,50 @@
+--- v0.7.8/readme
++++ v0.7.9/readme
+@@ -33,7 +33,7 @@
+ 
+ Spool catches JavaScript, Python and Go errors, groups repeats into issues, and maps JavaScript stacks back to your original source. Download an evidence packet for a fix, give an agent evidence access and inert grouping-proposal submission to one project, and see when a resolved error comes back in a later release. One owner can keep several projects separate, export private evidence and restore it into a fresh copy.
+ 
+-Public source: [just-every/run-spool](https://github.com/just-every/run-spool). The latest tagged Spool release is [v0.7.8](https://github.com/just-every/run-spool/tree/v0.7.8). The clone instructions below use `main`, which may be ahead of that tag; the tagged release has its own instructions. See the [changelog](CHANGELOG.md). Licensed under the [MIT License](LICENSE).
++Public source: [just-every/run-spool](https://github.com/just-every/run-spool). The latest tagged Spool release is [v0.7.9](https://github.com/just-every/run-spool/tree/v0.7.9). The clone instructions below use `main`, which may be ahead of that tag; the tagged release has its own instructions. See the [changelog](CHANGELOG.md). Licensed under the [MIT License](LICENSE).
+ 
+ Run Spool on your computer without a Cloudflare account or mail provider, or deploy it to your own Cloudflare Worker and D1 database. The [first-release jobs and verification requirements](ACCEPTANCE.md) describe what to expect.
+ 
+@@ -55,7 +55,7 @@
+ 
+ Already have Node 22 or later? `npx -y @runeditrun/rer dev just-every/run-spool` does the same.
+ 
+-To start it again later, run `cd run-spool && ~/.local/bin/rer dev`. To run the tagged release instead, use `git clone --branch v0.7.8 https://github.com/just-every/run-spool.git spool && cd spool && rer dev` in place of that line. Its dependencies and instructions are those shipped with that tag.
++To start it again later, run `cd run-spool && ~/.local/bin/rer dev`. To run the tagged release instead, use `git clone --branch v0.7.9 https://github.com/just-every/run-spool.git spool && cd spool && rer dev` in place of that line. Its dependencies and instructions are those shipped with that tag.
+ 
+ `rer dev` installs everything, prepares a local owner and prints a link that opens Spool signed in. First start uses `owner@run-spool.test` for the `run-spool` folder above, without asking for an email, even when input is piped. Another folder name produces `owner@<sanitized-folder-name>.test`; existing setup keeps its owner.
+ 
+@@ -77,7 +77,7 @@
+ 
+ Back up first: export a private archive (Settings → **Download private archive**, or stop dev and run `rer export --output exports/spool.rer`). Keep the original checkout, database and private settings.
+ 
+-For the latest tagged release, run `git fetch --tags && git checkout v0.7.8`, then `rer dev`. To keep following `main`, run `git pull --ff-only` and then `rer dev`. Hosted installations update with `rer deploy` from the original deploying checkout, retaining its private settings, generated secrets and deployment receipt; follow [the hosting update procedure](docs/HOSTED.md#update-to-a-newer-spool).
++For the latest tagged release, run `git fetch --tags && git checkout v0.7.9`, then `rer dev`. To keep following `main`, run `git pull --ff-only` and then `rer dev`. Hosted installations update with `rer deploy` from the original deploying checkout, retaining its private settings, generated secrets and deployment receipt; follow [the hosting update procedure](docs/HOSTED.md#update-to-a-newer-spool).
+ 
+ Those commands apply any migrations missing from the installed version. This `main` checkout includes migrations through `0099`; a tag applies the migrations shipped with that tag. Existing projects, evidence, triage states, grouping rules, inbound filters, alert rules and project keys are preserved. No reset or restore is needed for an upgrade. Older native private archives can also restore into a fresh, empty current installation. See the [release record](RELEASE.json) and [changelog](CHANGELOG.md).
+ 
+@@ -93,9 +93,9 @@
+ 
+ ## Capture protocol
+ 
+-Spool's own SDK, [`@just-every/spool`](packages/sdk/README.md), is the way to send errors. Install it and initialise it once with the project's endpoint and ingest key:
++Spool's own SDK, [`@just-every/spool`](packages/sdk/README.md), is the way to send errors. For browser capture without Node.js or npm, download `/errors-capture.js` from your Spool installation, serve it with your app and follow the [browser-helper setup](docs/capture.md#browser-capture-without-nodejs-or-npm). Or install the SDK and initialise it once with the project's endpoint and ingest key:
+ 
+-Run this in **your application’s repository**, using that application’s Node.js and npm. The Spool installer’s private Node runtime runs Spool itself; it does not put Node or npm on your shell’s PATH for your application.
++Run this in **your application’s repository**, with [Node.js and npm](https://nodejs.org/en/download) installed and available on PATH. The Spool installer’s private Node runtime runs Spool itself; it does not put Node or npm on your shell’s PATH for your application.
+ 
+ ```sh
+ npm install @just-every/spool
+@@ -119,7 +119,7 @@
+ 
+ ## Operating limits and privacy
+ 
+-Spool is intended for bounded error evidence. Each project retains at most 10,000 occurrences and admits at most 120 new occurrences per minute; recorded rejections can reduce the remaining admission budget. The issue list and its filters cover the latest 100 groups, and packets include the latest 10 occurrences. Maps are private uploads, limited to 20 flat V3 maps of 256 KiB per project; Spool never fetches source URLs. Ingest requests are limited to 32 KiB, 30 frames and 20 breadcrumbs.
++Spool is intended for bounded error evidence. Each project retains at most 10,000 occurrences and admits at most 120 new occurrences per minute; recorded rejections can reduce the remaining admission budget. The issue list and its filters cover the latest 100 groups, and packets include the latest 10 occurrences. Maps are private uploads. The upload service and current checkout CLI accept flat or indexed V3 maps up to 1 MiB each. The published npm SDK 0.1.0 CLI and the prepared-map picker on **Releases** accept only flat V3 maps up to 256 KiB. There is no lifetime map count; all paths respect the optional project artifact-storage byte cap. The larger/indexed CLI support is in the unpublished 0.2.0 source, not npm 0.1.0. Spool never fetches source URLs. Ingest requests are limited to 32 KiB, 30 frames and 20 breadcrumbs.
+ 
+ The SDK and server scrub common emails, tokens and passwords, but free text can contain personal data those patterns do not recognize. Inspect event and packet previews. There is no durable offline queue, automatic retry or guaranteed unload flush; errors lost before reaching Spool are unknown. Firefox and Safari stack parsing is implemented but has not been tested in those browsers. See [supported languages](docs/SUPPORTED-LANGUAGES.md) for exact Python and Go support and symbolication limits.
+ 

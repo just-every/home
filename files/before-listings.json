@@ -1,0 +1,247 @@
+[
+  {
+    "slug": "uptime",
+    "kind": "released",
+    "version": "v0.5.10"
+  },
+  {
+    "slug": "happytohelp",
+    "kind": "released",
+    "version": "v0.4.24"
+  },
+  {
+    "slug": "nook",
+    "kind": "released",
+    "version": "v0.5.0"
+  },
+  {
+    "slug": "lamp",
+    "kind": "released",
+    "version": "v1.11.14"
+  },
+  {
+    "slug": "cradle",
+    "kind": "released",
+    "version": "v0.4.0"
+  },
+  {
+    "slug": "vector",
+    "kind": "released",
+    "version": "v0.4.1"
+  },
+  {
+    "slug": "slate",
+    "kind": "released",
+    "version": "v0.4.0"
+  },
+  {
+    "slug": "pencil",
+    "kind": "released",
+    "version": "v0.7.0"
+  },
+  {
+    "slug": "orbit",
+    "kind": "released",
+    "version": "v0.4.8"
+  },
+  {
+    "slug": "mango",
+    "kind": "released",
+    "version": "v0.4.0"
+  },
+  {
+    "slug": "dial",
+    "kind": "released",
+    "version": "v0.5.0"
+  },
+  {
+    "slug": "penny",
+    "kind": "released",
+    "version": "v0.2.1"
+  },
+  {
+    "slug": "oncall",
+    "kind": "released",
+    "version": "v0.5.11"
+  },
+  {
+    "slug": "spool",
+    "kind": "released",
+    "version": "v0.7.8"
+  },
+  {
+    "slug": "balm",
+    "kind": "released",
+    "version": "v0.1.4"
+  },
+  {
+    "slug": "beam",
+    "kind": "released",
+    "version": "v0.1.0"
+  },
+  {
+    "slug": "cabin",
+    "kind": "released",
+    "version": "v0.1.0"
+  },
+  {
+    "slug": "chest",
+    "kind": "released",
+    "version": "v0.2.0"
+  },
+  {
+    "slug": "coaster",
+    "kind": "released",
+    "version": "v0.1.0"
+  },
+  {
+    "slug": "coffer",
+    "kind": "released",
+    "version": "v0.1.0"
+  },
+  {
+    "slug": "easel",
+    "kind": "released",
+    "version": "v0.1.0"
+  },
+  {
+    "slug": "gasket",
+    "kind": "released",
+    "version": "v0.1.0"
+  },
+  {
+    "slug": "gauge",
+    "kind": "released",
+    "version": "v0.1.0"
+  },
+  {
+    "slug": "glove",
+    "kind": "released",
+    "version": "v0.1.0"
+  },
+  {
+    "slug": "larder",
+    "kind": "released",
+    "version": "v0.1.3"
+  },
+  {
+    "slug": "locket",
+    "kind": "released",
+    "version": "v0.1.3"
+  },
+  {
+    "slug": "lodge",
+    "kind": "released",
+    "version": "v0.1.0"
+  },
+  {
+    "slug": "nectar",
+    "kind": "released",
+    "version": "v0.1.0"
+  },
+  {
+    "slug": "pantry",
+    "kind": "released",
+    "version": "v0.2.8"
+  },
+  {
+    "slug": "pier",
+    "kind": "released",
+    "version": "v0.1.0"
+  },
+  {
+    "slug": "purse",
+    "kind": "released",
+    "version": "v0.1.1"
+  },
+  {
+    "slug": "willow",
+    "kind": "released",
+    "version": "v0.1.0"
+  },
+  {
+    "slug": "buoy",
+    "kind": "released",
+    "version": "v0.1.3"
+  },
+  {
+    "slug": "lanyard",
+    "kind": "released",
+    "version": "v0.1.3"
+  },
+  {
+    "slug": "terrace",
+    "kind": "released",
+    "version": "v0.1.4"
+  },
+  {
+    "slug": "auth",
+    "kind": "soon",
+    "version": "v0.1.0"
+  },
+  {
+    "slug": "blotter",
+    "kind": "soon",
+    "version": ""
+  },
+  {
+    "slug": "crank",
+    "kind": "soon",
+    "version": ""
+  },
+  {
+    "slug": "evidence",
+    "kind": "soon",
+    "version": ""
+  },
+  {
+    "slug": "inkwell",
+    "kind": "soon",
+    "version": ""
+  },
+  {
+    "slug": "mallet",
+    "kind": "soon",
+    "version": ""
+  },
+  {
+    "slug": "pane",
+    "kind": "soon",
+    "version": ""
+  },
+  {
+    "slug": "placemat",
+    "kind": "soon",
+    "version": ""
+  },
+  {
+    "slug": "platter",
+    "kind": "soon",
+    "version": ""
+  },
+  {
+    "slug": "plinth",
+    "kind": "soon",
+    "version": ""
+  },
+  {
+    "slug": "satchel",
+    "kind": "soon",
+    "version": ""
+  },
+  {
+    "slug": "stall",
+    "kind": "soon",
+    "version": ""
+  },
+  {
+    "slug": "strap",
+    "kind": "soon",
+    "version": ""
+  },
+  {
+    "slug": "vane",
+    "kind": "soon",
+    "version": ""
+  }
+]

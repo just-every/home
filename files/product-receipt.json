@@ -1,0 +1,22 @@
+{
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-28",
+  "head": "181ca0a1b0d41af1dc4b9566412fc64f11267787",
+  "base": "42d2b3bfd372f151c993e36128249d7e059091de",
+  "push": "passed first attempt",
+  "dirty": false,
+  "files": [
+    {
+      "path": "public/data/listings.json",
+      "sha256": "e7cef82c37fe24647ccf9ab504e1c774fb714b9e54c0134398acf5ab13d3309f"
+    },
+    {
+      "path": "scripts/seeds-sync/state.json",
+      "sha256": "504e46f0fe4f99a22be284c7ad0112e4af3cd27b72af4c88738b7a52b32ed63e"
+    },
+    {
+      "path": "src/data/seed-pages.ts",
+      "sha256": "d2f712099cbbc69fd7834f99dde5dd2825481ac94ccce0c9140bc78f9561bc1a"
+    }
+  ]
+}

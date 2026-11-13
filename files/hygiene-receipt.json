@@ -1,0 +1,10 @@
+{
+  "diffCheck": "passed",
+  "scopeCheck": "passed",
+  "credentialShapeCheck": "passed",
+  "changedPaths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ]
+}

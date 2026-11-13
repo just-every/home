@@ -1,0 +1,25 @@
+{
+  "repository": "just-every/run-spool",
+  "release": {
+    "tagName": "v0.7.9",
+    "url": "https://github.com/just-every/run-spool/releases/tag/v0.7.9",
+    "isDraft": false,
+    "isPrerelease": false,
+    "publishedAt": "2026-11-13T12:35:45Z",
+    "releaseAssets": {
+      "nodes": [
+        {
+          "name": "spool-issue-page-1600.png"
+        },
+        {
+          "name": "rer-release.dsse.json"
+        }
+      ]
+    }
+  },
+  "tag_commit": "8049c9153f1d987bba6211bc05b8405b06101a6f",
+  "asset_presence_confirmed": true,
+  "signature_verified": false,
+  "promotion": "listing version v0.7.8 -> v0.7.9",
+  "release_status_change": false
+}

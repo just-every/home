@@ -1,0 +1,19 @@
+{
+  "serverPid": 25532,
+  "results": [
+    {
+      "width": 1440,
+      "assertions": [
+        "HTTP 200",
+        "rendered Version v0.7.9",
+        "public JSON Spool v0.7.9",
+        "49 listings / 35 released"
+      ]
+    },
+    {
+      "width": 390,
+      "captureOnly": true
+    }
+  ],
+  "stoppedOwnedServer": true
+}
