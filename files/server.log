@@ -1,0 +1,44 @@
+▲ Next.js 16.4.3
+- Local:         http://localhost:3100
+✓ Ready in 96ms
+✓ Running next.config.ts took 49ms
+⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+Token snapshot unavailable ReferenceError: caches is not defined
+    at h (.next/server/app/api/tokens/route.js:2:339)
+▲ [WARNING] Proxy environment variables detected. We'll use your proxy for fetch requests.
+
+
+Unhandled API error Error: D1_ERROR: no such table: page_views: SQLITE_ERROR
+    at async j (.next/server/app/api/events/route.js:1:10387)
+    at async k (.next/server/app/api/events/route.js:3:507)
+    at async _ (.next/server/app/api/events/route.js:1:3603)
+    at async aa (.next/server/app/api/events/route.js:1:4698)
+    at async B (.next/server/app/api/events/route.js:1:6955) {
+  [cause]: Error: no such table: page_views: SQLITE_ERROR
+      at D1DatabaseSessionAlwaysPrimary._sendOrThrow (cloudflare-internal:d1-api:194:24)
+      at async (cloudflare-internal:d1-api:455:19)
+}
+Token snapshot unavailable ReferenceError: caches is not defined
+    at h (.next/server/app/api/tokens/route.js:2:339)
+Unhandled API error Error: D1_ERROR: no such table: page_views: SQLITE_ERROR
+    at async j (.next/server/app/api/events/route.js:1:10387)
+    at async k (.next/server/app/api/events/route.js:3:507)
+    at async _ (.next/server/app/api/events/route.js:1:3603)
+    at async aa (.next/server/app/api/events/route.js:1:4698)
+    at async B (.next/server/app/api/events/route.js:1:6955) {
+  [cause]: Error: no such table: page_views: SQLITE_ERROR
+      at D1DatabaseSessionAlwaysPrimary._sendOrThrow (cloudflare-internal:d1-api:194:24)
+      at async (cloudflare-internal:d1-api:455:19)
+}
+Token snapshot unavailable ReferenceError: caches is not defined
+    at h (.next/server/app/api/tokens/route.js:2:339)
+Unhandled API error Error: D1_ERROR: no such table: page_views: SQLITE_ERROR
+    at async j (.next/server/app/api/events/route.js:1:10387)
+    at async k (.next/server/app/api/events/route.js:3:507)
+    at async _ (.next/server/app/api/events/route.js:1:3603)
+    at async aa (.next/server/app/api/events/route.js:1:4698)
+    at async B (.next/server/app/api/events/route.js:1:6955) {
+  [cause]: Error: no such table: page_views: SQLITE_ERROR
+      at D1DatabaseSessionAlwaysPrimary._sendOrThrow (cloudflare-internal:d1-api:194:24)
+      at async (cloudflare-internal:d1-api:455:19)
+}

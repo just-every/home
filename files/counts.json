@@ -1,0 +1,20 @@
+{
+  "before": {
+    "coming-soon": 14,
+    "released": 35
+  },
+  "after": {
+    "coming-soon": 14,
+    "released": 35
+  },
+  "total_before": 49,
+  "total_after": 49,
+  "public_field_changes": {
+    "happytohelp": {
+      "version": [
+        "v0.4.23",
+        "v0.4.24"
+      ]
+    }
+  }
+}

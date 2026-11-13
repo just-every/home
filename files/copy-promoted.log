@@ -1,0 +1,13 @@
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --copy-only --apply --only happytohelp --out ../packet/copy-promoted
+
+Reading 1 seed repositories...
+happytohelp: source=v0.4.24 commit=6acf8a4c50dfeb94ca9ab705b1e386d282ea8e0f (released listing version)
+
+Applied: 1 of 1 seeds changed.
+
+HappyToHelp
+  copy      README.md, seed.json changed since the last sync [reported]
+
+Report: /home/agent/rer-consolidation/work/je-sync-27/packet/copy-promoted/report.md

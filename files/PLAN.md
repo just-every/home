@@ -1,0 +1,10 @@
+# je-sync-27 execution plan
+
+1. Configure fleet identity, refresh launcher, install Git guard and preserved repository hooks. Clone only just-every/home, shallow from main; create cloud/je-sync-27.
+2. Read repository AGENTS.md and committed sync sources, install with npm ci. Run the complete dry sync and retain its reports. Other repositories are read only via gh api; a task-side Git transport adapter translates the sync tool's ls-remote requests into equivalent GitHub ref/commit API reads, without changing product code.
+3. Read actual findings. Verify each proposed version against non-draft/non-prerelease Releases with rer-release.dsse.json; distinguish asset presence from signature verification. Preserve JE ahead of RER and keep exclusions/pricing intact.
+4. Run copy-only apply, preserving wording and brand/home state. Review changed released source evidence against existing claims; only correct claims proved false. Record unreleased drift without importing it.
+5. Run full mechanical apply. Review each output and withhold ineligible versions/statuses, unproven capture inputs, and changes outside scope. Run listings generation/check and a final dry sync; explain all remaining findings.
+6. Run touched type-check, lint and production build. Capture changed screens at 1440 and 390 if visible UI changes exist. Do not add permanent tests or change sync implementation.
+7. Fetch current main and rebase only before the first publication; inspect all candidate identities, trailers, scope, diff hygiene and credential patterns. Commit with fleet author/committer and active hooks. Push only cloud/je-sync-27 through cloud-push.py. Open one PR using gh api.
+8. Observe exact-SHA Verify through REST with at least 300 seconds between observations of the same run and a ten-call CI/PR budget. Preserve complete non-secret reports and receipts in this packet; publish only to evidence/je-sync-27 using cloud_evidence.py. Record terminal product provenance, relay POST and READY/PUSHED status. Remove clone and its node_modules after successful publication and evidence transfer, retaining packet and recovery data.

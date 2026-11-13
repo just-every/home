@@ -1,0 +1,54 @@
+{
+  "startedAt": "2026-11-13T12:21:04.934Z",
+  "mode": "apply",
+  "copyOnly": true,
+  "captureHost": null,
+  "load": 3.52,
+  "statePath": "scripts/seeds-sync/state.json",
+  "baselineDate": null,
+  "seeds": [
+    {
+      "slug": "happytohelp",
+      "name": "HappyToHelp",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.24",
+        "commit": "6acf8a4c50dfeb94ca9ab705b1e386d282ea8e0f",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ae8feea8b7998aa7",
+          "README.md": "ff2699e21edf96c7",
+          "seed.json": "de762362ebcab2ec"
+        }
+      },
+      "findings": [
+        {
+          "type": "copy",
+          "summary": "README.md, seed.json changed since the last sync",
+          "status": "reported",
+          "manual": null,
+          "copy": "rewrite the page copy from README.md, seed.json (https://github.com/just-every/run-happytohelp/compare/3c45a60a6deb...6acf8a4c50df)",
+          "details": {
+            "files": [
+              "README.md",
+              "seed.json"
+            ],
+            "range": "https://github.com/just-every/run-happytohelp/compare/3c45a60a6deb...6acf8a4c50df",
+            "from": "3c45a60a6debb0886ae8c41eee18a95e6fee694d",
+            "to": "6acf8a4c50dfeb94ca9ab705b1e386d282ea8e0f"
+          },
+          "repeat": false,
+          "images": null
+        }
+      ]
+    }
+  ],
+  "shareImage": [],
+  "apply": {
+    "applied": [],
+    "written": [],
+    "favicons": false
+  }
+}

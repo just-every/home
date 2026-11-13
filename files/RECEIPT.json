@@ -1,0 +1,138 @@
+{
+  "tag": "je-sync-27",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-27",
+  "head": "5c025fcb6629b82000ac2d09a2ad4b1c5df8f81b",
+  "parent_main": "274220fea1ba6f13126557bb86b5cc078680a4eb",
+  "pr_url": "https://github.com/just-every/home/pull/51",
+  "counts": {
+    "before": {
+      "coming-soon": 14,
+      "released": 35
+    },
+    "after": {
+      "coming-soon": 14,
+      "released": 35
+    },
+    "total_before": 49,
+    "total_after": 49,
+    "public_field_changes": {
+      "happytohelp": {
+        "version": [
+          "v0.4.23",
+          "v0.4.24"
+        ]
+      }
+    }
+  },
+  "clause_status_changes": [],
+  "public_claim_changes": [],
+  "version_changes": {
+    "happytohelp": {
+      "before": "v0.4.23",
+      "after": "v0.4.24",
+      "source_commit": "6acf8a4c50dfeb94ca9ab705b1e386d282ea8e0f",
+      "release_url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.24",
+      "envelope_asset_present": true,
+      "signature_independently_verified": false
+    }
+  },
+  "withheld": [
+    {
+      "slug": "spool",
+      "proposed": "v0.7.9",
+      "retained": "v0.7.8",
+      "reason": "No published Release; release-by-tag endpoint HTTP 404",
+      "tag_object": {
+        "sha": "e5a543bcbe2f77f4d11b86eb02f3f983e05fae05",
+        "type": "tag",
+        "url": "https://api.github.com/repos/just-every/run-spool/git/tags/e5a543bcbe2f77f4d11b86eb02f3f983e05fae05"
+      }
+    }
+  ],
+  "checks": {
+    "npm_ci": "passed",
+    "dry_initial": "passed: two version findings",
+    "copy_initial": "passed: no changes",
+    "full_apply": "passed: Spool proposal reverted before publication",
+    "copy_promoted": "passed: provenance only",
+    "listings": "passed: generated 49",
+    "listings_check": "passed: current 49",
+    "type_check": "passed",
+    "lint": "passed",
+    "production_build": "passed",
+    "browser_1440": "passed",
+    "browser_390": "visual proof reviewed",
+    "scope": "passed: exactly three authorized paths",
+    "diff_check": "passed",
+    "credential_pattern_scan": "passed",
+    "identity_trailers": "passed: fleet author and committer, no trailers"
+  },
+  "product_push": {
+    "status": "pushed",
+    "attempts": 1,
+    "guard": "cloud-push.py",
+    "head": "5c025fcb6629b82000ac2d09a2ad4b1c5df8f81b"
+  },
+  "ci": {
+    "id": 43425109174,
+    "head_sha": "5c025fcb6629b82000ac2d09a2ad4b1c5df8f81b",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/just-every/home/actions/runs/43425109174",
+    "html_url": "https://github.com/just-every/home/actions/runs/43425109174"
+  },
+  "blockers": [],
+  "browser_receipt": {
+    "testedAt": "2026-11-13T12:24:21.039Z",
+    "rows": [
+      {
+        "width": 1440,
+        "height": 1000,
+        "url": "http://127.0.0.1:3100/happytohelp",
+        "status": 200,
+        "screenshot": "browser/happytohelp-1440.png",
+        "assertions": [
+          "HTTP 200",
+          "Version v0.4.24",
+          "Listings 49",
+          "HappyToHelp v0.4.24",
+          "Spool v0.7.8",
+          "No horizontal overflow",
+          "No page errors"
+        ],
+        "pageErrors": []
+      },
+      {
+        "width": 390,
+        "height": 1000,
+        "url": "http://127.0.0.1:3100/happytohelp",
+        "status": 200,
+        "screenshot": "browser/happytohelp-390.png",
+        "assertions": [
+          "visual capture only"
+        ],
+        "pageErrors": []
+      }
+    ]
+  },
+  "product_bundle": {
+    "path": "/home/agent/rer-consolidation/work/je-sync-27/je-sync-27-product.bundle",
+    "sha256": "76d11ebd91464901198d289aed0a389b2138fd1dc23889a3fa0702cc4604b862",
+    "verified": true
+  },
+  "servers_and_browsers_closed": true,
+  "clone_cleanup": "scheduled after successful evidence publication",
+  "product_ready": true,
+  "landing_authorized_or_performed": false,
+  "ci_api_budget": {
+    "limit": 10,
+    "used": 3,
+    "calls": [
+      "POST repos/just-every/home/pulls",
+      "repos/just-every/home/actions/runs?head_sha=5c025fcb6629b82000ac2d09a2ad4b1c5df8f81b&per_page=100",
+      "repos/just-every/home/actions/runs/43425109174"
+    ]
+  },
+  "main_rechecked_after_published_save": "unchanged; no merge required"
+}

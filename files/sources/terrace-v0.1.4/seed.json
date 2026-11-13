@@ -1,0 +1,102 @@
+{
+  "id": "terrace",
+  "name": "Terrace",
+  "version": "0.1.4",
+  "maturity": "first-release-build",
+  "category": "property-management",
+  "spine": {
+    "id": "tenancy",
+    "record": "A tenancy ties lease terms, rent, inspections and maintenance to a property."
+  },
+  "description": "Residential tenancy, recorded rent, photographed inspections and reviewed maintenance.",
+  "capabilities": [
+    {
+      "id": "tenancy-operations",
+      "clauses": [
+        "TER-001",
+        "TER-002",
+        "TER-003",
+        "TER-004",
+        "TER-005",
+        "TER-006",
+        "TER-007",
+        "TER-008"
+      ]
+    },
+    {
+      "id": "move-in-and-custody",
+      "clauses": [
+        "TER-009",
+        "TER-010",
+        "TER-011"
+      ]
+    }
+  ],
+  "nonGoals": [
+    "Trust accounting and money movement",
+    "Rent collection, bond lodgement, screening and listings",
+    "Automatic external delivery"
+  ],
+  "externals": [
+    {
+      "id": "cloudflare",
+      "required": true,
+      "why": "Worker hosting",
+      "data": [
+        "HTTP requests"
+      ],
+      "adapters": []
+    }
+  ],
+  "env": [],
+  "deploy": {
+    "healthPath": "/health",
+    "publicPaths": [
+      "/",
+      "/health",
+      "/signin",
+      "/portal"
+    ],
+    "notes": "Native owner sessions guard /app; unknown paths return real 404s; the development outbox is local-only."
+  },
+  "extensionPoints": {
+    "contributions": [],
+    "policies": [],
+    "events": [],
+    "slots": [],
+    "adapters": []
+  },
+  "limits": {
+    "status": "unmeasured"
+  },
+  "accessibility": {
+    "level": "WCAG 2.2 AA",
+    "status": "target; unaudited"
+  },
+  "operatingCost": {
+    "status": "unmeasured"
+  },
+  "composition": {
+    "base": "base",
+    "family": "residential",
+    "edition": "terrace",
+    "modules": [
+      "job-queue",
+      "release",
+      "deploy-kit",
+      "container",
+      "demo-host",
+      "integrations",
+      "mail",
+      "ai",
+      "portability",
+      "erasure",
+      "dependencies",
+      "operator-auth",
+      "owner-claim",
+      "demo",
+      "d1-transport"
+    ]
+  },
+  "replaces": []
+}

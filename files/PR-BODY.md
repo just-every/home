@@ -1,0 +1,5 @@
+Updates HappyToHelp from v0.4.23 to v0.4.24 in its page and generated listings, and records the released copy provenance. The non-draft, non-prerelease [v0.4.24 Release](https://github.com/just-every/run-happytohelp/releases/tag/v0.4.24) carries `rer-release.dsse.json`; asset presence was checked, signatures were not independently verified.
+
+The full 49-seed sync also proposed Spool v0.7.9, which was withheld because it has no published Release (tag Release endpoint: HTTP 404). Spool stays v0.7.8. No public claims, implementation judgments, status, art, homepage stills, pricing or exclusions change. Counts remain 49 listings: 35 released, 14 coming soon.
+
+Validation: full initial/final dry sync and copy-only/full apply reviewed; listings generation and check; type-check, lint and production build; HappyToHelp browser proof at 1440 and 390. The only final dry-sync finding is the deliberately withheld Spool tag. Landing, independent review, publication scan, deployment and live verification remain with the lane.

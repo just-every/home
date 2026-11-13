@@ -1,0 +1,1 @@
+Spool v0.7.9 was proposed and mechanically written by the full sync. It was immediately reverted to v0.7.8 before listings generation or publication: the v0.7.9 Release endpoint returned HTTP 404 and latest Release remains v0.7.8. No override or sync implementation was changed. Final dry sync is expected to retain this explicitly withheld tag finding.

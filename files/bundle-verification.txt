@@ -1,0 +1,9 @@
+../je-sync-27-product.bundle is okay
+The bundle contains these 5 refs:
+5c025fcb6629b82000ac2d09a2ad4b1c5df8f81b refs/heads/cloud/je-sync-27
+274220fea1ba6f13126557bb86b5cc078680a4eb refs/heads/main
+274220fea1ba6f13126557bb86b5cc078680a4eb refs/remotes/origin/HEAD
+274220fea1ba6f13126557bb86b5cc078680a4eb refs/remotes/origin/main
+5c025fcb6629b82000ac2d09a2ad4b1c5df8f81b HEAD
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1

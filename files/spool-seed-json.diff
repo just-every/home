@@ -1,0 +1,12 @@
+--- v0.7.8/seed.json
+
++++ v0.7.9/seed.json
+
+@@ -2,5 +2,5 @@
+
+   "id": "errors-workbench",
+   "name": "Spool",
+-  "version": "0.7.8",
++  "version": "0.7.9",
+   "maturity": "Local-first JavaScript, Python and Go evidence product with one owner and isolated projects; bounded native, Sentry and OTLP-log intake, private source maps, operator corrections, owner/project erasure, sandbox reproducer, granted GitHub fix branches and exposure measurement. Runtime checks and review evidence are recorded separately; source metadata does not establish hosted, provider or npm publication acceptance.",
+   "category": "monitoring",

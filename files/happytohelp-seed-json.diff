@@ -1,0 +1,12 @@
+--- v0.4.23/seed.json
+
++++ v0.4.24/seed.json
+
+@@ -2,5 +2,5 @@
+
+   "id": "happytohelp",
+   "name": "HappyToHelp",
+-  "version": "0.4.23",
++  "version": "0.4.24",
+   "license": "MIT",
+   "repository": "https://github.com/just-every/run-happytohelp",
