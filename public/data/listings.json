@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T03:01:53.800Z",
+  "generatedAt": "2026-11-13T07:28:12.440Z",
   "listings": [
     {
       "slug": "auth",
@@ -404,7 +404,7 @@
       "slug": "lamp",
       "name": "Lamp",
       "status": "released",
-      "version": "v1.11.13",
+      "version": "v1.11.14",
       "category": "Status page",
       "line": "The status page that never leaves your customers in the dark.",
       "headline": "When something breaks, turn the light on.",
@@ -591,7 +591,7 @@
       "slug": "oncall",
       "name": "Oncall",
       "status": "released",
-      "version": "v0.5.10",
+      "version": "v0.5.11",
       "category": "On-call rotas",
       "line": "Who's on now, who's next, and when they hand over.",
       "headline": "Everyone knows who's on call.",
@@ -611,7 +611,7 @@
       "slug": "orbit",
       "name": "Orbit",
       "status": "released",
-      "version": "v0.4.7",
+      "version": "v0.4.8",
       "category": "Sales CRM",
       "line": "A CRM that shows which deal to work next, and why.",
       "headline": "Your next deal finds you.",
@@ -947,7 +947,7 @@
       "slug": "uptime",
       "name": "Uptime",
       "status": "released",
-      "version": "v0.5.9",
+      "version": "v0.5.10",
       "category": "Uptime monitoring",
       "line": "Alerts you only when a failure is confirmed.",
       "headline": "Sleep through the night.",
