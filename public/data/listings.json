@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T18:33:09.577Z",
+  "generatedAt": "2026-11-13T21:21:00.844Z",
   "listings": [
     {
       "slug": "auth",
@@ -361,7 +361,7 @@
       "slug": "happytohelp",
       "name": "HappyToHelp",
       "status": "released",
-      "version": "v0.4.24",
+      "version": "v0.4.25",
       "category": "Customer support",
       "line": "Your Codex or Claude fixes the problem and writes the reply.",
       "headline": "Knows what your customer needs before they do.",
@@ -591,7 +591,7 @@
       "slug": "oncall",
       "name": "Oncall",
       "status": "released",
-      "version": "v0.5.12",
+      "version": "v0.5.13",
       "category": "On-call rotas",
       "line": "Who's on now, who's next, and when they hand over.",
       "headline": "Everyone knows who's on call.",
@@ -863,7 +863,7 @@
       "slug": "spool",
       "name": "Spool",
       "status": "released",
-      "version": "v0.7.9",
+      "version": "v0.7.10",
       "category": "Error tracking",
       "line": "JavaScript errors, traced to the exact line in your source.",
       "headline": "See exactly what broke.",

@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-13T18:33:06.093Z",
+  "syncedAt": "2026-11-13T21:20:59.504Z",
   "seeds": {
     "auth": {
       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
@@ -481,14 +481,14 @@
       }
     },
     "happytohelp": {
-      "commit": "6acf8a4c50dfeb94ca9ab705b1e386d282ea8e0f",
-      "sourceRef": "v0.4.24",
+      "commit": "333af4b0580c4284616783f1d79fcc9aad3aefc5",
+      "sourceRef": "v0.4.25",
       "sourceReason": "released listing version",
-      "tag": "v0.4.24",
+      "tag": "v0.4.25",
       "copy": {
         "CONTRACT.md": "ae8feea8b7998aa7",
-        "README.md": "ff2699e21edf96c7",
-        "seed.json": "de762362ebcab2ec"
+        "README.md": "45a28e3132618824",
+        "seed.json": "321e3d3d615cbcde"
       },
       "brand": {
         "theme.page": "#faf9f6",
@@ -504,7 +504,8 @@
       "home": {
         "headline": "Knows what your customer needs before they do.",
         "signature": "eedddddddeedeeeeeeeeeeeeeeeeeeeedeedeeebaa887dddeeeeeeeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededdeedeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddbbbcbbcbbbbbbbbeedeeeeeeeeedeeeeeeeeeeeeeeeeedddaaabaabaaaaaccbeeeeeeeeeeeeeeeeeedeeeeeeeeeeeeedddcddcddcddcdddeeeeeeeeedddcccdeedeedeedeeeeeeeddccddceddeeeeedeeeeeedeebbbaaacddeeedddccceeedcc555544999eedeedeeeeeeeeeeeeefeeeeeeeddddddeeeeeddccdccdddeedeeefeededddddddeedeeededdddeddeee"
-      }
+      },
+      "open": ["42983364b373"]
     },
     "inkwell": {
       "commit": "e4e3c2dd4bdf48fe16111f9d447568d6c4366a84",
@@ -804,14 +805,14 @@
       }
     },
     "oncall": {
-      "commit": "1ab915f6efdfe3398c8d7645fe56e46e123299b6",
-      "sourceRef": "v0.5.12",
+      "commit": "8adae6c836f2fabda29e8a091b052450410c8ca5",
+      "sourceRef": "v0.5.13",
       "sourceReason": "released listing version",
-      "tag": "v0.5.12",
+      "tag": "v0.5.13",
       "copy": {
         "CONTRACT.md": "c04517abc904f1e5",
-        "README.md": "1fcdb805e9c64257",
-        "seed.json": "6a14ea9f338c97ad"
+        "README.md": "872282ad16baf429",
+        "seed.json": "e91a0fe23123ca2a"
       },
       "brand": {
         "branding.primaryColor": "#1d2a35",
@@ -855,8 +856,7 @@
       "home": {
         "headline": "Your next deal finds you.",
         "signature": "eedddceeefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeeeeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedddaaabbbaaabbbbbbdddfeeeeeeeeeeeedcedceedeeeeeedddbaabbbaaaddceeeeeeeeeeeeeeeeede85e97eeeeeeeeeeedddddddddddddeeeeeeeeeeeeeeeeedecbedceeeecbeedeeeeddeddddddddeedeeefeeeeeeeeeeeeeeeeefeefeeeeeddd888aaaeddeedaaa777baafeeeeeeeeeeeecbeddeeeeeeeedddcdddeeeeeedddcccdddeeeeeeeeedddddceddeedeeeeeeeeeeeeeeeeedeeeeeeeedeeeeeeeeeeeeeeeeeeeedeed"
-      },
-      "open": ["64cb07f6a0dd"]
+      }
     },
     "pane": {
       "commit": "16501ad7d10c5af6f04799aa44c700249a41e9b4",
@@ -1155,14 +1155,14 @@
       }
     },
     "spool": {
-      "commit": "8049c9153f1d987bba6211bc05b8405b06101a6f",
-      "sourceRef": "v0.7.9",
+      "commit": "417ab513b3032370091479fa28f41a5a67b50c53",
+      "sourceRef": "v0.7.10",
       "sourceReason": "released listing version",
-      "tag": "v0.7.9",
+      "tag": "v0.7.10",
       "copy": {
         "CONTRACT.md": "ee9c871bfa25a110",
-        "README.md": "8e4935c8e07d3150",
-        "seed.json": "9df4692f3993614c"
+        "README.md": "d3558bee3c5f1d96",
+        "seed.json": "76b608fdf01eeaa9"
       },
       "brand": {
         "branding.primaryColor": "#1c1c1b",
@@ -1180,7 +1180,8 @@
       "home": {
         "headline": "See exactly what broke.",
         "signature": "eeddccddceedeedeedeeeeedeedeedeeeeeeeeeeedeedeedeeddddeedeedeeeeeeeedeedeededdeedeedeedeedeedeedeedccbddcddcddcccbeddeeeeeddddddceedeedeedeedeedeed999aa9999999999cccfeeeedeededddddeddeedeedeedeedbaaaa9bbaaaaaa9ccbeeeeededddddeedeedeedeedeedeedddcddcddcddceedeeeeeeeeddddddbedceeceeceedeedeedeedeededdeedeeeffefeeeedeededaed9edaedaedbeedeed999988aaabba888888bbbeedeedeededdeeeeeeeedeedeeda99998baaccbaa9aa9ccbeeddddddceedeedeedeedeed"
-      }
+      },
+      "open": ["42983364b373"]
     },
     "stall": {
       "commit": "8ee1f25df4f0b10b9a62e7fe221453499f27b297",
@@ -1287,8 +1288,7 @@
       "home": {
         "headline": "Sleep through the night.",
         "signature": "eeedddddeeefeefeefeefeefeefeefeefeefeeeededdeeeeeeeddeeeeddeddeddeddeddeddeddeddeddeeeeeeeeeeeeeeeeeeeeefddebbcbbcbbcbbcbbcbbcbbcabcddeeeeeeeeeeeeeeeeeeeeeeededdeededdeddeddeddeddeeeeeeeeeeeeeeeeeeeeeeeeedcd99a99accddddddddddedeeeeeeeeeeeeeedeeeeeeeeeedddaaaa9adddeddedeeddeeeeeeeeeeeeeeefedfedfededdeddfedfededdeddfedfedfddedcfddeddeddcccdddeddfdcedcedcfdcfdcfdcedcedcedcedbfdcfdcedc55888baacbbcbbccbcccceccdccdcceccedbfdceccbac77a"
-      },
-      "open": ["42983364b373"]
+      }
     },
     "vane": {
       "commit": "a2638146dc0faaefe358d203ac940389183151ef",
