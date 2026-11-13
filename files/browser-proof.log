@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "uptime",
+    "width": 1440,
+    "version": "v0.5.11",
+    "httpStatus": 200,
+    "screenshot": "browser/uptime-1440.png",
+    "assertions": "served listing and rendered version match independent GitHub Release metadata; no page errors"
+  },
+  {
+    "slug": "uptime",
+    "width": 390,
+    "version": "v0.5.11",
+    "httpStatus": 200,
+    "screenshot": "browser/uptime-390.png",
+    "assertions": "visual proof only"
+  },
+  {
+    "slug": "oncall",
+    "width": 1440,
+    "version": "v0.5.12",
+    "httpStatus": 200,
+    "screenshot": "browser/oncall-1440.png",
+    "assertions": "served listing and rendered version match independent GitHub Release metadata; no page errors"
+  },
+  {
+    "slug": "oncall",
+    "width": 390,
+    "version": "v0.5.12",
+    "httpStatus": 200,
+    "screenshot": "browser/oncall-390.png",
+    "assertions": "visual proof only"
+  },
+  {
+    "slug": "orbit",
+    "width": 1440,
+    "version": "v0.4.9",
+    "httpStatus": 200,
+    "screenshot": "browser/orbit-1440.png",
+    "assertions": "served listing and rendered version match independent GitHub Release metadata; no page errors"
+  },
+  {
+    "slug": "orbit",
+    "width": 390,
+    "version": "v0.4.9",
+    "httpStatus": 200,
+    "screenshot": "browser/orbit-390.png",
+    "assertions": "visual proof only"
+  }
+]

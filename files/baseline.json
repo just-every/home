@@ -1,0 +1,136 @@
+{
+  "counts": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "seeds": [
+    {
+      "slug": "happytohelp",
+      "name": "HappyToHelp",
+      "status": "released",
+      "version": "v0.4.24",
+      "category": "Customer support",
+      "line": "Your Codex or Claude fixes the problem and writes the reply.",
+      "headline": "Knows what your customer needs before they do.",
+      "replaces": [
+        "Zendesk",
+        "Intercom",
+        "Help Scout",
+        "Freshdesk"
+      ],
+      "primaryReplace": "Zendesk",
+      "accent": "#8fe3ee",
+      "ink": "#141414",
+      "paper": "#f6f2ea",
+      "mark": "/seeds/happytohelp/mark.svg",
+      "pageUrl": "https://justevery.com/happytohelp",
+      "contractUrl": "https://happytohelp.com/contract"
+    },
+    {
+      "slug": "lamp",
+      "name": "Lamp",
+      "status": "released",
+      "version": "v1.11.14",
+      "category": "Status page",
+      "line": "The status page that never leaves your customers in the dark.",
+      "headline": "When something breaks, turn the light on.",
+      "replaces": [
+        "Atlassian Statuspage",
+        "Instatus",
+        "Better Stack"
+      ],
+      "primaryReplace": "Atlassian Statuspage",
+      "accent": "#f4c25c",
+      "ink": "#182d24",
+      "paper": "#f8f6f0",
+      "mark": "/seeds/lamp/mark.svg",
+      "pageUrl": "https://justevery.com/lamp",
+      "contractUrl": "https://run-lamp.com/contract"
+    },
+    {
+      "slug": "oncall",
+      "name": "Oncall",
+      "status": "released",
+      "version": "v0.5.11",
+      "category": "On-call rotas",
+      "line": "Who's on now, who's next, and when they hand over.",
+      "headline": "Everyone knows who's on call.",
+      "replaces": [
+        "PagerDuty",
+        "Opsgenie"
+      ],
+      "primaryReplace": "PagerDuty",
+      "accent": "#d48f7f",
+      "ink": "#1d2a35",
+      "paper": "#f8f0e3",
+      "mark": "/seeds/oncall/mark.svg",
+      "pageUrl": "https://justevery.com/oncall",
+      "contractUrl": "https://run-oncall.com/contract"
+    },
+    {
+      "slug": "orbit",
+      "name": "Orbit",
+      "status": "released",
+      "version": "v0.4.8",
+      "category": "Sales CRM",
+      "line": "A CRM that shows which deal to work next, and why.",
+      "headline": "Your next deal finds you.",
+      "replaces": [
+        "HubSpot",
+        "Pipedrive",
+        "Salesforce"
+      ],
+      "primaryReplace": "HubSpot",
+      "accent": "#e85b1e",
+      "ink": "#16171d",
+      "paper": "#f5f1ea",
+      "mark": "/seeds/orbit/mark.svg",
+      "pageUrl": "https://justevery.com/orbit",
+      "contractUrl": "https://run-orbit.com/contract"
+    },
+    {
+      "slug": "spool",
+      "name": "Spool",
+      "status": "released",
+      "version": "v0.7.9",
+      "category": "Error tracking",
+      "line": "JavaScript errors, traced to the exact line in your source.",
+      "headline": "See exactly what broke.",
+      "replaces": [
+        "Sentry",
+        "Bugsnag",
+        "Rollbar"
+      ],
+      "primaryReplace": "Sentry",
+      "accent": "#f9d357",
+      "ink": "#1c1c1b",
+      "paper": "#f3f0e6",
+      "mark": "/seeds/spool/mark.svg",
+      "pageUrl": "https://justevery.com/spool",
+      "contractUrl": "https://run-spool.com/contract"
+    },
+    {
+      "slug": "uptime",
+      "name": "Uptime",
+      "status": "released",
+      "version": "v0.5.10",
+      "category": "Uptime monitoring",
+      "line": "Alerts you only when a failure is confirmed.",
+      "headline": "Sleep through the night.",
+      "replaces": [
+        "Pingdom",
+        "UptimeRobot",
+        "Better Stack"
+      ],
+      "primaryReplace": "Pingdom",
+      "accent": "#e8894f",
+      "ink": "#14204a",
+      "paper": "#f7f6fb",
+      "mark": "/seeds/uptime/mark.svg",
+      "pageUrl": "https://justevery.com/uptime",
+      "contractUrl": "https://run-uptime.com/contract"
+    }
+  ],
+  "head": "1b7c84f81246cce3a6d7b26bffc31ea1ca0370a0"
+}

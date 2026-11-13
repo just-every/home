@@ -1,0 +1,12 @@
+{
+  "utc": "2026-11-13T18:35:52Z",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "diff_check": "pass",
+  "credential_shaped_diff_values": "none",
+  "scope_check": "pass",
+  "publication_scan": "deferred to fleet Mac under cloud adaptation; not claimed run here"
+}

@@ -1,0 +1,111 @@
+{
+  "utc": "2026-11-13T18:40:12Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-29",
+  "head": "edfb1132486eaac9f87843199561c3230d5132df",
+  "base": "1b7c84f81246cce3a6d7b26bffc31ea1ca0370a0",
+  "clean_checkout": true,
+  "counts": {
+    "before": {
+      "listings": 49,
+      "released": 35,
+      "comingSoon": 14
+    },
+    "after": {
+      "listings": 49,
+      "released": 35,
+      "comingSoon": 14
+    }
+  },
+  "listing_changes": {
+    "oncall": {
+      "version": {
+        "before": "v0.5.11",
+        "after": "v0.5.12"
+      }
+    },
+    "orbit": {
+      "version": {
+        "before": "v0.4.8",
+        "after": "v0.4.9"
+      }
+    },
+    "uptime": {
+      "version": {
+        "before": "v0.5.10",
+        "after": "v0.5.11"
+      }
+    }
+  },
+  "public_copy_unchanged": true,
+  "clause_status_changes": [],
+  "all_43_non_path_seed_state_records_unchanged": true,
+  "excluded_absent": [
+    "beacon",
+    "relay",
+    "ferry",
+    "lily",
+    "brook",
+    "delta",
+    "barrow",
+    "linen"
+  ],
+  "checks": [
+    {
+      "command": "npm run type-check",
+      "result": "pass",
+      "started_at": "2026-11-13T18:34:21Z",
+      "finished_at": "2026-11-13T18:34:27Z",
+      "log": "type-check.log"
+    },
+    {
+      "command": "npm run lint",
+      "result": "pass",
+      "started_at": "2026-11-13T18:34:27Z",
+      "finished_at": "2026-11-13T18:34:31Z",
+      "log": "lint.log"
+    },
+    {
+      "command": "npm run build",
+      "result": "pass",
+      "started_at": "2026-11-13T18:34:31Z",
+      "finished_at": "2026-11-13T18:35:13Z",
+      "log": "build.log"
+    },
+    {
+      "command": "npm run listings",
+      "result": "pass",
+      "log": "listings.log"
+    },
+    {
+      "command": "npm run listings -- --check",
+      "result": "pass",
+      "log": "listings.log"
+    },
+    {
+      "command": "npm run seeds:sync -- --out ../packet/dry-after-retry",
+      "result": "pass",
+      "seeds": 49,
+      "findings": 0,
+      "unreadable": 0,
+      "log": "dry-after-retry.log"
+    }
+  ],
+  "browser": "browser-receipt.json",
+  "identity": "identity-check.txt",
+  "product_push": "product-push.log",
+  "publication_scan": "fleet Mac responsibility; not run here",
+  "github_manual_calls_before_ci_polls": 5,
+  "remote_product_head": "edfb1132486eaac9f87843199561c3230d5132df",
+  "remote_verified_at": "2026-11-13T18:41:41Z",
+  "ci": {
+    "id": 43484468818,
+    "observed_at": "2026-11-13T18:43:04Z",
+    "conclusion": "success",
+    "head_sha": "edfb1132486eaac9f87843199561c3230d5132df",
+    "html_url": "https://github.com/just-every/home/actions/runs/43484468818",
+    "status": "completed"
+  },
+  "terminal_product_custody": "READY",
+  "manual_github_calls": 6
+}

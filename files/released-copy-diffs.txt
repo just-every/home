@@ -1,0 +1,70 @@
+--- uptime prior readme
++++ uptime released readme
+@@ -33,7 +33,7 @@
+ 
+ ## Run it on your computer
+ 
+-Use Git on macOS, Linux or Windows with WSL2. The CLI selects the checkout's pinned Node 22.20.0 for application commands; direct `node` and `pnpm` contributor commands use that pinned runtime. Uptime is developed in its public repository, [just-every/run-uptime](https://github.com/just-every/run-uptime): candidate work on branches, accepted work on `main`, and each release is a version tag on `main`. Public v0.1.1 is the security predecessor that closed the local development file-exposure issue in v0.1.0. The previous published version is v0.5.9. This release record is v0.5.10. See [the changelog](CHANGELOG.md) for changes and [the release procedure](RELEASE.md) for producing the annotated tag and bundle.
++Use Git on macOS, Linux or Windows with WSL2. The CLI selects the checkout's pinned Node 22.20.0 for application commands; direct `node` and `pnpm` contributor commands use that pinned runtime. Uptime is developed in its public repository, [just-every/run-uptime](https://github.com/just-every/run-uptime): candidate work on branches, accepted work on `main`, and each release is a version tag on `main`. Public v0.1.1 is the security predecessor that closed the local development file-exposure issue in v0.1.0. The previous published version is v0.5.10. This release record is v0.5.11. See [the changelog](CHANGELOG.md) for changes and [the release procedure](RELEASE.md) for producing the annotated tag and bundle.
+ 
+ ```sh
+ curl -fsSL https://runeditrun.com/install.sh | sh -s -- dev just-every/run-uptime
+--- uptime prior seed
++++ uptime released seed
+@@ -1,7 +1,7 @@
+ {
+   "id": "uptime",
+   "name": "Uptime",
+-  "version": "0.5.10",
++  "version": "0.5.11",
+   "maturity": "local-installer-and-owner-deploy-implemented-hosted-unverified",
+   "category": "monitoring",
+   "spine": {
+@@ -1572,6 +1572,14 @@
+       },
+       {
+         "path": "/heartbeat-key.js",
++        "match": "exact",
++        "kind": "asset",
++        "class": "assets",
++        "authentication": "None; emitted static resource only.",
++        "environment": "all"
++      },
++      {
++        "path": "/heartbeat-rules.js",
+         "match": "exact",
+         "kind": "asset",
+         "class": "assets",
+--- oncall prior readme
++++ oncall released readme
+@@ -31,7 +31,7 @@
+ 
+ # Run it locally
+ 
+-See the [Oncall Run page](https://run-oncall.com/run) for local launch and PATH help. Public source: [just-every/run-oncall](https://github.com/just-every/run-oncall). The latest tag, `v0.5.11`, includes hosted coordination. See [Getting started](docs/getting-started.md#host-for-your-team) for complete credentials and deployment instructions.
++See the [Oncall Run page](https://run-oncall.com/run) for local launch and PATH help. Public source: [just-every/run-oncall](https://github.com/just-every/run-oncall). The `v0.5.12` release candidate includes hosted coordination. See [Getting started](docs/getting-started.md#host-for-your-team) for complete credentials and deployment instructions.
+ 
+ One line installs the `rer` command, clones Oncall and starts it:
+ 
+--- oncall prior seed
++++ oncall released seed
+@@ -1,7 +1,7 @@
+ {
+   "id": "oncall",
+   "name": "Oncall",
+-  "version": "0.5.11",
++  "version": "0.5.12",
+   "maturity": "maintained",
+   "category": "operations",
+   "replaces": [
+--- orbit prior seed
++++ orbit released seed
+@@ -1,7 +1,7 @@
+ {
+   "id": "orbit",
+   "name": "Orbit",
+-  "version": "0.4.8",
++  "version": "0.4.9",
+   "maturity": "complete-workflow-implementation; acceptance requires pinned runtime and native receipts",
+   "capabilities": [
+     {
