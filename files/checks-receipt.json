@@ -1,0 +1,97 @@
+{
+  "productHead": "0396a50284d16568b52f397e13787cf9440f3ad5",
+  "result": "pass",
+  "checks": [
+    {
+      "command": "npm ci",
+      "exit": 0,
+      "evidence": "npm-ci.log"
+    },
+    {
+      "command": "npm run seeds:sync (initial full dry run)",
+      "exit": 0,
+      "evidence": "dry-initial-report.json",
+      "summary": "4/49 seeds changed, 0 unreadable"
+    },
+    {
+      "command": "npm run seeds:sync -- --copy-only --apply",
+      "exit": 0,
+      "evidence": "copy-initial-report.json",
+      "summary": "0/49 copy findings at initial listing tags"
+    },
+    {
+      "command": "npm run seeds:sync -- --apply",
+      "exit": 0,
+      "evidence": "full-apply-report.json",
+      "summary": "4 eligible version updates applied"
+    },
+    {
+      "command": "npm run seeds:sync -- --copy-only --apply --only lamp,uptime,oncall,orbit",
+      "exit": 0,
+      "evidence": "copy-new-releases-report.json",
+      "summary": "four changed released copy sources recorded, all reviewed without prose edits"
+    },
+    {
+      "command": "npm run listings",
+      "exit": 0,
+      "summary": "Listings generated (49 seeds)"
+    },
+    {
+      "command": "npm run listings -- --check",
+      "exit": 0,
+      "summary": "Listings current (49 seeds)"
+    },
+    {
+      "command": "npm run seeds:sync (final full dry run)",
+      "exit": 0,
+      "evidence": "dry-final-report.json",
+      "summary": "0/49 seeds changed, 0 unreadable"
+    },
+    {
+      "command": "npm run type-check",
+      "exit": 0,
+      "evidence": "type-check.log"
+    },
+    {
+      "command": "npm run lint",
+      "exit": 0,
+      "evidence": "lint.log"
+    },
+    {
+      "command": "npm run build",
+      "exit": 0,
+      "evidence": "build.log",
+      "summary": "production build and all 61 static pages passed"
+    },
+    {
+      "command": "git diff --check origin/main..HEAD",
+      "exit": 0
+    },
+    {
+      "command": "full candidate history identity/trailer and changed-path audit",
+      "exit": 0,
+      "summary": "one fleet-authored/committed candidate, no trailers, exactly three authorized paths"
+    },
+    {
+      "command": "candidate browser proof at 1440 and 390",
+      "exit": 0,
+      "evidence": "browser-receipt.json",
+      "summary": "four pages, eight screenshots; functional assertions at 1440"
+    },
+    {
+      "command": "exact-SHA Actions REST discovery",
+      "exit": 0,
+      "evidence": "ci-discovery.json",
+      "summary": "push Verify branch 43386406510 completed/success"
+    },
+    {
+      "command": "final git fetch origin main and product remote-ref confirmation",
+      "exit": 0,
+      "summary": "origin/main unchanged at 7212b2fd1cb0bfe9241752dc64d37a407f0b004f; product branch advertises exact candidate SHA"
+    }
+  ],
+  "setupRecovery": [
+    "Initial dry sync stopped before applying because Playwright was absent. Installed playwright@1.63.0 globally and reran successfully using /usr/bin/chromium with --no-sandbox.",
+    "First commit attempt stopped before creating a commit: fleet symlinks broke Husky relative h lookup. Clone-local wrappers now exec original hooks by original path; lint-staged and fleet cleanup ran successfully. No repository hook was bypassed."
+  ]
+}

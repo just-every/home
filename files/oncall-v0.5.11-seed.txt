@@ -1,0 +1,143 @@
+{
+  "id": "oncall",
+  "name": "Oncall",
+  "version": "0.5.11",
+  "maturity": "maintained",
+  "category": "operations",
+  "replaces": [
+    "PagerDuty",
+    "Opsgenie"
+  ],
+  "spine": {
+    "id": "schedule",
+    "record": "Service rota with calendar-day hand-offs and explicit coverage gaps"
+  },
+  "description": "Coordinate incident response and on-call schedules alongside your existing pager.",
+  "capabilities": [
+    {
+      "id": "coordination",
+      "clauses": [
+        "OC-001",
+        "OC-002",
+        "OC-003",
+        "OC-004",
+        "OC-005",
+        "OC-006",
+        "OC-007",
+        "OC-008",
+        "OC-009",
+        "OC-010"
+      ]
+    },
+    {
+      "id": "rotas",
+      "clauses": [
+        "OC-011",
+        "OC-014",
+        "OC-020"
+      ]
+    },
+    {
+      "id": "paging-refusal",
+      "clauses": [
+        "OC-012",
+        "OC-013"
+      ]
+    },
+    {
+      "id": "upgrade-and-recovery",
+      "clauses": [
+        "OC-015",
+        "OC-016",
+        "OC-017",
+        "OC-019"
+      ]
+    },
+    {
+      "id": "maintained-installation",
+      "clauses": [
+        "OC-018"
+      ]
+    },
+    {
+      "id": "move-in",
+      "clauses": [
+        "OC-021",
+        "OC-022"
+      ]
+    }
+  ],
+  "nonGoals": [
+    "production paging",
+    "provider sends",
+    "autonomous remediation",
+    "independent standby and paging delivery guarantees"
+  ],
+  "externals": [
+    {
+      "name": "Move-in provider reads",
+      "hosts": [
+        "api.pagerduty.com",
+        "api.eu.pagerduty.com",
+        "api.opsgenie.com",
+        "api.eu.opsgenie.com",
+        "identity.pagerduty.com",
+        "identity.eu.pagerduty.com"
+      ],
+      "data": "Read-only users, schedules, overrides, final timelines and escalation policies. PagerDuty consent exchanges and revokes a short-lived read-only token; API keys stay in request memory. Provider redirects are refused."
+    }
+  ],
+  "env": [
+    {
+      "name": "PAGERDUTY_OAUTH_CLIENT_ID",
+      "required": false,
+      "secret": true
+    },
+    {
+      "name": "PAGERDUTY_OAUTH_CLIENT_SECRET",
+      "required": false,
+      "secret": true
+    }
+  ],
+  "deploy": {
+    "healthPath": "/health",
+    "publicPaths": [
+      "/",
+      "/health",
+      "/signin"
+    ],
+    "notes": "Hosted incident coordination beside your existing pager; paging OFF, no independent standby. Native owner sessions guard private APIs. rer deploy claims the configured owner and retires its setup token. Sign in through configured remote mail. Local rer dev uses a private RER_OPEN owner entry; no mail sender is configured by default."
+  },
+  "extensionPoints": {
+    "contributions": [],
+    "policies": [],
+    "events": [],
+    "slots": [],
+    "adapters": []
+  },
+  "limits": {
+    "status": "unmeasured"
+  },
+  "accessibility": {
+    "level": "WCAG 2.2 AA",
+    "status": "target; unaudited"
+  },
+  "operatingCost": {
+    "status": "unmeasured"
+  },
+  "composition": {
+    "base": "base",
+    "family": "response-operations",
+    "edition": "oncall",
+    "modules": [
+      "job-queue",
+      "release",
+      "deploy-kit",
+      "mail",
+      "operator-auth",
+      "portability",
+      "import-kit"
+    ]
+  },
+  "paging": "OFF"
+}

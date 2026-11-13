@@ -1,0 +1,50 @@
+{
+  "result": "pass",
+  "countsBefore": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "countsAfter": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "versions": {
+    "lamp": [
+      "v1.11.13",
+      "v1.11.14"
+    ],
+    "uptime": [
+      "v0.5.9",
+      "v0.5.10"
+    ],
+    "oncall": [
+      "v0.5.10",
+      "v0.5.11"
+    ],
+    "orbit": [
+      "v0.4.7",
+      "v0.4.8"
+    ]
+  },
+  "listingDelta": "exactly four version values plus generatedAt; all other listing fields identical",
+  "pageDelta": "exactly four version literals; all prose identical",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "excludedSlugsAbsent": [
+    "barrow",
+    "beacon",
+    "brook",
+    "delta",
+    "ferry",
+    "lily",
+    "linen",
+    "relay"
+  ],
+  "pricing": "source unchanged; accepted Assisted US$10/month and Managed US$100/month presentation preserved",
+  "contractStatusChanges": []
+}

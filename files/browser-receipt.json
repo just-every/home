@@ -1,0 +1,70 @@
+{
+  "result": "pass",
+  "assertionWidth": 1440,
+  "screenshotWidths": [
+    1440,
+    390
+  ],
+  "results": [
+    {
+      "slug": "lamp",
+      "width": 1440,
+      "version": "v1.11.14",
+      "assertions": "HTTP 200; exact displayed version; no horizontal overflow",
+      "screenshot": "lamp-1440.png"
+    },
+    {
+      "slug": "uptime",
+      "width": 1440,
+      "version": "v0.5.10",
+      "assertions": "HTTP 200; exact displayed version; no horizontal overflow",
+      "screenshot": "uptime-1440.png"
+    },
+    {
+      "slug": "oncall",
+      "width": 1440,
+      "version": "v0.5.11",
+      "assertions": "HTTP 200; exact displayed version; no horizontal overflow",
+      "screenshot": "oncall-1440.png"
+    },
+    {
+      "slug": "orbit",
+      "width": 1440,
+      "version": "v0.4.8",
+      "assertions": "HTTP 200; exact displayed version; no horizontal overflow",
+      "screenshot": "orbit-1440.png"
+    },
+    {
+      "slug": "lamp",
+      "width": 390,
+      "version": "v1.11.14",
+      "assertions": "screenshot only",
+      "screenshot": "lamp-390.png"
+    },
+    {
+      "slug": "uptime",
+      "width": 390,
+      "version": "v0.5.10",
+      "assertions": "screenshot only",
+      "screenshot": "uptime-390.png"
+    },
+    {
+      "slug": "oncall",
+      "width": 390,
+      "version": "v0.5.11",
+      "assertions": "screenshot only",
+      "screenshot": "oncall-390.png"
+    },
+    {
+      "slug": "orbit",
+      "width": 390,
+      "version": "v0.4.8",
+      "assertions": "screenshot only",
+      "screenshot": "orbit-390.png"
+    }
+  ],
+  "productHead": "0396a50284d16568b52f397e13787cf9440f3ad5",
+  "visualReview": "All eight screenshots inspected. Updated version labels are readable at both widths; existing layout retained.",
+  "recovery": "Initial networkidle wait timed out with no screenshot emitted. Reran using DOM/font readiness after local DB migrations; all assertions and captures passed. No application paths were mocked.",
+  "limits": "Local production Next rendering proves displayed versions; it is not deployment or provider qualification. Existing video posters may show a loading spinner while external media loads."
+}

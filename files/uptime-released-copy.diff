@@ -1,0 +1,84 @@
+--- uptime/v0.5.9/contract
++++ uptime/v0.5.10/contract
+@@ -240,6 +240,8 @@
+ 
+ **Bounded evidence (qualification pending).** `tests/public-paths.mjs` invokes `tests/startup-rer-relay-url-support.mjs` proveRerRelayUrlStartup once against the actual emitted Worker and independently migrated persistent D1. With MAIL_PROVIDER set to rer and a valid synthetic MAIL_API_KEY, independently missing and malformed non-HTTPS MAIL_RELAY_URL settings refuse health and an otherwise-valid native runner claim with 503 naming only the binding. The request origin is independent of the relay setting; captured diagnostics and responses withhold planted values, the observed outbound edge receives no requests, and every durable table remains exact, including populated owner admission, public counters and retained claim custody. A corrected synthetic HTTPS relay and restart on the same persistence restore health 200 and an authenticated idle claim without mail or target work. This qualifies only those two conditional-binding refusals and their correction; the current partial judgment, other configuration, readiness faults and timing, console, hosted and provider qualification remain unchanged.
+ 
++**Bounded sender evidence (qualification pending).** `tests/public-paths.mjs` invokes `tests/startup-mail-sender-support.mjs` proveMailSenderStartup once against the emitted Worker and independently migrated persistent D1. With MAIL_PROVIDER set to rer, valid synthetic relay authority and unrelated settings valid, missing and malformed mandatory MAIL_FROM settings each refuse health and an otherwise-valid scoped runner claim with 503 naming MAIL_FROM. Native owner admission, signed runner enrollment and inert retained custody precede refusal. Independently constructed request authority, captured value-free diagnostics, a zero-request outbound observer and complete readable durable snapshots, including SQLite sequences, demonstrate refusal without work. Correcting the sender and restarting the same persistence restores health 200 and authenticated idle claim 200; a wrong runner key still returns 401. Recovery permits only the named request-admission counts and runner-contact fields, preserving authority, custody and every other durable row without mail or target work. This qualifies only these sender cases and their correction; STARTUP-001 remains partial with all other binding, readiness, timing, console, hosted and provider obligations unchanged.
++
+ #### PUBLIC-002 — Declared sessionless paths and rate limits
+ 
+ **Requirement.** Every sessionless route and emitted static path is declared in `seed.json` with its authentication rule and rate-limit class. D1 applies owner-tunable per-client limits in fixed 60-second windows and returns 429 with `Retry-After` after the class limit. A declaration does not bypass route-specific session, runner, heartbeat or development-key checks. Limit values are marked estimated and not load-tested. See [Public paths and rate limits](docs/contract/safety-rules.md#public-paths-and-rate-limits) and [Integrity and authority](docs/contract/safety-rules.md#integrity-and-authority).
+@@ -553,6 +555,8 @@
+ *Tier:* Core · *Cites:* BASE-DATA-004
+ 
+ **Requirement.** An owner can add a named third-party provider directly from a searchable catalog, without running discovery. The catalog covers at least the providers US small businesses commonly depend on: AWS, Google Cloud, Microsoft Azure and Microsoft 365, Cloudflare, Stripe, PayPal, Square, Shopify, GitHub, Vercel, Netlify, Twilio, SendGrid, Mailgun, Slack, Zoom, Atlassian, OpenAI, Anthropic, Okta, Auth0, DigitalOcean and Fastly. Each entry names the provider's official status source (a Statuspage-compatible JSON API, RSS/Atom feed or status page) and its components and regions. The owner can follow the whole provider or chosen components, such as Stripe API or AWS us-east-1 EC2. A followed service becomes a dependency monitor inheriting DEPENDENCY-001's attribution, contextual-evidence and separation rules; this clause replaces its ordinary separate-monitor incident default with dependency notices that open no Uptime incident. The provider's stated status is attributed contextual evidence, is never proof that the buyer's application is up or down, and never changes an application monitor's state. Provider incidents and recoveries notify through the owner's chosen ROUTING-001 route as dependency notices, not as Uptime incidents. They appear beside correlated application incidents under FOLLOWUP-001, and AGENT-002 can cite them. A dependency the owner links to a monitor, service or group (MONITOR-001) shows as linked and qualifies for grouped acknowledgment. An unlinked provider incident that overlaps in time shows only as contextual coincidence and never groups acknowledgment. Following an entry first checks its status source live; a failing source is marked needs review. An owner can add a provider not in the catalog by giving its status page URL, which goes through DEPENDENCY-001's reviewed proposal. Catalog entries are versioned and reviewed when a provider moves its status source. A source that stops answering makes that dependency Unknown, never operational. UptimeRobot, Better Stack and Site24x7 third-party service monitors map onto catalog entries during migration. An explicitly reviewed Auth0 follow sends only the named tenant domain to Auth0's fixed official status endpoint, and that egress is disclosed before the owner confirms the follow; an unusable or ambiguous provider source, such as a free-text feed with no status field, stays Unknown and no status is inferred from it (RL-101).
++
++The bounded native Auth0 source-check door reviews one tenant domain in Auth0's tenant namespace, the fixed `https://status.auth0.com/rss` endpoint and its sole domain query before explicit owner consent can queue work. The persisted check and signed result keep that reviewed binding across restart; a changed tenant or reviewing owner requires a new review. Unconfirmed reviews expire after ten minutes; queued work retains the initiating owner's revocation fence. `tests/service-catalog-auth0-support.mjs`, mounted by `tests/discovery-jobs.mjs`, exercises admission and refusal with provider responses controlled only at the network edge. This source-check evidence does not qualify successful Auth0 status interpretation or following, live tenant behavior, Fastly status semantics or the held console controls.
+ 
+ **Acceptance.**
+ 1. Search the catalog for Stripe and add it with only the API component followed, then add AWS us-east-1.
+@@ -1364,6 +1368,8 @@
+ 7. `uptime.definitions.read` or `uptime.definitions.preview` adds destructive when code-managed destruction irreversibly erases a monitor, its evidence or another managed record, with the item count per table; a preview or a reversible definition change does not add destructive.
+ 8. `uptime.checks.run` adds destructive when the monitor holds an active destructive-write grant, with the step and item count; a manual check without such a grant does not add destructive. `uptime.grants.read` adds destructive when it grants authority for destructive writes, with the step and item count; a grant that does not allow destructive writes does not add destructive.
+ 
++**Bounded implementation evidence (qualification pending).** `tests/agent-comment-edit-support.mjs` proveCommentEditing, mounted once by `tests/agent-door.mjs`, exercises the synchronous mention-free edit variant of `uptime.incidents.note` through MCP. The server selects standard without destructive, reuses native comment history and current author or administrator authority, and fences versions and exact-key replay. The journey covers both supported protocol versions and ordinary autonomous or reviewed standard decisions with destructive blocked, genuine named approval, native and MCP timeline attribution, stale and foreign references, deleted targets and unrelated durable state with zero provider traffic. Native mention reconciliation remains unchanged; this fixture makes no claim about arbitrary pending mentions. This is bounded acceptance 4 evidence only, with no status promotion or qualification of the remaining clause outcomes or existing holds.
++
+ #### SURFACE-005 — The monitoring-operator journey under two company policies
+ 
+ *Tier:* Agent surface · *From:* new · *Cites:* BASE-AGENT-007, BASE-AGENT-013
+@@ -1388,6 +1394,8 @@
+ 2. `uptime.incidents.assign` or `uptime.incidents.acknowledge` is standard for taking or reassigning ownership. Acknowledge, stop and resolve carry destructive with the incidents irreversibly changed, including incidents grouped by acknowledgment; assignment does not carry destructive.
+ 3. `uptime.incidents.assign` or `uptime.incidents.acknowledge` adds live when acknowledge, stop or resolve ends scheduled reminders or a pending fallback on an open incident of a running monitor, including other incidents grouped by acknowledgment. Facts name every monitor, incident and route affected, applying each contact’s acknowledgment policy. Assignment, and a response action that ends no such scheduled reminder or pending fallback, do not add live.
+ 4. `uptime.checks.run` adds live, with the monitor affected, when the monitor runs setup and cleanup fixtures and the cleanup debts this check can open (one for each cleanup step on each probe and attempt) would bring its open-debt count to the limit, so its next scheduled run would refuse setup. A check of a monitor without fixtures, or one whose possible debts cannot reach the limit, does not add live.
++
++**Bounded implementation evidence.** `tests/agent-door.mjs` invokes `tests/agent-manual-multicleanup-support.mjs` proveManualMultiCleanup for acceptance 4: an owner-created enabled API monitor with two saved cleanup steps, one probe and zero retries has one open debt from signed production-runner execution. The journey checks the named monitor and debt summary, selective live approval without a slot, genuine person approval queuing one undispatched manual slot, replay, live refusal and a below-boundary counterpart under both policies and both protocols, preserving scheduled evidence and unrelated durable state without admission traffic. This evidence does not qualify other API shapes, browser fixtures, multiple probes or retries, or acceptances 1 through 3; SURFACE-006 retains its current judgment.
+ 
+ ## Push further
+ 
+
+--- uptime/v0.5.9/readme
++++ uptime/v0.5.10/readme
+@@ -33,7 +33,7 @@
+ 
+ ## Run it on your computer
+ 
+-Use Git on macOS, Linux or Windows with WSL2. The CLI selects the checkout's pinned Node 22.20.0 for application commands; direct `node` and `pnpm` contributor commands use that pinned runtime. Uptime is developed in its public repository, [just-every/run-uptime](https://github.com/just-every/run-uptime): candidate work on branches, accepted work on `main`, and each release is a version tag on `main`. Public v0.1.1 is the security predecessor that closed the local development file-exposure issue in v0.1.0. The previous published version is v0.5.8. This release record is v0.5.9. See [the changelog](CHANGELOG.md) for changes and [the release procedure](RELEASE.md) for producing the annotated tag and bundle.
++Use Git on macOS, Linux or Windows with WSL2. The CLI selects the checkout's pinned Node 22.20.0 for application commands; direct `node` and `pnpm` contributor commands use that pinned runtime. Uptime is developed in its public repository, [just-every/run-uptime](https://github.com/just-every/run-uptime): candidate work on branches, accepted work on `main`, and each release is a version tag on `main`. Public v0.1.1 is the security predecessor that closed the local development file-exposure issue in v0.1.0. The previous published version is v0.5.9. This release record is v0.5.10. See [the changelog](CHANGELOG.md) for changes and [the release procedure](RELEASE.md) for producing the annotated tag and bundle.
+ 
+ ```sh
+ curl -fsSL https://runeditrun.com/install.sh | sh -s -- dev just-every/run-uptime
+
+--- uptime/v0.5.9/seed
++++ uptime/v0.5.10/seed
+@@ -1,7 +1,7 @@
+ {
+   "id": "uptime",
+   "name": "Uptime",
+-  "version": "0.5.9",
++  "version": "0.5.10",
+   "maturity": "local-installer-and-owner-deploy-implemented-hosted-unverified",
+   "category": "monitoring",
+   "spine": {
+@@ -245,10 +245,10 @@
+     {
+       "id": "service-catalog-status-sources",
+       "required": false,
+-      "requiredWhen": "An owner follows or reviews a provider from the third-party service catalog",
++      "requiredWhen": "An owner follows or reviews a provider from the third-party service catalog, or explicitly confirms a reviewed Auth0 tenant-domain source check",
+       "why": "Before a provider is followed, the owner's runner (or a hosted demo's Worker) reads the catalog entry's own status source once to confirm it answers with the shape the catalog expects. Every scheduled check of a followed provider reads the same address with the same catalog reader.",
+       "data": [
+-        "Only status-source addresses the catalog itself names (provider status APIs, feeds and pages), one read-only GET each, with the catalog check User-Agent; no owner data, credential or other address is sent",
++        "Only status-source addresses the catalog itself names (provider status APIs, feeds and pages), one read-only GET each, with the catalog check User-Agent; no credential or other address is sent; the sole owner-data exception is an explicitly reviewed Auth0 source check sending one named tenant domain as the domain query parameter to the fixed https://status.auth0.com/rss endpoint (RL-101), with a new review required when the tenant changes",
+         "The provider's status service sees the request time and the runner's source address",
+         "The reader streams at most 1 MiB of a document, follows no redirect and keeps nothing but derived facts",
+         "Only derived facts return to the Worker: whether the source answered, whether it has the expected shape, what the provider states about the followed part and region, and the provider's own id for a component or product; no body or header is kept"
+@@ -348,7 +348,7 @@
+       "data": [
+         "Runner key authentication and signature, runner identity, declared network label, browser capability, request times, and claimed task identifiers",
+         "Assigned monitor and flow definitions, canary URLs, retry and lease data, and signed attempt evidence, including status, assertions, timings, and bounded flow trace",
+-        "Discovery input URLs and derived host/proposal results; for a service catalog check, the catalog entry and chosen parts, and the derived check result",
++        "Discovery input URLs and derived host/proposal results; for a service catalog check, the catalog entry and chosen parts, and the derived check result; a reviewed Auth0 source check also carries its named tenant domain, fixed official endpoint and explicit consent binding",
+         "For notification delivery, the claimed endpoint URL, signing credential and event payload are returned to the runner for the one configured send; signed outcome and bounded provider response details return to the Worker",
+         "Redacted HTTP failure snapshots (16 KiB text, optional 64 KiB PNG, 120 KiB total) carry final request details, owner-approved safe header/email exceptions, measured phases and bounded diagnostics under the signed envelope. Opt-in isolated screenshots render the already received excerpt after inert parsing/redaction, without fetching any target or subresource; scripts, styling and media are removed. Generated PNGs are authenticated-encrypted at rest, read only by owners and explicitly granted per-monitor evidence viewers, portable as redacted archive data, and subject to snapshot retention and erasure. Masks and access grants stay installation-local. Alerts carry no artifact content."
+       ],

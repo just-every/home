@@ -1,0 +1,57 @@
+
+> next-project@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.4.3 (webpack)
+✓ Running next.config.ts took 58ms
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+✓ Compiled successfully in 11.6s
+  Running TypeScript ...
+  Finished TypeScript in 4.6s ...
+  Collecting page data using 4 workers ...
+  Generating static pages using 4 workers (0/61) ...
+  Generating static pages using 4 workers (15/61) 
+  Generating static pages using 4 workers (30/61) 
+  Generating static pages using 4 workers (45/61) 
+✓ Generating static pages using 4 workers (61/61) in 1572ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├   /[slug]
+│ ├ ● /uptime
+│ ├ ● /happytohelp
+│ ├ ● /nook
+│ └ ● [+46 more paths]
+├ ƒ /api/contact
+├ ƒ /api/events
+├ ƒ /api/match
+├ ƒ /api/suggest
+├ ƒ /api/tokens
+├ ○ /contact
+├ ○ /journey
+├ ○ /process
+├ ○ /products
+└ ○ /sitemap.xml
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

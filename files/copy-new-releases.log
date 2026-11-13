@@ -1,0 +1,25 @@
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --copy-only --apply --only lamp,uptime,oncall,orbit --out /home/agent/rer-consolidation/work/je-sync-26/copy-new-releases
+
+Reading 4 seed repositories...
+uptime: source=v0.5.10 commit=bd7b21317cae0ae0082fa88127cef6842c377504 (released listing version)
+lamp: source=v1.11.14 commit=733e2ce1e2fc618183a93632218bb86456a06a79 (released listing version)
+orbit: source=v0.4.8 commit=0e9e55cf150dfcc781d1d9e62b2d88c15c9b6a63 (released listing version)
+oncall: source=v0.5.11 commit=457a0a194a0dc97f653cdc12224cae27b6f1a79f (released listing version)
+
+Applied: 4 of 4 seeds changed.
+
+Uptime
+  copy      CONTRACT.md, README.md, seed.json changed since the last sync [reported]
+
+Lamp
+  copy      README.md, seed.json changed since the last sync [reported]
+
+Orbit
+  copy      README.md, seed.json changed since the last sync [reported]
+
+Oncall
+  copy      CONTRACT.md, README.md, seed.json changed since the last sync [reported]
+
+Report: /home/agent/rer-consolidation/work/je-sync-26/copy-new-releases/report.md

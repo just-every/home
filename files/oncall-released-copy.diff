@@ -1,0 +1,35 @@
+--- oncall/v0.5.10/contract
++++ oncall/v0.5.11/contract
+@@ -1231,7 +1231,7 @@
+ | `oncall.actions.submit` | Submit completion evidence for a follow-up | OC-005, OC-053 | standard (+ sensitive) | Shipped |
+ | `oncall.actions.receipt` | Read the receipt of an earlier follow-up call by its idempotency key | OC-053 | standard | Shipped |
+ | `oncall.reviews.read` | Read an incident's review material | OC-036, OC-049 | standard (+ sensitive) | Shipped |
+-| `oncall.analytics.read` | Read response analytics, load, usage and readiness | OC-037, OC-044, OC-054 | standard | Shipped as response analytics (OC-030, OC-053); load, usage and readiness reading not yet shipped |
++| `oncall.analytics.read` | Read response analytics, load, usage and readiness | OC-037, OC-044, OC-054 | standard; sensitive for retained personal or incident evidence | Shipped response analytics, scheduled load and noise for granted services; workspace readiness only with every service granted; no-argument OC-053 counts retained; usage not yet shipped |
+ | `oncall.coordination.read` | Read the workspace coordination state and its revision | OC-003, OC-004, OC-036, OC-053 | standard | Shipped |
+ | `oncall.events.list` | List events an agent can follow | BASE-AGENT-010 | standard | Shipped |
+ | `oncall.imports.read` | Read imports | OC-038, OC-040 | standard | Shipped |
+
+--- oncall/v0.5.10/readme
++++ oncall/v0.5.11/readme
+@@ -31,7 +31,7 @@
+ 
+ # Run it locally
+ 
+-See the [Oncall Run page](https://run-oncall.com/run) for local launch and PATH help. Public source: [just-every/run-oncall](https://github.com/just-every/run-oncall). The latest tag, `v0.5.10`, includes hosted coordination. See [Getting started](docs/getting-started.md#host-for-your-team) for complete credentials and deployment instructions.
++See the [Oncall Run page](https://run-oncall.com/run) for local launch and PATH help. Public source: [just-every/run-oncall](https://github.com/just-every/run-oncall). The latest tag, `v0.5.11`, includes hosted coordination. See [Getting started](docs/getting-started.md#host-for-your-team) for complete credentials and deployment instructions.
+ 
+ One line installs the `rer` command, clones Oncall and starts it:
+ 
+
+--- oncall/v0.5.10/seed
++++ oncall/v0.5.11/seed
+@@ -1,7 +1,7 @@
+ {
+   "id": "oncall",
+   "name": "Oncall",
+-  "version": "0.5.10",
++  "version": "0.5.11",
+   "maturity": "maintained",
+   "category": "operations",
+   "replaces": [
