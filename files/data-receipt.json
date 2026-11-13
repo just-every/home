@@ -1,0 +1,127 @@
+{
+  "head": "5c025fcb6629b82000ac2d09a2ad4b1c5df8f81b",
+  "base": "274220fea1ba6f13126557bb86b5cc078680a4eb",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "beforeCounts": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "afterCounts": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "listingChanges": [
+    {
+      "slug": "happytohelp",
+      "field": "version",
+      "before": "v0.4.23",
+      "after": "v0.4.24"
+    }
+  ],
+  "stateChanges": [
+    {
+      "path": "/seeds/happytohelp/commit",
+      "before": "3c45a60a6debb0886ae8c41eee18a95e6fee694d",
+      "after": "6acf8a4c50dfeb94ca9ab705b1e386d282ea8e0f"
+    },
+    {
+      "path": "/seeds/happytohelp/copy/README.md",
+      "before": "2b37c66810922da8",
+      "after": "ff2699e21edf96c7"
+    },
+    {
+      "path": "/seeds/happytohelp/copy/seed.json",
+      "before": "573d1f0fa88958a5",
+      "after": "de762362ebcab2ec"
+    },
+    {
+      "path": "/seeds/happytohelp/open",
+      "before": null,
+      "after": [
+        "42983364b373"
+      ]
+    },
+    {
+      "path": "/seeds/happytohelp/sourceRef",
+      "before": "v0.4.23",
+      "after": "v0.4.24"
+    },
+    {
+      "path": "/seeds/happytohelp/tag",
+      "before": "v0.4.23",
+      "after": "v0.4.24"
+    },
+    {
+      "path": "/seeds/lamp/open",
+      "before": [
+        "42983364b373"
+      ],
+      "after": null
+    },
+    {
+      "path": "/seeds/oncall/open",
+      "before": [
+        "c843303a1181"
+      ],
+      "after": null
+    },
+    {
+      "path": "/seeds/orbit/open",
+      "before": [
+        "42983364b373"
+      ],
+      "after": null
+    },
+    {
+      "path": "/seeds/uptime/open",
+      "before": [
+        "c843303a1181"
+      ],
+      "after": null
+    },
+    {
+      "path": "/syncedAt",
+      "before": "2026-11-13T07:28:13.329Z",
+      "after": "2026-11-13T12:21:04.934Z"
+    }
+  ],
+  "versions": {
+    "happytohelp": "v0.4.24",
+    "lamp": "v1.11.14",
+    "oncall": "v0.5.11",
+    "orbit": "v0.4.8",
+    "spool": "v0.7.8",
+    "uptime": "v0.5.10"
+  },
+  "excludedAbsent": [
+    "beacon",
+    "relay",
+    "ferry",
+    "lily",
+    "brook",
+    "delta",
+    "barrow",
+    "linen"
+  ],
+  "wordingChanged": false,
+  "testsChanged": false,
+  "credentialPatternMatches": 0,
+  "pricingFilesUnchanged": [
+    "src/content/landing.ts",
+    "src/data/incumbent-prices.ts",
+    "src/components/seed/SeedPage.tsx"
+  ],
+  "pricingLiteralCaveat": "Assisted US$10/month and Managed US$100/month are absent from both baseline and candidate source; this candidate changes no pricing, GST or billing-country statement.",
+  "applicableGenerators": {
+    "listings": "npm run listings / npm run listings -- --check",
+    "sourceLock": "N/A: no sources.lock.json or documented lock generator",
+    "contractViews": "N/A: no CONTRACT.md, ACCEPTANCE.md, docs/CLAIMS.md or documented contract generator",
+    "migrationLedger": "N/A: no ledger checker; data-only change, migrations unchanged"
+  }
+}

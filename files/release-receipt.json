@@ -1,0 +1,28 @@
+{
+  "command": "gh api 'repos/just-every/run-happytohelp/releases?per_page=100'",
+  "release": {
+    "id": 444048798,
+    "tag_name": "v0.4.24",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-13T09:36:51Z",
+    "html_url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.24"
+  },
+  "assets": [
+    {
+      "id": 743085077,
+      "name": "rer-release.dsse.json",
+      "size": 3061,
+      "browser_download_url": "https://github.com/just-every/run-happytohelp/releases/download/v0.4.24/rer-release.dsse.json"
+    },
+    {
+      "id": 743085079,
+      "name": "screen-1.webp",
+      "size": 112826,
+      "browser_download_url": "https://github.com/just-every/run-happytohelp/releases/download/v0.4.24/screen-1.webp"
+    }
+  ],
+  "tagObject": "e92ebf51c358f4737810c26766d8a7f4073449b5",
+  "commit": "6acf8a4c50dfeb94ca9ab705b1e386d282ea8e0f",
+  "envelopeSignatureVerified": false
+}

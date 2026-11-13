@@ -1,0 +1,96 @@
+{
+  "tag": "je-gate-35",
+  "repository": "just-every/home",
+  "role": "gate",
+  "candidateBranch": "cloud/je-sync-27",
+  "candidateHead": "5c025fcb6629b82000ac2d09a2ad4b1c5df8f81b",
+  "baseline": "274220fea1ba6f13126557bb86b5cc078680a4eb",
+  "gateLocalBranch": "cloud/je-gate-35",
+  "productCommitsCreated": 0,
+  "productPushes": 0,
+  "prWrites": 0,
+  "deployments": 0,
+  "productStatus": "",
+  "npmCiExit": 0,
+  "baselineBuildExit": 0,
+  "localMigrationsExit": 0,
+  "baselineLocalMigrationsExit": 0,
+  "checks": [
+    {
+      "check": "listings-check",
+      "command": [
+        "npm",
+        "run",
+        "listings",
+        "--",
+        "--check"
+      ],
+      "exit": 0,
+      "started": "2026-11-13T12:46:05.328490+00:00",
+      "ended": "2026-11-13T12:46:09.922570+00:00"
+    },
+    {
+      "check": "listings-write",
+      "command": [
+        "npm",
+        "run",
+        "listings"
+      ],
+      "exit": 0,
+      "started": "2026-11-13T12:46:09.928559+00:00",
+      "ended": "2026-11-13T12:46:10.637627+00:00"
+    },
+    {
+      "check": "type-check",
+      "command": [
+        "npm",
+        "run",
+        "type-check"
+      ],
+      "exit": 0,
+      "started": "2026-11-13T12:46:10.646940+00:00",
+      "ended": "2026-11-13T12:46:19.702439+00:00"
+    },
+    {
+      "check": "lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "exit": 0,
+      "started": "2026-11-13T12:46:19.711344+00:00",
+      "ended": "2026-11-13T12:46:24.190683+00:00"
+    },
+    {
+      "check": "build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exit": 0,
+      "started": "2026-11-13T12:46:24.191127+00:00",
+      "ended": "2026-11-13T12:48:31.681132+00:00"
+    }
+  ],
+  "clausesChanged": [],
+  "before": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "apiCalls": 9,
+  "blockingFindings": 0,
+  "newFollowups": 0,
+  "verdict": "GATE PASS",
+  "publicationScope": "refs/heads/evidence/je-gate-35 only",
+  "browserExit": 0,
+  "serversStopped": true,
+  "renderedBodyOnlyVersionChanged": true
+}

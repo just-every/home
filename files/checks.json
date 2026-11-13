@@ -1,0 +1,59 @@
+[
+  {
+    "check": "listings-check",
+    "command": [
+      "npm",
+      "run",
+      "listings",
+      "--",
+      "--check"
+    ],
+    "exit": 0,
+    "started": "2026-11-13T12:46:05.328490+00:00",
+    "ended": "2026-11-13T12:46:09.922570+00:00"
+  },
+  {
+    "check": "listings-write",
+    "command": [
+      "npm",
+      "run",
+      "listings"
+    ],
+    "exit": 0,
+    "started": "2026-11-13T12:46:09.928559+00:00",
+    "ended": "2026-11-13T12:46:10.637627+00:00"
+  },
+  {
+    "check": "type-check",
+    "command": [
+      "npm",
+      "run",
+      "type-check"
+    ],
+    "exit": 0,
+    "started": "2026-11-13T12:46:10.646940+00:00",
+    "ended": "2026-11-13T12:46:19.702439+00:00"
+  },
+  {
+    "check": "lint",
+    "command": [
+      "npm",
+      "run",
+      "lint"
+    ],
+    "exit": 0,
+    "started": "2026-11-13T12:46:19.711344+00:00",
+    "ended": "2026-11-13T12:46:24.190683+00:00"
+  },
+  {
+    "check": "build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exit": 0,
+    "started": "2026-11-13T12:46:24.191127+00:00",
+    "ended": "2026-11-13T12:48:31.681132+00:00"
+  }
+]

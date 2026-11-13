@@ -1,0 +1,9 @@
+# Landing notes · je-gate-35
+
+NOTE G: R3's historical Assisted US$10/month and Managed US$100/month wording does not exist in either this main baseline or the candidate. The candidate preserves all pricing, tax and billing-country content byte for byte. This is a stale rubric detail, not a price change introduced by PR #51. The current shared landing copy says every product is MIT licensed and 100% free.
+
+NOTE G: The first browser harness attempt waited for networkidle and timed out on /happytohelp. It closed Chromium and stopped both owned server PIDs. The successful harness instead waits for DOM content, the real h1 and local fonts. No request interception, application mock, route stub or product edit is used. The documented local D1 migrations were applied to each temporary checkout so analytics requests use their actual schema. An intermediate all-footer-images wait included hidden responsive variants and timed out; the final main-footer-art readiness wait passes. Both actual attempt logs are retained. This is local test environment setup, not a deployed migration.
+
+Source-lock, contract-view write/check and migration-ledger commands are not applicable: this JE repository has no CONTRACT.md, sources.lock.json, generated ACCEPTANCE/CLAIMS or ledger-check command. The documented listings generator was independently run in both check and write modes, with no resulting tracked diff.
+
+Release envelope asset presence was checked; its cryptographic signature was not checked or claimed. No product branch was pushed by this gate. The builder's cloud/je-sync-27 and PR #51 retain product custody. Evidence publication is report-only and does not authorize landing. The lane retains the publication scan, PR merge, deployment and live proof. Do not treat the unused local cloud/je-gate-35 ref at baseline as a candidate or READY head.

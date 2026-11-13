@@ -1,0 +1,9 @@
+{"call": 1, "args": ["api", "repos/just-every/home/pulls/51"]}
+{"call": 2, "args": ["api", "repos/just-every/home/actions/runs?head_sha=5c025fcb6629b82000ac2d09a2ad4b1c5df8f81b&per_page=100"]}
+{"call": 3, "args": ["api", "repos/just-every/run-happytohelp/releases?per_page=100"]}
+{"call": 4, "args": ["api", "repos/just-every/run-happytohelp/contents/CONTRACT.md?ref=v0.4.24"]}
+{"call": 5, "args": ["api", "repos/just-every/run-happytohelp/git/ref/tags/v0.4.24"]}
+{"call": 6, "args": ["api", "repos/just-every/run-happytohelp/git/tags/e92ebf51c358f4737810c26766d8a7f4073449b5"]}
+{"call": 7, "args": ["api", "repos/just-every/run-happytohelp/contents/README.md?ref=v0.4.24"]}
+{"call": 8, "args": ["api", "repos/just-every/run-happytohelp/contents/seed.json?ref=v0.4.24"]}
+{"call": 9, "args": ["api", "repos/just-every/home/pulls/51"]}

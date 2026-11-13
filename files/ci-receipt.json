@@ -1,0 +1,42 @@
+{
+  "command": "gh api 'repos/just-every/home/actions/runs?head_sha=5c025fcb6629b82000ac2d09a2ad4b1c5df8f81b&per_page=100'",
+  "observations": [
+    {
+      "id": 43425141238,
+      "name": "Verify branch",
+      "event": "pull_request",
+      "head_sha": "5c025fcb6629b82000ac2d09a2ad4b1c5df8f81b",
+      "status": "completed",
+      "conclusion": "skipped",
+      "html_url": "https://github.com/just-every/home/actions/runs/43425141238",
+      "created_at": "2026-11-13T12:26:18Z",
+      "updated_at": "2026-11-13T12:28:17Z"
+    },
+    {
+      "id": 43425135691,
+      "name": "PR #51",
+      "event": "dynamic",
+      "head_sha": "5c025fcb6629b82000ac2d09a2ad4b1c5df8f81b",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/just-every/home/actions/runs/43425135691",
+      "created_at": "2026-11-13T12:26:16Z",
+      "updated_at": "2026-11-13T12:27:11Z"
+    },
+    {
+      "id": 43425109174,
+      "name": "Verify branch",
+      "event": "push",
+      "head_sha": "5c025fcb6629b82000ac2d09a2ad4b1c5df8f81b",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/just-every/home/actions/runs/43425109174",
+      "created_at": "2026-11-13T12:26:05Z",
+      "updated_at": "2026-11-13T12:28:10Z"
+    }
+  ],
+  "requiredSuccessfulRun": 43425109174,
+  "dispatches": 0,
+  "reruns": 0,
+  "polls": 0
+}

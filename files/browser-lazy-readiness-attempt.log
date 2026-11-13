@@ -1,0 +1,4 @@
+page.waitForFunction: Timeout 20000ms exceeded.
+    at main (/tmp/je-browser.cjs:43:16) {
+  name: 'TimeoutError'
+}
