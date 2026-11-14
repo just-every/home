@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-11-14T04:33:23Z",
+  "initial_attempts": [
+    {
+      "command": "cloud_run node /tmp/je-gate-40-browser/probe.mjs /workspace/je-gate-40-home",
+      "exit": 1,
+      "error": "page.goto: Timeout 30000ms exceeded; navigating to http://127.0.0.1:3140/spool, waiting until networkidle",
+      "server_pid_stopped": 1555
+    },
+    {
+      "command": "cloud_run node /tmp/je-gate-40-browser/probe.mjs /tmp/je-gate-40-base baseline",
+      "exit": 1,
+      "error": "page.goto: Timeout 30000ms exceeded; navigating to http://127.0.0.1:3141/spool, waiting until networkidle",
+      "server_pid_stopped": 1892
+    }
+  ],
+  "final_attempts": [
+    {
+      "command": "cloud_run node /tmp/je-gate-40-browser/probe.mjs /workspace/je-gate-40-home",
+      "exit": 0,
+      "receipt": "candidate-browser-receipt.json"
+    },
+    {
+      "command": "cloud_run node /tmp/je-gate-40-browser/probe.mjs /tmp/je-gate-40-base baseline",
+      "exit": 0,
+      "receipt": "baseline-browser-receipt.json"
+    }
+  ]
+}

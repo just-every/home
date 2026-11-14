@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-11-14T04:30:01Z",
+  "label": "candidate",
+  "repo": "/workspace/je-gate-40-home",
+  "serverPid": 2297,
+  "serverStopped": true,
+  "chromium": "/usr/bin/chromium",
+  "rows": [
+    {
+      "width": 1440,
+      "status": 200,
+      "h1": "Spool",
+      "version": "v0.7.11",
+      "layout": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440,
+        "overflow": []
+      },
+      "assertions": "public route, version, listings counts, exclusions, horizontal layout",
+      "screenshot": "candidate-spool-1440.png"
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "h1": "Spool",
+      "version": "v0.7.11",
+      "layout": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "overflow": []
+      },
+      "assertions": "visual proof only",
+      "screenshot": "candidate-spool-390.png"
+    }
+  ],
+  "pageErrors": []
+}

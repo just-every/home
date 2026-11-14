@@ -1,0 +1,27 @@
+[
+  {
+    "command": "npm run listings -- --check",
+    "exit": 0,
+    "output": "\n> next-project@0.1.0 listings\n> node --import tsx scripts/listings.mjs --check\n\nListings current (49 seeds)\n"
+  },
+  {
+    "command": "npm run listings",
+    "exit": 0,
+    "output": "\n> next-project@0.1.0 listings\n> node --import tsx scripts/listings.mjs\n\nListings unchanged (49 seeds)\n"
+  },
+  {
+    "command": "git diff --exit-code",
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "command": "npm run type-check",
+    "exit": 0,
+    "output": "\n> next-project@0.1.0 type-check\n> tsc --noEmit\n\n"
+  },
+  {
+    "command": "npm run lint",
+    "exit": 0,
+    "output": "\n> next-project@0.1.0 lint\n> eslint src tests\n\n"
+  }
+]

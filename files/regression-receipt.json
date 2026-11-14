@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-11-14T04:32:49Z",
+  "base": "24b0e587dbb784d19a32bb4679f7a866a61c1f6a",
+  "head": "198052d795b6a151201bd2d02713b892575897a7",
+  "article_equal_except_spool_version": true,
+  "served_listings_equal_except_spool_version_and_generatedAt": true,
+  "visual_review": "Viewed candidate full-page screenshots at 1440 and 390 and baseline at 1440. No layout break. Version visible as v0.7.11 on candidate and v0.7.10 on baseline.",
+  "assertion_width": 1440,
+  "browser_proof_widths": [
+    1440,
+    390
+  ],
+  "page_errors": 0
+}

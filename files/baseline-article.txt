@@ -1,0 +1,59 @@
+Spool
+
+Alternative to Sentry
+
+Also replaces Bugsnag, Rollbar
+
+JavaScript errors, traced to the exact line in your source.
+
+Spool in 51 seconds
+New errors, grouped into issues
+One issue, mapped to your original source
+Filter issues by release, status and project
+
+run-spool.com
+↗
+GitHub
+→
+
+Spool catches the errors in your app, groups repeats into one issue and points to the exact line in your own source code where it broke. It tells you when a fixed error comes back in a later release, and gives your coding agent a read-only view of one project's evidence.
+
+What it does
+Catch errors from JavaScript, Python and Go apps, using the same reporting libraries Sentry uses
+Group repeats into a single issue and show exactly where in your original source each error happened
+Keep your source maps private and match them to the right release
+Download an evidence packet to hand to whoever is fixing the issue
+Create a read-only agent key so a coding agent can read one project's issues and evidence, and change nothing
+Reopen a resolved issue when it returns in a later release, and name that release
+Scrub emails, tokens and passwords before anything is saved
+Export everything to one file and restore it into a fresh copy
+What it promises
+Error details are scrubbed before they are stored: emails, tokens and passwords are removed, and headers, cookies and request bodies are not kept by default.
+Owner sign-in, error sending and read-only agent access are separate, revoking one takes effect on the next request, and your source maps are never public.
+An error is only counted once it is fully saved, and a repeated send never counts twice.
+Changes to an issue are recorded, and a resolved issue reopens as returning only when it appears in a later release, so an old release's error raises no false alarm.
+The evidence packet is size-limited and never includes your source code.
+Counts of errors accepted and rejected are visible, and a quiet period is never reported as proof an error is fixed.
+Read the full contract
+→
+Move in from
+Sentry
+Datadog Error Tracking
+Rollbar
+Bugsnag
+Run it yourself
+
+One command clones a product and starts it.
+
+Terminal
+Copy
+$ npx -y @runeditrun/rer dev just-every/run-spool
+
+No npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-spool.
+
+RUNS ON
+your own computer, or your own Cloudflare account
+VERSION
+v0.7.10
+LICENCE
+MIT, 100% free

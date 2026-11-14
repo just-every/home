@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-11-14T04:30:06Z",
+  "label": "baseline",
+  "repo": "/tmp/je-gate-40-base",
+  "serverPid": 2602,
+  "serverStopped": true,
+  "chromium": "/usr/bin/chromium",
+  "rows": [
+    {
+      "width": 1440,
+      "status": 200,
+      "h1": "Spool",
+      "version": "v0.7.10",
+      "layout": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440,
+        "overflow": []
+      },
+      "assertions": "public route, version, listings counts, exclusions, horizontal layout",
+      "screenshot": "baseline-spool-1440.png"
+    }
+  ],
+  "pageErrors": []
+}

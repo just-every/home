@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-11-14T04:28:57Z",
+  "label": "candidate",
+  "repo": "/workspace/je-gate-40-home",
+  "serverPid": 1555,
+  "serverStopped": true,
+  "chromium": "/usr/bin/chromium",
+  "rows": [],
+  "pageErrors": []
+}

@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-11-14T04:30:25Z",
+  "calls": 9,
+  "budget": 10,
+  "commands": [
+    [
+      "gh",
+      "api",
+      "repos/just-every/home/pulls/56"
+    ],
+    [
+      "gh",
+      "api",
+      "repos/just-every/home/actions/runs?head_sha=198052d795b6a151201bd2d02713b892575897a7&per_page=100"
+    ],
+    [
+      "gh",
+      "api",
+      "repos/just-every/run-spool/releases/tags/v0.7.11"
+    ],
+    [
+      "gh",
+      "api",
+      "repos/just-every/run-spool/git/ref/tags/v0.7.11"
+    ],
+    [
+      "gh",
+      "api",
+      "repos/just-every/run-spool/contents/CONTRACT.md?ref=v0.7.11",
+      "-H",
+      "Accept: application/vnd.github.raw+json"
+    ],
+    [
+      "gh",
+      "api",
+      "repos/just-every/run-spool/git/tags/d54b7b443870e71ad7a2505b2f5970f93c3c9f8f"
+    ],
+    [
+      "gh",
+      "api",
+      "repos/just-every/run-spool/contents/README.md?ref=v0.7.11",
+      "-H",
+      "Accept: application/vnd.github.raw+json"
+    ],
+    [
+      "gh",
+      "api",
+      "repos/just-every/run-spool/contents/seed.json?ref=v0.7.11",
+      "-H",
+      "Accept: application/vnd.github.raw+json"
+    ],
+    [
+      "gh",
+      "api",
+      "repos/just-every/home/pulls/56"
+    ]
+  ],
+  "workflow_retries_or_dispatches": 0,
+  "release_reads": 1
+}
