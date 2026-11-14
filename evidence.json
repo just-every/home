@@ -115,6 +115,12 @@
       "sha256": "a197c0c04def4feae3dba51f729379fcf17dfe7542811eff435a3e1392deddd8"
     },
     {
+      "blob": "cc7351855ed9127be51d3c243f2e613209cc6ca5",
+      "bytes": 7754,
+      "path": "EVIDENCE-TRANSFER-RECEIPT.json",
+      "sha256": "e7c8c11848bc349fb32bbb6dc864b9beb4adf40d17b8a3e26759d58d39a11ebf"
+    },
+    {
       "blob": "3ca63242789fa534ccfc3042a70907c26141f478",
       "bytes": 214,
       "path": "FOLLOW-UPS.md",
@@ -229,10 +235,10 @@
       "sha256": "41725494ba28e36945494b15c97edccb0bd620bd7cbb7018167ae00858c7d5b4"
     },
     {
-      "blob": "3243720a3033f53ddb4999397d2a998581986aa8",
-      "bytes": 12844,
+      "blob": "7bd785bc190c3dd76dfd8b80182f0583e85f8adc",
+      "bytes": 13201,
       "path": "REPORT.md",
-      "sha256": "696e7b792a7cddc92da0c43b07f48fe9c90644ebe0c60438f090a4857b44091c"
+      "sha256": "aa01376bec7b137595b4677cc1790c51f44fe734336d3ed7139f60364d81b878"
     },
     {
       "blob": "04bd924e80f0f80c62de16dc17c6b4833accf054",

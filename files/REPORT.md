@@ -106,3 +106,5 @@ Nine gh API calls were used, within the ten-call budget. There was one exact-SHA
 Custody
 
 Candidate checkout is clean and restored to de3a00a8e9a04dfb0227d48fcba7465d71896815. Browsers and only the servers started by this gate were closed by their recorded PIDs; subreaper commands completed. Complete actual non-secret report/source/command/browser receipts are retained in this packet. Publication goes only to refs/heads/evidence/je-gate-42 with a report-only tree; this does not signal product READY, acceptance, landing or deployment. The product clone and its node_modules will be removed after verified evidence transfer; the external packet remains.
+
+Evidence return verification: the initial 42-file packet was independently fetched from exact evidence head 125c2d4bc1f5913069c8b805fd98394aed9aa680; every manifest entry, Git blob and byte/hash matched the retained packet. EVIDENCE-TRANSFER-RECEIPT.json contains that actual transfer receipt. The final evidence revision includes that receipt as file 43.
