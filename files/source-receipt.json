@@ -1,0 +1,403 @@
+{
+  "timestamp": "2026-11-14T20:30:43Z",
+  "transport": "gh api graphql; three actual source API calls including REST Lamp release metadata; immutable source cache adapter outside checkout for unmodified sync",
+  "seeds": [
+    {
+      "slug": "happytohelp",
+      "listedVersionBefore": "v0.4.26",
+      "main": "76a98f37da9003a14e5e2c7bfd9df03b1588ab51",
+      "sourceRef": "v0.4.26",
+      "sourceCommit": "2f597575d4ccb19cdd4cfa0de5e635757737a1aa",
+      "latestTag": {
+        "name": "v0.4.27",
+        "target": {
+          "oid": "e14aa1897ef393f37f29bd30054640f8fd8b175a",
+          "target": {
+            "oid": "82b44f22ccd7ca0648e4116a20faf07da74b0e5d"
+          }
+        }
+      },
+      "release": {
+        "tagName": "v0.4.26",
+        "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.26",
+        "isDraft": false,
+        "isPrerelease": false,
+        "publishedAt": "2026-11-14T08:04:05Z",
+        "tagCommit": {
+          "oid": "2f597575d4ccb19cdd4cfa0de5e635757737a1aa"
+        },
+        "releaseAssets": {
+          "nodes": [
+            {
+              "name": "screen-1.webp",
+              "size": 112826,
+              "downloadUrl": "https://github.com/just-every/run-happytohelp/releases/download/v0.4.26/screen-1.webp"
+            },
+            {
+              "name": "rer-release.dsse.json",
+              "size": 3061,
+              "downloadUrl": "https://github.com/just-every/run-happytohelp/releases/download/v0.4.26/rer-release.dsse.json"
+            }
+          ]
+        }
+      },
+      "files": {
+        "contract": {
+          "gitBlob": "dc29251bc6ee4b69de8ae440b3154a890a60db5b",
+          "sha256": "ae8feea8b7998aa729edadf621d7f3809aa83bbe073fd3e053e1c1fb8b9b04ec"
+        },
+        "readme": {
+          "gitBlob": "7be60aa3a36e9cc26b585fae871b7dbeb3d550c9",
+          "sha256": "f56c111027b43eda1542c4b9ae9e320d566fc60f50ec1d3d8488beabc394bfaf"
+        },
+        "seed": {
+          "gitBlob": "09969e3b690cdf937ed613d51424d2498e60d4db",
+          "sha256": "685ea267d1baacbe34913077256d05e6b3fca4070f2fcc3220e2d00bd2cd9005"
+        },
+        "mark": {
+          "gitBlob": "ed48bed0dd7ebb1d542796ec77df73e9e2630983",
+          "sha256": "211d1f291d7fff772fa5a729e8d244175d84448504005917f4c5e683ce1f5c45"
+        },
+        "branding": null,
+        "theme": {
+          "gitBlob": "fdf449becd842cdcb4724dd083a3ea07277cd327",
+          "sha256": "909819e581d4a4d3b0bf651d480db08b1dde66303764a26eae812e9a3409b821"
+        }
+      }
+    },
+    {
+      "slug": "lamp",
+      "listedVersionBefore": "v1.11.15",
+      "main": "429a46081ce68bab2dbdae46b8402b8ccce3ee2a",
+      "sourceRef": "v1.11.15",
+      "sourceCommit": "5dd84e13f6b0478edc2fc5e759d513f5eccf6d57",
+      "latestTag": {
+        "name": "v1.11.16",
+        "target": {
+          "oid": "de6a8948cf2e12e3efb876066caa1a334bfd2599",
+          "target": {
+            "oid": "429a46081ce68bab2dbdae46b8402b8ccce3ee2a"
+          }
+        }
+      },
+      "release": {
+        "tagName": "v1.11.15",
+        "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.15",
+        "isDraft": false,
+        "isPrerelease": false,
+        "publishedAt": "2026-11-13T22:24:48Z",
+        "tagCommit": {
+          "oid": "5dd84e13f6b0478edc2fc5e759d513f5eccf6d57"
+        },
+        "releaseAssets": {
+          "nodes": [
+            {
+              "name": "01-public-status-active-desktop.png",
+              "size": 631154,
+              "downloadUrl": "https://github.com/just-every/run-lamp/releases/download/v1.11.15/01-public-status-active-desktop.png"
+            },
+            {
+              "name": "rer-release.dsse.json",
+              "size": 3157,
+              "downloadUrl": "https://github.com/just-every/run-lamp/releases/download/v1.11.15/rer-release.dsse.json"
+            }
+          ]
+        }
+      },
+      "files": {
+        "contract": {
+          "gitBlob": "7e3aeee348aa73d49eaf7e0fb5289ae9ea5378fd",
+          "sha256": "8b575f27ee607ce3f259e3ec0d733febbf5536d9906cb99a0d9a2ede09c5096f"
+        },
+        "readme": {
+          "gitBlob": "94e692df2d3afd1da07cdec95e392a536ff06986",
+          "sha256": "1a20f137749ab26bb365e00f19345f2eb11df7d68141088a16f89448266b31c5"
+        },
+        "seed": {
+          "gitBlob": "05ed157b681490931cbce23a57c11da36e9aa767",
+          "sha256": "074cb758ae0a8d8f638090fc2106190c1fab4551322762c3a09eb4f5cdea603f"
+        },
+        "mark": {
+          "gitBlob": "282a592a78d2b776ba46e481505016bf09a90c48",
+          "sha256": "ebd49143e6f577de0fd4f1ddab4737b65e6be1f5e08190057e1ae196ba8ae9f8"
+        },
+        "branding": null,
+        "theme": {
+          "gitBlob": "e9d20f398733c7c1bbd21b68d827ca6795358744",
+          "sha256": "59aac7f7474987bf50e6703506676f085ab6a037238e506bf61d6bb7adee8d4a"
+        }
+      }
+    },
+    {
+      "slug": "uptime",
+      "listedVersionBefore": "v0.5.11",
+      "main": "bcfa1639dbf56a4afe5c2dc41a60796e6df10395",
+      "sourceRef": "v0.5.11",
+      "sourceCommit": "04016399e1e879e7be3b8e891baf02d975bb3901",
+      "latestTag": {
+        "name": "v0.5.11",
+        "target": {
+          "oid": "2f5528c928db9ad8e1730dfd1215da979c4916c3",
+          "target": {
+            "oid": "04016399e1e879e7be3b8e891baf02d975bb3901"
+          }
+        }
+      },
+      "release": {
+        "tagName": "v0.5.11",
+        "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.11",
+        "isDraft": false,
+        "isPrerelease": false,
+        "publishedAt": "2026-11-13T15:41:29Z",
+        "tagCommit": {
+          "oid": "04016399e1e879e7be3b8e891baf02d975bb3901"
+        },
+        "releaseAssets": {
+          "nodes": [
+            {
+              "name": "uptime-0.4.0-monitor-1440.png",
+              "size": 273042,
+              "downloadUrl": "https://github.com/just-every/run-uptime/releases/download/v0.5.11/uptime-0.4.0-monitor-1440.png"
+            },
+            {
+              "name": "rer-release.dsse.json",
+              "size": 3381,
+              "downloadUrl": "https://github.com/just-every/run-uptime/releases/download/v0.5.11/rer-release.dsse.json"
+            }
+          ]
+        }
+      },
+      "files": {
+        "contract": {
+          "gitBlob": "56c8c7311fe2b63b9b13561ec488a438bfd1e460",
+          "sha256": "0b70cec7f900fbc59542b6ae32afec508997695edda128142db3e88c8b770221"
+        },
+        "readme": {
+          "gitBlob": "83c1c65eb30197602d93b4efe3b3c1bae01586b5",
+          "sha256": "52c9d14b06fdfff8337665a2143d5e557fab5a0d77dab096fbd6b2772bd867a3"
+        },
+        "seed": {
+          "gitBlob": "263695da69853e99fc776dd0b05d2bfef285bca0",
+          "sha256": "6683864c580c2486f81098c8f310393d3acc6ce91be0bb33e79ae70a7c4fbab1"
+        },
+        "mark": {
+          "gitBlob": "b7ff4eb1e2f7972998f404d9f27cb5d7d860bc25",
+          "sha256": "23ce9643d52f9bed0dc193041fa13952a92bc2636cfdc87fde35954f80d55bea"
+        },
+        "branding": {
+          "gitBlob": "eda7ca24a18e0f0443fff10cc5c2d405852f138c",
+          "sha256": "1bd4f1654fc845a9e452a8c2b697aa55d698fb3b2f03b1498ad443fad54f0ea2"
+        },
+        "theme": {
+          "gitBlob": "2ef8ffcc6d1b757f298437ee26ad66b1e5221bba",
+          "sha256": "6a672cdb653cba66e4fd8fdbb92ae0134e67913597376481150e40d62702e2e6"
+        }
+      }
+    },
+    {
+      "slug": "oncall",
+      "listedVersionBefore": "v0.5.14",
+      "main": "96d1b7a9ee6ed01fce1effbb889991a4a8a66d01",
+      "sourceRef": "v0.5.14",
+      "sourceCommit": "4d1fc62d4d2b8bf90008ac87bbaa626bc1a5494b",
+      "latestTag": {
+        "name": "v0.5.14",
+        "target": {
+          "oid": "fde8016831d3587b636ebd256ce8c12f634f4848",
+          "target": {
+            "oid": "4d1fc62d4d2b8bf90008ac87bbaa626bc1a5494b"
+          }
+        }
+      },
+      "release": {
+        "tagName": "v0.5.14",
+        "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.14",
+        "isDraft": false,
+        "isPrerelease": false,
+        "publishedAt": "2026-11-14T12:38:51Z",
+        "tagCommit": {
+          "oid": "4d1fc62d4d2b8bf90008ac87bbaa626bc1a5494b"
+        },
+        "releaseAssets": {
+          "nodes": [
+            {
+              "name": "oncall-0.5.0-incident-1440.png",
+              "size": 223214,
+              "downloadUrl": "https://github.com/just-every/run-oncall/releases/download/v0.5.14/oncall-0.5.0-incident-1440.png"
+            },
+            {
+              "name": "rer-release.dsse.json",
+              "size": 3185,
+              "downloadUrl": "https://github.com/just-every/run-oncall/releases/download/v0.5.14/rer-release.dsse.json"
+            }
+          ]
+        }
+      },
+      "files": {
+        "contract": {
+          "gitBlob": "3d812d8596ccd09e24655ae5fd32b7a04c471fb7",
+          "sha256": "c04517abc904f1e5618a858e191fd0a9ae1dc54484b6fb993a56c794a9193cac"
+        },
+        "readme": {
+          "gitBlob": "b03ef36c8bf0423cfa98082183fa3f2e394a8001",
+          "sha256": "03d11757d735563f8be134f68abc7120a61677bef0216bb9377fcdbfa89c27a2"
+        },
+        "seed": {
+          "gitBlob": "999ea7f2af0e4acfa947f874eada3176ffe49120",
+          "sha256": "0d887683acfe58be0cda35017d73923a331c7345acd931e1a1eb080dc72f0719"
+        },
+        "mark": {
+          "gitBlob": "f8b337cad00cad6c4d1dccefb4840c3225b9b518",
+          "sha256": "8cd56e3a510b5d82d64ef863bf8c91a55dc04f45d830121daf11cba1480ab240"
+        },
+        "branding": {
+          "gitBlob": "bac5c27e1ffcb0eed5b0a3369e0f78c207f8e80f",
+          "sha256": "fb61b7873b7c485cb64ae0a7ae7b9fbdfdabc5bb7716928e70c80ef82a5f920c"
+        },
+        "theme": {
+          "gitBlob": "9ef85b0d008ea8200753841cdada6139928203bc",
+          "sha256": "e6f864c368de8882777352b409a0019afdf452dfd54953d1c98d8eba7c4cf6c7"
+        }
+      }
+    },
+    {
+      "slug": "orbit",
+      "listedVersionBefore": "v0.4.9",
+      "main": "9940c015edce444ed02c8f23fee20aac6a947761",
+      "sourceRef": "v0.4.9",
+      "sourceCommit": "a5f471626aea1bfcb2c79f5dbee2250fdb38fd49",
+      "latestTag": {
+        "name": "v0.4.9",
+        "target": {
+          "oid": "4e38a13accc3371f24615602cccd31b4c51a2bde",
+          "target": {
+            "oid": "a5f471626aea1bfcb2c79f5dbee2250fdb38fd49"
+          }
+        }
+      },
+      "release": {
+        "tagName": "v0.4.9",
+        "url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.9",
+        "isDraft": false,
+        "isPrerelease": false,
+        "publishedAt": "2026-11-13T17:49:50Z",
+        "tagCommit": {
+          "oid": "a5f471626aea1bfcb2c79f5dbee2250fdb38fd49"
+        },
+        "releaseAssets": {
+          "nodes": [
+            {
+              "name": "rer-release.dsse.json",
+              "size": 3333,
+              "downloadUrl": "https://github.com/just-every/run-orbit/releases/download/v0.4.9/rer-release.dsse.json"
+            }
+          ]
+        }
+      },
+      "files": {
+        "contract": {
+          "gitBlob": "c5e1855eac1c82bf4b0aa271c8693c4062e11810",
+          "sha256": "faa136fb56b398c3a3ba80defbe1789b3cfe2aca153dc9a5e7c4205e6aa2c32f"
+        },
+        "readme": {
+          "gitBlob": "0c4f66fa42170582e513285d58a9f2ee5178ffe3",
+          "sha256": "20ef6d3a4cdc967de48720ecb9b20e7801981fde88dc92b5129b3e38ca763f99"
+        },
+        "seed": {
+          "gitBlob": "0411cf6ab28dd45fb4a577bf8ec9e90d79fed25d",
+          "sha256": "e4b909cf7a1e6ab6c35f5de114d150df60f5bf323eec1cb6235baed59d7c7260"
+        },
+        "mark": {
+          "gitBlob": "206824f88897f25b1d1b053085cf29aea2d8cf4b",
+          "sha256": "55580fd39d44cc15f5957ca9e8f2861f1b46596313b90cd46642ef73e2d0be0e"
+        },
+        "branding": null,
+        "theme": {
+          "gitBlob": "6aea26c737e012037b4ccee9b68b923bb8ad08d6",
+          "sha256": "2196d575b2a541da71d3318c6bca00d0ab658a2aeb7361028e79ab1ec971e198"
+        }
+      }
+    },
+    {
+      "slug": "spool",
+      "listedVersionBefore": "v0.7.11",
+      "main": "f651887172e7d74a09af89f9eb059cfd13d72c61",
+      "sourceRef": "v0.7.11",
+      "sourceCommit": "b9e7e575097e0dd0fc0662ce1ed507fa0d41f0d8",
+      "latestTag": {
+        "name": "v0.7.11",
+        "target": {
+          "oid": "d54b7b443870e71ad7a2505b2f5970f93c3c9f8f",
+          "target": {
+            "oid": "b9e7e575097e0dd0fc0662ce1ed507fa0d41f0d8"
+          }
+        }
+      },
+      "release": {
+        "tagName": "v0.7.11",
+        "url": "https://github.com/just-every/run-spool/releases/tag/v0.7.11",
+        "isDraft": false,
+        "isPrerelease": false,
+        "publishedAt": "2026-11-14T02:29:00Z",
+        "tagCommit": {
+          "oid": "b9e7e575097e0dd0fc0662ce1ed507fa0d41f0d8"
+        },
+        "releaseAssets": {
+          "nodes": [
+            {
+              "name": "rer-release.dsse.json",
+              "size": 3105,
+              "downloadUrl": "https://github.com/just-every/run-spool/releases/download/v0.7.11/rer-release.dsse.json"
+            },
+            {
+              "name": "spool-issue-page-1600.png",
+              "size": 166594,
+              "downloadUrl": "https://github.com/just-every/run-spool/releases/download/v0.7.11/spool-issue-page-1600.png"
+            }
+          ]
+        }
+      },
+      "files": {
+        "contract": {
+          "gitBlob": "98d20645c67acd0ea21f39ea97855ba566a79e62",
+          "sha256": "ee9c871bfa25a110d3f3e61924164c75cc17ea412cb775f2e0621f114ab3594b"
+        },
+        "readme": {
+          "gitBlob": "91653cacadfa5a67b2a18ba4102b69bfbd884eb2",
+          "sha256": "c942367838430a754d26b981891e3e70f87ca2d3a537f90d9f3cbf9460f9fe88"
+        },
+        "seed": {
+          "gitBlob": "f09c70dfaccbac6cf7dc5e479b7ce82c3754c2cb",
+          "sha256": "2121502a5371a2c380585e6f3b3151152290518dd40def0b381e546e256b7aeb"
+        },
+        "mark": {
+          "gitBlob": "d82a325a29a92f9e87c40d0d736ea7593155513e",
+          "sha256": "60b00db5ff82c8cd20d57e363c45ce2ca57ce9bef626e5a924fe50ffafa2e968"
+        },
+        "branding": {
+          "gitBlob": "4929821751fe5cb91eada811a58e0c82898f3e22",
+          "sha256": "df944caeaf62db214b4835b7b7556fa3d9c3b2d7aed46cfd82995b94098154bd"
+        },
+        "theme": {
+          "gitBlob": "451b03a8d423582b05ae6c87570b8950a1a3fa19",
+          "sha256": "1cb0290573749eedfbc6e1b6d4e48b60a13eb5315363238f305f3c2c0f51fbeb"
+        }
+      }
+    }
+  ],
+  "lampCandidateFiles": {
+    "contract": {
+      "gitBlob": "a9cd9d56a1b1d6547d41414748b95be04a348a9b",
+      "sha256": "f9cb0b8a5bd46d6937005eccfd7b290d1ac6c3c512da4e973c0771bc3256cfdd"
+    },
+    "readme": {
+      "gitBlob": "94e692df2d3afd1da07cdec95e392a536ff06986",
+      "sha256": "1a20f137749ab26bb365e00f19345f2eb11df7d68141088a16f89448266b31c5"
+    },
+    "seed": {
+      "gitBlob": "ee1f023dae254ea9f49cdebe3e40f05f4b189cf1",
+      "sha256": "12d7013d559c4028d343349ad49aa8378d3850b131646967fad7aef356c32ba7"
+    }
+  },
+  "signatureVerification": "NOT RUN: envelope asset presence and published GitHub SHA-256 metadata verified; no DSSE cryptographic signature claim"
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "width": 1440,
+    "status": 200,
+    "title": "Lamp",
+    "version": "v1.11.16",
+    "softwareVersion": "v1.11.16",
+    "bodyWidth": 1440,
+    "viewport": 1440,
+    "assertions": "page/feed/schema consistency and withheld HappyToHelp release passed"
+  },
+  {
+    "width": 390,
+    "status": 200,
+    "title": "Lamp",
+    "version": "v1.11.16",
+    "softwareVersion": "v1.11.16",
+    "bodyWidth": 390,
+    "viewport": 390,
+    "assertions": "screenshot observation only"
+  }
+]

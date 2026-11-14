@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-11-14T20:41:49Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-35",
+  "head": "e7d336a0005e9a764869340199e6c007cbd51011",
+  "pr": "https://github.com/just-every/home/pull/59",
+  "base": "1eb1fe9d9bf8683ec1e8ecdab8653a5ce6446a86",
+  "productPushed": true,
+  "countsBefore": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "countsAfter": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "clauseStatusChanges": [],
+  "checks": {
+    "npm ci": "passed",
+    "listings generation": "passed",
+    "listings check": "passed",
+    "type-check": "passed",
+    "lint": "passed",
+    "production build": "passed",
+    "browser desktop assertions": "passed",
+    "browser 1440/390 proof": "passed",
+    "diff hygiene": "passed",
+    "scope": "passed: three declared files",
+    "identity/trailers": "passed: all candidate commits including side parents",
+    "diff credential-pattern inspection": "passed",
+    "full local test suite": "not run: owned by CI",
+    "Mac publication scan": "not run: lane responsibility"
+  },
+  "ciObservations": [
+    {
+      "id": 43638334147,
+      "name": "Verify branch",
+      "event": "push",
+      "status": "in_progress",
+      "conclusion": null,
+      "head_sha": "e7d336a0005e9a764869340199e6c007cbd51011",
+      "html_url": "https://github.com/just-every/home/actions/runs/43638334147"
+    },
+    {
+      "timestamp": "2026-11-14T20:41:49Z",
+      "id": 43638334147,
+      "conclusion": "success",
+      "head_sha": "e7d336a0005e9a764869340199e6c007cbd51011",
+      "html_url": "https://github.com/just-every/home/actions/runs/43638334147",
+      "status": "completed"
+    }
+  ],
+  "actualGithubApiCalls": 6,
+  "hookCompatibilityIncident": "Initial fleet symlink pre-commit could not resolve Husky h. The shell continued and first published cloud branch at unchanged main. No candidate or history was lost. Original hooks now execute by absolute path; lint-staged completed and e7d336a was committed and pushed with fleet identity. No published history rewrite.",
+  "serverCleanup": "next-server PID 3822 terminated, wrapper session exited; Playwright browser contexts closed in finally",
+  "blockers": [],
+  "productFileHashes": {
+    "public/data/listings.json": "546a5b71e8479983e5d3d20b45c920a2c886a82da6f1910a10949dab0bc83865",
+    "scripts/seeds-sync/state.json": "bfbf01cc6f9a9c520204b2e86f18f4bd9fc312a7234de2be1370d98574e5bd8a",
+    "src/data/seed-pages.ts": "c8d897ec502810c4e8e7cb15a25540ffe8dcf958da13a6811831c08aadd67dda"
+  },
+  "browserEnvironmentLimitations": [
+    "Stock next start has no Cloudflare global caches for the token snapshot endpoint.",
+    "Local analytics D1 page_views table was not provisioned; unrelated analytics requests log an error.",
+    "The changed /lamp document, JSON-LD and public feed return 200 and agree on the released version; no provider/migration operations were needed."
+  ],
+  "ciStatus": "completed",
+  "ciConclusion": "success",
+  "custody": "READY",
+  "productBlockers": []
+}

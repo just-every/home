@@ -1,0 +1,29 @@
+rer toolchain: node v24.19.0 pnpm 10.12.4 (pins none / 10.12.4)
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --only happytohelp,lamp,uptime,oncall,orbit,spool --apply --out ../packet/mechanical-apply
+
+Reading 6 seed repositories...
+uptime: source=v0.5.11 commit=04016399e1e879e7be3b8e891baf02d975bb3901 (released listing version)
+happytohelp: source=v0.4.26 commit=2f597575d4ccb19cdd4cfa0de5e635757737a1aa (released listing version)
+lamp: source=v1.11.15 commit=5dd84e13f6b0478edc2fc5e759d513f5eccf6d57 (released listing version)
+orbit: source=v0.4.9 commit=a5f471626aea1bfcb2c79f5dbee2250fdb38fd49 (released listing version)
+oncall: source=v0.5.14 commit=4d1fc62d4d2b8bf90008ac87bbaa626bc1a5494b (released listing version)
+spool: source=v0.7.11 commit=b9e7e575097e0dd0fc0662ce1ed507fa0d41f0d8 (released listing version)
+Reading 6 homepages...
+  read lamp 
+  read happytohelp 
+  read uptime 
+  read orbit 
+  read oncall 
+  read spool 
+  
+Applied: 2 of 6 seeds changed.
+
+HappyToHelp
+  version   newer tag v0.4.27 (page shows v0.4.26) [applied]
+
+Lamp
+  version   newer tag v1.11.16 (page shows v1.11.15) [applied]
+
+Report: /home/agent/rer-consolidation/work/je-sync-35/packet/mechanical-apply/report.md
