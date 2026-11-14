@@ -1,0 +1,1 @@
+{"label":"candidate","status":"failed","screens":[],"serverPid":1734,"serverSignal":null,"error":"page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:31443/lamp\", waiting until \"networkidle\"\u001b[22m\n\n    at /home/agent/rer-consolidation/work/je-gate-43/browser-probe.mjs:34:31"}

@@ -1,0 +1,60 @@
+{
+  "label": "baseline",
+  "version": "v1.11.15",
+  "route": "/lamp",
+  "sha": "1eb1fe9d9bf8683ec1e8ecdab8653a5ce6446a86",
+  "buildId": "a0kDfYEZ-YUrufDynqIwn",
+  "serverPid": 2230,
+  "startedAt": "2026-11-14T20:58:55.754Z",
+  "screens": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "title": "Lamp",
+      "version": "v1.11.15",
+      "text": "Products\nProcess\nJourney\nContact\nGitHub\nLamp\n\nAlternative to Atlassian Statuspage\n\nAlso replaces Instatus, Better Stack\n\nThe status page that never leaves your customers in the dark.\n\nLamp in 51 seconds\nThe public status page during an outage\nWrite a public incident update\nSchedule maintenance windows\nSubscribers and where updates go\n\nrun-lamp.com\n↗\nGitHub\n→\n\nLamp is a status page that tells your customers who is affected, how badly and what still works. You write each update once, and the page, the feed, the site banner and subscriber emails all carry the same words. Your page keeps answering even when Lamp's own database is down.\n\nWhat it does\nShow a status page with each component's state, a 90-day record and a plain-words account of every incident\nWrite each update once and send it to the page, an Atom feed, a site banner and subscriber email together, with a preview first\nKeep the page answering from the last known state, labelled with its age, when Lamp's own database is down\nLet subscribers choose the components they follow and unsubscribe in one click, with no cookies and no CAPTCHA\nRun planned maintenance that starts, finishes and notifies subscribers by itself\nTurn alerts from your monitoring tools into one draft incident per problem, which you review and publish\nPublish post-incident reports, post to Slack or Microsoft Teams, send signed webhooks and keep a delivery log\nUse your own domain and colours, and export everything whenever you like\nWhat it promises\nMonitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update.\nA published update is never edited or deleted; a correction is a new update and both stay on the public timeline.\nPublishing is a single step: the update and the list of people to notify are saved together.\nUptime is rounded down, so a period with any downtime never shows 100 percent.\nPublishing still works while email, the queue or a subscriber's endpoint is failing.\nIf the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear.\nThe public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites.\nThe delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it.\nMoving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm.\nEvery notification email carries a one-click unsubscribe.\nRead the full contract\n→\nMove in from\nAtlassian Statuspage\nBetter Stack\nInstatus\nSorry\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-lamp\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-lamp.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv1.11.15\nLICENCE\nMIT, 100% free\n\nMade with care and a lot of coding agents.\n\nProducts\nAll 49 products\n(so far)\nEssays\nProcess\nJourney\nGet in touch\nContact\nGitHub",
+      "versionBox": {
+        "x": 617.328125,
+        "y": 3796.640625,
+        "width": 205.328125,
+        "height": 23.09375,
+        "top": 3796.640625,
+        "right": 822.65625,
+        "bottom": 3819.734375,
+        "left": 617.328125
+      },
+      "httpStatus": 200,
+      "screenshot": "baseline-lamp-1440.png",
+      "desktopAssertions": "passed: HTTP 200, Lamp heading, exact version, no horizontal overflow, public JSON 49=35+14 and Lamp version"
+    },
+    {
+      "width": 390,
+      "height": 1000,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "title": "Lamp",
+      "version": "v1.11.15",
+      "text": "Products\nProcess\nJourney\nContact\nGitHub\nLamp\n\nAlternative to Atlassian Statuspage\n\nAlso replaces Instatus, Better Stack\n\nThe status page that never leaves your customers in the dark.\n\nLamp in 51 seconds\nThe public status page during an outage\nWrite a public incident update\nSchedule maintenance windows\nSubscribers and where updates go\n\nrun-lamp.com\n↗\nGitHub\n→\n\nLamp is a status page that tells your customers who is affected, how badly and what still works. You write each update once, and the page, the feed, the site banner and subscriber emails all carry the same words. Your page keeps answering even when Lamp's own database is down.\n\nWhat it does\nShow a status page with each component's state, a 90-day record and a plain-words account of every incident\nWrite each update once and send it to the page, an Atom feed, a site banner and subscriber email together, with a preview first\nKeep the page answering from the last known state, labelled with its age, when Lamp's own database is down\nLet subscribers choose the components they follow and unsubscribe in one click, with no cookies and no CAPTCHA\nRun planned maintenance that starts, finishes and notifies subscribers by itself\nTurn alerts from your monitoring tools into one draft incident per problem, which you review and publish\nPublish post-incident reports, post to Slack or Microsoft Teams, send signed webhooks and keep a delivery log\nUse your own domain and colours, and export everything whenever you like\nWhat it promises\nMonitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update.\nA published update is never edited or deleted; a correction is a new update and both stay on the public timeline.\nPublishing is a single step: the update and the list of people to notify are saved together.\nUptime is rounded down, so a period with any downtime never shows 100 percent.\nPublishing still works while email, the queue or a subscriber's endpoint is failing.\nIf the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear.\nThe public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites.\nThe delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it.\nMoving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm.\nEvery notification email carries a one-click unsubscribe.\nRead the full contract\n→\nMove in from\nAtlassian Statuspage\nBetter Stack\nInstatus\nSorry\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-lamp\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-lamp.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv1.11.15\nLICENCE\nMIT, 100% free\n\nMade with care and a lot of coding agents.\n\nProducts\nAll 49 products\n(so far)\nEssays\nProcess\nJourney\nGet in touch\nContact\nGitHub",
+      "versionBox": {
+        "x": 20,
+        "y": 3996.71875,
+        "width": 350,
+        "height": 23.09375,
+        "top": 3996.71875,
+        "right": 370,
+        "bottom": 4019.8125,
+        "left": 20
+      },
+      "httpStatus": 200,
+      "screenshot": "baseline-lamp-390.png",
+      "proofOnly": true
+    }
+  ],
+  "pageErrors": [],
+  "status": "passed",
+  "serverExitCode": 143,
+  "serverSignal": null,
+  "finishedAt": "2026-11-14T20:59:00.796Z"
+}

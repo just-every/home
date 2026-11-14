@@ -1,0 +1,1 @@
+{"label":"baseline","status":"passed","screens":[{"width":1440,"version":"v1.11.15","documentWidth":1440,"httpStatus":200,"screenshot":"baseline-lamp-1440.png"},{"width":390,"version":"v1.11.15","documentWidth":390,"httpStatus":200,"screenshot":"baseline-lamp-390.png"}],"pageErrors":[],"serverPid":2230,"serverSignal":null}

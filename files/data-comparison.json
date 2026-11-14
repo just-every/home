@@ -1,0 +1,75 @@
+{
+  "before": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "versions": {
+    "spool": "v0.7.11",
+    "uptime": "v0.5.11",
+    "happytohelp": "v0.4.26",
+    "orbit": "v0.4.9",
+    "lamp": "v1.11.16",
+    "oncall": "v0.5.14"
+  },
+  "changed_entries": {
+    "lamp": {
+      "version": [
+        "v1.11.15",
+        "v1.11.16"
+      ]
+    }
+  },
+  "excluded_absent": true,
+  "state_changes": [
+    {
+      "path": "/seeds/lamp/commit",
+      "before": "5dd84e13f6b0478edc2fc5e759d513f5eccf6d57",
+      "after": "429a46081ce68bab2dbdae46b8402b8ccce3ee2a"
+    },
+    {
+      "path": "/seeds/lamp/copy/CONTRACT.md",
+      "before": "8b575f27ee607ce3",
+      "after": "f9cb0b8a5bd46d69"
+    },
+    {
+      "path": "/seeds/lamp/copy/seed.json",
+      "before": "074cb758ae0a8d8f",
+      "after": "12d7013d559c4028"
+    },
+    {
+      "path": "/seeds/lamp/open",
+      "before": null,
+      "after": [
+        "922fed04eacf"
+      ]
+    },
+    {
+      "path": "/seeds/lamp/sourceRef",
+      "before": "v1.11.15",
+      "after": "v1.11.16"
+    },
+    {
+      "path": "/seeds/lamp/tag",
+      "before": "v1.11.15",
+      "after": "v1.11.16"
+    },
+    {
+      "path": "/seeds/oncall/open",
+      "before": [
+        "42983364b373"
+      ],
+      "after": null
+    },
+    {
+      "path": "/syncedAt",
+      "before": "2026-11-14T15:22:03.181Z",
+      "after": "2026-11-14T20:31:13.936Z"
+    }
+  ]
+}

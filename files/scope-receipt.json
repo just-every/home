@@ -1,0 +1,20 @@
+{
+  "head": "e7d336a0005e9a764869340199e6c007cbd51011",
+  "base": "1eb1fe9d9bf8683ec1e8ecdab8653a5ce6446a86",
+  "changed_paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "identity": "all candidate authors and committers are Run Edit Run fleet <fleet@runeditrun.com>; no trailers",
+  "candidate_commits": [
+    "e7d336a0005e9a764869340199e6c007cbd51011"
+  ],
+  "parent_graph": "e7d336a0005e9a764869340199e6c007cbd51011 1eb1fe9d9bf8683ec1e8ecdab8653a5ce6446a86",
+  "diff_whitespace": "passed",
+  "added_line_credential_shape_review": "passed; changed timestamps, public version, hashes and open marker only",
+  "seed_page_only_version_changed": true,
+  "source_hashes_matched": true,
+  "lamp_copy_open_marker_reproduced": true,
+  "pricing_preservation": "Only a version literal changed in rendered source; all other source/assets identical to baseline. Assisted/Managed price literals are absent from this JE checkout at both SHAs."
+}

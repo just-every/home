@@ -1,0 +1,15 @@
+# Independent gate plan: je-gate-43
+
+Candidate: just-every/home PR #59, cloud/je-sync-35 at e7d336a0005e9a764869340199e6c007cbd51011.
+Baseline: origin/main and PR base 1eb1fe9d9bf8683ec1e8ecdab8653a5ce6446a86.
+
+1. Read the shipped builder brief, frozen R1–R5 rubric, proportionality/triage rules, launcher AGENTS.md and home AGENTS.md. Use a fresh shallow filtered clone; authenticate GitHub only through the launcher bundle. No provider credentials, fixes, product commits, comments, deployments or merges.
+2. Confirm PR head/base before judging. Preserve baseline main and check out the exact candidate detached. Compare every diff hunk, candidate commit identity and trailers, test paths and added-line credential shapes. Explain state provenance and open markers separately from public wording.
+3. Independently read the Lamp v1.11.16 Release once, resolve its annotated tag to its commit, retrieve that tag's CONTRACT.md and seed.json and reproduce their state hashes. Confirm HappyToHelp v0.4.27 has a tag and no Release. Compare all six displayed versions, all statuses and excluded entries with main. Treat envelope presence as presence, without claiming cryptographic verification.
+4. Run npm ci, listings --check, listings write with a clean diff, type-check, lint and a production build. Check any documented lock, contract-view or migration-ledger mechanism only if applicable to this repository. Map builder points to these public data/source/render probes without running an unbounded all-repository sync outside the frozen gate.
+5. Serve the actual production build and probe /lamp and /data/listings.json at 1440. Capture /lamp once at 1440 and 390. Build baseline main in a separate detached worktree using the identical dependency lock, capture the same route at both sizes and compare displayed text/layout. Stop only the recorded server PIDs and close browsers.
+6. Read exact-SHA Verify once (one discovery call); if completed/success, no watcher, rerun or dispatch. Reserve the last call in the ten-call GitHub budget for PR head/base reconfirmation. If a real required failure appears, follow the brief's failure triage rather than widening the rubric.
+7. Read Lamp's tagged contract status table against every existing JE Lamp promise. Count a finding only for source-demonstrated falsity; retain known partial-evidence follow-ups as existing context. Do not edit copy or promote clause statuses.
+8. Write full row results, command receipts, source observations, screenshots and non-secret follow-up/landing notes to this packet. Explicitly select and scan packet files, publish only evidence/je-gate-43 through cloud_evidence.py, verify the transferred packet, then delete the clone/worktree and dependencies. Relay POST lines in the final answer and end with exactly one gate verdict for the specified SHA.
+
+No incumbent comparison beyond the frozen scope is introduced. This is a listing promotion: the home repository has no CONTRACT.md Product target table; Lamp's source names Atlassian Statuspage, Better Stack Status Pages and Status.io. No incumbent feature audit or provider probe is part of this gate.

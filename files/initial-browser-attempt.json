@@ -1,0 +1,15 @@
+{
+  "label": "candidate",
+  "version": "v1.11.16",
+  "route": "/lamp",
+  "sha": "e7d336a0005e9a764869340199e6c007cbd51011",
+  "buildId": "QpEfCy_IlGKddvT8oDyHl",
+  "serverPid": 1734,
+  "startedAt": "2026-11-14T20:56:14.340Z",
+  "screens": [],
+  "status": "failed",
+  "error": "page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:31443/lamp\", waiting until \"networkidle\"\u001b[22m\n\n    at /home/agent/rer-consolidation/work/je-gate-43/browser-probe.mjs:34:31",
+  "serverExitCode": 143,
+  "serverSignal": null,
+  "finishedAt": "2026-11-14T20:57:18.759Z"
+}

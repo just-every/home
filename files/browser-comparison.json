@@ -1,0 +1,62 @@
+[
+  {
+    "width": 1440,
+    "candidate_version": "v1.11.16",
+    "baseline_version": "v1.11.15",
+    "candidate_document_width": 1440,
+    "baseline_document_width": 1440,
+    "body_text_identical_except_version": true,
+    "candidate_version_box": {
+      "x": 617.328125,
+      "y": 3796.640625,
+      "width": 205.328125,
+      "height": 23.09375,
+      "top": 3796.640625,
+      "right": 822.65625,
+      "bottom": 3819.734375,
+      "left": 617.328125
+    },
+    "baseline_version_box": {
+      "x": 617.328125,
+      "y": 3796.640625,
+      "width": 205.328125,
+      "height": 23.09375,
+      "top": 3796.640625,
+      "right": 822.65625,
+      "bottom": 3819.734375,
+      "left": 617.328125
+    },
+    "candidate_http": 200,
+    "baseline_http": 200
+  },
+  {
+    "width": 390,
+    "candidate_version": "v1.11.16",
+    "baseline_version": "v1.11.15",
+    "candidate_document_width": 390,
+    "baseline_document_width": 390,
+    "body_text_identical_except_version": true,
+    "candidate_version_box": {
+      "x": 20,
+      "y": 3996.71875,
+      "width": 350,
+      "height": 23.09375,
+      "top": 3996.71875,
+      "right": 370,
+      "bottom": 4019.8125,
+      "left": 20
+    },
+    "baseline_version_box": {
+      "x": 20,
+      "y": 3996.71875,
+      "width": 350,
+      "height": 23.09375,
+      "top": 3996.71875,
+      "right": 370,
+      "bottom": 4019.8125,
+      "left": 20
+    },
+    "candidate_http": 200,
+    "baseline_http": 200
+  }
+]

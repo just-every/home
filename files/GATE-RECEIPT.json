@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "tag": "je-gate-43",
+  "role": "independent gate",
+  "generatedUtc": "2026-11-14T21:02:21Z",
+  "repository": "just-every/home",
+  "pr": 59,
+  "prUrl": "https://github.com/just-every/home/pull/59",
+  "candidateBranch": "cloud/je-sync-35",
+  "candidateHead": "e7d336a0005e9a764869340199e6c007cbd51011",
+  "baselineMain": "1eb1fe9d9bf8683ec1e8ecdab8653a5ce6446a86",
+  "headBasePrerequisite": "confirmed twice; still open and unmerged at final API read",
+  "decision": "PASS",
+  "rubric": {
+    "R1": "MET",
+    "R2": "MET",
+    "R3": "MET",
+    "R4": "MET",
+    "R5": "MET"
+  },
+  "newBlockingFindings": 0,
+  "newFollowups": 0,
+  "clausesChanged": [],
+  "countsBefore": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "countsAfter": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "checks": [
+    {
+      "command": "npm ci",
+      "exit": 0,
+      "receipt": "npm-ci.log"
+    },
+    {
+      "command": "npm run listings -- --check",
+      "exit": 0,
+      "result": "Listings current (49 seeds)",
+      "receipt": "local-checks.log"
+    },
+    {
+      "command": "npm run listings && git diff --exit-code",
+      "exit": 0,
+      "result": "Listings unchanged (49 seeds), clean diff",
+      "receipt": "local-checks.log"
+    },
+    {
+      "command": "npm run type-check",
+      "exit": 0,
+      "receipt": "local-checks.log"
+    },
+    {
+      "command": "npm run lint",
+      "exit": 0,
+      "receipt": "local-checks.log"
+    },
+    {
+      "command": "npm run build",
+      "exit": 0,
+      "result": "61 static pages generated; actual /lamp page built",
+      "receipt": "local-checks.log"
+    },
+    {
+      "command": "npm run build (baseline detached worktree)",
+      "exit": 0,
+      "receipt": "baseline-build.log"
+    },
+    {
+      "command": "cloud_run timeout 180 node ../browser-probe.mjs candidate",
+      "exit": 0,
+      "result": "/lamp and public listings assertions passed at 1440; /lamp proof captured at 1440 and 390",
+      "receipt": "candidate-browser.json"
+    },
+    {
+      "command": "cloud_run timeout 180 node ../browser-probe.mjs baseline",
+      "exit": 0,
+      "result": "baseline passes; text identical except version and identical version geometry at both widths",
+      "receipt": "baseline-browser.json"
+    },
+    {
+      "command": "Initial browser driver using page.goto waitUntil networkidle",
+      "exit": 1,
+      "result": "60-second navigation readiness timeout; replaced readiness wait with DOM load, without weakening any route/data assertions or changing product code",
+      "receipt": "initial-browser-attempt.json"
+    }
+  ],
+  "ci": {
+    "total_count": 3,
+    "workflow_runs": [
+      {
+        "conclusion": "skipped",
+        "event": "pull_request",
+        "head_sha": "e7d336a0005e9a764869340199e6c007cbd51011",
+        "html_url": "https://github.com/just-every/home/actions/runs/43638363063",
+        "id": 43638363063,
+        "name": "Verify branch",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "event": "dynamic",
+        "head_sha": "e7d336a0005e9a764869340199e6c007cbd51011",
+        "html_url": "https://github.com/just-every/home/actions/runs/43638361677",
+        "id": 43638361677,
+        "name": "PR #59",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "event": "push",
+        "head_sha": "e7d336a0005e9a764869340199e6c007cbd51011",
+        "html_url": "https://github.com/just-every/home/actions/runs/43638334147",
+        "id": 43638334147,
+        "name": "Verify branch",
+        "status": "completed"
+      }
+    ]
+  },
+  "githubCalls": 10,
+  "sourceTag": "v1.11.16",
+  "sourceCommit": "429a46081ce68bab2dbdae46b8402b8ccce3ee2a",
+  "envelopePresenceVerified": true,
+  "cryptographicSignatureVerified": false,
+  "productChangesByGate": false,
+  "productPushByGate": false,
+  "productPrCreatedByGate": false,
+  "requiredApplicableChecksNotRun": [],
+  "notApplicable": [
+    "No home CONTRACT.md or sources.lock.json or generated acceptance/claims mechanism",
+    "No documented migration-ledger check; migrations untouched"
+  ],
+  "productBlockers": [],
+  "reportReturn": "separate evidence ref publication; transport receipt is retained outside this immutable packet"
+}

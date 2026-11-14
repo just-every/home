@@ -1,0 +1,60 @@
+{
+  "observedThroughUtc": "2026-11-14T21:02:21Z",
+  "calls": [
+    {
+      "number": 1,
+      "command": "gh api repos/just-every/home/pulls/59",
+      "result": "200; open, expected head and base"
+    },
+    {
+      "number": 2,
+      "command": "gh api repos/just-every/home/actions/runs?head_sha=e7d336a0005e9a764869340199e6c007cbd51011&per_page=100",
+      "result": "200; push Verify completed/success on exact SHA"
+    },
+    {
+      "number": 3,
+      "command": "gh api repos/just-every/run-lamp/releases/tags/v1.11.16",
+      "result": "200; published non-draft/non-prerelease Release, envelope asset present"
+    },
+    {
+      "number": 4,
+      "command": "gh api repos/just-every/run-lamp/git/ref/tags/v1.11.16",
+      "result": "200; annotated tag object de6a8948cf2e12e3efb876066caa1a334bfd2599"
+    },
+    {
+      "number": 5,
+      "command": "gh api repos/just-every/run-lamp/contents/CONTRACT.md?ref=v1.11.16",
+      "result": "200; CONTRACT hash matches state"
+    },
+    {
+      "number": 6,
+      "command": "gh api repos/just-every/run-lamp/contents/seed.json?ref=v1.11.16",
+      "result": "200; seed.json hash and version match state"
+    },
+    {
+      "number": 7,
+      "command": "gh api repos/just-every/run-lamp/git/tags/de6a8948cf2e12e3efb876066caa1a334bfd2599",
+      "result": "200; resolves to expected commit"
+    },
+    {
+      "number": 8,
+      "command": "gh api repos/just-every/run-happytohelp/git/ref/tags/v0.4.27",
+      "result": "200; tag exists"
+    },
+    {
+      "number": 9,
+      "command": "gh api repos/just-every/run-happytohelp/releases/tags/v0.4.27",
+      "result": "404 Not Found; expected proof that tag has no Release; command exit 1"
+    },
+    {
+      "number": 10,
+      "command": "gh api repos/just-every/home/pulls/59",
+      "result": "200; final head/base unchanged, open and unmerged"
+    }
+  ],
+  "totalCalls": 10,
+  "ciDiscoveryCalls": 1,
+  "ciPollCalls": 0,
+  "ciDispatchOrRerunCalls": 0,
+  "failedJobLogCalls": 0
+}
