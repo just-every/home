@@ -1,0 +1,239 @@
+UTC 2026-11-14T15:49:16Z
+COMMAND ["node", "/tmp/je-gate-browser/baseline-run.mjs"]
+{
+  "head": "d91018b5eb84b95b8d44b54b03cf7374e9cde0a4",
+  "utc": "2026-11-14T15:49:17.137Z",
+  "url": "http://127.0.0.1:43142/oncall",
+  "server_pid": 2449,
+  "assertion_width": 1440,
+  "screens": [
+    {
+      "width": 1440,
+      "http_status": 200,
+      "title": "Oncall: free, open-source alternative to PagerDuty",
+      "h1": "Oncall",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "version": "v0.5.13",
+      "versionRect": {
+        "x": 617.328125,
+        "y": 3686.890625,
+        "width": 205.328125,
+        "height": 23.09375,
+        "top": 3686.890625,
+        "right": 822.65625,
+        "bottom": 3709.984375,
+        "left": 617.328125
+      },
+      "galleryImages": [
+        {
+          "src": "/seeds/oncall/mark-light.svg",
+          "complete": true,
+          "naturalWidth": 32
+        },
+        {
+          "src": "/seeds/oncall/gallery/01-incident.webp",
+          "complete": true,
+          "naturalWidth": 1600
+        },
+        {
+          "src": "/seeds/oncall/gallery/02-schedules.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/seeds/oncall/gallery/03-incident-detail.webp",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/video/oncall-poster.webp",
+          "complete": true,
+          "naturalWidth": 1280
+        },
+        {
+          "src": "/seeds/oncall/gallery/thumbs/01-incident.webp",
+          "complete": true,
+          "naturalWidth": 200
+        },
+        {
+          "src": "/seeds/oncall/gallery/thumbs/02-schedules.webp",
+          "complete": true,
+          "naturalWidth": 200
+        },
+        {
+          "src": "/seeds/oncall/gallery/thumbs/03-incident-detail.webp",
+          "complete": true,
+          "naturalWidth": 200
+        },
+        {
+          "src": "/landing/separators/creek.svg",
+          "complete": true,
+          "naturalWidth": 300
+        },
+        {
+          "src": "/landing/separators/parts/creek-lilies.svg",
+          "complete": true,
+          "naturalWidth": 173
+        },
+        {
+          "src": "/landing/separators/parts/creek-cattails-b.svg",
+          "complete": true,
+          "naturalWidth": 196
+        },
+        {
+          "src": "/landing/separators/parts/creek-cattails-a.svg",
+          "complete": true,
+          "naturalWidth": 114
+        },
+        {
+          "src": "/landing/separators/parts/creek-reeds-a.svg",
+          "complete": true,
+          "naturalWidth": 112
+        },
+        {
+          "src": "/landing/separators/parts/creek-reeds-b.svg",
+          "complete": true,
+          "naturalWidth": 48
+        },
+        {
+          "src": "/landing/separators/parts/creek-cattails-c.svg",
+          "complete": true,
+          "naturalWidth": 118
+        },
+        {
+          "src": "/landing/separators/parts/creek-glint-a.svg",
+          "complete": true,
+          "naturalWidth": 48
+        },
+        {
+          "src": "/landing/separators/parts/creek-glint-c.svg",
+          "complete": true,
+          "naturalWidth": 62
+        },
+        {
+          "src": "/landing/separators/parts/creek-glint-e.svg",
+          "complete": true,
+          "naturalWidth": 276
+        },
+        {
+          "src": "/landing/separators/parts/creek-glint-d.svg",
+          "complete": true,
+          "naturalWidth": 184
+        },
+        {
+          "src": "/landing/separators/parts/creek-glint-f.svg",
+          "complete": true,
+          "naturalWidth": 124
+        },
+        {
+          "src": "/landing/separators/parts/creek-glint-b.svg",
+          "complete": true,
+          "naturalWidth": 55
+        },
+        {
+          "src": "/landing/footer/footer-art.svg",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/landing/footer/motion/glints-1.svg",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/landing/footer/motion/glints-2.svg",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/landing/footer/motion/glints-3.svg",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/landing/footer/motion/bird1.svg",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/landing/footer/motion/bird2.svg",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/landing/footer/motion/bird3.svg",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/landing/footer/motion/head.svg",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/landing/footer/motion/ear.svg",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0
+        },
+        {
+          "src": "/landing/footer/motion/petal.svg",
+          "complete": false,
+          "naturalWidth": 0
+        }
+      ],
+      "screenshot": "BASELINE-1440.png"
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "width": 1440,
+      "message": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+    }
+  ],
+  "result": "pass",
+  "server_stopped": true,
+  "finished_utc": "2026-11-14T15:49:19.237Z"
+}

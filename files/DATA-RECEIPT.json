@@ -1,0 +1,99 @@
+{
+  "utc": "2026-11-14T15:46:05Z",
+  "head": "de3a00a8e9a04dfb0227d48fcba7465d71896815",
+  "baseline": "d91018b5eb84b95b8d44b54b03cf7374e9cde0a4",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "counts_before": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14,
+    "six_path_versions": {
+      "oncall": "v0.5.13",
+      "spool": "v0.7.11",
+      "uptime": "v0.5.11",
+      "happytohelp": "v0.4.26",
+      "orbit": "v0.4.9",
+      "lamp": "v1.11.15"
+    }
+  },
+  "counts_after": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14,
+    "six_path_versions": {
+      "oncall": "v0.5.14",
+      "spool": "v0.7.11",
+      "uptime": "v0.5.11",
+      "happytohelp": "v0.4.26",
+      "orbit": "v0.4.9",
+      "lamp": "v1.11.15"
+    }
+  },
+  "public_listing_changes": [
+    {
+      "path": "/oncall/version",
+      "before": "v0.5.13",
+      "after": "v0.5.14"
+    }
+  ],
+  "state_changes": [
+    {
+      "path": "/seeds/happytohelp/open",
+      "before": [
+        "42983364b373"
+      ],
+      "after": null
+    },
+    {
+      "path": "/seeds/oncall/commit",
+      "before": "8adae6c836f2fabda29e8a091b052450410c8ca5",
+      "after": "4d1fc62d4d2b8bf90008ac87bbaa626bc1a5494b"
+    },
+    {
+      "path": "/seeds/oncall/copy/README.md",
+      "before": "872282ad16baf429",
+      "after": "03d11757d735563f"
+    },
+    {
+      "path": "/seeds/oncall/copy/seed.json",
+      "before": "e91a0fe23123ca2a",
+      "after": "0d887683acfe58be"
+    },
+    {
+      "path": "/seeds/oncall/open",
+      "before": null,
+      "after": [
+        "42983364b373"
+      ]
+    },
+    {
+      "path": "/seeds/oncall/sourceRef",
+      "before": "v0.5.13",
+      "after": "v0.5.14"
+    },
+    {
+      "path": "/seeds/oncall/tag",
+      "before": "v0.5.13",
+      "after": "v0.5.14"
+    },
+    {
+      "path": "/syncedAt",
+      "before": "2026-11-14T09:48:33.578Z",
+      "after": "2026-11-14T15:22:03.181Z"
+    }
+  ],
+  "copy_hashes_verified": {
+    "CONTRACT.md": "c04517abc904f1e5",
+    "README.md": "03d11757d735563f",
+    "seed.json": "0d887683acfe58be"
+  },
+  "open_finding_identity": "copy:README.md, seed.json changed since the last sync",
+  "credential_shape_scan": "pass; changed added lines only; no values recorded",
+  "tests_deleted_skipped_weakened": false,
+  "pricing_presentation": "byte-identical to baseline; all price/page components unchanged",
+  "source_lock_contract_generator_migration_ledger": "not applicable: no sources.lock.json, CONTRACT.md, generated contract views, contract generator, or migration-ledger check in home; AGENTS.md declares none"
+}

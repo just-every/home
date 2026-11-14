@@ -1,0 +1,70 @@
+{
+  "utc": "2026-11-14T15:46:28Z",
+  "source": "just-every/run-oncall@v0.5.14/CONTRACT.md",
+  "source_commit": "4d1fc62d4d2b8bf90008ac87bbaa626bc1a5494b",
+  "incumbents": "PagerDuty, Opsgenie / Jira Service Management, Splunk On-Call (VictorOps)",
+  "incumbent_behavior": "On-call schedules, current/next coverage, overrides, calendar and incident coordination. JE explicitly describes companion use with the existing pager; it promises no replacement of live paging in this release. Gate compares only the named listing behavior, not future native paging parity.",
+  "relevant_status_rows": {
+    "OC-001": {
+      "name": "Event identity and alerts",
+      "status": "done",
+      "gap": ""
+    },
+    "OC-002": {
+      "name": "Routing replay",
+      "status": "done",
+      "gap": ""
+    },
+    "OC-003": {
+      "name": "Roles and authority",
+      "status": "done",
+      "gap": ""
+    },
+    "OC-004": {
+      "name": "Incident state transitions",
+      "status": "done",
+      "gap": ""
+    },
+    "OC-005": {
+      "name": "Copied runbooks",
+      "status": "done",
+      "gap": ""
+    },
+    "OC-006": {
+      "name": "Bounded outbound incident effects",
+      "status": "done",
+      "gap": ""
+    },
+    "OC-008": {
+      "name": "User-authored records kept",
+      "status": "done",
+      "gap": ""
+    },
+    "OC-011": {
+      "name": "Calendar-day rotations",
+      "status": "done",
+      "gap": ""
+    },
+    "OC-012": {
+      "name": "Paging off",
+      "status": "done",
+      "gap": ""
+    },
+    "OC-020": {
+      "name": "Now/next and calendar feed",
+      "status": "done",
+      "gap": ""
+    },
+    "OC-021": {
+      "name": "Move-in preview",
+      "status": "done",
+      "gap": ""
+    },
+    "OC-022": {
+      "name": "Resume and undo",
+      "status": "done",
+      "gap": ""
+    }
+  },
+  "judgment": "No JE Oncall sentence is shown false by the released source. All ten JE promise IDs map to done published clauses. Partial source rows alone are not findings. No wording or clause status changed."
+}

@@ -1,0 +1,6 @@
+UTC 2026-11-14T15:42:37Z
+COMMAND ["npm", "run", "type-check"]
+
+> next-project@0.1.0 type-check
+> tsc --noEmit
+

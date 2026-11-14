@@ -1,0 +1,117 @@
+[
+  {
+    "call": 1,
+    "name": "PR.json",
+    "utc": "2026-11-14T15:40:39Z",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/home/pulls/58",
+      "--jq",
+      "{number,state,html_url,head:{sha:.head.sha,ref:.head.ref},base:{sha:.base.sha,ref:.base.ref},merged,draft}"
+    ],
+    "exit": 0
+  },
+  {
+    "call": 2,
+    "name": "CI-RUNS.json",
+    "utc": "2026-11-14T15:41:07Z",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/home/actions/runs?head_sha=de3a00a8e9a04dfb0227d48fcba7465d71896815&per_page=100",
+      "--jq",
+      "{total_count,workflow_runs:[.workflow_runs[]|{id,name,status,conclusion,head_sha,html_url,event,run_attempt}]}"
+    ],
+    "exit": 0
+  },
+  {
+    "call": 3,
+    "name": "ONCALL-RELEASE.json",
+    "utc": "2026-11-14T15:41:07Z",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-oncall/releases/tags/v0.5.14",
+      "--jq",
+      "{id,tag_name,target_commitish,draft,prerelease,published_at,html_url,assets:[.assets[]|{id,name,size,digest,browser_download_url}]}"
+    ],
+    "exit": 0
+  },
+  {
+    "call": 4,
+    "name": "ONCALL-TAG.json",
+    "utc": "2026-11-14T15:41:08Z",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-oncall/git/ref/tags/v0.5.14"
+    ],
+    "exit": 0
+  },
+  {
+    "call": 5,
+    "name": "ONCALL-CONTRACT.md",
+    "utc": "2026-11-14T15:41:09Z",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-oncall/contents/CONTRACT.md?ref=v0.5.14",
+      "-H",
+      "Accept: application/vnd.github.raw+json"
+    ],
+    "exit": 0
+  },
+  {
+    "call": 6,
+    "name": "ONCALL-TAG-OBJECT.json",
+    "utc": "2026-11-14T15:41:48Z",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-oncall/git/tags/fde8016831d3587b636ebd256ce8c12f634f4848",
+      "--jq",
+      "{sha,tag,object}"
+    ],
+    "exit": 0
+  },
+  {
+    "call": 7,
+    "name": "ONCALL-README.md",
+    "utc": "2026-11-14T15:44:28Z",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-oncall/contents/README.md?ref=4d1fc62d4d2b8bf90008ac87bbaa626bc1a5494b",
+      "-H",
+      "Accept: application/vnd.github.raw+json"
+    ],
+    "exit": 0
+  },
+  {
+    "call": 8,
+    "name": "ONCALL-SEED.json",
+    "utc": "2026-11-14T15:44:28Z",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/run-oncall/contents/seed.json?ref=4d1fc62d4d2b8bf90008ac87bbaa626bc1a5494b",
+      "-H",
+      "Accept: application/vnd.github.raw+json"
+    ],
+    "exit": 0
+  },
+  {
+    "call": 9,
+    "name": "PR-FINAL.json",
+    "utc": "2026-11-14T15:48:53Z",
+    "command": [
+      "gh",
+      "api",
+      "repos/just-every/home/pulls/58",
+      "--jq",
+      "{number,state,html_url,head:{sha:.head.sha,ref:.head.ref},base:{sha:.base.sha,ref:.base.ref},merged,draft}"
+    ],
+    "exit": 0
+  }
+]

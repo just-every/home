@@ -1,0 +1,2 @@
+UTC 2026-11-14T15:42:37Z
+COMMAND ["git", "diff", "--exit-code", "--", "public/data/listings.json"]
