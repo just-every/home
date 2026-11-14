@@ -1,0 +1,84 @@
+diff --git a/public/data/listings.json b/public/data/listings.json
+index 32d3d7b..78d490a 100644
+--- a/public/data/listings.json
++++ b/public/data/listings.json
+@@ -1,5 +1,5 @@
+ {
+-  "generatedAt": "2026-11-14T04:06:54.212Z",
++  "generatedAt": "2026-11-14T09:48:38.555Z",
+   "listings": [
+     {
+       "slug": "auth",
+@@ -361,7 +361,7 @@
+       "slug": "happytohelp",
+       "name": "HappyToHelp",
+       "status": "released",
+-      "version": "v0.4.25",
++      "version": "v0.4.26",
+       "category": "Customer support",
+       "line": "Your Codex or Claude fixes the problem and writes the reply.",
+       "headline": "Knows what your customer needs before they do.",
+diff --git a/scripts/seeds-sync/state.json b/scripts/seeds-sync/state.json
+index 5782132..78d9759 100644
+--- a/scripts/seeds-sync/state.json
++++ b/scripts/seeds-sync/state.json
+@@ -1,5 +1,5 @@
+ {
+-  "syncedAt": "2026-11-14T04:06:52.747Z",
++  "syncedAt": "2026-11-14T09:48:33.578Z",
+   "seeds": {
+     "auth": {
+       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
+@@ -481,14 +481,14 @@
+       }
+     },
+     "happytohelp": {
+-      "commit": "333af4b0580c4284616783f1d79fcc9aad3aefc5",
+-      "sourceRef": "v0.4.25",
++      "commit": "2f597575d4ccb19cdd4cfa0de5e635757737a1aa",
++      "sourceRef": "v0.4.26",
+       "sourceReason": "released listing version",
+-      "tag": "v0.4.25",
++      "tag": "v0.4.26",
+       "copy": {
+         "CONTRACT.md": "ae8feea8b7998aa7",
+-        "README.md": "45a28e3132618824",
+-        "seed.json": "321e3d3d615cbcde"
++        "README.md": "f56c111027b43eda",
++        "seed.json": "685ea267d1baacbe"
+       },
+       "brand": {
+         "theme.page": "#faf9f6",
+@@ -504,7 +504,8 @@
+       "home": {
+         "headline": "Knows what your customer needs before they do.",
+         "signature": "eedddddddeedeeeeeeeeeeeeeeeeeeeedeedeeebaa887dddeeeeeeeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededdeedeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddbbbcbbcbbbbbbbbeedeeeeeeeeedeeeeeeeeeeeeeeeeedddaaabaabaaaaaccbeeeeeeeeeeeeeeeeeedeeeeeeeeeeeeedddcddcddcddcdddeeeeeeeeedddcccdeedeedeedeeeeeeeddccddceddeeeeedeeeeeedeebbbaaacddeeedddccceeedcc555544999eedeedeeeeeeeeeeeeefeeeeeeeddddddeeeeeddccdccdddeedeeefeededddddddeedeeededdddeddeee"
+-      }
++      },
++      "open": ["42983364b373"]
+     },
+     "inkwell": {
+       "commit": "e4e3c2dd4bdf48fe16111f9d447568d6c4366a84",
+@@ -1178,8 +1179,7 @@
+       "home": {
+         "headline": "See exactly what broke.",
+         "signature": "eeddccddceedeedeedeeeeedeedeedeeeeeeeeeeedeedeedeeddddeedeedeeeeeeeedeedeededdeedeedeedeedeedeedeedccbddcddcddcccbeddeeeeeddddddceedeedeedeedeedeed999aa9999999999cccfeeeedeededddddeddeedeedeedeedbaaaa9bbaaaaaa9ccbeeeeededddddeedeedeedeedeedeedddcddcddcddceedeeeeeeeeddddddbedceeceeceedeedeedeedeededdeedeeeffefeeeedeededaed9edaedaedbeedeed999988aaabba888888bbbeedeedeededdeeeeeeeedeedeeda99998baaccbaa9aa9ccbeeddddddceedeedeedeedeed"
+-      },
+-      "open": ["42983364b373"]
++      }
+     },
+     "stall": {
+       "commit": "8ee1f25df4f0b10b9a62e7fe221453499f27b297",
+diff --git a/src/data/seed-pages.ts b/src/data/seed-pages.ts
+index 2331581..afaee4a 100644
+--- a/src/data/seed-pages.ts
++++ b/src/data/seed-pages.ts
+@@ -190,7 +190,7 @@ export const seedPageContent: SeedPageContent[] = [
+     ],
+     moveIn: ['Zendesk', 'Help Scout', 'Intercom', 'Freshdesk'],
+     runsOn: 'Your computer, or your own Cloudflare account',
+-    version: 'v0.4.25',
++    version: 'v0.4.26',
+     contractUrl: 'https://happytohelp.com/contract',
+     seoTitle: 'HappyToHelp: free, open-source alternative to Zendesk',
+     seoDescription:

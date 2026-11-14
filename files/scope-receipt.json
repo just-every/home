@@ -1,0 +1,35 @@
+{
+  "before": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "listingChanges": [
+    {
+      "slug": "happytohelp",
+      "fields": {
+        "version": {
+          "before": "v0.4.25",
+          "after": "v0.4.26"
+        }
+      }
+    }
+  ],
+  "changedPaths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "stateChangedSeeds": [
+    "happytohelp",
+    "spool"
+  ],
+  "excludedSeedsAbsent": true,
+  "diffCredentialShapeScan": "pass",
+  "contractStatusChanges": []
+}

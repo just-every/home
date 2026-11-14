@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-11-14T09:53:35Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-33",
+  "head": "17b30cd333dbc7f0732b0d5c0b30fc6596836aa5",
+  "base": "1faa377be04206d8423fdd1c1c39da28a87b1199",
+  "pr": "https://github.com/just-every/home/pull/57",
+  "push": "success",
+  "signatureVerification": "not rerun; asset presence and GitHub digest observed",
+  "fullPublicationScan": "Mac lane required",
+  "clausesChanged": [],
+  "localChecks": {
+    "npmCi": "pass",
+    "listings": "pass",
+    "listingsCheck": "pass",
+    "typeCheck": "pass",
+    "lint": "pass",
+    "build": "pass",
+    "dryRecheck": "0 changed, 0 unreadable",
+    "browser1440": "pass",
+    "browser390": "proof captured"
+  },
+  "counts": {
+    "before": {
+      "total": 49,
+      "released": 35,
+      "comingSoon": 14
+    },
+    "after": {
+      "total": 49,
+      "released": 35,
+      "comingSoon": 14
+    }
+  },
+  "remoteProductHead": "17b30cd333dbc7f0732b0d5c0b30fc6596836aa5",
+  "exactShaVerify": {
+    "conclusion": "success",
+    "created_at": "2026-11-14T09:51:59Z",
+    "event": "push",
+    "head_sha": "17b30cd333dbc7f0732b0d5c0b30fc6596836aa5",
+    "html_url": "https://github.com/just-every/home/actions/runs/43582553278",
+    "id": 43582553278,
+    "name": "Verify branch",
+    "status": "completed",
+    "updated_at": "2026-11-14T09:53:40Z"
+  },
+  "terminalStatus": "READY",
+  "cloneCleanup": "authorized after evidence publication; product ref verified"
+}

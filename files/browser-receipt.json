@@ -1,0 +1,22 @@
+{
+  "observedAt": "2026-11-14T09:50:49.794Z",
+  "assertionWidth": 1440,
+  "proof": [
+    {
+      "width": 1440,
+      "url": "http://127.0.0.1:3133/happytohelp",
+      "status": 200,
+      "version": "v0.4.26",
+      "errors": [],
+      "screenshot": "browser/happytohelp-1440.png"
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:3133/happytohelp",
+      "status": 200,
+      "version": "v0.4.26",
+      "errors": [],
+      "screenshot": "browser/happytohelp-390.png"
+    }
+  ]
+}
