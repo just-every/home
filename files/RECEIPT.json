@@ -1,0 +1,258 @@
+{
+  "schema": 1,
+  "tag": "je-gate-41",
+  "timestamp": "2026-11-14T10:15:15Z",
+  "repository": "just-every/home",
+  "role": "independent gate",
+  "pr": {
+    "base": {
+      "ref": "main",
+      "sha": "1faa377be04206d8423fdd1c1c39da28a87b1199"
+    },
+    "head": {
+      "ref": "cloud/je-sync-33",
+      "sha": "17b30cd333dbc7f0732b0d5c0b30fc6596836aa5"
+    },
+    "html_url": "https://github.com/just-every/home/pull/57",
+    "number": 57,
+    "state": "open"
+  },
+  "candidate_branch": "cloud/je-sync-33",
+  "head": "17b30cd333dbc7f0732b0d5c0b30fc6596836aa5",
+  "base": "1faa377be04206d8423fdd1c1c39da28a87b1199",
+  "local_gate_branch": "cloud/je-gate-41 (baseline only; never pushed)",
+  "checkout": "detached candidate",
+  "npm_ci_exit": 0,
+  "checks": [
+    {
+      "name": "listings-check",
+      "start": "2026-11-14T10:08:06Z",
+      "end": "2026-11-14T10:08:07Z",
+      "exit": 0,
+      "command": [
+        "npm",
+        "run",
+        "listings",
+        "--",
+        "--check"
+      ]
+    },
+    {
+      "name": "listings-generate",
+      "start": "2026-11-14T10:08:07Z",
+      "end": "2026-11-14T10:08:08Z",
+      "exit": 0,
+      "command": [
+        "npm",
+        "run",
+        "listings"
+      ]
+    },
+    {
+      "name": "listings-no-diff",
+      "start": "2026-11-14T10:08:08Z",
+      "end": "2026-11-14T10:08:08Z",
+      "exit": 0,
+      "command": [
+        "git",
+        "diff",
+        "--exit-code"
+      ]
+    },
+    {
+      "name": "type-check",
+      "start": "2026-11-14T10:08:08Z",
+      "end": "2026-11-14T10:08:14Z",
+      "exit": 0,
+      "command": [
+        "npm",
+        "run",
+        "type-check"
+      ]
+    },
+    {
+      "name": "lint",
+      "start": "2026-11-14T10:08:14Z",
+      "end": "2026-11-14T10:08:18Z",
+      "exit": 0,
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ]
+    },
+    {
+      "name": "build",
+      "start": "2026-11-14T10:08:18Z",
+      "end": "2026-11-14T10:09:02Z",
+      "exit": 0,
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ]
+    }
+  ],
+  "baseline_build_exit": 0,
+  "browser": {
+    "candidate": {
+      "timestamp": "2026-11-14T10:11:42Z",
+      "label": "candidate",
+      "head": "17b30cd333dbc7f0732b0d5c0b30fc6596836aa5",
+      "route": "/happytohelp",
+      "assertedWidth": 1440,
+      "visualWidths": [
+        1440,
+        390
+      ],
+      "rows": [
+        {
+          "width": 1440,
+          "status": 200,
+          "h1": "HappyToHelp",
+          "version": "v0.4.26",
+          "versionVisible": true,
+          "versionBox": {
+            "x": 617.328125,
+            "y": 488.640625,
+            "width": 205.328125,
+            "height": 23.09375
+          },
+          "documentWidth": 1440,
+          "bodyWidth": 1440,
+          "listingVersion": "v0.4.26",
+          "listingStatus": "released",
+          "pageErrors": [],
+          "screenshot": "candidate-1440.png"
+        },
+        {
+          "width": 390,
+          "status": 200,
+          "h1": "HappyToHelp",
+          "version": "v0.4.26",
+          "versionVisible": true,
+          "versionBox": {
+            "x": 20,
+            "y": 488.390625,
+            "width": 350,
+            "height": 23.09375
+          },
+          "documentWidth": 390,
+          "bodyWidth": 390,
+          "listingVersion": "v0.4.26",
+          "listingStatus": "released",
+          "pageErrors": [],
+          "screenshot": "candidate-390.png"
+        }
+      ]
+    },
+    "baseline": {
+      "timestamp": "2026-11-14T10:13:18Z",
+      "label": "baseline",
+      "head": "1faa377be04206d8423fdd1c1c39da28a87b1199",
+      "route": "/happytohelp",
+      "assertedWidth": 1440,
+      "visualWidths": [
+        1440,
+        390
+      ],
+      "rows": [
+        {
+          "width": 1440,
+          "status": 200,
+          "h1": "HappyToHelp",
+          "version": "v0.4.25",
+          "versionVisible": true,
+          "versionBox": {
+            "x": 617.328125,
+            "y": 488.640625,
+            "width": 205.328125,
+            "height": 23.09375
+          },
+          "documentWidth": 1440,
+          "bodyWidth": 1440,
+          "listingVersion": "v0.4.25",
+          "listingStatus": "released",
+          "pageErrors": [],
+          "screenshot": "baseline-1440.png"
+        },
+        {
+          "width": 390,
+          "status": 200,
+          "h1": "HappyToHelp",
+          "version": "v0.4.25",
+          "versionVisible": true,
+          "versionBox": {
+            "x": 20,
+            "y": 488.390625,
+            "width": 350,
+            "height": 23.09375
+          },
+          "documentWidth": 390,
+          "bodyWidth": 390,
+          "listingVersion": "v0.4.25",
+          "listingStatus": "released",
+          "pageErrors": [],
+          "screenshot": "baseline-390.png"
+        }
+      ]
+    }
+  },
+  "ci": [
+    {
+      "conclusion": "skipped",
+      "event": "pull_request",
+      "head_sha": "17b30cd333dbc7f0732b0d5c0b30fc6596836aa5",
+      "html_url": "https://github.com/just-every/home/actions/runs/43582573964",
+      "id": 43582573964,
+      "name": "Verify branch",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "dynamic",
+      "head_sha": "17b30cd333dbc7f0732b0d5c0b30fc6596836aa5",
+      "html_url": "https://github.com/just-every/home/actions/runs/43582571910",
+      "id": 43582571910,
+      "name": "PR #57",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "17b30cd333dbc7f0732b0d5c0b30fc6596836aa5",
+      "html_url": "https://github.com/just-every/home/actions/runs/43582553278",
+      "id": 43582553278,
+      "name": "Verify branch",
+      "status": "completed"
+    }
+  ],
+  "github_api_calls": 9,
+  "product_commits_created": 0,
+  "product_refs_pushed": [],
+  "clause_status_changes": [],
+  "new_blocking_findings": 0,
+  "new_followups": 0,
+  "verdict": "GATE PASS",
+  "before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "source_lock": "not applicable: no source-lock command or file in JE repository",
+  "contract_views": "not applicable: no root CONTRACT.md, generated contract views or documented generator in JE repository",
+  "migration_ledger": "not applicable: no migration-ledger check in JE repository",
+  "publication_scan": "Mac publication scan remains with fleet; no product push made",
+  "cleanup": {
+    "candidate_server_pid": 1447,
+    "baseline_server_pid": 2174,
+    "browsers_closed": true,
+    "servers_signaled_by_recorded_pid": true,
+    "clone_removal": "after evidence publication"
+  }
+}

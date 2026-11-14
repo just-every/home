@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-11-14T10:17:05Z",
+  "calls": [
+    {
+      "sequence": 1,
+      "command": "gh api repos/just-every/home/pulls/57",
+      "receipt": "pr.json",
+      "saved_at": "2026-11-14T10:04:44Z",
+      "exit": 0
+    },
+    {
+      "sequence": 2,
+      "command": "gh api repos/just-every/run-happytohelp/releases/tags/v0.4.26",
+      "receipt": "release.json",
+      "saved_at": "2026-11-14T10:07:05Z",
+      "exit": 0
+    },
+    {
+      "sequence": 3,
+      "command": "gh api repos/just-every/run-happytohelp/git/ref/tags/v0.4.26",
+      "receipt": "tag.json",
+      "saved_at": "2026-11-14T10:07:06Z",
+      "exit": 0
+    },
+    {
+      "sequence": 4,
+      "command": "gh api repos/just-every/run-happytohelp/contents/CONTRACT.md?ref=v0.4.26",
+      "receipt": "happytohelp-CONTRACT.md",
+      "saved_at": "2026-11-14T10:07:07Z",
+      "exit": 0
+    },
+    {
+      "sequence": 5,
+      "command": "gh api repos/just-every/home/actions/runs?head_sha=17b30cd333dbc7f0732b0d5c0b30fc6596836aa5&per_page=100",
+      "receipt": "ci.json",
+      "saved_at": "2026-11-14T10:07:08Z",
+      "exit": 0
+    },
+    {
+      "sequence": 6,
+      "command": "gh api repos/just-every/run-happytohelp/git/tags/20b30051488f6e923e16f70f17b5f5e137b55bcc",
+      "receipt": "tag-object.json",
+      "saved_at": "2026-11-14T10:07:25Z",
+      "exit": 0
+    },
+    {
+      "sequence": 7,
+      "command": "gh api repos/just-every/run-happytohelp/contents/README.md?ref=v0.4.26",
+      "receipt": "happytohelp-README.md",
+      "saved_at": "2026-11-14T10:07:26Z",
+      "exit": 0
+    },
+    {
+      "sequence": 8,
+      "command": "gh api repos/just-every/run-happytohelp/contents/seed.json?ref=v0.4.26",
+      "receipt": "happytohelp-seed.json",
+      "saved_at": "2026-11-14T10:07:27Z",
+      "exit": 0
+    },
+    {
+      "sequence": 9,
+      "command": "gh api repos/just-every/home/pulls/57",
+      "receipt": "final-pr.json",
+      "saved_at": "2026-11-14T10:13:47Z",
+      "exit": 0
+    }
+  ],
+  "total": 9
+}

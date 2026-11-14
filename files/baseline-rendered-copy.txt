@@ -1,0 +1,62 @@
+HappyToHelp
+
+Alternative to Zendesk
+
+Also replaces Intercom, Help Scout, Freshdesk
+
+Your Codex or Claude fixes the problem and writes the reply.
+
+HappyToHelp in 56 seconds
+A support conversation beside the AI helper
+Move in your support history from an export
+
+happytohelp.com
+↗
+GitHub
+→
+
+HappyToHelp is a customer support desk where your own Codex or Claude investigates the problem, fixes it and drafts the reply, and you press Send. It brings a website chat widget, a shared inbox for chat and email, a help center and replies drafted from your own articles into one place. You can try it beside your current helpdesk and bring your history over when you are ready.
+
+What it does
+Let your own Codex or Claude, running on your computer, investigate a customer's problem, fix it and draft the reply for you to send
+Put a chat widget on your website that offers a hand when a visitor seems stuck
+Answer chat and email from one shared inbox, with customer details beside each conversation, assignment rules, saved-reply macros, snoozing and merging of duplicates
+Publish a searchable help center that customers use to find answers themselves
+Get suggested replies drafted from your own articles, with the source shown
+Collect a thumbs up or down on resolved conversations and see reports you can export
+Connect with scoped API tokens, signed webhooks and Slack
+Bring over your help center and history from Zendesk, Help Scout, Intercom or Freshdesk while your current helpdesk keeps running
+What it promises
+Imports are reviewed before anything is written, send no messages to your customers, can be undone as a whole, and keep source dates, private notes and publication state.
+Customer and agent messages are stored once, and two conflicting final replies can never both be accepted.
+Customers can rate a resolution with a thumbs up or down and a short comment, and comments are removed if the contact is erased.
+Reports use your own calendar and time zone, count each conversation once, and export to a spreadsheet file that is safe to open.
+Messages are saved before they are shown live, so a reload or dropped connection recovers everything that was sent, and an AI draft never becomes a final answer until it is safely accepted.
+With no AI key, the AI is simply not assigned to new conversations and your team keeps them; your company's policy sets AI spending limits and uncertain attempts are never silently repeated.
+Revoking a computer's access ends its authority at once, and HappyToHelp never claims that work already running there was stopped.
+API tokens have chosen scopes, are shown once, are stored hashed and can expire; an unclear webhook result is not sent again.
+Teammates can sign in with an authenticator app or a security key plus one-time recovery codes, and an owner can require it for everyone or by role.
+You can export your conversations, files, contacts, help articles, settings and history in one checked archive and restore it into a clean installation; sign-ins and provider secrets are left out.
+Read the full contract
+→
+Move in from
+Zendesk
+Help Scout
+Intercom
+Freshdesk
+Run it yourself
+
+One command clones a product and starts it.
+
+Terminal
+Copy
+$ npx -y @runeditrun/rer dev just-every/run-happytohelp
+
+No npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-happytohelp.
+
+RUNS ON
+Your computer, or your own Cloudflare account
+VERSION
+v0.4.25
+LICENCE
+MIT, 100% free

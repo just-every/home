@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-11-14T10:11:42Z",
+  "label": "candidate",
+  "head": "17b30cd333dbc7f0732b0d5c0b30fc6596836aa5",
+  "route": "/happytohelp",
+  "assertedWidth": 1440,
+  "visualWidths": [
+    1440,
+    390
+  ],
+  "rows": [
+    {
+      "width": 1440,
+      "status": 200,
+      "h1": "HappyToHelp",
+      "version": "v0.4.26",
+      "versionVisible": true,
+      "versionBox": {
+        "x": 617.328125,
+        "y": 488.640625,
+        "width": 205.328125,
+        "height": 23.09375
+      },
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "listingVersion": "v0.4.26",
+      "listingStatus": "released",
+      "pageErrors": [],
+      "screenshot": "candidate-1440.png"
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "h1": "HappyToHelp",
+      "version": "v0.4.26",
+      "versionVisible": true,
+      "versionBox": {
+        "x": 20,
+        "y": 488.390625,
+        "width": 350,
+        "height": 23.09375
+      },
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "listingVersion": "v0.4.26",
+      "listingStatus": "released",
+      "pageErrors": [],
+      "screenshot": "candidate-390.png"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-11-14T10:15:15Z",
+  "rendered_main_copy_equal_after_version_normalization": true,
+  "version_geometry_identical_at": [
+    1440,
+    390
+  ],
+  "visual_inspection": "All four full-page screenshots inspected: candidate/main preserve the same layout and readable version; no new clipping, overflow or overlap. The phone gallery intentionally shows a sliver of the next slide on both.",
+  "baseline_build_exit": 0
+}

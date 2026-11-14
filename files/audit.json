@@ -1,0 +1,134 @@
+{
+  "timestamp": "2026-11-14T10:09:24Z",
+  "head": "17b30cd333dbc7f0732b0d5c0b30fc6596836aa5",
+  "base": "1faa377be04206d8423fdd1c1c39da28a87b1199",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "commits": [
+    "17b30cd333dbc7f0732b0d5c0b30fc6596836aa5"
+  ],
+  "before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "changed_listing": [
+    "happytohelp"
+  ],
+  "unchanged_versions": {
+    "spool": "v0.7.11",
+    "uptime": "v0.5.11",
+    "oncall": "v0.5.13",
+    "orbit": "v0.4.9",
+    "lamp": "v1.11.15"
+  },
+  "absent": [
+    "beacon",
+    "relay",
+    "ferry",
+    "lily",
+    "brook",
+    "delta",
+    "barrow",
+    "linen"
+  ],
+  "source_hashes": {
+    "CONTRACT.md": "ae8feea8b7998aa7",
+    "README.md": "f56c111027b43eda",
+    "seed.json": "685ea267d1baacbe"
+  },
+  "state_changes": [
+    {
+      "slug": "happytohelp",
+      "keys": [
+        "commit",
+        "copy",
+        "open",
+        "sourceRef",
+        "tag"
+      ]
+    },
+    {
+      "slug": "spool",
+      "keys": [
+        "open"
+      ]
+    }
+  ],
+  "open_marker": "42983364b373",
+  "credential_shapes_in_added_diff": 0,
+  "authors_and_committers": "Run Edit Run fleet <fleet@runeditrun.com>",
+  "trailers": "absent",
+  "wording_changed": false,
+  "test_files_changed": false,
+  "contract_claim_rows": {
+    "MOVE-IN-001": {
+      "title": "Reviewed history import",
+      "group": "published",
+      "status": "done",
+      "gap": ""
+    },
+    "CONVERSATION-001": {
+      "title": "Durable transcript",
+      "group": "published",
+      "status": "partial",
+      "gap": "Main re-audit: unasserted in the cited Evidence set: model writer race; import writer race; lost-response final-reply race. Asserted: competing visitor revisions admit one writer; exact duplicate replay; changed replay refused; stale operator frontier refused; operator admission; erased message identity; erased message revision; erased message content removed; erased transcript frontier. Prior-reference qualification (before test consolidation): Carried-done audit: unasserted in the cited Evidence set: model writer race; import writer race; lost-response final-reply race. Asserted: competing visitor revisions admit one writer; exact duplicate replay; changed replay refused; stale operator frontier refused; operator admission; erased message identity; erased message revision; erased message content removed; erased transcript frontier."
+    },
+    "DELIVERY-001": {
+      "title": "Live delivery and recovery",
+      "group": "published",
+      "status": "partial",
+      "gap": "Carried-done audit: unasserted in the cited Evidence set: widget reconnect replay; operator reconnect replay; runtime restart replay; committed messages recovered; committed attachments recovered; unauthorized replay denied; superseded provisional AI never becomes final. The cited registry invokes the delivered workflow, but its helper assertions are not named in this clause\u2019s old Evidence set; no direct outcome assertion is claimed here."
+    },
+    "OUTCOMES-001": {
+      "title": "Resolution feedback and provenance",
+      "group": "published",
+      "status": "partial",
+      "gap": "Main re-audit: unasserted in the cited Evidence set: rerating retains history; other actors cannot rate; revoked session cannot rate; reopened cycle cannot use previous rating; erasure redacts comment history. Asserted: close and initial eligible rating; rerating preserves latest value; expired session cannot rate; second close has a distinct cycle; operator reads past-cycle feedback after reopen; erasure redacts current comments; human outcome from visible answer; assisted outcome from visible answer; AI-only outcome from visible answer; missing provenance stays unknown."
+    },
+    "REPORTS-001": {
+      "title": "Workspace calendar reports",
+      "group": "published",
+      "status": "done",
+      "gap": ""
+    },
+    "AI-001": {
+      "title": "Configured model execution",
+      "group": "published",
+      "status": "partial",
+      "gap": "Carried-done audit: unasserted in the cited Evidence set: configured suggestion; configured reply; normalized stream events; per-round usage; bounded context; bounded tools; policy budgets; missing-provider error; durable daily skip; crash never replays; ambiguous attempt never replays. The cited registry invokes the delivered workflow, but its helper assertions are not named in this clause\u2019s old Evidence set; no direct outcome assertion is claimed here."
+    },
+    "DELEGATION-001": {
+      "title": "Explicit local authority",
+      "group": "published",
+      "status": "partial",
+      "gap": "Carried-done audit: unasserted in the cited Evidence set: packaged connector pairing; read-only investigation; separately authorized child fix; distinct read-only observation; human Send; exact-request replay; stale work refused; revoked work refused; offline work refused; unverified work refused; uncertain work not replayed; resolve versus resolve-and-reply; revocation does not assert cancellation. The cited registry invokes the delivered workflow, but its helper assertions are not named in this clause\u2019s old Evidence set; no direct outcome assertion is claimed here."
+    },
+    "CONNECTIONS-001": {
+      "title": "Workspace integrations",
+      "group": "published",
+      "status": "partial",
+      "gap": "Main re-audit: unasserted in the cited Evidence set: issued token has exact scopes; issued token has expiry; show-once secret; hashed secret storage; unsafe literal destination refused; outgoing byte bound. Asserted: scoped native API use; token revocation; token expiry; erasure replay fences; signed events; Slack escaped customer text; redirect target never requested; declared response bound; streamed response bound; timeout remains uncertain; server error remains uncertain; uncertain work never replays; rate-limit retry retains same event. Prior-reference qualification (before test consolidation): Carried-done audit: unasserted in the cited Evidence set: show-once secret; hashed secret storage; unsafe literal destination refused. Asserted: issued token has exact scopes; issued token has expiry; scoped native API use; token revocation; token expiry; erasure replay fences; signed events; Slack escaped customer text; redirect target never requested; outgoing byte bound; declared response bound; streamed response bound; timeout remains uncertain; server error remains uncertain; uncertain work never replays; rate-limit retry retains same event."
+    },
+    "IDENTITY-003": {
+      "title": "Two-factor authentication for native accounts",
+      "group": "target",
+      "status": "partial",
+      "gap": "Carried-done audit: unasserted in the cited Evidence set: TOTP enrollment; role policy forces factor enrollment; single-use recovery codes; missing factor refused; wrong factor refused; replayed TOTP refused; used recovery refused; passkey sign-in; owner reset needs own step-up; reset notification; reset audit; refund needs recent step-up; export needs recent step-up; installation owner recovery; existing no-factor sessions revoked. The direct enrollment call asserts only HTTP 201. Enrollment state and recovery-code assertions are in `tests/helpers/identity/two-factor.mjs`, outside the carried Evidence set."
+    },
+    "PORTABILITY-001": {
+      "title": "Complete customer-owned portable support data",
+      "group": "target",
+      "status": "partial",
+      "gap": "Carried-done audit: unasserted in the cited Evidence set: nonempty target refused. Asserted: source destroyed before restore; clean independent install; each populated portable business record; native support store equality; every attachment byte; R2 metadata equality; erasure fences preserved; corrupt archive refused; oversized archive refused; refusal has no partial restore; restored work is inert; Durable Object history captured; interrupted business action state retained inertly."
+    }
+  }
+}

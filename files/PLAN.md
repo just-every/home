@@ -1,0 +1,11 @@
+# je-gate-41 plan
+
+1. Refresh the launcher, install the prescribed Git credential helper and commit hooks, and use a fresh shallow clone of just-every/home. Verify PR #57 is still open at the exact requested head and the required main base; never judge a replacement head.
+2. Compare the candidate against origin/main. Explain all three files and each hunk; inspect every candidate author, committer and trailer, the added content for credential shapes, unchanged wording, other seed versions/statuses, counts, excluded seeds and pricing.
+3. Read the HappyToHelp v0.4.26 GitHub Release once, resolve its annotated tag to a commit, and read the released CONTRACT.md/README.md/seed.json through gh api. Recompute the sync tool's copy hashes. Asset presence is not signature verification.
+4. Independently install dependencies and run the documented listings check and generation; require no diff. Run type-check, lint and production build. Identify whether source-lock, contract-view and migration-ledger commands actually apply to this repository; run documented applicable commands only.
+5. Serve the production build locally and inspect the real /happytohelp public door once at 1440 and 390, with version assertions and screenshots. Compare the touched surface against main; keep checks within the frozen rubric.
+6. Observe exact-SHA Verify through REST once (ten-call GitHub budget, no CI dispatch/rerun). Read the source contract status table and compare only touched page claims; partial evidence alone is not falsity, and known follow-ups are not new findings.
+7. Write every rubric row as MET/UNMET/NOT RUN with commands/results, record findings by tier, preserve actual receipts and publish only the selected public-safe packet to evidence/je-gate-41. Fix nothing and make no product commit, product push, PR comment, merge or deployment. Stop owned processes and delete the scratch clone/node_modules after evidence publication.
+
+Target: cloud/je-sync-33 at 17b30cd333dbc7f0732b0d5c0b30fc6596836aa5; base main 1faa377be04206d8423fdd1c1c39da28a87b1199. The local cloud/je-gate-41 branch names the unmodified baseline only; independent checks run detached at the candidate. Evidence publication is separately authorized and is not product READY/PUSHED custody.

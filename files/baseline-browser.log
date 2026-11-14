@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-11-14T10:13:18Z",
+  "label": "baseline",
+  "head": "1faa377be04206d8423fdd1c1c39da28a87b1199",
+  "route": "/happytohelp",
+  "assertedWidth": 1440,
+  "visualWidths": [
+    1440,
+    390
+  ],
+  "rows": [
+    {
+      "width": 1440,
+      "status": 200,
+      "h1": "HappyToHelp",
+      "version": "v0.4.25",
+      "versionVisible": true,
+      "versionBox": {
+        "x": 617.328125,
+        "y": 488.640625,
+        "width": 205.328125,
+        "height": 23.09375
+      },
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "listingVersion": "v0.4.25",
+      "listingStatus": "released",
+      "pageErrors": [],
+      "screenshot": "baseline-1440.png"
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "h1": "HappyToHelp",
+      "version": "v0.4.25",
+      "versionVisible": true,
+      "versionBox": {
+        "x": 20,
+        "y": 488.390625,
+        "width": 350,
+        "height": 23.09375
+      },
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "listingVersion": "v0.4.25",
+      "listingStatus": "released",
+      "pageErrors": [],
+      "screenshot": "baseline-390.png"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Candidate browser attempt: page.goto http://127.0.0.1:3141/happytohelp waiting for networkidle exceeded 60000 ms. No product assertion ran. Browser closed in finally. Retried with DOMContentLoaded, visible h1 and document.fonts.ready because the page has continuing external media requests. No application, fixture or network mocking changes.

@@ -1,0 +1,6 @@
+{"name": "listings-check", "start": "2026-11-14T10:08:06Z", "end": "2026-11-14T10:08:07Z", "exit": 0, "command": ["npm", "run", "listings", "--", "--check"]}
+{"name": "listings-generate", "start": "2026-11-14T10:08:07Z", "end": "2026-11-14T10:08:08Z", "exit": 0, "command": ["npm", "run", "listings"]}
+{"name": "listings-no-diff", "start": "2026-11-14T10:08:08Z", "end": "2026-11-14T10:08:08Z", "exit": 0, "command": ["git", "diff", "--exit-code"]}
+{"name": "type-check", "start": "2026-11-14T10:08:08Z", "end": "2026-11-14T10:08:14Z", "exit": 0, "command": ["npm", "run", "type-check"]}
+{"name": "lint", "start": "2026-11-14T10:08:14Z", "end": "2026-11-14T10:08:18Z", "exit": 0, "command": ["npm", "run", "lint"]}
+{"name": "build", "start": "2026-11-14T10:08:18Z", "end": "2026-11-14T10:09:02Z", "exit": 0, "command": ["npm", "run", "build"]}
