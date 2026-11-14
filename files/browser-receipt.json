@@ -1,0 +1,22 @@
+{
+  "startedAt": "2026-11-14T15:25:22.770Z",
+  "serverPid": 3780,
+  "url": "http://127.0.0.1:31434/oncall",
+  "screenshots": [
+    {
+      "path": "oncall-1440.png",
+      "width": 1440,
+      "height": 4804
+    },
+    {
+      "path": "oncall-390.png",
+      "width": 390,
+      "height": 4761
+    }
+  ],
+  "assertionWidth": 1440,
+  "desktopVersionAssertion": "passed",
+  "status": "passed",
+  "serverStopped": true,
+  "finishedAt": "2026-11-14T15:25:25.980Z"
+}

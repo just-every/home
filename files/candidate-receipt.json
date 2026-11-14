@@ -1,0 +1,98 @@
+{
+  "tag": "je-sync-34",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-34",
+  "head": "de3a00a8e9a04dfb0227d48fcba7465d71896815",
+  "base": "d91018b5eb84b95b8d44b54b03cf7374e9cde0a4",
+  "pr": {
+    "base_ref": "main",
+    "head_ref": "cloud/je-sync-34",
+    "head_sha": "de3a00a8e9a04dfb0227d48fcba7465d71896815",
+    "html_url": "https://github.com/just-every/home/pull/58",
+    "number": 58,
+    "state": "open"
+  },
+  "checks": {
+    "npm ci": "passed",
+    "npm run listings": "passed",
+    "npm run listings -- --check": "passed",
+    "npm run type-check": "passed",
+    "npm run lint": "passed",
+    "npm run build": "passed",
+    "finalDrySync": "0 of 6 changed; 0 unreadable",
+    "browser": {
+      "startedAt": "2026-11-14T15:25:22.770Z",
+      "serverPid": 3780,
+      "url": "http://127.0.0.1:31434/oncall",
+      "screenshots": [
+        {
+          "path": "oncall-1440.png",
+          "width": 1440,
+          "height": 4804
+        },
+        {
+          "path": "oncall-390.png",
+          "width": 390,
+          "height": 4761
+        }
+      ],
+      "assertionWidth": 1440,
+      "desktopVersionAssertion": "passed",
+      "status": "passed",
+      "serverStopped": true,
+      "finishedAt": "2026-11-14T15:25:25.980Z"
+    },
+    "diffWhitespace": "passed",
+    "scope": "3 permitted paths only",
+    "credentialPatternDiffScan": "passed",
+    "identityAndTrailers": "passed"
+  },
+  "counts": {
+    "before": {
+      "total": 49,
+      "released": 35,
+      "comingSoon": 14
+    },
+    "after": {
+      "total": 49,
+      "released": 35,
+      "comingSoon": 14
+    }
+  },
+  "changedPaths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "productPush": "successful; product-push.log",
+  "clauseStatusChanges": [],
+  "sourceSnapshotTime": "2026-11-14T15:18:47Z",
+  "sourceTransport": "gh api graphql batched six repositories; authentic snapshot adapter, Git blob hashes verified; no other repository cloned or accessed via Git",
+  "releaseRule": {
+    "tag": "v0.5.14",
+    "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.14",
+    "commit": "4d1fc62d4d2b8bf90008ac87bbaa626bc1a5494b",
+    "nonDraft": true,
+    "nonPrerelease": true,
+    "dsseAssetPresent": true,
+    "signatureVerified": false
+  },
+  "publicationScan": "Mac lane retained; unavailable in cloud per assignment",
+  "workingTreeClean": true,
+  "tree": "5ed99dc7c1ee8d569988ec2bd7ce0a9eb9d7dcd7",
+  "remoteBranchVerified": "de3a00a8e9a04dfb0227d48fcba7465d71896815\trefs/heads/cloud/je-sync-34",
+  "custodyRecordedAt": "2026-11-14T15:30:17Z",
+  "ci": {
+    "runId": 43610187411,
+    "conclusion": "success",
+    "head_sha": "de3a00a8e9a04dfb0227d48fcba7465d71896815",
+    "html_url": "https://github.com/just-every/home/actions/runs/43610187411",
+    "status": "completed",
+    "observedAt": "2026-11-14T15:31:49Z"
+  },
+  "terminalStatus": "READY",
+  "githubApiCalls": 5,
+  "updatedAt": "2026-11-14T15:32:26Z",
+  "evidenceRef": "refs/heads/evidence/je-sync-34",
+  "cleanupPolicy": "Delete successful product clone and node_modules after verified evidence publication; preserve external packet."
+}

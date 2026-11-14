@@ -1,0 +1,84 @@
+diff --git a/public/data/listings.json b/public/data/listings.json
+index 78d490a..840dd97 100644
+--- a/public/data/listings.json
++++ b/public/data/listings.json
+@@ -1,5 +1,5 @@
+ {
+-  "generatedAt": "2026-11-14T09:48:38.555Z",
++  "generatedAt": "2026-11-14T15:22:04.359Z",
+   "listings": [
+     {
+       "slug": "auth",
+@@ -591,7 +591,7 @@
+       "slug": "oncall",
+       "name": "Oncall",
+       "status": "released",
+-      "version": "v0.5.13",
++      "version": "v0.5.14",
+       "category": "On-call rotas",
+       "line": "Who's on now, who's next, and when they hand over.",
+       "headline": "Everyone knows who's on call.",
+diff --git a/scripts/seeds-sync/state.json b/scripts/seeds-sync/state.json
+index 78d9759..dabd3cc 100644
+--- a/scripts/seeds-sync/state.json
++++ b/scripts/seeds-sync/state.json
+@@ -1,5 +1,5 @@
+ {
+-  "syncedAt": "2026-11-14T09:48:33.578Z",
++  "syncedAt": "2026-11-14T15:22:03.181Z",
+   "seeds": {
+     "auth": {
+       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
+@@ -504,8 +504,7 @@
+       "home": {
+         "headline": "Knows what your customer needs before they do.",
+         "signature": "eedddddddeedeeeeeeeeeeeeeeeeeeeedeedeeebaa887dddeeeeeeeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededdeedeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddbbbcbbcbbbbbbbbeedeeeeeeeeedeeeeeeeeeeeeeeeeedddaaabaabaaaaaccbeeeeeeeeeeeeeeeeeedeeeeeeeeeeeeedddcddcddcddcdddeeeeeeeeedddcccdeedeedeedeeeeeeeddccddceddeeeeedeeeeeedeebbbaaacddeeedddccceeedcc555544999eedeedeeeeeeeeeeeeefeeeeeeeddddddeeeeeddccdccdddeedeeefeededddddddeedeeededdddeddeee"
+-      },
+-      "open": ["42983364b373"]
++      }
+     },
+     "inkwell": {
+       "commit": "e4e3c2dd4bdf48fe16111f9d447568d6c4366a84",
+@@ -805,14 +804,14 @@
+       }
+     },
+     "oncall": {
+-      "commit": "8adae6c836f2fabda29e8a091b052450410c8ca5",
+-      "sourceRef": "v0.5.13",
++      "commit": "4d1fc62d4d2b8bf90008ac87bbaa626bc1a5494b",
++      "sourceRef": "v0.5.14",
+       "sourceReason": "released listing version",
+-      "tag": "v0.5.13",
++      "tag": "v0.5.14",
+       "copy": {
+         "CONTRACT.md": "c04517abc904f1e5",
+-        "README.md": "872282ad16baf429",
+-        "seed.json": "e91a0fe23123ca2a"
++        "README.md": "03d11757d735563f",
++        "seed.json": "0d887683acfe58be"
+       },
+       "brand": {
+         "branding.primaryColor": "#1d2a35",
+@@ -829,7 +828,8 @@
+       "home": {
+         "headline": "Everyone knows who's on call.",
+         "signature": "feedddeeeffeffeffeffeffeffeffeffeffeffeffefeeffeffeffeffefffffefffffeffeffeffeffeffeffeffeffeffeeedccccccccccccccceedffeeeeeeeeedeeeffeffeffeffeeeebbbccccccbbbdddfeeffeedddcbccbeedeeefeeeeeffefeeeeeeeeeeeeeeeeefffdcbdb9ddcddddddcccdddeeeffeeed999999999dddeeeffeeccedcffeffeeedddcdcbecbabbeed99999aaaaeedfeeffeffeffeffeffeffeeeddccedc9aaffefeeffeffeeeeeeefeeffeffeffeffeffeffeffeffeffeffeeeeeeeffeeeeeeeffefeefeeffefeeeeeffeffeffeffe"
+-      }
++      },
++      "open": ["42983364b373"]
+     },
+     "orbit": {
+       "commit": "a5f471626aea1bfcb2c79f5dbee2250fdb38fd49",
+diff --git a/src/data/seed-pages.ts b/src/data/seed-pages.ts
+index afaee4a..3aee1f2 100644
+--- a/src/data/seed-pages.ts
++++ b/src/data/seed-pages.ts
+@@ -1043,7 +1043,7 @@ export const seedPageContent: SeedPageContent[] = [
+     ],
+     moveIn: ['PagerDuty', 'Opsgenie', 'Splunk On-Call', 'Better Stack'],
+     runsOn: 'your own computer, or your own Cloudflare account',
+-    version: 'v0.5.13',
++    version: 'v0.5.14',
+     contractUrl: 'https://run-oncall.com/contract',
+     seoTitle: 'Oncall: free, open-source alternative to PagerDuty',
+     seoDescription:

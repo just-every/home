@@ -1,0 +1,1 @@
+{"query": "query { oncall: repository(owner:\"just-every\",name:\"run-oncall\") { contract: object(expression:\"v0.5.14:CONTRACT.md\") { ... on Blob { oid text } } readme: object(expression:\"v0.5.14:README.md\") { ... on Blob { oid text } } seed: object(expression:\"v0.5.14:seed.json\") { ... on Blob { oid text } } } }"}

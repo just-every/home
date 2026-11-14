@@ -1,0 +1,11 @@
+{
+  "startedAt": "2026-11-14T15:24:40.286Z",
+  "serverPid": 3560,
+  "url": "http://127.0.0.1:31434/oncall",
+  "screenshots": [],
+  "assertionWidth": 1440,
+  "status": "failed",
+  "error": "Oncall headline shown",
+  "serverStopped": true,
+  "finishedAt": "2026-11-14T15:24:42.625Z"
+}
