@@ -1097,7 +1097,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Sentry', 'Datadog Error Tracking', 'Rollbar', 'Bugsnag'],
     runsOn: 'your own computer, or your own Cloudflare account',
-    version: 'v0.7.10',
+    version: 'v0.7.11',
     contractUrl: 'https://run-spool.com/contract',
     seoTitle: 'Spool: free, open-source alternative to Sentry',
     seoDescription:
