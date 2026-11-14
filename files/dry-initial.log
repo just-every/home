@@ -1,0 +1,25 @@
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --only happytohelp,lamp,uptime,oncall,orbit,spool --out ../packet/dry-initial
+
+Reading 6 seed repositories...
+uptime: source=v0.5.11 commit=04016399e1e879e7be3b8e891baf02d975bb3901 (released listing version)
+happytohelp: source=v0.4.25 commit=333af4b0580c4284616783f1d79fcc9aad3aefc5 (released listing version)
+lamp: source=v1.11.15 commit=5dd84e13f6b0478edc2fc5e759d513f5eccf6d57 (released listing version)
+orbit: source=v0.4.9 commit=a5f471626aea1bfcb2c79f5dbee2250fdb38fd49 (released listing version)
+oncall: source=v0.5.13 commit=8adae6c836f2fabda29e8a091b052450410c8ca5 (released listing version)
+spool: source=v0.7.10 commit=417ab513b3032370091479fa28f41a5a67b50c53 (released listing version)
+Reading 6 homepages...
+  read lamp 
+  read uptime 
+  read orbit 
+  read happytohelp 
+  read oncall 
+  read spool 
+  
+Dry run: 1 of 6 seeds changed.
+
+Spool
+  version   newer tag v0.7.11 (page shows v0.7.10) [to apply]
+
+Report: /home/agent/rer-consolidation/work/je-sync-32/packet/dry-initial/report.md

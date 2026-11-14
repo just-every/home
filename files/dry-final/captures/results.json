@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "uptime",
+    "url": "https://run-uptime.com",
+    "finalUrl": "https://run-uptime.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Uptime — Sleep through the night",
+    "h1": "Sleep through the night.",
+    "headline": "Sleep through the night.",
+    "alternativeTo": "Open source alternative to Pingdom, UptimeRobot and Better Stack",
+    "theme": {
+      "page": "#f7f6fb",
+      "text": "#14204a",
+      "action": "#14204a",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "lamp",
+    "url": "https://run-lamp.com",
+    "finalUrl": "https://run-lamp.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Lamp — When something breaks, turn the light on.",
+    "h1": "When something breaks, turn the light on.",
+    "headline": "When something breaks, turn the light on.",
+    "alternativeTo": "Open source alternative to Atlassian Statuspage, Instatus and Better Stack",
+    "theme": {
+      "page": "#f8f6f0",
+      "text": "#182d24",
+      "action": "#182d24",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "orbit",
+    "url": "https://run-orbit.com",
+    "finalUrl": "https://run-orbit.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Orbit — Your next deal finds you.",
+    "h1": "Your next deal finds you.",
+    "headline": "Your next deal finds you.",
+    "alternativeTo": "Open source alternative to HubSpot, Pipedrive and Salesforce",
+    "theme": {
+      "page": "#fdfaf6",
+      "text": "#16171d",
+      "action": "#16171d",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "happytohelp",
+    "url": "https://happytohelp.com",
+    "finalUrl": "https://happytohelp.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "HappyToHelp — Customer Support, Solved.",
+    "h1": "Knows what your customer needs before they do.",
+    "headline": "Knows what your customer needs before they do.",
+    "alternativeTo": "Open source alternative to Zendesk, Intercom, Help Scout and Freshdesk",
+    "theme": {
+      "page": "#f6f2ea",
+      "text": "#141414",
+      "action": "#141414",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "spool",
+    "url": "https://run-spool.com",
+    "finalUrl": "https://run-spool.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Spool — see exactly what broke",
+    "h1": "See exactly what broke.",
+    "headline": "See exactly what broke.",
+    "alternativeTo": "Open source alternative to Sentry, Bugsnag and Rollbar",
+    "theme": {
+      "page": "#f3f0e6",
+      "text": "#1c1c1b",
+      "action": "#1c1c1b",
+      "themeColor": null
+    }
+  },
+  {
+    "slug": "oncall",
+    "url": "https://run-oncall.com",
+    "finalUrl": "https://run-oncall.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Oncall — who's on call, now and next",
+    "h1": "Everyone knows who's on call.",
+    "headline": "Everyone knows who's on call.",
+    "alternativeTo": "Open source alternative to PagerDuty and Opsgenie",
+    "theme": {
+      "page": "#f8f0e3",
+      "text": "#1d2a35",
+      "action": "#1d2a35",
+      "themeColor": null
+    }
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "observed_at": "2026-11-14T04:11:27Z",
+  "api_calls_used": 7,
+  "budget": 10,
+  "runs": [
+    {
+      "id": 43555200362,
+      "name": "Verify branch",
+      "status": "completed",
+      "conclusion": "skipped",
+      "head_sha": "198052d795b6a151201bd2d02713b892575897a7",
+      "event": "pull_request",
+      "html_url": "https://github.com/just-every/home/actions/runs/43555200362",
+      "created_at": "2026-11-14T04:09:18Z",
+      "updated_at": "2026-11-14T04:10:52Z"
+    },
+    {
+      "id": 43555197504,
+      "name": "PR #56",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "198052d795b6a151201bd2d02713b892575897a7",
+      "event": "dynamic",
+      "html_url": "https://github.com/just-every/home/actions/runs/43555197504",
+      "created_at": "2026-11-14T04:09:16Z",
+      "updated_at": "2026-11-14T04:10:09Z"
+    },
+    {
+      "id": 43555153014,
+      "name": "Verify branch",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "198052d795b6a151201bd2d02713b892575897a7",
+      "event": "push",
+      "html_url": "https://github.com/just-every/home/actions/runs/43555153014",
+      "created_at": "2026-11-14T04:08:43Z",
+      "updated_at": "2026-11-14T04:10:52Z"
+    }
+  ]
+}

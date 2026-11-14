@@ -1,0 +1,29 @@
+{
+  "tag": "v0.7.11",
+  "public_commit": "b9e7e575097e0dd0fc0662ce1ed507fa0d41f0d8",
+  "tag_object": "d54b7b443870e71ad7a2505b2f5970f93c3c9f8f",
+  "envelope_sha256": "0da3575aaa5b3f982ae20446ba90acb074829f14b1135669c1e9443376b17f89",
+  "asset_present": true,
+  "signature_count": 1,
+  "cryptographic_signature_verification": "NOT RUN: no trusted public verification key provided; brief reports prior PASS, not independently claimed here",
+  "source_checks": [
+    {
+      "file": "CONTRACT.md",
+      "bytes": 325429,
+      "sha256": "ee9c871bfa25a110d3f3e61924164c75cc17ea412cb775f2e0621f114ab3594b",
+      "matches_envelope_payload": true
+    },
+    {
+      "file": "README.md",
+      "bytes": 17446,
+      "sha256": "c942367838430a754d26b981891e3e70f87ca2d3a537f90d9f3cbf9460f9fe88",
+      "matches_envelope_payload": true
+    },
+    {
+      "file": "seed.json",
+      "bytes": 18314,
+      "sha256": "2121502a5371a2c380585e6f3b3151152290518dd40def0b381e546e256b7aeb",
+      "matches_envelope_payload": true
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "budget": 10,
+  "used": 7,
+  "calls": [
+    {
+      "n": 1,
+      "command": "gh api graphql --input source-query.json",
+      "result": "schema validation error: ReleaseAsset.databaseId is not defined; no authentication/transport rejection"
+    },
+    {
+      "n": 2,
+      "command": "gh api graphql --input source-query.json",
+      "result": "success; six fresh repository snapshots with refs, releases, brand and released copy files"
+    },
+    {
+      "n": 3,
+      "command": "gh api repos/just-every/run-spool/releases/tags/v0.7.11",
+      "result": "success"
+    },
+    {
+      "n": 4,
+      "command": "gh api graphql --input spool-query.json",
+      "result": "success; v0.7.11 released source files"
+    },
+    {
+      "n": 5,
+      "command": "gh api repos/just-every/run-spool/releases/assets/<asset-id> -H Accept:application/octet-stream",
+      "result": "success; exact real asset ID is in spool-release.json"
+    },
+    {
+      "n": 6,
+      "command": "gh api repos/just-every/home/pulls --method POST --input pr-request.json",
+      "result": "success; PR 56"
+    },
+    {
+      "n": 7,
+      "command": "gh api repos/just-every/home/actions/runs?head_sha=198052d795b6a151201bd2d02713b892575897a7&per_page=100",
+      "result": "completed/success exact-SHA push Verify; PR event duplicate correctly skipped"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "startedAt": "2026-11-14T04:06:54.897Z",
+  "mode": "dry-run",
+  "copyOnly": false,
+  "captureHost": null,
+  "load": 0.35,
+  "statePath": "scripts/seeds-sync/state.json",
+  "baselineDate": null,
+  "seeds": [
+    {
+      "slug": "uptime",
+      "name": "Uptime",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.5.11",
+        "commit": "04016399e1e879e7be3b8e891baf02d975bb3901",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "0b70cec7f900fbc5",
+          "README.md": "52c9d14b06fdfff8",
+          "seed.json": "6683864c580c2486"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "happytohelp",
+      "name": "HappyToHelp",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.25",
+        "commit": "333af4b0580c4284616783f1d79fcc9aad3aefc5",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ae8feea8b7998aa7",
+          "README.md": "45a28e3132618824",
+          "seed.json": "321e3d3d615cbcde"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "lamp",
+      "name": "Lamp",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v1.11.15",
+        "commit": "5dd84e13f6b0478edc2fc5e759d513f5eccf6d57",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "8b575f27ee607ce3",
+          "README.md": "1a20f137749ab26b",
+          "seed.json": "074cb758ae0a8d8f"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "orbit",
+      "name": "Orbit",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.9",
+        "commit": "a5f471626aea1bfcb2c79f5dbee2250fdb38fd49",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "faa136fb56b398c3",
+          "README.md": "20ef6d3a4cdc967d",
+          "seed.json": "e4b909cf7a1e6ab6"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "oncall",
+      "name": "Oncall",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.5.13",
+        "commit": "8adae6c836f2fabda29e8a091b052450410c8ca5",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "c04517abc904f1e5",
+          "README.md": "872282ad16baf429",
+          "seed.json": "e91a0fe23123ca2a"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "spool",
+      "name": "Spool",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.7.11",
+        "commit": "b9e7e575097e0dd0fc0662ce1ed507fa0d41f0d8",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ee9c871bfa25a110",
+          "README.md": "c942367838430a75",
+          "seed.json": "2121502a5371a2c3"
+        }
+      },
+      "findings": []
+    }
+  ],
+  "shareImage": [],
+  "apply": null
+}

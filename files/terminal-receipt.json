@@ -1,0 +1,25 @@
+{
+  "recorded_at": "2026-11-14T04:12:15Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-32",
+  "head": "198052d795b6a151201bd2d02713b892575897a7",
+  "pr": "https://github.com/just-every/home/pull/56",
+  "push": "success",
+  "verify_run_id": 43555153014,
+  "verify_url": "https://github.com/just-every/home/actions/runs/43555153014",
+  "verify_status": "completed",
+  "verify_conclusion": "success",
+  "worktree": "clean",
+  "scope": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "clause_status_changes": [],
+  "server_pid": 3656,
+  "subreaper_pid": 3655,
+  "server_stopped": true,
+  "browsers_closed": true,
+  "blockers": [],
+  "publication_scan": "Mac lane-owned; not available in cloud"
+}
