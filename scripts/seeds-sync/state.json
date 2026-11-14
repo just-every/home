@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-14T09:48:33.578Z",
+  "syncedAt": "2026-11-14T15:22:03.181Z",
   "seeds": {
     "auth": {
       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
@@ -504,8 +504,7 @@
       "home": {
         "headline": "Knows what your customer needs before they do.",
         "signature": "eedddddddeedeeeeeeeeeeeeeeeeeeeedeedeeebaa887dddeeeeeeeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededdeedeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddbbbcbbcbbbbbbbbeedeeeeeeeeedeeeeeeeeeeeeeeeeedddaaabaabaaaaaccbeeeeeeeeeeeeeeeeeedeeeeeeeeeeeeedddcddcddcddcdddeeeeeeeeedddcccdeedeedeedeeeeeeeddccddceddeeeeedeeeeeedeebbbaaacddeeedddccceeedcc555544999eedeedeeeeeeeeeeeeefeeeeeeeddddddeeeeeddccdccdddeedeeefeededddddddeedeeededdddeddeee"
-      },
-      "open": ["42983364b373"]
+      }
     },
     "inkwell": {
       "commit": "e4e3c2dd4bdf48fe16111f9d447568d6c4366a84",
@@ -805,14 +804,14 @@
       }
     },
     "oncall": {
-      "commit": "8adae6c836f2fabda29e8a091b052450410c8ca5",
-      "sourceRef": "v0.5.13",
+      "commit": "4d1fc62d4d2b8bf90008ac87bbaa626bc1a5494b",
+      "sourceRef": "v0.5.14",
       "sourceReason": "released listing version",
-      "tag": "v0.5.13",
+      "tag": "v0.5.14",
       "copy": {
         "CONTRACT.md": "c04517abc904f1e5",
-        "README.md": "872282ad16baf429",
-        "seed.json": "e91a0fe23123ca2a"
+        "README.md": "03d11757d735563f",
+        "seed.json": "0d887683acfe58be"
       },
       "brand": {
         "branding.primaryColor": "#1d2a35",
@@ -829,7 +828,8 @@
       "home": {
         "headline": "Everyone knows who's on call.",
         "signature": "feedddeeeffeffeffeffeffeffeffeffeffeffeffefeeffeffeffeffefffffefffffeffeffeffeffeffeffeffeffeffeeedccccccccccccccceedffeeeeeeeeedeeeffeffeffeffeeeebbbccccccbbbdddfeeffeedddcbccbeedeeefeeeeeffefeeeeeeeeeeeeeeeeefffdcbdb9ddcddddddcccdddeeeffeeed999999999dddeeeffeeccedcffeffeeedddcdcbecbabbeed99999aaaaeedfeeffeffeffeffeffeffeeeddccedc9aaffefeeffeffeeeeeeefeeffeffeffeffeffeffeffeffeffeffeeeeeeeffeeeeeeeffefeefeeffefeeeeeffeffeffeffe"
-      }
+      },
+      "open": ["42983364b373"]
     },
     "orbit": {
       "commit": "a5f471626aea1bfcb2c79f5dbee2250fdb38fd49",
