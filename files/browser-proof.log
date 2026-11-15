@@ -1,0 +1,91 @@
+{
+  "author": "Run Edit Run fleet",
+  "startedAt": "2026-11-15T16:28:19Z",
+  "head": "4a7cef36328b98da774deab81849d7aa9a3fc1fd",
+  "browser": "/usr/bin/chromium",
+  "assertionWidth": 1440,
+  "observations": [
+    {
+      "slug": "lamp",
+      "width": 1440,
+      "status": 200,
+      "version": "v1.11.18",
+      "screenshot": "browser/lamp-1440.png",
+      "assertions": "HTTP, rendered/listing version agreement, SEO/listing version agreement"
+    },
+    {
+      "slug": "spool",
+      "width": 1440,
+      "status": 200,
+      "version": "v0.7.12",
+      "screenshot": "browser/spool-1440.png",
+      "assertions": "HTTP, rendered/listing version agreement, SEO/listing version agreement"
+    },
+    {
+      "slug": "uptime",
+      "width": 1440,
+      "status": 200,
+      "version": "v0.5.12",
+      "screenshot": "browser/uptime-1440.png",
+      "assertions": "HTTP, rendered/listing version agreement, SEO/listing version agreement"
+    },
+    {
+      "slug": "oncall",
+      "width": 1440,
+      "status": 200,
+      "version": "v0.5.15",
+      "screenshot": "browser/oncall-1440.png",
+      "assertions": "HTTP, rendered/listing version agreement, SEO/listing version agreement"
+    },
+    {
+      "slug": "orbit",
+      "width": 1440,
+      "status": 200,
+      "version": "v0.4.10",
+      "screenshot": "browser/orbit-1440.png",
+      "assertions": "HTTP, rendered/listing version agreement, SEO/listing version agreement"
+    },
+    {
+      "slug": "lamp",
+      "width": 390,
+      "status": 200,
+      "version": "v1.11.18",
+      "screenshot": "browser/lamp-390.png",
+      "assertions": "visual proof only"
+    },
+    {
+      "slug": "spool",
+      "width": 390,
+      "status": 200,
+      "version": "v0.7.12",
+      "screenshot": "browser/spool-390.png",
+      "assertions": "visual proof only"
+    },
+    {
+      "slug": "uptime",
+      "width": 390,
+      "status": 200,
+      "version": "v0.5.12",
+      "screenshot": "browser/uptime-390.png",
+      "assertions": "visual proof only"
+    },
+    {
+      "slug": "oncall",
+      "width": 390,
+      "status": 200,
+      "version": "v0.5.15",
+      "screenshot": "browser/oncall-390.png",
+      "assertions": "visual proof only"
+    },
+    {
+      "slug": "orbit",
+      "width": 390,
+      "status": 200,
+      "version": "v0.4.10",
+      "screenshot": "browser/orbit-390.png",
+      "assertions": "visual proof only"
+    }
+  ],
+  "status": "passed",
+  "endedAt": "2026-11-15T16:28:26Z"
+}

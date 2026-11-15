@@ -1,0 +1,84 @@
+{
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "listing_changes": [
+    {
+      "slug": "lamp",
+      "changes": {
+        "version": [
+          "v1.11.17",
+          "v1.11.18"
+        ]
+      }
+    },
+    {
+      "slug": "oncall",
+      "changes": {
+        "version": [
+          "v0.5.14",
+          "v0.5.15"
+        ]
+      }
+    },
+    {
+      "slug": "orbit",
+      "changes": {
+        "version": [
+          "v0.4.9",
+          "v0.4.10"
+        ]
+      }
+    },
+    {
+      "slug": "spool",
+      "changes": {
+        "version": [
+          "v0.7.11",
+          "v0.7.12"
+        ]
+      }
+    },
+    {
+      "slug": "uptime",
+      "changes": {
+        "version": [
+          "v0.5.11",
+          "v0.5.12"
+        ]
+      }
+    }
+  ],
+  "counts_before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "counts_after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "state_slugs_changed": [
+    "happytohelp",
+    "lamp",
+    "oncall",
+    "orbit",
+    "spool",
+    "uptime"
+  ],
+  "excluded_absent": [
+    "beacon",
+    "relay",
+    "ferry",
+    "lily",
+    "brook",
+    "delta",
+    "barrow",
+    "linen"
+  ],
+  "clause_status_changes": [],
+  "credential_shaped_diff_findings": 0
+}

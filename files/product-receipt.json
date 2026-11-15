@@ -1,0 +1,33 @@
+{
+  "author": "Run Edit Run fleet",
+  "recordedAt": "2026-11-15T16:33:02Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-38",
+  "head": "4a7cef36328b98da774deab81849d7aa9a3fc1fd",
+  "pr": "https://github.com/just-every/home/pull/62",
+  "product_pushed": true,
+  "push_attempts": 1,
+  "tree_clean": true,
+  "ci": {
+    "id": 43735528330,
+    "conclusion": "success",
+    "head_sha": "4a7cef36328b98da774deab81849d7aa9a3fc1fd",
+    "html_url": "https://github.com/just-every/home/actions/runs/43735528330",
+    "status": "completed"
+  },
+  "counts_before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "counts_after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "clause_status_changes": [],
+  "candidate_status": "READY",
+  "landing": "lane-owned; not merged or deployed",
+  "blockers": [],
+  "evidence_publication": "separate report-only evidence ref; receipt supplied by entrypoint"
+}

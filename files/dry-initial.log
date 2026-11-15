@@ -1,0 +1,50 @@
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --only happytohelp,lamp,spool,uptime,oncall,orbit --out ../packet/dry-initial
+
+Reading 6 seed repositories...
+uptime: source=v0.5.11 commit=04016399e1e879e7be3b8e891baf02d975bb3901 (released listing version)
+happytohelp: source=v0.4.28 commit=41fb40246d2e69f928be397c48d952d147c39160 (released listing version)
+lamp: source=v1.11.17 commit=b5b5628a247ba2289aeb9af16cab04a998e823ce (released listing version)
+orbit: source=v0.4.9 commit=a5f471626aea1bfcb2c79f5dbee2250fdb38fd49 (released listing version)
+oncall: source=v0.5.14 commit=4d1fc62d4d2b8bf90008ac87bbaa626bc1a5494b (released listing version)
+spool: source=v0.7.11 commit=b9e7e575097e0dd0fc0662ce1ed507fa0d41f0d8 (released listing version)
+Reading 6 homepages...
+node:internal/errors:985
+  const err = new Error(message);
+              ^
+
+Error: Command failed: /opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node /home/agent/rer-consolidation/work/je-sync-38/home/scripts/seeds-sync/sources/capture-page.mjs /home/agent/rer-consolidation/work/je-sync-38/packet/dry-initial/captures/jobs.json /home/agent/rer-consolidation/work/je-sync-38/packet/dry-initial/captures
+file:///home/agent/rer-consolidation/work/je-sync-38/home/scripts/seeds-sync/sources/capture-page.mjs:42
+  throw new Error(
+        ^
+
+Error: Playwright not found: npm i playwright-core next to this script, or globally.
+    at loadPlaywright (file:///home/agent/rer-consolidation/work/je-sync-38/home/scripts/seeds-sync/sources/capture-page.mjs:42:9)
+    at async file:///home/agent/rer-consolidation/work/je-sync-38/home/scripts/seeds-sync/sources/capture-page.mjs:232:22
+
+Node.js v24.19.0
+
+    at genericNodeError (node:internal/errors:985:15)
+    at wrappedFn (node:internal/errors:539:14)
+    at ChildProcess.exithandler (node:child_process:417:12)
+    at ChildProcess.emit (node:events:509:28)
+    at maybeClose (node:internal/child_process:1141:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:306:5) {
+  code: 1,
+  killed: false,
+  signal: null,
+  cmd: '/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node /home/agent/rer-consolidation/work/je-sync-38/home/scripts/seeds-sync/sources/capture-page.mjs /home/agent/rer-consolidation/work/je-sync-38/packet/dry-initial/captures/jobs.json /home/agent/rer-consolidation/work/je-sync-38/packet/dry-initial/captures',
+  stdout: '',
+  stderr: 'file:///home/agent/rer-consolidation/work/je-sync-38/home/scripts/seeds-sync/sources/capture-page.mjs:42\n' +
+    '  throw new Error(\n' +
+    '        ^\n' +
+    '\n' +
+    'Error: Playwright not found: npm i playwright-core next to this script, or globally.\n' +
+    '    at loadPlaywright (file:///home/agent/rer-consolidation/work/je-sync-38/home/scripts/seeds-sync/sources/capture-page.mjs:42:9)\n' +
+    '    at async file:///home/agent/rer-consolidation/work/je-sync-38/home/scripts/seeds-sync/sources/capture-page.mjs:232:22\n' +
+    '\n' +
+    'Node.js v24.19.0\n'
+}
+
+Node.js v24.19.0

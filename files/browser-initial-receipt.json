@@ -1,0 +1,9 @@
+{
+  "author": "Run Edit Run fleet",
+  "startedAt": "2026-11-15T16:27:27Z",
+  "head": "4a7cef36328b98da774deab81849d7aa9a3fc1fd",
+  "browser": "/usr/bin/chromium",
+  "assertionWidth": 1440,
+  "observations": [],
+  "endedAt": "2026-11-15T16:27:57Z"
+}

@@ -1,0 +1,44 @@
+{
+  "author": "Run Edit Run fleet",
+  "recordedAt": "2026-11-15T16:33:02Z",
+  "head": "4a7cef36328b98da774deab81849d7aa9a3fc1fd",
+  "checks": {
+    "npm_ci": "passed",
+    "npm_ci_locked": "passed",
+    "type_check": "passed",
+    "lint": "passed",
+    "production_build": "passed",
+    "listings_generate": "passed",
+    "listings_check": "passed",
+    "final_dry_sync": "0 of 6 changed",
+    "diff_check": "passed",
+    "scope_and_credential_diff_review": "passed"
+  },
+  "clause_status_changes": [],
+  "counts_before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "counts_after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "full_local_suite": "not run; branch CI owns it",
+  "publication_scan": "lane-owned, not available in cloud",
+  "sync_builtin_contents_requests": 180,
+  "browser": "passed: five rendered/listing/SEO agreements at 1440, visual proof at 1440 and 390",
+  "browser_artifacts": 10,
+  "process_cleanup": "browsers closed; recorded next-server, workerd and esbuild terminated; subreaper exited",
+  "candidate_author_committer": "Run Edit Run fleet <fleet@runeditrun.com>",
+  "candidate_trailers": "absent",
+  "exact_sha_verify": {
+    "id": 43735528330,
+    "conclusion": "success",
+    "head_sha": "4a7cef36328b98da774deab81849d7aa9a3fc1fd",
+    "html_url": "https://github.com/just-every/home/actions/runs/43735528330",
+    "status": "completed"
+  },
+  "explicit_gh_calls_total": 9
+}

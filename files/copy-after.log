@@ -1,0 +1,30 @@
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --only happytohelp,lamp,spool,uptime,oncall,orbit --copy-only --apply --out ../packet/copy-after
+
+Reading 6 seed repositories...
+uptime: source=v0.5.12 commit=2045014b15f76380b5d7493c0c42b2caa430f88b (released listing version)
+happytohelp: source=v0.4.28 commit=41fb40246d2e69f928be397c48d952d147c39160 (released listing version)
+lamp: source=v1.11.18 commit=f495b89afd9f6832e4d4807018d91fa4c4670147 (released listing version)
+orbit: source=v0.4.10 commit=22ca38c0e0bb5784440df021e8a5eb5b41a81de8 (released listing version)
+oncall: source=v0.5.15 commit=44ca722b6a5dde173b5253df7b5e0eab762df459 (released listing version)
+spool: source=v0.7.12 commit=cc086904fd942175d18c60082b10c459c343dc78 (released listing version)
+
+Applied: 5 of 6 seeds changed.
+
+Uptime
+  copy      CONTRACT.md, README.md, seed.json changed since the last sync [reported]
+
+Lamp
+  copy      seed.json changed since the last sync [reported]
+
+Orbit
+  copy      CONTRACT.md, seed.json changed since the last sync [reported]
+
+Oncall
+  copy      README.md, seed.json changed since the last sync [reported]
+
+Spool
+  copy      seed.json changed since the last sync [reported]
+
+Report: /home/agent/rer-consolidation/work/je-sync-38/packet/copy-after/report.md

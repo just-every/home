@@ -1,0 +1,49 @@
+{
+  "author": "Run Edit Run fleet",
+  "at": "2026-11-15T16:30:20Z",
+  "recorded_processes": [
+    {
+      "pid": 5748,
+      "parent": 5703,
+      "command": "bash"
+    },
+    {
+      "pid": 5749,
+      "parent": 5748,
+      "command": "python3"
+    },
+    {
+      "pid": 5750,
+      "parent": 5749,
+      "command": "next-server (v1"
+    },
+    {
+      "pid": 5985,
+      "parent": 5750,
+      "command": "esbuild"
+    },
+    {
+      "pid": 5990,
+      "parent": 5750,
+      "command": "workerd"
+    }
+  ],
+  "sent_sigterm": [
+    {
+      "pid": 5990,
+      "parent": 5750,
+      "command": "workerd"
+    },
+    {
+      "pid": 5985,
+      "parent": 5750,
+      "command": "esbuild"
+    },
+    {
+      "pid": 5750,
+      "parent": 5749,
+      "command": "next-server (v1"
+    }
+  ],
+  "browser": "closed in finally after every context"
+}
