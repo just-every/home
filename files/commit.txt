@@ -1,0 +1,12 @@
+commit 55965df662b1ae184d2493e31acf633874a03ca4
+Author:     Run Edit Run fleet <fleet@runeditrun.com>
+AuthorDate: Sun Nov 15 23:49:49 2026 +0000
+Commit:     Run Edit Run fleet <fleet@runeditrun.com>
+CommitDate: Sun Nov 15 23:49:49 2026 +0000
+
+    chore: sync Lamp v1.11.19 release listing
+
+ public/data/listings.json     |  4 ++--
+ scripts/seeds-sync/state.json | 13 +++++++------
+ src/data/seed-pages.ts        |  2 +-
+ 3 files changed, 10 insertions(+), 9 deletions(-)

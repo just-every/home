@@ -1,0 +1,53 @@
+{
+  "startedAt": "2026-11-15T23:43:54.861Z",
+  "mode": "apply",
+  "copyOnly": false,
+  "captureHost": null,
+  "load": 1.41,
+  "statePath": "scripts/seeds-sync/state.json",
+  "baselineDate": null,
+  "seeds": [
+    {
+      "slug": "lamp",
+      "name": "Lamp",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v1.11.18",
+        "commit": "f495b89afd9f6832e4d4807018d91fa4c4670147",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "f9cb0b8a5bd46d69",
+          "README.md": "1a20f137749ab26b",
+          "seed.json": "b6e8bdb89b3124d6"
+        }
+      },
+      "findings": [
+        {
+          "type": "version",
+          "summary": "newer tag v1.11.19 (page shows v1.11.18)",
+          "status": "applied",
+          "manual": null,
+          "copy": null,
+          "details": null,
+          "repeat": false,
+          "images": null
+        }
+      ]
+    }
+  ],
+  "shareImage": [],
+  "apply": {
+    "applied": [
+      {
+        "slug": "lamp",
+        "summary": "newer tag v1.11.19 (page shows v1.11.18)"
+      }
+    ],
+    "written": [
+      "src/data/seed-pages.ts"
+    ],
+    "favicons": false
+  }
+}

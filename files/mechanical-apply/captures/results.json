@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "lamp",
+    "url": "https://run-lamp.com",
+    "finalUrl": "https://run-lamp.com/",
+    "ok": true,
+    "status": 200,
+    "removed": [],
+    "title": "Lamp — When something breaks, turn the light on.",
+    "h1": "When something breaks, turn the light on.",
+    "headline": "When something breaks, turn the light on.",
+    "alternativeTo": "Open source alternative to Atlassian Statuspage, Instatus and Better Stack",
+    "theme": {
+      "page": "#f8f6f0",
+      "text": "#182d24",
+      "action": "#182d24",
+      "themeColor": null
+    }
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-40",
+  "head": "55965df662b1ae184d2493e31acf633874a03ca4",
+  "tree": "1698dcbec7f4565c3d0862d6ca5b55e40560a254",
+  "base": "58b6a16f340a07049c9da27998bf808e7a43c746",
+  "at": "2026-11-15T23:49:53Z",
+  "identityAndTrailers": "pass (all candidate commits including side parents)",
+  "publicationScan": "retained by fleet Mac; cloud does diff hygiene only",
+  "remoteRef": "refs/heads/cloud/je-sync-40",
+  "remoteHead": "55965df662b1ae184d2493e31acf633874a03ca4",
+  "checkoutClean": true,
+  "verifiedAt": "2026-11-15T23:51:48Z",
+  "pushStatus": "PUSHED",
+  "readyStatus": "READY",
+  "verify": {
+    "at": "2026-11-15T23:55:45Z",
+    "epoch": 1794786945.5163343,
+    "id": 43776915532,
+    "conclusion": "success",
+    "head_sha": "55965df662b1ae184d2493e31acf633874a03ca4",
+    "html_url": "https://github.com/just-every/home/actions/runs/43776915532",
+    "status": "completed"
+  },
+  "finalizedAt": "2026-11-15T23:56:55Z"
+}

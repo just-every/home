@@ -1,0 +1,8 @@
+{
+  "pid": 18972,
+  "startedAt": "2026-11-15T23:47:01Z",
+  "command": "node node_modules/next/dist/bin/next start --hostname 127.0.0.1 --port 3324",
+  "browserExit": 1,
+  "stoppedAt": "2026-11-15T23:47:34Z",
+  "serverExit": 143
+}

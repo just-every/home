@@ -1,0 +1,10 @@
+{
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-40",
+  "head": "55965df662b1ae184d2493e31acf633874a03ca4",
+  "tree": "1698dcbec7f4565c3d0862d6ca5b55e40560a254",
+  "base": "58b6a16f340a07049c9da27998bf808e7a43c746",
+  "at": "2026-11-15T23:49:53Z",
+  "identityAndTrailers": "pass (all candidate commits including side parents)",
+  "publicationScan": "retained by fleet Mac; cloud does diff hygiene only"
+}

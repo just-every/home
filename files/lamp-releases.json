@@ -1,0 +1,248 @@
+[
+  {
+    "id": 446446554,
+    "tag_name": "v1.11.19",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-15T23:27:59Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.19",
+    "assets": [
+      "01-public-status-active-desktop.png",
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 446052213,
+    "tag_name": "v1.11.18",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-15T12:40:20Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.18",
+    "assets": [
+      "01-public-status-active-desktop.png",
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 445918048,
+    "tag_name": "v1.11.17",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-15T08:42:04Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.17",
+    "assets": [
+      "01-public-status-active-desktop.png",
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 445557067,
+    "tag_name": "v1.11.16",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-14T20:04:54Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.16",
+    "assets": [
+      "01-public-status-active-desktop.png",
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 444800991,
+    "tag_name": "v1.11.15",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-13T22:24:48Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.15",
+    "assets": [
+      "01-public-status-active-desktop.png",
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 443848569,
+    "tag_name": "v1.11.14",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-13T05:23:23Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.14",
+    "assets": [
+      "01-public-status-active-desktop.png",
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 443216776,
+    "tag_name": "v1.11.13",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-12T16:30:00Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.13",
+    "assets": [
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 442120959,
+    "tag_name": "v1.11.12",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-11T19:26:45Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.12",
+    "assets": [
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 441883245,
+    "tag_name": "v1.11.11",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-11T15:38:16Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.11",
+    "assets": [
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 441210777,
+    "tag_name": "v1.11.10",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-11T03:40:31Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.10",
+    "assets": [
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 440797977,
+    "tag_name": "v1.11.9",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-10T19:13:59Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.9",
+    "assets": [
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 440672832,
+    "tag_name": "v1.11.8",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-10T17:20:39Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.8",
+    "assets": [
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 440520907,
+    "tag_name": "v1.11.7",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-10T15:12:53Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.7",
+    "assets": [
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 440336751,
+    "tag_name": "v1.11.6",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-10T12:31:05Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.6",
+    "assets": [
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 439665431,
+    "tag_name": "v1.11.5",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-09T21:27:42Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.5",
+    "assets": [
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 438097276,
+    "tag_name": "v1.11.4",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-08T07:27:02Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.4",
+    "assets": [
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 433294690,
+    "tag_name": "v1.11.3",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-03T22:39:03Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.3",
+    "assets": [
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 432946357,
+    "tag_name": "v1.11.2",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-03T16:28:11Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.2",
+    "assets": [
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 432568153,
+    "tag_name": "v1.11.1",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-03T10:47:13Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.1",
+    "assets": [
+      "rer-release.dsse.json"
+    ]
+  },
+  {
+    "id": 419114144,
+    "tag_name": "v1.10.0",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-10-21T03:27:36Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.10.0",
+    "assets": [
+      "rer-release.dsse.json"
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "command": "npm run type-check",
+    "exit": 0,
+    "startedAt": "2026-11-15T23:45:08Z",
+    "endedAt": "2026-11-15T23:45:23Z",
+    "log": "type-check.log"
+  },
+  {
+    "command": "npm run lint",
+    "exit": 0,
+    "startedAt": "2026-11-15T23:45:23Z",
+    "endedAt": "2026-11-15T23:45:29Z",
+    "log": "lint.log"
+  },
+  {
+    "command": "npm run build",
+    "exit": 0,
+    "startedAt": "2026-11-15T23:45:29Z",
+    "endedAt": "2026-11-15T23:46:17Z",
+    "log": "build.log"
+  }
+]

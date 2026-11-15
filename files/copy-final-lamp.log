@@ -1,0 +1,13 @@
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --copy-only --apply --only lamp --out /home/agent/rer-consolidation/work/je-sync-40/packet/copy-final-lamp
+
+Reading 1 seed repositories...
+lamp: source=v1.11.19 commit=761f3d186e8fa73ea9aa8b61bcf9ebe8013384f6 (released listing version)
+
+Applied: 1 of 1 seeds changed.
+
+Lamp
+  copy      seed.json changed since the last sync [reported]
+
+Report: /home/agent/rer-consolidation/work/je-sync-40/packet/copy-final-lamp/report.md

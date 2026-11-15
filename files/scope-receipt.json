@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-15T23:49:10Z",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "diffCheck": 0,
+  "credentialShapeScan": "pass (added/current diff, no values logged)",
+  "beforeCounts": {
+    "all": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "afterCounts": {
+    "all": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "listingsChanges": [
+    {
+      "slug": "lamp",
+      "fields": {
+        "version": {
+          "before": "v1.11.18",
+          "after": "v1.11.19"
+        }
+      }
+    }
+  ],
+  "clauseStatusChanges": []
+}

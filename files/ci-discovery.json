@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-15T23:50:44Z",
+  "epoch": 1794786644.0972168,
+  "exactSha": "55965df662b1ae184d2493e31acf633874a03ca4",
+  "runs": [
+    {
+      "id": 43776915532,
+      "name": "Verify branch",
+      "event": "push",
+      "status": "in_progress",
+      "conclusion": null,
+      "head_sha": "55965df662b1ae184d2493e31acf633874a03ca4",
+      "head_branch": "cloud/je-sync-40",
+      "html_url": "https://github.com/just-every/home/actions/runs/43776915532",
+      "created_at": "2026-11-15T23:49:57Z",
+      "updated_at": "2026-11-15T23:50:00Z"
+    }
+  ]
+}

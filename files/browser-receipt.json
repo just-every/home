@@ -1,0 +1,30 @@
+[
+  {
+    "at": "2026-11-15T23:48:46Z",
+    "url": "http://127.0.0.1:3324/lamp",
+    "width": 1440,
+    "http": 200,
+    "title": "Lamp: free, open-source alternative to Atlassian Statuspage",
+    "version": "v1.11.19",
+    "expectedVersion": "v1.11.19",
+    "assertion": "rendered version matches generated listing",
+    "image": "lamp-1440.png",
+    "scrollX": 0,
+    "scrollY": 3308,
+    "documentWidth": 1440
+  },
+  {
+    "at": "2026-11-15T23:48:48Z",
+    "url": "http://127.0.0.1:3324/lamp",
+    "width": 390,
+    "http": 200,
+    "title": "Lamp: free, open-source alternative to Atlassian Statuspage",
+    "version": "v1.11.19",
+    "expectedVersion": "v1.11.19",
+    "assertion": "capture only",
+    "image": "lamp-390.png",
+    "scrollX": 0,
+    "scrollY": 3508,
+    "documentWidth": 390
+  }
+]
