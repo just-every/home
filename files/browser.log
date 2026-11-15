@@ -1,0 +1,16 @@
+[
+  {
+    "width": 1440,
+    "status": 200,
+    "url": "http://127.0.0.1:3146/happytohelp",
+    "assertion": "Rendered release version agrees with the generated public listing",
+    "version": "v0.4.28",
+    "screenshot": "happytohelp-1440.png"
+  },
+  {
+    "width": 390,
+    "status": 200,
+    "url": "http://127.0.0.1:3146/happytohelp",
+    "screenshot": "happytohelp-390.png"
+  }
+]

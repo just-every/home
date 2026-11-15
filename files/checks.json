@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-11-15T05:02:33Z",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "diff_check": "passed",
+  "credential_diff_check": "passed",
+  "full_publication_scan": "Mac lane required; unavailable in cloud",
+  "type_check": "passed",
+  "lint": "passed",
+  "build": "passed"
+}

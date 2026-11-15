@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-11-15T05:09:01Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-36",
+  "head": "00caa60e44e6989fd690f5613986eceb130af2f2",
+  "base": "1800026d12e254459c00c62ce46e32f2b5b02cb0",
+  "pr": "https://github.com/just-every/home/pull/60",
+  "product_push": "confirmed",
+  "first_real_commit_pushed": true,
+  "rebased_before_first_publication": true,
+  "published_history_rewritten": false,
+  "source_transport": "gh api only for other repositories; task-local adapter, committed sync implementation unchanged",
+  "source_api_calls": 67,
+  "manual_calls_so_far": {
+    "release_lists": 6,
+    "pull_request_create": 1,
+    "exact_sha_run_discovery": 1
+  },
+  "resolved_setup_issues": [
+    "Playwright was initially absent; installed playwright@1.63.0 globally and reran sync successfully.",
+    "Supplied hook symlinks initially resolved Husky h beside the symlink. A Git-metadata-only h trampoline now re-enters each original hook path, preserving repository hooks and co-author cleanup.",
+    "The first browser navigation waited for networkidle and timed out because background connections stayed active. The completed proof uses DOMContentLoaded and waits for fonts; no requests or application paths were mocked."
+  ],
+  "local_runtime_limitations": [
+    "Next start lacks Cloudflare caches and local page_views migration for background analytics; the rendered product page and listing feed both returned HTTP 200. This round does not claim hosted analytics qualification."
+  ],
+  "processes": "Browser closed; recorded Next server PID terminated; cloud_run server/subreaper session completed with exit 143 after SIGTERM.",
+  "manual_calls_final": {
+    "release_lists": 6,
+    "pull_request_create": 1,
+    "exact_sha_run_discovery": 1,
+    "exact_sha_run_poll": 1,
+    "total": 9
+  },
+  "exact_sha_verify": {
+    "run_id": 43679421386,
+    "conclusion": "success",
+    "head_sha": "00caa60e44e6989fd690f5613986eceb130af2f2",
+    "html_url": "https://github.com/just-every/home/actions/runs/43679421386",
+    "status": "completed"
+  }
+}

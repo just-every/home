@@ -1,0 +1,32 @@
+{
+  "before_counts": {
+    "coming-soon": 14,
+    "released": 35
+  },
+  "after_counts": {
+    "coming-soon": 14,
+    "released": 35
+  },
+  "total_before": 49,
+  "total_after": 49,
+  "changes": [
+    {
+      "slug": "happytohelp",
+      "field": "version",
+      "before": "v0.4.26",
+      "after": "v0.4.28"
+    }
+  ],
+  "excluded_absent": [
+    "beacon",
+    "relay",
+    "ferry",
+    "lily",
+    "brook",
+    "delta",
+    "barrow",
+    "linen"
+  ],
+  "status_promotions": 0,
+  "contract_clause_changes": 0
+}

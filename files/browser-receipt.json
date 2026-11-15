@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-11-15T05:05:50Z",
+  "candidate": "00caa60e44e6989fd690f5613986eceb130af2f2",
+  "assertion_width": 1440,
+  "observations": [
+    {
+      "width": 1440,
+      "status": 200,
+      "url": "http://127.0.0.1:3146/happytohelp",
+      "assertion": "Rendered release version agrees with the generated public listing",
+      "version": "v0.4.28",
+      "screenshot": "happytohelp-1440.png"
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "url": "http://127.0.0.1:3146/happytohelp",
+      "screenshot": "happytohelp-390.png"
+    }
+  ],
+  "browser_closed": true
+}
