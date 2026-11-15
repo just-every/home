@@ -1,0 +1,32 @@
+{
+  "oncall": {
+    "old_tag": "v0.5.15",
+    "new_tag": "v0.5.16",
+    "before": {
+      "done": 26,
+      "partial": 41,
+      "missing": 34
+    },
+    "after": {
+      "done": 26,
+      "partial": 41,
+      "missing": 34
+    },
+    "clause_status_changes": []
+  },
+  "uptime": {
+    "old_tag": "v0.5.12",
+    "new_tag": "v0.5.13",
+    "before": {
+      "done": 37,
+      "partial": 58,
+      "missing": 20
+    },
+    "after": {
+      "done": 37,
+      "partial": 58,
+      "missing": 20
+    },
+    "clause_status_changes": []
+  }
+}

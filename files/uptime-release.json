@@ -1,0 +1,21 @@
+{
+  "id": 446367442,
+  "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.13",
+  "tag_name": "v0.5.13",
+  "target_commitish": "main",
+  "draft": false,
+  "prerelease": false,
+  "published_at": "2026-11-15T21:06:58Z",
+  "assets": [
+    {
+      "name": "rer-release.dsse.json",
+      "size": 3381,
+      "browser_download_url": "https://github.com/just-every/run-uptime/releases/download/v0.5.13/rer-release.dsse.json"
+    },
+    {
+      "name": "uptime-0.4.0-monitor-1440.png",
+      "size": 273042,
+      "browser_download_url": "https://github.com/just-every/run-uptime/releases/download/v0.5.13/uptime-0.4.0-monitor-1440.png"
+    }
+  ]
+}

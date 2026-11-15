@@ -1,0 +1,21 @@
+started server PID=1291
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.goto: Timeout 30000ms exceeded.
+Call log:
+[2m  - navigating to "http://127.0.0.1:34747/uptime", waiting until "networkidle"[22m
+
+    at /tmp/je-gate-47-browser.mjs:16:30 {
+  name: 'TimeoutError'
+}
+
+Node.js v24.19.0
+stopped own server PID=1291
+Traceback (most recent call last):
+  File "/tmp/je-gate-47-browser-driver.py", line 15, in <module>
+    subprocess.run(['node','/tmp/je-gate-47-browser.mjs',label],check=True,timeout=180)
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['node', '/tmp/je-gate-47-browser.mjs', 'head']' returned non-zero exit status 1.

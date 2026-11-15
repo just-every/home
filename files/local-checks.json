@@ -1,0 +1,70 @@
+[
+  {
+    "command": [
+      "npm",
+      "run",
+      "listings",
+      "--",
+      "--check"
+    ],
+    "start": "2026-11-15T22:20:02Z",
+    "end": "2026-11-15T22:20:03Z",
+    "exit": 0,
+    "log": "check-1.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "listings"
+    ],
+    "start": "2026-11-15T22:20:03Z",
+    "end": "2026-11-15T22:20:03Z",
+    "exit": 0,
+    "log": "check-2.log"
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--exit-code"
+    ],
+    "start": "2026-11-15T22:20:03Z",
+    "end": "2026-11-15T22:20:03Z",
+    "exit": 0,
+    "log": "check-3.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "type-check"
+    ],
+    "start": "2026-11-15T22:20:03Z",
+    "end": "2026-11-15T22:20:09Z",
+    "exit": 0,
+    "log": "check-4.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "lint"
+    ],
+    "start": "2026-11-15T22:20:09Z",
+    "end": "2026-11-15T22:20:13Z",
+    "exit": 0,
+    "log": "check-5.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "start": "2026-11-15T22:20:13Z",
+    "end": "2026-11-15T22:20:53Z",
+    "exit": 0,
+    "log": "check-6.log"
+  }
+]

@@ -1,0 +1,11 @@
+# je-gate-47 independent gate plan
+
+Author: Run Edit Run fleet. Started: 2026-11-15T22:22:41Z.
+
+1. Establish fleet Git identity and bundle-only Git authentication. Read launcher and Home instructions. Keep a fresh shallow Home clone; use read-only gh api for other repositories. No product fixes, product commits, PR writes, merges, dispatches, provider calls or deployment.
+2. Bind PR #63 head to 0656778f51b9191393e035773150eaf0f218293e and its main base to 2edf0e10aa92711884a2cdbdcf66d383233870c9. Preserve main for comparison. Inspect all candidate commits, trailers, complete diff and credential-shaped additions.
+3. Independently resolve the two annotated release tags with Git. Read each published Release once, checking draft/prerelease and envelope asset presence only. Read old/new CONTRACT.md, README.md and seed.json through gh api in one batched GraphQL request; compare source hashes, statuses and JE claims. Explain every state open marker through sync implementation, without accepting builder receipts as evidence.
+4. Run npm ci; listings check and regeneration with no diff; type-check; lint; production build. Heavy commands run sequentially in this dedicated VM through cloud_run. No full suite or sync API crawl beyond the frozen rubric. Home has no documented source-lock, contract-view or migration-ledger generator; check applicability explicitly.
+5. Probe real built /uptime and /oncall pages, assert the changed behavior at 1440, and record visual proof at 1440 and 390 once per candidate screen. Compare baseline screens using the same production build path, then return to candidate. Stop only recorded server/browser PIDs.
+6. Read exact-head Verify once via REST, within ten calls. Never dispatch or rerun CI. Tier any actual findings under the frozen rubric; do not turn missing builder receipts or pre-existing partial evidence into blockers.
+7. Write REPORT.md, actual receipts, FOLLOW-UPS.md and LANDING-NOTES.md outside the clone, audit all selected evidence for public publication, publish only evidence/je-gate-47 with cloud_evidence.py, verify transfer and product checkout unchanged, delete clone/node_modules, and emit the exact evidence and lane POST lines followed by one gate verdict.

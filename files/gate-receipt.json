@@ -1,0 +1,317 @@
+{
+  "timestamp": "2026-11-15T22:28:02Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-39",
+  "head": "0656778f51b9191393e035773150eaf0f218293e",
+  "baseline": "2edf0e10aa92711884a2cdbdcf66d383233870c9",
+  "clean": true,
+  "product_commits_created": 0,
+  "product_pushes": 0,
+  "product_modifications": 0,
+  "npm_ci_exit": 0,
+  "mechanical": [
+    {
+      "command": [
+        "npm",
+        "run",
+        "listings",
+        "--",
+        "--check"
+      ],
+      "start": "2026-11-15T22:20:02Z",
+      "end": "2026-11-15T22:20:03Z",
+      "exit": 0,
+      "log": "check-1.log"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "listings"
+      ],
+      "start": "2026-11-15T22:20:03Z",
+      "end": "2026-11-15T22:20:03Z",
+      "exit": 0,
+      "log": "check-2.log"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--exit-code"
+      ],
+      "start": "2026-11-15T22:20:03Z",
+      "end": "2026-11-15T22:20:03Z",
+      "exit": 0,
+      "log": "check-3.log"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "type-check"
+      ],
+      "start": "2026-11-15T22:20:03Z",
+      "end": "2026-11-15T22:20:09Z",
+      "exit": 0,
+      "log": "check-4.log"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "start": "2026-11-15T22:20:09Z",
+      "end": "2026-11-15T22:20:13Z",
+      "exit": 0,
+      "log": "check-5.log"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "start": "2026-11-15T22:20:13Z",
+      "end": "2026-11-15T22:20:53Z",
+      "exit": 0,
+      "log": "check-6.log"
+    }
+  ],
+  "candidate_browser": [
+    {
+      "timestamp": "2026-11-15T22:22:55Z",
+      "label": "head",
+      "slug": "uptime",
+      "width": 1440,
+      "status": 200,
+      "version": "v0.5.13",
+      "versionCount": 1,
+      "layout": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "bodyWidth": 1440,
+        "headings": [
+          "Uptime"
+        ]
+      },
+      "errors": [],
+      "failed": [],
+      "screenshot": "head-uptime-1440.png",
+      "asserted": true
+    },
+    {
+      "timestamp": "2026-11-15T22:22:57Z",
+      "label": "head",
+      "slug": "oncall",
+      "width": 1440,
+      "status": 200,
+      "version": "v0.5.16",
+      "versionCount": 1,
+      "layout": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "bodyWidth": 1440,
+        "headings": [
+          "Oncall"
+        ]
+      },
+      "errors": [],
+      "failed": [
+        {
+          "url": "http://127.0.0.1:34747/api/events",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://analytics.twitter.com/i/adsctp",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:34747/api/tokens",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "screenshot": "head-oncall-1440.png",
+      "asserted": true
+    },
+    {
+      "timestamp": "2026-11-15T22:22:58Z",
+      "label": "head",
+      "slug": "uptime",
+      "width": 390,
+      "status": 200,
+      "version": "v0.5.13",
+      "versionCount": 1,
+      "layout": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "bodyWidth": 390,
+        "headings": [
+          "Uptime"
+        ]
+      },
+      "errors": [],
+      "failed": [],
+      "screenshot": "head-uptime-390.png",
+      "asserted": false
+    },
+    {
+      "timestamp": "2026-11-15T22:22:58Z",
+      "label": "head",
+      "slug": "oncall",
+      "width": 390,
+      "status": 200,
+      "version": "v0.5.16",
+      "versionCount": 1,
+      "layout": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "bodyWidth": 390,
+        "headings": [
+          "Oncall"
+        ]
+      },
+      "errors": [],
+      "failed": [
+        {
+          "url": "http://127.0.0.1:34747/api/tokens",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:34747/api/events",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://static.ads-twitter.com/uwt.js",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "screenshot": "head-oncall-390.png",
+      "asserted": false
+    }
+  ],
+  "baseline_browser": [
+    {
+      "timestamp": "2026-11-15T22:24:04Z",
+      "label": "baseline",
+      "slug": "uptime",
+      "width": 1440,
+      "status": 200,
+      "version": "v0.5.12",
+      "versionCount": 1,
+      "layout": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "bodyWidth": 1440,
+        "headings": [
+          "Uptime"
+        ]
+      },
+      "errors": [],
+      "failed": [],
+      "screenshot": "baseline-uptime-1440.png",
+      "asserted": true
+    },
+    {
+      "timestamp": "2026-11-15T22:24:05Z",
+      "label": "baseline",
+      "slug": "oncall",
+      "width": 1440,
+      "status": 200,
+      "version": "v0.5.15",
+      "versionCount": 1,
+      "layout": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "bodyWidth": 1440,
+        "headings": [
+          "Oncall"
+        ]
+      },
+      "errors": [],
+      "failed": [
+        {
+          "url": "http://127.0.0.1:34747/api/tokens",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:34747/api/events",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "screenshot": "baseline-oncall-1440.png",
+      "asserted": true
+    },
+    {
+      "timestamp": "2026-11-15T22:24:06Z",
+      "label": "baseline",
+      "slug": "uptime",
+      "width": 390,
+      "status": 200,
+      "version": "v0.5.12",
+      "versionCount": 1,
+      "layout": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "bodyWidth": 390,
+        "headings": [
+          "Uptime"
+        ]
+      },
+      "errors": [],
+      "failed": [],
+      "screenshot": "baseline-uptime-390.png",
+      "asserted": false
+    },
+    {
+      "timestamp": "2026-11-15T22:24:07Z",
+      "label": "baseline",
+      "slug": "oncall",
+      "width": 390,
+      "status": 200,
+      "version": "v0.5.15",
+      "versionCount": 1,
+      "layout": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "bodyWidth": 390,
+        "headings": [
+          "Oncall"
+        ]
+      },
+      "errors": [],
+      "failed": [
+        {
+          "url": "http://127.0.0.1:34747/api/tokens",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:34747/api/events",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://analytics.twitter.com/1/i/adsct",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "https://t.co/1/i/adsct",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "screenshot": "baseline-oncall-390.png",
+      "asserted": false
+    }
+  ],
+  "rubric": {
+    "R1": "MET",
+    "R2": "MET",
+    "R3": "MET",
+    "R4": "MET",
+    "R5": "MET"
+  },
+  "blocking": 0,
+  "new_c": 0,
+  "out_of_scope_d": 1,
+  "verdict": "GATE PASS"
+}

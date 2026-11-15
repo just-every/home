@@ -1,0 +1,112 @@
+[
+  {
+    "timestamp": "2026-11-15T22:22:55Z",
+    "label": "head",
+    "slug": "uptime",
+    "width": 1440,
+    "status": 200,
+    "version": "v0.5.13",
+    "versionCount": 1,
+    "layout": {
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "bodyWidth": 1440,
+      "headings": [
+        "Uptime"
+      ]
+    },
+    "errors": [],
+    "failed": [],
+    "screenshot": "head-uptime-1440.png",
+    "asserted": true
+  },
+  {
+    "timestamp": "2026-11-15T22:22:57Z",
+    "label": "head",
+    "slug": "oncall",
+    "width": 1440,
+    "status": 200,
+    "version": "v0.5.16",
+    "versionCount": 1,
+    "layout": {
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "bodyWidth": 1440,
+      "headings": [
+        "Oncall"
+      ]
+    },
+    "errors": [],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:34747/api/events",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://analytics.twitter.com/i/adsctp",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:34747/api/tokens",
+        "error": "net::ERR_ABORTED"
+      }
+    ],
+    "screenshot": "head-oncall-1440.png",
+    "asserted": true
+  },
+  {
+    "timestamp": "2026-11-15T22:22:58Z",
+    "label": "head",
+    "slug": "uptime",
+    "width": 390,
+    "status": 200,
+    "version": "v0.5.13",
+    "versionCount": 1,
+    "layout": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "bodyWidth": 390,
+      "headings": [
+        "Uptime"
+      ]
+    },
+    "errors": [],
+    "failed": [],
+    "screenshot": "head-uptime-390.png",
+    "asserted": false
+  },
+  {
+    "timestamp": "2026-11-15T22:22:58Z",
+    "label": "head",
+    "slug": "oncall",
+    "width": 390,
+    "status": 200,
+    "version": "v0.5.16",
+    "versionCount": 1,
+    "layout": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "bodyWidth": 390,
+      "headings": [
+        "Oncall"
+      ]
+    },
+    "errors": [],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:34747/api/tokens",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:34747/api/events",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://static.ads-twitter.com/uwt.js",
+        "error": "net::ERR_ABORTED"
+      }
+    ],
+    "screenshot": "head-oncall-390.png",
+    "asserted": false
+  }
+]

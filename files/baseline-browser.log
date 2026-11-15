@@ -1,0 +1,114 @@
+started server PID=1931
+[
+  {
+    "timestamp": "2026-11-15T22:24:04Z",
+    "label": "baseline",
+    "slug": "uptime",
+    "width": 1440,
+    "status": 200,
+    "version": "v0.5.12",
+    "versionCount": 1,
+    "layout": {
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "bodyWidth": 1440,
+      "headings": [
+        "Uptime"
+      ]
+    },
+    "errors": [],
+    "failed": [],
+    "screenshot": "baseline-uptime-1440.png",
+    "asserted": true
+  },
+  {
+    "timestamp": "2026-11-15T22:24:05Z",
+    "label": "baseline",
+    "slug": "oncall",
+    "width": 1440,
+    "status": 200,
+    "version": "v0.5.15",
+    "versionCount": 1,
+    "layout": {
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "bodyWidth": 1440,
+      "headings": [
+        "Oncall"
+      ]
+    },
+    "errors": [],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:34747/api/tokens",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:34747/api/events",
+        "error": "net::ERR_ABORTED"
+      }
+    ],
+    "screenshot": "baseline-oncall-1440.png",
+    "asserted": true
+  },
+  {
+    "timestamp": "2026-11-15T22:24:06Z",
+    "label": "baseline",
+    "slug": "uptime",
+    "width": 390,
+    "status": 200,
+    "version": "v0.5.12",
+    "versionCount": 1,
+    "layout": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "bodyWidth": 390,
+      "headings": [
+        "Uptime"
+      ]
+    },
+    "errors": [],
+    "failed": [],
+    "screenshot": "baseline-uptime-390.png",
+    "asserted": false
+  },
+  {
+    "timestamp": "2026-11-15T22:24:07Z",
+    "label": "baseline",
+    "slug": "oncall",
+    "width": 390,
+    "status": 200,
+    "version": "v0.5.15",
+    "versionCount": 1,
+    "layout": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "bodyWidth": 390,
+      "headings": [
+        "Oncall"
+      ]
+    },
+    "errors": [],
+    "failed": [
+      {
+        "url": "http://127.0.0.1:34747/api/tokens",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://127.0.0.1:34747/api/events",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://analytics.twitter.com/1/i/adsct",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://t.co/1/i/adsct",
+        "error": "net::ERR_ABORTED"
+      }
+    ],
+    "screenshot": "baseline-oncall-390.png",
+    "asserted": false
+  }
+]
+stopped own server PID=1931

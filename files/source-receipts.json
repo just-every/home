@@ -1,0 +1,98 @@
+[
+  {
+    "repository": "just-every/run-oncall",
+    "tag": "v0.5.15",
+    "path": "CONTRACT.md",
+    "blob": "3d812d8596ccd09e24655ae5fd32b7a04c471fb7",
+    "bytes": 293890,
+    "sha256": "c04517abc904f1e5618a858e191fd0a9ae1dc54484b6fb993a56c794a9193cac"
+  },
+  {
+    "repository": "just-every/run-oncall",
+    "tag": "v0.5.16",
+    "path": "CONTRACT.md",
+    "blob": "3d812d8596ccd09e24655ae5fd32b7a04c471fb7",
+    "bytes": 293890,
+    "sha256": "c04517abc904f1e5618a858e191fd0a9ae1dc54484b6fb993a56c794a9193cac"
+  },
+  {
+    "repository": "just-every/run-oncall",
+    "tag": "v0.5.15",
+    "path": "README.md",
+    "blob": "11d2bf77aeaaa81828c47aef1b839dca547f06e7",
+    "bytes": 12739,
+    "sha256": "1868c766a1837b414e8463fa5de228aad8ce7633ace4f7b7971b20bee0a3f666"
+  },
+  {
+    "repository": "just-every/run-oncall",
+    "tag": "v0.5.16",
+    "path": "README.md",
+    "blob": "11d2bf77aeaaa81828c47aef1b839dca547f06e7",
+    "bytes": 12739,
+    "sha256": "1868c766a1837b414e8463fa5de228aad8ce7633ace4f7b7971b20bee0a3f666"
+  },
+  {
+    "repository": "just-every/run-oncall",
+    "tag": "v0.5.15",
+    "path": "seed.json",
+    "blob": "8412ca3d299968835268111776089b38b647dd13",
+    "bytes": 3195,
+    "sha256": "1e3e511472c20faabe1671213c4e0fd43c025730ec421297948992ba99b58e24"
+  },
+  {
+    "repository": "just-every/run-oncall",
+    "tag": "v0.5.16",
+    "path": "seed.json",
+    "blob": "21b2347ace56cd1e6fed8652f8baadf950943a4d",
+    "bytes": 3195,
+    "sha256": "130f81940ec475b72ddac899589b49f59adaa83e894aac014551f9302bc79bff"
+  },
+  {
+    "repository": "just-every/run-uptime",
+    "tag": "v0.5.12",
+    "path": "CONTRACT.md",
+    "blob": "c5724406701da4ee0c0150bb579457e0dc1be466",
+    "bytes": 319805,
+    "sha256": "15145d9425bbeedd7716aaa06134e91aedbcc8f76c0ef93847220175fc4f9ca5"
+  },
+  {
+    "repository": "just-every/run-uptime",
+    "tag": "v0.5.13",
+    "path": "CONTRACT.md",
+    "blob": "8dc361cb84c02e84b4684b760b4289a1e1f4901d",
+    "bytes": 319929,
+    "sha256": "bc8396eb9509cf77cf0a5d2a8ad31814ee6a8272ea162a552aa2404eadae4070"
+  },
+  {
+    "repository": "just-every/run-uptime",
+    "tag": "v0.5.12",
+    "path": "README.md",
+    "blob": "ec37c1c543a9ef79750f97c2bae41731dc04aba1",
+    "bytes": 38582,
+    "sha256": "4deebb00bd0bdecd020fa45ef4742651fd3178c5c896dce0ffdb1161d22a821d"
+  },
+  {
+    "repository": "just-every/run-uptime",
+    "tag": "v0.5.13",
+    "path": "README.md",
+    "blob": "709198b04903be86b8bc500310b7d807a695f96b",
+    "bytes": 41129,
+    "sha256": "3dcae3939be7cacb0ef3ea1a92bd67624da1cb12d15c753fabd99fe1bea259ef"
+  },
+  {
+    "repository": "just-every/run-uptime",
+    "tag": "v0.5.12",
+    "path": "seed.json",
+    "blob": "034e730b3d1a5d482c58526a9f2fcb0523e41ce9",
+    "bytes": 85797,
+    "sha256": "27e772552d622f633007508f6437531770f761ea57497cc5975d82954a47bbbe"
+  },
+  {
+    "repository": "just-every/run-uptime",
+    "tag": "v0.5.13",
+    "path": "seed.json",
+    "blob": "0357009f98764850eaeb0b2bf86e909f301eaf86",
+    "bytes": 85970,
+    "sha256": "71f59345e2c02e149a7157fc1fa7024cff538f517806b251b51a561db7ff8c77"
+  }
+]
