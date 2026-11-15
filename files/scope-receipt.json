@@ -1,0 +1,11 @@
+{
+  "head": "00caa60e44e6989fd690f5613986eceb130af2f2",
+  "base": "1800026d12e254459c00c62ce46e32f2b5b02cb0",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "credential_shape_matches": 0,
+  "test_paths_changed": []
+}

@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-11-15T05:24:45.516739+00:00",
+  "head": "00caa60e44e6989fd690f5613986eceb130af2f2",
+  "base": "1800026d12e254459c00c62ce46e32f2b5b02cb0",
+  "before_counts": {
+    "total": 49,
+    "coming-soon": 14,
+    "released": 35
+  },
+  "after_counts": {
+    "total": 49,
+    "coming-soon": 14,
+    "released": 35
+  },
+  "source": {
+    "ref": "v0.4.28",
+    "commit": "41fb40246d2e69f928be397c48d952d147c39160",
+    "tag_object": "0ecfc8529b62c73e8108fdbc169d4f410ca08043",
+    "file_hashes": [
+      {
+        "file": "CONTRACT.md",
+        "sha256_16": "ae8feea8b7998aa7",
+        "matches_state": true
+      },
+      {
+        "file": "README.md",
+        "sha256_16": "9260e012d46d3779",
+        "matches_state": true
+      },
+      {
+        "file": "seed.json",
+        "sha256_16": "519c266cfec58440",
+        "matches_state": true
+      }
+    ],
+    "seed_version": "0.4.28",
+    "copy_open_id": "42983364b373"
+  },
+  "claim_statuses": {
+    "CONVERSATION-001": "partial",
+    "DELIVERY-001": "partial",
+    "MOVE-IN-001": "done",
+    "OUTCOMES-001": "partial",
+    "REPORTS-001": "done",
+    "CONNECTIONS-001": "partial",
+    "AI-001": "partial",
+    "DELEGATION-001": "partial",
+    "IDENTITY-003": "partial",
+    "PORTABILITY-001": "partial"
+  },
+  "source_lock_and_contract_generator": "not applicable: no root CONTRACT.md, sources.lock.json, generated views or documented commands",
+  "migration_ledger": "not applicable: SQL migrations exist but no migration ledger or documented ledger checker; no migration diff",
+  "price_comparison": "No pricing wording changed anywhere. Assisted/Managed price statements do not occur in tracked baseline or head JE source; this maintenance does not add, alter or remove them.",
+  "product_changes_by_gate": false,
+  "api_calls": 9
+}
