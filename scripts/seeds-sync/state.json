@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-14T20:31:13.936Z",
+  "syncedAt": "2026-11-15T05:01:22.600Z",
   "seeds": {
     "auth": {
       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
@@ -481,14 +481,14 @@
       }
     },
     "happytohelp": {
-      "commit": "2f597575d4ccb19cdd4cfa0de5e635757737a1aa",
-      "sourceRef": "v0.4.26",
+      "commit": "41fb40246d2e69f928be397c48d952d147c39160",
+      "sourceRef": "v0.4.28",
       "sourceReason": "released listing version",
-      "tag": "v0.4.26",
+      "tag": "v0.4.28",
       "copy": {
         "CONTRACT.md": "ae8feea8b7998aa7",
-        "README.md": "f56c111027b43eda",
-        "seed.json": "685ea267d1baacbe"
+        "README.md": "9260e012d46d3779",
+        "seed.json": "519c266cfec58440"
       },
       "brand": {
         "theme.page": "#faf9f6",
@@ -504,7 +504,8 @@
       "home": {
         "headline": "Knows what your customer needs before they do.",
         "signature": "eedddddddeedeeeeeeeeeeeeeeeeeeeedeedeeebaa887dddeeeeeeeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeededdeedeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddbbbcbbcbbbbbbbbeedeeeeeeeeedeeeeeeeeeeeeeeeeedddaaabaabaaaaaccbeeeeeeeeeeeeeeeeeedeeeeeeeeeeeeedddcddcddcddcdddeeeeeeeeedddcccdeedeedeedeeeeeeeddccddceddeeeeedeeeeeedeebbbaaacddeeedddccceeedcc555544999eedeedeeeeeeeeeeeeefeeeeeeeddddddeeeeeddccdccdddeedeeefeededddddddeedeeededdddeddeee"
-      }
+      },
+      "open": ["42983364b373"]
     },
     "inkwell": {
       "commit": "e4e3c2dd4bdf48fe16111f9d447568d6c4366a84",
@@ -557,8 +558,7 @@
       "home": {
         "headline": "When something breaks, turn the light on.",
         "signature": "eeddddeeefeefeefeeffeeeeeeeffefeeeeeeeeeed9a9ddcfeeeeefeefeefeefeeffeccccccffefeefeefeeeeeeeeeeefeefeefeefeefeeffeccc444454dccffefeefeefeeffeffefeefeefeeffeffeffeddcdcbdcbedcffeffeffefeefeefeefeefeeffeeeddddeedeedeedeedeededddddeeeffefeefeefeefeeffeeedddcccbccbbbbbbbbbaccbddceedffefeefeefeefeefeeffeeeeddcedcddcddcddcdddfeeffefeefeefeefeefeefeefeeffebbb898eedeedeedeedfeefeefeefeefeefeefeefeefeefeeeeddddeedeeeeeeeeeeeefeefeefeefee"
-      },
-      "open": ["922fed04eacf"]
+      }
     },
     "lanyard": {
       "commit": "db2a1ef37612248290e0efd85209c9b1f0da8c83",
