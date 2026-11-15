@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-15T05:01:22.600Z",
+  "syncedAt": "2026-11-15T10:08:12.915Z",
   "seeds": {
     "auth": {
       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
@@ -535,14 +535,14 @@
       }
     },
     "lamp": {
-      "commit": "429a46081ce68bab2dbdae46b8402b8ccce3ee2a",
-      "sourceRef": "v1.11.16",
+      "commit": "b5b5628a247ba2289aeb9af16cab04a998e823ce",
+      "sourceRef": "v1.11.17",
       "sourceReason": "released listing version",
-      "tag": "v1.11.16",
+      "tag": "v1.11.17",
       "copy": {
         "CONTRACT.md": "f9cb0b8a5bd46d69",
         "README.md": "1a20f137749ab26b",
-        "seed.json": "12d7013d559c4028"
+        "seed.json": "588e2ec26a9f9880"
       },
       "brand": {
         "theme.page": "#f8f6f0",
@@ -558,7 +558,8 @@
       "home": {
         "headline": "When something breaks, turn the light on.",
         "signature": "eeddddeeefeefeefeeffeeeeeeeffefeeeeeeeeeed9a9ddcfeeeeefeefeefeefeeffeccccccffefeefeefeeeeeeeeeeefeefeefeefeefeeffeccc444454dccffefeefeefeeffeffefeefeefeeffeffeffeddcdcbdcbedcffeffeffefeefeefeefeefeeffeeeddddeedeedeedeedeededddddeeeffefeefeefeefeeffeeedddcccbccbbbbbbbbbaccbddceedffefeefeefeefeefeeffeeeeddcedcddcddcddcdddfeeffefeefeefeefeefeefeefeeffebbb898eedeedeedeedfeefeefeefeefeefeefeefeefeefeeeeddddeedeeeeeeeeeeeefeefeefeefee"
-      }
+      },
+      "open": ["64cb07f6a0dd"]
     },
     "lanyard": {
       "commit": "db2a1ef37612248290e0efd85209c9b1f0da8c83",
