@@ -1,0 +1,12 @@
+commit 0656778f51b9191393e035773150eaf0f218293e
+Author:     Run Edit Run fleet <fleet@runeditrun.com>
+AuthorDate: Sun Nov 15 22:05:59 2026 +0000
+Commit:     Run Edit Run fleet <fleet@runeditrun.com>
+CommitDate: Sun Nov 15 22:05:59 2026 +0000
+
+    sync: seed listings 15 Nov path releases
+
+ public/data/listings.json     |  6 +++---
+ scripts/seeds-sync/state.json | 33 +++++++++++++++------------------
+ src/data/seed-pages.ts        |  4 ++--
+ 3 files changed, 20 insertions(+), 23 deletions(-)

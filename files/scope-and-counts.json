@@ -1,0 +1,59 @@
+{
+  "observedAt": "2026-11-15T22:05:34Z",
+  "before": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "listingChanges": [
+    {
+      "slug": "oncall",
+      "fields": {
+        "version": {
+          "before": "v0.5.15",
+          "after": "v0.5.16"
+        }
+      }
+    },
+    {
+      "slug": "uptime",
+      "fields": {
+        "version": {
+          "before": "v0.5.12",
+          "after": "v0.5.13"
+        }
+      }
+    }
+  ],
+  "stateChanges": {
+    "lamp": [
+      "open"
+    ],
+    "oncall": [
+      "sourceRef",
+      "commit",
+      "tag",
+      "open",
+      "copy"
+    ],
+    "orbit": [
+      "open"
+    ],
+    "spool": [
+      "open"
+    ],
+    "uptime": [
+      "sourceRef",
+      "commit",
+      "tag",
+      "copy"
+    ]
+  },
+  "excludedSlugs": "all eight remain absent",
+  "pricing": "untouched; no changes outside the three scoped data/state paths"
+}

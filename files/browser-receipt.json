@@ -1,0 +1,52 @@
+{
+  "author": "Run Edit Run fleet",
+  "observedAt": "2026-11-15T22:09:08Z",
+  "head": "0656778f51b9191393e035773150eaf0f218293e",
+  "assertions": "HTTP 200, correct rendered version, correct JSON-LD version, no page errors at 1440; screenshots at 1440 and 390",
+  "observations": [
+    {
+      "slug": "uptime",
+      "width": 1440,
+      "status": 200,
+      "version": "RUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.5.13\nLICENCE\nMIT, 100% free",
+      "documentWidth": 1440,
+      "viewportWidth": 1440,
+      "pageErrors": [],
+      "screenshot": "browser-uptime-1440.png",
+      "assertionWidth": 1440
+    },
+    {
+      "slug": "oncall",
+      "width": 1440,
+      "status": 200,
+      "version": "RUNS ON\nyour own computer, or your own Cloudflare account\nVERSION\nv0.5.16\nLICENCE\nMIT, 100% free",
+      "documentWidth": 1440,
+      "viewportWidth": 1440,
+      "pageErrors": [],
+      "screenshot": "browser-oncall-1440.png",
+      "assertionWidth": 1440
+    },
+    {
+      "slug": "uptime",
+      "width": 390,
+      "status": 200,
+      "version": "RUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.5.13\nLICENCE\nMIT, 100% free",
+      "documentWidth": 390,
+      "viewportWidth": 390,
+      "pageErrors": [],
+      "screenshot": "browser-uptime-390.png",
+      "assertionWidth": 1440
+    },
+    {
+      "slug": "oncall",
+      "width": 390,
+      "status": 200,
+      "version": "RUNS ON\nyour own computer, or your own Cloudflare account\nVERSION\nv0.5.16\nLICENCE\nMIT, 100% free",
+      "documentWidth": 390,
+      "viewportWidth": 390,
+      "pageErrors": [],
+      "screenshot": "browser-oncall-390.png",
+      "assertionWidth": 1440
+    }
+  ]
+}

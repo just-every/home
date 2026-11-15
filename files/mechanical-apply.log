@@ -1,0 +1,26 @@
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --apply --only uptime,lamp,orbit,oncall,spool --out ../packet/mechanical-apply
+
+Reading 5 seed repositories...
+uptime: source=v0.5.12 commit=2045014b15f76380b5d7493c0c42b2caa430f88b (released listing version)
+lamp: source=v1.11.18 commit=f495b89afd9f6832e4d4807018d91fa4c4670147 (released listing version)
+orbit: source=v0.4.10 commit=22ca38c0e0bb5784440df021e8a5eb5b41a81de8 (released listing version)
+oncall: source=v0.5.15 commit=44ca722b6a5dde173b5253df7b5e0eab762df459 (released listing version)
+spool: source=v0.7.12 commit=cc086904fd942175d18c60082b10c459c343dc78 (released listing version)
+Reading 5 homepages...
+  read uptime 
+  read lamp 
+  read oncall 
+  read orbit 
+  read spool 
+  
+Applied: 2 of 5 seeds changed.
+
+Uptime
+  version   newer tag v0.5.13 (page shows v0.5.12) [applied]
+
+Oncall
+  version   newer tag v0.5.16 (page shows v0.5.15) [applied]
+
+Report: /home/agent/rer-consolidation/work/je-sync-39/packet/mechanical-apply/report.md

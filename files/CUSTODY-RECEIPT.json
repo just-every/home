@@ -1,0 +1,93 @@
+{
+  "author": "Run Edit Run fleet",
+  "observedAt": "2026-11-15T22:12:40Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-39",
+  "head": "0656778f51b9191393e035773150eaf0f218293e",
+  "base": "2edf0e10aa92711884a2cdbdcf66d383233870c9",
+  "remoteHead": "0656778f51b9191393e035773150eaf0f218293e",
+  "productPushed": true,
+  "pullRequest": {
+    "base": "main",
+    "head": "0656778f51b9191393e035773150eaf0f218293e",
+    "html_url": "https://github.com/just-every/home/pull/63",
+    "number": 63,
+    "state": "open"
+  },
+  "verifyRunId": 43767367492,
+  "verify": {
+    "conclusion": "success",
+    "head_sha": "0656778f51b9191393e035773150eaf0f218293e",
+    "html_url": "https://github.com/just-every/home/actions/runs/43767367492",
+    "status": "completed"
+  },
+  "ready": true,
+  "blockers": [],
+  "clauseStatusChanges": [],
+  "counts": {
+    "observedAt": "2026-11-15T22:05:34Z",
+    "before": {
+      "total": 49,
+      "released": 35,
+      "comingSoon": 14
+    },
+    "after": {
+      "total": 49,
+      "released": 35,
+      "comingSoon": 14
+    },
+    "listingChanges": [
+      {
+        "slug": "oncall",
+        "fields": {
+          "version": {
+            "before": "v0.5.15",
+            "after": "v0.5.16"
+          }
+        }
+      },
+      {
+        "slug": "uptime",
+        "fields": {
+          "version": {
+            "before": "v0.5.12",
+            "after": "v0.5.13"
+          }
+        }
+      }
+    ],
+    "stateChanges": {
+      "lamp": [
+        "open"
+      ],
+      "oncall": [
+        "sourceRef",
+        "commit",
+        "tag",
+        "open",
+        "copy"
+      ],
+      "orbit": [
+        "open"
+      ],
+      "spool": [
+        "open"
+      ],
+      "uptime": [
+        "sourceRef",
+        "commit",
+        "tag",
+        "copy"
+      ]
+    },
+    "excludedSlugs": "all eight remain absent",
+    "pricing": "untouched; no changes outside the three scoped data/state paths"
+  },
+  "localChecksReceipt": "CHECKS-RECEIPT.json",
+  "browserReceipt": "browser-receipt.json",
+  "publicationScan": "Mac fleet after candidate return; not run in cloud",
+  "landingCustody": "lane owns independent gate, publication scan, PR merge, deploy and live 1440/390 verification",
+  "worktreeClean": true,
+  "directGhControlCalls": 8,
+  "syncReads": "The requested committed sync invokes gh api for source files internally."
+}

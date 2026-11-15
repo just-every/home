@@ -1,0 +1,102 @@
+{
+  "author": "Run Edit Run fleet",
+  "observedAt": "2026-11-15T22:07:49Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-39",
+  "head": "0656778f51b9191393e035773150eaf0f218293e",
+  "base": "2edf0e10aa92711884a2cdbdcf66d383233870c9",
+  "worktreeClean": true,
+  "changedPaths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "checks": {
+    "npm ci": "passed",
+    "copy-only apply before promotion": "passed; no copy changes",
+    "mechanical apply": "passed; Uptime and Oncall versions",
+    "copy-only apply after promotion": "passed; reviewed and retained public wording",
+    "listings generation": "passed; 49",
+    "listings check": "passed; 49",
+    "final dry sync": "passed; sole deliberate HappyToHelp bare-tag finding",
+    "type-check": "passed",
+    "lint": "passed",
+    "production build": "passed",
+    "diff whitespace": "passed",
+    "all candidate author/committer/trailers": "passed",
+    "diff scope and credential shape": "passed",
+    "full local tests": "not run; unchanged data-only version maintenance; CI owns full suite",
+    "Base publication scan": "reserved for Mac lander per cloud instruction",
+    "browser public page proof": "passed at exact candidate; assertions at 1440, changed version facts captured at 1440 and 390 for both pages",
+    "local browser preview limitation": "Unchanged analytics endpoints lack Cloudflare caches and local page_views table in next start; page rendering/version/schema checks succeed. No analytics/deployment claim."
+  },
+  "logs": [
+    {
+      "file": "npm-ci.log",
+      "bytes": 296,
+      "sha256": "02f92811da0f8a44ca376166b4e6a6286f16a500cdc14edf1434f7a281689a7c"
+    },
+    {
+      "file": "copy-before-apply.log",
+      "bytes": 930,
+      "sha256": "b72481b4a8ecd1648d6682e7ff46c4a16832eec0552c05f3fe65134ccfebe0d1"
+    },
+    {
+      "file": "mechanical-apply.log",
+      "bytes": 1035,
+      "sha256": "0128c4f61a6a0ecfb5f96eea49359186782961f6f1f162045f5944abf9cee8a9"
+    },
+    {
+      "file": "copy-after-apply.log",
+      "bytes": 1090,
+      "sha256": "67b9bc724f105f3fa4419ab8dd301f22bc05926c7b217598be9153622e3a3a87"
+    },
+    {
+      "file": "listings.log",
+      "bytes": 103,
+      "sha256": "e29ba2f14c9a32f200d9e8956d6e4a524102837b5f12a181e9ab0807f1eff33a"
+    },
+    {
+      "file": "listings-check.log",
+      "bytes": 109,
+      "sha256": "8cbef4f8b3f74fe74438c2725d5c9fc79521670c9f240ea2d11548bdc20775d9"
+    },
+    {
+      "file": "dry-baseline.log",
+      "bytes": 6028,
+      "sha256": "0fa0decdd9dbe5d6cc2b4d5080634dd4243794990fee3c8d7301e8bfa993b0f1"
+    },
+    {
+      "file": "dry-final.log",
+      "bytes": 1085,
+      "sha256": "493af2e65195b6fa3cd2b5a7ae2e1e9b39357c8a41f6f665e7205f0562d6bbf0"
+    },
+    {
+      "file": "type-check.log",
+      "bytes": 49,
+      "sha256": "5a848264e3d4f39bae1d347b4ff2be16348436fdcdd3a42c91c0fca2a8f23403"
+    },
+    {
+      "file": "lint.log",
+      "bytes": 47,
+      "sha256": "02ef98276ac56c4ea2e84e7291740f26bb5d7d07639d8ce90366e463210307f3"
+    },
+    {
+      "file": "build.log",
+      "bytes": 1709,
+      "sha256": "568fa1dbf0291c57ad236b9cffdb7b5548ecb158845afe54e43f19407b70c433"
+    },
+    {
+      "file": "identity-audit.log",
+      "bytes": 127,
+      "sha256": "2867e34754e76d4ecac04d44b7bd1244d7825421ccf4c9c0083f50a4f1069ada"
+    },
+    {
+      "file": "product-push.log",
+      "bytes": 975,
+      "sha256": "8236736d0e54d979fd10e7f988e079f64e811d5f538057376e71ff11408d47fe"
+    }
+  ],
+  "browserReceipt": "browser-receipt.json",
+  "browserServerStopped": true
+}
