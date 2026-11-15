@@ -1,0 +1,17 @@
+{
+  "observedAt": "2026-11-15T10:17:12Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-37",
+  "head": "2eb5ffbe583fcd1671cf9cb32640b32a34214716",
+  "runId": 43702829307,
+  "workflow": "Verify branch",
+  "status": "completed",
+  "conclusion": "success",
+  "url": "https://github.com/just-every/home/actions/runs/43702829307",
+  "discovery": "ci-discovery.json",
+  "finalObservation": "ci-final.json",
+  "pollIntervalSeconds": 309,
+  "observationCalls": 2,
+  "PRCreationCalls": 1,
+  "tenCallObservationBudgetUsed": 3
+}

@@ -1,0 +1,118 @@
+{
+  "head": "2eb5ffbe583fcd1671cf9cb32640b32a34214716",
+  "before": {
+    "total": 49,
+    "coming-soon": 14,
+    "released": 35
+  },
+  "after": {
+    "total": 49,
+    "coming-soon": 14,
+    "released": 35
+  },
+  "changedListings": [
+    {
+      "slug": "lamp",
+      "before": {
+        "slug": "lamp",
+        "name": "Lamp",
+        "status": "released",
+        "version": "v1.11.16",
+        "category": "Status page",
+        "line": "The status page that never leaves your customers in the dark.",
+        "headline": "When something breaks, turn the light on.",
+        "replaces": [
+          "Atlassian Statuspage",
+          "Instatus",
+          "Better Stack"
+        ],
+        "primaryReplace": "Atlassian Statuspage",
+        "accent": "#f4c25c",
+        "ink": "#182d24",
+        "paper": "#f8f6f0",
+        "mark": "/seeds/lamp/mark.svg",
+        "pageUrl": "https://justevery.com/lamp",
+        "contractUrl": "https://run-lamp.com/contract"
+      },
+      "after": {
+        "slug": "lamp",
+        "name": "Lamp",
+        "status": "released",
+        "version": "v1.11.17",
+        "category": "Status page",
+        "line": "The status page that never leaves your customers in the dark.",
+        "headline": "When something breaks, turn the light on.",
+        "replaces": [
+          "Atlassian Statuspage",
+          "Instatus",
+          "Better Stack"
+        ],
+        "primaryReplace": "Atlassian Statuspage",
+        "accent": "#f4c25c",
+        "ink": "#182d24",
+        "paper": "#f8f6f0",
+        "mark": "/seeds/lamp/mark.svg",
+        "pageUrl": "https://justevery.com/lamp",
+        "contractUrl": "https://run-lamp.com/contract"
+      }
+    }
+  ],
+  "stateChangedSeeds": [
+    "lamp"
+  ],
+  "hiddenSeedsAbsent": [
+    "beacon",
+    "relay",
+    "ferry",
+    "lily",
+    "brook",
+    "delta",
+    "barrow",
+    "linen"
+  ],
+  "clauseStatusChanges": [],
+  "publicCopyChanges": [],
+  "pricingChanges": [],
+  "checks": {
+    "npmCi": "passed",
+    "listings": "passed",
+    "listingsCheck": "passed",
+    "typeCheck": "passed",
+    "lint": "passed",
+    "productionBuild": "passed",
+    "drySyncBefore": "1 of 6 changed: Lamp version",
+    "copyOnlyBefore": "0 of 6 changed",
+    "copyOnlyAfter": "Lamp seed.json version only",
+    "drySyncAfter": "0 of 6 changed",
+    "browser": "passed at 1440 and 390; assertions at 1440"
+  },
+  "publicationScan": "Mac lane; unavailable in this cloud",
+  "signatureVerification": "not performed; envelope asset presence confirmed for all six releases",
+  "productPush": {
+    "status": "pushed",
+    "branch": "cloud/je-sync-37",
+    "head": "2eb5ffbe583fcd1671cf9cb32640b32a34214716",
+    "guard": "cloud-push.py",
+    "PR": "https://github.com/just-every/home/pull/61"
+  },
+  "browserReceipt": "browser-receipt.json",
+  "generatedAt": "2026-11-15T10:14:13Z",
+  "ci": {
+    "observedAt": "2026-11-15T10:17:12Z",
+    "repository": "just-every/home",
+    "branch": "cloud/je-sync-37",
+    "head": "2eb5ffbe583fcd1671cf9cb32640b32a34214716",
+    "runId": 43702829307,
+    "workflow": "Verify branch",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/just-every/home/actions/runs/43702829307",
+    "discovery": "ci-discovery.json",
+    "finalObservation": "ci-final.json",
+    "pollIntervalSeconds": 309,
+    "observationCalls": 2,
+    "PRCreationCalls": 1,
+    "tenCallObservationBudgetUsed": 3
+  },
+  "finalProductState": "READY"
+}

@@ -1,0 +1,19 @@
+{
+  "serverPid": 7897,
+  "screens": [
+    {
+      "width": 1440,
+      "status": 200,
+      "versionVisible": true,
+      "screenshot": "lamp-1440.png"
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "versionVisible": true,
+      "screenshot": "lamp-390.png"
+    }
+  ],
+  "result": "passed",
+  "serverStopped": true
+}

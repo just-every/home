@@ -1,0 +1,18 @@
+Run Edit Run fleet <fleet@runeditrun.com>
+Run Edit Run fleet <fleet@runeditrun.com>
+
+{
+  "identity": "passed",
+  "trailer": "passed",
+  "diffHygiene": "passed",
+  "credentialShapes": "passed",
+  "scope": "passed",
+  "candidateCommits": [
+    "2eb5ffbe583fcd1671cf9cb32640b32a34214716"
+  ],
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ]
+}

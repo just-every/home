@@ -1,0 +1,11 @@
+--- ../packet/sources/lamp/seed-v1.11.16.json	2026-11-15 10:08:35.223612531 +0000
++++ ../packet/sources/lamp/seed-v1.11.17.json	2026-11-15 10:08:35.103617915 +0000
+@@ -1,7 +1,7 @@
+ {
+   "id": "lamp",
+   "name": "Lamp",
+-  "version": "1.11.16",
++  "version": "1.11.17",
+   "maturity": "ui-port-local-runtime",
+   "category": "status",
+   "spine": {

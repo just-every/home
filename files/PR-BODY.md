@@ -1,0 +1,5 @@
+Updates Lamp from v1.11.16 to v1.11.17 in the public catalogue and records its released copy provenance. The other five path seeds remain current; the final scoped sync reports no changes. Listing counts remain 49 total, 35 released and 14 coming soon.
+
+GitHub release https://github.com/just-every/run-lamp/releases/tag/v1.11.17 is published, non-draft and non-prerelease, and contains rer-release.dsse.json. This confirms envelope asset presence; signature verification remains with the release/landing gate. Lamp's released contract and README are unchanged; seed.json changes only its version. Existing claims and partial-evidence follow-ups are preserved.
+
+Validation: listings regeneration/check, type-check, lint and production build passed. The production Lamp page shows v1.11.17 at 1440 and 390; the desktop check asserts no horizontal overflow. No marks, colours, stills, galleries, pricing or clause statuses changed. Independent publication scan, review, merge and deployment remain with the lane.
