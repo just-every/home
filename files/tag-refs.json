@@ -1,0 +1,37 @@
+{
+  "lamp": {
+    "tag": "v1.11.18",
+    "refs": [
+      "583a0ffcfdd7d251237a52220b093ec0255d81e5\trefs/tags/v1.11.18",
+      "f495b89afd9f6832e4d4807018d91fa4c4670147\trefs/tags/v1.11.18^{}"
+    ]
+  },
+  "spool": {
+    "tag": "v0.7.12",
+    "refs": [
+      "d9a5fceb1e81a6b8361982e5bb11fc09dfebc481\trefs/tags/v0.7.12",
+      "cc086904fd942175d18c60082b10c459c343dc78\trefs/tags/v0.7.12^{}"
+    ]
+  },
+  "oncall": {
+    "tag": "v0.5.15",
+    "refs": [
+      "1b5248dd3ee06c59609d5e355f6aedfe9e2e8cd7\trefs/tags/v0.5.15",
+      "44ca722b6a5dde173b5253df7b5e0eab762df459\trefs/tags/v0.5.15^{}"
+    ]
+  },
+  "orbit": {
+    "tag": "v0.4.10",
+    "refs": [
+      "3cf4456a7bb7d48063612661b596f07c9ea1c336\trefs/tags/v0.4.10",
+      "22ca38c0e0bb5784440df021e8a5eb5b41a81de8\trefs/tags/v0.4.10^{}"
+    ]
+  },
+  "uptime": {
+    "tag": "v0.5.12",
+    "refs": [
+      "097ff17d561d7029443c51837bcb1e0c21fb0930\trefs/tags/v0.5.12",
+      "2045014b15f76380b5d7493c0c42b2caa430f88b\trefs/tags/v0.5.12^{}"
+    ]
+  }
+}

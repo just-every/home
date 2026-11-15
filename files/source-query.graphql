@@ -1,0 +1,26 @@
+query { lamp:repository(owner:"just-every",name:"run-lamp") {
+      isPrivate nameWithOwner
+      release(tagName:"v1.11.18") { tagName isDraft isPrerelease publishedAt url releaseAssets(first:100) { nodes { name } } }
+      ref(qualifiedName:"refs/tags/v1.11.18") { name target { oid ... on Tag { target { oid ... on Tag { target { oid } } } } } }
+      new_contract:object(expression:"v1.11.18:CONTRACT.md") { ... on Blob { text oid } } new_readme:object(expression:"v1.11.18:README.md") { ... on Blob { text oid } } new_seed:object(expression:"v1.11.18:seed.json") { ... on Blob { text oid } } old_contract:object(expression:"v1.11.17:CONTRACT.md") { ... on Blob { text oid } } old_readme:object(expression:"v1.11.17:README.md") { ... on Blob { text oid } } old_seed:object(expression:"v1.11.17:seed.json") { ... on Blob { text oid } }
+    } oncall:repository(owner:"just-every",name:"run-oncall") {
+      isPrivate nameWithOwner
+      release(tagName:"v0.5.15") { tagName isDraft isPrerelease publishedAt url releaseAssets(first:100) { nodes { name } } }
+      ref(qualifiedName:"refs/tags/v0.5.15") { name target { oid ... on Tag { target { oid ... on Tag { target { oid } } } } } }
+      new_contract:object(expression:"v0.5.15:CONTRACT.md") { ... on Blob { text oid } } new_readme:object(expression:"v0.5.15:README.md") { ... on Blob { text oid } } new_seed:object(expression:"v0.5.15:seed.json") { ... on Blob { text oid } } old_contract:object(expression:"v0.5.14:CONTRACT.md") { ... on Blob { text oid } } old_readme:object(expression:"v0.5.14:README.md") { ... on Blob { text oid } } old_seed:object(expression:"v0.5.14:seed.json") { ... on Blob { text oid } }
+    } orbit:repository(owner:"just-every",name:"run-orbit") {
+      isPrivate nameWithOwner
+      release(tagName:"v0.4.10") { tagName isDraft isPrerelease publishedAt url releaseAssets(first:100) { nodes { name } } }
+      ref(qualifiedName:"refs/tags/v0.4.10") { name target { oid ... on Tag { target { oid ... on Tag { target { oid } } } } } }
+      new_contract:object(expression:"v0.4.10:CONTRACT.md") { ... on Blob { text oid } } new_readme:object(expression:"v0.4.10:README.md") { ... on Blob { text oid } } new_seed:object(expression:"v0.4.10:seed.json") { ... on Blob { text oid } } old_contract:object(expression:"v0.4.9:CONTRACT.md") { ... on Blob { text oid } } old_readme:object(expression:"v0.4.9:README.md") { ... on Blob { text oid } } old_seed:object(expression:"v0.4.9:seed.json") { ... on Blob { text oid } }
+    } spool:repository(owner:"just-every",name:"run-spool") {
+      isPrivate nameWithOwner
+      release(tagName:"v0.7.12") { tagName isDraft isPrerelease publishedAt url releaseAssets(first:100) { nodes { name } } }
+      ref(qualifiedName:"refs/tags/v0.7.12") { name target { oid ... on Tag { target { oid ... on Tag { target { oid } } } } } }
+      new_contract:object(expression:"v0.7.12:CONTRACT.md") { ... on Blob { text oid } } new_readme:object(expression:"v0.7.12:README.md") { ... on Blob { text oid } } new_seed:object(expression:"v0.7.12:seed.json") { ... on Blob { text oid } } old_contract:object(expression:"v0.7.11:CONTRACT.md") { ... on Blob { text oid } } old_readme:object(expression:"v0.7.11:README.md") { ... on Blob { text oid } } old_seed:object(expression:"v0.7.11:seed.json") { ... on Blob { text oid } }
+    } uptime:repository(owner:"just-every",name:"run-uptime") {
+      isPrivate nameWithOwner
+      release(tagName:"v0.5.12") { tagName isDraft isPrerelease publishedAt url releaseAssets(first:100) { nodes { name } } }
+      ref(qualifiedName:"refs/tags/v0.5.12") { name target { oid ... on Tag { target { oid ... on Tag { target { oid } } } } } }
+      new_contract:object(expression:"v0.5.12:CONTRACT.md") { ... on Blob { text oid } } new_readme:object(expression:"v0.5.12:README.md") { ... on Blob { text oid } } new_seed:object(expression:"v0.5.12:seed.json") { ... on Blob { text oid } } old_contract:object(expression:"v0.5.11:CONTRACT.md") { ... on Blob { text oid } } old_readme:object(expression:"v0.5.11:README.md") { ... on Blob { text oid } } old_seed:object(expression:"v0.5.11:seed.json") { ... on Blob { text oid } }
+    } }

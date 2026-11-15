@@ -1,0 +1,197 @@
+{
+  "schema": 1,
+  "tag": "je-gate-46",
+  "signed_by": "Run Edit Run fleet / Codex independent gate",
+  "timestamp_utc": "2026-11-15T16:49:17Z",
+  "repository": "just-every/home",
+  "pr": "https://github.com/just-every/home/pull/62",
+  "candidate_branch": "cloud/je-sync-38",
+  "head": "4a7cef36328b98da774deab81849d7aa9a3fc1fd",
+  "base": "e65b94456024ec80409449a4b7b91dedcd88f9a9",
+  "gate_branch": "cloud/je-gate-46",
+  "gate_product_commits": 0,
+  "gate_product_pushes": 0,
+  "product_tree_clean": true,
+  "counts_before": {
+    "all": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "counts_after": {
+    "all": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "clause_status_changes": [],
+  "rows": {
+    "R1": "MET",
+    "R2": "MET",
+    "R3": "MET",
+    "R4": "MET",
+    "R5": "MET"
+  },
+  "checks": {
+    "npm ci": 0,
+    "npm run listings -- --check": 0,
+    "npm run listings": 0,
+    "git diff --exit-code after listings": 0,
+    "npm run type-check": 0,
+    "npm run lint": 0,
+    "npm run build": 0,
+    "git diff --check origin/main HEAD": 0,
+    "browser_head_main_1440_390": "PASS"
+  },
+  "ci_runs": [
+    {
+      "id": 43735573750,
+      "name": "Verify branch",
+      "event": "pull_request",
+      "head_sha": "4a7cef36328b98da774deab81849d7aa9a3fc1fd",
+      "status": "completed",
+      "conclusion": "skipped",
+      "html_url": "https://github.com/just-every/home/actions/runs/43735573750"
+    },
+    {
+      "id": 43735570352,
+      "name": "PR #62",
+      "event": "dynamic",
+      "head_sha": "4a7cef36328b98da774deab81849d7aa9a3fc1fd",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/just-every/home/actions/runs/43735570352"
+    },
+    {
+      "id": 43735528330,
+      "name": "Verify branch",
+      "event": "push",
+      "head_sha": "4a7cef36328b98da774deab81849d7aa9a3fc1fd",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/just-every/home/actions/runs/43735528330"
+    }
+  ],
+  "github_api_calls": 3,
+  "releases": [
+    {
+      "slug": "lamp",
+      "version": "v1.11.18",
+      "commit": "f495b89afd9f6832e4d4807018d91fa4c4670147",
+      "published_at": "2026-11-15T12:40:20Z",
+      "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.18",
+      "draft": false,
+      "prerelease": false,
+      "envelope_asset_present": true,
+      "signature_verified": false,
+      "copy_hashes": {
+        "CONTRACT.md": "f9cb0b8a5bd46d69",
+        "README.md": "1a20f137749ab26b",
+        "seed.json": "b6e8bdb89b3124d6"
+      },
+      "status_rows_unchanged": true,
+      "status_counts": {
+        "partial": 129,
+        "done": 60,
+        "missing": 55
+      }
+    },
+    {
+      "slug": "oncall",
+      "version": "v0.5.15",
+      "commit": "44ca722b6a5dde173b5253df7b5e0eab762df459",
+      "published_at": "2026-11-15T13:34:20Z",
+      "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.15",
+      "draft": false,
+      "prerelease": false,
+      "envelope_asset_present": true,
+      "signature_verified": false,
+      "copy_hashes": {
+        "CONTRACT.md": "c04517abc904f1e5",
+        "README.md": "1868c766a1837b41",
+        "seed.json": "1e3e511472c20faa"
+      },
+      "status_rows_unchanged": true,
+      "status_counts": {
+        "done": 26,
+        "partial": 41,
+        "missing": 34
+      }
+    },
+    {
+      "slug": "orbit",
+      "version": "v0.4.10",
+      "commit": "22ca38c0e0bb5784440df021e8a5eb5b41a81de8",
+      "published_at": "2026-11-15T13:47:13Z",
+      "url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.10",
+      "draft": false,
+      "prerelease": false,
+      "envelope_asset_present": true,
+      "signature_verified": false,
+      "copy_hashes": {
+        "CONTRACT.md": "2c7cce58a1437e4b",
+        "README.md": "20ef6d3a4cdc967d",
+        "seed.json": "d7a7135bef74a09a"
+      },
+      "status_rows_unchanged": true,
+      "status_counts": {
+        "partial": 130,
+        "done": 42,
+        "missing": 32
+      }
+    },
+    {
+      "slug": "spool",
+      "version": "v0.7.12",
+      "commit": "cc086904fd942175d18c60082b10c459c343dc78",
+      "published_at": "2026-11-15T12:41:15Z",
+      "url": "https://github.com/just-every/run-spool/releases/tag/v0.7.12",
+      "draft": false,
+      "prerelease": false,
+      "envelope_asset_present": true,
+      "signature_verified": false,
+      "copy_hashes": {
+        "CONTRACT.md": "ee9c871bfa25a110",
+        "README.md": "c942367838430a75",
+        "seed.json": "8123b75e1c3dfe5d"
+      },
+      "status_rows_unchanged": true,
+      "status_counts": {
+        "done": 23,
+        "partial": 54,
+        "missing": 28
+      }
+    },
+    {
+      "slug": "uptime",
+      "version": "v0.5.12",
+      "commit": "2045014b15f76380b5d7493c0c42b2caa430f88b",
+      "published_at": "2026-11-15T14:03:19Z",
+      "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.12",
+      "draft": false,
+      "prerelease": false,
+      "envelope_asset_present": true,
+      "signature_verified": false,
+      "copy_hashes": {
+        "CONTRACT.md": "15145d9425bbeedd",
+        "README.md": "4deebb00bd0bdecd",
+        "seed.json": "27e772552d622f63"
+      },
+      "status_rows_unchanged": true,
+      "status_counts": {
+        "done": 37,
+        "partial": 58,
+        "missing": 20
+      }
+    }
+  ],
+  "blocking_findings": 0,
+  "new_followups": 0,
+  "verdict": "GATE PASS",
+  "not_applicable": [
+    "Home has no CONTRACT.md, source lock, contract-view generator or migration ledger command; no such seed steps invented."
+  ],
+  "limits": [
+    "Envelope presence only; no signature verification.",
+    "Mac publication scan and landing remain with fleet.",
+    "No provider/deployment/PR mutations."
+  ]
+}

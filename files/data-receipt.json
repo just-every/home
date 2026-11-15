@@ -1,0 +1,71 @@
+{
+  "counts": [
+    {
+      "ref": "main",
+      "total": 49,
+      "counts": {
+        "released": 35,
+        "coming-soon": 14
+      },
+      "excluded_absent": true,
+      "happytohelp": "v0.4.28"
+    },
+    {
+      "ref": "head",
+      "total": 49,
+      "counts": {
+        "released": 35,
+        "coming-soon": 14
+      },
+      "excluded_absent": true,
+      "happytohelp": "v0.4.28"
+    }
+  ],
+  "changes": [
+    {
+      "slug": "lamp",
+      "changes": {
+        "version": [
+          "v1.11.17",
+          "v1.11.18"
+        ]
+      }
+    },
+    {
+      "slug": "oncall",
+      "changes": {
+        "version": [
+          "v0.5.14",
+          "v0.5.15"
+        ]
+      }
+    },
+    {
+      "slug": "orbit",
+      "changes": {
+        "version": [
+          "v0.4.9",
+          "v0.4.10"
+        ]
+      }
+    },
+    {
+      "slug": "spool",
+      "changes": {
+        "version": [
+          "v0.7.11",
+          "v0.7.12"
+        ]
+      }
+    },
+    {
+      "slug": "uptime",
+      "changes": {
+        "version": [
+          "v0.5.11",
+          "v0.5.12"
+        ]
+      }
+    }
+  ]
+}

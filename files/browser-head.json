@@ -1,0 +1,74 @@
+[
+  {
+    "timestamp": "2026-11-15T16:43:59Z",
+    "variant": "head",
+    "slug": "lamp",
+    "width": 1440,
+    "status": 200,
+    "version": "v1.11.18",
+    "layout": {
+      "viewport": 1440,
+      "width": 1440,
+      "h1": [
+        "Lamp"
+      ],
+      "height": 4798
+    },
+    "errors": [],
+    "screenshot": "head-lamp-1440.png"
+  },
+  {
+    "timestamp": "2026-11-15T16:43:59Z",
+    "variant": "head",
+    "slug": "spool",
+    "width": 1440,
+    "status": 200,
+    "version": "v0.7.12",
+    "layout": {
+      "viewport": 1440,
+      "width": 1440,
+      "h1": [
+        "Spool"
+      ],
+      "height": 4419
+    },
+    "errors": [],
+    "screenshot": "head-spool-1440.png"
+  },
+  {
+    "timestamp": "2026-11-15T16:43:59Z",
+    "variant": "head",
+    "slug": "lamp",
+    "width": 390,
+    "status": 200,
+    "version": "v1.11.18",
+    "layout": {
+      "viewport": 390,
+      "width": 390,
+      "h1": [
+        "Lamp"
+      ],
+      "height": 4876
+    },
+    "errors": [],
+    "screenshot": "head-lamp-390.png"
+  },
+  {
+    "timestamp": "2026-11-15T16:43:59Z",
+    "variant": "head",
+    "slug": "spool",
+    "width": 390,
+    "status": 200,
+    "version": "v0.7.12",
+    "layout": {
+      "viewport": 390,
+      "width": 390,
+      "h1": [
+        "Spool"
+      ],
+      "height": 4367
+    },
+    "errors": [],
+    "screenshot": "head-spool-390.png"
+  }
+]

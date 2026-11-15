@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "lamp",
+    "width": 1440,
+    "text_equal_except_version": true,
+    "main_height": 4798,
+    "head_height": 4798,
+    "main_width": 1440,
+    "head_width": 1440
+  },
+  {
+    "slug": "spool",
+    "width": 1440,
+    "text_equal_except_version": true,
+    "main_height": 4419,
+    "head_height": 4419,
+    "main_width": 1440,
+    "head_width": 1440
+  },
+  {
+    "slug": "lamp",
+    "width": 390,
+    "text_equal_except_version": true,
+    "main_height": 4876,
+    "head_height": 4876,
+    "main_width": 390,
+    "head_width": 390
+  },
+  {
+    "slug": "spool",
+    "width": 390,
+    "text_equal_except_version": true,
+    "main_height": 4367,
+    "head_height": 4367,
+    "main_width": 390,
+    "head_width": 390
+  }
+]

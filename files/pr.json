@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-11-15T16:47:38Z",
+  "number": 62,
+  "state": "open",
+  "draft": false,
+  "html_url": "https://github.com/just-every/home/pull/62",
+  "head": {
+    "ref": "cloud/je-sync-38",
+    "sha": "4a7cef36328b98da774deab81849d7aa9a3fc1fd"
+  },
+  "base": {
+    "ref": "main",
+    "sha": "e65b94456024ec80409449a4b7b91dedcd88f9a9"
+  }
+}
