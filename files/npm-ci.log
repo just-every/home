@@ -1,0 +1,12 @@
+2026-11-15T10:29:02Z
+COMMAND: timeout 360 npm ci
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+> next-project@0.1.0 prepare
+> husky
+
+
+added 726 packages in 32s
+2026-11-15T10:29:34Z
+EXIT=0

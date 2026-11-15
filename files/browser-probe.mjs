@@ -1,0 +1,48 @@
+import {chromium} from 'playwright';
+import fs from 'node:fs';
+import path from 'node:path';
+import {execFileSync} from 'node:child_process';
+import assert from 'node:assert/strict';
+const packet=path.join(process.env.HOME,'rer-consolidation/work/je-gate-45/packet');
+const timestamp=()=>execFileSync('date',['-u','+%Y-%m-%dT%H:%M:%SZ'],{encoding:'utf8'}).trim();
+const receipt={started:timestamp(),head:'2eb5ffbe583fcd1671cf9cb32640b32a34214716',origin:'http://127.0.0.1:31845',browser:'Chromium /usr/bin/chromium --no-sandbox',assertionWidth:1440,proofWidths:[1440,390],screens:[],errors:[],failedRequests:[]};
+const browser=await chromium.launch({headless:true,executablePath:'/usr/bin/chromium',args:['--no-sandbox','--use-mock-keychain','--password-store=basic']});
+try {
+ const context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'});
+ const page=await context.newPage();
+ page.on('pageerror',e=>receipt.errors.push(e.message));
+ page.on('requestfailed',r=>receipt.failedRequests.push({url:r.url().split('?')[0],error:r.failure()?.errorText}));
+ const dataResponse=await page.request.get(`${receipt.origin}/data/listings.json`);
+ assert.equal(dataResponse.status(),200);
+ const data=await dataResponse.json();
+ assert.equal(data.listings.length,49);
+ assert.equal(data.listings.filter(x=>x.status==='released').length,35);
+ assert.equal(data.listings.filter(x=>x.status==='coming-soon').length,14);
+ assert.equal(data.listings.find(x=>x.slug==='lamp').version,'v1.11.17');
+ assert.equal(data.listings.find(x=>x.slug==='lamp').pageUrl,'https://justevery.com/lamp');
+ for(const slug of ['beacon','relay','ferry','lily','brook','delta','barrow','linen']) assert.equal(data.listings.some(x=>x.slug===slug),false);
+ receipt.publicData={status:dataResponse.status(),total:49,released:35,comingSoon:14,lamp:data.listings.find(x=>x.slug==='lamp')};
+ const response=await page.goto(`${receipt.origin}/lamp`,{waitUntil:'domcontentloaded',timeout:45000});
+ assert.equal(response.status(),200);
+ await page.getByRole('heading',{name:'Lamp',exact:true}).waitFor({state:'visible'});
+ await page.getByText('v1.11.17',{exact:true}).waitFor({state:'attached'});
+ await page.evaluate(()=>document.fonts.ready);
+ const metric=()=>page.evaluate(()=>({viewport:innerWidth,documentWidth:document.documentElement.scrollWidth,bodyWidth:document.body.scrollWidth,pageHeight:document.documentElement.scrollHeight,version:[...document.querySelectorAll('dd')].find(e=>e.textContent==='v1.11.17')?.getBoundingClientRect().toJSON(),h1:document.querySelector('h1')?.textContent}));
+ let metrics=await metric();
+ assert.ok(metrics.documentWidth<=1440,`horizontal overflow ${metrics.documentWidth}`);
+ await page.getByText('v1.11.17',{exact:true}).scrollIntoViewIfNeeded();
+ assert.ok(await page.getByText('v1.11.17',{exact:true}).isVisible());
+ await page.evaluate(()=>window.scrollTo(0,0));
+ await page.screenshot({path:path.join(packet,'lamp-1440.png'),fullPage:true,animations:'disabled'});
+ receipt.screens.push({width:1440,status:response.status(),metrics,screenshot:'lamp-1440.png'});
+ fs.writeFileSync(path.join(packet,'lamp-rendered-text.txt'),await page.locator('body').innerText());
+ // Phone is browser proof for the same screen, without registering another assertion journey.
+ await page.setViewportSize({width:390,height:844});
+ await page.reload({waitUntil:'domcontentloaded',timeout:45000});
+ await page.evaluate(()=>document.fonts.ready);
+ metrics=await metric();
+ await page.screenshot({path:path.join(packet,'lamp-390.png'),fullPage:true,animations:'disabled'});
+ receipt.screens.push({width:390,metrics,screenshot:'lamp-390.png',versionText:await page.locator('dl').innerText()});
+ receipt.result='PASS';
+ await context.close();
+} catch(error) {receipt.result='FAIL';receipt.error=error.stack;process.exitCode=1;} finally {await browser.close();receipt.finished=timestamp();fs.writeFileSync(path.join(packet,'browser-receipt.json'),JSON.stringify(receipt,null,2)+'\n');console.log(JSON.stringify(receipt,null,2));}

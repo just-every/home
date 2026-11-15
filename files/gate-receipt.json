@@ -1,0 +1,60 @@
+{
+  "author": "Run Edit Run fleet",
+  "timestamp": "2026-11-15T10:36:43Z",
+  "repository": "just-every/home",
+  "role": "independent deciding gate",
+  "tag": "je-gate-45",
+  "candidate_branch": "cloud/je-sync-37",
+  "candidate_head": "2eb5ffbe583fcd1671cf9cb32640b32a34214716",
+  "base": "9805549c7fc4a357ac08bda001cb5165e1141b7e",
+  "pr": "https://github.com/just-every/home/pull/61",
+  "product_commits_created": 0,
+  "product_pushes": 0,
+  "clause_status_changes": [],
+  "r1": "MET",
+  "r2": "MET",
+  "r3": "MET",
+  "r4": "MET",
+  "r5": "MET",
+  "blocking_findings": 0,
+  "new_follow_ups": 0,
+  "decision": "PASS",
+  "ci": {
+    "verify": 43702829307,
+    "verify_status": "completed",
+    "verify_conclusion": "success",
+    "pr_duplicate_skipped": 43702862984,
+    "pr_check_success": 43702860848,
+    "exact_head": true
+  },
+  "counts_before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "counts_after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "checks": {
+    "npm-ci": 0,
+    "listings-check": 0,
+    "listings-write": 0,
+    "type-check": 0,
+    "lint": 0,
+    "build": 0
+  },
+  "browser": "browser-receipt.json",
+  "api_calls": 8,
+  "source_lock": "not applicable: absent in this repository",
+  "contract_generator": "not applicable: no local CONTRACT.md or documented contract generator",
+  "migration_ledger": "not applicable: five SQL migrations exist, no documented migration-ledger check and no migration changes",
+  "server_cleanup": "PID 1423 received SIGTERM after browser closed; subreaper exited 143 as expected",
+  "product_tree_clean": true,
+  "limitations": [
+    "Release envelope asset presence verified; no signature verification attempted or claimed.",
+    "Production Next server rendered static catalogue and Lamp page; Cloudflare cache/D1-backed telemetry was not provisioned and is outside the touched surface.",
+    "Mac publication/landing scan and deployment remain with the lane."
+  ]
+}

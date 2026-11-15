@@ -1,0 +1,8 @@
+2026-11-15T10:29:34Z
+COMMAND: timeout 180 npm run type-check
+
+> next-project@0.1.0 type-check
+> tsc --noEmit
+
+2026-11-15T10:29:40Z
+EXIT=0

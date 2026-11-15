@@ -1,0 +1,97 @@
+{
+  "started": "2026-11-15T10:33:13Z",
+  "head": "2eb5ffbe583fcd1671cf9cb32640b32a34214716",
+  "origin": "http://127.0.0.1:31845",
+  "browser": "Chromium /usr/bin/chromium --no-sandbox",
+  "assertionWidth": 1440,
+  "proofWidths": [
+    1440,
+    390
+  ],
+  "screens": [
+    {
+      "width": 1440,
+      "status": 200,
+      "metrics": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440,
+        "pageHeight": 4891,
+        "version": {
+          "x": 617.328125,
+          "y": 3796.640625,
+          "width": 205.328125,
+          "height": 23.09375,
+          "top": 3796.640625,
+          "right": 822.65625,
+          "bottom": 3819.734375,
+          "left": 617.328125
+        },
+        "h1": "Lamp"
+      },
+      "screenshot": "lamp-1440.png"
+    },
+    {
+      "width": 390,
+      "metrics": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "pageHeight": 4876,
+        "version": {
+          "x": 20,
+          "y": 3996.71875,
+          "width": 350,
+          "height": 23.09375,
+          "top": 3996.71875,
+          "right": 370,
+          "bottom": 4019.8125,
+          "left": 20
+        },
+        "h1": "Lamp"
+      },
+      "screenshot": "lamp-390.png",
+      "versionText": "RUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv1.11.17\nLICENCE\nMIT, 100% free"
+    }
+  ],
+  "errors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:31845/api/tokens",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:31845/api/events",
+      "error": "net::ERR_ABORTED"
+    }
+  ],
+  "publicData": {
+    "status": 200,
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14,
+    "lamp": {
+      "slug": "lamp",
+      "name": "Lamp",
+      "status": "released",
+      "version": "v1.11.17",
+      "category": "Status page",
+      "line": "The status page that never leaves your customers in the dark.",
+      "headline": "When something breaks, turn the light on.",
+      "replaces": [
+        "Atlassian Statuspage",
+        "Instatus",
+        "Better Stack"
+      ],
+      "primaryReplace": "Atlassian Statuspage",
+      "accent": "#f4c25c",
+      "ink": "#182d24",
+      "paper": "#f8f6f0",
+      "mark": "/seeds/lamp/mark.svg",
+      "pageUrl": "https://justevery.com/lamp",
+      "contractUrl": "https://run-lamp.com/contract"
+    }
+  },
+  "result": "PASS",
+  "finished": "2026-11-15T10:33:16Z"
+}

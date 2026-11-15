@@ -1,0 +1,44 @@
+{
+  "started": "2026-11-15T10:31:43Z",
+  "head": "2eb5ffbe583fcd1671cf9cb32640b32a34214716",
+  "origin": "http://127.0.0.1:31845",
+  "browser": "Chromium /usr/bin/chromium --no-sandbox",
+  "assertionWidth": 1440,
+  "proofWidths": [
+    1440,
+    390
+  ],
+  "screens": [],
+  "errors": [],
+  "failedRequests": [],
+  "publicData": {
+    "status": 200,
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14,
+    "lamp": {
+      "slug": "lamp",
+      "name": "Lamp",
+      "status": "released",
+      "version": "v1.11.17",
+      "category": "Status page",
+      "line": "The status page that never leaves your customers in the dark.",
+      "headline": "When something breaks, turn the light on.",
+      "replaces": [
+        "Atlassian Statuspage",
+        "Instatus",
+        "Better Stack"
+      ],
+      "primaryReplace": "Atlassian Statuspage",
+      "accent": "#f4c25c",
+      "ink": "#182d24",
+      "paper": "#f8f6f0",
+      "mark": "/seeds/lamp/mark.svg",
+      "pageUrl": "https://justevery.com/lamp",
+      "contractUrl": "https://run-lamp.com/contract"
+    }
+  },
+  "result": "FAIL",
+  "error": "page.goto: Timeout 45000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:31845/lamp\", waiting until \"networkidle\"\u001b[22m\n\n    at /home/agent/rer-consolidation/work/je-gate-45/browser/probe.mjs:25:28",
+  "finished": "2026-11-15T10:32:29Z"
+}

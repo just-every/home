@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-11-15T10:30:10Z",
+  "head": "2eb5ffbe583fcd1671cf9cb32640b32a34214716",
+  "base": "9805549c7fc4a357ac08bda001cb5165e1141b7e",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "counts_before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "counts_after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "listing_changes": {
+    "lamp": {
+      "version": [
+        "v1.11.16",
+        "v1.11.17"
+      ]
+    }
+  },
+  "unchanged_versions": {
+    "spool": "v0.7.11",
+    "uptime": "v0.5.11",
+    "oncall": "v0.5.14",
+    "orbit": "v0.4.9",
+    "happytohelp": "v0.4.28"
+  },
+  "excluded_absent": [
+    "beacon",
+    "relay",
+    "ferry",
+    "lily",
+    "brook",
+    "delta",
+    "barrow",
+    "linen"
+  ],
+  "copy_wording_unchanged": true,
+  "state_only_lamp_changed": true,
+  "credential_shaped_added_values": 0,
+  "deleted_skipped_weakened_tests": 0,
+  "source": "b5b5628a247ba2289aeb9af16cab04a998e823ce",
+  "diff_whitespace": "pass",
+  "contract_source_lock_migration_checks": "not applicable: no CONTRACT.md, sources.lock.json, generated contract views or migration-ledger check in repository instructions/scripts"
+}
