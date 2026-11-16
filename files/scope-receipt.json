@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-11-16T23:06:33Z",
+  "listingChanges": {
+    "uptime": {
+      "version": [
+        "v0.5.13",
+        "v0.5.15"
+      ]
+    }
+  },
+  "beforeCounts": {
+    "coming-soon": 14,
+    "released": 35
+  },
+  "afterCounts": {
+    "coming-soon": 14,
+    "released": 35
+  },
+  "totalBefore": 49,
+  "totalAfter": 49,
+  "stateChanges": [
+    "orbit",
+    "spool",
+    "uptime"
+  ],
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "excludedAbsent": [
+    "beacon",
+    "relay",
+    "ferry",
+    "lily",
+    "brook",
+    "delta",
+    "barrow",
+    "linen"
+  ],
+  "publicCopyChanges": 0,
+  "clauseStatusChanges": 0,
+  "productHead": "423e10234898f9742f9724749e106b0678572b38",
+  "productTree": "5fa6a9f0a28f3ac4209a34219a421083b9f37e65",
+  "files": {
+    "public/data/listings.json": {
+      "blob": "4c2537478a904f73081368d79ea45bc924073d81",
+      "sha256": "b46eeec3fc2a443ae3ba27170f0336623d6b5862056a9099681f141c021a80e0"
+    },
+    "scripts/seeds-sync/state.json": {
+      "blob": "64f59588e584797a676d9f5af465558251e6454f",
+      "sha256": "98b070337a115ddcfb7c0971fc55ec913875d46c924ba64de90dcc907a697166"
+    },
+    "src/data/seed-pages.ts": {
+      "blob": "bd24dbd2ef5b932c57ce4ef6db470f054082f95b",
+      "sha256": "d699693aee6421af48d5c7eae032beeaba038934caa2540d35af2e3443e989b0"
+    }
+  }
+}

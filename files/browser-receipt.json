@@ -1,0 +1,19 @@
+{
+  "startedAt": "2026-11-16T23:08:35Z",
+  "assertionWidth": 1440,
+  "screenshots": [
+    {
+      "width": 1440,
+      "path": "uptime-1440.png",
+      "url": "http://127.0.0.1:3143/uptime",
+      "version": "RUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.5.15\nLICENCE\nMIT, 100% free"
+    },
+    {
+      "width": 390,
+      "path": "uptime-390.png",
+      "url": "http://127.0.0.1:3143/uptime",
+      "version": "RUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.5.15\nLICENCE\nMIT, 100% free"
+    }
+  ],
+  "finishedAt": "2026-11-16T23:08:38Z"
+}

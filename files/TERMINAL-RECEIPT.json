@@ -1,0 +1,59 @@
+{
+  "author": "Run Edit Run fleet",
+  "completedAt": "2026-11-16T23:15:12Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-43",
+  "head": "423e10234898f9742f9724749e106b0678572b38",
+  "productTree": "5fa6a9f0a28f3ac4209a34219a421083b9f37e65",
+  "productRemoteHead": "423e10234898f9742f9724749e106b0678572b38",
+  "pr": {
+    "base": "main",
+    "head": "423e10234898f9742f9724749e106b0678572b38",
+    "html_url": "https://github.com/just-every/home/pull/67",
+    "number": 67
+  },
+  "ci": {
+    "runId": 43976676609,
+    "conclusion": "success",
+    "head_sha": "423e10234898f9742f9724749e106b0678572b38",
+    "html_url": "https://github.com/just-every/home/actions/runs/43976676609",
+    "status": "completed",
+    "observedAt": "2026-11-16T23:14:37Z"
+  },
+  "checks": {
+    "npmCi": "passed",
+    "listings": "passed",
+    "listingsCheck": "passed",
+    "lint": "passed",
+    "typeCheck": "passed",
+    "productionBuild": "passed on retry after existing Next.js advisory",
+    "drySync": "zero of six changed",
+    "browser": "1440 assertion and 1440/390 screenshots",
+    "candidateDiffHygiene": "passed",
+    "publicationScan": "Mac lane required before landing"
+  },
+  "counts": {
+    "before": 49,
+    "after": 49,
+    "releasedBefore": 35,
+    "releasedAfter": 35,
+    "comingSoonBefore": 14,
+    "comingSoonAfter": 14
+  },
+  "versionChanges": {
+    "uptime": [
+      "v0.5.13",
+      "v0.5.15"
+    ]
+  },
+  "clauseStatusChanges": [],
+  "publicCopyChanges": [],
+  "blockers": [],
+  "followups": [
+    "Existing Next.js dependency security advisory; upgrade outside catalogue scope",
+    "RER Uptime remains 0.5.13; Spool absent from fresh RER manifest",
+    "Existing partial-evidence copy follow-ups preserved"
+  ],
+  "custody": "READY candidate; no merge/deploy or publication-scan claim",
+  "readyLine": "READY branch=cloud/je-sync-43 head=423e10234898f9742f9724749e106b0678572b38"
+}
