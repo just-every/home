@@ -1,0 +1,48 @@
+oldContract sha256=ae8feea8b7998aa729edadf621d7f3809aa83bbe073fd3e053e1c1fb8b9b04ec lines=1289
+newContract sha256=ae8feea8b7998aa729edadf621d7f3809aa83bbe073fd3e053e1c1fb8b9b04ec lines=1289
+oldReadme sha256=9260e012d46d3779a398ef8693a6eb963efe2b051ae11a9dd7a5b2a2fc3afd55 lines=422
+newReadme sha256=022f2ad37fee04ef72146d5f049454b840fd2bb4b8bcd6f99f5afdcac3faa4d7 lines=434
+v0.4.31 README.md:81: installation, local sign-in and stopping the app, step by step.
+v0.4.31 README.md:82: The [Run HappyToHelp page](https://happytohelp.com/run) has the quick-start command.
+v0.4.31 README.md:83: 
+v0.4.31 README.md:84: Start the free local app with this single copy-and-run command. You do not need
+v0.4.31 README.md:85: Node.js or npm installed first; the installer brings its own. Git is required.
+v0.4.31 README.md:86: 
+v0.4.31 README.md:87: ```sh
+v0.4.31 README.md:88: curl -fsSL https://runeditrun.com/install.sh | sh -s -- dev just-every/run-happytohelp
+v0.4.31 README.md:89: ```
+v0.4.31 README.md:90: 
+v0.4.31 README.md:91: That clones HappyToHelp into `run-happytohelp`, provisions the checkout's own pinned
+v0.4.31 README.md:92: Node and pnpm, installs dependencies, sets up a local owner and starts the app.
+v0.4.31 README.md:93: To start it again later, run `cd run-happytohelp && rer dev`.
+v0.4.31 README.md:94: 
+v0.4.31 README.md:95: If you already have **Node.js 22 or later** (with npm) and Git, the alternative is:
+v0.4.31 README.md:96: 
+v0.4.31 README.md:97: ```sh
+v0.4.31 README.md:98: npx -y @runeditrun/rer dev just-every/run-happytohelp
+v0.4.31 README.md:99: ```
+v0.4.31 README.md:100: 
+v0.4.31 README.md:101: To set it up without starting it, use
+v0.4.31 README.md:102: `npx -y @runeditrun/rer setup just-every/run-happytohelp`.
+v0.4.31 README.md:103: 
+v0.4.31 README.md:104: Normal setup and launch install the app's dependencies and build its local assets;
+v0.4.31 README.md:105: they do not download Chromium. Dev uses its local
+v0.4.31 README.md:106: address for the chat widget and generates a private owner password. Wait for `RER_READY`, then open the `RER_OPEN` address to enter as the
+v0.4.31 README.md:107: real local owner and reach **Setup**. No private answers, email service or AI
+v0.4.31 README.md:108: account are needed. Use `rer dev --stop` from the checkout to stop the managed app.
+v0.4.31 README.md:109: 
+v0.4.31 README.md:110: **Browser verification:** `rer verify` downloads the Chromium and headless shell
+v0.4.31 README.md:111: pinned by the checkout's Playwright into your user cache when first needed.
+v0.4.31 README.md:112: See [Verify, reset and move data](docs/INSTALLER.md#verify-reset-and-move-data)
+v0.4.31 README.md:113: for running browser checks directly.
+v0.4.31 README.md:114: 
+v0.4.31 README.md:115: Already running 0.3? Keep your checkout and data, and follow
+v0.4.31 README.md:116: [Upgrading from 0.3.x](OPERATIONS.md#upgrading-from-03x) instead.
+oldSeed sha256=519c266cfec584401dfd9aa0e468dcad2bab4d4e8e1b777a2e20536589d76106 lines=455
+newSeed sha256=9289d1c33da148609c47efc69d5c74f916cf687df3e4e3bb7c1a9dc1619c3694 lines=455
+v0.4.31 seed.json:1: {
+v0.4.31 seed.json:2:   "id": "happytohelp",
+v0.4.31 seed.json:3:   "name": "HappyToHelp",
+v0.4.31 seed.json:4:   "version": "0.4.31",
+v0.4.31 seed.json:5:   "license": "MIT",
+v0.4.31 seed.json:6:   "repository": "https://github.com/just-every/run-happytohelp",

@@ -1,0 +1,66 @@
+{
+  "observedAt": "2026-11-16T13:39:54Z",
+  "rerGeneratedAt": "2026-11-15T13:56:34Z",
+  "seeds": [
+    {
+      "slug": "happytohelp",
+      "rerVersion": "0.4.28",
+      "jeBefore": "v0.4.28",
+      "rerReleasePin": {
+        "repository": "https://github.com/just-every/run-happytohelp",
+        "tag": "v0.4.28",
+        "status": "published"
+      }
+    },
+    {
+      "slug": "lamp",
+      "rerVersion": "1.11.18",
+      "jeBefore": "v1.11.19",
+      "rerReleasePin": {
+        "repository": "https://github.com/just-every/run-lamp",
+        "tag": "v1.11.18",
+        "status": "published"
+      }
+    },
+    {
+      "slug": "uptime",
+      "rerVersion": "0.5.13",
+      "jeBefore": "v0.5.13",
+      "rerReleasePin": {
+        "repository": "https://github.com/just-every/run-uptime",
+        "tag": "v0.5.13",
+        "status": "published"
+      }
+    },
+    {
+      "slug": "oncall",
+      "rerVersion": "0.5.16",
+      "jeBefore": "v0.5.16",
+      "rerReleasePin": {
+        "repository": "https://github.com/just-every/run-oncall",
+        "tag": "v0.5.16",
+        "status": "published"
+      }
+    },
+    {
+      "slug": "orbit",
+      "rerVersion": "0.4.10",
+      "jeBefore": "v0.4.10",
+      "rerReleasePin": {
+        "repository": "https://github.com/just-every/run-orbit",
+        "tag": "v0.4.10",
+        "status": "published"
+      }
+    },
+    {
+      "slug": "spool",
+      "rerVersion": "0.7.12",
+      "jeBefore": "v0.7.12",
+      "rerReleasePin": {
+        "repository": "https://github.com/just-every/run-spool",
+        "tag": "v0.7.12",
+        "status": "published"
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "observedAt": "2026-11-16T13:49:07Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-41",
+  "head": "7795b774fcead3ae2c846ff48f974b328de924c4",
+  "base": "abbda23585bcb50a430ffc60dba59b9d40046aa0",
+  "remoteRef": "7795b774fcead3ae2c846ff48f974b328de924c4\trefs/heads/cloud/je-sync-41",
+  "push": "succeeded first attempt through cloud-push.py",
+  "pr": {
+    "base": {
+      "ref": "main"
+    },
+    "head": {
+      "ref": "cloud/je-sync-41",
+      "sha": "7795b774fcead3ae2c846ff48f974b328de924c4"
+    },
+    "html_url": "https://github.com/just-every/home/pull/65",
+    "number": 65,
+    "state": "open"
+  },
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "worktreeClean": true,
+  "localChecks": {
+    "npmCi": "passed",
+    "listings": "passed",
+    "typeCheck": "passed",
+    "lint": "passed",
+    "productionBuild": "passed",
+    "finalDry": "passed; only deliberately withheld Uptime and Spool bare tags remain",
+    "browser": "passed; assertions1440/screens1440and390",
+    "identityAndDiffHygiene": "passed"
+  },
+  "clauseStatusChanges": [],
+  "countsBefore": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "countsAfter": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "macPublicationScan": "not run in cloud; lane-owned",
+  "ci": {
+    "conclusion": "success",
+    "created_at": "2026-11-16T13:46:12Z",
+    "event": "push",
+    "head_sha": "7795b774fcead3ae2c846ff48f974b328de924c4",
+    "html_url": "https://github.com/just-every/home/actions/runs/43878969241",
+    "id": 43878969241,
+    "name": "Verify branch",
+    "status": "completed",
+    "updated_at": "2026-11-16T13:47:38Z"
+  },
+  "custody": "READY"
+}

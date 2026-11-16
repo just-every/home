@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-11-16T13:44:46Z",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "scopeCheck": "passed",
+  "diffCredentialShapeCheck": "passed",
+  "publicationScan": "Mac lane responsibility; unavailable in cloud; not claimed"
+}

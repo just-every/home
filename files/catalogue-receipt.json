@@ -1,0 +1,29 @@
+{
+  "observedAt": "2026-11-16T13:43:03Z",
+  "before": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "coming-soon": 14
+  },
+  "listingChanges": [
+    {
+      "slug": "happytohelp",
+      "changes": {
+        "version": {
+          "before": "v0.4.28",
+          "after": "v0.4.31"
+        }
+      }
+    }
+  ],
+  "stateChangedSeeds": [
+    "happytohelp",
+    "lamp",
+    "oncall"
+  ]
+}

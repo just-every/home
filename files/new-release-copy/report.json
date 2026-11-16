@@ -1,0 +1,144 @@
+{
+  "startedAt": "2026-11-16T13:42:00.408Z",
+  "mode": "apply",
+  "copyOnly": true,
+  "captureHost": null,
+  "load": 1.46,
+  "statePath": "scripts/seeds-sync/state.json",
+  "baselineDate": null,
+  "seeds": [
+    {
+      "slug": "uptime",
+      "name": "Uptime",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.5.13",
+        "commit": "c1e8376c7dfd6ed601b6fe993567237449fc7143",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "bc8396eb9509cf77",
+          "README.md": "3dcae3939be7cacb",
+          "seed.json": "71f59345e2c02e14"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "happytohelp",
+      "name": "HappyToHelp",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.31",
+        "commit": "e5fb53dc305f53a71ff0b6db81d5eec7dfd0104f",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ae8feea8b7998aa7",
+          "README.md": "022f2ad37fee04ef",
+          "seed.json": "9289d1c33da14860"
+        }
+      },
+      "findings": [
+        {
+          "type": "copy",
+          "summary": "README.md, seed.json changed since the last sync",
+          "status": "reported",
+          "manual": null,
+          "copy": "rewrite the page copy from README.md, seed.json (https://github.com/just-every/run-happytohelp/compare/41fb40246d2e...e5fb53dc305f)",
+          "details": {
+            "files": [
+              "README.md",
+              "seed.json"
+            ],
+            "range": "https://github.com/just-every/run-happytohelp/compare/41fb40246d2e...e5fb53dc305f",
+            "from": "41fb40246d2e69f928be397c48d952d147c39160",
+            "to": "e5fb53dc305f53a71ff0b6db81d5eec7dfd0104f"
+          },
+          "repeat": false,
+          "images": null
+        }
+      ]
+    },
+    {
+      "slug": "lamp",
+      "name": "Lamp",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v1.11.19",
+        "commit": "761f3d186e8fa73ea9aa8b61bcf9ebe8013384f6",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "f9cb0b8a5bd46d69",
+          "README.md": "1a20f137749ab26b",
+          "seed.json": "7d8b60b1b7a538bf"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "orbit",
+      "name": "Orbit",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.10",
+        "commit": "22ca38c0e0bb5784440df021e8a5eb5b41a81de8",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "2c7cce58a1437e4b",
+          "README.md": "20ef6d3a4cdc967d",
+          "seed.json": "d7a7135bef74a09a"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "oncall",
+      "name": "Oncall",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.5.16",
+        "commit": "7f250f7e66f1377f7b4b773effd1c72e8854c025",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "c04517abc904f1e5",
+          "README.md": "1868c766a1837b41",
+          "seed.json": "130f81940ec475b7"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "spool",
+      "name": "Spool",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.7.12",
+        "commit": "cc086904fd942175d18c60082b10c459c343dc78",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ee9c871bfa25a110",
+          "README.md": "c942367838430a75",
+          "seed.json": "8123b75e1c3dfe5d"
+        }
+      },
+      "findings": []
+    }
+  ],
+  "shareImage": [],
+  "apply": {
+    "applied": [],
+    "written": [],
+    "favicons": false
+  }
+}
