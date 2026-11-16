@@ -1,0 +1,41 @@
+{
+  "startedAt": "2026-11-16T15:29:24Z",
+  "finishedAt": "2026-11-16T15:29:26Z",
+  "origin": "http://127.0.0.1:3187",
+  "browser": "/usr/bin/chromium",
+  "rows": [
+    {
+      "slug": "orbit",
+      "width": 1440,
+      "httpStatus": 200,
+      "version": "v0.4.11",
+      "versionRowMatchesRelease": true,
+      "structuredMetadataMatchesRelease": true,
+      "screenshot": "browser-proof/orbit-1440.png"
+    },
+    {
+      "slug": "orbit",
+      "width": 390,
+      "screenshot": "browser-proof/orbit-390.png",
+      "observation": "phone screenshot only; assertions performed at 1440"
+    },
+    {
+      "slug": "spool",
+      "width": 1440,
+      "httpStatus": 200,
+      "version": "v0.7.13",
+      "versionRowMatchesRelease": true,
+      "structuredMetadataMatchesRelease": true,
+      "screenshot": "browser-proof/spool-1440.png"
+    },
+    {
+      "slug": "spool",
+      "width": 390,
+      "screenshot": "browser-proof/spool-390.png",
+      "observation": "phone screenshot only; assertions performed at 1440"
+    }
+  ],
+  "productHead": "8859bb199a9b92eb7fe05aef12ba1dbc75ac3439",
+  "productTree": "77dc0b3df74fca29e8ea7eefa0e6e4866acd7a25",
+  "provenance": "Local checks and browser proof ran on the exact content committed in this product tree; repository pre-commit hooks produced the same scoped content."
+}

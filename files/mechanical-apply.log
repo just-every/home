@@ -1,0 +1,26 @@
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --apply --only happytohelp,lamp,oncall,orbit,spool --out ../packet/mechanical-apply
+
+Reading 5 seed repositories...
+happytohelp: source=v0.4.31 commit=e5fb53dc305f53a71ff0b6db81d5eec7dfd0104f (released listing version)
+lamp: source=v1.11.19 commit=761f3d186e8fa73ea9aa8b61bcf9ebe8013384f6 (released listing version)
+orbit: source=v0.4.10 commit=22ca38c0e0bb5784440df021e8a5eb5b41a81de8 (released listing version)
+oncall: source=v0.5.16 commit=7f250f7e66f1377f7b4b773effd1c72e8854c025 (released listing version)
+spool: source=v0.7.12 commit=cc086904fd942175d18c60082b10c459c343dc78 (released listing version)
+Reading 5 homepages...
+  read lamp 
+  read oncall 
+  read orbit 
+  read spool 
+  read happytohelp 
+  
+Applied: 2 of 5 seeds changed.
+
+Orbit
+  version   newer tag v0.4.11 (page shows v0.4.10) [applied]
+
+Spool
+  version   newer tag v0.7.13 (page shows v0.7.12) [applied]
+
+Report: /home/agent/rer-consolidation/work/je-sync-42/packet/mechanical-apply/report.md

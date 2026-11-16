@@ -1,0 +1,55 @@
+{
+  "rerGeneratedAt": "2026-11-15T13:56:34Z",
+  "jeLiveGeneratedAt": "2026-11-16T13:42:13.967Z",
+  "readAt": "2026-11-16T15:20:01Z",
+  "rows": [
+    {
+      "slug": "happytohelp",
+      "rerId": "happytohelp",
+      "rerVersion": "0.4.28",
+      "jeBefore": "v0.4.31",
+      "jeCandidate": "v0.4.31",
+      "downgraded": false
+    },
+    {
+      "slug": "lamp",
+      "rerId": "lamp",
+      "rerVersion": "1.11.18",
+      "jeBefore": "v1.11.19",
+      "jeCandidate": "v1.11.19",
+      "downgraded": false
+    },
+    {
+      "slug": "uptime",
+      "rerId": "uptime",
+      "rerVersion": "0.5.13",
+      "jeBefore": "v0.5.13",
+      "jeCandidate": "v0.5.13",
+      "downgraded": false
+    },
+    {
+      "slug": "oncall",
+      "rerId": "oncall",
+      "rerVersion": "0.5.16",
+      "jeBefore": "v0.5.16",
+      "jeCandidate": "v0.5.16",
+      "downgraded": false
+    },
+    {
+      "slug": "orbit",
+      "rerId": "orbit",
+      "rerVersion": "0.4.10",
+      "jeBefore": "v0.4.10",
+      "jeCandidate": "v0.4.11",
+      "downgraded": false
+    },
+    {
+      "slug": "spool",
+      "rerId": "errors-workbench",
+      "rerVersion": "0.7.12",
+      "jeBefore": "v0.7.12",
+      "jeCandidate": "v0.7.13",
+      "downgraded": false
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "before": {
+    "total": 49,
+    "coming-soon": 14,
+    "released": 35
+  },
+  "after": {
+    "total": 49,
+    "coming-soon": 14,
+    "released": 35
+  },
+  "listingChanges": [
+    {
+      "slug": "orbit",
+      "changes": {
+        "version": {
+          "before": "v0.4.10",
+          "after": "v0.4.11"
+        }
+      },
+      "release": "https://github.com/just-every/run-orbit/releases/tag/v0.4.11",
+      "envelopeAssetPresent": true,
+      "signatureVerified": false
+    },
+    {
+      "slug": "spool",
+      "changes": {
+        "version": {
+          "before": "v0.7.12",
+          "after": "v0.7.13"
+        }
+      },
+      "release": "https://github.com/just-every/run-spool/releases/tag/v0.7.13",
+      "envelopeAssetPresent": true,
+      "signatureVerified": false
+    }
+  ],
+  "stateChangedSeeds": [
+    "happytohelp",
+    "orbit",
+    "spool"
+  ],
+  "hiddenAbsent": [
+    "beacon",
+    "relay",
+    "ferry",
+    "lily",
+    "brook",
+    "delta",
+    "barrow",
+    "linen"
+  ],
+  "changedPaths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "productHead": "8859bb199a9b92eb7fe05aef12ba1dbc75ac3439",
+  "productTree": "77dc0b3df74fca29e8ea7eefa0e6e4866acd7a25",
+  "provenance": "Local checks and browser proof ran on the exact content committed in this product tree; repository pre-commit hooks produced the same scoped content."
+}

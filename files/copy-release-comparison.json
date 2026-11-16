@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "orbit",
+    "sources": {
+      "v0.4.10": {
+        "slug": "orbit",
+        "tag": "v0.4.10",
+        "commit": "22ca38c0e0bb5784440df021e8a5eb5b41a81de8",
+        "files": {
+          "CONTRACT.md": {
+            "bytes": 502392,
+            "sha256": "2c7cce58a1437e4b0104046706ee4c79ad96965c233d8a36149a3573f1fe2872"
+          },
+          "README.md": {
+            "bytes": 17225,
+            "sha256": "20ef6d3a4cdc967de48720ecb9b20e7801981fde88dc92b5129b3e38ca763f99"
+          },
+          "seed.json": {
+            "bytes": 19649,
+            "sha256": "d7a7135bef74a09a15319d316b51a98a61c3d65b39b7277251a6a6e9531dd67e"
+          }
+        }
+      },
+      "v0.4.11": {
+        "slug": "orbit",
+        "tag": "v0.4.11",
+        "commit": "a4fcbfcd72fa4253826f43d0b0de02275094f86d",
+        "files": {
+          "CONTRACT.md": {
+            "bytes": 502392,
+            "sha256": "2c7cce58a1437e4b0104046706ee4c79ad96965c233d8a36149a3573f1fe2872"
+          },
+          "README.md": {
+            "bytes": 17225,
+            "sha256": "20ef6d3a4cdc967de48720ecb9b20e7801981fde88dc92b5129b3e38ca763f99"
+          },
+          "seed.json": {
+            "bytes": 19649,
+            "sha256": "d0ec85580f2b4ddf3b0d9b42286050e85485de8d6db78d7f30292845a99464dd"
+          }
+        }
+      }
+    },
+    "copyUnchanged": false
+  },
+  {
+    "slug": "spool",
+    "sources": {
+      "v0.7.12": {
+        "slug": "spool",
+        "tag": "v0.7.12",
+        "commit": "cc086904fd942175d18c60082b10c459c343dc78",
+        "files": {
+          "CONTRACT.md": {
+            "bytes": 325429,
+            "sha256": "ee9c871bfa25a110d3f3e61924164c75cc17ea412cb775f2e0621f114ab3594b"
+          },
+          "README.md": {
+            "bytes": 17446,
+            "sha256": "c942367838430a754d26b981891e3e70f87ca2d3a537f90d9f3cbf9460f9fe88"
+          },
+          "seed.json": {
+            "bytes": 18314,
+            "sha256": "8123b75e1c3dfe5d92ea6fefaca24d96d9aa6d5baa5c963be17dac44e9108562"
+          }
+        }
+      },
+      "v0.7.13": {
+        "slug": "spool",
+        "tag": "v0.7.13",
+        "commit": "e35ebeca36a855cdbe7c0685b7c5324170d17a2a",
+        "files": {
+          "CONTRACT.md": {
+            "bytes": 325429,
+            "sha256": "ee9c871bfa25a110d3f3e61924164c75cc17ea412cb775f2e0621f114ab3594b"
+          },
+          "README.md": {
+            "bytes": 17446,
+            "sha256": "c942367838430a754d26b981891e3e70f87ca2d3a537f90d9f3cbf9460f9fe88"
+          },
+          "seed.json": {
+            "bytes": 18314,
+            "sha256": "1a6fc3d599968e1e4c8d5ea4c3541fe7f16bf1b83c79dc872a5216f15f7c62a1"
+          }
+        }
+      }
+    },
+    "copyUnchanged": false
+  }
+]

@@ -1,0 +1,140 @@
+{
+  "startedAt": "2026-11-16T15:25:32.717Z",
+  "mode": "apply",
+  "copyOnly": false,
+  "captureHost": null,
+  "load": 0.79,
+  "statePath": "scripts/seeds-sync/state.json",
+  "baselineDate": null,
+  "seeds": [
+    {
+      "slug": "happytohelp",
+      "name": "HappyToHelp",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.31",
+        "commit": "e5fb53dc305f53a71ff0b6db81d5eec7dfd0104f",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ae8feea8b7998aa7",
+          "README.md": "022f2ad37fee04ef",
+          "seed.json": "9289d1c33da14860"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "lamp",
+      "name": "Lamp",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v1.11.19",
+        "commit": "761f3d186e8fa73ea9aa8b61bcf9ebe8013384f6",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "f9cb0b8a5bd46d69",
+          "README.md": "1a20f137749ab26b",
+          "seed.json": "7d8b60b1b7a538bf"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "orbit",
+      "name": "Orbit",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.10",
+        "commit": "22ca38c0e0bb5784440df021e8a5eb5b41a81de8",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "2c7cce58a1437e4b",
+          "README.md": "20ef6d3a4cdc967d",
+          "seed.json": "d7a7135bef74a09a"
+        }
+      },
+      "findings": [
+        {
+          "type": "version",
+          "summary": "newer tag v0.4.11 (page shows v0.4.10)",
+          "status": "applied",
+          "manual": null,
+          "copy": null,
+          "details": null,
+          "repeat": false,
+          "images": null
+        }
+      ]
+    },
+    {
+      "slug": "oncall",
+      "name": "Oncall",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.5.16",
+        "commit": "7f250f7e66f1377f7b4b773effd1c72e8854c025",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "c04517abc904f1e5",
+          "README.md": "1868c766a1837b41",
+          "seed.json": "130f81940ec475b7"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "spool",
+      "name": "Spool",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.7.12",
+        "commit": "cc086904fd942175d18c60082b10c459c343dc78",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ee9c871bfa25a110",
+          "README.md": "c942367838430a75",
+          "seed.json": "8123b75e1c3dfe5d"
+        }
+      },
+      "findings": [
+        {
+          "type": "version",
+          "summary": "newer tag v0.7.13 (page shows v0.7.12)",
+          "status": "applied",
+          "manual": null,
+          "copy": null,
+          "details": null,
+          "repeat": false,
+          "images": null
+        }
+      ]
+    }
+  ],
+  "shareImage": [],
+  "apply": {
+    "applied": [
+      {
+        "slug": "orbit",
+        "summary": "newer tag v0.4.11 (page shows v0.4.10)"
+      },
+      {
+        "slug": "spool",
+        "summary": "newer tag v0.7.13 (page shows v0.7.12)"
+      }
+    ],
+    "written": [
+      "src/data/seed-pages.ts"
+    ],
+    "favicons": false
+  }
+}

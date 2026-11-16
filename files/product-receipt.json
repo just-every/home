@@ -1,0 +1,22 @@
+{
+  "head": "8859bb199a9b92eb7fe05aef12ba1dbc75ac3439",
+  "tree": "77dc0b3df74fca29e8ea7eefa0e6e4866acd7a25",
+  "base": "c65e045744cdfde8abe63ec1718b641bc148e486",
+  "checkedAt": "2026-11-16T15:31:11Z",
+  "files": [
+    {
+      "path": "public/data/listings.json",
+      "sha256": "69dc4c659ce0f56a5ecab440a132e042dc0ca8437c55aa7e9c38c933dad91bcf"
+    },
+    {
+      "path": "scripts/seeds-sync/state.json",
+      "sha256": "e5e382aff45bf7cb9c6ae96768ba2347620ef18215e6870bfb3261f79efc95f8"
+    },
+    {
+      "path": "src/data/seed-pages.ts",
+      "sha256": "7098f297f6822095658c2e5e85c78080a49aa28ddf8572b8a410255a7288d7fc"
+    }
+  ],
+  "clean": true,
+  "hooks": "/home/agent/rer-consolidation/work/je-sync-42/home/.git/fleet-cloud-hooks"
+}

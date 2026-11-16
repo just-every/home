@@ -1,0 +1,89 @@
+{
+  "startedAt": "2026-11-16T15:26:08.482Z",
+  "mode": "apply",
+  "copyOnly": true,
+  "captureHost": null,
+  "load": 0.97,
+  "statePath": "scripts/seeds-sync/state.json",
+  "baselineDate": null,
+  "seeds": [
+    {
+      "slug": "orbit",
+      "name": "Orbit",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.11",
+        "commit": "a4fcbfcd72fa4253826f43d0b0de02275094f86d",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "2c7cce58a1437e4b",
+          "README.md": "20ef6d3a4cdc967d",
+          "seed.json": "d0ec85580f2b4ddf"
+        }
+      },
+      "findings": [
+        {
+          "type": "copy",
+          "summary": "seed.json changed since the last sync",
+          "status": "reported",
+          "manual": null,
+          "copy": "rewrite the page copy from seed.json (https://github.com/just-every/run-orbit/compare/22ca38c0e0bb...a4fcbfcd72fa)",
+          "details": {
+            "files": [
+              "seed.json"
+            ],
+            "range": "https://github.com/just-every/run-orbit/compare/22ca38c0e0bb...a4fcbfcd72fa",
+            "from": "22ca38c0e0bb5784440df021e8a5eb5b41a81de8",
+            "to": "a4fcbfcd72fa4253826f43d0b0de02275094f86d"
+          },
+          "repeat": false,
+          "images": null
+        }
+      ]
+    },
+    {
+      "slug": "spool",
+      "name": "Spool",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.7.13",
+        "commit": "e35ebeca36a855cdbe7c0685b7c5324170d17a2a",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ee9c871bfa25a110",
+          "README.md": "c942367838430a75",
+          "seed.json": "1a6fc3d599968e1e"
+        }
+      },
+      "findings": [
+        {
+          "type": "copy",
+          "summary": "seed.json changed since the last sync",
+          "status": "reported",
+          "manual": null,
+          "copy": "rewrite the page copy from seed.json (https://github.com/just-every/run-spool/compare/cc086904fd94...e35ebeca36a8)",
+          "details": {
+            "files": [
+              "seed.json"
+            ],
+            "range": "https://github.com/just-every/run-spool/compare/cc086904fd94...e35ebeca36a8",
+            "from": "cc086904fd942175d18c60082b10c459c343dc78",
+            "to": "e35ebeca36a855cdbe7c0685b7c5324170d17a2a"
+          },
+          "repeat": false,
+          "images": null
+        }
+      ]
+    }
+  ],
+  "shareImage": [],
+  "apply": {
+    "applied": [],
+    "written": [],
+    "favicons": false
+  }
+}

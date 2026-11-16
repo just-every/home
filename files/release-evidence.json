@@ -1,0 +1,173 @@
+{
+  "observedAt": "2026-11-16T15:20:01Z",
+  "source": "GitHub REST releases?per_page=5 for each active repository",
+  "signatureVerification": "not performed; envelope asset presence only",
+  "releases": [
+    {
+      "seed": "happytohelp",
+      "latestEligibleObserved": {
+        "assets": [
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3061
+          },
+          {
+            "name": "screen-1.webp",
+            "size": 112826
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.31",
+        "prerelease": false,
+        "published_at": "2026-11-16T11:23:15Z",
+        "tag_name": "v0.4.31",
+        "target_commitish": "main"
+      },
+      "otherPublishedTagsObserved": [
+        "v0.4.28",
+        "v0.4.26",
+        "v0.4.25",
+        "v0.4.24"
+      ],
+      "draftsIgnored": 0
+    },
+    {
+      "seed": "lamp",
+      "latestEligibleObserved": {
+        "assets": [
+          {
+            "name": "01-public-status-active-desktop.png",
+            "size": 631154
+          },
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3157
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.19",
+        "prerelease": false,
+        "published_at": "2026-11-15T23:27:59Z",
+        "tag_name": "v1.11.19",
+        "target_commitish": "main"
+      },
+      "otherPublishedTagsObserved": [
+        "v1.11.18",
+        "v1.11.17",
+        "v1.11.16",
+        "v1.11.15"
+      ],
+      "draftsIgnored": 0
+    },
+    {
+      "seed": "uptime",
+      "latestEligibleObserved": {
+        "assets": [
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3381
+          },
+          {
+            "name": "uptime-0.4.0-monitor-1440.png",
+            "size": 273042
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.13",
+        "prerelease": false,
+        "published_at": "2026-11-15T21:06:58Z",
+        "tag_name": "v0.5.13",
+        "target_commitish": "main"
+      },
+      "otherPublishedTagsObserved": [
+        "v0.5.12",
+        "v0.5.11",
+        "v0.5.10",
+        "v0.5.9"
+      ],
+      "draftsIgnored": 0
+    },
+    {
+      "seed": "oncall",
+      "latestEligibleObserved": {
+        "assets": [
+          {
+            "name": "oncall-0.5.0-incident-1440.png",
+            "size": 223214
+          },
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3185
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.16",
+        "prerelease": false,
+        "published_at": "2026-11-15T21:07:22Z",
+        "tag_name": "v0.5.16",
+        "target_commitish": "main"
+      },
+      "otherPublishedTagsObserved": [
+        "v0.5.15",
+        "v0.5.14",
+        "v0.5.13"
+      ],
+      "draftsIgnored": 1
+    },
+    {
+      "seed": "orbit",
+      "latestEligibleObserved": {
+        "assets": [
+          {
+            "name": "orbit-now-queue-1600.png",
+            "size": 359729
+          },
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3349
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.11",
+        "prerelease": false,
+        "published_at": "2026-11-16T14:35:53Z",
+        "tag_name": "v0.4.11",
+        "target_commitish": "main"
+      },
+      "otherPublishedTagsObserved": [
+        "v0.4.10",
+        "v0.4.9",
+        "v0.4.8",
+        "v0.4.7"
+      ],
+      "draftsIgnored": 0
+    },
+    {
+      "seed": "spool",
+      "latestEligibleObserved": {
+        "assets": [
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3105
+          },
+          {
+            "name": "spool-issue-page-1600.png",
+            "size": 166594
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-spool/releases/tag/v0.7.13",
+        "prerelease": false,
+        "published_at": "2026-11-16T14:00:22Z",
+        "tag_name": "v0.7.13",
+        "target_commitish": "main"
+      },
+      "otherPublishedTagsObserved": [
+        "v0.7.12",
+        "v0.7.11",
+        "v0.7.10"
+      ],
+      "draftsIgnored": 1
+    }
+  ]
+}
