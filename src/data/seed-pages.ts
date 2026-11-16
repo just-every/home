@@ -734,7 +734,7 @@ export const seedPageContent: SeedPageContent[] = [
       'Outlook mail and calendar',
     ],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.4.10',
+    version: 'v0.4.11',
     contractUrl: 'https://run-orbit.com/contract',
     seoTitle: 'Orbit: free, open-source alternative to HubSpot',
     seoDescription:
@@ -1097,7 +1097,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Sentry', 'Datadog Error Tracking', 'Rollbar', 'Bugsnag'],
     runsOn: 'your own computer, or your own Cloudflare account',
-    version: 'v0.7.12',
+    version: 'v0.7.13',
     contractUrl: 'https://run-spool.com/contract',
     seoTitle: 'Spool: free, open-source alternative to Sentry',
     seoDescription:

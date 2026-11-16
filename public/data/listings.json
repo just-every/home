@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T13:42:13.967Z",
+  "generatedAt": "2026-11-16T15:26:15.359Z",
   "listings": [
     {
       "slug": "auth",
@@ -611,7 +611,7 @@
       "slug": "orbit",
       "name": "Orbit",
       "status": "released",
-      "version": "v0.4.10",
+      "version": "v0.4.11",
       "category": "Sales CRM",
       "line": "A CRM that shows which deal to work next, and why.",
       "headline": "Your next deal finds you.",
@@ -863,7 +863,7 @@
       "slug": "spool",
       "name": "Spool",
       "status": "released",
-      "version": "v0.7.12",
+      "version": "v0.7.13",
       "category": "Error tracking",
       "line": "JavaScript errors, traced to the exact line in your source.",
       "headline": "See exactly what broke.",
