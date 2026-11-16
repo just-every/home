@@ -98,3 +98,7 @@ The single REST CI discovery at 2026-11-16T13:48:10Z observed all of these termi
 Product branch push succeeded on attempt 1. Remote branch identity was checked through Git. Product working tree is clean. Local type-check, lint, production build, listings check, final dry and browser proof passed before the first product commit; pre-commit formatting did not add paths. No clause statuses changed. No blocker remains.
 
 READY branch=cloud/je-sync-41 head=7795b774fcead3ae2c846ff48f974b328de924c4
+
+## Local browser-server limitation
+
+Recorded 2026-11-16T13:50:33Z. After the proof servers stopped, their buffered output showed unavailable Cloudflare Cache API (`caches is not defined`) for the token snapshot and missing local analytics D1 table `page_views` for event requests. These are limitations of the generic local Next server used for static page proof; analytics/token API behavior was not verified. The static product page, public listings and product JSON-LD consistency assertions passed. No provider or production behavior is claimed from this proof. Actual diagnostics and stopped-process outcomes are retained in server-observations.txt. This does not affect the exact-SHA green CI or the catalogue-only candidate.

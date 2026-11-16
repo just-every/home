@@ -1,0 +1,12 @@
+Recorded 2026-11-16T13:50:33Z. Author: Run Edit Run fleet.
+
+Server observations from the stopped local browser-proof sessions. All three recorded Next server processes stopped after SIGTERM; tool sessions returned exit 143 as expected.
+
+Actual repeated diagnostic:
+Token snapshot unavailable ReferenceError: caches is not defined
+
+Actual diagnostic on the first and final server sessions:
+Unhandled API error Error: D1_ERROR: no such table: page_views: SQLITE_ERROR
+  [cause]: Error: no such table: page_views: SQLITE_ERROR
+
+The static product page, public listings feed and product JSON-LD were served and the final browser proof passed. The generic next start process lacks the deployed Cloudflare Cache API and the local analytics D1 schema was not migrated for this static page proof. Analytics/token API behavior was not part of this catalogue change and is not claimed as verified. No provider credentials were used and no out-of-scope implementation change was made.

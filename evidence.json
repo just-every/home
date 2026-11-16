@@ -7,10 +7,10 @@
       "sha256": "b1d274f86e02c1bd6052131b8b90ec43831cd172055ce78bf0a01da4b0fa96d4"
     },
     {
-      "blob": "9e6ccddc98f4633c61c713a88ca1ceb1595578a6",
-      "bytes": 11542,
+      "blob": "960cec1528e2dbe9fe289aeb1220ed8ea02a9a2a",
+      "bytes": 12275,
       "path": "REPORT.md",
-      "sha256": "8244bd69c932c19122bac1a4d53ecee49b445aa209744693e6787d67bbf89bba"
+      "sha256": "3bc47fa1d5e3c8182ab52a96bf4c9117da4bea2e1047cd1eed73fa49b3685630"
     },
     {
       "blob": "23a420680cf2adbdd84558a864a0d993c1792eba",
@@ -275,6 +275,12 @@
       "bytes": 1009587,
       "path": "rer-seeds.json",
       "sha256": "3ed6aada52c5480fbadab9312b8f6bca05f9d40a0a248caa58526296c2ff89c6"
+    },
+    {
+      "blob": "29c6c977756502f01e57d5848c80b5b3f43bc56f",
+      "bytes": 974,
+      "path": "server-observations.txt",
+      "sha256": "42e44bf30707d4ad9b3e783409d6711146a6f726702b219ae3d14f68495d07ed"
     },
     {
       "blob": "4f4fdc177376e6d04e20cdebdc6d687079af2ce9",
