@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/just-every/run-lamp/v1.11.19/seed.json",
+    "exit": 0,
+    "recorded_at": "2026-11-16T14:04:13Z",
+    "sha256_16": "7d8b60b1b7a538bf"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/just-every/run-oncall/v0.5.16/seed.json",
+    "exit": 0,
+    "recorded_at": "2026-11-16T14:04:14Z",
+    "sha256_16": "130f81940ec475b7"
+  }
+]

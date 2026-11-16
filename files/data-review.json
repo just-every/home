@@ -1,0 +1,78 @@
+{
+  "base": "abbda23585bcb50a430ffc60dba59b9d40046aa0",
+  "head": "7795b774fcead3ae2c846ff48f974b328de924c4",
+  "counts": {
+    "before": {
+      "total": 49,
+      "released": 35,
+      "coming-soon": 14
+    },
+    "after": {
+      "total": 49,
+      "released": 35,
+      "coming-soon": 14
+    }
+  },
+  "changed_listings": [
+    {
+      "slug": "happytohelp",
+      "fields": {
+        "version": {
+          "before": "v0.4.28",
+          "after": "v0.4.31"
+        }
+      }
+    }
+  ],
+  "state_changes": {
+    "happytohelp": {
+      "commit": {
+        "before": "41fb40246d2e69f928be397c48d952d147c39160",
+        "after": "e5fb53dc305f53a71ff0b6db81d5eec7dfd0104f"
+      },
+      "open": {
+        "before": null,
+        "after": [
+          "42983364b373"
+        ]
+      },
+      "tag": {
+        "before": "v0.4.28",
+        "after": "v0.4.31"
+      },
+      "copy": {
+        "before": {
+          "CONTRACT.md": "ae8feea8b7998aa7",
+          "README.md": "9260e012d46d3779",
+          "seed.json": "519c266cfec58440"
+        },
+        "after": {
+          "CONTRACT.md": "ae8feea8b7998aa7",
+          "README.md": "022f2ad37fee04ef",
+          "seed.json": "9289d1c33da14860"
+        }
+      },
+      "sourceRef": {
+        "before": "v0.4.28",
+        "after": "v0.4.31"
+      }
+    },
+    "lamp": {
+      "open": {
+        "before": [
+          "64cb07f6a0dd"
+        ],
+        "after": null
+      }
+    },
+    "oncall": {
+      "open": {
+        "before": [
+          "64cb07f6a0dd"
+        ],
+        "after": null
+      }
+    }
+  },
+  "credential_shaped_additions": 0
+}

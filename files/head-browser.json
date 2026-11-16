@@ -1,0 +1,37 @@
+{
+  "label": "head",
+  "head": "7795b774fcead3ae2c846ff48f974b328de924c4",
+  "started": "2026-11-16T14:01:29Z",
+  "serverPid": 1555,
+  "pages": [
+    {
+      "width": 1440,
+      "status": 200,
+      "title": "HappyToHelp",
+      "version": "v0.4.31",
+      "geometry": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "bodyWidth": 1440,
+        "height": 4965
+      },
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "title": "HappyToHelp",
+      "version": "v0.4.31",
+      "geometry": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "bodyWidth": 390,
+        "height": 5250
+      },
+      "pageErrors": []
+    }
+  ],
+  "status": "passed",
+  "ended": "2026-11-16T14:01:34Z",
+  "serverStopped": true
+}

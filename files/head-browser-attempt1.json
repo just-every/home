@@ -1,0 +1,11 @@
+{
+  "label": "head",
+  "head": "7795b774fcead3ae2c846ff48f974b328de924c4",
+  "started": "2026-11-16T14:00:44Z",
+  "serverPid": 1309,
+  "pages": [],
+  "status": "failed",
+  "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3017/happytohelp\", waiting until \"networkidle\"\u001b[22m\n",
+  "ended": "2026-11-16T14:01:15Z",
+  "serverStopped": true
+}
