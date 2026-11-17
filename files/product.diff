@@ -1,0 +1,12 @@
+diff --git a/package.json b/package.json
+index 281783b..70632b1 100644
+--- a/package.json
++++ b/package.json
+@@ -3,6 +3,7 @@
+   "version": "0.1.0",
+   "private": true,
+   "type": "module",
++  "packageManager": "npm@10.9.3",
+   "scripts": {
+     "dev": "npm run db:migrate:local && next dev --turbopack",
+     "build": "next build --webpack",

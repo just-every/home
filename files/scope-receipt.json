@@ -1,0 +1,14 @@
+{
+  "product_head": "aa8d3e0dedcfd68c74e89aadadde99318bb2f81e",
+  "base_head": "20474825061a95160f9df45c7064385b068db2e7",
+  "changed_files": 1,
+  "added_lines": 1,
+  "deleted_lines": 0,
+  "packageManager_before": null,
+  "packageManager_after": "npm@10.9.3",
+  "runner_pin_regex": "^(pnpm|npm|yarn)@x.y.z",
+  "lockfile_scripts_dependencies_workflows_unchanged": true,
+  "production_enables_corepack": false,
+  "worktree_clean": true,
+  "contract_clause_changes": []
+}
