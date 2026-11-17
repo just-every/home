@@ -1,0 +1,6 @@
+{
+  "title": "sync: seed listings 16 Nov (path release Oncall v0.5.17)",
+  "head": "cloud/je-sync-44",
+  "base": "main",
+  "body": "Update Oncall\u2019s public listing from v0.5.16 to v0.5.17 and record the released-source provenance. The published [v0.5.17 Release](https://github.com/just-every/run-oncall/releases/tag/v0.5.17) is non-draft and non-prerelease and carries rer-release.dsse.json; asset presence was checked, without asserting signature verification.\n\nThe six-path sync has no remaining findings. Public wording and the other five versions stay unchanged; counts remain 49 listings, 35 released and 14 coming soon.\n\nValidation: listings generation/check, typecheck, lint and production build passed. The build passed on retry after the existing Next.js security advisory stopped its first invocation. Candidate browser proof shows the updated version at 1440 and 390. Exact-SHA Verify is left to the branch workflow and the lane\u2019s landing gates."
+}

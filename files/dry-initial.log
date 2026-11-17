@@ -1,0 +1,18 @@
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --only happytohelp,lamp,uptime,oncall,orbit,spool --out ../packet/dry-initial
+
+Reading 6 seed repositories...
+uptime: source=unresolved commit=unresolved (git ls-remote just-every/run-uptime: remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/just-every/run-uptime.git/')
+happytohelp: source=unresolved commit=unresolved (git ls-remote just-every/run-happytohelp: remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/just-every/run-happytohelp.git/')
+lamp: source=unresolved commit=unresolved (git ls-remote just-every/run-lamp: remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/just-every/run-lamp.git/')
+orbit: source=unresolved commit=unresolved (git ls-remote just-every/run-orbit: remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/just-every/run-orbit.git/')
+oncall: source=unresolved commit=unresolved (git ls-remote just-every/run-oncall: remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/just-every/run-oncall.git/')
+spool: source=unresolved commit=unresolved (git ls-remote just-every/run-spool: remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/just-every/run-spool.git/')
+Blocked: a released seed source could not be resolved; no changes applied.

@@ -1,0 +1,41 @@
+{
+  "author": "Run Edit Run fleet",
+  "recordedAt": "2026-11-17T02:15:12Z",
+  "observedAt": "2026-11-17T02:14:03Z",
+  "repository": "just-every/home",
+  "head": "9ec81f8a0a48b2ef43c82873e057f0667c04f868",
+  "requiredVerify": {
+    "conclusion": "success",
+    "created_at": "2026-11-17T02:11:22Z",
+    "event": "push",
+    "head_sha": "9ec81f8a0a48b2ef43c82873e057f0667c04f868",
+    "html_url": "https://github.com/just-every/home/actions/runs/44001126383",
+    "id": 44001126383,
+    "name": "Verify branch",
+    "status": "completed",
+    "updated_at": "2026-11-17T02:12:45Z"
+  },
+  "prVerify": {
+    "conclusion": "skipped",
+    "created_at": "2026-11-17T02:12:04Z",
+    "event": "pull_request",
+    "head_sha": "9ec81f8a0a48b2ef43c82873e057f0667c04f868",
+    "html_url": "https://github.com/just-every/home/actions/runs/44001208540",
+    "id": 44001208540,
+    "name": "Verify branch",
+    "status": "completed",
+    "updated_at": "2026-11-17T02:12:45Z"
+  },
+  "observations": 1,
+  "manualGitHubApiCalls": 5,
+  "manualCalls": [
+    "published Oncall release metadata",
+    "released commit comparison",
+    "released CONTRACT.md",
+    "create PR",
+    "exact-SHA workflow discovery"
+  ],
+  "syncSourceFileApiReads": "180 expected from the required committed sync rounds (four full source reads at 36 each, two copy-only source reads at 18 each); no task-local network adapters or retries beyond the committed tool",
+  "custody": "READY",
+  "clauseStatusChanges": []
+}

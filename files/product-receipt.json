@@ -1,0 +1,28 @@
+{
+  "author": "Run Edit Run fleet",
+  "recordedAt": "2026-11-17T02:11:59Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-44",
+  "head": "9ec81f8a0a48b2ef43c82873e057f0667c04f868",
+  "base": "20474825061a95160f9df45c7064385b068db2e7",
+  "push": {
+    "status": "success",
+    "attempts": 1,
+    "ref": "refs/heads/cloud/je-sync-44"
+  },
+  "identityAndTrailers": "all commits in origin/main..HEAD checked; fleet author/committer, no trailers",
+  "cleanWorktree": true,
+  "checks": {
+    "typecheck": "passed",
+    "lint": "passed",
+    "listings": "passed",
+    "drySync": "0 changes, 0 unreadable",
+    "productionBuild": "passed on retry; existing Next.js security advisory retained",
+    "browser": "1440 public-door assertions and screenshots at 1440 and 390 passed; server stopped"
+  },
+  "clauseStatusChanges": [],
+  "pr": "https://github.com/just-every/home/pull/68",
+  "ciRunId": 44001126383,
+  "ciConclusion": "success",
+  "custody": "READY"
+}

@@ -1,0 +1,16 @@
+{
+  "author": "Run Edit Run fleet",
+  "startedAt": "2026-11-17T02:10:31.393Z",
+  "serverPid": 5936,
+  "url": "http://127.0.0.1:3044/oncall",
+  "checks": [
+    "1440: published Oncall page shows v0.5.17 and public listings agree; 49 listings"
+  ],
+  "screenshots": [
+    "oncall-1440.png",
+    "oncall-390.png"
+  ],
+  "status": "passed",
+  "serverStopped": true,
+  "finishedAt": "2026-11-17T02:10:35.786Z"
+}

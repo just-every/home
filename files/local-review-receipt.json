@@ -1,0 +1,51 @@
+{
+  "author": "Run Edit Run fleet",
+  "recordedAt": "2026-11-17T02:10:13Z",
+  "changedPaths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "scope": "passed",
+  "dataReview": "Only Oncall version changes in public listings; every other listing equal to main",
+  "stateReview": "Only Oncall provenance and syncedAt change; Uptime prior copy follow-up preserved",
+  "copyReview": "CONTRACT.md and README.md hashes unchanged; seed.json diff is version only",
+  "credentialShapedDiffCheck": "passed",
+  "diffWhitespaceCheck": "passed",
+  "countsBefore": {
+    "listings": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "countsAfter": {
+    "listings": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "source": {
+    "release": {
+      "assets": [
+        {
+          "name": "oncall-0.5.0-incident-1440.png",
+          "size": 223214
+        },
+        {
+          "name": "rer-release.dsse.json",
+          "size": 3185
+        }
+      ],
+      "draft": false,
+      "html_url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.17",
+      "prerelease": false,
+      "published_at": "2026-11-17T00:50:36Z",
+      "tag_name": "v0.5.17",
+      "target_commitish": "main"
+    },
+    "oncallCommit": "3b9cba555f564a4d582b9909305bc8d35c9c8bf1"
+  },
+  "files": {
+    "public/data/listings.json": "42f177de878b1e8c13e45baff69aae7acc5f060f0d687a253aa381ce9a6ce4b2",
+    "scripts/seeds-sync/state.json": "b5eda4d8cce64ed882760e9389c29cd00b58298b7d5a80c594a15b1163fd9f2e",
+    "src/data/seed-pages.ts": "7b365086ca5d09963f7b0659a98bd6984653a18eb4d188e0c1c378ed18348190"
+  }
+}
