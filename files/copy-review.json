@@ -1,0 +1,12 @@
+{
+  "recordedAt": "2026-11-17T03:38:18Z",
+  "author": "Run Edit Run fleet",
+  "contractIdentical": true,
+  "contractSha256": "c04517abc904f1e5618a858e191fd0a9ae1dc54484b6fb993a56c794a9193cac",
+  "seedJsonChangedFields": [
+    "version"
+  ],
+  "sourceFile": "seed.json",
+  "sourceLine": 4,
+  "decision": "Update the displayed version only; retain all existing public claims. No contract implementation status changed."
+}

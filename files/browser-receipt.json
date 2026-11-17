@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-11-17T03:40:32Z",
+  "author": "Run Edit Run fleet",
+  "proof": [
+    {
+      "width": 1440,
+      "url": "http://127.0.0.1:3045/oncall",
+      "status": 200,
+      "title": "Oncall: free, open-source alternative to PagerDuty",
+      "observedVersion": "v0.5.17",
+      "pageErrors": [],
+      "screenshot": "browser/oncall-1440.png"
+    },
+    {
+      "width": 390,
+      "url": "http://127.0.0.1:3045/oncall",
+      "status": 200,
+      "title": "Oncall: free, open-source alternative to PagerDuty",
+      "observedVersion": "v0.5.17",
+      "pageErrors": [],
+      "screenshot": "browser/oncall-390.png"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-11-15T13:56:34Z",
+  "seeds": [
+    {
+      "id": "happytohelp",
+      "name": "HappyToHelp",
+      "version": "0.4.31",
+      "repository": "https://github.com/just-every/run-happytohelp",
+      "status": null,
+      "maturity": "Public source is available. Assisted is in early access with hands-on onboarding. Managed is in early access; requesting access does not start a subscription."
+    },
+    {
+      "id": "lamp",
+      "name": "Lamp",
+      "version": "1.11.19",
+      "repository": "https://github.com/just-every/run-lamp",
+      "status": null,
+      "maturity": "ui-port-local-runtime"
+    },
+    {
+      "id": "uptime",
+      "name": "Uptime",
+      "version": "0.5.15",
+      "repository": "https://github.com/just-every/run-uptime",
+      "status": null,
+      "maturity": "local-installer-and-owner-deploy-implemented-hosted-unverified"
+    },
+    {
+      "id": "oncall",
+      "name": "Oncall",
+      "version": "0.5.17",
+      "repository": "https://github.com/just-every/run-oncall",
+      "status": null,
+      "maturity": "maintained"
+    },
+    {
+      "id": "orbit",
+      "name": "Orbit",
+      "version": "0.4.11",
+      "repository": "https://github.com/just-every/run-orbit",
+      "status": null,
+      "maturity": "complete-workflow-implementation; acceptance requires pinned runtime and native receipts"
+    },
+    {
+      "id": "spool",
+      "name": "Spool",
+      "present": false,
+      "decision": "Preserve JE v0.7.13; report omission to gr."
+    }
+  ]
+}

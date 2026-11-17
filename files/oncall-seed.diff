@@ -1,0 +1,11 @@
+--- ../packet/oncall-source/seed-v0.5.16.json	2026-11-17 03:37:30.292830655 +0000
++++ ../packet/oncall-source/seed-v0.5.17.json	2026-11-17 03:37:30.660832712 +0000
+@@ -1,7 +1,7 @@
+ {
+   "id": "oncall",
+   "name": "Oncall",
+-  "version": "0.5.16",
++  "version": "0.5.17",
+   "maturity": "maintained",
+   "category": "operations",
+   "replaces": [

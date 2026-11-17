@@ -1,0 +1,46 @@
+{
+  "recordedAt": "2026-11-17T03:37:59Z",
+  "author": "Run Edit Run fleet",
+  "before": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "listingChanges": [
+    {
+      "slug": "oncall",
+      "fields": [
+        "version"
+      ],
+      "before": "v0.5.16",
+      "after": "v0.5.17"
+    }
+  ],
+  "changedStateSeeds": [
+    "oncall",
+    "uptime"
+  ],
+  "changedPaths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "excludedEntriesAbsent": [
+    "beacon",
+    "relay",
+    "ferry",
+    "lily",
+    "brook",
+    "delta",
+    "barrow",
+    "linen"
+  ],
+  "releaseEnvelopeAssetPresent": true,
+  "signatureVerified": false,
+  "clausesChanged": []
+}

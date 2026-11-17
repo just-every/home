@@ -1,0 +1,44 @@
+{
+  "total_count": 3,
+  "workflow_runs": [
+    {
+      "conclusion": "skipped",
+      "created_at": "2026-11-17T03:41:12Z",
+      "event": "pull_request",
+      "head_sha": "df5a56749a451ccdfc958738fc36a730ef0f61b4",
+      "html_url": "https://github.com/just-every/home/actions/runs/44011933288",
+      "id": 44011933288,
+      "name": "Verify branch",
+      "status": "completed",
+      "updated_at": "2026-11-17T03:42:00Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-11-17T03:41:10Z",
+      "event": "dynamic",
+      "head_sha": "df5a56749a451ccdfc958738fc36a730ef0f61b4",
+      "html_url": "https://github.com/just-every/home/actions/runs/44011930518",
+      "id": 44011930518,
+      "name": "PR #70",
+      "status": "completed",
+      "updated_at": "2026-11-17T03:42:15Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-11-17T03:40:38Z",
+      "event": "push",
+      "head_sha": "df5a56749a451ccdfc958738fc36a730ef0f61b4",
+      "html_url": "https://github.com/just-every/home/actions/runs/44011868390",
+      "id": 44011868390,
+      "name": "Verify branch",
+      "status": "completed",
+      "updated_at": "2026-11-17T03:42:00Z"
+    }
+  ],
+  "observedAt": "2026-11-17T03:43:06Z",
+  "author": "Run Edit Run fleet",
+  "observationCalls": 1,
+  "primaryVerifyRun": 44011868390,
+  "candidateHead": "df5a56749a451ccdfc958738fc36a730ef0f61b4",
+  "result": "READY"
+}
