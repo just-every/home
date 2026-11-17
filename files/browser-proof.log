@@ -1,0 +1,54 @@
+{
+  "recordedAt": "2026-11-17T07:04:06Z",
+  "baseUrl": "http://127.0.0.1:3146",
+  "checks": [
+    {
+      "slug": "lamp",
+      "width": 1440,
+      "httpStatus": 200,
+      "version": "v1.11.21",
+      "assertion": "rendered release version matches generated listing",
+      "screenshot": "browser/lamp-1440.png"
+    },
+    {
+      "slug": "spool",
+      "width": 1440,
+      "httpStatus": 200,
+      "version": "v0.7.14",
+      "assertion": "rendered release version matches generated listing",
+      "screenshot": "browser/spool-1440.png"
+    },
+    {
+      "slug": "uptime",
+      "width": 1440,
+      "httpStatus": 200,
+      "version": "v0.5.16",
+      "assertion": "rendered release version matches generated listing",
+      "screenshot": "browser/uptime-1440.png"
+    },
+    {
+      "slug": "lamp",
+      "width": 390,
+      "httpStatus": 200,
+      "version": "v1.11.21",
+      "assertion": "screenshot only",
+      "screenshot": "browser/lamp-390.png"
+    },
+    {
+      "slug": "spool",
+      "width": 390,
+      "httpStatus": 200,
+      "version": "v0.7.14",
+      "assertion": "screenshot only",
+      "screenshot": "browser/spool-390.png"
+    },
+    {
+      "slug": "uptime",
+      "width": 390,
+      "httpStatus": 200,
+      "version": "v0.5.16",
+      "assertion": "screenshot only",
+      "screenshot": "browser/uptime-390.png"
+    }
+  ]
+}

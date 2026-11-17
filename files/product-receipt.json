@@ -1,0 +1,81 @@
+{
+  "recordedAt": "2026-11-17T07:06:49Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-46",
+  "head": "ab47d1c215a29c6c6041924b40acd73606b113e0",
+  "base": "98760b32e33ae6cdacb6328c9de076d66bfa9f94",
+  "tree": "a6aad46f47ecdba1ffd3bc49d925cc4dff7d6b09",
+  "clean": true,
+  "productPush": "success",
+  "pr": {
+    "base_ref": "main",
+    "head_sha": "ab47d1c215a29c6c6041924b40acd73606b113e0",
+    "html_url": "https://github.com/just-every/home/pull/71",
+    "number": 71,
+    "state": "open"
+  },
+  "checks": {
+    "npmCi": "PASS",
+    "copyOnlyApply": "PASS",
+    "mechanicalApply": "PASS, three version updates",
+    "listings": "PASS, 49 seeds",
+    "finalDrySync": "PASS, 0 of 6 changed; 0 unreadable",
+    "typeCheck": "PASS",
+    "lint": "PASS",
+    "productionBuild": "PASS on retry after pre-existing Next.js security reminder",
+    "browser": "PASS, three rendered versions at 1440; six screenshots at 1440/390",
+    "diffHygiene": "PASS",
+    "fullLocalSuite": "not run; branch CI owns full suite",
+    "macPublicationScan": "deferred to required Mac gate"
+  },
+  "clauseStatusChanges": [],
+  "processCleanup": "owned Next server stopped with recorded PID; both browser runs closed contexts/browser; subreaper sessions exited",
+  "ci": {
+    "recordedAt": "2026-11-17T07:07:56Z",
+    "observationAt": "2026-11-17T07:07:08Z",
+    "repository": "just-every/home",
+    "head": "ab47d1c215a29c6c6041924b40acd73606b113e0",
+    "discoveryCalls": 1,
+    "pollCalls": 0,
+    "logCalls": 0,
+    "verify": {
+      "conclusion": "success",
+      "created_at": "2026-11-17T07:05:00Z",
+      "event": "push",
+      "head_sha": "ab47d1c215a29c6c6041924b40acd73606b113e0",
+      "html_url": "https://github.com/just-every/home/actions/runs/44035955957",
+      "id": 44035955957,
+      "name": "Verify branch",
+      "path": ".github/workflows/verify.yml",
+      "status": "completed",
+      "updated_at": "2026-11-17T07:06:40Z"
+    },
+    "otherRuns": [
+      {
+        "conclusion": "skipped",
+        "created_at": "2026-11-17T07:05:27Z",
+        "event": "pull_request",
+        "head_sha": "ab47d1c215a29c6c6041924b40acd73606b113e0",
+        "html_url": "https://github.com/just-every/home/actions/runs/44036019177",
+        "id": 44036019177,
+        "name": "Verify branch",
+        "path": ".github/workflows/verify.yml",
+        "status": "completed",
+        "updated_at": "2026-11-17T07:06:41Z"
+      },
+      {
+        "conclusion": "success",
+        "created_at": "2026-11-17T07:05:25Z",
+        "event": "dynamic",
+        "head_sha": "ab47d1c215a29c6c6041924b40acd73606b113e0",
+        "html_url": "https://github.com/just-every/home/actions/runs/44036014288",
+        "id": 44036014288,
+        "name": "PR #71",
+        "path": "dynamic/github-code-scanning/codeql",
+        "status": "completed",
+        "updated_at": "2026-11-17T07:06:20Z"
+      }
+    ],
+    "disposition": "READY; product candidate only; fleet landing gates retained"
+  }
+}

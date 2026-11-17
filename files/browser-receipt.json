@@ -1,0 +1,62 @@
+{
+  "recordedAt": "2026-11-17T07:04:06Z",
+  "baseUrl": "http://127.0.0.1:3146",
+  "checks": [
+    {
+      "slug": "lamp",
+      "width": 1440,
+      "httpStatus": 200,
+      "version": "v1.11.21",
+      "assertion": "rendered release version matches generated listing",
+      "screenshot": "browser/lamp-1440.png",
+      "sha256": "88fa831e9ef7f6f976e387b0d585eedf0df264fc6735c34f36dcd2b340a132eb"
+    },
+    {
+      "slug": "spool",
+      "width": 1440,
+      "httpStatus": 200,
+      "version": "v0.7.14",
+      "assertion": "rendered release version matches generated listing",
+      "screenshot": "browser/spool-1440.png",
+      "sha256": "011f9a8eb7bbf73a7613135b9e2364837d2c258070ece0a8c3565c5be207e824"
+    },
+    {
+      "slug": "uptime",
+      "width": 1440,
+      "httpStatus": 200,
+      "version": "v0.5.16",
+      "assertion": "rendered release version matches generated listing",
+      "screenshot": "browser/uptime-1440.png",
+      "sha256": "12c8655c27cfad399007d921cbc682fa29fad666124be7c777ffe60e34d349b9"
+    },
+    {
+      "slug": "lamp",
+      "width": 390,
+      "httpStatus": 200,
+      "version": "v1.11.21",
+      "assertion": "screenshot only",
+      "screenshot": "browser/lamp-390.png",
+      "sha256": "af517e50c4170dcee3b854d32d954da350a12a65a064f725f24174739f134777"
+    },
+    {
+      "slug": "spool",
+      "width": 390,
+      "httpStatus": 200,
+      "version": "v0.7.14",
+      "assertion": "screenshot only",
+      "screenshot": "browser/spool-390.png",
+      "sha256": "14a0ba1f1585b2d27c714e4995c8704e0ee32a9b0bfb2d750ff05abeb9a3b292"
+    },
+    {
+      "slug": "uptime",
+      "width": 390,
+      "httpStatus": 200,
+      "version": "v0.5.16",
+      "assertion": "screenshot only",
+      "screenshot": "browser/uptime-390.png",
+      "sha256": "e6563ca44c92199c8ac601f3c80cae62c3a24d11c594f6a6bf9e8ecccd5740bd"
+    }
+  ],
+  "productHead": "ab47d1c215a29c6c6041924b40acd73606b113e0",
+  "sourceTreeUnchangedAtCommit": true
+}

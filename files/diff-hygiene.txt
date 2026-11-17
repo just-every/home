@@ -1,0 +1,5 @@
+Author: Run Edit Run fleet. Recorded: 2026-11-17T07:03:37Z
+PASS diff --check
+PASS changed paths exactly within brief scope
+PASS diff credential-shape scan (GitHub tokens, private-key headers, credential URLs, Stripe keys)
+Mac full publication scan remains the fleet landing gate; it cannot run in cloud.

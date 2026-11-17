@@ -1,0 +1,68 @@
+Released copy provenance diff. Author: Run Edit Run fleet. Recorded: 2026-11-17T07:01:37Z
+--- lamp/previous/readme
++++ lamp/new/readme
+@@ -86,9 +86,10 @@
+ 
+ The [Run page's](https://run-lamp.com/run) combined curl line above clones the
+ default branch, `main`, not a release tag, into a `run-lamp` folder and starts it; after that, run `rer dev` from that folder. `main` is Lamp's
+-development source and may hold changes not yet in a release; it pins
+-`@runeditrun/rer` 0.2.108. `package.json` and `RELEASE.json` name this checkout's
+-Lamp version. To use a published release, choose a tag from the
++development source and may hold changes not yet in a release. The exact
++`@runeditrun/rer` pin is in `package.json` under `devDependencies`, locked in
++`pnpm-lock.yaml`. `package.json` and `RELEASE.json` name this checkout's Lamp
++version. To use a published release, choose a tag from the
+ [releases page](https://github.com/just-every/run-lamp/releases), then clone it
+ and start it (replace `vX.Y.Z` with your chosen tag):
+ 
+@@ -134,8 +135,9 @@
+ [input reference](docs/deployment-reference.md) distinguishes required owner
+ values from secrets that `rer` generates on a first deploy.
+ 
+-Use `rer` from the project root; the checkout pins `@runeditrun/rer` 0.2.108. Before a
+-command that builds or verifies the checkout,
++Use `rer` from the project root with the pin declared in `package.json`;
++`rer --version` shows the installed CLI first and the checkout's pin second.
++Before a command that builds or verifies the checkout,
+ stop a running development server with `rer dev --stop` or a production preview
+ with `rer preview --stop`.
+ 
+@@ -182,3 +184,5 @@
+ Preserve applied migration history. Back up data and the source revision before
+ an update, restore into an empty destination when needed, and verify the exact
+ candidate before adoption.
++
++<!-- Run Edit Run fleet, 2026-11-16: clarify the checkout rer pin and installed CLI version. -->
+--- lamp/previous/seed
++++ lamp/new/seed
+@@ -1,7 +1,7 @@
+ {
+   "id": "lamp",
+   "name": "Lamp",
+-  "version": "1.11.19",
++  "version": "1.11.21",
+   "maturity": "ui-port-local-runtime",
+   "category": "status",
+   "spine": {
+--- spool/previous/seed
++++ spool/new/seed
+@@ -1,7 +1,7 @@
+ {
+   "id": "errors-workbench",
+   "name": "Spool",
+-  "version": "0.7.13",
++  "version": "0.7.14",
+   "maturity": "Local-first JavaScript, Python and Go evidence product with one owner and isolated projects; bounded native, Sentry and OTLP-log intake, private source maps, operator corrections, owner/project erasure, sandbox reproducer, granted GitHub fix branches and exposure measurement. Runtime checks and review evidence are recorded separately; source metadata does not establish hosted, provider or npm publication acceptance.",
+   "category": "monitoring",
+   "replaces": [
+--- uptime/previous/seed
++++ uptime/new/seed
+@@ -1,7 +1,7 @@
+ {
+   "id": "uptime",
+   "name": "Uptime",
+-  "version": "0.5.15",
++  "version": "0.5.16",
+   "maturity": "local-installer-and-owner-deploy-implemented-hosted-unverified",
+   "category": "monitoring",
+   "spine": {
