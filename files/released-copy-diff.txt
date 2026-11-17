@@ -1,0 +1,22 @@
+--- lamp/old/Seed
++++ lamp/new/Seed
+@@ -1,7 +1,7 @@
+ {
+   "id": "lamp",
+   "name": "Lamp",
+-  "version": "1.11.21",
++  "version": "1.11.22",
+   "maturity": "ui-port-local-runtime",
+   "category": "status",
+   "spine": {
+--- oncall/old/Seed
++++ oncall/new/Seed
+@@ -1,7 +1,7 @@
+ {
+   "id": "oncall",
+   "name": "Oncall",
+-  "version": "0.5.17",
++  "version": "0.5.18",
+   "maturity": "maintained",
+   "category": "operations",
+   "replaces": [

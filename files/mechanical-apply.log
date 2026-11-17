@@ -1,0 +1,13 @@
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --only happytohelp,lamp,uptime,oncall,orbit,spool --apply --out /home/agent/rer-consolidation/work/je-sync-47/packet/mechanical-apply
+
+Reading 6 seed repositories...
+uptime: source=v0.5.16 commit=6fd9399cf9ce9acf4e009999581cc20f32c9e129 (released listing version)
+happytohelp: source=v0.4.31 commit=e5fb53dc305f53a71ff0b6db81d5eec7dfd0104f (released listing version)
+lamp: source=v1.11.21 commit=4d0675dbe51e2a86f69a8112b153baaf3fd91094 (released listing version)
+orbit: source=unresolved commit=unresolved (git ls-remote just-every/run-orbit: remote: upstream connect error or disconnect/reset before headers. reset reason: remote refused stream reset
+fatal: unable to access 'https://github.com/just-every/run-orbit.git/': The requested URL returned error: 503)
+oncall: source=v0.5.17 commit=3b9cba555f564a4d582b9909305bc8d35c9c8bf1 (released listing version)
+spool: source=v0.7.14 commit=1853e3b3b59d49853b5ee7678f851d6de8343fbf (released listing version)
+Blocked: a released seed source could not be resolved; no changes applied.

@@ -1,0 +1,61 @@
+{
+  "author": "Run Edit Run fleet",
+  "observedAt": "2026-11-17T09:58:09Z",
+  "base": "b0243a5998f76c4cbe56e6b76160d36961150207",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "before": {
+    "total": 49,
+    "coming-soon": 14,
+    "released": 35
+  },
+  "after": {
+    "total": 49,
+    "coming-soon": 14,
+    "released": 35
+  },
+  "changes": [
+    {
+      "slug": "lamp",
+      "before": "v1.11.21",
+      "after": "v1.11.22"
+    },
+    {
+      "slug": "oncall",
+      "before": "v0.5.17",
+      "after": "v0.5.18"
+    }
+  ],
+  "stateFieldsChanged": {
+    "lamp": [
+      "commit",
+      "copy",
+      "open",
+      "sourceRef",
+      "tag"
+    ],
+    "oncall": [
+      "commit",
+      "copy",
+      "open",
+      "sourceRef",
+      "tag"
+    ],
+    "spool": [
+      "open"
+    ],
+    "uptime": [
+      "open"
+    ]
+  },
+  "copyAndPricing": "All JE wording and pricing unchanged; seed-pages.ts differs only in two versions.",
+  "exclusions": "Eight excluded slugs remain absent.",
+  "releaseEligibility": "Published non-draft non-prerelease GitHub Releases with rer-release.dsse.json present; signatures not verified.",
+  "scope": "PASS",
+  "diffHygiene": "PASS",
+  "credentialPatternDiffScan": "PASS",
+  "publicationScan": "Reserved to Mac lander; not run in cloud."
+}

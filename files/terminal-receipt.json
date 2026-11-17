@@ -1,0 +1,77 @@
+{
+  "author": "Run Edit Run fleet",
+  "observedAt": "2026-11-17T10:02:23Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-47",
+  "head": "622aec51aa844eeaa4fba3841393a673d18e88eb",
+  "base": "b0243a5998f76c4cbe56e6b76160d36961150207",
+  "pr": "https://github.com/just-every/home/pull/73",
+  "productPush": "succeeded; remote ref independently verified at exact head",
+  "status": "READY",
+  "ci": {
+    "conclusion": "success",
+    "created_at": "2026-11-17T09:58:18Z",
+    "event": "push",
+    "head_sha": "622aec51aa844eeaa4fba3841393a673d18e88eb",
+    "html_url": "https://github.com/just-every/home/actions/runs/44060446426",
+    "id": 44060446426,
+    "name": "Verify branch",
+    "status": "completed",
+    "updated_at": "2026-11-17T09:59:28Z"
+  },
+  "otherRuns": [
+    {
+      "conclusion": "skipped",
+      "created_at": "2026-11-17T09:59:15Z",
+      "event": "pull_request",
+      "head_sha": "622aec51aa844eeaa4fba3841393a673d18e88eb",
+      "html_url": "https://github.com/just-every/home/actions/runs/44060585675",
+      "id": 44060585675,
+      "name": "Verify branch",
+      "status": "completed",
+      "updated_at": "2026-11-17T09:59:28Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-11-17T09:59:13Z",
+      "event": "dynamic",
+      "head_sha": "622aec51aa844eeaa4fba3841393a673d18e88eb",
+      "html_url": "https://github.com/just-every/home/actions/runs/44060582436",
+      "id": 44060582436,
+      "name": "PR #73",
+      "status": "completed",
+      "updated_at": "2026-11-17T10:00:05Z"
+    }
+  ],
+  "countsBefore": {
+    "listings": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "countsAfter": {
+    "listings": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "clauseStatusChanges": [],
+  "localChecks": {
+    "npm ci": 0,
+    "copy-only apply": 0,
+    "mechanical apply retry": 0,
+    "listings": 0,
+    "listings --check": 0,
+    "type-check": 0,
+    "lint": 0,
+    "production build": 0,
+    "final dry-sync": 0,
+    "browser proof final": 0,
+    "git diff --check": 0,
+    "identity/trailers": 0
+  },
+  "sourceEligibility": "published non-draft non-prerelease GitHub Releases; rer-release.dsse.json asset presence only; signatures not verified",
+  "browserProof": "browser/receipt.json",
+  "servers": "both recorded own server PIDs stopped; browsers closed",
+  "publicationScan": "not run in cloud; Mac lane gate",
+  "blockers": [],
+  "cloneCleanup": "remove pushed clone/node_modules after evidence publication and final remote ref verification"
+}

@@ -1,0 +1,38 @@
+{
+  "author": "Run Edit Run fleet",
+  "observedAt": "2026-11-17T09:59:16.683Z",
+  "checks": [
+    {
+      "slug": "lamp",
+      "width": 1440,
+      "version": "v1.11.22",
+      "httpStatus": 200,
+      "asserted": true,
+      "screenshot": "browser/lamp-1440.png"
+    },
+    {
+      "slug": "oncall",
+      "width": 1440,
+      "version": "v0.5.18",
+      "httpStatus": 200,
+      "asserted": true,
+      "screenshot": "browser/oncall-1440.png"
+    },
+    {
+      "slug": "lamp",
+      "width": 390,
+      "version": "v1.11.22",
+      "httpStatus": 200,
+      "asserted": false,
+      "screenshot": "browser/lamp-390.png"
+    },
+    {
+      "slug": "oncall",
+      "width": 390,
+      "version": "v0.5.18",
+      "httpStatus": 200,
+      "asserted": false,
+      "screenshot": "browser/oncall-390.png"
+    }
+  ]
+}

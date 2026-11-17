@@ -1,0 +1,62 @@
+{
+  "source": "https://runeditrun.com/data/seeds.json",
+  "generatedAt": "2026-11-15T13:56:34Z",
+  "observedAt": "2026-11-17T09:49:15Z",
+  "matches": [
+    {
+      "slug": "happytohelp",
+      "je_version": "v0.4.31",
+      "rer_id": "happytohelp",
+      "rer_version": "0.4.31",
+      "repository": "https://github.com/just-every/run-happytohelp",
+      "matched": 1,
+      "drift": false
+    },
+    {
+      "slug": "lamp",
+      "je_version": "v1.11.22",
+      "rer_id": "lamp",
+      "rer_version": "1.11.21",
+      "repository": "https://github.com/just-every/run-lamp",
+      "matched": 1,
+      "drift": true
+    },
+    {
+      "slug": "oncall",
+      "je_version": "v0.5.18",
+      "rer_id": "oncall",
+      "rer_version": "0.5.17",
+      "repository": "https://github.com/just-every/run-oncall",
+      "matched": 1,
+      "drift": true
+    },
+    {
+      "slug": "orbit",
+      "je_version": "v0.4.11",
+      "rer_id": "orbit",
+      "rer_version": "0.4.11",
+      "repository": "https://github.com/just-every/run-orbit",
+      "matched": 1,
+      "drift": false
+    },
+    {
+      "slug": "spool",
+      "je_version": "v0.7.14",
+      "rer_id": "errors-workbench",
+      "rer_version": "0.7.14",
+      "repository": "https://github.com/just-every/run-spool",
+      "matched": 1,
+      "drift": false
+    },
+    {
+      "slug": "uptime",
+      "je_version": "v0.5.16",
+      "rer_id": "uptime",
+      "rer_version": "0.5.16",
+      "repository": "https://github.com/just-every/run-uptime",
+      "matched": 1,
+      "drift": false
+    }
+  ],
+  "note": "Matched by repository URL/name, including Spool id errors-workbench; static generatedAt ignored as freshness evidence. RER now trails candidate Lamp and Oncall; preserve candidate versions."
+}
