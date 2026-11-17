@@ -1,0 +1,104 @@
+[
+  {
+    "command": [
+      "npm",
+      "ci"
+    ],
+    "start": "2026-11-17T08:41:47Z",
+    "end": "2026-11-17T08:42:12Z",
+    "exit": 0,
+    "log": "head-01.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "type-check"
+    ],
+    "start": "2026-11-17T08:42:12Z",
+    "end": "2026-11-17T08:42:19Z",
+    "exit": 0,
+    "log": "head-02.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "lint"
+    ],
+    "start": "2026-11-17T08:42:19Z",
+    "end": "2026-11-17T08:42:24Z",
+    "exit": 0,
+    "log": "head-03.log"
+  },
+  {
+    "command": [
+      "npm",
+      "test"
+    ],
+    "start": "2026-11-17T08:42:24Z",
+    "end": "2026-11-17T08:42:31Z",
+    "exit": 0,
+    "log": "head-04.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "listings",
+      "--",
+      "--check"
+    ],
+    "start": "2026-11-17T08:42:31Z",
+    "end": "2026-11-17T08:42:31Z",
+    "exit": 0,
+    "log": "head-05.log"
+  },
+  {
+    "command": [
+      "npm",
+      "audit",
+      "--json"
+    ],
+    "start": "2026-11-17T08:42:31Z",
+    "end": "2026-11-17T08:42:32Z",
+    "exit": 0,
+    "log": "head-06.log"
+  },
+  {
+    "command": [
+      "npm",
+      "audit",
+      "--omit=dev",
+      "--json"
+    ],
+    "start": "2026-11-17T08:42:32Z",
+    "end": "2026-11-17T08:42:33Z",
+    "exit": 0,
+    "log": "head-07.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "start": "2026-11-17T08:42:33Z",
+    "end": "2026-11-17T08:43:27Z",
+    "exit": 0,
+    "log": "head-08.log"
+  },
+  {
+    "command": [
+      "env",
+      "NODE_ENV=production",
+      "npm",
+      "run",
+      "build:cloudflare"
+    ],
+    "start": "2026-11-17T08:43:27Z",
+    "end": "2026-11-17T08:44:25Z",
+    "exit": 0,
+    "log": "head-09.log"
+  }
+]

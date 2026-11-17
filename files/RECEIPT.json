@@ -1,0 +1,51 @@
+{
+  "tag": "je-gate-56",
+  "author": "Codex",
+  "timestamp": "2026-11-17T08:53:54Z",
+  "repository": "just-every/home",
+  "pr": "https://github.com/just-every/home/pull/72",
+  "candidate_branch": "cloud/je-deps-1",
+  "head": "4560a230d30bff9a8f5ad73cb0726364f66e64d4",
+  "base": "567a17189ad2f0fb2b4601976ec5d1348cf083eb",
+  "patch_sha256": "034c07cec93cb52c9aaae16b980e70ebfad29d8d66d79b6e9a9230fefbe22259",
+  "product_changes": 0,
+  "product_pushes": 0,
+  "clause_status_changes": [],
+  "ci_runs": [
+    {
+      "id": 44046796169,
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "4560a230d30bff9a8f5ad73cb0726364f66e64d4"
+    },
+    {
+      "id": 44046837297,
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "4560a230d30bff9a8f5ad73cb0726364f66e64d4"
+    },
+    {
+      "id": 44046841495,
+      "status": "completed",
+      "conclusion": "skipped",
+      "head_sha": "4560a230d30bff9a8f5ad73cb0726364f66e64d4"
+    }
+  ],
+  "github_rest_calls": 7,
+  "dependabot_attempts": 5,
+  "dependabot_http": 403,
+  "rubric": {
+    "R1": "MET",
+    "R2": "NOT RUN",
+    "R3": "UNMET: console-clean only; pre-existing identical console errors; named checks and render comparison MET",
+    "R4": "MET",
+    "R5": "MET"
+  },
+  "blocking_findings": 0,
+  "followups": 0,
+  "verdict": "GATE NOT RUN R2 Dependabot alert-to-lock comparison",
+  "candidate_check_receipt": "checks.json",
+  "browser_receipt": "browser-receipt.json",
+  "browser_comparison": "browser.json",
+  "build_sizes": "build-sizes.json"
+}

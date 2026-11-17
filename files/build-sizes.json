@@ -1,0 +1,21 @@
+{
+  "trees": [
+    {
+      "tree": "baseline",
+      "file_bytes": 70535835,
+      "files": 2331,
+      "du_apparent_bytes": 70535835,
+      "worker_bytes": 2278,
+      "worker_sha256": "d05223bf4d44c84108a102ab62aa3bc9c5568f0c3ac2064c37be5cc65c64bc45"
+    },
+    {
+      "tree": "home",
+      "file_bytes": 70571104,
+      "files": 2333,
+      "du_apparent_bytes": 70571104,
+      "worker_bytes": 2278,
+      "worker_sha256": "d05223bf4d44c84108a102ab62aa3bc9c5568f0c3ac2064c37be5cc65c64bc45"
+    }
+  ],
+  "candidate_to_baseline_ratio": 1.000500015346809
+}

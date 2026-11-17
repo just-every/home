@@ -1,0 +1,174 @@
+(node:2586) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "comparisons": [
+    {
+      "width": 1440,
+      "route": "/",
+      "text_equal": true,
+      "structure_equal": true,
+      "headings_equal": true,
+      "baseline_overflow": false,
+      "head_overflow": false,
+      "baseline_page_errors": [],
+      "head_page_errors": [],
+      "baseline_console_errors": [
+        "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+      ],
+      "head_console_errors": [
+        "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/products",
+      "text_equal": true,
+      "structure_equal": true,
+      "headings_equal": true,
+      "baseline_overflow": false,
+      "head_overflow": false,
+      "baseline_page_errors": [],
+      "head_page_errors": [],
+      "baseline_console_errors": [
+        "Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+      ],
+      "head_console_errors": [
+        "Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/uptime",
+      "text_equal": true,
+      "structure_equal": true,
+      "headings_equal": true,
+      "baseline_overflow": false,
+      "head_overflow": false,
+      "baseline_page_errors": [],
+      "head_page_errors": [],
+      "baseline_console_errors": [
+        "Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+      ],
+      "head_console_errors": [
+        "Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/nook",
+      "text_equal": true,
+      "structure_equal": true,
+      "headings_equal": true,
+      "baseline_overflow": false,
+      "head_overflow": false,
+      "baseline_page_errors": [],
+      "head_page_errors": [],
+      "baseline_console_errors": [
+        "Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+      ],
+      "head_console_errors": [
+        "Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "text_equal": true,
+      "structure_equal": true,
+      "headings_equal": true,
+      "baseline_overflow": false,
+      "head_overflow": false,
+      "baseline_page_errors": [],
+      "head_page_errors": [],
+      "baseline_console_errors": [
+        "Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+      ],
+      "head_console_errors": [
+        "Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/products",
+      "text_equal": true,
+      "structure_equal": true,
+      "headings_equal": true,
+      "baseline_overflow": false,
+      "head_overflow": false,
+      "baseline_page_errors": [],
+      "head_page_errors": [],
+      "baseline_console_errors": [
+        "Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+      ],
+      "head_console_errors": [
+        "Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/uptime",
+      "text_equal": true,
+      "structure_equal": true,
+      "headings_equal": true,
+      "baseline_overflow": false,
+      "head_overflow": false,
+      "baseline_page_errors": [],
+      "head_page_errors": [],
+      "baseline_console_errors": [
+        "Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+      ],
+      "head_console_errors": [
+        "Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/nook",
+      "text_equal": true,
+      "structure_equal": true,
+      "headings_equal": true,
+      "baseline_overflow": false,
+      "head_overflow": false,
+      "baseline_page_errors": [],
+      "head_page_errors": [],
+      "baseline_console_errors": [
+        "Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+      ],
+      "head_console_errors": [
+        "Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+        "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "route": "/brand.json",
+      "baseline_status": 200,
+      "head_status": 200,
+      "identical": true,
+      "bytes": 2384,
+      "sha256": "a54bb68daa5f1590e5a6eaafecf38c627e42fa014f65c0d7efaf81bee809b7a4"
+    },
+    {
+      "route": "/data/listings.json",
+      "baseline_status": 200,
+      "head_status": 200,
+      "identical": true,
+      "bytes": 30086,
+      "sha256": "78ae543ada87bddbf65d6470686a009b94c2f8f425fbe517161445c645df7229"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+[
+  {
+    "command": [
+      "npm",
+      "ci"
+    ],
+    "start": "2026-11-17T08:44:53Z",
+    "end": "2026-11-17T08:45:20Z",
+    "exit": 0,
+    "log": "baseline-01.log"
+  },
+  {
+    "command": [
+      "npm",
+      "audit",
+      "--json"
+    ],
+    "start": "2026-11-17T08:45:20Z",
+    "end": "2026-11-17T08:46:15Z",
+    "exit": 1,
+    "log": "baseline-02.log"
+  },
+  {
+    "command": [
+      "npm",
+      "audit",
+      "--omit=dev",
+      "--json"
+    ],
+    "start": "2026-11-17T08:46:15Z",
+    "end": "2026-11-17T08:46:18Z",
+    "exit": 1,
+    "log": "baseline-03.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "start": "2026-11-17T08:46:18Z",
+    "end": "2026-11-17T08:47:23Z",
+    "exit": 1,
+    "log": "baseline-04.log"
+  },
+  {
+    "command": [
+      "env",
+      "NODE_ENV=production",
+      "npm",
+      "run",
+      "build:cloudflare"
+    ],
+    "start": "2026-11-17T08:47:23Z",
+    "end": "2026-11-17T08:48:33Z",
+    "exit": 0,
+    "log": "baseline-05.log"
+  }
+]

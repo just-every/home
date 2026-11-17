@@ -1,0 +1,7 @@
+1. Bind PR #72 to the frozen base and head through Git refs and a PR API read; stop if either changes.
+2. Compare immutable base/head package manifests, lock resolution URLs/integrities, commit identities and trailers, and unchanged source/workflows.
+3. Read the default-branch Dependabot alerts using only the injected fleet GitHub credential, with bounded refresh/backoff on rejection. Compare locked versions to advisory ranges; independently audit both trees.
+4. Run the named candidate installation, type-check, lint, nine tests, listings check, Next build and production OpenNext build in sequence in the dedicated cloud VM on Node 22 and npm 10.9.3.
+5. Build baseline main in an isolated worktree; compare production bundle sizes, serve baseline/head builds, capture the four named routes at 1440 and 390, and compare visible text, DOM structure, errors, layout and byte identity of the two JSON endpoints.
+6. Read existing exact-head Verify via REST once; do not dispatch, rerun, merge, deploy, edit or publish product code.
+7. Tier only findings within the frozen rubric, retain complete non-secret evidence outside the product tree, publish the explicitly selected packet to evidence/je-gate-56, and delete disposable checkouts and dependencies.
