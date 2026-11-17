@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "packageManager": "npm@10.9.3",
   "scripts": {
     "dev": "npm run db:migrate:local && next dev --turbopack",
     "build": "next build --webpack",
