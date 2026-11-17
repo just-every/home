@@ -80,7 +80,7 @@ Counts before → after: **49 → 49 listings; 35 → 35 released; 14 → 14 com
 Changed product paths, and nothing else:
 
 - `src/data/seed-pages.ts`: Oncall version field, row 1046.
-- `public/data/listings.json`: generatedAt and Oncall version, row 595.
+- `public/data/listings.json`: generatedAt and Oncall version, row 594.
 - `scripts/seeds-sync/state.json`: syncedAt and Oncall commit/ref/tag/seed.json provenance hash, plus the tool's observed copy-finding marker.
 
 The tool's full mechanical apply cleared a prior Uptime open copy marker because it was no longer a new finding. Restored that existing marker `c843303a1181` so this round does not silently close the named Uptime follow-up. All non-Oncall state records are identical to main, and legacy formatting is preserved. The Oncall copy-only observation is recorded by the tool as seen (`64cb07f6a0dd`); its version-only source edit does not warrant rewriting true claims.
