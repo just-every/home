@@ -1043,7 +1043,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['PagerDuty', 'Opsgenie', 'Splunk On-Call', 'Better Stack'],
     runsOn: 'your own computer, or your own Cloudflare account',
-    version: 'v0.5.16',
+    version: 'v0.5.17',
     contractUrl: 'https://run-oncall.com/contract',
     seoTitle: 'Oncall: free, open-source alternative to PagerDuty',
     seoDescription:
