@@ -1,0 +1,115 @@
+[
+  {
+    "package": "next",
+    "alert": "moderate; GHSA-mfr8-8qww-v76h",
+    "before": [
+      "16.4.3"
+    ],
+    "after": [
+      "16.4.5"
+    ],
+    "how": "Direct pin to the smallest patched 16.4.x release"
+  },
+  {
+    "package": "@opennextjs/cloudflare",
+    "alert": "compatibility",
+    "before": [
+      "1.20.13"
+    ],
+    "after": [
+      "1.20.13"
+    ],
+    "how": "Unchanged; peer range >=16.4.1 includes 16.4.5"
+  },
+  {
+    "package": "undici",
+    "alert": "high; eight advisories",
+    "before": [
+      "7.29.1"
+    ],
+    "after": [
+      "7.30.1"
+    ],
+    "how": "Existing override updated"
+  },
+  {
+    "package": "brace-expansion",
+    "alert": "high; three advisories",
+    "before": [
+      "5.0.9"
+    ],
+    "after": [
+      "5.0.12"
+    ],
+    "how": "Existing override updated to cover all three fixed thresholds"
+  },
+  {
+    "package": "source-map-js",
+    "alert": "high; GHSA-68fv-2mgg-jv7q",
+    "before": [
+      "1.2.1"
+    ],
+    "after": [
+      "1.2.2"
+    ],
+    "how": "Targeted lockfile update inside parent range"
+  },
+  {
+    "package": "sharp",
+    "alert": "high; GHSA-wq5f-xc86-pv6w",
+    "before": [
+      "0.35.4",
+      "0.35.5"
+    ],
+    "after": [
+      "0.35.5"
+    ],
+    "how": "Direct development pin; deduplicates already-patched runtime copies"
+  },
+  {
+    "package": "qs",
+    "alert": "moderate; GHSA-6pq8-jhm2-2vcw",
+    "before": [
+      "6.16.0"
+    ],
+    "after": [
+      "6.16.1"
+    ],
+    "how": "Existing override updated"
+  },
+  {
+    "package": "minimatch",
+    "alert": "moderate; GHSA-g3hv-75wg-m249",
+    "before": [
+      "10.2.6",
+      "3.1.5"
+    ],
+    "after": [
+      "11.0.1",
+      "3.1.5"
+    ],
+    "how": "New minimatch@>=7 override; modern vulnerable ranges exclude patched 11.0.1; unaffected 3.1.5 retained"
+  },
+  {
+    "package": "glob",
+    "alert": "moderate; GHSA-3g3m-2fjr-6pw4",
+    "before": [
+      "13.0.6"
+    ],
+    "after": [
+      "14.0.2"
+    ],
+    "how": "New glob@>=9 override; OpenNext ^13.0.6 excludes patched 14.0.2"
+  },
+  {
+    "package": "fast-uri",
+    "alert": "moderate/low; five advisories",
+    "before": [
+      "3.1.7"
+    ],
+    "after": [
+      "3.1.9"
+    ],
+    "how": "Existing override updated"
+  }
+]

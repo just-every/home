@@ -1,0 +1,70 @@
+START 2026-11-17T08:22:47Z
+COMMAND ["npm", "run", "build"]
+(node:1823) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+> next-project@0.1.0 build
+> next build --webpack
+
+(node:1836) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+▲ Next.js 16.4.5 (webpack)
+✓ Running next.config.ts took 28ms
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+(node:1836) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✓ Compiled successfully in 9.4s
+  Running TypeScript ...
+  Finished TypeScript in 5.6s ...
+  Collecting page data using 4 workers ...
+(node:1881) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1882) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1888) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1894) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  Generating static pages using 4 workers (0/61) ...
+  Generating static pages using 4 workers (15/61) 
+  Generating static pages using 4 workers (30/61) 
+  Generating static pages using 4 workers (45/61) 
+✓ Generating static pages using 4 workers (61/61) in 1066ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├   /[slug]
+│ ├ ● /uptime
+│ ├ ● /happytohelp
+│ ├ ● /nook
+│ └ ● [+46 more paths]
+├ ƒ /api/contact
+├ ƒ /api/events
+├ ƒ /api/match
+├ ƒ /api/suggest
+├ ƒ /api/tokens
+├ ○ /contact
+├ ○ /journey
+├ ○ /process
+├ ○ /products
+└ ○ /sitemap.xml
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+
+END 2026-11-17T08:23:22Z EXIT 0 SECONDS 34.927

@@ -1,0 +1,10 @@
+START 2026-11-17T08:20:16Z
+COMMAND ["npm", "ci"]
+(node:1223) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+npm error Exit handler never called!
+npm error This is an error with npm itself. Please report this error at:
+npm error   <https://github.com/npm/cli/issues>
+npm error A complete log of this run can be found in: /home/agent/.npm/_logs/2026-11-17T08_20_16_747Z-debug-0.log
+
+END 2026-11-17T08:21:28Z EXIT 1 SECONDS 71.621

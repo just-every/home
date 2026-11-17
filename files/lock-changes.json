@@ -1,0 +1,507 @@
+[
+  {
+    "path": "node_modules/@img/sharp-darwin-arm64",
+    "before": "0.35.4",
+    "after": "0.35.5"
+  },
+  {
+    "path": "node_modules/@img/sharp-darwin-x64",
+    "before": "0.35.4",
+    "after": "0.35.5"
+  },
+  {
+    "path": "node_modules/@img/sharp-freebsd-wasm32",
+    "before": "0.35.4",
+    "after": "0.35.5"
+  },
+  {
+    "path": "node_modules/@img/sharp-libvips-darwin-arm64",
+    "before": "1.3.3",
+    "after": "1.3.4"
+  },
+  {
+    "path": "node_modules/@img/sharp-libvips-darwin-x64",
+    "before": "1.3.3",
+    "after": "1.3.4"
+  },
+  {
+    "path": "node_modules/@img/sharp-libvips-linux-arm",
+    "before": "1.3.3",
+    "after": "1.3.4"
+  },
+  {
+    "path": "node_modules/@img/sharp-libvips-linux-arm64",
+    "before": "1.3.3",
+    "after": "1.3.4"
+  },
+  {
+    "path": "node_modules/@img/sharp-libvips-linux-ppc64",
+    "before": "1.3.3",
+    "after": "1.3.4"
+  },
+  {
+    "path": "node_modules/@img/sharp-libvips-linux-riscv64",
+    "before": "1.3.3",
+    "after": "1.3.4"
+  },
+  {
+    "path": "node_modules/@img/sharp-libvips-linux-s390x",
+    "before": "1.3.3",
+    "after": "1.3.4"
+  },
+  {
+    "path": "node_modules/@img/sharp-libvips-linux-x64",
+    "before": "1.3.3",
+    "after": "1.3.4"
+  },
+  {
+    "path": "node_modules/@img/sharp-libvips-linuxmusl-arm64",
+    "before": "1.3.3",
+    "after": "1.3.4"
+  },
+  {
+    "path": "node_modules/@img/sharp-libvips-linuxmusl-x64",
+    "before": "1.3.3",
+    "after": "1.3.4"
+  },
+  {
+    "path": "node_modules/@img/sharp-linux-arm",
+    "before": "0.35.4",
+    "after": "0.35.5"
+  },
+  {
+    "path": "node_modules/@img/sharp-linux-arm64",
+    "before": "0.35.4",
+    "after": "0.35.5"
+  },
+  {
+    "path": "node_modules/@img/sharp-linux-ppc64",
+    "before": "0.35.4",
+    "after": "0.35.5"
+  },
+  {
+    "path": "node_modules/@img/sharp-linux-riscv64",
+    "before": "0.35.4",
+    "after": "0.35.5"
+  },
+  {
+    "path": "node_modules/@img/sharp-linux-s390x",
+    "before": "0.35.4",
+    "after": "0.35.5"
+  },
+  {
+    "path": "node_modules/@img/sharp-linux-x64",
+    "before": "0.35.4",
+    "after": "0.35.5"
+  },
+  {
+    "path": "node_modules/@img/sharp-linuxmusl-arm64",
+    "before": "0.35.4",
+    "after": "0.35.5"
+  },
+  {
+    "path": "node_modules/@img/sharp-linuxmusl-x64",
+    "before": "0.35.4",
+    "after": "0.35.5"
+  },
+  {
+    "path": "node_modules/@img/sharp-wasm32",
+    "before": "0.35.4",
+    "after": "0.35.5"
+  },
+  {
+    "path": "node_modules/@img/sharp-webcontainers-wasm32",
+    "before": "0.35.4",
+    "after": "0.35.5"
+  },
+  {
+    "path": "node_modules/@img/sharp-win32-arm64",
+    "before": "0.35.4",
+    "after": "0.35.5"
+  },
+  {
+    "path": "node_modules/@img/sharp-win32-ia32",
+    "before": "0.35.4",
+    "after": "0.35.5"
+  },
+  {
+    "path": "node_modules/@img/sharp-win32-x64",
+    "before": "0.35.4",
+    "after": "0.35.5"
+  },
+  {
+    "path": "node_modules/@isaacs/nonrecursive-glob-match",
+    "before": null,
+    "after": "1.1.0"
+  },
+  {
+    "path": "node_modules/@next/env",
+    "before": "16.4.3",
+    "after": "16.4.5"
+  },
+  {
+    "path": "node_modules/@next/swc-darwin-arm64",
+    "before": "16.4.3",
+    "after": "16.4.5"
+  },
+  {
+    "path": "node_modules/@next/swc-darwin-x64",
+    "before": "16.4.3",
+    "after": "16.4.5"
+  },
+  {
+    "path": "node_modules/@next/swc-linux-arm64-gnu",
+    "before": "16.4.3",
+    "after": "16.4.5"
+  },
+  {
+    "path": "node_modules/@next/swc-linux-arm64-musl",
+    "before": "16.4.3",
+    "after": "16.4.5"
+  },
+  {
+    "path": "node_modules/@next/swc-linux-x64-gnu",
+    "before": "16.4.3",
+    "after": "16.4.5"
+  },
+  {
+    "path": "node_modules/@next/swc-linux-x64-musl",
+    "before": "16.4.3",
+    "after": "16.4.5"
+  },
+  {
+    "path": "node_modules/@next/swc-win32-arm64-msvc",
+    "before": "16.4.3",
+    "after": "16.4.5"
+  },
+  {
+    "path": "node_modules/@next/swc-win32-x64-msvc",
+    "before": "16.4.3",
+    "after": "16.4.5"
+  },
+  {
+    "path": "node_modules/@typescript-eslint/typescript-estree/node_modules/minimatch",
+    "before": "10.2.6",
+    "after": "11.0.1"
+  },
+  {
+    "path": "node_modules/brace-expansion",
+    "before": "5.0.9",
+    "after": "5.0.12"
+  },
+  {
+    "path": "node_modules/fast-uri",
+    "before": "3.1.7",
+    "after": "3.1.9"
+  },
+  {
+    "path": "node_modules/glob",
+    "before": "13.0.6",
+    "after": "14.0.2"
+  },
+  {
+    "path": "node_modules/glob/node_modules/minimatch",
+    "before": "10.2.6",
+    "after": "11.0.1"
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-darwin-arm64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-darwin-x64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-freebsd-wasm32",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-libvips-darwin-arm64",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-libvips-darwin-x64",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-libvips-linux-arm",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-libvips-linux-arm64",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-libvips-linux-ppc64",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-libvips-linux-riscv64",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-libvips-linux-s390x",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-libvips-linux-x64",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-libvips-linuxmusl-arm64",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-libvips-linuxmusl-x64",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-linux-arm",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-linux-arm64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-linux-ppc64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-linux-riscv64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-linux-s390x",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-linux-x64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-linuxmusl-arm64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-linuxmusl-x64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-wasm32",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-webcontainers-wasm32",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-win32-arm64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-win32-ia32",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/@img/sharp-win32-x64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/miniflare/node_modules/sharp",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/next",
+    "before": "16.4.3",
+    "after": "16.4.5"
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-darwin-arm64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-darwin-x64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-freebsd-wasm32",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-libvips-darwin-arm64",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-libvips-darwin-x64",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-libvips-linux-arm",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-libvips-linux-arm64",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-libvips-linux-ppc64",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-libvips-linux-riscv64",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-libvips-linux-s390x",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-libvips-linux-x64",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-libvips-linuxmusl-arm64",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-libvips-linuxmusl-x64",
+    "before": "1.3.4",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-linux-arm",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-linux-arm64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-linux-ppc64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-linux-riscv64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-linux-s390x",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-linux-x64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-linuxmusl-arm64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-linuxmusl-x64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-wasm32",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-webcontainers-wasm32",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-win32-arm64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-win32-ia32",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/@img/sharp-win32-x64",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/next/node_modules/sharp",
+    "before": "0.35.5",
+    "after": null
+  },
+  {
+    "path": "node_modules/path-scurry",
+    "before": "2.0.2",
+    "after": "3.0.0"
+  },
+  {
+    "path": "node_modules/qs",
+    "before": "6.16.0",
+    "after": "6.16.1"
+  },
+  {
+    "path": "node_modules/sharp",
+    "before": "0.35.4",
+    "after": "0.35.5"
+  },
+  {
+    "path": "node_modules/source-map-js",
+    "before": "1.2.1",
+    "after": "1.2.2"
+  },
+  {
+    "path": "node_modules/undici",
+    "before": "7.29.1",
+    "after": "7.30.1"
+  }
+]

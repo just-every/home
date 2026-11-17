@@ -1,0 +1,15 @@
+START 2026-11-17T08:22:47Z
+COMMAND ["npm", "run", "brand", "--", "--check"]
+(node:1745) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+> next-project@0.1.0 brand
+> node --import tsx scripts/brand-json.mjs --check
+
+(node:1758) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1758) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Brand hashes and content current
+
+END 2026-11-17T08:22:47Z EXIT 0 SECONDS 0.296

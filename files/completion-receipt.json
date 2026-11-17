@@ -1,0 +1,19 @@
+{
+  "repository": "just-every/home",
+  "product_branch": "cloud/je-deps-1",
+  "product_head": "4560a230d30bff9a8f5ad73cb0726364f66e64d4",
+  "pr": "https://github.com/just-every/home/pull/72",
+  "verify_run_id": 44046796169,
+  "verify_status": "completed",
+  "verify_conclusion": "success",
+  "local_checks": "all required checks pass; 9 tests pass",
+  "audit_full_before": 17,
+  "audit_full_after": 0,
+  "audit_production_before": 13,
+  "audit_production_after": 0,
+  "clause_changes": [],
+  "publication_scan": "retained for the independent fleet lane before landing",
+  "landing_and_deployment": "not performed; lane retains hold",
+  "cleanup": "delete disposable clone and node_modules after evidence verification",
+  "utc": "2026-11-17T08:29:34Z"
+}

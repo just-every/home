@@ -1,0 +1,15 @@
+START 2026-11-17T08:22:47Z
+COMMAND ["npm", "run", "listings", "--", "--check"]
+(node:1784) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+> next-project@0.1.0 listings
+> node --import tsx scripts/listings.mjs --check
+
+(node:1797) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1797) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Listings current (49 seeds)
+
+END 2026-11-17T08:22:47Z EXIT 0 SECONDS 0.312

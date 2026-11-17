@@ -1,0 +1,17 @@
+{
+  "repository": "just-every/home",
+  "branch": "cloud/je-deps-1",
+  "head": "4560a230d30bff9a8f5ad73cb0726364f66e64d4",
+  "base": "567a17189ad2f0fb2b4601976ec5d1348cf083eb",
+  "files_sha256": {
+    "package.json": "055511c62f608be9effc61c57974a4b46074990ba7fdcc3be404343c07e9c7fe",
+    "package-lock.json": "5cd5c9b2646cf32a20c014fdba3fdd87e4898290a7642da06d35319cfee6b2d9"
+  },
+  "changed_files": [
+    "package-lock.json",
+    "package.json"
+  ],
+  "identity_and_trailers": "Run Edit Run fleet <fleet@runeditrun.com>\nRun Edit Run fleet <fleet@runeditrun.com>\n\n",
+  "clean": true,
+  "utc": "2026-11-17T08:26:46Z"
+}

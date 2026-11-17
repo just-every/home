@@ -1,0 +1,21 @@
+START 2026-11-17T08:24:25Z
+COMMAND ["npm", "ci"]
+(node:2302) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+> next-project@0.1.0 prepare
+> husky
+
+(node:2348) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+added 715 packages, and audited 716 packages in 14s
+
+222 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+END 2026-11-17T08:24:39Z EXIT 0 SECONDS 13.839

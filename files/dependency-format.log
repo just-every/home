@@ -1,0 +1,8 @@
+START 2026-11-17T08:24:40Z
+COMMAND ["./node_modules/.bin/prettier", "--check", "package.json", "package-lock.json"]
+(node:2385) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Checking formatting...
+All matched files use Prettier code style!
+
+END 2026-11-17T08:24:40Z EXIT 0 SECONDS 0.369

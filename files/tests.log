@@ -1,0 +1,99 @@
+START 2026-11-17T08:24:48Z
+COMMAND ["npm", "test"]
+(node:2458) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+> next-project@0.1.0 test
+> node --import tsx --test tests/*.test.ts
+
+(node:2471) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+TAP version 13
+# (node:2478) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:2478) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# [33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+# (node:2478) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:2478) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# match usage: input 20, cache write 0, cache read 0, output 40
+# Subtest: match: Claude picks real products; a repeat comes from D1 with no model call
+ok 1 - match: Claude picks real products; a repeat comes from D1 with no model call
+  ---
+  duration_ms: 801.385779
+  type: 'test'
+  ...
+# Subtest: match: without an Anthropic key a new query fails honestly
+ok 2 - match: without an Anthropic key a new query fails honestly
+  ---
+  duration_ms: 12.569331
+  type: 'test'
+  ...
+# Subtest: suggest: stores the row, refuses the honeypot, then rate limits
+ok 3 - suggest: stores the row, refuses the honeypot, then rate limits
+  ---
+  duration_ms: 129.435226
+  type: 'test'
+  ...
+# Subtest: contact: stores the message, refuses the honeypot and bad input, then rate limits
+ok 4 - contact: stores the message, refuses the honeypot and bad input, then rate limits
+  ---
+  duration_ms: 8193.078894
+  type: 'test'
+  ...
+# Subtest: events: stores page views and events without an IP; refuses unknown beacons
+ok 5 - events: stores page views and events without an IP; refuses unknown beacons
+  ---
+  duration_ms: 42.382228
+  type: 'test'
+  ...
+# (node:2479) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:2479) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: accepts a portable CLI template and keeps only its public fields
+ok 6 - accepts a portable CLI template and keeps only its public fields
+  ---
+  duration_ms: 1.242992
+  type: 'test'
+  ...
+# Subtest: refuses missing or malformed remote CLI input
+ok 7 - refuses missing or malformed remote CLI input
+  ---
+  duration_ms: 0.287463
+  type: 'test'
+  ...
+# Subtest: refuses installer URLs that could change the displayed shell command
+ok 8 - refuses installer URLs that could change the displayed shell command
+  ---
+  duration_ms: 0.254543
+  type: 'test'
+  ...
+# (node:2480) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:2480) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# [33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+# (node:2480) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:2480) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tokens: no count before the first measurement, then the newest one
+ok 9 - tokens: no count before the first measurement, then the newest one
+  ---
+  duration_ms: 938.914603
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 11629.81255
+
+END 2026-11-17T08:25:00Z EXIT 0 SECONDS 11.784

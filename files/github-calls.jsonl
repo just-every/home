@@ -1,0 +1,2 @@
+{"call": 1, "utc": "2026-11-17T08:27:08Z", "method": "POST", "endpoint": "repos/just-every/home/pulls", "purpose": "Open the one requested product PR"}
+{"call": 2, "utc": "2026-11-17T08:28:49Z", "method": "GET", "endpoint": "repos/just-every/home/actions/runs?head_sha=4560a230d30bff9a8f5ad73cb0726364f66e64d4&per_page=100", "purpose": "Single exact-SHA CI observation"}

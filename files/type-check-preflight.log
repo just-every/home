@@ -1,0 +1,10 @@
+START 2026-11-17T08:22:35Z
+COMMAND ["npm", "run", "type-check"]
+(node:1578) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+> next-project@0.1.0 type-check
+> tsc --noEmit
+
+
+END 2026-11-17T08:22:40Z EXIT 0 SECONDS 4.829

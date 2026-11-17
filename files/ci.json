@@ -1,0 +1,12 @@
+{
+  "observed_utc": "2026-11-17T08:28:49Z",
+  "conclusion": "success",
+  "created_at": "2026-11-17T08:26:50Z",
+  "event": "push",
+  "head_sha": "4560a230d30bff9a8f5ad73cb0726364f66e64d4",
+  "html_url": "https://github.com/just-every/home/actions/runs/44046796169",
+  "id": 44046796169,
+  "name": "Verify branch",
+  "status": "completed",
+  "updated_at": "2026-11-17T08:28:01Z"
+}

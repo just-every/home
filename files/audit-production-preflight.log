@@ -1,0 +1,7 @@
+START 2026-11-17T08:23:57Z
+COMMAND ["npm", "audit", "--omit=dev"]
+(node:2205) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+found 0 vulnerabilities
+
+END 2026-11-17T08:23:58Z EXIT 0 SECONDS 0.615
