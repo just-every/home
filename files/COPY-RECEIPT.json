@@ -1,0 +1,25 @@
+{
+  "recordedAt": "2026-11-18T12:49:50Z",
+  "repository": "just-every/run-uptime",
+  "from": {
+    "tag": "v0.5.16",
+    "commit": "6fd9399cf9ce9acf4e009999581cc20f32c9e129"
+  },
+  "to": {
+    "tag": "v0.5.17",
+    "commit": "359b1bb93606ccfe5dc0120d2cdce78e8df67f6a"
+  },
+  "files": {
+    "CONTRACT.md": {
+      "beforeSha256": "9e5c8dd14ef60da605c7729888ce46f087f26f83f77f2c6ae05d9f872d569609",
+      "afterSha256": "9e5c8dd14ef60da605c7729888ce46f087f26f83f77f2c6ae05d9f872d569609",
+      "identical": true
+    },
+    "seed.json": {
+      "beforeSha256": "3ca1f357c5ee2078732dc927f3b880694818b4fbff1f7b317f053a55409a55da",
+      "afterSha256": "97d6a9d3659eb36df27998d1c95dcaec4f544e95396bc92a25558255493964c0",
+      "identical": false
+    }
+  },
+  "review": "CONTRACT.md identical; README.md hashes unchanged in committed sync reports. seed.json line 4 changes version only (0.5.16 to 0.5.17). Existing JE wording retained; no public claim edits or implementation-status promotions."
+}

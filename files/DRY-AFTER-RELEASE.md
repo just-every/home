@@ -1,0 +1,36 @@
+# Seeds sync, 2026-11-18T12:44:55.865Z
+
+Dry run over 6 seeds: 1 with changes, 0 unreadable. Homepages read here (load 0.9). State: scripts/seeds-sync/state.json.
+
+## Copy source refs
+
+| Seed | Ref | Commit | Reason |
+| --- | --- | --- | --- |
+| uptime | v0.5.17 | 359b1bb93606ccfe5dc0120d2cdce78e8df67f6a | released listing version |
+| happytohelp | v0.4.31 | e5fb53dc305f53a71ff0b6db81d5eec7dfd0104f | released listing version |
+| lamp | v1.11.22 | 4c90e6c8f35775e2a0287ab24ccba87d7a8d8485 | released listing version |
+| orbit | v0.4.11 | a4fcbfcd72fa4253826f43d0b0de02275094f86d | released listing version |
+| oncall | v0.5.18 | 8dd2a0acf06b30fbc810c8a2a7e0fe8c01dd85ef | released listing version |
+| spool | v0.7.14 | 1853e3b3b59d49853b5ee7678f851d6de8343fbf | released listing version |
+
+## Changes by seed
+
+### Uptime (released)
+
+- **copy**: seed.json changed since the last sync (reported)
+
+## For a copy rewrite (reported, never applied)
+
+- Uptime: rewrite the page copy from seed.json (https://github.com/just-every/run-uptime/compare/6fd9399cf9ce...359b1bb93606)
+
+## Still open from the last sync (not news)
+
+- Uptime: no "alternative to" line found on the homepage (check https://run-uptime.com for the products it names; replaces left as is)
+- Oncall: no "alternative to" line found on the homepage (check https://run-oncall.com for the products it names; replaces left as is)
+
+## Rules
+
+- Marks: drawn at 128px on white; changed when over 1% of pixels move by more than 64/255 in a channel.
+- Homepage stills: 1280x720 after fonts load, motion reduced, overlays removed; compared at 160x90, changed when over 0.8% of pixels move by more than 64/255. Seeds with a reel keep a 16x9 fingerprint instead, changed when over 2% of cells move.
+- Colours follow the token that held them at the last sync; the pastel keeps the hue (within 25 degrees) of the accent or ink.
+

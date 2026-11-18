@@ -1,0 +1,152 @@
+{
+  "tag": "je-sync-48",
+  "repository": "just-every/home",
+  "recordedAt": "2026-11-18T12:51:42Z",
+  "productBranch": "cloud/je-sync-48",
+  "productHead": "145dc392f1cba1d403ddd2c4005f8be7c15c2c7e",
+  "base": "b8dbc82823e70d46001e422d98567c9edbff097a",
+  "productPush": {
+    "entrypoint": "cloud-push.py origin cloud/je-sync-48",
+    "attempt": 1,
+    "result": "PUSH_OK",
+    "advertisedRefs": {
+      "refs/heads/cloud/je-sync-48": "145dc392f1cba1d403ddd2c4005f8be7c15c2c7e",
+      "refs/heads/main": "b8dbc82823e70d46001e422d98567c9edbff097a"
+    }
+  },
+  "pr": {
+    "base": "main",
+    "head": "145dc392f1cba1d403ddd2c4005f8be7c15c2c7e",
+    "html_url": "https://github.com/just-every/home/pull/74",
+    "number": 74
+  },
+  "counts": {
+    "before": {
+      "total": 49,
+      "released": 35,
+      "comingSoon": 14
+    },
+    "after": {
+      "total": 49,
+      "released": 35,
+      "comingSoon": 14
+    }
+  },
+  "changedFiles": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "diff": {
+    "insertions": 14,
+    "deletions": 14
+  },
+  "clauseStatusChanges": [],
+  "checks": [
+    {
+      "command": "npm ci (npm 10.9.3)",
+      "exit": 0
+    },
+    {
+      "command": "npm run listings",
+      "exit": 0
+    },
+    {
+      "command": "npm run listings -- --check",
+      "exit": 0
+    },
+    {
+      "command": "npm run type-check",
+      "exit": 0
+    },
+    {
+      "command": "npm run lint",
+      "exit": 0
+    },
+    {
+      "command": "npm run build",
+      "exit": 0
+    },
+    {
+      "command": "npm run brand -- --check",
+      "exit": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit": 0
+    },
+    {
+      "command": "all candidate ancestry identity/trailer inspection",
+      "exit": 0
+    },
+    {
+      "command": "scope and added-line credential-shaped-value review",
+      "exit": 0
+    }
+  ],
+  "finalDry": {
+    "command": "npm run seeds:sync -- --only happytohelp,lamp,uptime,oncall,orbit,spool",
+    "result": "Dry run: 0 of 6 seeds changed.",
+    "unreadable": 0,
+    "openFollowups": 2
+  },
+  "browser": {
+    "receipt": "BROWSER.json",
+    "result": "PASS",
+    "widths": [
+      1440,
+      390
+    ],
+    "assertionWidth": 1440
+  },
+  "macPublicationScan": "NOT RUN in cloud; retained lane gate",
+  "fullLocalSuite": "NOT RUN; branch CI owns full suite",
+  "unresolvedProductBlockers": [],
+  "ci": {
+    "total_count": 3,
+    "workflow_runs": [
+      {
+        "conclusion": "skipped",
+        "created_at": "2026-11-18T12:49:20Z",
+        "event": "pull_request",
+        "head_sha": "145dc392f1cba1d403ddd2c4005f8be7c15c2c7e",
+        "html_url": "https://github.com/just-every/home/actions/runs/44307577644",
+        "id": 44307577644,
+        "name": "Verify branch",
+        "status": "completed",
+        "updated_at": "2026-11-18T12:51:05Z"
+      },
+      {
+        "conclusion": "success",
+        "created_at": "2026-11-18T12:49:18Z",
+        "event": "dynamic",
+        "head_sha": "145dc392f1cba1d403ddd2c4005f8be7c15c2c7e",
+        "html_url": "https://github.com/just-every/home/actions/runs/44307573504",
+        "id": 44307573504,
+        "name": "PR #74",
+        "status": "completed",
+        "updated_at": "2026-11-18T12:50:10Z"
+      },
+      {
+        "conclusion": "success",
+        "created_at": "2026-11-18T12:49:00Z",
+        "event": "push",
+        "head_sha": "145dc392f1cba1d403ddd2c4005f8be7c15c2c7e",
+        "html_url": "https://github.com/just-every/home/actions/runs/44307525306",
+        "id": 44307525306,
+        "name": "Verify branch",
+        "status": "completed",
+        "updated_at": "2026-11-18T12:50:56Z"
+      }
+    ]
+  },
+  "ciObservedAt": "2026-11-18T12:51:13Z",
+  "ready": {
+    "branch": "cloud/je-sync-48",
+    "head": "145dc392f1cba1d403ddd2c4005f8be7c15c2c7e",
+    "verifyRunId": 44307525306,
+    "verifyUrl": "https://github.com/just-every/home/actions/runs/44307525306",
+    "status": "READY"
+  },
+  "ciNotes": "One exact-SHA REST discovery observation; push Verify succeeded. PR duplicate Verify was intentionally skipped by workflow condition; dynamic PR check also succeeded."
+}

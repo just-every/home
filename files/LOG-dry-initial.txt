@@ -1,0 +1,18 @@
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --only happytohelp,lamp,uptime,oncall,orbit,spool --out /home/agent/rer-consolidation/work/je-sync-48/dry-initial
+
+Reading 6 seed repositories...
+uptime: source=unresolved commit=unresolved (git ls-remote just-every/run-uptime: remote: upstream connect error or disconnect/reset before headers. reset reason: connection timeout
+fatal: unable to access 'https://github.com/just-every/run-uptime.git/': The requested URL returned error: 503)
+happytohelp: source=unresolved commit=unresolved (git ls-remote just-every/run-happytohelp: remote: upstream connect error or disconnect/reset before headers. reset reason: connection timeout
+fatal: unable to access 'https://github.com/just-every/run-happytohelp.git/': The requested URL returned error: 503)
+lamp: source=unresolved commit=unresolved (git ls-remote just-every/run-lamp: remote: upstream connect error or disconnect/reset before headers. reset reason: connection timeout
+fatal: unable to access 'https://github.com/just-every/run-lamp.git/': The requested URL returned error: 503)
+orbit: source=unresolved commit=unresolved (git ls-remote just-every/run-orbit: remote: upstream connect error or disconnect/reset before headers. reset reason: connection timeout
+fatal: unable to access 'https://github.com/just-every/run-orbit.git/': The requested URL returned error: 503)
+oncall: source=unresolved commit=unresolved (git ls-remote just-every/run-oncall: remote: upstream connect error or disconnect/reset before headers. reset reason: connection timeout
+fatal: unable to access 'https://github.com/just-every/run-oncall.git/': The requested URL returned error: 503)
+spool: source=unresolved commit=unresolved (git ls-remote just-every/run-spool: remote: upstream connect error or disconnect/reset before headers. reset reason: connection timeout
+fatal: unable to access 'https://github.com/just-every/run-spool.git/': The requested URL returned error: 503)
+Blocked: a released seed source could not be resolved; no changes applied.

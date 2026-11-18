@@ -1,0 +1,11 @@
+--- /tmp/je-sync-48-uptime-seed-old.json	2026-11-18 12:45:28.550190962 +0000
++++ /tmp/je-sync-48-uptime-seed-new.json	2026-11-18 12:45:29.302208478 +0000
+@@ -1,7 +1,7 @@
+ {
+   "id": "uptime",
+   "name": "Uptime",
+-  "version": "0.5.16",
++  "version": "0.5.17",
+   "maturity": "local-installer-and-owner-deploy-implemented-hosted-unverified",
+   "category": "monitoring",
+   "spine": {

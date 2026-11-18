@@ -1,0 +1,26 @@
+{
+  "recordedAt": "2026-11-18T12:48:04Z",
+  "result": "PASS",
+  "assertionWidth": 1440,
+  "assertions": [
+    "Uptime page displays verified published release version",
+    "public listings and page agree on Uptime released version"
+  ],
+  "captures": [
+    {
+      "url": "/uptime",
+      "width": 1440,
+      "height": 1000,
+      "path": "uptime-1440.png"
+    },
+    {
+      "url": "/uptime",
+      "width": 390,
+      "height": 1000,
+      "path": "uptime-390.png"
+    }
+  ],
+  "productHead": "145dc392f1cba1d403ddd2c4005f8be7c15c2c7e",
+  "treeMatchesCandidate": true,
+  "initialAttempt": "networkidle wait timed out on the reel page; repeated with DOMContentLoaded and explicit visible-content readiness; both captured widths passed. Browser and server closed after both attempts."
+}

@@ -1,0 +1,120 @@
+{
+  "recordedAt": "2026-11-18T12:49:50Z",
+  "source": "fresh GitHub releases GraphQL query, first 20 releases per repository",
+  "releases": {
+    "happytohelp": {
+      "tagName": "v0.4.31",
+      "isDraft": false,
+      "isPrerelease": false,
+      "publishedAt": "2026-11-16T11:23:15Z",
+      "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.31",
+      "releaseAssets": {
+        "nodes": [
+          {
+            "name": "rer-release.dsse.json"
+          },
+          {
+            "name": "screen-1.webp"
+          }
+        ]
+      },
+      "envelopeAssetPresent": true,
+      "signatureVerification": "NOT RUN; envelope asset presence only"
+    },
+    "lamp": {
+      "tagName": "v1.11.22",
+      "isDraft": false,
+      "isPrerelease": false,
+      "publishedAt": "2026-11-17T09:20:51Z",
+      "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.22",
+      "releaseAssets": {
+        "nodes": [
+          {
+            "name": "01-public-status-active-desktop.png"
+          },
+          {
+            "name": "rer-release.dsse.json"
+          }
+        ]
+      },
+      "envelopeAssetPresent": true,
+      "signatureVerification": "NOT RUN; envelope asset presence only"
+    },
+    "uptime": {
+      "tagName": "v0.5.17",
+      "isDraft": false,
+      "isPrerelease": false,
+      "publishedAt": "2026-11-18T10:12:36Z",
+      "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.17",
+      "releaseAssets": {
+        "nodes": [
+          {
+            "name": "uptime-0.4.0-monitor-1440.png"
+          },
+          {
+            "name": "rer-release.dsse.json"
+          }
+        ]
+      },
+      "envelopeAssetPresent": true,
+      "signatureVerification": "NOT RUN; envelope asset presence only"
+    },
+    "oncall": {
+      "tagName": "v0.5.18",
+      "isDraft": false,
+      "isPrerelease": false,
+      "publishedAt": "2026-11-17T09:09:41Z",
+      "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.18",
+      "releaseAssets": {
+        "nodes": [
+          {
+            "name": "oncall-0.5.0-incident-1440.png"
+          },
+          {
+            "name": "rer-release.dsse.json"
+          }
+        ]
+      },
+      "envelopeAssetPresent": true,
+      "signatureVerification": "NOT RUN; envelope asset presence only"
+    },
+    "orbit": {
+      "tagName": "v0.4.11",
+      "isDraft": false,
+      "isPrerelease": false,
+      "publishedAt": "2026-11-16T14:35:53Z",
+      "url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.11",
+      "releaseAssets": {
+        "nodes": [
+          {
+            "name": "orbit-now-queue-1600.png"
+          },
+          {
+            "name": "rer-release.dsse.json"
+          }
+        ]
+      },
+      "envelopeAssetPresent": true,
+      "signatureVerification": "NOT RUN; envelope asset presence only"
+    },
+    "spool": {
+      "tagName": "v0.7.14",
+      "isDraft": false,
+      "isPrerelease": false,
+      "publishedAt": "2026-11-17T05:47:55Z",
+      "url": "https://github.com/just-every/run-spool/releases/tag/v0.7.14",
+      "releaseAssets": {
+        "nodes": [
+          {
+            "name": "rer-release.dsse.json"
+          },
+          {
+            "name": "spool-issue-page-1600.png"
+          }
+        ]
+      },
+      "envelopeAssetPresent": true,
+      "signatureVerification": "NOT RUN; envelope asset presence only"
+    }
+  }
+}
