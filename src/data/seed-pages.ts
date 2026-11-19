@@ -345,7 +345,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Atlassian Statuspage', 'Better Stack', 'Instatus', 'Sorry'],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v1.11.22',
+    version: 'v1.11.23',
     contractUrl: 'https://run-lamp.com/contract',
     seoTitle: 'Lamp: free, open-source alternative to Atlassian Statuspage',
     seoDescription:
@@ -1043,7 +1043,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['PagerDuty', 'Opsgenie', 'Splunk On-Call', 'Better Stack'],
     runsOn: 'your own computer, or your own Cloudflare account',
-    version: 'v0.5.18',
+    version: 'v0.5.19',
     contractUrl: 'https://run-oncall.com/contract',
     seoTitle: 'Oncall: free, open-source alternative to PagerDuty',
     seoDescription:
