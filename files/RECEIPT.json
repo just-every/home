@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "tag": "je-gate-61",
+  "recorded_at": "2026-11-19T18:35:09Z",
+  "repository": "just-every/home",
+  "pr": "https://github.com/just-every/home/pull/77",
+  "product_branch": "cloud/je-sync-51",
+  "candidate": "ac2df502633ad0e49ecdefd46e42bbc907fce02e",
+  "baseline": "e54baedf55c3a4f01bf5daea7819fe509b6df3d9",
+  "final_remote_refs": [
+    {
+      "sha": "ac2df502633ad0e49ecdefd46e42bbc907fce02e",
+      "ref": "refs/heads/cloud/je-sync-51"
+    },
+    {
+      "sha": "e54baedf55c3a4f01bf5daea7819fe509b6df3d9",
+      "ref": "refs/heads/main"
+    },
+    {
+      "sha": "ac2df502633ad0e49ecdefd46e42bbc907fce02e",
+      "ref": "refs/pull/77/head"
+    }
+  ],
+  "npm_ci": {
+    "command": "npm ci",
+    "exit": 0,
+    "result_observed_at": "2026-11-19T18:24:54Z",
+    "log": "npm-ci.log"
+  },
+  "local_checks": [
+    {
+      "check": "listings-check",
+      "command": "npm run listings -- --check",
+      "started_at": "2026-11-19T18:25:36Z",
+      "finished_at": "2026-11-19T18:25:36Z",
+      "exit": 0
+    },
+    {
+      "check": "listings-write",
+      "command": "npm run listings",
+      "started_at": "2026-11-19T18:25:36Z",
+      "finished_at": "2026-11-19T18:25:37Z",
+      "exit": 0
+    },
+    {
+      "check": "type-check",
+      "command": "npm run type-check",
+      "started_at": "2026-11-19T18:25:37Z",
+      "finished_at": "2026-11-19T18:25:43Z",
+      "exit": 0
+    },
+    {
+      "check": "lint",
+      "command": "npm run lint",
+      "started_at": "2026-11-19T18:25:43Z",
+      "finished_at": "2026-11-19T18:25:47Z",
+      "exit": 0
+    },
+    {
+      "check": "build",
+      "command": "npm run build",
+      "started_at": "2026-11-19T18:25:47Z",
+      "finished_at": "2026-11-19T18:26:28Z",
+      "exit": 0
+    }
+  ],
+  "baseline_build": {
+    "command": "npm run build",
+    "head": "e54baedf55c3a4f01bf5daea7819fe509b6df3d9",
+    "exit": 0,
+    "completed_at": "2026-11-19T18:31:46Z",
+    "log": "build-baseline.log"
+  },
+  "rubric": {
+    "R1": "MET",
+    "R2": "MET",
+    "R3": "MET",
+    "R4": "MET",
+    "R5": "MET"
+  },
+  "blocking_findings": 0,
+  "carried_follow_up_items": 1,
+  "clause_status_changes": [],
+  "github_rest_calls": 4,
+  "ci_run_ids": [
+    44583257308,
+    44583353630,
+    44583347125
+  ],
+  "ci_dispatch_or_rerun": false,
+  "browser_assertion_width": 1440,
+  "browser_proof_widths": [
+    1440,
+    390
+  ],
+  "browser_attempts": [
+    {
+      "outcome": "networkidle timeout on media-bearing page; owned processes closed",
+      "product_finding": false
+    },
+    {
+      "outcome": "DOM/font readiness; completed head and baseline observations",
+      "receipts": [
+        "browser-head.json",
+        "browser-base.json",
+        "regression.json"
+      ]
+    }
+  ],
+  "server_pids_started_and_stopped": [
+    1419,
+    1669,
+    2137
+  ],
+  "product_commit_created": false,
+  "product_push_made": false,
+  "product_checkout_clean": true,
+  "sources_lock_contract_generator_migration_ledger": "not applicable; no such source/generator/check is documented in this website repository",
+  "git_tag_results": {
+    "just-every/run-uptime": {
+      "v0.5.17": {
+        "object": "36e8e9251a46c55da83415fbe9f0b050afc91fb6",
+        "peeled": "359b1bb93606ccfe5dc0120d2cdce78e8df67f6a"
+      },
+      "v0.5.18": {
+        "object": "8aa5b753383f8f45b80207c1f1223d91796672d5",
+        "peeled": "52f77a94a0a675ba5e1be122dfe0c720087144fb"
+      }
+    },
+    "just-every/run-orbit": {
+      "v0.4.11": {
+        "object": "810d833d3a832f11d7bd1ba37d5ea812b45113a0",
+        "peeled": "a4fcbfcd72fa4253826f43d0b0de02275094f86d"
+      },
+      "v0.4.12": {
+        "object": "5f6aae44f2d05009835cc98ed029aff5af1dfafd",
+        "peeled": "a9fa1830c1913562154dedaeb5a1322ead7c3e6b"
+      }
+    }
+  },
+  "verdict": "GATE PASS WITH FOLLOW-UPS 1 head=ac2df502633ad0e49ecdefd46e42bbc907fce02e",
+  "evidence_ref": "refs/heads/evidence/je-gate-61",
+  "retention": "packet retained outside product clone; clone and node_modules deleted after successful evidence transfer verification"
+}

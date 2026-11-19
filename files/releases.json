@@ -1,0 +1,31 @@
+[
+  {
+    "id": 451620070,
+    "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.18",
+    "tag_name": "v0.5.18",
+    "target_commitish": "main",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-19T16:34:45Z",
+    "repository": "just-every/run-uptime",
+    "assets": [
+      {
+        "name": "rer-release.dsse.json",
+        "size": 3381
+      },
+      {
+        "name": "uptime-0.4.0-monitor-1440.png",
+        "size": 273042
+      }
+    ],
+    "observed_at": "2026-11-19T18:25:05Z"
+  },
+  {
+    "repository": "just-every/run-orbit",
+    "tag": "v0.4.12",
+    "exit": 1,
+    "error": "gh: Not Found (HTTP 404)",
+    "body": "{\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/releases/releases#get-a-release-by-tag-name\",\"status\":\"404\"}",
+    "observed_at": "2026-11-19T18:25:06Z"
+  }
+]

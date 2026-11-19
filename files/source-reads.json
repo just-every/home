@@ -1,0 +1,41 @@
+{
+  "observed_at": "2026-11-19T18:25:09Z",
+  "reads": [
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-uptime/v0.5.17/CONTRACT.md",
+      "status": 200,
+      "bytes": 320196,
+      "sha256": "9e5c8dd14ef60da605c7729888ce46f087f26f83f77f2c6ae05d9f872d569609"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-uptime/v0.5.17/README.md",
+      "status": 200,
+      "bytes": 41438,
+      "sha256": "e7ffa12f1203490efd0365303baccc09cf163e665021d47d0b10f29e85e3c2a1"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-uptime/v0.5.17/seed.json",
+      "status": 200,
+      "bytes": 85970,
+      "sha256": "97d6a9d3659eb36df27998d1c95dcaec4f544e95396bc92a25558255493964c0"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-uptime/v0.5.18/CONTRACT.md",
+      "status": 200,
+      "bytes": 320196,
+      "sha256": "9e5c8dd14ef60da605c7729888ce46f087f26f83f77f2c6ae05d9f872d569609"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-uptime/v0.5.18/README.md",
+      "status": 200,
+      "bytes": 43006,
+      "sha256": "7a2a44311f07e869dc041999ee55462a9f4b6e157c71aafea6d0bf623528e605"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-uptime/v0.5.18/seed.json",
+      "status": 200,
+      "bytes": 85970,
+      "sha256": "fa03b1b7d35850760410afd248ea42b3b5b6753b89a23e2ec3cbe7fd68765996"
+    }
+  ]
+}

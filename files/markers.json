@@ -1,0 +1,60 @@
+{
+  "observed_at": "2026-11-19T18:30:47Z",
+  "results": [
+    {
+      "slug": "uptime",
+      "hashes": {
+        "CONTRACT.md": "9e5c8dd14ef60da6",
+        "README.md": "7a2a44311f07e869",
+        "seed.json": "fa03b1b7d3585076"
+      },
+      "findings": [
+        {
+          "type": "copy",
+          "summary": "README.md, seed.json changed since the last sync",
+          "details": {
+            "files": [
+              "README.md",
+              "seed.json"
+            ],
+            "range": "https://github.com/just-every/run-uptime/compare/359b1bb93606...52f77a94a0a6",
+            "from": "359b1bb93606ccfe5dc0120d2cdce78e8df67f6a",
+            "to": "52f77a94a0a675ba5e1be122dfe0c720087144fb"
+          },
+          "apply": null,
+          "copy": "rewrite the page copy from README.md, seed.json (https://github.com/just-every/run-uptime/compare/359b1bb93606...52f77a94a0a6)",
+          "key": "42983364b373"
+        }
+      ],
+      "headOpen": [
+        "bf4b3f38e1a2",
+        "42983364b373"
+      ],
+      "baseOpen": [
+        "bf4b3f38e1a2"
+      ],
+      "homeFingerprint": {
+        "changedShare": 0,
+        "changed": false
+      },
+      "retainedMarker": {
+        "type": "homepage",
+        "summary": "no \"alternative to\" line found on the homepage",
+        "key": "bf4b3f38e1a2"
+      }
+    },
+    {
+      "slug": "spool",
+      "hashes": {
+        "CONTRACT.md": "ee9c871bfa25a110",
+        "README.md": "a9c5f1be825c6da3",
+        "seed.json": "665317811e8d8aef"
+      },
+      "findings": [],
+      "headOpen": [],
+      "baseOpen": [
+        "42983364b373"
+      ]
+    }
+  ]
+}

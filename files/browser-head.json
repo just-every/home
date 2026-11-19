@@ -1,0 +1,181 @@
+{
+  "observed_at": "2026-11-19T18:30:51Z",
+  "head": "ac2df502633ad0e49ecdefd46e42bbc907fce02e",
+  "kind": "head",
+  "results": [
+    {
+      "width": 1440,
+      "status": 200,
+      "title": "Uptime",
+      "version": "VERSION\nv0.5.18",
+      "dimensions": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440
+      },
+      "errors": [],
+      "boxes": [
+        {
+          "tag": "MAIN",
+          "text": "{\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"Uptime\",\"description\":\"Uptime",
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 3969.828125
+        },
+        {
+          "tag": "ARTICLE",
+          "text": "UptimeAlternative to PingdomAlso replaces UptimeRobot, Better StackAlerts you only when a failure is",
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 3969.828125
+        },
+        {
+          "tag": "H1",
+          "text": "Uptime",
+          "x": 380,
+          "y": 239,
+          "width": 680,
+          "height": 58.796875
+        },
+        {
+          "tag": "DT",
+          "text": "Runs on",
+          "x": 380,
+          "y": 3846.390625,
+          "width": 205.328125,
+          "height": 17.25
+        },
+        {
+          "tag": "DD",
+          "text": "Your computer, or your own Cloudflare account",
+          "x": 380,
+          "y": 3867.640625,
+          "width": 205.328125,
+          "height": 46.1875
+        },
+        {
+          "tag": "DT",
+          "text": "Version",
+          "x": 617.328125,
+          "y": 3846.390625,
+          "width": 205.328125,
+          "height": 17.25
+        },
+        {
+          "tag": "DD",
+          "text": "v0.5.18",
+          "x": 617.328125,
+          "y": 3867.640625,
+          "width": 205.328125,
+          "height": 23.09375
+        },
+        {
+          "tag": "DT",
+          "text": "Licence",
+          "x": 854.65625,
+          "y": 3846.390625,
+          "width": 205.328125,
+          "height": 17.25
+        },
+        {
+          "tag": "DD",
+          "text": "MIT, 100% free",
+          "x": 854.65625,
+          "y": 3867.640625,
+          "width": 205.328125,
+          "height": 23.09375
+        }
+      ],
+      "assertions": "HTTP 200; Uptime heading; expected version; no horizontal overflow; no page errors"
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "title": "Uptime",
+      "version": "VERSION\nv0.5.18",
+      "dimensions": {
+        "width": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390
+      },
+      "errors": [],
+      "boxes": [
+        {
+          "tag": "MAIN",
+          "text": "{\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"Uptime\",\"description\":\"Uptime",
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 4275.515625
+        },
+        {
+          "tag": "ARTICLE",
+          "text": "UptimeAlternative to PingdomAlso replaces UptimeRobot, Better StackAlerts you only when a failure is",
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 4275.515625
+        },
+        {
+          "tag": "H1",
+          "text": "Uptime",
+          "x": 20,
+          "y": 214,
+          "width": 350,
+          "height": 42
+        },
+        {
+          "tag": "DT",
+          "text": "Runs on",
+          "x": 20,
+          "y": 4051.390625,
+          "width": 350,
+          "height": 17.25
+        },
+        {
+          "tag": "DD",
+          "text": "Your computer, or your own Cloudflare account",
+          "x": 20,
+          "y": 4072.640625,
+          "width": 350,
+          "height": 46.1875
+        },
+        {
+          "tag": "DT",
+          "text": "Version",
+          "x": 20,
+          "y": 4132.828125,
+          "width": 350,
+          "height": 17.25
+        },
+        {
+          "tag": "DD",
+          "text": "v0.5.18",
+          "x": 20,
+          "y": 4154.078125,
+          "width": 350,
+          "height": 23.09375
+        },
+        {
+          "tag": "DT",
+          "text": "Licence",
+          "x": 20,
+          "y": 4191.171875,
+          "width": 350,
+          "height": 17.25
+        },
+        {
+          "tag": "DD",
+          "text": "MIT, 100% free",
+          "x": 20,
+          "y": 4212.421875,
+          "width": 350,
+          "height": 23.09375
+        }
+      ],
+      "assertions": "visual proof only"
+    }
+  ]
+}

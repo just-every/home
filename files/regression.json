@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-11-19T18:32:59Z",
+  "baseline": "e54baedf55c3a4f01bf5daea7819fe509b6df3d9",
+  "candidate": "ac2df502633ad0e49ecdefd46e42bbc907fce02e",
+  "results": [
+    {
+      "width": 1440,
+      "baseline_version": "VERSION\nv0.5.17",
+      "candidate_version": "VERSION\nv0.5.18",
+      "same_dimensions": true,
+      "same_geometry": true,
+      "baseline_errors": [],
+      "candidate_errors": []
+    },
+    {
+      "width": 390,
+      "baseline_version": "VERSION\nv0.5.17",
+      "candidate_version": "VERSION\nv0.5.18",
+      "same_dimensions": true,
+      "same_geometry": true,
+      "baseline_errors": [],
+      "candidate_errors": []
+    }
+  ]
+}

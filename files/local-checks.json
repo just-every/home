@@ -1,0 +1,37 @@
+[
+  {
+    "check": "listings-check",
+    "command": "npm run listings -- --check",
+    "started_at": "2026-11-19T18:25:36Z",
+    "finished_at": "2026-11-19T18:25:36Z",
+    "exit": 0
+  },
+  {
+    "check": "listings-write",
+    "command": "npm run listings",
+    "started_at": "2026-11-19T18:25:36Z",
+    "finished_at": "2026-11-19T18:25:37Z",
+    "exit": 0
+  },
+  {
+    "check": "type-check",
+    "command": "npm run type-check",
+    "started_at": "2026-11-19T18:25:37Z",
+    "finished_at": "2026-11-19T18:25:43Z",
+    "exit": 0
+  },
+  {
+    "check": "lint",
+    "command": "npm run lint",
+    "started_at": "2026-11-19T18:25:43Z",
+    "finished_at": "2026-11-19T18:25:47Z",
+    "exit": 0
+  },
+  {
+    "check": "build",
+    "command": "npm run build",
+    "started_at": "2026-11-19T18:25:47Z",
+    "finished_at": "2026-11-19T18:26:28Z",
+    "exit": 0
+  }
+]

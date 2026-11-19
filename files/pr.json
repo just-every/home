@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-11-19T18:23:44Z",
+  "result": {
+    "number": 77,
+    "state": "open",
+    "draft": false,
+    "html_url": "https://github.com/just-every/home/pull/77",
+    "merged": false,
+    "mergeable_state": "clean",
+    "head": "ac2df502633ad0e49ecdefd46e42bbc907fce02e",
+    "base": "e54baedf55c3a4f01bf5daea7819fe509b6df3d9",
+    "head_ref": "cloud/je-sync-51",
+    "base_ref": "main"
+  }
+}

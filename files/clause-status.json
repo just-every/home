@@ -1,0 +1,699 @@
+{
+  "observed_at": "2026-11-19T18:31:47Z",
+  "repository": "just-every/run-uptime",
+  "ref": "v0.5.18",
+  "contract_unchanged_from_previous_release": true,
+  "status_changes_in_candidate": [],
+  "rows": [
+    {
+      "id": "HTTP-001",
+      "title": "Signed HTTP monitoring",
+      "kind": "published",
+      "status": "done"
+    },
+    {
+      "id": "EVIDENCE-001",
+      "title": "Immutable scheduled evidence",
+      "kind": "published",
+      "status": "done"
+    },
+    {
+      "id": "STATE-001",
+      "title": "Fixed coverage and incident hysteresis",
+      "kind": "published",
+      "status": "partial"
+    },
+    {
+      "id": "AUTHORITY-001",
+      "title": "Server-side scoped authority",
+      "kind": "published",
+      "status": "done"
+    },
+    {
+      "id": "NETWORK-001",
+      "title": "Pinned bounded destination execution",
+      "kind": "published",
+      "status": "partial"
+    },
+    {
+      "id": "HEARTBEAT-001",
+      "title": "Revision-scoped receipt evaluation",
+      "kind": "published",
+      "status": "done"
+    },
+    {
+      "id": "ARCHIVE-001",
+      "title": "Inactive validated restore",
+      "kind": "published",
+      "status": "done"
+    },
+    {
+      "id": "IMPORT-001",
+      "title": "Reviewed definition files and inactive imports",
+      "kind": "published",
+      "status": "partial"
+    },
+    {
+      "id": "RETENTION-001",
+      "title": "Explicit storage custody",
+      "kind": "published",
+      "status": "done"
+    },
+    {
+      "id": "ERASURE-001",
+      "title": "Operator-directed entity erasure",
+      "kind": "published",
+      "status": "done"
+    },
+    {
+      "id": "AUDIT-001",
+      "title": "Durable anonymized audit",
+      "kind": "published",
+      "status": "done"
+    },
+    {
+      "id": "PRESENCE-001",
+      "title": "Contact separate from health",
+      "kind": "published",
+      "status": "done"
+    },
+    {
+      "id": "INTERFACE-001",
+      "title": "Honest durable operator feedback",
+      "kind": "published",
+      "status": "partial"
+    },
+    {
+      "id": "NOTIFY-001",
+      "title": "Authorized installation-wide destinations",
+      "kind": "published",
+      "status": "done"
+    },
+    {
+      "id": "DELIVERY-001",
+      "title": "Bounded notification acknowledgment",
+      "kind": "published",
+      "status": "done"
+    },
+    {
+      "id": "PUBLIC-001",
+      "title": "Public landing and documentation",
+      "kind": "published",
+      "status": "done"
+    },
+    {
+      "id": "BOUNDARY-001",
+      "title": "Monitoring ownership and honest delivery claims",
+      "kind": "published",
+      "status": "partial"
+    },
+    {
+      "id": "DRILL-001",
+      "title": "Recipient-reported alert drills",
+      "kind": "published",
+      "status": "done"
+    },
+    {
+      "id": "STARTUP-001",
+      "title": "Required configuration diagnostics",
+      "kind": "published",
+      "status": "partial"
+    },
+    {
+      "id": "PUBLIC-002",
+      "title": "Declared sessionless paths and rate limits",
+      "kind": "published",
+      "status": "done"
+    },
+    {
+      "id": "FLOW-001",
+      "title": "Supported isolated browser transactions",
+      "kind": "published",
+      "status": "partial"
+    },
+    {
+      "id": "MONITOR-001",
+      "title": "Owned monitor catalog and lifecycle",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "API-001",
+      "title": "Complete HTTP and API assertions",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "SLOW-001",
+      "title": "Slow-response alerts distinct from outages",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "API-002",
+      "title": "Authenticated monitoring and secret lifecycle",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "API-003",
+      "title": "Multi-step API transactions",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "API-004",
+      "title": "Safe setup and teardown",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "TCP-001",
+      "title": "TCP service checks",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "PING-001",
+      "title": "ICMP reachability and packet quality",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "DNS-001",
+      "title": "DNS records and change detection",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "TLS-001",
+      "title": "SSL certificate and chain monitoring",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "DOMAIN-001",
+      "title": "Domain registration expiry",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "UDP-001",
+      "title": "UDP request and response checks",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "MAIL-001",
+      "title": "SMTP and mailbox protocol checks",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "NETWORK-002",
+      "title": "Explicit TLS trust exceptions for legacy targets",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "HEARTBEAT-002",
+      "title": "Cron and job heartbeat schedules",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "HEARTBEAT-003",
+      "title": "Heartbeat receipt forms and scheduler snippets",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "HEARTBEAT-004",
+      "title": "Heartbeat settings from incumbents",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "SCHEDULE-001",
+      "title": "Explicit cadence, retries and confirmation",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "SCHEDULE-002",
+      "title": "Interval floor, on-time execution and alert latency",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "PROBE-001",
+      "title": "US and global independent locations",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "PROBE-002",
+      "title": "Published probe addresses and identification",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "PRIVATE-001",
+      "title": "Buyer-network private locations",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "MAINT-001",
+      "title": "Planned and recurring maintenance",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "REPORT-001",
+      "title": "Latency, uptime and SLA reporting",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "EVIDENCE-002",
+      "title": "Failure snapshot and incident report",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "DIAG-001",
+      "title": "Connection and network diagnostics",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "PERF-001",
+      "title": "Page speed and real-user performance",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "DEPENDENCY-001",
+      "title": "External dependency checks",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "DEPENDENCY-002",
+      "title": "Third-party service catalog",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "DISCOVERY-001",
+      "title": "Reviewed automatic endpoint discovery",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "FLOW-002",
+      "title": "Reusable Playwright monitoring as code",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "FLOW-003",
+      "title": "Useful and safe browser failure artifacts",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "FLOW-004",
+      "title": "Cross-browser and mobile transactions",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "ROUTING-001",
+      "title": "Monitor, service and team alert routing",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "ROUTING-002",
+      "title": "Per-contact alert delay and repeat",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "DELIVERY-002",
+      "title": "Deduplicated retry and fallback contacts",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "NOTICE-001",
+      "title": "Actionable trigger and recovery notice content",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "WEBHOOK-001",
+      "title": "Custom webhook requests and payload templates",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "CHAT-001",
+      "title": "Teams, Discord, Telegram and workplace chat",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "PHONE-001",
+      "title": "US SMS and voice alerts",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "PHONE-002",
+      "title": "Uptime-provided compliant US sender",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "MOBILE-001",
+      "title": "Mobile operator access and push",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "FOLLOWUP-001",
+      "title": "Ongoing outage follow-up and correlation",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "INCIDENT-001",
+      "title": "Incident comments and edit history",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "INCIDENT-002",
+      "title": "Comment mentions",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "INCIDENT-003",
+      "title": "Incident root cause",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "INCIDENT-004",
+      "title": "Publish a comment to the status page",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "INCIDENT-005",
+      "title": "Comment and root-cause custody",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "ONCALL-001",
+      "title": "Responder handoff and automatic resolution",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "LAMP-001",
+      "title": "Status communication through Lamp",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "AUTOMATION-001",
+      "title": "Zapier, Make and custom automation",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "MANAGE-001",
+      "title": "Monitor and contact API",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "READAPI-001",
+      "title": "Versioned read API keys, limits and documentation",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "READAPI-002",
+      "title": "Uptime and response-time reads",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "READAPI-003",
+      "title": "Incident reads",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "CODE-001",
+      "title": "CLI, TypeScript and CI deployment",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "CODE-002",
+      "title": "Terraform provider",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "METRICS-001",
+      "title": "Grafana and Prometheus integration",
+      "kind": "target",
+      "status": "done"
+    },
+    {
+      "id": "MIGRATE-001",
+      "title": "Complete UptimeRobot migration",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "MIGRATE-002",
+      "title": "Pingdom migration",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "MIGRATE-003",
+      "title": "Better Stack Uptime migration",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "MIGRATE-004",
+      "title": "Site24x7 website monitoring migration",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "MIGRATE-005",
+      "title": "Challenger and advanced synthetic migration",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "HISTORY-001",
+      "title": "Sourced incumbent uptime history",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "ACCESS-001",
+      "title": "Teams, roles and accountable ownership",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "ACCESS-002",
+      "title": "Enterprise identity lifecycle",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "ACCESS-003",
+      "title": "Multi-factor sign-in and step-up",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "COST-001",
+      "title": "US buyer budgets and capacity transparency",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "OPS-001",
+      "title": "Recovery of monitoring itself",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "ARCHIVE-002",
+      "title": "Whole-workspace archives at monitoring scale",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "SURFACE-001",
+      "title": "The registry equals this table and the Base harness passes",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "SURFACE-002",
+      "title": "Live and security are computed per call",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "SURFACE-003",
+      "title": "External and money are computed per call",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "SURFACE-004",
+      "title": "Access, destructive and gated are computed per call",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "SURFACE-005",
+      "title": "The monitoring-operator journey under two company policies",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "SURFACE-006",
+      "title": "One-way operational actions carry their effects",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "AGENT-001",
+      "title": "Continuously maintain meaningful coverage",
+      "kind": "push-further",
+      "status": "partial"
+    },
+    {
+      "id": "AGENT-002",
+      "title": "Distinguish outage, network and broken check",
+      "kind": "push-further",
+      "status": "partial"
+    },
+    {
+      "id": "AGENT-003",
+      "title": "Repair browser drift without weakening intent",
+      "kind": "push-further",
+      "status": "missing"
+    },
+    {
+      "id": "AGENT-004",
+      "title": "Keep alert routes accountable",
+      "kind": "push-further",
+      "status": "done"
+    },
+    {
+      "id": "AGENT-005",
+      "title": "Coordinate evidence handoff and verified recovery",
+      "kind": "push-further",
+      "status": "partial"
+    },
+    {
+      "id": "BASE-AGENT-001",
+      "title": "One MCP door per seed",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "BASE-AGENT-002",
+      "title": "The seed's jobs are tools, through the UI's own actions",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "BASE-AGENT-003",
+      "title": "Records are resources",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "BASE-AGENT-004",
+      "title": "Business identity and short-lived, audience-bound tokens",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "BASE-AGENT-005",
+      "title": "An agent acts as a person in a role, never more",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "BASE-AGENT-006",
+      "title": "Every action declares its risk class",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "BASE-AGENT-007",
+      "title": "The company's policy decides, at one chokepoint",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "BASE-AGENT-008",
+      "title": "Truthful attribution",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "BASE-AGENT-009",
+      "title": "Every agent action is audited with its class and decision",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "BASE-AGENT-010",
+      "title": "Agents can follow changes",
+      "kind": "target",
+      "status": "missing"
+    },
+    {
+      "id": "BASE-AGENT-011",
+      "title": "Limits are policy, and Pause stops everything",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "BASE-AGENT-012",
+      "title": "Writes are idempotent and conflict-safe",
+      "kind": "target",
+      "status": "partial"
+    },
+    {
+      "id": "BASE-AGENT-013",
+      "title": "Manifest, docs and the conformance journey",
+      "kind": "target",
+      "status": "partial"
+    }
+  ]
+}

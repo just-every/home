@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-11-19T18:31:47Z",
+  "baseline": "e54baedf55c3a4f01bf5daea7819fe509b6df3d9",
+  "candidate": "ac2df502633ad0e49ecdefd46e42bbc907fce02e",
+  "all_reachable_candidate_commits": [
+    {
+      "commit": "ac2df502633ad0e49ecdefd46e42bbc907fce02e",
+      "author_allowed": true,
+      "committer_allowed": true,
+      "trailers_absent": true
+    }
+  ],
+  "product_changes_by_gate": false,
+  "product_push_by_gate": false
+}

@@ -1,0 +1,26 @@
+{
+  "observed_at": "2026-11-19T18:27:14Z",
+  "reads": [
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-spool/v0.7.15/CONTRACT.md",
+      "status": 200,
+      "sha256_16": "ee9c871bfa25a110",
+      "state_hash": "ee9c871bfa25a110",
+      "matches": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-spool/v0.7.15/README.md",
+      "status": 200,
+      "sha256_16": "a9c5f1be825c6da3",
+      "state_hash": "a9c5f1be825c6da3",
+      "matches": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-spool/v0.7.15/seed.json",
+      "status": 200,
+      "sha256_16": "665317811e8d8aef",
+      "state_hash": "665317811e8d8aef",
+      "matches": true
+    }
+  ]
+}
