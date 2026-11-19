@@ -1,0 +1,64 @@
+{
+  "recordedAt": "2026-11-19T19:23:25Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-52",
+  "head": "e6bd26e6cbcaa0da5c190f8335319f5da02587da",
+  "base": "76034fe7b1951090ee5bcfd47f1c98c4e7073376",
+  "push": {
+    "command": "python3 $HOME/rer-consolidation/.tools/cloud-push.py origin cloud/je-sync-52",
+    "attempts": 1,
+    "result": "PUSH_OK",
+    "advertisedBranchVerified": true
+  },
+  "remoteRefs": {
+    "refs/heads/cloud/je-sync-52": "e6bd26e6cbcaa0da5c190f8335319f5da02587da",
+    "refs/heads/main": "76034fe7b1951090ee5bcfd47f1c98c4e7073376"
+  },
+  "changedPaths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "checks": {
+    "npm ci": "passed",
+    "npm run seeds:sync -- --only happytohelp,lamp,uptime,oncall,orbit,spool": "passed, final dry run 0 new changes; 2 known open findings",
+    "npm run listings": "passed",
+    "npm run listings -- --check": "passed, 49 seeds",
+    "npm run type-check": "passed",
+    "npm run lint": "passed",
+    "npm run build": "passed",
+    "git diff --check": "passed",
+    "scope and credential-shaped diff check": "passed",
+    "all candidate commit identities/trailers": "passed",
+    "browser": "passed; browser-receipt.json"
+  },
+  "countsBefore": {
+    "listings": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "countsAfter": {
+    "listings": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "clauseStatusChanges": [],
+  "testChanges": [],
+  "publicationScan": "retained by fleet Mac lander; unavailable in this cloud",
+  "initialRecoverableFailures": [
+    "First dry sync could not load Playwright; installed Playwright globally, reran successfully.",
+    "Initial browser navigation waiting for networkidle timed out; used DOM readiness for the catalogue proof, reran successfully."
+  ],
+  "localPreviewLimitations": [
+    "Bare Next production server has no edge caches API and no migrated analytics table. Catalogue version assertion and screenshots passed. Full edge build/checks belong to CI."
+  ],
+  "productCheckoutClean": true,
+  "exactShaVerify": {
+    "runId": 44597428122,
+    "head": "e6bd26e6cbcaa0da5c190f8335319f5da02587da",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/just-every/home/actions/runs/44597428122"
+  },
+  "browserAndServersClosed": true
+}

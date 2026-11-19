@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-11-19T19:22:38Z",
+  "head": "e6bd26e6cbcaa0da5c190f8335319f5da02587da",
+  "url": "http://127.0.0.1:3100/orbit",
+  "assertionWidth": 1440,
+  "assertion": "Rendered version equals the Orbit version served by the public listings endpoint",
+  "displayedVersion": "v0.4.12",
+  "status": "released",
+  "result": "passed",
+  "screenshots": [
+    "orbit-1440.png",
+    "orbit-390.png"
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ]
+}
