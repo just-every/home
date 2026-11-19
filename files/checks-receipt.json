@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-11-19T03:29:48Z",
+  "head": "ebb37c16d14f5da21a34b4b70398e3b0af654e8c",
+  "checks": [
+    {
+      "command": "npm ci",
+      "exit": 0
+    },
+    {
+      "command": "npm run listings",
+      "exit": 0
+    },
+    {
+      "command": "npm run listings -- --check",
+      "exit": 0
+    },
+    {
+      "command": "npm run type-check",
+      "exit": 0
+    },
+    {
+      "command": "npm run lint",
+      "exit": 0
+    },
+    {
+      "command": "npm run build",
+      "exit": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit": 0
+    }
+  ],
+  "sync_scope": [
+    "happytohelp",
+    "lamp",
+    "uptime",
+    "oncall",
+    "orbit",
+    "spool"
+  ],
+  "sync_result": "zero new changes on repeated dry run; two existing open homepage findings",
+  "publication_scan": "delegated to Mac lander as required by cloud adaptation; candidate diff credential-shaped scan passed",
+  "browser": "passed at 1440; screenshots at 1440 and 390; see browser-receipt.json",
+  "full_local_suite": "not run; CI owns full suite",
+  "exact_sha_verify": {
+    "head": "ebb37c16d14f5da21a34b4b70398e3b0af654e8c",
+    "run_id": 44451676898,
+    "conclusion": "success"
+  }
+}

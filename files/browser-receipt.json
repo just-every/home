@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-11-19T03:30:05Z",
+  "head": "ebb37c16d14f5da21a34b4b70398e3b0af654e8c",
+  "assertion_width": 1440,
+  "external_requests": "blocked for local rendering; application responses are real",
+  "initial_attempt": "networkidle timed out on /lamp; retried using load after closing the first browser and stopping its server",
+  "captures": [
+    {
+      "slug": "lamp",
+      "width": 1440,
+      "file": "lamp-1440.png"
+    },
+    {
+      "slug": "oncall",
+      "width": 1440,
+      "file": "oncall-1440.png"
+    },
+    {
+      "slug": "lamp",
+      "width": 390,
+      "file": "lamp-390.png"
+    },
+    {
+      "slug": "oncall",
+      "width": 390,
+      "file": "oncall-390.png"
+    }
+  ],
+  "checks": [
+    {
+      "slug": "lamp",
+      "status": 200,
+      "version": "v1.11.23",
+      "rendered_version_matches_public_catalogue": true,
+      "structured_data_matches": true
+    },
+    {
+      "slug": "oncall",
+      "status": 200,
+      "version": "v0.5.19",
+      "rendered_version_matches_public_catalogue": true,
+      "structured_data_matches": true
+    }
+  ]
+}

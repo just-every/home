@@ -1,0 +1,49 @@
+{
+  "total_count": 3,
+  "workflow_runs": [
+    {
+      "conclusion": "skipped",
+      "created_at": "2026-11-19T03:28:56Z",
+      "event": "pull_request",
+      "head_sha": "ebb37c16d14f5da21a34b4b70398e3b0af654e8c",
+      "html_url": "https://github.com/just-every/home/actions/runs/44451720981",
+      "id": 44451720981,
+      "name": "Verify branch",
+      "status": "completed",
+      "updated_at": "2026-11-19T03:29:45Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-11-19T03:28:53Z",
+      "event": "dynamic",
+      "head_sha": "ebb37c16d14f5da21a34b4b70398e3b0af654e8c",
+      "html_url": "https://github.com/just-every/home/actions/runs/44451716778",
+      "id": 44451716778,
+      "name": "PR #75",
+      "status": "completed",
+      "updated_at": "2026-11-19T03:29:54Z"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-11-19T03:28:32Z",
+      "event": "push",
+      "head_sha": "ebb37c16d14f5da21a34b4b70398e3b0af654e8c",
+      "html_url": "https://github.com/just-every/home/actions/runs/44451676898",
+      "id": 44451676898,
+      "name": "Verify branch",
+      "status": "completed",
+      "updated_at": "2026-11-19T03:29:45Z"
+    }
+  ],
+  "observed_at": "2026-11-19T03:32:50Z",
+  "observation_count": 1,
+  "polling": "one exact-SHA REST discovery; no follow-up poll needed",
+  "manual_GitHub_calls": 10,
+  "manual_call_breakdown": {
+    "release_metadata": 6,
+    "released_copy_compare": 2,
+    "pr_creation": 1,
+    "exact_sha_ci_discovery": 1
+  },
+  "committed_sync_tool_calls": "mandatory six-path sync tools separately read repository contents through their existing gh api implementation; no task-local Git/API adapter installed"
+}

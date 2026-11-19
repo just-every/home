@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-11-19T03:31:37Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-49",
+  "head": "ebb37c16d14f5da21a34b4b70398e3b0af654e8c",
+  "product_branch_advertised": true,
+  "advertised_refs": {
+    "refs/heads/cloud/je-sync-49": "ebb37c16d14f5da21a34b4b70398e3b0af654e8c",
+    "refs/heads/main": "3ca519fe5ed32210f185a60764e2c605f0fc4062"
+  },
+  "candidate_commit_count": 1,
+  "candidate_identity_and_trailers": "all candidate authors and committers verified as fleet; no trailers",
+  "hooks": "fleet cloud hook active; original repository hooks preserved; lint-staged completed",
+  "first_push": "cloud-push.py attempt 1 succeeded",
+  "force_push": false,
+  "main_push": false,
+  "landing": "left to lane; not merged or deployed"
+}
