@@ -1,0 +1,150 @@
+{
+  "observedAt": "2026-11-19T21:33:44Z",
+  "source": "GitHub Releases API, first 10 releases per path",
+  "releases": [
+    {
+      "seed": "happytohelp",
+      "latestEligibleRelease": {
+        "assets": [
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3061,
+            "state": "uploaded"
+          },
+          {
+            "name": "screen-1.webp",
+            "size": 112826,
+            "state": "uploaded"
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.31",
+        "prerelease": false,
+        "published_at": "2026-11-16T11:23:15Z",
+        "tag_name": "v0.4.31"
+      },
+      "envelopeAssetPresenceVerified": true,
+      "signatureVerified": false
+    },
+    {
+      "seed": "lamp",
+      "latestEligibleRelease": {
+        "assets": [
+          {
+            "name": "01-public-status-active-desktop.png",
+            "size": 631154,
+            "state": "uploaded"
+          },
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3157,
+            "state": "uploaded"
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.24",
+        "prerelease": false,
+        "published_at": "2026-11-19T20:37:48Z",
+        "tag_name": "v1.11.24"
+      },
+      "envelopeAssetPresenceVerified": true,
+      "signatureVerified": false
+    },
+    {
+      "seed": "uptime",
+      "latestEligibleRelease": {
+        "assets": [
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3381,
+            "state": "uploaded"
+          },
+          {
+            "name": "uptime-0.4.0-monitor-1440.png",
+            "size": 273042,
+            "state": "uploaded"
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.18",
+        "prerelease": false,
+        "published_at": "2026-11-19T16:34:45Z",
+        "tag_name": "v0.5.18"
+      },
+      "envelopeAssetPresenceVerified": true,
+      "signatureVerified": false
+    },
+    {
+      "seed": "oncall",
+      "latestEligibleRelease": {
+        "assets": [
+          {
+            "name": "oncall-0.5.0-incident-1440.png",
+            "size": 223214,
+            "state": "uploaded"
+          },
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3185,
+            "state": "uploaded"
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.19",
+        "prerelease": false,
+        "published_at": "2026-11-18T21:42:25Z",
+        "tag_name": "v0.5.19"
+      },
+      "envelopeAssetPresenceVerified": true,
+      "signatureVerified": false
+    },
+    {
+      "seed": "orbit",
+      "latestEligibleRelease": {
+        "assets": [
+          {
+            "name": "orbit-now-queue-1600.png",
+            "size": 359729,
+            "state": "uploaded"
+          },
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3349,
+            "state": "uploaded"
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.12",
+        "prerelease": false,
+        "published_at": "2026-11-19T18:57:59Z",
+        "tag_name": "v0.4.12"
+      },
+      "envelopeAssetPresenceVerified": true,
+      "signatureVerified": false
+    },
+    {
+      "seed": "spool",
+      "latestEligibleRelease": {
+        "assets": [
+          {
+            "name": "rer-release.dsse.json",
+            "size": 3105,
+            "state": "uploaded"
+          },
+          {
+            "name": "spool-issue-page-1600.png",
+            "size": 166594,
+            "state": "uploaded"
+          }
+        ],
+        "draft": false,
+        "html_url": "https://github.com/just-every/run-spool/releases/tag/v0.7.15",
+        "prerelease": false,
+        "published_at": "2026-11-19T10:28:00Z",
+        "tag_name": "v0.7.15"
+      },
+      "envelopeAssetPresenceVerified": true,
+      "signatureVerified": false
+    }
+  ]
+}

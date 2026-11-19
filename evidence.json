@@ -1,0 +1,142 @@
+{
+  "files": [
+    {
+      "blob": "f046491f55d3ff31397a4136f16329045b12a2ca",
+      "bytes": 1761,
+      "path": "APPLY.md",
+      "sha256": "88dd2d37955866d7cd7616fec972a4415c504ce53e2991ff8d0bee66e4a57f8f"
+    },
+    {
+      "blob": "6698f7039eb758a644524cbfb7bd569b565e1d21",
+      "bytes": 1702,
+      "path": "BROWSER-PROBE.mjs",
+      "sha256": "c7c5c84744188479f1eb3e8b9438c26b9e7aa5266cb2e58ef6e20c82514c918b"
+    },
+    {
+      "blob": "3bf65c760c7ccafb5c79d1aed6f52c590bdce705",
+      "bytes": 210,
+      "path": "BROWSER.json",
+      "sha256": "bdaadb2b17eb153d846f68bb12232606807226e338cd49190bd79290d314f6ae"
+    },
+    {
+      "blob": "88f26f556f5ff0a59b8150dcf68ad28a8294ef62",
+      "bytes": 1708,
+      "path": "BUILD.log",
+      "sha256": "77b3260f6ab5b6855fbd383705ba02c98f513655b55e8488182e6a3cf05eedd4"
+    },
+    {
+      "blob": "69df456800d183d60d335742889909e8f2eabec0",
+      "bytes": 965,
+      "path": "CI.json",
+      "sha256": "057aa93bbc89a83ed05dde4893fc4b4d832f59b5bf5079c31479e89beda57364"
+    },
+    {
+      "blob": "d810d98cbe6fb2e371eef1e700aeedb6b2de0ed1",
+      "bytes": 1631,
+      "path": "COPY-AFTER.md",
+      "sha256": "2be2b9719bf3c460d94cca1b1acb035516a704153a924c421d46988cd6b61586"
+    },
+    {
+      "blob": "dc27cdb71504c02d5d5bd36c8a06ba087172d46e",
+      "bytes": 1368,
+      "path": "COPY-BEFORE.md",
+      "sha256": "4927bd11494766da58eb2291e747ed9c98c63132e6f7cf3d4bb9c5eb357f084b"
+    },
+    {
+      "blob": "bbe8599737fde00303eaa9dfa88f3a25a9aee64c",
+      "bytes": 13156,
+      "path": "COPY-REVIEW.md",
+      "sha256": "1218233c8a00e59450c35d450ed1097b4050a836d4476debb0a834dbcdd13291"
+    },
+    {
+      "blob": "657a457000f8429c66648892c7795947dd4a8e89",
+      "bytes": 1634,
+      "path": "DRY-FINAL.md",
+      "sha256": "907169e35c479233c89cb5a18ff3c99c5827dc733e1fce7ea4f6104320435c10"
+    },
+    {
+      "blob": "7fa6b4055e1de5381797265fdb9702107887b16c",
+      "bytes": 1705,
+      "path": "DRY-FIRST.md",
+      "sha256": "16ec1567be014a6005b9714be599c1df77221691692090018bb04219cd446011"
+    },
+    {
+      "blob": "253955fdf38fb14230b3ac37c938dae66d7f90d6",
+      "bytes": 3057,
+      "path": "INITIAL-DRY-FAILURE.log",
+      "sha256": "2ac5478f6be674235951f6618364764f48773c3a0bca701912fbcb683a0a23d3"
+    },
+    {
+      "blob": "585867309e92a681fa15a48967b9786dec40dca2",
+      "bytes": 778171,
+      "path": "LAMP-1440.png",
+      "sha256": "40b30a29e7870743e4b4aaad7377b50a77b60d6ea3d72196eef7a64020886f1c"
+    },
+    {
+      "blob": "094a2b3bc3bfa8f80f4ca1a6d149637cc5e05546",
+      "bytes": 399886,
+      "path": "LAMP-390.png",
+      "sha256": "39eb445483bc82e368825b17074ae1b5e0dc8b957ee1c96aa9c3e8dd7d46b492"
+    },
+    {
+      "blob": "02abf0d4ed8ef1c3e0a62e98c0345d520742667a",
+      "bytes": 47,
+      "path": "LINT.log",
+      "sha256": "02ef98276ac56c4ea2e84e7291740f26bb5d7d07639d8ce90366e463210307f3"
+    },
+    {
+      "blob": "bf26c9c91a6f287d453b305cb27f27bba8e0b24c",
+      "bytes": 296,
+      "path": "NPM-CI.log",
+      "sha256": "3144bacb0bb42f156419c2449b0aafeaa8d0b4f137ba5de396863baa7ef01553"
+    },
+    {
+      "blob": "a808f077ecb19bf7bcc4382632de596a7d007020",
+      "bytes": 1512,
+      "path": "PLAN.md",
+      "sha256": "c77ab1a8de5b9c8a92de5939f5b3fa1eeae375453681a1b02ac41a91d53bfac3"
+    },
+    {
+      "blob": "d865d232ef92e3d6a26b0d64a1710e88d94a63fb",
+      "bytes": 149,
+      "path": "PR.json",
+      "sha256": "0af08b6de4fcff0fe919a1cec255b755b6a96a8f59ea2f94b02f5ef5cda61080"
+    },
+    {
+      "blob": "0c28b5922d3bd672da1ee69ad936d4202d9e7960",
+      "bytes": 1773,
+      "path": "RECEIPT.json",
+      "sha256": "33400eaf5a24d5be6a1d3ecfaa8deb61e45876bbbc43281f4e7cf0c4ceac4e6e"
+    },
+    {
+      "blob": "bbfcd3e28feac3ccabd85c6738541375b09f4a9d",
+      "bytes": 4126,
+      "path": "RELEASES.json",
+      "sha256": "00f131189e39b39d91d04379c1bb7fa3e1c30b9799731310e060b1a08cccf32e"
+    },
+    {
+      "blob": "225ee289372156f73f6c5f891deaf6965771d8ca",
+      "bytes": 9307,
+      "path": "REPORT.md",
+      "sha256": "30019a7f6553a286ce7dd1749d12243bb30737c53a84e39b21ccffddd5bb758a"
+    },
+    {
+      "blob": "6326d127915c22061bc7ee2ecdb907ab7feaeeda",
+      "bytes": 1173,
+      "path": "RER-VERSIONS.json",
+      "sha256": "477fa5d7b9438171deea196cad9eb596af09b6906500c1fefaeb2c5d25d5d249"
+    },
+    {
+      "blob": "781fc107c6de1f0fc7a78db73b8a4442fb7966b7",
+      "bytes": 49,
+      "path": "TYPE-CHECK.log",
+      "sha256": "5a848264e3d4f39bae1d347b4ff2be16348436fdcdd3a42c91c0fca2a8f23403"
+    }
+  ],
+  "product_branch": "cloud/je-sync-53",
+  "product_head": "b5dd96438b919f9e179cc2180647d093a75f49f4",
+  "ref": "refs/heads/evidence/je-sync-53",
+  "repository": "just-every/home",
+  "schema": 1,
+  "tag": "je-sync-53"
+}

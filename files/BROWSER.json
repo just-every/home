@@ -1,0 +1,14 @@
+{
+  "rows": [
+    {
+      "width": 1440,
+      "status": 200,
+      "version": "v1.11.24",
+      "publicListingMatchesRenderedVersion": true
+    },
+    {
+      "width": 390,
+      "proofOnly": true
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "observedAt": "2026-11-19T21:40:39Z",
+  "runs": [
+    {
+      "conclusion": "skipped",
+      "event": "pull_request",
+      "head_sha": "b5dd96438b919f9e179cc2180647d093a75f49f4",
+      "html_url": "https://github.com/just-every/home/actions/runs/44620995336",
+      "id": 44620995336,
+      "name": "Verify branch",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "dynamic",
+      "head_sha": "b5dd96438b919f9e179cc2180647d093a75f49f4",
+      "html_url": "https://github.com/just-every/home/actions/runs/44620986625",
+      "id": 44620986625,
+      "name": "PR #79",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "b5dd96438b919f9e179cc2180647d093a75f49f4",
+      "html_url": "https://github.com/just-every/home/actions/runs/44620888729",
+      "id": 44620888729,
+      "name": "Verify branch",
+      "status": "completed"
+    }
+  ],
+  "total_count": 3
+}

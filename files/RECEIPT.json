@@ -1,0 +1,70 @@
+{
+  "tag": "je-sync-53",
+  "recordedAt": "2026-11-19T21:41:59Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-53",
+  "head": "b5dd96438b919f9e179cc2180647d093a75f49f4",
+  "base": "c8edeed7cea845bcb13a9beaadcc152211ee5ea7",
+  "pr": "https://github.com/just-every/home/pull/79",
+  "verify": {
+    "conclusion": "success",
+    "event": "push",
+    "head_sha": "b5dd96438b919f9e179cc2180647d093a75f49f4",
+    "html_url": "https://github.com/just-every/home/actions/runs/44620888729",
+    "id": 44620888729,
+    "name": "Verify branch",
+    "status": "completed"
+  },
+  "counts": {
+    "before": {
+      "total": 49,
+      "released": 35,
+      "comingSoon": 14
+    },
+    "after": {
+      "total": 49,
+      "released": 35,
+      "comingSoon": 14
+    }
+  },
+  "clauseStatusChanges": [],
+  "productPaths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "checks": {
+    "npmCi": 0,
+    "copyBefore": 0,
+    "mechanicalApply": 0,
+    "copyAfter": 0,
+    "finalDrySync": 0,
+    "listingsGenerate": 0,
+    "listingsCheck": 0,
+    "typecheck": 0,
+    "lint": 0,
+    "productionBuild": 0,
+    "candidateBrowserProof": 0,
+    "scopeAndDiffHygiene": "passed",
+    "allCandidateIdentitiesAndTrailers": "passed",
+    "guardedProductPush": "passed first attempt"
+  },
+  "initialDryFailure": "Playwright missing; repaired by external global installation; full dry sync rerun passed",
+  "signatureVerified": false,
+  "browser": {
+    "rows": [
+      {
+        "width": 1440,
+        "status": 200,
+        "version": "v1.11.24",
+        "publicListingMatchesRenderedVersion": true
+      },
+      {
+        "width": 390,
+        "proofOnly": true
+      }
+    ]
+  },
+  "blockers": [],
+  "landingHeldByLane": true
+}
