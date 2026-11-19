@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-19T19:19:30.150Z",
+  "syncedAt": "2026-11-19T21:37:15.280Z",
   "seeds": {
     "auth": {
       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
@@ -534,14 +534,14 @@
       }
     },
     "lamp": {
-      "commit": "199a635758939ab54b12f3a76dabeee68ab74b8f",
-      "sourceRef": "v1.11.23",
+      "commit": "3f1349f029fa8c8c59bf9adfe4e2ae59fd502842",
+      "sourceRef": "v1.11.24",
       "sourceReason": "released listing version",
-      "tag": "v1.11.23",
+      "tag": "v1.11.24",
       "copy": {
-        "CONTRACT.md": "a00a9a5c6c935c51",
+        "CONTRACT.md": "d87c0980ff9dc859",
         "README.md": "402e33bfc617555f",
-        "seed.json": "da15eb8e8db73044"
+        "seed.json": "27ab1bd11b147555"
       },
       "brand": {
         "theme.page": "#f8f6f0",
@@ -557,7 +557,8 @@
       "home": {
         "headline": "When something breaks, turn the light on.",
         "signature": "eeddddeeefeefeefeeffeeeeeeeffefeeeeeeeeeed9a9ddcfeeeeefeefeefeefeeffeccccccffefeefeefeeeeeeeeeeefeefeefeefeefeeffeccc444454dccffefeefeefeeffeffefeefeefeeffeffeffeddcdcbdcbedcffeffeffefeefeefeefeefeeffeeeddddeedeedeedeedeededddddeeeffefeefeefeefeeffeeedddcccbccbbbbbbbbbaccbddceedffefeefeefeefeefeeffeeeeddcedcddcddcddcdddfeeffefeefeefeefeefeefeefeeffebbb898eedeedeedeedfeefeefeefeefeefeefeefeefeefeeeeddddeedeeeeeeeeeeeefeefeefeefee"
-      }
+      },
+      "open": ["922fed04eacf"]
     },
     "lanyard": {
       "commit": "db2a1ef37612248290e0efd85209c9b1f0da8c83",
@@ -855,8 +856,7 @@
       "home": {
         "headline": "Your next deal finds you.",
         "signature": "eedddceeefeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedeeeeeeeedeedeedeedeedeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedddaaabbbaaabbbbbbdddfeeeeeeeeeeeedcedceedeeeeeedddbaabbbaaaddceeeeeeeeeeeeeeeeede85e97eeeeeeeeeeedddddddddddddeeeeeeeeeeeeeeeeedecbedceeeecbeedeeeeddeddddddddeedeeefeeeeeeeeeeeeeeeeefeefeeeeeddd888aaaeddeedaaa777baafeeeeeeeeeeeecbeddeeeeeeeedddcdddeeeeeedddcccdddeeeeeeeeedddddceddeedeeeeeeeeeeeeeeeeedeeeeeeeedeeeeeeeeeeeeeeeeeeeedeed"
-      },
-      "open": ["42983364b373"]
+      }
     },
     "pane": {
       "commit": "16501ad7d10c5af6f04799aa44c700249a41e9b4",
