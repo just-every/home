@@ -1,0 +1,41 @@
+{
+  "recordedAt": "2026-11-19T11:51:55Z",
+  "productHead": "cfcfbd6d264fb5fc53689da63a3d0fa6943e4d0f",
+  "build": "npm run build; served with next start on the clean product checkout",
+  "browser": "headless Chromium /usr/bin/chromium; fresh contexts; --no-sandbox",
+  "rows": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "url": "http://127.0.0.1:3456/spool",
+      "status": 200,
+      "observedVersion": "v0.7.15",
+      "screenshot": "spool-1440.png",
+      "dimensions": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440
+      },
+      "assertions": "public page and listing data",
+      "publicData": {
+        "listings": 49,
+        "released": 35,
+        "comingSoon": 14,
+        "spoolVersion": "v0.7.15",
+        "status": 200
+      }
+    },
+    {
+      "width": 390,
+      "height": 1000,
+      "url": "http://127.0.0.1:3456/spool",
+      "status": 200,
+      "observedVersion": "v0.7.15",
+      "screenshot": "spool-390.png",
+      "dimensions": {
+        "clientWidth": 390,
+        "scrollWidth": 390
+      },
+      "assertions": "visual proof only"
+    }
+  ]
+}

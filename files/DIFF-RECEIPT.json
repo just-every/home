@@ -1,0 +1,38 @@
+{
+  "recordedAt": "2026-11-19T11:50:14Z",
+  "base": "e6d3ce9aba21377e929bf8742c168dfe3279f731",
+  "files": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "before": {
+    "listings": 49,
+    "coming-soon": 14,
+    "released": 35
+  },
+  "after": {
+    "listings": 49,
+    "coming-soon": 14,
+    "released": 35
+  },
+  "publicChanges": [
+    {
+      "seed": "spool",
+      "field": "version",
+      "before": "v0.7.14",
+      "after": "v0.7.15"
+    }
+  ],
+  "stateSeedsChanged": [
+    "lamp",
+    "oncall",
+    "spool"
+  ],
+  "scopeCheck": "passed",
+  "copyPreservation": "all wording unchanged; only listed Spool version changes",
+  "excludedSeeds": "all eight absent",
+  "credentialShapedAddedValues": "none found",
+  "publicationScan": "fleet Mac gate retained; unavailable in cloud per task instructions",
+  "clauseStatusChanges": []
+}

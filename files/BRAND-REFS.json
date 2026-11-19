@@ -1,0 +1,41 @@
+{
+  "observedAt": "2026-11-19T11:46:04Z",
+  "sources": [
+    {
+      "seed": "happytohelp",
+      "repository": "just-every/run-happytohelp",
+      "brandRef": "HEAD",
+      "brandCommit": "c798ff4f9d60bd4ba7a453349f1b626bd6171139"
+    },
+    {
+      "seed": "lamp",
+      "repository": "just-every/run-lamp",
+      "brandRef": "HEAD",
+      "brandCommit": "b3af16fb7270dc281f80112a21e1b1aa07c66e6f"
+    },
+    {
+      "seed": "uptime",
+      "repository": "just-every/run-uptime",
+      "brandRef": "HEAD",
+      "brandCommit": "373dfff5fbbefd13d13d6c0598401393938118da"
+    },
+    {
+      "seed": "oncall",
+      "repository": "just-every/run-oncall",
+      "brandRef": "HEAD",
+      "brandCommit": "9a95d7c30457bdb5281193880f5c9612e059c27d"
+    },
+    {
+      "seed": "orbit",
+      "repository": "just-every/run-orbit",
+      "brandRef": "HEAD",
+      "brandCommit": "2288bfae201961fdb966552dc86655a76b2e0247"
+    },
+    {
+      "seed": "spool",
+      "repository": "just-every/run-spool",
+      "brandRef": "HEAD",
+      "brandCommit": "bb2efcd34837cd6067d02ce176609d3fc636dad2"
+    }
+  ]
+}

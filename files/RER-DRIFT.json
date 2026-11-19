@@ -1,0 +1,50 @@
+{
+  "readAt": "2026-11-19T11:44:57Z",
+  "source": "https://runeditrun.com/data/seeds.json",
+  "generatedAt": "2026-11-15T13:56:34Z",
+  "matchedBy": "repository URL",
+  "seeds": [
+    {
+      "id": "happytohelp",
+      "name": "HappyToHelp",
+      "repository": "https://github.com/just-every/run-happytohelp",
+      "version": "0.4.31",
+      "maturity": "Public source is available. Assisted is in early access with hands-on onboarding. Managed is in early access; requesting access does not start a subscription."
+    },
+    {
+      "id": "lamp",
+      "name": "Lamp",
+      "repository": "https://github.com/just-every/run-lamp",
+      "version": "1.11.23",
+      "maturity": "ui-port-local-runtime"
+    },
+    {
+      "id": "uptime",
+      "name": "Uptime",
+      "repository": "https://github.com/just-every/run-uptime",
+      "version": "0.5.17",
+      "maturity": "local-installer-and-owner-deploy-implemented-hosted-unverified"
+    },
+    {
+      "id": "oncall",
+      "name": "Oncall",
+      "repository": "https://github.com/just-every/run-oncall",
+      "version": "0.5.19",
+      "maturity": "maintained"
+    },
+    {
+      "id": "errors-workbench",
+      "name": "Spool",
+      "repository": "https://github.com/just-every/run-spool",
+      "version": "0.7.14",
+      "maturity": "Local-first JavaScript, Python and Go evidence product with one owner and isolated projects; bounded native, Sentry and OTLP-log intake, private source maps, operator corrections, owner/project erasure, sandbox reproducer, granted GitHub fix branches and exposure measurement. Runtime checks and review evidence are recorded separately; source metadata does not establish hosted, provider or npm publication acceptance."
+    },
+    {
+      "id": "orbit",
+      "name": "Orbit",
+      "repository": "https://github.com/just-every/run-orbit",
+      "version": "0.4.11",
+      "maturity": "complete-workflow-implementation; acceptance requires pinned runtime and native receipts"
+    }
+  ]
+}

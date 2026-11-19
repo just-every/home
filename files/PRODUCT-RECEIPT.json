@@ -1,0 +1,64 @@
+{
+  "recordedAt": "2026-11-19T11:54:30Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-50",
+  "head": "cfcfbd6d264fb5fc53689da63a3d0fa6943e4d0f",
+  "base": "e6d3ce9aba21377e929bf8742c168dfe3279f731",
+  "remoteAdvertised": "cfcfbd6d264fb5fc53689da63a3d0fa6943e4d0f\trefs/heads/cloud/je-sync-50",
+  "pr": "https://github.com/just-every/home/pull/76",
+  "productPush": "fleet cloud-push guard; succeeded on attempt 1; no force",
+  "identityAudit": "all origin/main..HEAD authors, committers and trailers checked, including side parents; passed",
+  "worktree": "clean after repository pre-commit hooks",
+  "checks": {
+    "npmCi": "pass, npm 10.9.3",
+    "listingsGenerate": "pass",
+    "listingsCheck": "pass, 49 seeds",
+    "finalDrySync": "pass, 0 of 6 changed, 0 unreadable, 2 pre-existing homepage findings",
+    "typeCheck": "pass",
+    "lint": "pass",
+    "productionBuild": "pass; 61 pages generated",
+    "browser": "pass, 1440 assertion and 1440/390 screenshots; both pages HTTP 200; no horizontal overflow",
+    "fullLocalSuite": "not run; CI owns the full suite"
+  },
+  "verify": {
+    "conclusion": "success",
+    "event": "push",
+    "head_sha": "cfcfbd6d264fb5fc53689da63a3d0fa6943e4d0f",
+    "html_url": "https://github.com/just-every/home/actions/runs/44518479316",
+    "id": 44518479316,
+    "name": "Verify branch",
+    "path": ".github/workflows/verify.yml",
+    "status": "completed"
+  },
+  "otherRuns": [
+    {
+      "conclusion": "skipped",
+      "event": "pull_request",
+      "head_sha": "cfcfbd6d264fb5fc53689da63a3d0fa6943e4d0f",
+      "html_url": "https://github.com/just-every/home/actions/runs/44518490019",
+      "id": 44518490019,
+      "name": "Verify branch",
+      "path": ".github/workflows/verify.yml",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "dynamic",
+      "head_sha": "cfcfbd6d264fb5fc53689da63a3d0fa6943e4d0f",
+      "html_url": "https://github.com/just-every/home/actions/runs/44518484825",
+      "id": 44518484825,
+      "name": "PR #76",
+      "path": "dynamic/github-code-scanning/codeql",
+      "status": "completed"
+    }
+  ],
+  "ciObservation": {
+    "at": "2026-11-19T11:52:25Z",
+    "calls": 1,
+    "method": "gh api repos/just-every/home/actions/runs?head_sha=<full SHA>&per_page=100",
+    "polling": "one exact-SHA discovery; no repeated polling or rerun"
+  },
+  "clauseStatusChanges": [],
+  "processCleanup": "fresh browser contexts and browser closed; only the recorded Next server PID was stopped; its subreaper exited",
+  "landing": "candidate only; independent gate, publication scan, merge, deployment and live proof remain with the fleet"
+}
