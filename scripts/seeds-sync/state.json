@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-19T03:26:47.163Z",
+  "syncedAt": "2026-11-19T11:48:49.795Z",
   "seeds": {
     "auth": {
       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
@@ -557,8 +557,7 @@
       "home": {
         "headline": "When something breaks, turn the light on.",
         "signature": "eeddddeeefeefeefeeffeeeeeeeffefeeeeeeeeeed9a9ddcfeeeeefeefeefeefeeffeccccccffefeefeefeeeeeeeeeeefeefeefeefeefeeffeccc444454dccffefeefeefeeffeffefeefeefeeffeffeffeddcdcbdcbedcffeffeffefeefeefeefeefeeffeeeddddeedeedeedeedeededddddeeeffefeefeefeefeeffeeedddcccbccbbbbbbbbbaccbddceedffefeefeefeefeefeeffeeeeddcedcddcddcddcdddfeeffefeefeefeefeefeefeefeeffebbb898eedeedeedeedfeefeefeefeefeefeefeefeefeefeeeeddddeedeeeeeeeeeeeefeefeefeefee"
-      },
-      "open": ["c843303a1181"]
+      }
     },
     "lanyard": {
       "commit": "db2a1ef37612248290e0efd85209c9b1f0da8c83",
@@ -830,7 +829,7 @@
         "headline": "Everyone knows who's on call.",
         "signature": "feedddeeeffeffeffeffeffeffeffeffeffeffeffefeeffeffeffeffefffffefffffeffeffeffeffeffeffeffeffeffeeedccccccccccccccceedffeeeeeeeeedeeeffeffeffeffeeeebbbccccccbbbdddfeeffeedddcbccbeedeeefeeeeeffefeeeeeeeeeeeeeeeeefffdcbdb9ddcddddddcccdddeeeffeeed999999999dddeeeffeeccedcffeffeeedddcdcbecbabbeed9999aaaaaeedfeeffeffeffeffeffeffeeeddccedc9aafeeeeefeeffefeeeeeffeffeffeffeffeffeffeffeffeffeffefeefeeffeffeffeffeffeffeffeffeffeffeffeffeffe"
       },
-      "open": ["bf4b3f38e1a2", "c843303a1181"]
+      "open": ["bf4b3f38e1a2"]
     },
     "orbit": {
       "commit": "a4fcbfcd72fa4253826f43d0b0de02275094f86d",
@@ -1155,14 +1154,14 @@
       }
     },
     "spool": {
-      "commit": "1853e3b3b59d49853b5ee7678f851d6de8343fbf",
-      "sourceRef": "v0.7.14",
+      "commit": "bb2efcd34837cd6067d02ce176609d3fc636dad2",
+      "sourceRef": "v0.7.15",
       "sourceReason": "released listing version",
-      "tag": "v0.7.14",
+      "tag": "v0.7.15",
       "copy": {
         "CONTRACT.md": "ee9c871bfa25a110",
-        "README.md": "c942367838430a75",
-        "seed.json": "db0f7f28a05d8d58"
+        "README.md": "a9c5f1be825c6da3",
+        "seed.json": "665317811e8d8aef"
       },
       "brand": {
         "branding.primaryColor": "#1c1c1b",
@@ -1180,7 +1179,8 @@
       "home": {
         "headline": "See exactly what broke.",
         "signature": "eeddccddceedeedeedeeeeedeedeedeeeeeeeeeeedeedeedeeddddeedeedeeeeeeeedeedeededdeedeedeedeedeedeedeedccbddcddcddcccbeddeeeeeddddddceedeedeedeedeedeed999aa9999999999cccfeeeedeededddddeddeedeedeedeedbaaaa9bbaaaaaa9ccbeeeeededddddeedeedeedeedeedeedddcddcddcddceedeeeeeeeeddddddbedceeceeceedeedeedeedeededdeedeeeffefeeeedeededaed9edaedaedbeedeed999988aaabba888888bbbeedeedeededdeeeeeeeedeedeeda99998baaccbaa9aa9ccbeeddddddceedeedeedeedeed"
-      }
+      },
+      "open": ["42983364b373"]
     },
     "stall": {
       "commit": "8ee1f25df4f0b10b9a62e7fe221453499f27b297",
