@@ -1,0 +1,144 @@
+{
+  "recorded_at_utc": "2026-11-19T19:46:55Z",
+  "selected_regular_files": [
+    {
+      "path": "FOLLOW-UPS.md",
+      "bytes": 627,
+      "sha256": "b183db758518b12b19e7017ad39cc6e3dd5027ebcb980ab43807fa54d5fe7a56"
+    },
+    {
+      "path": "LANDING-NOTES.md",
+      "bytes": 652,
+      "sha256": "4f428eca1f9dc5bf0c269afb7e0e6e3632c7ccce79fd81d9c0601b10a0866e8d"
+    },
+    {
+      "path": "REPORT.md",
+      "bytes": 13137,
+      "sha256": "6d6bb30af3c40dae5357632a88eb4892cd588ab7836ddd0b4c61ddbef46dc127"
+    },
+    {
+      "path": "browser-process-receipt.json",
+      "bytes": 347,
+      "sha256": "9ed5fb81f205c5e32670801ab3c90e9d223084ff9dd694e2fffaa89a6c734ea3"
+    },
+    {
+      "path": "build.log",
+      "bytes": 1730,
+      "sha256": "e215747a19958b57ce3312afab5e23008f9d087dd22d26d447407d9fa17ab0fc"
+    },
+    {
+      "path": "checks-receipt.json",
+      "bytes": 1014,
+      "sha256": "2258305efdbbc6925966cc55c06a720e851f9588c435d20b0ecb72092b04acc9"
+    },
+    {
+      "path": "ci-receipt.json",
+      "bytes": 1118,
+      "sha256": "7d1b1b36db8234fbf2906f72e8c488076da29d6a4ebb700af54295f5f547cce4"
+    },
+    {
+      "path": "claims-receipt.json",
+      "bytes": 12337,
+      "sha256": "451b7eee5a55a78cdf8d07aecfce545efbe70a096643a1d77c58fa39490344bf"
+    },
+    {
+      "path": "diff-receipt.json",
+      "bytes": 1897,
+      "sha256": "88595b5e1208fe6c9fed67b2d7b6e26a633c6fa82da3bdc5d98ab95756e11eca"
+    },
+    {
+      "path": "head-browser-receipt.json",
+      "bytes": 7894,
+      "sha256": "ff745ac4edafecfe07f642369bca1c2cf9d5e63e4492e3b4b36a615360335278"
+    },
+    {
+      "path": "head-orbit-1440.png",
+      "bytes": 906284,
+      "sha256": "1e51fb760def2aad38e5ed5b053b663905a9bc5e326070f2b4f2fe1892e30e48"
+    },
+    {
+      "path": "head-orbit-390.png",
+      "bytes": 448072,
+      "sha256": "926fd5292139ea905aaf8cb1fbc8c5f53d4b0fd0c29d62d5035607c79c3c8c39"
+    },
+    {
+      "path": "lint.log",
+      "bytes": 68,
+      "sha256": "769f9c877adcb8ade88d956586fd5a0b4aba10ddd649dc6b37695e34b7d0712e"
+    },
+    {
+      "path": "listings-check.log",
+      "bytes": 130,
+      "sha256": "a878043d762368af0030f81897551576b850e3055b39da25787a24225a6fa58b"
+    },
+    {
+      "path": "listings-generate.log",
+      "bytes": 124,
+      "sha256": "b2f694fb7e8adefc3f826105900b142ef67d8273d350fdb34839773a77169166"
+    },
+    {
+      "path": "listings-no-diff.log",
+      "bytes": 21,
+      "sha256": "b06239bc48ea13e73db5c2d534f25c22bf493d4c2764e58afb1eff157d2b19c0"
+    },
+    {
+      "path": "main-browser-receipt.json",
+      "bytes": 7894,
+      "sha256": "09cb6f58166f7a7ddf635e6af133cb55f0c936c46e7bb218acd30c410ead82c6"
+    },
+    {
+      "path": "main-build.log",
+      "bytes": 4311,
+      "sha256": "7a787aedb633fb3f1e0ba66a39501530fffe9da7c415f8d647bb59d6ed23ab11"
+    },
+    {
+      "path": "main-orbit-1440.png",
+      "bytes": 905859,
+      "sha256": "284c228811e24ead185aefabb6b06117cf1f5391aeda6858a8c926cd1cf2de62"
+    },
+    {
+      "path": "main-orbit-390.png",
+      "bytes": 447819,
+      "sha256": "1d339481e521e895a4776b6bccf05b7c3c6edf6c4d36dd488095c18ee1bec8dc"
+    },
+    {
+      "path": "marker-receipt.json",
+      "bytes": 807,
+      "sha256": "7ea4f3be94fdc52d50621eea77f07c9dc56d454a0e09c5b8010319d298b05ab6"
+    },
+    {
+      "path": "npm-ci.log",
+      "bytes": 338,
+      "sha256": "37bd4d558905109cb85a51facaa7450a2ebcb360e88825d64c67dd3a37f97df6"
+    },
+    {
+      "path": "pr-receipt.json",
+      "bytes": 309,
+      "sha256": "93da5f6ec41254153e40010145ca14e2248030796ca00489395d7becd7eae217"
+    },
+    {
+      "path": "release-receipt.json",
+      "bytes": 648,
+      "sha256": "742756214c38bfe97d20d4a41e9480bcfa72011471e7bbe0212ed6c1d4643e9d"
+    },
+    {
+      "path": "render-comparison-receipt.json",
+      "bytes": 594,
+      "sha256": "43ec93e6180d88e0b0fcfdbe0a6c1b744160eaf0a64130b896e3f181953b9996"
+    },
+    {
+      "path": "source-receipt.json",
+      "bytes": 2409,
+      "sha256": "c46158b428b5c29b8ad0730202499272cc1cd3c4dcf4b9e18cf1566071afa0ef"
+    },
+    {
+      "path": "type-check.log",
+      "bytes": 70,
+      "sha256": "0e9a0b4e9d2f4c1bdf352c0642a47140f4e879dfb43ab9a872d7ee0a40caf9c9"
+    }
+  ],
+  "text_email_scan": "passed; npm package@version banners are package coordinates",
+  "text_credential_shape_scan": "passed",
+  "selection": "explicit filenames; no symlinks, raw source files, credentials, environment dumps or private gate data",
+  "screenshot_review": "all four actual product screenshots visually inspected"
+}

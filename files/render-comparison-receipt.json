@@ -1,0 +1,22 @@
+{
+  "recorded_at_utc": "2026-11-19T19:45:53Z",
+  "comparisons": [
+    {
+      "width": 1440,
+      "body_diff": "version string only",
+      "version_box_identical": true,
+      "horizontal_overflow": false,
+      "head_status": 200,
+      "main_status": 200
+    },
+    {
+      "width": 390,
+      "body_diff": "version string only",
+      "version_box_identical": true,
+      "horizontal_overflow": false,
+      "head_status": 200,
+      "main_status": 200
+    }
+  ],
+  "visual_review": "Both full-page screenshots at both widths inspected; no introduced clipping, overlap or layout break."
+}

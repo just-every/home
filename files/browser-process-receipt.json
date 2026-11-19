@@ -1,0 +1,18 @@
+[
+  {
+    "label": "head",
+    "started": "2026-11-19T19:43:40Z",
+    "ended": "2026-11-19T19:43:45Z",
+    "server_pid": 1775,
+    "server_stopped": true,
+    "exit": 0
+  },
+  {
+    "label": "main",
+    "started": "2026-11-19T19:43:45Z",
+    "ended": "2026-11-19T19:43:49Z",
+    "server_pid": 1984,
+    "server_stopped": true,
+    "exit": 0
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "id": 451794142,
+  "tag_name": "v0.4.12",
+  "target_commitish": "main",
+  "draft": false,
+  "prerelease": false,
+  "published_at": "2026-11-19T18:57:59Z",
+  "html_url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.12",
+  "assets": [
+    {
+      "name": "orbit-now-queue-1600.png",
+      "size": 359729,
+      "browser_download_url": "https://github.com/just-every/run-orbit/releases/download/v0.4.12/orbit-now-queue-1600.png"
+    },
+    {
+      "name": "rer-release.dsse.json",
+      "size": 3349,
+      "browser_download_url": "https://github.com/just-every/run-orbit/releases/download/v0.4.12/rer-release.dsse.json"
+    }
+  ]
+}

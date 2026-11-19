@@ -1,0 +1,40 @@
+[
+  {
+    "label": "head",
+    "width": 1440,
+    "url": "http://127.0.0.1:31962/orbit",
+    "status": 200,
+    "title": "Orbit",
+    "version": "v0.4.12",
+    "viewport": 1440,
+    "scrollWidth": 1440,
+    "versionBox": {
+      "x": 617.328125,
+      "y": 3971.390625,
+      "width": 205.328125,
+      "height": 23.09375
+    },
+    "bodyText": "Products\nProcess\nJourney\nContact\nGitHub\nOrbit\n\nAlternative to HubSpot\n\nAlso replaces Pipedrive, Salesforce\n\nA CRM that shows which deal to work next, and why.\n\nOrbit in 51 seconds\nThe NOW queue of deals to act on\nYour brief: what changed since last look\nReview a follow-up before it is sent\nSignal sources feeding the queue\n\nrun-orbit.com\n↗\nGitHub\n→\n\nOrbit puts a deal in your NOW queue when a customer replies, scores it from real signals, and shows you why. Your company's policy controls agent sending; with approval required, a person reviews the exact email before it is sent. It is free for the whole team, and you can try it beside your current CRM.\n\nWhat it does\nMove a deal into your NOW queue when a customer replies, books a meeting or submits a form\nScore each deal from what customers actually did, with older activity counting for less and every signal behind the score shown\nKeep contacts, companies and deals, with your own fields, in a pipeline with your own stages\nLet a contact form on your site drop each enquiry onto the right contact\nDraft follow-ups, with optional AI, that you review and approve one by one, and schedule them with quiet hours\nCancel scheduled follow-ups automatically when the customer replies\nPull in emails and meetings from Gmail, Google Calendar, Outlook, forwarded mail or a calendar link\nImport contacts from a CSV, and export or restore a complete archive of your workspace any time\nWhat it promises\nSignals, scores and AI text never grant permission to send. Your company's policy decides agent sending; when approval is required, a person approves the exact saved recipients, subject and body, and later changes invalidate it.\nA deal's score shows every signal it used, with source, time and weight, beside the reason for the recommendation.\nOrbit uses no tracking script, pixel or cookie, and does not fingerprint visitors.\nA reply, a booked meeting, an unsubscribe or a permanent bounce cancels that contact's scheduled messages.\nOpt-out is on by default for sequence email and off for one-to-one email. Messages set to carry it include one-click unsubscribe; an identified opt-out marks the contact do-not-contact within a minute and cancels scheduled messages.\nA draft goes stale when the customer replies or the deal changes, and a stale draft cannot be sent until you have seen what changed.\nCapture never writes a draft or sends a message, and a contact created from captured mail is do-not-contact until you clear it.\nIf the AI is unavailable, records, scoring, search, hand-written drafts and sending still work.\nMerging duplicates needs you to choose the surviving record and every conflicting value, and refuses if either record changed after your review.\nDeleting a contact removes their email, signals, drafts and message bodies from records, search, exports and later AI or mail requests within five minutes.\nRead the full contract\n→\nMove in from\nHubSpot Sales Hub\nPipedrive\nCSV files\nGmail and Google Calendar\nOutlook mail and calendar\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-orbit\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-orbit.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.4.12\nLICENCE\nMIT, 100% free\n\nMade with care and a lot of coding agents.\n\nProducts\nAll 49 products\n(so far)\nEssays\nProcess\nJourney\nGet in touch\nContact\nGitHub",
+    "errors": [],
+    "screenshot": "head-orbit-1440.png"
+  },
+  {
+    "label": "head",
+    "width": 390,
+    "url": "http://127.0.0.1:31962/orbit",
+    "status": 200,
+    "title": "Orbit",
+    "version": "v0.4.12",
+    "viewport": 390,
+    "scrollWidth": 390,
+    "versionBox": {
+      "x": 20,
+      "y": 4257.859375,
+      "width": 350,
+      "height": 23.09375
+    },
+    "bodyText": "Products\nProcess\nJourney\nContact\nGitHub\nOrbit\n\nAlternative to HubSpot\n\nAlso replaces Pipedrive, Salesforce\n\nA CRM that shows which deal to work next, and why.\n\nOrbit in 51 seconds\nThe NOW queue of deals to act on\nYour brief: what changed since last look\nReview a follow-up before it is sent\nSignal sources feeding the queue\n\nrun-orbit.com\n↗\nGitHub\n→\n\nOrbit puts a deal in your NOW queue when a customer replies, scores it from real signals, and shows you why. Your company's policy controls agent sending; with approval required, a person reviews the exact email before it is sent. It is free for the whole team, and you can try it beside your current CRM.\n\nWhat it does\nMove a deal into your NOW queue when a customer replies, books a meeting or submits a form\nScore each deal from what customers actually did, with older activity counting for less and every signal behind the score shown\nKeep contacts, companies and deals, with your own fields, in a pipeline with your own stages\nLet a contact form on your site drop each enquiry onto the right contact\nDraft follow-ups, with optional AI, that you review and approve one by one, and schedule them with quiet hours\nCancel scheduled follow-ups automatically when the customer replies\nPull in emails and meetings from Gmail, Google Calendar, Outlook, forwarded mail or a calendar link\nImport contacts from a CSV, and export or restore a complete archive of your workspace any time\nWhat it promises\nSignals, scores and AI text never grant permission to send. Your company's policy decides agent sending; when approval is required, a person approves the exact saved recipients, subject and body, and later changes invalidate it.\nA deal's score shows every signal it used, with source, time and weight, beside the reason for the recommendation.\nOrbit uses no tracking script, pixel or cookie, and does not fingerprint visitors.\nA reply, a booked meeting, an unsubscribe or a permanent bounce cancels that contact's scheduled messages.\nOpt-out is on by default for sequence email and off for one-to-one email. Messages set to carry it include one-click unsubscribe; an identified opt-out marks the contact do-not-contact within a minute and cancels scheduled messages.\nA draft goes stale when the customer replies or the deal changes, and a stale draft cannot be sent until you have seen what changed.\nCapture never writes a draft or sends a message, and a contact created from captured mail is do-not-contact until you clear it.\nIf the AI is unavailable, records, scoring, search, hand-written drafts and sending still work.\nMerging duplicates needs you to choose the surviving record and every conflicting value, and refuses if either record changed after your review.\nDeleting a contact removes their email, signals, drafts and message bodies from records, search, exports and later AI or mail requests within five minutes.\nRead the full contract\n→\nMove in from\nHubSpot Sales Hub\nPipedrive\nCSV files\nGmail and Google Calendar\nOutlook mail and calendar\nRun it yourself\n\nOne command clones a product and starts it.\n\nTerminal\nCopy\n$ npx -y @runeditrun/rer dev just-every/run-orbit\n\nNo npm? curl -fsSL https://runeditrun.com/install.sh | sh installs rer, then rer dev just-every/run-orbit.\n\nRUNS ON\nYour computer, or your own Cloudflare account\nVERSION\nv0.4.12\nLICENCE\nMIT, 100% free\n\nMade with care and a lot of coding agents.\n\nProducts\nAll 49 products\n(so far)\nEssays\nProcess\nJourney\nGet in touch\nContact\nGitHub",
+    "errors": [],
+    "screenshot": "head-orbit-390.png"
+  }
+]

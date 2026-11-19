@@ -1,0 +1,44 @@
+[
+  {
+    "check": "listings-check",
+    "command": "npm run listings -- --check",
+    "exit": 0,
+    "started": "2026-11-19T19:38:03Z",
+    "ended": "2026-11-19T19:38:04Z"
+  },
+  {
+    "check": "listings-generate",
+    "command": "npm run listings",
+    "exit": 0,
+    "started": "2026-11-19T19:38:04Z",
+    "ended": "2026-11-19T19:38:04Z"
+  },
+  {
+    "check": "listings-no-diff",
+    "command": "git diff --exit-code -- public/data/listings.json",
+    "exit": 0,
+    "started": "2026-11-19T19:38:04Z",
+    "ended": "2026-11-19T19:38:04Z"
+  },
+  {
+    "check": "type-check",
+    "command": "npm run type-check",
+    "exit": 0,
+    "started": "2026-11-19T19:38:04Z",
+    "ended": "2026-11-19T19:38:10Z"
+  },
+  {
+    "check": "lint",
+    "command": "npm run lint",
+    "exit": 0,
+    "started": "2026-11-19T19:38:10Z",
+    "ended": "2026-11-19T19:38:13Z"
+  },
+  {
+    "check": "build",
+    "command": "npm run build",
+    "exit": 0,
+    "started": "2026-11-19T19:38:13Z",
+    "ended": "2026-11-19T19:38:52Z"
+  }
+]
