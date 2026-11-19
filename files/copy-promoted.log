@@ -1,0 +1,13 @@
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --only uptime --copy-only --apply --out ../packet/copy-promoted
+
+Reading 1 seed repositories...
+uptime: source=v0.5.18 commit=52f77a94a0a675ba5e1be122dfe0c720087144fb (released listing version)
+
+Applied: 1 of 1 seeds changed.
+
+Uptime
+  copy      README.md, seed.json changed since the last sync [reported]
+
+Report: /home/agent/rer-consolidation/work/je-sync-51/packet/copy-promoted/report.md

@@ -1,0 +1,23 @@
+{
+  "before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "changed": [
+    {
+      "slug": "uptime",
+      "fields": {
+        "version": {
+          "before": "v0.5.17",
+          "after": "v0.5.18"
+        }
+      }
+    }
+  ]
+}

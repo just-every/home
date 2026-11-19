@@ -1,0 +1,6 @@
+{
+  "title": "sync: seed listings 19 Nov (path release Uptime v0.5.18)",
+  "head": "cloud/je-sync-51",
+  "base": "main",
+  "body": "Update Uptime from v0.5.17 to v0.5.18 after confirming the published stable GitHub Release includes rer-release.dsse.json. Refresh released-copy provenance and generated listings; no signature verification is claimed.\n\nKeep Orbit at v0.4.11: the sync detects tag v0.4.12 but GitHub has no Release for it. The other five path versions remain unchanged. Listings remain 49 total: 35 released and 14 coming soon. Existing copy, marks, colours, pricing and exclusions stay intact.\n\nValidation: locked npm install; six-path dry sync, copy-only apply and mechanical apply; final dry sync has only the explained Orbit tag finding and existing missing alternative-to lines; listings generation/check; type-check; lint; production build. Publication scan, independent gate, landing, deployment and live browser verification remain with the lane."
+}

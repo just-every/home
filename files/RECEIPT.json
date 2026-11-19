@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "tag": "je-sync-51",
+  "repository": "just-every/home",
+  "recordedAt": "2026-11-19T18:06:32Z",
+  "product": {
+    "branch": "cloud/je-sync-51",
+    "head": "ac2df502633ad0e49ecdefd46e42bbc907fce02e",
+    "base": "e54baedf55c3a4f01bf5daea7819fe509b6df3d9",
+    "published": true,
+    "push_attempts": 1,
+    "working_tree_clean": true
+  },
+  "pr": {
+    "base": "e54baedf55c3a4f01bf5daea7819fe509b6df3d9",
+    "head": "ac2df502633ad0e49ecdefd46e42bbc907fce02e",
+    "html_url": "https://github.com/just-every/home/pull/77",
+    "number": 77,
+    "state": "open"
+  },
+  "ci": {
+    "conclusion": "success",
+    "head_sha": "ac2df502633ad0e49ecdefd46e42bbc907fce02e",
+    "html_url": "https://github.com/just-every/home/actions/runs/44583257308",
+    "status": "completed",
+    "run_id": 44583257308
+  },
+  "custody": "READY",
+  "counts": {
+    "before": {
+      "total": 49,
+      "released": 35,
+      "coming_soon": 14
+    },
+    "after": {
+      "total": 49,
+      "released": 35,
+      "coming_soon": 14
+    },
+    "changed": [
+      {
+        "slug": "uptime",
+        "fields": {
+          "version": {
+            "before": "v0.5.17",
+            "after": "v0.5.18"
+          }
+        }
+      }
+    ]
+  },
+  "clauses": {
+    "changed": [],
+    "promoted": [],
+    "demoted": []
+  },
+  "local_checks": "passed; see CHECKS.json and actual logs",
+  "browser": "passed at 1440 and 390; see browser/receipt.json",
+  "blockers": [],
+  "withheld": [
+    "Orbit v0.4.12 lacks a published Release; retain v0.4.11",
+    "Later and coming-soon seeds paused until 25 Nov"
+  ],
+  "rer_drift": "Uptime RER 0.5.17 versus JE 0.5.18; Spool found by repository URL as errors-workbench 0.7.15",
+  "publication_scan": "Mac lane gate retained; not run in cloud",
+  "evidence_ref": "refs/heads/evidence/je-sync-51",
+  "landing": "not performed; open PR and independent gate remain with lane"
+}

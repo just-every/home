@@ -1,0 +1,74 @@
+{
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-51",
+  "head": "ac2df502633ad0e49ecdefd46e42bbc907fce02e",
+  "checks": [
+    {
+      "command": "npm ci",
+      "exit_code": 0,
+      "log": "npm-ci.log"
+    },
+    {
+      "command": "npm run type-check",
+      "exit_code": 0,
+      "log": "type-check.log"
+    },
+    {
+      "command": "npm run lint",
+      "exit_code": 0,
+      "log": "lint.log"
+    },
+    {
+      "command": "npm run build",
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": "npm run listings",
+      "exit_code": 0,
+      "outcome": "generated 49 listings"
+    },
+    {
+      "command": "npm run listings -- --check",
+      "exit_code": 0,
+      "outcome": "49 current",
+      "log": "listings-check.log"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    },
+    {
+      "command": "scope and credential-shaped diff review",
+      "exit_code": 0,
+      "outcome": "exactly the three requested product files; no credential-shaped values"
+    },
+    {
+      "command": "six-path final dry sync",
+      "exit_code": 0,
+      "log": "dry-after.log",
+      "outcome": "only withheld Orbit v0.4.12 and two previously open alternative-to findings"
+    },
+    {
+      "command": "Uptime browser proof",
+      "exit_code": 0,
+      "receipt": "browser/receipt.json",
+      "outcome": "1440 and 390 show v0.5.18; no horizontal overflow"
+    }
+  ],
+  "tests": "No tests added, deleted or weakened; CI owns the full suite. Browser assertion runs at 1440, with proof at both widths.",
+  "publication_scan": "NOT RUN in cloud per task adaptation; independent Mac publication scan retained.",
+  "limitations": [
+    "First sync attempt could not locate Playwright. Resolved with the installed playwright-core package and reran successfully.",
+    "Initial browser networkidle navigation timed out on ongoing page requests. Repeated with DOM content loaded and fonts settled; actual screenshots and receipt succeeded.",
+    "Local production preview has pre-existing analytics D1 table and Cloudflare caches diagnostics; product page rendered successfully. No provider credentials or deployment used."
+  ],
+  "ci": {
+    "conclusion": "success",
+    "head_sha": "ac2df502633ad0e49ecdefd46e42bbc907fce02e",
+    "html_url": "https://github.com/just-every/home/actions/runs/44583257308",
+    "status": "completed",
+    "run_id": 44583257308,
+    "observedAt": "2026-11-19T18:06:32Z"
+  }
+}

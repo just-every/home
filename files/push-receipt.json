@@ -1,0 +1,11 @@
+{
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-51",
+  "head": "ac2df502633ad0e49ecdefd46e42bbc907fce02e",
+  "push": "succeeded",
+  "attempts": 1,
+  "transport": "fleet cloud-push.py",
+  "identity_check": "all candidate author and committer names and addresses accepted; no trailers",
+  "hook": "fleet cloud cleanup active; repository lint-staged hook passed",
+  "main": "untouched"
+}

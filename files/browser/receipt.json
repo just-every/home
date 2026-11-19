@@ -1,0 +1,21 @@
+{
+  "recordedAt": "2026-11-19T18:01:56.063Z",
+  "route": "/uptime",
+  "rows": [
+    {
+      "width": 1440,
+      "status": 200,
+      "version": "v0.5.18",
+      "screenshot": "browser/uptime-1440.png",
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "version": "v0.5.18",
+      "screenshot": "browser/uptime-390.png",
+      "horizontalOverflow": false
+    }
+  ],
+  "productHead": "ac2df502633ad0e49ecdefd46e42bbc907fce02e"
+}
