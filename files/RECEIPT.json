@@ -1,0 +1,135 @@
+{
+  "author": "Run Edit Run fleet",
+  "timestamp": "2026-11-20T12:32:03Z",
+  "repository": "just-every/home",
+  "product_branch": "cloud/je-sync-54",
+  "product_head": "868476d830f4153bdd8bbd1ca73a2cee55dc20be",
+  "base": "85540bca95af7ba648bd511bf58a8e9c17edd45f",
+  "pr": "https://github.com/just-every/home/pull/80",
+  "pr_state": "open",
+  "final_pr_head_and_base_match": true,
+  "worktree_clean": true,
+  "checks": [
+    {
+      "timestamp": "2026-11-20T12:24:31Z",
+      "command": "npm run listings -- --check",
+      "exit": 0,
+      "log": "listingscheck.log"
+    },
+    {
+      "timestamp": "2026-11-20T12:24:32Z",
+      "command": "npm run listings",
+      "exit": 0,
+      "log": "listings.log"
+    },
+    {
+      "timestamp": "2026-11-20T12:24:32Z",
+      "command": "npm run type-check",
+      "exit": 0,
+      "log": "type-check.log"
+    },
+    {
+      "timestamp": "2026-11-20T12:24:36Z",
+      "command": "npm run lint",
+      "exit": 0,
+      "log": "lint.log"
+    },
+    {
+      "timestamp": "2026-11-20T12:24:39Z",
+      "command": "npm run build",
+      "exit": 0,
+      "log": "build.log"
+    }
+  ],
+  "npm_ci_exit": 0,
+  "baseline_build_exit": 0,
+  "baseline_render_exit": 0,
+  "candidate_render_exit": 0,
+  "desktop_assertion_width": 1440,
+  "browser_proof_widths": [
+    1440,
+    390
+  ],
+  "counts_before": {
+    "all": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "counts_after": {
+    "all": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "clause_status_changes": [],
+  "source_reads": [
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-oncall/v0.5.19/CONTRACT.md",
+      "bytes": 301090,
+      "sha256": "831ba92eb6dc8bd2ca423108375906e190045ccf2669cf02a167a4145932fc37",
+      "exit": 0
+    },
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-oncall/v0.5.19/README.md",
+      "bytes": 12813,
+      "sha256": "b2c25df447c4fbedbf7bbb1c6ad81be44187cffb66448627f7a2c7211e592a3f",
+      "exit": 0
+    },
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-oncall/v0.5.19/seed.json",
+      "bytes": 3195,
+      "sha256": "b090e45599bc4e287de013bb716c0e104590b5cddb93d2f9e1dba4a23332f313",
+      "exit": 0
+    },
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-oncall/v0.5.21/CONTRACT.md",
+      "bytes": 313542,
+      "sha256": "7617e905d0abae0e592c0e716e04e5291dacb1537d435f24865cefd5d4a4b87c",
+      "exit": 0
+    },
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-oncall/v0.5.21/README.md",
+      "bytes": 12813,
+      "sha256": "b2c25df447c4fbedbf7bbb1c6ad81be44187cffb66448627f7a2c7211e592a3f",
+      "exit": 0
+    },
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-oncall/v0.5.21/seed.json",
+      "bytes": 3195,
+      "sha256": "c7510d2baa3cf6cd2d6352a10a55029f365e69800472a91046868b927b092258",
+      "exit": 0
+    }
+  ],
+  "api_calls": 4,
+  "ci": [
+    {
+      "id": 44733382505,
+      "name": "Verify branch",
+      "status": "completed",
+      "conclusion": "skipped",
+      "head_sha": "868476d830f4153bdd8bbd1ca73a2cee55dc20be",
+      "html_url": "https://github.com/just-every/home/actions/runs/44733382505"
+    },
+    {
+      "id": 44733379327,
+      "name": "PR #80",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "868476d830f4153bdd8bbd1ca73a2cee55dc20be",
+      "html_url": "https://github.com/just-every/home/actions/runs/44733379327"
+    },
+    {
+      "id": 44733339123,
+      "name": "Verify branch",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "868476d830f4153bdd8bbd1ca73a2cee55dc20be",
+      "html_url": "https://github.com/just-every/home/actions/runs/44733339123"
+    }
+  ],
+  "verdict": "GATE PASS",
+  "new_blocking_findings": 0,
+  "new_copy_followups": 0,
+  "product_commits_created": 0,
+  "product_pushes": 0,
+  "evidence_ref": "refs/heads/evidence/je-gate-64"
+}

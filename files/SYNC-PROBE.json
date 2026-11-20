@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-11-20T12:31:29Z",
+  "command": "Invoke committed detectCopy and compareSignatures against independent public release bytes and origin/main state",
+  "copy": [
+    {
+      "type": "copy",
+      "summary": "CONTRACT.md, seed.json changed since the last sync",
+      "details": {
+        "files": [
+          "CONTRACT.md",
+          "seed.json"
+        ],
+        "range": "https://github.com/just-every/run-oncall/compare/518317b385c4...33cafdc77501",
+        "from": "518317b385c4535599bfc670dd676da46069b451",
+        "to": "33cafdc7750103f51ac4173c7b52c8dbcf1efbe0"
+      },
+      "apply": null,
+      "copy": "rewrite the page copy from CONTRACT.md, seed.json (https://github.com/just-every/run-oncall/compare/518317b385c4...33cafdc77501)",
+      "key": "922fed04eacf"
+    }
+  ],
+  "uptimeFingerprint": {
+    "changedShare": 0,
+    "changed": false
+  },
+  "oncallFingerprintUnchanged": true,
+  "lampCopyProvenanceUnchanged": true,
+  "lampOpenBefore": [
+    "922fed04eacf"
+  ],
+  "lampOpenAfter": [],
+  "oncallOpenBefore": [
+    "bf4b3f38e1a2"
+  ],
+  "oncallOpenAfter": [
+    "bf4b3f38e1a2",
+    "922fed04eacf"
+  ]
+}

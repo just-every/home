@@ -1,0 +1,12 @@
+{
+  "head": "868476d830f4153bdd8bbd1ca73a2cee55dc20be",
+  "base": "85540bca95af7ba648bd511bf58a8e9c17edd45f",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "credential_shaped_matches": 0,
+  "all_candidate_author_committer_and_trailers_allowed": true,
+  "tests_changed": false
+}
