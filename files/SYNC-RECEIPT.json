@@ -1,0 +1,64 @@
+{
+  "recorded_at": "2026-11-20T12:11:39Z",
+  "steps": [
+    {
+      "step": "initial-dry",
+      "command": "npm run seeds:sync -- --only happytohelp,lamp,uptime,oncall,orbit,spool",
+      "exit": 1,
+      "result": "Playwright not discoverable; no product write"
+    },
+    {
+      "step": "initial-dry-retry",
+      "command": "npm run seeds:sync -- --only happytohelp,lamp,uptime,oncall,orbit,spool",
+      "exit": 0,
+      "result": "one version change; two existing open findings",
+      "report": "DRY-BEFORE.md"
+    },
+    {
+      "step": "copy-apply",
+      "command": "npm run seeds:sync -- --only happytohelp,lamp,uptime,oncall,orbit,spool --copy-only --apply",
+      "exit": 1,
+      "result": "Oncall Git HTTP 503; refused before writes"
+    },
+    {
+      "step": "copy-apply-retry",
+      "command": "npm run seeds:sync -- --only happytohelp,lamp,uptime,oncall,orbit,spool --copy-only --apply",
+      "exit": 0,
+      "result": "zero copy changes",
+      "report": "COPY-APPLY.md"
+    },
+    {
+      "step": "mechanical-apply",
+      "command": "npm run seeds:sync -- --only happytohelp,lamp,uptime,oncall,orbit,spool --apply",
+      "exit": 0,
+      "result": "Oncall v0.5.21 only",
+      "report": "MECHANICAL-APPLY.md"
+    },
+    {
+      "step": "copy-new-release",
+      "command": "npm run seeds:sync -- --only happytohelp,lamp,uptime,oncall,orbit,spool --copy-only --apply",
+      "exit": 0,
+      "result": "reviewed new released copy hashes recorded; no wording edit",
+      "report": "COPY-NEW-RELEASE.md"
+    },
+    {
+      "step": "listings",
+      "command": "npm run listings",
+      "exit": 0,
+      "result": "49 listings generated"
+    },
+    {
+      "step": "listings-check",
+      "command": "npm run listings -- --check",
+      "exit": 0,
+      "result": "Listings current (49 seeds)"
+    },
+    {
+      "step": "final-dry",
+      "command": "npm run seeds:sync -- --only happytohelp,lamp,uptime,oncall,orbit,spool",
+      "exit": 0,
+      "result": "zero changes; two existing open findings",
+      "report": "DRY-AFTER.md"
+    }
+  ]
+}

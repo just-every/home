@@ -1,0 +1,36 @@
+{
+  "observed_at": "2026-11-20T12:09:25Z",
+  "runs": [
+    {
+      "conclusion": null,
+      "event": "pull_request",
+      "head_branch": "cloud/je-sync-54",
+      "head_sha": "868476d830f4153bdd8bbd1ca73a2cee55dc20be",
+      "html_url": "https://github.com/just-every/home/actions/runs/44733382505",
+      "id": 44733382505,
+      "name": "Verify branch",
+      "status": "pending"
+    },
+    {
+      "conclusion": null,
+      "event": "dynamic",
+      "head_branch": "refs/pull/80/head",
+      "head_sha": "868476d830f4153bdd8bbd1ca73a2cee55dc20be",
+      "html_url": "https://github.com/just-every/home/actions/runs/44733379327",
+      "id": 44733379327,
+      "name": "PR #80",
+      "status": "in_progress"
+    },
+    {
+      "conclusion": null,
+      "event": "push",
+      "head_branch": "cloud/je-sync-54",
+      "head_sha": "868476d830f4153bdd8bbd1ca73a2cee55dc20be",
+      "html_url": "https://github.com/just-every/home/actions/runs/44733339123",
+      "id": 44733339123,
+      "name": "Verify branch",
+      "status": "in_progress"
+    }
+  ],
+  "total_count": 3
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "command": "npm run type-check",
+    "exit": 0,
+    "started": "2026-11-20T12:07:19Z",
+    "finished": "2026-11-20T12:07:24Z",
+    "head": "868476d830f4153bdd8bbd1ca73a2cee55dc20be",
+    "log": "typecheck.log"
+  },
+  {
+    "command": "npm run lint",
+    "exit": 0,
+    "started": "2026-11-20T12:07:24Z",
+    "finished": "2026-11-20T12:07:26Z",
+    "head": "868476d830f4153bdd8bbd1ca73a2cee55dc20be",
+    "log": "lint.log"
+  },
+  {
+    "command": "npm run build",
+    "exit": 0,
+    "started": "2026-11-20T12:07:26Z",
+    "finished": "2026-11-20T12:07:56Z",
+    "head": "868476d830f4153bdd8bbd1ca73a2cee55dc20be",
+    "log": "production-build.log"
+  }
+]

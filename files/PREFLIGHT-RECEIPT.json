@@ -1,0 +1,15 @@
+{
+  "recorded_at": "2026-11-20T12:11:39Z",
+  "head": "868476d830f4153bdd8bbd1ca73a2cee55dc20be",
+  "base": "85540bca95af7ba648bd511bf58a8e9c17edd45f",
+  "candidate_commit_count": 1,
+  "working_tree_clean": true,
+  "all_candidate_identities_allowed": true,
+  "all_candidate_full_messages_checked": true,
+  "trailers_present": false,
+  "diff_whitespace_check": "passed",
+  "changed_path_scope_check": "passed",
+  "diff_credential_pattern_check": "passed",
+  "public_report_email_and_credential_pattern_check": "passed",
+  "full_publication_scan": "Mac lane required; unavailable in this cloud"
+}

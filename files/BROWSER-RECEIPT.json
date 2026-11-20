@@ -1,0 +1,32 @@
+{
+  "head": "868476d830f4153bdd8bbd1ca73a2cee55dc20be",
+  "started": "2026-11-20T12:09:45Z",
+  "server_pid": 6255,
+  "source": "production Next.js build",
+  "screen": "/oncall",
+  "captures": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "file": "oncall-1440.png",
+      "version": "v0.5.21",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 390,
+      "height": 1000,
+      "file": "oncall-390.png",
+      "version": "v0.5.21",
+      "horizontal_overflow": false
+    }
+  ],
+  "assertions": [
+    "Oncall route returns HTTP 200",
+    "rendered version matches generated listing",
+    "public listing equals generated Oncall row",
+    "structured data version matches listing"
+  ],
+  "result": "passed",
+  "server_stopped": true,
+  "finished": "2026-11-20T12:09:49Z"
+}

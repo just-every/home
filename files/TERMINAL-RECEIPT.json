@@ -1,0 +1,35 @@
+{
+  "tag": "je-sync-54",
+  "repository": "just-every/home",
+  "recorded_at": "2026-11-20T12:15:04Z",
+  "branch": "cloud/je-sync-54",
+  "head": "868476d830f4153bdd8bbd1ca73a2cee55dc20be",
+  "base": "85540bca95af7ba648bd511bf58a8e9c17edd45f",
+  "pr": "https://github.com/just-every/home/pull/80",
+  "product_push": "succeeded first attempt",
+  "verify": {
+    "id": 44733339123,
+    "observed_at": "2026-11-20T12:14:26Z",
+    "conclusion": "success",
+    "head_sha": "868476d830f4153bdd8bbd1ca73a2cee55dc20be",
+    "html_url": "https://github.com/just-every/home/actions/runs/44733339123",
+    "status": "completed"
+  },
+  "custody": "READY",
+  "counts_before": {
+    "listings": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "counts_after": {
+    "listings": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "clause_status_changes": [],
+  "blockers": [],
+  "publication_scan": "Mac lane must run before landing",
+  "evidence_ref": "refs/heads/evidence/je-sync-54",
+  "manual_github_core_calls": 10,
+  "cleanup": "remove pushed product clone and node_modules after successful evidence publication"
+}

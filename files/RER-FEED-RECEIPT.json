@@ -1,0 +1,54 @@
+{
+  "source": "https://runeditrun.com/data/seeds.json",
+  "match": "repository URL",
+  "versions": [
+    {
+      "name": "HappyToHelp",
+      "id": "happytohelp",
+      "repository": "https://github.com/just-every/run-happytohelp",
+      "rer_version": "0.4.31",
+      "candidate_version": "v0.4.31",
+      "drift": false
+    },
+    {
+      "name": "Lamp",
+      "id": "lamp",
+      "repository": "https://github.com/just-every/run-lamp",
+      "rer_version": "1.11.24",
+      "candidate_version": "v1.11.24",
+      "drift": false
+    },
+    {
+      "name": "Uptime",
+      "id": "uptime",
+      "repository": "https://github.com/just-every/run-uptime",
+      "rer_version": "0.5.18",
+      "candidate_version": "v0.5.18",
+      "drift": false
+    },
+    {
+      "name": "Oncall",
+      "id": "oncall",
+      "repository": "https://github.com/just-every/run-oncall",
+      "rer_version": "0.5.19",
+      "candidate_version": "v0.5.21",
+      "drift": true
+    },
+    {
+      "name": "Orbit",
+      "id": "orbit",
+      "repository": "https://github.com/just-every/run-orbit",
+      "rer_version": "0.4.12",
+      "candidate_version": "v0.4.12",
+      "drift": false
+    },
+    {
+      "name": "Spool",
+      "id": "errors-workbench",
+      "repository": "https://github.com/just-every/run-spool",
+      "rer_version": "0.7.15",
+      "candidate_version": "v0.7.15",
+      "drift": false
+    }
+  ]
+}
