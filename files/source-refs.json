@@ -1,0 +1,25 @@
+{
+  "observedAt": "2026-11-20T17:53:33Z",
+  "refs": {
+    "happytohelp": {
+      "HEAD": "1ffe9e063072f94e01a5d116f20b2317ca824b77"
+    },
+    "lamp": {
+      "HEAD": "173e93d259f968daffd0148365c2b9a26c62e3e6"
+    },
+    "uptime": {
+      "HEAD": "52f77a94a0a675ba5e1be122dfe0c720087144fb"
+    },
+    "oncall": {
+      "HEAD": "b6f5671aa17547fb4a4c10e45e730c14f8fa80d0"
+    },
+    "orbit": {
+      "HEAD": "a9fa1830c1913562154dedaeb5a1322ead7c3e6b"
+    },
+    "spool": {
+      "HEAD": "804a4ad15e6c8e1c52f0069dcf610ba1f5d2342c",
+      "refs/tags/v0.7.16": "d7bc1dee9b7035e1f4beceee3db1c41952b7a3e3",
+      "refs/tags/v0.7.16^{}": "804a4ad15e6c8e1c52f0069dcf610ba1f5d2342c"
+    }
+  }
+}

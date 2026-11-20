@@ -1,0 +1,21 @@
+{
+  "status": "ahead",
+  "ahead_by": 4,
+  "base": "bb2efcd34837cd6067d02ce176609d3fc636dad2",
+  "commits": [
+    "533ad0256f36b06811106a35756354239baccbf3",
+    "8157a49c55c94207abf64b23c4521617043ebe3f",
+    "7a75de63c8615e4162759c6c7a0db8f728f9a007",
+    "804a4ad15e6c8e1c52f0069dcf610ba1f5d2342c"
+  ],
+  "compare_url": "https://github.com/just-every/run-spool/compare/v0.7.15...v0.7.16",
+  "copy_files_changed": [
+    {
+      "additions": 1,
+      "deletions": 1,
+      "filename": "seed.json",
+      "patch": "@@ -1,7 +1,7 @@\n {\n   \"id\": \"errors-workbench\",\n   \"name\": \"Spool\",\n-  \"version\": \"0.7.15\",\n+  \"version\": \"0.7.16\",\n   \"maturity\": \"Local-first JavaScript, Python and Go evidence product with one owner and isolated projects; bounded native, Sentry and OTLP-log intake, private source maps, operator corrections, owner/project erasure, sandbox reproducer, granted GitHub fix branches and exposure measurement. Runtime checks and review evidence are recorded separately; source metadata does not establish hosted, provider or npm publication acceptance.\",\n   \"category\": \"monitoring\",\n   \"replaces\": [",
+      "status": "modified"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "observedAt": "2026-11-20T17:56:45Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-55",
+  "head": "65fe10485fe75a1d0ffa4e801750bbdc6b788150",
+  "base": "b77f3d58fd67ee248394bfdb5f0671b55fe31719",
+  "push": "successful on first guarded attempt",
+  "command": "python3 cloud-push.py origin cloud/je-sync-55",
+  "authorAndCommitter": "fleet identity",
+  "trailers": "none",
+  "publishedHistoryRewritten": false,
+  "mainPushed": false
+}

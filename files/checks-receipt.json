@@ -1,0 +1,55 @@
+{
+  "observedAt": "2026-11-20T17:56:45Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-55",
+  "head": "65fe10485fe75a1d0ffa4e801750bbdc6b788150",
+  "base": "b77f3d58fd67ee248394bfdb5f0671b55fe31719",
+  "changedFiles": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "checks": [
+    {
+      "command": "npm run type-check",
+      "exit": 0,
+      "log": "type-check.log",
+      "sha256": "5a848264e3d4f39bae1d347b4ff2be16348436fdcdd3a42c91c0fca2a8f23403"
+    },
+    {
+      "command": "npm run lint",
+      "exit": 0,
+      "log": "lint.log",
+      "sha256": "02ef98276ac56c4ea2e84e7291740f26bb5d7d07639d8ce90366e463210307f3"
+    },
+    {
+      "command": "npm run build",
+      "exit": 0,
+      "log": "build.log",
+      "sha256": "88a2f1a55e529ee75989b20a54e851e59fdb4cab407850076e5f7149f1a13499"
+    },
+    {
+      "command": "npm run listings",
+      "exit": 0,
+      "result": "Listings generated (49 seeds)"
+    },
+    {
+      "command": "npm run listings -- --check",
+      "exit": 0,
+      "result": "Listings current (49 seeds)"
+    },
+    {
+      "command": "git diff --check",
+      "exit": 0
+    },
+    {
+      "command": "scope and credential-shaped diff review",
+      "exit": 0,
+      "result": "Only the three authorized listing/provenance files; no credential-shaped values found"
+    }
+  ],
+  "worktreeClean": true,
+  "commitIdentityReview": "all candidate author and committer identities match fleet; no trailers",
+  "publicationScan": "Mac lane gate; unavailable in this cloud by assignment",
+  "fullSuite": "not run locally; CI owns the full suite"
+}

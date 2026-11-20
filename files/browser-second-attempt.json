@@ -1,0 +1,18 @@
+{
+  "head": "65fe10485fe75a1d0ffa4e801750bbdc6b788150",
+  "startedAt": "2026-11-20T17:57:06Z",
+  "route": "/spool",
+  "browser": "Chromium /usr/bin/chromium",
+  "assertionWidth": 1440,
+  "views": [],
+  "serverPid": 5832,
+  "status": "failed",
+  "error": "Error: released version public-page assertion failed",
+  "serverExit": {
+    "code": 143,
+    "signal": null
+  },
+  "finishedAt": "2026-11-20T17:57:08Z",
+  "browserClosed": true,
+  "serverStopped": true
+}

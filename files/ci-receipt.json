@@ -1,0 +1,25 @@
+{
+  "observedAt": "2026-11-20T17:57:36Z",
+  "command": "gh api repos/just-every/home/actions/runs?head_sha=65fe10485fe75a1d0ffa4e801750bbdc6b788150&per_page=100",
+  "githubDirectCalls": 9,
+  "githubDirectCallBreakdown": {
+    "six_latest_release_reads": 6,
+    "released_spool_compare": 1,
+    "create_pr": 1,
+    "exact_sha_run_discovery": 1
+  },
+  "syncSourceReads": "The required committed sync tools make their own gh api content reads. These prescribed runs were limited to six path seeds; no API adapter, full-catalogue run or extra source-file probes were installed.",
+  "candidateVerify": {
+    "conclusion": "success",
+    "created_at": "2026-11-20T17:54:49Z",
+    "event": "push",
+    "head_sha": "65fe10485fe75a1d0ffa4e801750bbdc6b788150",
+    "html_url": "https://github.com/just-every/home/actions/runs/44787789105",
+    "id": 44787789105,
+    "name": "Verify branch",
+    "status": "completed",
+    "updated_at": "2026-11-20T17:56:15Z"
+  },
+  "prVerify": "The pull-request workflow run 44787851273 is skipped by the existing cloud-branch condition; readiness uses the successful push Verify on the same exact head.",
+  "additionalPollingCalls": 0
+}

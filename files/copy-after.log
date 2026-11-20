@@ -1,0 +1,13 @@
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --copy-only --apply --only spool --out /home/agent/rer-consolidation/work/je-sync-55/copy-after
+
+Reading 1 seed repositories...
+spool: source=v0.7.16 commit=804a4ad15e6c8e1c52f0069dcf610ba1f5d2342c (released listing version)
+
+Applied: 1 of 1 seeds changed.
+
+Spool
+  copy      seed.json changed since the last sync [reported]
+
+Report: /home/agent/rer-consolidation/work/je-sync-55/copy-after/report.md

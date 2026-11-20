@@ -1,0 +1,41 @@
+{
+  "head": "65fe10485fe75a1d0ffa4e801750bbdc6b788150",
+  "startedAt": "2026-11-20T17:57:37Z",
+  "route": "/spool",
+  "browser": "Chromium /usr/bin/chromium",
+  "assertionWidth": 1440,
+  "views": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "httpStatus": 200,
+      "displayedVersion": "VERSION v0.7.16",
+      "screenshot": "browser/spool-1440.png"
+    },
+    {
+      "width": 390,
+      "height": 1000,
+      "httpStatus": 200,
+      "displayedVersion": "VERSION v0.7.16",
+      "screenshot": "browser/spool-390.png"
+    }
+  ],
+  "serverPid": 6065,
+  "currentObservation": {
+    "httpStatus": 200,
+    "labelAndValue": "VERSION v0.7.16",
+    "versionValue": "v0.7.16"
+  },
+  "assertions": [
+    "production Spool page returns HTTP 200 and displays v0.7.16",
+    "public listings feed agrees with displayed version and released status"
+  ],
+  "status": "passed",
+  "serverExit": {
+    "code": 143,
+    "signal": null
+  },
+  "finishedAt": "2026-11-20T17:57:42Z",
+  "browserClosed": true,
+  "serverStopped": true
+}
