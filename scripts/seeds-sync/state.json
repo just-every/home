@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-20T12:06:16.138Z",
+  "syncedAt": "2026-11-20T17:53:15.776Z",
   "seeds": {
     "auth": {
       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
@@ -829,7 +829,7 @@
         "headline": "Everyone knows who's on call.",
         "signature": "feedddeeeffeffeffeffeffeffeffeffeffeffeffefeeffeffeffeffefffffefffffeffeffeffeffeffeffeffeffeffeeedccccccccccccccceedffeeeeeeeeedeeeffeffeffeffeeeebbbccccccbbbdddfeeffeedddcbccbeedeeefeeeeeffefeeeeeeeeeeeeeeeeefffdcbdb9ddcddddddcccdddeeeffeeed999999999dddeeeffeeccedcffeffeeedddcdcbecbabbeed9999aaaaaeedfeeffeffeffeffeffeffeeeddccedc9aafeeeeefeeffefeeeeeffeffeffeffeffeffeffeffeffeffeffefeefeeffeffeffeffeffeffeffeffeffeffeffeffeffe"
       },
-      "open": ["bf4b3f38e1a2", "922fed04eacf"]
+      "open": ["bf4b3f38e1a2"]
     },
     "orbit": {
       "commit": "a9fa1830c1913562154dedaeb5a1322ead7c3e6b",
@@ -1154,14 +1154,14 @@
       }
     },
     "spool": {
-      "commit": "bb2efcd34837cd6067d02ce176609d3fc636dad2",
-      "sourceRef": "v0.7.15",
+      "commit": "804a4ad15e6c8e1c52f0069dcf610ba1f5d2342c",
+      "sourceRef": "v0.7.16",
       "sourceReason": "released listing version",
-      "tag": "v0.7.15",
+      "tag": "v0.7.16",
       "copy": {
         "CONTRACT.md": "ee9c871bfa25a110",
         "README.md": "a9c5f1be825c6da3",
-        "seed.json": "665317811e8d8aef"
+        "seed.json": "e12b3e10eb61e0ee"
       },
       "brand": {
         "branding.primaryColor": "#1c1c1b",
@@ -1179,7 +1179,8 @@
       "home": {
         "headline": "See exactly what broke.",
         "signature": "eeddccddceedeedeedeeeeedeedeedeeeeeeeeeeedeedeedeeddddeedeedeeeeeeeedeedeededdeedeedeedeedeedeedeedccbddcddcddcccbeddeeeeeddddddceedeedeedeedeedeed999aa9999999999cccfeeeedeededddddeddeedeedeedeedbaaaa9bbaaaaaa9ccbeeeeededddddeedeedeedeedeedeedddcddcddcddceedeeeeeeeeddddddbedceeceeceedeedeedeedeededdeedeeeffefeeeedeededaed9edaedaedbeedeed999988aaabba888888bbbeedeedeededdeeeeeeeedeedeeda99998baaccbaa9aa9ccbeeddddddceedeedeedeedeed"
-      }
+      },
+      "open": ["64cb07f6a0dd"]
     },
     "stall": {
       "commit": "8ee1f25df4f0b10b9a62e7fe221453499f27b297",
