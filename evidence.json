@@ -1,0 +1,88 @@
+{
+  "files": [
+    {
+      "blob": "2d075790ad859feb8123e56e4d88fbaeada625a5",
+      "bytes": 611,
+      "path": "FOLLOW-UPS.md",
+      "sha256": "9134e2e968bbf4fca76551bd5e3527b408792b0e09238e78a816c730140d65af"
+    },
+    {
+      "blob": "ca7bc53050174ba4da98e5e6ad3917a7386173c6",
+      "bytes": 1112,
+      "path": "LANDING-NOTES.md",
+      "sha256": "aedfa08d36d1a1ea873227ea273a036e0131626a659ad0189272d111e385edfc"
+    },
+    {
+      "blob": "f0838aa251954c977a05746412c95dafa0bbb1f3",
+      "bytes": 11929,
+      "path": "REPORT.md",
+      "sha256": "ed587e01c4646da74952cd267a1d848ee725f489b4b75388a14ac20e547f6238"
+    },
+    {
+      "blob": "43430836f1561106ab8295c625ff106cf0987c3a",
+      "bytes": 431,
+      "path": "browser-initial-receipt.json",
+      "sha256": "2c8b61df383ee489841d53bfbac2875eb8672c07a157df70f9410ec001c50a01"
+    },
+    {
+      "blob": "7e950d7238c26d29cf9a00fdba87813c8ff102bf",
+      "bytes": 1164,
+      "path": "browser-receipt.json",
+      "sha256": "6798101857425dae75275eb057e62091fae6b65d10f618a3ebb9560a94b92e9b"
+    },
+    {
+      "blob": "76cd15fe41649b95147d0b4c90c3f21007bbc880",
+      "bytes": 3186,
+      "path": "checks-receipt.json",
+      "sha256": "fc022148dc60bf7925ffebe2f93ffbeda6655ddfb601a823a6d24a123fdc6fe2"
+    },
+    {
+      "blob": "ce06ac363375b0f28a15300308c59b371c1fac23",
+      "bytes": 610,
+      "path": "custody-receipt.json",
+      "sha256": "5ecdd8ef07a6ffcde4394c24fbbdbea5e2aa947130c622e22ec46926b0b15cc3"
+    },
+    {
+      "blob": "3bcc94ce94d8dadc3805a2de2b185a10b6b82f9e",
+      "bytes": 3231,
+      "path": "public-source-receipt.json",
+      "sha256": "395aaa5218bdd791c2ca3775590ce9f3110cbae9ad92f58d048498878a0e8bd8"
+    },
+    {
+      "blob": "58c4423ca7c8393c1fcdbb6254c878a49dcccada",
+      "bytes": 1409,
+      "path": "scope-receipt.json",
+      "sha256": "4fb57ac8fe5f7a5b2c746cac0d560e7ceccc0bdf31f76635cd5cd6843eabd028"
+    },
+    {
+      "blob": "803d9716cb7ecd9f9c475138fc0dd46e2fe5c2d3",
+      "bytes": 827692,
+      "path": "spool-1440.png",
+      "sha256": "46d86a10187f828a4fb40e8bb93782a8fa99079f0615ab3e80572bd2f2df8e91"
+    },
+    {
+      "blob": "62e58b02f8bfff789c1a89171ff53a2e254f78e6",
+      "bytes": 379039,
+      "path": "spool-390.png",
+      "sha256": "af8e98e615c66916892e28adb93c3b22060c7230035fd7ac1c89c86b25677602"
+    },
+    {
+      "blob": "286db96871670d6674b437b64128cc4f1e649f8c",
+      "bytes": 76584,
+      "path": "spool-version-1440.png",
+      "sha256": "0a4aae168eee26947ee25a933fa5e0415abe2cb3e657eb17ddda6b469d28ce2c"
+    },
+    {
+      "blob": "4d5f74aab0afad759fbae2e053c7f4105311e7e7",
+      "bytes": 55031,
+      "path": "spool-version-390.png",
+      "sha256": "1b1381be10f375023d490a2799f3030cb4c6e73b3273bb76b98264a64a7c98d9"
+    }
+  ],
+  "product_branch": "",
+  "product_head": "65fe10485fe75a1d0ffa4e801750bbdc6b788150",
+  "ref": "refs/heads/evidence/je-gate-65",
+  "repository": "just-every/home",
+  "schema": 1,
+  "tag": "je-gate-65"
+}

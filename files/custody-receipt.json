@@ -1,0 +1,17 @@
+{
+  "observedAt": "2026-11-20T18:16:03Z",
+  "productHead": "65fe10485fe75a1d0ffa4e801750bbdc6b788150",
+  "productBranch": "cloud/je-sync-55",
+  "productChanged": false,
+  "candidateIdentityPolicyPassed": true,
+  "candidateCommitCount": 1,
+  "candidateTrailers": [],
+  "npmCi": {
+    "exitCode": 0,
+    "packagesAdded": 715
+  },
+  "browserVisualInspection": "1440 and 390 full page and version viewport captures inspected; no layout break",
+  "sourceLockContractViewsMigrationLedger": "not applicable: no such source or documented command in this repository",
+  "githubRestCalls": 3,
+  "verdict": "GATE PASS"
+}

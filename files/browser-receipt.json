@@ -1,0 +1,51 @@
+{
+  "startedAt": "2026-11-20T18:12:10Z",
+  "command": "production Next server; Playwright Chromium /spool at 1440 and 390",
+  "serverPid": 1508,
+  "views": [
+    {
+      "width": 1440,
+      "status": 200,
+      "title": "Spool: free, open-source alternative to Sentry",
+      "h1": "Spool",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "versionText": "v0.7.16",
+      "pageErrors": [],
+      "screenshots": [
+        "spool-1440.png",
+        "spool-version-1440.png"
+      ]
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "title": "Spool: free, open-source alternative to Sentry",
+      "h1": "Spool",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "versionText": "v0.7.16",
+      "pageErrors": [],
+      "screenshots": [
+        "spool-390.png",
+        "spool-version-390.png"
+      ]
+    }
+  ],
+  "assertions": [
+    {
+      "width": 1440,
+      "passed": true,
+      "checks": [
+        "HTTP 200",
+        "Spool heading",
+        "one visible v0.7.16",
+        "no horizontal overflow",
+        "no page errors"
+      ]
+    }
+  ],
+  "result": "PASS",
+  "finishedAt": "2026-11-20T18:12:14Z",
+  "serverStopped": true
+}

@@ -1,0 +1,96 @@
+{
+  "observedAt": "2026-11-20T18:09:00Z",
+  "transport": "unauthenticated public HTTPS; no provider or GitHub credentials used",
+  "pr": {
+    "url": "https://api.github.com/repos/just-every/home/pulls/81",
+    "result": {
+      "number": 81,
+      "state": "open",
+      "draft": false,
+      "html_url": "https://github.com/just-every/home/pull/81",
+      "head": "65fe10485fe75a1d0ffa4e801750bbdc6b788150",
+      "head_ref": "cloud/je-sync-55",
+      "base": "b77f3d58fd67ee248394bfdb5f0671b55fe31719",
+      "base_ref": "main"
+    }
+  },
+  "ci": {
+    "url": "https://api.github.com/repos/just-every/home/actions/runs?head_sha=65fe10485fe75a1d0ffa4e801750bbdc6b788150&per_page=100",
+    "result": {
+      "runs": [
+        {
+          "id": 44787851273,
+          "name": "Verify branch",
+          "event": "pull_request",
+          "status": "completed",
+          "conclusion": "skipped",
+          "head_sha": "65fe10485fe75a1d0ffa4e801750bbdc6b788150",
+          "html_url": "https://github.com/just-every/home/actions/runs/44787851273"
+        },
+        {
+          "id": 44787843142,
+          "name": "PR #81",
+          "event": "dynamic",
+          "status": "completed",
+          "conclusion": "success",
+          "head_sha": "65fe10485fe75a1d0ffa4e801750bbdc6b788150",
+          "html_url": "https://github.com/just-every/home/actions/runs/44787843142"
+        },
+        {
+          "id": 44787789105,
+          "name": "Verify branch",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "head_sha": "65fe10485fe75a1d0ffa4e801750bbdc6b788150",
+          "html_url": "https://github.com/just-every/home/actions/runs/44787789105"
+        }
+      ]
+    }
+  },
+  "release": {
+    "url": "https://api.github.com/repos/just-every/run-spool/releases/tags/v0.7.16",
+    "result": {
+      "tag_name": "v0.7.16",
+      "target_commitish": "main",
+      "draft": false,
+      "prerelease": false,
+      "published_at": "2026-11-20T15:29:27Z",
+      "html_url": "https://github.com/just-every/run-spool/releases/tag/v0.7.16",
+      "assets": [
+        {
+          "name": "rer-release.dsse.json",
+          "size": 3105
+        },
+        {
+          "name": "spool-issue-page-1600.png",
+          "size": 166594
+        }
+      ]
+    }
+  },
+  "v0.7.15/CONTRACT.md": {
+    "url": "https://raw.githubusercontent.com/just-every/run-spool/v0.7.15/CONTRACT.md",
+    "sha256_16": "ee9c871bfa25a110"
+  },
+  "v0.7.15/README.md": {
+    "url": "https://raw.githubusercontent.com/just-every/run-spool/v0.7.15/README.md",
+    "sha256_16": "a9c5f1be825c6da3"
+  },
+  "v0.7.15/seed.json": {
+    "url": "https://raw.githubusercontent.com/just-every/run-spool/v0.7.15/seed.json",
+    "sha256_16": "665317811e8d8aef"
+  },
+  "v0.7.16/CONTRACT.md": {
+    "url": "https://raw.githubusercontent.com/just-every/run-spool/v0.7.16/CONTRACT.md",
+    "sha256_16": "ee9c871bfa25a110"
+  },
+  "v0.7.16/README.md": {
+    "url": "https://raw.githubusercontent.com/just-every/run-spool/v0.7.16/README.md",
+    "sha256_16": "a9c5f1be825c6da3"
+  },
+  "v0.7.16/seed.json": {
+    "url": "https://raw.githubusercontent.com/just-every/run-spool/v0.7.16/seed.json",
+    "sha256_16": "e12b3e10eb61e0ee"
+  }
+}

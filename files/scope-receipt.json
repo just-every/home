@@ -1,0 +1,74 @@
+{
+  "observedAt": "2026-11-20T18:10:39Z",
+  "base": "b77f3d58fd67ee248394bfdb5f0671b55fe31719",
+  "head": "65fe10485fe75a1d0ffa4e801750bbdc6b788150",
+  "paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "beforeCounts": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "afterCounts": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "listingChanges": [
+    {
+      "slug": "spool",
+      "changes": {
+        "version": {
+          "before": "v0.7.15",
+          "after": "v0.7.16"
+        }
+      }
+    }
+  ],
+  "stateChanges": [
+    {
+      "slug": "oncall",
+      "changedKeys": [
+        "open"
+      ],
+      "beforeOpen": [
+        "bf4b3f38e1a2",
+        "922fed04eacf"
+      ],
+      "afterOpen": [
+        "bf4b3f38e1a2"
+      ]
+    },
+    {
+      "slug": "spool",
+      "changedKeys": [
+        "commit",
+        "copy",
+        "open",
+        "sourceRef",
+        "tag"
+      ],
+      "beforeOpen": [],
+      "afterOpen": [
+        "64cb07f6a0dd"
+      ]
+    }
+  ],
+  "excludedAbsent": true,
+  "credentialPatternMatches": 0,
+  "versions": {
+    "HappyToHelp": "v0.4.31",
+    "Lamp": "v1.11.24",
+    "Oncall": "v0.5.21",
+    "Orbit": "v0.4.12",
+    "Spool": "v0.7.16",
+    "Uptime": "v0.5.18"
+  },
+  "markers": {
+    "64cb07f6a0dd": "seed.json",
+    "922fed04eacf": "CONTRACT.md, seed.json"
+  }
+}
