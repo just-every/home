@@ -1,0 +1,46 @@
+[
+  {
+    "timestamp": "2026-11-21T14:35:50Z",
+    "width": 1440,
+    "status": 200,
+    "facts": {
+      "h1": "HappyToHelp",
+      "version": "v0.4.32",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "versionBox": {
+        "x": 617.328125,
+        "y": 3963.640625,
+        "width": 205.328125,
+        "height": 23.09375,
+        "top": 3963.640625,
+        "right": 822.65625,
+        "bottom": 3986.734375,
+        "left": 617.328125
+      }
+    },
+    "errors": []
+  },
+  {
+    "timestamp": "2026-11-21T14:35:51Z",
+    "width": 390,
+    "status": 200,
+    "facts": {
+      "h1": "HappyToHelp",
+      "version": "v0.4.32",
+      "viewport": 390,
+      "documentWidth": 390,
+      "versionBox": {
+        "x": 20,
+        "y": 4371.390625,
+        "width": 350,
+        "height": 23.09375,
+        "top": 4371.390625,
+        "right": 370,
+        "bottom": 4394.484375,
+        "left": 20
+      }
+    },
+    "errors": []
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-11-21T14:43:02Z",
+  "repository": "just-every/home",
+  "product_branch": "cloud/je-sync-59",
+  "product_head": "a1f21a22a9548c68cbadcd57cdb5b6b302d8bad4",
+  "baseline": "d49ab6e90a88bdc1adb5dd98d994bdd667fa6a97",
+  "worktree_clean": true,
+  "product_changes_made": false,
+  "product_push_made": false,
+  "exact_sha_verify_run": 44913327266,
+  "exact_sha_verify": "completed/success",
+  "counts_before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "counts_after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "clause_status_changes": [],
+  "blocking_findings": 0,
+  "existing_follow_ups": 8,
+  "rows": {
+    "R1": "MET",
+    "R2": "MET",
+    "R3": "MET",
+    "R4": "MET",
+    "R5": "MET"
+  },
+  "commands": {
+    "npm ci": 0,
+    "npm run listings -- --check": 0,
+    "npm run listings": 0,
+    "npm run type-check": 0,
+    "npm run lint": 0,
+    "npm run build": 0,
+    "npm run build on main": 0,
+    "browser public route": 0
+  },
+  "owned_server_processes_stopped": true,
+  "clone_cleanup": "scheduled immediately after evidence publication; report packet retained outside clone"
+}

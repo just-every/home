@@ -1,0 +1,76 @@
+{
+  "timestamp": "2026-11-21T14:37:00Z",
+  "repository": "just-every/home",
+  "head": "a1f21a22a9548c68cbadcd57cdb5b6b302d8bad4",
+  "base": "d49ab6e90a88bdc1adb5dd98d994bdd667fa6a97",
+  "product_branch": "cloud/je-sync-59",
+  "pr": {
+    "url": "https://github.com/just-every/home/pull/85",
+    "state": "open",
+    "draft": false,
+    "head": "a1f21a22a9548c68cbadcd57cdb5b6b302d8bad4",
+    "base": "d49ab6e90a88bdc1adb5dd98d994bdd667fa6a97"
+  },
+  "release": {
+    "tag_name": "v0.4.32",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-21T13:06:52Z",
+    "html_url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.32",
+    "asset_names": [
+      "rer-release.dsse.json",
+      "screen-1.webp"
+    ],
+    "signature_verified": false
+  },
+  "source_hashes": {
+    "v0.4.31": {
+      "CONTRACT.md": "ae8feea8b7998aa729edadf621d7f3809aa83bbe073fd3e053e1c1fb8b9b04ec",
+      "README.md": "022f2ad37fee04ef72146d5f049454b840fd2bb4b8bcd6f99f5afdcac3faa4d7",
+      "seed.json": "9289d1c33da148609c47efc69d5c74f916cf687df3e4e3bb7c1a9dc1619c3694"
+    },
+    "v0.4.32": {
+      "CONTRACT.md": "54267bbf4898ad0a8e38a6989ac2a347d25eb95a40ac9c20478618eeb0b40480",
+      "README.md": "529e0bfbb2f4dd3462663adc066c13b041336ea3ff661ecd44178aa16ef11070",
+      "seed.json": "0614aeec476c22385f88783e0a35488628c88b20f20f8c598d0f89afd3f60b2d"
+    }
+  },
+  "runs": [
+    {
+      "id": 44913368333,
+      "name": "Verify branch",
+      "status": "completed",
+      "conclusion": "skipped",
+      "head_sha": "a1f21a22a9548c68cbadcd57cdb5b6b302d8bad4",
+      "html_url": "https://github.com/just-every/home/actions/runs/44913368333"
+    },
+    {
+      "id": 44913364990,
+      "name": "PR #85",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "a1f21a22a9548c68cbadcd57cdb5b6b302d8bad4",
+      "html_url": "https://github.com/just-every/home/actions/runs/44913364990"
+    },
+    {
+      "id": 44913327266,
+      "name": "Verify branch",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "a1f21a22a9548c68cbadcd57cdb5b6b302d8bad4",
+      "html_url": "https://github.com/just-every/home/actions/runs/44913327266"
+    }
+  ],
+  "api_reads": 3,
+  "credential_free_reads": true,
+  "tags": {
+    "v0.4.31": {
+      "tag_object": "61cdf5e595b4de625e66fa8e9ad52f0e02920d27",
+      "peeled_commit": "e5fb53dc305f53a71ff0b6db81d5eec7dfd0104f"
+    },
+    "v0.4.32": {
+      "tag_object": "fa8d6b687fa799e6903c46817b04ec3591766bd0",
+      "peeled_commit": "c9f4904b175366d0226fc2a4c33348d6e4f8ffc9"
+    }
+  }
+}

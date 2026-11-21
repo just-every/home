@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-11-21T14:41:07Z",
+  "base": "d49ab6e90a88bdc1adb5dd98d994bdd667fa6a97",
+  "head": "a1f21a22a9548c68cbadcd57cdb5b6b302d8bad4",
+  "base_build_exit": 0,
+  "visible_text_parity_except_version": true,
+  "main_version": "v0.4.31",
+  "head_version": "v0.4.32",
+  "render_and_css_unchanged": true
+}

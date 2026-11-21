@@ -1,0 +1,100 @@
+{
+  "files": [
+    {
+      "blob": "f49542a8496a9c12694063442a18e3c707313419",
+      "bytes": 8847,
+      "path": "FOLLOW-UPS.md",
+      "sha256": "d84ad23e16012fd5a85e0740e0eb91bbf484c4a29170faf61ca93c882e855be3"
+    },
+    {
+      "blob": "9b2198e4cc84c399354d7dbb42ea2b7c41f9ba63",
+      "bytes": 995,
+      "path": "LANDING-NOTES.md",
+      "sha256": "30e31925d9cde26827df0f16346f6ec38e25c629cda8336e63b8109b78b5349a"
+    },
+    {
+      "blob": "42fbb901955fcab057e72d50b04f6666683ead0a",
+      "bytes": 1942,
+      "path": "PLAN.md",
+      "sha256": "e437820fbcc86ef9b63d660238581ae42917c76295095810db0833501e562bdf"
+    },
+    {
+      "blob": "f8c892cb84e171756de027b6cf73f0298f69c872",
+      "bytes": 12382,
+      "path": "REPORT.md",
+      "sha256": "641fe479b04a1acaf948171a5f6808c48ee945ad2a1b3fd0bb714a4f53e15aee"
+    },
+    {
+      "blob": "711d5c4f490d17ea8bd591904698c972f2c36b07",
+      "bytes": 945,
+      "path": "browser-receipt.json",
+      "sha256": "c9ccffe1f710ba4bdc93b29e7cde876b49afedf102c58ce6e4ab4511470ffdb4"
+    },
+    {
+      "blob": "27a10256d80f802b0990328cf8ac8e30c8391ab5",
+      "bytes": 2122,
+      "path": "checks.log",
+      "sha256": "425e1b24f7342ca947f02496a6960255475d5c6f8f4e2d76fc76b8eebdfcd43a"
+    },
+    {
+      "blob": "a014180e5cfe497a43ca6f91c363d70e4e90bb36",
+      "bytes": 7908,
+      "path": "claims-receipt.json",
+      "sha256": "dd5602e2bf75b26dd41691da9e9138be9ef8fae96996e48561cf20a2416f3238"
+    },
+    {
+      "blob": "b084d75c6aab1e9aa3ac6e8674365a2bbb02ca44",
+      "bytes": 790337,
+      "path": "happytohelp-1440.png",
+      "sha256": "b27ee378d02a5a0b116ead1baa63c2c6db49f87b979273b1ab5c1de393a0f604"
+    },
+    {
+      "blob": "862ab5eca369b5ed6d96b277500af62e23771be5",
+      "bytes": 462378,
+      "path": "happytohelp-390.png",
+      "sha256": "285f367fc79103867e11739189ce3cf25e144842c96f4a82669f5a71a15c2a18"
+    },
+    {
+      "blob": "d3da0ac2ca2abc6456cb9d345816d800b6ef8462",
+      "bytes": 1386,
+      "path": "main-build.log",
+      "sha256": "3c6fc7d519a898733f2a3d75470abc940c49a4090ed18d047708467e671fddb7"
+    },
+    {
+      "blob": "c4169a9e1ad3d62e1b54a9d11c9fe8d5f73eaa01",
+      "bytes": 296,
+      "path": "npm-ci.log",
+      "sha256": "16873ebe206f0b5bee3e61797497e5b5eda04d391e36c3054fbd6bd2955ea1b2"
+    },
+    {
+      "blob": "43a15171956bc6582a1d39772e13bdd4764afc64",
+      "bytes": 314,
+      "path": "regression-receipt.json",
+      "sha256": "92f589c72ebe9fda1e80d90932c71a8cf19da51d13c5917ff1cbbf485c6d4f56"
+    },
+    {
+      "blob": "c3e7818b8005a183816a4326acd1ce3faf44bfa8",
+      "bytes": 1155,
+      "path": "review-receipt.json",
+      "sha256": "10783180c8fbdb34a48e4215e6c8dcbe9f7afe52d11d9f383b6591526b5d7934"
+    },
+    {
+      "blob": "f3e5152af303c2b45cfcd2c45aec01707b3c8598",
+      "bytes": 2578,
+      "path": "source-ci-receipt.json",
+      "sha256": "00597399a65a42fc4aa7d6078e7dd6c77cc946093e52a67b0fc8e873888c9b4a"
+    },
+    {
+      "blob": "0e169732d059b639aa30b7d8f62da796cfda641e",
+      "bytes": 17350,
+      "path": "source-diffs.md",
+      "sha256": "cfe2b7c18e8950080645a59c9cfe4f561349d6ba11ca2c2f4f7a54a9ed4419e4"
+    }
+  ],
+  "product_branch": "",
+  "product_head": "a1f21a22a9548c68cbadcd57cdb5b6b302d8bad4",
+  "ref": "refs/heads/evidence/je-gate-69",
+  "repository": "just-every/home",
+  "schema": 1,
+  "tag": "je-gate-69"
+}
