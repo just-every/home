@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-21T03:20:10.352Z",
+  "syncedAt": "2026-11-21T04:14:12.740Z",
   "seeds": {
     "auth": {
       "commit": "d55816c1f0e6b66f12d0c2846fdba6cf22965251",
@@ -534,14 +534,14 @@
       }
     },
     "lamp": {
-      "commit": "3f1349f029fa8c8c59bf9adfe4e2ae59fd502842",
-      "sourceRef": "v1.11.24",
+      "commit": "09f8cdb44557e43615ffa9321bc2492bb24d0710",
+      "sourceRef": "v1.11.25",
       "sourceReason": "released listing version",
-      "tag": "v1.11.24",
+      "tag": "v1.11.25",
       "copy": {
-        "CONTRACT.md": "d87c0980ff9dc859",
+        "CONTRACT.md": "5143f61d67908656",
         "README.md": "402e33bfc617555f",
-        "seed.json": "27ab1bd11b147555"
+        "seed.json": "63620403fd1bc245"
       },
       "brand": {
         "theme.page": "#f8f6f0",
@@ -557,7 +557,8 @@
       "home": {
         "headline": "When something breaks, turn the light on.",
         "signature": "eeddddeeefeefeefeeffeeeeeeeffefeeeeeeeeeed9a9ddcfeeeeefeefeefeefeeffeccccccffefeefeefeeeeeeeeeeefeefeefeefeefeeffeccc444454dccffefeefeefeeffeffefeefeefeeffeffeffeddcdcbdcbedcffeffeffefeefeefeefeefeeffeeeddddeedeedeedeedeededddddeeeffefeefeefeefeeffeeedddcccbccbbbbbbbbbaccbddceedffefeefeefeefeefeeffeeeeddcedcddcddcddcdddfeeffefeefeefeefeefeefeefeeffebbb898eedeedeedeedfeefeefeefeefeefeefeefeefeefeeeeddddeedeeeeeeeeeeeefeefeefeefee"
-      }
+      },
+      "open": ["922fed04eacf"]
     },
     "lanyard": {
       "commit": "db2a1ef37612248290e0efd85209c9b1f0da8c83",
@@ -829,7 +830,7 @@
         "headline": "Everyone knows who's on call.",
         "signature": "feedddeeeffeffeffeffeffeffeffeffeffeffeffefeeffeffeffeffefffffefffffeffeffeffeffeffeffeffeffeffeeedccccccccccccccceedffeeeeeeeeedeeeffeffeffeffeeeebbbccccccbbbdddfeeffeedddcbccbeedeeefeeeeeffefeeeeeeeeeeeeeeeeefffdcbdb9ddcddddddcccdddeeeffeeed999999999dddeeeffeeccedcffeffeeedddcdcbecbabbeed9999aaaaaeedfeeffeffeffeffeffeffeeeddccedc9aafeeeeefeeffefeeeeeffeffeffeffeffeffeffeffeffeffeffefeefeeffeffeffeffeffeffeffeffeffeffeffeffeffe"
       },
-      "open": ["bf4b3f38e1a2", "922fed04eacf"]
+      "open": ["bf4b3f38e1a2"]
     },
     "orbit": {
       "commit": "a9fa1830c1913562154dedaeb5a1322ead7c3e6b",
@@ -1285,9 +1286,9 @@
       "mark": "23ce9643d52f9bed",
       "home": {
         "headline": "Sleep through the night.",
-        "signature": "eeedddddeeefeefeefeefeefeefeefeefeefeeeededdeeeeeeeddeeeeddeddeddeddeddeddeddeddeddeeeeeeeeeeeeeeeeeeeeefddebbcbbcbbcbbcbbcbbcbbcabcddeeefeeeeeeeeeeeeeeeeeeddeddeededdeddeddeddeddeeeeeeeeeeeeeeeeeeeeeeededcd99a99accdededdeddeedeedeeeeeeeeeeedeeeeeeeeeedcd99a99adcdeddeddeddeeeeeeeeeeeeeeefedfedfededdeddfedfededdeddfedfededdeddfddeddedddcceddfddfdcedcedcfdcfdcfdcfdcedcedcedbfdcfdcedc56889caaccbccbccbcdccedceccdcceccfdbfdcecccbc88a"
+        "signature": "eeedddddeeefeefeefeefeefeefeefeefeefeeeededdeeeeeeeddeeeeddeddeddeddeddeddeddeddeddeeeeeeeeeeeeeeeeeeeeefddebbcbbcbbcbbcbbcbbcbbcabcddeeefeeeeeeeeeeeeeeeeeeddeddeededdeddeddeddeddeeeeeeeeeeeeeeeeeeeeeeededcd99a99accdededdeddeedeedeeeeeeeeeeedeeeeeeeeeedcd99a99adcdeddeddeddeeeeeeeeeeeeeeefedfedfededdeddfedfededdeddfedfededdeddfededdedddcceddfddfdcedcedcfdcfdcfdcfdcedcedcedbfdcfdcedc56889caaccbccbccbcdccedceccdcceccfdbfdcecccbc88a"
       },
-      "open": ["bf4b3f38e1a2", "64cb07f6a0dd"]
+      "open": ["bf4b3f38e1a2"]
     },
     "vane": {
       "commit": "a2638146dc0faaefe358d203ac940389183151ef",
