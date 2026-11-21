@@ -1,0 +1,64 @@
+{
+  "files": [
+    {
+      "blob": "85ad8b41f52eef82e066547636e64936120dc0bc",
+      "bytes": 510,
+      "path": "BROWSER-RECEIPT.json",
+      "sha256": "8fd4dbe019fbab6698af547320475634c154d997a2c5b877123853c9a60facbb"
+    },
+    {
+      "blob": "b38ba55a8e61f55b9901dc3e05eac46abe3edafa",
+      "bytes": 2339,
+      "path": "CHECK-RECEIPT.json",
+      "sha256": "183d62c0d3716f6f228137cea60852df4e14e0b48fdba4852c12ae9aa8081c51"
+    },
+    {
+      "blob": "a64513f03d2b72890e3e1e8248aa45783d6c1468",
+      "bytes": 2535,
+      "path": "CHECKS.log",
+      "sha256": "5f4c2f4dc4a2ed907ffbbfd11f38cfc54d3cb8e5e1d839e48a22b40ef38977af"
+    },
+    {
+      "blob": "96edf2249ff8d253122cbeae1615a837e0ac23fc",
+      "bytes": 638,
+      "path": "FOLLOW-UPS.md",
+      "sha256": "638fd092060d63eb0328abec563fdf2358760d403d17b651d6ffafde08766e1e"
+    },
+    {
+      "blob": "3a23e9f185135f886a9fc8faa4427826502e9307",
+      "bytes": 1020,
+      "path": "LANDING-NOTES.md",
+      "sha256": "ad5f0c645ba34bb3940a05d640ef7f54b38fc337624737a6d655e85d3240b186"
+    },
+    {
+      "blob": "5a279e613caadab2346895fb6202be1815951476",
+      "bytes": 13779,
+      "path": "REPORT.md",
+      "sha256": "4abf8aac052b3b9383827d07c9077127357003ec83b93c0c639678a0c1bb77fe"
+    },
+    {
+      "blob": "f12d4189cea9bddd79aa605052b74bccbeb72c63",
+      "bytes": 2542,
+      "path": "SOURCE-RECEIPT.json",
+      "sha256": "57e89340482792b5422e88afe5d8c6c9b4c554089aafd8214933c14f86423d0a"
+    },
+    {
+      "blob": "f7ec48eb304376ecf13e37a18e4786580c3b2090",
+      "bytes": 1142225,
+      "path": "spool-1440.png",
+      "sha256": "d2bc24315551542d90c9adfe07cdfd734f07d08f950679ae48323170d83baf07"
+    },
+    {
+      "blob": "af1e6da70d8bbab6ed70fa7bb1f3df464e66c9ac",
+      "bytes": 380150,
+      "path": "spool-390.png",
+      "sha256": "3239cb5a0e9138f1e5d50100647b9f71950aed5960b426b0682e9156acd96899"
+    }
+  ],
+  "product_branch": "cloud/je-sync-58",
+  "product_head": "a4432df44b1f920691386ab779c89246fdbb047e",
+  "ref": "refs/heads/evidence/je-gate-68",
+  "repository": "just-every/home",
+  "schema": 1,
+  "tag": "je-gate-68"
+}

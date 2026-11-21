@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-11-21T06:56:55Z",
+  "head": "a4432df44b1f920691386ab779c89246fdbb047e",
+  "release": {
+    "tag_name": "v0.7.17",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-21T05:40:50Z",
+    "html_url": "https://github.com/just-every/run-spool/releases/tag/v0.7.17"
+  },
+  "assets": [
+    "rer-release.dsse.json",
+    "spool-issue-page-1600.png"
+  ],
+  "signature_verified": false,
+  "tags": {
+    "v0.7.16": "804a4ad15e6c8e1c52f0069dcf610ba1f5d2342c",
+    "v0.7.17": "512977a936e6bda3f76c3a68e2511e62cb56090d"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-spool/v0.7.16/CONTRACT.md",
+      "bytes": 325429,
+      "sha256": "ee9c871bfa25a110d3f3e61924164c75cc17ea412cb775f2e0621f114ab3594b",
+      "state_sha256_prefix": "ee9c871bfa25a110"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-spool/v0.7.16/README.md",
+      "bytes": 16991,
+      "sha256": "a9c5f1be825c6da301767aa88a5d36cd78ba633b85532257f6602ab8e5fd140d",
+      "state_sha256_prefix": "a9c5f1be825c6da3"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-spool/v0.7.16/seed.json",
+      "bytes": 18314,
+      "sha256": "e12b3e10eb61e0eeef16bd24393a771c00d3207f381d0dd8c30c73926603e0c4",
+      "state_sha256_prefix": "e12b3e10eb61e0ee"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-spool/v0.7.17/CONTRACT.md",
+      "bytes": 325429,
+      "sha256": "ee9c871bfa25a110d3f3e61924164c75cc17ea412cb775f2e0621f114ab3594b",
+      "state_sha256_prefix": "ee9c871bfa25a110"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-spool/v0.7.17/README.md",
+      "bytes": 16991,
+      "sha256": "a9c5f1be825c6da301767aa88a5d36cd78ba633b85532257f6602ab8e5fd140d",
+      "state_sha256_prefix": "a9c5f1be825c6da3"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/just-every/run-spool/v0.7.17/seed.json",
+      "bytes": 18314,
+      "sha256": "ae789445b452ee5aba6b35d2cd28fec0ef31a6191b813dc1fd879fae37d971d7",
+      "state_sha256_prefix": "ae789445b452ee5a"
+    }
+  ],
+  "lamp_marker": {
+    "removed": "922fed04eacf",
+    "type": "copy",
+    "summary": "CONTRACT.md, seed.json changed since the last sync",
+    "current_hashes_match_state": true
+  },
+  "spool_marker": {
+    "added": "64cb07f6a0dd",
+    "type": "copy",
+    "summary": "seed.json changed since the last sync"
+  },
+  "uptime_signature": {
+    "hex_index": 328,
+    "from": "e",
+    "to": "d",
+    "detector_changed": false
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "timestamp": "2026-11-21T06:56:55Z",
+  "tag": "je-gate-68",
+  "repository": "just-every/home",
+  "head": "a4432df44b1f920691386ab779c89246fdbb047e",
+  "base": "e572559bee1902ab7f01fe2fe279e55a6a9c35ff",
+  "candidate_branch": "cloud/je-sync-58",
+  "pr": "https://github.com/just-every/home/pull/84",
+  "rows": {
+    "R1": "MET",
+    "R2": "MET",
+    "R3": "MET",
+    "R4": "MET",
+    "R5": "MET"
+  },
+  "checks": [
+    {
+      "command": "npm ci",
+      "exit": 0,
+      "status": "MET"
+    },
+    {
+      "command": "npm run listings -- --check",
+      "exit": 0,
+      "status": "MET"
+    },
+    {
+      "command": "npm run listings",
+      "exit": 0,
+      "status": "MET"
+    },
+    {
+      "command": "npm run type-check",
+      "exit": 0,
+      "status": "MET"
+    },
+    {
+      "command": "npm run lint",
+      "exit": 0,
+      "status": "MET"
+    },
+    {
+      "command": "npm run build",
+      "exit": 0,
+      "status": "MET"
+    }
+  ],
+  "diff_check_exit": 0,
+  "worktree_clean": true,
+  "counts_before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "counts_after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "clause_status_changes": [],
+  "blocking_findings": 0,
+  "carried_followups": 1,
+  "ci_runs": [
+    {
+      "id": 44876352831,
+      "name": "Verify branch",
+      "head_sha": "a4432df44b1f920691386ab779c89246fdbb047e",
+      "status": "completed",
+      "conclusion": "skipped",
+      "html_url": "https://github.com/just-every/home/actions/runs/44876352831"
+    },
+    {
+      "id": 44876350833,
+      "name": "PR #84",
+      "head_sha": "a4432df44b1f920691386ab779c89246fdbb047e",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/just-every/home/actions/runs/44876350833"
+    },
+    {
+      "id": 44876309710,
+      "name": "Verify branch",
+      "head_sha": "a4432df44b1f920691386ab779c89246fdbb047e",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/just-every/home/actions/runs/44876309710"
+    }
+  ],
+  "browser_initial_attempt": {
+    "result": "networkidle timeout",
+    "timeout_ms": 30000
+  },
+  "browser_final_result": "MET",
+  "identity_check": "all candidate author and committer identities allowed; no trailers",
+  "credential_shaped_diff_matches": 0
+}

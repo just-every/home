@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-11-21T06:50:56Z",
+  "head": "a4432df44b1f920691386ab779c89246fdbb047e",
+  "url": "http://127.0.0.1:3168/spool",
+  "assertionWidth": 1440,
+  "observations": [
+    {
+      "width": 1440,
+      "status": 200,
+      "title": "Spool",
+      "version": "v0.7.17",
+      "versionVisible": true,
+      "scrollWidth": 1440
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "title": "Spool",
+      "version": "v0.7.17",
+      "versionVisible": true,
+      "scrollWidth": 390
+    }
+  ]
+}
