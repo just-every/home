@@ -116,7 +116,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['Pingdom', 'UptimeRobot', 'Better Stack Uptime', 'Site24x7'],
     runsOn: 'Your computer, or your own Cloudflare account',
-    version: 'v0.5.18',
+    version: 'v0.5.19',
     contractUrl: 'https://run-uptime.com/contract',
     seoTitle: 'Uptime: free, open-source alternative to Pingdom',
     seoDescription:
@@ -1043,7 +1043,7 @@ export const seedPageContent: SeedPageContent[] = [
     ],
     moveIn: ['PagerDuty', 'Opsgenie', 'Splunk On-Call', 'Better Stack'],
     runsOn: 'your own computer, or your own Cloudflare account',
-    version: 'v0.5.21',
+    version: 'v0.5.22',
     contractUrl: 'https://run-oncall.com/contract',
     seoTitle: 'Oncall: free, open-source alternative to PagerDuty',
     seoDescription:
