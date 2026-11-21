@@ -1,0 +1,30 @@
+
+> next-project@0.1.0 seeds:sync
+> node --import tsx scripts/seeds-sync/index.mjs --only uptime,happytohelp,lamp,orbit,oncall,spool --out /home/agent/rer-consolidation/work/je-sync-56/dry
+
+Reading 6 seed repositories...
+uptime: source=v0.5.18 commit=52f77a94a0a675ba5e1be122dfe0c720087144fb (released listing version)
+happytohelp: source=v0.4.31 commit=e5fb53dc305f53a71ff0b6db81d5eec7dfd0104f (released listing version)
+lamp: source=v1.11.24 commit=3f1349f029fa8c8c59bf9adfe4e2ae59fd502842 (released listing version)
+orbit: source=v0.4.12 commit=a9fa1830c1913562154dedaeb5a1322ead7c3e6b (released listing version)
+oncall: source=v0.5.21 commit=33cafdc7750103f51ac4173c7b52c8dbcf1efbe0 (released listing version)
+spool: source=v0.7.16 commit=804a4ad15e6c8e1c52f0069dcf610ba1f5d2342c (released listing version)
+Reading 6 homepages...
+  read lamp 
+  read uptime 
+  read orbit 
+  read happytohelp 
+  read oncall 
+  read spool 
+  
+Dry run: 2 of 6 seeds changed.
+
+Uptime
+  version   newer tag v0.5.19 (page shows v0.5.18) [to apply]
+
+Oncall
+  version   newer tag v0.5.22 (page shows v0.5.21) [to apply]
+
+2 finding(s) still open from the last sync (report.md lists them).
+
+Report: /home/agent/rer-consolidation/work/je-sync-56/dry/report.md

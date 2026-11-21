@@ -1,0 +1,23 @@
+{
+  "observedAt": "2026-11-21T03:22:20Z",
+  "head": "2ae09dc01a11933324491a7e235750cdd4ad2858",
+  "runs": [
+    {
+      "id": 44860698831,
+      "name": "Verify branch",
+      "event": "push",
+      "status": "in_progress",
+      "conclusion": null,
+      "head_sha": "2ae09dc01a11933324491a7e235750cdd4ad2858",
+      "html_url": "https://github.com/just-every/home/actions/runs/44860698831"
+    }
+  ],
+  "finalObservation": {
+    "conclusion": "success",
+    "head_sha": "2ae09dc01a11933324491a7e235750cdd4ad2858",
+    "html_url": "https://github.com/just-every/home/actions/runs/44860698831",
+    "status": "completed",
+    "id": 44860698831,
+    "observedAt": "2026-11-21T03:27:21Z"
+  }
+}

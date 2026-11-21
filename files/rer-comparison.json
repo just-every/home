@@ -1,0 +1,49 @@
+{
+  "fetchedAt": "2026-11-21T03:16:23Z",
+  "generatedAt": "2026-11-15T13:56:34Z",
+  "matchedBy": "repository URL",
+  "seeds": [
+    {
+      "slug": "uptime",
+      "repository": "https://github.com/just-every/run-uptime",
+      "rerId": "uptime",
+      "rerVersion": "0.5.18",
+      "jeVersion": "v0.5.19"
+    },
+    {
+      "slug": "happytohelp",
+      "repository": "https://github.com/just-every/run-happytohelp",
+      "rerId": "happytohelp",
+      "rerVersion": "0.4.31",
+      "jeVersion": "v0.4.31"
+    },
+    {
+      "slug": "lamp",
+      "repository": "https://github.com/just-every/run-lamp",
+      "rerId": "lamp",
+      "rerVersion": "1.11.24",
+      "jeVersion": "v1.11.24"
+    },
+    {
+      "slug": "orbit",
+      "repository": "https://github.com/just-every/run-orbit",
+      "rerId": "orbit",
+      "rerVersion": "0.4.12",
+      "jeVersion": "v0.4.12"
+    },
+    {
+      "slug": "oncall",
+      "repository": "https://github.com/just-every/run-oncall",
+      "rerId": "oncall",
+      "rerVersion": "0.5.21",
+      "jeVersion": "v0.5.22"
+    },
+    {
+      "slug": "spool",
+      "repository": "https://github.com/just-every/run-spool",
+      "rerId": "errors-workbench",
+      "rerVersion": "0.7.16",
+      "jeVersion": "v0.7.16"
+    }
+  ]
+}

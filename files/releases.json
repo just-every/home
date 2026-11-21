@@ -1,0 +1,1282 @@
+{
+  "data": {
+    "uptime": {
+      "nameWithOwner": "just-every/run-uptime",
+      "releases": {
+        "nodes": [
+          {
+            "tagName": "v0.5.19",
+            "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.19",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-20T23:39:34Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "uptime-0.4.0-monitor-1440.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.18",
+            "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.18",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-19T16:34:45Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "uptime-0.4.0-monitor-1440.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.17",
+            "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.17",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-18T10:12:36Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "uptime-0.4.0-monitor-1440.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.16",
+            "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.16",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-17T06:55:05Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "uptime-0.4.0-monitor-1440.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.15",
+            "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.15",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-16T21:13:14Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "uptime-0.4.0-monitor-1440.png"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.13",
+            "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.13",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-15T21:06:58Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "uptime-0.4.0-monitor-1440.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.12",
+            "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.12",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-15T14:03:19Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "uptime-0.4.0-monitor-1440.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.11",
+            "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.11",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-13T15:41:29Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "uptime-0.4.0-monitor-1440.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.10",
+            "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.10",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-13T05:56:08Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "uptime-0.4.0-monitor-1440.png"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.9",
+            "url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.9",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-12T18:01:29Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "uptime-0.4.0-monitor-1440.png"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": true
+        }
+      }
+    },
+    "oncall": {
+      "nameWithOwner": "just-every/run-oncall",
+      "releases": {
+        "nodes": [
+          {
+            "tagName": "v0.5.22",
+            "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.22",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-21T02:50:25Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "oncall-0.5.0-incident-1440.png"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.21",
+            "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.21",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-20T11:53:45Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "oncall-0.5.0-incident-1440.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.19",
+            "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.19",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-18T21:42:25Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "oncall-0.5.0-incident-1440.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.18",
+            "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.18",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-17T09:09:41Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "oncall-0.5.0-incident-1440.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.17",
+            "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.17",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-17T00:50:36Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "oncall-0.5.0-incident-1440.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.16",
+            "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.16",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-15T21:07:22Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "oncall-0.5.0-incident-1440.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.15",
+            "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.15",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-15T13:34:20Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "oncall-0.5.0-incident-1440.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.14",
+            "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.14",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-14T12:38:51Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "oncall-0.5.0-incident-1440.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.13",
+            "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.13",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-13T19:42:50Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.5.12",
+            "url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.12",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-13T15:39:37Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": true
+        }
+      }
+    },
+    "happytohelp": {
+      "nameWithOwner": "just-every/run-happytohelp",
+      "releases": {
+        "nodes": [
+          {
+            "tagName": "v0.4.31",
+            "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.31",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-16T11:23:15Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "screen-1.webp"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.28",
+            "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.28",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-15T03:25:11Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "screen-1.webp"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.26",
+            "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.26",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-14T08:04:05Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "screen-1.webp"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.25",
+            "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.25",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-13T21:16:57Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "screen-1.webp"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.24",
+            "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.24",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-13T09:36:51Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "screen-1.webp"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.23",
+            "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.23",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-13T00:12:39Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.22",
+            "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.22",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-12T07:26:55Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.21",
+            "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.21",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-11T16:22:35Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.20",
+            "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.20",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-11T14:29:30Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.19",
+            "url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.19",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-11T06:22:53Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": true
+        }
+      }
+    },
+    "lamp": {
+      "nameWithOwner": "just-every/run-lamp",
+      "releases": {
+        "nodes": [
+          {
+            "tagName": "v1.11.24",
+            "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.24",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-19T20:37:48Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "01-public-status-active-desktop.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v1.11.23",
+            "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.23",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-19T01:05:42Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "01-public-status-active-desktop.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v1.11.22",
+            "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.22",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-17T09:20:51Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "01-public-status-active-desktop.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v1.11.21",
+            "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.21",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-17T06:00:15Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "01-public-status-active-desktop.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v1.11.19",
+            "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.19",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-15T23:27:59Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "01-public-status-active-desktop.png"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v1.11.18",
+            "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.18",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-15T12:40:20Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "01-public-status-active-desktop.png"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v1.11.17",
+            "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.17",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-15T08:42:04Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "01-public-status-active-desktop.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v1.11.16",
+            "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.16",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-14T20:04:54Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "01-public-status-active-desktop.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v1.11.15",
+            "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.15",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-13T22:24:48Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "01-public-status-active-desktop.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v1.11.14",
+            "url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.14",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-13T05:23:23Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "01-public-status-active-desktop.png"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": true
+        }
+      }
+    },
+    "orbit": {
+      "nameWithOwner": "just-every/run-orbit",
+      "releases": {
+        "nodes": [
+          {
+            "tagName": "v0.4.12",
+            "url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.12",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-19T18:57:59Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "orbit-now-queue-1600.png"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.11",
+            "url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.11",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-16T14:35:53Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "orbit-now-queue-1600.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.10",
+            "url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.10",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-15T13:47:13Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "orbit-now-queue-1600.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.9",
+            "url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.9",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-13T17:49:50Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.8",
+            "url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.8",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-13T03:37:12Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "orbit-now-queue-1600.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.7",
+            "url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.7",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-12T15:49:46Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.6",
+            "url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.6",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-11T18:56:11Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "orbit-now-queue-1600.png"
+                },
+                {
+                  "name": "release-receipt.json"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "public-source.tar"
+                },
+                {
+                  "name": "publish-check.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.5",
+            "url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.5",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-11T05:54:43Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "public-source.tar"
+                },
+                {
+                  "name": "orbit-now-queue-1600.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "release-receipt.json"
+                },
+                {
+                  "name": "publish-check.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.4",
+            "url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.4",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-10T15:51:33Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "orbit-now-queue-1600.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "public-source.tar"
+                },
+                {
+                  "name": "publish-check.json"
+                },
+                {
+                  "name": "release-receipt.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.4.3",
+            "url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.3",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-01T17:37:37Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "release-receipt.json"
+                },
+                {
+                  "name": "public-source.tar"
+                },
+                {
+                  "name": "orbit-v0.4.3-release.tar.gz"
+                },
+                {
+                  "name": "publish-check.json"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": true
+        }
+      }
+    },
+    "spool": {
+      "nameWithOwner": "just-every/run-spool",
+      "releases": {
+        "nodes": [
+          {
+            "tagName": "v0.7.16",
+            "url": "https://github.com/just-every/run-spool/releases/tag/v0.7.16",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-20T15:29:27Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "spool-issue-page-1600.png"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.7.15",
+            "url": "https://github.com/just-every/run-spool/releases/tag/v0.7.15",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-19T10:28:00Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "spool-issue-page-1600.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.7.14",
+            "url": "https://github.com/just-every/run-spool/releases/tag/v0.7.14",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-17T05:47:55Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "spool-issue-page-1600.png"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.7.13",
+            "url": "https://github.com/just-every/run-spool/releases/tag/v0.7.13",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-16T14:00:22Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "spool-issue-page-1600.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.7.12",
+            "url": "https://github.com/just-every/run-spool/releases/tag/v0.7.12",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-15T12:41:15Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "spool-issue-page-1600.png"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.7.11",
+            "url": "https://github.com/just-every/run-spool/releases/tag/v0.7.11",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-14T02:29:00Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "rer-release.dsse.json"
+                },
+                {
+                  "name": "spool-issue-page-1600.png"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.7.10",
+            "url": "https://github.com/just-every/run-spool/releases/tag/v0.7.10",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-13T21:16:22Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "spool-issue-page-1600.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.7.9",
+            "url": "https://github.com/just-every/run-spool/releases/tag/v0.7.9",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-13T12:35:45Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "spool-issue-page-1600.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.7.8",
+            "url": "https://github.com/just-every/run-spool/releases/tag/v0.7.8",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-12T16:30:33Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "spool-issue-page-1600.png"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          },
+          {
+            "tagName": "v0.7.7",
+            "url": "https://github.com/just-every/run-spool/releases/tag/v0.7.7",
+            "isDraft": false,
+            "isPrerelease": false,
+            "publishedAt": "2026-11-12T09:07:23Z",
+            "releaseAssets": {
+              "nodes": [
+                {
+                  "name": "spool-issue-page-1600.png"
+                },
+                {
+                  "name": "publish-check.json"
+                },
+                {
+                  "name": "release-receipt.json"
+                },
+                {
+                  "name": "public-source.tar"
+                },
+                {
+                  "name": "rer-release.dsse.json"
+                }
+              ],
+              "pageInfo": {
+                "hasNextPage": false
+              }
+            }
+          }
+        ],
+        "pageInfo": {
+          "hasNextPage": true
+        }
+      }
+    }
+  }
+}

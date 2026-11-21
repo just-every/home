@@ -1,0 +1,38 @@
+{
+  "head": "2ae09dc01a11933324491a7e235750cdd4ad2858",
+  "recordedAt": "2026-11-21T03:22:39Z",
+  "observations": [
+    {
+      "slug": "uptime",
+      "width": 1440,
+      "status": 200,
+      "renderedVersion": "v0.5.19",
+      "catalogueVersion": "v0.5.19",
+      "asserted": true
+    },
+    {
+      "slug": "oncall",
+      "width": 1440,
+      "status": 200,
+      "renderedVersion": "v0.5.22",
+      "catalogueVersion": "v0.5.22",
+      "asserted": true
+    },
+    {
+      "slug": "uptime",
+      "width": 390,
+      "status": 200,
+      "renderedVersion": "v0.5.19",
+      "catalogueVersion": "v0.5.19",
+      "asserted": false
+    },
+    {
+      "slug": "oncall",
+      "width": 390,
+      "status": 200,
+      "renderedVersion": "v0.5.22",
+      "catalogueVersion": "v0.5.22",
+      "asserted": false
+    }
+  ]
+}

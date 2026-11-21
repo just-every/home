@@ -1,0 +1,85 @@
+{
+  "tag": "je-sync-56",
+  "recordedAt": "2026-11-21T03:27:50Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-56",
+  "head": "2ae09dc01a11933324491a7e235750cdd4ad2858",
+  "base": "acb6cbe44844a1d642a9e9d034c113016e5d9e65",
+  "productPush": "success (first attempt)",
+  "before": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "changedPaths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "checks": [
+    {
+      "command": "npm ci",
+      "exit": 0
+    },
+    {
+      "command": "npm run seeds:sync -- --copy-only --apply --only uptime,happytohelp,lamp,orbit,oncall,spool",
+      "exit": 0
+    },
+    {
+      "command": "npm run seeds:sync -- --apply --only uptime,happytohelp,lamp,orbit,oncall,spool",
+      "exit": 0
+    },
+    {
+      "command": "npm run listings",
+      "exit": 0
+    },
+    {
+      "command": "npm run listings -- --check",
+      "exit": 0
+    },
+    {
+      "command": "npm run seeds:sync -- --only uptime,happytohelp,lamp,orbit,oncall,spool (final dry run)",
+      "exit": 0
+    },
+    {
+      "command": "npm run type-check",
+      "exit": 0
+    },
+    {
+      "command": "npm run lint",
+      "exit": 0
+    },
+    {
+      "command": "npm run build",
+      "exit": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit": 0
+    }
+  ],
+  "browser": "see browser-receipt.json and four actual captures",
+  "clauseStatusChanges": [],
+  "publicationScan": "deferred to lane Mac per cloud brief",
+  "limitations": [
+    "Initial dry sync lacked Playwright; installed globally and rerun successfully.",
+    "First browser proof attempt timed out on networkidle; retried successfully with DOM readiness.",
+    "Local Next server auxiliary token API lacks Cloudflare caches and analytics D1 tables; catalogue pages served HTTP 200 and correct versions.",
+    "No full local test suite: CI owns full suite."
+  ],
+  "ci": {
+    "conclusion": "success",
+    "head_sha": "2ae09dc01a11933324491a7e235750cdd4ad2858",
+    "html_url": "https://github.com/just-every/home/actions/runs/44860698831",
+    "status": "completed",
+    "id": 44860698831,
+    "observedAt": "2026-11-21T03:27:21Z"
+  },
+  "ready": true,
+  "blockers": []
+}
