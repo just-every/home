@@ -1,0 +1,165 @@
+{
+  "startedAt": "2026-11-21T04:13:40.198Z",
+  "mode": "apply",
+  "copyOnly": false,
+  "captureHost": null,
+  "load": 0.11,
+  "statePath": "scripts/seeds-sync/state.json",
+  "baselineDate": null,
+  "seeds": [
+    {
+      "slug": "uptime",
+      "name": "Uptime",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.5.19",
+        "commit": "b9bff679ec99b702de753d63ad385d232e6b6d1e",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "9e5c8dd14ef60da6",
+          "README.md": "7a2a44311f07e869",
+          "seed.json": "7a8736536e7b6342"
+        }
+      },
+      "findings": [
+        {
+          "type": "homepage",
+          "summary": "no \"alternative to\" line found on the homepage",
+          "status": "reported",
+          "manual": "check https://run-uptime.com for the products it names; replaces left as is",
+          "copy": null,
+          "details": null,
+          "repeat": true,
+          "images": null
+        }
+      ]
+    },
+    {
+      "slug": "happytohelp",
+      "name": "HappyToHelp",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.31",
+        "commit": "e5fb53dc305f53a71ff0b6db81d5eec7dfd0104f",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ae8feea8b7998aa7",
+          "README.md": "022f2ad37fee04ef",
+          "seed.json": "9289d1c33da14860"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "lamp",
+      "name": "Lamp",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v1.11.24",
+        "commit": "3f1349f029fa8c8c59bf9adfe4e2ae59fd502842",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "d87c0980ff9dc859",
+          "README.md": "402e33bfc617555f",
+          "seed.json": "27ab1bd11b147555"
+        }
+      },
+      "findings": [
+        {
+          "type": "version",
+          "summary": "newer tag v1.11.25 (page shows v1.11.24)",
+          "status": "applied",
+          "manual": null,
+          "copy": null,
+          "details": null,
+          "repeat": false,
+          "images": null
+        }
+      ]
+    },
+    {
+      "slug": "orbit",
+      "name": "Orbit",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.12",
+        "commit": "a9fa1830c1913562154dedaeb5a1322ead7c3e6b",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "2c7cce58a1437e4b",
+          "README.md": "e5fc0bf436eeddff",
+          "seed.json": "8dd55de93d00fe43"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "oncall",
+      "name": "Oncall",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.5.22",
+        "commit": "9cbcf975224f7171dcd3813e6f54d4b29a0791ca",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "cadffafd0877d991",
+          "README.md": "b2c25df447c4fbed",
+          "seed.json": "00cd8f30b1f2a58e"
+        }
+      },
+      "findings": [
+        {
+          "type": "homepage",
+          "summary": "no \"alternative to\" line found on the homepage",
+          "status": "reported",
+          "manual": "check https://run-oncall.com for the products it names; replaces left as is",
+          "copy": null,
+          "details": null,
+          "repeat": true,
+          "images": null
+        }
+      ]
+    },
+    {
+      "slug": "spool",
+      "name": "Spool",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.7.16",
+        "commit": "804a4ad15e6c8e1c52f0069dcf610ba1f5d2342c",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ee9c871bfa25a110",
+          "README.md": "a9c5f1be825c6da3",
+          "seed.json": "e12b3e10eb61e0ee"
+        }
+      },
+      "findings": []
+    }
+  ],
+  "shareImage": [],
+  "apply": {
+    "applied": [
+      {
+        "slug": "lamp",
+        "summary": "newer tag v1.11.25 (page shows v1.11.24)"
+      }
+    ],
+    "written": [
+      "src/data/seed-pages.ts"
+    ],
+    "favicons": false
+  }
+}

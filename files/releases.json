@@ -1,0 +1,80 @@
+[
+  {
+    "slug": "happytohelp",
+    "assets": [
+      "rer-release.dsse.json",
+      "screen-1.webp"
+    ],
+    "draft": false,
+    "html_url": "https://github.com/just-every/run-happytohelp/releases/tag/v0.4.31",
+    "prerelease": false,
+    "published_at": "2026-11-16T11:23:15Z",
+    "tag_name": "v0.4.31",
+    "target_commitish": "main"
+  },
+  {
+    "slug": "lamp",
+    "assets": [
+      "01-public-status-active-desktop.png",
+      "rer-release.dsse.json"
+    ],
+    "draft": false,
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.25",
+    "prerelease": false,
+    "published_at": "2026-11-21T03:46:07Z",
+    "tag_name": "v1.11.25",
+    "target_commitish": "main"
+  },
+  {
+    "slug": "uptime",
+    "assets": [
+      "rer-release.dsse.json",
+      "uptime-0.4.0-monitor-1440.png"
+    ],
+    "draft": false,
+    "html_url": "https://github.com/just-every/run-uptime/releases/tag/v0.5.19",
+    "prerelease": false,
+    "published_at": "2026-11-20T23:39:34Z",
+    "tag_name": "v0.5.19",
+    "target_commitish": "main"
+  },
+  {
+    "slug": "oncall",
+    "assets": [
+      "oncall-0.5.0-incident-1440.png",
+      "rer-release.dsse.json"
+    ],
+    "draft": false,
+    "html_url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.22",
+    "prerelease": false,
+    "published_at": "2026-11-21T02:50:25Z",
+    "tag_name": "v0.5.22",
+    "target_commitish": "main"
+  },
+  {
+    "slug": "orbit",
+    "assets": [
+      "orbit-now-queue-1600.png",
+      "rer-release.dsse.json"
+    ],
+    "draft": false,
+    "html_url": "https://github.com/just-every/run-orbit/releases/tag/v0.4.12",
+    "prerelease": false,
+    "published_at": "2026-11-19T18:57:59Z",
+    "tag_name": "v0.4.12",
+    "target_commitish": "main"
+  },
+  {
+    "slug": "spool",
+    "assets": [
+      "rer-release.dsse.json",
+      "spool-issue-page-1600.png"
+    ],
+    "draft": false,
+    "html_url": "https://github.com/just-every/run-spool/releases/tag/v0.7.16",
+    "prerelease": false,
+    "published_at": "2026-11-20T15:29:27Z",
+    "tag_name": "v0.7.16",
+    "target_commitish": "main"
+  }
+]

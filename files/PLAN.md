@@ -1,0 +1,10 @@
+# je-sync-57 plan
+
+Author: Codex; date: 2026-11-21 UTC.
+
+1. Configure the fleet identity, launcher credential helper, guarded push entrypoint, repository hooks and pinned checkout toolchain. Read the launcher and product instructions and committed sync implementation. Keep one writer in a fresh shallow clone of just-every/home on cloud/je-sync-57.
+2. Restrict committed sync operations to HappyToHelp, Lamp, Uptime, Oncall, Orbit and Spool. Observe each latest published GitHub Release, reject drafts/prereleases and require rer-release.dsse.json. Read the current RER catalogue and match by repository URL or name. Never downgrade JE to stale RER pins.
+3. Run npm ci and the dry sync, review every finding and source ref, run copy-only apply, then mechanical apply. After a version change, record copy provenance at the newly displayed release and review its source diff without promoting contract statuses. Preserve wording unless released source proves it false. Preserve paused seeds and existing follow-ups.
+4. Regenerate listings, check them, repeat the dry sync and explain every remaining finding. Review path scope, counts and diff hygiene. Run typecheck, lint and production build. Add no redundant pin tests and leave the full suite to branch CI.
+5. Commit only the three changed product files, synchronize main before first push, inspect every unpublished commit identity/trailer and use the guarded named-branch push. Open the requested PR. Capture Lamp's changed version at desktop and phone widths with a locally started server; close the browser and stop that server by its recorded PID.
+6. Observe exact-SHA Verify through REST within the explicit-call budget and five-minute polling cadence. Preserve full non-secret reports and receipts outside the product clone, publish only explicitly selected evidence files to evidence/je-sync-57, then delete the pushed clone and node_modules. Relay the candidate, CI result, RER drift and retained follow-ups to the lane; leave acceptance, publication scan, merge, deploy and live verification with the fleet.

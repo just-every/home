@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-11-21T04:17:21Z",
+  "head": "d5a27a8bb527ee2adc7108b6a384e541300acfa1",
+  "screens": [
+    {
+      "width": 1440,
+      "path": "lamp-1440.png",
+      "url": "/lamp"
+    },
+    {
+      "width": 390,
+      "path": "lamp-390.png",
+      "url": "/lamp"
+    }
+  ],
+  "assertionWidth": 1440,
+  "assertions": [
+    "Lamp public page returns 200 and displays published version",
+    "Public listings endpoint agrees with the displayed version"
+  ]
+}

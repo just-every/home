@@ -1,0 +1,184 @@
+{
+  "files": [
+    {
+      "blob": "e33872f95431c64aacd6167126e43260c336840d",
+      "bytes": 2071,
+      "path": "PLAN.md",
+      "sha256": "b21cb3333d20f97ae71d336279bfe4770f57ded7e11e46bb1af47c118da96922"
+    },
+    {
+      "blob": "91a5c67d66530e27bcc2afaf70f69f4ad557dba2",
+      "bytes": 8741,
+      "path": "REPORT.md",
+      "sha256": "8ecc6a5f496b6df4d129b7d943685b58f27be799c2c7566f02082e84e710f202"
+    },
+    {
+      "blob": "f4b3ab9af6430f4edb8e5d738a42f97e0f97bd6e",
+      "bytes": 466,
+      "path": "browser-receipt.json",
+      "sha256": "54dbb5d11ab53c6be219e1706389edc0b818c9a423b125f97e3a69a7c3b6bed1"
+    },
+    {
+      "blob": "615326c963dfd78c2328ddfa7c14e75e2df2b640",
+      "bytes": 173,
+      "path": "ci-final.json",
+      "sha256": "35aecf33d0e8b695b58164955f8f7040b09fb4e8dbfb880876db564583441354"
+    },
+    {
+      "blob": "8916649fbaf91b14ecb1cd997364fa33b2ab4a59",
+      "bytes": 236,
+      "path": "ci-initial.json",
+      "sha256": "f34341dc6659a80b09d3b58ced5b92a7303033e9c3ec35fcd642c117fe9b721c"
+    },
+    {
+      "blob": "b88193e1f7f24e6219418c31942fb9d31da84e39",
+      "bytes": 3140,
+      "path": "copy-apply/report.json",
+      "sha256": "960d77ba3768fdc6baecfa25bc5c290bf74320cb4756fdfa92c245c072b28465"
+    },
+    {
+      "blob": "6fd8923883d473420cf905e4b4de4742c1200c2a",
+      "bytes": 1368,
+      "path": "copy-apply/report.md",
+      "sha256": "715adfe35730bf4ab604db89f591e5985f038a1592ecbfe3985b5bd5e450f372"
+    },
+    {
+      "blob": "c4d0eab8dd6aa424b3e6fba2eef63c0353fb75ba",
+      "bytes": 3879,
+      "path": "copy-new-release/report.json",
+      "sha256": "2c41a92044b22aa218413b4c19491eb73039b46141601d6f29539114f831753c"
+    },
+    {
+      "blob": "6b7c9306aef6e88b9456f807fbaffa58fd110dbd",
+      "bytes": 1631,
+      "path": "copy-new-release/report.md",
+      "sha256": "50b1de727dbbe63a193fccdd238fe1173a074e06ad3e5ca6036fbab83853fb4e"
+    },
+    {
+      "blob": "9c836f2ea10f1367aa35c53dd8e29673d2e576ac",
+      "bytes": 3049,
+      "path": "dry-final/captures/results.json",
+      "sha256": "14373f059c0021c04f267c4b8f46ac6e762146694a7e275c28a6cb5423dce143"
+    },
+    {
+      "blob": "86c45913ea76834af8da5b66c3ff5b098b196a37",
+      "bytes": 3808,
+      "path": "dry-final/report.json",
+      "sha256": "5d7fa32287f7ac80271660a52d45b2e5fc1d8f0448a38e94a9e109401bb8f81f"
+    },
+    {
+      "blob": "873f3b1cc5bbf1961987aa11d130f558036649fa",
+      "bytes": 1634,
+      "path": "dry-final/report.md",
+      "sha256": "0165ec75a1fc48583e0843d9777b59890316efc87e2820e22a2efec0aae44a24"
+    },
+    {
+      "blob": "741790340a6f9f01fa7795618fcb46ecf5294e6a",
+      "bytes": 3049,
+      "path": "dry-initial/captures/results.json",
+      "sha256": "e62d7d9d2b63ebb76071d741a6ea22431a09f303b9898d5487a03416dcd33830"
+    },
+    {
+      "blob": "927b160254633131e44ba50a4948425dc734a3ab",
+      "bytes": 4090,
+      "path": "dry-initial/report.json",
+      "sha256": "2e7f6694d85c84f2304ad553e4261a720625ab559e6e0f40bdc67b490c10b6cf"
+    },
+    {
+      "blob": "acd439a654e05ed27a2a202aaede8ef6a796526d",
+      "bytes": 1705,
+      "path": "dry-initial/report.md",
+      "sha256": "875936e53918205f03060f425f6fe675bc7d7a58ab0cf57275c2b4e2d4ac3777"
+    },
+    {
+      "blob": "991bb0de55eea53d7c24d230704b06d53b183163",
+      "bytes": 809580,
+      "path": "lamp-1440.png",
+      "sha256": "15c9fc84831a57ccdae1a514439e85821297e4fa0162e66cebc837cf6cfa8a44"
+    },
+    {
+      "blob": "898a4414224f8b250274fe067f3f7a14b2c1fd9a",
+      "bytes": 422599,
+      "path": "lamp-390.png",
+      "sha256": "afd48adbac47c3b6bdbe61b3f5ffd43ff58be3bc852706d03da2e2d0df97de03"
+    },
+    {
+      "blob": "ae77b1db114e1f26fd001718a8edec21ba71224e",
+      "bytes": 14155,
+      "path": "lamp-copy-review.json",
+      "sha256": "cd6b8b13d1877054be07e9c9c002c35d0894db0da7da33fc3d72c7fe5b28d0bd"
+    },
+    {
+      "blob": "02abf0d4ed8ef1c3e0a62e98c0345d520742667a",
+      "bytes": 47,
+      "path": "lint.log",
+      "sha256": "02ef98276ac56c4ea2e84e7291740f26bb5d7d07639d8ce90366e463210307f3"
+    },
+    {
+      "blob": "802eac33f608cad6c8f02516e3c39340b2b7e7df",
+      "bytes": 3049,
+      "path": "mechanical-apply/captures/results.json",
+      "sha256": "9932ea04a42240bb7a6be0233bd4c19aa632045fe51d8252be05294bc240f763"
+    },
+    {
+      "blob": "c3f037ccf3ac2c5904867148ee967edabafae355",
+      "bytes": 4291,
+      "path": "mechanical-apply/report.json",
+      "sha256": "f294b9506186db48c90ee8deea9b05959577895aa105e910041c36fc92e251e9"
+    },
+    {
+      "blob": "71683556c70fa43e442a8d4e2d3496714d733171",
+      "bytes": 1761,
+      "path": "mechanical-apply/report.md",
+      "sha256": "b0935b214cbb2f03ec22ebaa603f32da815de0ffacced634733a809714c06c22"
+    },
+    {
+      "blob": "d9d0d073a8b16601daf7c6f1326a47c6d6768a62",
+      "bytes": 170,
+      "path": "pr.json",
+      "sha256": "42483e4561b0e2525f9cba315b1838c1194327886e67a584e89500844681737e"
+    },
+    {
+      "blob": "30abc3d10af2fc58b9acf7409fe0522c55130789",
+      "bytes": 4842,
+      "path": "product-diff.patch",
+      "sha256": "a55d1c735f575531be56df9b057a8e0aafc89299104e951c62bfa7ef21d97877"
+    },
+    {
+      "blob": "d1cf67e9d9463d65c439f8724c24494c10376b2e",
+      "bytes": 1707,
+      "path": "production-build.log",
+      "sha256": "2605ed8d61ed22ffc0ce265cd2933bca52bc01eeeac89a63e86ee132459ac025"
+    },
+    {
+      "blob": "8a593dc9345e97ea9a69ec82658470aab06597f8",
+      "bytes": 2095,
+      "path": "releases.json",
+      "sha256": "c82ccefb87b6cb4974bd8f4e7f556dedab314684ab6b0674f536d7f88779284c"
+    },
+    {
+      "blob": "baa61a7c614831abf7aba9e2ffb5ddf1aab2d59b",
+      "bytes": 1359,
+      "path": "rer-drift.json",
+      "sha256": "655a227c274f1795a87593c1b736e9064cd7c3aeaa61d6a080b630b544c442d5"
+    },
+    {
+      "blob": "781fc107c6de1f0fc7a78db73b8a4442fb7966b7",
+      "bytes": 49,
+      "path": "typecheck.log",
+      "sha256": "5a848264e3d4f39bae1d347b4ff2be16348436fdcdd3a42c91c0fca2a8f23403"
+    },
+    {
+      "blob": "4e2437c4a6ec4014340dae8d92931d64860fe752",
+      "bytes": 1618,
+      "path": "validation-receipt.json",
+      "sha256": "3d25fb21d38b8e0291ae4c09075d761bcab4b66a4b14e02da17113946a79d57d"
+    }
+  ],
+  "product_branch": "cloud/je-sync-57",
+  "product_head": "d5a27a8bb527ee2adc7108b6a384e541300acfa1",
+  "ref": "refs/heads/evidence/je-sync-57",
+  "repository": "just-every/home",
+  "schema": 1,
+  "tag": "je-sync-57"
+}

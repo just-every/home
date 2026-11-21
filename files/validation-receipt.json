@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-11-21T04:17:03Z",
+  "head": "d5a27a8bb527ee2adc7108b6a384e541300acfa1",
+  "base": "b31943633013fe0fd6f753579457ecba453ff06a",
+  "branch": "cloud/je-sync-57",
+  "before": {
+    "total": 49,
+    "statuses": {
+      "coming-soon": 14,
+      "released": 35
+    }
+  },
+  "after": {
+    "total": 49,
+    "statuses": {
+      "coming-soon": 14,
+      "released": 35
+    }
+  },
+  "listing_changes": {
+    "lamp": {
+      "version": [
+        "v1.11.24",
+        "v1.11.25"
+      ]
+    }
+  },
+  "state_changed_seeds": [
+    "lamp",
+    "oncall",
+    "uptime"
+  ],
+  "checks": {
+    "npm_ci": "pass",
+    "copy_only_apply": "pass",
+    "mechanical_apply": "pass",
+    "listings_generate": "pass",
+    "listings_check": "pass",
+    "final_dry_sync": "zero new changes; two known open findings",
+    "typecheck": "pass",
+    "lint": "pass",
+    "production_build": "pass",
+    "scope": "pass",
+    "diff_hygiene": "pass",
+    "credential_shaped_diff": "pass",
+    "candidate_identity_and_trailers": "pass",
+    "publication_scan": "fleet landing gate; unavailable in cloud",
+    "full_suite": "branch CI owns full suite"
+  },
+  "clauses_changed": [],
+  "public_claim_edits": [],
+  "art_changes": [],
+  "excluded_seeds_present": [],
+  "exact_sha_verify": {
+    "run_id": 44865228024,
+    "conclusion": "success",
+    "head_sha": "d5a27a8bb527ee2adc7108b6a384e541300acfa1",
+    "html_url": "https://github.com/just-every/home/actions/runs/44865228024",
+    "status": "completed"
+  },
+  "browser_proof": "pass at assertion width 1440, screenshots 1440 and 390",
+  "product_custody": "READY",
+  "blockers": []
+}
