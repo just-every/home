@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-11-21T04:33:48Z",
+  "head": "d5a27a8bb527ee2adc7108b6a384e541300acfa1",
+  "serverPid": 1461,
+  "route": "/lamp",
+  "screens": [
+    {
+      "width": 1440,
+      "status": 200,
+      "title": "Lamp",
+      "version": "v1.11.25",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "bodyWidth": 1440,
+      "height": 4891,
+      "missingImages": [],
+      "prices": [],
+      "pageErrors": [],
+      "screenshot": "lamp-1440.png"
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "title": "Lamp",
+      "version": "v1.11.25",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "bodyWidth": 390,
+      "height": 4876,
+      "missingImages": [],
+      "prices": [],
+      "pageErrors": [],
+      "screenshot": "lamp-390.png"
+    }
+  ],
+  "assertions": [
+    "1440: HTTP 200, Lamp heading, version v1.11.25, no horizontal overflow or page errors; public listings endpoint contains 49 entries and Lamp v1.11.25"
+  ],
+  "result": "PASS",
+  "serverStopped": true,
+  "browserClosed": true
+}

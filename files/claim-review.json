@@ -1,0 +1,117 @@
+{
+  "timestamp": "2026-11-21T04:38:46Z",
+  "head": "d5a27a8bb527ee2adc7108b6a384e541300acfa1",
+  "source": "https://raw.githubusercontent.com/just-every/run-lamp/v1.11.25/CONTRACT.md",
+  "claims": [
+    {
+      "clause": "INTAKE-002",
+      "sentence": "Monitoring alerts follow the source's intake policy, which keeps a private draft until publication by default. Your company's policy decides agent publication; an alert alone is never a finished customer update.",
+      "title": "Alerts never publish",
+      "kind": "published",
+      "status": "partial",
+      "evidence": "`tests/e2e/publishing-contract.test.mjs`",
+      "gap": "The cited journey asserts a private draft and page exclusion. It does not measure the 30-second create/update bound or compare all public surfaces. The class/policy wording carries no promotion.",
+      "status_row_unchanged": true
+    },
+    {
+      "clause": "INCIDENT-004",
+      "sentence": "A published update is never edited or deleted; a correction is a new update and both stay on the public timeline.",
+      "title": "Published updates are immutable",
+      "kind": "published",
+      "status": "partial",
+      "evidence": "`tests/e2e/publishing-browser.test.mjs`, `tests/e2e/publishing-contract.test.mjs`",
+      "gap": "Asserted: original wording retained; correction identifies original; both updates retained. Unasserted in old cited evidence: published deletion refused; public publication order.",
+      "status_row_unchanged": true
+    },
+    {
+      "clause": "UPDATE-008",
+      "sentence": "Publishing is a single step: the update and the list of people to notify are saved together.",
+      "title": "Atomic publication and recipients",
+      "kind": "published",
+      "status": "partial",
+      "evidence": "`tests/e2e/delivery-contract.test.mjs`, `tests/e2e/publishing-contract.test.mjs`",
+      "gap": "Asserted: update once; recipients once; no failed recipient. Unasserted in old cited evidence: narrowing preserves delivery; unsubscribe suppresses delivery; failed update not public; retry to success; dispatch does not block.",
+      "status_row_unchanged": true
+    },
+    {
+      "clause": "NOTIFY-009",
+      "sentence": "Publishing still works while email, the queue or a subscriber's endpoint is failing.",
+      "title": "Delivery never blocks publication",
+      "kind": "published",
+      "status": "partial",
+      "evidence": "`tests/e2e/delivery-contract.test.mjs`",
+      "gap": "Old cited evidence asserts only the previously described delivered slice. It does not assert: mail provider failure publish; queue failure publish; endpoint failure publish; public page survives delivery failure; feed survives delivery failure; widget survives delivery failure; recovery preserves and delivers committed set.",
+      "status_row_unchanged": true
+    },
+    {
+      "clause": "UPTIME-001",
+      "sentence": "Uptime is rounded down, so a period with any downtime never shows 100 percent.",
+      "title": "Definition",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`tests/e2e/public-contract.test.mjs` (owner maintains a complete catalogue and customers read, refresh, embed and retain its public story), loading `tests/e2e/helpers/public-capacity-journey.mjs` (publicCapacityJourney): public collection readback asserts the complete ninety-day partial boundary and 99.99 percent for a one-minute outage.",
+      "gap": "",
+      "status_row_unchanged": true
+    },
+    {
+      "clause": "PAGE-006",
+      "sentence": "If the database or queue is down, the public page, feed and banner keep serving the last known state, labelled as such, and never show a false all-clear.",
+      "title": "Serving through a failure",
+      "kind": "published",
+      "status": "partial",
+      "evidence": "`tests/e2e/public-contract.test.mjs`, `tests/e2e/public-contract.test.mjs`, `tests/e2e/publishing-contract.test.mjs`",
+      "gap": "Old cited evidence asserts The page body still contains Partially unavailable after database removal; Stale page content is labeled Last known state; The generation instant is visible in stale page content; The retained failure body contains Partially unavailable. Unasserted: The Atom feed survives database outage; The widget survives database outage; Page content survives queue outage; Atom feed content survives queue outage; Widget content survives queue outage; Page content survives object-storage outage; Atom feed content survives object-storage outage; Widget content survives object-storage outage; Origin outage uses the specified cached-response window; Page is unavailable only before first publication; Atom feed is unavailable only before first publication; Widget is unavailable only before first publication.",
+      "status_row_unchanged": true
+    },
+    {
+      "clause": "PAGE-013",
+      "sentence": "The public page sets no cookies, has no tracking or consent banner, and loads nothing from other sites.",
+      "title": "Enforced isolation",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`tests/e2e/delivery-contract.test.mjs`, `tests/e2e/public-contract.test.mjs` (owner maintains a complete catalogue and customers read, refresh, embed and retain its public story): acceptance 1 checks the complete documented CSP, framing refusal, nosniff and referrer headers on the public page, history, feeds, widget, status JSON and badge. Its registered `tests/e2e/helpers/public-isolation-flow.mjs` (publicIsolationFlow) proves acceptance 2 and 3 on populated default, Calm headline, Uptime-history-led and Regions map pages: fresh anonymous readers load, poll, observe a native publication and reload without CAPTCHA, consent controls or attempted storage writes; independent cookies, localStorage, sessionStorage, IndexedDB and CacheStorage inventories remain empty. Existing `tests/baseline/e2e-baseline/core-baseline.test.mjs` retains public no-Set-Cookie and document.cookie controls under BASE-PUBLIC-001.",
+      "gap": "",
+      "status_row_unchanged": true
+    },
+    {
+      "clause": "NOTIFY-004",
+      "sentence": "The delivery log records whether each message was delivered, bounced or failed, and nothing tracks whether anyone read it.",
+      "title": "Delivery log, without tracking",
+      "kind": "published",
+      "status": "done",
+      "evidence": "`tests/e2e/delivery-contract.test.mjs`, `tests/e2e/delivery-contract.test.mjs`; `tests/e2e/delivery-contract.test.mjs` (Failing subscriber destinations deactivate with reasons, alert the webhook contact and suppress queued and future notifications); `tests/e2e/delivery-contract.test.mjs` (NOTIFY-013 NOTIFY-002 NOTIFY-003 NOTIFY-004 NOTIFY-005 NOTIFY-007 NOTIFY-008 NOTIFY-010 \u2014 Owner-selected provider fallback preserves frozen notifications and reconciles delivery receipts)",
+      "gap": "",
+      "status_row_unchanged": true
+    },
+    {
+      "clause": "MOVE-002",
+      "sentence": "Moving in keeps original update times, notifies nobody, and brings email subscribers over as pending until they confirm.",
+      "title": "Retroactive and silent",
+      "kind": "published",
+      "status": "partial",
+      "evidence": "`tests/e2e/statuspage-import.test.mjs`, `tests/e2e/statuspage-import.test.mjs`, `tests/e2e/sorry-import.test.mjs`",
+      "gap": "Old cited evidence asserts Sorry incident update timestamps equal source times; Past Sorry maintenance is completed; Imported Better Stack maintenance has no native notice; Import queues no notification delivery. Unasserted: Complete imported component history derives from original update times; Concurrent repeated applies send no mail; Preview sends no mail; Every resume sends no mail; Cutover checks send no mail; Each imported email subscriber is pending.",
+      "status_row_unchanged": true
+    },
+    {
+      "clause": "SUB-006",
+      "sentence": "Every notification email carries a one-click unsubscribe.",
+      "title": "One-click unsubscribe",
+      "kind": "published",
+      "status": "partial",
+      "evidence": "`tests/e2e/delivery-contract.test.mjs`, `tests/e2e/rer-mail.test.mjs`; `tests/e2e/helpers/subscriber-one-click-flow.mjs`; the R-40 live-provider receipt remains outstanding.",
+      "gap": "Old cited evidence asserts mail unsubscribe value is present; web unsubscribe value is present; one-click declaration; URL-encoded deactivation. Unasserted: visible unsubscribe link in notification body; multipart form deactivation; DKIM coverage of both unsubscribe headers; per-token allowance independence.",
+      "status_row_unchanged": true
+    }
+  ],
+  "newTargetClause": {
+    "id": "COMP-011",
+    "status": "missing",
+    "gap": "No shared page order for groups and ungrouped components, with preview and saving through the bulk table, drag ordering and CSV. Public rendering, slot retention for hidden components, source-order import and dry-run reporting for unreproducible order remain unbuilt."
+  },
+  "summary": {
+    "done": 65,
+    "partial": 124,
+    "missing": 56
+  }
+}

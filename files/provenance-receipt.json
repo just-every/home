@@ -1,0 +1,109 @@
+{
+  "timestamp": "2026-11-21T04:38:46Z",
+  "head": "d5a27a8bb527ee2adc7108b6a384e541300acfa1",
+  "hashes": [
+    {
+      "repo": "just-every/run-lamp",
+      "ref": "v1.11.24",
+      "file": "CONTRACT.md",
+      "sha256_16": "d87c0980ff9dc859"
+    },
+    {
+      "repo": "just-every/run-lamp",
+      "ref": "v1.11.25",
+      "file": "CONTRACT.md",
+      "sha256_16": "5143f61d67908656"
+    },
+    {
+      "repo": "just-every/run-lamp",
+      "ref": "v1.11.24",
+      "file": "README.md",
+      "sha256_16": "402e33bfc617555f"
+    },
+    {
+      "repo": "just-every/run-lamp",
+      "ref": "v1.11.25",
+      "file": "README.md",
+      "sha256_16": "402e33bfc617555f"
+    },
+    {
+      "repo": "just-every/run-lamp",
+      "ref": "v1.11.24",
+      "file": "seed.json",
+      "sha256_16": "27ab1bd11b147555"
+    },
+    {
+      "repo": "just-every/run-lamp",
+      "ref": "v1.11.25",
+      "file": "seed.json",
+      "sha256_16": "63620403fd1bc245"
+    },
+    {
+      "repo": "just-every/run-oncall",
+      "ref": "v0.5.22",
+      "file": "CONTRACT.md",
+      "sha256_16": "cadffafd0877d991",
+      "matchesRecordedHash": true
+    },
+    {
+      "repo": "just-every/run-oncall",
+      "ref": "v0.5.22",
+      "file": "README.md",
+      "sha256_16": "b2c25df447c4fbed",
+      "matchesRecordedHash": true
+    },
+    {
+      "repo": "just-every/run-oncall",
+      "ref": "v0.5.22",
+      "file": "seed.json",
+      "sha256_16": "00cd8f30b1f2a58e",
+      "matchesRecordedHash": true
+    },
+    {
+      "repo": "just-every/run-uptime",
+      "ref": "v0.5.19",
+      "file": "CONTRACT.md",
+      "sha256_16": "9e5c8dd14ef60da6",
+      "matchesRecordedHash": true
+    },
+    {
+      "repo": "just-every/run-uptime",
+      "ref": "v0.5.19",
+      "file": "README.md",
+      "sha256_16": "7a2a44311f07e869",
+      "matchesRecordedHash": true
+    },
+    {
+      "repo": "just-every/run-uptime",
+      "ref": "v0.5.19",
+      "file": "seed.json",
+      "sha256_16": "7a8736536e7b6342",
+      "matchesRecordedHash": true
+    }
+  ],
+  "tagProbe": {
+    "command": "git -c credential.helper= ls-remote --tags https://github.com/just-every/run-lamp 'refs/tags/v1.11.2[45]*'",
+    "v1.11.24": {
+      "tag": "5eef90a8df03b44dcd7b0d6a21347f45f95f1297",
+      "commit": "3f1349f029fa8c8c59bf9adfe4e2ae59fd502842"
+    },
+    "v1.11.25": {
+      "tag": "e24bf83fc6b11ff06acd7723957d13a5006baaed",
+      "commit": "09f8cdb44557e43615ffa9321bc2492bb24d0710"
+    }
+  },
+  "markers": {
+    "922fed04eacf": "sha256(copy:CONTRACT.md, seed.json changed since the last sync)[:12]; added to Lamp, removed from Oncall",
+    "64cb07f6a0dd": "sha256(copy:seed.json changed since the last sync)[:12]; removed from Uptime",
+    "bf4b3f38e1a2": "sha256(homepage:no \"alternative to\" line found on the homepage)[:12]; retained for Oncall and Uptime"
+  },
+  "uptimeFingerprint": {
+    "length": 432,
+    "offset": 328,
+    "before": "d",
+    "after": "e",
+    "delta": 1,
+    "materialChangedCells": 0,
+    "totalCells": 144
+  }
+}

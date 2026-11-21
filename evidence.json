@@ -1,0 +1,82 @@
+{
+  "files": [
+    {
+      "blob": "d017ef34849bb46fd15e0fb24dc911c7c43a1960",
+      "bytes": 4225,
+      "path": "FOLLOW-UPS.md",
+      "sha256": "b10d21c6e5ed9277d2cb897da08a102fa2c544b3dbea1a0ee26a24566f1f7bab"
+    },
+    {
+      "blob": "1839ce3ecc4e1e07008081208e1371db61d2d5c3",
+      "bytes": 1245,
+      "path": "LANDING-NOTES.md",
+      "sha256": "9af3363cab47ad315b05dece475b9fa18992f2ad970760408ac6fd7c789fdfa4"
+    },
+    {
+      "blob": "6ad90e572c22669b438dee32f8b31d6b79418920",
+      "bytes": 17536,
+      "path": "REPORT.md",
+      "sha256": "a1257dd72f3d944113cb7e4ea4256e84c7095f63c9ec5efd3019eab85b94dbe1"
+    },
+    {
+      "blob": "c7924102d93b7681077222a15d723bfed2b98d1e",
+      "bytes": 450,
+      "path": "browser-first-attempt.json",
+      "sha256": "5b9a0abdad86302fa708d5fb8a1e5cf851c8915c6f6d1370a086fc005a1ea53e"
+    },
+    {
+      "blob": "b9f1beb367d446664ab5ddb84702ddbe7c6be810",
+      "bytes": 1030,
+      "path": "browser-receipt.json",
+      "sha256": "84bf16e0ce55fa641b22321a425529f09df58789abed06d5c5b4b7fd566f2715"
+    },
+    {
+      "blob": "a8608719ab721f42b9c79e22cdeb91bbdd87eed1",
+      "bytes": 2851,
+      "path": "checks.json",
+      "sha256": "db0eee9cac76535c2bf0b45361be1d0cd16f7fa6942714075508ebb8b50e262f"
+    },
+    {
+      "blob": "84935db1f5e52fc1294f15dba1a323fc4d63094c",
+      "bytes": 9012,
+      "path": "claim-review.json",
+      "sha256": "2bfa325c0b97bd9dfee6861ca03287a14a93623191ee4d1b7f255b6918604a47"
+    },
+    {
+      "blob": "824cc4e99c774e8c8aed92e96225f43838681ba3",
+      "bytes": 456,
+      "path": "install-receipt.json",
+      "sha256": "6e78729e65819736ed08670c36825dca8b7c8be54b6465d4d93b6bf5a5d9417b"
+    },
+    {
+      "blob": "4f51e29810a8acd58ea2c107043f3ba6a158b013",
+      "bytes": 808226,
+      "path": "lamp-1440.png",
+      "sha256": "dfaf545c2bfbc67e204b5d2726e98a47c23266a367a7de9265bb7980db2a3bd0"
+    },
+    {
+      "blob": "0177f2a3b482fa926fdf0b8dcd782ab132c221c9",
+      "bytes": 422764,
+      "path": "lamp-390.png",
+      "sha256": "8ab0bd44a837f8514bbb413c063b02abbe1fd58889d93e4a6039cdb8cf14f92d"
+    },
+    {
+      "blob": "263e08ae8cb1674ad2f7d443b511c73e3f1a3e76",
+      "bytes": 2992,
+      "path": "provenance-receipt.json",
+      "sha256": "f0118fd4f3e006f6442e6cd61fb17d9f63ed4e719ba86e515ef34f411ee4d149"
+    },
+    {
+      "blob": "42524fa7261ecaa6df00d4e08eb85394aab480df",
+      "bytes": 1673,
+      "path": "public-source-receipt.json",
+      "sha256": "2ee0a52a30a13d065e001b39523b98ec0bec1e0907ead0f8398dfbf8b079d12c"
+    }
+  ],
+  "product_branch": "",
+  "product_head": "d5a27a8bb527ee2adc7108b6a384e541300acfa1",
+  "ref": "refs/heads/evidence/je-gate-67",
+  "repository": "just-every/home",
+  "schema": 1,
+  "tag": "je-gate-67"
+}

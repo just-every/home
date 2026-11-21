@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-11-21T04:40:26Z",
+  "head": "d5a27a8bb527ee2adc7108b6a384e541300acfa1",
+  "command": "npm ci",
+  "exitCode": 0,
+  "output": "npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead\nnpm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.\n\n> next-project@0.1.0 prepare\n> husky\n\n\nadded 715 packages in 15s\n"
+}

@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-11-21T04:33:09Z",
+  "pr": {
+    "url": "https://github.com/just-every/home/pull/83",
+    "state": "open",
+    "draft": false,
+    "head": "d5a27a8bb527ee2adc7108b6a384e541300acfa1",
+    "base": "b31943633013fe0fd6f753579457ecba453ff06a",
+    "branch": "cloud/je-sync-57"
+  },
+  "ci": [
+    {
+      "id": 44865280599,
+      "name": "Verify branch",
+      "head_sha": "d5a27a8bb527ee2adc7108b6a384e541300acfa1",
+      "status": "completed",
+      "conclusion": "skipped",
+      "html_url": "https://github.com/just-every/home/actions/runs/44865280599",
+      "event": "pull_request"
+    },
+    {
+      "id": 44865277340,
+      "name": "PR #83",
+      "head_sha": "d5a27a8bb527ee2adc7108b6a384e541300acfa1",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/just-every/home/actions/runs/44865277340",
+      "event": "dynamic"
+    },
+    {
+      "id": 44865228024,
+      "name": "Verify branch",
+      "head_sha": "d5a27a8bb527ee2adc7108b6a384e541300acfa1",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/just-every/home/actions/runs/44865228024",
+      "event": "push"
+    }
+  ],
+  "release": {
+    "tag_name": "v1.11.25",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-21T03:46:07Z",
+    "html_url": "https://github.com/just-every/run-lamp/releases/tag/v1.11.25",
+    "asset_names": [
+      "01-public-status-active-desktop.png",
+      "rer-release.dsse.json"
+    ],
+    "signature_verified": false
+  },
+  "transport": "Unauthenticated public HTTPS REST and raw source reads; no credentials or CI polling",
+  "api_calls": 3
+}

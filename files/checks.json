@@ -1,0 +1,32 @@
+[
+  {
+    "command": "npm run listings -- --check",
+    "startedAt": "2026-11-21T04:31:36Z",
+    "exitCode": 0,
+    "output": "\n> next-project@0.1.0 listings\n> node --import tsx scripts/listings.mjs --check\n\nListings current (49 seeds)\n"
+  },
+  {
+    "command": "npm run listings",
+    "startedAt": "2026-11-21T04:31:36Z",
+    "exitCode": 0,
+    "output": "\n> next-project@0.1.0 listings\n> node --import tsx scripts/listings.mjs\n\nListings unchanged (49 seeds)\n"
+  },
+  {
+    "command": "npm run type-check",
+    "startedAt": "2026-11-21T04:31:36Z",
+    "exitCode": 0,
+    "output": "\n> next-project@0.1.0 type-check\n> tsc --noEmit\n\n"
+  },
+  {
+    "command": "npm run lint",
+    "startedAt": "2026-11-21T04:31:41Z",
+    "exitCode": 0,
+    "output": "\n> next-project@0.1.0 lint\n> eslint src tests\n\n"
+  },
+  {
+    "command": "npm run build",
+    "startedAt": "2026-11-21T04:31:44Z",
+    "exitCode": 0,
+    "output": "\n> next-project@0.1.0 build\n> next build --webpack\n\n\u25b2 Next.js 16.4.5 (webpack)\n\u2713 Running next.config.ts took 30ms\nAttention: Next.js now collects completely anonymous telemetry regarding usage.\nThis information is used to shape Next.js' roadmap and prioritize features.\nYou can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:\nhttps://nextjs.org/telemetry\n\n\n\u26a0 The \"middleware\" file convention is deprecated. Please use \"proxy\" instead.\n\n  To migrate automatically, run:\n  npx @next/codemod@canary middleware-to-proxy .\n\n  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy\n  Creating an optimized production build ...\n\u2713 Compiled successfully in 8.4s\n  Running TypeScript ...\n  Finished TypeScript in 4.2s ...\n  Collecting page data using 4 workers ...\n  Generating static pages using 4 workers (0/61) ...\n  Generating static pages using 4 workers (15/61) \n  Generating static pages using 4 workers (30/61) \n  Generating static pages using 4 workers (45/61) \n\u2713 Generating static pages using 4 workers (61/61) in 1041ms\n  Finalizing page optimization ...\n  Collecting build traces ...\n\nRoute (app)\n\u250c \u25cb /\n\u251c \u25cb /_not-found\n\u251c   /[slug]\n\u2502 \u251c \u25cf /uptime\n\u2502 \u251c \u25cf /happytohelp\n\u2502 \u251c \u25cf /nook\n\u2502 \u2514 \u25cf [+46 more paths]\n\u251c \u0192 /api/contact\n\u251c \u0192 /api/events\n\u251c \u0192 /api/match\n\u251c \u0192 /api/suggest\n\u251c \u0192 /api/tokens\n\u251c \u25cb /contact\n\u251c \u25cb /journey\n\u251c \u25cb /process\n\u251c \u25cb /products\n\u2514 \u25cb /sitemap.xml\n\n\n\u0192 Proxy (Middleware)\n\n\u25cb  (Static)   prerendered as static content\n\u25cf  (SSG)      prerendered as static HTML (uses generateStaticParams)\n\u0192  (Dynamic)  server-rendered on demand\n\n"
+  }
+]

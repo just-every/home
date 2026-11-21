@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-11-21T04:32:55Z",
+  "head": "d5a27a8bb527ee2adc7108b6a384e541300acfa1",
+  "serverPid": 1200,
+  "route": "/lamp",
+  "screens": [],
+  "assertions": [],
+  "result": "FAIL",
+  "error": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3067/lamp\", waiting until \"networkidle\"\u001b[22m\n\n    at /tmp/je-gate-67-browser.cjs:24:30",
+  "serverStopped": true,
+  "browserClosed": true
+}
