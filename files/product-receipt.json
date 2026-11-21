@@ -1,0 +1,54 @@
+{
+  "observedAt": "2026-11-21T06:37:02Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-58",
+  "head": "a4432df44b1f920691386ab779c89246fdbb047e",
+  "remoteRef": "refs/heads/cloud/je-sync-58",
+  "remoteHead": "a4432df44b1f920691386ab779c89246fdbb047e",
+  "base": "e572559bee1902ab7f01fe2fe279e55a6a9c35ff",
+  "workingTreeClean": true,
+  "candidateIdentitiesChecked": true,
+  "coauthorTrailers": 0,
+  "diffCredentialShapeCheck": "passed",
+  "changedPaths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "listingChanges": [
+    {
+      "slug": "spool",
+      "fields": {
+        "version": {
+          "before": "v0.7.16",
+          "after": "v0.7.17"
+        }
+      }
+    }
+  ],
+  "countsBefore": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "countsAfter": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "changedStateRecords": [
+    "lamp",
+    "spool",
+    "uptime"
+  ],
+  "clauseStatusChanges": [],
+  "assetChanges": [],
+  "publicCopyChanges": [],
+  "sourceEnvelopePresence": true,
+  "sourceSignatureVerified": false,
+  "publicationScan": "Mac lane retains required publication scan; not available in cloud",
+  "ciRunId": 44876309710,
+  "ciConclusion": "success",
+  "pr": "https://github.com/just-every/home/pull/84",
+  "terminalStatus": "READY"
+}

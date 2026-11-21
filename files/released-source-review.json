@@ -1,0 +1,39 @@
+{
+  "reviewedAt": "2026-11-21T06:34:19Z",
+  "repository": "just-every/run-spool",
+  "sourceFiles": [
+    {
+      "path": "CONTRACT.md",
+      "oldRef": "v0.7.16",
+      "newRef": "v0.7.17",
+      "oldBlob": "98d20645c67acd0ea21f39ea97855ba566a79e62",
+      "newBlob": "98d20645c67acd0ea21f39ea97855ba566a79e62",
+      "identical": true
+    },
+    {
+      "path": "README.md",
+      "oldRef": "v0.7.16",
+      "newRef": "v0.7.17",
+      "oldBlob": "f623176ca4114b64118fc1481a13d6c0294e82c1",
+      "newBlob": "f623176ca4114b64118fc1481a13d6c0294e82c1",
+      "identical": true
+    },
+    {
+      "path": "seed.json",
+      "oldRef": "v0.7.16",
+      "newRef": "v0.7.17",
+      "oldBlob": "64d84e483c08d7b1c7e2061cc05d5bef046449df",
+      "newBlob": "62c1c6a1aae5449314353647a5bc787634f605a2",
+      "identical": false,
+      "changedLines": [
+        {
+          "line": 4,
+          "before": "\"version\": \"0.7.16\",",
+          "after": "\"version\": \"0.7.17\","
+        }
+      ]
+    }
+  ],
+  "publicClaimsEdited": [],
+  "decision": "Existing wording remains true; preserve all copy and partial-evidence follow-ups. Update version and copy provenance only."
+}

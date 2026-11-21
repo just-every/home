@@ -1,0 +1,143 @@
+{
+  "startedAt": "2026-11-21T06:34:19.798Z",
+  "mode": "apply",
+  "copyOnly": true,
+  "captureHost": null,
+  "load": 0.95,
+  "statePath": "scripts/seeds-sync/state.json",
+  "baselineDate": null,
+  "seeds": [
+    {
+      "slug": "uptime",
+      "name": "Uptime",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.5.19",
+        "commit": "b9bff679ec99b702de753d63ad385d232e6b6d1e",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "9e5c8dd14ef60da6",
+          "README.md": "7a2a44311f07e869",
+          "seed.json": "7a8736536e7b6342"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "happytohelp",
+      "name": "HappyToHelp",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.31",
+        "commit": "e5fb53dc305f53a71ff0b6db81d5eec7dfd0104f",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ae8feea8b7998aa7",
+          "README.md": "022f2ad37fee04ef",
+          "seed.json": "9289d1c33da14860"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "lamp",
+      "name": "Lamp",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v1.11.25",
+        "commit": "09f8cdb44557e43615ffa9321bc2492bb24d0710",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "5143f61d67908656",
+          "README.md": "402e33bfc617555f",
+          "seed.json": "63620403fd1bc245"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "orbit",
+      "name": "Orbit",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.4.12",
+        "commit": "a9fa1830c1913562154dedaeb5a1322ead7c3e6b",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "2c7cce58a1437e4b",
+          "README.md": "e5fc0bf436eeddff",
+          "seed.json": "8dd55de93d00fe43"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "oncall",
+      "name": "Oncall",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.5.22",
+        "commit": "9cbcf975224f7171dcd3813e6f54d4b29a0791ca",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "cadffafd0877d991",
+          "README.md": "b2c25df447c4fbed",
+          "seed.json": "00cd8f30b1f2a58e"
+        }
+      },
+      "findings": []
+    },
+    {
+      "slug": "spool",
+      "name": "Spool",
+      "kind": "released",
+      "status": "ok",
+      "reason": null,
+      "source": {
+        "ref": "v0.7.17",
+        "commit": "512977a936e6bda3f76c3a68e2511e62cb56090d",
+        "reason": "released listing version",
+        "copy": {
+          "CONTRACT.md": "ee9c871bfa25a110",
+          "README.md": "a9c5f1be825c6da3",
+          "seed.json": "ae789445b452ee5a"
+        }
+      },
+      "findings": [
+        {
+          "type": "copy",
+          "summary": "seed.json changed since the last sync",
+          "status": "reported",
+          "manual": null,
+          "copy": "rewrite the page copy from seed.json (https://github.com/just-every/run-spool/compare/804a4ad15e6c...512977a936e6)",
+          "details": {
+            "files": [
+              "seed.json"
+            ],
+            "range": "https://github.com/just-every/run-spool/compare/804a4ad15e6c...512977a936e6",
+            "from": "804a4ad15e6c8e1c52f0069dcf610ba1f5d2342c",
+            "to": "512977a936e6bda3f76c3a68e2511e62cb56090d"
+          },
+          "repeat": false,
+          "images": null
+        }
+      ]
+    }
+  ],
+  "shareImage": [],
+  "apply": {
+    "applied": [],
+    "written": [],
+    "favicons": false
+  }
+}

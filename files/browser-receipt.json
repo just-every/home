@@ -1,0 +1,27 @@
+{
+  "head": "a4432df44b1f920691386ab779c89246fdbb047e",
+  "rows": [
+    {
+      "observedAt": "2026-11-21T06:37:20Z",
+      "width": 1440,
+      "height": 1000,
+      "path": "/spool",
+      "status": 200,
+      "displayedVersion": "v0.7.17",
+      "expectedVersion": "v0.7.17",
+      "asserted": true,
+      "screenshot": "browser/spool-1440.png"
+    },
+    {
+      "observedAt": "2026-11-21T06:37:22Z",
+      "width": 390,
+      "height": 1000,
+      "path": "/spool",
+      "status": 200,
+      "displayedVersion": "v0.7.17",
+      "expectedVersion": "v0.7.17",
+      "asserted": false,
+      "screenshot": "browser/spool-390.png"
+    }
+  ]
+}
