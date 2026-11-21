@@ -1,0 +1,42 @@
+{
+  "observedAt": "2026-11-21T14:21:09Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-59",
+  "head": "a1f21a22a9548c68cbadcd57cdb5b6b302d8bad4",
+  "base": "d49ab6e90a88bdc1adb5dd98d994bdd667fa6a97",
+  "pr": "https://github.com/just-every/home/pull/85",
+  "push": {
+    "status": "success",
+    "attempts": 1,
+    "command": "python3 $HOME/rer-consolidation/.tools/cloud-push.py origin cloud/je-sync-59"
+  },
+  "checks": {
+    "identity": "all candidate authors and committers match fleet; no trailers",
+    "candidateCommits": 1,
+    "scope": "passed",
+    "diffHygiene": "passed",
+    "credentialShapedDiff": "passed",
+    "worktree": "clean",
+    "listings": "passed",
+    "typecheck": "passed",
+    "lint": "passed",
+    "productionBuild": "passed",
+    "browser": "1440 assertions passed; 1440 and 390 screenshots captured"
+  },
+  "changedFiles": [
+    {
+      "path": "public/data/listings.json",
+      "sha256": "9703404ca306b02f1ad602cfaae9c64051a912dbcb01c0f0c64bc07895101a1d"
+    },
+    {
+      "path": "scripts/seeds-sync/state.json",
+      "sha256": "4e66090d63cab2ddb44d5f7cd068a09e4cf323a00f69fa1eee6b5af69672f27b"
+    },
+    {
+      "path": "src/data/seed-pages.ts",
+      "sha256": "4b7bcffc2c8111bc75d3ac628a2f285ea36a57dc99837c9ed2ffe9792aee4c6d"
+    }
+  ],
+  "publicationScan": "Deferred to the Mac lane under the cloud adaptation; not run here",
+  "clausesChanged": []
+}

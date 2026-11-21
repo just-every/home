@@ -1,0 +1,135 @@
+{
+  "observedAt": "2026-11-21T14:15:39Z",
+  "source": "https://runeditrun.com/data/seeds.json",
+  "generatedAt": "2026-11-15T13:56:34Z",
+  "rows": [
+    {
+      "rerId": "happytohelp",
+      "name": "HappyToHelp",
+      "repository": "https://github.com/just-every/run-happytohelp",
+      "rerVersion": "0.4.31",
+      "jeVersion": "v0.4.32",
+      "drift": true
+    },
+    {
+      "rerId": "lamp",
+      "name": "Lamp",
+      "repository": "https://github.com/just-every/run-lamp",
+      "rerVersion": "1.11.25",
+      "jeVersion": "v1.11.25",
+      "drift": false
+    },
+    {
+      "rerId": "pencil",
+      "name": "Pencil",
+      "repository": "https://github.com/just-every/run-pencil",
+      "rerVersion": "0.7.0",
+      "jeVersion": "v0.7.0",
+      "drift": false
+    },
+    {
+      "rerId": "dial",
+      "name": "Dial",
+      "repository": "https://github.com/just-every/run-dial",
+      "rerVersion": "0.5.0",
+      "jeVersion": "v0.5.0",
+      "drift": false
+    },
+    {
+      "rerId": "slate",
+      "name": "Slate",
+      "repository": "https://github.com/just-every/run-slate",
+      "rerVersion": "0.4.0",
+      "jeVersion": "v0.4.0",
+      "drift": false
+    },
+    {
+      "rerId": "cradle",
+      "name": "Cradle",
+      "repository": "https://github.com/just-every/run-cradle",
+      "rerVersion": "0.4.0",
+      "jeVersion": "v0.4.0",
+      "drift": false
+    },
+    {
+      "rerId": "uptime",
+      "name": "Uptime",
+      "repository": "https://github.com/just-every/run-uptime",
+      "rerVersion": "0.5.19",
+      "jeVersion": "v0.5.19",
+      "drift": false
+    },
+    {
+      "rerId": "penny",
+      "name": "Penny",
+      "repository": "https://github.com/just-every/run-penny",
+      "rerVersion": "0.1.4",
+      "jeVersion": "v0.2.1",
+      "drift": true
+    },
+    {
+      "rerId": "oncall",
+      "name": "Oncall",
+      "repository": "https://github.com/just-every/run-oncall",
+      "rerVersion": "0.5.22",
+      "jeVersion": "v0.5.22",
+      "drift": false
+    },
+    {
+      "rerId": "errors-workbench",
+      "name": "Spool",
+      "repository": "https://github.com/just-every/run-spool",
+      "rerVersion": "0.7.17",
+      "jeVersion": "v0.7.17",
+      "drift": false
+    },
+    {
+      "rerId": "orbit",
+      "name": "Orbit",
+      "repository": "https://github.com/just-every/run-orbit",
+      "rerVersion": "0.4.12",
+      "jeVersion": "v0.4.12",
+      "drift": false
+    },
+    {
+      "rerId": "team-workspace",
+      "name": "Nook",
+      "repository": "https://github.com/just-every/run-nook",
+      "rerVersion": "0.4.0",
+      "jeVersion": "v0.5.0",
+      "drift": true
+    },
+    {
+      "rerId": "mango",
+      "name": "Mango",
+      "repository": "https://github.com/just-every/run-mango",
+      "rerVersion": "0.3.0",
+      "jeVersion": "v0.4.0",
+      "drift": true
+    },
+    {
+      "rerId": "vector",
+      "name": "Vector",
+      "repository": "https://github.com/just-every/run-vector",
+      "rerVersion": "0.3.0",
+      "jeVersion": "v0.4.1",
+      "drift": true
+    },
+    {
+      "rerId": "coffer",
+      "name": "coffer",
+      "repository": "https://github.com/just-every/run-coffer",
+      "rerVersion": "0.1.0",
+      "jeVersion": "v0.1.0",
+      "drift": false
+    },
+    {
+      "rerId": "pantry",
+      "name": "Pantry",
+      "repository": "https://github.com/just-every/run-pantry",
+      "rerVersion": "0.2.5",
+      "jeVersion": "v0.2.8",
+      "drift": true
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "observedAt": "2026-11-21T14:18:54Z",
+  "url": "http://127.0.0.1:34159/happytohelp",
+  "results": [
+    {
+      "width": 1440,
+      "assertions": "page loads, displayed version and SEO match public catalogue, no horizontal overflow",
+      "version": "v0.4.32",
+      "status": "passed"
+    },
+    {
+      "width": 390,
+      "proof": "phone screenshot of the same changed page",
+      "version": "v0.4.32",
+      "status": "captured"
+    }
+  ]
+}

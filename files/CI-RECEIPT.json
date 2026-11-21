@@ -1,0 +1,17 @@
+{
+  "observedAt": "2026-11-21T14:25:09Z",
+  "repository": "just-every/home",
+  "branch": "cloud/je-sync-59",
+  "head": "a1f21a22a9548c68cbadcd57cdb5b6b302d8bad4",
+  "requiredWorkflow": "Verify branch",
+  "runId": 44913327266,
+  "status": "completed",
+  "conclusion": "success",
+  "url": "https://github.com/just-every/home/actions/runs/44913327266",
+  "discoveryAt": "2026-11-21T14:19:53Z",
+  "workflowObservations": 2,
+  "watchers": 1,
+  "administrativeApiCalls": 6,
+  "mandatorySyncFileReads": 180,
+  "readDetails": "Four full six-seed reads (one before Playwright was installed), two copy-only six-seed reads; actual committed tool reads files through gh api. Direct administrative API operations were one batched Release query, compare, released contract read, PR creation, run discovery and final run observation."
+}

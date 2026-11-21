@@ -1,0 +1,103 @@
+{
+  "observedAt": "2026-11-21T14:15:39Z",
+  "url": "https://runeditrun.com/data/seeds.json",
+  "generatedAt": "2026-11-15T13:56:34Z",
+  "seeds": [
+    {
+      "id": "happytohelp",
+      "name": "HappyToHelp",
+      "version": "0.4.31",
+      "repository": "https://github.com/just-every/run-happytohelp"
+    },
+    {
+      "id": "lamp",
+      "name": "Lamp",
+      "version": "1.11.25",
+      "repository": "https://github.com/just-every/run-lamp"
+    },
+    {
+      "id": "pencil",
+      "name": "Pencil",
+      "version": "0.7.0",
+      "repository": "https://github.com/just-every/run-pencil"
+    },
+    {
+      "id": "dial",
+      "name": "Dial",
+      "version": "0.5.0",
+      "repository": "https://github.com/just-every/run-dial"
+    },
+    {
+      "id": "slate",
+      "name": "Slate",
+      "version": "0.4.0",
+      "repository": "https://github.com/just-every/run-slate"
+    },
+    {
+      "id": "cradle",
+      "name": "Cradle",
+      "version": "0.4.0",
+      "repository": "https://github.com/just-every/run-cradle"
+    },
+    {
+      "id": "uptime",
+      "name": "Uptime",
+      "version": "0.5.19",
+      "repository": "https://github.com/just-every/run-uptime"
+    },
+    {
+      "id": "penny",
+      "name": "Penny",
+      "version": "0.1.4",
+      "repository": "https://github.com/just-every/run-penny"
+    },
+    {
+      "id": "oncall",
+      "name": "Oncall",
+      "version": "0.5.22",
+      "repository": "https://github.com/just-every/run-oncall"
+    },
+    {
+      "id": "errors-workbench",
+      "name": "Spool",
+      "version": "0.7.17",
+      "repository": "https://github.com/just-every/run-spool"
+    },
+    {
+      "id": "orbit",
+      "name": "Orbit",
+      "version": "0.4.12",
+      "repository": "https://github.com/just-every/run-orbit"
+    },
+    {
+      "id": "team-workspace",
+      "name": "Nook",
+      "version": "0.4.0",
+      "repository": "https://github.com/just-every/run-nook"
+    },
+    {
+      "id": "mango",
+      "name": "Mango",
+      "version": "0.3.0",
+      "repository": "https://github.com/just-every/run-mango"
+    },
+    {
+      "id": "vector",
+      "name": "Vector",
+      "version": "0.3.0",
+      "repository": "https://github.com/just-every/run-vector"
+    },
+    {
+      "id": "coffer",
+      "name": "coffer",
+      "version": "0.1.0",
+      "repository": "https://github.com/just-every/run-coffer"
+    },
+    {
+      "id": "pantry",
+      "name": "Pantry",
+      "version": "0.2.5",
+      "repository": "https://github.com/just-every/run-pantry"
+    }
+  ]
+}

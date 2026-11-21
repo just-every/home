@@ -1,0 +1,42 @@
+{
+  "observedAt": "2026-11-21T14:17:13Z",
+  "before": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "after": {
+    "total": 49,
+    "released": 35,
+    "comingSoon": 14
+  },
+  "changes": [
+    {
+      "slug": "happytohelp",
+      "changes": {
+        "version": {
+          "before": "v0.4.31",
+          "after": "v0.4.32"
+        }
+      }
+    }
+  ],
+  "changedPaths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ],
+  "excluded": [
+    "beacon",
+    "relay",
+    "ferry",
+    "lily",
+    "brook",
+    "delta",
+    "barrow",
+    "linen"
+  ],
+  "clausesChanged": [],
+  "copyChanged": false,
+  "artChanged": false
+}

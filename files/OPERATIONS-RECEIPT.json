@@ -1,0 +1,81 @@
+{
+  "recordedAt": "2026-11-21T14:22:29Z",
+  "operations": [
+    {
+      "command": "npm ci",
+      "exit": 0
+    },
+    {
+      "command": "npm run seeds:sync -- --only uptime,happytohelp,lamp,oncall,spool,orbit --out ../packet/dry-before",
+      "exit": 0,
+      "result": "1 of 6 changed, 0 unreadable; one version proposal"
+    },
+    {
+      "command": "npm run seeds:sync -- --copy-only --apply --only uptime,happytohelp,lamp,oncall,spool,orbit --out ../packet/copy-before",
+      "exit": 0,
+      "result": "0 changed"
+    },
+    {
+      "command": "npm run seeds:sync -- --apply --only uptime,happytohelp,lamp,oncall,spool,orbit --out ../packet/apply",
+      "exit": 0,
+      "result": "HappyToHelp version applied; transient Uptime homepage error left Uptime unchanged"
+    },
+    {
+      "command": "npm run seeds:sync -- --copy-only --apply --only uptime,happytohelp,lamp,oncall,spool,orbit --out ../packet/copy-after",
+      "exit": 0,
+      "result": "HappyToHelp released copy hashes recorded; wording preserved"
+    },
+    {
+      "command": "npm run listings",
+      "exit": 0
+    },
+    {
+      "command": "npm run listings -- --check",
+      "exit": 0
+    },
+    {
+      "command": "npm run seeds:sync -- --only uptime,happytohelp,lamp,oncall,spool,orbit --out ../packet/dry-after",
+      "exit": 0,
+      "result": "0 of 6 changed, 0 unreadable; two existing open findings"
+    },
+    {
+      "command": "npm run type-check",
+      "exit": 0
+    },
+    {
+      "command": "npm run lint",
+      "exit": 0
+    },
+    {
+      "command": "npm run build",
+      "exit": 0
+    },
+    {
+      "command": "cloud_run node /tmp/je-sync-59-browser.mjs ../packet",
+      "exit": 0,
+      "result": "1440 assertions passed; 1440/390 screenshots"
+    },
+    {
+      "command": "git rebase origin/main",
+      "exit": 0,
+      "result": "Already current; base unchanged"
+    },
+    {
+      "command": "python3 $HOME/rer-consolidation/.tools/cloud-push.py origin cloud/je-sync-59",
+      "exit": 0,
+      "result": "First attempt succeeded"
+    }
+  ],
+  "recoveredObservations": [
+    "First dry attempt needed Playwright, installed globally at 1.63.0",
+    "Browser initial networkidle navigation timed out; rendered-page and manifest assertions passed with DOM-ready navigation"
+  ],
+  "ownedProcessCleanup": "Browsers closed; recorded Next server PID stopped and reaped",
+  "notRun": [
+    "full local suite",
+    "full local verify",
+    "Mac publication scan",
+    "deployment",
+    "live JE verification"
+  ]
+}
