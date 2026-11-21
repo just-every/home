@@ -1,0 +1,72 @@
+[
+  {
+    "id": "EVIDENCE-001",
+    "title": "Immutable scheduled evidence",
+    "area": "published",
+    "status": "done",
+    "gap": ""
+  },
+  {
+    "id": "STATE-001",
+    "title": "Fixed coverage and incident hysteresis",
+    "area": "published",
+    "status": "partial",
+    "gap": "Two configured runner networks still prove confirmed Failing and the scheduled confirmation/recovery thresholds. Gap: exactly one failing vantage reading Degraded; Unknown for partial, missing and stale evidence; the intermediate Recovering state; and no fabricated recovery from a manual pass during an outage, an absent selected probe or maintenance expiry lack assertions in the cited files. Maintenance expiry is asserted only in tests/maintenance-windows.mjs, which this clause does not cite."
+  },
+  {
+    "id": "NETWORK-001",
+    "title": "Pinned bounded destination execution",
+    "area": "published",
+    "status": "partial",
+    "gap": "Cross-origin authentication, client-certificate and body stripping are asserted. Gap: mixed DNS answers, rebinding before connection, TLS hostname mismatch, re-resolution of every redirect, HTTPS downgrade and forbidden redirect refusal, exact-origin credential binding, timeout/body/encoding bounds and zero connections to rejected destinations lack assertions in the cited files. tests/tls-auth.mjs calls assertions in helper files this clause does not cite."
+  },
+  {
+    "id": "ARCHIVE-001",
+    "title": "Inactive validated restore",
+    "area": "published",
+    "status": "done",
+    "gap": ""
+  },
+  {
+    "id": "ERASURE-001",
+    "title": "Operator-directed entity erasure",
+    "area": "published",
+    "status": "done",
+    "gap": ""
+  },
+  {
+    "id": "NOTIFY-001",
+    "title": "Authorized installation-wide destinations",
+    "area": "published",
+    "status": "done",
+    "gap": ""
+  },
+  {
+    "id": "DELIVERY-001",
+    "title": "Bounded notification acknowledgment",
+    "area": "published",
+    "status": "done",
+    "gap": ""
+  },
+  {
+    "id": "DRILL-001",
+    "title": "Recipient-reported alert drills",
+    "area": "published",
+    "status": "done",
+    "gap": ""
+  },
+  {
+    "id": "TLS-001",
+    "title": "SSL certificate and chain monitoring",
+    "area": "target",
+    "status": "done",
+    "gap": ""
+  },
+  {
+    "id": "MAINT-001",
+    "title": "Planned and recurring maintenance",
+    "area": "target",
+    "status": "done",
+    "gap": ""
+  }
+]

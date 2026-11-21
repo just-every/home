@@ -1,0 +1,113 @@
+{
+  "at": "2026-11-21T03:35:38Z",
+  "sources": [
+    {
+      "slug": "oncall",
+      "tag": "v0.5.21",
+      "file": "CONTRACT.md",
+      "url": "https://raw.githubusercontent.com/just-every/run-oncall/v0.5.21/CONTRACT.md",
+      "bytes": 313542,
+      "sha256": "7617e905d0abae0e592c0e716e04e5291dacb1537d435f24865cefd5d4a4b87c",
+      "status": "read"
+    },
+    {
+      "slug": "oncall",
+      "tag": "v0.5.21",
+      "file": "seed.json",
+      "url": "https://raw.githubusercontent.com/just-every/run-oncall/v0.5.21/seed.json",
+      "bytes": 3195,
+      "sha256": "c7510d2baa3cf6cd2d6352a10a55029f365e69800472a91046868b927b092258",
+      "status": "read"
+    },
+    {
+      "slug": "oncall",
+      "tag": "v0.5.21",
+      "file": "README.md",
+      "url": "https://raw.githubusercontent.com/just-every/run-oncall/v0.5.21/README.md",
+      "bytes": 12813,
+      "sha256": "b2c25df447c4fbedbf7bbb1c6ad81be44187cffb66448627f7a2c7211e592a3f",
+      "status": "read"
+    },
+    {
+      "slug": "oncall",
+      "tag": "v0.5.22",
+      "file": "CONTRACT.md",
+      "url": "https://raw.githubusercontent.com/just-every/run-oncall/v0.5.22/CONTRACT.md",
+      "bytes": 316595,
+      "sha256": "cadffafd0877d991928c6b0141c94f38f182a61b7faa7c0a2f329011b245e1c3",
+      "status": "read"
+    },
+    {
+      "slug": "oncall",
+      "tag": "v0.5.22",
+      "file": "seed.json",
+      "url": "https://raw.githubusercontent.com/just-every/run-oncall/v0.5.22/seed.json",
+      "bytes": 3195,
+      "sha256": "00cd8f30b1f2a58e1f10a085bdfcc70a9e75708ec2da5743d2473fc0b127d116",
+      "status": "read"
+    },
+    {
+      "slug": "oncall",
+      "tag": "v0.5.22",
+      "file": "README.md",
+      "url": "https://raw.githubusercontent.com/just-every/run-oncall/v0.5.22/README.md",
+      "bytes": 12813,
+      "sha256": "b2c25df447c4fbedbf7bbb1c6ad81be44187cffb66448627f7a2c7211e592a3f",
+      "status": "read"
+    },
+    {
+      "slug": "uptime",
+      "tag": "v0.5.18",
+      "file": "CONTRACT.md",
+      "url": "https://raw.githubusercontent.com/just-every/run-uptime/v0.5.18/CONTRACT.md",
+      "bytes": 320196,
+      "sha256": "9e5c8dd14ef60da605c7729888ce46f087f26f83f77f2c6ae05d9f872d569609",
+      "status": "read"
+    },
+    {
+      "slug": "uptime",
+      "tag": "v0.5.18",
+      "file": "seed.json",
+      "url": "https://raw.githubusercontent.com/just-every/run-uptime/v0.5.18/seed.json",
+      "bytes": 85970,
+      "sha256": "fa03b1b7d35850760410afd248ea42b3b5b6753b89a23e2ec3cbe7fd68765996",
+      "status": "read"
+    },
+    {
+      "slug": "uptime",
+      "tag": "v0.5.18",
+      "file": "README.md",
+      "url": "https://raw.githubusercontent.com/just-every/run-uptime/v0.5.18/README.md",
+      "bytes": 43006,
+      "sha256": "7a2a44311f07e869dc041999ee55462a9f4b6e157c71aafea6d0bf623528e605",
+      "status": "read"
+    },
+    {
+      "slug": "uptime",
+      "tag": "v0.5.19",
+      "file": "CONTRACT.md",
+      "url": "https://raw.githubusercontent.com/just-every/run-uptime/v0.5.19/CONTRACT.md",
+      "bytes": 320196,
+      "sha256": "9e5c8dd14ef60da605c7729888ce46f087f26f83f77f2c6ae05d9f872d569609",
+      "status": "read"
+    },
+    {
+      "slug": "uptime",
+      "tag": "v0.5.19",
+      "file": "seed.json",
+      "url": "https://raw.githubusercontent.com/just-every/run-uptime/v0.5.19/seed.json",
+      "bytes": 85970,
+      "sha256": "7a8736536e7b634270436aab1db5b9358bdcec0c1fcc2fb08279b39585f5da04",
+      "status": "read"
+    },
+    {
+      "slug": "uptime",
+      "tag": "v0.5.19",
+      "file": "README.md",
+      "url": "https://raw.githubusercontent.com/just-every/run-uptime/v0.5.19/README.md",
+      "bytes": 43006,
+      "sha256": "7a2a44311f07e869dc041999ee55462a9f4b6e157c71aafea6d0bf623528e605",
+      "status": "read"
+    }
+  ]
+}

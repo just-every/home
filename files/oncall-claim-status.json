@@ -1,0 +1,72 @@
+[
+  {
+    "id": "OC-002",
+    "title": "Routing replay",
+    "area": "published",
+    "status": "done",
+    "gap": ""
+  },
+  {
+    "id": "OC-003",
+    "title": "Roles and authority",
+    "area": "published",
+    "status": "done",
+    "gap": ""
+  },
+  {
+    "id": "OC-004",
+    "title": "Incident state transitions",
+    "area": "published",
+    "status": "done",
+    "gap": ""
+  },
+  {
+    "id": "OC-005",
+    "title": "Copied runbooks",
+    "area": "published",
+    "status": "done",
+    "gap": ""
+  },
+  {
+    "id": "OC-006",
+    "title": "Bounded outbound incident effects",
+    "area": "published",
+    "status": "done",
+    "gap": ""
+  },
+  {
+    "id": "OC-008",
+    "title": "User-authored records kept",
+    "area": "published",
+    "status": "done",
+    "gap": ""
+  },
+  {
+    "id": "OC-011",
+    "title": "Calendar-day rotations",
+    "area": "published",
+    "status": "done",
+    "gap": ""
+  },
+  {
+    "id": "OC-012",
+    "title": "Paging off",
+    "area": "published",
+    "status": "done",
+    "gap": ""
+  },
+  {
+    "id": "OC-021",
+    "title": "Move-in preview",
+    "area": "published",
+    "status": "done",
+    "gap": ""
+  },
+  {
+    "id": "OC-022",
+    "title": "Resume and undo",
+    "area": "published",
+    "status": "done",
+    "gap": ""
+  }
+]

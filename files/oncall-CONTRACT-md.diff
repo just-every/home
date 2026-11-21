@@ -1,0 +1,50 @@
+--- oncall/v0.5.21/CONTRACT.md
++++ oncall/v0.5.22/CONTRACT.md
+@@ -594,7 +594,11 @@
+ 1. Trigger a service template, request backup responders and assign/transfer commander/scribe/communications roles through web/chat.
+ 2. Merge related incidents, split an unrelated alert, miss an update deadline with the browser closed and inspect reminders, aliases and attributed timelines; reject unauthorized role and state mutations.
+ 
++**Observed (20 November 2026, Run Edit Run fleet).** In the emitted browser workflow in `tests/product-browser.mjs`, a responder reviewed a merge with a current source. A separate signed-in responder added a note to the target. The original confirmation sent the reviewed revisions, received 409 and showed a conflict without a success message. Only the note changed the incident records. The source remained directly accessible, all links and roles stayed intact, and native audit recorded one refusal attributed to the reviewing responder and target. Paging stayed OFF with unchanged records and zero outbound requests. The successful merge, retained alias and split also passed in the same journey.
++
+ **Observed (18 November 2026, Run Edit Run fleet).** In the emitted Worker storm journey in `tests/triage.mjs`, a signed-in viewer used the current revision of an acknowledged incident to request a transfer of its Communications role to a different active responder. The native command returned 403 and recorded exactly one `command.assign-role` refusal attributed to the viewer and the incident. The role, timeline, workspace and incident revisions and paging records stayed unchanged, and the Worker made zero outbound requests. The same command succeeded for the signed-in responder.
++
++**Observed (20 November 2026, Run Edit Run fleet).** In the emitted Worker browser journey in `tests/product-browser.mjs`, a responder saved a note on a public-service incident after a second user reviewed splitting one of its two alerts. Confirmation sent the reviewed source revision, received 409 and showed the conflict without claiming success or creating a child. Both alert links and their source and generation custody stayed intact. The note was the only incident change. The refusal recorded one audit row attributed to the confirming user and source incident. Paging stayed OFF with unchanged records and zero outbound requests. The journey asserts at 1440 and captures the review and refusal at 1440 and 390.
+ 
+ #### OC-051 — Reviewed Lamp and Statuspage communication
+ 
+@@ -1054,6 +1058,8 @@
+ **Observed service runbook readback (18 November 2026, Run Edit Run fleet).** In `tests/oncall-agent-service-replay.mjs`, the same admitted MCP agent followed the `resource_link` from the first completed standard-only `oncall.services.update` in each company policy. The full service, including its in-grant dependency and edited runbook, matched the protected native state and the write projection excluding its separate ETag. The autonomous read completed directly. The held read completed with its own open standard review and preserved the original open write review. The read preserved the original write result and receipt, the incident's copied runbook, native records and revisions, mutation audit and paging state. The Worker attempted zero outbound requests. The write link comes from `src/agent-door/service-tools.ts` and the scoped read comes from `src/agent-door/resources.ts`.
+ 
+ **Observed follow-up creation readback (19 November 2026, Run Edit Run fleet).** In `tests/oncall-agent-flow.mjs`, the same admitted MCP agent followed the parent incident `resource_link` from the first successful `oncall.actions.create` on an evidence-free incident in its granted service. The whole incident matched the write result and the sponsor's protected GET `/api/state`, including the new revision, the open P1 follow-up with its owner, UTC due date and human-review requirement, and the attributed creation entry. Autonomous policy served the read directly. Held policy served the standard read with its own open review and preserved the original open write review. Both reads preserved native records and revisions, mutation audit, the original write outcome and paging. Only read audit and capacity bookkeeping accompanied the result. The Worker attempted zero outbound requests. The signed-in review in `tests/agent-door-browser.mjs` displayed the saved open follow-up and its attributed creation at 1440 and 390 pixels.
++
++**Observed follow-up submission readback (20 November 2026, Run Edit Run fleet).** In `tests/oncall-agent-action-submit-replay.mjs`, the same admitted agent followed the parent incident `resource_link` from the first completed `oncall.actions.submit` response for an owned P1 follow-up with a UTC due date and human review. The full incident matched the completed response and the sponsor’s protected GET `/api/state`, including the incremented revision, submitted evidence and attributed timeline. The follow-up remained open awaiting human acceptance. Autonomous policy served the read directly. Held policy withheld the resource until the sponsor approved the separate saved read revision and summary. Both reads preserved the original write outcome and its approval where present, native records and revisions, mutation audit and paging. The Worker made zero outbound requests. The signed-in review in `tests/agent-door-browser.mjs` showed the retained evidence, attribution and awaiting-acceptance state at 1440 and 390 pixels under both policies.
+ 
+ **Acceptance.**
+ 1. `resources / templates / list` names every record type in the Agent surface.
+@@ -1235,7 +1241,7 @@
+ | `oncall.incidents.list` | List incidents the caller may read | OC-003, OC-053 | standard (+ sensitive) | Shipped |
+ | `oncall.incidents.read` | Read one incident | OC-003, OC-004, OC-053 | standard (+ sensitive) | Shipped |
+ | `oncall.incidents.receipt` | Read the receipt of an earlier incident call by its idempotency key | OC-053 | standard | Shipped |
+-| `oncall.incidents.update` | Acknowledge, note, reassign, snooze or escalate an incident and assign its roles | OC-004, OC-027, OC-050, OC-058 | standard (+ live) | Shipped for reassign, role and recovery changes; manual-page, snooze, cancel-deadline and expire-deadline add live from validated native custody; acknowledge and note ship as oncall.incidents.acknowledge and oncall.notes.add; escalation not yet shipped; paging remains OFF |
++| `oncall.incidents.update` | Acknowledge, note, reassign, snooze or escalate an incident and assign its roles | OC-004, OC-027, OC-050, OC-058 | standard (+ sensitive) (+ live) | Shipped for reassign, role and recovery changes; manual-page, snooze, cancel-deadline and expire-deadline add live from validated native custody; acknowledge and note ship as oncall.incidents.acknowledge and oncall.notes.add; escalation not yet shipped; paging remains OFF |
+ | `oncall.incidents.acknowledge` | Record an agent acknowledgment naming an active human responder | OC-004, OC-053 | standard (+ sensitive) | Shipped |
+ | `oncall.notes.add` | Append an agent-attributed note to an incident | OC-004, OC-008 | standard (+ sensitive) | Shipped |
+ | `oncall.bridges.create` | Create or join a Zoom or Teams incident bridge and record its participants and link | OC-035 | external | Not yet shipped |
+@@ -1280,7 +1286,7 @@
+ | `oncall.coordination.read` | Read the workspace coordination state and its revision | OC-003, OC-004, OC-036, OC-053 | standard | Shipped |
+ | `oncall.events.list` | List events an agent can follow | BASE-AGENT-010 | standard | Shipped |
+ | `oncall.imports.read` | Read imports | OC-038, OC-040 | standard | Shipped |
+-| `oncall.changes.read` | List recent changes for a service, alert or incident | OC-065 | standard | Shipped |
++| `oncall.changes.read` | List recent changes for a service, alert or incident | OC-065 | standard (+ sensitive) | Shipped |
+ | `oncall.archive.export` | Export the archive, a checkpoint or the permanent audit | OC-007, OC-015, OC-016, OC-041, OC-052 | standard | Not yet shipped |
+ | `oncall.archive.restore` | Restore an archive or checkpoint, replacing state | OC-007, OC-013, OC-015, OC-016, OC-052 | destructive · live · access (+ security) | Not yet shipped |
+ | `oncall.paging.history` | Acknowledge or cancel held historical paging jobs | OC-013 | standard | Not yet shipped |
+@@ -1311,6 +1317,8 @@
+ *Tier:* Agent surface · *From:* new · *Cites:* BASE-AGENT-001, BASE-AGENT-002, BASE-AGENT-003, BASE-AGENT-010, BASE-AGENT-012, BASE-AGENT-013
+ 
+ **Requirement.** Oncall serves the Base MCP door with exactly the tools, resources, events and prompts this area lists. The table marks each tool shipped or not yet shipped, and the resources, events and prompts are marked as not yet declared by the door; this clause stays unmet until every row ships and the door declares them.
++
++**Local proof (Run Edit Run fleet, 19 November 2026).** Under both autonomous and held policies, the emitted MCP tool listing returned the read-only `oncall.changes.read` for `OC-065` with `services:read` scope and the standard and sensitive possible classes. The served agent guide displayed the same scope and class set and cited the existing `changes` fixture for both classes at 1440 and 390 pixels. Discovery and guide reads preserved native records, permanent mutation audit and paging state, with paging OFF and zero outbound requests.
+ 
+ **Acceptance.**
+ 1. `tools/list` names exactly the tools in this area's table, each with its Core clauses and classes in `_meta`.

@@ -1,0 +1,11 @@
+--- oncall/v0.5.21/seed.json
++++ oncall/v0.5.22/seed.json
+@@ -1,7 +1,7 @@
+ {
+   "id": "oncall",
+   "name": "Oncall",
+-  "version": "0.5.21",
++  "version": "0.5.22",
+   "maturity": "maintained",
+   "category": "operations",
+   "replaces": [

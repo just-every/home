@@ -1,0 +1,69 @@
+{
+  "counts_before": {
+    "released": 35,
+    "coming-soon": 14
+  },
+  "counts_after": {
+    "released": 35,
+    "coming-soon": 14
+  },
+  "listing_changes": [
+    {
+      "slug": "oncall",
+      "fields": {
+        "version": {
+          "before": "v0.5.21",
+          "after": "v0.5.22"
+        }
+      }
+    },
+    {
+      "slug": "uptime",
+      "fields": {
+        "version": {
+          "before": "v0.5.18",
+          "after": "v0.5.19"
+        }
+      }
+    }
+  ],
+  "marker_changes": [
+    {
+      "slug": "oncall",
+      "before": [
+        "bf4b3f38e1a2"
+      ],
+      "after": [
+        "bf4b3f38e1a2",
+        "922fed04eacf"
+      ]
+    },
+    {
+      "slug": "spool",
+      "before": [
+        "64cb07f6a0dd"
+      ],
+      "after": []
+    },
+    {
+      "slug": "uptime",
+      "before": [
+        "bf4b3f38e1a2"
+      ],
+      "after": [
+        "bf4b3f38e1a2",
+        "64cb07f6a0dd"
+      ]
+    }
+  ],
+  "marker_keys": {
+    "CONTRACT.md, seed.json changed since the last sync": "922fed04eacf",
+    "seed.json changed since the last sync": "64cb07f6a0dd"
+  },
+  "excluded_present": [],
+  "changed_paths": [
+    "public/data/listings.json",
+    "scripts/seeds-sync/state.json",
+    "src/data/seed-pages.ts"
+  ]
+}

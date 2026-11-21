@@ -1,0 +1,122 @@
+[
+  {
+    "at": "2026-11-21T03:39:53Z",
+    "mode": "main",
+    "slug": "uptime",
+    "width": 1440,
+    "checks": {
+      "http": true,
+      "version": true,
+      "title": true,
+      "horizontalOverflow": false,
+      "pageErrors": []
+    },
+    "metrics": {
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "bodyWidth": 1440,
+      "headings": [
+        "Uptime"
+      ],
+      "versionBoxes": [
+        {
+          "text": "v0.5.18",
+          "x": 617.328125,
+          "y": 3867.640625,
+          "width": 205.328125,
+          "height": 23.09375
+        }
+      ]
+    }
+  },
+  {
+    "at": "2026-11-21T03:39:54Z",
+    "mode": "main",
+    "slug": "uptime",
+    "width": 390,
+    "checks": {
+      "http": true,
+      "version": true,
+      "title": true,
+      "horizontalOverflow": false,
+      "pageErrors": []
+    },
+    "metrics": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "bodyWidth": 390,
+      "headings": [
+        "Uptime"
+      ],
+      "versionBoxes": [
+        {
+          "text": "v0.5.18",
+          "x": 20,
+          "y": 4154.078125,
+          "width": 350,
+          "height": 23.09375
+        }
+      ]
+    }
+  },
+  {
+    "at": "2026-11-21T03:39:55Z",
+    "mode": "main",
+    "slug": "oncall",
+    "width": 1440,
+    "checks": {
+      "http": true,
+      "version": true,
+      "title": true,
+      "horizontalOverflow": false,
+      "pageErrors": []
+    },
+    "metrics": {
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "bodyWidth": 1440,
+      "headings": [
+        "Oncall"
+      ],
+      "versionBoxes": [
+        {
+          "text": "v0.5.21",
+          "x": 617.328125,
+          "y": 3686.890625,
+          "width": 205.328125,
+          "height": 23.09375
+        }
+      ]
+    }
+  },
+  {
+    "at": "2026-11-21T03:39:56Z",
+    "mode": "main",
+    "slug": "oncall",
+    "width": 390,
+    "checks": {
+      "http": true,
+      "version": true,
+      "title": true,
+      "horizontalOverflow": false,
+      "pageErrors": []
+    },
+    "metrics": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "bodyWidth": 390,
+      "headings": [
+        "Oncall"
+      ],
+      "versionBoxes": [
+        {
+          "text": "v0.5.21",
+          "x": 20,
+          "y": 3881.828125,
+          "width": 350,
+          "height": 23.09375
+        }
+      ]
+    }
+  }
+]

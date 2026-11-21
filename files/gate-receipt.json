@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-21T03:44:34Z",
+  "head": "2ae09dc01a11933324491a7e235750cdd4ad2858",
+  "base": "acb6cbe44844a1d642a9e9d034c113016e5d9e65",
+  "candidate_count": 1,
+  "side_parents": 0,
+  "identity_policy": "passed",
+  "trailers": "absent",
+  "tracked_worktree_clean": true,
+  "counts_before": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "counts_after": {
+    "total": 49,
+    "released": 35,
+    "coming_soon": 14
+  },
+  "rows": {
+    "R1": "MET",
+    "R2": "MET",
+    "R3": "MET",
+    "R4": "MET",
+    "R5": "MET"
+  },
+  "blocking_findings": 0,
+  "carried_C_followups": 2,
+  "clause_status_changes": 0,
+  "ci_successful_verify_run": 44860698831,
+  "api_calls": 4
+}

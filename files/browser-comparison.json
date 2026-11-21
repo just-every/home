@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "uptime",
+    "width": 1440,
+    "same_document_width": true,
+    "same_version_box_geometry": true,
+    "head_version": "v0.5.19",
+    "main_version": "v0.5.18"
+  },
+  {
+    "slug": "uptime",
+    "width": 390,
+    "same_document_width": true,
+    "same_version_box_geometry": true,
+    "head_version": "v0.5.19",
+    "main_version": "v0.5.18"
+  },
+  {
+    "slug": "oncall",
+    "width": 1440,
+    "same_document_width": true,
+    "same_version_box_geometry": true,
+    "head_version": "v0.5.22",
+    "main_version": "v0.5.21"
+  },
+  {
+    "slug": "oncall",
+    "width": 390,
+    "same_document_width": true,
+    "same_version_box_geometry": true,
+    "head_version": "v0.5.22",
+    "main_version": "v0.5.21"
+  }
+]

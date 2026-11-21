@@ -1,0 +1,67 @@
+[
+  {
+    "at": "2026-11-21T03:46:37Z",
+    "command": "git -c credential.helper= ls-remote https://github.com/just-every/home refs/heads/main refs/heads/cloud/je-sync-56 refs/pull/82/head",
+    "exit": 0,
+    "refs": [
+      {
+        "sha": "2ae09dc01a11933324491a7e235750cdd4ad2858",
+        "ref": "refs/heads/cloud/je-sync-56"
+      },
+      {
+        "sha": "acb6cbe44844a1d642a9e9d034c113016e5d9e65",
+        "ref": "refs/heads/main"
+      },
+      {
+        "sha": "2ae09dc01a11933324491a7e235750cdd4ad2858",
+        "ref": "refs/pull/82/head"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-21T03:46:37Z",
+    "command": "git -c credential.helper= ls-remote https://github.com/just-every/run-oncall refs/tags/v0.5.21 refs/tags/v0.5.21^{} refs/tags/v0.5.22 refs/tags/v0.5.22^{}",
+    "exit": 0,
+    "refs": [
+      {
+        "sha": "d64013191039b85d20579f3699aaa2c2a0e22c28",
+        "ref": "refs/tags/v0.5.21"
+      },
+      {
+        "sha": "33cafdc7750103f51ac4173c7b52c8dbcf1efbe0",
+        "ref": "refs/tags/v0.5.21^{}"
+      },
+      {
+        "sha": "0f5547279a0fd65e54a4b057e1a1c60ce600cc9f",
+        "ref": "refs/tags/v0.5.22"
+      },
+      {
+        "sha": "9cbcf975224f7171dcd3813e6f54d4b29a0791ca",
+        "ref": "refs/tags/v0.5.22^{}"
+      }
+    ]
+  },
+  {
+    "at": "2026-11-21T03:46:37Z",
+    "command": "git -c credential.helper= ls-remote https://github.com/just-every/run-uptime refs/tags/v0.5.18 refs/tags/v0.5.18^{} refs/tags/v0.5.19 refs/tags/v0.5.19^{}",
+    "exit": 0,
+    "refs": [
+      {
+        "sha": "8aa5b753383f8f45b80207c1f1223d91796672d5",
+        "ref": "refs/tags/v0.5.18"
+      },
+      {
+        "sha": "52f77a94a0a675ba5e1be122dfe0c720087144fb",
+        "ref": "refs/tags/v0.5.18^{}"
+      },
+      {
+        "sha": "35518bfc006d4411e76edee5fd794abd6db7e52c",
+        "ref": "refs/tags/v0.5.19"
+      },
+      {
+        "sha": "b9bff679ec99b702de753d63ad385d232e6b6d1e",
+        "ref": "refs/tags/v0.5.19^{}"
+      }
+    ]
+  }
+]

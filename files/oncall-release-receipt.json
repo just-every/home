@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-21T03:34:54Z",
+  "url": "https://api.github.com/repos/just-every/run-oncall/releases/tags/v0.5.22",
+  "result": {
+    "tag_name": "v0.5.22",
+    "draft": false,
+    "prerelease": false,
+    "published_at": "2026-11-21T02:50:25Z",
+    "html_url": "https://github.com/just-every/run-oncall/releases/tag/v0.5.22",
+    "target_commitish": "main",
+    "assets": [
+      "oncall-0.5.0-incident-1440.png",
+      "rer-release.dsse.json"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+# je-gate-66 independent gate plan
+
+Author: Run Edit Run fleet. Recorded at 2026-11-21T03:39:44Z.
+
+1. Configure the required fleet Git identity. Use one fresh shallow blobless clone of the declared home repository, retain main, fetch PR 82 and check out its exact requested head. Confirm head/base before judgment. Use public unauthenticated reads for gate work; reserve launcher refresh and the injected Git credential for the explicitly permitted evidence publication.
+2. Read repository AGENTS.md, the supplied RULES and builder brief, sync provenance/copy/marker code and each changed hunk. Check all candidate identities/trailers, scope, tests untouched and credential-shaped additions. Create no product commit and perform no product push, review comment, merge or deploy.
+3. Read each release once, resolve annotated tags independently over Git, and read both releases and their preceding CONTRACT.md, README.md and seed.json via public raw HTTPS. Compare hashes, version metadata, entire contract status tables and changed requirements/observations with JE copy.
+4. Run npm ci, listings check/write, type-check, lint and production build sequentially. Assert the two built pages at 1440 and capture both at 1440 and 390 using system Chromium. Build baseline main sequentially and make the same regression observations. Close own browsers and stop only recorded own server descendants.
+5. Read exact-head CI once; do not dispatch or rerun. Score R1-R5, retain all touched existing follow-ups with exact sentences and clause ids, and apply the frozen A/B/BAR threshold. Confirm no product mutation.
+6. Write the complete report, follow-ups, landing notes, receipts and screenshots outside the product clone. Select actual non-secret regular files explicitly, check selected text for addresses/credentials, publish the supplied evidence packet to evidence/je-gate-66 attached to the advertised candidate, and remove the disposable clone/node_modules after successful transfer. End with relay lines and one gate verdict.
